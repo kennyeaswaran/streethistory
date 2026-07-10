@@ -9,6 +9,67 @@ Workflow: when doing a street's full pass, check here first and consume its
 leads (verify → into the entry; debunk → delete, noting why if instructive).
 Periodically sweep the whole file. Keep entries dated.
 
+## Open leads (2026-07 migration additions)
+
+- **Moneta Avenue → Broadway (1925–26)** (2026-07, displaced from Broadway's
+  "south of Cesar Chavez" segment note during the segment-model migration):
+  farther south of current map coverage, much of Moneta Ave. was renamed
+  Broadway 1925–26. No Moneta Avenue entry exists yet and this stretch is
+  outside current NEIGHBORHOODS coverage — bank for whenever that area is
+  added, rather than a segment split now.
+
+## Segment-review flags (2026-07 migration)
+
+- **Figueroa Street, "south of Pico" segment** (2026-07): the segment's only
+  built-date source is the Edgar's Subdivision resubdivision map (M.R. 59-56,
+  surveyed Aug. 1895), which documents "Figueroa Street" near 20th & Flower —
+  roughly the southern half of this short Pico-to-coverage-edge stretch (Pico
+  at lat 34.0406 down to the coverage edge at 34.0343). The block immediately
+  south of Pico itself isn't separately evidenced; flagging rather than
+  splitting per this pass's no-new-segments rule.
+
+- **Central Avenue, "north of 2nd" segment** (2026-07): its Vine St→Central
+  evidence (both Herald citations) is explicitly scoped to "south of 1st" —
+  the segment's own note already flags that Vine north of 1st kept a
+  different identity in 1897. But the segment's band has no south-of-1st
+  closure (from: null), so it silently extends to the coverage edge, ~200m
+  north of the real 1st St intersection (`node intersect.js "Central Avenue"
+  "1st Street"` → lat 34.0492; Central's actual north end in the geometry is
+  34.0510). The stretch between 1st and the coverage edge has no
+  evidence at all under this segment's citations — a future split candidate
+  at 1st Street.
+
+- **4th Street & 5th Street, "west of Alameda" segments; Hill Street, "south
+  of Cesar Chavez" segment; Olympic Blvd, "west of Central" segment**
+  (2026-07 review pass): all four carry 1849 Ord-survey origin claims on
+  bands that extend beyond the survey grid (Pearl–Main for the numbered
+  cross-streets; southern edge unpinned for Hill; and the survey's numbered
+  streets are described as Calle 1ª–8ª, so 10th's "by 1849" rests on the
+  numbered-street template, not a checked label). The origin texts on
+  4th/5th/Hill now state the grid's extent; the real fix is 3rd-style splits
+  at Figueroa and Main (and, for Hill, wherever the survey's south edge
+  falls) once each stretch's own record is pulled. Same family as the two
+  2nd Street flags below.
+
+- **2nd Street, "west of Figueroa" segment** (2026-07): carries `planned: "by
+  1849"` with the Ord/Hutton survey as a source, but its only `built`
+  citation confirms the street here only via a Nov. 1909 Crown Hill tract
+  map — and by the parallel 3rd Street entry's own segmentation, Figueroa is
+  the WEST edge of the original 1849 grid ("Figueroa to Main" = "original 3rd
+  St"). This segment sits entirely west of that edge, so the Ord Survey
+  citation likely over-claims a stretch the 1849 survey never covered. Not
+  fixed this pass (would need research into whether/how this stretch joined
+  2nd St, same as 3rd Street's own west-of-Bixel segment already flags as
+  "not yet researched").
+
+- **2nd Street, "east of Alameda (Guadalupe St)" segment** (2026-07): sources
+  include the Ord/Hutton survey (`ORD_SURVEY`), but this is exactly rule 6's
+  own textbook case — the segment's `namedAfter` and nameHistory both say
+  this stretch was "folded into 2nd Street" later (presumed Feb. 1897), i.e.
+  it lies past the Ord grid's eastern edge (Alameda). The Ord Survey citation
+  doesn't document this stretch at all; it's carried over from the generic
+  numbered-street source list. Left in place per the no-fix-just-flag rule.
+
 ## 3rd Street segment-model pilot — shopping list (2026-07)
 
 3rd Street is now the pilot of the full segment model (7 segments, `from`/`to`
@@ -221,6 +282,11 @@ segments are honest unknowns; what each needs:
 - **Wolfskill Ave / original-Central Ave boundary**: still open — this stretch
   is south of Vernon, outside current map coverage (NEIGHBORHOODS bbox ends at
   lat 34.033). Not actionable until a South L.A. neighborhood is added.
+  (2026-07 migration: trimmed a duplicate of this same open question from the
+  segment's own note; also displaced from that note — Central Ave's stretch
+  through South L.A. became the heart of Black Los Angeles in the 20th
+  century, a history outside current coverage, worth a proper mention once
+  that stretch is added.)
 - **9th→Olympic renaming date, east of Central** (2026-07): Olympic absorbed
   9th's continuation east of Central Ave sometime 1935–1945. Pin the ordinance
   (City Archives / L.A. Times archive) — this one is L.A. Times, 1935–1945
@@ -230,7 +296,9 @@ segments are honest unknowns; what each needs:
   what that stretch was called.
 - **Georgia St → Georgia Bell renaming date** (2026-07): unsettled — Kines says
   1883; Forman's 1897 testimony says Sept. 11, 1890 (or 1880, OCR unclear).
-  Council ordinance books would settle it. (Trimmed from Georgia Street's note.)
+  Council ordinance books would settle it. (Trimmed from Georgia Street's note;
+  re-trimmed 2026-07 migration — a duplicate of this same sentence had crept
+  back into the entry's note.)
 - **Santa Fe Ave "Tulip" extent** (2026-07): the Goodwin Tract citation covers
   only the stretch south of 6th. Whether the same "Tulip"-era name applied
   further north (toward 1st/3rd, where the depots sat) is unchecked. (Trimmed

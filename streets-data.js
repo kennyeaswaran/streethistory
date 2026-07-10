@@ -103,21 +103,23 @@ const STREET_DATA = {
     orientation: "NS",
     segments: [
       {
-        label: "Pico → White Knoll",
-        minLat: 34.040,
+        label: "north of Pico",
+        from: null,
+        to: "Pico Boulevard",
+        minLat: 34.0406,
         name: "Figueroa Street",
         namedAfter: "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835",
         namedAfterLink: "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
         planned: { text: "by 1849", url: ORD_SURVEY.url },
         built: "by 1849",
         nameHistory: [
-          { from: "1849", until: "1874", name: "Calle de los Chapules (“Grasshopper Street”)",
+          { from: "1849", until: "1874", name: "Calle de los Chapules (“Grasshopper Street”)", how: "origin",
             origin: "named after the insect: grasshoppers crossing this line from the western plains doomed the grape harvest",
             originLink: null },
-          { from: "1874", until: "1897", name: "Pearl Street",
+          { from: "1874", until: "1897", name: "Pearl Street", how: "renaming",
             origin: "property owners along Grasshopper Street petitioned for “Pearl Street” over a rival “Union Avenue” proposal; the Herald's report of the Feb. 26, 1874 council debate names no petitioner or namesake — though in 1897, ex-Mayor J. R. Toberman claimed the naming as his own {{(source)}}",
             originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10" },
-          { from: "Feb. 1897", until: null, name: "Figueroa Street",
+          { from: "Feb. 1897", until: null, name: "Figueroa Street", how: "transfer",
             origin: "Pearl Street was renamed Figueroa Street “being a continuation of that thoroughfare”; the older Figueroa Street (c. 1853–1857) a few blocks west was simultaneously renamed De La Guerra, then Boylston within weeks {{(source)}}",
             originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970202.2.34" }
         ],
@@ -138,13 +140,15 @@ const STREET_DATA = {
       },
       {
         label: "south of Pico",
-        maxLat: 34.040,
+        from: "Pico Boulevard",
+        to: null,
+        maxLat: 34.0406,
         name: "Figueroa Street",
         namedAfter: "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835",
         namedAfterLink: "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
         planned: null,
         built: { text: "already \"Figueroa Street\" by Aug. 1895 (near 20th & Flower)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR059/MR059-056.pdf" },
-        note: "Pearl ended at Pico, so this stretch needed no 1897 rename. A recorded tract map (Edgar's Subdivision resubdivision, 1895) already labels it \"Figueroa Street\" a year before the citywide renaming — evidence it is the older southern continuation of the pre-1897 Figueroa Street whose downtown stretch became De La Guerra, left untouched rather than renamed alongside Pearl.",
+        note: "Pearl ended at Pico, so this stretch needed no 1897 rename. A recorded tract map (Edgar's Subdivision resubdivision, 1895) already labels it \"Figueroa Street\" a year before the citywide renaming — evidence it is the older southern continuation of the pre-1897 Figueroa Street whose downtown stretch became De La Guerra, then [[Boylston Street]], left untouched rather than renamed alongside Pearl.",
         categories: ["person", "governor"],
         disputed: false,
         sources: [
@@ -167,7 +171,9 @@ const STREET_DATA = {
         origin: "unverified — reported in some accounts", originLink: null },
       { from: "?", until: "1849", name: "Calle de Caridad (“Charity Street”)",
         origin: "unverified — a name also carried by today's Grand Avenue", originLink: null },
-      { from: "1849", until: null, name: "Spring Street", origin: null, originLink: null }
+      { from: "1849", until: null, name: "Spring Street", how: "origin",
+        origin: "labeled “Calle Primavera” (spring) on the Ord/Hutton survey {{(survey)}} — the record here doesn't confirm either unverified predecessor name",
+        originLink: ORD_SURVEY.url }
     ],
     note: "The Ortega attribution first appears in print in 1911; earlier accounts suggested only the season.",
     categories: ["person", "alive", "renamed", "disputed"],
@@ -254,23 +260,27 @@ const STREET_DATA = {
     orientation: "NS",
     segments: [
       {
-        label: "Chinatown (north of Cesar Chavez)",
-        minLat: 34.0595,
+        label: "north of Cesar Chavez (Chinatown)",
+        from: null,
+        to: "Cesar E Chavez Avenue",
+        minLat: 34.0586,
         name: "North Broadway",
         namedAfter: "Extension of downtown's Broadway name (itself borrowed from New York's {{Broadway}}) to this older street in 1909",
         namedAfterLink: "https://en.wikipedia.org/wiki/Broadway_(Manhattan)",
         planned: { text: "by 1849 (as Calle Eternidad)", url: ORD_SURVEY.url },
         built: "by 1849",
         nameHistory: [
-          { from: "1849", until: "1888", name: "Calle Eternidad / Eternity Street",
+          { from: "1849", until: "1888", name: "Calle Eternidad / Eternity Street", how: "origin",
             origin: "led to Calvary Cemetery (est. 1844) — though an 1895 account claims it was “so named because it had neither beginning nor end” {{(source)}}",
             originLink: "https://homesteadmuseum.blog/2016/07/18/museum-director-musings-through-the-viewfinder-on-calle-eternidad-1880s/" },
-          { from: "1888", until: "Nov. 1909", name: "Buena Vista Road / Street",
+          { from: "1888", until: "Nov. 1909", name: "Buena Vista Road / Street", how: "renaming",
             origin: "renamed (“good view”) when Alfred Solano's 1888 survey extended it past Solano Canyon to the L.A. River {{(source)}}",
             originLink: "https://www.solanocanyon.org/buena-vista-road.html" },
-          { from: "Nov. 1909", until: null, name: "North Broadway", origin: null, originLink: null }
+          { from: "Nov. 1909", until: null, name: "North Broadway", how: "extension",
+            origin: "the downtown Broadway name (itself borrowed from New York's {{Broadway}}) was extended north onto this older street in Nov. 1909, after several earlier failed attempts",
+            originLink: "https://en.wikipedia.org/wiki/Broadway_(Manhattan)" }
         ],
-        note: "Resisted several earlier attempts at the Broadway renaming before 1909.",
+        note: null,
         categories: ["renamed", "borrowed", "disputed"],
         disputed: true,
         sources: [
@@ -282,20 +292,24 @@ const STREET_DATA = {
         ]
       },
       {
-        label: "downtown (south of Cesar Chavez)",
-        maxLat: 34.0595,
+        label: "south of Cesar Chavez (downtown)",
+        from: "Cesar E Chavez Avenue",
+        to: null,
+        maxLat: 34.0586,
         name: "Broadway",
         namedAfter: "New York City's {{Broadway}}, via an 1890 renaming petition by printer Fred Lind Alles",
         namedAfterLink: "https://en.wikipedia.org/wiki/Broadway_(Manhattan)",
         planned: { text: "by 1849 (as Fort Street)", url: ORD_SURVEY.url },
         built: "by 1849",
         nameHistory: [
-          { from: "1849", until: "1890", name: "Fort Street",
+          { from: "1849", until: "1890", name: "Fort Street", how: "origin",
             origin: "named after {{Fort Moore}}, built on a nearby hill after the Mexican–American War",
             originLink: "https://en.wikipedia.org/wiki/Fort_Moore" },
-          { from: "Feb. 1890", until: null, name: "Broadway", origin: null, originLink: null }
+          { from: "Feb. 1890", until: null, name: "Broadway", how: "renaming",
+            origin: "renamed from Fort Street after New York City's {{Broadway}}, via an 1890 renaming petition by printer Fred Lind Alles",
+            originLink: "https://en.wikipedia.org/wiki/Broadway_(Manhattan)" }
         ],
-        note: "Farther south, much of Moneta Ave. also became Broadway (1925–26).",
+        note: null,
         categories: ["renamed", "borrowed"],
         disputed: false,
         sources: [
@@ -331,11 +345,11 @@ const STREET_DATA = {
     planned: null,
     built: "by 1781 (likely one of the original pueblo's two roads from the plaza)",
     nameHistory: [
-      { from: "c. 1781", until: "?", name: "Calle Real (“Royal Road”)",
+      { from: "c. 1781", until: "?", name: "Calle Real (“Royal Road”)", how: "origin",
         origin: "standard Spanish colonial designation for a settlement's principal road", originLink: null },
       { from: "?", until: "c. 1849", name: "Calle Principal",
         origin: "descriptive — the principal street", originLink: null },
-      { from: "c. 1849", until: null, name: "Main Street",
+      { from: "c. 1849", until: null, name: "Main Street", how: "renaming",
         origin: "anglicization, fixed by the Ord/Hutton survey; first found in print May 1851 {{(source)}}",
         originLink: "https://lastreetnames.com/street/main-street-los-angeles/" }
     ],
@@ -355,18 +369,22 @@ const STREET_DATA = {
     orientation: "NS",
     segments: [
       {
-        label: "Plaza block (former Calle de los Negros)",
-        minLat: 34.0551,
+        label: "north of Arcadia (Calle de los Negros)",
+        from: null,
+        to: "Arcadia Street",
+        minLat: 34.0553,
         name: "Los Angeles Street",
         namedAfter: "Extension of the Los Angeles Street name when it absorbed this block in 1910",
         namedAfterLink: null,
         planned: null,
         built: "not yet researched",
         nameHistory: [
-          { from: "?", until: "1910", name: "Calle de los Negros (“Negro Alley”)",
+          { from: "?", until: "1910", name: "Calle de los Negros (“Negro Alley”)", how: "origin",
             origin: "origin of the name is debated, and few if any Black residents are documented; the block became L.A.'s first Chinatown and was the site of the {{1871 anti-Chinese massacre}}",
             originLink: "https://en.wikipedia.org/wiki/Chinese_massacre_of_1871" },
-          { from: "1910", until: null, name: "Los Angeles Street", origin: null, originLink: null }
+          { from: "1910", until: null, name: "Los Angeles Street", how: "extension",
+            origin: "the Los Angeles Street name was extended north to absorb this block in 1910",
+            originLink: null }
         ],
         note: null,
         categories: ["renamed", "place", "disputed"],
@@ -377,13 +395,20 @@ const STREET_DATA = {
         ]
       },
       {
-        label: "south of Arcadia St",
-        maxLat: 34.0551,
+        label: "south of Arcadia",
+        from: "Arcadia Street",
+        to: null,
+        maxLat: 34.0553,
         name: "Los Angeles Street",
         namedAfter: "The city itself — ultimately from {{Nuestra Señora de los Ángeles de Porciúncula}}, the 1769 Spanish naming of the L.A. River",
         namedAfterLink: "https://en.wikipedia.org/wiki/History_of_Los_Angeles",
         planned: "not yet researched",
         built: "by 1854",
+        nameHistory: [
+          { from: "by 1854", until: null, name: "Los Angeles Street", how: "origin",
+            origin: "the through stretch of Los Angeles Street, named for the city itself, in place by 1854 — the Plaza-block stretch to the north joined by extension in 1910",
+            originLink: null }
+        ],
         note: null,
         categories: ["place"],
         disputed: false,
@@ -434,13 +459,15 @@ const STREET_DATA = {
     planned: null,
     built: "c. 1853–1857 (as the original Figueroa Street)",
     nameHistory: [
-      { from: "c. 1853–1857", until: "Feb. 1897", name: "Figueroa Street",
+      { from: "c. 1853–1857", until: "Feb. 1897", name: "Figueroa Street", how: "origin",
         origin: "honored Gov. José Figueroa; the 1897 street-renaming committee moved the name a few blocks east onto the former Pearl Street, “being a continuation of that thoroughfare” {{(source)}}",
         originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970202.2.34" },
-      { from: "Feb. 1897", until: "Feb. 1897", name: "De La Guerra Street",
+      { from: "Feb. 1897", until: "Feb. 1897", name: "De La Guerra Street", how: "renaming",
         origin: "the committee's proposed replacement name for the stretch between 3rd and 6th; at the Feb. 23, 1897 council session O.T. Johnson's representative objected and Boylston was substituted on the spot, on motion of Councilman Toll {{(source)}}",
         originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20" },
-      { from: "1897", until: null, name: "Boylston Street", origin: null, originLink: null }
+      { from: "1897", until: null, name: "Boylston Street", how: "renaming",
+        origin: "substituted for De La Guerra on the spot at the Feb. 23, 1897 council session, on motion of Councilman Toll, after O.T. Johnson's representative objected {{(source)}}",
+        originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20" }
     ],
     note: "The donor side of the [[Figueroa Street]] name transfer.",
     categories: ["borrowed", "renamed"],
@@ -460,17 +487,17 @@ const STREET_DATA = {
     planned: null,
     built: "by 1874",
     nameHistory: [
-      { from: "1874", until: "1883–1890 (sources differ)", name: "Georgia Street",
+      { from: "1874", until: "1883–1890 (sources differ)", name: "Georgia Street", how: "origin",
         origin: "christened on Bell land; later renamed Georgia Bell to avoid conflict with another, now-defunct Georgia Street {{(source)}}",
         originLink: "https://lastreetnames.com/street/georgia-street/" },
-      { from: "by 1890", until: "Feb. 1897", name: "Georgia Bell Street",
+      { from: "by 1890", until: "Feb. 1897", name: "Georgia Bell Street", how: "renaming",
         origin: "adjoining stretches platted as Nevada Street (on 1886 Downey Harvey and Dunnigan tract maps) were folded in as Georgia Bell on May 10, 1889, per Gen. Forman's 1897 testimony {{(source)}}",
         originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24" },
-      { from: "Feb. 1897", until: null, name: "Georgia Street",
+      { from: "Feb. 1897", until: null, name: "Georgia Street", how: "renaming",
         origin: "the renaming commission proposed reverting to “Nevada”; after Major Bell's furious protest the council compromised on Georgia — one of the street's own former names — and Bell dropped his threatened lawsuit {{(source)}}",
         originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970227.2.12" }
     ],
-    note: "The Georgia→Georgia Bell renaming date is unsettled: Kines says 1883; Forman testified Sept. 11, 1890 (or 1880 — OCR unclear). The \"other, now-defunct Georgia Street\" that prompted the original rename is very likely the short \"Georgia St\" on the 1888-recorded Wolfskill Orchard Tract map east of Alameda — now part of [[3rd Street]]'s eastern segment, across downtown from this street.",
+    note: "The \"other, now-defunct Georgia Street\" that prompted the original rename is very likely the short \"Georgia St\" on the 1888-recorded Wolfskill Orchard Tract map east of Alameda — now part of [[3rd Street]]'s eastern segment, across downtown from this street.",
     categories: ["person", "alive", "renamed"],
     disputed: false,
     sources: [
@@ -509,23 +536,27 @@ const STREET_DATA = {
     orientation: "NS",
     segments: [
       {
-        label: "Chinatown (north of Cesar Chavez)",
-        minLat: 34.0595,
+        label: "north of Cesar Chavez (Chinatown)",
+        from: null,
+        to: "Cesar E Chavez Avenue",
+        minLat: 34.0592,
         name: "North Hill Street",
         namedAfter: "Extension of downtown's Hill Street name to this older street in 1960",
         namedAfterLink: null,
         planned: { text: "by 1849 (as Calle del Toro)", url: ORD_SURVEY.url },
         built: "not yet researched",
         nameHistory: [
-          { from: "1849", until: "Feb. 1874", name: "Calle del Toro (“Bull Street”)",
+          { from: "1849", until: "Feb. 1874", name: "Calle del Toro (“Bull Street”)", how: "origin",
             origin: "no specific namesake documented; bullfights were reportedly held in the area until 1872",
             originLink: null },
-          { from: "Feb. 1874", until: "1960", name: "Castelar Street",
-            origin: "renamed by petition, apparently for {{Emilio Castelar}}, president of Spain's First Republic",
+          { from: "Feb. 1874", until: "1960", name: "Castelar Street", how: "renaming",
+            origin: "renamed by petition, apparently for {{Emilio Castelar}}, president of Spain's First Republic — part of a wider Feb. 1874 petition that also covered Grasshopper Street (→ Union Avenue) and Wasp Street (→ Yale Street)",
             originLink: "https://en.wikipedia.org/wiki/Emilio_Castelar" },
-          { from: "1960", until: null, name: "North Hill Street", origin: null, originLink: null }
+          { from: "1960", until: null, name: "North Hill Street", how: "extension",
+            origin: "the downtown Hill Street name was extended north onto this older street (Castelar St.) in 1960 {{(source)}}",
+            originLink: "https://web.archive.org/web/20151125171258/https://pqasb.pqarchiver.com/latimes/doc/167676581.html" }
         ],
-        note: "The Feb. 1874 renaming was part of a wider petition that also covered Grasshopper Street (→ Union Avenue) and Wasp Street (→ Yale Street).",
+        note: null,
         categories: ["renamed", "nature"],
         disputed: false,
         sources: [
@@ -538,13 +569,20 @@ const STREET_DATA = {
         ]
       },
       {
-        label: "downtown (south of Cesar Chavez)",
-        maxLat: 34.0595,
+        label: "south of Cesar Chavez (downtown)",
+        from: "Cesar E Chavez Avenue",
+        to: null,
+        maxLat: 34.0592,
         name: "Hill Street",
         namedAfter: "{{Bunker Hill}} — the knoll the street ran along, though the hill itself wasn't formally named until 1873, after the street",
         namedAfterLink: "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
         planned: { text: "by 1849", url: ORD_SURVEY.url },
         built: "by 1849",
+        nameHistory: [
+          { from: "1849", until: null, name: "Hill Street", how: "origin",
+            origin: "laid out as Calle Loma (“Hill Street”) on the Ord/Hutton survey — how far south the 1849 grid carried it is not pinned down {{(survey)}}",
+            originLink: ORD_SURVEY.url }
+        ],
         note: null,
         categories: ["nature"],
         disputed: false,
@@ -688,13 +726,20 @@ const STREET_DATA = {
     segments: [
       {
         label: "north of 4th",
+        from: null,
+        to: "4th Street",
         minLat: 34.0436,
         name: "Hewitt Street",
         namedAfter: null,
         namedAfterLink: null,
         planned: null,
         built: { text: "already \"Hewitt St\" by May 19, 1875 (Map of the Thomas Tract) and again on the Mills and Wicks Extension of Second St. tract's original Apr.–May 1886 sheet", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf" },
-        note: "This stretch shows no \"Carolina\" phase on either recorded map — it appears to have carried the name \"Hewitt\" from its earliest platting, unlike the stretch south of 4th (see that segment). Home to ArtShare L.A., around the corner from [[4th Place]].",
+        nameHistory: [
+          { from: "by 1875", until: null, name: "Hewitt Street", how: "origin",
+            origin: "labeled \"Hewitt St\" on the 1875 Thomas Tract map, its earliest documented platting — this stretch shows no \"Carolina\" phase, unlike the stretch south of 4th",
+            originLink: null }
+        ],
+        note: "Home to ArtShare L.A., around the corner from [[4th Place]].",
         categories: ["unknown"],
         disputed: false,
         sources: [
@@ -703,7 +748,9 @@ const STREET_DATA = {
         ]
       },
       {
-        label: "4th to Palmetto (Bliss Tract)",
+        label: "4th to Palmetto (Carolina St)",
+        from: "4th Street",
+        to: "Palmetto Street",
         maxLat: 34.0436,
         name: "Hewitt Street",
         namedAfter: null,
@@ -711,7 +758,7 @@ const STREET_DATA = {
         planned: null,
         built: null,
         nameHistory: [
-          { from: "1886", until: "?", name: "Carolina Street",
+          { from: "1886", until: "?", name: "Carolina Street", how: "origin",
             origin: "named on Dr. Frederick Preston Howard's tract, likely for his wife Caroline (née Huber) {{(source)}} — corroborated by the Mills and Wicks Extension tract's separate Jan. 24, 1887 sheet, which shows the SAME corridor, immediately south of 4th/Huber St, also labeled \"Carolina\" (bordering \"O.H. Bliss\")",
             originLink: "https://lastreetnames.com/street/colyton-street/" },
           { from: "?", until: null, name: "Hewitt Street",
@@ -1067,7 +1114,9 @@ const STREET_DATA = {
     orientation: "NS",
     segments: [
       {
-        label: "1st → 2nd (former Vine St)",
+        label: "north of 2nd (former Vine St)",
+        from: null,
+        to: "2nd Street",
         minLat: 34.0477,
         name: "Central Avenue",
         namedAfter: "Extension of the Central Avenue name over this block in the Feb. 1897 citywide renaming",
@@ -1078,7 +1127,9 @@ const STREET_DATA = {
           { from: "?", until: "Feb. 1897", name: "Vine Street",
             origin: "origin not yet researched; Vine north of 1st kept its name in 1897 (that stretch no longer exists) {{(source)}}",
             originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24" },
-          { from: "Feb. 1897", until: null, name: "Central Avenue", origin: null, originLink: null }
+          { from: "Feb. 1897", until: null, name: "Central Avenue", how: "extension",
+            origin: "the Central Avenue name (already used to the south) was extended over this block, formerly Vine St, in the Feb. 1897 citywide renaming {{(source)}}",
+            originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28" }
         ],
         note: null,
         categories: ["renamed", "descriptive"],
@@ -1090,6 +1141,8 @@ const STREET_DATA = {
       },
       {
         label: "south of 2nd (former Wolfskill Ave)",
+        from: "2nd Street",
+        to: null,
         maxLat: 34.0477,
         name: "Central Avenue",
         namedAfter: "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted",
@@ -1097,14 +1150,14 @@ const STREET_DATA = {
         planned: null,
         built: "by 1883; put on the map by 1887 via Ezra F. Kysor's Central Park tract",
         nameHistory: [
-          { from: "by 1887", until: "Feb. 1897", name: "Wolfskill Avenue",
+          { from: "by 1887", until: "Feb. 1897", name: "Wolfskill Avenue", how: "origin",
             origin: "named for {{William Wolfskill}}'s old citrus ranch, which this stretch ran through; already labeled \"Wolfskill\" on the recorded 1887 Wolfskill Orchard Tract map, on the tract's edge nearest Alameda",
             originLink: "https://en.wikipedia.org/wiki/William_Wolfskill" },
-          { from: "Feb. 1897", until: null, name: "Central Avenue",
+          { from: "Feb. 1897", until: null, name: "Central Avenue", how: "renaming",
             origin: "renamed per the city's street-renaming committee's report, among changes made “in response to urgent requests made before the committee” {{(source)}}",
             originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28" }
         ],
-        note: "Where Wolfskill Ave ended and the original (1883) Central began is not yet pinned — this segment's southern history may split again. Central's stretch through South L.A. became the heart of Black Los Angeles in the 20th century — a history outside current coverage.",
+        note: null,
         categories: ["descriptive", "renamed"],
         disputed: false,
         sources: [
@@ -1552,7 +1605,9 @@ Object.assign(STREET_DATA, {
     segments: [
       {
         label: "west of Figueroa",
-        maxLng: -118.2530,
+        from: null,
+        to: "Figueroa Street",
+        maxLng: -118.2531,
         name: "2nd Street",
         namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
         namedAfterLink: null,
@@ -1569,9 +1624,11 @@ Object.assign(STREET_DATA, {
         ]
       },
       {
-        label: "Bunker Hill Tunnel (Figueroa–Hill)",
-        minLng: -118.2530,
-        maxLng: -118.2480,
+        label: "Figueroa to Hill (Bunker Hill Tunnel)",
+        from: "Figueroa Street",
+        to: "Hill Street",
+        minLng: -118.2531,
+        maxLng: -118.2478,
         name: "2nd Street",
         namedAfter: "Its ordinal position in the downtown grid, same as the rest of 2nd Street — this stretch just tunnels under Bunker Hill instead of running at grade",
         namedAfterLink: null,
@@ -1586,8 +1643,10 @@ Object.assign(STREET_DATA, {
         ]
       },
       {
-        label: "Hill St to Alameda",
-        minLng: -118.2480,
+        label: "Hill to Alameda",
+        from: "Hill Street",
+        to: "Alameda Street",
+        minLng: -118.2478,
         maxLng: -118.2381,
         name: "2nd Street",
         namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
@@ -1605,6 +1664,8 @@ Object.assign(STREET_DATA, {
       },
       {
         label: "east of Alameda (Guadalupe St)",
+        from: "Alameda Street",
+        to: null,
         minLng: -118.2381,
         name: "2nd Street",
         namedAfter: "Its ordinal position in the downtown grid, once this stretch was folded into 2nd Street",
@@ -1612,18 +1673,18 @@ Object.assign(STREET_DATA, {
         planned: null,
         built: { text: "already \"Guadalupe St\" by May 19, 1875 (Map of the Thomas Tract, recorded that date)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf" },
         nameHistory: [
-          { from: "1875", until: "?", name: "Guadalupe Street",
+          { from: "1875", until: "?", name: "Guadalupe Street", how: "origin",
             origin: "labeled \"Guadalupe\" on the recorded Thomas Tract map, one block north of (and parallel to) \"Georgia St\" — the tract's own name for this stretch's [[3rd Street|3rd Street]] counterpart, itself later folded into the numbered grid — putting Guadalupe in the 2nd Street position",
             originLink: null },
-          { from: "?", until: null, name: "2nd Street",
+          { from: "?", until: null, name: "2nd Street", how: "renaming",
             origin: "not directly documented; presumably folded in during the {{Feb. 1897 citywide renaming}} along with other downtown-grid consolidations, though no source specifically names this stretch",
             originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28" }
         ],
-        note: "Seen on the second sheet (M.R. 3-61) of the same Thomas Tract map that names [[Garey Street]] and the north end of [[Hewitt Street]]. Inferred from position (one block north of \"Georgia St,\" which the neighboring [[3rd Street]] entry already ties to this same tract and grid), not from a matching modern parcel — the block hasn't been checked address-by-address the way Garey and Hewitt were.",
+        note: "Seen on the second sheet (M.R. 3-61) of the same Thomas Tract map that names [[Garey Street]] and the north end of [[Hewitt Street]].",
         categories: ["number", "renamed"],
         disputed: false,
         sources: [
-          { title: "Recorded map: Map of the Thomas Tract, being a portion of the Johnson and Mott Tract, M.R. 3-60/61 (recorded May 19, 1875, at the request of Milton Thomas) — labels this street \"Guadalupe\"", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf" },
+          { title: "Recorded map: Map of the Thomas Tract, being a portion of the Johnson and Mott Tract, M.R. 3-60/61 (recorded May 19, 1875, at the request of Milton Thomas) — labels this street \"Guadalupe\" (identified by position relative to \"Georgia St,\" not a matching modern parcel)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf" },
           { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
           { title: ORD_SURVEY.title, url: ORD_SURVEY.url }
         ]
@@ -1802,12 +1863,19 @@ Object.assign(STREET_DATA, {
     segments: [
       {
         label: "west of Alameda",
+        from: null,
+        to: "Alameda Street",
         maxLng: -118.2381,
         name: "4th Street",
         namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
         namedAfterLink: null,
         planned: { text: "by 1849", url: ORD_SURVEY.url },
         built: "not yet researched",
+        nameHistory: [
+          { from: "1849", until: null, name: "4th Street", how: "origin",
+            origin: "laid out as Calle 4ª (“Fourth Street”) on the Ord/Hutton survey, whose grid ran from Pearl (now Figueroa) to Main — when the rest of this stretch joined is not yet researched {{(survey)}}",
+            originLink: ORD_SURVEY.url }
+        ],
         note: "The 1890 petition that turned Fort Street into Broadway cited confusion between “Fort” and “Fourth”.",
         categories: ["number"],
         disputed: false,
@@ -1819,7 +1887,9 @@ Object.assign(STREET_DATA, {
         ]
       },
       {
-        label: "Alameda–Hewitt (Huber St)",
+        label: "Alameda to Hewitt (Huber St)",
+        from: "Alameda Street",
+        to: "Hewitt Street",
         minLng: -118.2381,
         maxLng: -118.2354,
         name: "4th Street",
@@ -1828,10 +1898,10 @@ Object.assign(STREET_DATA, {
         planned: null,
         built: { text: "already \"Huber St\" by Apr.–May 1886 (Mills and Wicks Extension of Second St. tract, one block north), and again by Aug. 1886 (F.P. Howard & Co.'s Subdivision of the Bliss Tract)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf" },
         nameHistory: [
-          { from: "1886", until: "?", name: "Huber Street",
+          { from: "1886", until: "?", name: "Huber Street", how: "origin",
             origin: "named on Dr. Frederick Preston Howard's tract; no specific namesake documented, though possibly for his wife Caroline (née Huber), as with [[Hewitt Street]]'s \"Carolina Street\" one block east {{(source)}} — the Mills and Wicks Extension tract one block north corroborates \"Huber\" a few months earlier, in spring 1886",
             originLink: "https://lastreetnames.com/street/colyton-street/" },
-          { from: "?", until: null, name: "4th Street",
+          { from: "?", until: null, name: "4th Street", how: "renaming",
             origin: "not directly documented, but this exact block is where the {{Feb. 1897 citywide renaming}} folded Larkin Street and Short Street (“from Fourth street to Santa Fe grounds”) into 4th's eastern reach — the likely, though unconfirmed, rename event for this stretch",
             originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28" }
         ],
@@ -1846,6 +1916,8 @@ Object.assign(STREET_DATA, {
       },
       {
         label: "east of Hewitt",
+        from: "Hewitt Street",
+        to: null,
         minLng: -118.2354,
         name: "4th Street",
         namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
@@ -1870,12 +1942,19 @@ Object.assign(STREET_DATA, {
     segments: [
       {
         label: "west of Alameda",
+        from: null,
+        to: "Alameda Street",
         maxLng: -118.2382,
         name: "5th Street",
         namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
         namedAfterLink: null,
         planned: { text: "by 1849", url: ORD_SURVEY.url },
         built: "not yet researched",
+        nameHistory: [
+          { from: "1849", until: null, name: "5th Street", how: "origin",
+            origin: "laid out as Calle 5ª (“Fifth Street”) on the Ord/Hutton survey, whose grid ran from Pearl (now Figueroa) to Main — when the rest of this stretch joined is not yet researched {{(survey)}}",
+            originLink: ORD_SURVEY.url }
+        ],
         note: null,
         categories: ["number"],
         disputed: false,
@@ -1886,7 +1965,9 @@ Object.assign(STREET_DATA, {
         ]
       },
       {
-        label: "Alameda–Hewitt (Poplar St)",
+        label: "Alameda to Hewitt (Poplar St)",
+        from: "Alameda Street",
+        to: "Hewitt Street",
         minLng: -118.2382,
         maxLng: -118.2351,
         name: "5th Street",
@@ -1895,10 +1976,10 @@ Object.assign(STREET_DATA, {
         planned: null,
         built: { text: "already \"Poplar Street\" by Aug. 1886 (F.P. Howard & Co.'s Subdivision of the Bliss Tract)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf" },
         nameHistory: [
-          { from: "1886", until: "?", name: "Poplar Street",
+          { from: "1886", until: "?", name: "Poplar Street", how: "origin",
             origin: "named on Dr. Frederick Preston Howard's tract; no specific namesake documented",
             originLink: null },
-          { from: "?", until: null, name: "5th Street",
+          { from: "?", until: null, name: "5th Street", how: "renaming",
             origin: "not directly documented, but this exact block is where the {{Feb. 1897 citywide renaming}} folded Lugo Street into 5th (extent not yet researched) — the likely, though unconfirmed, rename event for this stretch",
             originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28" }
         ],
@@ -1912,6 +1993,8 @@ Object.assign(STREET_DATA, {
       },
       {
         label: "east of Hewitt",
+        from: "Hewitt Street",
+        to: null,
         minLng: -118.2351,
         name: "5th Street",
         namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
@@ -1977,16 +2060,18 @@ Object.assign(STREET_DATA, {
     segments: [
       {
         label: "west of Central Ave (former 10th St)",
-        maxLng: -118.2471,
+        from: null,
+        to: "Central Avenue",
+        maxLng: -118.2442,
         name: "Olympic Boulevard",
         namedAfter: "The {{1932 Summer Olympics}}, held in Los Angeles",
         namedAfterLink: "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
         planned: { text: "by 1849 (as 10th Street)", url: ORD_SURVEY.url },
         built: { text: "already \"Tenth\" by Apr. 1875 (W.M. Williams's subdivision of Blocks 72 & 73 of Ord's Survey)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf" },
         nameHistory: [
-          { from: "by 1849", until: "1935", name: "10th Street",
+          { from: "by 1849", until: "1935", name: "10th Street", how: "origin",
             origin: "ordinal position in the downtown grid", originLink: null },
-          { from: "1935", until: null, name: "Olympic Boulevard",
+          { from: "1935", until: null, name: "Olympic Boulevard", how: "renaming",
             origin: "renaming requested July 1929, before the Games; that they were the 10th Olympiad apparently went unremarked at the time {{(source)}}",
             originLink: "https://lastreetnames.com/street/olympic-boulevard/" }
         ],
@@ -2003,16 +2088,19 @@ Object.assign(STREET_DATA, {
       },
       {
         label: "east of Central Ave (former 9th St)",
-        minLng: -118.2471,
+        from: "Central Avenue",
+        to: null,
+        minLng: -118.2442,
         name: "Olympic Boulevard",
         namedAfter: "Extension of the Olympic name (for the {{1932 Summer Olympics}}) over the eastern reach of 9th Street",
         namedAfterLink: "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
         planned: "not yet researched",
         built: "not yet researched",
         nameHistory: [
-          { from: "?", until: "by 1945", name: "9th Street",
-            origin: "ordinal position in the downtown grid; east of Central Ave, 9th's alignment continues as today's Olympic", originLink: null },
-          { from: "by 1945", until: null, name: "Olympic Boulevard",
+          { from: "?", until: "by 1945", name: "9th Street", how: "extension",
+            origin: "ordinal position in the downtown grid; east of Central Ave, 9th's alignment continues as today's Olympic — this stretch joined 9th's name by extension from the core grid",
+            originLink: null },
+          { from: "by 1945", until: null, name: "Olympic Boulevard", how: "extension",
             origin: "absorbed during Olympic's eastward expansion (1935–1945); the exact renaming date for this stretch is not yet researched {{(source)}}",
             originLink: "https://lastreetnames.com/street/olympic-boulevard/" }
         ],
@@ -2225,25 +2313,25 @@ Object.assign(STREET_DATA, {
     planned: { text: "by 1886 (as an extension of Ocean View Avenue)", url: "https://lastreetnames.com/street/miramar-street/" },
     built: "by 1886",
     nameHistory: [
-      { from: "1886", until: "1896", name: "Ocean View Avenue",
+      { from: "1886", until: "1896", name: "Ocean View Avenue", how: "extension",
         origin: "an eastward extension, in two unconnected portions, of Ocean View Avenue — opened 1886 on the Nob Hill tract, itself borrowing the name of San Francisco's Nob Hill",
         originLink: null },
-      { from: "1896", until: "1897", name: "Nob Hill Avenue",
+      { from: "1896", until: "1897", name: "Nob Hill Avenue", how: "renaming",
         origin: "residents petitioned to rename the extension \"Nob Hill Avenue\"", originLink: null },
-      { from: "1897", until: "1915", name: "Ocean View Avenue",
+      { from: "1897", until: "1915", name: "Ocean View Avenue", how: "renaming",
         origin: "an 1897 city ordinance changed Nob Hill Ave. back to Ocean View Ave., while a separately grown section of Ocean View was renamed Miramar in that same ordinance",
         originLink: null },
-      { from: "1915", until: null, name: "Miramar Street",
+      { from: "1915", until: null, name: "Miramar Street", how: "renaming",
         origin: "the city unified the rest of Ocean View Avenue under the Miramar name, except for the original 1886 diagonal segment (outside this map's coverage), which still carries \"Ocean View Avenue\" today",
         originLink: null }
     ],
-    note: "Bixel–Boylston appears as \"Third St\" on an 1894 tract map — one pre-1915 name this street absorbed (that sheet's \"Arnold St,\" one block south, is 3rd Street instead). Further west through Crown Hill, an 1909 tract's stretch \"establ[ished]\" as 3rd St by Ord. 39,578 is, per alignment, also Miramar — not 3rd Street. Confirmed via pixel-to-coordinate alignment, not lot-level records.",
+    note: "Bixel–Boylston appears as \"Third St\" on an 1894 tract map — one pre-1915 name this street absorbed (that sheet's \"Arnold St,\" one block south, is 3rd Street instead). Further west through Crown Hill, an 1909 tract's stretch \"establ[ished]\" as 3rd St by Ord. 39,578 is, per alignment, also Miramar — not 3rd Street.",
     categories: ["renamed", "descriptive"],
     disputed: false,
     sources: [
       { title: "L.A. Street Names: Miramar Street / Ocean View Avenue", url: "https://lastreetnames.com/street/miramar-street/" },
-      { title: "Recorded map: Compromise Subdivision / \"Washington Tract,\" M.R. 66-35/36 (surveyed Mar. 1894 by E.D. Severance; recorded May 1, 1897) — labels the Bixel–Boylston block's north side \"Third St.\"; alignment against the modern street grid via a pixel-to-coordinate overlay tool confirms this is Miramar's Bixel–Boylston stretch (the sheet's \"Arnold St\", one block south, is modern 3rd Street instead)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf" },
-      { title: "Recorded map: \"Crownwood\" (Witmer's Subdivision of parts of Lots 2 & 7, Block 38, Hancock Survey), M.B. 15-166 (surveyed Nov. 1909 by Chas. Forman Jr.) — annotates a Crown Hill stretch \"Name establ. por. of 3rd St. Ord. 39,578\"; alignment against the modern street grid, checked at multiple points, matches this stretch to modern Miramar Street (within ~20m) rather than modern 3rd Street (100m+ off)", url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
+      { title: "Recorded map: Compromise Subdivision / \"Washington Tract,\" M.R. 66-35/36 (surveyed Mar. 1894 by E.D. Severance; recorded May 1, 1897) — labels the Bixel–Boylston block's north side \"Third St.\" (identified by map alignment, not a lot-level record; the sheet's \"Arnold St\", one block south, is modern 3rd Street instead)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf" },
+      { title: "Recorded map: \"Crownwood\" (Witmer's Subdivision of parts of Lots 2 & 7, Block 38, Hancock Survey), M.B. 15-166 (surveyed Nov. 1909 by Chas. Forman Jr.) — annotates a Crown Hill stretch \"Name establ. por. of 3rd St. Ord. 39,578\" (identified by map alignment as modern Miramar Street, not 3rd Street)", url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
     ]
   },
 
