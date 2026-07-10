@@ -61,6 +61,11 @@
   .street-popup .former li { margin-bottom: 2px; }
   .street-popup .former ul { margin: 1px 0 3px; padding-left: 14px; list-style-type: circle; }
   .street-popup .former li.origin { color: #666; font-size: 12px; }
+  .street-popup .former .how {
+    display: inline-block; margin-left: 4px; padding: 0 5px; border-radius: 8px;
+    font-size: 10px; vertical-align: 1px; background: #eef4f8; color: #2e6f9e;
+  }
+  .street-popup .former .how.origin-badge { background: #f0e8d0; color: #7a5c00; }
   .street-popup .note { margin: 6px 0; font-style: italic; color: #666; font-size: 12px; }
   .street-popup .sources { margin-top: 8px; padding-top: 6px; border-top: 1px solid #eee; }
   .street-popup .sources a { display: block; }
@@ -350,13 +355,19 @@ function popupHtml(street) {
   if (fact(d.planned)) html += `<tr><td>Planned</td><td>${fact(d.planned)}</td></tr>`;
   if (fact(d.built)) html += `<tr><td>Built</td><td>${fact(d.built)}</td></tr>`;
   html += `</table>`;
-  // Name history only for streets that have been renamed; the current name is the
-  // final entry. Streets with one lifelong name just end with the dates above.
-  if (d.nameHistory && d.nameHistory.length > 1) {
+  // Name history: every renamed street gets one; a single-item history is
+  // allowed when it documents HOW the current name arrived (how: "origin" /
+  // "extension" / "renaming" / "transfer" — rendered as a small badge).
+  const HOW_LABELS = { origin: "origin of the name", extension: "extension",
+                       renaming: "renamed", transfer: "name transferred" };
+  if (d.nameHistory && d.nameHistory.length) {
     html += `<strong>Name history:</strong><ul class="former">`;
     d.nameHistory.forEach(f => {
       const span = f.until === null ? esc(f.from) + "–" : esc(f.from) + "–" + esc(f.until);
       html += `<li>${span} ${esc(f.name)}`;
+      if (f.how && HOW_LABELS[f.how]) {
+        html += ` <span class="how${f.how === "origin" ? " origin-badge" : ""}">${HOW_LABELS[f.how]}</span>`;
+      }
       if (f.origin) {
         html += `<ul><li class="origin">${crossLinks(linkify(f.origin, f.originLink))}</li></ul>`;
       }

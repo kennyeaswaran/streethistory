@@ -11,4 +11,6 @@
 .vscode/
 
 # tract map downloads (re-downloadable; see TRACT-RESEARCH.md)
-tracts/
+# — but transcriptions are research output and ARE tracked
+tracts/*
+!tracts/transcriptions/

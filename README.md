@@ -16,18 +16,24 @@ street geometry live from the Overpass API). For a local server:
   prefixes) are grouped into one clickable street.
 - Click target: each street segment carries an invisible ~18px-wide stroke, so the
   street's drawn area is clickable without hunting for a hairline.
-- Data: `streets-data.js` — one entry per street; see the schema comment at the top of
-  that file, which is the general plan for future entries. Key conventions: "by 1849"
-  with a link to the Ord/Hutton survey for planned/built when the survey is the earliest
-  record; a chronological `nameHistory` (with per-name origin sub-bullets, which may be
-  "no namesake documented") only for streets that have been renamed. Streets without an
-  entry render grey; entries render blue; filter checkboxes highlight matches in amber.
+- Data: `streets-data.js` — one entry per street, subdivided into **segments**
+  wherever stretches have distinct name lineages (see the schema comment at the top
+  of that file). Segments are bounded by cross-streets (`from`/`to`), and each
+  carries its own chronological `nameHistory` whose items can be tagged with `how`
+  the name arrived there: the segment where a name originated vs. stretches it
+  reached by extension, renaming, or transfer (rendered as popup badges).
+  3rd Street is the exemplar. Streets without an entry render grey; entries render
+  blue; filter checkboxes highlight matches in amber.
 
-## Adding a street
+## Adding history
 
-Add an entry to `STREET_DATA` in `streets-data.js`, keyed by the street's OSM name
-without directional prefix (e.g. "Main Street", not "South Main Street"). Categories
-are defined in `CATEGORIES` in the same file — add new ones freely.
+Research is **document-first**: find a primary document (recorded tract map,
+renaming ordinance, newspaper report of a council action), transcribe it once,
+then apply it to every street segment it touches — adding it as a source to
+existing segments, splitting segments where its extents demand, and creating
+new (even partial) entries for streets it names. Entries are keyed by the
+street's OSM name without directional prefix (e.g. "Main Street", not "South
+Main Street"). Full guide: ADDING-STREETS.md; map pipeline: TRACT-RESEARCH.md.
 
 ## Known limitations / next steps
 
@@ -54,9 +60,11 @@ Full workflow in ADDING-STREETS.md.
 
 ## Research process
 
-Batched by neighborhood (see ADDING-STREETS.md, "Scaling research"). Unverified
-hunches and open questions live in `research-leads.md`; sourced claims go
-straight into the data even when found incidentally.
+Batched by document (see ADDING-STREETS.md, "Scaling research"): a batch is a
+set of primary documents — e.g. the tract maps harvested for a neighborhood —
+transcribed into `tracts/transcriptions/` or `omnibus-*.md` and applied one by
+one. Unverified hunches and open questions live in `research-leads.md`;
+sourced claims go straight into the data even when found incidentally.
 
 ## Research resources
 

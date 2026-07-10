@@ -23,10 +23,18 @@ function checkEntry(id, v) {
   if (!Array.isArray(v.sources) || !v.sources.length) err(id, "no sources — every entry must justify its claims");
   else v.sources.forEach(s => { if (!/^https?:\/\//.test(s.url)) err(id, "bad source url:", s.url); });
   if (v.nameHistory) {
-    if (v.nameHistory.length < 2) err(id, "nameHistory with <2 entries — omit it for never-renamed streets");
+    // A 1-item history is allowed only when it documents HOW the current name
+    // arrived (how: "origin"/"extension"/...); otherwise omit for never-renamed streets.
+    if (v.nameHistory.length < 2 && !(v.nameHistory.length === 1 && v.nameHistory[0].how))
+      err(id, "nameHistory with <2 entries and no `how` — omit it for never-renamed streets");
     const last = v.nameHistory[v.nameHistory.length - 1];
     if (last.until !== null) err(id, "nameHistory must end with the current name (until: null)");
-    if (!v.categories.includes("renamed")) warn(id, "has nameHistory but no 'renamed' category");
+    if (v.nameHistory.length >= 2 && !v.categories.includes("renamed")) warn(id, "has nameHistory but no 'renamed' category");
+    const HOWS = ["origin", "extension", "renaming", "transfer"];
+    v.nameHistory.forEach((h, j) => {
+      if (h.how !== undefined && !HOWS.includes(h.how))
+        err(id, `nameHistory[${j}].how "${h.how}" — must be one of ${HOWS.join("/")}`);
+    });
   }
   if (v.disputed && !v.categories.includes("disputed")) warn(id, "disputed:true but no 'disputed' category");
   if (v.formerNames || v.named !== undefined || v.history !== undefined) err(id, "obsolete schema field (formerNames/named/history)");
@@ -91,8 +99,20 @@ for (const [key, v] of Object.entries(STREET_DATA)) {
     const id = key + "::" + i;
     if (!s.label) err(id, "segment missing label");
     else if (s.label.length > 40) warn(id, "label over 40 chars — chips should be a few words");
+    // from/to: bounding cross-streets by name (null = coverage edge / physical end)
+    for (const f of ["from", "to"]) {
+      if (s[f] !== undefined && s[f] !== null && typeof s[f] !== "string")
+        err(id, `${f} must be a cross-street name string or null`);
+    }
     checkEntry(id, s);
   });
+  // Adjacent segments should meet at a shared cross-street, unless the street
+  // is physically discontinuous there (gapAfter: true on the earlier segment).
+  for (let i = 1; i < v.segments.length; i++) {
+    const a = v.segments[i - 1], b = v.segments[i];
+    if (a.to !== undefined && b.from !== undefined && a.to !== b.from && !a.gapAfter)
+      warn(key + "::" + i, `from "${b.from}" doesn't match previous segment's to "${a.to}" — shared boundary, or set gapAfter`);
+  }
 
   // band coverage: every position along the street resolves to exactly one segment
   const isNS = v.orientation === "NS";

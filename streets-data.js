@@ -24,11 +24,24 @@
 //                  Streets on the 1849 survey were not necessarily built then — the
 //                  survey was partly aspirational (see Hope Street).
 //   nameHistory    chronological array of { from, until (null = present), name,
-//                  origin, originLink } — include ONLY for streets that have been
-//                  renamed. Each former name gets its own origin sub-bullet; origin
-//                  may be "no namesake documented" when the record is silent.
-//                  Streets that have carried one name since planning/building omit
-//                  this and simply end with the planned/built dates.
+//                  origin, originLink, how } — for streets/segments that have been
+//                  renamed, and (as a single item) for a segment documenting how
+//                  its current name arrived. Each former name gets its own origin
+//                  sub-bullet; origin may be "no namesake documented" when the
+//                  record is silent. `how` (optional) says how that name came to
+//                  THIS segment, one of:
+//                    "origin"    — the name's earliest documented appearance
+//                                  anywhere is on this segment (upgradeable if an
+//                                  earlier record surfaces)
+//                    "extension" — the name spread along the same roadway onto
+//                                  this stretch (new construction or absorption)
+//                    "renaming"  — an existing street under another name was
+//                                  renamed to this (ordinance, petition, etc.)
+//                    "transfer"  — the name moved here from a DIFFERENT roadway
+//                                  (e.g. Figueroa 1897)
+//                  Streets that have carried one name since planning/building and
+//                  whose name originated elsewhere may still omit nameHistory and
+//                  simply end with the planned/built dates.
 //   note           optional one-line caveat (e.g. a different street once shared a name)
 //   categories     tags used by the filter checkboxes
 //   disputed       true if the origin attribution is uncertain
@@ -39,10 +52,18 @@
 // Calle Eternidad), the top-level entry is { name, orientation, segments: [...] }
 // where each segment carries the full schema above plus:
 //   label          short stretch description (a few words; shown as a chip)
+//   from/to        the bounding cross-streets, by name (null = coverage edge or
+//                  the street's physical end). This is the AUTHORITATIVE
+//                  definition of the segment — tract maps and renaming
+//                  ordinances state extents in cross-streets, so we do too.
+//                  Adjacent segments should share the boundary street
+//                  (seg[i].to === seg[i+1].from) unless gapAfter is set.
+//   gapAfter       true when the street is physically discontinuous between
+//                  this segment and the next (rail yards, river). The numeric
+//                  bands still tile across the gap (no pavement there to click).
 //   minLat/maxLat  which stretch a clicked block belongs to (by way midpoint
-//   minLng/maxLng  latitude for N–S streets, longitude for E–W streets;
-//                  boundaries are approximate and refinable — a future version
-//                  could split by cross-street or explicit way lists)
+//   minLng/maxLng  latitude for N–S streets, longitude for E–W streets);
+//                  DERIVED from from/to via `node intersect.js "X" "Y"`
 // orientation is "NS" or "EW". CANONICAL SEGMENT ORDER (= chip order):
 //   N–S streets: north to south (descending latitude)
 //   E–W streets: west to east (ascending longitude)
@@ -1536,14 +1557,15 @@ Object.assign(STREET_DATA, {
         namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
         namedAfterLink: null,
         planned: { text: "by 1849", url: ORD_SURVEY.url },
-        built: "not yet researched",
+        built: { text: "already \"2nd St\" (drawn but unlabeled directly — confirmed via its \"W. 2nd\" bearing annotation) by Nov. 1909, curving through Crown Hill near Witmer/Columbia/Crown Hill Ave", url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" },
         note: null,
         categories: ["number"],
         disputed: false,
         sources: [
           { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
           { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
-          { title: ORD_RECORDED.title, url: ORD_RECORDED.url }
+          { title: ORD_RECORDED.title, url: ORD_RECORDED.url },
+          { title: "Recorded map: \"Crownwood\" (Witmer's Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166 — shows 2nd St's curving Crown Hill alignment, labeled \"W. 2nd\" along its centerline; alignment against the modern street grid confirms this stretch, multiple points matching to within meters", url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
         ]
       },
       {
@@ -1608,18 +1630,92 @@ Object.assign(STREET_DATA, {
       }
     ]
   },
+  // PILOT of the full segment model (2026-07): every stretch with a distinct
+  // documented lineage — or a distinct gap in the record — gets its own
+  // segment, with `how` marking where the name originated vs. spread.
   "3rd Street": {
     name: "3rd Street",
     orientation: "EW",
     segments: [
       {
-        label: "west of Alameda",
-        maxLng: -118.2381,
+        label: "west of Bixel",
+        from: null,
+        to: "Bixel Street",
+        maxLng: -118.2598,
+        name: "3rd Street",
+        namedAfter: "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        note: "The Crown Hill stretch a 1909 tract sheet assigns to 3rd St (Ord. 39,578) is today's [[Miramar Street]], not this one.",
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
+          { title: "Recorded map: \"Crownwood\" (Witmer's Subdivision), M.B. 15-166 (surveyed Nov. 1909) — its \"por. of 3rd St. Ord. 39,578\" stretch is modern Miramar Street, not this one", url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
+        ]
+      },
+      {
+        label: "Bixel to Boylston (Arnold St)",
+        from: "Bixel Street",
+        to: "Boylston Street",
+        minLng: -118.2598,
+        maxLng: -118.2578,
+        name: "3rd Street",
+        namedAfter: "Its ordinal position in the downtown grid, once this stretch was folded in — before that, a separately named street",
+        namedAfterLink: null,
+        planned: null,
+        built: { text: "already \"Arnold St\" by Mar. 1894 (Compromise Subdivision/Washington Tract survey)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf" },
+        nameHistory: [
+          { from: "by 1894", until: "?", name: "Arnold Street", how: "origin",
+            origin: "labeled \"Arnold St\" on the 1894 Compromise Subdivision/Washington Tract map — namesake untraced",
+            originLink: null },
+          { from: "?", until: null, name: "3rd Street", how: "renaming",
+            origin: "not directly documented; presumably folded in during the {{Feb. 1897 citywide renaming}}, though no source specifically names this stretch",
+            originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28" }
+        ],
+        note: "In 1894, \"Third St\" was the block immediately north — today's [[Miramar Street]].",
+        categories: ["number", "renamed"],
+        disputed: false,
+        sources: [
+          { title: "Recorded map: Compromise Subdivision / \"Washington Tract,\" M.R. 66-35/36 (surveyed Mar. 1894 by E.D. Severance; recorded May 1, 1897) — labels this stretch \"Arnold St.\" (identified by map alignment, not a lot-level record)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf" },
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      },
+      {
+        label: "Boylston to Figueroa",
+        from: "Boylston Street",
+        to: "Figueroa Street",
+        minLng: -118.2578,
+        maxLng: -118.2546,
+        name: "3rd Street",
+        namedAfter: "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      },
+      {
+        label: "Figueroa to Main (original 3rd St)",
+        from: "Figueroa Street",
+        to: "Main Street",
+        minLng: -118.2546,
+        maxLng: -118.2459,
         name: "3rd Street",
         namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
         namedAfterLink: null,
         planned: { text: "by 1849", url: ORD_SURVEY.url },
         built: "not yet researched",
+        nameHistory: [
+          { from: "1849", until: null, name: "3rd Street", how: "origin",
+            origin: "laid out as Calle 3ª (\"Third Street\") on the Ord/Hutton survey, between Pearl (now Figueroa) and Main {{(survey)}}",
+            originLink: ORD_SURVEY.url }
+        ],
         note: null,
         categories: ["number"],
         disputed: false,
@@ -1630,28 +1726,72 @@ Object.assign(STREET_DATA, {
         ]
       },
       {
-        label: "east of Alameda (Georgia St)",
+        label: "Main to Alameda",
+        from: "Main Street",
+        to: "Alameda Street",
+        minLng: -118.2459,
+        maxLng: -118.2381,
+        name: "3rd Street",
+        namedAfter: "Its ordinal position in the downtown grid, extended east beyond the original grid's Main St edge",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        nameHistory: [
+          { from: "?", until: null, name: "3rd Street", how: "extension",
+            origin: "presumably an eastward extension of Third beyond {{the Ord survey's numbered grid}}, which ran west from Main — when it was cut through, and whether first under another name, is not yet researched",
+            originLink: ORD_SURVEY.url }
+        ],
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      },
+      {
+        label: "Alameda to Santa Fe (Georgia St)",
+        from: "Alameda Street",
+        to: "Santa Fe Avenue",
+        gapAfter: true,
         minLng: -118.2381,
+        maxLng: -118.2326,
         name: "3rd Street",
         namedAfter: "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
         namedAfterLink: null,
         planned: null,
-        built: { text: "already \"Georgia St\" by Jan. 1888 (recorded Wolfskill Orchard Tract map, final sheet)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" },
+        built: { text: "already \"Georgia St\" by May 19, 1875 (recorded Thomas Tract map, second sheet); shown again just east of Alameda on the Jan. 1888 Wolfskill Orchard Tract map", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf" },
         nameHistory: [
-          { from: "by 1888", until: "?", name: "Georgia Street",
-            origin: "labeled \"Georgia St\" on the recorded Wolfskill Orchard Tract map, east of Alameda — not the unrelated, still-existing [[Georgia Street]] across downtown, which was partly renamed to avoid confusion with \"another, now-defunct Georgia Street,\" almost certainly this one",
+          { from: "by 1875", until: "?", name: "Georgia Street", how: "origin",
+            origin: "labeled \"Georgia St\" on the 1875 Thomas Tract and 1888 Wolfskill Orchard Tract maps — likely the \"now-defunct Georgia Street\" whose existence forced the 1880s renaming of the unrelated [[Georgia Street]] across downtown",
             originLink: null },
-          { from: "?", until: null, name: "3rd Street",
-            origin: "not directly documented; presumably folded in during the {{Feb. 1897 citywide renaming}} along with other downtown-grid consolidations, though no source specifically names this stretch",
+          { from: "?", until: null, name: "3rd Street", how: "renaming",
+            origin: "not directly documented; presumably folded in during the {{Feb. 1897 citywide renaming}}, though no source specifically names this stretch",
             originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28" }
         ],
-        note: "Seen on the final sheet (recorded Jan. 11, 1888) of the same Wolfskill Orchard Tract map that also names [[Omar Street|Omar Ave]], [[Ceres Avenue]], [[Gladys Avenue]], and the old \"Wolfskill Avenue\" stretch of [[Central Avenue]]. The map shows Third St's platted extent running to a boundary, an unplatted gap (almost certainly Alameda, unlabeled here), and \"Georgia St\" resuming on the far side in direct alignment.",
+        note: null,
         categories: ["number", "renamed"],
         disputed: false,
         sources: [
-          { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, recorded Jan. 11, 1888) — final sheet (5 of 5) shows \"Georgia St\" just east of Alameda, in line with Third St's alignment", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" },
-          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
-          { title: ORD_SURVEY.title, url: ORD_SURVEY.url }
+          { title: "Recorded map: Map of the Thomas Tract, being a portion of the Johnson and Mott Tract, M.R. 3-60/61 (recorded May 19, 1875, at the request of Milton Thomas) — second sheet labels this street \"Georgia St\"", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf" },
+          { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, recorded Jan. 11, 1888) — final sheet (5 of 5) shows \"Georgia St\" just east of Alameda, in line with Third St's alignment across an unlabeled gap that is almost certainly Alameda", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" },
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      },
+      {
+        label: "east of Mission Rd (discontinuous)",
+        from: "Mission Road",
+        to: null,
+        minLng: -118.2326,
+        name: "3rd Street",
+        namedAfter: "Its ordinal position in the downtown grid — how this stretch came to carry the name is not yet researched",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        note: "Physically separated from the rest of 3rd by the rail yards and river (3rd has no bridge); whether it first carried another name is not yet checked.",
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
         ]
       }
     ]
@@ -2097,11 +2237,13 @@ Object.assign(STREET_DATA, {
         origin: "the city unified the rest of Ocean View Avenue under the Miramar name, except for the original 1886 diagonal segment (outside this map's coverage), which still carries \"Ocean View Avenue\" today",
         originLink: null }
     ],
-    note: null,
+    note: "Bixel–Boylston appears as \"Third St\" on an 1894 tract map — one pre-1915 name this street absorbed (that sheet's \"Arnold St,\" one block south, is 3rd Street instead). Further west through Crown Hill, an 1909 tract's stretch \"establ[ished]\" as 3rd St by Ord. 39,578 is, per alignment, also Miramar — not 3rd Street. Confirmed via pixel-to-coordinate alignment, not lot-level records.",
     categories: ["renamed", "descriptive"],
     disputed: false,
     sources: [
-      { title: "L.A. Street Names: Miramar Street / Ocean View Avenue", url: "https://lastreetnames.com/street/miramar-street/" }
+      { title: "L.A. Street Names: Miramar Street / Ocean View Avenue", url: "https://lastreetnames.com/street/miramar-street/" },
+      { title: "Recorded map: Compromise Subdivision / \"Washington Tract,\" M.R. 66-35/36 (surveyed Mar. 1894 by E.D. Severance; recorded May 1, 1897) — labels the Bixel–Boylston block's north side \"Third St.\"; alignment against the modern street grid via a pixel-to-coordinate overlay tool confirms this is Miramar's Bixel–Boylston stretch (the sheet's \"Arnold St\", one block south, is modern 3rd Street instead)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf" },
+      { title: "Recorded map: \"Crownwood\" (Witmer's Subdivision of parts of Lots 2 & 7, Block 38, Hancock Survey), M.B. 15-166 (surveyed Nov. 1909 by Chas. Forman Jr.) — annotates a Crown Hill stretch \"Name establ. por. of 3rd St. Ord. 39,578\"; alignment against the modern street grid, checked at multiple points, matches this stretch to modern Miramar Street (within ~20m) rather than modern 3rd Street (100m+ off)", url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
     ]
   },
 

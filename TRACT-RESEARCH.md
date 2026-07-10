@@ -72,34 +72,45 @@ below. Browser time is for collecting Map-Refs, not for squinting at plats.
    names AS PLATTED — this is where original names like "Ruth Avenue" appear
    — and (d) subdivider/surveyor names, which are namesake candidates for
    streets named in the tract. **Scan the WHOLE plat, not just the block you
-   went looking for** — see "Cross-link every street a map touches" below.
+   went looking for.**
 
-5. **Cite it.** Source entry:
-   `{ title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (recorded [date])", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }`
+5. **Transcribe it** into `tracts/transcriptions/<MAPREF>.md` (template: the
+   files already there): tract name, Map-Ref, recording date, subdivider,
+   surveyor, then every street name drawn on the plat with its extent within
+   the tract, plus notable unlabeled platted streets. The transcription is
+   the durable output of the reading step — it's what gets applied to
+   streets-data.js, and it means nobody re-reads the scan later. The reading
+   can be delegated (human, another instance, or another AI system that's
+   better at plat-reading); the transcription file is the handoff format,
+   and whoever applies it spot-checks at least one claim against the scan
+   before trusting the rest.
+
+6. **Apply it** to every street the map touches, per ADDING-STREETS.md's
+   core loop. Source entry format:
+   `{ title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (recorded [date]) — [what it shows about THIS segment]", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }`
    and where appropriate: `planned: { text: "by [recording date] (as [original name], [tract])", url: ... }`.
 
-## Cross-link every street a map touches
+## Every map is a shared resource (the document-first principle)
 
-Once you've opened a tract map for any reason, treat it as a shared resource,
-not a single-street lookup:
+A map opened for any reason gets transcribed and applied in full — this is
+the core loop in ADDING-STREETS.md; the essentials:
 
 - **Read every street name drawn on the plat**, not just the one you were
   chasing. A single subdivision map routinely names 4–6 streets at once (the
   Bliss Tract alone: Seaton, Colyton, Carolina/Hewitt, Huber, Poplar,
   Palmetto).
-- **Add the map as a source to every one of those streets' entries** (or
-  segments) currently in streets-data.js — check `grep` for the street name
-  first — UNLESS that street/segment already has an earlier-dated source for
-  the same name (don't let a later map crowd out an earlier one; add both if
-  the later map adds real information, e.g. a narrower date or a subdivider
-  name).
+- **Add the map as a source to every segment it documents** — check `grep`
+  for the street name first — UNLESS that segment already has an
+  earlier-dated source for the same name (don't let a later map crowd out an
+  earlier one; add both if the later map adds real information, e.g. a
+  narrower date or a subdivider name).
 - A name appearing on the map only proves the name existed by the recording
-  date on THAT block — if the street continues past the tract's boundary,
-  that's still worth a citation on the segment/stretch the map actually
-  covers, not the whole street, unless it's a single-entry (unsegmented)
-  street where the whole thing shares one history.
-- This is cheap to do in the same sitting you're already reading the map —
-  expensive to do later, since you'd have to re-open and re-read it.
+  date on THAT block — the citation belongs on the segment(s) the map
+  actually covers, not the whole street. If the documented extent doesn't
+  match the current segmentation, split (ADDING-STREETS.md, "Executing a
+  split").
+- Transcribing in the same sitting is cheap; re-opening and re-reading the
+  scan later is expensive.
 
 ## Network access notes (2026-07)
 
@@ -145,12 +156,102 @@ them directly as images — no browser needed for the reading step at all:
    an instance.
 3. Any instance (no browser required) converts and reads:
    `pdftoppm -png -r 150 "tracts/MR030-009.pdf" /tmp/mr30` then Read the PNGs
-   (re-render at `-r 300` and crop for fine label text). Transcribe street
-   names, recording dates, subdivider/surveyor from the title block; apply to
-   entries per the conventions above.
+   (re-render at `-r 300` and crop for fine label text). Write the
+   transcription file (`tracts/transcriptions/<MAPREF>.md`), then apply it
+   per ADDING-STREETS.md's core loop.
 
-This also decouples the roles: a browser session harvests Map-Refs; a
-non-browser session (cheaper, faster) does the map-reading and data entry.
+This decouples the roles: a browser session harvests Map-Refs; a
+non-browser session does the map-reading; the application step just needs
+the transcription files. Any of the three can be a different instance — or,
+for the reading step, a different AI system entirely if it reads plats
+better (the experience so far: label transcription is the error-prone step,
+so whoever applies a transcription spot-checks it against the scan).
+
+## Alignment: HUMAN DOES THE FITTING (`align.html`) — read this first
+
+Hard-won division of labor (2026-07, MR006-138): instances are unreliable at
+estimating pixel coordinates on scans — every georeferencing error in this
+project's history (junction-contaminated samples, off-the-ink traces,
+misplaced hypothesis anchors) came from Claude eyeballing pixels. Humans do
+this in seconds by sight. So:
+
+1. Instance prepares: render the scan (`pdftoppm -png -r 100 … tracts/renders/x`)
+   and tell Kenny the file name and the approximate view center (lat, lng).
+2. **Kenny aligns**: open `align.html` (serve the folder locally, same as
+   index.html), load the render, set the view center, then drag / wheel-resize /
+   rotate the semi-transparent scan until the drawn streets sit on the red
+   modern lines. Export — this saves `<name>-alignment.json`, which encodes the
+   human alignment as three virtual control points, directly usable by georef.py.
+3. Instance reads off: `python3 georef.py overlay <alignment.json>` for the
+   record, then `trace` along each drawn street (endpoints from the gridded
+   render) for the verdict table. The precision protocol below still applies to
+   INTERPRETING results — junctions, margins, realignments — but the fit itself
+   is no longer the instance's guess.
+
+Use the georef.py-only path (below) only when a human isn't available and at
+least two intersections are beyond doubt; label all conclusions from that path
+as provisional.
+
+## Georeferencing: when labels can't be trusted (`georef.py`)
+
+Old plats routinely show names that DON'T match modern streets in the obvious
+way — MR066-035's block reads Bixel/Third/Figueroa/Arnold but is today's
+Bixel/Miramar/Boylston/3rd, and naive label-matching (old Third = modern 3rd)
+is geometrically impossible there. Don't match by name; match by geometry:
+
+1. `pdftoppm -png -r 100 tracts/MAP.pdf tracts/renders/map` then
+   `python3 georef.py grid tracts/renders/map-1.png` — Read the gridded image
+   and estimate pixel coords of 2+ points you can identify CONFIDENTLY
+   (intersections of streets with unchanged names, or renamings already
+   documented in the data). Prefer points far apart; aim for the street
+   intersection center, not the lot corner (nudge into the drawn roadway).
+2. Modern lat/lng for those intersections: `node intersect.js "A" "B"`.
+3. Control file + `python3 georef.py fit control.json` (2 pts = similarity;
+   3+ = affine, preferred — and residuals become meaningful; >15 m means a
+   bad point). `overlay` draws every modern street, labeled, onto the scan —
+   Read it and see which red line lies in which drawn corridor. `locate
+   control.json X Y` names the nearest modern streets for any pixel.
+4. If you're unsure which label-mapping is right, fit each hypothesis and
+   keep the one whose overlay superposes EVERYWHERE, not just at the control
+   points. Expect up to a street-width of offset (corner-vs-centerline,
+   1890s surveying, regrades); systematic large misfit = wrong hypothesis.
+5. Cite conclusions as "georeferenced against OSM via georef.py" in the note
+   or leads file — it's an inference layer on top of the map, so say so.
+
+### Precision protocol (learned the hard way on MR006-138)
+
+The MR006-138 first pass got three streets wrong. Every error came from
+sampling, not from the transform. Rules:
+
+- **Trace lines, never points.** Use `georef.py trace control.json x1 y1 x2 y2`
+  with the pixel ENDPOINTS of the drawn street — it samples along the line
+  and votes. Single `locate` points fail two ways: junction points match
+  whichever cross-street is closest (a point at old State×Hobart matched
+  three unrelated streets within 21 m), and off-the-ink points bias toward
+  the wrong neighbor (an "Aztec" sample 33 px east of the line flipped its
+  answer). Read endpoint pixels off the drawn line on the grid image.
+- **Verdict bands** (median distance + vote share): under ~15 m with a clear
+  margin = match. 20–50 m with a vote win = "corresponds, but realigned or
+  regraded — flag it" (old Home vs. modern Rockwood: 7/9 votes but ~43 m;
+  the block really was recut at a different angle). Over ~60 m or split
+  votes = no modern counterpart; the street is gone. Never report a
+  junction-adjacent minimum as an identification.
+- **Anchors: ironclad only.** Both names unchanged (or a change documented in
+  our own data), intersection center not lot corner, spread as wide as the
+  sheet allows. Sanity-check the fit by tracing the anchors' own streets at
+  midspan (<15 m expected) BEFORE trusting far-field results. Do not add
+  hypothesis-laden anchors: a plausible-seeming 4-point affine with two
+  sloppy new pixels performed WORSE than the clean 2-point similarity —
+  residuals under 15 m only police anchors whose pixels are precise.
+- **Overlay labels sit at way midpoints,** which may be far from where the
+  line crosses your map. Identify by following the red LINE, not by which
+  label lands nearby.
+- **Beware later diagonal cuts** (Beverly Blvd, Glendale Blvd): they slice
+  across old grids and can sit nearest to a vanished street's alignment
+  without being its successor. If the nearest street postdates the tract and
+  crosses it diagonally, treat as coincidence unless the whole trace tracks it.
+- **Report full tool output** — and don't `tail` it into garbage; one clipped
+  line cost half an hour of confusion.
 
 ## Gotchas found the hard way
 
@@ -249,8 +350,14 @@ instantly showing a tract's footprint. Use when a source names a tract
 
 ## What to run this on first
 
-1. Streets/segments with `planned: "not yet researched"` (grep streets-data.js).
-2. The pending extent questions: where Larkin/Short ran (4th St), Lugo (5th),
+1. The 3rd Street segment-model shopping list in research-leads.md (the
+   pilot's four unresearched segments, with candidate addresses).
+2. Streets/segments with `planned: "not yet researched"` (grep streets-data.js).
+3. The pending extent questions: where Larkin/Short ran (4th St), Lugo (5th),
    the Wolfskill Ave / original-Central boundary, Figueroa south of Pico.
-3. Namesake hunches tied to subdivisions: Gladys/Wolfskill-family pattern,
+4. Namesake hunches tied to subdivisions: Gladys/Wolfskill-family pattern,
    Agatha (1897 tract?), Ruth Avenue's 1887 tract.
+5. Retro-transcription: the PDFs already in `tracts/` have been read but not
+   transcribed — writing `tracts/transcriptions/<MAPREF>.md` for each (from
+   the scans plus what's already applied in streets-data.js) makes them
+   reusable without re-reading.
