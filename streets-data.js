@@ -326,7 +326,7 @@ const STREET_DATA = {
     name: "Olive Street",
     namedAfter: "{{The olive}} — though no specific tree or grove at the site is documented",
     namedAfterLink: "https://en.wikipedia.org/wiki/Olive",
-    planned: { text: "by 1849", url: ORD_SURVEY.url },
+    planned: { text: "by 1849 (as Calle Accytuna), within the surveyed grid — the Ord/Hutton survey's numbered cross streets ran only Calle 1ª–8ª, so how far south of 8th St the name extended by 1849 is not pinned down", url: ORD_SURVEY.url },
     built: "by 1869 (earliest press mention)",
     note: null,
     categories: ["nature"],
@@ -422,17 +422,72 @@ const STREET_DATA = {
 
   "1st Street": {
     name: "1st Street",
-    namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
-    namedAfterLink: null,
-    planned: { text: "by 1849", url: ORD_SURVEY.url },
-    built: "by 1849",
-    note: "Since 1883, 1st Street divides north from south in L.A. addresses (as Main Street divides east from west). Claims dating the numbering to 1846 are doubtful.",
-    categories: ["number"],
-    disputed: false,
-    sources: [
-      { title: "L.A. Street Names: 1st Street", url: "https://lastreetnames.com/street/0001st-street/" },
-      { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
-      { title: ORD_RECORDED.title, url: ORD_RECORDED.url }
+    orientation: "EW",
+    segments: [
+      {
+        label: "west of Figueroa",
+        from: null,
+        to: "Figueroa Street",
+        maxLng: -118.2520,
+        name: "1st Street",
+        namedAfter: "Its ordinal position in the downtown grid — how and when this stretch joined 1st Street is not yet researched",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      },
+      {
+        label: "Figueroa to Main (original 1st St)",
+        from: "Figueroa Street",
+        to: "Main Street",
+        minLng: -118.2520,
+        maxLng: -118.2434,
+        name: "1st Street",
+        namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        namedAfterLink: null,
+        planned: { text: "by 1849", url: ORD_SURVEY.url },
+        built: "by 1849",
+        nameHistory: [
+          { from: "1849", until: null, name: "1st Street", how: "origin",
+            origin: "laid out as Calle 1ª (\"First Street\") on the Ord/Hutton survey, between Pearl (now Figueroa) and Main {{(survey)}}",
+            originLink: ORD_SURVEY.url }
+        ],
+        note: "Since 1883, 1st Street divides north from south in L.A. addresses (as Main Street divides east from west). Claims dating the numbering to 1846 are doubtful.",
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street", url: "https://lastreetnames.com/street/0001st-street/" },
+          { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
+          { title: ORD_RECORDED.title, url: ORD_RECORDED.url }
+        ]
+      },
+      {
+        label: "east of Main",
+        from: "Main Street",
+        to: null,
+        minLng: -118.2434,
+        name: "1st Street",
+        namedAfter: "Its ordinal position in the downtown grid, extended east beyond the original grid's Main St edge",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        nameHistory: [
+          { from: "?", until: null, name: "1st Street", how: "extension",
+            origin: "presumably an eastward extension of First beyond {{the Ord survey's numbered grid}}, which ran west from Main — when it was cut through, and whether first under another name, is not yet researched",
+            originLink: ORD_SURVEY.url }
+        ],
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      }
     ]
   },
 
@@ -576,11 +631,11 @@ const STREET_DATA = {
         name: "Hill Street",
         namedAfter: "{{Bunker Hill}} — the knoll the street ran along, though the hill itself wasn't formally named until 1873, after the street",
         namedAfterLink: "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
-        planned: { text: "by 1849", url: ORD_SURVEY.url },
-        built: "by 1849",
+        planned: { text: "by 1849, within the surveyed grid — the survey attests the name only inside the 1849 grid, and this grid's southern edge here isn't pinned down", url: ORD_SURVEY.url },
+        built: "by 1849, within the surveyed grid (southern edge here not pinned down)",
         nameHistory: [
           { from: "1849", until: null, name: "Hill Street", how: "origin",
-            origin: "laid out as Calle Loma (“Hill Street”) on the Ord/Hutton survey — how far south the 1849 grid carried it is not pinned down {{(survey)}}",
+            origin: "laid out as Calle Loma (“Hill Street”) on the Ord/Hutton survey — the survey attests the name only within the 1849 grid, whose southern extent here is not pinned down {{(survey)}}",
             originLink: ORD_SURVEY.url }
         ],
         note: null,
@@ -644,7 +699,7 @@ const STREET_DATA = {
     namedAfter: "{{Matthew Keller}} (c. 1811–1881), Irish-born shopkeeper, vintner, and city councilman known by the Spanish honorary “Don Mateo”",
     namedAfterLink: "https://en.wikipedia.org/wiki/Matthew_Keller",
     planned: null,
-    built: { text: "already \"Mateo\" by Jan. 1887 (the Jan. 1887 additional-lots sheet of the Mills and Wicks Extension of Second St. tract), directly bordering the \"Keller Est.\" label", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf" },
+    built: { text: "already \"Mateo\" by Jan. 1887, on the tract's blocks directly bordering the \"Keller Est.\" label (Jan. 1887 additional-lots sheet of the Mills and Wicks Extension of Second St. tract) — not separately documented along the rest of the modern street", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf" },
     note: "Keller's Rising Sun Vineyard once covered the ground just west of the street; he also owned Rancho Topanga Malibu, sold by his son to the {{Rindge}} family in 1892. The tract's Jan. 1887 sheet confirms Mateo, labeled right against \"Keller Est.,\" but still doesn't mention [[Molino Street|Molino]].",
     categories: ["person"],
     disputed: false,
@@ -711,7 +766,7 @@ const STREET_DATA = {
         origin: "renamed for the {{Atchison, Topeka & Santa Fe Railway}} when it reached Los Angeles in May 1887, a few months after the Goodwin Tract's \"Tulip\" plat",
         originLink: "https://en.wikipedia.org/wiki/Atchison,_Topeka_and_Santa_Fe_Railway" }
     ],
-    note: "“Santa Fe” was aspirational even for the railroad itself — no AT&SF train reached the city of Santa Fe until 1880. The company's “La Grande” station opened at Santa Fe & 3rd in 1893; passenger service moved to Union Station in 1939 and the AT&SF folded in 1996. The old freight depot near 2nd is now home to SCI-Arc.",
+    note: "“Santa Fe” was aspirational even for the railroad itself — no AT&SF train reached the city of Santa Fe until 1880. The company's “La Grande” station (1893–1939) stood at Santa Fe & 3rd; the old freight depot near 2nd is now SCI-Arc. \"Tulip\" is documented only on the Goodwin Tract's own frontage (south of 6th, between Imperial and Mesquit) — no former name is documented north of 6th or south of Imperial.",
     categories: ["place", "aspiration", "renamed"],
     disputed: false,
     sources: [
@@ -1114,10 +1169,28 @@ const STREET_DATA = {
     orientation: "NS",
     segments: [
       {
-        label: "north of 2nd (former Vine St)",
+        label: "north of 1st",
         from: null,
+        to: "1st Street",
+        minLat: 34.0492,
+        name: "Central Avenue",
+        namedAfter: "Its position on Central Avenue — how and when this stretch joined the Central Avenue name is not yet researched",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        note: "The Vine St evidence for the segment to the south is explicitly scoped to south of 1st; whether this block was ever Vine St too, or carried another name, isn't researched.",
+        categories: ["descriptive"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: Central Avenue", url: "https://lastreetnames.com/street/central-avenue/" }
+        ]
+      },
+      {
+        label: "1st to 2nd (former Vine St)",
+        from: "1st Street",
         to: "2nd Street",
         minLat: 34.0477,
+        maxLat: 34.0492,
         name: "Central Avenue",
         namedAfter: "Extension of the Central Avenue name over this block in the Feb. 1897 citywide renaming",
         namedAfterLink: null,
@@ -1479,8 +1552,8 @@ const STREET_DATA = {
     namedAfter: "Almost certainly Thomas Andrew Garey (1830–1909), citrus nurseryman and co-founder of Pomona — his was the only Garey family in town when the street was named",
     namedAfterLink: null,
     planned: null,
-    built: { text: "already \"Garey\" by May 19, 1875 (Map of the Thomas Tract, recorded that date) — earlier than the \"c. 1877\" secondary estimate", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf" },
-    note: "Later absorbed the former Amelia and Messer streets.",
+    built: { text: "already \"Garey\" by May 19, 1875, on the blocks near Garey/Hewitt (2nd–3rd Sts, east of Alameda) that the Map of the Thomas Tract fronts — earlier than the \"c. 1877\" secondary estimate", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf" },
+    note: "Later absorbed the former Amelia and Messer streets, whose stretch this 1875 tract citation doesn't document.",
     categories: ["person", "alive"],
     disputed: false,
     sources: [
@@ -1609,17 +1682,15 @@ Object.assign(STREET_DATA, {
         to: "Figueroa Street",
         maxLng: -118.2531,
         name: "2nd Street",
-        namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        namedAfter: "Its ordinal position in the downtown grid — how and when this stretch joined 2nd Street is not yet researched",
         namedAfterLink: null,
-        planned: { text: "by 1849", url: ORD_SURVEY.url },
+        planned: "not yet researched",
         built: { text: "already \"2nd St\" (drawn but unlabeled directly — confirmed via its \"W. 2nd\" bearing annotation) by Nov. 1909, curving through Crown Hill near Witmer/Columbia/Crown Hill Ave", url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" },
         note: null,
         categories: ["number"],
         disputed: false,
         sources: [
           { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
-          { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
-          { title: ORD_RECORDED.title, url: ORD_RECORDED.url },
           { title: "Recorded map: \"Crownwood\" (Witmer's Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166 — shows 2nd St's curving Crown Hill alignment, labeled \"W. 2nd\" along its centerline; alignment against the modern street grid confirms this stretch, multiple points matching to within meters", url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
         ]
       },
@@ -1685,8 +1756,7 @@ Object.assign(STREET_DATA, {
         disputed: false,
         sources: [
           { title: "Recorded map: Map of the Thomas Tract, being a portion of the Johnson and Mott Tract, M.R. 3-60/61 (recorded May 19, 1875, at the request of Milton Thomas) — labels this street \"Guadalupe\" (identified by position relative to \"Georgia St,\" not a matching modern parcel)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf" },
-          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
-          { title: ORD_SURVEY.title, url: ORD_SURVEY.url }
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
         ]
       }
     ]
@@ -1862,10 +1932,28 @@ Object.assign(STREET_DATA, {
     orientation: "EW",
     segments: [
       {
-        label: "west of Alameda",
+        label: "west of Figueroa",
         from: null,
-        to: "Alameda Street",
-        maxLng: -118.2381,
+        to: "Figueroa Street",
+        maxLng: -118.2560,
+        name: "4th Street",
+        namedAfter: "Its ordinal position in the downtown grid — how and when this stretch joined 4th Street is not yet researched",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      },
+      {
+        label: "Figueroa to Main (original 4th St)",
+        from: "Figueroa Street",
+        to: "Main Street",
+        minLng: -118.2560,
+        maxLng: -118.2472,
         name: "4th Street",
         namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
         namedAfterLink: null,
@@ -1873,7 +1961,7 @@ Object.assign(STREET_DATA, {
         built: "not yet researched",
         nameHistory: [
           { from: "1849", until: null, name: "4th Street", how: "origin",
-            origin: "laid out as Calle 4ª (“Fourth Street”) on the Ord/Hutton survey, whose grid ran from Pearl (now Figueroa) to Main — when the rest of this stretch joined is not yet researched {{(survey)}}",
+            origin: "laid out as Calle 4ª (“Fourth Street”) on the Ord/Hutton survey, between Pearl (now Figueroa) and Main {{(survey)}}",
             originLink: ORD_SURVEY.url }
         ],
         note: "The 1890 petition that turned Fort Street into Broadway cited confusion between “Fort” and “Fourth”.",
@@ -1884,6 +1972,29 @@ Object.assign(STREET_DATA, {
           { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
           { title: "L.A. Street Names: Broadway (the Fort/Fourth confusion)", url: "https://lastreetnames.com/street/broadway/" },
           { title: ORD_RECORDED.title, url: ORD_RECORDED.url }
+        ]
+      },
+      {
+        label: "Main to Alameda",
+        from: "Main Street",
+        to: "Alameda Street",
+        minLng: -118.2472,
+        maxLng: -118.2381,
+        name: "4th Street",
+        namedAfter: "Its ordinal position in the downtown grid, extended east beyond the original grid's Main St edge",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        nameHistory: [
+          { from: "?", until: null, name: "4th Street", how: "extension",
+            origin: "presumably an eastward extension of Fourth beyond {{the Ord survey's numbered grid}}, which ran west from Main — when it was cut through, and whether first under another name, is not yet researched",
+            originLink: ORD_SURVEY.url }
+        ],
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
         ]
       },
       {
@@ -1941,10 +2052,28 @@ Object.assign(STREET_DATA, {
     orientation: "EW",
     segments: [
       {
-        label: "west of Alameda",
+        label: "west of Figueroa",
         from: null,
-        to: "Alameda Street",
-        maxLng: -118.2382,
+        to: "Figueroa Street",
+        maxLng: -118.2571,
+        name: "5th Street",
+        namedAfter: "Its ordinal position in the downtown grid — how and when this stretch joined 5th Street is not yet researched",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      },
+      {
+        label: "Figueroa to Main (original 5th St)",
+        from: "Figueroa Street",
+        to: "Main Street",
+        minLng: -118.2571,
+        maxLng: -118.2486,
         name: "5th Street",
         namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
         namedAfterLink: null,
@@ -1952,7 +2081,7 @@ Object.assign(STREET_DATA, {
         built: "not yet researched",
         nameHistory: [
           { from: "1849", until: null, name: "5th Street", how: "origin",
-            origin: "laid out as Calle 5ª (“Fifth Street”) on the Ord/Hutton survey, whose grid ran from Pearl (now Figueroa) to Main — when the rest of this stretch joined is not yet researched {{(survey)}}",
+            origin: "laid out as Calle 5ª (“Fifth Street”) on the Ord/Hutton survey, between Pearl (now Figueroa) and Main {{(survey)}}",
             originLink: ORD_SURVEY.url }
         ],
         note: null,
@@ -1962,6 +2091,29 @@ Object.assign(STREET_DATA, {
           { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
           { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
           { title: ORD_RECORDED.title, url: ORD_RECORDED.url }
+        ]
+      },
+      {
+        label: "Main to Alameda",
+        from: "Main Street",
+        to: "Alameda Street",
+        minLng: -118.2486,
+        maxLng: -118.2382,
+        name: "5th Street",
+        namedAfter: "Its ordinal position in the downtown grid, extended east beyond the original grid's Main St edge",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        nameHistory: [
+          { from: "?", until: null, name: "5th Street", how: "extension",
+            origin: "presumably an eastward extension of Fifth beyond {{the Ord survey's numbered grid}}, which ran west from Main — when it was cut through, and whether first under another name, is not yet researched",
+            originLink: ORD_SURVEY.url }
+        ],
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
         ]
       },
       {
@@ -2012,40 +2164,235 @@ Object.assign(STREET_DATA, {
       }
     ]
   },
-  "6th Street": numberedStreet("6th Street", { sources: [
-    { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
-    { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
-    { title: ORD_RECORDED.title, url: ORD_RECORDED.url }
-  ] }),
-  "7th Street": numberedStreet("7th Street", { sources: [
-    { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
-    { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
-    { title: ORD_RECORDED.title, url: ORD_RECORDED.url }
-  ] }),
-  "8th Street": numberedStreet("8th Street", { sources: [
-    { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
-    { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
-    { title: ORD_RECORDED.title, url: ORD_RECORDED.url }
-  ] }),
+  "6th Street": {
+    name: "6th Street",
+    orientation: "EW",
+    segments: [
+      {
+        label: "west of Figueroa",
+        from: null,
+        to: "Figueroa Street",
+        maxLng: -118.2585,
+        name: "6th Street",
+        namedAfter: "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      },
+      {
+        label: "Figueroa to Main (original 6th St)",
+        from: "Figueroa Street",
+        to: "Main Street",
+        minLng: -118.2585,
+        maxLng: -118.2499,
+        name: "6th Street",
+        namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        namedAfterLink: null,
+        planned: { text: "by 1849", url: ORD_SURVEY.url },
+        built: "not yet researched",
+        nameHistory: [
+          { from: "1849", until: null, name: "6th Street", how: "origin",
+            origin: "laid out as Calle 6ª (\"Sixth Street\") on the Ord/Hutton survey, between Pearl (now Figueroa) and Main {{(survey)}}",
+            originLink: ORD_SURVEY.url }
+        ],
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
+          { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
+          { title: ORD_RECORDED.title, url: ORD_RECORDED.url }
+        ]
+      },
+      {
+        label: "east of Main",
+        from: "Main Street",
+        to: null,
+        minLng: -118.2499,
+        name: "6th Street",
+        namedAfter: "Its ordinal position in the downtown grid, extended east beyond the original grid's Main St edge",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        nameHistory: [
+          { from: "?", until: null, name: "6th Street", how: "extension",
+            origin: "presumably an eastward extension of Sixth beyond {{the Ord survey's numbered grid}}, which ran west from Main — when it was cut through, and whether first under another name, is not yet researched",
+            originLink: ORD_SURVEY.url }
+        ],
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      }
+    ]
+  },
+  "7th Street": {
+    name: "7th Street",
+    orientation: "EW",
+    segments: [
+      {
+        label: "west of Figueroa",
+        from: null,
+        to: "Figueroa Street",
+        maxLng: -118.2599,
+        name: "7th Street",
+        namedAfter: "Its ordinal position in the downtown grid — how and when this stretch joined 7th Street is not yet researched",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      },
+      {
+        label: "Figueroa to Main (original 7th St)",
+        from: "Figueroa Street",
+        to: "Main Street",
+        minLng: -118.2599,
+        maxLng: -118.2514,
+        name: "7th Street",
+        namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        namedAfterLink: null,
+        planned: { text: "by 1849", url: ORD_SURVEY.url },
+        built: "not yet researched",
+        nameHistory: [
+          { from: "1849", until: null, name: "7th Street", how: "origin",
+            origin: "laid out as Calle 7ª (\"Seventh Street\") on the Ord/Hutton survey, between Pearl (now Figueroa) and Main {{(survey)}}",
+            originLink: ORD_SURVEY.url }
+        ],
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
+          { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
+          { title: ORD_RECORDED.title, url: ORD_RECORDED.url }
+        ]
+      },
+      {
+        label: "east of Main",
+        from: "Main Street",
+        to: null,
+        minLng: -118.2514,
+        name: "7th Street",
+        namedAfter: "Its ordinal position in the downtown grid, extended east beyond the original grid's Main St edge",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        nameHistory: [
+          { from: "?", until: null, name: "7th Street", how: "extension",
+            origin: "presumably an eastward extension of Seventh beyond {{the Ord survey's numbered grid}}, which ran west from Main — when it was cut through, and whether first under another name, is not yet researched",
+            originLink: ORD_SURVEY.url }
+        ],
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      }
+    ]
+  },
+  "8th Street": {
+    name: "8th Street",
+    orientation: "EW",
+    segments: [
+      {
+        label: "west of Figueroa",
+        from: null,
+        to: "Figueroa Street",
+        maxLng: -118.2612,
+        name: "8th Street",
+        namedAfter: "Its ordinal position in the downtown grid — how and when this stretch joined 8th Street is not yet researched",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      },
+      {
+        label: "Figueroa to Main (original 8th St)",
+        from: "Figueroa Street",
+        to: "Main Street",
+        minLng: -118.2612,
+        maxLng: -118.2532,
+        name: "8th Street",
+        namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        namedAfterLink: null,
+        planned: { text: "by 1849", url: ORD_SURVEY.url },
+        built: "not yet researched",
+        nameHistory: [
+          { from: "1849", until: null, name: "8th Street", how: "origin",
+            origin: "laid out as Calle 8ª (\"Eighth Street\") on the Ord/Hutton survey, between Pearl (now Figueroa) and Main {{(survey)}}",
+            originLink: ORD_SURVEY.url }
+        ],
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
+          { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
+          { title: ORD_RECORDED.title, url: ORD_RECORDED.url }
+        ]
+      },
+      {
+        label: "east of Main",
+        from: "Main Street",
+        to: null,
+        minLng: -118.2532,
+        name: "8th Street",
+        namedAfter: "Its ordinal position in the downtown grid, extended east beyond the original grid's Main St edge",
+        namedAfterLink: null,
+        planned: "not yet researched",
+        built: "not yet researched",
+        nameHistory: [
+          { from: "?", until: null, name: "8th Street", how: "extension",
+            origin: "presumably an eastward extension of Eighth beyond {{the Ord survey's numbered grid}}, which ran west from Main — when it was cut through, and whether first under another name, is not yet researched",
+            originLink: ORD_SURVEY.url }
+        ],
+        note: null,
+        categories: ["number"],
+        disputed: false,
+        sources: [
+          { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" }
+        ]
+      }
+    ]
+  },
   "9th Street": numberedStreet("9th Street", {
+    planned: "not yet researched",
     note: "A donor street twice over: its stretch west of Figueroa became [[James M Wood Boulevard|James M. Wood Blvd]] in 1997, and its continuation east of Central Ave was absorbed by [[Olympic Boulevard|Olympic Blvd]] by 1945. It was also a receiver: between San Pedro and Alameda, this stretch absorbed the path of an earlier, separate [[Kohler Street]].",
     sources: [
       { title: "L.A. Street Names: 1st Street (on the numbering system)", url: "https://lastreetnames.com/street/0001st-street/" },
-      { title: ORD_SURVEY.title, url: ORD_SURVEY.url },
       { title: "L.A. Street Names: James M. Wood Boulevard", url: "https://lastreetnames.com/street/james-m-wood-boulevard/" },
       { title: "L.A. Street Names: Olympic Boulevard", url: "https://lastreetnames.com/street/olympic-boulevard/" }
     ]
   }),
   "10th Street": numberedStreet("10th Street", {
+    planned: "not yet researched",
     note: "A remnant: most of 10th became [[Olympic Boulevard|Olympic Blvd]] in 1935, its citywide widening already underway by 1928.",
     sources: [
       { title: "L.A. Street Names: 10th Street", url: "https://lastreetnames.com/street/010th-street/" },
-      { title: "L.A. Street Names: Olympic Boulevard", url: "https://lastreetnames.com/street/olympic-boulevard/" },
-      { title: ORD_SURVEY.title, url: ORD_SURVEY.url }
+      { title: "L.A. Street Names: Olympic Boulevard", url: "https://lastreetnames.com/street/olympic-boulevard/" }
     ]
   }),
-  "11th Street": numberedStreet("11th Street"),
-  "12th Street": numberedStreet("12th Street"),
+  "11th Street": numberedStreet("11th Street", { planned: "not yet researched" }),
+  "12th Street": numberedStreet("12th Street", { planned: "not yet researched" }),
   "14th Street": numberedStreet("14th Street", { planned: "not yet researched" }),
   "15th Street": numberedStreet("15th Street", { planned: "not yet researched" }),
   "17th Street": numberedStreet("17th Street", { planned: "not yet researched" }),
@@ -2066,11 +2413,11 @@ Object.assign(STREET_DATA, {
         name: "Olympic Boulevard",
         namedAfter: "The {{1932 Summer Olympics}}, held in Los Angeles",
         namedAfterLink: "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
-        planned: { text: "by 1849 (as 10th Street)", url: ORD_SURVEY.url },
+        planned: "not yet researched",
         built: { text: "already \"Tenth\" by Apr. 1875 (W.M. Williams's subdivision of Blocks 72 & 73 of Ord's Survey)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf" },
         nameHistory: [
-          { from: "by 1849", until: "1935", name: "10th Street", how: "origin",
-            origin: "ordinal position in the downtown grid", originLink: null },
+          { from: "?", until: "1935", name: "10th Street", how: "origin",
+            origin: "ordinal position in the downtown grid; the 1849 survey's numbered streets ran only to 8th, so when 10th was laid out is not yet researched", originLink: null },
           { from: "1935", until: null, name: "Olympic Boulevard", how: "renaming",
             origin: "renaming requested July 1929, before the Games; that they were the 10th Olympiad apparently went unremarked at the time {{(source)}}",
             originLink: "https://lastreetnames.com/street/olympic-boulevard/" }
@@ -2119,11 +2466,11 @@ Object.assign(STREET_DATA, {
     name: "James M. Wood Boulevard",
     namedAfter: "James Michael Wood (1945–1996), labor leader and chair of the Community Redevelopment Agency",
     namedAfterLink: null,
-    planned: { text: "by 1849 (as 9th Street)", url: ORD_SURVEY.url },
+    planned: "not yet researched",
     built: "not yet researched",
     nameHistory: [
-      { from: "by 1849", until: "1997", name: "9th Street",
-        origin: "ordinal position in the downtown grid", originLink: null },
+      { from: "?", until: "1997", name: "9th Street",
+        origin: "ordinal position in the downtown grid; the 1849 survey's numbered streets ran only to 8th, so when 9th was laid out is not yet researched", originLink: null },
       { from: "1997", until: null, name: "James M. Wood Boulevard", how: "renaming",
         origin: "City Council renamed the stretch between Figueroa and Western to honor Wood the year after his death {{(source)}}",
         originLink: "https://lastreetnames.com/street/james-m-wood-boulevard/" }
@@ -2466,7 +2813,7 @@ Object.assign(STREET_DATA, {
     namedAfter: "{{Pío de Jesús Pico}} (1801–1894), Alta California's last Mexican governor (1845–1846) and a major landowner",
     namedAfterLink: "https://en.wikipedia.org/wiki/Pio_Pico",
     planned: { text: "by 1855 (most likely 1853), as Pico Street", url: "https://lastreetnames.com/street/pico-boulevard/" },
-    built: { text: "already \"Pico\" by Oct. 1885 (Cameron Tract survey)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" },
+    built: { text: "already \"Pico\" by Oct. 1885 (Cameron Tract survey), near the Figueroa Street intersection — not separately documented along the rest of the boulevard", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" },
     note: "Los Angeles never had an official 13th Street downtown — Pico Street picked up straight after 12th — though a 1903 item still locates a church at “Flower street, corner Pico (Thirteenth) street.” Became Pico Boulevard in 1914.",
     categories: ["person", "governor"],
     disputed: false,
