@@ -70,6 +70,131 @@ Periodically sweep the whole file. Keep entries dated.
   doesn't document this stretch at all; it's carried over from the generic
   numbered-street source list. Left in place per the no-fix-just-flag rule.
 
+- **1st, 6th, 7th, 8th Street — single-entry "by 1849" claims outrun the
+  survey's Figueroa–Main grid** (2026-07 single-entry migration): same family
+  as the 2nd Street flags above, but on streets that haven't been split into
+  segments at all yet, so the whole street (not just one segment) carries
+  `planned: "by 1849"` / `built` tied to `ORD_SURVEY`. Geometry check
+  (`streets-geometry.js` lng extents vs. `node intersect.js "<street>"
+  "Figueroa Street"` / `"Main Street"`) confirms all four physically run past
+  both edges of the 1849 grid: 1st Street spans lng -118.2604 to -118.2248
+  (Figueroa × 1st = -118.2520, Main × 1st = -118.2434); 6th spans -118.2732 to
+  -118.2246 (Figueroa -118.2585, Main -118.2499); 7th spans -118.2729 to
+  -118.2248 (Figueroa -118.2599, Main -118.2514); 8th spans -118.2722 to
+  -118.2395 (Figueroa -118.2612, Main -118.2532). Only the Figueroa–Main core
+  of each is actually attested by the Ord/Hutton survey (`ORD_RECORDED`
+  confirms 1st–8th as Calle 1ª–8ª); the stretches beyond Figueroa (west) and
+  Main (east) need their own join dates researched, same as 3rd Street's
+  "west of Bixel" / "Main to Alameda" segments. Not fixed this pass (no new
+  segments) — these are 3rd-style split candidates once each stretch's own
+  record is pulled.
+
+- **9th, 10th, 11th, 12th Street — "by 1849" claim rests on the numbered-
+  street template, not on survey coverage at all** (2026-07 single-entry
+  migration): the Ord/Hutton survey's numbered cross-streets ran only Calle
+  1ª–8ª (Pearl/Figueroa to Main) — see the recorded-copy note above and the
+  existing 4th/5th/Hill/Olympic flag, which already caught this for 10th.
+  9th, 11th, and 12th inherit the same `numberedStreet()` default
+  (`planned: {text: "by 1849", url: ORD_SURVEY.url}`) with no override, unlike
+  14th/15th/17th/18th, which already carry `planned: "not yet researched"`.
+  Since these streets were never part of the 1849 numbered grid to begin
+  with, the "by 1849" claim is doubly wrong for them — not just an extent
+  overrun but a survey citation that never covered any part of the named
+  street. Geometry: 9th spans lng -118.2628 to -118.2470 (Figueroa × 9th =
+  -118.2628, Main × 9th = -118.2550 — west end sits at Figueroa, but the
+  street runs east past Main); 10th is now a short remnant (lng -118.2517 to
+  -118.2445, per the "most of 10th became Olympic Blvd 1935" note) that
+  doesn't reach either Figueroa or Main directly (`intersect.js` reports
+  >500m gaps to both); 11th spans -118.2751 to -118.2522 (Figueroa -118.2652,
+  Main -118.2581); 12th spans -118.2721 to -118.2457 (Figueroa -118.2669,
+  Main -118.2594). Per rule 7, flagging rather than fixing: the per-street
+  `opts` fix (mirroring 14th+'s override) is the obvious next move, but that's
+  a data decision for the next pass, not this restructuring one — the
+  shared `numberedStreet()` helper itself is untouched.
+
+- **James M Wood Boulevard — "by 1849 (as 9th Street)" claim on a stretch
+  entirely west of Figueroa** (2026-07 single-entry migration batch): same
+  family as the 9th/10th/11th/12th flag above. `node intersect.js "James M
+  Wood Boulevard" "Figueroa Street"` → lng -118.2628 (~0 m gap, they meet
+  exactly at this street's east end); the entry's own geometry runs
+  lng -118.2728 to -118.2628, i.e. entirely WEST of Figueroa — outside the
+  Ord/Hutton survey's Pearl(Figueroa)–Main core that the 9th Street entry
+  itself sources this claim to. The 9th Street entry's own note already
+  correctly calls this a donor stretch ("its stretch west of Figueroa became
+  James M. Wood Blvd in 1997"), so the cross-reference between the two
+  entries is NOT missing — but the `planned: "by 1849"` field on this entry
+  over-claims survey coverage the same way the 9th Street entry it derives
+  from does. Left the nameHistory's first item without a `how` tag this pass
+  (text only says "ordinal position in the downtown grid," not how this
+  specific west-of-Figueroa stretch joined 9th Street's name) rather than
+  guess "extension" without a stated source, per rule 4/5. Fix path: same as
+  9th Street's own flag above — needs `planned: "not yet researched"` or a
+  9th-Street-style override, not a fix in this pass.
+
+- **Garey Street — single 1875 tract-map citation for a ~790 m street whose
+  own note says it "later absorbed the former Amelia and Messer streets"**
+  (2026-07 single-entry migration): the entry's only dated claim ("already
+  'Garey' by May 19, 1875") comes from the Thomas Tract map, which documents
+  the name on whatever stretch that tract fronts — not the parts later
+  folded in from Amelia and Messer (dates/extents for that absorption aren't
+  researched here). Geometry: Garey Street spans lat 34.0459–34.0531 in
+  current coverage. Flagging per rule 7 rather than splitting (rule 2); a
+  future pass could split at wherever Amelia/Messer's stretch began, once
+  pulled.
+
+- **Mateo Street — single 1887 tract-sheet citation for a ~1,385 m street;
+  entry's own note flags a gap in that sheet's coverage** (2026-07 single-
+  entry migration): the only source for the "already 'Mateo' by Jan. 1887"
+  claim is the Mills and Wicks Extension of Second St. tract's additional-
+  lots sheet, which the note itself says "confirms Mateo, labeled right
+  against 'Keller Est.,' but still doesn't mention Molino" — i.e. the source
+  is scoped to the blocks near the Keller estate, not necessarily the whole
+  modern street (lat 34.0296–34.0421 in current coverage). Flagging per rule
+  7 rather than splitting; a future pass could pull the tract's actual platted
+  extent for this street.
+
+- **Olive Street — blanket "by 1849" Ord-survey `planned` date on a street
+  that runs well south of the surveyed grid** (2026-07 single-entry
+  migration): the entry cites `ORD_SURVEY`/sheet 68 ("Calle Accytuna") for
+  the whole street, but the recorded copy's numbered cross-streets only ran
+  Calle 1ª–8ª (same limit already flagged for 4th/5th/Hill/Olympic and the
+  9th–12th family). `node intersect.js "Olive Street" "8th Street"` → lat
+  34.0452 (8th, the grid's south edge); `node intersect.js "Olive Street"
+  "9th Street"` → lat 34.0437; `node intersect.js "Olive Street" "Pico
+  Boulevard"` → lat 34.0381. Olive Street's own geometry spans lat
+  34.0324–34.0550 in current coverage, i.e. it continues a full 8 blocks
+  (~1,400 m) south of 8th, past 9th and Pico, with no survey coverage at all
+  for that stretch. Not fixed this pass (no new segments) — a 3rd-Street-
+  style split at 8th is the obvious next move once that stretch's own join
+  date is researched.
+
+- **Santa Fe Avenue — "Tulip Street" origin item covers a couple of blocks,
+  applied as the whole street's pre-1887 history** (2026-07 single-entry
+  migration): the nameHistory's own text already scopes the 1886 Goodwin
+  Tract citation to "the stretch south of 6th St, between Imperial (then
+  'Palm') and Mesquit" — `node intersect.js "Santa Fe Avenue" "6th Street"` →
+  lat 34.0384; `"Imperial Street"` → lat 34.0364; `"Mesquit Street"` → lat
+  34.0381, so the attested band is roughly 34.0364–34.0384 (~200 m). Santa Fe
+  Avenue's own geometry spans lat 34.0306–34.0496 (~2,100 m) in current
+  coverage — the "Tulip Street" item is presented as this single-entry
+  street's one and only former name, but the tract map backing it covers
+  under a tenth of the street's length. Flagging per rule 7 rather than
+  splitting; the stretches north of 6th and south of Imperial have no
+  documented former name at all.
+
+- **Pico Boulevard — `built` date sourced to a single tract map at one
+  intersection, applied to the whole boulevard** (2026-07 single-entry
+  migration): "already 'Pico' by Oct. 1885" cites the Cameron Tract survey,
+  whose source description itself says it "labels this street 'Pico'
+  directly, at Figueroa" — `node intersect.js "Pico Boulevard" "Figueroa
+  Street"` → lat 34.0406. Pico Boulevard's own geometry spans lat
+  34.0328–34.0425 in current coverage (and the real street continues miles
+  further west/east beyond the map), so the 1885 date is only directly
+  attested at that one cross-street, not along the boulevard generally. The
+  `planned` field's "by 1855 (most likely 1853)" is a secondary (lastreetnames.com)
+  claim about the name generally, not tied to a single document, so it isn't
+  part of this flag. Flagging per rule 7 rather than editing the built text.
+
 ## 3rd Street segment-model pilot — shopping list (2026-07)
 
 3rd Street is now the pilot of the full segment model (7 segments, `from`/`to`

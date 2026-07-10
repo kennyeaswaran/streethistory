@@ -209,10 +209,10 @@ const STREET_DATA = {
     planned: { text: "by 1849 (as Charity Street)", url: ORD_SURVEY.url },
     built: "1869 (first block, between 5th and 6th)",
     nameHistory: [
-      { from: "1849", until: "1886–1887", name: "Charity Street (Calle de Caridad)",
+      { from: "1849", until: "1886–1887", name: "Charity Street (Calle de Caridad)", how: "origin",
         origin: "the virtue; residents petitioned for a change, tired of jokes about “living on charity”",
         originLink: null },
-      { from: "1886–1887", until: null, name: "Grand Avenue", origin: null, originLink: null }
+      { from: "1886–1887", until: null, name: "Grand Avenue", how: "renaming", origin: null, originLink: null }
     ],
     note: null,
     categories: ["aspiration", "renamed"],
@@ -515,10 +515,10 @@ const STREET_DATA = {
     planned: null,
     built: "not yet researched",
     nameHistory: [
-      { from: "?", until: "by 1897", name: "Virginia Street",
+      { from: "?", until: "by 1897", name: "Virginia Street", how: "origin",
         origin: "per Major Horace Bell, named for his daughter Virginia {{(source)}}",
         originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24" },
-      { from: "by 1897", until: null, name: "Delong Street",
+      { from: "by 1897", until: null, name: "Delong Street", how: "renaming",
         origin: "renamed by City Engineer Dockweiler in the explorer's honor — as Dockweiler himself confirmed at the Feb. 18, 1897 hearing {{(source)}}",
         originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24" }
     ],
@@ -663,12 +663,12 @@ const STREET_DATA = {
     planned: null,
     built: { text: "platted as \"Second St\" by Apr.–May 1886 (Mills and Wicks Extension of Second St. tract)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf" },
     nameHistory: [
-      { from: "1886", until: "?", name: "Second Street",
+      { from: "1886", until: "?", name: "Second Street", how: "extension",
         origin: "platted as the eastward extension of downtown's [[2nd Street]] on the Mills and Wicks Extension tract — the tract's own name advertises this — immediately adjacent to [[Hewitt Street|Hewitt]]; evidently this stretch parted ways with the numbered grid rather than staying \"2nd\"",
         originLink: null },
-      { from: "?", until: "1915", name: "Stephenson Avenue",
+      { from: "?", until: "1915", name: "Stephenson Avenue", how: "renaming",
         origin: "no namesake documented; rename date from \"Second\" not yet found", originLink: null },
-      { from: "1915", until: null, name: "Traction Avenue",
+      { from: "1915", until: null, name: "Traction Avenue", how: "renaming",
         origin: "renamed to avoid confusion with the Eastside's bigger, busier Stephenson Avenue, which itself was renamed Whittier Boulevard just five years later {{(source)}}",
         originLink: "https://lastreetnames.com/street/traction-avenue/" }
     ],
@@ -704,10 +704,10 @@ const STREET_DATA = {
     planned: null,
     built: "named May 1887, when the AT&SF officially reached Los Angeles",
     nameHistory: [
-      { from: "1886", until: "1887", name: "Tulip Street",
+      { from: "1886", until: "1887", name: "Tulip Street", how: "origin",
         origin: "platted as \"Tulip\" on the Goodwin Tract, recorded Oct. 6, 1886 — the stretch south of 6th St, between [[Imperial Street|Imperial]] (then \"Palm\") and [[Mesquit Street|Mesquit]]",
         originLink: null },
-      { from: "1887", until: null, name: "Santa Fe Avenue",
+      { from: "1887", until: null, name: "Santa Fe Avenue", how: "renaming",
         origin: "renamed for the {{Atchison, Topeka & Santa Fe Railway}} when it reached Los Angeles in May 1887, a few months after the Goodwin Tract's \"Tulip\" plat",
         originLink: "https://en.wikipedia.org/wiki/Atchison,_Topeka_and_Santa_Fe_Railway" }
     ],
@@ -858,10 +858,10 @@ const STREET_DATA = {
     planned: null,
     built: { text: "already \"Palm St\" by Oct. 6, 1886 (Plan of the Goodwin Tract) — renamed \"Imperial\" by an unresearched later date", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
     nameHistory: [
-      { from: "1886", until: "?", name: "Palm Street",
+      { from: "1886", until: "?", name: "Palm Street", how: "origin",
         origin: "platted as \"Palm\" on the Goodwin Tract, recorded Oct. 6, 1886 — one of a run of tree/plant-themed street names ([[Willow Street|Willow]], Palm, [[Santa Fe Avenue|Tulip]], [[Mesquit Street|Mesquit]]) south of 6th St",
         originLink: null },
-      { from: "?", until: null, name: "Imperial Street",
+      { from: "?", until: null, name: "Imperial Street", how: "renaming",
         origin: "rename date and reason not yet researched",
         originLink: null }
     ],
@@ -1283,10 +1283,10 @@ const STREET_DATA = {
     planned: null,
     built: "1887 (as Stanford Avenue)",
     nameHistory: [
-      { from: "1887", until: "?", name: "Stanford Avenue",
+      { from: "1887", until: "?", name: "Stanford Avenue", how: "origin",
         origin: "named for SPRR president Leland Stanford, part of the same 1887 package as Towne and Ruth (now Stanford) Avenues {{(source)}}",
         originLink: "https://lastreetnames.com/street/towne-avenue-dtla/" },
-      { from: "?", until: null, name: "Crocker Street",
+      { from: "?", until: null, name: "Crocker Street", how: "renaming",
         origin: "renamed for Crocker once the “Stanford” name moved a block over to the former Ruth Avenue {{(source)}}",
         originLink: "https://lastreetnames.com/street/towne-avenue-dtla/" }
     ],
@@ -1307,10 +1307,10 @@ const STREET_DATA = {
     planned: null,
     built: "1887 (as Ruth Avenue)",
     nameHistory: [
-      { from: "1887", until: "after Feb. 1897", name: "Ruth Avenue",
+      { from: "1887", until: "after Feb. 1897", name: "Ruth Avenue", how: "origin",
         origin: "presumably named for a daughter of landowner Joseph Wolfskill, whose old DTLA orchard was being subdivided; the 1897 renaming commission proposed changing it, but the council committee restored the name {{(source)}}",
         originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28" },
-      { from: "after Feb. 1897", until: null, name: "Stanford Avenue",
+      { from: "after Feb. 1897", until: null, name: "Stanford Avenue", how: "transfer",
         origin: "took over the Stanford name once the original Stanford Avenue, a block over, was renamed Crocker Street {{(source)}}",
         originLink: "https://lastreetnames.com/street/towne-avenue-dtla/" }
     ],
@@ -1430,7 +1430,7 @@ const STREET_DATA = {
     built: "not yet researched",
     nameHistory: [
       { from: "?", until: "1988", name: "Weller Street", origin: "not yet researched", originLink: null },
-      { from: "1988", until: null, name: "Astronaut Ellison S. Onizuka Street",
+      { from: "1988", until: null, name: "Astronaut Ellison S. Onizuka Street", how: "renaming",
         origin: "renamed in Onizuka's honor two years after the Challenger explosion, with a memorial plaque and shuttle model at the street's center {{(source)}}",
         originLink: "https://lastreetnames.com/street/astronaut-ellison-s-onizuka-street/" }
     ],
@@ -1509,7 +1509,7 @@ const STREET_DATA = {
     namedAfterLink: null,
     planned: null,
     built: "by 1898 (Sanjuro Mizuno's Santa Fe Hotel, the city's first Japanese boardinghouse, stood at 1st and Rose)",
-    note: "Not covered by Kines; no source found for the name's origin. The 1875 Thomas Tract map (which names [[Garey Street|Garey]] and the north end of [[Hewitt Street|Hewitt]]) shows an unlabeled platted street in roughly this position — a positional inference toward an earlier date, not a literal name match.",
+    note: "Not covered by Kines; no source found for the name's origin. The 1875 Thomas Tract map shows an unlabeled platted street in roughly this position (identified by position only, not a name match).",
     categories: ["unknown"],
     disputed: false,
     sources: [
@@ -2124,7 +2124,7 @@ Object.assign(STREET_DATA, {
     nameHistory: [
       { from: "by 1849", until: "1997", name: "9th Street",
         origin: "ordinal position in the downtown grid", originLink: null },
-      { from: "1997", until: null, name: "James M. Wood Boulevard",
+      { from: "1997", until: null, name: "James M. Wood Boulevard", how: "renaming",
         origin: "City Council renamed the stretch between Figueroa and Western to honor Wood the year after his death {{(source)}}",
         originLink: "https://lastreetnames.com/street/james-m-wood-boulevard/" }
     ],
@@ -2219,10 +2219,10 @@ Object.assign(STREET_DATA, {
     planned: { text: "L.A.'s trial-run Ramona Boulevard opened along this corridor in April 1935, upgraded to the Ramona Parkway/Freeway in the 1940s", url: "https://laist.com/news/transportation/los-angeles-10-freeway-history-ramona-airline-marilyn-reece" },
     built: { text: "built as the Ramona Freeway (US 99) through the 1940s–50s, later renamed the San Bernardino Freeway; folded into I-10 in the 1964 renumbering. Only a short stub enters this coverage at the East L.A. Interchange", url: "https://en.wikipedia.org/wiki/Interstate_10_in_California" },
     nameHistory: [
-      { from: "1935", until: "?", name: "Ramona Boulevard, then Ramona Parkway / Ramona Freeway",
+      { from: "1935", until: "?", name: "Ramona Boulevard, then Ramona Parkway / Ramona Freeway", how: "origin",
         origin: "carried the era's popular \"Ramona\" place-name — widely applied across the San Gabriel Valley and commonly traced to Helen Hunt Jackson's 1884 Southern California novel; the road's own naming record is not pinned to a source here",
         originLink: null },
-      { from: "?", until: null, name: "San Bernardino Freeway",
+      { from: "?", until: null, name: "San Bernardino Freeway", how: "renaming",
         origin: "renamed for its destination city of San Bernardino", originLink: null }
     ],
     note: "Shares the I-10 designation with the [[Santa Monica Freeway]], whose entry explains that number, the two linked by a short I-5 overlap at the East L.A. Interchange. In this coverage only a single carriageway stub appears at the eastern edge, and OSM still tags it with the old \"US 99\" ref — a fossil of the pre-1964 inland route that ran here before I-10 and I-5 took over the corridor.",
@@ -2242,11 +2242,11 @@ Object.assign(STREET_DATA, {
     planned: { text: "added to the state highway system in 1935 as Route 205", url: "https://en.wikipedia.org/wiki/Arroyo_Seco_Parkway" },
     built: { text: "opened Dec. 30, 1940 — the first freeway in the western United States; completed to the Four Level Interchange on Sept. 22, 1953", url: "https://en.wikipedia.org/wiki/Arroyo_Seco_Parkway" },
     nameHistory: [
-      { from: "1940", until: "1954", name: "Arroyo Seco Parkway",
+      { from: "1940", until: "1954", name: "Arroyo Seco Parkway", how: "origin",
         origin: "named for the Arroyo Seco, the seasonal stream it parallels toward Pasadena", originLink: null },
-      { from: "Nov. 16, 1954", until: "2010", name: "Pasadena Freeway",
+      { from: "Nov. 16, 1954", until: "2010", name: "Pasadena Freeway", how: "renaming",
         origin: "renamed for its destination, Pasadena, when the California Highway Commission reclassified the parkway as a freeway", originLink: null },
-      { from: "2010", until: null, name: "Arroyo Seco Parkway",
+      { from: "2010", until: null, name: "Arroyo Seco Parkway", how: "renaming",
         origin: "the historic parkway name was restored, reflecting its standing as a National Historic Civil Engineering Landmark and National Scenic Byway", originLink: null }
     ],
     note: "Signed SR 110; continues south of the Four Level as the [[Harbor Freeway]] (the map's switch sits a little north of it). When it opened in 1940 it became L.A.'s leg of US 66 — the OSM ways still carry historical US 66, US 6, and US 99 refs. SR 110 is a California number picked to match the adjoining I-110, not a grid position. A National Historic Civil Engineering Landmark (1999) and National Scenic Byway (2002).",
@@ -2342,10 +2342,10 @@ Object.assign(STREET_DATA, {
     planned: { text: "by 1849 (as Calle de las Vírgenes / Virgin Street)", url: ORD_SURVEY.url },
     built: "not yet researched",
     nameHistory: [
-      { from: "1849", until: "Aug. 1887", name: "Virgin Street (Calle de las Vírgenes)",
+      { from: "1849", until: "Aug. 1887", name: "Virgin Street (Calle de las Vírgenes)", how: "origin",
         origin: "no explanation given on the 1849 survey — possibly a reference to bachelorettes, nuns, or the Virgin Mary {{(source)}}",
         originLink: "https://lastreetnames.com/street/alpine-street/" },
-      { from: "Aug. 1887", until: null, name: "Alpine Street",
+      { from: "Aug. 1887", until: null, name: "Alpine Street", how: "renaming",
         origin: "renamed by petition of real estate agent William P. McIntosh, who'd run a Sierra lumber company near Alpine County in the 1870s but gave no stated reason",
         originLink: null }
     ],
@@ -2382,10 +2382,10 @@ Object.assign(STREET_DATA, {
     planned: { text: "by 1849 (as Calle de las Avispas / Hornet Street)", url: ORD_SURVEY.url },
     built: "not yet researched",
     nameHistory: [
-      { from: "1849", until: "Feb. 1874", name: "Hornet Street (Calle de las Avispas, “Wasp Street”)",
+      { from: "1849", until: "Feb. 1874", name: "Hornet Street (Calle de las Avispas, “Wasp Street”)", how: "origin",
         origin: "avispa means “wasp”; insects were a common naming source in the young pueblo (cf. [[Figueroa Street|Grasshopper St]])",
         originLink: null },
-      { from: "Feb. 1874", until: null, name: "Yale Street",
+      { from: "Feb. 1874", until: null, name: "Yale Street", how: "renaming",
         origin: "renamed by the same petition that changed Bull St to Castelar (now [[Hill Street|N. Hill St]]) and proposed Grasshopper St to Union (Council chose Pearl St instead)",
         originLink: null }
     ],
@@ -2420,9 +2420,9 @@ Object.assign(STREET_DATA, {
     planned: { text: "by 1849 (as Calle Alta / High Street)", url: ORD_SURVEY.url },
     built: "not yet researched",
     nameHistory: [
-      { from: "1849", until: "1886", name: "High Street (Calle Alta)", origin: "no namesake documented", originLink: null },
-      { from: "1886", until: "1890", name: "Walters Street", origin: "renamed for resident George Walters", originLink: null },
-      { from: "1890", until: null, name: "Ord Street",
+      { from: "1849", until: "1886", name: "High Street (Calle Alta)", how: "origin", origin: "no namesake documented", originLink: null },
+      { from: "1886", until: "1890", name: "Walters Street", how: "renaming", origin: "renamed for resident George Walters", originLink: null },
+      { from: "1890", until: null, name: "Ord Street", how: "renaming",
         origin: "renamed for surveyor E.O.C. Ord, who had not named it after himself when he mapped the city in 1849 {{(source)}}",
         originLink: "https://lastreetnames.com/street/ord-street/" }
     ],
@@ -2443,10 +2443,10 @@ Object.assign(STREET_DATA, {
     planned: null,
     built: "not yet researched",
     nameHistory: [
-      { from: "not yet researched", until: "Mar. 31, 1994", name: "Macy Street",
+      { from: "not yet researched", until: "Mar. 31, 1994", name: "Macy Street", how: "origin",
         origin: "named for pioneer merchants Obed and Oscar Macy; ran this name along the whole stretch through the Old Plaza/Chinatown area covered by this map",
         originLink: null },
-      { from: "Mar. 31, 1994", until: null, name: "Cesar E. Chavez Avenue",
+      { from: "Mar. 31, 1994", until: null, name: "Cesar E. Chavez Avenue", how: "renaming",
         origin: "Macy Street, Brooklyn Avenue (Boyle Heights/East L.A., outside this map's coverage), and a new Sunset Blvd connector were united and renamed for Chavez on his would-be 67th birthday, pushed by Supervisor Gloria Molina after his 1993 death {{(source)}}",
         originLink: "https://laist.com/news/entertainment/brooklyn-cesar" }
     ],
@@ -2488,7 +2488,7 @@ Object.assign(STREET_DATA, {
       { from: "not yet researched", until: "1938", name: "West 16th Street",
         origin: "part of the numbered downtown grid, absorbed at this end of the corridor only when the 13-mile Venice Boulevard rebranding — championed by Culver City founder Harry H. Culver — finally reached it",
         originLink: null },
-      { from: "1938", until: null, name: "Venice Boulevard",
+      { from: "1938", until: null, name: "Venice Boulevard", how: "renaming",
         origin: "consolidated the roadway's many segment names (Center St., St. Marks Blvd., Electric Ave./Blvd., Front St., West 16th St.) under one Venice-themed name, an idea Venice residents floated in 1912 {{(source)}}",
         originLink: "https://lastreetnames.com/street/venice-boulevard/" }
     ],
