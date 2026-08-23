@@ -1,0 +1,38 @@
+{
+  "image": "tracts/renders/mr6-1-grid.png",
+  "points": [
+    {
+      "px": [
+        0,
+        0
+      ],
+      "ll": [
+        34.068239,
+        -118.263814
+      ],
+      "note": "align.html corner (0,0)"
+    },
+    {
+      "px": [
+        1749,
+        0
+      ],
+      "ll": [
+        34.064644,
+        -118.256228
+      ],
+      "note": "align.html corner (1749,0)"
+    },
+    {
+      "px": [
+        0,
+        1115
+      ],
+      "ll": [
+        34.064204,
+        -118.266561
+      ],
+      "note": "align.html corner (0,1115)"
+    }
+  ]
+}

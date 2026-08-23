@@ -9,6 +9,86 @@ Workflow: when doing a street's full pass, check here first and consume its
 leads (verify → into the entry; debunk → delete, noting why if instructive).
 Periodically sweep the whole file. Keep entries dated.
 
+## The 1897 ordinance — status as of 2026-08
+
+- **✔ IDENTIFIED: Ordinance No. 4093 (New Series), Ordinance Book IV p. 337**
+  (adopted Feb. 23, 1897; the vetoed Feb. 2 version is at p. 331). From City
+  Council minutes, Record Series R05.557, transcribed in
+  `omnibus-1897-renaming-council-minutes.md` (ChatGPT transcription of the
+  City Clerk's scans, obtained by Kenny 2026-08; not yet spot-checked against
+  the images — the first application of any line from it owes that check). The
+  ⭐ target is no longer "find the ordinance" but "get two known ledger
+  pages": **request with the City Archivist is in flight (Kenny, 2026-08).**
+- **Directory route — NEGATIVE (2026-08):** the 1898 city directory carries no
+  list of changes; the 1897 directory says it already incorporates the 326
+  council changes but doesn't print them as a table. Don't re-run this.
+  Recorded in SERIAL-SOURCES.md too.
+- **Still open, unchanged:** the Dec. 27, 1897 supplementary renaming
+  ordinance (city engineer's cleanup batch, list never printed) — same
+  archives trail, and presumably findable the same way now, by ordinance
+  number in the same books.
+- **What the minutes changed in what was already banked** (full table in the
+  new file): a dozen Herald OCR corrections, the Escalon/Zaragoza conflict
+  settled, the "Lacy vs. Canada → Avenue 33" conflict resolved as a genuine
+  duplicate, and the Feb. 23 floor amendments recorded for the first time
+  (De La Guerra→Boylston, Nevada→Georgia, Manitou St→Ave, Broadway St→Canal
+  St, Stanley→Tropico, Dana→Stanley, Wood Ave→Griffin Ave).
+- **⚠ Downgrade — 3rd Street, east of Mission Rd:** the "Mono street … had
+  been changed to Third … restored" HOT LEAD below rests on the Feb. 19
+  Herald. The manuscript's corresponding line reads **Moore**, not Mono, so
+  the lead is probably an OCR artifact. Don't build a segment story on it
+  until a Mono Street is independently located.
+- **Apply pass owed:** the in-coverage lines (Figueroa/Boylston, Georgia,
+  Central, 4th, 5th, Marion, Stanford/Ruth) are already in the data from the
+  Herald; what the manuscript adds is that each can now name the instrument —
+  Ordinance No. 4093 (N.S.) — and cite a manuscript record. Not yet applied
+  as of 2026-08.
+
+## Serial-source leads (Sanborn atlases & city directories, 2026-08)
+
+Two source families new to the project, brought in by Kenny 2026-08 and
+written up in SERIAL-SOURCES.md. Nothing below has been run yet.
+
+- **~~⭐ The 1897 and 1898 city directories as a route to the renaming
+  ordinance~~ — RUN, NEGATIVE (Kenny, 2026-08):** the 1898 directory has no
+  list of changes, and the 1897 directory states it already incorporates the
+  326 council changes without printing them as a table. The hypothesis was
+  that a publisher absorbing 326 changes would print a concordance; it didn't.
+  Don't re-run. (The directories remain valuable for their annual street
+  guides — the extent-and-bracket use below — just not for the ordinance.)
+- **Sanborn index-sheet gazetteer, 1888 / 1894 / 1906 / 1950** (2026-08):
+  each volume carries a street index and a key map, so the indexes read
+  across editions give a per-year existence timeline for every street in the
+  city — from roughly a dozen images, all of them text rather than plat ink.
+  Do this BEFORE reading any Sanborn sheets: it is the prioritization tool,
+  and it says which streets have a question at all. Needs a human/browser
+  download step (LOC returns 403 to automated fetching of its search, JSON
+  API and IIIF manifests; item pages read fine).
+- **The 1894 + 1906 Sanborn pair as the bracket for the "presumably folded in
+  during the Feb. 1897 renaming" hedges** (2026-08): three nameHistory items
+  currently rest on that presumption with no source naming the stretch —
+  2nd Street (east-of-Alameda/Guadalupe lineage) and 3rd Street's
+  "Bixel to Boylston (Arnold St)" and "Alameda to Santa Fe (Georgia St)"
+  segments. Sanborn sheets covering those blocks in 1894 and 1906 would
+  replace the presumption with a dated bracket on the exact blocks, whether
+  or not the ordinance itself ever turns up. Same trick applies wholesale to
+  the 96 "not yet researched" field values in streets-data.js as of 2026-08
+  (34 `planned`, 59 `built`, 3 elsewhere).
+- **ProQuest Digital Sanborn Maps (1867–1970), via an LAPL card** (2026-08):
+  many more L.A. years than LOC has online, including the 1929/1930 and
+  1960s editions. Authenticated, so it is a human-only path — worth a session
+  of Kenny's time if the LOC editions leave a bracket too wide.
+- **Annexed-city Sanborn volumes** (2026-08): Hollywood, Highland Park,
+  San Pedro, Venice, Eagle Rock and the rest were published under their OWN
+  city names before annexation — search LOC that way when coverage grows past
+  Downtown. Annexation is itself a renaming event class (duplicate names with
+  existing L.A. streets had to be resolved), so the pre- and post-annexation
+  editions of an annexed town are a natural bracket for that whole class.
+- **Checker follow-up** (2026-08): `check-data.js`'s `PRIMARY` regex doesn't
+  recognize `loc.gov` or `rescarta.lapl.org`, so the primary-anchor count will
+  under-report once Sanborn/directory sources land. Add them with the first
+  such source.
+
 ## Open leads (2026-07 migration additions)
 
 - **Moneta Avenue → Broadway (1925–26)** (2026-07, displaced from Broadway's
@@ -208,8 +288,11 @@ segments are honest unknowns; what each needs:
   for the Main-side blocks too. When was Third cut through east of Main, and
   under what name?
 - **East of Mission Rd (discontinuous)** — NavigateLA at 2–3 addresses on
-  E 3rd between Mission Rd and the coverage edge (~1300–1900 E 3rd St). HOT
-  LEAD from omnibus-1897-renaming-full.md (Feb. 18 session): "The name of
+  E 3rd between Mission Rd and the coverage edge (~1300–1900 E 3rd St).
+  ⚠ **DOWNGRADED 2026-08 — the manuscript reads "Moore," not "Mono"** (see
+  "The 1897 ordinance" at the top of this file); what follows is probably an
+  OCR artifact. Former HOT LEAD from omnibus-1897-renaming-full.md (Feb. 18
+  session): "The name of
   Mono street, which had been changed to Third, was restored" — the Feb. 2
   ordinance evidently renamed a Mono St to Third and the council took it
   back. If Mono St was this east-of-the-river stretch, that's the segment's
@@ -339,7 +422,9 @@ segments are honest unknowns; what each needs:
   changes, signed Feb. 26, 1897) confirmed NOT printed in the Herald/CDNC;
   companion docs banked there (Feb. 2/3/9/19/24/27, Mar. 5 permalinks + all
   itemized changes); next trail = City Archives ordinance book, L.A. Times
-  Feb. 3 & 24 1897 (ProQuest), Express/Record legal ads, Burks map.
+  Feb. 3 & 24 1897 (ProQuest), Express/Record legal ads, Burks map — and
+  (added 2026-08) the 1897/1898 city directories, see Serial-source leads at
+  the top of this file.
 
 ## Open leads
 

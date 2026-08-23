@@ -14,3 +14,13 @@
 # — but transcriptions are research output and ARE tracked
 tracts/*
 !tracts/transcriptions/
+# — and the human alignments are NOT regenerable (each is a hand fit in
+#   align.html, and PIPELINE.md treats them as the stage-2 benchmark)
+!tracts/renders/
+tracts/renders/*
+!tracts/renders/*-alignment.json
+
+# overlay-trial: the renders are derived (regenerate with georef.py overlay /
+# overlay-one from tracts/ + the alignment JSONs), so only the trial's
+# instructions, answer key and results are tracked
+overlay-trial/**/*.png

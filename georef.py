@@ -175,6 +175,54 @@ def cmd_overlay(ctrl_path):
     out = c["image"].rsplit(".", 1)[0] + "-overlay.png"
     im.save(out); print("wrote", out)
 
+def slugify(name):
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
+def cmd_streets(ctrl_path):
+    """List every named modern street with geometry inside the image bounds,
+    with its in-sheet lat/lng extent — the automatic answer to 'which segment
+    of the modern street does this sheet cover'."""
+    c, pts, M, to_en, to_ll = cmd_fit(ctrl_path, quiet=True)
+    en_to_px = invert_M(M)
+    im = Image.open(c["image"])
+    found = {}
+    for w in load_geometry():
+        if "geometry" not in w or "name" not in w.get("tags", {}): continue
+        name = normalize(w["tags"]["name"])
+        for pt in w["geometry"]:
+            x, y = en_to_px(*to_en(pt["lat"], pt["lon"]))
+            if -50 <= x <= im.width + 50 and -50 <= y <= im.height + 50:
+                f = found.setdefault(name, {"n": 0, "lat": [90, -90], "lng": [180, -180]})
+                f["n"] += 1
+                f["lat"] = [min(f["lat"][0], pt["lat"]), max(f["lat"][1], pt["lat"])]
+                f["lng"] = [min(f["lng"][0], pt["lon"]), max(f["lng"][1], pt["lon"])]
+    for name, f in sorted(found.items(), key=lambda kv: -kv[1]["n"]):
+        print(f"{name}\t{f['n']} pts in sheet\tlat {f['lat'][0]:.5f}..{f['lat'][1]:.5f}\tlng {f['lng'][0]:.5f}..{f['lng'][1]:.5f}")
+
+def cmd_overlay_one(ctrl_path, target):
+    """Overlay with ONE modern street bold red and every other street faint
+    grey for context. No text labels — made for yes/no coincidence checks."""
+    c, pts, M, to_en, to_ll = cmd_fit(ctrl_path, quiet=True)
+    en_to_px = invert_M(M)
+    im = Image.open(c["image"]).convert("RGB")
+    d = ImageDraw.Draw(im)
+    tgt = normalize(target).lower()
+    drew = False
+    passes = [(False, (150, 150, 150), 2), (True, (220, 30, 30), 5)]
+    for is_target, color, width in passes:
+        for w in load_geometry():
+            if "geometry" not in w or "name" not in w.get("tags", {}): continue
+            name = normalize(w["tags"]["name"])
+            if (name.lower() == tgt) != is_target: continue
+            pxs = [en_to_px(*to_en(pt["lat"], pt["lon"])) for pt in w["geometry"]]
+            if not any(-200 <= x <= im.width + 200 and -200 <= y <= im.height + 200 for x, y in pxs):
+                continue
+            d.line([tuple(map(float, p)) for p in pxs], fill=color, width=width)
+            if is_target: drew = True
+    if not drew: sys.exit(f"no ways named '{target}' land on this sheet")
+    out = c["image"].rsplit(".", 1)[0] + "-only-" + slugify(target) + ".png"
+    im.save(out); print("wrote", out)
+
 def cmd_trace(ctrl_path, x1, y1, x2, y2, n=9):
     """Sample n points along a drawn street line (pixel endpoints) and vote."""
     c, pts, M, to_en, to_ll = cmd_fit(ctrl_path, quiet=True)
@@ -205,6 +253,8 @@ if __name__ == "__main__":
     if args[0] == "grid": cmd_grid(args[1], int(args[2]) if len(args) > 2 else 200)
     elif args[0] == "fit": cmd_fit(args[1])
     elif args[0] == "overlay": cmd_overlay(args[1])
+    elif args[0] == "streets": cmd_streets(args[1])
+    elif args[0] == "overlay-one": cmd_overlay_one(args[1], args[2])
     elif args[0] == "locate": cmd_locate(args[1], float(args[2]), float(args[3]))
     elif args[0] == "trace": cmd_trace(args[1], *map(float, args[2:6]), n=int(args[6]) if len(args) > 6 else 9)
     else: sys.exit(__doc__)

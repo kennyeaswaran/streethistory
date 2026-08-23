@@ -33,7 +33,9 @@ then apply it to every street segment it touches — adding it as a source to
 existing segments, splitting segments where its extents demand, and creating
 new (even partial) entries for streets it names. Entries are keyed by the
 street's OSM name without directional prefix (e.g. "Main Street", not "South
-Main Street"). Full guide: ADDING-STREETS.md; map pipeline: TRACT-RESEARCH.md.
+Main Street"). Full guide: ADDING-STREETS.md; map pipeline: TRACT-RESEARCH.md;
+Sanborn atlases and city directories: SERIAL-SOURCES.md; end-to-end stage
+specs (and what's still unsolved): PIPELINE.md.
 
 ## Known limitations / next steps
 
@@ -76,7 +78,17 @@ sourced claims go straight into the data even when found incidentally.
 - Calisphere (historic maps & photos): https://calisphere.org/
 - California Digital Newspaper Collection (Herald etc., renaming ordinances): https://cdnc.ucr.edu/
 - L.A. City Archives & Records Center (Council minutes/ordinances to 1850): https://clerk.lacity.gov/records
+  — scanned 19th-century council minutes are served by the City Clerk's older
+  document app (Record Series R05.557, e.g. `M02231897_01.pdf`); the February
+  1897 renaming sessions are transcribed in omnibus-1897-renaming-council-minutes.md
 - NavigateLA (recorded tract boundaries): https://navigatela.lacity.org/
 - L.A. County tract map search (recorded subdivision maps, scanned): https://pw.lacounty.gov/smpm/landrecords/TractMaps.aspx
   — full street→tract→map workflow in TRACT-RESEARCH.md
+- Sanborn fire insurance atlases (LOC, free): https://www.loc.gov/collections/sanborn-maps/
+  — L.A. city editions 1888, 1894, 1906, 1950 and later; annexed towns
+  (Hollywood, Highland Park, San Pedro …) appear under their own city names.
+  LAPL's guide to the set: https://www.lapl.org/collections-resources/research-guides/sanborn-atlases
+- L.A. city directories 1873–1907, digitized by LAPL: https://rescarta.lapl.org/ResCarta-Web/jsp/RcWebBrowse.jsp
+  — annual street guides with extents in cross-streets; no maps
+  — both of the above: SERIAL-SOURCES.md
 - Bernice Kimball, "Street Names of Los Angeles" (BOE, 1988) — at LAPL; the city's own renaming compendium

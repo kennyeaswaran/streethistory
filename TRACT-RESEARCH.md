@@ -5,6 +5,12 @@ Recorded subdivision maps give: the recording date, the original platted
 street names, the subdivider, and the surveyor — often the single best
 primary anchor for `planned` and for pre-newspaper street names.
 
+Scope note: this file is the *origin-document* pipeline — one subdivision at
+a time. For the *serial* sources (Sanborn atlases, city directories), which
+bracket a renaming across whole neighborhoods at once but never name a
+namesake, see SERIAL-SOURCES.md. A cheap serial sweep is usually the right
+way to decide which streets deserve the lookup below.
+
 REQUIRES A BROWSER for HARVESTING ONLY (NavigateLA and the Assessor portal are
 JavaScript apps; fetch tools see nothing). READING maps is different:
 
@@ -74,16 +80,18 @@ below. Browser time is for collecting Map-Refs, not for squinting at plats.
    streets named in the tract. **Scan the WHOLE plat, not just the block you
    went looking for.**
 
-5. **Transcribe it** into `tracts/transcriptions/<MAPREF>.md` (template: the
-   files already there): tract name, Map-Ref, recording date, subdivider,
-   surveyor, then every street name drawn on the plat with its extent within
-   the tract, plus notable unlabeled platted streets. The transcription is
-   the durable output of the reading step — it's what gets applied to
-   streets-data.js, and it means nobody re-reads the scan later. The reading
-   can be delegated (human, another instance, or another AI system that's
-   better at plat-reading); the transcription file is the handoff format,
-   and whoever applies it spot-checks at least one claim against the scan
-   before trusting the rest.
+5. **Transcribe it** into `tracts/transcriptions/<MAPREF>.md` per
+   `tracts/transcriptions/TEMPLATE.md`, which splits the file in two: Part A
+   is the verbatim transcription (title block, recording block, every street
+   label exactly as written, blocks/lots, margin notes — NO modern-street
+   identifications), Part B is the application record (modern identities
+   with their basis, and what was applied to streets-data.js). The reading
+   step can be delegated — a human, another instance, or another AI system
+   that's better at plat-reading — using the paste-ready prompt at the
+   bottom of TEMPLATE.md; keeping identification OUT of Part A is what makes
+   delegation safe, since matching drawn streets to modern ones is where
+   every documented error has come from. Whoever fills Part B spot-checks at
+   least one Part A claim against the scan before trusting the rest.
 
 6. **Apply it** to every street the map touches, per ADDING-STREETS.md's
    core loop. Source entry format:

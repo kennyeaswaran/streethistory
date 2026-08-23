@@ -44,6 +44,9 @@ enforces most of these rules.
      `omnibus-<year>-<slug>.md` (permalink at top; every renaming/creation/
      extension one line each, keeping the document's extent language
      verbatim — the extents are what later decide segmentation).
+   - Sanborn sheet or city-directory street guide → see SERIAL-SOURCES.md.
+     These are *serial* sources: what they contribute is a name-and-extent
+     bracket ("Palm in 1894, Imperial by 1906"), never a namesake.
 3. **Apply it to every street it touches.** For each street the document
    names, `grep` streets-data.js:
    - Stretch already covered by a segment with the same name lineage → add
@@ -250,6 +253,16 @@ how many entries have one. The trails:
   **TRACT-RESEARCH.md** (NavigateLA Parcel Description Report gives tract
   name + Map-Ref; DPW Land Records serves the scan; Assessor Legal Search
   goes tract-name→location).
+- **Sanborn fire insurance atlases** (1888, 1894, 1906, 1950 …) — the same
+  ground re-surveyed every few years, so a pair of editions brackets a
+  renaming on the exact blocks each sheet covers. Free at LOC; volume street
+  indexes make a per-year name gazetteer. Workflow and the paste-on dating
+  caveat: **SERIAL-SOURCES.md**.
+- **City directories** (LAPL, 1873–1907) — annual street guides listing each
+  street's extent in cross-streets: the tightest brackets available for a
+  renaming, and the likeliest surviving home for a mass-renaming concordance.
+  Also SERIAL-SOURCES.md; ResCarta is JavaScript-rendered, so browser or
+  human only.
 - **Bernice Kimball, “Street Names of Los Angeles” (Bureau of Engineering,
   1988)** — the BOE's own compendium of name changes, compiled from city
   records; not online, but LAPL holds it, and Kines relies on it. Worth

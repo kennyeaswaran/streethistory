@@ -1,5 +1,15 @@
 # Omnibus: the 1897 renaming ordinance — full-text hunt + companion documents
 
+**⚠ STATUS UPDATE (2026-08): the ordinance is now IDENTIFIED but still not in
+hand.** City Council minutes (transcribed in
+`omnibus-1897-renaming-council-minutes.md`) name it **Ordinance No. 4093 (New
+Series)** and record where the clerk entered it: **Ordinance Book IV, p. 337**
+(adopted Feb. 23, 1897), with the vetoed Feb. 2 version at **p. 331**. Kenny
+has written to the City Archivist asking for scans of those pages (2026-08).
+Two further negatives worth not re-running: the **1898 city directory carries
+no list of changes**, and the **1897 directory states it already incorporates
+the 326 council changes** without printing them as a table (Kenny, 2026-08).
+
 **⚠ STATUS (2026-07-04): the full ordinance text is NOT in CDNC.** A systematic
 sweep (search record below) shows the Los Angeles Herald never printed the
 complete list — only the summary (Feb. 2), the committee's amendments (Feb. 21,
@@ -79,9 +89,11 @@ Express, and Record are not in CDNC for that year).
 
 **Where the full text most likely lives:**
 
-1. **L.A. City Archives** (Erwin Piper Technical Center): the signed ordinance
-   (approved Feb. 26, 1897) in the ordinance books, and council minutes for
-   Feb. 1–2 and Feb. 23, 1897. The definitive copy.
+1. **L.A. City Archives** (Erwin Piper Technical Center) — now a precise ask,
+   not a fishing trip: **Ordinance Book IV, pp. 331 and 337**, Ordinance No.
+   4093 (New Series). The council minutes half of this trail is DONE (2026-08,
+   `omnibus-1897-renaming-council-minutes.md`); the ordinance-book pages are
+   what remain. Request with the archivist as of 2026-08.
 2. **Los Angeles Times, Feb. 3 and Feb. 24, 1897** (ProQuest via LAPL — not
    CDNC): the Times covered the same sessions and may have printed the list or
    long extracts.
@@ -135,6 +147,10 @@ Feb. 21 final report, the Feb. 21 wording (already banked) governs.
 - ✔ IN COVERAGE (5th St): "Fourth street east of the river was changed to
   Fifth" (same Workman group)
 - ⏸ "The name of Mono street, which had been changed to Third, was restored"
+  [⚠ 2026-08: the corresponding line in the manuscript committee report reads
+  **"The name Moore Street reinstated"** — so "Mono" here is probably the same
+  OCR slip. Treat the 3rd Street east-of-Mission "Mono" lead as weak until a
+  Mono Street is independently located.]
 - ⏸ "Keno street was changed to Killarney street" [Feb. 21 prints "Kino"]
 - ✔ Pearl→Figueroa UPHELD over ex-Mayor J. R. Toberman's protest ("he had the
   street named Pearl when there were not more than half a dozen people living
@@ -191,12 +207,14 @@ Feb. 21 final report, the Feb. 21 wording (already banked) governs.
   session. Former name Virginia street was, per Bell, for his daughter
   Virginia. Undated (pre-1897); citable as the Herald Feb. 19, 1897 report.
 
-### OCR conflict flag (carried over from omnibus-1897-renaming.md)
+### OCR conflict flag — RESOLVED 2026-08
 
 Feb. 19 prints "Escalon → Dara" + "Saragassa [Zaragosa] → Rossini";
-Feb. 21 prints "Escalon → Rossini" + "Zaragosa → Dana." One article has the
-pairs swapped (both garble Dana/Dara). The Feb. 21 final report is the later
-and controlling document, but the signed ordinance text is needed to settle it.
+Feb. 21 prints "Escalon → Rossini" + "Zaragosa → Dana." The manuscript
+committee report in the Feb. 23 minutes gives **Escalon → Rossini** and
+**Zaragoza → Dana**, i.e. the Feb. 21 pairing; the Feb. 19 swap was OCR
+garble. (The signed ordinance would still be the last word, but two
+independent readings of the Feb. 23 document now agree.)
 
 ## In-coverage summary (new names matching current map geometry)
 
@@ -209,7 +227,7 @@ and controlling document, but the signed ordinance text is needed to settle it.
 | Marion Avenue | ordinance renamed it "Stilson place"; restored Feb. 18 | ☐ new |
 | Georgia Street | Georgia Bell → Nevada (ordinance) → **Georgia street** (final, Feb. 23); prior history: Nevada (1886 tract maps) → Georgia Bell (May 10, 1889 / Sept. 11, 1890±) | ✔ full entry written |
 | Delong Street | Virginia → De Long (pre-1897, by Dockweiler, for the Arctic explorer) | ✔ full entry written |
-| Boylston Street | old Figueroa → De La Guerra (Feb. 1 ordinance) → Boylston (Feb. 23) | ☐ (Feb. 24 article banked) |
+| Boylston Street | old Figueroa → De La Guerra (Feb. 1 ordinance) → Boylston (Feb. 23) | ✔ entry written; NB the manuscript shows De La Guerra was only ever draft text — the Feb. 2 version never became law |
 
 ## Open follow-ups
 
