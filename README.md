@@ -33,7 +33,8 @@ then apply it to every street segment it touches — adding it as a source to
 existing segments, splitting segments where its extents demand, and creating
 new (even partial) entries for streets it names. Entries are keyed by the
 street's OSM name without directional prefix (e.g. "Main Street", not "South
-Main Street"). Full guide: ADDING-STREETS.md; map pipeline: TRACT-RESEARCH.md;
+Main Street"). Orientation for AI instances (and a quick map of every doc
+below): CLAUDE.md. Full guide: ADDING-STREETS.md; map pipeline: TRACT-RESEARCH.md;
 Sanborn atlases and city directories: SERIAL-SOURCES.md; end-to-end stage
 specs (and what's still unsolved): PIPELINE.md.
 

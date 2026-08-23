@@ -53,6 +53,11 @@ Don't redirect — point the domain at GitHub so it stays in the address bar:
 
 - git + Dropbox both sync this folder; that's fine day-to-day on one machine,
   but if you ever see odd "conflicted copy" files, resolve in git's favor.
+- **If GitHub Desktop says "Unable to create index.lock: File exists,"** an AI
+  instance ran a git command through the remote-devices bridge and couldn't
+  clean up after it (that shell can't delete files). With Desktop idle,
+  `rm .git/index.lock` in this folder and commit again. Instances are told in
+  CLAUDE.md to use `git --no-optional-locks`, which avoids creating it.
 - OSM's tile server is fine for modest public traffic; if the site takes off,
   switch the tile URL in index.html to a free-tier provider (MapTiler,
   Protomaps) and keep the attribution line.
