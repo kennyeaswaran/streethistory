@@ -25,6 +25,7 @@ JavaScript-only archives, and committing to git.
 | wondering what's automatable and what isn't | **PIPELINE.md** (three stages; stage 2 is the open problem) |
 | holding an unverified hunch | **research-leads.md** (dated parking lot; sweep it before a street pass) |
 | publishing / git | **PUBLISHING.md** |
+| looking at the proposed names/documents/generator model | **MODEL-SPEC.md** (proposed, not built — nothing in it is live) |
 | curious how the data got this shape | migration-2026-07.md (historical; that pass is done) |
 
 Documents already transcribed live in `tracts/transcriptions/` (one recorded
@@ -121,3 +122,8 @@ can type each into the map's search box and eyeball the popup.
 - **Newly available and unexercised:** Sanborn atlases and city directories
   (SERIAL-SOURCES.md), which bracket renamings wholesale rather than one
   subdivision at a time.
+- **A data-model change is specced but not built** (MODEL-SPEC.md): authored
+  name entities + per-document files, with segments *generated* from them
+  rather than hand-maintained. Until its acceptance test passes,
+  `streets-data.js` stays hand-authored exactly as ADDING-STREETS.md
+  describes — a frozen copy for diffing lives in `legacy/`.

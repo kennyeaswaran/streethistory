@@ -1,0 +1,600 @@
+# Spec: names, documents, and the generated segment file
+
+**Status (2026-08): proposed, not built.** Nothing in this file is live. The
+current hand-authored `streets-data.js` remains the working data and the map's
+only source until the generator passes the acceptance test in §11. A frozen
+copy of the hand-authored data sits in `legacy/streets-data-2026-08.js` for
+diffing.
+
+This spec is written to be handed to an implementer cold. Where a rule exists
+because we already got it wrong once, that's noted — those are the parts worth
+reading twice.
+
+---
+
+## 0. The project, for someone seeing it for the first time
+
+**Streetymology** is a map of street-name history. You open it, click a street,
+and a popup tells you what that stretch has been called over time, who or what
+each name honored, and which documents prove it. Coverage so far is Downtown
+Los Angeles: 107 streets, 140 entries.
+
+Three things about it drive every decision below.
+
+**It is keyed to real geometry.** Streets are drawn from OpenStreetMap, so a
+claim always attaches to actual pavement — not to a name in a list.
+
+**The unit of data is the *segment*, not the street.** Los Angeles streets
+were assembled from pieces: 3rd Street's downtown blocks were laid out as
+"Calle 3ª" in 1849, the stretch east of Alameda was "Georgia St" in 1875, and
+the Crown Hill stretch was "Arnold St" in 1894. A single entry saying "3rd
+Street, named for its position in the grid" would be false about most of its
+length. So a street is subdivided wherever stretches have different name
+lineages, and each segment carries only what is documented about *that* ground.
+
+**Every claim carries a linked source, and unknowns stay unknown.** "not yet
+researched" is a legitimate, preferred value. The project would rather show a
+grey street than a confident guess. Most evidence is primary: recorded
+subdivision maps, council ordinances, contemporary newspaper reports, fire
+insurance atlases.
+
+The research process is *document-first*: find a document, transcribe it once,
+then apply it to every street it touches — because one 1886 tract map names six
+streets at once, and re-reading it later is expensive.
+
+Background, if useful: `CLAUDE.md` (orientation and the rules that have been
+broken), `ADDING-STREETS.md` (the current hand-authoring guide this model would
+replace), `README.md` (what the site is).
+
+---
+
+## 1. What this replaces, and why
+
+Today a segment is hand-authored: its bounding cross-streets, its numeric
+band, its name history, its sources. That has four costs the project keeps
+paying:
+
+1. **Segmentation is hand-maintained.** Splits are a documented five-step
+   procedure; `check-data.js` exists largely to police tiling, adjacency and
+   ordering that a generator would get right by construction.
+2. **Entries can out-claim their evidence.** The whole "Segment-review flags"
+   section of research-leads.md is instances of a segment asserting something
+   over more ground than its documents cover.
+3. **One document = many scattered edits.** A tract map touching six streets
+   means six edits; a Sanborn sheet touching forty means forty, which is why
+   large-map sweeps are impractical under the current model.
+4. **Names are matched by string.** `normalizeName()` merges by spelling, so
+   two unrelated "Georgia Street"s collide while one Figueroa moving between
+   roadways looks like two different things.
+
+The model below fixes all four by inverting the direction of authorship: we
+record what documents say, and derive segments from that.
+
+## 2. The layers
+
+| layer | file(s) | authored by | holds |
+|---|---|---|---|
+| **Names** | `names.js` | human | one entry per name *entity*: spellings, namesake, categories |
+| **Documents** | `documents/<doc-id>.js` | human/instance, one file per document | what a document attests: which name covered which extent, when |
+| **Generated** | `streets-data.js`, `generated/*` | the generator | segments, timelines, search index, reports |
+
+Rule of thumb for where something belongs: if it's a fact about *a name*, it's
+in names; if a document *testifies* to it, it's in documents; if it can be
+computed from those two, it is never authored anywhere.
+
+## 3. Name identity
+
+**A name entity is a naming lineage, not a string.** Two occurrences are the
+same entity iff connected by a chain of propagation — origin, extension,
+renaming, transfer. Consequences:
+
+- The two Georgias are **different entities** with the same spelling: one
+  honors Georgia Bell, the other (probably) the state. No edge connects them.
+- Figueroa is **one entity** across three roadways: originating on the
+  west-side street c. 1853–57, extended north, transferred onto former Pearl
+  in 1897.
+- 3rd Street is **one entity** across the downtown grid; a separate numbered
+  grid elsewhere in the city would be a *different* entity that spells alike.
+
+**Default when uncertain: separate entities.** If a map shows a name and a
+nearby street carried a similar or identical spelling on an earlier map, enter
+it as a new entity unless the spelling *and* the extent match. Merge later if
+the evidence arrives. This asymmetry is deliberate:
+
+- merging is cheap — fold B into A, keep B's id as an **alias** so every
+  document row citing B still resolves;
+- splitting a wrongly-merged entity is expensive — every row must be
+  reassigned by hand;
+- and the error costs differ in kind: a spurious duplicate is clutter, while
+  a wrong merge *fabricates a transfer that never happened* and draws it on
+  the map.
+
+Record a suspicion with `possiblySameAs` rather than acting on it.
+
+### `names.js` schema
+
+```js
+"figueroa-gov": {
+  spellings: [                      // chronological; last = display name
+    { forms: ["Figueroa Street"] }  // normalized; NOT a document's abbreviation
+  ],
+  namedAfter: "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835",
+  namedAfterLink: "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
+  categories: ["person", "governor"],
+  sources: [                        // what justifies the ORIGIN claim; more than
+                                    // one when the question is contested, and our
+                                    // own reasoning is allowed if labelled as such
+    { title: "L.A. Street Names: Figueroa Street",
+      url: "https://lastreetnames.com/street/figueroa-street/" }
+  ],
+  disputed: false,                  // with the "disputed" category, as today
+  note: null,                       // about the NAMING CLAIM only — historiography,
+                                    // contested attributions, negative results
+  possiblySameAs: null,
+  aliases: []                       // ids merged into this one; never reused
+},
+
+"georgia-bell": {
+  spellings: [                      // ORDERED; dates are derived, not authored
+    { forms: ["Georgia Street"], disambiguation: "west downtown" },
+    { forms: ["Georgia Bell Street"] },
+    { forms: ["Georgia Street"], disambiguation: "west downtown" }
+  ],
+  namedAfter: "{{Georgia Herrick Bell}} (1845–1899), wife of Major Horace Bell",
+  ...
+}
+```
+
+**Spelling periods are ordered, not dated.** When each form was in force is
+derived from the rows that attest it, by the same interval logic as everything
+else (§6.2) — so the three entries above resolve to Georgia until 1889,
+Georgia Bell 1889–1897, Georgia after. Authoring dates here would duplicate
+the documents and go stale against them.
+
+The exception is a form attested only in **prose** — Kines saying a street
+"was Georgia Bell Street from 1889" with no document transcribed — where there
+are no rows to derive from. Such a spelling may carry an explicit `from` /
+`until` and must carry its own source. Expect these to be rare: a name usually
+gets *replaced* rather than *respelled*, so most entities have exactly one
+spelling period and this whole mechanism sits idle.
+
+⚠ The example above presupposes an answer to a question §12 leaves open —
+whether Georgia reverting in 1897 resumes the old entity or starts a new one.
+Written this way it assumes resumption. It is a good illustration of where
+that decision bites, and should not be read as the decision having been made.
+
+### Two spellings at once, and two renderings of one spelling
+
+These look alike and are not:
+
+- **Concurrent forms** — `forms` is a list because a name can genuinely carry
+  two at the same time. The Ord survey labels streets in both languages:
+  Avispa *and* Wasp, both current, neither a rename. One entity, one spelling
+  period, two forms; the first is the display form.
+- **Renderings of one form** — "Third St" / "3rd St", "Avenue Twenty" /
+  "Avenue 20", "Santee St" / "Santee Street". These are *not* authored. Store
+  the canonical form once; the generator expands renderings when it builds the
+  search index (§6.5). A scribal variant is a matching problem, not a
+  historical fact.
+
+**The test for which bucket something goes in: can the rule be written as a
+closed table?** Ordinal words against numerals, and street-type abbreviations,
+both can — they are finite, known lists, and the generator owns them. Anything
+that can't is authored as an additional form. That excludes middle initials:
+"Cesar Chavez" / "Cesar E Chavez" is not a rendering rule so much as two names
+people actually use, so it goes in `forms` rather than into the generator,
+where a general drop-a-single-letter-token rule would be guessing.
+
+**No canonical display name field.** Display = the last spelling in the list.
+This works universally because OSM is a document (§4.1), so every living name
+has a present-day sighting; a dead name displays as it was called when it
+died, which is correct ("Pearl Street", not "Figueroa Street").
+
+**`disambiguation` is per-spelling, not per-name.** Only some spellings of a
+name collide — "Georgia" needs one, "Georgia Bell" doesn't. Optional: the
+generator derives one when absent (§6.5).
+
+**No lineage edges are authored.** Propagation is derived from document rows
+(§6.3). The one exception is a mechanism a document *states in words* — the
+1897 ordinance's "being a continuation of that thoroughfare" — which belongs
+on the document's change row, since the document is what attests it.
+
+## 4. Documents
+
+One file per document, `documents/<doc-id>.js`. The prose transcription (Part
+A — verbatim labels, title block, caveats) stays where it is, in
+`tracts/transcriptions/` or `omnibus-*.md`; this file is the machine-readable
+Part B, and the two cross-reference by id.
+
+```js
+{
+  id: "mr003-060",
+  title: "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract",
+  url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf",
+  transcription: "tracts/transcriptions/MR003-060.md",
+
+  date: { on: "1875-05-19" },        // or { after: "1906", before: "1950-06" }
+                                     // for a Sanborn sheet with an undated paste-on
+  type: "tract-map",                 // tract-map | survey | sanborn | directory
+                                     // | ordinance | osm | annotation
+  attests: "planned-on",             // planned-on | planned-by
+                                     // built-on   | built-by     — see §4.2
+  completeness: "incidental",        // incidental | exhaustive-in-scope — see §4.3
+  coverage: [[34.045, -118.238], [34.052, -118.236],             // polygon; §4.4
+             [34.051, -118.230], [34.044, -118.232]],
+  sweptFully: true,                  // OUR reading, not the document's claim;
+                                     // gates negative inference — see §4.5
+  sweptFor: null,                    // when sweptFully is false: streets done so far
+  readBy: "instance",                // human | instance | instance+alignment
+
+  rows: [ ... ]                      // §5
+}
+```
+
+### 4.1 OSM is a document
+
+The current OSM extract is document `osm`, dated to the extraction, `type:
+"osm"`, `attests: "built-by"`, coverage = the union of NEIGHBORHOODS
+boundaries, with one `state` row per named way. It is the newest sighting of
+every living name, which is what makes "display = latest spelling" work and
+what makes the grey base map fall out: a segment whose *only* sighting is
+`osm` is one nobody has researched. It is tertiary, so it must not count
+toward the primary-anchor metric.
+
+**Its rows bind to entities automatically — nothing is attached by hand.** OSM
+gives spellings, not ids, so the generator resolves them:
+
+1. **Unique match** — the normalized OSM name matches the latest form of
+   exactly one entity: bind it.
+2. **No match** — mint a **stub entity**: the OSM name as its only spelling,
+   `namedAfter: null`, category `unresearched`, no sources. This is how new
+   coverage bootstraps. Add a neighborhood, and its couple of hundred street
+   names arrive as stubs that render grey immediately and are ready to receive
+   research, with no hand-entry step at all.
+3. **Several matches** — two live entities sharing a current form (two
+   surviving "Georgia Street"s would do it): disambiguate by geometry, binding
+   to whichever entity's known extents overlap the way. If that is still
+   ambiguous, bind nothing and report it; a wrong bind fabricates history,
+   and this is exactly the collision the model exists to keep honest.
+
+Stubs must be distinguishable from curated entities so a human can see what
+has actually been researched — no sources and no `namedAfter` is sufficient,
+and the generated report should count them.
+
+### 4.2 `attests` — what kind of existence, and how tightly dated
+
+Four values, crossing *what* is attested with *how* the date binds:
+
+| value | meaning | default for |
+|---|---|---|
+| `planned-on` | the document **is** the planning act — this is the date | recorded tract maps, for streets the tract itself dedicates |
+| `planned-by` | planned no later than this | a survey or map that merely shows an existing street |
+| `built-on` | built on this date (rare; needs an opening/acceptance record) | — |
+| `built-by` | physically existed no later than this | Sanborn, city directories, OSM |
+
+Ink on paper proves intent, not pavement — Hope Street is on the 1849 survey
+and was not built for two decades. Sanborn is the converse: it surveyed
+physical structures for fire underwriters, so it had no reason to draw what
+wasn't there.
+
+**A row may override its document's default, and often must.** Recording a
+subdivision map dedicates the streets it creates — `planned-on` — but the same
+sheet also draws streets that already existed and merely abut the tract, which
+are only `planned-by`. TRACT-RESEARCH.md documents this trap already: "a street
+may predate the tract fronting it." Sanborn likewise sometimes draws proposed
+or unopened streets.
+
+### 4.3 `completeness` — what its silence proves
+
+- **incidental** — the document mentions what it happens to cover. Its silence
+  about a street proves little.
+- **exhaustive-in-scope** — the document purports to list *every* instance of
+  its subject. Ordinance 4093 claims to list all 326 renamings, so a street
+  it doesn't name **was not renamed on that date** — a strong negative, and
+  the point of recording it. Scope matters: exhaustive within the city limits
+  of the day, over streets the council had jurisdiction over, and only for
+  the change it legislates.
+
+### 4.4 `coverage` — the footprint it testifies about
+
+**A polygon** — `[[lat, lng], …]` — not a bounding box. Sheets are rotated,
+tracts are irregular, and a bbox would silently claim testimony over ground
+the document never showed. A rectangle is just a four-point polygon.
+
+Where it comes from: for any georeferenced sheet, the polygon is the scan's
+corners (or its drawn tract boundary) pushed through the alignment transform,
+so `georef.py` can emit it as a by-product of work already being done. For an
+ordinance, coverage is the city limits of the day — which is also the honest
+scope limit on its completeness (§4.3).
+
+Required, and load-bearing: without it, "no street drawn here" is
+indistinguishable from "we never looked at this part of the sheet," and the
+"latest document showing the segment did **not** yet exist" color scheme (§8)
+is unimplementable.
+
+### 4.5 Two different completenesses, and the half-entered sheet
+
+`completeness` and `sweptFully` are easy to confuse and must not be:
+
+- **`completeness`** is a property of the *document* — does it claim to list
+  everything in its scope? Ordinance 4093 does; a tract map doesn't. It never
+  changes.
+- **`sweptFully`** is a property of *our work* — have we entered every street
+  on it yet? It starts `false` and becomes `true` when the reading is done.
+
+A big Sanborn sheet won't be entered in one sitting, and the danger is
+specific: if coverage claims the whole sheet while half the rows are missing,
+the generator will read the gap as *negative evidence* — "no street here in
+1894" — and quietly publish a false claim.
+
+So: **leave `coverage` as the sheet's true footprint** (it's a fact about the
+document, and georef emits it once), and **gate all negative inference on
+`sweptFully: true`.** A partly-entered document contributes its positive rows
+normally and contributes no silence at all. Record what has been done with
+`sweptFor: ["3rd Street", "Willow Street", …]` so partial work is visible and
+resumable, and so a later session knows where it stopped.
+
+## 5. Rows
+
+Three kinds. Every row's extent is stated in **modern** cross-street names —
+identification has already happened, and the plat's own wording lives in Part
+A. The document's own text for the name goes in `asWritten`.
+
+```js
+// STATE — this extent bore this name at this date. The workhorse.
+{ kind: "state", name: "georgia-east", asWritten: "Georgia St",
+  street: "3rd Street", from: "Alameda Street", to: "Santa Fe Avenue",
+  basis: "alignment" },          // lot-level | label | alignment | position
+
+// CHANGE — this extent went from one name to another on this date.
+// Only a document that attests the transition itself (ordinance, council
+// minutes, dated newspaper report) may carry these.
+{ kind: "change", from: "vine-central", to: "central-ave",
+  street: "Central Avenue", fromCross: "1st Street", toCross: "2nd Street",
+  mechanism: "renaming" },       // optional; only when the document SAYS so
+
+// ANNOTATION — a place fact tied to an extent, not to a name.
+{ kind: "annotation", street: "Wall Street", from: "7th Street", to: "8th Street",
+  text: "Site of the Southern California Flower Market (1912)",
+  url: "..." }                   // annotations MUST carry their own source
+```
+
+**On annotations.** Streetscape history was deliberately cut from the data
+(2026-08): most of it was borrowed from lastreetnames.com, which the name
+history links anyway, and duplicating it is both redundant and a permissions
+problem (see README's pre-launch note). Anything worth keeping re-enters as an
+annotation row with its own citation — which makes borrowed material visible
+as borrowed rather than a policy anyone has to remember.
+
+**`basis`** carries the existing vocabulary, strongest to weakest: lot-level
+match, label match, alignment, position. Anything below lot-level surfaces in
+the generated source title, as it does today ("identified by map alignment").
+
+### 5.1 `asWritten` is not a spelling
+
+`asWritten` is verbatim: what the ink says, typos included. Directories
+misprint names, plats abbreviate inconsistently, and many labels omit the
+street type entirely. The name's `spellings` list, by contrast, holds forms we
+*assert* the name actually took.
+
+So the rule is: **`asWritten` is never automatically promoted into a name's
+spelling list.** Adding a spelling is a human judgement that a form was real
+rather than a scribal error. A row whose `asWritten` matches no known form is
+perfectly normal and is not an error — though the generator should report the
+distinct unmatched strings, since a form recurring across independent
+documents is probably a real spelling nobody has recorded yet.
+
+## 6. Generation
+
+### 6.1 Segments
+
+Segments are the **maximal stretches of a street whose name-timeline is
+constant.** Take every row touching a street, project its extent onto the
+street's geometry, cut at every extent boundary, then **merge adjacent
+intervals whose timelines are identical.**
+
+The merge step is not optional. Documents end mid-block, so raw boundaries
+proliferate; without merging you get twenty segments where there are three.
+
+### 6.2 Timelines and the constancy rule
+
+Within a segment, a name's period runs from its earliest sighting to its
+latest, **and the gap between two sightings of the same name is filled** — if
+a name is attested in 1875 and again in 1888 with nothing contradicting it
+between, the segment simply bore that name 1875–1888. Viewers see a gap only
+where two *different* names meet without a change row pinning the transition.
+
+A `change` row pins a transition to a date and overrides the inferred bracket.
+
+### 6.3 `how`, derived
+
+- entity appears where it had no prior presence → **origin**
+- entity's extent grows contiguously → **extension**
+- entity arrives on an extent another entity simultaneously vacated →
+  **renaming**
+- …and the arriving entity also vacated a *different* roadway in the same
+  window → **transfer** (the Figueroa 1897 signature)
+
+Derive only where the rows support it; otherwise leave `how` absent. Never
+guess — evidence density varies, and a renaming looks like a transfer when
+you simply haven't recorded where the name came from.
+
+### 6.4 `planned` / `built`
+
+Computed independently from the four `attests` values (§4.2):
+
+- **planned** — the earliest `planned-on` if any exists (an exact date), else
+  the earliest `planned-by` (rendered "by 1875").
+- **built** — the earliest `built-on` if any, else the earliest `built-by`.
+- **Inference:** if a street was planned *on* a date and is already attested
+  built *by* that same date, it was built on it — collapse to an exact date.
+
+Hope Street's two decades between paper and pavement stop being a hand-written
+caveat and become the visible distance between two derived dates.
+
+### 6.5 Search index and derived disambiguation
+
+The generator emits a prebuilt index — one row per (form, name entity) with
+the label **already resolved** — so the browser holds no rule logic.
+
+**Expand renderings when building the index**, per §3: numerals both ways
+("Third"/"3rd", "Avenue Twenty"/"Avenue 20"), street-type abbreviations, and
+optional middle initials ("Cesar Chavez"/"Cesar E Chavez"). Most type
+abbreviations are literal prefixes of the full word, so "Santee St" already
+matches "Santee Street" without help; the table strictly needs only the ones
+that aren't — `Ct`/Court, `Blvd`/Boulevard — but carrying the full table costs
+nothing and is more robust.
+
+**Match on any token, not just the whole string.** Typing "20" should reach
+"Avenue 20", where the type word is a prefix rather than a suffix, and
+"Chavez" should reach "Cesar Chavez".
+
+Labels: a form unique to one entity displays alone. A form shared by several
+displays with a disambiguator — the authored one if present, otherwise
+derived: locality (neighborhood, or bounding cross-streets within one), plus,
+for a form no longer current, the date range and successor.
+
+- `Georgia Street (west downtown)`
+- `Georgia Street (by 1875–1897; now 3rd Street, Alameda to Santa Fe)`
+
+**Derive locality, don't author it, in the normal case.** The namesake is the
+*worst* discriminator for the collisions that actually occur — where entities
+differ is where they are and what became of them. (Beware the tempting
+counter-example: 9th Street surviving on Olympic *and* on James M. Wood is
+**one** entity that lost two stretches to two renamings, not two entities. It
+needs no disambiguation at all.)
+
+Every derived-without-authored disambiguation is listed in a generated report
+so a human can consider writing a better one ("west downtown" beats "James M.
+Wood to Chick Hearn"). Generated reports live under `generated/` with a header
+saying they are overwritten every build.
+
+### 6.6 Output requirements
+
+Generated `streets-data.js` keeps today's consumable shape — the map, the
+checker and the report scripts read it unchanged — plus: each segment's
+name-periods carry **both the form in force and the entity id**, so
+spelling-set matching and entity queries work without loading the document
+corpus.
+
+**Carry every link through.** A generated segment's sources come from the
+document registry (title, url, date) joined with the name's own origin
+citations and `namedAfterLink`; nothing is retyped. This is worth stating
+because the hand-authored file currently repeats itself badly: 329 source rows
+across 140 entries resolve to just 148 distinct URLs — the Ord survey is
+re-described by hand 31 times, the Wolfskill Orchard Tract map 8 — and the
+generator's job is to make each document described once and cited everywhere.
+
+## 7. What the generator does not own
+
+`namedAfter`, `namedAfterLink`, `categories`, notes about a naming claim,
+annotations, and every authored disambiguation. It computes structure; it
+never invents meaning.
+
+## 8. Map requirements (on generated output)
+
+Color schemes, one active at a time, with the legend reflecting the active one:
+
+1. **Default** — grey if the segment has no sighting but `osm`; blue if it has
+   research behind it.
+2. **Name category** — single-select (radio, not checkboxes), normally folded
+   under a caret. "Origin unknown" is a category here rather than its own base
+   color; the current violet base color retires.
+3. **Age: earliest document showing the segment existed.**
+4. **Age: latest document showing it did not yet exist** — requires §4.4
+   coverage extents. These two converge as research completes; the *gap*
+   between them is a natural later view, since it maps how well-pinned each
+   segment is.
+
+Search: typing matches against **all recorded forms**, historical included, so
+"Zarago" finds the entity however a document spelled it. Matching segments
+color three ways — currently bearing a matched form, formerly bearing one,
+neither — and searching replaces the active scheme while typing, restoring it
+when cleared.
+
+**Selecting anything fits the map to it.** Picking an entity from the dropdown
+or following a cross-link zooms and pans to the bounds of the highlighted
+segments, with padding. Without this the feature is actively confusing:
+highlights land off-screen with no indication of which way to scroll. Note
+that a transferred name can highlight two widely separated places at once
+(Figueroa's donor and receiving roadways), so fitting to the union may zoom
+out further than expected — if that proves annoying in practice, the fix is a
+match count with next/previous stepping, not abandoning the fit.
+
+**Cross-links are saved searches.** Clicking `[[name:<id>]]` in a popup does
+exactly what typing that form and picking that entity from the dropdown does:
+returns to the base map with the search active, the three-color highlight
+applied, and the view fitted. That keeps one mechanism rather than inventing a second navigation
+path — but it must select the *entity*, not merely fill the text box, since
+typing "Georgia" matches two entities and the link means one of them. The
+dropdown therefore lists streets alongside names, so `[[street:<key>]]`
+(highlight that roadway's segments) is the same gesture. Links never target a
+generated segment id, which is not stable across builds.
+
+## 9. Validation
+
+The checker gains: every row's name id exists (or resolves through an alias);
+every street and cross-street exists in geometry; extents parse and lie on the
+named street; `change` rows only on documents that attest transitions;
+annotations carry a source; and **an ambiguity the generator cannot resolve
+into distinct labels is an error** — which will fire retroactively on an old
+entry the day new coverage introduces a collision. That is intended.
+
+## 10. Build
+
+Generate into `streets-data.js` and commit it, during migration: the git diff
+is the safety net, showing exactly where generated segmentation differs from
+what was hand-built. CI regenerates and fails if the committed artifact
+differs, or it will silently go stale. The file gets a do-not-edit header and
+a checker rule to match. Once generated segmentation stops being surprising,
+the artifact can move to build-time-only.
+
+**The switchover is a big bang, deliberately.** The generator does not merge
+with, or fall back to, hand-authored entries: on the day it lands, every
+street is generated. Two reasons. A passthrough path doubles the model
+surface — two kinds of entry, two code paths, two things to check — and this
+repo has evidence that partial migrations linger: the 2026-07 note saying
+"migrate the remaining band-only segments as each gets touched, no big-bang
+rewrite needed" is still outstanding. And the safety net is already in place:
+`legacy/streets-data-2026-08.js` plus git history.
+
+Big bang applies to the *switchover*, not the validation — see §11.
+
+## 11. Acceptance test
+
+**Regenerate 3rd Street and diff against `legacy/streets-data-2026-08.js`.**
+It is the exemplar — seven segments, extents already reasoned out from the
+Thomas, Wolfskill and Washington tract maps, including the Georgia St stretch
+and the Arnold St stretch whose identification came from map alignment. If the
+generator reproduces that segmentation and those timelines, the model works.
+If it emits nine segments, or loses the Georgia stretch, the model is wrong
+and we have learned it cheaply.
+
+Validation is incremental even though the switchover isn't (§10). Prove the
+model on 3rd Street first and iterate there, where a wrong answer is cheap;
+then encode the rest of the corpus; then, before the switch, **diff the full
+generated output against `legacy/` street by street and account for every
+difference** — each one is either a demonstrable improvement (a claim the old
+entry over-stated, a segment boundary the evidence actually supports) or a
+bug. Unexplained differences block the switch.
+
+First documents to encode, in order:
+
+1. **`mr003-060`** — Thomas Tract (1875), already transcribed; touches 3rd,
+   2nd, Garey and Hewitt.
+2. **`ord-4093`** — the 1897 ordinance's in-coverage rows, all `change` kind,
+   `completeness: "exhaustive-in-scope"`. This is where the deferred 1897
+   apply pass goes, rather than into hand-edits we would throw away.
+3. The name entities those two touch — a handful, including both Georgias and
+   the Figueroa lineage.
+
+## 12. Deliberately deferred
+
+- Restructuring nameHistory dates from strings into `{ earliest, latest }`.
+  The derived model wants it; it is a migration across every entry and should
+  wait until the generator has proven itself.
+- Rendering derived brackets as prose in popups.
+- The bracket-width ("how well pinned") color scheme.
+- Whether a revived name resumes its old entity or begins a new one — Georgia
+  in 1897 revives a pre-1889 name on the same street. The model can express
+  either; the call hasn't been made.
