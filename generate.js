@@ -1,0 +1,864 @@
+// generate.js — derives streets-data from names.js + documents/ (MODEL-SPEC §6).
+// Run: node generate.js
+// Writes: generated/streets-data.gen.js, generated/search-index.js, generated/report.md
+//
+// The authored layers hold what documents SAY (documents/) and facts about
+// names (names.js); everything here is computed and never authored:
+// segmentation, timelines, `how`, planned/built, labels, bands, the search
+// index. During migration the output goes to generated/ and the live
+// hand-authored streets-data.js is untouched (MODEL-SPEC §0, §11).
+
+const fs = require("fs");
+const path = require("path");
+const { NAME_ENTITIES } = require("./names.js");
+const { DOCUMENTS } = require("./documents/index.js");
+
+const OUT_DIR = path.join(__dirname, "generated");
+
+// ---------------------------------------------------------------------------
+// Config carried into the generated file (authored here for now; NEIGHBORHOODS
+// and CATEGORIES may move to their own authored file later).
+const srcData = fs.readFileSync(path.join(__dirname, "streets-data.js"), "utf8");
+const { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS } =
+  new Function(srcData + "; return { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS };")();
+const GEN_CATEGORIES = CATEGORIES.some(c => c.id === "unresearched") ? CATEGORIES
+  : CATEGORIES.concat([{ id: "unresearched", label: "Not yet researched" }]);
+
+// ---------------------------------------------------------------------------
+// Dates. Partial ISO strings: "1875", "1894-03", "1875-05-19".
+function dkey(d) { // sortable; missing parts sort early for starts — callers pad
+  return (d + "-01-01").slice(0, 10);
+}
+function dyear(d) { return d.slice(0, 4); }
+const MONTHS = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+function dfmtFull(d) { // "May 19, 1875" / "Mar. 1894" / "1875"
+  const [y, m, day] = d.split("-");
+  if (day) return `${MONTHS[+m - 1]} ${+day}, ${y}`;
+  if (m) return `${MONTHS[+m - 1]} ${y}`;
+  return y;
+}
+function dfmtMonth(d) { // "Feb. 1897" / "1897"
+  const [y, m] = d.split("-");
+  return m ? `${MONTHS[+m - 1]} ${y}` : y;
+}
+function docDate(doc) { // representative date for ordering/brackets
+  return doc.date.on || doc.date.before || doc.date.after;
+}
+
+// ---------------------------------------------------------------------------
+// Geometry: group ways by normalized street name; scalar projection.
+const normalizeName = n => n.replace(/^(North|South|East|West|N\.?|S\.?|E\.?|W\.?)\s+/i, "");
+const geomSrc = fs.readFileSync(path.join(__dirname, "streets-geometry.js"), "utf8");
+const GEOM = new Function(geomSrc + "; return STREET_GEOMETRY;")();
+const geom = GEOM.data || GEOM;
+
+// Names where the leading token is NOT a directional prefix but part of the
+// name itself, so the shared normalizeName convention (and the checker's
+// key rule, and the map's click lookup) all misparse them. Excluded from
+// generation and reported; resolving them properly is an entity-model
+// question for the map/checker migration.
+const EXCLUDE_NAMES = new Set([
+  "East West Bank Plaza at The Broad"   // a plaza named for East West Bank
+]);
+
+const streets = new Map(); // name -> { ways:[], points:[], orientation, axis }
+for (const w of geom.elements) {
+  if (!w.geometry || !w.tags || !w.tags.name) continue;
+  if (EXCLUDE_NAMES.has(w.tags.name)) continue;
+  const n = normalizeName(w.tags.name);
+  if (!streets.has(n)) streets.set(n, { ways: [], points: [] });
+  const s = streets.get(n);
+  s.ways.push(w);
+  s.points.push(...w.geometry);
+}
+for (const [n, s] of streets) {
+  const lats = s.points.map(p => p.lat), lons = s.points.map(p => p.lon);
+  const dLat = (Math.max(...lats) - Math.min(...lats)) * 111;
+  const dLon = (Math.max(...lons) - Math.min(...lons)) * 92.5;
+  s.orientation = dLat >= dLon ? "NS" : "EW";
+  s.axis = s.orientation === "NS" ? "lat" : "lon";
+  s.min = s.axis === "lat" ? Math.min(...lats) : Math.min(...lons);
+  s.max = s.axis === "lat" ? Math.max(...lats) : Math.max(...lons);
+}
+function scalarOf(street, p) { return street.axis === "lat" ? p.lat : p.lon; }
+
+// Intersection scalar of two streets (same math as intersect.js).
+const xCache = new Map();
+function crossScalar(streetName, crossName) {
+  const key = streetName + "|" + crossName;
+  if (xCache.has(key)) return xCache.get(key);
+  const a = streets.get(streetName), b = streets.get(crossName);
+  if (!a || !b) { xCache.set(key, null); return null; }
+  let best = { d: Infinity };
+  for (const p of a.points) for (const q of b.points) {
+    const d = Math.hypot(p.lat - q.lat, (p.lon - q.lon) * 0.83);
+    if (d < best.d) best = { d, lat: (p.lat + q.lat) / 2, lon: (p.lon + q.lon) / 2 };
+  }
+  const res = best.d < 0.0015 // ~165 m sanity bound
+    ? { scalar: a.axis === "lat" ? best.lat : best.lon, m: Math.round(best.d * 111000) }
+    : null;
+  xCache.set(key, res);
+  return res;
+}
+
+// Pavement coverage along the axis: union of way intervals; gaps beyond
+// GAP_M meters are physical discontinuities (rail yards, river).
+const GAP_DEG = 120 / 111000 / 0.9; // ~120 m in axis degrees (rough)
+function pavement(street) {
+  const ivs = street.ways.map(w => {
+    const ss = w.geometry.map(p => scalarOf(street, p));
+    return [Math.min(...ss), Math.max(...ss)];
+  }).sort((x, y) => x[0] - y[0]);
+  const merged = [];
+  for (const [a, b] of ivs) {
+    const last = merged[merged.length - 1];
+    if (last && a <= last[1] + GAP_DEG) last[1] = Math.max(last[1], b);
+    else merged.push([a, b]);
+  }
+  return merged;
+}
+
+// ---------------------------------------------------------------------------
+// Names: canonical forms, rendering expansion, matching.
+const ORDINALS = [["1st", "First"], ["2nd", "Second"], ["3rd", "Third"], ["4th", "Fourth"],
+  ["5th", "Fifth"], ["6th", "Sixth"], ["7th", "Seventh"], ["8th", "Eighth"], ["9th", "Ninth"],
+  ["10th", "Tenth"], ["11th", "Eleventh"], ["12th", "Twelfth"], ["14th", "Fourteenth"],
+  ["15th", "Fifteenth"], ["16th", "Sixteenth"], ["17th", "Seventeenth"], ["18th", "Eighteenth"],
+  ["20th", "Twentieth"], ["21st", "Twenty-first"], ["23rd", "Twenty-third"]];
+const NUMWORDS = [["1", "One"], ["18", "Eighteen"], ["19", "Nineteen"], ["20", "Twenty"],
+  ["21", "Twenty-one"], ["22", "Twenty-two"], ["26", "Twenty-six"], ["33", "Thirty-three"],
+  ["43", "Forty-three"], ["50", "Fifty"], ["52", "Fifty-two"], ["57", "Fifty-seven"],
+  ["61", "Sixty-one"], ["64", "Sixty-four"], ["66", "Sixty-six"]];
+const TYPE_ABBR = { "St": "Street", "Ave": "Avenue", "Av": "Avenue", "Blvd": "Boulevard",
+  "Ct": "Court", "Dr": "Drive", "Pl": "Place", "Rd": "Road", "Ln": "Lane", "Wy": "Way",
+  "Hwy": "Highway", "Ter": "Terrace", "Terr": "Terrace" };
+
+// Canonical token form: expand type abbreviations, numerals for ordinals.
+function canonTokens(name) {
+  return name.replace(/[.,]/g, "").split(/\s+/).map(t => {
+    if (TYPE_ABBR[t]) return TYPE_ABBR[t].toLowerCase();
+    for (const [num, word] of ORDINALS) if (t.toLowerCase() === word.toLowerCase()) return num;
+    for (const [num, word] of NUMWORDS) if (t.toLowerCase() === word.toLowerCase()) return num;
+    return t.toLowerCase();
+  });
+}
+function canon(name) { return canonTokens(name).join(" "); }
+
+// Does a document's verbatim string match a form? (§5.1: matching only —
+// asWritten is never promoted to a spelling.) Type word may be absent.
+function formMatches(asWritten, form) {
+  const a = canon(normalizeName(asWritten)), f = canon(form);
+  if (a === f) return true;
+  const ftoks = canonTokens(form);
+  const last = ftoks[ftoks.length - 1];
+  if (["street", "avenue", "boulevard", "court", "drive", "place", "road", "lane", "way"].includes(last)) {
+    if (a === ftoks.slice(0, -1).join(" ")) return true; // "Garey" ~ "Garey Street"
+  }
+  return false;
+}
+
+const entities = {}; // id -> normalized entity record
+const aliasOf = {};
+for (const [id, e] of Object.entries(NAME_ENTITIES)) {
+  entities[id] = e;
+  for (const a of e.aliases || []) aliasOf[a] = id;
+}
+function resolveEntity(id) { return entities[id] ? id : aliasOf[id]; }
+function displayForm(e) { const sp = e.spellings[e.spellings.length - 1]; return sp.forms[0]; }
+
+// ---------------------------------------------------------------------------
+// OSM binding (§4.1): resolve each OSM street name to an entity, minting
+// stubs for new coverage. Reports ambiguities instead of guessing.
+const report = { stubs: [], ambiguous: [], unmatchedAsWritten: new Map(),
+                 derivedDisambig: [], partialDocs: [], notes: [] };
+const osmDoc = DOCUMENTS.find(d => d.type === "osm");
+const nonOsmDocs = DOCUMENTS.filter(d => d.type !== "osm");
+
+function entityHasRowsOnStreet(id, streetName) {
+  for (const doc of nonOsmDocs) for (const r of doc.rows) {
+    if (r.kind === "annotation") continue;
+    const ids = r.kind === "change" ? [r.from, r.to] : [r.name];
+    if (ids.map(resolveEntity).includes(id) && r.street === streetName) return true;
+  }
+  return false;
+}
+
+const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const osmBinding = new Map(); // street name -> entity id
+for (const streetName of streets.keys()) {
+  const matches = Object.entries(entities)
+    .filter(([, e]) => formMatches(streetName, displayForm(e)))
+    .map(([id]) => id);
+  if (matches.length === 1) { osmBinding.set(streetName, matches[0]); continue; }
+  if (matches.length > 1) {
+    // Disambiguate by geometry: the entity whose known (documented) extents
+    // lie on this street. A wrong bind fabricates history — report instead
+    // of guessing when this fails.
+    const onStreet = matches.filter(id => entityHasRowsOnStreet(id, streetName));
+    if (onStreet.length === 1) { osmBinding.set(streetName, onStreet[0]); continue; }
+    report.ambiguous.push(`OSM "${streetName}" matches entities ${matches.join(", ")} — not bound`);
+    continue;
+  }
+  // No match: mint a stub (this is how new coverage bootstraps).
+  let id = slug(streetName);
+  if (entities[id]) id += "-osm";
+  entities[id] = {
+    spellings: [{ forms: [streetName] }],
+    namedAfter: null, namedAfterLink: null,
+    categories: ["unresearched"], sources: [],
+    disputed: false, note: null, possiblySameAs: null, aliases: [],
+    stub: true
+  };
+  osmBinding.set(streetName, id);
+  report.stubs.push(id);
+}
+
+// ---------------------------------------------------------------------------
+// Collect rows per street. Each becomes {kind, entity, interval [a,b],
+// fromCross, toCross, doc, attests, basis, asWritten, ...}.
+function rowAttests(row, doc) { return row.attests || doc.attests; }
+
+const perStreet = new Map(); // street -> rows[]
+function addRow(streetName, rec) {
+  if (!perStreet.has(streetName)) perStreet.set(streetName, []);
+  perStreet.get(streetName).push(rec);
+}
+const problems = [];
+
+for (const doc of nonOsmDocs) {
+  if (doc.sweptFully === false) report.partialDocs.push(`${doc.id}: sweptFor = ${JSON.stringify(doc.sweptFor)}`);
+  for (const row of doc.rows) {
+    const street = streets.get(row.street);
+    if (!street) { problems.push(`${doc.id}: street not in geometry: ${row.street}`); continue; }
+    const ends = [row.kind === "change" ? row.fromCross : row.from,
+                  row.kind === "change" ? row.toCross : row.to];
+    // Row from/to follow canonical order (as segment from/to do): N→S for NS
+    // streets, W→E for EW. A null end means the street's end on that side.
+    const isNS = street.orientation === "NS";
+    const iv = ends.map((c, i) => {
+      if (c === null || c === undefined) {
+        const fromSide = i === 0;
+        return isNS ? (fromSide ? street.max : street.min)
+                    : (fromSide ? street.min : street.max);
+      }
+      const x = crossScalar(row.street, c);
+      if (!x) { problems.push(`${doc.id}: cross-street not on ${row.street}: ${c}`); return null; }
+      return x.scalar;
+    });
+    if (iv.includes(null)) continue;
+    const [a, b] = [Math.min(iv[0], iv[1]), Math.max(iv[0], iv[1])];
+    const base = { doc, a, b, crossA: iv[0] <= iv[1] ? ends[0] : ends[1],
+                   crossB: iv[0] <= iv[1] ? ends[1] : ends[0], basis: row.basis || null };
+    if (row.kind === "state") {
+      const ent = resolveEntity(row.name);
+      if (!ent) { problems.push(`${doc.id}: unknown entity ${row.name}`); continue; }
+      addRow(row.street, { ...base, kind: "state", entity: ent, asWritten: row.asWritten,
+                           attests: rowAttests(row, doc) });
+      // §5.1 report: recurring unmatched forms are probably real spellings.
+      const e = entities[ent];
+      if (!e.spellings.some(sp => sp.forms.some(f => formMatches(row.asWritten, f)))) {
+        const k = `${ent}: "${row.asWritten}"`;
+        report.unmatchedAsWritten.set(k, (report.unmatchedAsWritten.get(k) || 0) + 1);
+      }
+    } else if (row.kind === "change") {
+      const from = resolveEntity(row.from), to = resolveEntity(row.to);
+      if (!from || !to) { problems.push(`${doc.id}: unknown entity in change row`); continue; }
+      addRow(row.street, { ...base, kind: "change", from, to, toForm: row.toForm || null,
+                           mechanism: row.mechanism || null, date: docDate(doc) });
+    } else if (row.kind === "annotation") {
+      addRow(row.street, { ...base, kind: "annotation", text: row.text, url: row.url });
+    }
+  }
+}
+// OSM rows: geometric extents, entity from the street-level binding.
+for (const row of osmDoc.rows) {
+  const streetName = row.street;
+  const street = streets.get(streetName);
+  if (!street) continue;
+  const ent = osmBinding.get(streetName);
+  if (!ent) continue; // ambiguous bind already reported
+  const ss = row.geometry.map(p => scalarOf(street, p));
+  addRow(streetName, { kind: "state", entity: ent, asWritten: row.asWritten,
+    doc: osmDoc, a: Math.min(...ss), b: Math.max(...ss), crossA: null, crossB: null,
+    attests: "built-by", basis: "label", osm: true });
+}
+
+// ---------------------------------------------------------------------------
+// Segmentation (§6.1): cut at every extent boundary + pavement gap, then
+// merge adjacent intervals with identical timelines. Never merge across a
+// physical gap.
+const SNAP = 0.0004; // ~40 m: cuts closer than this are the same boundary
+
+function buildStreet(streetName) {
+  const street = streets.get(streetName);
+  const rows = perStreet.get(streetName) || [];
+  const pav = pavement(street);
+
+  // Cut points: named (from row extents) + pavement edges.
+  const cuts = []; // {scalar, cross}
+  const pushCut = (scalar, cross) => {
+    const near = cuts.find(c => Math.abs(c.scalar - scalar) < SNAP);
+    if (near) { if (!near.cross && cross) near.cross = cross; return; }
+    cuts.push({ scalar, cross });
+  };
+  for (const r of rows) {
+    if (r.osm) continue; // way boundaries are not evidence boundaries
+    pushCut(r.a, r.crossA); pushCut(r.b, r.crossB);
+  }
+  for (const [a, b] of pav) { pushCut(a, null); pushCut(b, null); }
+  cuts.sort((x, y) => x.scalar - y.scalar);
+
+  // Elementary intervals: consecutive cuts, where pavement exists.
+  const intervals = [];
+  for (let i = 0; i + 1 < cuts.length; i++) {
+    const a = cuts[i].scalar, b = cuts[i + 1].scalar;
+    if (b - a < SNAP) continue;
+    const mid = (a + b) / 2;
+    if (!pav.some(([pa, pb]) => mid >= pa - SNAP && mid <= pb + SNAP)) continue;
+    const eps = Math.min(SNAP, (b - a) / 3); // don't starve narrow intervals
+    intervals.push({ a, b, crossA: cuts[i].cross, crossB: cuts[i + 1].cross,
+      rows: rows.filter(r => r.a < b - eps && r.b > a + eps) });
+  }
+  intervals.forEach(iv => { iv.timeline = timelineFor(streetName, iv); });
+
+  // Merge adjacent identical timelines (not across pavement gaps).
+  const merged = [];
+  for (const iv of intervals) {
+    const last = merged[merged.length - 1];
+    const gapBefore = last && iv.a - last.b > SNAP;
+    if (last && !gapBefore && sig(last.timeline) === sig(iv.timeline)) {
+      last.b = iv.b; last.crossB = iv.crossB;
+    } else {
+      if (gapBefore && last) last.gapAfter = true;
+      merged.push({ ...iv });
+    }
+  }
+  return { street, merged, pav };
+}
+
+function sig(timeline) {
+  return JSON.stringify(timeline.map(p => [p.entity, p.form, p.start, p.startKind,
+    p.end, p.endKind, p.how, p.docs.map(d => d.id).sort()]));
+}
+
+// ---------------------------------------------------------------------------
+// Timeline for one elementary interval (§6.2): per entity, presence runs
+// from earliest sighting to latest, gap-filled; change rows pin transitions.
+// Spelling periods expand into one timeline period per form in force.
+function timelineFor(streetName, iv) {
+  const states = iv.rows.filter(r => r.kind === "state");
+  const changes = iv.rows.filter(r => r.kind === "change")
+    .sort((x, y) => dkey(x.date) < dkey(y.date) ? -1 : 1);
+
+  const present = new Map(); // entity -> {sightings:[], opens:[], closes:[]}
+  const get = id => { if (!present.has(id)) present.set(id, { sightings: [], opens: [], closes: [] }); return present.get(id); };
+  for (const s of states) get(s.entity).sightings.push(s);
+  for (const c of changes) {
+    if (c.from === c.to) { get(c.from).respells = get(c.from).respells || []; get(c.from).respells.push(c); }
+    else { get(c.to).opens.push(c); get(c.from).closes.push(c); }
+  }
+
+  const periods = [];
+  for (const [ent, info] of present) {
+    const e = entities[ent];
+    const sight = info.sightings.slice().sort((x, y) => dkey(docDate(x.doc)) < dkey(docDate(y.doc)) ? -1 : 1);
+    const nonOsm = sight.filter(s => !s.osm);
+    const hasOsm = sight.some(s => s.osm);
+    const open = info.opens.sort((x, y) => dkey(x.date) < dkey(y.date) ? -1 : 1)[0] || null;
+    const close = info.closes.sort((x, y) => dkey(x.date) < dkey(y.date) ? -1 : 1)[0] || null;
+
+    // Presence bracket.
+    let start, startKind, startDoc = null;
+    if (open) { start = open.date; startKind = "change"; startDoc = open.doc; }
+    else if (nonOsm.length) {
+      const s0 = nonOsm[0];
+      start = docDate(s0.doc);
+      startKind = s0.attests === "planned-on" ? "exact" : "by";
+      startDoc = s0.doc;
+    } else if (close || (info.respells && info.respells.length)) {
+      // Presence implied by a transition out of (or within) this name; the
+      // prose-dated first spelling period may supply an earlier start below.
+      start = null; startKind = "unknown";
+    } else if (hasOsm) { start = null; startKind = "unknown"; }
+    else continue;
+
+    let end, endKind, endDoc = null;
+    if (close) { end = close.date; endKind = "change"; endDoc = close.doc; }
+    else if (hasOsm) { end = null; endKind = "current"; }
+    else { end = "?"; endKind = "unknown"; }
+
+    // Expand into spelling periods (most entities have exactly one).
+    const sps = e.spellings;
+    if (sps.length === 1) {
+      // A prose-dated spelling (§3 exception) can supply the start when no
+      // rows do — e.g. an entity known only from prose plus the change row
+      // that ended it.
+      if (start === null && sps[0].from) { start = sps[0].from; startKind = "prose"; }
+      periods.push(mkPeriod(ent, sps[0].forms[0], start, startKind, end, endKind,
+        { sightings: sight, open, close, startDoc, endDoc, proseSource: sps[0].source || null }));
+    } else {
+      // Boundaries between spelling periods: respell pins first, then prose
+      // dates authored on the periods themselves (§3 prose exception).
+      const bounds = []; // between sps[i] and sps[i+1]
+      const respells = (info.respells || []).slice().sort((x, y) => dkey(x.date) < dkey(y.date) ? -1 : 1);
+      let ri = respells.length - 1;
+      for (let i = sps.length - 2; i >= 0; i--) {
+        let bnd = null;
+        // A respell whose toForm matches sps[i+1] pins this boundary.
+        const r = respells[ri];
+        if (r && r.toForm && sps[i + 1].forms.some(f => formMatches(r.toForm, f))) { bnd = { date: r.date, kind: "change", doc: r.doc }; ri--; }
+        else if (sps[i + 1].from) bnd = { date: sps[i + 1].from, kind: "prose", source: sps[i + 1].source };
+        else if (sps[i].until) bnd = { date: sps[i].until, kind: "prose", source: sps[i].source };
+        bounds[i] = bnd;
+      }
+      let cursorStart = start, cursorKind = startKind;
+      if (cursorStart === null && sps[0].from) { cursorStart = sps[0].from; cursorKind = "prose"; }
+      for (let i = 0; i < sps.length; i++) {
+        const isLast = i === sps.length - 1;
+        const bnd = bounds[i];
+        const pEnd = isLast ? end : (bnd ? bnd.date : "?");
+        const pEndKind = isLast ? endKind : (bnd ? bnd.kind : "unknown");
+        periods.push(mkPeriod(ent, sps[i].forms[0], cursorStart, cursorKind, pEnd, pEndKind,
+          { sightings: sight, open: i === 0 ? open : (bounds[i - 1] && bounds[i - 1].kind === "change" ? { date: bounds[i - 1].date, doc: bounds[i - 1].doc, respell: true } : null),
+            close: isLast ? close : null, startDoc, endDoc: isLast ? endDoc : null,
+            proseSource: sps[i].source || null, spellingIndex: i }));
+        cursorStart = pEnd === "?" ? null : pEnd;
+        cursorKind = bnd ? bnd.kind : "unknown";
+      }
+    }
+  }
+
+  // Order by effective date; on a tie (a transition day), the period ENDING
+  // that day precedes the one beginning.
+  periods.sort((x, y) => {
+    const key = p => p.start ? dkey(p.start) : (p.end && p.end !== "?" ? dkey(p.end) : "9999");
+    const endsAt = p => p.end && p.end !== "?" && dkey(p.end) === key(p) ? 0 : 1;
+    const kx = key(x), ky = key(y);
+    if (kx !== ky) return kx < ky ? -1 : 1;
+    return endsAt(x) - endsAt(y);
+  });
+  return periods;
+}
+
+function mkPeriod(entity, form, start, startKind, end, endKind, ctx) {
+  const docs = [];
+  for (const s of ctx.sightings || []) if (!docs.includes(s.doc)) docs.push(s.doc);
+  if (ctx.open && ctx.open.doc && !docs.includes(ctx.open.doc)) docs.push(ctx.open.doc);
+  if (ctx.close && ctx.close.doc && !docs.includes(ctx.close.doc)) docs.push(ctx.close.doc);
+  return { entity, form, start, startKind, end, endKind, docs, ctx, how: null };
+}
+
+// ---------------------------------------------------------------------------
+// `how`, derived (§6.3) — conservative:
+//  * origin    — the entity's earliest dated non-OSM sighting anywhere lies here.
+//  * renaming  — a change row pins it, OR a documented predecessor occupied
+//                this ground (its rows are evidence on THIS interval, so the
+//                inference is local even when the date is unknown).
+//  * transfer  — pinned renaming whose arriving entity vacated a different
+//                roadway in the same window (±2 y), or stated by the document.
+//  * extension — only when this interval has a DATED non-OSM sighting later
+//                than the entity's dated presence on an adjacent interval.
+//                (An undated arrival next to older ground is NOT called an
+//                extension: 3rd's western reach is exactly where that
+//                presumption is a trap — its 1894 "Third St" is modern
+//                Miramar. Never guess.)
+function earliestSightingOf(entity) {
+  let best = null;
+  for (const doc of nonOsmDocs) for (const r of doc.rows) {
+    if (r.kind !== "state" || resolveEntity(r.name) !== entity) continue;
+    const d = docDate(doc);
+    if (!best || dkey(d) < dkey(best.date)) best = { date: d, street: r.street, row: r, doc };
+  }
+  return best;
+}
+function vacatedElsewhere(entity, date, streetName) {
+  for (const doc of nonOsmDocs) for (const r of doc.rows) {
+    if (r.kind !== "change" || r.from === r.to) continue;
+    if (resolveEntity(r.from) !== entity || r.street === streetName) continue;
+    const d = docDate(doc);
+    if (Math.abs(+dyear(d) - +dyear(date)) <= 2) return true;
+  }
+  return false;
+}
+
+function deriveHow(streetName, seg, allSegs) {
+  const tl = seg.timeline;
+  for (let i = 0; i < tl.length; i++) {
+    const p = tl[i];
+    if (p.ctx.spellingIndex !== undefined && p.ctx.spellingIndex > 0) {
+      // A respelling within one entity keeps the arrival story of the entity;
+      // the item documents the spelling change, not a new arrival.
+      p.how = p.ctx.open && p.ctx.open.respell ? "renaming" : null;
+      continue;
+    }
+    const first = earliestSightingOf(p.entity);
+    const ownDated = p.ctx.sightings.filter(s => !s.osm);
+    if (first && ownDated.some(s => s.doc === first.doc) && first.street === streetName) {
+      p.how = "origin"; continue;
+    }
+    if (p.startKind === "change") {
+      const mech = p.ctx.open && p.ctx.open.mechanism;
+      p.how = mech || (vacatedElsewhere(p.entity, p.start, streetName) ? "transfer" : "renaming");
+      continue;
+    }
+    const predecessors = tl.slice(0, i).filter(q => q.entity !== p.entity);
+    if (predecessors.length) { p.how = "renaming"; continue; }
+    if (ownDated.length) {
+      const myEarliest = dkey(docDate(ownDated[0].doc));
+      const adj = allSegs.filter(s2 => s2 !== seg &&
+        (Math.abs(s2.b - seg.a) < SNAP || Math.abs(s2.a - seg.b) < SNAP));
+      const earlierNextDoor = adj.some(s2 => s2.timeline.some(q =>
+        q.entity === p.entity && q.ctx.sightings.some(s =>
+          !s.osm && dkey(docDate(s.doc)) < myEarliest)));
+      if (earlierNextDoor) { p.how = "extension"; continue; }
+    }
+    p.how = null;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Rendering: prose fields in today's consumable shape (§6.6). Structure is
+// derived; namesake meaning comes only from names.js (§7).
+function shortCross(name) {
+  if (!name) return null;
+  return name.replace(/ Street$/, "").replace(/ Avenue$/, "").replace(/ Boulevard$/, "")
+             .replace(/ Road$/, " Rd").replace(/ Place$/, " Pl");
+}
+function shortForm(form) {
+  return form.replace(/ Street$/, " St").replace(/ Avenue$/, " Ave").replace(/ Boulevard$/, " Blvd");
+}
+function fmtStart(p) {
+  if (!p.start) return "?";
+  if (p.startKind === "by") return "by " + dyear(p.start);
+  if (p.startKind === "change") return dfmtMonth(p.start);
+  if (p.startKind === "prose") return dyear(p.start);
+  return dyear(p.start); // exact
+}
+function fmtEnd(p) {
+  if (p.end === null) return null;
+  if (p.end === "?") return "?";
+  if (p.endKind === "change") return dfmtMonth(p.end);
+  return dyear(p.end);
+}
+function docShort(doc) { return doc.shortTitle || doc.title.replace(/^Recorded map: /, "").split(",")[0]; }
+
+function originLine(streetName, p, tl) {
+  const e = entities[p.entity];
+  const isCurrent = p.end === null;
+  const dated = p.ctx.sightings.filter(s => !s.osm);
+  const parts = [];
+  let link = null, marked = false;
+
+  if (p.startKind === "change" && p.ctx.open) {
+    const open = p.ctx.open;
+    const mech = open.respell ? "renamed — reviving a spelling the street had carried before —" :
+      p.how === "transfer" ? "the name arrived from another roadway, renamed" : "renamed";
+    parts.push(`${mech} per ${docShort(open.doc)} {{(source)}}`);
+    link = open.doc.url; marked = true;
+  } else if (dated.length && (p.ctx.spellingIndex || 0) === 0) {
+    const names = dated.map(s => `${dyear(docDate(s.doc))} ${docShort(s.doc)}`);
+    const uniq = [...new Set(names)];
+    parts.push(`labeled “${dated[0].asWritten}” on the ${uniq.join(" and the ")} {{(source)}}`);
+    link = dated[0].doc.url; marked = true;
+  } else if (p.startKind === "prose" && p.ctx.proseSource) {
+    parts.push(`this spelling attested from ${dyear(p.start)} {{(source)}}`);
+    link = p.ctx.proseSource.url; marked = true;
+  } else {
+    parts.push("arrival on this stretch not directly documented");
+  }
+
+  // The naming claim itself is entity-owned meaning (§7). The CURRENT name's
+  // claim already lives in the segment's namedAfter field; former names have
+  // no other home, so it rides on their history line.
+  const lcFirst = t => /^[A-Z][a-z]/.test(t) ? t[0].toLowerCase() + t.slice(1) : t;
+  if (!isCurrent) {
+    if (e.namedAfter) {
+      // at most one {{}} span per field (checker rule): if the clause already
+      // carries a {{(source)}} marker, the namesake rides along unmarked
+      parts.push(marked ? e.namedAfter.replace(/\{\{|\}\}/g, "") : e.namedAfter);
+      if (!marked && e.namedAfterLink) link = e.namedAfterLink;
+    } else if (e.note) parts.push(lcFirst(e.note.replace(/\.$/, "")));
+    else if (!e.stub) parts.push("no namesake documented");
+  }
+  return { origin: parts.join(" — "), originLink: link };
+}
+
+function namedAfterFor(streetName, seg) {
+  const tl = seg.timeline;
+  const cur = tl.find(p => p.end === null);
+  if (!cur) return { namedAfter: null, namedAfterLink: null, entity: null };
+  const e = entities[cur.entity];
+  const others = tl.some(p => p.entity !== cur.entity);
+  const base = e.namedAfter;
+  if (!base) return { namedAfter: null, namedAfterLink: e.namedAfterLink || null, entity: cur.entity };
+  const head = base.split(" — ")[0];
+  const arrival = tl.filter(p => p.entity === cur.entity)
+                    .find(p => (p.ctx.spellingIndex || 0) === 0);
+  const how = arrival && arrival.how;
+  const disp = displayForm(e);
+  if (how === "origin") return { namedAfter: base, namedAfterLink: e.namedAfterLink, entity: cur.entity };
+  if (how === "renaming" || how === "transfer")
+    return { namedAfter: `${head}, once this stretch was folded into ${disp}`, namedAfterLink: e.namedAfterLink, entity: cur.entity };
+  if (how === "extension")
+    return { namedAfter: `${head}, extended onto this stretch`, namedAfterLink: e.namedAfterLink, entity: cur.entity };
+  if (others)
+    return { namedAfter: `${head}, once this stretch was folded into ${disp}`, namedAfterLink: e.namedAfterLink, entity: cur.entity };
+  return { namedAfter: `${head} — how and when this stretch joined ${disp} is not yet researched`, namedAfterLink: e.namedAfterLink, entity: cur.entity };
+}
+
+function plannedBuiltFor(seg) {
+  const states = seg.rows.filter(r => r.kind === "state" && !r.osm);
+  const byAttest = k => states.filter(s => s.attests === k)
+    .sort((x, y) => dkey(docDate(x.doc)) < dkey(docDate(y.doc)) ? -1 : 1);
+  const po = byAttest("planned-on")[0], pb = byAttest("planned-by")[0];
+  const bo = byAttest("built-on")[0], bb = byAttest("built-by")[0];
+  let planned = null, built = null;
+  if (po) planned = { text: dyear(docDate(po.doc)), url: po.doc.url };
+  else if (pb) planned = { text: "by " + dyear(docDate(pb.doc)), url: pb.doc.url };
+  if (bo) built = { text: dfmtFull(docDate(bo.doc)), url: bo.doc.url };
+  else if (bb) built = { text: `already “${bb.asWritten}” by ${dfmtFull(docDate(bb.doc))} (${docShort(bb.doc)})`, url: bb.doc.url };
+  if (!planned && !built) return { planned: "not yet researched", built: "not yet researched" };
+  return { planned: planned || null, built: built || "not yet researched" };
+}
+
+function sourcesFor(seg, curEntity) {
+  const out = []; const seen = new Set();
+  const push = (title, url) => { if (url && !seen.has(url)) { seen.add(url); out.push({ title, url }); } };
+  // Current name's own origin citations first (the naming claim), then the
+  // documents that testify about this ground, oldest first — each described
+  // once, from the registry (§6.6).
+  if (curEntity) for (const s of entities[curEntity].sources || []) push(s.title, s.url);
+  const docs = [];
+  for (const r of seg.rows) if (!r.osm && r.kind !== "annotation" && !docs.includes(r.doc)) docs.push(r.doc);
+  docs.sort((x, y) => dkey(docDate(x)) < dkey(docDate(y)) ? -1 : 1);
+  for (const d of docs) {
+    const weakBasis = seg.rows.some(r => r.doc === d && ["alignment", "position"].includes(r.basis));
+    push(d.title + (weakBasis ? " (identified by map alignment, not a lot-level record)" : ""), d.url);
+    for (const c of d.copies || []) push(c.title, c.url);
+  }
+  // Former entities' claims and prose-dated spellings.
+  for (const p of seg.timeline || []) {
+    const e = entities[p.entity];
+    if (p.entity !== curEntity) for (const s of e.sources || []) push(s.title, s.url);
+    if (p.ctx && p.ctx.proseSource) push(p.ctx.proseSource.title, p.ctx.proseSource.url);
+  }
+  if (!out.length) push("OpenStreetMap (current extract — this street has no research behind it yet)", "https://www.openstreetmap.org/");
+  return out;
+}
+
+function labelFor(streetName, seg, i, segs, street) {
+  const first = i === 0, last = i === segs.length - 1;
+  const dirLo = street.orientation === "EW" ? "west of" : "south of";
+  const dirHi = street.orientation === "EW" ? "east of" : "north of";
+  // canonical chip order handled by caller; here segs are in ascending scalar
+  let core;
+  const a = shortCross(seg.crossA), b = shortCross(seg.crossB);
+  if (first && !a) core = `${dirLo} ${b || "?"}`;
+  else if (last && !b) core = `${dirHi} ${a || "?"}`;
+  // canonical reading order: N→S for NS streets, W→E for EW
+  else core = street.orientation === "NS" ? `${b || "?"} to ${a || "?"}` : `${a || "?"} to ${b || "?"}`;
+  // suffix: former name, "original X" on the origin stretch, discontinuity
+  const tl = seg.timeline;
+  const cur = tl.find(p => p.end === null);
+  const formers = tl.filter(p => cur && p.entity !== cur.entity);
+  const prevGap = i > 0 && segs[i - 1].gapAfter;
+  let suffix = "";
+  if (formers.length) suffix = ` (${shortForm(formers[formers.length - 1].form)})`;
+  else if (cur) {
+    const arrival = tl.find(p => p.entity === cur.entity && (p.ctx.spellingIndex || 0) === 0);
+    if (arrival && arrival.how === "origin" && tl.length === 1 && segs.length > 1 &&
+        arrival.ctx.sightings.some(s => !s.osm))
+      suffix = ` (original ${shortForm(cur.form)})`;
+  }
+  if (prevGap) suffix += " (discontinuous)";
+  return (core + suffix).trim();
+}
+
+// ---------------------------------------------------------------------------
+// Boundary naming: a segment boundary that came from a pavement gap (not a
+// row extent) carries no cross-street name; find the street that intersects
+// nearest to it. Bounded search, bbox-prefiltered.
+function nearestCrossName(streetName, scalar) {
+  const street = streets.get(streetName);
+  let best = null;
+  for (const [other, o] of streets) {
+    if (other === streetName) continue;
+    if (o.orientation === street.orientation) continue; // want cross streets
+    // quick reject: the other street's scalar range (on OUR axis) must span near the cut
+    const oss = o.points.map(p => scalarOf(street, p));
+    if (Math.min(...oss) > scalar + SNAP * 2 || Math.max(...oss) < scalar - SNAP * 2) continue;
+    const x = crossScalar(streetName, other);
+    if (!x || x.m > 40) continue;
+    const d = Math.abs(x.scalar - scalar);
+    if (d < SNAP * 2 && (!best || d < best.d)) best = { d, name: other };
+  }
+  return best ? best.name : null;
+}
+
+// ---------------------------------------------------------------------------
+// Assemble STREET_DATA.
+const STREET_DATA = {};
+const searchIndex = new Map(); // canon form -> [{entity, form}]
+
+for (const streetName of [...streets.keys()].sort()) {
+  const { street, merged } = buildStreet(streetName);
+  if (!merged.length) continue;
+  merged.forEach(seg => deriveHow(streetName, seg, merged));
+
+  // Resolve unnamed internal boundaries (pavement-gap edges) to cross names.
+  for (let i = 0; i + 1 < merged.length; i++) {
+    if (!merged[i].crossB) merged[i].crossB = nearestCrossName(streetName, merged[i].b);
+    if (!merged[i + 1].crossA) merged[i + 1].crossA = nearestCrossName(streetName, merged[i + 1].a);
+  }
+
+  // Shared band boundaries: bands must tile even across physical gaps (the
+  // boundary falls at the gap's start — no pavement there to classify).
+  // chain[k] = boundary between ascending segments k-1 and k.
+  const chain = [];
+  for (let i = 1; i < merged.length; i++) chain[i] = merged[i - 1].b;
+
+  const isNS = street.orientation === "NS";
+  const n = merged.length;
+
+  const segEntries = merged.map((seg, i) => {
+    const na = namedAfterFor(streetName, seg);
+    const pb = plannedBuiltFor(seg);
+    const tl = seg.timeline;
+    const cur = tl.find(p => p.end === null);
+    const entry = {
+      label: labelFor(streetName, seg, i, merged, street),
+      name: streetName,
+      namedAfter: na.namedAfter,
+      namedAfterLink: na.namedAfterLink || null,
+      planned: pb.planned,
+      built: pb.built
+    };
+
+    // nameHistory: emit when the timeline says more than "one name, story
+    // unknown" — ≥2 periods, or a single period with a derivable `how`.
+    const items = tl.map(p => {
+      const ol = originLine(streetName, p, tl);
+      const it = { from: fmtStart(p), until: fmtEnd(p), name: p.form,
+                   entityId: p.entity, formInForce: p.form };
+      if (p.how) it.how = p.how;
+      it.origin = ol.origin; it.originLink = ol.originLink;
+      return it;
+    });
+    if (items.length >= 2 || (items.length === 1 && items[0].how)) entry.nameHistory = items;
+
+    entry.note = null;
+    const ann = seg.rows.filter(r => r.kind === "annotation");
+    if (ann.length) entry.note = ann.map(a => a.text).join(" ");
+
+    const e = cur ? entities[cur.entity] : null;
+    const cats = e ? [...e.categories] : ["unresearched"];
+    if (tl.filter(p => (p.ctx.spellingIndex || 0) === 0).length >= 2 && !cats.includes("renamed")) cats.push("renamed");
+    entry.categories = cats;
+    entry.disputed = e ? !!e.disputed : false;
+    entry.sources = sourcesFor(seg, cur ? cur.entity : null);
+
+    // Bands (scalar space is the same for both orientations).
+    if (i > 0) entry[isNS ? "minLat" : "minLng"] = +chain[i].toFixed(4);
+    if (i < n - 1) entry[isNS ? "maxLat" : "maxLng"] = +chain[i + 1].toFixed(4);
+    return entry;
+  });
+
+  // Canonical chip order: NS = north→south (descending lat); EW = west→east
+  // (ascending lng). Assign from/to and gapAfter in DISPLAY order.
+  const order = isNS ? [...Array(n).keys()].reverse() : [...Array(n).keys()];
+  const ordered = order.map((ai, j) => {
+    const entry = segEntries[ai], seg = merged[ai];
+    if (isNS) {
+      entry.from = j === 0 ? null : seg.crossB;             // northern boundary
+      entry.to = j === n - 1 ? null : seg.crossA;           // southern boundary
+      const nextAsc = ai - 1;                                // display-next = asc-previous
+      if (j < n - 1 && merged[nextAsc] && merged[nextAsc].gapAfter) entry.gapAfter = true;
+    } else {
+      entry.from = j === 0 ? null : seg.crossA;
+      entry.to = j === n - 1 ? null : seg.crossB;
+      if (seg.gapAfter && j < n - 1) entry.gapAfter = true;
+    }
+    return entry;
+  });
+
+  if (ordered.length === 1) {
+    const single = ordered[0];
+    delete single.label; delete single.from; delete single.to;
+    delete single.minLat; delete single.maxLat; delete single.minLng; delete single.maxLng;
+    delete single.gapAfter;
+    STREET_DATA[streetName] = single;
+  } else {
+    STREET_DATA[streetName] = { name: streetName, orientation: street.orientation, segments: ordered };
+  }
+
+  // Search index rows: every recorded form of every entity seen on this street.
+  for (const seg of merged) for (const p of seg.timeline) {
+    const key = canon(p.form);
+    if (!searchIndex.has(key)) searchIndex.set(key, []);
+    const list = searchIndex.get(key);
+    if (!list.some(x => x.entity === p.entity)) list.push({ entity: p.entity, form: p.form, street: streetName });
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Search index labels (§6.5): unique form → alone; shared → disambiguated,
+// authored disambiguation preferred, derived otherwise (and reported).
+const SEARCH_INDEX = [];
+for (const [key, list] of searchIndex) {
+  for (const x of list) {
+    const e = entities[x.entity];
+    let label = x.form;
+    if (list.length > 1) {
+      const sp = e.spellings.find(s => s.forms.some(f => canon(f) === key));
+      if (sp && sp.disambiguation) label += ` (${sp.disambiguation})`;
+      else { label += ` (${x.street})`; report.derivedDisambig.push(`${x.entity}: "${label}"`); }
+    }
+    SEARCH_INDEX.push({ form: x.form, entity: x.entity, label, street: x.street });
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Emit.
+fs.mkdirSync(OUT_DIR, { recursive: true });
+const stringify = o => JSON.stringify(o, null, 2);
+
+const header = `// GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
+// documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
+// Built: ${new Date().toISOString().slice(0, 10)}
+`;
+fs.writeFileSync(path.join(OUT_DIR, "streets-data.gen.js"),
+  header +
+  `const NEIGHBORHOODS = ${stringify(NEIGHBORHOODS)};\n\n` +
+  `const CATEGORIES = ${stringify(GEN_CATEGORIES)};\n\n` +
+  `const SIMILAR_PROJECTS = ${stringify(SIMILAR_PROJECTS)};\n\n` +
+  `const STREET_DATA = ${stringify(STREET_DATA)};\n`);
+
+fs.writeFileSync(path.join(OUT_DIR, "search-index.js"),
+  header + `const SEARCH_INDEX = ${stringify(SEARCH_INDEX)};\n`);
+
+const rep = [];
+rep.push("# Generated report", "", "**Overwritten every build** (`node generate.js`).", "");
+rep.push(`- Streets: ${Object.keys(STREET_DATA).length}; entries: ${Object.values(STREET_DATA).flatMap(v => v.segments || [v]).length}`);
+rep.push(`- Stub entities minted from OSM (unresearched): ${report.stubs.length}`);
+rep.push(`- Curated entities: ${Object.keys(NAME_ENTITIES).length}`);
+if (EXCLUDE_NAMES.size) rep.push(`- Excluded OSM names (normalizeName misparses them; see generate.js): ${[...EXCLUDE_NAMES].join("; ")}`);
+rep.push("");
+if (report.ambiguous.length) { rep.push("## Ambiguous OSM binds (NOT bound — fix by adding extents or disambiguation)"); report.ambiguous.forEach(x => rep.push("- " + x)); rep.push(""); }
+if (problems.length) { rep.push("## Row problems"); problems.forEach(x => rep.push("- " + x)); rep.push(""); }
+if (report.partialDocs.length) { rep.push("## Partially swept documents (no negative inference contributed)"); report.partialDocs.forEach(x => rep.push("- " + x)); rep.push(""); }
+if (report.unmatchedAsWritten.size) {
+  rep.push("## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)");
+  for (const [k, n] of report.unmatchedAsWritten) rep.push(`- ${k} ×${n}`);
+  rep.push("");
+}
+if (report.derivedDisambig.length) {
+  rep.push("## Derived (unauthored) search disambiguations — consider authoring better ones");
+  [...new Set(report.derivedDisambig)].forEach(x => rep.push("- " + x)); rep.push("");
+}
+fs.writeFileSync(path.join(OUT_DIR, "report.md"), rep.join("\n") + "\n");
+
+console.log(`Generated ${Object.keys(STREET_DATA).length} streets, ` +
+  `${Object.values(STREET_DATA).flatMap(v => v.segments || [v]).length} entries; ` +
+  `${report.stubs.length} stubs; ${problems.length} row problems` +
+  (problems.length ? "  ← see generated/report.md" : ""));
+if (problems.length) process.exitCode = 1;
