@@ -118,9 +118,19 @@ All small; flagging them so they get ratified or reversed consciously:
    Street vs generated 10 (pavement-gap segmentation is stricter than the
    hand data; some gaps — the 2nd St tunnel — need OSM-side investigation or
    a gap-threshold call).
-3. **Map/checker migration** (§8): search over all forms via
-   `generated/search-index.js`, entity cross-links, the two age color
-   schemes, fit-on-select; retire the checker's stub-hostile warning.
+3. **Map/checker migration** (§8) — now underway in **`preview.html`**, which
+   as of 2026-08-25 is a STANDING file (no longer auto-derived from
+   index.html; it is the future index.html and is edited directly). Already
+   in it: entity search over all recorded forms with fit-on-select and
+   three-way coloring (bears / formerly bore / neither), the grey =
+   OSM-only base scheme with the violet base retired, single-select radio
+   category filters folded under a caret, former-CATEGORY matches shown
+   violet (via the generated per-segment `formerCategories` field), and
+   OSM ways split at band boundaries (with boundary-sliver suppression) so
+   segments finer than way-breaks stay clickable. Still to do: entity
+   cross-links as saved searches (`[[name:<id>]]`), the two age color
+   schemes, match-count stepping, and retiring the checker's stub-hostile
+   warning.
 4. Then the big-bang switchover per §10: generate into `streets-data.js`,
    do-not-edit header, CI regeneration check.
 

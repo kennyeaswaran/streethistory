@@ -748,6 +748,9 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "formerCategories": [
+          "unknown"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -873,6 +876,9 @@ const STREET_DATA = {
         "categories": [
           "number",
           "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
         ],
         "disputed": false,
         "sources": [
@@ -1022,6 +1028,9 @@ const STREET_DATA = {
         "categories": [
           "number",
           "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
         ],
         "disputed": false,
         "sources": [
@@ -2445,6 +2454,10 @@ const STREET_DATA = {
           "unknown",
           "renamed"
         ],
+        "formerCategories": [
+          "person",
+          "governor"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -2494,6 +2507,10 @@ const STREET_DATA = {
         "categories": [
           "unknown",
           "renamed"
+        ],
+        "formerCategories": [
+          "person",
+          "governor"
         ],
         "disputed": false,
         "sources": [
@@ -2782,6 +2799,9 @@ const STREET_DATA = {
           "descriptive",
           "renamed"
         ],
+        "formerCategories": [
+          "unknown"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -2835,6 +2855,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive",
           "renamed"
+        ],
+        "formerCategories": [
+          "person"
         ],
         "disputed": false,
         "sources": [
@@ -3752,6 +3775,10 @@ const STREET_DATA = {
           "person",
           "governor",
           "renamed"
+        ],
+        "formerCategories": [
+          "nature",
+          "unknown"
         ],
         "disputed": false,
         "sources": [
@@ -5740,6 +5767,9 @@ const STREET_DATA = {
           "unresearched",
           "renamed"
         ],
+        "formerCategories": [
+          "number"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -5817,6 +5847,9 @@ const STREET_DATA = {
         "categories": [
           "unresearched",
           "renamed"
+        ],
+        "formerCategories": [
+          "number"
         ],
         "disputed": false,
         "sources": [

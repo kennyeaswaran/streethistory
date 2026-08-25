@@ -757,6 +757,14 @@ for (const streetName of [...streets.keys()].sort()) {
     // OR a documented respelling of the same one (Georgia Bell → Georgia).
     if (tl.length >= 2 && !cats.includes("renamed")) cats.push("renamed");
     entry.categories = cats;
+    // Categories of FORMER name entities on this ground, so the map can show
+    // "formerly in this category" (violet) alongside current matches (§8) —
+    // e.g. Miramar's ex-"3rd St" stretches under the numbered-streets filter.
+    const formerCats = [...new Set(tl
+      .filter(p => !cur || p.entity !== cur.entity)
+      .flatMap(p => entities[p.entity].categories || [])
+      .filter(c => c !== "unresearched"))];
+    if (formerCats.length) entry.formerCategories = formerCats;
     entry.disputed = e ? !!e.disputed : false;
     entry.sources = sourcesFor(seg, cur ? cur.entity : null);
 
@@ -839,227 +847,13 @@ fs.writeFileSync(path.join(OUT_DIR, "streets-data.gen.js"),
 fs.writeFileSync(path.join(OUT_DIR, "search-index.js"),
   header + `const SEARCH_INDEX = ${stringify(SEARCH_INDEX)};\n`);
 
-// preview.html — the live map UI pointed at the GENERATED data, rebuilt from
-// index.html on every run so it never drifts from the real page. index.html
-// itself stays untouched (it keeps serving the hand-authored data until the
-// §10 switchover). Beyond the data swap, the preview carries the map-side
-// changes the generated model needs (MODEL-SPEC §8), applied as surgical
-// span replacements that FAIL LOUDLY if index.html drifts:
-//   1. entity-based search over all recorded forms (search-index.js);
-//   2. grey = only sighting is OSM ("unresearched"); violet base retired,
-//      reused for "formerly bore the searched name";
-//   3. OSM ways split at segment band boundaries, so a segment finer than
-//      OSM's way-breaks still gets its own clickable pieces (the dead-chip
-//      bug: Miramar's Witmer–Lucas stretch).
-// When a change graduates to index.html at switchover, delete its transform.
-
-function replaceSpan(src, startMarker, endMarker, replacement, what) {
-  const i = src.indexOf(startMarker);
-  if (i < 0 || src.indexOf(startMarker, i + 1) >= 0)
-    throw new Error(`preview.html: marker not found or not unique (${what}): start`);
-  const j = src.indexOf(endMarker, i);
-  if (j < 0) throw new Error(`preview.html: marker not found (${what}): end`);
-  return src.slice(0, i) + replacement + src.slice(j + endMarker.length);
-}
-
-const BANNER = `
-<div style="position:fixed;left:0;right:0;bottom:0;z-index:2000;background:#7a1fa2;color:#fff;
-  font:13px/1.4 system-ui,sans-serif;padding:6px 12px;text-align:center">
-  GENERATED PREVIEW — data built by generate.js from names.js + documents/
-  (${new Date().toISOString().slice(0, 10)}); the live map still serves the hand-authored data.
-  <a href="index.html" style="color:#ffd54f">back to live version</a>
-</div>`;
-
-const NEW_STYLEFOR = `function styleFor(street) {
-  const data = street.entry;
-  // grey = the only sighting is the OSM extract itself (§8 scheme 1)
-  if (!data || data.categories.includes("unresearched"))
-    return { color: COLOR_NODATA, opacity: 0.7 };
-  // an active search replaces the active scheme (§8): currently bearing the
-  // searched name / formerly bore it / neither
-  if (searchHits.size > 0) {
-    const hit = searchHits.get(street.key);
-    if (hit === "cur") return { color: COLOR_HIGHLIGHT, opacity: 1 };
-    if (hit === "former") return { color: COLOR_UNKNOWN, opacity: 1 };
-    return { color: COLOR_DIMMED, opacity: 0.8 };
-  }
-  if (activeFilters.size === 0)
-    return { color: COLOR_DATA, opacity: 0.9 };   // violet base retired (§8)
-  const matches = data.categories.some(c => activeFilters.has(c));
-  return matches ? { color: COLOR_HIGHLIGHT, opacity: 1 }
-                 : { color: COLOR_DIMMED, opacity: 0.8 };
-}`;
-
-const NEW_SEARCH = `// Entity-based search (§6.5/§8): one option per recorded form of each name
-// entity — historical forms included — labeled with its disambiguation.
-// Selecting one highlights every stretch that bears (orange) or once bore
-// (violet) the name, and fits the map to the union.
-const searchHits = new Map();    // street key -> "cur" | "former"
-const searchByLabel = new Map(); // dropdown label -> entity id
-function populateSearch() {
-  const dl = document.getElementById("streetList");
-  dl.innerHTML = "";
-  searchByLabel.clear();
-  const labels = [];
-  (typeof SEARCH_INDEX !== "undefined" ? SEARCH_INDEX : []).forEach(row => {
-    if (searchByLabel.has(row.label)) return;
-    searchByLabel.set(row.label, row.entity);
-    labels.push(row.label);
-  });
-  labels.sort((a, b) => a.localeCompare(b));
-  labels.forEach(l => {
-    const opt = document.createElement("option");
-    opt.value = l;
-    dl.appendChild(opt);
-  });
-}
-function entitySegments(id) {
-  const cur = [], former = [];
-  streets.forEach((street, key) => {
-    const e = street.entry;
-    if (!e) return;
-    if (e.entityId === id) cur.push(key);
-    else if ((e.nameHistory || []).some(h => h.entityId === id && h.until !== null)) former.push(key);
-  });
-  return { cur, former };
-}
-document.getElementById("searchBox").addEventListener("change", e => {
-  const id = searchByLabel.get(e.target.value);
-  if (id === undefined) return;
-  const { cur, former } = entitySegments(id);
-  searchHits.clear();
-  cur.forEach(k => searchHits.set(k, "cur"));
-  former.forEach(k => searchHits.set(k, "former"));
-  restyleAll();
-  const hitWays = [...searchHits.keys()].flatMap(k => (streets.get(k) || { ways: [] }).ways);
-  if (hitWays.length) map.fitBounds(L.featureGroup(hitWays).getBounds(), { maxZoom: 16, padding: [60, 60] });
-  if (cur.length + former.length === 1) jumpToSegment(cur[0] || former[0]);
-});
-document.getElementById("searchBox").addEventListener("input", e => {
-  if (e.target.value === "" && searchHits.size) { searchHits.clear(); restyleAll(); }
-});`;
-
-const NEW_DRAW = `    // Band boundaries per street, for splitting ways whose span crosses a
-    // segment boundary (generated boundaries need not align with OSM's
-    // way-breaks; without splitting, a fine segment can end up with no ways
-    // at all — an unclickable chip).
-    function bandBounds(top) {
-      const isNS = top.orientation === "NS";
-      const vals = new Set();
-      top.segments.forEach(s => {
-        [isNS ? s.minLat : s.minLng, isNS ? s.maxLat : s.maxLng]
-          .forEach(v => { if (v !== undefined) vals.add(v); });
-      });
-      return [...vals].sort((a, b) => a - b);
-    }
-    function splitAtBounds(latlngs, bounds, isNS) {
-      const sc = p => isNS ? p[0] : p[1];
-      const out = [];
-      let cur = [latlngs[0]];
-      for (let i = 1; i < latlngs.length; i++) {
-        let a = cur[cur.length - 1];
-        const b = latlngs[i];
-        const crossings = bounds
-          .filter(v => (sc(a) < v && sc(b) > v) || (sc(a) > v && sc(b) < v))
-          .sort((x, y) => sc(a) < sc(b) ? x - y : y - x);
-        for (const v of crossings) {
-          const t = (v - sc(a)) / (sc(b) - sc(a));
-          const pt = [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
-          cur.push(pt); out.push(cur); cur = [pt]; a = pt;
-        }
-        cur.push(b);
-      }
-      out.push(cur);
-      let pieces = out.filter(p => p.length >= 2);
-      // Boundary slivers: a way ending a hair past a (rounded) band boundary
-      // splits into a near-zero fragment that then claims the neighboring
-      // segment — and can become a popup anchor far from the segment's real
-      // ground. Drop split-produced pieces under ~9 m along the axis.
-      if (pieces.length > 1) {
-        const MIN_EXTENT = 1e-4;
-        const real = pieces.filter(p => {
-          const ss = p.map(sc);
-          return Math.max(...ss) - Math.min(...ss) >= MIN_EXTENT;
-        });
-        if (real.length) pieces = real;
-      }
-      return pieces;
-    }
-
-    json.elements.forEach(way => {
-      if (!way.geometry || !way.tags || !way.tags.name) return;
-      const norm = normalizeName(way.tags.name);
-      const all = way.geometry.map(p => [p.lat, p.lon]);
-      const top = STREET_DATA[norm];
-      const pieces = (top && top.segments)
-        ? splitAtBounds(all, bandBounds(top), top.orientation === "NS")
-        : [all];
-      const weight = WEIGHTS[way.tags.highway] || 4;
-
-      pieces.forEach(latlngs => {
-        // any interior point identifies the band; endpoints can sit exactly
-        // on a boundary, so use the midpoint of the piece's extremes
-        const rep = [(latlngs[0][0] + latlngs[latlngs.length - 1][0]) / 2,
-                     (latlngs[0][1] + latlngs[latlngs.length - 1][1]) / 2];
-        const { entry, key } = resolveEntry(norm, rep[0], rep[1]);
-        if (!streets.has(key)) streets.set(key, { key, name: norm, entry, ways: [] });
-        const street = streets.get(key);
-
-        const visible = L.polyline(latlngs, {
-          weight: weight, ...styleFor(street), interactive: false
-        }).addTo(map);
-        street.ways.push(visible);
-
-        // wide invisible line = generous click target covering the street's drawn area
-        const hit = L.polyline(latlngs, { weight: HIT_WEIGHT, opacity: 0.001, color: "#000" }).addTo(map);
-        hit.on("click", e => {
-          L.popup({ maxWidth: 340 }).setLatLng(e.latlng).setContent(popupHtml(street)).openOn(map);
-        });
-        hit.on("mouseover", () => street.ways.forEach(pl => pl.setStyle({ weight: weight + 2 })));
-        hit.on("mouseout",  () => street.ways.forEach(pl => pl.setStyle({ weight: weight })));
-        hit.bindTooltip(norm, { sticky: true });
-      });
-    });`;
-
-let previewSrc = fs.readFileSync(path.join(__dirname, "index.html"), "utf8")
-  .replace('<script src="streets-data.js"></script>',
-           '<script src="generated/streets-data.gen.js"></script>\n<script src="generated/search-index.js"></script>')
-  .replace("<title>Streetymology", "<title>[PREVIEW] Streetymology")
-  .replace('placeholder="Find a street with history…"',
-           'placeholder="Find a name, past or present…"')
-  .replace('<span class="swatch" style="background:#8e6bb8"></span> researched, origin not yet found',
-           '<span class="swatch" style="background:#8e6bb8"></span> search: formerly bore the name')
-  .replace("</body>", BANNER + "\n</body>");
-if (!previewSrc.includes("generated/streets-data.gen.js"))
-  throw new Error("preview.html: could not find the streets-data.js script tag in index.html");
-previewSrc = replaceSpan(previewSrc,
-  "function styleFor(street) {",
-  ": { color: COLOR_DIMMED, opacity: 0.8 };\n}",
-  NEW_STYLEFOR, "styleFor");
-previewSrc = replaceSpan(previewSrc,
-  "const searchIndex = new Map();",
-  'e.target.value = "";\n});',
-  NEW_SEARCH, "search block");
-previewSrc = replaceSpan(previewSrc,
-  "    json.elements.forEach(way => {",
-  "hit.bindTooltip(norm, { sticky: true });\n    });",
-  NEW_DRAW, "way drawing");
-// popup anchor: the middle-of-the-list way can be a short boundary piece far
-// from the segment's real ground — anchor on the longest piece instead
-previewSrc = replaceSpan(previewSrc,
-  "  const midWay = street.ways[Math.floor(street.ways.length / 2)].getLatLngs();",
-  ".getLatLngs();",
-  "  const midWay = street.ways.reduce((a, b) =>\n" +
-  "    b.getLatLngs().length > a.getLatLngs().length ? b : a).getLatLngs();",
-  "jumpToSegment anchor");
-previewSrc = replaceSpan(previewSrc,
-  "    const withData = [...streets.values()]",
-  "with history`;",
-  "    const withData = [...streets.values()]\n" +
-  "      .filter(s => s.entry && !s.entry.categories.includes(\"unresearched\")).length;\n" +
-  "    statusEl.textContent = `${streets.size} street entries loaded · ${withData} researched`;",
-  "status line");
-fs.writeFileSync(path.join(__dirname, "preview.html"), previewSrc);
+// preview.html is a STANDING FILE, no longer generated from index.html
+// (decision 2026-08-25): it is the map-side migration workspace for the §8
+// features (entity search, grey/blue scheme, former-name and former-category
+// highlighting, way-splitting at band boundaries) and is edited directly.
+// At the §10 switchover it replaces index.html. It reads
+// generated/streets-data.gen.js + generated/search-index.js, so a data
+// regeneration here is all it needs to stay current.
 
 const rep = [];
 rep.push("# Generated report", "", "**Overwritten every build** (`node generate.js`).", "");

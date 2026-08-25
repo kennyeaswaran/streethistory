@@ -113,14 +113,16 @@
 <div id="panel">
   <input id="searchBox" list="streetList" placeholder="Find a name, past or present…" autocomplete="off">
   <datalist id="streetList"></datalist>
-  <h2>Highlight streets…</h2>
-  <div id="filters"></div>
+  <details id="filterBox" style="margin:6px 0">
+    <summary style="cursor:pointer;font-weight:600">Highlight streets…</summary>
+    <div id="filters"></div>
+  </details>
   <button class="clear" onclick="clearFilters()">Clear highlights</button>
   <button class="clear" id="saveGeom" style="display:none" title="Saves streets-geometry.js — put it next to index.html and the map will load instantly without Overpass">Save geometry file</button>
   <div class="legend">
     <div><span class="swatch" style="background:#2e6f9e"></span> history available</div>
-    <div><span class="swatch" style="background:#e8a020"></span> highlighted by filter</div>
-    <div><span class="swatch" style="background:#8e6bb8"></span> search: formerly bore the name</div>
+    <div><span class="swatch" style="background:#e8a020"></span> search / filter: current match</div>
+    <div><span class="swatch" style="background:#8e6bb8"></span> search / filter: match on a former name</div>
     <div><span class="swatch" style="background:#c0c0c0"></span> not yet researched</div>
   </div>
   <div class="count" id="count"></div>
@@ -227,17 +229,21 @@ function resolveEntry(norm, lat, lng) {
 // ---------------------------------------------------------------
 // Filters UI
 // ---------------------------------------------------------------
+// §8 scheme 2: single-select (radio, not checkboxes), folded under a caret
+// (the <details> wrapper in the panel). Clicking the active one clears it.
 const filtersDiv = document.getElementById("filters");
 CATEGORIES.forEach(cat => {
   const label = document.createElement("label");
-  const cb = document.createElement("input");
-  cb.type = "checkbox";
-  cb.value = cat.id;
-  cb.addEventListener("change", () => {
-    cb.checked ? activeFilters.add(cat.id) : activeFilters.delete(cat.id);
+  const rb = document.createElement("input");
+  rb.type = "radio";
+  rb.name = "catFilter";
+  rb.value = cat.id;
+  rb.addEventListener("click", () => {
+    if (activeFilters.has(cat.id)) { rb.checked = false; activeFilters.clear(); }
+    else { activeFilters.clear(); activeFilters.add(cat.id); }
     restyleAll();
   });
-  label.appendChild(cb);
+  label.appendChild(rb);
   label.appendChild(document.createTextNode(" " + cat.label));
   filtersDiv.appendChild(label);
 });
@@ -269,33 +275,43 @@ function clearFilters() {
 // ---------------------------------------------------------------
 function styleFor(street) {
   const data = street.entry;
-  // grey = the only sighting is the OSM extract itself (§8 scheme 1)
-  if (!data || data.categories.includes("unresearched"))
-    return { color: COLOR_NODATA, opacity: 0.7 };
-  // an active search replaces the active scheme (§8): currently bearing the
-  // searched name / formerly bore it / neither
+  // An active search replaces the active scheme (§8): currently bearing the
+  // searched name (gold) / formerly bore it (violet) / neither (dimmed).
+  // Checked FIRST — a former bearer whose current name is an unresearched
+  // stub (Miramar's ex-"3rd St" stretches) must still light up violet.
   if (searchHits.size > 0) {
     const hit = searchHits.get(street.key);
     if (hit === "cur") return { color: COLOR_HIGHLIGHT, opacity: 1 };
     if (hit === "former") return { color: COLOR_UNKNOWN, opacity: 1 };
     return { color: COLOR_DIMMED, opacity: 0.8 };
   }
-  if (activeFilters.size === 0)
-    return { color: COLOR_DATA, opacity: 0.9 };   // violet base retired (§8)
-  const matches = data.categories.some(c => activeFilters.has(c));
-  return matches ? { color: COLOR_HIGHLIGHT, opacity: 1 }
-                 : { color: COLOR_DIMMED, opacity: 0.8 };
+  // Category filter: current match gold, former match violet, rest dimmed —
+  // former categories come from the generated formerCategories field.
+  if (activeFilters.size > 0) {
+    if (data && data.categories.some(c => activeFilters.has(c)))
+      return { color: COLOR_HIGHLIGHT, opacity: 1 };
+    if (data && (data.formerCategories || []).some(c => activeFilters.has(c)))
+      return { color: COLOR_UNKNOWN, opacity: 1 };
+    return { color: COLOR_DIMMED, opacity: 0.8 };
+  }
+  // grey = the only sighting is the OSM extract itself (§8 scheme 1)
+  if (!data || data.categories.includes("unresearched"))
+    return { color: COLOR_NODATA, opacity: 0.7 };
+  return { color: COLOR_DATA, opacity: 0.9 };     // violet base retired (§8)
 }
 
 function restyleAll() {
-  let matchCount = 0;
+  let cur = 0, former = 0;
   streets.forEach(street => {
     const s = styleFor(street);
     street.ways.forEach(pl => pl.setStyle(s));
-    if (activeFilters.size > 0 && s.color === COLOR_HIGHLIGHT) matchCount++;
+    if (s.color === COLOR_HIGHLIGHT) cur++;
+    else if (s.color === COLOR_UNKNOWN) former++;
   });
-  document.getElementById("count").textContent =
-    activeFilters.size > 0 ? matchCount + " street(s) match" : "";
+  const active = activeFilters.size > 0 || searchHits.size > 0;
+  document.getElementById("count").textContent = active
+    ? `${cur} current match(es)` + (former ? ` · ${former} former` : "")
+    : "";
 }
 
 // ---------------------------------------------------------------
@@ -462,6 +478,7 @@ function entitySegments(id) {
 document.getElementById("searchBox").addEventListener("change", e => {
   const id = searchByLabel.get(e.target.value);
   if (id === undefined) return;
+  map.closePopup();          // an open popup would sit on top of the result
   const { cur, former } = entitySegments(id);
   searchHits.clear();
   cur.forEach(k => searchHits.set(k, "cur"));
@@ -679,8 +696,8 @@ fetchStreets()
 
 <div style="position:fixed;left:0;right:0;bottom:0;z-index:2000;background:#7a1fa2;color:#fff;
   font:13px/1.4 system-ui,sans-serif;padding:6px 12px;text-align:center">
-  GENERATED PREVIEW — data built by generate.js from names.js + documents/
-  (2026-08-25); the live map still serves the hand-authored data.
+  PREVIEW of the generated data model (names.js + documents/ → generate.js) —
+  the live map still serves the hand-authored data.
   <a href="index.html" style="color:#ffd54f">back to live version</a>
 </div>
 </body>
