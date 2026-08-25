@@ -32,6 +32,12 @@ module.exports = {
     { kind: "state", name: "wolfskill-ave", asWritten: "Wolfskill",
       street: "Central Avenue", from: "2nd Street", to: null,
       attests: "built-by",
-      basis: "label" }              // on the tract's edge nearest Alameda
+      basis: "label" }              // on the tract's edge nearest Alameda.
+                                    // ⚠ EXTENT UNVERIFIED south of the tract:
+                                    // "to: null" (Central's south end) carries
+                                    // over the legacy segment's claim, but the
+                                    // sheet can only attest its own footprint
+                                    // (~3rd–7th). Narrow when this map gets its
+                                    // full sweep (Kenny flagged, 2026-08-25).
   ]
 };
