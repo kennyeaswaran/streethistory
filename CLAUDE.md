@@ -26,6 +26,7 @@ JavaScript-only archives, and committing to git.
 | holding an unverified hunch | **research-leads.md** (dated parking lot; sweep it before a street pass) |
 | publishing / git | **PUBLISHING.md** |
 | looking at the proposed names/documents/generator model | **MODEL-SPEC.md** (the contract) + **MODEL-IMPLEMENTATION.md** (built 2026-08-24; 3rd St acceptance diff clean; NOT live) |
+| executing the switchover to generated data | **MODEL-IMPLEMENTATION.md → "Switchover checklist"** (every known required change, incl. two code traps marked ⚠ in generate.js) |
 | curious how the data got this shape | migration-2026-07.md (historical; that pass is done) |
 
 Documents already transcribed live in `tracts/transcriptions/` (one recorded
@@ -127,6 +128,8 @@ can type each into the map's search box and eyeball the popup.
   `generated/streets-data.gen.js`; every 3rd St difference vs `legacy/` is
   accounted in MODEL-IMPLEMENTATION.md. **Not live**: `streets-data.js` stays
   hand-authored per ADDING-STREETS.md until the full corpus is encoded, the
-  street-by-street diff is clean, and Kenny approves the §10 switchover.
-  Validate authored layers with `node check-model.js`; diff a street with
-  `node diff-street.js "3rd Street"`.
+  street-by-street diff is clean, and Kenny approves the §10 switchover
+  (checklist: MODEL-IMPLEMENTATION.md). Validate authored layers with
+  `node check-model.js`; diff a street with `node diff-street.js "3rd Street"`.
+  `preview.html` renders the generated data and is the future index.html —
+  a standing file, edited directly, NOT regenerated from index.html.

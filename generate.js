@@ -16,8 +16,12 @@ const { DOCUMENTS } = require("./documents/index.js");
 const OUT_DIR = path.join(__dirname, "generated");
 
 // ---------------------------------------------------------------------------
-// Config carried into the generated file (authored here for now; NEIGHBORHOODS
-// and CATEGORIES may move to their own authored file later).
+// Config carried into the generated file.
+// ⚠ SWITCHOVER TRAP (see MODEL-IMPLEMENTATION.md, checklist item A): these
+// constants are read out of the HAND-AUTHORED streets-data.js. The moment
+// streets-data.js becomes generated output, this read is self-referential and
+// breaks on a clean build. Move NEIGHBORHOODS / CATEGORIES / SIMILAR_PROJECTS
+// into an authored site-config.js BEFORE flipping the output target.
 const srcData = fs.readFileSync(path.join(__dirname, "streets-data.js"), "utf8");
 const { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS } =
   new Function(srcData + "; return { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS };")();
@@ -60,6 +64,11 @@ const geom = GEOM.data || GEOM;
 const EXCLUDE_NAMES = new Set([
   "East West Bank Plaza at The Broad"   // a plaza named for East West Bank
 ]);
+// ⚠ SWITCHOVER (checklist item B): the map's NAME_ALIASES ("2nd Street
+// Tunnel" → "2nd Street") is NOT applied here, so the tunnel is a separate
+// stub street and its pavement reads as a gap in 2nd Street (inflating its
+// segmentation). Move that alias table into this file at switchover so
+// aliased ways join the parent street's geometry, and export it for the map.
 
 const streets = new Map(); // name -> { ways:[], points:[], orientation, axis }
 for (const w of geom.elements) {

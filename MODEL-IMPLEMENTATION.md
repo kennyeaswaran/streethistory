@@ -139,3 +139,91 @@ hand-estimated rectangles pending georef-derived footprints (harmless while
 `sweptFully: false` gates negative inference, load-bearing after); the
 `extension`-derivation rule above is the one place the generator is *more*
 conservative than the hand data chose to be.
+
+## Switchover checklist — for the instance that flips it (§10)
+
+Everything below is a KNOWN change the switchover requires, gathered while
+building. Do not start until the prerequisites in "What remains" §§1–2 above
+are done (full corpus encoded; street-by-street diff accounted) and Kenny has
+approved. Work through this in order; most items have a ⚠ comment at the code
+site too.
+
+**A. Break the config bootstrap first (circularity trap).**
+`generate.js` currently reads `NEIGHBORHOODS`, `CATEGORIES` and
+`SIMILAR_PROJECTS` *out of the hand-authored `streets-data.js`* (top of the
+file, marked ⚠). Once `streets-data.js` is generated, that read becomes
+self-referential and breaks on any clean build. Move the three constants into
+an authored `site-config.js` (add the `unresearched` category there — the
+generator currently injects it), make `generate.js` read that, and have the
+generated file re-emit them unchanged for the map and checker.
+
+**B. Unify name aliasing (the 2nd Street Tunnel).**
+The map's `NAME_ALIASES` ("2nd Street Tunnel" → "2nd Street") exists only in
+index.html/preview.html; the generator doesn't know it. Consequences today:
+the generated data has an orphan "2nd Street Tunnel" stub entry the map never
+reaches, and — worse — the tunnel's pavement reads as a GAP in 2nd Street,
+which is part of why generated 2nd has 10 segments vs legacy's 4. Move the
+alias table into the generator (next to `EXCLUDE_NAMES`, which handles "East
+West Bank Plaza at The Broad") so the tunnel's OSM rows join 2nd Street's
+geometry, and have the map read the same table from generated output rather
+than hardcoding it.
+
+**C. Flip the artifact.**
+Point the generator's output at `streets-data.js` itself (keep emitting
+`generated/search-index.js` and `generated/report.md` where they are). Give
+it the DO-NOT-EDIT header §10 specifies. Commit the generated file during the
+transition so the git diff stays a safety net; `legacy/streets-data-2026-08.js`
+stays as the frozen pre-model archive; `diff-street.js` remains the
+comparison harness (retarget its "generated" path).
+
+**D. Promote preview.html to index.html.**
+preview.html IS the future index.html (standing file; decision 2026-08-25).
+At the flip: change its data `<script src>` to `streets-data.js`, delete the
+purple PREVIEW banner and the `[PREVIEW]` title prefix and the
+"back to live version" link, then replace index.html with it and delete
+preview.html. Map features still owed before or after the flip (§8): entity
+cross-links as saved searches (`[[name:<id>]]` / `[[street:<key>]]` — note
+generated origin lines do not yet emit any `[[...]]` links), the two age
+color schemes (needs coverage polygons), and match-count next/previous
+stepping instead of union-fit when a transferred name highlights two places.
+
+**E. Checker and CI.**
+`check-data.js`: relax the "namedAfter is null but 'unknown' category
+missing" warning for entries carrying `unresearched` (it currently fires on
+all 265 stubs); add an error if `streets-data.js` lacks the generated
+header (hand-edit tripwire). `.github/workflows/deploy.yml`: add
+`node check-model.js` and a regeneration check (`node generate.js && git
+diff --exit-code streets-data.js`) before deploy, so a stale committed
+artifact or invalid authored layer blocks the site, as `check-data.js` does
+today.
+
+**F. Rewrite the authoring docs.**
+- **ADDING-STREETS.md** — describes hand-authoring segments; replace with
+  the new loop: entities into `names.js`, one Part B file per document into
+  `documents/`, `node check-model.js`, `node generate.js`, review the diff.
+  Keep the field conventions that survive (namedAfter phrasing, {{}} links,
+  category definitions).
+- **CLAUDE.md** — rules 6 and 7 change: band boundaries are generated (rule 6
+  and `intersect.js` become internal detail; keep intersect.js as a
+  debugging tool), and "run check-data.js after every street" becomes "run
+  check-model.js + generate.js after every document, check-data.js on the
+  output". Update the Where-to-look table and the State section.
+- **PIPELINE.md** — stage 3 (APPLY) becomes "write the document's Part B
+  file + any new entities, regenerate" instead of "edit streets-data.js";
+  its output contract and the spot-check obligation carry over unchanged.
+- **tracts/transcriptions/TEMPLATE.md** — Part B's home is now
+  `documents/<doc-id>.js`; the template should say so and link the schema
+  (MODEL-SPEC §4–§5).
+- **PUBLISHING.md** — note the extra CI gates from item E.
+- **MODEL-SPEC.md** — status line (§0) and the §12 items resolved along the
+  way (revived-name decision is already recorded here and in names.js).
+
+**G. Aftercare.**
+- Refreshing OSM coverage now has one more step: after replacing
+  `streets-geometry.js` (map's "Save geometry file" button), re-run
+  `node generate.js` — the osm document derives from that file at load time.
+- Coverage polygons: replace the hand-estimated rectangles in `documents/`
+  with georef-derived footprints before flipping any big document to
+  `sweptFully: true` — negative inference makes them load-bearing (§4.4).
+- The Wolfskill south-extent caveat in `documents/mr030-009.js` and the
+  other ⚠ row comments are the first candidates for the post-switch sweep.
