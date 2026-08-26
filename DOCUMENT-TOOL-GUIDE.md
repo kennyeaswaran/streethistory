@@ -25,20 +25,24 @@ if you need to *read* fine label text, but align against the 100 dpi one.
 
 ## Starting the tool
 
-Two steps, both from the project folder:
+**Double-click `start-tools.command`** in the project folder. It serves the
+folder, opens the document tool in Chrome, and prints the URLs of the other
+pages (preview, live map, old aligner) in case you want them. Leave the
+Terminal window it opens alone while you work — that window *is* the server,
+and closing it stops serving.
 
-```
-python3 -m http.server 8000
-```
+It picks a free port if 8000 is busy, and if a server is already running on
+this folder it reuses that one instead of starting a second.
 
-then open **http://localhost:8000/document-tool.html** in Chrome.
+The manual equivalent, if you ever need it, is `python3 -m http.server 8000`
+from the project folder and then http://localhost:8000/document-tool.html.
 
-**Do not double-click the HTML file.** Opening it as `file://` looks like it
-works and then fails in two ways that are hard to diagnose: the save dialog
-never appears (the File System Access API needs a secure context, and
-localhost counts as one but `file://` does not), and loading a document by id
-silently 404s. If the Save button starts downloading files to your Downloads
-folder instead of asking where to put them, that's the symptom.
+**Do not double-click `document-tool.html` itself.** Opening it as `file://`
+looks like it works and then fails in two ways that are hard to diagnose: the
+save dialog never appears (the File System Access API needs a secure context,
+and localhost counts as one but `file://` does not), and loading a document by
+id silently 404s. If Save starts dropping files into Downloads instead of
+asking where to put them, that's the symptom.
 
 ## Opening something
 
@@ -164,7 +168,9 @@ flips.
 
 | symptom | cause |
 |---|---|
-| Save downloads instead of asking where | opened as `file://`, not through localhost |
+| Save downloads instead of asking where | opened as `file://`, not through localhost — or a browser other than Chrome |
+| `start-tools.command` opens in a text editor | it lost its executable bit; `chmod +x start-tools.command` in Terminal, once |
+| "Ports 8000-8010 are all busy" | an old server is still running; close its Terminal window |
 | "could not load …" on a render path | path is relative to the project folder: `tracts/renders/X.png` |
 | Load by id does nothing | no `documents/<id>.js` yet — use the render path instead |
 | No red streets at all | `streets-geometry.js` missing or the view is far from downtown; try Set view with `34.0570, -118.2590, 0.55` |
