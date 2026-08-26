@@ -82,16 +82,63 @@ for (const doc of DOCUMENTS) {
   if (!["incidental", "exhaustive-in-scope"].includes(doc.completeness)) err(d, "unknown completeness:", doc.completeness);
   if (doc.type !== "osm") {
     if (!Array.isArray(doc.coverage) || doc.coverage.length < 3)
-      err(d, "coverage must be a polygon (≥3 [lat,lng] points) — §4.4, load-bearing");
+      err(d, "coverage must be a polygon (≥3 points) — §4.4, load-bearing");
+    else if (!doc.coverage.every(pt => Array.isArray(pt) && pt.length === 2 && pt.every(Number.isFinite)))
+      err(d, "coverage points must be two finite numbers");
+    else if (!doc.alignment && doc.coverage.some(([la, ln]) => Math.abs(la) > 90 || Math.abs(ln) > 180))
+      err(d, "coverage looks like pixels but the document has no alignment — §4.6 stores pixels only where there is a scan to measure them against");
     if (doc.sweptFully === undefined) err(d, "sweptFully missing (gates negative inference — §4.5)");
     if (doc.sweptFully === false && !Array.isArray(doc.sweptFor))
       err(d, "sweptFully:false requires sweptFor (partial work must be visible and resumable)");
   }
+  if (doc.scan !== undefined && doc.scan !== null && typeof doc.scan !== "string")
+    err(d, "scan must be a path string or null");
+  if (doc.alignment) {
+    const al = doc.alignment;
+    if (!al.image) err(d, "alignment.image missing — pixels are meaningless without the render they were measured on");
+    if (!al.dpi) warn(d, "alignment.dpi missing — PIPELINE.md requires the render's dpi alongside any pixel coordinate");
+    if (!Array.isArray(al.points) || al.points.length < 2)
+      err(d, "alignment needs at least 2 control points");
+    else for (const [i, pt] of al.points.entries()) {
+      if (!Array.isArray(pt.px) || pt.px.length !== 2 || !pt.px.every(Number.isFinite))
+        err(d, `alignment.points[${i}].px must be [x, y]`);
+      if (!Array.isArray(pt.ll) || pt.ll.length !== 2 || !pt.ll.every(Number.isFinite))
+        err(d, `alignment.points[${i}].ll must be [lat, lng]`);
+    }
+  }
+  // §5.5: a fully swept document is one a human has vouched for, row by row.
+  // The osm pseudo-document is exempt: it is derived from streets-geometry.js
+  // at load time, not read by anyone, and it is tertiary evidence (§4.1).
+  // `confirmed: false` marks a PROPOSAL awaiting review; an absent flag means
+  // the row was authored directly rather than proposed. Only an explicit false
+  // blocks the sweep.
+  if (doc.sweptFully === true && doc.type !== "osm")
+    for (const [i, row] of (doc.rows || []).entries())
+      if (row.confirmed === false)
+        err(d, `sweptFully:true but rows[${i}] is still an unconfirmed proposal (§5.5)`);
 
   for (const [i, row] of (doc.rows || []).entries()) {
     const r = `${d}.rows[${i}]`;
-    if (!["state", "change", "annotation"].includes(row.kind)) { err(r, "unknown kind:", row.kind); continue; }
+    if (!["state", "change", "annotation", "silent", "vanished"].includes(row.kind)) { err(r, "unknown kind:", row.kind); continue; }
+    // §5.3 vanished rows describe absent pavement: no modern street, a traced
+    // polyline in scan pixels instead.
+    if (row.kind === "vanished") {
+      if (!doc.alignment) err(r, "vanished row needs the document to have an alignment (§4.6) — its trace is in scan pixels");
+      if (!Array.isArray(row.trace) || row.trace.length < 2)
+        err(r, "vanished row needs a trace of at least 2 points");
+      else if (!row.trace.every(pt => Array.isArray(pt) && pt.length === 2 && pt.every(Number.isFinite)))
+        err(r, "vanished trace points must be [x, y] scan pixels");
+      if (!resolve(row.name)) err(r, "name id does not resolve:", row.name);
+      if (!row.asWritten) err(r, "vanished row missing asWritten (verbatim ink — §5.1)");
+      if (row.street) err(r, "vanished row must not name a modern street — that is what makes it vanished");
+      continue;
+    }
     if (doc.type !== "osm" && !streets.has(row.street)) err(r, "street not in geometry:", row.street);
+    // §5.2 silence is stated, not inferred, so it can be reviewed and ticked off.
+    if (row.kind === "silent") {
+      if (row.name) err(r, "silent row must not carry a name — it records that the map shows nothing here");
+      if (row.asWritten) err(r, "silent row must not carry asWritten");
+    }
     if (row.kind === "state") {
       if (doc.type !== "osm" && !resolve(row.name)) err(r, "name id does not resolve:", row.name);
       if (doc.type !== "osm" && !row.asWritten) err(r, "state row missing asWritten (verbatim ink — §5.1)");
@@ -114,6 +161,18 @@ for (const doc of DOCUMENTS) {
       const crosses = row.kind === "change" ? [row.fromCross, row.toCross] : [row.from, row.to];
       for (const c of crosses) {
         if (c === null || c === undefined) continue;
+        // §5.4: an extent may end mid-block, as a point instead of a name.
+        if (typeof c === "object") {
+          if (c.px) {
+            if (!doc.alignment) err(r, "pixel extent needs an alignment on the document (§4.6)");
+            if (!Array.isArray(c.px) || c.px.length !== 2 || !c.px.every(Number.isFinite))
+              err(r, "extent px must be [x, y]");
+          } else if (c.ll) {
+            if (!Array.isArray(c.ll) || c.ll.length !== 2 || !c.ll.every(Number.isFinite))
+              err(r, "extent ll must be [lat, lng]");
+          } else err(r, "extent object must carry px or ll (§5.4)");
+          continue;
+        }
         if (!streets.has(c)) { err(r, "cross-street not in geometry:", c); continue; }
         const m = intersectionM(row.street, c);
         if (m !== null && m > 60) err(r, `"${c}" does not meet ${row.street} (nearest ${m} m)`);

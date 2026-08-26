@@ -7655,3 +7655,5 @@ const STREET_DATA = {
     ]
   }
 };
+
+const VANISHED_STREETS = [];

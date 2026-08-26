@@ -178,14 +178,16 @@ function displayForm(e) { const sp = e.spellings[e.spellings.length - 1]; return
 // ---------------------------------------------------------------------------
 // OSM binding (§4.1): resolve each OSM street name to an entity, minting
 // stubs for new coverage. Reports ambiguities instead of guessing.
+const DocGeom = require("./doc-geometry.js");
 const report = { stubs: [], ambiguous: [], unmatchedAsWritten: new Map(),
                  derivedDisambig: [], partialDocs: [], notes: [] };
+const vanished = [];   // §5.3 — drawn pavement with no modern counterpart
 const osmDoc = DOCUMENTS.find(d => d.type === "osm");
 const nonOsmDocs = DOCUMENTS.filter(d => d.type !== "osm");
 
 function entityHasRowsOnStreet(id, streetName) {
   for (const doc of nonOsmDocs) for (const r of doc.rows) {
-    if (r.kind === "annotation") continue;
+    if (r.kind === "annotation" || r.kind === "silent") continue;
     const ids = r.kind === "change" ? [r.from, r.to] : [r.name];
     if (ids.map(resolveEntity).includes(id) && r.street === streetName) return true;
   }
@@ -237,6 +239,26 @@ const problems = [];
 for (const doc of nonOsmDocs) {
   if (doc.sweptFully === false) report.partialDocs.push(`${doc.id}: sweptFor = ${JSON.stringify(doc.sweptFor)}`);
   for (const row of doc.rows) {
+    // §5.3: no modern street to hang an extent on — the extent IS the trace,
+    // stored in scan pixels and derived through the document's alignment so a
+    // better alignment moves the ghost with the map (§4.6).
+    if (row.kind === "vanished") {
+      if (!doc.alignment) { problems.push(`${doc.id}: vanished row without an alignment`); continue; }
+      let fit;
+      try { fit = DocGeom.fitAlignment(doc.alignment.points); }
+      catch (e) { problems.push(`${doc.id}: alignment does not fit (${e.message})`); continue; }
+      const ent = resolveEntity(row.name);
+      if (!ent) { problems.push(`${doc.id}: unknown entity ${row.name}`); continue; }
+      vanished.push({
+        entity: ent, asWritten: row.asWritten, doc: doc.id,
+        basis: row.basis || "alignment", note: row.note || null,
+        // Traced by a human through an alignment good to roughly a street
+        // width — never render this as though it were surveyed.
+        path: row.trace.map(([x, y]) => DocGeom.scanToWorld(fit, x, y))
+                       .map(([lat, lng]) => [+lat.toFixed(6), +lng.toFixed(6)])
+      });
+      continue;
+    }
     const street = streets.get(row.street);
     if (!street) { problems.push(`${doc.id}: street not in geometry: ${row.street}`); continue; }
     const ends = [row.kind === "change" ? row.fromCross : row.from,
@@ -249,6 +271,17 @@ for (const doc of nonOsmDocs) {
         const fromSide = i === 0;
         return isNS ? (fromSide ? street.max : street.min)
                     : (fromSide ? street.min : street.max);
+      }
+      // §5.4: a mid-block end, given as a point rather than a cross-street.
+      if (typeof c === "object") {
+        let ll = c.ll;
+        if (!ll && c.px) {
+          if (!doc.alignment) { problems.push(`${doc.id}: pixel extent without an alignment`); return null; }
+          try { ll = DocGeom.scanToWorld(DocGeom.fitAlignment(doc.alignment.points), c.px[0], c.px[1]); }
+          catch (e) { problems.push(`${doc.id}: alignment does not fit (${e.message})`); return null; }
+        }
+        if (!ll) { problems.push(`${doc.id}: extent object carries neither px nor ll`); return null; }
+        return scalarOf(street, { lat: ll[0], lon: ll[1] });
       }
       const x = crossScalar(row.street, c);
       if (!x) { problems.push(`${doc.id}: cross-street not on ${row.street}: ${c}`); return null; }
@@ -276,6 +309,11 @@ for (const doc of nonOsmDocs) {
                            mechanism: row.mechanism || null, date: docDate(doc) });
     } else if (row.kind === "annotation") {
       addRow(row.street, { ...base, kind: "annotation", text: row.text, url: row.url });
+    } else if (row.kind === "silent") {
+      // §5.2 — "this document covers this ground and shows nothing here".
+      // Carried so the tool's sweep gate and (later) the age colour schemes
+      // can read it; it is not evidence OF a name, so it never becomes a source.
+      addRow(row.street, { ...base, kind: "silent", note: row.note || null });
     }
   }
 }
@@ -638,7 +676,7 @@ function sourcesFor(seg, curEntity) {
   // once, from the registry (§6.6).
   if (curEntity) for (const s of entities[curEntity].sources || []) push(s.title, s.url);
   const docs = [];
-  for (const r of seg.rows) if (!r.osm && r.kind !== "annotation" && !docs.includes(r.doc)) docs.push(r.doc);
+  for (const r of seg.rows) if (!r.osm && r.kind !== "annotation" && r.kind !== "silent" && !docs.includes(r.doc)) docs.push(r.doc);
   docs.sort((x, y) => dkey(docDate(x)) < dkey(docDate(y)) ? -1 : 1);
   for (const d of docs) {
     const weakBasis = seg.rows.some(r => r.doc === d && ["alignment", "position"].includes(r.basis));
@@ -851,7 +889,12 @@ fs.writeFileSync(path.join(OUT_DIR, "streets-data.gen.js"),
   `const NEIGHBORHOODS = ${stringify(NEIGHBORHOODS)};\n\n` +
   `const CATEGORIES = ${stringify(GEN_CATEGORIES)};\n\n` +
   `const SIMILAR_PROJECTS = ${stringify(SIMILAR_PROJECTS)};\n\n` +
-  `const STREET_DATA = ${stringify(STREET_DATA)};\n`);
+  `const STREET_DATA = ${stringify(STREET_DATA)};\n\n` +
+  // §5.3 — ghost streets: drawn pavement with no modern counterpart. Emitted
+  // as their own collection so their name entities stay reachable by search
+  // rather than existing in names.js with no way to find them. Whether the
+  // public map draws them is a display decision, deliberately still open.
+  `const VANISHED_STREETS = ${stringify(vanished)};\n`);
 
 fs.writeFileSync(path.join(OUT_DIR, "search-index.js"),
   header + `const SEARCH_INDEX = ${stringify(SEARCH_INDEX)};\n`);
@@ -882,6 +925,12 @@ if (report.unmatchedAsWritten.size) {
 if (report.derivedDisambig.length) {
   rep.push("## Derived (unauthored) search disambiguations — consider authoring better ones");
   [...new Set(report.derivedDisambig)].forEach(x => rep.push("- " + x)); rep.push("");
+}
+if (vanished.length) {
+  rep.push("", "## Vanished streets (§5.3)", "",
+    "Traced through a document alignment; approximate to roughly a street width.", "");
+  for (const v of vanished)
+    rep.push(`- **${v.asWritten}** (${v.entity}) — ${v.path.length} points, from ${v.doc}`);
 }
 fs.writeFileSync(path.join(OUT_DIR, "report.md"), rep.join("\n") + "\n");
 

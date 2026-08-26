@@ -27,6 +27,8 @@ JavaScript-only archives, and committing to git.
 | publishing / git | **PUBLISHING.md** |
 | looking at the proposed names/documents/generator model | **MODEL-SPEC.md** (the contract) + **MODEL-IMPLEMENTATION.md** (built 2026-08-24; 3rd St acceptance diff clean; NOT live) |
 | executing the switchover to generated data | **MODEL-IMPLEMENTATION.md → "Switchover checklist"** (every known required change, incl. two code traps marked ⚠ in generate.js) |
+| **using** the document tool (Kenny) | **DOCUMENT-TOOL-GUIDE.md** — serve the folder, open via localhost, align, draw coverage, save |
+| building the document tool | **TOOL-SPEC.md** (align → AI proposals → review). Phase 1 built 2026-08-25 in `document-tool.html`; phase 2 not yet |
 | curious how the data got this shape | migration-2026-07.md (historical; that pass is done) |
 
 Documents already transcribed live in `tracts/transcriptions/` (one recorded

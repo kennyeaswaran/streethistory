@@ -1,10 +1,17 @@
 # Spec: names, documents, and the generated segment file
 
-**Status (2026-08): proposed, not built.** Nothing in this file is live. The
-current hand-authored `streets-data.js` remains the working data and the map's
-only source until the generator passes the acceptance test in §11. A frozen
-copy of the hand-authored data sits in `legacy/streets-data-2026-08.js` for
-diffing.
+**Status (2026-08-25): built, not live.** The generator exists and passes the
+§11 acceptance test on 3rd Street — see MODEL-IMPLEMENTATION.md for what was
+built, the accounted differences, and the switchover checklist. The
+hand-authored `streets-data.js` remains the map's source until the full corpus
+is encoded and Kenny approves the §10 switchover. A frozen copy of the
+hand-authored data sits in `legacy/streets-data-2026-08.js` for diffing.
+
+**Amended 2026-08-25 (§5.2–§5.4, §4.6):** row kinds for vanished streets and
+for documented silence, extents that can end mid-block, alignment stored on
+the document, and pixel-space storage for anything traced on a scan. These
+came out of designing the document tool (TOOL-SPEC.md) and are contract, not
+UI: `check-model.js` and `generate.js` must honour them.
 
 This spec is written to be handed to an implementer cold. Where a rule exists
 because we already got it wrong once, that's noted — those are the parts worth
@@ -211,6 +218,10 @@ Part B, and the two cross-reference by id.
   id: "mr003-060",
   title: "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf",
+  scan: "tracts/MR003-060.pdf",      // optional: the local source file, so the
+                                     // document tool can open it without a
+                                     // picker and a future map could offer the
+                                     // sheet as an overlay
   transcription: "tracts/transcriptions/MR003-060.md",
 
   date: { on: "1875-05-19" },        // or { after: "1906", before: "1950-06" }
@@ -301,11 +312,16 @@ or unopened streets.
 tracts are irregular, and a bbox would silently claim testimony over ground
 the document never showed. A rectangle is just a four-point polygon.
 
-Where it comes from: for any georeferenced sheet, the polygon is the scan's
-corners (or its drawn tract boundary) pushed through the alignment transform,
-so `georef.py` can emit it as a by-product of work already being done. For an
-ordinance, coverage is the city limits of the day — which is also the honest
-scope limit on its completeness (§4.3).
+Where it comes from: a human draws it in the document tool, tracing the area
+the document actually informs about — for a tract map that is the *tract
+boundary*, not the sheet edge, since a plat is mostly blank paper around the
+tract and claiming the paper would license negative inference over blocks the
+map never depicted. For an ordinance, coverage is the city limits of the day,
+which is also the honest scope limit on its completeness (§4.3).
+
+**Stored in scan pixels** for any document with an `alignment` (§4.6), in
+`[lat, lng]` only for documents with no scan. Pixel storage means a later,
+better alignment carries the polygon with it instead of stranding it.
 
 Required, and load-bearing: without it, "no street drawn here" is
 indistinguishable from "we never looked at this part of the sheet," and the
@@ -334,11 +350,44 @@ normally and contributes no silence at all. Record what has been done with
 `sweptFor: ["3rd Street", "Willow Street", …]` so partial work is visible and
 resumable, and so a later session knows where it stopped.
 
+### 4.6 `alignment` — the scan-to-world transform, stored on the document
+
+A document produced from a scan carries its own alignment:
+
+```js
+alignment: {
+  image: "tracts/renders/MR066-035.png",   // the render these pixels refer to
+  dpi: 100,                                 // meaningless without it (PIPELINE.md)
+  points: [ { px: [x, y], ll: [lat, lng], note: "…" }, … ]   // ≥3
+}
+```
+
+This is the same control-point schema `georef.py` already consumes, so the
+document becomes the single home for what used to live in
+`tracts/renders/<name>-alignment.json`. **Keep emitting that sidecar too**:
+`georef.py` reads it, and the four committed alignment files are the stage-2
+benchmark (PIPELINE.md §2) — orphaning them would delete the only ground truth
+the project has for scoring an automatic aligner.
+
+**Everything traced on the scan is stored in scan pixels, never in lat/lng.**
+Coverage polygons (§4.4), vanished-street traces (§5.3) and any mid-block
+extent point (§5.4) are pixel coordinates against `alignment.image`, converted
+to world coordinates by the generator. The reason is that alignments improve:
+bake in lat/lng and every later refinement silently leaves the traces behind,
+in the wrong place, with nothing to flag it. Stored as pixels, they follow the
+alignment for free.
+
+Documents with no scan — ordinances, newspaper reports, `osm` — have no
+`alignment`, and their extents are cross-street names or geometry as usual.
+
 ## 5. Rows
 
-Three kinds. Every row's extent is stated in **modern** cross-street names —
-identification has already happened, and the plat's own wording lives in Part
-A. The document's own text for the name goes in `asWritten`.
+Five kinds: `state`, `change` and `annotation` below, plus `silent` (§5.2) and
+`vanished` (§5.3), added 2026-08-25. Extents are stated in **modern**
+cross-street names wherever a cross-street is available — identification has
+already happened, and the plat's own wording lives in Part A — with points
+allowed where a document's extent ends mid-block (§5.4). The document's own
+text for the name goes in `asWritten`.
 
 ```js
 // STATE — this extent bore this name at this date. The workhorse.
@@ -383,6 +432,97 @@ rather than a scribal error. A row whose `asWritten` matches no known form is
 perfectly normal and is not an error — though the generator should report the
 distinct unmatched strings, since a form recurring across independent
 documents is probably a real spelling nobody has recorded yet.
+
+### 5.2 `silent` — the map covers this ground and shows nothing here
+
+```js
+{ kind: "silent", street: "Willow Street", from: "6th Street", to: "Mesquit Street",
+  confirmed: true, note: "blank inside the tract boundary; no street drawn" }
+```
+
+Silence *was* left implicit — inferable from `coverage` plus `sweptFully`.
+That fails the moment a human is working through a sheet segment by segment,
+because an inference can't be reviewed or ticked off: "I looked here and the
+map shows nothing" and "nobody has looked here yet" are the same absence.
+
+So silence becomes statable at segment granularity. It is what licenses the
+"no counterpart" verdict in the document tool, it is what makes the
+every-segment-accounted gate on `sweptFully` (§4.5) checkable, and it is
+weak evidence in its own right — on an `exhaustive-in-scope` document (§4.3)
+a `silent` row over a stretch means the street did not exist under any name
+at that date, which is what feeds the "latest document showing it did not yet
+exist" colour scheme (§8).
+
+Coverage-plus-`sweptFully` still governs whole-document silence; `silent` rows
+are the reviewable, per-segment version, and they should agree.
+
+### 5.3 `vanished` — drawn pavement with no modern counterpart
+
+```js
+{ kind: "vanished", name: "gordon-alley", asWritten: "Gordon Al.",
+  trace: [[1180, 640], [1240, 980]],     // SCAN PIXELS against alignment.image
+  confirmed: false, basis: "alignment" }
+```
+
+A street the document draws that no longer exists in any form — vacated
+blocks, and everything the freeways took. There is no modern street to hang
+an extent on, so the extent *is* geometry, exactly as OSM rows carry the way
+itself because for OSM the geometry is the identification.
+
+Note what is **not** this kind: a *former name* on surviving pavement. Arnold,
+Georgia, Guadalupe, Tulip and Palm are all ordinary `state` rows on modern
+streets — the pavement is still there, only the name is gone. `vanished` is
+for absent pavement.
+
+The generator emits these as their own collection, with world coordinates
+derived through the alignment. That matters for more than completeness: a
+name entity whose only appearances are vanished streets would otherwise be
+unreachable — present in `names.js`, with an origin and a namesake, and
+findable by no query on the map. In the generated collection it can be
+indexed and searched like any other name. Whether the public map *draws*
+ghost streets is a display decision, deliberately left open.
+
+Precision: a trace is a human following ink through an alignment good to
+roughly a street width. Never render it as though it were surveyed, and keep
+the document id with it so the provenance stays visible.
+
+### 5.4 Extents that end mid-block
+
+`from`/`to` accept **either** a cross-street name **or** a point:
+
+```js
+{ kind: "state", name: "georgia-east", asWritten: "Georgia St",
+  street: "3rd Street", from: "Alameda Street", to: { px: [2040, 1130] } }
+```
+
+Tract boundaries do not respect intersections, and neither do coverage
+polygons, so an extent frequently ends partway along a block. A cross-street
+name wins whenever one is near — it is stable, human-readable, and survives
+re-alignment — and a point is the fallback. Points are scan pixels (§4.6)
+for anything traced on a scan.
+
+The generator needs no special case: it already cuts at arbitrary boundaries
+and merges adjacent intervals with identical timelines (§6.1), so a mid-block
+cut either survives because the timelines differ or dissolves because they
+don't. The checker must accept both forms.
+
+### 5.5 `confirmed` and `note` on every row
+
+`confirmed: false` marks a **proposal** — generated by the AI pass
+(TOOL-SPEC.md §3) and not yet vouched for by a human. A person promotes it to
+`true` in review, so the file itself records who stands behind each claim
+instead of that living in a tool's memory. **An absent flag means the row was
+authored directly rather than proposed**, which is why rows written before
+this field existed are not retroactively suspect.
+
+A document may not be marked `sweptFully` while any row is explicitly
+`confirmed: false`. The `osm` pseudo-document is exempt: it is derived at load
+time, read by nobody, and tertiary anyway (§4.1).
+
+Every row may also carry `note` — free text about *this row*. It exists so
+the document tool can round-trip a file without eating anything: a caveat
+that matters belongs in data the tool preserves, not in a JS comment it would
+regenerate away.
 
 ## 6. Generation
 
@@ -539,6 +679,14 @@ named street; `change` rows only on documents that attest transitions;
 annotations carry a source; and **an ambiguity the generator cannot resolve
 into distinct labels is an error** — which will fire retroactively on an old
 entry the day new coverage introduces a collision. That is intended.
+
+Added with the 2026-08-25 amendments: pixel-space extents and traces require
+the document to have an `alignment` (§4.6), and their pixels must lie within
+the alignment image's bounds; `vanished` traces need at least two points;
+`sweptFully: true` requires every row `confirmed` and — per the tool's gate
+(TOOL-SPEC.md) — every in-bounds segment accounted by some row; and a `silent`
+row overlapping a `state` row for the same document is a contradiction, not a
+judgement call.
 
 ## 10. Build
 
