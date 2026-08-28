@@ -16,7 +16,7 @@ function ok(name, cond, detail) {
 function near(a, b, tol) { return Math.abs(a - b) <= tol; }
 
 // --- fixtures --------------------------------------------------------------
-const alignPath = path.join(__dirname, "tracts/renders/MR066-035-alignment.json");
+const alignPath = path.join(__dirname, "documents/mr066-035/mr066-035-alignment.json");
 const align = JSON.parse(fs.readFileSync(alignPath, "utf8"));
 const fit = G.fitAlignment(align.points);
 
@@ -128,6 +128,38 @@ console.log("cross-street snapping");
 
   const none = G.nearestCrossStreet(streetPoints, "3rd Street", { lat: 34.2, lon: -118.9 });
   ok("nothing near returns null", none === null);
+}
+
+console.log("scan placement (what the document tool stores)");
+{
+  // The tool holds a placement, not a screen position. Restoring one from a
+  // saved alignment and re-deriving the corners must reproduce the alignment —
+  // otherwise resuming a document silently moves the scan.
+  const W = 747, H = 1276;                        // MR066-035 render size
+  const pl = G.placementFromAlignment(align.points, W, H);
+  let worst = 0;
+  for (const p of align.points) {
+    const [lat, lng] = G.placementToWorld(pl, W, H, p.px[0], p.px[1]);
+    worst = Math.max(worst, G.metres({ lat, lon: lng }, { lat: p.ll[0], lon: p.ll[1] }));
+  }
+  ok("placement reproduces the saved corners within 2 m", worst < 2, `worst ${worst.toFixed(2)} m`);
+
+  const mPerPx = pl.mppx;
+  ok("placement scale matches the fit (0.2-2 m/px)", mPerPx > 0.2 && mPerPx < 2, `${mPerPx.toFixed(3)}`);
+  ok("rotation is small for a near-north-up sheet", Math.abs(pl.rot) < 0.6,
+     `${(pl.rot * 180 / Math.PI).toFixed(2)}°`);
+
+  // Round-trip through the alignment format: placement -> corners -> placement.
+  const pts = [[0, 0], [W, 0], [0, H]].map(([px, py]) => {
+    const [lat, lng] = G.placementToWorld(pl, W, H, px, py);
+    return { px: [px, py], ll: [+lat.toFixed(6), +lng.toFixed(6)] };
+  });
+  const pl2 = G.placementFromAlignment(pts, W, H);
+  const drift = G.metres({ lat: pl.lat, lon: pl.lng }, { lat: pl2.lat, lon: pl2.lng });
+  ok("save -> reload -> save does not move the scan", drift < 0.5, `${drift.toFixed(3)} m`);
+  ok("…nor change its scale", Math.abs(pl.mppx - pl2.mppx) < 0.002,
+     `${pl.mppx.toFixed(4)} vs ${pl2.mppx.toFixed(4)}`);
+  ok("…nor its rotation", Math.abs(pl.rot - pl2.rot) < 0.001);
 }
 
 console.log(`\n${pass} passed, ${fail} failed`);

@@ -1,5 +1,11 @@
 # Research leads
 
+> **Path note (2026-08-26):** this file is a dated log, so its references to
+> `align.html`, `tracts/` and the loose `omnibus-*.md` files are left as they
+> were written. Those things now live at `attic/align.html`, `inbox/` or
+> `documents/<id>/`, and the omnibus files are inside `documents/ord-4093/`.
+
+
 Unverified hunches, patterns, and open questions — things NOT yet solid enough
 for streets-data.js. Rule of thumb: a claim with a citable source goes straight
 into the data (partial entries are fine); anything inferred, remembered, or

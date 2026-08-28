@@ -1,14 +1,13 @@
 # TEMPLATE — map transcription + application record
 
-One file per recorded map, named `<MAPREF>.md` after the first page's file
-(e.g. `MR030-009.md`, `TR0015-166a.md`). Two halves, filled in by different
-parties at different times:
+One file per recorded map, living beside it as `documents/<id>/<id>-partA.md`.
+Two halves, filled in by different parties at different times:
 
 - **Part A (transcription)** — filled in by whoever READS the scan (a human,
   ChatGPT, or a Claude instance). Verbatim only: what is drawn and written on
   the map. NO modern-street identifications — matching old streets to modern
   ones is the error-prone step, and it's done separately with geometry tools
-  (align.html / georef.py), never by eyeballing a transcription.
+  (document-tool.html / georef.py), never by eyeballing a transcription.
 - **Part B (application)** — filled in by a Claude instance applying the
   document to streets-data.js per ADDING-STREETS.md's core loop. Records the
   modern identifications, their basis, and what was applied where.
@@ -22,7 +21,7 @@ against the scan before trusting the rest.
 
 - **Full title (verbatim from title block):**
 - **Map-Ref:** M.R. or M.B. book–page(s)
-- **Scan file(s):** `tracts/….pdf` / URL
+- **Scan file(s):** `documents/<id>/<id>.pdf` / URL
 - **Recording block (verbatim):** date, "at the request of …", recorder
 - **Subdivider / requester:**
 - **Surveyor (and survey date, if different from recording):**
@@ -66,7 +65,7 @@ notes ("Name establ. … Ord. …"), certifications — verbatim, with sheet + l
 
 - Basis vocabulary, strongest to weakest: **lot-level match** (NavigateLA
   Lot/Tract fields match the plat), **label match** (unchanged name),
-  **alignment** (align.html / georef.py fit), **position** (grid reasoning
+  **alignment** (document-tool.html / georef.py fit), **position** (grid reasoning
   only — always flag in the entry). Anything below lot-level gets a short
   parenthetical in the source title, e.g. "(identified by map alignment)".
 - Every street from Part A gets a row, even if the outcome is "out of

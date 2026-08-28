@@ -15,7 +15,7 @@ REQUIRES A BROWSER for HARVESTING ONLY (NavigateLA and the Assessor portal are
 JavaScript apps; fetch tools see nothing). READING maps is different:
 
 **RULE — downloads first.** Before opening any map PDF in a browser viewer,
-`ls tracts/` — if the map is already downloaded, read it locally
+`ls inbox/ documents/*/` — if the map is already downloaded, read it locally
 (`pdftoppm -png -r 150`, then Read the PNGs; re-render at `-r 300` for fine
 labels). If it is NOT there, add its verified URL to a shopping list for
 Kenny to download rather than reading it online; only read online when it's a
@@ -80,8 +80,8 @@ below. Browser time is for collecting Map-Refs, not for squinting at plats.
    streets named in the tract. **Scan the WHOLE plat, not just the block you
    went looking for.**
 
-5. **Transcribe it** into `tracts/transcriptions/<MAPREF>.md` per
-   `tracts/transcriptions/TEMPLATE.md`, which splits the file in two: Part A
+5. **Transcribe it** into `documents/<id>/<id>-partA.md` per
+   `handbook/TRANSCRIPTION-TEMPLATE.md`, which splits the file in two: Part A
    is the verbatim transcription (title block, recording block, every street
    label exactly as written, blocks/lots, margin notes — NO modern-street
    identifications), Part B is the application record (modern identities
@@ -158,14 +158,14 @@ them directly as images — no browser needed for the reading step at all:
    and existence-checks them with `mcp__workspace__web_fetch` (Content-Type
    `application/pdf` = real; HTML = wrong guess). Output: a list of verified
    URLs, presented as clickable links.
-2. **Kenny downloads the batch** — click each link, save into `tracts/` in the
+2. **Kenny downloads the batch** — click each link, save into `inbox/` in the
    project folder (gitignored; they're re-downloadable). A dozen PDFs is a
    couple of minutes of human clicking, versus ~10 browser-minutes each for
    an instance.
 3. Any instance (no browser required) converts and reads:
-   `pdftoppm -png -r 150 "tracts/MR030-009.pdf" /tmp/mr30` then Read the PNGs
+   `pdftoppm -png -r 150 "documents/mr030-009/mr030-009.pdf" /tmp/mr30` then Read the PNGs
    (re-render at `-r 300` and crop for fine label text). Write the
-   transcription file (`tracts/transcriptions/<MAPREF>.md`), then apply it
+   transcription file (`documents/<id>/<id>-partA.md`), then apply it
    per ADDING-STREETS.md's core loop.
 
 This decouples the roles: a browser session harvests Map-Refs; a
@@ -175,7 +175,7 @@ for the reading step, a different AI system entirely if it reads plats
 better (the experience so far: label transcription is the error-prone step,
 so whoever applies a transcription spot-checks it against the scan).
 
-## Alignment: HUMAN DOES THE FITTING (`align.html`) — read this first
+## Alignment: HUMAN DOES THE FITTING (`document-tool.html`) — read this first
 
 Hard-won division of labor (2026-07, MR006-138): instances are unreliable at
 estimating pixel coordinates on scans — every georeferencing error in this
@@ -183,9 +183,9 @@ project's history (junction-contaminated samples, off-the-ink traces,
 misplaced hypothesis anchors) came from Claude eyeballing pixels. Humans do
 this in seconds by sight. So:
 
-1. Instance prepares: render the scan (`pdftoppm -png -r 100 … tracts/renders/x`)
+1. Instance prepares: render the scan (`pdftoppm -png -r 100 … documents/<id>/<id>-100dpi`)
    and tell Kenny the file name and the approximate view center (lat, lng).
-2. **Kenny aligns**: open `align.html` (serve the folder locally, same as
+2. **Kenny aligns**: open `document-tool.html` (double-click `start-tools.command`, same as
    index.html), load the render, set the view center, then drag / wheel-resize /
    rotate the semi-transparent scan until the drawn streets sit on the red
    modern lines. Export — this saves `<name>-alignment.json`, which encodes the
@@ -207,8 +207,8 @@ way — MR066-035's block reads Bixel/Third/Figueroa/Arnold but is today's
 Bixel/Miramar/Boylston/3rd, and naive label-matching (old Third = modern 3rd)
 is geometrically impossible there. Don't match by name; match by geometry:
 
-1. `pdftoppm -png -r 100 tracts/MAP.pdf tracts/renders/map` then
-   `python3 georef.py grid tracts/renders/map-1.png` — Read the gridded image
+1. `pdftoppm -png -r 100 documents/<id>/<id>.pdf documents/<id>/<id>-100dpi` then
+   `python3 georef.py grid documents/<id>/<id>-100dpi-1.png` — Read the gridded image
    and estimate pixel coords of 2+ points you can identify CONFIDENTLY
    (intersections of streets with unchanged names, or renamings already
    documented in the data). Prefer points far apart; aim for the street
@@ -365,7 +365,7 @@ instantly showing a tract's footprint. Use when a source names a tract
    the Wolfskill Ave / original-Central boundary, Figueroa south of Pico.
 4. Namesake hunches tied to subdivisions: Gladys/Wolfskill-family pattern,
    Agatha (1897 tract?), Ruth Avenue's 1887 tract.
-5. Retro-transcription: the PDFs already in `tracts/` have been read but not
-   transcribed — writing `tracts/transcriptions/<MAPREF>.md` for each (from
+5. Retro-transcription: the PDFs already in `inbox/` have been read but not
+   transcribed — writing `documents/<id>/<id>-partA.md` for each (from
    the scans plus what's already applied in streets-data.js) makes them
    reusable without re-reading.

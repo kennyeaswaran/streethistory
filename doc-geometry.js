@@ -178,7 +178,33 @@
       : { value: { ll: [+pt.lat.toFixed(6), +pt.lon.toFixed(6)] }, snapped: false };
   }
 
+  // --- scan placement ------------------------------------------------------
+  // The document tool holds a scan's placement as a ground point under its
+  // centre, a rotation from north, and metres per scan pixel — never as a
+  // screen position, which would need correcting on every pan and zoom and
+  // would drift as those corrections accumulated.
+  const KX = lat => 111320 * Math.cos(lat * Math.PI / 180);
+
+  function placementFromAlignment(points, imgW, imgH) {
+    const fit = fitAlignment(points);
+    const [lat, lng] = scanToWorld(fit, imgW / 2, imgH / 2);
+    const [aLat, aLng] = scanToWorld(fit, 0, 0);
+    const [bLat, bLng] = scanToWorld(fit, imgW, 0);
+    const mppx = metres({ lat: aLat, lon: aLng }, { lat: bLat, lon: bLng }) / imgW;
+    // the top edge runs along +x in scan space; its bearing is the rotation
+    const east = (bLng - aLng) * KX(lat), south = -(bLat - aLat) * KY;
+    return { lat, lng, rot: Math.atan2(south, east), mppx };
+  }
+
+  function placementToWorld(pl, imgW, imgH, px, py) {
+    const c = Math.cos(pl.rot), sn = Math.sin(pl.rot);
+    const dx = (px - imgW / 2) * pl.mppx, dy = (py - imgH / 2) * pl.mppx;
+    const east = dx * c - dy * sn, south = dx * sn + dy * c;
+    return [pl.lat - south / KY, pl.lng + east / KX(pl.lat)];
+  }
+
   return { makeProj, fitAlignment, scanToWorld, worldToScan, pointInPolygon,
+           placementFromAlignment, placementToWorld,
            coverageToWorld, segmentsInBounds, nearestCrossStreet, snapOrPoint,
            metres };
 });

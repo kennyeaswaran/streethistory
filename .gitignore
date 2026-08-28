@@ -6,21 +6,29 @@
 .dropbox
 .dropbox.cache
 
-# editors
+# editors / python
 *.swp
 .vscode/
+__pycache__/
 
-# tract map downloads (re-downloadable; see TRACT-RESEARCH.md)
-# — but transcriptions are research output and ARE tracked
-tracts/*
-!tracts/transcriptions/
-# — and the human alignments are NOT regenerable (each is a hand fit in
-#   align.html, and PIPELINE.md treats them as the stage-2 benchmark)
-!tracts/renders/
-tracts/renders/*
-!tracts/renders/*-alignment.json
+# Raw downloads waiting to be turned into documents. Emptied as they are
+# processed; every one of them is re-downloadable (see handbook/TRACT-RESEARCH.md).
+inbox/
 
-# overlay-trial: the renders are derived (regenerate with georef.py overlay /
-# overlay-one from tracts/ + the alignment JSONs), so only the trial's
-# instructions, answer key and results are tracked
+# One folder per document (documents/<id>/) holds everything about it. The
+# heavy, re-derivable parts stay out of git; the reasoning does not.
+#   ignored: the source scan (re-downloadable) and renders (regenerate with
+#            pdftoppm / georef.py)
+#   tracked: the document file, the alignment (a HAND fit — not reproducible
+#            by anyone but Kenny at the tool), the Part A transcription, and
+#            any notes
+# If viewer-facing map overlays ever land, the web-sized derivative to commit
+# should be named <id>-web.jpg and added as an exception here.
+documents/*/*.pdf
+documents/*/*-100dpi.png
+documents/*/*-overlay.png
+documents/*/*-only-*.png
+
+# overlay-trial: the benchmark's PROSE and ANSWERS are tracked; its renders
+# are derived from the scans plus the alignments via georef.py.
 overlay-trial/**/*.png

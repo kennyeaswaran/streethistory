@@ -1,0 +1,38 @@
+{
+  "image": "tracts/renders/MR066-035.png",
+  "points": [
+    {
+      "px": [
+        0,
+        0
+      ],
+      "ll": [
+        34.059411,
+        -118.260332
+      ],
+      "note": "document-tool corner (0,0)"
+    },
+    {
+      "px": [
+        747,
+        0
+      ],
+      "ll": [
+        34.059574,
+        -118.257456
+      ],
+      "note": "document-tool corner (747,0)"
+    },
+    {
+      "px": [
+        0,
+        1276
+      ],
+      "ll": [
+        34.055311,
+        -118.259997
+      ],
+      "note": "document-tool corner (0,1276)"
+    }
+  ]
+}

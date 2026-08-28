@@ -1,5 +1,9 @@
 # Segment-model migration pass (2026-07) — agent instructions
 
+> **Path note (2026-08-26):** written before the folder reorganisation;
+> `tracts/transcriptions/` is now `documents/<id>/<id>-partA.md`.
+
+
 Goal: bring existing `streets-data.js` entries up to the conventions
 established by the 3rd Street pilot. Read ADDING-STREETS.md first (the
 "Segments" and "Field conventions" sections), and study the **"3rd Street"

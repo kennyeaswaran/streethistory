@@ -8,10 +8,10 @@
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
 ## Partially swept documents (no negative inference contributed)
-- ord-1849: sweptFor = ["2nd Street","3rd Street","Figueroa Street"]
 - mr003-060: sweptFor = ["Hewitt Street","Garey Street","2nd Street","3rd Street"]
 - mr030-009: sweptFor = ["3rd Street","Central Avenue"]
 - mr066-035: sweptFor = ["3rd Street","Miramar Street"]
+- ord-1849: sweptFor = ["2nd Street","3rd Street","Figueroa Street"]
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
 - tr0015-166a: sweptFor = ["2nd Street","Miramar Street"]
 

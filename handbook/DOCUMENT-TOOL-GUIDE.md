@@ -9,16 +9,24 @@ the AI pass and phase 2 review.
 
 ---
 
-## Before you start: get a render
+## Before you start: make the document's folder
 
-The tool wants a PNG, not a PDF. From the project folder:
+Every document lives in `documents/<id>/`, holding everything about it — the
+document file, the alignment, the render, the source scan and the Part A
+transcription. That folder is the unit you can drag whole into another AI
+system, which is what the next stage of the workflow needs.
+
+A fresh download lands in `inbox/`. To start work on one:
 
 ```
-pdftoppm -png -r 100 "tracts/MR066-035.pdf" tracts/renders/MR066-035
+mkdir -p documents/mr066-035
+mv inbox/MR066-035.pdf documents/mr066-035/mr066-035.pdf
+pdftoppm -png -r 100 documents/mr066-035/mr066-035.pdf \
+         documents/mr066-035/mr066-035-100dpi
 ```
 
-That writes `tracts/renders/MR066-035-1.png` (one file per page — the `-1` is
-the page number, and multi-page maps give you `-2`, `-3`…). **Use 100 dpi**:
+That writes `mr066-035-100dpi-1.png` (one file per page — the `-1` is the page
+number, and multi-page maps give you `-2`, `-3`…). **Use 100 dpi**:
 it is the project's alignment convention, and every stored pixel coordinate is
 meaningless against a render at a different resolution. Re-render at `-r 300`
 if you need to *read* fine label text, but align against the 100 dpi one.
@@ -53,8 +61,8 @@ The **Start** section at the top left has three ways in:
   the coverage ring, fetches the render named in the file, and puts the scan
   back exactly where you left it. Any rows already in the file are left
   untouched.
-- **Start fresh from a render** — type the path (`tracts/renders/MR066-035-1.png`)
-  and click Load. Anything under the project folder works, since the page is
+- **Start fresh from a render** — type the path
+  (`documents/mr066-035/mr066-035-100dpi-1.png`) and click Load. Anything under the project folder works, since the page is
   being served from there.
 - **Pick a file** — the ordinary file chooser, for a render that lives
   somewhere else.
@@ -114,8 +122,9 @@ Right-hand panel, top to bottom:
 - **shortTitle** — a few words for generated prose ("…on the 1875 Thomas
   Tract map").
 - **url** — where the scan lives online.
-- **scan** — the local source file, `tracts/MR066-035.pdf`. Optional.
-- **transcription** — the Part A file, if one exists.
+- **scan** — the source file, `documents/<id>/<id>.pdf`. Optional.
+- **transcription** — the Part A file, `documents/<id>/<id>-partA.md`, if one
+  exists.
 - **date** — *on* for a known date, *after*/*before* for a range. A Sanborn
   sheet from a volume corrected over decades is `after: "1906"`.
 - **type** — tract-map, survey, sanborn, directory, ordinance, news-report.
@@ -133,16 +142,25 @@ Right-hand panel, top to bottom:
 
 ## Saving
 
-**Save document + alignment** writes two files:
+**Connect the project folder first** — the button is in the Write section, and
+it only has to be done once. Chrome remembers the folder between sessions (it
+will ask you to re-confirm access the first time you save in a new session).
+After that, Save puts both files exactly where they belong and you never pick
+a location.
 
-1. `<id>.js` — the document. Put it in `documents/` and add a line for it in
-   `documents/index.js`.
-2. `<render>-alignment.json` — the control points. Put it in
-   `tracts/renders/`. `georef.py` reads this, and the committed alignment
-   files are the benchmark for any future automatic aligner.
+**Save document + alignment** writes three files into `documents/<id>/`:
 
-Chrome asks where to save each one, so you can navigate straight to the right
-folder. If the API isn't available they land in Downloads and you move them.
+1. `<id>.js` — the document itself.
+2. `<id>-alignment.json` — the control points, in the schema `georef.py`
+   reads. Written separately as well as inside the document because these
+   hand fits are the benchmark for any future automatic aligner.
+3. `TASK.md` — the brief for the AI pass: what the sheet is, which modern
+   streets fall inside the coverage polygon, the rules that decide a match,
+   and the row format to hand back. It exists so that dragging the folder
+   into an assistant is the whole instruction.
+
+Without a connected folder it falls back to asking where to put each file
+(or downloading them, outside Chrome), and then you move them yourself.
 
 Re-saving an existing document **preserves the prose comment block at the top
 of the file** and any rows already in it. Comments *inside* the object are not
@@ -156,19 +174,41 @@ node check-model.js     # the header and any rows are valid
 node generate.js        # rebuild generated/
 ```
 
-## What phase 1 does not do
+## What happens next — and what phase 2 is
 
-It never writes rows, and it always saves `sweptFully: false`. A document
-whose coverage is drawn but whose streets are unidentified is a perfectly good
-intermediate state — that's the handoff to the AI pass (TOOL-SPEC.md §3) and
-then to phase 2 review, where rows get confirmed and the sweep gate finally
-flips.
+Phase 1 never writes rows, and always saves `sweptFully: false`. A document
+with its coverage drawn and no streets identified is a complete, correct
+intermediate state, not an unfinished one.
+
+**Phase 2 does not exist yet** — there is no button to press and nothing to
+look for in the tool. When it is built it will live in this same page, as a
+second mode, and the sequence will be:
+
+1. **Phase 1** (today) — align, bound, save the header.
+2. **The AI pass** — drag `documents/<id>/` into an assistant; `TASK.md` in it
+   is the brief. Eventually the tool will also export one image per in-bounds
+   modern street,
+   an AI system proposes which plat street each corresponds to, and those
+   arrive as rows marked `confirmed: false`. The instructions for that already
+   exist in `overlay-trial/INSTRUCTIONS-v2.md`, and `ANSWER-KEY.md` is the
+   benchmark for deciding which AI system to trust with it.
+3. **Phase 2** — the in-bounds segments are drawn over the scan in colours for
+   identified / no-counterpart / unaccounted, you click through them, correct
+   what is wrong, tick what is right, and when nothing is unaccounted the
+   document can finally be marked `sweptFully: true`.
+
+So for now, the useful thing to do with a finished phase-1 document is simply
+to have it: the coverage polygon and the alignment are what make everything
+downstream possible, and neither can be produced any other way.
 
 ## When something looks wrong
 
 | symptom | cause |
 |---|---|
 | Save downloads instead of asking where | opened as `file://`, not through localhost — or a browser other than Chrome |
+| Save asks where to put files every time | the project folder isn't connected — use the button in the Write section |
+| "remembered — Save will ask to re-confirm" | normal at the start of a session; the first Save re-grants access |
+| Scan drifts off the streets as you zoom | fixed 2026-08-26; if you still see it, reload — an old copy of the page may be cached |
 | `start-tools.command` opens in a text editor | it lost its executable bit; `chmod +x start-tools.command` in Terminal, once |
 | "Ports 8000-8010 are all busy" | an old server is still running; close its Terminal window |
 | "could not load …" on a render path | path is relative to the project folder: `tracts/renders/X.png` |

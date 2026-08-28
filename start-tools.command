@@ -55,7 +55,7 @@ echo
 echo "    document tool   $BASE/document-tool.html"
 echo "    map preview     $BASE/preview.html"
 echo "    live map        $BASE/index.html"
-echo "    aligner (old)   $BASE/align.html"
+echo "    old aligner     $BASE/attic/align.html"
 echo
 
 # Open in Chrome if it's there (the File System Access API is a Chrome

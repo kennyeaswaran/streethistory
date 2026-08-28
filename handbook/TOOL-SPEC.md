@@ -2,8 +2,7 @@
 
 **Status (2026-08-25): specified, not built.** Target file:
 `document-tool.html`, a single self-contained page served from the project
-folder. `align.html` stays until this supersedes it, then retires — the same
-pattern `preview.html` is using for `index.html`.
+folder. `align.html` was retired to `attic/` when this superseded it (2026-08-26).
 
 Written against MODEL-SPEC.md as amended 2026-08-25 (§4.4, §4.6, §5.2–§5.5).
 Read §0 of that file first if you don't know the project.
@@ -13,7 +12,7 @@ Read §0 of that file first if you don't know the project.
 ## 1. The problem it solves
 
 A document reaches `documents/<id>.js` today by a chain of hand steps: a human
-aligns the scan in `align.html`, exports control points, an instance runs
+aligned the scan in `align.html`, exported control points, an instance ran
 `georef.py` to overlay and trace, someone reads a verdict table, and someone
 writes the rows. It works, and it produced the 3rd Street evidence base, but
 it is slow, it loses the human's judgement into prose, and it cannot be
@@ -32,10 +31,10 @@ a match. The interface enforces the rule that instances keep breaking.
 
 ## 2. Phase 1 — align, then bound
 
-Essentially today's `align.html` plus one step.
+Essentially the old `align.html` plus one step.
 
-1. **Load** a render (`tracts/renders/*.png`) and, if resuming, an existing
-   `documents/<id>.js`.
+1. **Load** a render (`documents/<id>/<id>-100dpi.png`) and, if resuming, an
+   existing `documents/<id>/<id>.js`.
 2. **Align** — drag to move, wheel to scale, slider to rotate the scan over
    the live modern street network drawn from `streets-geometry.js`. Separate
    controls pan and zoom the *view* without disturbing the alignment, so the
@@ -48,7 +47,7 @@ Essentially today's `align.html` plus one step.
    type, `attests` default, `completeness`, `readBy`.
 5. **Write** `documents/<id>.js` with the header, `alignment` (§4.6) and the
    `coverage` polygon **in scan pixels**, `sweptFully: false`, no rows yet.
-   Also write the `tracts/renders/<name>-alignment.json` sidecar, because
+   The alignment is also written beside it as `<id>-alignment.json`, because
    `georef.py` reads it and the four committed alignment files are the
    stage-2 benchmark.
 
@@ -196,7 +195,7 @@ expected values for the snapping.
 
 The adversarial benchmark, deliberately. Its answers are known
 (`overlay-trial/ANSWER-KEY.md`), a human alignment is already committed
-(`tracts/renders/MR066-035-alignment.json`), it is small, and two of its rows
+(`documents/mr066-035/mr066-035-alignment.json`), it is small, and two of its rows
 are already encoded. Finishing it means roughly four to six rows — adding
 Bixel, and the plat's "Figueroa St" which is modern **Boylston** — and
 flipping it to `sweptFully: true`.

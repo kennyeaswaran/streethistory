@@ -6,7 +6,8 @@
 <!--
   The document tool (TOOL-SPEC.md). PHASE 1 is implemented here: align a scan
   to the modern street network, draw the coverage polygon, fill the header,
-  and write documents/<id>.js plus the georef alignment sidecar.
+  and write everything into documents/<id>/ — the document file, the alignment,
+  and (moved in by hand for now) the render and source scan.
 
   Phase 2 (review of proposed rows) is specified in TOOL-SPEC.md §4 and will
   be added to this same file — the loader, the alignment fit and the in-bounds
@@ -75,7 +76,7 @@
     the alignment.</div>
   <label style="margin-top:8px">…or start fresh from a render</label>
   <div class="row">
-    <input type="text" id="renderPath" placeholder="tracts/renders/MR066-035.png">
+    <input type="text" id="renderPath" placeholder="documents/mr066-035/mr066-035-100dpi.png">
     <button id="loadRenderBtn" style="flex:0 0 auto">Load</button>
   </div>
   <div class="hint">Or pick a file anywhere: <input type="file" id="file" accept="image/*"></div>
@@ -118,8 +119,8 @@
   <label>title <textarea id="f_title" rows="3" placeholder="Recorded map: …"></textarea></label>
   <label>shortTitle <input type="text" id="f_shortTitle" placeholder="Thomas Tract map"></label>
   <label>url <input type="url" id="f_url" placeholder="https://…"></label>
-  <label>scan — local source file <input type="text" id="f_scan" placeholder="tracts/MR066-035.pdf"></label>
-  <label>transcription <input type="text" id="f_transcription" placeholder="tracts/transcriptions/MR066-035.md"></label>
+  <label>scan — local source file <input type="text" id="f_scan" placeholder="documents/mr066-035/mr066-035.pdf"></label>
+  <label>transcription <input type="text" id="f_transcription" placeholder="documents/mr066-035/mr066-035-partA.md"></label>
   <div class="row">
     <div><label>date kind
       <select id="f_dateKind"><option>on</option><option>after</option><option>before</option></select>
@@ -142,10 +143,17 @@
     <option>human</option><option>instance</option><option>instance+alignment</option></select></label>
 
   <h3>Write</h3>
+  <div class="hint">Connect the project folder once and Save puts both files
+    exactly where they belong — no picking a location each time.</div>
+  <div class="row">
+    <button id="connectDir">Connect project folder…</button>
+  </div>
+  <div class="hint" id="dirState">not connected — Save will ask where to put each file</div>
   <div class="hint" id="writeHint"></div>
   <button class="primary" id="save">Save document + alignment</button>
   <div class="hint">Phase 1 always writes <code>sweptFully: false</code> and no
   rows. Rows arrive from the AI pass and are confirmed in phase 2.</div>
+  <div class="hint" id="nextSteps" style="display:none"></div>
 </div>
 
 <div id="status">load a render to begin</div>
@@ -174,7 +182,12 @@ const statusEl = $("status");
 let img = null, imgName = "";
 let mode = "align";                       // "align" | "coverage"
 let view = { lat: 34.0570, lng: -118.2590, mpp: 0.55 };
-let scan = { x: 0, y: 0, rot: 0, mppx: 0.55 };
+// The scan's placement is stored in WORLD terms: the ground point under its
+// centre, its rotation from north, and its scale in metres per scan pixel.
+// Storing a screen position instead (as this once did) means every pan and
+// zoom needs a compensating correction, and any error in one of those
+// corrections drifts the alignment a little each time.
+let scan = { lat: 34.0570, lng: -118.2590, rot: 0, mppx: 0.55 };
 let coverage = [];                        // scan pixels [[x,y], ...]
 let pendingAlignment = null, loadedDoc = null;
 
@@ -184,22 +197,30 @@ const llToScreen = (lat, lng) => [ (lng - view.lng) * kx() / view.mpp + cv.width
                                    cv.height / 2 - (lat - view.lat) * KY / view.mpp ];
 const screenToLL = (x, y) => [ view.lat + (cv.height / 2 - y) * view.mpp / KY,
                                view.lng + (x - cv.width / 2) * view.mpp / kx() ];
+// Screen is a metric plane (both axes are metres / view.mpp), so the scan's
+// rotation and uniform scale behave the same in screen space and on the ground.
+function scanCentreScreen() { return llToScreen(scan.lat, scan.lng); }
 function scanToScreen(px, py) {
+  const [cx, cy] = scanCentreScreen();
   const s = scan.mppx / view.mpp, c = Math.cos(scan.rot), sn = Math.sin(scan.rot);
   const dx = (px - img.width / 2) * s, dy = (py - img.height / 2) * s;
-  return [ scan.x + dx * c - dy * sn, scan.y + dx * sn + dy * c ];
+  return [ cx + dx * c - dy * sn, cy + dx * sn + dy * c ];
 }
 function screenToScan(sx, sy) {
+  const [cx, cy] = scanCentreScreen();
   const s = scan.mppx / view.mpp, c = Math.cos(-scan.rot), sn = Math.sin(-scan.rot);
-  const ux = sx - scan.x, uy = sy - scan.y;
+  const ux = sx - cx, uy = sy - cy;
   return [ (ux * c - uy * sn) / s + img.width / 2, (ux * sn + uy * c) / s + img.height / 2 ];
 }
+// Scan pixel -> ground, WITHOUT going through the screen: the exported control
+// points must not depend on how far you happen to be zoomed in.
+const scanToWorldDirect = (px, py) => G.placementToWorld(scan, img.width, img.height, px, py);
 
 // The three control points phase 1 exports: scan corners through the human's
 // alignment. Same schema georef.py consumes (MODEL-SPEC §4.6).
 function controlPoints() {
   return [[0, 0], [img.width, 0], [0, img.height]].map(([px, py]) => {
-    const [lat, lng] = screenToLL(...scanToScreen(px, py));
+    const [lat, lng] = scanToWorldDirect(px, py);
     return { px: [px, py], ll: [+lat.toFixed(6), +lng.toFixed(6)],
              note: `document-tool corner (${px},${py})` };
   });
@@ -213,7 +234,8 @@ function draw() {
   if (img) {
     ctx.save();
     ctx.globalAlpha = $("op").value / 100;
-    ctx.translate(scan.x, scan.y); ctx.rotate(scan.rot);
+    const [cx, cy] = scanCentreScreen();
+    ctx.translate(cx, cy); ctx.rotate(scan.rot);
     const s = scan.mppx / view.mpp; ctx.scale(s, s);
     ctx.drawImage(img, -img.width / 2, -img.height / 2);
     ctx.restore();
@@ -294,11 +316,14 @@ addEventListener("mousemove", e => {
   if (drag && img) {
     const dx = e.clientX - drag.last[0], dy = e.clientY - drag.last[1];
     if (Math.abs(dx) + Math.abs(dy) > 2) drag.moved = true;
-    if (drag.kind === "scan") { scan.x += dx; scan.y += dy; }
-    else {
+    if (drag.kind === "scan") {
+      scan.lng += dx * view.mpp / kx();
+      scan.lat -= dy * view.mpp / KY;
+    } else {
+      // Panning the view moves nothing on the ground, so the scan needs no
+      // compensation at all now that its placement is stored in world terms.
       view.lng -= dx * view.mpp / kx();
       view.lat += dy * view.mpp / KY;
-      scan.x += dx; scan.y += dy;         // keep the scan pinned to the ground
     }
     drag.last = [e.clientX, e.clientY];
     draw();
@@ -318,18 +343,18 @@ cv.addEventListener("wheel", e => {
   if (!img) return;
   const f = e.deltaY < 0 ? 1.03 : 1 / 1.03;
   if (e.shiftKey || mode === "coverage") {           // zoom the VIEW
+    // Keep the ground point under the cursor fixed. The scan is not touched:
+    // it is anchored to the ground, so it follows automatically.
     const [lat0, lng0] = screenToLL(e.clientX, e.clientY);
-    const [sxBefore, syBefore] = [e.clientX, e.clientY];
     view.mpp /= f;
-    const [sx, sy] = llToScreen(lat0, lng0);
-    view.lng += (sx - sxBefore) * view.mpp / kx();
-    view.lat -= (sy - syBefore) * view.mpp / KY;
-    const [nx, ny] = llToScreen(...screenToLL(scan.x, scan.y));
-    scan.x = nx; scan.y = ny;
+    view.lat = lat0 + (cv.height / 2 - e.clientY) * view.mpp / KY;
+    view.lng = lng0 - (e.clientX - cv.width / 2) * view.mpp / kx();
+    $("view").value = `${view.lat.toFixed(4)}, ${view.lng.toFixed(4)}, ${view.mpp.toFixed(3)}`;
   } else {                                            // scale the SCAN
+    const [cx, cy] = scanCentreScreen();
     scan.mppx *= f;
-    scan.x = e.clientX + (scan.x - e.clientX) * f;
-    scan.y = e.clientY + (scan.y - e.clientY) * f;
+    const nx = e.clientX + (cx - e.clientX) * f, ny = e.clientY + (cy - e.clientY) * f;
+    [scan.lat, scan.lng] = screenToLL(nx, ny);
     $("sc").value = scan.mppx; $("scV").textContent = scan.mppx.toFixed(3);
   }
   draw();
@@ -363,11 +388,9 @@ $("setview").onclick = () => {
 };
 $("fitScan").onclick = () => {
   if (!img) return;
-  const [lat, lng] = screenToLL(...scanToScreen(img.width / 2, img.height / 2));
-  view.lat = lat; view.lng = lng;
+  view.lat = scan.lat; view.lng = scan.lng;
   view.mpp = Math.max(img.width * scan.mppx / cv.width, img.height * scan.mppx / cv.height) * 1.1;
-  scan.x = cv.width / 2; scan.y = cv.height / 2;
-  $("view").value = `${lat.toFixed(4)}, ${lng.toFixed(4)}, ${view.mpp.toFixed(2)}`;
+  $("view").value = `${view.lat.toFixed(4)}, ${view.lng.toFixed(4)}, ${view.mpp.toFixed(3)}`;
   draw();
 };
 
@@ -376,7 +399,7 @@ function loadRender(src, name) {
     const im = new Image();
     im.onload = () => {
       img = im; imgName = name;
-      scan.x = cv.width / 2; scan.y = cv.height / 2;
+      scan.lat = view.lat; scan.lng = view.lng;
       if (!$("f_id").value) $("f_id").value = name.replace(/\.[^.]+$/, "").toLowerCase();
       draw(); res(im);
     };
@@ -401,10 +424,10 @@ $("loadDoc").onclick = async () => {
   if (!id) return;
   let doc;
   try {
-    const src = await (await fetch(`documents/${id}.js`)).text();
+    const src = await (await fetch(`documents/${id}/${id}.js`)).text();
     const body = src.slice(src.indexOf("module.exports") ).replace(/^module\.exports\s*=\s*/, "");
     doc = new Function("return " + body.replace(/;\s*$/, ""))();
-  } catch (err) { alert(`Could not load documents/${id}.js — ${err.message}`); return; }
+  } catch (err) { alert(`Could not load documents/${id}/${id}.js — ${err.message}`); return; }
 
   for (const k of ["id", "title", "shortTitle", "url", "scan", "transcription"])
     if (doc[k]) $("f_" + k).value = doc[k];
@@ -437,17 +460,9 @@ $("loadDoc").onclick = async () => {
 // scale and position, so the human can resume where they left off.
 function restoreAlignment(al) {
   if (!img || !al.points || al.points.length < 2) return;
-  const [p0, p1] = al.points;
-  const s0 = llToScreen(p0.ll[0], p0.ll[1]), s1 = llToScreen(p1.ll[0], p1.ll[1]);
-  const d = [p1.px[0] - p0.px[0], p1.px[1] - p0.px[1]];
-  const sd = [s1[0] - s0[0], s1[1] - s0[1]];
-  const scale = Math.hypot(sd[0], sd[1]) / Math.hypot(d[0], d[1]);   // screen px per scan px
-  scan.mppx = scale * view.mpp;
-  scan.rot = Math.atan2(sd[1], sd[0]) - Math.atan2(d[1], d[0]);
-  const off = [img.width / 2 - p0.px[0], img.height / 2 - p0.px[1]];
-  const c = Math.cos(scan.rot), sn = Math.sin(scan.rot);
-  scan.x = s0[0] + (off[0] * c - off[1] * sn) * scale;
-  scan.y = s0[1] + (off[0] * sn + off[1] * c) * scale;
+  // Reuse the tested fit rather than re-deriving the transform by hand, then
+  // read the placement off it in world terms.
+  Object.assign(scan, G.placementFromAlignment(al.points, img.width, img.height));
   $("rot").value = scan.rot * 180 / Math.PI; $("rotV").textContent = (scan.rot * 180 / Math.PI).toFixed(1);
   $("sc").value = scan.mppx; $("scV").textContent = scan.mppx.toFixed(3);
   pendingAlignment = null;
@@ -494,7 +509,7 @@ function serialiseDoc(prefix) {
 ${covLines.join(",\n")}
   ],
   alignment: {
-    image: ${q("tracts/renders/" + imgName)},
+    image: ${q(`documents/${id}/${id}-100dpi.png`)},
     dpi: 100,
     points: [
 ${pts.join(",\n")}
@@ -506,6 +521,147 @@ ${pts.join(",\n")}
 
 ${rowsSrc}};
 `;
+}
+
+// A single directory handle for the project folder means Save can write
+// documents/<id>.js and tracts/renders/<name>-alignment.json straight to the
+// right places. Handles survive reloads via IndexedDB, but re-granting
+// permission needs a user gesture, so that happens on the Save click.
+let projectDir = null;
+
+function idb(fn) {
+  return new Promise((res, rej) => {
+    const open = indexedDB.open("streetymology-tool", 1);
+    open.onupgradeneeded = () => open.result.createObjectStore("handles");
+    open.onerror = () => rej(open.error);
+    open.onsuccess = () => {
+      const tx = open.result.transaction("handles", "readwrite");
+      const req = fn(tx.objectStore("handles"));
+      req.onsuccess = () => res(req.result);
+      req.onerror = () => rej(req.error);
+    };
+  });
+}
+const saveHandle = h => idb(st => st.put(h, "projectDir")).catch(() => {});
+const loadHandle = () => idb(st => st.get("projectDir")).catch(() => null);
+
+function setDirState(text, warn) {
+  const el = $("dirState");
+  el.innerHTML = warn ? `<span class="warn">${text}</span>` : text;
+}
+
+async function ensureDirPermission(gesture) {
+  if (!projectDir) return false;
+  const opts = { mode: "readwrite" };
+  if (await projectDir.queryPermission(opts) === "granted") return true;
+  if (!gesture) return false;
+  return await projectDir.requestPermission(opts) === "granted";
+}
+
+$("connectDir").onclick = async () => {
+  if (!window.showDirectoryPicker) {
+    setDirState("This browser has no directory access — use Chrome, or Save will download files.", true);
+    return;
+  }
+  try {
+    projectDir = await window.showDirectoryPicker({ mode: "readwrite" });
+    await saveHandle(projectDir);
+    setDirState(`connected: <b>${projectDir.name}</b> — Save writes into documents/&lt;id&gt;/`);
+  } catch (e) { if (e.name !== "AbortError") setDirState(e.message, true); }
+};
+
+(async () => {
+  const h = await loadHandle();
+  if (!h) return;
+  projectDir = h;
+  const granted = await ensureDirPermission(false);
+  setDirState(granted
+    ? `connected: <b>${h.name}</b> — Save writes into documents/&lt;id&gt;/`
+    : `<b>${h.name}</b> remembered — Save will ask to re-confirm access once`);
+})();
+
+// The bundle is meant to be dragged whole into another AI system, so it
+// carries its own brief. Everything here is derivable at save time: the sheet,
+// its date, and the modern streets whose geometry falls inside the coverage
+// polygon. The traps are restated because they arrive with the data rather
+// than in a separate conversation nobody remembers to have.
+function taskMarkdown(id) {
+  const streets = inBoundsNames();
+  const dk = $("f_dateKind").value, dv = $("f_date").value.trim();
+  return `# Identify the streets on ${id}
+
+${$("f_title").value.trim()}
+
+- **Date:** ${dk} ${dv}
+- **Sheet:** \`${id}-100dpi.png\` (100 dpi; every pixel coordinate below is
+  measured against this render)
+- **Alignment:** \`${id}-alignment.json\` — control points mapping scan pixels
+  to lat/lng, already fitted by a human
+- **Coverage:** the polygon in \`${id}.js\`, in scan pixels — the ground this
+  document testifies about
+
+## The job
+
+For each modern street listed below, decide what this sheet shows along it:
+the plat's own label for that corridor, or that the sheet shows nothing there.
+Then list any street DRAWN on the plat that matches none of them.
+
+Modern streets inside the coverage polygon (${streets.length}):
+
+${streets.map(n => "- " + n).join("\n")}
+
+## Rules that decide the answer
+
+1. **Geometry only, never names.** These sheets are chosen because old names
+   mislead. On this project's benchmark sheet the plat's "Third St" is modern
+   **Miramar** and its "Arnold St" is modern **3rd**. A corridor labelled X
+   frequently corresponds to a modern street named Y.
+2. **Streets are drawn as corridors** — two parallel edge lines with the name
+   lettered between them. A correct match runs down the MIDDLE, which on a
+   wide street looks far from both edges. Judge whether the line stays inside
+   the corridor, not whether it touches ink.
+3. **A diagonal crossing is not a match** unless it tracks the corridor along
+   its length.
+4. **Small offsets are normal** (1890s surveying, paper stretch, regrading) —
+   up to about half a corridor width. Systematic drift out of the corridor is
+   a non-match.
+5. **Maps are often not north-up.** Orient by the shape of the network.
+6. If unsure between two readings, give both and say what would decide it. A
+   wrong confident answer is the worst outcome; an honest "two candidates, low
+   confidence" is fine.
+
+## What to hand back
+
+Rows to paste into \`${id}.js\`, in this shape — all of them
+\`confirmed: false\`, since a human confirms them afterwards:
+
+\`\`\`js
+// the plat labels this stretch of a modern street
+{ kind: "state", name: "<name-entity-id>", asWritten: "<label exactly as lettered>",
+  street: "<modern street>", from: "<cross street>", to: "<cross street>",
+  basis: "alignment", confirmed: false },
+
+// the sheet covers this stretch and shows no street there
+{ kind: "silent", street: "<modern street>", from: "<cross street>", to: "<cross street>",
+  confirmed: false },
+
+// drawn on the plat, no modern counterpart at all
+{ kind: "vanished", name: "<name-entity-id>", asWritten: "<label as lettered>",
+  trace: [[x, y], [x, y]], basis: "alignment", confirmed: false }
+\`\`\`
+
+\`asWritten\` is verbatim ink, typos included. \`trace\` is scan pixels against
+the render above. If you cannot name a \`name\` entity, leave it as a comment
+describing the label — inventing an id is worse than leaving the gap.
+`;
+}
+
+async function writeInto(dir, parts, name, text) {
+  let d = dir;
+  for (const part of parts) d = await d.getDirectoryHandle(part, { create: true });
+  const fh = await d.getFileHandle(name, { create: true });
+  const w = await fh.createWritable();
+  await w.write(text); await w.close();
 }
 
 async function writeFile(suggestedName, text) {
@@ -536,16 +692,42 @@ $("save").onclick = async () => {
   // prose header is often the most useful thing in it.
   let prefix = "";
   try {
-    const src = await (await fetch(`documents/${id}.js`)).text();
+    const src = await (await fetch(`documents/${id}/${id}.js`)).text();
     const i = src.indexOf("module.exports");
     if (i > 0) prefix = src.slice(0, i);
   } catch (e) { /* new document */ }
 
-  const okDoc = await writeFile(`${id}.js`, serialiseDoc(prefix));
-  if (!okDoc) return;
-  await writeFile(imgName.replace(/\.[^.]+$/, "") + "-alignment.json",
-    JSON.stringify({ image: "tracts/renders/" + imgName, points: controlPoints() }, null, 2));
-  statusEl.textContent = `saved ${id}.js — put it in documents/ and the alignment in tracts/renders/`;
+  const docText = serialiseDoc(prefix);
+  const alignName = `${id}-alignment.json`;
+  const alignText = JSON.stringify(
+    { image: `documents/${id}/${id}-100dpi.png`, points: controlPoints() }, null, 2);
+
+  let where;
+  if (await ensureDirPermission(true)) {
+    try {
+      await writeInto(projectDir, ["documents", id], `${id}.js`, docText);
+      await writeInto(projectDir, ["documents", id], `${id}-alignment.json`, alignText);
+      await writeInto(projectDir, ["documents", id], "TASK.md", taskMarkdown(id));
+      where = `documents/${id}/ (${id}.js, ${id}-alignment.json, TASK.md)`;
+      setDirState(`connected: <b>${projectDir.name}</b> — Save writes into documents/&lt;id&gt;/`);
+    } catch (e) { alert("Could not write into the project folder: " + e.message); return; }
+  } else {
+    if (!await writeFile(`${id}.js`, docText)) return;
+    await writeFile(alignName, alignText);
+    await writeFile("TASK.md", taskMarkdown(id));
+    where = `two files — move ${id}.js into documents/ and ${alignName} into tracts/renders/`;
+  }
+
+  statusEl.textContent = `saved ${where}`;
+  const next = $("nextSteps");
+  next.style.display = "";
+  next.innerHTML =
+    `<b>Saved ${where}.</b><br><br>Next:<ol class="compact">` +
+    `<li>Move the render and the source scan into <code>documents/${id}/</code> (as <code>${id}-100dpi.png</code> and <code>${id}.pdf</code>) — the folder is meant to be draggable whole into an AI assistant, and <code>TASK.md</code> in it is the brief. if it is not there yet — the folder is meant to hold everything about this document.</li>` +
+    `<li>In the terminal: <code>node check-model.js</code> then <code>node generate.js</code>.</li>` +
+    `<li>Identifying which street is which is <b>phase 2</b>, which is not built yet — ` +
+    `the document is complete and correct as it stands, with no rows and ` +
+    `<code>sweptFully: false</code>.</li></ol>`;
 };
 
 addEventListener("resize", draw);

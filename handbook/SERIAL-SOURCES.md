@@ -136,9 +136,10 @@ than substituting for it.
 
 ## Conventions (proposed; not yet exercised)
 
-- Transcriptions: `sanborn/<year>-vol<N>-sheet<NN>.md` and
-  `directories/<year>-streets.md`, following
-  `tracts/transcriptions/TEMPLATE.md`'s Part A / Part B split — Part A
+- One folder per sheet, as for every document: `documents/sanborn-1894-v1-s12/`
+  and `documents/directory-1897/`, each holding its own Part A transcription
+  (`<id>-partA.md`) beside the document file, per
+  `handbook/TRANSCRIPTION-TEMPLATE.md`'s Part A / Part B split — Part A
   verbatim (labels as lettered, correction-slip dates, index rows), Part B
   the modern identifications with their basis. The split matters more here,
   not less: one Sanborn sheet can produce dozens of Part B rows.

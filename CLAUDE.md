@@ -19,35 +19,60 @@ JavaScript-only archives, and committing to git.
 
 | You are… | Read |
 |---|---|
-| adding or editing street data | **ADDING-STREETS.md** (the authoring guide; schema, segments, field conventions) |
-| chasing one subdivision's platted names | **TRACT-RESEARCH.md** (NavigateLA → Map-Ref → DPW scan → transcription) |
-| after name-change dates across a neighborhood | **SERIAL-SOURCES.md** (Sanborn atlases, city directories) |
-| wondering what's automatable and what isn't | **PIPELINE.md** (three stages; stage 2 is the open problem) |
-| holding an unverified hunch | **research-leads.md** (dated parking lot; sweep it before a street pass) |
-| publishing / git | **PUBLISHING.md** |
-| looking at the proposed names/documents/generator model | **MODEL-SPEC.md** (the contract) + **MODEL-IMPLEMENTATION.md** (built 2026-08-24; 3rd St acceptance diff clean; NOT live) |
+| adding or editing street data | **handbook/ADDING-STREETS.md** (the authoring guide; schema, segments, field conventions) |
+| chasing one subdivision's platted names | **handbook/TRACT-RESEARCH.md** (NavigateLA → Map-Ref → DPW scan → transcription) |
+| after name-change dates across a neighborhood | **handbook/SERIAL-SOURCES.md** (Sanborn atlases, city directories) |
+| wondering what's automatable and what isn't | **handbook/PIPELINE.md** (three stages; stage 2 is the open problem) |
+| holding an unverified hunch | **handbook/research-leads.md** (dated parking lot; sweep it before a street pass) |
+| publishing / git | **handbook/PUBLISHING.md** |
+| looking at the proposed names/documents/generator model | **handbook/MODEL-SPEC.md** (the contract) + **handbook/MODEL-IMPLEMENTATION.md** (built 2026-08-24; 3rd St acceptance diff clean; NOT live) |
 | executing the switchover to generated data | **MODEL-IMPLEMENTATION.md → "Switchover checklist"** (every known required change, incl. two code traps marked ⚠ in generate.js) |
-| **using** the document tool (Kenny) | **DOCUMENT-TOOL-GUIDE.md** — serve the folder, open via localhost, align, draw coverage, save |
-| building the document tool | **TOOL-SPEC.md** (align → AI proposals → review). Phase 1 built 2026-08-25 in `document-tool.html`; phase 2 not yet |
-| curious how the data got this shape | migration-2026-07.md (historical; that pass is done) |
+| **using** the document tool (Kenny) | **handbook/DOCUMENT-TOOL-GUIDE.md** — serve the folder, open via localhost, align, draw coverage, save |
+| building the document tool | **handbook/TOOL-SPEC.md** (align → AI proposals → review). Phase 1 built 2026-08-25 in `document-tool.html`; phase 2 not yet |
+| curious how the data got this shape | handbook/migration-2026-07.md (historical; that pass is done) |
 
 Documents already transcribed live in `tracts/transcriptions/` (one recorded
 map each, Part A/Part B per TEMPLATE.md) and `omnibus-*.md` (one council action
 or newspaper report each, many streets at once).
+
+## Folder layout (reorganised 2026-08-26)
+
+```
+  README.md  CLAUDE.md          the two files tools look for by name
+  start-tools.command           double-click: serves the folder, opens the tool
+  *.html                        index (live map), preview (its successor),
+                                document-tool (align + bound a scan)
+  *.js *.py                     the runnable pieces: generate, the checkers,
+                                doc-geometry, intersect, georef
+  names.js  streets-data.js     the authored name layer; the live map data
+  handbook/                     every guide, spec and standing decision
+  documents/<id>/               ONE FOLDER PER DOCUMENT — its .js, its
+                                alignment, its render, its scan, its Part A.
+                                This is the unit you hand to another AI system.
+  inbox/                        raw downloads not yet made into documents
+  generated/  legacy/           generator output; the frozen pre-model data
+  overlay-trial/                the stage-2 benchmark and its answer key
+  attic/                        superseded but kept (align.html)
+```
+
+**Adding a document is creating its folder** — `documents/index.js` discovers
+them, so there is no registry line to remember. The folder name and the `id`
+inside the file must match; the checker says so if they drift.
+
 
 ## The rules that have actually been broken
 
 1. **Never estimate pixel coordinates on a scan.** Every georeferencing error
    in this project's history came from an instance eyeballing pixels. Humans
    do it in seconds in `align.html`; instances run `georef.py` on the human's
-   alignment. (TRACT-RESEARCH.md, "Alignment.")
+   alignment. (handbook/TRACT-RESEARCH.md, "Alignment.")
 2. **Match drawn streets to modern ones by geometry, never by name.** The
    benchmark case: on M.R. 66-35 the plat's "Third St" is modern Miramar and
    its "Arnold St" is modern 3rd. Name continuity is a trap, not evidence.
 3. **Never let a claim outrun the document's extent.** A name on a tract map
    proves that name on *those blocks* by that date — not along the whole
    street, and not that the tract coined it. When the evidence covers less
-   than the segment, flag it in research-leads.md rather than quietly
+   than the segment, flag it in handbook/research-leads.md rather than quietly
    widening the claim.
 4. **Every dated claim carries a linked source, and unknowns stay unknown.**
    "not yet researched", "no namesake documented", `namedAfter: null` + the
@@ -123,13 +148,13 @@ can type each into the map's search box and eyeball the popup.
   pending a request to the City Archivist. An apply pass naming the ordinance
   in the seven affected entries is owed — see research-leads.md.
 - **Newly available and unexercised:** Sanborn atlases and city directories
-  (SERIAL-SOURCES.md), which bracket renamings wholesale rather than one
+  (handbook/SERIAL-SOURCES.md), which bracket renamings wholesale rather than one
   subdivision at a time.
 - **The generated data model is built and passes its 3rd Street acceptance
   test** (2026-08-24): `names.js` + `documents/` + `generate.js` →
   `generated/streets-data.gen.js`; every 3rd St difference vs `legacy/` is
   accounted in MODEL-IMPLEMENTATION.md. **Not live**: `streets-data.js` stays
-  hand-authored per ADDING-STREETS.md until the full corpus is encoded, the
+  hand-authored per handbook/ADDING-STREETS.md until the full corpus is encoded, the
   street-by-street diff is clean, and Kenny approves the §10 switchover
   (checklist: MODEL-IMPLEMENTATION.md). Validate authored layers with
   `node check-model.js`; diff a street with `node diff-street.js "3rd Street"`.
