@@ -40,6 +40,7 @@ or newspaper report each, many streets at once).
 ```
   README.md  CLAUDE.md          the two files tools look for by name
   start-tools.command           double-click: serves the folder, opens the tool
+  new-document.command          double-click: inbox/ scan -> documents/<id>/
   *.html                        index (live map), preview (its successor),
                                 document-tool (align + bound a scan)
   *.js *.py                     the runnable pieces: generate, the checkers,
@@ -54,6 +55,8 @@ or newspaper report each, many streets at once).
   overlay-trial/                the stage-2 benchmark and its answer key
   attic/                        superseded but kept (align.html)
 ```
+
+A folder named `_something` is **parked**: on disk, ignored by the model.
 
 **Adding a document is creating its folder** — `documents/index.js` discovers
 them, so there is no registry line to remember. The folder name and the `id`

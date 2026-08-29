@@ -157,6 +157,19 @@ const NAME_ENTITIES = {
     possiblySameAs: null, aliases: []
   },
 
+  // Still called Bixel today, so it is only ever seen as itself; entered
+  // because M.R. 66-35 is the first document row that attests it.
+  "bixel": {
+    spellings: [{ forms: ["Bixel Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "Namesake untraced. Kenny: worth a look — lastreetnames.com may have it.",
+    possiblySameAs: null, aliases: []
+  },
+
   // ---- the Thomas Tract's other names -------------------------------------
 
   "guadalupe": {

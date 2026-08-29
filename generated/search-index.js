@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-08-28
+// Built: 2026-08-29
 const SEARCH_INDEX = [
   {
     "form": "10th Street",
@@ -346,7 +346,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Bixel Street",
-    "entity": "bixel-street",
+    "entity": "bixel",
     "label": "Bixel Street",
     "street": "Bixel Street"
   },

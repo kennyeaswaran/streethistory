@@ -1,0 +1,262 @@
+{
+  "document": "mr066-035",
+  "image": "mr066-035-100dpi.png",
+  "imageSize": [1038, 1774],
+  "generatedBy": "document-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr066-035-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [282, 494],
+    [65, 825],
+    [874, 1250],
+    [997, 993],
+    [793, 714]
+  ],
+  "coverageLl": [
+    [34.058304, -118.259373],
+    [34.057541, -118.259945],
+    [34.056614, -118.257717],
+    [34.057204, -118.257397],
+    [34.057828, -118.257969]
+  ],
+  "streets": [
+    {
+      "name": "3rd Street",
+      "runs": [
+        {
+          "px": [
+            [886, 1195],
+            [841, 1183],
+            [796, 1162],
+            [792, 1160],
+            [547, 1031],
+            [502, 1024],
+            [421, 981],
+            [274, 903],
+            [155, 844],
+            [112, 823]
+          ],
+          "ll": [
+            [34.056739, -118.257689],
+            [34.056764, -118.257811],
+            [34.05681, -118.257934],
+            [34.056815, -118.257946],
+            [34.057096, -118.25862],
+            [34.05711, -118.258744],
+            [34.057205, -118.258967],
+            [34.057374, -118.259371],
+            [34.057502, -118.259698],
+            [34.057549, -118.259818]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Street",
+          "px": [502, 1024],
+          "ll": [34.05711, -118.258744],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bixel Street",
+          "px": [112, 823],
+          "ll": [34.057549, -118.259818],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [841, 1183],
+          "ll": [34.056764, -118.257811],
+          "insideCoverage": true
+        },
+        {
+          "name": "Huntley Drive",
+          "px": [911, 1107],
+          "ll": [34.056942, -118.257626],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "4th Street",
+      "runs": [
+        {
+          "px": [
+            [502, 1024],
+            [532, 1059],
+            [646, 1123]
+          ],
+          "ll": [
+            [34.05711, -118.258744],
+            [34.057033, -118.258659],
+            [34.056891, -118.258346]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [502, 1024],
+          "ll": [34.05711, -118.258744],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [770, 1317],
+          "ll": [34.056456, -118.257997],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Bixel Street",
+      "runs": [
+        {
+          "px": [
+            [276, 549],
+            [254, 576],
+            [138, 777],
+            [112, 823]
+          ],
+          "ll": [
+            [34.058178, -118.259387],
+            [34.058116, -118.259443],
+            [34.057654, -118.259748],
+            [34.057549, -118.259818]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [112, 823],
+          "ll": [34.057549, -118.259818],
+          "insideCoverage": true
+        },
+        {
+          "name": "Miramar Street",
+          "px": [276, 549],
+          "ll": [34.058178, -118.259387],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Boylston Street",
+      "runs": [
+        {
+          "px": [
+            [841, 1183],
+            [859, 1152],
+            [924, 1040],
+            [935, 1018]
+          ],
+          "ll": [
+            [34.056764, -118.257811],
+            [34.056836, -118.257764],
+            [34.057094, -118.257593],
+            [34.057144, -118.257564]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [841, 1183],
+          "ll": [34.056764, -118.257811],
+          "insideCoverage": true
+        },
+        {
+          "name": "Huntley Drive",
+          "px": [935, 1018],
+          "ll": [34.057144, -118.257564],
+          "insideCoverage": true
+        },
+        {
+          "name": "Miramar Street",
+          "px": [935, 1018],
+          "ll": [34.057144, -118.257564],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Huntley Drive",
+      "runs": [
+        {
+          "px": [
+            [935, 1018],
+            [948, 995]
+          ],
+          "ll": [
+            [34.057144, -118.257564],
+            [34.057198, -118.257532]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [911, 1107],
+          "ll": [34.056942, -118.257626],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [935, 1018],
+          "ll": [34.057144, -118.257564],
+          "insideCoverage": true
+        },
+        {
+          "name": "Miramar Street",
+          "px": [935, 1018],
+          "ll": [34.057144, -118.257564],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Miramar Street",
+      "runs": [
+        {
+          "px": [
+            [970, 1045],
+            [935, 1018],
+            [908, 987],
+            [724, 779],
+            [316, 554],
+            [276, 549]
+          ],
+          "ll": [
+            [34.057083, -118.257469],
+            [34.057144, -118.257564],
+            [34.057213, -118.25764],
+            [34.057678, -118.258152],
+            [34.05817, -118.259276],
+            [34.058178, -118.259387]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [276, 549],
+          "ll": [34.058178, -118.259387],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [935, 1018],
+          "ll": [34.057144, -118.257564],
+          "insideCoverage": true
+        },
+        {
+          "name": "Huntley Drive",
+          "px": [935, 1018],
+          "ll": [34.057144, -118.257564],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ]
+}

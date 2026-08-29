@@ -13,7 +13,9 @@ const osm = require("./osm.js");
 
 const here = __dirname;
 const ids = fs.readdirSync(here, { withFileTypes: true })
-  .filter(e => e.isDirectory() && !e.name.startsWith("."))
+  // A folder whose name starts with "_" is PARKED: present on disk, ignored by
+  // the model. Useful for setting a document aside without deleting it.
+  .filter(e => e.isDirectory() && !e.name.startsWith(".") && !e.name.startsWith("_"))
   .map(e => e.name)
   .sort();
 

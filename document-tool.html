@@ -9,9 +9,11 @@
   and write everything into documents/<id>/ — the document file, the alignment,
   and (moved in by hand for now) the render and source scan.
 
-  Phase 2 (review of proposed rows) is specified in TOOL-SPEC.md §4 and will
-  be added to this same file — the loader, the alignment fit and the in-bounds
-  segment query it needs are already here.
+  PHASE 2 (TOOL-SPEC.md §4) is here in its READ-ONLY form: the Review mode
+  draws the document's rows on the sheet they were read from, so AI output can
+  be judged without opening the .js. Confirming, correcting and flipping
+  sweptFully are not built yet — those are edits, and edits want the same care
+  the alignment got.
 
   MUST BE SERVED, not opened as file:// — the File System Access API needs a
   secure context and the document loader fetches from documents/.
@@ -22,6 +24,7 @@
                background:#fffef7; color:#241f18; }
   #cv { position:absolute; inset:0; cursor:grab; }
   #cv.coverage { cursor:crosshair; }
+  #cv.review { cursor:pointer; }
   #cv.panning { cursor:grabbing; }
   .panel { position:absolute; z-index:10; background:rgba(255,255,250,0.97);
            border:1px solid #c9b98a; border-radius:6px; padding:10px 14px;
@@ -55,6 +58,27 @@
   .modes button:last-child { border-radius:0 4px 4px 0; }
   .modes button.on { background:#3c5f8a; color:#fff; border-color:#2e4a6d; }
   ul.compact { margin:4px 0; padding-left:18px; font-size:11px; color:#4a4034; }
+  /* a slider with a step button at each end */
+  .slider { display:flex; align-items:center; gap:4px; }
+  .slider input[type=range] { flex:1; }
+  .slider button { flex:0 0 24px; padding:1px 0; font-size:13px; line-height:1.2; }
+  /* --- review mode (phase 2, read-only) --- */
+  #review { top:10px; left:310px; width:330px; max-height:calc(100vh - 20px);
+            overflow-y:auto; display:none; }
+  #pop { max-width:340px; display:none; font-size:12px; line-height:1.5; }
+  #pop b.hdr { font-size:13px; }
+  #pop .close { float:right; cursor:pointer; color:#8a7f68; margin-left:8px; }
+  .swatch { display:inline-block; width:22px; height:0; border-top-width:4px;
+            border-top-style:solid; vertical-align:middle; margin-right:6px; }
+  .tally { font-size:12px; margin:3px 0; cursor:pointer; }
+  .tally:hover { background:#f3ecd8; }
+  .stlist { margin:2px 0 8px; padding-left:0; list-style:none; font-size:12px; }
+  .stlist li { padding:2px 4px; border-radius:3px; cursor:pointer; }
+  .stlist li:hover { background:#f3ecd8; }
+  .stlist .aw { color:#4a4034; font-style:italic; }
+  .prop { color:#8a5c00; }
+  .badge { font-size:10px; border:1px solid #c9b98a; border-radius:8px;
+           padding:0 5px; margin-left:4px; color:#6b5f4a; }
 </style>
 </head>
 <body>
@@ -85,17 +109,23 @@
   <div class="modes">
     <button id="mAlign" class="on">Align</button>
     <button id="mCoverage">Coverage</button>
+    <button id="mReview">Review</button>
   </div>
   <div class="hint" id="modeHint"></div>
 
   <h3>Alignment</h3>
   <label>Opacity <input type="range" id="op" min="10" max="100" value="65"></label>
-  <label>Rotation (°) <span id="rotV">0.0</span>
-    <input type="range" id="rot" min="-180" max="180" value="0" step="0.1"></label>
-  <label>Scale (m per scan pixel) <span id="scV">0.55</span>
-    <input type="range" id="sc" min="0.05" max="2" value="0.55" step="0.002"></label>
-  <div class="row">
-    <button id="nudgeCCW">↺ 0.1°</button><button id="nudgeCW">↻ 0.1°</button>
+  <label>Rotation (°) <span id="rotV">0.0</span></label>
+  <div class="slider">
+    <button id="nudgeCCW" title="rotate 0.1° counter-clockwise">↺</button>
+    <input type="range" id="rot" min="-180" max="180" value="0" step="0.1">
+    <button id="nudgeCW" title="rotate 0.1° clockwise">↻</button>
+  </div>
+  <label>Scale (m per scan pixel) <span id="scV">0.55</span></label>
+  <div class="slider">
+    <button id="scDown" title="1% smaller">−</button>
+    <input type="range" id="sc" min="0.05" max="2" value="0.55" step="0.002">
+    <button id="scUp" title="1% larger">+</button>
   </div>
 
   <h3>Coverage polygon</h3>
@@ -156,10 +186,31 @@
   <div class="hint" id="nextSteps" style="display:none"></div>
 </div>
 
+<div class="panel" id="review">
+  <h2>Review · phase 2 <span class="badge">read-only</span></h2>
+  <div class="hint">What the rows in this document say, drawn on the sheet.
+    Nothing here edits anything — corrections still go in the <code>.js</code>
+    by hand for now.</div>
+  <div class="row"><button id="revReload">Re-read rows from disk</button></div>
+  <div class="hint">Paste the AI's rows into <code>documents/&lt;id&gt;/&lt;id&gt;.js</code>,
+    then press that — no need to re-align anything.</div>
+  <div id="revSummary"></div>
+  <h3>Legend</h3>
+  <div id="revLegend"></div>
+  <h3>Streets in coverage</h3>
+  <div id="revStreets"></div>
+  <div id="revProblems"></div>
+</div>
+
+<div class="panel" id="pop"></div>
+
 <div id="status">load a render to begin</div>
 
 <script src="streets-geometry.js"></script>
 <script src="doc-geometry.js"></script>
+<!-- names.js only so review mode can say "there is no such name entity". Its
+     module.exports line is guarded, so it loads fine as a plain script. -->
+<script src="names.js"></script>
 <script>
 "use strict";
 const G = DocGeometry;
@@ -241,9 +292,12 @@ function draw() {
     ctx.restore();
   }
 
-  // modern network
-  ctx.lineWidth = 2.5; ctx.strokeStyle = "rgba(220,30,30,0.85)";
-  ctx.font = "bold 14px Georgia"; ctx.fillStyle = "rgba(150,0,190,0.95)";
+  // modern network — muted in review mode so the row colours carry the meaning
+  const rev = mode === "review";
+  ctx.lineWidth = rev ? 1.5 : 2.5;
+  ctx.strokeStyle = rev ? "rgba(120,110,95,0.45)" : "rgba(220,30,30,0.85)";
+  ctx.font = "bold 14px Georgia";
+  ctx.fillStyle = rev ? "rgba(120,110,95,0.75)" : "rgba(150,0,190,0.95)";
   const labelled = new Set();
   for (const w of ways) {
     const pts = w.geometry.map(p => llToScreen(p.lat, p.lon));
@@ -273,6 +327,7 @@ function draw() {
       ctx.beginPath(); ctx.arc(x, y, i === 0 ? 5 : 3.5, 0, 7); ctx.fill();
     });
   }
+  if (mode === "review") drawReview();
   refreshCoverageUI();
 }
 
@@ -300,7 +355,7 @@ function inBoundsNames() {
 let drag = null;   // {kind:"scan"|"view", last:[x,y]}
 cv.addEventListener("mousedown", e => {
   if (!img) return;
-  const panning = e.shiftKey || mode === "coverage" || e.button === 1 || e.button === 2;
+  const panning = e.shiftKey || mode !== "align" || e.button === 1 || e.button === 2;
   drag = { kind: panning ? "view" : "scan", last: [e.clientX, e.clientY], moved: false };
   cv.classList.toggle("panning", panning);
 });
@@ -310,6 +365,7 @@ addEventListener("mouseup", e => {
     coverage.push(screenToScan(e.clientX, e.clientY).map(v => Math.round(v)));
     draw();
   }
+  if (mode === "review" && drag && !drag.moved) pickFeature(e.clientX, e.clientY);
   drag = null; cv.classList.remove("panning");
 });
 addEventListener("mousemove", e => {
@@ -334,21 +390,31 @@ addEventListener("mousemove", e => {
     statusEl.textContent =
       `${lat.toFixed(5)}, ${lng.toFixed(5)}  ·  scan px ${Math.round(sx)},${Math.round(sy)}` +
       `  ·  ${scan.mppx.toFixed(3)} m/px  ·  ${(scan.rot * 180 / Math.PI).toFixed(1)}°` +
-      `  ·  ${mode === "coverage" ? "click to add a coverage point" : "drag = move scan, shift+drag = pan"}`;
+      `  ·  ${mode === "coverage" ? "click to add a coverage point"
+             : mode === "review" ? "click a coloured street"
+             : "drag = move scan, shift+drag = pan"}`;
   }
 });
 cv.addEventListener("contextmenu", e => e.preventDefault());
 cv.addEventListener("wheel", e => {
   e.preventDefault();
   if (!img) return;
-  const f = e.deltaY < 0 ? 1.03 : 1 / 1.03;
-  if (e.shiftKey || mode === "coverage") {           // zoom the VIEW
+  // A fixed step per event misbehaves badly across input devices: a trackpad
+  // sends a stream of tiny deltas, a mouse wheel sends one big one, and some
+  // report lines or pages rather than pixels. Normalise to pixels, then scale
+  // exponentially by how far it actually moved, clamped so one notch can never
+  // jump more than ~25%.
+  const unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? 400 : 1;
+  const dy = Math.max(-120, Math.min(120, e.deltaY * unit));
+  const f = Math.exp(-dy * 0.002);
+  if (e.shiftKey || e.ctrlKey || mode !== "align") { // zoom the VIEW
     // Keep the ground point under the cursor fixed. The scan is not touched:
     // it is anchored to the ground, so it follows automatically.
     const [lat0, lng0] = screenToLL(e.clientX, e.clientY);
     view.mpp /= f;
+    const kxHere = kx();                             // before view.lat moves
     view.lat = lat0 + (cv.height / 2 - e.clientY) * view.mpp / KY;
-    view.lng = lng0 - (e.clientX - cv.width / 2) * view.mpp / kx();
+    view.lng = lng0 - (e.clientX - cv.width / 2) * view.mpp / kxHere;
     $("view").value = `${view.lat.toFixed(4)}, ${view.lng.toFixed(4)}, ${view.mpp.toFixed(3)}`;
   } else {                                            // scale the SCAN
     const [cx, cy] = scanCentreScreen();
@@ -364,14 +430,22 @@ function setMode(m) {
   mode = m;
   $("mAlign").classList.toggle("on", m === "align");
   $("mCoverage").classList.toggle("on", m === "coverage");
+  $("mReview").classList.toggle("on", m === "review");
   cv.classList.toggle("coverage", m === "coverage");
+  cv.classList.toggle("review", m === "review");
+  $("review").style.display = m === "review" ? "" : "none";
+  if (m !== "review") hidePop();
   $("modeHint").innerHTML = m === "align"
     ? "Drag moves the scan · wheel scales it · shift+drag pans the view · shift+wheel zooms."
-    : "Click adds a coverage point · drag pans · wheel zooms. The scan is locked while tracing.";
+    : m === "coverage"
+    ? "Click adds a coverage point · drag pans · wheel zooms. The scan is locked while tracing."
+    : "Click a coloured street to see what the rows claim about it · drag pans · wheel zooms.";
+  reviewSig = null;                 // force the panel to rebuild on entry
   draw();
 }
 $("mAlign").onclick = () => setMode("align");
 $("mCoverage").onclick = () => setMode("coverage");
+$("mReview").onclick = () => setMode("review");
 
 $("op").oninput = draw;
 $("rot").oninput = e => { scan.rot = e.target.value * Math.PI / 180; $("rotV").textContent = (+e.target.value).toFixed(1); draw(); };
@@ -380,6 +454,13 @@ const nudge = d => { scan.rot += d * Math.PI / 180;
   $("rot").value = scan.rot * 180 / Math.PI; $("rotV").textContent = (scan.rot * 180 / Math.PI).toFixed(1); draw(); };
 $("nudgeCCW").onclick = () => nudge(-0.1);
 $("nudgeCW").onclick = () => nudge(0.1);
+const stepScale = f => {
+  scan.mppx *= f;
+  $("sc").value = scan.mppx; $("scV").textContent = scan.mppx.toFixed(3);
+  draw();
+};
+$("scDown").onclick = () => stepScale(1 / 1.01);
+$("scUp").onclick = () => stepScale(1.01);
 $("covUndo").onclick = () => { coverage.pop(); draw(); };
 $("covClear").onclick = () => { coverage = []; draw(); };
 $("setview").onclick = () => {
@@ -394,13 +475,29 @@ $("fitScan").onclick = () => {
   draw();
 };
 
-function loadRender(src, name) {
+// The render is named after the document (<id>-100dpi.png) and lives in the
+// document's folder, so the id comes from either — never from the raw
+// filename, which would fold "-100dpi" and the page number into the id.
+function idFromRender(pathOrName) {
+  const m = pathOrName.match(/(?:^|\/)documents\/([^/]+)\//);
+  if (m) return m[1];
+  return pathOrName.split("/").pop()
+    .replace(/\.[^.]+$/, "")               // extension
+    // "-100dpi" and any page number pdftoppm appended after it. Only stripped
+    // TOGETHER: a bare trailing -NNN is part of the id ("mr066-035"), not a
+    // page number, and stripping it would silently rename the document.
+    .replace(/-\d+dpi(-\d+)?$/i, "")
+    .toLowerCase();
+}
+let renderPathUsed = "";              // exactly what was loaded, for alignment.image
+function loadRender(src, name, realPath) {
   return new Promise((res, rej) => {
     const im = new Image();
     im.onload = () => {
       img = im; imgName = name;
+      renderPathUsed = realPath || name;
       scan.lat = view.lat; scan.lng = view.lng;
-      if (!$("f_id").value) $("f_id").value = name.replace(/\.[^.]+$/, "").toLowerCase();
+      if (!$("f_id").value) $("f_id").value = idFromRender(realPath || name);
       draw(); res(im);
     };
     im.onerror = () => rej(new Error("could not load " + src));
@@ -414,7 +511,7 @@ $("file").addEventListener("change", e => {
 $("loadRenderBtn").onclick = async () => {
   const pth = $("renderPath").value.trim();
   if (!pth) return;
-  try { await loadRender(pth, pth.split("/").pop()); }
+  try { await loadRender(pth, pth.split("/").pop(), pth); }
   catch (e) { alert(e.message + " — the path is relative to this page, e.g. tracts/renders/MR066-035.png"); }
 };
 
@@ -442,17 +539,19 @@ $("loadDoc").onclick = async () => {
   if (doc.alignment && doc.alignment.points) {
     if (doc.alignment.image) {
       $("renderPath").value = doc.alignment.image;
-      try { await loadRender(doc.alignment.image, doc.alignment.image.split("/").pop()); }
+      try { await loadRender(doc.alignment.image, doc.alignment.image.split("/").pop(), doc.alignment.image); }
       catch (e) { alert(`Header loaded, but the render ${doc.alignment.image} did not load. ` +
                         `Load it by hand and the alignment will still restore.`); }
     }
     if (img) restoreAlignment(doc.alignment); else pendingAlignment = doc.alignment;
   }
-  if (doc.rows && doc.rows.length)
-    alert(`Loaded ${doc.rows.length} row(s). Phase 1 does not edit rows — saving here ` +
-          `preserves them untouched.`);
   loadedDoc = doc;
+  lastModel = null; reviewSig = null;
   draw();
+  // A document that already has rows is here to be looked at, not aligned
+  // again — go straight to review. (Saving from any mode still preserves the
+  // rows untouched; nothing in this tool edits them.)
+  if (doc.rows && doc.rows.length) setMode("review");
 };
 
 
@@ -471,6 +570,384 @@ function restoreAlignment(al) {
 $("file").addEventListener("change", () => {
   if (pendingAlignment) setTimeout(() => { if (img) restoreAlignment(pendingAlignment); }, 80);
 });
+
+// --- phase 2: review, read-only -------------------------------------------
+// What this mode is for: seeing what a document's rows CLAIM, drawn on the
+// sheet they were read from, without opening the .js. It draws the modern
+// streets inside coverage in the colour of what has been said about each, so
+// the thing you are looking for — a corridor nobody has accounted for, or a
+// confident match that is a block off — is visible rather than inferable.
+// It changes nothing: confirming is not built yet (TOOL-SPEC §4).
+
+const REVC = {
+  state:       "#1a7a3c",   // the document names this stretch
+  change:      "#1f5fa8",   // a renaming happens here
+  annotation:  "#0f8a8a",
+  silent:      "#6f6f6f",   // covered, and nothing is drawn there
+  unaccounted: "#c0392b",   // in coverage, no row says anything
+  vanished:    "#8e44ad"    // drawn on the plat, no modern counterpart
+};
+const esc = s => String(s == null ? "" : s)
+  .replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+let reviewFeatures = [];        // {street,row,kind,pts:[[x,y]]} rebuilt each draw
+let selStreet = null;
+
+const reviewRows = () => (loadedDoc && Array.isArray(loadedDoc.rows)) ? loadedDoc.rows : [];
+const entities = () => (typeof NAME_ENTITIES !== "undefined" ? NAME_ENTITIES : null);
+
+// Where two streets meet. Same 60 m rule check-model.js and doc-geometry use,
+// so "not a cross street" means the same thing here as it does there.
+const xPointCache = new Map();
+function crossPoint(street, cross) {
+  const key = street + " >< " + cross;
+  if (xPointCache.has(key)) return xPointCache.get(key);
+  const own = streetPoints.get(street), other = streetPoints.get(cross);
+  let best = null, bd = Infinity;
+  if (own && other) {
+    for (const p of own) for (const q of other) {
+      const d = G.metres(p, q);
+      if (d < bd) { bd = d; best = { lat: (p.lat + q.lat) / 2, lon: (p.lon + q.lon) / 2 }; }
+    }
+    if (bd > 60) best = null;
+  }
+  xPointCache.set(key, best);
+  return best;
+}
+
+// MODEL-SPEC §5.4: an extent end is a cross-street NAME, a {px}/{ll} point, or
+// null meaning "the street's own end on that side".
+function extentPoint(street, val, problems) {
+  if (val === null || val === undefined) return null;
+  if (typeof val === "object") {
+    if (val.px && img) {
+      const [lat, lng] = scanToWorldDirect(val.px[0], val.px[1]);
+      return { lat, lon: lng };
+    }
+    if (val.ll) return { lat: val.ll[0], lon: val.ll[1] };
+    problems.push(`an extent on ${street} carries neither px nor ll`);
+    return null;
+  }
+  const p = crossPoint(street, val);
+  if (!p) problems.push(`“${esc(val)}” does not meet ${esc(street)} — extent ignored, row drawn full length`);
+  return p;
+}
+
+// The portion of one in-bounds run between two ground points. Ends that fall
+// outside the run clamp to it, which is right: the run is already clipped to
+// coverage, and a row may legitimately run past the polygon's edge.
+function clipRun(run, pA, pB) {
+  if (!pA && !pB) return run;
+  const idx = pt => {
+    let bi = 0, bd = Infinity;
+    run.forEach((p, i) => { const d = G.metres(p, pt); if (d < bd) { bd = d; bi = i; } });
+    return bi;
+  };
+  let a = pA ? idx(pA) : 0, b = pB ? idx(pB) : run.length - 1;
+  if (a > b) { const t = a; a = b; b = t; }
+  if (a === b) { a = Math.max(0, a - 1); b = Math.min(run.length - 1, b + 1); }
+  return run.slice(a, b + 1);
+}
+
+// OSM splits one street into many ways, so segmentsInBounds hands back a
+// street as several runs that meet end to end — including one-point runs where
+// a way merely clips the polygon. Join them back into continuous polylines:
+// otherwise a row's extent gets clipped inside each fragment separately, and
+// the bundle written for the AI pass describes "3rd Street" as five pieces,
+// two of them a single point.
+function stitchRuns(runs) {
+  const key = p => p.lat.toFixed(7) + "," + p.lon.toFixed(7);
+  const parts = runs.map(r => r.slice()).filter(r => r.length);
+  for (let joined = true; joined; ) {
+    joined = false;
+    search:
+    for (let i = 0; i < parts.length; i++) {
+      for (let j = 0; j < parts.length; j++) {
+        if (i === j) continue;
+        const A = parts[i], B = parts[j];
+        let out = null;
+        if (key(A[A.length - 1]) === key(B[0])) out = A.concat(B.slice(1));
+        else if (key(A[A.length - 1]) === key(B[B.length - 1])) out = A.concat(B.slice(0, -1).reverse());
+        else if (key(A[0]) === key(B[B.length - 1])) out = B.concat(A.slice(1));
+        else if (key(A[0]) === key(B[0])) out = B.slice().reverse().concat(A.slice(1));
+        if (out) { parts[i] = out; parts.splice(j, 1); joined = true; break search; }
+      }
+    }
+  }
+  const real = parts.filter(r => r.length >= 2);
+  return real.length ? real : parts;      // a lone touching point is still a fact
+}
+
+function reviewModel() {
+  const problems = [];
+  const streets = new Map();                 // name -> {name, runs, rows}
+  if (!img) problems.push("no render loaded — Load the document first");
+  else if (coverage.length < 3) problems.push("the coverage polygon has fewer than 3 points");
+  else {
+    try {
+      const fit = G.fitAlignment(controlPoints());
+      const ring = G.coverageToWorld(fit, coverage);
+      for (const s of G.segmentsInBounds(ways, ring)) {
+        if (!streets.has(s.name)) streets.set(s.name, { name: s.name, runs: [], rows: [] });
+        streets.get(s.name).runs.push(...s.runs);
+      }
+      for (const rec of streets.values()) rec.runs = stitchRuns(rec.runs);
+    } catch (e) { problems.push("the alignment does not fit: " + e.message); }
+  }
+
+  const ENT = entities();
+  const vanished = [];
+  for (const r of reviewRows()) {
+    // change rows carry entity ids in from/to; their EXTENT is fromCross/toCross.
+    const ids = r.kind === "change" ? [r.from, r.to] : [r.name];
+    for (const id of ids)
+      if (ENT && id && !ENT[id])
+        problems.push(`no name entity “${esc(id)}” in names.js (row on ${esc(r.street || "?")})`);
+
+    if (r.kind === "vanished") { vanished.push(r); continue; }
+    if (!r.street) { problems.push(`a ${esc(r.kind || "?")} row has no street`); continue; }
+    const rec = streets.get(r.street);
+    if (!rec) {
+      problems.push(`a row names “${esc(r.street)}”, which is not inside the coverage ` +
+                    `polygon — a misspelling, or the alignment moved`);
+      continue;
+    }
+    rec.rows.push(r);
+  }
+
+  for (const rec of streets.values()) {
+    rec.status = rec.rows.some(r => r.kind === "state" || r.kind === "change" || r.kind === "annotation")
+      ? "named" : rec.rows.some(r => r.kind === "silent") ? "silent" : "unaccounted";
+    rec.proposed = rec.rows.some(r => r.confirmed === false);
+  }
+
+  const list = [...streets.values()].sort((a, b) => a.name.localeCompare(b.name));
+  const proposed = reviewRows().filter(r => r.confirmed === false).length;
+  return { streets: list, vanished, problems, proposed,
+           counts: {
+             named: list.filter(s => s.status === "named").length,
+             silent: list.filter(s => s.status === "silent").length,
+             unaccounted: list.filter(s => s.status === "unaccounted").length
+           } };
+}
+
+function drawReview() {
+  reviewFeatures = [];
+  const m = reviewModel();
+  const toScr = run => run.map(p => llToScreen(p.lat, p.lon));
+  const stroke = (pts, colour, width, dashed) => {
+    if (pts.length < 2) return;
+    ctx.save();
+    ctx.setLineDash(dashed ? [8, 6] : []);
+    ctx.lineWidth = width; ctx.lineCap = "round"; ctx.lineJoin = "round";
+    ctx.strokeStyle = colour;
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y));
+    ctx.stroke();
+    ctx.restore();
+  };
+  const halo = (text, x, y, colour) => {
+    ctx.save();
+    ctx.font = "bold 14px Georgia"; ctx.lineWidth = 4;
+    ctx.strokeStyle = "rgba(255,254,247,0.9)"; ctx.strokeText(text, x, y);
+    ctx.fillStyle = colour; ctx.fillText(text, x, y);
+    ctx.restore();
+  };
+  const problems = [];
+
+  for (const s of m.streets) {
+    const selected = selStreet === s.name;
+    if (s.status === "unaccounted") {
+      for (const run of s.runs) {
+        const pts = toScr(run);
+        stroke(pts, REVC.unaccounted, selected ? 9 : 6, false);
+        reviewFeatures.push({ street: s.name, row: null, kind: "unaccounted", pts });
+      }
+      continue;
+    }
+    for (const run of s.runs) stroke(toScr(run), "rgba(180,172,150,0.55)", 6, false);
+    for (const row of s.rows) {
+      const extA = row.kind === "change" ? row.fromCross : row.from;
+      const extB = row.kind === "change" ? row.toCross : row.to;
+      const pA = extentPoint(s.name, extA, problems), pB = extentPoint(s.name, extB, problems);
+      const colour = REVC[row.kind] || REVC.state;
+      const dashed = row.confirmed === false;
+      for (const run of s.runs) {
+        const pts = toScr(clipRun(run, pA, pB));
+        stroke(pts, colour, selected ? 9 : 6, dashed);
+        reviewFeatures.push({ street: s.name, row, kind: row.kind, pts });
+        const label = row.asWritten || (row.kind === "silent" ? "— nothing shown —" : row.name);
+        if (label && pts.length) {
+          const [lx, ly] = pts[Math.floor(pts.length / 2)];
+          if (lx > 0 && lx < cv.width && ly > 0 && ly < cv.height) halo(label, lx + 6, ly - 8, colour);
+        }
+      }
+    }
+  }
+
+  // vanished: traces in scan pixels, so they ride on the alignment
+  for (const r of m.vanished) {
+    if (!Array.isArray(r.trace) || r.trace.length < 2 || !img) continue;
+    const pts = r.trace.map(([x, y]) => scanToScreen(x, y));
+    stroke(pts, REVC.vanished, 6, r.confirmed === false);
+    reviewFeatures.push({ street: null, row: r, kind: "vanished", pts });
+    const [lx, ly] = pts[Math.floor(pts.length / 2)];
+    if (r.asWritten) halo(r.asWritten, lx + 6, ly - 8, REVC.vanished);
+  }
+  lastModel = m; lastDrawProblems = problems;
+  refreshReview();
+}
+let lastModel = null, lastDrawProblems = [], reviewSig = null;
+
+// --- review panel ----------------------------------------------------------
+function rowHtml(r, emphasise) {
+  const extA = r.kind === "change" ? r.fromCross : r.from;
+  const extB = r.kind === "change" ? r.toCross : r.to;
+  const end = v => v == null ? "<i>street end</i>"
+    : typeof v === "object" ? (v.px ? `px ${v.px[0]},${v.px[1]}` : `${v.ll[0]}, ${v.ll[1]}`)
+    : esc(v);
+  const bits = [];
+  bits.push(`<b style="color:${REVC[r.kind] || "#241f18"}">${esc(r.kind)}</b>`);
+  if (r.asWritten) bits.push(`“<b>${esc(r.asWritten)}</b>”`);
+  if (r.kind === "change") bits.push(`${esc(r.from)} → ${esc(r.to)}`);
+  else if (r.name) bits.push(`<code>${esc(r.name)}</code>`);
+  const meta = [];
+  if (r.kind !== "vanished") meta.push(`${end(extA)} → ${end(extB)}`);
+  if (r.attests) meta.push(esc(r.attests));
+  if (r.basis) meta.push("basis: " + esc(r.basis));
+  if (r.mechanism) meta.push("mechanism: " + esc(r.mechanism));
+  if (r.confirmed === false) meta.push('<span class="prop">proposed — not confirmed</span>');
+  return `<div style="margin:5px 0;${emphasise ? "background:#f3ecd8;padding:3px 5px;border-radius:3px" : ""}">` +
+         bits.join(" ") + `<div class="hint" style="margin:1px 0">${meta.join(" · ")}</div>` +
+         (r.note ? `<div class="hint">${esc(r.note)}</div>` : "") + "</div>";
+}
+
+function refreshReview() {
+  if (mode !== "review") return;
+  const m = lastModel || reviewModel();
+  const c = m.counts, n = m.streets.length;
+  // Panning redraws constantly; rebuilding the list each frame would fight the
+  // scrollbar. Only touch the DOM when what it says has actually changed.
+  const sig = JSON.stringify([n, c, m.proposed, m.vanished.length, reviewRows().length,
+                              m.streets.map(s => s.name + s.status), m.problems, lastDrawProblems]);
+  if (sig === reviewSig) return;
+  reviewSig = sig;
+  $("revSummary").innerHTML =
+    `<div class="hint" style="font-size:12px"><b>${n}</b> modern street${n === 1 ? "" : "s"} ` +
+    `in coverage · <b>${reviewRows().length}</b> row${reviewRows().length === 1 ? "" : "s"}` +
+    (m.proposed ? ` · <b class="prop">${m.proposed} awaiting review</b>` : "") + "</div>" +
+    (reviewRows().length === 0
+      ? `<div class="hint warn">No rows yet. Rows are what the AI pass produces from ` +
+        `<code>TASK.md</code>; paste them into the document file and press ` +
+        `“Re-read rows from disk”.</div>` : "");
+
+  const sw = k => `<span class="swatch" style="border-top-color:${REVC[k]}"></span>`;
+  $("revLegend").innerHTML =
+    `<div class="hint">${sw("state")}named by this document (${c.named})</div>` +
+    `<div class="hint">${sw("silent")}covered, nothing drawn there (${c.silent})</div>` +
+    `<div class="hint">${sw("unaccounted")}<b>unaccounted</b> — no row says anything (${c.unaccounted})</div>` +
+    `<div class="hint">${sw("vanished")}drawn on the plat, no modern street (${m.vanished.length})</div>` +
+    `<div class="hint">dashed = <span class="prop">proposed</span>, awaiting a human</div>`;
+
+  const order = { unaccounted: 0, named: 1, silent: 2 };
+  const items = m.streets.slice().sort((a, b) =>
+    (order[a.status] - order[b.status]) || a.name.localeCompare(b.name));
+  $("revStreets").innerHTML = "<ul class='stlist'>" + items.map(s => {
+    const aw = s.rows.map(r => r.asWritten).filter(Boolean);
+    return `<li data-st="${esc(s.name)}">` +
+      `<span class="swatch" style="border-top-color:${REVC[s.status === "named" ? "state" : s.status]}"></span>` +
+      esc(s.name) + (aw.length ? ` <span class="aw">“${esc(aw.join("”, “"))}”</span>` : "") +
+      (s.proposed ? ' <span class="badge prop">proposed</span>' : "") + "</li>";
+  }).join("") + "</ul>";
+  for (const li of $("revStreets").querySelectorAll("li"))
+    li.onclick = () => selectStreet(li.dataset.st);
+
+  const probs = [...new Set([...(m.problems || []), ...lastDrawProblems])];
+  $("revProblems").innerHTML = probs.length
+    ? "<h3>Wants a look</h3>" + probs.map(p => `<div class="hint warn">${p}</div>`).join("")
+    : "";
+}
+
+function selectStreet(name) {
+  selStreet = name;
+  draw();
+  const f = reviewFeatures.find(f => f.street === name && f.pts.length);
+  const rec = (lastModel ? lastModel.streets : []).find(s => s.name === name);
+  if (!rec) return;
+  const mid = f ? f.pts[Math.floor(f.pts.length / 2)] : [cv.width / 2, cv.height / 2];
+  showPop(mid[0], mid[1], popHtml(rec, null));
+}
+
+function popHtml(rec, row) {
+  const head = `<span class="close" title="close">×</span><b class="hdr">${esc(rec.name)}</b>`;
+  if (rec.status === "unaccounted")
+    return head + `<div class="hint" style="color:${REVC.unaccounted}"><b>Unaccounted.</b> This ` +
+      `street runs through the coverage polygon and no row says what the sheet shows along it. ` +
+      `Until every street here is either named or explicitly silent, the document cannot be ` +
+      `marked <code>sweptFully</code>.</div>`;
+  return head + rec.rows.map(r => rowHtml(r, r === row)).join("");
+}
+
+function showPop(x, y, html) {
+  const p = $("pop");
+  p.innerHTML = html; p.style.display = "";
+  const w = p.offsetWidth, h = p.offsetHeight;
+  p.style.left = Math.max(8, Math.min(innerWidth - w - 8, x + 14)) + "px";
+  p.style.top = Math.max(8, Math.min(innerHeight - h - 8, y + 14)) + "px";
+  const c = p.querySelector(".close"); if (c) c.onclick = hidePop;
+}
+function hidePop() { $("pop").style.display = "none"; selStreet = null; }
+
+// distance from a point to a polyline, in screen pixels
+function distToPts(pts, x, y) {
+  let best = Infinity;
+  for (let i = 1; i < pts.length; i++) {
+    const [x1, y1] = pts[i - 1], [x2, y2] = pts[i];
+    const dx = x2 - x1, dy = y2 - y1, L = dx * dx + dy * dy;
+    let t = L ? ((x - x1) * dx + (y - y1) * dy) / L : 0;
+    t = Math.max(0, Math.min(1, t));
+    best = Math.min(best, Math.hypot(x - (x1 + t * dx), y - (y1 + t * dy)));
+  }
+  return best;
+}
+
+function pickFeature(x, y) {
+  let best = null, bd = 14;
+  for (const f of reviewFeatures) {
+    const d = distToPts(f.pts, x, y);
+    if (d < bd) { bd = d; best = f; }
+  }
+  if (!best) { hidePop(); draw(); return; }
+  if (best.kind === "vanished") {
+    selStreet = null; draw();
+    showPop(x, y, `<span class="close" title="close">×</span><b class="hdr">Vanished street</b>` +
+      `<div class="hint">Drawn on the plat with no modern counterpart, so it is stored as a ` +
+      `trace in scan pixels rather than against a modern street.</div>` + rowHtml(best.row, true));
+    return;
+  }
+  selStreet = best.street; draw();
+  const rec = (lastModel ? lastModel.streets : []).find(s => s.name === best.street);
+  if (rec) showPop(x, y, popHtml(rec, best.row));
+}
+
+// Re-read only the rows, so pasting the AI's output into the .js does not cost
+// a reload and a re-align.
+$("revReload").onclick = async () => {
+  const id = ($("f_id").value || $("loadId").value).trim().replace(/\.js$/, "");
+  if (!id) return alert("No document id — load a document first.");
+  try {
+    const src = await (await fetch(`documents/${id}/${id}.js?t=${Date.now()}`)).text();
+    const body = src.slice(src.indexOf("module.exports")).replace(/^module\.exports\s*=\s*/, "");
+    const doc = new Function("return " + body.replace(/;\s*$/, ""))();
+    loadedDoc = Object.assign(loadedDoc || {}, doc);
+    lastModel = null;
+    draw(); refreshReview();
+    statusEl.textContent = `re-read ${(doc.rows || []).length} row(s) from documents/${id}/${id}.js`;
+  } catch (err) {
+    alert(`Could not re-read documents/${id}/${id}.js — ${err.message}\n\n` +
+          `If you have just edited it, check it still parses as JavaScript.`);
+  }
+};
 
 // --- serialise -------------------------------------------------------------
 const q = s => JSON.stringify(s == null ? null : String(s));
@@ -496,7 +973,7 @@ function serialiseDoc(prefix) {
   scan: ${$("f_scan").value.trim() ? q($("f_scan").value.trim()) : "null"},
   transcription: ${$("f_transcription").value.trim() ? q($("f_transcription").value.trim()) : "null"},
 
-  date: { ${dateKind}: ${q(dateVal)} },
+  date: { ${dateKind}: ${dateVal ? q(dateVal) : "null"} },   ${dateVal ? "" : "// TODO: read from the sheet's title block"}
   type: ${q($("f_type").value)},
   attests: ${q($("f_attests").value)},
   completeness: ${q($("f_completeness").value)},
@@ -509,7 +986,7 @@ function serialiseDoc(prefix) {
 ${covLines.join(",\n")}
   ],
   alignment: {
-    image: ${q(`documents/${id}/${id}-100dpi.png`)},
+    image: ${q(renderPathUsed)},
     dpi: 100,
     points: [
 ${pts.join(",\n")}
@@ -550,6 +1027,17 @@ function setDirState(text, warn) {
   el.innerHTML = warn ? `<span class="warn">${text}</span>` : text;
 }
 
+// A directory handle carries no path, so nothing stops you handing back the
+// document's own folder instead of the project root — which silently produces
+// documents/<id>/documents/<id>/. Check for files only the root has.
+const ROOT_MARKERS = ["document-tool.html", "names.js"];
+async function looksLikeProjectRoot(dir) {
+  for (const m of ROOT_MARKERS) {
+    try { await dir.getFileHandle(m); } catch (e) { return false; }
+  }
+  return true;
+}
+
 async function ensureDirPermission(gesture) {
   if (!projectDir) return false;
   const opts = { mode: "readwrite" };
@@ -558,13 +1046,42 @@ async function ensureDirPermission(gesture) {
   return await projectDir.requestPermission(opts) === "granted";
 }
 
+// The last gate before writing. A handle remembered from a previous session
+// usually arrives WITHOUT permission, and a directory handle cannot be read
+// at all until permission is granted — so the check at restore time silently
+// does nothing, and a stale handle pointing at a document's own folder gets
+// used as if it were the project root. That is exactly how
+// documents/<id>/documents/<id>/ happened, twice. Check here, after the
+// permission prompt and immediately before writing, where the check can
+// actually see the folder.
+//   "ok"   — safe to write into
+//   "no"   — no folder connected; fall back to save dialogs
+//   "bad"  — connected to the wrong folder; write NOTHING
+async function useProjectDir(gesture) {
+  if (!projectDir) return "no";
+  if (!await ensureDirPermission(gesture)) return "no";
+  if (await looksLikeProjectRoot(projectDir)) return "ok";
+  const bad = projectDir.name;
+  projectDir = null;
+  await saveHandle(null);
+  setDirState(`"${bad}" is not the project folder — forgotten. Press Save again ` +
+              `and pick the folder that CONTAINS documents/.`, true);
+  return "bad";
+}
+
 $("connectDir").onclick = async () => {
   if (!window.showDirectoryPicker) {
     setDirState("This browser has no directory access — use Chrome, or Save will download files.", true);
     return;
   }
   try {
-    projectDir = await window.showDirectoryPicker({ mode: "readwrite" });
+    const dir = await window.showDirectoryPicker({ mode: "readwrite" });
+    if (!await looksLikeProjectRoot(dir)) {
+      setDirState(`"${dir.name}" is not the project folder — no document-tool.html ` +
+                  `in it. Pick the folder that CONTAINS documents/, not one inside it.`, true);
+      return;
+    }
+    projectDir = dir;
     await saveHandle(projectDir);
     setDirState(`connected: <b>${projectDir.name}</b> — Save writes into documents/&lt;id&gt;/`);
   } catch (e) { if (e.name !== "AbortError") setDirState(e.message, true); }
@@ -575,6 +1092,12 @@ $("connectDir").onclick = async () => {
   if (!h) return;
   projectDir = h;
   const granted = await ensureDirPermission(false);
+  if (granted && !await looksLikeProjectRoot(h)) {
+    projectDir = null; await saveHandle(null);
+    setDirState("the folder remembered from last time is not the project root — " +
+                "forgotten; Save will ask again", true);
+    return;
+  }
   setDirState(granted
     ? `connected: <b>${h.name}</b> — Save writes into documents/&lt;id&gt;/`
     : `<b>${h.name}</b> remembered — Save will ask to re-confirm access once`);
@@ -585,9 +1108,127 @@ $("connectDir").onclick = async () => {
 // its date, and the modern streets whose geometry falls inside the coverage
 // polygon. The traps are restated because they arrive with the data rather
 // than in a separate conversation nobody remembers to have.
+// The bundle has to be self-sufficient: an assistant given only this folder
+// has the scan and the alignment, but until now had no idea WHERE the modern
+// streets actually run — so it could not do the one thing the task asks for,
+// which is compare drawn ink against modern geometry. This writes that
+// geometry out, in scan pixels as well as lat/lng, because the pixels are what
+// can be checked directly against the image sitting beside it.
+function documentStreets() {
+  if (!img || coverage.length < 3) return null;
+  const fit = G.fitAlignment(controlPoints());
+  const ring = G.coverageToWorld(fit, coverage);
+
+  const merged = new Map();
+  for (const s of G.segmentsInBounds(ways, ring)) {
+    if (!merged.has(s.name)) merged.set(s.name, []);
+    merged.get(s.name).push(...s.runs);
+  }
+  for (const [name, runs] of merged) merged.set(name, stitchRuns(runs));
+
+  // Cross streets are what `from`/`to` are written in terms of, so they have
+  // to come along. Restrict the search to a padded box around the coverage
+  // ring first — otherwise this is every street in the city against every
+  // other, and the save visibly hangs.
+  const lats = ring.map(p => p[0]), lngs = ring.map(p => p[1]), pad = 0.004;
+  const box = { n: Math.max(...lats) + pad, s: Math.min(...lats) - pad,
+                e: Math.max(...lngs) + pad, w: Math.min(...lngs) - pad };
+  const boxed = new Map();
+  for (const [name, pts] of streetPoints) {
+    const f = pts.filter(p => p.lat <= box.n && p.lat >= box.s && p.lon <= box.e && p.lon >= box.w);
+    if (f.length) boxed.set(name, f);
+  }
+
+  const toPx = (lat, lon) => {
+    const [x, y] = G.worldToScan(fit, lat, lon);
+    return [Math.round(x), Math.round(y)];
+  };
+
+  const streets = [];
+  for (const [name, runs] of merged) {
+    const own = boxed.get(name) || [];
+    const crossings = [];
+    for (const [other, pts] of boxed) {
+      if (other === name) continue;
+      let bd = Infinity, bp = null;
+      for (const p of pts) for (const q of own) {
+        const d = G.metres(p, q);
+        if (d < bd) { bd = d; bp = { lat: (p.lat + q.lat) / 2, lon: (p.lon + q.lon) / 2 }; }
+      }
+      if (bd > 60 || !bp) continue;              // same 60 m rule as check-model
+      const inside = G.pointInPolygon([bp.lat, bp.lon], ring);
+      // A cross street just outside the polygon is still the natural way to
+      // name where a stretch ends, so keep those too.
+      const nearRun = runs.some(r => r.some(p => G.metres(p, bp) < 80));
+      if (!inside && !nearRun) continue;
+      crossings.push({ name: other, px: toPx(bp.lat, bp.lon),
+                       ll: [+bp.lat.toFixed(6), +bp.lon.toFixed(6)],
+                       insideCoverage: inside });
+    }
+    crossings.sort((a, b) => a.name.localeCompare(b.name));
+    streets.push({
+      name,
+      runs: runs.map(r => ({ px: r.map(p => toPx(p.lat, p.lon)),
+                             ll: r.map(p => [+p.lat.toFixed(6), +p.lon.toFixed(6)]) })),
+      crossings
+    });
+  }
+  streets.sort((a, b) => a.name.localeCompare(b.name));
+  return { ring, streets };
+}
+
+function streetsJsonText(id) {
+  const d = documentStreets();
+  if (!d) return "{}";
+  const obj = {
+    document: id,
+    image: renderPathUsed.split("/").pop(),
+    imageSize: [img.width, img.height],
+    generatedBy: "document-tool.html phase 1",
+    coordinates: "px = [x, y] in pixels on `image` above, y increasing downward. " +
+                 "ll = [latitude, longitude]. The two are related by the human " +
+                 "alignment in " + id + "-alignment.json; px is the useful one for " +
+                 "comparing against the scan.",
+    what: "Every modern street whose geometry falls inside this document's " +
+          "coverage polygon, as it runs TODAY. These are the corridors the " +
+          "document has to be read against. `crossings` are the intersections " +
+          "usable as `from`/`to` in a row.",
+    coveragePx: coverage,
+    coverageLl: d.ring.map(p => [+p[0].toFixed(6), +p[1].toFixed(6)]),
+    streets: d.streets
+  };
+  // Coordinate pairs on one line each; the default pretty-printer puts every
+  // number on its own line and the file becomes unreadable.
+  return JSON.stringify(obj, null, 2)
+    .replace(/\[\s*(-?[\d.]+),\s*(-?[\d.]+)\s*\]/g, "[$1, $2]");
+}
+
+// Existing name entities, so the AI pass can reuse an id instead of inventing
+// one. An invented id fails check-model.js and shows up in review as a
+// problem, which is a slow way to find out.
+function entityListMarkdown() {
+  const E = entities();
+  if (!E) return "";
+  const lines = Object.keys(E).sort().map(id => {
+    const sp = E[id].spellings[E[id].spellings.length - 1];
+    return `- \`${id}\` — ${sp.forms.join(", ")}`;
+  });
+  return `\n## Name entities that already exist\n\nUse one of these ids in \`name\` ` +
+         `when the label belongs to a lineage the project already knows about. If ` +
+         `none fits, leave \`name\` out and put the label in a comment — inventing ` +
+         `an id is worse than leaving the gap.\n\n${lines.join("\n")}\n`;
+}
+
 function taskMarkdown(id) {
   const streets = inBoundsNames();
   const dk = $("f_dateKind").value, dv = $("f_date").value.trim();
+  const missing = [];
+  if (!$("f_title").value.trim()) missing.push("**title** — the sheet's full title, verbatim from its title block");
+  if (!dv) missing.push("**date** — the survey or recording date shown on the sheet");
+  if (!$("f_url").value.trim()) missing.push("**url** — where this scan came from, if you can tell");
+  const missingBlock = missing.length
+    ? `\n## Also needed from the sheet itself\n\nThese were left blank because they are read off the map, not off the\nscreen. Please supply them along with the rows:\n\n${missing.map(m => "- " + m).join("\n")}\n`
+    : "";
   return `# Identify the streets on ${id}
 
 ${$("f_title").value.trim()}
@@ -599,6 +1240,11 @@ ${$("f_title").value.trim()}
   to lat/lng, already fitted by a human
 - **Coverage:** the polygon in \`${id}.js\`, in scan pixels — the ground this
   document testifies about
+- **Modern streets:** \`${id}-streets.json\` — where every modern street inside
+  the coverage polygon runs today, **in pixels on the render above** as well as
+  in lat/lng, with the intersections along it. This is the file that lets you
+  answer the question: overlay those pixel polylines on the image and see what
+  the sheet has drawn there.
 
 ## The job
 
@@ -612,10 +1258,13 @@ ${streets.map(n => "- " + n).join("\n")}
 
 ## Rules that decide the answer
 
-1. **Geometry only, never names.** These sheets are chosen because old names
-   mislead. On this project's benchmark sheet the plat's "Third St" is modern
-   **Miramar** and its "Arnold St" is modern **3rd**. A corridor labelled X
-   frequently corresponds to a modern street named Y.
+1. **Geometry only, never names.** A corridor labelled X on the plat
+   frequently corresponds to a modern street named Y — that mismatch is the
+   whole reason this project exists, and it is not rare. In particular, do
+   **not** assume the plat's numbered streets are the modern numbered streets
+   of the same number; renumbering and renaming have moved them. Decide every
+   match from where the lines are, using \`${id}-streets.json\`, and only then
+   look at what the plat calls it.
 2. **Streets are drawn as corridors** — two parallel edge lines with the name
    lettered between them. A correct match runs down the MIDDLE, which on a
    wide street looks far from both edges. Judge whether the line stays inside
@@ -651,9 +1300,14 @@ Rows to paste into \`${id}.js\`, in this shape — all of them
 \`\`\`
 
 \`asWritten\` is verbatim ink, typos included. \`trace\` is scan pixels against
-the render above. If you cannot name a \`name\` entity, leave it as a comment
-describing the label — inventing an id is worse than leaving the gap.
-`;
+the render above.
+
+\`street\` must be one of the names listed above, spelled exactly. \`from\` and
+\`to\` must be names from that street's \`crossings\` in \`${id}-streets.json\`,
+or \`null\` for the street's own end within the coverage — anything else is
+rejected downstream. If the stretch ends mid-block, give a point instead:
+\`from: { px: [x, y] }\`.
+${entityListMarkdown()}`;
 }
 
 async function writeInto(dir, parts, name, text) {
@@ -667,8 +1321,9 @@ async function writeInto(dir, parts, name, text) {
 async function writeFile(suggestedName, text) {
   if (window.showSaveFilePicker) {
     try {
+      const ext = (suggestedName.match(/\.[^.]+$/) || [".txt"])[0];
       const h = await window.showSaveFilePicker({ suggestedName,
-        types: [{ description: "Source", accept: { "text/plain": [".js", ".json"] } }] });
+        types: [{ description: ext + " file", accept: { "text/plain": [ext] } }] });
       const w = await h.createWritable(); await w.write(text); await w.close();
       return true;
     } catch (err) { if (err.name === "AbortError") return false; }
@@ -685,8 +1340,11 @@ $("save").onclick = async () => {
   if (!id) return alert("The document needs an id.");
   if (coverage.length < 3) return alert("Coverage needs at least 3 points — it is what "
     + "licenses negative inference later (MODEL-SPEC §4.4).");
-  if (!$("f_title").value.trim()) return alert("The document needs a title.");
-  if (!$("f_date").value.trim()) return alert("The document needs a date.");
+  // Title and date are NOT required here. They are read off the sheet's own
+  // title block, which is the AI pass's job — TASK.md asks for them when they
+  // are blank, and check-model.js flags a rowless document as a stub rather
+  // than an error. Blocking the save would lose the alignment, which is the
+  // part only a human can produce.
 
   // Preserve everything above module.exports in an existing file (§5): the
   // prose header is often the most useful thing in it.
@@ -700,22 +1358,56 @@ $("save").onclick = async () => {
   const docText = serialiseDoc(prefix);
   const alignName = `${id}-alignment.json`;
   const alignText = JSON.stringify(
-    { image: `documents/${id}/${id}-100dpi.png`, points: controlPoints() }, null, 2);
+    { image: renderPathUsed, points: controlPoints() }, null, 2);
 
+  // Three save dialogs for three files that all belong in one folder is the
+  // wrong shape. If the project folder isn't connected yet, ask for it ONCE,
+  // here, and remember it — after that saving is silent.
+  if (!projectDir && window.showDirectoryPicker) {
+    alert("Choose the PROJECT FOLDER — the one holding document-tool.html, " +
+          "names.js and the documents/ folder.\n\n" +
+          "NOT documents/, and NOT this document's own folder: the tool creates " +
+          "documents/" + id + "/ inside whatever you pick.\n\n" +
+          "Asked once. After this, Save writes with no dialogs.");
+    try {
+      const dir = await window.showDirectoryPicker({ mode: "readwrite" });
+      if (!await looksLikeProjectRoot(dir)) {
+        alert(`"${dir.name}" doesn't look like the project folder — there is no ` +
+              `document-tool.html in it.\n\nNothing was written. Press Save again and ` +
+              `pick the folder that CONTAINS documents/.`);
+        return;
+      }
+      projectDir = dir;
+      await saveHandle(projectDir);
+      setDirState(`connected: <b>${projectDir.name}</b> — Save writes into documents/&lt;id&gt;/`);
+    } catch (e) { if (e.name !== "AbortError") setDirState(e.message, true); }
+  }
+
+  const streetsText = streetsJsonText(id);
   let where;
-  if (await ensureDirPermission(true)) {
+  const dirState = await useProjectDir(true);
+  if (dirState === "bad") {
+    alert(`Nothing was written.\n\nThe folder this tool had remembered is not the ` +
+          `project root, so writing into it would have made a nested ` +
+          `documents/${id}/documents/${id}/ again. It has been forgotten — press ` +
+          `Save once more and pick the folder that CONTAINS documents/.`);
+    return;
+  }
+  if (dirState === "ok") {
     try {
       await writeInto(projectDir, ["documents", id], `${id}.js`, docText);
       await writeInto(projectDir, ["documents", id], `${id}-alignment.json`, alignText);
+      await writeInto(projectDir, ["documents", id], `${id}-streets.json`, streetsText);
       await writeInto(projectDir, ["documents", id], "TASK.md", taskMarkdown(id));
-      where = `documents/${id}/ (${id}.js, ${id}-alignment.json, TASK.md)`;
+      where = `documents/${id}/ (${id}.js, ${id}-alignment.json, ${id}-streets.json, TASK.md)`;
       setDirState(`connected: <b>${projectDir.name}</b> — Save writes into documents/&lt;id&gt;/`);
     } catch (e) { alert("Could not write into the project folder: " + e.message); return; }
   } else {
     if (!await writeFile(`${id}.js`, docText)) return;
     await writeFile(alignName, alignText);
+    await writeFile(`${id}-streets.json`, streetsText);
     await writeFile("TASK.md", taskMarkdown(id));
-    where = `two files — move ${id}.js into documents/ and ${alignName} into tracts/renders/`;
+    where = `four files — move them all into documents/${id}/`;
   }
 
   statusEl.textContent = `saved ${where}`;
@@ -723,11 +1415,14 @@ $("save").onclick = async () => {
   next.style.display = "";
   next.innerHTML =
     `<b>Saved ${where}.</b><br><br>Next:<ol class="compact">` +
-    `<li>Move the render and the source scan into <code>documents/${id}/</code> (as <code>${id}-100dpi.png</code> and <code>${id}.pdf</code>) — the folder is meant to be draggable whole into an AI assistant, and <code>TASK.md</code> in it is the brief. if it is not there yet — the folder is meant to hold everything about this document.</li>` +
+    `<li>If they are not there yet, move the render and the source scan into ` +
+    `<code>documents/${id}/</code> as <code>${id}-100dpi.png</code> and ` +
+    `<code>${id}.pdf</code>. The folder is meant to be draggable whole into an ` +
+    `assistant: <code>TASK.md</code> is the brief and <code>${id}-streets.json</code> ` +
+    `carries the modern street geometry, so nothing outside the folder is needed.</li>` +
     `<li>In the terminal: <code>node check-model.js</code> then <code>node generate.js</code>.</li>` +
-    `<li>Identifying which street is which is <b>phase 2</b>, which is not built yet — ` +
-    `the document is complete and correct as it stands, with no rows and ` +
-    `<code>sweptFully: false</code>.</li></ol>`;
+    `<li>Paste the rows that come back into <code>${id}.js</code>, then look at them ` +
+    `in <b>Review</b> mode.</li></ol>`;
 };
 
 addEventListener("resize", draw);

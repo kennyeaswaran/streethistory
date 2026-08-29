@@ -1,8 +1,8 @@
 // test-doc-geometry.js — headless tests for the geometry core (TOOL-SPEC §6).
 // Run: node test-doc-geometry.js
-// Fixtures are real project data: the committed MR066-035 human alignment and
-// the live street geometry, so a regression here means the tool would put
-// something in the wrong place on a real sheet.
+// Fixtures are real project data (fixtures/, frozen copies) plus the live
+// street geometry, so a regression here means the tool would put something
+// in the wrong place on a real sheet.
 
 const fs = require("fs");
 const path = require("path");
@@ -16,7 +16,8 @@ function ok(name, cond, detail) {
 function near(a, b, tol) { return Math.abs(a - b) <= tol; }
 
 // --- fixtures --------------------------------------------------------------
-const alignPath = path.join(__dirname, "documents/mr066-035/mr066-035-alignment.json");
+// A frozen copy, not the live document: see fixtures/README.md.
+const alignPath = path.join(__dirname, "fixtures/mr066-035-alignment.json");
 const align = JSON.parse(fs.readFileSync(alignPath, "utf8"));
 const fit = G.fitAlignment(align.points);
 

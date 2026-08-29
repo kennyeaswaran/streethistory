@@ -72,9 +72,19 @@ for (const doc of DOCUMENTS) {
   const d = doc.id || "?";
   if (seenDocIds.has(doc.id)) err(d, "duplicate document id");
   seenDocIds.add(doc.id);
-  for (const f of ["id", "title", "url", "type", "attests", "completeness"])
+  // A document with no rows yet is a STUB: phase 1 has aligned it and bounded
+  // it, and the facts printed on the sheet — its title, its date, where the
+  // scan came from — are still to be read off the map itself. That is the AI
+  // pass's job (TASK.md asks for them), so a stub is warned about, not failed:
+  // blocking would have meant discarding an alignment only a human can make.
+  const stub = !(doc.rows || []).length && doc.type !== "osm";
+  const need = (f, msg) => stub ? warn(d, "stub:", msg) : err(d, msg);
+  for (const f of ["id", "type", "attests", "completeness"])
     if (!doc[f]) err(d, "missing", f);
-  if (!doc.date || !(doc.date.on || doc.date.after || doc.date.before)) err(d, "missing/empty date");
+  for (const f of ["title", "url"])
+    if (!doc[f]) need(f, "missing " + f);
+  if (!doc.date || !(doc.date.on || doc.date.after || doc.date.before))
+    need("date", "missing/empty date");
   else for (const k of ["on", "after", "before"])
     if (doc.date[k] && !DATE_RE.test(doc.date[k]) && doc.date[k] !== "unknown") err(d, `date.${k} malformed:`, doc.date[k]);
   if (!TYPES.includes(doc.type)) err(d, "unknown type:", doc.type);
