@@ -29,8 +29,17 @@
   .panel { position:absolute; z-index:10; background:rgba(255,255,250,0.97);
            border:1px solid #c9b98a; border-radius:6px; padding:10px 14px;
            font-size:13px; box-shadow:0 2px 10px rgba(0,0,0,0.15); }
-  #left { top:10px; left:10px; width:290px; max-height:calc(100vh - 20px); overflow-y:auto; }
-  #right { top:10px; right:10px; width:300px; max-height:calc(100vh - 20px); overflow-y:auto; }
+  /* One panel. Each mode shows only what that mode needs — three panels of
+     controls, two of them irrelevant at any moment, ate most of the map. */
+  #panel { top:10px; left:10px; width:320px; max-height:calc(100vh - 20px);
+           overflow-y:auto; }
+  .modebody { display:none; }
+  #openBox { margin:8px 0 4px; border:1px solid #e6dcc2; border-radius:4px;
+             padding:4px 8px; background:#fdfbf2; }
+  #openBox summary { cursor:pointer; font-size:12px; color:#4a4034;
+                     text-transform:uppercase; letter-spacing:0.06em; }
+  #openBox[open] summary { margin-bottom:4px; }
+  #whatsOpen { font-size:12px; }
   h2 { font-size:14px; margin:0 0 6px; }
   h3 { font-size:12px; margin:14px 0 4px; text-transform:uppercase;
        letter-spacing:0.06em; color:#6b5f4a; border-top:1px solid #e6dcc2; padding-top:8px; }
@@ -63,9 +72,9 @@
   .slider input[type=range] { flex:1; }
   .slider button { flex:0 0 24px; padding:1px 0; font-size:13px; line-height:1.2; }
   /* --- review mode (phase 2, read-only) --- */
-  #review { top:10px; left:310px; width:330px; max-height:calc(100vh - 20px);
-            overflow-y:auto; display:none; }
-  #pop { max-width:340px; display:none; font-size:12px; line-height:1.5; }
+
+  #pop { max-width:340px; display:none; z-index:20; font-size:12px; line-height:1.5;
+         max-height:calc(100vh - 20px); overflow-y:auto; }
   #pop b.hdr { font-size:13px; }
   #pop .close { float:right; cursor:pointer; color:#8a7f68; margin-left:8px; }
   .swatch { display:inline-block; width:22px; height:0; border-top-width:4px;
@@ -99,28 +108,8 @@
 <body>
 <canvas id="cv"></canvas>
 
-<div class="panel" id="left">
-  <h2>Document tool · phase 1</h2>
-  <div class="hint">Align the scan to the red modern streets, then trace the
-  area the document actually informs about — for a tract map that is the
-  <b>tract boundary, not the sheet edge</b>.</div>
-
-  <h3>Start</h3>
-  <label>Resume a document (documents/&lt;id&gt;.js)</label>
-  <div class="row">
-    <input type="text" id="loadId" placeholder="mr066-035">
-    <button id="loadDoc" style="flex:0 0 auto">Load</button>
-  </div>
-  <div class="hint">Brings back the header, the coverage ring, the render and
-    the alignment.</div>
-  <label style="margin-top:8px">…or start fresh from a render</label>
-  <div class="row">
-    <input type="text" id="renderPath" placeholder="documents/mr066-035/mr066-035-100dpi.png">
-    <button id="loadRenderBtn" style="flex:0 0 auto">Load</button>
-  </div>
-  <div class="hint">Or pick a file anywhere: <input type="file" id="file" accept="image/*"></div>
-
-  <h3>Mode</h3>
+<div class="panel" id="panel">
+  <h2>Document tool</h2>
   <div class="modes">
     <button id="mAlign" class="on">Align</button>
     <button id="mCoverage">Coverage</button>
@@ -128,101 +117,128 @@
   </div>
   <div class="hint" id="modeHint"></div>
 
-  <h3>Alignment</h3>
-  <label>Opacity <input type="range" id="op" min="10" max="100" value="65"></label>
-  <label>Rotation (°) <span id="rotV">0.0</span></label>
-  <div class="slider">
-    <button id="nudgeCCW" title="rotate 0.1° counter-clockwise">↺</button>
-    <input type="range" id="rot" min="-180" max="180" value="0" step="0.1">
-    <button id="nudgeCW" title="rotate 0.1° clockwise">↻</button>
+  <!-- One place to open things, rather than a loader per mode competing for
+       space. Open by default while nothing is loaded, folded away after. -->
+  <details id="openBox">
+    <summary>Open</summary>
+    <label>A saved document (documents/&lt;id&gt;/)</label>
+    <div class="row">
+      <input type="text" id="loadId" placeholder="mr066-035">
+      <button id="loadDoc" style="flex:0 0 auto">Load</button>
+    </div>
+    <div class="hint">Restores the header, the coverage ring, the render and the
+      alignment. If it already has rows, this goes straight to Review.</div>
+    <label style="margin-top:8px">…or a bare scan, to start a new document</label>
+    <div class="row">
+      <input type="text" id="renderPath" placeholder="documents/mr066-035/mr066-035-100dpi.png">
+      <button id="loadRenderBtn" style="flex:0 0 auto">Load</button>
+    </div>
+    <div class="hint">Or from anywhere: <input type="file" id="file" accept="image/*"></div>
+  </details>
+  <div class="hint" id="whatsOpen"></div>
+
+  <!-- ALIGN ------------------------------------------------------------- -->
+  <div class="modebody" data-mode="align">
+    <div class="hint">Put the scan on the modern street network by the
+      <b>shape</b> of the grid — corners, angles, block sizes — never by making
+      names match.</div>
+    <h3>Alignment</h3>
+    <label>Opacity <input type="range" id="op" min="10" max="100" value="65"></label>
+    <label>Rotation (°) <span id="rotV">0.0</span></label>
+    <div class="slider">
+      <button id="nudgeCCW" title="rotate 0.1° counter-clockwise">↺</button>
+      <input type="range" id="rot" min="-180" max="180" value="0" step="0.1">
+      <button id="nudgeCW" title="rotate 0.1° clockwise">↻</button>
+    </div>
+    <label>Scale (m per scan pixel) <span id="scV">0.55</span></label>
+    <div class="slider">
+      <button id="scDown" title="1% smaller">−</button>
+      <input type="range" id="sc" min="0.05" max="2" value="0.55" step="0.002">
+      <button id="scUp" title="1% larger">+</button>
+    </div>
+    <h3>View</h3>
+    <label>Centre (lat, lng) &amp; m/px
+      <input type="text" id="view" value="34.0570, -118.2590, 0.55"></label>
+    <div class="row">
+      <button id="setview">Set</button><button id="fitScan">Fit scan</button>
+    </div>
   </div>
-  <label>Scale (m per scan pixel) <span id="scV">0.55</span></label>
-  <div class="slider">
-    <button id="scDown" title="1% smaller">−</button>
-    <input type="range" id="sc" min="0.05" max="2" value="0.55" step="0.002">
-    <button id="scUp" title="1% larger">+</button>
+
+  <!-- COVERAGE ---------------------------------------------------------- -->
+  <div class="modebody" data-mode="coverage">
+    <div class="hint">Trace the ground this document actually informs about —
+      for a tract map the <b>drawn tract boundary, not the sheet edge</b>. It is
+      what will later license saying "this document shows no street here".</div>
+    <h3>Polygon</h3>
+    <div class="hint"><span id="covCount">0</span> points ·
+      <span id="covState">not started</span></div>
+    <div class="row">
+      <button id="covUndo">Undo point</button><button id="covClear">Clear</button>
+    </div>
+    <div class="hint" id="writeHint"></div>
+
+    <h3>Document header</h3>
+    <label>id <input type="text" id="f_id" placeholder="mr066-035"></label>
+    <label>title <textarea id="f_title" rows="3" placeholder="Recorded map: …"></textarea></label>
+    <label>shortTitle <input type="text" id="f_shortTitle" placeholder="Thomas Tract map"></label>
+    <label>url <input type="url" id="f_url" placeholder="https://…"></label>
+    <label>scan — local source file <input type="text" id="f_scan" placeholder="documents/mr066-035/mr066-035.pdf"></label>
+    <label>transcription <input type="text" id="f_transcription" placeholder="documents/mr066-035/mr066-035-partA.md"></label>
+    <div class="row">
+      <div><label>date kind
+        <select id="f_dateKind"><option>on</option><option>after</option><option>before</option></select>
+      </label></div>
+      <div><label>value <input type="text" id="f_date" placeholder="1894-03"></label></div>
+    </div>
+    <label>type <select id="f_type">
+      <option>tract-map</option><option>survey</option><option>sanborn</option>
+      <option>directory</option><option>ordinance</option><option>news-report</option>
+      <option>annotation</option></select></label>
+    <label>attests (document default) <select id="f_attests">
+      <option>planned-by</option><option>planned-on</option>
+      <option>built-by</option><option>built-on</option></select></label>
+    <div class="hint">A recorded plat <i>dedicates</i> the streets it creates
+      (planned-on) but merely <i>draws</i> ones already there (planned-by).</div>
+    <label>completeness <select id="f_completeness">
+      <option>incidental</option><option>exhaustive-in-scope</option></select></label>
+    <label>readBy <select id="f_readBy">
+      <option>human</option><option>instance</option><option>instance+alignment</option></select></label>
+
+    <button class="primary" id="save">Save document + alignment</button>
+    <div class="hint">Writes the document, the alignment, the modern street
+      geometry and <code>TASK.md</code> into <code>documents/&lt;id&gt;/</code>.</div>
+    <div class="hint" id="nextSteps" style="display:none"></div>
   </div>
 
-  <h3>Coverage polygon</h3>
-  <div class="hint"><span id="covCount">0</span> points ·
-    <span id="covState">not started</span></div>
-  <div class="row">
-    <button id="covUndo">Undo point</button><button id="covClear">Clear</button>
+  <!-- REVIEW ------------------------------------------------------------ -->
+  <div class="modebody" data-mode="review">
+    <div class="hint">What the rows say, drawn on the sheet they were read from.
+      Click a coloured street to see every field of its rows, give each one a
+      name entity, and vouch for it.</div>
+    <div id="revSummary"></div>
+
+    <h3>Sweep</h3>
+    <div class="hint" id="sweepState"></div>
+    <button id="sweepBtn">Mark fully swept</button>
+    <button class="primary" id="saveReview">Save review</button>
+    <div class="hint" id="reviewSaveState"></div>
+
+    <h3>Legend</h3>
+    <div id="revLegend"></div>
+    <h3>Streets in coverage</h3>
+    <div id="revStreets"></div>
+    <div id="revProblems"></div>
+
+    <h3>If an assistant just edited the file</h3>
+    <div class="row"><button id="revReload">Re-read rows from disk</button></div>
+    <div class="hint">Picks up new rows without re-aligning anything.
+      <b>Discards unsaved review edits.</b></div>
   </div>
 
-  <h3>View</h3>
-  <label>Centre (lat, lng) &amp; m/px
-    <input type="text" id="view" value="34.0570, -118.2590, 0.55"></label>
-  <div class="row">
-    <button id="setview">Set</button><button id="fitScan">Fit scan</button>
-  </div>
-</div>
-
-<div class="panel" id="right">
-  <h2>Document header</h2>
-  <label>id <input type="text" id="f_id" placeholder="mr066-035"></label>
-  <label>title <textarea id="f_title" rows="3" placeholder="Recorded map: …"></textarea></label>
-  <label>shortTitle <input type="text" id="f_shortTitle" placeholder="Thomas Tract map"></label>
-  <label>url <input type="url" id="f_url" placeholder="https://…"></label>
-  <label>scan — local source file <input type="text" id="f_scan" placeholder="documents/mr066-035/mr066-035.pdf"></label>
-  <label>transcription <input type="text" id="f_transcription" placeholder="documents/mr066-035/mr066-035-partA.md"></label>
-  <div class="row">
-    <div><label>date kind
-      <select id="f_dateKind"><option>on</option><option>after</option><option>before</option></select>
-    </label></div>
-    <div><label>value <input type="text" id="f_date" placeholder="1894-03"></label></div>
-  </div>
-  <label>type <select id="f_type">
-    <option>tract-map</option><option>survey</option><option>sanborn</option>
-    <option>directory</option><option>ordinance</option><option>news-report</option>
-    <option>annotation</option></select></label>
-  <label>attests (document default) <select id="f_attests">
-    <option>planned-by</option><option>planned-on</option>
-    <option>built-by</option><option>built-on</option></select></label>
-  <div class="hint">A recorded plat <i>dedicates</i> the streets it creates
-    (planned-on) but merely <i>draws</i> ones already there (planned-by) —
-    rows override per street in phase 2.</div>
-  <label>completeness <select id="f_completeness">
-    <option>incidental</option><option>exhaustive-in-scope</option></select></label>
-  <label>readBy <select id="f_readBy">
-    <option>human</option><option>instance</option><option>instance+alignment</option></select></label>
-
-  <h3>Write</h3>
-  <div class="hint">Connect the project folder once and Save puts both files
-    exactly where they belong — no picking a location each time.</div>
-  <div class="row">
-    <button id="connectDir">Connect project folder…</button>
-  </div>
-  <div class="hint" id="dirState">not connected — Save will ask where to put each file</div>
-  <div class="hint" id="writeHint"></div>
-  <button class="primary" id="save">Save document + alignment</button>
-  <div class="hint">Phase 1 writes no rows. Rows arrive from the AI pass, which
-  edits <code>&lt;id&gt;.js</code> directly, and are confirmed in Review.</div>
-  <div class="hint" id="nextSteps" style="display:none"></div>
-</div>
-
-<div class="panel" id="review">
-  <h2>Review · phase 2</h2>
-  <div class="hint">What the rows say, drawn on the sheet they were read from.
-    Click a coloured street to see every field of its rows, give each one a name
-    entity, and vouch for it.</div>
-  <div class="row"><button id="revReload">Re-read rows from disk</button></div>
-  <div class="hint">If an assistant has just edited
-    <code>documents/&lt;id&gt;/&lt;id&gt;.js</code>, press that — no re-aligning.
-    <b>It discards unsaved review edits.</b></div>
-  <div id="revSummary"></div>
-
-  <h3>Sweep</h3>
-  <div class="hint" id="sweepState"></div>
-  <button id="sweepBtn">Mark fully swept</button>
-  <button class="primary" id="saveReview">Save review</button>
-  <div class="hint" id="reviewSaveState"></div>
-
-  <h3>Legend</h3>
-  <div id="revLegend"></div>
-  <h3>Streets in coverage</h3>
-  <div id="revStreets"></div>
-  <div id="revProblems"></div>
+  <!-- Both saves need this, so it sits below every mode. -->
+  <h3>Project folder</h3>
+  <div class="row"><button id="connectDir">Connect project folder…</button></div>
+  <div class="hint" id="dirState">not connected</div>
 </div>
 
 <datalist id="entlist"></datalist>
@@ -254,6 +270,16 @@ for (const w of geomRaw) {
 
 const cv = document.getElementById("cv"), ctx = cv.getContext("2d");
 const $ = id => document.getElementById(id);
+
+// Show or hide an element, ALWAYS with an explicit value.
+//
+// `el.style.display = ""` does not mean "visible": it clears the inline style
+// and lets the stylesheet decide. The review panel and the row popup are both
+// `display:none` in the stylesheet — that is how they start hidden — so ""
+// put them straight back to hidden and neither ever appeared. From the outside
+// that looks like a positioning bug, which is a long way from the cause, so
+// this is now the only way anything here gets toggled.
+const setVisible = (el, on) => { el.style.display = on ? "block" : "none"; };
 const statusEl = $("status");
 
 let img = null, imgName = "";
@@ -271,6 +297,14 @@ let pendingAlignment = null, loadedDoc = null;
 // so review mode can flip it once every street in coverage is accounted for
 // and every proposal has been confirmed.
 let docSwept = { fully: false, for: [] };
+// Has the scan been moved since it was restored from the file? The placement
+// the tool holds (centre, rotation, uniform scale) cannot represent everything
+// a 3-point affine fit can, so re-deriving control points from it and writing
+// them back moves the alignment by a metre or two EVERY save. That is fine
+// once, on purpose; it is not fine as a side effect of confirming a row in
+// review, and it compounds. So an untouched alignment is written back byte for
+// byte, and only a real nudge in Align mode replaces it.
+let alignmentTouched = false;
 
 // --- projections -----------------------------------------------------------
 const KY = 110540, kx = () => 111320 * Math.cos(view.lat * Math.PI / 180);
@@ -416,6 +450,7 @@ addEventListener("mousemove", e => {
     if (drag.kind === "scan") {
       scan.lng += dx * view.mpp / kx();
       scan.lat -= dy * view.mpp / KY;
+      alignmentTouched = true;
     } else {
       // Panning the view moves nothing on the ground, so the scan needs no
       // compensation at all now that its placement is stored in world terms.
@@ -453,7 +488,7 @@ cv.addEventListener("wheel", e => {
     $("view").value = `${view.lat.toFixed(4)}, ${view.lng.toFixed(4)}, ${view.mpp.toFixed(3)}`;
   } else {                                            // scale the SCAN
     const [cx, cy] = scanCentreScreen();
-    scan.mppx *= f;
+    scan.mppx *= f; alignmentTouched = true;
     const nx = e.clientX + (cx - e.clientX) * f, ny = e.clientY + (cy - e.clientY) * f;
     [scan.lat, scan.lng] = screenToLL(nx, ny);
     $("sc").value = scan.mppx; $("scV").textContent = scan.mppx.toFixed(3);
@@ -468,7 +503,8 @@ function setMode(m) {
   $("mReview").classList.toggle("on", m === "review");
   cv.classList.toggle("coverage", m === "coverage");
   cv.classList.toggle("review", m === "review");
-  $("review").style.display = m === "review" ? "" : "none";
+  for (const b of document.querySelectorAll(".modebody"))
+    setVisible(b, b.dataset.mode === m);
   if (m !== "review") hidePop();
   $("modeHint").innerHTML = m === "align"
     ? "Drag moves the scan · wheel scales it · shift+drag pans the view · shift+wheel zooms."
@@ -476,20 +512,35 @@ function setMode(m) {
     ? "Click adds a coverage point · drag pans · wheel zooms. The scan is locked while tracing."
     : "Click a coloured street to see what the rows claim about it · drag pans · wheel zooms.";
   reviewSig = null;                 // force the panel to rebuild on entry
+  refreshOpenBox();
   draw();
+}
+
+// The Open box folds itself away once something is open, and the line under it
+// always says what that something is — with one panel there is no longer a
+// header field in view to read the id off.
+function refreshOpenBox() {
+  const id = ($("f_id").value || "").trim();
+  setVisible($("openBox"), true);
+  $("openBox").open = !img;
+  $("whatsOpen").innerHTML = img
+    ? `open: <b>${esc(id || imgName)}</b>` +
+      (loadedDoc ? ` · ${(loadedDoc.rows || []).length} row(s)` : " · new document")
+    : `<span class="warn">Nothing open.</span> Load a saved document, or a scan to start one.`;
 }
 $("mAlign").onclick = () => setMode("align");
 $("mCoverage").onclick = () => setMode("coverage");
 $("mReview").onclick = () => setMode("review");
 
 $("op").oninput = draw;
-$("rot").oninput = e => { scan.rot = e.target.value * Math.PI / 180; $("rotV").textContent = (+e.target.value).toFixed(1); draw(); };
-$("sc").oninput = e => { scan.mppx = +e.target.value; $("scV").textContent = scan.mppx.toFixed(3); draw(); };
-const nudge = d => { scan.rot += d * Math.PI / 180;
+$("rot").oninput = e => { alignmentTouched = true; scan.rot = e.target.value * Math.PI / 180; $("rotV").textContent = (+e.target.value).toFixed(1); draw(); };
+$("sc").oninput = e => { alignmentTouched = true; scan.mppx = +e.target.value; $("scV").textContent = scan.mppx.toFixed(3); draw(); };
+const nudge = d => { alignmentTouched = true; scan.rot += d * Math.PI / 180;
   $("rot").value = scan.rot * 180 / Math.PI; $("rotV").textContent = (scan.rot * 180 / Math.PI).toFixed(1); draw(); };
 $("nudgeCCW").onclick = () => nudge(-0.1);
 $("nudgeCW").onclick = () => nudge(0.1);
 const stepScale = f => {
+  alignmentTouched = true;
   scan.mppx *= f;
   $("sc").value = scan.mppx; $("scV").textContent = scan.mppx.toFixed(3);
   draw();
@@ -531,9 +582,10 @@ function loadRender(src, name, realPath) {
     im.onload = () => {
       img = im; imgName = name;
       renderPathUsed = realPath || name;
+      alignmentTouched = true;           // a bare scan has no stored alignment
       scan.lat = view.lat; scan.lng = view.lng;
       if (!$("f_id").value) $("f_id").value = idFromRender(realPath || name);
-      draw(); res(im);
+      refreshOpenBox(); draw(); res(im);
     };
     im.onerror = () => rej(new Error("could not load " + src));
     im.src = src;
@@ -583,6 +635,7 @@ $("loadDoc").onclick = async () => {
   loadedDoc = doc;
   docSwept = { fully: doc.sweptFully === true, for: doc.sweptFor || [] };
   lastModel = null; reviewSig = null; reviewDirty = false;
+  refreshOpenBox();
   draw();
   // A document that already has rows is here to be looked at, not aligned
   // again — go straight to review. (Saving from any mode still preserves the
@@ -598,6 +651,7 @@ function restoreAlignment(al) {
   // Reuse the tested fit rather than re-deriving the transform by hand, then
   // read the placement off it in world terms.
   Object.assign(scan, G.placementFromAlignment(al.points, img.width, img.height));
+  alignmentTouched = false;              // restored, not authored
   $("rot").value = scan.rot * 180 / Math.PI; $("rotV").textContent = (scan.rot * 180 / Math.PI).toFixed(1);
   $("sc").value = scan.mppx; $("scV").textContent = scan.mppx.toFixed(3);
   pendingAlignment = null;
@@ -1109,7 +1163,7 @@ let popPos = [0, 0], popRow = null;
 function showPop(x, y, html) {
   const p = $("pop");
   popPos = [x, y];
-  p.innerHTML = html; p.style.display = "";
+  p.innerHTML = html; setVisible(p, true);
   const w = p.offsetWidth, h = p.offsetHeight;
   p.style.left = Math.max(8, Math.min(innerWidth - w - 8, x + 14)) + "px";
   p.style.top = Math.max(8, Math.min(innerHeight - h - 8, y + 14)) + "px";
@@ -1124,7 +1178,7 @@ function reopenPop(street, row) {
   popRow = row;
   showPop(popPos[0], popPos[1], popHtml(rec, row));
 }
-function hidePop() { $("pop").style.display = "none"; selStreet = null; popRow = null; }
+function hidePop() { setVisible($("pop"), false); selStreet = null; popRow = null; }
 
 // distance from a point to a polyline, in screen pixels
 function distToPts(pts, x, y) {
@@ -1318,15 +1372,31 @@ $("revReload").onclick = async () => {
 
 // --- serialise -------------------------------------------------------------
 const q = s => JSON.stringify(s == null ? null : String(s));
+// Either the alignment exactly as the file had it, or a fresh one derived from
+// where the scan now sits — never a re-derivation of an untouched one.
+function alignmentBlock() {
+  const stored = loadedDoc && loadedDoc.alignment;
+  const use = (!alignmentTouched && stored && stored.points && stored.points.length >= 2)
+    ? stored
+    : { image: renderPathUsed, dpi: 100, points: controlPoints() };
+  const pts = use.points.map(p =>
+    `      { px: [${p.px[0]}, ${p.px[1]}], ll: [${p.ll[0]}, ${p.ll[1]}]` +
+    (p.note ? `, note: ${q(p.note)}` : "") + ` }`);
+  return `{
+    image: ${q(use.image || renderPathUsed)},
+    dpi: ${use.dpi || 100},
+    points: [
+${pts.join(",\n")}
+    ]
+  }`;
+}
+
 function serialiseDoc(prefix) {
   const id = $("f_id").value.trim();
   const dateKind = $("f_dateKind").value, dateVal = $("f_date").value.trim();
   const cov = coverage.map(([x, y]) => `[${x}, ${y}]`);
   const covLines = [];
   for (let i = 0; i < cov.length; i += 4) covLines.push("    " + cov.slice(i, i + 4).join(", "));
-  const pts = controlPoints().map(p =>
-    `      { px: [${p.px[0]}, ${p.px[1]}], ll: [${p.ll[0]}, ${p.ll[1]}], note: ${q(p.note)} }`);
-
   const rows = (loadedDoc && loadedDoc.rows) || [];
   const rowsSrc = rows.length
     ? "  rows: " + JSON.stringify(rows, null, 2).replace(/\n/g, "\n  ") + "\n"
@@ -1352,13 +1422,7 @@ function serialiseDoc(prefix) {
   coverage: [
 ${covLines.join(",\n")}
   ],
-  alignment: {
-    image: ${q(renderPathUsed)},
-    dpi: 100,
-    points: [
-${pts.join(",\n")}
-    ]
-  },
+  alignment: ${alignmentBlock()},
 
   sweptFully: ${docSwept.fully ? "true" : "false"},
   sweptFor: ${JSON.stringify(docSwept.for || [])},
@@ -1389,9 +1453,28 @@ function idb(fn) {
 const saveHandle = h => idb(st => st.put(h, "projectDir")).catch(() => {});
 const loadHandle = () => idb(st => st.get("projectDir")).catch(() => null);
 
-function setDirState(text, warn) {
-  const el = $("dirState");
-  el.innerHTML = warn ? `<span class="warn">${text}</span>` : text;
+// A directory picker shows the human only folder NAMES, so the tool has to be
+// able to say which name to look for. It cannot learn that from the browser —
+// a served page knows nothing about the filesystem it came from — so
+// start-tools.command writes it into project-info.json when it starts the
+// server, and this reads it back.
+let projectFolderName = null;
+fetch("project-info.json")
+  .then(r => r.ok ? r.json() : null)
+  .then(j => { if (j && j.folder) { projectFolderName = j.folder; renderDirState(); } })
+  .catch(() => {});
+const folderAdvice = () => projectFolderName
+  ? `Pick the folder named <b>${esc(projectFolderName)}</b> — the one this tool is ` +
+    `being served from. Not <code>documents/</code>, and not a document's own folder.`
+  : `Pick the folder holding <code>document-tool.html</code> and <code>documents/</code>. ` +
+    `Not <code>documents/</code> itself.`;
+
+let dirMsg = { text: "not connected — Save will ask where to put each file", warn: false };
+function setDirState(text, warn) { dirMsg = { text, warn }; renderDirState(); }
+function renderDirState() {
+  $("dirState").innerHTML =
+    (dirMsg.warn ? `<span class="warn">${dirMsg.text}</span>` : dirMsg.text) +
+    (projectDir ? "" : `<div style="margin-top:3px">${folderAdvice()}</div>`);
 }
 
 // A directory handle carries no path, so nothing stops you handing back the
@@ -1442,7 +1525,7 @@ $("connectDir").onclick = async () => {
     return;
   }
   try {
-    const dir = await window.showDirectoryPicker({ mode: "readwrite" });
+    const dir = await window.showDirectoryPicker({ mode: "readwrite", id: "streetymology" });
     if (!await looksLikeProjectRoot(dir)) {
       setDirState(`"${dir.name}" is not the project folder — no document-tool.html ` +
                   `in it. Pick the folder that CONTAINS documents/, not one inside it.`, true);
@@ -1731,13 +1814,14 @@ $("save").onclick = async () => {
   // wrong shape. If the project folder isn't connected yet, ask for it ONCE,
   // here, and remember it — after that saving is silent.
   if (!projectDir && window.showDirectoryPicker) {
-    alert("Choose the PROJECT FOLDER — the one holding document-tool.html, " +
-          "names.js and the documents/ folder.\n\n" +
+    alert("Choose the PROJECT FOLDER" +
+          (projectFolderName ? ` — the one named “${projectFolderName}”` : "") + ".\n\n" +
+          "It is the folder holding document-tool.html, names.js and documents/.\n\n" +
           "NOT documents/, and NOT this document's own folder: the tool creates " +
           "documents/" + id + "/ inside whatever you pick.\n\n" +
           "Asked once. After this, Save writes with no dialogs.");
     try {
-      const dir = await window.showDirectoryPicker({ mode: "readwrite" });
+      const dir = await window.showDirectoryPicker({ mode: "readwrite", id: "streetymology" });
       if (!await looksLikeProjectRoot(dir)) {
         alert(`"${dir.name}" doesn't look like the project folder — there is no ` +
               `document-tool.html in it.\n\nNothing was written. Press Save again and ` +
@@ -1779,7 +1863,7 @@ $("save").onclick = async () => {
 
   statusEl.textContent = `saved ${where}`;
   const next = $("nextSteps");
-  next.style.display = "";
+  setVisible(next, true);
   next.innerHTML =
     `<b>Saved ${where}.</b><br><br>Next:<ol class="compact">` +
     `<li>If they are not there yet, move the render and the source scan into ` +
@@ -1794,6 +1878,7 @@ $("save").onclick = async () => {
 
 addEventListener("resize", draw);
 refreshEntityList();
+renderDirState();
 addEventListener("beforeunload", e => {
   // Review edits live in memory until Save review; a reload would drop them.
   if (reviewDirty) { e.preventDefault(); e.returnValue = ""; }

@@ -42,37 +42,41 @@ pdftoppm -png -r 100 documents/mr066-035/mr066-035.pdf \
 
 **Double-click `start-tools.command`** in the project folder. It serves the
 folder, opens the document tool in Chrome, and prints the URLs of the other
-pages (preview, live map, old aligner) in case you want them. Leave the
-Terminal window it opens alone while you work — that window *is* the server,
-and closing it stops serving.
+pages in case you want them. Leave the Terminal window it opens alone while you
+work — that window *is* the server, and closing it stops serving.
 
-It picks a free port if 8000 is busy, and if a server is already running on
-this folder it reuses that one instead of starting a second.
+It picks a free port if 8000 is busy, reuses a server already running on this
+folder, and writes `project-info.json` so the tool can tell you by name which
+folder to connect.
 
-The manual equivalent, if you ever need it, is `python3 -m http.server 8000`
-from the project folder and then http://localhost:8000/document-tool.html.
+The manual equivalent is `python3 -m http.server 8000` from the project folder,
+then http://localhost:8000/document-tool.html.
 
 **Do not double-click `document-tool.html` itself.** Opening it as `file://`
 looks like it works and then fails in two ways that are hard to diagnose: the
 save dialog never appears (the File System Access API needs a secure context,
 and localhost counts as one but `file://` does not), and loading a document by
 id silently 404s. If Save starts dropping files into Downloads instead of
-asking where to put them, that's the symptom.
+asking where to put them, that is the symptom.
+
+## The panel
+
+One panel, top left. The three mode buttons are at the top and **everything
+below them belongs to the mode you are in** — the alignment sliders in Align,
+the polygon controls and the document header in Coverage, the row list and the
+sweep in Review. Only two things sit outside that: the **Open** box at the top,
+and the **Project folder** control at the bottom, which both saves need.
 
 ## Opening something
 
-The **Start** section at the top left has three ways in:
+The **Open** box at the top of the panel. It is open while nothing is loaded and
+folds itself away afterwards; the line under it says what you have open.
 
-- **Resume a document** — type an id (`mr066-035`, no `.js`) and click Load.
-  This is the main path once a document exists: it restores the header fields,
-  the coverage ring, fetches the render named in the file, and puts the scan
-  back exactly where you left it. Any rows already in the file are left
-  untouched.
-- **Start fresh from a render** — type the path
-  (`documents/mr066-035/mr066-035-100dpi-1.png`) and click Load. Anything under the project folder works, since the page is
-  being served from there.
-- **Pick a file** — the ordinary file chooser, for a render that lives
-  somewhere else.
+- **A saved document** — type an id (`mr066-035`, no `.js`) and Load. This is
+  the main path: it restores the header, the coverage ring, the render and the
+  alignment, and if the document already has rows it goes straight to Review.
+- **A bare scan** — type a path (`documents/mr066-035/mr066-035-100dpi.png`) and
+  Load, or pick a file from anywhere. This is how a new document starts.
 
 ## Aligning
 
@@ -307,7 +311,8 @@ first.
 | symptom | cause |
 |---|---|
 | Save downloads instead of asking where | opened as `file://`, not through localhost — or a browser other than Chrome |
-| Save asks where to put files every time | the project folder isn't connected — use the button in the Write section |
+| Save asks where to put files every time | the project folder isn't connected — use the button at the bottom of the panel |
+| The panel doesn't name the folder to connect | you opened the tool without `start-tools.command`, so there is no `project-info.json` |
 | "remembered — Save will ask to re-confirm" | normal at the start of a session; the first Save re-grants access |
 | Save says the remembered folder "is not the project folder" | it was pointing somewhere stale and has been forgotten; press Save again and pick the folder containing `documents/`. Nothing was written |
 | Scan drifts off the streets as you zoom | fixed 2026-08-26; if you still see it, reload — an old copy of the page may be cached |

@@ -48,6 +48,12 @@ if [ "$PORT" -gt "$MAXPORT" ]; then
   exit 1
 fi
 
+# The tool needs to be able to TELL you which folder to connect: a directory
+# picker shows names only, and a served page cannot see the filesystem it came
+# from. So write the name here, where the page can fetch it.
+printf '{ "folder": %s, "path": %s, "note": "written by start-tools.command" }\n' \
+  "\"$(basename "$(pwd)")\"" "\"$(pwd)\"" > project-info.json
+
 BASE="http://localhost:$PORT"
 echo
 echo "  Streetymology tools — serving $(pwd)"

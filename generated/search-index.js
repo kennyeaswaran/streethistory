@@ -105,6 +105,12 @@ const SEARCH_INDEX = [
     "street": "3rd Street"
   },
   {
+    "form": "Arnold Street",
+    "entity": "arnold",
+    "label": "Arnold Street",
+    "street": "3rd Street"
+  },
+  {
     "form": "Georgia Street",
     "entity": "georgia-east",
     "label": "Georgia Street (east of Alameda)",

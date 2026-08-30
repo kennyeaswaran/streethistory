@@ -32,3 +32,7 @@ documents/*/*-only-*.png
 # overlay-trial: the benchmark's PROSE and ANSWERS are tracked; its renders
 # are derived from the scans plus the alignments via georef.py.
 overlay-trial/**/*.png
+
+# Written by start-tools.command each time it serves the folder, so the tool
+# can name the folder you have to connect. It records THIS machine's path.
+project-info.json
