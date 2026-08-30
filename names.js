@@ -166,7 +166,8 @@ const NAME_ENTITIES = {
     categories: ["unknown"],
     sources: [],
     disputed: false,
-    note: "Namesake untraced. Kenny: worth a look — lastreetnames.com may have it.",
+    note: null,
+    internalNote: "Namesake untraced. Worth a look — lastreetnames.com may have it.",
     possiblySameAs: null, aliases: []
   },
 
@@ -174,6 +175,23 @@ const NAME_ENTITIES = {
   // Andrew Glassell subdivided Lot 7 etc. of Block 39, Hancock Survey No. 1,
   // and put his nephew and law partner's name on a street through it. The rest
   // of that plat's names are in names-new.js, still unresearched.
+
+  "aztec-avenue": {
+    spellings: [{ forms: ["Aztec Avenue"] }],
+    namedAfter: "The {{Aztec}} empire — one of a conquest theme Andrew Glassell ran through his 1884 subdivision, alongside Cortez Street for Hern\u00e1n Cort\u00e9s and Montezuma Avenue (now Dawson Street) for Moctezuma II",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Aztecs",
+    categories: ["place", "history"],
+    sources: [
+      { title: "L.A. Street Names: Cortez Street (\u201cwhat is now Belmont Avenue was called Aztec Avenue and what is now Dawson Street was called Montezuma Avenue\u2026 Glassell was clearly going for a theme here\u201d)",
+        url: "https://lastreetnames.com/street/cortez-street/" },
+      { title: "Recorded map: Glassell\u2019s Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf" }
+    ],
+    disputed: false,
+    note: null,
+    internalNote: "Kines\u2019s Cortez Street page names the theme and confirms Aztec Avenue = modern Belmont Avenue independently of our alignment, which is a clean check on the AI pass. It attributes Cortez/Aztec/Montezuma to \u201cGlassell\u2019s Subdivision No. 2\u201d, 1884; M.R. 6-138 is Glassell\u2019s subdivision of Lot 7 etc. and draws Aztec, so the two are the same tract family \u2014 worth pinning down which sheet is which. Montezuma Avenue = Dawson Street is NOT yet an entity; Dawson was dropped from MR006-138 as polygon overshoot, so it needs its own document. Pizarro Street sits 206 m away and has no Kines page.",
+    possiblySameAs: null, aliases: []
+  },
 
   "patton-street": {
     spellings: [{ forms: ["Patton Street"] }],

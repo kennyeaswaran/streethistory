@@ -57,6 +57,16 @@ for (const [id, e] of Object.entries(NAME_ENTITIES)) {
       err(id, `spellings[${i}] carries prose dates but no source (§3 prose exception requires one)`);
   });
   if (e.namedAfter === undefined) err(id, "namedAfter missing (use null if genuinely nothing)");
+  // `note` is PUBLIC: when a former name has no namedAfter, generate.js prints
+  // the note as that name's origin line on the map. Working notes — identity
+  // decisions, what was searched and not found, whose call it was — belong in
+  // `internalNote`, which nothing renders. Getting this backwards put "Kenny:
+  // worth a look" and a paragraph about Kines onto the public site.
+  if (e.internalNote !== undefined && typeof e.internalNote !== "string" && e.internalNote !== null)
+    err(id, "internalNote must be a string or null");
+  if (typeof e.note === "string" && /\b(Kenny|TODO|check this|research-leads|2026-\d\d-\d\d)\b/.test(e.note))
+    warn(id, "note reads like a working note and `note` is shown to readers — " +
+             "move it to internalNote");
   if (!Array.isArray(e.categories) || !e.categories.length) err(id, "no categories");
   if (e.namedAfter) {
     const open = (e.namedAfter.match(/\{\{/g) || []).length, close = (e.namedAfter.match(/\}\}/g) || []).length;

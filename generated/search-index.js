@@ -555,6 +555,12 @@ const SEARCH_INDEX = [
     "street": "College Street"
   },
   {
+    "form": "State Street",
+    "entity": "state-colton",
+    "label": "State Street",
+    "street": "Colton Street"
+  },
+  {
     "form": "Colton Street",
     "entity": "colton-street",
     "label": "Colton Street",

@@ -1275,7 +1275,10 @@ function mintEntityFor(r) {
     namedAfter: null, namedAfterLink: null,
     categories: ["unknown"], sources: [],
     disputed: false,
-    note: `Minted in review from ${loadedDoc && loadedDoc.id ? loadedDoc.id : "a document"}` +
+    note: null,
+    // Provenance, not something a reader of the map wants: `note` is printed
+    // publicly as a former name's origin line when there is no namedAfter.
+    internalNote: `Minted in review from ${loadedDoc && loadedDoc.id ? loadedDoc.id : "a document"}` +
           (r.asWritten ? `, where the ink reads “${r.asWritten}”` : "") +
           ". Namesake not researched.",
     possiblySameAs: null, aliases: []
@@ -1552,8 +1555,21 @@ $("sweepBtn").onclick = () => {
 // names-new.js is rewritten whole: the entities already in it, plus the ones
 // minted this session. Appending textually to a file the human may also have
 // edited is how you lose their edits.
-function namesNewText() {
-  const existing = typeof NEW_NAME_ENTITIES !== "undefined" ? NEW_NAME_ENTITIES : {};
+async function currentNamesNew() {
+  // The page's copy is from load time. If the file has been edited since — by
+  // hand, or by another session — writing the in-memory copy back would undo
+  // that silently, and this file is where research accumulates. So re-read it
+  // at the last moment and merge onto what is actually on disk.
+  try {
+    const src = await (await fetch(`names-new.js?t=${Date.now()}`)).text();
+    const fn = new Function(src + "; return typeof NEW_NAME_ENTITIES !== 'undefined' ? NEW_NAME_ENTITIES : {};");
+    return fn();
+  } catch (e) {
+    return typeof NEW_NAME_ENTITIES !== "undefined" ? NEW_NAME_ENTITIES : {};
+  }
+}
+
+function namesNewText(existing) {
   const all = { ...existing, ...mintedEntities };
   const body = Object.keys(all).sort().map(id => {
     const e = all[id];
@@ -1565,6 +1581,9 @@ function namesNewText() {
       `    sources: ${JSON.stringify(e.sources || [])},\n` +
       `    disputed: ${e.disputed === true},\n` +
       `    note: ${JSON.stringify(e.note ?? null)},\n` +
+      // note is PUBLIC (generate.js prints it as a former name's origin line);
+      // internalNote is not rendered anywhere. Both have to survive a save.
+      (e.internalNote ? `    internalNote: ${JSON.stringify(e.internalNote)},\n` : "") +
       // Preserve what a human has decided about identity. These fields are the
       // whole point of the file — writing them back as null would erase the
       // research this file exists to collect.
@@ -1624,7 +1643,7 @@ $("saveReview").onclick = async () => {
   try {
     await writeInto(projectDir, ["documents", id], `${id}.js`, serialiseDoc(prefix));
     if (Object.keys(mintedEntities).length)
-      await writeInto(projectDir, [], "names-new.js", namesNewText());
+      await writeInto(projectDir, [], "names-new.js", namesNewText(await currentNamesNew()));
   } catch (e) { return alert("Could not write: " + e.message); }
 
   reviewDirty = false;

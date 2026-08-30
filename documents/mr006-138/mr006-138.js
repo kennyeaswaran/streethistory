@@ -80,10 +80,10 @@ module.exports = {
       "kind": "state",
       "asWritten": "State Street",
       "street": "Colton Street",
-      "from": null,
-      "to": "Belmont Avenue",
+      "from": "Belmont Avenue",
+      "to": null,
       "basis": "alignment",
-      "note": "The modern centerline follows the straight and then diagonal State Street corridor; its short eastern end lies just beyond Douglas Street.",
+      "note": "The modern centerline follows the straight and then diagonal State Street corridor; its short eastern end lies just beyond Douglas Street. (Extent corrected 2026-08-30: the AI pass wrote from:null,to:Belmont, but Belmont is where Colton BEGINS, so that spanned nothing. Colton runs east from Belmont.)",
       "name": "state-colton"
     },
     {

@@ -312,6 +312,22 @@ for (const doc of nonOsmDocs) {
     });
     if (iv.includes(null)) continue;
     const [a, b] = [Math.min(iv[0], iv[1]), Math.max(iv[0], iv[1])];
+    // Both ends landing in the same place means the row covers nothing, and it
+    // used to produce NO segment and NO complaint — the street simply came out
+    // with no history and the build said "0 row problems". The usual cause is
+    // ends given the wrong way round: `from` is the WEST end of an EW street
+    // and the SOUTH end of an NS one, so `from: null, to: X` where X sits at
+    // that same end is empty, while `from: X, to: null` is the whole street.
+    // (MR006-138's Colton Street row was exactly this.)
+    if (b - a < 4e-5) {
+      const other = isNS ? "from: <cross>, to: null" : "from: <cross>, to: null";
+      problems.push(`${doc.id}: row on ${row.street} (${row.asWritten || row.kind}) spans ` +
+        `nothing — its two ends resolve to the same point. ${row.from === null || row.to === null
+          ? `\`from\` is the ${isNS ? "SOUTH" : "WEST"} end and \`to\` the ` +
+            `${isNS ? "NORTH" : "EAST"} end; try ${other}.`
+          : "the two cross streets meet this one at the same place."}`);
+      continue;
+    }
     const base = { doc, a, b, crossA: iv[0] <= iv[1] ? ends[0] : ends[1],
                    crossB: iv[0] <= iv[1] ? ends[1] : ends[0], basis: row.basis || null };
     if (row.kind === "state") {

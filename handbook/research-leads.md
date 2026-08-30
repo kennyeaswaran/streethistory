@@ -429,9 +429,20 @@ segments are honest unknowns; what each needs:
     The other is a coincidence worth recording: Patton married **Ruth Wilson**
     in 1884, and Pasadena's Lake Avenue is named for her father's **Lake
     Vineyard** (Kines). Wants a contemporary source.
-  - **Court Street** — Kines's Court Street page is Monrovia's (Bonita Court,
-    renamed 1966 over postal confusion). Nothing for the L.A. one.
-  - **Aztec, Council, Home, Waters, Welcome, Diamond** — not covered by Kines.
+  - **Aztec Avenue — SOLVED, moved into `names.js`.** Kenny noticed that a block
+    outside coverage the same street meets **Cortez Street**, with **Pizarro
+    Street** 206 m away — a naming scheme, not a coincidence. Kines's Cortez
+    Street page confirms it: Cortez (1884, *Glassell's Subdivision No. 2*,
+    Andrew Glassell) is Hernán Cortés, and "what is now **Belmont Avenue** was
+    called **Aztec Avenue** and what is now **Dawson Street** was called
+    **Montezuma Avenue** … Glassell was clearly going for a theme here." That
+    also confirms Aztec = Belmont **independently of our alignment**, which is
+    the first outside check the AI pass has had. Follow-ups: *Montezuma Avenue =
+    Dawson Street* has no entity yet (Dawson was dropped from MR006-138 as
+    polygon overshoot, so it needs its own document); Pizarro has no Kines page;
+    and it is worth pinning down how "Glassell's Subdivision No. 2" relates to
+    M.R. 6-138's "Glassell's Subdivision of Lot 7 etc."
+  - **Council, Home, Waters, Welcome, Diamond, Court** — not covered by Kines.
     His Echo Park index (34 streets, both pages read) contains none of them;
     Patton is the only one of ours he has. Web search found nothing usable.
   - The 1897 omnibus in `documents/ord-4093/` does **not** cover these

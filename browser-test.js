@@ -355,6 +355,20 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
                                null, { timeout: 15000 });
     await page.waitForTimeout(600);
 
+    // Make the gap rather than depend on the document still having one: this
+    // is live data, and the whole point of the feature is that Kenny closes
+    // these. Drop whatever row covers Douglas Street, in memory only.
+    // Also un-sweep it and put back the streets already excluded as overshoot,
+    // so the sweep gate and the exclusion flow both have something to act on.
+    await page.evaluate(() => {
+      loadedDoc.rows = loadedDoc.rows.filter(r => r.street !== "Douglas Street" ||
+                                                  r.kind !== "silent");
+      docSwept = { fully: false, for: [] };
+      coverageExcept = [];
+      lastModel = null; reviewSig = null; draw(); updateReviewActions();
+    });
+    await page.waitForTimeout(300);
+
     const m = () => page.evaluate(() => ({
       gaps: lastModel.gaps.map(g => ({ street: g.street, m: Math.round(g.metres) })),
       metres: lastModel.counts.gapMetres,
@@ -444,7 +458,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("undo puts it back",
        gap2.street in (await m()).status, Object.keys((await m()).status).join(", "));
 
-    // leave the document alone: nothing was saved, so a reload is enough
+    // nothing was saved, and reloading discards every in-memory change above
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
     await page.waitForTimeout(100);
     await page.fill("#loadId", "mr066-035");

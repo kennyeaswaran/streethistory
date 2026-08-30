@@ -2101,7 +2101,7 @@ const STREET_DATA = {
             "entityId": "aztec-avenue",
             "formInForce": "Aztec Avenue",
             "how": "origin",
-            "origin": "labeled “Aztec Avenue” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced. Not covered by Kines (no Aztec entry in his index or Echo Park list, checked 2026-08-30). Modern Belmont Avenue",
+            "origin": "labeled “Aztec Avenue” on the 1884 Glassell's Subdivision map {{(source)}} — The Aztec empire — one of a conquest theme Andrew Glassell ran through his 1884 subdivision, alongside Cortez Street for Hernán Cortés and Montezuma Avenue (now Dawson Street) for Moctezuma II",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           },
           {
@@ -2121,13 +2121,18 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "unknown"
+          "place",
+          "history"
         ],
         "disputed": false,
         "sources": [
           {
             "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Cortez Street (“what is now Belmont Avenue was called Aztec Avenue and what is now Dawson Street was called Montezuma Avenue… Glassell was clearly going for a theme here”)",
+            "url": "https://lastreetnames.com/street/cortez-street/"
           }
         ],
         "maxLat": 34.0669,
@@ -2235,7 +2240,7 @@ const STREET_DATA = {
             "entityId": "diamond-street",
             "formInForce": "Diamond Street",
             "how": "origin",
-            "origin": "labeled “Diamond Street” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced. IDENTITY DECIDED (Kenny, 2026-08-30): one entity covering both the plat's Diamond Street — modern Beverly Boulevard through this tract — and the modern Diamond Street that survives 869 m east. The two lie on roughly the same east-west line, about 30 m apart, so this reads as one naming that lost its middle rather than two that spell alike. NB handbook/research-leads.md records an earlier pass calling Diamond \"unchanged since 1884\"; that was name-matching, and the surviving stretch is outside MR006-138's coverage",
+            "origin": "labeled “Diamond Street” on the 1884 Glassell's Subdivision map {{(source)}} — no namesake documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           },
           {
@@ -3219,17 +3224,46 @@ const STREET_DATA = {
     "entityId": "colton-street",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1884",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+    },
     "built": "not yet researched",
+    "nameHistory": [
+      {
+        "from": "by 1884",
+        "until": "?",
+        "name": "State Street",
+        "entityId": "state-colton",
+        "formInForce": "State Street",
+        "how": "origin",
+        "origin": "labeled “State Street” on the 1884 Glassell's Subdivision map {{(source)}} — no namesake documented",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+      },
+      {
+        "from": "?",
+        "until": null,
+        "name": "Colton Street",
+        "entityId": "colton-street",
+        "formInForce": "Colton Street",
+        "how": "renaming",
+        "origin": "arrival on this stretch not directly documented",
+        "originLink": null
+      }
+    ],
     "note": null,
     "categories": [
-      "unresearched"
+      "unresearched",
+      "renamed"
+    ],
+    "formerCategories": [
+      "unknown"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
       }
     ]
   },
@@ -3795,7 +3829,7 @@ const STREET_DATA = {
             "entityId": "waters-street",
             "formInForce": "Waters Street",
             "how": "origin",
-            "origin": "labeled “Waters Street” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced. Not covered by Kines (checked 2026-08-30). Modern Douglas Street north of Colton; the stretch south of it is gone. Note the nearby \"Walters St\" (Ord Street, 1886-1890) in research-leads — a different street, and a spelling trap",
+            "origin": "labeled “Waters Street” on the 1884 Glassell's Subdivision map {{(source)}} — no namesake documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           },
           {
@@ -4674,7 +4708,7 @@ const STREET_DATA = {
             "entityId": "lake-avenue",
             "formInForce": "Lake Avenue",
             "how": "origin",
-            "origin": "labeled “Lake Avenue” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced; two candidates, neither sourced. (1) Echo Park Lake — the city reservoir was already there in 1884 and this street runs toward it, which is the simple explanation. (2) Lake Vineyard, Benjamin D. Wilson's ranch: George S. Patton, whose street is on this same plat, married Wilson's daughter Ruth in 1884, the year of this subdivision. Kines's Lake Avenue page is Pasadena/Altadena's, named for Lake Vineyard, and is a different street. Wanted: a contemporary source, not a coincidence",
+            "origin": "labeled “Lake Avenue” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced. Two candidates: Echo Park Lake, the city reservoir this street runs toward, which was already there in 1884; or Lake Vineyard, the ranch of Benjamin D. Wilson, whose daughter Ruth married George S. Patton — whose own street is on this same plat — in the year it was recorded",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           },
           {
@@ -5462,7 +5496,7 @@ const STREET_DATA = {
         "entityId": "hobart-street",
         "formInForce": "Hobart Street",
         "how": "origin",
-        "origin": "labeled “Hobart Street” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced. NOT the same entity as Hobart Boulevard in Koreatown: Kines dates that one to 1887 and names it for Hobart Addison Stewart (1868-1915), a Flint, Michigan dairy farmer, on a subdivision by different people. This Hobart Street is three years earlier and a different roadway (modern Lake Shore Terrace). Do not merge on the strength of the spelling",
+        "origin": "labeled “Hobart Street” on the 1884 Glassell's Subdivision map {{(source)}} — no namesake documented",
         "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
       },
       {
@@ -7059,7 +7093,7 @@ const STREET_DATA = {
             "entityId": "home-street",
             "formInForce": "Home Street",
             "how": "origin",
-            "origin": "labeled “Home Street” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced. Not covered by Kines (checked 2026-08-30). Modern Rockwood Street, which research-leads records as renamed AND realigned by about 43 m — so the date of the realignment is a separate open question",
+            "origin": "labeled “Home Street” on the 1884 Glassell's Subdivision map {{(source)}} — no namesake documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           },
           {
