@@ -9,6 +9,7 @@
 
 ## Partially swept documents (no negative inference contributed)
 - mr003-060: sweptFor = ["Hewitt Street","Garey Street","2nd Street","3rd Street"]
+- mr013-087-p1: sweptFor = []
 - mr030-009: sweptFor = ["3rd Street","Central Avenue"]
 - ord-1849: sweptFor = ["2nd Street","3rd Street","Figueroa Street"]
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]

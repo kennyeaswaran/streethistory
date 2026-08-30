@@ -396,6 +396,22 @@ they are not interchangeable:
   review tool offers both and chooses neither. `check-model.js` rejects a
   document that both excludes a street and carries rows for it.
 
+### 4.4a A sheet is the unit, not a bound volume
+
+A document carries **one** `alignment` and **one** `coverage`, so a recorded
+map of several sheets is several documents: `mr013-087-p1`, `mr013-087-p2`.
+They share `title`, `url` and `scan` — that is what makes them one map
+bibliographically — and differ in `shortTitle`, alignment, coverage and rows.
+
+The alternative, a page dimension inside one document, would have to reach
+every pixel coordinate in the system: `alignment.image`, coverage polygons,
+`vanished` traces (§5.3), `{px}` extents (§5.4). The gain would be a tidier
+bibliography, which `title` and `url` already carry.
+
+A sheet not worth encoding — an index page, a certificate page, blocks that
+were never built — is parked as `documents/_<id>-pN/`, ignored by the registry
+with the render kept. M.R. 13-87's sheet 2 is the example.
+
 ### 4.5 Two different completenesses, and the half-entered sheet
 
 `completeness` and `sweptFully` are easy to confuse and must not be:

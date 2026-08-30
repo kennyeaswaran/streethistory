@@ -13,30 +13,35 @@ mark the document swept.
 
 ## Before you start: make the document's folder
 
-Every document lives in `documents/<id>/`, holding everything about it — the
-document file, the alignment, the render, the source scan and the Part A
-transcription. That folder is the unit you can hand whole to another AI
-system, which is what the next stage of the workflow needs.
-
-A fresh download goes into `inbox/`. Then **double-click
-`new-document.command`**: it lists what's waiting, asks which one and what id
-to give it, creates `documents/<id>/`, moves the scan in, renders it at 100
-dpi, and prints the render path to paste into the tool. `inbox/` empties as
-you work, which is the point of it.
-
-*(100 dpi is the project's alignment convention — every stored pixel
+**Double-click `new-document.command`.** Pick a scan from `inbox/`, give it an
+id, and it creates `documents/<id>/` holding the scan and a 100 dpi PNG render.
+Use 100 dpi: it is the project's alignment convention, and every stored pixel
 coordinate is meaningless against a render at another resolution. Re-render at
-`-r 300` if you need to* read *fine label text, but align against the 100 dpi
-one.)*
+300 dpi if you need to *read* fine label text, but align against the 100 dpi
+one.
 
-If you'd rather do it by hand:
+### A multi-page scan becomes one document per page
 
-```
-mkdir -p documents/mr066-035
-mv inbox/MR066-035.pdf documents/mr066-035/mr066-035.pdf
-pdftoppm -png -r 100 documents/mr066-035/mr066-035.pdf \
-         documents/mr066-035/mr066-035-100dpi
-```
+A recorded map of two sheets gives you `documents/<id>-p1/` and
+`documents/<id>-p2/`, each with its own copy of the PDF and its own render.
+That is not a filing preference — **a document carries one alignment and one
+coverage polygon**, and two sheets have two of each. Both pages in one folder
+means the second sheet's `<id>.js`, alignment and streets bundle overwrite the
+first sheet's. The two sheets share a `title` and a `url`, which is what makes
+them one recorded map; give each its own `shortTitle` ("… sheet 2").
+
+The script tells you the page count and asks which pages you want, because a
+sheet with nothing worth recording on it is common — index sheets, certificate
+pages, blocks that were never built. Press return for all of them.
+
+**A sheet you decide to skip later** goes in `documents/_<id>-p2/` — the
+leading underscore is the parking convention, so the checker and generator
+ignore it while the render stays on disk. M.R. 13-87's sheet 2 is the worked
+example.
+
+If you ever paste a page-suffixed render into a folder that already has an
+alignment for a different image, Save will stop and say so rather than
+silently replacing it.
 
 ## Starting the tool
 
@@ -357,6 +362,8 @@ first.
 | Save says the remembered folder "is not the project folder" | it was pointing somewhere stale and has been forgotten; press Save again and pick the folder containing `documents/`. Nothing was written |
 | Scan drifts off the streets as you zoom | fixed 2026-08-26; if you still see it, reload — an old copy of the page may be cached |
 | `start-tools.command` opens in a text editor | it lost its executable bit; `chmod +x start-tools.command` in Terminal, once |
+| Renders came out as `-100dpi-1.png`, `-100dpi-2.png` | an old multi-page render; `new-document.command` now makes one folder per page |
+| "already holds an alignment for …" on Save | you are aligning a second image into a document that has one — if it is another page, it needs its own document |
 | "Ports 8000-8010 are all busy" | an old server is still running; close its Terminal window |
 | "could not load …" on a render path | path is relative to the project folder: `tracts/renders/X.png` |
 | Load by id does nothing | no `documents/<id>.js` yet — use the render path instead |

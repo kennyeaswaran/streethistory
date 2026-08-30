@@ -181,6 +181,32 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     await page.waitForTimeout(400);
   }
 
+  console.log("aligning a second sheet into the first sheet's folder");
+  {
+    // A document holds one alignment. Overwriting it is how a multi-page scan
+    // destroys the first sheet's work, so the save must ask first.
+    dialogs.length = 0;
+    await page.evaluate(() => {
+      renderPathUsed = "documents/mr066-035/mr066-035-100dpi-2.png";
+      alignmentTouched = true;
+    });
+    await page.click("#mCoverage");
+    await page.waitForTimeout(150);
+    await page.click("#save");
+    await page.waitForTimeout(400);
+    ok("it warns before replacing an alignment for a different image",
+       dialogs.some(d => /already holds an alignment/.test(d)),
+       dialogs.join(" | ").slice(0, 160));
+    ok("…and says each page needs its own document",
+       dialogs.some(d => /-p1\/, -p2\//.test(d)), dialogs.join(" | ").slice(0, 200));
+    // dismissed, so nothing was written
+    ok("…and dismissing writes nothing",
+       !dialogs.some(d => /^saved/.test(d)));
+    await page.evaluate(() => { alignmentTouched = false; });
+    await page.click("#mReview");
+    await page.waitForTimeout(200);
+  }
+
   console.log("handing it a PDF");
   {
     // A PDF used to fail silently: the picker filtered it out and the path

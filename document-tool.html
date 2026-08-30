@@ -2171,10 +2171,25 @@ $("save").onclick = async () => {
   // prose header is often the most useful thing in it.
   let prefix = "";
   try {
-    const src = await (await fetch(`documents/${id}/${id}.js`)).text();
+    const src = await (await fetch(`documents/${id}/${id}.js?t=${Date.now()}`)).text();
     const i = src.indexOf("module.exports");
     if (i > 0) prefix = src.slice(0, i);
-  } catch (e) { /* new document */ }
+    // A document holds ONE alignment. If this folder already has one for a
+    // DIFFERENT image, something is being overwritten — and the usual cause is
+    // a multi-page scan whose second sheet is being aligned into the first
+    // sheet's folder, which silently destroys the first sheet's work.
+    const body = src.slice(i).replace(/^module\.exports\s*=\s*/, "");
+    const existing = new Function("return " + body.replace(/;\s*$/, ""))();
+    const had = existing.alignment && existing.alignment.image;
+    if (had && had !== renderRelPath() &&
+        !confirm(`documents/${id}/${id}.js already holds an alignment for\n\n  ${had}\n\n` +
+                 `and you are aligning\n\n  ${renderRelPath()}\n\n` +
+                 `Saving replaces the first one. If these are two pages of one scan, each ` +
+                 `page needs its OWN document — a document carries one alignment and one ` +
+                 `coverage polygon. new-document.command makes documents/${id}-p1/, -p2/ ` +
+                 `for you.\n\nReplace the stored alignment anyway?`))
+      return;
+  } catch (e) { /* new document, or an unparseable one — the save will fix it */ }
 
   const docText = serialiseDoc(prefix);
   const alignName = `${id}-alignment.json`;

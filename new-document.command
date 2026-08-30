@@ -4,6 +4,15 @@
 #
 # Everything about one document lives in one folder (see CLAUDE.md, "Folder
 # layout") — that folder is the unit you hand to another AI system later.
+#
+# A MULTI-PAGE PDF becomes one document PER PAGE: documents/<id>-p1/,
+# documents/<id>-p2/, and so on. That is not a filing preference, it is what
+# the model can express — a document carries ONE alignment and ONE coverage
+# polygon (MODEL-SPEC §4.4, §4.6), and two sheets have two of each. Putting
+# both pages in one folder means the tool's outputs (<id>.js, the alignment,
+# the streets bundle) collide on the second sheet and quietly overwrite the
+# first. The two sheets share a title and a url; that is what makes them one
+# recorded map bibliographically, and it is enough.
 
 cd "$(dirname "$0")" || { echo "Could not find the project folder."; exit 1; }
 
@@ -34,49 +43,105 @@ echo
 read -r -p "  Document id [$suggest]: " id
 id="${id:-$suggest}"
 
-dir="documents/$id"
-if [ -e "$dir" ]; then
-  echo "  $dir already exists — pick another id, or move the old one aside."
-  echo; read -r -p "Press return to close."; exit 1
-fi
-
-mkdir -p "$dir"
 ext="${src##*.}"; ext=$(echo "$ext" | tr '[:upper:]' '[:lower:]')
-mv "$src" "$dir/$id.$ext"
-echo
-echo "  → $dir/$id.$ext"
 
-render=""
+# --- how many pages? ------------------------------------------------------
+pages=1
 if [ "$ext" = "pdf" ]; then
   if ! command -v pdftoppm >/dev/null 2>&1; then
     echo
     echo "  pdftoppm isn't installed, so I can't make the render."
     echo "  Install it with:   brew install poppler"
-    echo "  Then run this script again, or render by hand:"
-    echo "     pdftoppm -png -r 100 \"$dir/$id.pdf\" \"$dir/$id-100dpi\""
     echo; read -r -p "Press return to close."; exit 1
   fi
-  # 100 dpi is the project's alignment convention: every stored pixel
-  # coordinate is meaningless against a render at another resolution.
-  pdftoppm -png -r 100 "$dir/$id.pdf" "$dir/$id-100dpi"
-  pages=("$dir/$id-100dpi"*.png)
-  if [ ${#pages[@]} -eq 1 ]; then
-    mv "${pages[0]}" "$dir/$id-100dpi.png"
-    render="$dir/$id-100dpi.png"
-  else
-    render="${pages[0]}"
-    echo "  → ${#pages[@]} pages rendered; the tool aligns one page at a time."
+  if command -v pdfinfo >/dev/null 2>&1; then
+    pages=$(pdfinfo "$src" 2>/dev/null | awk '/^Pages:/ {print $2}')
   fi
-else
-  render="$dir/$id.$ext"
+  [ -z "$pages" ] && pages=1
 fi
 
-echo "  → $render"
+# --- which pages do we want? ----------------------------------------------
+# One document per page, so ask before making folders nobody wants. A sheet
+# with nothing on it worth recording is common in a recorded map: index
+# sheets, certificate pages, blocks that were never built.
+wanted=(1)
+if [ "$pages" -gt 1 ]; then
+  echo
+  echo "  $(basename "$src") has $pages pages."
+  echo "  Each page becomes its own document — one alignment and one coverage"
+  echo "  polygon per sheet is all the model can hold."
+  echo
+  read -r -p "  Which pages? (e.g. 1 3, or return for all $pages) " picks
+  if [ -z "$picks" ]; then
+    wanted=(); for ((n=1; n<=pages; n++)); do wanted+=("$n"); done
+  else
+    wanted=(); ok=yes
+    for n in $picks; do
+      case "$n" in (*[!0-9]*|"") ok=no;; esac
+      [ "$ok" = yes ] && { [ "$n" -ge 1 ] && [ "$n" -le "$pages" ] || ok=no; }
+      wanted+=("$n")
+    done
+    if [ "$ok" != yes ]; then
+      echo "  Page numbers must be between 1 and $pages."
+      echo; read -r -p "Press return to close."; exit 1
+    fi
+  fi
+fi
+
+# --- check every folder BEFORE creating any of them ------------------------
+made=()
+for n in "${wanted[@]}"; do
+  did="$id"; [ "$pages" -gt 1 ] && did="$id-p$n"
+  if [ -e "documents/$did" ]; then
+    echo "  documents/$did already exists — pick another id, or move the old one aside."
+    echo; read -r -p "Press return to close."; exit 1
+  fi
+done
+
+renders=()
+for n in "${wanted[@]}"; do
+  did="$id"; [ "$pages" -gt 1 ] && did="$id-p$n"
+  dir="documents/$did"
+  mkdir -p "$dir"
+  # The scan is copied into every page's folder rather than shared, so each
+  # folder stays something you can hand over whole.
+  cp "$src" "$dir/$did.$ext"
+  made+=("$did")
+  if [ "$ext" = "pdf" ]; then
+    # 100 dpi is the project's alignment convention: every stored pixel
+    # coordinate is meaningless against a render at another resolution.
+    pdftoppm -png -r 100 -f "$n" -l "$n" "$dir/$did.pdf" "$dir/$did-100dpi"
+    # pdftoppm appends the page number even with -f/-l; fold it back in, so
+    # the render is named exactly as the rest of the toolchain expects.
+    shopt -s nullglob
+    for f in "$dir/$did-100dpi"-*.png; do mv "$f" "$dir/$did-100dpi.png"; done
+    renders+=("$dir/$did-100dpi.png")
+  else
+    renders+=("$dir/$did.$ext")
+  fi
+done
+rm -f "$src"
+
 echo
-echo "  Next: start-tools.command, then in the tool paste this into"
-echo "  \"start fresh from a render\":"
+for r in "${renders[@]}"; do echo "  → $r"; done
+if [ "$pages" -gt 1 ]; then
+  echo
+  echo "  $pages-page scan → ${#made[@]} document(s): ${made[*]}"
+  echo "  They share a title and a url; give each its own shortTitle (\"… sheet 2\")."
+  if [ "${#wanted[@]}" -lt "$pages" ]; then
+    echo "  Pages you skipped are gone from inbox/ but still inside each .pdf."
+  fi
+fi
 echo
-echo "      $render"
+echo
+echo "  Next: start-tools.command, then in the tool's Open box paste"
+if [ "${#renders[@]}" -gt 1 ]; then
+  echo "  ONE of these, align it, and come back for the next:"
+else
+  echo "  this path:"
+fi
+echo
+for r in "${renders[@]}"; do echo "      $r"; done
 echo
 echo "  Align it, trace the coverage polygon, fill the header, Save."
 echo
