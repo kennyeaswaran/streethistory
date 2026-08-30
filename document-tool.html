@@ -25,6 +25,9 @@
   #cv { position:absolute; inset:0; cursor:grab; }
   #cv.coverage { cursor:crosshair; }
   #cv.review { cursor:pointer; }
+  #cv.panhand { cursor:move; }
+  #viewBox { margin:6px 0; }
+  #viewBox summary { cursor:pointer; font-size:11px; color:#6b5f4a; }
   #cv.panning { cursor:grabbing; }
   .panel { position:absolute; z-index:10; background:rgba(255,255,250,0.97);
            border:1px solid #c9b98a; border-radius:6px; padding:10px 14px;
@@ -133,15 +136,15 @@
       <input type="text" id="renderPath" placeholder="documents/mr066-035/mr066-035-100dpi.png">
       <button id="loadRenderBtn" style="flex:0 0 auto">Load</button>
     </div>
-    <div class="hint">Or from anywhere: <input type="file" id="file" accept="image/*"></div>
+    <div class="hint">Or from anywhere: <input type="file" id="file" accept="image/*,.pdf,application/pdf"></div>
+    <div class="hint">Starting from a PDF in <code>inbox/</code>? Double-click
+      <code>new-document.command</code> first — it makes the document's folder and
+      the 100&nbsp;dpi render this tool needs.</div>
   </details>
   <div class="hint" id="whatsOpen"></div>
 
   <!-- ALIGN ------------------------------------------------------------- -->
   <div class="modebody" data-mode="align">
-    <div class="hint">Put the scan on the modern street network by the
-      <b>shape</b> of the grid — corners, angles, block sizes — never by making
-      names match.</div>
     <h3>Alignment</h3>
     <label>Opacity <input type="range" id="op" min="10" max="100" value="65"></label>
     <label>Rotation (°) <span id="rotV">0.0</span></label>
@@ -156,12 +159,19 @@
       <input type="range" id="sc" min="0.05" max="2" value="0.55" step="0.002">
       <button id="scUp" title="1% larger">+</button>
     </div>
-    <h3>View</h3>
-    <label>Centre (lat, lng) &amp; m/px
-      <input type="text" id="view" value="34.0570, -118.2590, 0.55"></label>
-    <div class="row">
-      <button id="setview">Set</button><button id="fitScan">Fit scan</button>
+    <h3>Drag moves</h3>
+    <div class="modes">
+      <button id="dScan" class="on">the scan</button>
+      <button id="dView">the map under it</button>
     </div>
+    <div class="hint" id="dragHint"></div>
+    <div class="row"><button id="fitScan">Find the scan</button></div>
+    <details id="viewBox">
+      <summary>Jump to coordinates</summary>
+      <label>Centre (lat, lng) &amp; m/px
+        <input type="text" id="view" value="34.0570, -118.2590, 0.55"></label>
+      <div class="row"><button id="setview">Set</button></div>
+    </details>
   </div>
 
   <!-- COVERAGE ---------------------------------------------------------- -->
@@ -229,6 +239,17 @@
     <div id="revStreets"></div>
     <div id="revProblems"></div>
 
+    <h3>Drawn on the plat, gone today</h3>
+    <div class="hint">A corridor the sheet letters that no modern street
+      follows — MODEL-SPEC §5.3. Trace it on the scan and it becomes a
+      <code>vanished</code> row.</div>
+    <div class="row">
+      <button id="traceStart">Trace a vanished street</button>
+      <button id="traceDone" style="display:none">Finish</button>
+      <button id="traceCancel" style="display:none">Cancel</button>
+    </div>
+    <div class="hint" id="traceState"></div>
+
     <h3>If an assistant just edited the file</h3>
     <div class="row"><button id="revReload">Re-read rows from disk</button></div>
     <div class="hint">Picks up new rows without re-aligning anything.
@@ -283,7 +304,12 @@ const setVisible = (el, on) => { el.style.display = on ? "block" : "none"; };
 const statusEl = $("status");
 
 let img = null, imgName = "";
-let mode = "align";                       // "align" | "coverage"
+let mode = "align";                       // "align" | "coverage" | "review"
+// In align mode there are two things a drag could move, and which you want
+// changes minute to minute. Shift was the only way to say so, and the fallback
+// — typing a latitude — is not something anyone knows off the top of their
+// head. So it is a switch now, and shift inverts whichever way it is set.
+let dragTarget = "scan";                  // "scan" | "view"
 let view = { lat: 34.0570, lng: -118.2590, mpp: 0.55 };
 // The scan's placement is stored in WORLD terms: the ground point under its
 // centre, its rotation from north, and its scale in metres per scan pixel.
@@ -297,6 +323,12 @@ let pendingAlignment = null, loadedDoc = null;
 // so review mode can flip it once every street in coverage is accounted for
 // and every proposal has been confirmed.
 let docSwept = { fully: false, for: [] };
+// A hand-traced polygon cannot follow a boundary exactly, so it sometimes
+// catches a few metres of a street the document says nothing about. Marking
+// those `silent` would be a lie in the direction that matters most: silence is
+// EVIDENCE, and licenses arguing that no street was there. This says the
+// opposite — the polygon overshoots, this ground was never covered.
+let coverageExcept = [];
 // Has the scan been moved since it was restored from the file? The placement
 // the tool holds (centre, rotation, uniform scale) cannot represent everything
 // a 3-point affine fit can, so re-deriving control points from it and writing
@@ -430,7 +462,10 @@ const inBoundsNames = () => coverageStreets().streets.map(s => s.name);
 let drag = null;   // {kind:"scan"|"view", last:[x,y]}
 cv.addEventListener("mousedown", e => {
   if (!img) return;
-  const panning = e.shiftKey || mode !== "align" || e.button === 1 || e.button === 2;
+  // Outside align mode the scan is locked, so a drag always pans.
+  const panning = mode !== "align" ? true
+                : e.button === 1 || e.button === 2 ? true
+                : (dragTarget === "view") !== e.shiftKey;
   drag = { kind: panning ? "view" : "scan", last: [e.clientX, e.clientY], moved: false };
   cv.classList.toggle("panning", panning);
 });
@@ -440,7 +475,11 @@ addEventListener("mouseup", e => {
     coverage.push(screenToScan(e.clientX, e.clientY).map(v => Math.round(v)));
     draw();
   }
-  if (mode === "review" && drag && !drag.moved) pickFeature(e.clientX, e.clientY);
+  if (mode === "review" && drag && !drag.moved) {
+    if (tracing) { tracing.push(screenToScan(e.clientX, e.clientY).map(v => Math.round(v)));
+                   updateTraceUI(); draw(); }
+    else pickFeature(e.clientX, e.clientY);
+  }
   drag = null; cv.classList.remove("panning");
 });
 addEventListener("mousemove", e => {
@@ -468,7 +507,8 @@ addEventListener("mousemove", e => {
       `  ·  ${scan.mppx.toFixed(3)} m/px  ·  ${(scan.rot * 180 / Math.PI).toFixed(1)}°` +
       `  ·  ${mode === "coverage" ? "click to add a coverage point"
              : mode === "review" ? "click a coloured street"
-             : "drag = move scan, shift+drag = pan"}`;
+             : dragTarget === "scan" ? "drag = move the scan (shift = the map)"
+             : "drag = move the map (shift = the scan)"}`;
   }
 });
 cv.addEventListener("contextmenu", e => e.preventDefault());
@@ -483,7 +523,9 @@ cv.addEventListener("wheel", e => {
   const unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? 400 : 1;
   const dy = Math.max(-120, Math.min(120, e.deltaY * unit));
   const f = Math.exp(-dy * 0.002);
-  if (e.shiftKey || e.ctrlKey || mode !== "align") { // zoom the VIEW
+  // The wheel follows the same switch: it acts on whatever a drag would move.
+  const onView = mode !== "align" || e.ctrlKey || ((dragTarget === "view") !== e.shiftKey);
+  if (onView) {                                     // zoom the VIEW
     view = zoomView(view, cv.width, cv.height, e.clientX, e.clientY, f);
     $("view").value = `${view.lat.toFixed(4)}, ${view.lng.toFixed(4)}, ${view.mpp.toFixed(3)}`;
   } else {                                            // scale the SCAN
@@ -496,6 +538,14 @@ cv.addEventListener("wheel", e => {
   draw();
 }, { passive: false });
 
+function setModeHint() {
+  $("modeHint").innerHTML = mode === "align"
+    ? "Match the <b>shape</b> of the grid — corners, angles, block sizes — never the names."
+    : mode === "coverage"
+    ? "Click adds a coverage point · drag pans · wheel zooms. The scan is locked while tracing."
+    : "Click a coloured street to see what the rows claim about it · drag pans · wheel zooms.";
+}
+
 function setMode(m) {
   mode = m;
   $("mAlign").classList.toggle("on", m === "align");
@@ -505,12 +555,9 @@ function setMode(m) {
   cv.classList.toggle("review", m === "review");
   for (const b of document.querySelectorAll(".modebody"))
     setVisible(b, b.dataset.mode === m);
-  if (m !== "review") hidePop();
-  $("modeHint").innerHTML = m === "align"
-    ? "Drag moves the scan · wheel scales it · shift+drag pans the view · shift+wheel zooms."
-    : m === "coverage"
-    ? "Click adds a coverage point · drag pans · wheel zooms. The scan is locked while tracing."
-    : "Click a coloured street to see what the rows claim about it · drag pans · wheel zooms.";
+  if (m !== "review") { hidePop(); tracing = null; updateTraceUI(); }
+  setModeHint();
+  cv.classList.toggle("panhand", m === "align" && dragTarget === "view");
   reviewSig = null;                 // force the panel to rebuild on entry
   refreshOpenBox();
   draw();
@@ -528,6 +575,21 @@ function refreshOpenBox() {
       (loadedDoc ? ` · ${(loadedDoc.rows || []).length} row(s)` : " · new document")
     : `<span class="warn">Nothing open.</span> Load a saved document, or a scan to start one.`;
 }
+function setDragTarget(t) {
+  dragTarget = t;
+  $("dScan").classList.toggle("on", t === "scan");
+  $("dView").classList.toggle("on", t === "view");
+  $("dragHint").innerHTML = t === "scan"
+    ? "Drag places the scan on the ground · wheel scales it · <b>hold shift</b> to " +
+      "pan and zoom the map instead."
+    : "Drag slides the map under the scan · wheel zooms · <b>hold shift</b> to " +
+      "move the scan instead. The scan stays where you put it on the ground.";
+  cv.classList.toggle("panhand", mode === "align" && t === "view");
+  if (mode === "align") setModeHint();
+}
+$("dScan").onclick = () => setDragTarget("scan");
+$("dView").onclick = () => setDragTarget("view");
+
 $("mAlign").onclick = () => setMode("align");
 $("mCoverage").onclick = () => setMode("coverage");
 $("mReview").onclick = () => setMode("review");
@@ -591,15 +653,66 @@ function loadRender(src, name, realPath) {
     im.src = src;
   });
 }
+// A browser cannot draw a PDF onto a canvas, and it should not try: the whole
+// model rests on pixel coordinates against ONE render at ONE resolution, saved
+// on disk as `alignment.image`. A canvas rendered on the fly would be at
+// whatever size the browser chose and would exist nowhere afterwards, so every
+// stored pixel would point at a file that was never written. Hence pdftoppm,
+// and hence this message rather than a silent failure — which is what a PDF
+// used to get, since the file picker filtered them out entirely and the path
+// loader just said "could not load".
+function pdfAdvice(pathOrName) {
+  const id = idFromRender(pathOrName.replace(/\.pdf$/i, ""));
+  return `That is a PDF, and the tool aligns a PNG render of one — every pixel ` +
+    `coordinate it stores is measured against a render at a known resolution, so ` +
+    `the render has to exist on disk.\n\n` +
+    `Easiest: close this and double-click new-document.command. It moves the scan ` +
+    `out of inbox/, makes documents/${id}/, and renders it.\n\n` +
+    `Or by hand, in the project folder:\n\n` +
+    `  mkdir -p documents/${id}\n` +
+    `  mv inbox/*.pdf documents/${id}/${id}.pdf\n` +
+    `  pdftoppm -png -r 100 documents/${id}/${id}.pdf documents/${id}/${id}-100dpi\n\n` +
+    `then load documents/${id}/${id}-100dpi.png here. (pdftoppm comes from ` +
+    `poppler: brew install poppler.)`;
+}
+const looksLikePdf = s => /\.pdf$/i.test(s.trim());
+
 $("file").addEventListener("change", e => {
   const f = e.target.files[0]; if (!f) return;
+  if (looksLikePdf(f.name) || f.type === "application/pdf") return alert(pdfAdvice(f.name));
   loadRender(URL.createObjectURL(f), f.name).catch(err => alert(err.message));
 });
+// `alignment.image` is fetched relative to the page, i.e. the project root.
+// A bare filename therefore 404s — and the tool used to WRITE bare filenames
+// whenever the render came from the file picker, which hands over a name with
+// no path. Every such document failed to reopen. Both ends are fixed; this end
+// also rescues the files already written that way, and anything an assistant
+// edited by hand into the obvious-looking short form.
+async function loadRenderResolving(image, id) {
+  const base = image.split("/").pop();
+  const tries = [image];
+  if (id) tries.push(`documents/${id}/${base}`);
+  tries.push(base);
+  for (const t of [...new Set(tries)]) {
+    try { await loadRender(t, base, t); return t; } catch (e) { /* next */ }
+  }
+  alert(`Header loaded, but the render could not be found. Tried:\n\n` +
+        [...new Set(tries)].map(t => "  " + t).join("\n") +
+        `\n\nPut the path in the Open box (relative to the project folder) and Load ` +
+        `it — the alignment will restore onto it.`);
+  return null;
+}
+
 $("loadRenderBtn").onclick = async () => {
   const pth = $("renderPath").value.trim();
   if (!pth) return;
+  if (looksLikePdf(pth)) return alert(pdfAdvice(pth));
   try { await loadRender(pth, pth.split("/").pop(), pth); }
-  catch (e) { alert(e.message + " — the path is relative to this page, e.g. tracts/renders/MR066-035.png"); }
+  catch (e) {
+    alert(`${e.message}\n\nThe path is relative to the project folder, e.g.\n` +
+          `  documents/mr066-035/mr066-035-100dpi.png\n\n` +
+          `If the render has not been made yet, double-click new-document.command.`);
+  }
 };
 
 // --- load an existing document --------------------------------------------
@@ -625,15 +738,17 @@ $("loadDoc").onclick = async () => {
   if (Array.isArray(doc.coverage) && typeof doc.coverage[0]?.[0] === "number") coverage = doc.coverage;
   if (doc.alignment && doc.alignment.points) {
     if (doc.alignment.image) {
-      $("renderPath").value = doc.alignment.image;
-      try { await loadRender(doc.alignment.image, doc.alignment.image.split("/").pop(), doc.alignment.image); }
-      catch (e) { alert(`Header loaded, but the render ${doc.alignment.image} did not load. ` +
-                        `Load it by hand and the alignment will still restore.`); }
+      const used = await loadRenderResolving(doc.alignment.image, doc.id || id);
+      $("renderPath").value = used || doc.alignment.image;
     }
     if (img) restoreAlignment(doc.alignment); else pendingAlignment = doc.alignment;
   }
   loadedDoc = doc;
   docSwept = { fully: doc.sweptFully === true, for: doc.sweptFor || [] };
+  coverageExcept = Array.isArray(doc.coverageExcept) ? doc.coverageExcept.slice() : [];
+  // A popup describes one row of one document, and it sits over the canvas —
+  // left open across a load it both lies and swallows the next click.
+  hidePop(); tracing = null; updateTraceUI();
   lastModel = null; reviewSig = null; reviewDirty = false;
   refreshOpenBox();
   draw();
@@ -683,6 +798,10 @@ const esc = s => String(s == null ? "" : s)
 let reviewFeatures = [];        // {street,row,kind,pts:[[x,y]]} rebuilt each draw
 let selStreet = null;
 let reviewDirty = false;        // edits made in review that are not on disk yet
+// A vanished street is traced, not clicked: it has no modern geometry to pick
+// from, which is exactly what makes it vanished. Points are scan pixels, so
+// the trace rides on the alignment like everything else stored on a scan.
+let tracing = null;             // null when not tracing, else [[x, y], ...]
 
 const reviewRows = () => (loadedDoc && Array.isArray(loadedDoc.rows)) ? loadedDoc.rows : [];
 
@@ -739,8 +858,8 @@ function extentPoint(street, val, problems) {
 // The portion of one in-bounds run between two ground points. Ends that fall
 // outside the run clamp to it, which is right: the run is already clipped to
 // coverage, and a row may legitimately run past the polygon's edge.
-function clipRun(run, pA, pB) {
-  if (!pA && !pB) return run;
+function clipRange(run, pA, pB) {
+  if (!pA && !pB) return [0, run.length - 1];
   const idx = pt => {
     let bi = 0, bd = Infinity;
     run.forEach((p, i) => { const d = G.metres(p, pt); if (d < bd) { bd = d; bi = i; } });
@@ -749,7 +868,36 @@ function clipRun(run, pA, pB) {
   let a = pA ? idx(pA) : 0, b = pB ? idx(pB) : run.length - 1;
   if (a > b) { const t = a; a = b; b = t; }
   if (a === b) { a = Math.max(0, a - 1); b = Math.min(run.length - 1, b + 1); }
+  return [a, b];
+}
+function clipRun(run, pA, pB) {
+  const [a, b] = clipRange(run, pA, pB);
   return run.slice(a, b + 1);
+}
+
+// What the rows DON'T say anything about.
+//
+// Accounting street by street is not enough: a document can name one stretch
+// of a street and be silent about the rest, and a street with any row at all
+// used to count as handled — so the uncovered part drew as pale background and
+// there was no way to notice it, let alone act on it. Coverage is a claim
+// about GROUND, so the gaps have to be found in metres, not in street names.
+function runGaps(run, ranges) {
+  const merged = ranges.slice().sort((x, y) => x[0] - y[0]).reduce((acc, r) => {
+    const last = acc[acc.length - 1];
+    if (last && r[0] <= last[1]) last[1] = Math.max(last[1], r[1]);
+    else acc.push(r.slice());
+    return acc;
+  }, []);
+  const gaps = [];
+  let at = 0;
+  for (const [a, b] of merged) {
+    if (a > at) gaps.push([at, a]);
+    at = Math.max(at, b);
+  }
+  if (at < run.length - 1) gaps.push([at, run.length - 1]);
+  return gaps.filter(([a, b]) => b > a &&
+    runMetres(run.slice(a, b + 1)) >= MIN_RUN_M);
 }
 
 // OSM splits one street into many ways, so segmentsInBounds hands back a
@@ -807,15 +955,16 @@ function coverageStreets() {
     if (!merged.has(s.name)) merged.set(s.name, []);
     merged.get(s.name).push(...s.runs);
   }
-  const streets = [], slivers = [];
+  const streets = [], slivers = [], excepted = [];
   for (const [name, raw] of merged) {
+    if (coverageExcept.includes(name)) { excepted.push(name); continue; }
     const runs = stitchRuns(raw).filter(r => r.length >= 2 && runMetres(r) >= MIN_RUN_M);
     if (runs.length) streets.push({ name, runs });
     else slivers.push({ name, metres: Math.max(0, ...stitchRuns(raw).map(runMetres)) });
   }
   streets.sort((a, b) => a.name.localeCompare(b.name));
   slivers.sort((a, b) => a.name.localeCompare(b.name));
-  return { streets, slivers, ring, error: null };
+  return { streets, slivers, excepted: excepted.sort(), ring, error: null };
 }
 
 function reviewModel() {
@@ -852,19 +1001,42 @@ function reviewModel() {
     rec.rows.push(r);
   }
 
+  const gapProblems = [];
   for (const rec of streets.values()) {
-    rec.status = rec.rows.some(r => r.kind === "state" || r.kind === "change" || r.kind === "annotation")
-      ? "named" : rec.rows.some(r => r.kind === "silent") ? "silent" : "unaccounted";
+    // Which stretch of which run each row speaks for, and what is left over.
+    rec.covered = rec.runs.map(() => []);
+    for (const row of rec.rows) {
+      const extA = row.kind === "change" ? row.fromCross : row.from;
+      const extB = row.kind === "change" ? row.toCross : row.to;
+      const pA = extentPoint(rec.name, extA, gapProblems);
+      const pB = extentPoint(rec.name, extB, gapProblems);
+      rec.runs.forEach((run, i) => rec.covered[i].push(clipRange(run, pA, pB)));
+    }
+    rec.gaps = [];
+    rec.runs.forEach((run, i) => {
+      for (const [a, b] of runGaps(run, rec.covered[i]))
+        rec.gaps.push({ street: rec.name, runIndex: i, a, b,
+                        pts: run.slice(a, b + 1), metres: runMetres(run.slice(a, b + 1)) });
+    });
+    const kinds = new Set(rec.rows.map(r => r.kind));
+    rec.status = !rec.rows.length ? "unaccounted"
+      : rec.gaps.length ? "partial"
+      : (kinds.has("state") || kinds.has("change") || kinds.has("annotation")) ? "named"
+      : "silent";
     rec.proposed = rec.rows.some(r => r.confirmed === false);
   }
 
   const list = [...streets.values()].sort((a, b) => a.name.localeCompare(b.name));
   const proposed = reviewRows().filter(r => r.confirmed === false).length;
-  return { streets: list, vanished, problems, proposed, slivers: cov.slivers,
+  const gaps = list.flatMap(s => s.gaps || []);
+  return { streets: list, vanished, problems, proposed, gaps,
+           slivers: cov.slivers, excepted: cov.excepted || [],
            counts: {
              named: list.filter(s => s.status === "named").length,
              silent: list.filter(s => s.status === "silent").length,
-             unaccounted: list.filter(s => s.status === "unaccounted").length
+             partial: list.filter(s => s.status === "partial").length,
+             unaccounted: list.filter(s => s.status === "unaccounted").length,
+             gapMetres: Math.round(gaps.reduce((m, g) => m + g.metres, 0))
            } };
 }
 
@@ -890,15 +1062,7 @@ function drawReview() {
 
   for (const s of m.streets) {
     const selected = selStreet === s.name;
-    if (s.status === "unaccounted") {
-      for (const run of s.runs) {
-        const pts = toScr(run);
-        stroke(pts, REVC.unaccounted, selected ? 9 : 6, false);
-        reviewFeatures.push({ street: s.name, row: null, kind: "unaccounted", pts });
-      }
-      continue;
-    }
-    for (const run of s.runs) stroke(toScr(run), "rgba(180,172,150,0.55)", 6, false);
+    for (const run of s.runs) stroke(toScr(run), "rgba(180,172,150,0.45)", 6, false);
     for (const row of s.rows) {
       const extA = row.kind === "change" ? row.fromCross : row.from;
       const extB = row.kind === "change" ? row.toCross : row.to;
@@ -911,6 +1075,20 @@ function drawReview() {
         reviewFeatures.push({ street: s.name, row, kind: row.kind, pts });
       }
     }
+    // Whatever no row speaks for, drawn last so it is never hidden under one.
+    for (const gap of s.gaps || []) {
+      const pts = toScr(gap.pts);
+      stroke(pts, REVC.unaccounted, selected ? 9 : 6, false);
+      reviewFeatures.push({ street: s.name, row: null, kind: "unaccounted", gap, pts });
+    }
+  }
+
+  // the trace being drawn right now
+  if (tracing && tracing.length) {
+    const pts = tracing.map(([x, y]) => scanToScreen(x, y));
+    stroke(pts, REVC.vanished, 6, true);
+    ctx.fillStyle = REVC.vanished;
+    for (const [x, y] of pts) { ctx.beginPath(); ctx.arc(x, y, 4, 0, 7); ctx.fill(); }
   }
 
   // vanished: traces in scan pixels, so they ride on the alignment
@@ -998,13 +1176,13 @@ function refreshEntityList() {
 
 function bindPopControls() {
   const p = $("pop");
-  const touch = () => {
+  function touch() {
     reviewDirty = true; lastModel = null; reviewSig = null;
     const sel = selStreet, keep = popRow;
     draw();
     if (sel) reopenPop(sel, keep);
     updateReviewActions();
-  };
+  }
   for (const el of p.querySelectorAll("input.npick")) el.onchange = () => {
     const r = reviewRows()[+el.dataset.ri], v = el.value.trim();
     const E = entities() || {};
@@ -1020,6 +1198,33 @@ function bindPopControls() {
   for (const el of p.querySelectorAll("button.newent")) el.onclick = () => {
     const r = reviewRows()[+el.dataset.ri];
     if (mintEntityFor(r)) touch();
+  };
+  for (const el of p.querySelectorAll("button.mksilent")) el.onclick = () => {
+    const gap = findGap(el.dataset.gk);
+    if (!gap) return alert("That stretch is no longer in the model — reopen it and try again.");
+    const rec = lastModel.streets.find(s => s.name === gap.street);
+    const ends = gapExtents(rec, gap);
+    loadedDoc.rows = loadedDoc.rows || [];
+    loadedDoc.rows.push({ kind: "silent", street: gap.street,
+                          from: ends.from, to: ends.to, confirmed: false,
+                          note: `Added in review: the sheet covers this ${Math.round(gap.metres)} m ` +
+                                `and draws no street along it.` });
+    popGap = null;
+    touch();
+  };
+  for (const el of p.querySelectorAll("button.mkexcept")) el.onclick = () => {
+    const gap = findGap(el.dataset.gk);
+    if (!gap) return alert("That stretch is no longer in the model — reopen it and try again.");
+    if (!confirm(`Drop ${gap.street} from this document's coverage?\n\n` +
+        `Use this when the polygon strays onto ground the document does not ` +
+        `actually inform about — not when the sheet covers it and draws nothing, ` +
+        `which is "shows nothing here" instead.\n\n` +
+        `It is recorded in the document as coverageExcept, and reversible from ` +
+        `the panel.`)) return;
+    if (!coverageExcept.includes(gap.street)) coverageExcept.push(gap.street);
+    hidePop();
+    reviewDirty = true; lastModel = null; reviewSig = null;
+    draw(); updateReviewActions();
   };
   for (const el of p.querySelectorAll("button.conf")) el.onclick = () => {
     const r = reviewRows()[+el.dataset.ri];
@@ -1106,7 +1311,8 @@ function refreshReview() {
   $("revLegend").innerHTML =
     `<div class="hint">${sw("state")}named by this document (${c.named})</div>` +
     `<div class="hint">${sw("silent")}covered, nothing drawn there (${c.silent})</div>` +
-    `<div class="hint">${sw("unaccounted")}<b>unaccounted</b> — no row says anything (${c.unaccounted})</div>` +
+    `<div class="hint">${sw("unaccounted")}<b>unaccounted</b> — no row speaks for this ` +
+    `stretch (${m.gaps.length} stretch${m.gaps.length === 1 ? "" : "es"}, ${c.gapMetres} m)</div>` +
     `<div class="hint">${sw("vanished")}drawn on the plat, no modern street (${m.vanished.length})</div>` +
     `<div class="hint">dashed = <span class="prop">proposed</span>, awaiting a human</div>`;
 
@@ -1124,7 +1330,17 @@ function refreshReview() {
       ? `<div class="hint">Not counted, each clipping the polygon by less than ` +
         `${MIN_RUN_M} m — a side street's stub at an intersection: ` +
         m.slivers.map(s => `${esc(s.name)} (${s.metres.toFixed(0)} m)`).join(", ") + "</div>"
-      : "");
+      : "") +
+    ((m.excepted && m.excepted.length)
+      ? `<div class="hint">Dropped from coverage as polygon overshoot: ` +
+        m.excepted.map(n => `${esc(n)} <a href="#" data-unexcept="${esc(n)}">undo</a>`).join(", ") +
+        `</div>` : "");
+  for (const a of $("revStreets").querySelectorAll("a[data-unexcept]")) a.onclick = e => {
+    e.preventDefault();
+    coverageExcept = coverageExcept.filter(n => n !== a.dataset.unexcept);
+    reviewDirty = true; lastModel = null; reviewSig = null;
+    draw(); updateReviewActions();
+  };
   // Bind AFTER the list's final HTML is in place: assigning innerHTML again
   // would reparse the subtree and drop these handlers.
   for (const li of $("revStreets").querySelectorAll("li"))
@@ -1138,28 +1354,90 @@ function refreshReview() {
     : "";
 }
 
+// Bring a feature into view if it is off screen. Picking a street from the
+// list and having nothing visibly happen — because the stretch is above the
+// window — is indistinguishable from the tool being broken.
+function revealFeature(f) {
+  if (!f || !f.pts.length) return false;
+  const mid = f.pts[Math.floor(f.pts.length / 2)];
+  const pad = 60;
+  if (mid[0] > pad && mid[0] < cv.width - pad && mid[1] > pad && mid[1] < cv.height - pad)
+    return false;
+  const [lat, lng] = screenToLL(mid[0], mid[1]);
+  view.lat = lat; view.lng = lng;
+  $("view").value = `${view.lat.toFixed(4)}, ${view.lng.toFixed(4)}, ${view.mpp.toFixed(3)}`;
+  draw();
+  return true;
+}
+
 function selectStreet(name) {
   selStreet = name;
   draw();
-  const f = reviewFeatures.find(f => f.street === name && f.pts.length);
+  // Prefer an unaccounted stretch: if the list is being worked through, that
+  // is the thing that needs doing.
+  let f = reviewFeatures.find(x => x.street === name && x.gap && x.pts.length) ||
+          reviewFeatures.find(x => x.street === name && x.pts.length);
+  if (revealFeature(f))
+    f = reviewFeatures.find(x => x.street === name && x.gap && x.pts.length) ||
+        reviewFeatures.find(x => x.street === name && x.pts.length);
   const rec = (lastModel ? lastModel.streets : []).find(s => s.name === name);
   if (!rec) return;
+  popGap = f && f.gap ? f.gap : null;
   const mid = f ? f.pts[Math.floor(f.pts.length / 2)] : [cv.width / 2, cv.height / 2];
   popRow = null;
-  showPop(mid[0], mid[1], popHtml(rec, null));
+  showPop(mid[0], mid[1], popHtml(rec, null, popGap));
 }
 
-function popHtml(rec, row) {
+function popHtml(rec, row, gap) {
   const head = `<span class="close" title="close">×</span><b class="hdr">${esc(rec.name)}</b>`;
-  if (rec.status === "unaccounted")
-    return head + `<div class="hint" style="color:${REVC.unaccounted}"><b>Unaccounted.</b> This ` +
-      `street runs through the coverage polygon and no row says what the sheet shows along it. ` +
-      `Until every street here is either named or explicitly silent, the document cannot be ` +
-      `marked <code>sweptFully</code>.</div>`;
-  return head + rec.rows.map(r => rowHtml(r, r === row)).join("");
+  return head + (gap ? gapHtml(rec, gap) : "") +
+         rec.rows.map(r => rowHtml(r, r === row)).join("");
 }
 
-let popPos = [0, 0], popRow = null;
+// Two honest answers to "no row speaks for this stretch", and they are not the
+// same claim. `silent` says the document covers this ground and draws nothing
+// on it — evidence, and the thing that later licenses "no street was here".
+// Excluding says the polygon simply overshoots, and the document never spoke
+// about this ground at all. Guessing between them by hand is how a traced
+// boundary's slop turns into a false historical claim, so both are offered.
+// Gaps are addressed by VALUE, not by index into lastModel.gaps. Opening the
+// popup redraws first, which rebuilds the model, so the object the click
+// carried is by then a stale twin of the one in the list — an index taken from
+// it silently misses and the button does nothing at all.
+const gapKey = g => `${g.street}|${g.runIndex}|${g.a}|${g.b}`;
+const findGap = key => (lastModel ? lastModel.gaps : []).find(g => gapKey(g) === key);
+
+function gapHtml(rec, gap) {
+  const key = gapKey(gap);
+  const ends = gapExtents(rec, gap);
+  return `<div class="rowcard" style="border-left-color:${REVC.unaccounted}">` +
+    `<b style="color:${REVC.unaccounted}">unaccounted</b> · ${Math.round(gap.metres)} m` +
+    `<div class="hint">${esc(describeEnd(ends.from))} → ${esc(describeEnd(ends.to))} — ` +
+    `no row says what this sheet shows along here.</div>` +
+    `<div class="ctlrow"><button class="mksilent" data-gk="${esc(key)}">` +
+    `Sheet shows nothing here</button></div>` +
+    `<div class="ctlrow"><button class="mkexcept" data-gk="${esc(key)}">` +
+    `Outside coverage — polygon overshoots</button></div>` +
+    `<div class="hint">The first is a claim about the map and becomes a ` +
+    `<code>silent</code> row. The second is a claim about the polygon and drops ` +
+    `<b>${esc(rec.name)}</b> from this document's coverage entirely.</div></div>`;
+}
+
+// A gap's ends in the vocabulary rows use: a cross street when one is close,
+// a scan pixel when the stretch stops mid-block (MODEL-SPEC §5.4).
+function gapExtents(rec, gap) {
+  const run = rec.runs[gap.runIndex];
+  const toPx = img ? (lat, lon) => G.worldToScan(G.fitAlignment(controlPoints()), lat, lon) : null;
+  const end = (p, atRunEnd) => atRunEnd ? null
+    : G.snapOrPoint(streetPoints, rec.name, p, toPx, { maxM: 40 }).value;
+  return { from: end(run[gap.a], gap.a === 0),
+           to:   end(run[gap.b], gap.b === run.length - 1) };
+}
+const describeEnd = v => v == null ? "the street's end in coverage"
+  : typeof v === "object" ? (v.px ? `px ${v.px[0]},${v.px[1]}` : `${v.ll[0]}, ${v.ll[1]}`)
+  : v;
+
+let popPos = [0, 0], popRow = null, popGap = null;
 function showPop(x, y, html) {
   const p = $("pop");
   popPos = [x, y];
@@ -1174,11 +1452,14 @@ function showPop(x, y, html) {
 // the new state — in place, so the thing you were reading does not jump away.
 function reopenPop(street, row) {
   const rec = (lastModel ? lastModel.streets : []).find(s => s.name === street);
-  if (!rec) return;
+  if (!rec) { hidePop(); return; }
   popRow = row;
-  showPop(popPos[0], popPos[1], popHtml(rec, row));
+  // The gap object is rebuilt each model pass, so re-find it by position.
+  const g = popGap && (rec.gaps || []).find(x => gapKey(x) === gapKey(popGap));
+  popGap = g || null;
+  showPop(popPos[0], popPos[1], popHtml(rec, row, popGap));
 }
-function hidePop() { setVisible($("pop"), false); selStreet = null; popRow = null; }
+function hidePop() { setVisible($("pop"), false); selStreet = null; popRow = null; popGap = null; }
 
 // distance from a point to a polyline, in screen pixels
 function distToPts(pts, x, y) {
@@ -1209,8 +1490,8 @@ function pickFeature(x, y) {
   }
   selStreet = best.street; draw();
   const rec = (lastModel ? lastModel.streets : []).find(s => s.name === best.street);
-  popRow = best.row;
-  if (rec) showPop(x, y, popHtml(rec, best.row));
+  popRow = best.row; popGap = best.gap || null;
+  if (rec) showPop(x, y, popHtml(rec, best.row, popGap));
 }
 
 // --- the sweep gate and writing review back --------------------------------
@@ -1222,9 +1503,11 @@ function sweepBlockers() {
   const m = lastModel || reviewModel();
   const out = [];
   if (!m.streets.length) out.push("no streets are in coverage yet");
-  const un = m.streets.filter(s => s.status === "unaccounted");
-  if (un.length) out.push(`${un.length} street${un.length === 1 ? " is" : "s are"} still ` +
-                          `unaccounted: ${un.map(s => s.name).join(", ")}`);
+  if (m.gaps.length) {
+    const by = [...new Set(m.gaps.map(g => g.street))];
+    out.push(`${m.counts.gapMetres} m across ${m.gaps.length} stretch` +
+             `${m.gaps.length === 1 ? "" : "es"} is unaccounted (${by.join(", ")})`);
+  }
   if (m.proposed) out.push(`${m.proposed} row${m.proposed === 1 ? " is" : "s are"} still an ` +
                            `unconfirmed proposal`);
   const nameless = reviewRows().filter(r => (r.kind === "state" || r.kind === "vanished") && !r.name);
@@ -1280,9 +1563,13 @@ function namesNewText() {
       `    namedAfterLink: ${JSON.stringify(e.namedAfterLink ?? null)},\n` +
       `    categories: ${JSON.stringify(e.categories || ["unknown"])},\n` +
       `    sources: ${JSON.stringify(e.sources || [])},\n` +
-      `    disputed: false,\n` +
+      `    disputed: ${e.disputed === true},\n` +
       `    note: ${JSON.stringify(e.note ?? null)},\n` +
-      `    possiblySameAs: null, aliases: []\n  }`;
+      // Preserve what a human has decided about identity. These fields are the
+      // whole point of the file — writing them back as null would erase the
+      // research this file exists to collect.
+      `    possiblySameAs: ${JSON.stringify(e.possiblySameAs ?? null)},\n` +
+      `    aliases: ${JSON.stringify(e.aliases || [])}\n  }`;
   }).join(",\n\n");
   return `// names-new.js — name entities created in the document tool's review mode.
 //
@@ -1347,6 +1634,51 @@ $("saveReview").onclick = async () => {
     " — run node check-model.js && node generate.js";
 };
 
+// --- tracing a vanished street ---------------------------------------------
+function updateTraceUI() {
+  const on = !!tracing;
+  setVisible($("traceDone"), on);
+  setVisible($("traceCancel"), on);
+  setVisible($("traceStart"), !on);
+  $("traceState").innerHTML = !on ? ""
+    : tracing.length < 2
+      ? `<span class="warn">${tracing.length} point${tracing.length === 1 ? "" : "s"}</span> — ` +
+        `click along the corridor's centre line; two points is the minimum.`
+      : `${tracing.length} points. Click to extend, or Finish.`;
+  cv.classList.toggle("coverage", on);        // crosshair
+}
+$("traceStart").onclick = () => {
+  if (!img) return alert("Load the document first.");
+  tracing = []; hidePop(); updateTraceUI(); draw();
+};
+$("traceCancel").onclick = () => { tracing = null; updateTraceUI(); draw(); };
+$("traceDone").onclick = () => {
+  if (!tracing || tracing.length < 2) return alert("A trace needs at least two points.");
+  const asWritten = (prompt(
+    "The label, exactly as the plat letters it — typos, abbreviations and all. " +
+    "This is the evidence; the tidy form belongs to the name entity.", "") || "").trim();
+  if (!asWritten) return;                     // §5.1: no ink, no row
+  const row = { kind: "vanished", asWritten, trace: tracing.slice(),
+                basis: "alignment", confirmed: false };
+  loadedDoc.rows = loadedDoc.rows || [];
+  loadedDoc.rows.push(row);
+  tracing = null;
+  reviewDirty = true; lastModel = null; reviewSig = null;
+  updateTraceUI(); draw();
+  // Straight into the row, because it still needs a name entity before it can
+  // be confirmed — leaving it unnamed is how it would get forgotten.
+  const f = reviewFeatures.find(x => x.row === row);
+  if (f && f.pts.length) {
+    const mid = f.pts[Math.floor(f.pts.length / 2)];
+    popRow = row;
+    showPop(mid[0], mid[1], `<span class="close" title="close">×</span>` +
+      `<b class="hdr">Vanished street</b>` +
+      `<div class="hint">Drawn on the plat with no modern counterpart, so it is ` +
+      `stored as a trace in scan pixels rather than against a modern street.</div>` +
+      rowHtml(row, true));
+  }
+};
+
 // Re-read only the rows, so pasting the AI's output into the .js does not cost
 // a reload and a re-align.
 $("revReload").onclick = async () => {
@@ -1360,6 +1692,8 @@ $("revReload").onclick = async () => {
     const doc = new Function("return " + body.replace(/;\s*$/, ""))();
     loadedDoc = Object.assign(loadedDoc || {}, doc);
     docSwept = { fully: doc.sweptFully === true, for: doc.sweptFor || [] };
+    coverageExcept = Array.isArray(doc.coverageExcept) ? doc.coverageExcept.slice() : [];
+    hidePop();
     reviewDirty = false;
     lastModel = null;
     draw(); refreshReview();
@@ -1374,16 +1708,26 @@ $("revReload").onclick = async () => {
 const q = s => JSON.stringify(s == null ? null : String(s));
 // Either the alignment exactly as the file had it, or a fresh one derived from
 // where the scan now sits — never a re-derivation of an untouched one.
+// The render's path as the project sees it. The file picker gives a bare name
+// with no path — it cannot give more — but the render always ends up in the
+// document's own folder, so that is where the file records it.
+function renderRelPath() {
+  const id = $("f_id").value.trim();
+  if (!renderPathUsed) return "";
+  if (renderPathUsed.includes("/") || !id) return renderPathUsed;
+  return `documents/${id}/${renderPathUsed}`;
+}
+
 function alignmentBlock() {
   const stored = loadedDoc && loadedDoc.alignment;
   const use = (!alignmentTouched && stored && stored.points && stored.points.length >= 2)
     ? stored
-    : { image: renderPathUsed, dpi: 100, points: controlPoints() };
+    : { image: renderRelPath(), dpi: 100, points: controlPoints() };
   const pts = use.points.map(p =>
     `      { px: [${p.px[0]}, ${p.px[1]}], ll: [${p.ll[0]}, ${p.ll[1]}]` +
     (p.note ? `, note: ${q(p.note)}` : "") + ` }`);
   return `{
-    image: ${q(use.image || renderPathUsed)},
+    image: ${q(use.image || renderRelPath())},
     dpi: ${use.dpi || 100},
     points: [
 ${pts.join(",\n")}
@@ -1424,7 +1768,12 @@ ${covLines.join(",\n")}
   ],
   alignment: ${alignmentBlock()},
 
-  sweptFully: ${docSwept.fully ? "true" : "false"},
+${coverageExcept.length ? `  // The polygon strays onto these; the document does not inform about them.
+  // NOT the same as a silent row, which says the sheet covers the ground and
+  // draws nothing there (MODEL-SPEC §4.4, §5.2).
+  coverageExcept: ${JSON.stringify(coverageExcept.slice().sort())},
+
+` : ""}  sweptFully: ${docSwept.fully ? "true" : "false"},
   sweptFor: ${JSON.stringify(docSwept.for || [])},
 
 ${rowsSrc}};
@@ -1628,7 +1977,7 @@ function streetsJsonText(id) {
   if (!d) return "{}";
   const obj = {
     document: id,
-    image: renderPathUsed.split("/").pop(),
+    image: renderRelPath().split("/").pop(),
     imageSize: [img.width, img.height],
     generatedBy: "document-tool.html phase 1",
     coordinates: "px = [x, y] in pixels on `image` above, y increasing downward. " +
@@ -1645,7 +1994,10 @@ function streetsJsonText(id) {
     // Streets that only clip the polygon by a few metres — a side street's
     // stub at an intersection. Listed so it is clear they were considered and
     // ruled out, not missed. Do not write rows for these.
-    excludedAsSlivers: d.slivers.map(s => ({ name: s.name, metres: +s.metres.toFixed(1) }))
+    excludedAsSlivers: d.slivers.map(s => ({ name: s.name, metres: +s.metres.toFixed(1) })),
+    // Ground the polygon strays onto that the document does not inform about.
+    // Do not write rows for these either — not even silent ones.
+    excludedAsOvershoot: coverageExcept.slice().sort()
   };
   // Coordinate pairs on one line each; the default pretty-printer puts every
   // number on its own line and the file becomes unreadable.
@@ -1808,7 +2160,7 @@ $("save").onclick = async () => {
   const docText = serialiseDoc(prefix);
   const alignName = `${id}-alignment.json`;
   const alignText = JSON.stringify(
-    { image: renderPathUsed, points: controlPoints() }, null, 2);
+    { image: renderRelPath(), points: controlPoints() }, null, 2);
 
   // Three save dialogs for three files that all belong in one folder is the
   // wrong shape. If the project folder isn't connected yet, ask for it ONCE,
@@ -1877,6 +2229,7 @@ $("save").onclick = async () => {
 };
 
 addEventListener("resize", draw);
+setDragTarget("scan");
 refreshEntityList();
 renderDirState();
 addEventListener("beforeunload", e => {

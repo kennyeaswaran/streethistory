@@ -97,6 +97,49 @@ console.log("segmentsInBounds");
   ok("returns point runs", found.every(f => f.runs.every(r => r.length > 0)));
 }
 
+console.log("coverage is clipped at the boundary, not at the vertex");
+{
+  // A square ring, and a way whose two vertices sit outside it on either side:
+  // OSM records long straight streets exactly like this, and testing only
+  // vertices would report the way as absent from a polygon it crosses end to
+  // end. On MR006-138 the vertex-only test silently dropped 127 m of Douglas
+  // Street, which is what sent us looking.
+  const ring = [[0, 0], [0, 10], [10, 10], [10, 0]];        // [lat, lon]
+  const across = [{ lat: 5, lon: -5 }, { lat: 5, lon: 15 }];
+  const got = G.segmentsInBounds([{ name: "across", geometry: across }], ring);
+  ok("a way crossing with no vertex inside is still found", got.length === 1,
+     JSON.stringify(got));
+  const run = got[0].runs[0];
+  ok("…and is clipped to the two boundary crossings",
+     run.length === 2 && Math.abs(run[0].lon - 0) < 1e-9 && Math.abs(run[1].lon - 10) < 1e-9,
+     JSON.stringify(run));
+
+  // Entering: the run must start at the boundary, not at the first inside vertex.
+  const entering = [{ lat: 5, lon: -5 }, { lat: 5, lon: 6 }];
+  const e = G.segmentsInBounds([{ name: "in", geometry: entering }], ring)[0].runs[0];
+  ok("entering starts at the boundary", Math.abs(e[0].lon - 0) < 1e-9, JSON.stringify(e));
+  ok("…and keeps the inside vertex", Math.abs(e[e.length - 1].lon - 6) < 1e-9);
+
+  // Leaving: likewise at the far end.
+  const leaving = [{ lat: 5, lon: 6 }, { lat: 5, lon: 15 }];
+  const l = G.segmentsInBounds([{ name: "out", geometry: leaving }], ring)[0].runs[0];
+  ok("leaving ends at the boundary", Math.abs(l[l.length - 1].lon - 10) < 1e-9, JSON.stringify(l));
+
+  // In and out and in again: two runs, not one.
+  const weave = [{ lat: 5, lon: 2 }, { lat: 5, lon: 15 }, { lat: 8, lon: 15 }, { lat: 8, lon: 4 }];
+  const wruns = G.segmentsInBounds([{ name: "weave", geometry: weave }], ring)[0].runs;
+  ok("a way that leaves and returns yields two runs", wruns.length === 2,
+     JSON.stringify(wruns.map(r => r.length)));
+
+  const clear = [{ lat: 20, lon: 20 }, { lat: 30, lon: 30 }];
+  ok("a way nowhere near it is still absent",
+     G.segmentsInBounds([{ name: "far", geometry: clear }], ring).length === 0);
+
+  ok("ringCrossings orders hits along the segment",
+     G.ringCrossings({ lat: 5, lon: -5 }, { lat: 5, lon: 15 }, ring)
+       .map(h => h.lon).every((v, i, a) => i === 0 || a[i - 1] <= v));
+}
+
 console.log("cross-street snapping");
 {
   // Ground truth from intersect.js: 3rd Street x Bixel Street.

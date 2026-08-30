@@ -1233,7 +1233,7 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "west of ?",
+        "label": "part of",
         "name": "6th Street",
         "entityId": "6th-street",
         "namedAfter": null,
@@ -1286,7 +1286,7 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "west of ?",
+        "label": "part of",
         "name": "7th Place",
         "entityId": "7th-place",
         "namedAfter": null,
@@ -1563,7 +1563,7 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "west of ?",
+        "label": "part of",
         "name": "Aliso Street",
         "entityId": "aliso-street",
         "namedAfter": null,
@@ -1969,7 +1969,7 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "west of ?",
+        "label": "part of",
         "name": "Bauchet Street",
         "entityId": "bauchet-street",
         "namedAfter": null,
@@ -2057,20 +2057,82 @@ const STREET_DATA = {
   },
   "Belmont Avenue": {
     "name": "Belmont Avenue",
-    "entityId": "belmont-avenue",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "north of Court",
+        "name": "Belmont Avenue",
+        "entityId": "belmont-avenue",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLat": 34.0669,
+        "from": null,
+        "to": "Court Street"
+      },
+      {
+        "label": "Court to Beverly (Aztec Ave)",
+        "name": "Belmont Avenue",
+        "entityId": "belmont-avenue",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": "?",
+            "name": "Aztec Avenue",
+            "entityId": "aztec-avenue",
+            "formInForce": "Aztec Avenue",
+            "how": "origin",
+            "origin": "labeled “Aztec Avenue” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced. Not covered by Kines (no Aztec entry in his index or Echo Park list, checked 2026-08-30). Modern Belmont Avenue",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Belmont Avenue",
+            "entityId": "belmont-avenue",
+            "formInForce": "Belmont Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          }
+        ],
+        "maxLat": 34.0669,
+        "from": "Court Street",
+        "to": null
       }
     ]
   },
@@ -2079,7 +2141,7 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "west of ?",
+        "label": "part of",
         "name": "Bernard Street",
         "entityId": "bernard-street",
         "namedAfter": null,
@@ -2129,20 +2191,82 @@ const STREET_DATA = {
   },
   "Beverly Boulevard": {
     "name": "Beverly Boulevard",
-    "entityId": "beverly-boulevard",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "EW",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "west of Belmont",
+        "name": "Beverly Boulevard",
+        "entityId": "beverly-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "maxLng": -118.2631,
+        "from": null,
+        "to": "Belmont Avenue"
+      },
+      {
+        "label": "beyond Belmont (Diamond St)",
+        "name": "Beverly Boulevard",
+        "entityId": "beverly-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": "?",
+            "name": "Diamond Street",
+            "entityId": "diamond-street",
+            "formInForce": "Diamond Street",
+            "how": "origin",
+            "origin": "labeled “Diamond Street” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced. IDENTITY DECIDED (Kenny, 2026-08-30): one entity covering both the plat's Diamond Street — modern Beverly Boulevard through this tract — and the modern Diamond Street that survives 869 m east. The two lie on roughly the same east-west line, about 30 m apart, so this reads as one naming that lost its middle rather than two that spell alike. NB handbook/research-leads.md records an earlier pass calling Diamond \"unchanged since 1884\"; that was name-matching, and the surviving stretch is outside MR006-138's coverage",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Beverly Boulevard",
+            "entityId": "beverly-boulevard",
+            "formInForce": "Beverly Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          }
+        ],
+        "minLng": -118.2631,
+        "from": "Belmont Avenue",
+        "to": null
       }
     ]
   },
@@ -3369,20 +3493,68 @@ const STREET_DATA = {
   },
   "Council Street": {
     "name": "Council Street",
-    "entityId": "council-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "EW",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "west of Belmont",
+        "name": "Council Street",
+        "entityId": "council-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "maxLng": -118.2631,
+        "from": null,
+        "to": "Belmont Avenue"
+      },
+      {
+        "label": "Belmont to Lake Shore Terrace (original Council St)",
+        "name": "Council Street",
+        "entityId": "council-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": null,
+            "name": "Council Street",
+            "entityId": "council-street",
+            "formInForce": "Council Street",
+            "how": "origin",
+            "origin": "labeled “Council Street” on the 1884 Glassell's Subdivision map {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          }
+        ],
+        "minLng": -118.2631,
+        "from": "Belmont Avenue",
+        "to": null
       }
     ]
   },
@@ -3391,17 +3563,32 @@ const STREET_DATA = {
     "entityId": "court-street",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1884",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+    },
     "built": "not yet researched",
+    "nameHistory": [
+      {
+        "from": "by 1884",
+        "until": null,
+        "name": "Court Street",
+        "entityId": "court-street",
+        "formInForce": "Court Street",
+        "how": "origin",
+        "origin": "labeled “Court Street” on the 1884 Glassell's Subdivision map {{(source)}}",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+      }
+    ],
     "note": null,
     "categories": [
-      "unresearched"
+      "unknown"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
       }
     ]
   },
@@ -3547,7 +3734,7 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "categories": [
-      "unresearched"
+      "unknown"
     ],
     "disputed": false,
     "sources": [
@@ -3559,20 +3746,116 @@ const STREET_DATA = {
   },
   "Douglas Street": {
     "name": "Douglas Street",
-    "entityId": "douglas-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Douglas Street",
+        "entityId": "douglas-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLat": 34.0651,
+        "from": null,
+        "to": {
+          "px": [
+            1389,
+            83
+          ]
+        }
+      },
+      {
+        "label": "beyond Colton (Waters St)",
+        "name": "Douglas Street",
+        "entityId": "douglas-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": "?",
+            "name": "Waters Street",
+            "entityId": "waters-street",
+            "formInForce": "Waters Street",
+            "how": "origin",
+            "origin": "labeled “Waters Street” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced. Not covered by Kines (checked 2026-08-30). Modern Douglas Street north of Colton; the stretch south of it is gone. Note the nearby \"Walters St\" (Ord Street, 1886-1890) in research-leads — a different street, and a spelling trap",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Douglas Street",
+            "entityId": "douglas-street",
+            "formInForce": "Douglas Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          }
+        ],
+        "minLat": 34.0639,
+        "maxLat": 34.0651,
+        "from": {
+          "px": [
+            1389,
+            83
+          ]
+        },
+        "to": "Colton Street"
+      },
+      {
+        "label": "south of Colton",
+        "name": "Douglas Street",
+        "entityId": "douglas-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "maxLat": 34.0639,
+        "from": "Colton Street",
+        "to": null
       }
     ]
   },
@@ -4347,20 +4630,82 @@ const STREET_DATA = {
   },
   "Glendale Boulevard": {
     "name": "Glendale Boulevard",
-    "entityId": "glendale-boulevard",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "north of Court",
+        "name": "Glendale Boulevard",
+        "entityId": "glendale-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLat": 34.0656,
+        "from": null,
+        "to": "Court Street"
+      },
+      {
+        "label": "beyond Court (Lake Ave)",
+        "name": "Glendale Boulevard",
+        "entityId": "glendale-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": "?",
+            "name": "Lake Avenue",
+            "entityId": "lake-avenue",
+            "formInForce": "Lake Avenue",
+            "how": "origin",
+            "origin": "labeled “Lake Avenue” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced; two candidates, neither sourced. (1) Echo Park Lake — the city reservoir was already there in 1884 and this street runs toward it, which is the simple explanation. (2) Lake Vineyard, Benjamin D. Wilson's ranch: George S. Patton, whose street is on this same plat, married Wilson's daughter Ruth in 1884, the year of this subdivision. Kines's Lake Avenue page is Pasadena/Altadena's, named for Lake Vineyard, and is a different street. Wanted: a contemporary source, not a coincidence",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Glendale Boulevard",
+            "entityId": "glendale-boulevard",
+            "formInForce": "Glendale Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          }
+        ],
+        "maxLat": 34.0656,
+        "from": "Court Street",
+        "to": null
       }
     ]
   },
@@ -5104,17 +5449,46 @@ const STREET_DATA = {
     "entityId": "lake-shore-terrace",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1884",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+    },
     "built": "not yet researched",
+    "nameHistory": [
+      {
+        "from": "by 1884",
+        "until": "?",
+        "name": "Hobart Street",
+        "entityId": "hobart-street",
+        "formInForce": "Hobart Street",
+        "how": "origin",
+        "origin": "labeled “Hobart Street” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced. NOT the same entity as Hobart Boulevard in Koreatown: Kines dates that one to 1887 and names it for Hobart Addison Stewart (1868-1915), a Flint, Michigan dairy farmer, on a subdivision by different people. This Hobart Street is three years earlier and a different roadway (modern Lake Shore Terrace). Do not merge on the strength of the spelling",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+      },
+      {
+        "from": "?",
+        "until": null,
+        "name": "Lake Shore Terrace",
+        "entityId": "lake-shore-terrace",
+        "formInForce": "Lake Shore Terrace",
+        "how": "renaming",
+        "origin": "arrival on this stretch not directly documented",
+        "originLink": null
+      }
+    ],
     "note": null,
     "categories": [
-      "unresearched"
+      "unresearched",
+      "renamed"
+    ],
+    "formerCategories": [
+      "unknown"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
       }
     ]
   },
@@ -6027,7 +6401,7 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "north of ? (discontinuous)",
+        "label": "part of (discontinuous)",
         "name": "Myers Street",
         "entityId": "myers-street",
         "namedAfter": null,
@@ -6411,20 +6785,98 @@ const STREET_DATA = {
   },
   "Patton Street": {
     "name": "Patton Street",
-    "entityId": "patton-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Patton Street",
+        "entityId": "patton-street",
+        "namedAfter": "{{George Smith Patton (1856–1927)}}, the attorney who developed the street — how and when this stretch joined Patton Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Patton Street (“This 1883 street was named for its developer, attorney George Smith Patton (1856-1927)”)",
+            "url": "https://lastreetnames.com/street/patton-street/"
+          },
+          {
+            "title": "L.A. Street Names: Glassell Street (Glassell’s firm; “his nephew George S. Patton replaced Smith”)",
+            "url": "https://lastreetnames.com/street/glassell-street/"
+          },
+          {
+            "title": "Wikipedia: George S. Patton (attorney)",
+            "url": "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)"
+          }
+        ],
+        "minLat": 34.0656,
+        "from": null,
+        "to": {
+          "px": [
+            1159,
+            83
+          ]
+        }
+      },
+      {
+        "label": "beyond Colton (original Patton St)",
+        "name": "Patton Street",
+        "entityId": "patton-street",
+        "namedAfter": "{{George Smith Patton (1856–1927)}}, the attorney who developed the street — nephew and law partner of Andrew Glassell, who subdivided the adjoining tract the following year, and father of the WWII general",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)",
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": null,
+            "name": "Patton Street",
+            "entityId": "patton-street",
+            "formInForce": "Patton Street",
+            "how": "origin",
+            "origin": "labeled “Patton Street” on the 1884 Glassell's Subdivision map {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Patton Street (“This 1883 street was named for its developer, attorney George Smith Patton (1856-1927)”)",
+            "url": "https://lastreetnames.com/street/patton-street/"
+          },
+          {
+            "title": "L.A. Street Names: Glassell Street (Glassell’s firm; “his nephew George S. Patton replaced Smith”)",
+            "url": "https://lastreetnames.com/street/glassell-street/"
+          },
+          {
+            "title": "Wikipedia: George S. Patton (attorney)",
+            "url": "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)"
+          },
+          {
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          }
+        ],
+        "maxLat": 34.0656,
+        "from": {
+          "px": [
+            1159,
+            83
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -6563,20 +7015,82 @@ const STREET_DATA = {
   },
   "Rockwood Street": {
     "name": "Rockwood Street",
-    "entityId": "rockwood-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "EW",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "west of Belmont",
+        "name": "Rockwood Street",
+        "entityId": "rockwood-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "maxLng": -118.263,
+        "from": null,
+        "to": "Belmont Avenue"
+      },
+      {
+        "label": "Belmont to Glendale (Home St)",
+        "name": "Rockwood Street",
+        "entityId": "rockwood-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": "?",
+            "name": "Home Street",
+            "entityId": "home-street",
+            "formInForce": "Home Street",
+            "how": "origin",
+            "origin": "labeled “Home Street” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced. Not covered by Kines (checked 2026-08-30). Modern Rockwood Street, which research-leads records as renamed AND realigned by about 43 m — so the date of the realignment is a separate open question",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Rockwood Street",
+            "entityId": "rockwood-street",
+            "formInForce": "Rockwood Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          }
+        ],
+        "minLng": -118.263,
+        "from": "Belmont Avenue",
+        "to": null
       }
     ]
   },
@@ -7417,17 +7931,32 @@ const STREET_DATA = {
     "entityId": "welcome-street",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1884",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+    },
     "built": "not yet researched",
+    "nameHistory": [
+      {
+        "from": "by 1884",
+        "until": null,
+        "name": "Welcome Street",
+        "entityId": "welcome-street",
+        "formInForce": "Welcome Street",
+        "how": "origin",
+        "origin": "labeled “Welcome Street” on the 1884 Glassell's Subdivision map {{(source)}}",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+      }
+    ],
     "note": null,
     "categories": [
-      "unresearched"
+      "unknown"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
       }
     ]
   },
@@ -7695,4 +8224,39 @@ const STREET_DATA = {
   }
 };
 
-const VANISHED_STREETS = [];
+const VANISHED_STREETS = [
+  {
+    "entity": "council-street",
+    "asWritten": "Council Street",
+    "doc": "mr006-138",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.065606,
+        -118.261066
+      ],
+      [
+        34.065601,
+        -118.260292
+      ]
+    ]
+  },
+  {
+    "entity": "waters-street",
+    "asWritten": "Waters Street",
+    "doc": "mr006-138",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.06389,
+        -118.258809
+      ],
+      [
+        34.062612,
+        -118.259736
+      ]
+    ]
+  }
+];

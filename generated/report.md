@@ -2,9 +2,9 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 273; entries: 333
-- Stub entities minted from OSM (unresearched): 264
-- Curated entities: 19
+- Streets: 273; entries: 341
+- Stub entities minted from OSM (unresearched): 259
+- Curated entities: 30
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
 ## Partially swept documents (no negative inference contributed)
@@ -23,3 +23,10 @@
 - second-street: "Calle 2ª" ×1
 - third-street: "por. of 3rd St. Ord. 39,578" ×1
 
+
+## Vanished streets (§5.3)
+
+Traced through a document alignment; approximate to roughly a street width.
+
+- **Council Street** (council-street) — 2 points, from mr006-138
+- **Waters Street** (waters-street) — 2 points, from mr006-138

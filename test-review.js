@@ -75,8 +75,8 @@ const sandbox = {
 };
 Object.defineProperty(sandbox, "loadedDoc", { get: () => ({ rows }) });
 vm.createContext(sandbox);
-vm.runInContext("const KY = 110540; let lastModel = null;\n" + zoomSource + source + bundleSource + gateSource +
-  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers };", sandbox);
+vm.runInContext("const KY = 110540; let lastModel = null; let coverageExcept = [];\n" + zoomSource + source + bundleSource + gateSource +
+  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers, runGaps, clipRange };", sandbox);
 const API = sandbox.API;
 const setRows = r => { rows = r; };
 
@@ -162,7 +162,12 @@ console.log("a plausible AI pass");
   ]);
   const m = API.reviewModel();
   const by = Object.fromEntries(m.streets.map(s => [s.name, s]));
-  ok("named streets read as named", m.counts.named === 2, JSON.stringify(m.counts));
+  // A row that covers only part of a street leaves the rest unaccounted, so
+  // the street reads "partial" — that stretch is the thing still to be decided.
+  ok("a fully covered street reads as named", m.counts.named === 1, JSON.stringify(m.counts));
+  ok("a partly covered one reads as partial", m.counts.partial === 1, JSON.stringify(m.counts));
+  ok("and the leftover is measured, not just noted", m.counts.gapMetres > 0,
+     String(m.counts.gapMetres));
   ok("a silent row is not a naming", by["4th Street"].status === "silent");
   ok("everything unmentioned stays unaccounted", m.counts.unaccounted === 2, JSON.stringify(m.counts));
   ok("a vanished row is held apart from the streets", m.vanished.length === 1);
@@ -290,6 +295,36 @@ console.log("the streets bundle that ships with the document");
      d.streets.every(s => s.crossings.every(c => API.extentPoint(s.name, c.name, []) !== null)));
 }
 
+console.log("finding the stretches no row speaks for");
+{
+  const run = Array.from({ length: 11 }, (_, i) => ({ lat: 34, lon: -118 + i * 0.001 }));
+  const L = r => r.slice(1).reduce((t, p, i) => t + G.metres(r[i], p), 0);
+  ok("this test run is long enough to have gaps in", L(run) > 500, L(run).toFixed(0));
+
+  ok("nothing covered, one gap over the whole run",
+     JSON.stringify(API.runGaps(run, [])) === JSON.stringify([[0, 10]]),
+     JSON.stringify(API.runGaps(run, [])));
+  ok("fully covered, no gaps", API.runGaps(run, [[0, 10]]).length === 0);
+  ok("covered in the middle leaves a gap at each end",
+     API.runGaps(run, [[4, 6]]).length === 2, JSON.stringify(API.runGaps(run, [[4, 6]])));
+  ok("overlapping ranges merge rather than inventing a gap between them",
+     API.runGaps(run, [[0, 6], [4, 10]]).length === 0,
+     JSON.stringify(API.runGaps(run, [[0, 6], [4, 10]])));
+  ok("ranges given out of order still merge",
+     API.runGaps(run, [[4, 10], [0, 6]]).length === 0);
+  ok("two separated ranges leave the gap between them",
+     API.runGaps(run, [[0, 3], [7, 10]]).length === 1,
+     JSON.stringify(API.runGaps(run, [[0, 3], [7, 10]])));
+  // A sliver of a gap is not worth reporting, for the same reason a sliver of
+  // coverage is not worth including. This run's steps are ~9 m, so leaving one
+  // uncovered is under the threshold and leaving four is over it.
+  const fine = Array.from({ length: 11 }, (_, i) => ({ lat: 34, lon: -118 + i * 0.0001 }));
+  ok("a gap under the minimum length is not reported",
+     API.runGaps(fine, [[0, 9]]).length === 0, JSON.stringify(API.runGaps(fine, [[0, 9]])));
+  ok("…but a real one still is",
+     API.runGaps(fine, [[0, 6]]).length === 1, JSON.stringify(API.runGaps(fine, [[0, 6]])));
+}
+
 console.log("the gate on confirming a row");
 {
   const nameless = { kind: "state", asWritten: "ARNOLD ST.", street: "3rd Street", confirmed: false };
@@ -323,12 +358,23 @@ console.log("the gate on sweptFully");
   setRows(full);
   b = API.sweepBlockers().join(" | ");
   ok("covering every street is not enough while proposals stand",
-     !/unaccounted/.test(b) && /unconfirmed proposal/.test(b), b);
+     /unconfirmed proposal/.test(b), b);
 
   // Confirmed, as review would leave them.
-  setRows(full.map(r => { const c = { ...r }; delete c.confirmed; return c; }));
-  ok("with every street accounted for and confirmed, it sweeps",
-     API.sweepBlockers().length === 0, API.sweepBlockers().join(" | "));
+  // Naming a street is not the same as accounting for all of it. Truncate one
+  // row at a mid-block point and the sweep must refuse, in metres — which is
+  // what coverage is a claim about. (This is the MR006-138 case: a row for the
+  // part matching the plat, and 152 m past it that nothing spoke for.)
+  const confirmed = full.map(r => { const c = { ...r }; delete c.confirmed; return c; });
+  const mir = API.reviewModel().streets.find(s => s.name === "Miramar Street");
+  const mid = mir.runs[0][Math.floor(mir.runs[0].length / 2)];
+  const midPx = G.worldToScan(fit, mid.lat, mid.lon).map(v => Math.round(v));
+  setRows(confirmed.map(r => r.street === "Miramar Street"
+    ? { ...r, to: { px: midPx } } : r));
+  ok("a row truncated mid-block leaves the rest unaccounted",
+     /m across/.test(API.sweepBlockers().join(" | ")), API.sweepBlockers().join(" | "));
+  ok("…and it is reported against the right street",
+     /Miramar/.test(API.sweepBlockers().join(" | ")), API.sweepBlockers().join(" | "));
 
   // A confirmed row that lost its name must still block: the sweep is the
   // claim that licenses arguing from silence, so it checks, not trusts.
@@ -338,9 +384,12 @@ console.log("the gate on sweptFully");
      /no name entity/.test(API.sweepBlockers().join(" | ")), API.sweepBlockers().join(" | "));
 
   // Huntley is a sliver, so leaving it unmentioned must not block.
-  setRows(full.map(r => { const c = { ...r }; delete c.confirmed; return c; }));
-  ok("the Huntley sliver does not have to be accounted for",
+  // Whole-street extents: nothing left over.
+  setRows(confirmed);
+  ok("with every metre accounted for and confirmed, it sweeps",
      API.sweepBlockers().length === 0, API.sweepBlockers().join(" | "));
+  ok("the Huntley sliver still does not have to be accounted for",
+     !/Huntley/.test(API.sweepBlockers().join(" | ")));
 }
 
 console.log(`\n${pass} passed, ${fail} failed`);

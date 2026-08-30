@@ -412,6 +412,42 @@ segments are honest unknowns; what each needs:
   - A. Glassell = Andrew Glassell (Glassell Park namesake) — this map is a
     primary tie of the family to Filipinotown-area streets.
 
+- **MR006-138 name entities — research pass** (2026-08-30). Eleven entities
+  were minted in review; ten remain in `names-new.js`. What was checked:
+  - **Patton Street — SOLVED, moved into `names.js`.** Kines: "This 1883 street
+    was named for its developer, attorney George Smith Patton (1856-1927)."
+    Patton was **Andrew Glassell's nephew** and replaced George Hugh Smith in
+    Glassell's firm (Kines's Glassell Street page; Wikipedia). Glassell
+    subdivided this tract the following year, so the tract name really did
+    lead somewhere.
+  - **Hobart Street — NOT Hobart Boulevard.** Kines dates Koreatown's Hobart
+    Blvd to 1887 and names it for Hobart Addison Stewart (1868-1915), a Flint
+    dairy farmer, on someone else's subdivision. Different roadway, three years
+    later. Kept separate; noted in the entity.
+  - **Lake Avenue — two candidates, neither sourced.** Echo Park Lake (the
+    reservoir predates 1884 and the street runs at it) is the simple reading.
+    The other is a coincidence worth recording: Patton married **Ruth Wilson**
+    in 1884, and Pasadena's Lake Avenue is named for her father's **Lake
+    Vineyard** (Kines). Wants a contemporary source.
+  - **Court Street** — Kines's Court Street page is Monrovia's (Bonita Court,
+    renamed 1966 over postal confusion). Nothing for the L.A. one.
+  - **Aztec, Council, Home, Waters, Welcome, Diamond** — not covered by Kines.
+    His Echo Park index (34 streets, both pages read) contains none of them;
+    Patton is the only one of ours he has. Web search found nothing usable.
+  - The 1897 omnibus in `documents/ord-4093/` does **not** cover these
+    renamings — grepped, no hits. The full 326-change list was never printed,
+    so State→Colton, Home→Rockwood, Hobart→Lake Shore Terrace, Waters→Douglas,
+    Lake→Glendale, Aztec→Belmont and Diamond→Beverly are all still undated.
+    **That is the next real target**: one source would date seven renamings.
+    The city engineer's Oct. 26, 1897 second list is a candidate; so are the
+    city directories and Sanborn sheets.
+  - **Identity decisions taken** (Kenny): `diamond-street` is ONE entity
+    spanning the plat's Diamond (modern Beverly Blvd here) and the modern
+    Diamond Street 869 m east — roughly collinear, ~30 m apart, one naming that
+    lost its middle. `state-street` was **renamed `state-colton`** so it cannot
+    collide with Boyle Heights' State Street, which is a different naming and
+    must get its own disambiguated id when that area is encoded.
+
 ## Omnibus documents
 
 - **omnibus-1897-renaming.md** (Herald, Feb. 21, 1897 committee report):

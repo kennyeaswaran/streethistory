@@ -591,9 +591,16 @@ function deriveHow(streetName, seg, allSegs) {
 // derived; namesake meaning comes only from names.js (§7).
 function shortCross(name) {
   if (!name) return null;
+  // MODEL-SPEC §5.4 lets an extent end mid-block, as {px} or {ll} rather than a
+  // cross-street name. There is nothing to name such a point after, so callers
+  // fall back to "beyond <the other end>". Unhandled, this threw — no document
+  // used a point extent until MR006-138.
+  if (typeof name !== "string") return null;
   return name.replace(/ Street$/, "").replace(/ Avenue$/, "").replace(/ Boulevard$/, "")
              .replace(/ Road$/, " Rd").replace(/ Place$/, " Pl");
 }
+// True when an extent end is a mid-block point rather than a cross street.
+const isPointEnd = v => !!v && typeof v === "object" && (v.px || v.ll);
 function shortForm(form) {
   return form.replace(/ Street$/, " St").replace(/ Avenue$/, " Ave").replace(/ Boulevard$/, " Blvd");
 }
@@ -723,7 +730,15 @@ function labelFor(streetName, seg, i, segs, street) {
   // canonical chip order handled by caller; here segs are in ascending scalar
   let core;
   const a = shortCross(seg.crossA), b = shortCross(seg.crossB);
-  if (first && !a) core = `${dirLo} ${b || "?"}`;
+  // A mid-block end has no name to print. Say it relative to the end that does
+  // have one — "beyond Colton" reads as an extent; "? to Colton" does not.
+  // Neither end named. Usually that is a street with one segment and nothing
+  // documented about it; occasionally a middle piece bounded by pavement edges.
+  // Either way it beats what this used to print, which was a literal "?".
+  if (!a && !b) core = segs.length === 1 ? "whole street" : "part of";
+  else if (!a && isPointEnd(seg.crossA)) core = `beyond ${b}`;
+  else if (!b && isPointEnd(seg.crossB)) core = `beyond ${a}`;
+  else if (first && !a) core = `${dirLo} ${b || "?"}`;
   else if (last && !b) core = `${dirHi} ${a || "?"}`;
   // canonical reading order: N→S for NS streets, W→E for EW
   else core = street.orientation === "NS" ? `${b || "?"} to ${a || "?"}` : `${a || "?"} to ${b || "?"}`;

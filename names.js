@@ -170,6 +170,29 @@ const NAME_ENTITIES = {
     possiblySameAs: null, aliases: []
   },
 
+  // ---- the 1884 Glassell tract (M.R. 6-138) -------------------------------
+  // Andrew Glassell subdivided Lot 7 etc. of Block 39, Hancock Survey No. 1,
+  // and put his nephew and law partner's name on a street through it. The rest
+  // of that plat's names are in names-new.js, still unresearched.
+
+  "patton-street": {
+    spellings: [{ forms: ["Patton Street"] }],
+    namedAfter: "{{George Smith Patton (1856–1927)}}, the attorney who developed the street — nephew and law partner of Andrew Glassell, who subdivided the adjoining tract the following year, and father of the WWII general",
+    namedAfterLink: "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)",
+    categories: ["person"],
+    sources: [
+      { title: "L.A. Street Names: Patton Street (\u201cThis 1883 street was named for its developer, attorney George Smith Patton (1856-1927)\u201d)",
+        url: "https://lastreetnames.com/street/patton-street/" },
+      { title: "L.A. Street Names: Glassell Street (Glassell\u2019s firm; \u201chis nephew George S. Patton replaced Smith\u201d)",
+        url: "https://lastreetnames.com/street/glassell-street/" },
+      { title: "Wikipedia: George S. Patton (attorney)",
+        url: "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)" }
+    ],
+    disputed: false,
+    note: "Kines dates the naming to 1883, a year before M.R. 6-138 was recorded, so the plat draws a street that already had the name — consistent with the document's planned-by default. Not to be confused with Patton Avenue/Place elsewhere in the county.",
+    possiblySameAs: null, aliases: []
+  },
+
   // ---- the Thomas Tract's other names -------------------------------------
 
   "guadalupe": {

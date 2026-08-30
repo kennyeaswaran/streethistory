@@ -81,25 +81,22 @@ folds itself away afterwards; the line under it says what you have open.
 ## Aligning
 
 The scan sits over the live modern street network, drawn in red with purple
-labels. In **Align** mode:
+labels. **Drag moves** is a switch at the top of the Align controls: the scan,
+or the map under it. Which one you want changes minute to minute, and shift
+inverts whichever way it is set.
 
-| gesture | effect |
-|---|---|
-| drag | move the scan |
-| wheel | scale the scan |
-| shift+drag | pan the view (scan stays put on the ground) |
-| shift+wheel | zoom the view |
-| rotation slider / ↺ ↻ buttons | rotate the scan (the buttons nudge 0.1°) |
-| opacity slider | see through the scan while matching lines |
+| gesture | with "the scan" | with "the map under it" |
+|---|---|---|
+| drag | move the scan | slide the map under it |
+| wheel | scale the scan | zoom the map |
+| shift + either | acts on the map | acts on the scan |
 
-**Fit scan** re-centres the view on the scan if you lose it. The readout along
-the bottom gives the cursor's lat/lng, the scan pixel under it, the current
-scale in metres per pixel and the rotation.
-
-**Rotation is the easiest thing to leave undone**, and the most likely reason
-a nearly-right alignment is wrong: getting position and scale right while the
-sheet sits at 0° will put the corners a street-width out even though the middle
-looks perfect. Check the corners, not the centre.
+The scan is anchored to the *ground*, not the screen, so moving the map never
+disturbs an alignment you have already made. **Find the scan** re-centres on it
+if you lose it. Coordinates can still be typed under *Jump to coordinates*, but
+you will rarely know them; the readout along the bottom gives the cursor's
+lat/lng, the scan pixel under it, the current scale in metres per pixel and the
+rotation.
 
 What a good alignment looks like: the drawn streets sit *on* the red lines
 along their whole length. Expect up to about a street's width of offset —
@@ -280,24 +277,59 @@ A row cannot be confirmed without a name entity and without `asWritten`.
 
 **Mark fully swept** sets `sweptFully: true`, which is the strongest claim the
 model makes: it licenses arguing from this document's *silence*. So it is a
-gate rather than a checkbox, and it says in words what is missing — any street
-still unaccounted, any row still proposed, any row without a name. When it goes
-through it also fills `sweptFor` with the streets in coverage.
+gate rather than a checkbox, and it says in words what is missing — how many
+metres across how many stretches are still unaccounted, any row still proposed,
+any row without a name. When it goes through it also fills `sweptFor` with the
+streets in coverage.
 
 **Save review** writes `documents/<id>/<id>.js` and, if you minted any,
 `names-new.js`. Nothing is written until you press it, and reloading the page
 with unsaved edits will warn you. Then, as always, `node check-model.js` and
 `node generate.js`.
 
+### Red is a stretch, not a street
+
+Review accounts for **ground, not street names**. A street can be named along
+one stretch and unaccounted along the next — that is the normal case, not an
+edge case — so anything no row speaks for is drawn red over the part that is
+missing, and the panel counts it in metres. A street in that state reads
+*partial*.
+
+Clicking a red stretch offers exactly two answers, and they are different
+claims:
+
+- **Sheet shows nothing here** — the document covers this ground and draws no
+  street on it. This is *evidence*: it becomes a `silent` row and it is what
+  later licenses arguing that no street was there. The extents are worked out
+  for you, snapping to a cross street where one is close and falling back to a
+  scan pixel mid-block.
+- **Outside coverage — polygon overshoots** — the document never spoke about
+  this ground at all; the traced boundary just strayed onto it. This records
+  the street in `coverageExcept` and drops it from the document's coverage.
+
+Guessing between them by hand is how a traced boundary's slop turns into a
+false historical claim, which is why the tool will not choose for you. The
+panel lists what has been dropped, with an undo, and `check-model.js` refuses a
+document that both excludes a street and carries rows for it.
+
 ### Slivers
 
-A street can clip the coverage polygon by a few metres — the stub of a side
-street leaving an intersection just inside the boundary. Anything under 25 m,
-shorter than the junction it leaves from, is **not** treated as in bounds: no
-plat could draw a distinguishable corridor there, and counting it would leave a
-permanently red street that can never be resolved. The panel lists what was
-excluded and how long it was, so it is clear they were ruled out rather than
-missed.
+Some overshoot is caught automatically. A street that clips the polygon by
+less than 25 m — shorter than the junction it leaves from — is not treated as
+in bounds at all: no plat could draw a distinguishable corridor there, and
+counting it would leave a permanently red stretch that can never be resolved.
+The panel lists what was excluded and how long it was, so it is clear they were
+ruled out rather than missed. `coverageExcept` is for the overshoot that is too
+big for that rule to catch.
+
+### Streets the plat draws and the city has lost
+
+**Trace a vanished street** puts the canvas into tracing: click along the
+corridor's centre line, press Finish, and type the label exactly as the plat
+letters it. It writes a `vanished` row whose `trace` is in scan pixels, so it
+rides on the alignment like everything else stored against a scan, and opens
+the popup so you can give it a name entity. Until it has one it cannot be
+confirmed, and the document cannot be swept.
 
 ### What Review still does not do
 
@@ -326,7 +358,9 @@ first.
 | Review mode is empty / all red | the document has no rows yet — that is what the AI pass produces |
 | "Re-read rows from disk" errors | the `.js` no longer parses; a pasted row is probably missing a comma or a brace |
 | A row you pasted does not appear | check "Wants a look" — its `street` is probably misspelled or outside coverage |
-| A street you expect is missing from Review | it may be a sliver — the panel lists what was excluded under the street list |
+| A street you expect is missing from Review | it may be a sliver, or in `coverageExcept` — the panel lists both under the street list |
+| A named street still shows red | only part of it is covered by a row; click the red part |
+| Clicking a street in the list seems to do nothing | it now pans to the stretch — if not, the document may have no geometry there |
 | "Save review" is greyed out | there are no unsaved edits |
 | Review edits vanished | "Re-read rows from disk" discards them; save first |
 | `check-model` warns about names-new.js | those entities still need their namesake researched and moving into `names.js` |

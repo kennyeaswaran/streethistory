@@ -121,20 +121,55 @@
   // ways: [{ name, geometry: [{lat, lon}] }]; ring: [[lat,lng], ...]
   // Returns one record per way with the in-bounds portions as point runs, so
   // a way that enters, leaves and re-enters yields two runs.
+  //
+  // Clipped at the EDGE, not at the vertex. OSM records a straight street as
+  // two points hundreds of metres apart, so testing only vertices throws away
+  // everything between the last inside vertex and the boundary — on MR006-138
+  // that silently lost 127 m of Douglas Street, and a way that crossed a
+  // polygon with no vertex inside would have been missed altogether.
   function segmentsInBounds(ways, ringLL) {
     const out = [];
     for (const w of ways) {
-      if (!w.geometry || !w.geometry.length) continue;
+      const g = w.geometry;
+      if (!g || !g.length) continue;
       const runs = [];
       let cur = null;
-      for (const p of w.geometry) {
-        const inside = pointInPolygon([p.lat, p.lon], ringLL);
-        if (inside) { if (!cur) { cur = []; runs.push(cur); } cur.push(p); }
-        else cur = null;
+      const open = p => { cur = [p]; runs.push(cur); };
+      for (let i = 0; i < g.length; i++) {
+        const p = g[i], pin = pointInPolygon([p.lat, p.lon], ringLL);
+        if (pin) { if (cur) cur.push(p); else open(p); }
+        if (i + 1 >= g.length) break;
+        const q = g[i + 1], qin = pointInPolygon([q.lat, q.lon], ringLL);
+        if (pin && qin) continue;                       // wholly inside
+        const xs = ringCrossings(p, q, ringLL);
+        if (pin && !qin) { if (xs.length) cur.push(xs[0]); cur = null; }
+        else if (!pin && qin) { open(xs.length ? xs[xs.length - 1] : p); }
+        else {                                          // both ends outside
+          if (xs.length >= 2) runs.push([xs[0], xs[xs.length - 1]]);
+          cur = null;
+        }
       }
       if (runs.length) out.push({ name: w.name, way: w, runs });
     }
     return out;
+  }
+
+  // Where the segment p→q crosses the ring, in order along p→q. Planar, in the
+  // same [lat, lon] frame pointInPolygon uses, so the two always agree.
+  function ringCrossings(p, q, ring) {
+    const hits = [];
+    const ax = p.lat, ay = p.lon, bx = q.lat, by = q.lon;
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const cx = ring[j][0], cy = ring[j][1], dx = ring[i][0], dy = ring[i][1];
+      const den = (dy - cy) * (bx - ax) - (dx - cx) * (by - ay);
+      if (!den) continue;                                // parallel
+      const t = ((dx - cx) * (ay - cy) - (dy - cy) * (ax - cx)) / den;
+      const u = ((bx - ax) * (ay - cy) - (by - ay) * (ax - cx)) / den;
+      if (t < 0 || t > 1 || u < 0 || u > 1) continue;
+      hits.push({ t, lat: ax + t * (bx - ax), lon: ay + t * (by - ay) });
+    }
+    hits.sort((m, n) => m.t - n.t);
+    return hits.map(h => ({ lat: h.lat, lon: h.lon }));
   }
 
   // --- cross streets -------------------------------------------------------
@@ -204,6 +239,7 @@
   }
 
   return { makeProj, fitAlignment, scanToWorld, worldToScan, pointInPolygon,
+           ringCrossings,
            placementFromAlignment, placementToWorld,
            coverageToWorld, segmentsInBounds, nearestCrossStreet, snapOrPoint,
            metres };

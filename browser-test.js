@@ -3,6 +3,40 @@
 const { chromium } = require("playwright");
 const http = require("http"), fs = require("fs"), path = require("path");
 
+// A document written the broken way — alignment.image with no path — built
+// here rather than committed, so a stray fixture can never end up in the real
+// documents/ set. The leading underscore is the parking convention that
+// documents/index.js skips, so even a crashed run leaves nothing that breaks
+// check-model.js.
+const FIXTURE = path.join(__dirname, "documents/_bare-test");
+const RENDER = "mr006-138-100dpi.png";
+function makeFixture() {
+  const src = path.join(__dirname, "documents/mr006-138", RENDER);
+  if (!fs.existsSync(src)) return false;
+  fs.mkdirSync(FIXTURE, { recursive: true });
+  fs.copyFileSync(src, path.join(FIXTURE, RENDER));
+  fs.writeFileSync(path.join(FIXTURE, "_bare-test.js"), `module.exports = {
+  id: "_bare-test",
+  title: "t", shortTitle: "t", url: "http://x", scan: null, transcription: null,
+  date: { on: "1884" }, type: "tract-map", attests: "planned-by",
+  completeness: "incidental", readBy: "human",
+  coverage: [[202, 199], [694, 945], [1569, 919], [1573, 75], [564, 63]],
+  alignment: {
+    image: ${JSON.stringify(RENDER)},
+    dpi: 100,
+    points: [
+      { px: [0, 0], ll: [34.068278, -118.263905] },
+      { px: [1749, 0], ll: [34.064723, -118.256185] },
+      { px: [0, 1115], ll: [34.064173, -118.266621] }
+    ]
+  },
+  sweptFully: false, sweptFor: [], rows: []
+};
+`);
+  return true;
+}
+const dropFixture = () => fs.rmSync(FIXTURE, { recursive: true, force: true });
+
 const MIME = { ".html":"text/html", ".js":"text/javascript", ".png":"image/png", ".json":"application/json" };
 const server = http.createServer((req, res) => {
   const f = path.join(__dirname, decodeURIComponent(req.url.split("?")[0]));
@@ -15,6 +49,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
                           : (fail++, console.error("  FAIL " + n + (d ? " — " + d : "")));
 
 (async () => {
+  const haveFixture = makeFixture();
   await new Promise(r => server.listen(8123, r));
   const browser = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium" });
   const page = await browser.newPage({ viewport: { width: 1500, height: 950 } });
@@ -23,9 +58,39 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   page.on("console", m => { if (m.type() === "error") errors.push(m.text()); });
   const missing = [];
   page.on("response", r => { if (r.status() === 404) missing.push(r.url()); });
-  page.on("dialog", d => d.dismiss());
+  // One dialog handler for the whole run: a second one races the first and
+  // Playwright refuses the loser. `answers` lets a test feed a prompt.
+  const dialogs = [], answers = [];
+  page.on("dialog", d => {
+    dialogs.push(d.message());
+    if (d.type() === "prompt" && answers.length) d.accept(answers.shift());
+    else d.dismiss();
+  });
 
   await page.goto("http://localhost:8123/document-tool.html");
+  await page.addInitScript(() => {});
+  await page.evaluate(() => {
+    // Pick the point on a feature that is furthest from every OTHER feature,
+    // so a click there cannot be captured by a neighbour within tolerance.
+    // Bring the feature into view first — the tool's own list does this now,
+    // and a click at a negative y is not a click at all.
+    window.centreOn = (pred) => {
+      const f = reviewFeatures.find(pred);
+      if (f) revealFeature(f);
+    };
+    window.clearestPointOn = (pred) => {
+      let best = null;
+      for (const f of reviewFeatures) {
+        if (!pred(f)) continue;
+        for (const [x, y] of f.pts) {
+          let clear = Infinity;
+          for (const g of reviewFeatures) if (g !== f) clear = Math.min(clear, distToPts(g.pts, x, y));
+          if (!best || clear > best.clear) best = { x, y, clear };
+        }
+      }
+      return best ? [Math.round(best.x), Math.round(best.y)] : null;
+    };
+  });
   await page.waitForFunction(() => typeof setMode === "function" || document.getElementById("cv"));
 
   console.log("loading a document");
@@ -75,6 +140,67 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   console.log("connecting the project folder");
   const advice = await page.textContent("#dirState");
   ok("it names the folder to pick", /Street name history/.test(advice), advice);
+
+  console.log("a document whose alignment.image has no path");
+  if (!haveFixture) console.log("  (skipped — documents/mr006-138/ render not present)");
+  else {
+    // The tool used to WRITE a bare filename whenever the render came from the
+    // file picker (which hands over a name and nothing else), and then could
+    // never reopen the document — alignment.image is fetched relative to the
+    // project root. documents/bare-test/ is exactly such a file.
+    dialogs.length = 0;
+    await page.evaluate(() => { document.getElementById("openBox").open = true; });
+    await page.waitForTimeout(100);
+    await page.fill("#loadId", "_bare-test");
+    await page.click("#loadDoc");
+    await page.waitForTimeout(1200);
+    ok("it finds the render in the document's own folder", dialogs.length === 0,
+       dialogs.join(" | ").slice(0, 160));
+    ok("…and the scan is actually loaded",
+       await page.evaluate(() => !!img && img.naturalWidth > 0));
+    // 813 m along the sheet's top edge / 1749 px = 0.465 m/px. A wrong render
+    // (or none) would not land anywhere near that.
+    ok("…and the alignment restored onto it",
+       await page.evaluate(() => Math.abs(scan.mppx - 0.465) < 0.01),
+       String(await page.evaluate(() => scan.mppx)));
+    ok("…and it repaired the path it shows you",
+       (await page.inputValue("#renderPath")).includes("documents/_bare-test/"),
+       await page.inputValue("#renderPath"));
+    // Saving it must not write the bare name back out.
+    ok("a save would record a project-relative path",
+       await page.evaluate(() => renderRelPath().includes("documents/")),
+       await page.evaluate(() => renderRelPath()));
+
+    // back to the document the rest of the run expects (the Open box folds
+    // itself away once something is loaded)
+    await page.evaluate(() => { document.getElementById("openBox").open = true; });
+    await page.fill("#loadId", "mr066-035");
+    await page.click("#loadDoc");
+    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "mr066-035",
+                               null, { timeout: 15000 });
+    await page.waitForTimeout(400);
+  }
+
+  console.log("handing it a PDF");
+  {
+    // A PDF used to fail silently: the picker filtered it out and the path
+    // loader said only "could not load".
+    dialogs.length = 0;
+    await page.evaluate(() => { document.getElementById("openBox").open = true; });
+    await page.fill("#renderPath", "inbox/MR006-138.pdf");
+    await page.click("#loadRenderBtn");
+    await page.waitForTimeout(300);
+    const said = dialogs[0];
+    ok("it says what a PDF needs instead of failing", said && /pdftoppm/.test(said),
+       String(said).slice(0, 100));
+    ok("…and names the script that does it", said && /new-document\.command/.test(said));
+    ok("…and works out the document id", said && /mr006-138/.test(said),
+       String(said).slice(0, 160));
+    ok("the picker no longer hides PDFs from you",
+       /pdf/i.test(await page.getAttribute("#file", "accept")),
+       await page.getAttribute("#file", "accept"));
+    await page.fill("#renderPath", "");
+  }
 
   console.log("the alignment survives a review save");
   {
@@ -157,12 +283,232 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   const entOpts = await page.locator("#entlist option").count();
   ok("the name picker has entities to offer", entOpts > 5, String(entOpts));
 
+  console.log("tracing a street that has no modern counterpart");
+  {
+    const before = await page.evaluate(() => loadedDoc.rows.length);
+    dialogs.length = 0;
+    await page.click("#traceStart");
+    ok("Finish and Cancel appear, Trace goes away",
+       await page.isVisible("#traceDone") && !(await page.isVisible("#traceStart")));
+    ok("it says a trace needs two points",
+       /two points is the minimum/.test(await page.textContent("#traceState")),
+       await page.textContent("#traceState"));
+
+    // Finishing with one point must be refused, not silently accepted.
+    await page.mouse.click(700, 300);
+    await page.waitForTimeout(120);
+    await page.click("#traceDone");
+    await page.waitForTimeout(150);
+    ok("one point is refused", dialogs.some(d => /at least two points/.test(d)),
+       dialogs.join(" | "));
+    ok("…and no row was added",
+       await page.evaluate(() => loadedDoc.rows.length) === before);
+
+    await page.mouse.click(760, 380);
+    await page.waitForTimeout(120);
+    ok("the point count keeps up", /2 points/.test(await page.textContent("#traceState")),
+       await page.textContent("#traceState"));
+
+    // Cancelling leaves nothing behind.
+    await page.click("#traceCancel");
+    await page.waitForTimeout(120);
+    ok("cancel drops the trace",
+       await page.evaluate(() => tracing === null && loadedDoc.rows.length) === before);
+    ok("…and restores the button", await page.isVisible("#traceStart"));
+
+    // A real one, answering the asWritten prompt.
+    answers.push("Waters Street");
+    await page.click("#traceStart");
+    await page.mouse.click(700, 300); await page.waitForTimeout(80);
+    await page.mouse.click(760, 380); await page.waitForTimeout(80);
+    await page.click("#traceDone");
+    await page.waitForTimeout(300);
+    const row = await page.evaluate(() => loadedDoc.rows[loadedDoc.rows.length - 1]);
+    ok("a vanished row is added", row && row.kind === "vanished", JSON.stringify(row));
+    ok("…carrying the verbatim ink", row.asWritten === "Waters Street", row.asWritten);
+    ok("…and a trace in scan pixels", Array.isArray(row.trace) && row.trace.length === 2,
+       JSON.stringify(row.trace));
+    ok("…marked unconfirmed, since it still has no name entity",
+       row.confirmed === false && !row.name);
+    ok("the popup opens on it so it is not forgotten",
+       (await page.textContent("#pop")).includes("Waters Street"),
+       (await page.textContent("#pop") || "").slice(0, 80));
+    ok("the sweep now refuses on the nameless row",
+       /no name entity/.test(await page.textContent("#sweepState")),
+       await page.textContent("#sweepState"));
+
+    // put mr066-035 back the way the rest of the run expects
+    await page.evaluate(n => { loadedDoc.rows.length = n; lastModel = null; reviewSig = null; },
+                        before);
+    await page.evaluate(() => draw());
+  }
+
+  console.log("stretches no row speaks for");
+  {
+    // MR006-138 is the case this came from: Douglas Street has a row for the
+    // part matching Waters Street and 152 m south of it that nothing covers.
+    await page.evaluate(() => { document.getElementById("openBox").open = true; });
+    await page.waitForTimeout(100);
+    await page.fill("#loadId", "mr006-138");
+    await page.click("#loadDoc");
+    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "mr006-138",
+                               null, { timeout: 15000 });
+    await page.waitForTimeout(600);
+
+    const m = () => page.evaluate(() => ({
+      gaps: lastModel.gaps.map(g => ({ street: g.street, m: Math.round(g.metres) })),
+      metres: lastModel.counts.gapMetres,
+      status: Object.fromEntries(lastModel.streets.map(s => [s.name, s.status]))
+    }));
+    const before = await m();
+    ok("a street with a row can still have an unaccounted stretch",
+       before.gaps.some(g => g.street === "Douglas Street"), JSON.stringify(before.gaps));
+    ok("…and the street reads as partial, not named",
+       before.status["Douglas Street"] === "partial", before.status["Douglas Street"]);
+    ok("the sweep counts metres, not street names",
+       /m across/.test(await page.textContent("#sweepState")),
+       await page.textContent("#sweepState"));
+
+    // Clicking the gap must offer both answers, and they are different claims.
+    // Aim at the point on the gap furthest from every other feature — this
+    // sheet has vanished traces running close to it, and the hit test takes
+    // the nearest line, quite correctly.
+    await page.evaluate(() => centreOn(f => f.gap && f.gap.street === "Douglas Street"));
+    await page.waitForTimeout(200);
+    const at = await page.evaluate(() => clearestPointOn(
+      f => f.gap && f.gap.street === "Douglas Street"));
+    ok("the gap can be brought on screen",
+       at && at[0] > 0 && at[1] > 0 && at[0] < 1500 && at[1] < 950, JSON.stringify(at));
+    await page.mouse.click(at[0], at[1]);
+    await page.waitForTimeout(250);
+    ok("clicking it offers a silent row", await page.locator("#pop button.mksilent").count() === 1);
+    ok("…and an exclusion", await page.locator("#pop button.mkexcept").count() === 1);
+    ok("…and names the ends in row vocabulary",
+       /Colton|px /.test(await page.textContent("#pop")),
+       (await page.textContent("#pop")).slice(0, 140));
+
+    const rows0 = await page.evaluate(() => loadedDoc.rows.length);
+    await page.locator("#pop button.mksilent").first().click();
+    await page.waitForTimeout(400);
+    const after = await m();
+    ok("a silent row closes the gap",
+       !after.gaps.some(g => g.street === "Douglas Street"), JSON.stringify(after.gaps));
+    ok("…and it is a real row with extents",
+       await page.evaluate(() => {
+         const r = loadedDoc.rows[loadedDoc.rows.length - 1];
+         return r.kind === "silent" && r.street === "Douglas Street" && "from" in r && "to" in r;
+       }));
+    ok("…added as a proposal, not silently vouched for",
+       await page.evaluate(() => loadedDoc.rows[loadedDoc.rows.length - 1].confirmed === false));
+    ok("…and one row longer", await page.evaluate(() => loadedDoc.rows.length) === rows0 + 1);
+
+    console.log("dropping a street the polygon overshoots");
+    const gap2 = await page.evaluate(() => {
+      const f = reviewFeatures.find(x => x.gap && x.gap.street !== "Douglas Street");
+      if (!f) return null;
+      centreOn(x => x.gap && x.gap.street === f.gap.street);
+      return { street: f.gap.street,
+               at: clearestPointOn(x => x.gap && x.gap.street === f.gap.street) };
+    });
+    ok("there is another overshoot to test on", !!gap2, JSON.stringify(gap2));
+    await page.mouse.click(gap2.at[0], gap2.at[1]);
+    await page.waitForTimeout(250);
+    answers.push("");                       // the confirm() is answered below
+    dialogs.length = 0;
+    page.once("dialog", () => {});          // no-op; the global handler dismisses
+    await page.locator("#pop button.mkexcept").first().click();
+    await page.waitForTimeout(200);
+    ok("it asks before dropping a street from coverage",
+       dialogs.some(d => /Drop .* from this document/.test(d)), dialogs.join(" | "));
+    ok("…and dismissing means nothing changed",
+       await page.evaluate(() => coverageExcept.length) === 0);
+
+    // Now accept it.
+    await page.evaluate(s => { coverageExcept.push(s); lastModel = null; reviewSig = null; draw(); },
+                        gap2.street);
+    await page.waitForTimeout(300);
+    const after2 = await m();
+    ok("the excluded street leaves the model",
+       !(gap2.street in after2.status), Object.keys(after2.status).join(", "));
+    ok("…and its gap goes with it",
+       !after2.gaps.some(g => g.street === gap2.street), JSON.stringify(after2.gaps));
+    ok("…and the panel says so, with an undo",
+       (await page.textContent("#revStreets")).includes("overshoot") &&
+       await page.locator("#revStreets a[data-unexcept]").count() > 0,
+       (await page.textContent("#revStreets")).slice(-120));
+    ok("it is written into the document",
+       (await page.evaluate(() => serialiseDoc(""))).includes("coverageExcept"));
+
+    await page.locator("#revStreets a[data-unexcept]").first().click();
+    await page.waitForTimeout(300);
+    ok("undo puts it back",
+       gap2.street in (await m()).status, Object.keys((await m()).status).join(", "));
+
+    // leave the document alone: nothing was saved, so a reload is enough
+    await page.evaluate(() => { document.getElementById("openBox").open = true; });
+    await page.waitForTimeout(100);
+    await page.fill("#loadId", "mr066-035");
+    await page.click("#loadDoc");
+    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "mr066-035",
+                               null, { timeout: 15000 });
+    await page.waitForTimeout(400);
+  }
+
   console.log("switching modes swaps the panel body");
   await page.click("#mAlign");
   await page.waitForTimeout(150);
   ok("align mode shows only the align body", JSON.stringify(await shown()) === '["align"]',
      JSON.stringify(await shown()));
   ok("the alignment sliders are back", (await vis("#op")).h > 0);
+
+  console.log("choosing what a drag moves");
+  {
+    const place = () => page.evaluate(() => ({ scan: [scan.lat, scan.lng],
+                                               view: [view.lat, view.lng] }));
+    const moved = (a, b) => Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]) > 1e-9;
+
+    ok("it starts on the scan", await page.evaluate(() => dragTarget) === "scan");
+    const p0 = await place();
+    await page.mouse.move(700, 500); await page.mouse.down();
+    await page.mouse.move(760, 540, { steps: 4 }); await page.mouse.up();
+    await page.waitForTimeout(120);
+    const p1 = await place();
+    ok("dragging moves the scan", moved(p0.scan, p1.scan));
+    ok("…and leaves the view alone", !moved(p0.view, p1.view));
+
+    await page.click("#dView");
+    ok("the switch takes", await page.evaluate(() => dragTarget) === "view");
+    await page.mouse.move(700, 500); await page.mouse.down();
+    await page.mouse.move(640, 460, { steps: 4 }); await page.mouse.up();
+    await page.waitForTimeout(120);
+    const p2 = await place();
+    ok("now dragging moves the map", moved(p1.view, p2.view));
+    ok("…and the scan stays where it was put on the ground", !moved(p1.scan, p2.scan));
+
+    // shift inverts whichever way the switch is set
+    await page.keyboard.down("Shift");
+    await page.mouse.move(700, 500); await page.mouse.down();
+    await page.mouse.move(750, 530, { steps: 4 }); await page.mouse.up();
+    await page.keyboard.up("Shift");
+    await page.waitForTimeout(120);
+    const p3 = await place();
+    ok("shift inverts it", moved(p2.scan, p3.scan) && !moved(p2.view, p3.view),
+       JSON.stringify({ p2, p3 }));
+
+    // the wheel follows the same switch
+    const before = await page.evaluate(() => [scan.mppx, view.mpp]);
+    await page.mouse.move(700, 500);
+    await page.mouse.wheel(0, -120);
+    await page.waitForTimeout(120);
+    const after = await page.evaluate(() => [scan.mppx, view.mpp]);
+    ok("with the map selected the wheel zooms the map",
+       Math.abs(after[1] - before[1]) > 1e-9 && Math.abs(after[0] - before[0]) < 1e-12,
+       JSON.stringify({ before, after }));
+
+    await page.click("#dScan");
+    await page.evaluate(p => { scan.lat = p.scan[0]; scan.lng = p.scan[1];
+                               view.lat = p.view[0]; view.lng = p.view[1]; draw(); }, p0);
+  }
   ok("the popup hides with it", (await vis("#pop")).display === "none");
   await page.click("#mCoverage");
   await page.waitForTimeout(150);
@@ -181,6 +527,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   await page.screenshot({ path: "review-mode.png" });
   await browser.close();
   server.close();
+  dropFixture();
   console.log(`\n${pass} passed, ${fail} failed`);
   process.exit(fail ? 1 : 0);
 })();

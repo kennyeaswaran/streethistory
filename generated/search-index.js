@@ -327,6 +327,12 @@ const SEARCH_INDEX = [
     "street": "Bellevue Avenue"
   },
   {
+    "form": "Aztec Avenue",
+    "entity": "aztec-avenue",
+    "label": "Aztec Avenue",
+    "street": "Belmont Avenue"
+  },
+  {
     "form": "Belmont Avenue",
     "entity": "belmont-avenue",
     "label": "Belmont Avenue",
@@ -342,6 +348,12 @@ const SEARCH_INDEX = [
     "form": "Beverly Boulevard",
     "entity": "beverly-boulevard",
     "label": "Beverly Boulevard",
+    "street": "Beverly Boulevard"
+  },
+  {
+    "form": "Diamond Street",
+    "entity": "diamond-street",
+    "label": "Diamond Street",
     "street": "Beverly Boulevard"
   },
   {
@@ -663,15 +675,15 @@ const SEARCH_INDEX = [
     "street": "Dewap Road"
   },
   {
-    "form": "Diamond Street",
-    "entity": "diamond-street",
-    "label": "Diamond Street",
-    "street": "Diamond Street"
-  },
-  {
     "form": "Douglas Street",
     "entity": "douglas-street",
     "label": "Douglas Street",
+    "street": "Douglas Street"
+  },
+  {
+    "form": "Waters Street",
+    "entity": "waters-street",
+    "label": "Waters Street",
     "street": "Douglas Street"
   },
   {
@@ -817,6 +829,12 @@ const SEARCH_INDEX = [
     "entity": "gladys-avenue",
     "label": "Gladys Avenue",
     "street": "Gladys Avenue"
+  },
+  {
+    "form": "Lake Avenue",
+    "entity": "lake-avenue",
+    "label": "Lake Avenue",
+    "street": "Glendale Boulevard"
   },
   {
     "form": "Glendale Boulevard",
@@ -997,6 +1015,12 @@ const SEARCH_INDEX = [
     "entity": "l-a-live-way",
     "label": "L. A. Live Way",
     "street": "L. A. Live Way"
+  },
+  {
+    "form": "Hobart Street",
+    "entity": "hobart-street",
+    "label": "Hobart Street",
+    "street": "Lake Shore Terrace"
   },
   {
     "form": "Lake Shore Terrace",
@@ -1356,6 +1380,12 @@ const SEARCH_INDEX = [
     "form": "Rockwood Street",
     "entity": "rockwood-street",
     "label": "Rockwood Street",
+    "street": "Rockwood Street"
+  },
+  {
+    "form": "Home Street",
+    "entity": "home-street",
+    "label": "Home Street",
     "street": "Rockwood Street"
   },
   {

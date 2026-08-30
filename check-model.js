@@ -114,6 +114,24 @@ for (const doc of DOCUMENTS) {
     if (doc.sweptFully === undefined) err(d, "sweptFully missing (gates negative inference — §4.5)");
     if (doc.sweptFully === false && !Array.isArray(doc.sweptFor))
       err(d, "sweptFully:false requires sweptFor (partial work must be visible and resumable)");
+
+  // §4.4: a hand-traced polygon sometimes strays a few metres onto ground the
+  // document says nothing about. Naming those streets here is a claim about
+  // the POLYGON; a silent row would be a claim about the MAP, and only the
+  // latter licenses arguing from the document's silence. Keeping them apart is
+  // the point, so a name that is not a real street — or that also carries rows
+  // — means one of the two has been used for the other.
+  if (doc.coverageExcept !== undefined) {
+    if (!Array.isArray(doc.coverageExcept)) err(d, "coverageExcept must be an array of street names");
+    else for (const n of doc.coverageExcept) {
+      if (!streets.has(n)) err(d, "coverageExcept names a street not in the geometry:", n);
+      if ((doc.rows || []).some(r => r.street === n))
+        err(d, `coverageExcept lists "${n}" but rows also speak for it — it is either ` +
+               `covered or it is not`);
+      if ((doc.sweptFor || []).includes(n))
+        err(d, `coverageExcept and sweptFor both list "${n}"`);
+    }
+  }
   }
   if (doc.scan !== undefined && doc.scan !== null && typeof doc.scan !== "string")
     err(d, "scan must be a path string or null");
