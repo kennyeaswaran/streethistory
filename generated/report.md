@@ -2,7 +2,7 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 273; entries: 333
+- Streets: 273; entries: 329
 - Stub entities minted from OSM (unresearched): 264
 - Curated entities: 19
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
@@ -16,10 +16,6 @@
 - tr0015-166a: sweptFor = ["2nd Street","Miramar Street"]
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
-- arnold: "ARNOLD ST." ×1
-- third-street: "THIRD ST." ×1
-- bixel: "BIXEL ST" ×1
-- figueroa-gov: "FIGUEROA ST." ×1
 - third-street: "Calle 3ª" ×1
 - second-street: "Calle 2ª" ×1
 - third-street: "por. of 3rd St. Ord. 39,578" ×1

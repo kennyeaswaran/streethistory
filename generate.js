@@ -11,6 +11,20 @@
 const fs = require("fs");
 const path = require("path");
 const { NAME_ENTITIES } = require("./names.js");
+// Entities minted in review mode live in a separate file so a browser tool
+// never writes into hand-authored names.js (see names-new.js). They are merged
+// here and validated identically; `pendingResearch` marks them as un-researched.
+let NEW_NAME_ENTITIES = {};
+try { ({ NEW_NAME_ENTITIES } = require("./names-new.js")); } catch (e) { /* none yet */ }
+for (const [id, e] of Object.entries(NEW_NAME_ENTITIES)) {
+  if (NAME_ENTITIES[id]) {
+    console.error(`ERROR: names-new.js "${id}" also exists in names.js — ` +
+                  `it has probably been researched and moved; delete it from names-new.js.`);
+    process.exitCode = 1;
+  }
+  NAME_ENTITIES[id] = { ...e, pendingResearch: true };
+}
+
 const { DOCUMENTS } = require("./documents/index.js");
 
 const OUT_DIR = path.join(__dirname, "generated");
@@ -183,6 +197,7 @@ const report = { stubs: [], ambiguous: [], unmatchedAsWritten: new Map(),
                  derivedDisambig: [], partialDocs: [], notes: [] };
 const vanished = [];   // §5.3 — drawn pavement with no modern counterpart
 const osmDoc = DOCUMENTS.find(d => d.type === "osm");
+let proposalCount = 0;              // unconfirmed rows held back from the map
 const nonOsmDocs = DOCUMENTS.filter(d => d.type !== "osm");
 
 function entityHasRowsOnStreet(id, streetName) {
@@ -229,6 +244,13 @@ for (const streetName of streets.keys()) {
 // fromCross, toCross, doc, attests, basis, asWritten, ...}.
 function rowAttests(row, doc) { return row.attests || doc.attests; }
 
+// A row still marked `confirmed: false` is a proposal from the AI pass that no
+// human has checked. It is not evidence yet, so it does not reach the map: a
+// proposal that generated a public claim would make review optional in
+// practice. Review (document-tool.html) is where it becomes evidence, by
+// having the flag removed.
+const isProposal = row => row.confirmed === false;
+
 const perStreet = new Map(); // street -> rows[]
 function addRow(streetName, rec) {
   if (!perStreet.has(streetName)) perStreet.set(streetName, []);
@@ -239,6 +261,7 @@ const problems = [];
 for (const doc of nonOsmDocs) {
   if (doc.sweptFully === false) report.partialDocs.push(`${doc.id}: sweptFor = ${JSON.stringify(doc.sweptFor)}`);
   for (const row of doc.rows) {
+    if (isProposal(row)) { proposalCount++; continue; }
     // §5.3: no modern street to hang an extent on — the extent IS the trace,
     // stored in scan pixels and derived through the document's alignment so a
     // better alignment moves the ghost with the map (§4.6).
@@ -934,6 +957,9 @@ if (vanished.length) {
 }
 fs.writeFileSync(path.join(OUT_DIR, "report.md"), rep.join("\n") + "\n");
 
+if (proposalCount)
+  console.log(`Held back ${proposalCount} unconfirmed proposal row(s) — confirm them ` +
+              `in the document tool's Review mode to let them reach the map.`);
 console.log(`Generated ${Object.keys(STREET_DATA).length} streets, ` +
   `${Object.values(STREET_DATA).flatMap(v => v.segments || [v]).length} entries; ` +
   `${report.stubs.length} stubs; ${problems.length} row problems` +

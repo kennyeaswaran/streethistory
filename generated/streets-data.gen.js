@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-08-29
+// Built: 2026-08-30
 const NEIGHBORHOODS = [
   {
     "id": "dtla",
@@ -817,7 +817,7 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "west of Bixel",
+        "label": "west of Figueroa",
         "name": "3rd Street",
         "entityId": "third-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
@@ -835,89 +835,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           }
         ],
-        "maxLng": -118.2598,
-        "from": null,
-        "to": "Bixel Street"
-      },
-      {
-        "label": "Bixel to Boylston (Arnold St)",
-        "name": "3rd Street",
-        "entityId": "third-street",
-        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1894",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1894",
-            "until": "?",
-            "name": "Arnold Street",
-            "entityId": "arnold",
-            "formInForce": "Arnold Street",
-            "how": "origin",
-            "origin": "labeled “ARNOLD ST.” on the 1894 Washington Tract map {{(source)}} — namesake untraced",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "3rd Street",
-            "entityId": "third-street",
-            "formInForce": "3rd Street",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "categories": [
-          "number",
-          "renamed"
-        ],
-        "formerCategories": [
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Recorded map: Compromise Subdivision of a portion of the O.T. Johnson tract, known as the Washington Tract, M.R. 66-35 (surveyed Mar. 1894 by E.D. Severance) (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
-          }
-        ],
-        "minLng": -118.2598,
-        "maxLng": -118.2578,
-        "from": "Bixel Street",
-        "to": "Boylston Street"
-      },
-      {
-        "label": "Boylston to Figueroa",
-        "name": "3rd Street",
-        "entityId": "third-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": "not yet researched",
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          }
-        ],
-        "minLng": -118.2578,
         "maxLng": -118.2546,
-        "from": "Boylston Street",
+        "from": null,
         "to": "Figueroa Street"
       },
       {
@@ -2200,46 +2119,7 @@ const STREET_DATA = {
         "gapAfter": true
       },
       {
-        "label": "Miramar to 3rd (original Bixel St)",
-        "name": "Bixel Street",
-        "entityId": "bixel",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1894",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1894",
-            "until": null,
-            "name": "Bixel Street",
-            "entityId": "bixel",
-            "formInForce": "Bixel Street",
-            "how": "origin",
-            "origin": "labeled “BIXEL ST” on the 1894 Washington Tract map {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
-          }
-        ],
-        "note": null,
-        "categories": [
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "Recorded map: Compromise Subdivision of a portion of the O.T. Johnson tract, known as the Washington Tract, M.R. 66-35 (surveyed Mar. 1894 by E.D. Severance) (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
-          }
-        ],
-        "minLat": 34.0575,
-        "maxLat": 34.0582,
-        "from": "Miramar Street",
-        "to": "3rd Street"
-      },
-      {
-        "label": "3rd to 8th (discontinuous)",
+        "label": "Miramar to 8th (discontinuous)",
         "name": "Bixel Street",
         "entityId": "bixel",
         "namedAfter": null,
@@ -2258,8 +2138,8 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0469,
-        "maxLat": 34.0575,
-        "from": "3rd Street",
+        "maxLat": 34.0582,
+        "from": "Miramar Street",
         "to": "8th Street",
         "gapAfter": true
       },
@@ -2508,13 +2388,13 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/figueroa-street/"
           }
         ],
-        "minLat": 34.0568,
+        "minLat": 34.0571,
         "from": null,
         "to": "Colton Street",
         "gapAfter": true
       },
       {
-        "label": "south of 3rd (Figueroa St)",
+        "label": "south of Miramar (Figueroa St)",
         "name": "Boylston Street",
         "entityId": "boylston",
         "namedAfter": null,
@@ -2562,8 +2442,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/figueroa-street/"
           }
         ],
-        "maxLat": 34.0568,
-        "from": "3rd Street",
+        "maxLat": 34.0571,
+        "from": "Miramar Street",
         "to": null
       }
     ]
@@ -5851,63 +5731,7 @@ const STREET_DATA = {
         "gapAfter": true
       },
       {
-        "label": "Bixel to Boylston (3rd St) (discontinuous)",
-        "name": "Miramar Street",
-        "entityId": "miramar-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1894",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1894",
-            "until": "?",
-            "name": "3rd Street",
-            "entityId": "third-street",
-            "formInForce": "3rd Street",
-            "origin": "labeled “THIRD ST.” on the 1894 Washington Tract map {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "Miramar Street",
-            "entityId": "miramar-street",
-            "formInForce": "Miramar Street",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "categories": [
-          "unresearched",
-          "renamed"
-        ],
-        "formerCategories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "Recorded map: Compromise Subdivision of a portion of the O.T. Johnson tract, known as the Washington Tract, M.R. 66-35 (surveyed Mar. 1894 by E.D. Severance) (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
-          },
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          }
-        ],
-        "minLng": -118.261,
-        "maxLng": -118.2576,
-        "from": "Bixel Street",
-        "to": "Boylston Street"
-      },
-      {
-        "label": "east of Boylston",
+        "label": "east of Bixel (discontinuous)",
         "name": "Miramar Street",
         "entityId": "miramar-street",
         "namedAfter": null,
@@ -5925,8 +5749,8 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "minLng": -118.2576,
-        "from": "Boylston Street",
+        "minLng": -118.261,
+        "from": "Bixel Street",
         "to": null
       }
     ]

@@ -25,6 +25,21 @@ const di = html.indexOf("function documentStreets()"), dj = html.indexOf("functi
 if (di < 0 || dj < 0) { console.error("Could not find documentStreets in document-tool.html"); process.exit(1); }
 const bundleSource = html.slice(di, dj);
 
+// zoomView sits with the projections, not the review block.
+const zi = html.indexOf("function zoomView("), zj = html.indexOf("\n// The three control points");
+if (zi < 0 || zj < 0) { console.error("Could not find zoomView in document-tool.html"); process.exit(1); }
+const zoomSource = html.slice(zi, zj);
+
+// The two gates review mode enforces: what stops a row being confirmed, and
+// what stops a document being called fully swept.
+const slice = (a, b) => {
+  const i = html.indexOf(a), j = html.indexOf(b);
+  if (i < 0 || j < 0) { console.error("Could not find " + a + " in document-tool.html"); process.exit(1); }
+  return html.slice(i, j);
+};
+const gateSource = slice("function confirmBlocker(", "function mintEntityFor(") +
+                   slice("function sweepBlockers()", "function updateReviewActions()");
+
 // --- fixtures --------------------------------------------------------------
 // Frozen, not read from documents/mr066-035/: the document is live data and
 // these tests must keep meaning something after it is swept (fixtures/README).
@@ -60,8 +75,8 @@ const sandbox = {
 };
 Object.defineProperty(sandbox, "loadedDoc", { get: () => ({ rows }) });
 vm.createContext(sandbox);
-vm.runInContext(source + bundleSource +
-  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns };", sandbox);
+vm.runInContext("const KY = 110540; let lastModel = null;\n" + zoomSource + source + bundleSource + gateSource +
+  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers };", sandbox);
 const API = sandbox.API;
 const setRows = r => { rows = r; };
 
@@ -69,14 +84,68 @@ let pass = 0, fail = 0;
 const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
                           : (fail++, console.error("  FAIL " + n + (d ? " — " + d : "")));
 
+console.log("zooming the view about the cursor");
+{
+  // The property that matters: whatever ground point is under the cursor must
+  // still be under it afterwards. A sign error here does not read as a broken
+  // zoom, it reads as the map scrolling away — which is how it shipped.
+  const at = (v, cw, ch, sx, sy) => [v.lat + (ch/2 - sy) * v.mpp / 110540,
+                                     v.lng + (sx - cw/2) * v.mpp /
+                                       (111320 * Math.cos(v.lat * Math.PI/180))];
+  const V0 = { lat: 34.057, lng: -118.259, mpp: 0.55 };
+  const CW = 1400, CH = 900;
+  let worst = 0, worstAt = null;
+  for (const [sx, sy] of [[700,450],[0,0],[1400,900],[100,860],[1300,40]])
+    for (const f of [1.02, 0.98, 1.25, 0.8, 2, 0.5]) {
+      const before = at(V0, CW, CH, sx, sy);
+      const v = API.zoomView(V0, CW, CH, sx, sy, f);
+      const after = at(v, CW, CH, sx, sy);
+      const d = G.metres({lat:before[0],lon:before[1]}, {lat:after[0],lon:after[1]});
+      if (d > worst) { worst = d; worstAt = [sx, sy, f]; }
+    }
+  ok("the point under the cursor does not move", worst < 0.05,
+     worst.toFixed(3) + " m at " + JSON.stringify(worstAt));
+
+  const zin = API.zoomView(V0, CW, CH, 700, 450, 1.25);
+  ok("zooming in shrinks metres-per-pixel", zin.mpp < V0.mpp);
+  ok("zooming about the centre leaves the centre alone",
+     Math.abs(zin.lat - V0.lat) < 1e-9 && Math.abs(zin.lng - V0.lng) < 1e-9);
+
+  // The bug that shipped was a slow drift, not a jump: simulate a trackpad
+  // swipe of many tiny zooms and check the anchor still holds at the end.
+  let v = V0;
+  for (let i = 0; i < 40; i++) v = API.zoomView(v, CW, CH, 700, 200, 1.01);
+  const b = at(V0, CW, CH, 700, 200), a2 = at(v, CW, CH, 700, 200);
+  const drift = G.metres({lat:b[0],lon:b[1]}, {lat:a2[0],lon:a2[1]});
+  ok("40 small zooms do not drift the anchor", drift < 0.5, drift.toFixed(2) + " m");
+  ok("...and they do zoom", v.mpp < V0.mpp * 0.8, v.mpp.toFixed(3));
+}
+
+console.log("slivers: streets that merely clip the polygon");
+{
+  const cov = API.coverageStreets();
+  const names = cov.streets.map(s => s.name).sort();
+  const len = r => r.slice(1).reduce((t, p, i) => t + G.metres(r[i], p), 0);
+  ok("Huntley Drive's 6.5 m stub is not in bounds", !names.includes("Huntley Drive"),
+     names.join(", "));
+  ok("it is reported as a sliver, not silently dropped",
+     cov.slivers.some(s => s.name === "Huntley Drive"), JSON.stringify(cov.slivers));
+  ok("every sliver really is under the threshold",
+     cov.slivers.every(s => s.metres < API.MIN_RUN_M), JSON.stringify(cov.slivers));
+  ok("everything kept has a run at least that long",
+     cov.streets.every(s => s.runs.some(r => len(r) >= API.MIN_RUN_M)));
+  ok("4th Street's short but real run survives", names.includes("4th Street"), names.join(", "));
+  ok("five streets remain", names.length === 5, names.join(", "));
+}
+
 console.log("what phase 1 leaves behind");
 {
   setRows([]);
   const m = API.reviewModel();
   const names = m.streets.map(s => s.name).sort();
   // Same six as test-doc-geometry finds for this coverage ring.
-  ok("finds the sheet's six in-bounds streets", names.length === 6, names.join(", "));
-  ok("with no rows, every one is unaccounted", m.counts.unaccounted === 6);
+  ok("finds the sheet's five in-bounds streets", names.length === 5, names.join(", "));
+  ok("with no rows, every one is unaccounted", m.counts.unaccounted === 5);
   ok("an empty document is not a problem", m.problems.length === 0, JSON.stringify(m.problems));
 }
 
@@ -87,15 +156,15 @@ console.log("a plausible AI pass");
       from: "Bixel Street", to: "Boylston Street", basis: "alignment", confirmed: false },
     { kind: "state", name: "third-street", asWritten: "Arnold St", street: "3rd Street",
       from: "Bixel Street", to: null, basis: "alignment", confirmed: false },
-    { kind: "silent", street: "Huntley Drive", from: null, to: null, confirmed: false },
+    { kind: "silent", street: "4th Street", from: null, to: null, confirmed: false },
     { kind: "vanished", name: "third-street", asWritten: "Gone St",
       trace: [[300, 500], [600, 800]], basis: "alignment", confirmed: false }
   ]);
   const m = API.reviewModel();
   const by = Object.fromEntries(m.streets.map(s => [s.name, s]));
   ok("named streets read as named", m.counts.named === 2, JSON.stringify(m.counts));
-  ok("a silent row is not a naming", by["Huntley Drive"].status === "silent");
-  ok("everything unmentioned stays unaccounted", m.counts.unaccounted === 3, JSON.stringify(m.counts));
+  ok("a silent row is not a naming", by["4th Street"].status === "silent");
+  ok("everything unmentioned stays unaccounted", m.counts.unaccounted === 2, JSON.stringify(m.counts));
   ok("a vanished row is held apart from the streets", m.vanished.length === 1);
   ok("confirmed:false is counted as awaiting review", m.proposed === 4, String(m.proposed));
   ok("nothing plausible is reported as a problem", m.problems.length === 0, JSON.stringify(m.problems));
@@ -183,7 +252,7 @@ console.log("the streets bundle that ships with the document");
 {
   const d = API.documentStreets();
   const names = d.streets.map(s => s.name).sort();
-  ok("carries every in-bounds street", names.length === 6, names.join(", "));
+  ok("carries every in-bounds street", names.length === 5, names.join(", "));
 
   const third = d.streets.find(s => s.name === "3rd Street");
   ok("each street has at least one run", d.streets.every(s => s.runs.length >= 1));
@@ -219,6 +288,59 @@ console.log("the streets bundle that ships with the document");
   // Everything an extent could name must be resolvable by review mode.
   ok("every crossing resolves as an extent",
      d.streets.every(s => s.crossings.every(c => API.extentPoint(s.name, c.name, []) !== null)));
+}
+
+console.log("the gate on confirming a row");
+{
+  const nameless = { kind: "state", asWritten: "ARNOLD ST.", street: "3rd Street", confirmed: false };
+  ok("a state row with no name entity cannot be confirmed",
+     /no name entity/.test(API.confirmBlocker(nameless) || ""), String(API.confirmBlocker(nameless)));
+  ok("...nor one with no verbatim ink",
+     /asWritten/.test(API.confirmBlocker({ kind: "state", name: "arnold", street: "3rd Street" }) || ""));
+  ok("a complete state row can be confirmed",
+     API.confirmBlocker({ kind: "state", name: "arnold", asWritten: "ARNOLD ST.",
+                          street: "3rd Street" }) === null);
+  ok("a silent row needs neither — it names nothing",
+     API.confirmBlocker({ kind: "silent", street: "4th Street" }) === null);
+  ok("a vanished row is held to the same standard as a state row",
+     /no name entity/.test(API.confirmBlocker({ kind: "vanished", asWritten: "Gone St" }) || ""));
+}
+
+console.log("the gate on sweptFully");
+{
+  setRows([]);
+  let b = API.sweepBlockers().join(" | ");
+  ok("an empty document is not sweepable", /unaccounted/.test(b), b);
+
+  // Everything named, but still unconfirmed proposals.
+  const full = [
+    { kind: "state", name: "arnold", asWritten: "ARNOLD ST.", street: "3rd Street", confirmed: false },
+    { kind: "state", name: "third-street", asWritten: "THIRD ST.", street: "Miramar Street", confirmed: false },
+    { kind: "state", name: "bixel", asWritten: "BIXEL ST", street: "Bixel Street", confirmed: false },
+    { kind: "state", name: "figueroa-gov", asWritten: "FIGUEROA ST.", street: "Boylston Street", confirmed: false },
+    { kind: "silent", street: "4th Street", confirmed: false }
+  ];
+  setRows(full);
+  b = API.sweepBlockers().join(" | ");
+  ok("covering every street is not enough while proposals stand",
+     !/unaccounted/.test(b) && /unconfirmed proposal/.test(b), b);
+
+  // Confirmed, as review would leave them.
+  setRows(full.map(r => { const c = { ...r }; delete c.confirmed; return c; }));
+  ok("with every street accounted for and confirmed, it sweeps",
+     API.sweepBlockers().length === 0, API.sweepBlockers().join(" | "));
+
+  // A confirmed row that lost its name must still block: the sweep is the
+  // claim that licenses arguing from silence, so it checks, not trusts.
+  setRows(full.map(r => { const c = { ...r }; delete c.confirmed;
+                          if (c.name === "bixel") delete c.name; return c; }));
+  ok("a confirmed row with no name entity still blocks the sweep",
+     /no name entity/.test(API.sweepBlockers().join(" | ")), API.sweepBlockers().join(" | "));
+
+  // Huntley is a sliver, so leaving it unmentioned must not block.
+  setRows(full.map(r => { const c = { ...r }; delete c.confirmed; return c; }));
+  ok("the Huntley sliver does not have to be accounted for",
+     API.sweepBlockers().length === 0, API.sweepBlockers().join(" | "));
 }
 
 console.log(`\n${pass} passed, ${fail} failed`);

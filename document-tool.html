@@ -79,6 +79,21 @@
   .prop { color:#8a5c00; }
   .badge { font-size:10px; border:1px solid #c9b98a; border-radius:8px;
            padding:0 5px; margin-left:4px; color:#6b5f4a; }
+  .rowcard { border-left:4px solid #999; padding:2px 0 2px 8px; margin:8px 0; }
+  .rowcard.on { background:#f6f0dd; }
+  table.fields { border-collapse:collapse; width:100%; font-size:12px; }
+  table.fields td { vertical-align:top; padding:1px 0; }
+  table.fields td.fk { color:#6b5f4a; width:5.5em; padding-right:8px;
+                       font-size:11px; white-space:nowrap; }
+  #pop code { font-size:11px; background:#f3ecd8; padding:0 3px; border-radius:2px; }
+  .ctl { border-top:1px dashed #ddd2b4; margin-top:6px; padding-top:5px; }
+  .ctlrow { display:flex; gap:5px; align-items:center; margin:4px 0; }
+  .ctlrow label.fk { flex:0 0 3.4em; font-size:11px; color:#6b5f4a; }
+  .ctlrow input { flex:1; }
+  .ctlrow button { flex:0 0 auto; }
+  .ctlrow button.conf { flex:1; }
+  button.conf.done { background:#dfeadb; border-color:#7ba377; color:#2c5c30; }
+  #sweepBtn { width:100%; }
 </style>
 </head>
 <body>
@@ -181,20 +196,28 @@
   <div class="hint" id="dirState">not connected — Save will ask where to put each file</div>
   <div class="hint" id="writeHint"></div>
   <button class="primary" id="save">Save document + alignment</button>
-  <div class="hint">Phase 1 always writes <code>sweptFully: false</code> and no
-  rows. Rows arrive from the AI pass and are confirmed in phase 2.</div>
+  <div class="hint">Phase 1 writes no rows. Rows arrive from the AI pass, which
+  edits <code>&lt;id&gt;.js</code> directly, and are confirmed in Review.</div>
   <div class="hint" id="nextSteps" style="display:none"></div>
 </div>
 
 <div class="panel" id="review">
-  <h2>Review · phase 2 <span class="badge">read-only</span></h2>
-  <div class="hint">What the rows in this document say, drawn on the sheet.
-    Nothing here edits anything — corrections still go in the <code>.js</code>
-    by hand for now.</div>
+  <h2>Review · phase 2</h2>
+  <div class="hint">What the rows say, drawn on the sheet they were read from.
+    Click a coloured street to see every field of its rows, give each one a name
+    entity, and vouch for it.</div>
   <div class="row"><button id="revReload">Re-read rows from disk</button></div>
-  <div class="hint">Paste the AI's rows into <code>documents/&lt;id&gt;/&lt;id&gt;.js</code>,
-    then press that — no need to re-align anything.</div>
+  <div class="hint">If an assistant has just edited
+    <code>documents/&lt;id&gt;/&lt;id&gt;.js</code>, press that — no re-aligning.
+    <b>It discards unsaved review edits.</b></div>
   <div id="revSummary"></div>
+
+  <h3>Sweep</h3>
+  <div class="hint" id="sweepState"></div>
+  <button id="sweepBtn">Mark fully swept</button>
+  <button class="primary" id="saveReview">Save review</button>
+  <div class="hint" id="reviewSaveState"></div>
+
   <h3>Legend</h3>
   <div id="revLegend"></div>
   <h3>Streets in coverage</h3>
@@ -202,15 +225,18 @@
   <div id="revProblems"></div>
 </div>
 
+<datalist id="entlist"></datalist>
 <div class="panel" id="pop"></div>
 
 <div id="status">load a render to begin</div>
 
 <script src="streets-geometry.js"></script>
 <script src="doc-geometry.js"></script>
-<!-- names.js only so review mode can say "there is no such name entity". Its
-     module.exports line is guarded, so it loads fine as a plain script. -->
+<!-- The name entities, so review mode can offer them and flag ids that do not
+     exist. Both files guard their module.exports line, so they load fine as
+     plain scripts; names-new.js may legitimately be absent. -->
 <script src="names.js"></script>
+<script src="names-new.js" onerror="window.__noNamesNew = true"></script>
 <script>
 "use strict";
 const G = DocGeometry;
@@ -241,6 +267,10 @@ let view = { lat: 34.0570, lng: -118.2590, mpp: 0.55 };
 let scan = { lat: 34.0570, lng: -118.2590, rot: 0, mppx: 0.55 };
 let coverage = [];                        // scan pixels [[x,y], ...]
 let pendingAlignment = null, loadedDoc = null;
+// §5.5's sweep gate. Held here rather than being written as a constant false,
+// so review mode can flip it once every street in coverage is accounted for
+// and every proposal has been confirmed.
+let docSwept = { fully: false, for: [] };
 
 // --- projections -----------------------------------------------------------
 const KY = 110540, kx = () => 111320 * Math.cos(view.lat * Math.PI / 180);
@@ -266,6 +296,24 @@ function screenToScan(sx, sy) {
 // Scan pixel -> ground, WITHOUT going through the screen: the exported control
 // points must not depend on how far you happen to be zoomed in.
 const scanToWorldDirect = (px, py) => G.placementToWorld(scan, img.width, img.height, px, py);
+
+// Zoom the view about a fixed screen point, returning a NEW view.
+//
+// Pure and separately tested because a sign error here does not look like a
+// zoom bug and is nearly impossible to spot by eye: each event still changes
+// the scale by the right amount, it just also nudges the centre, and a
+// trackpad's stream of small events turns that nudge into a steady drift.
+// That is precisely what shipped — the map appeared to scroll south under a
+// two-finger swipe instead of zooming (fixed 2026-08-30).
+function zoomView(v, cw, ch, sx, sy, factor) {
+  const kx0 = 111320 * Math.cos(v.lat * Math.PI / 180);
+  const lat0 = v.lat + (ch / 2 - sy) * v.mpp / KY;     // ground point under the cursor
+  const lng0 = v.lng + (sx - cw / 2) * v.mpp / kx0;
+  const mpp = v.mpp / factor;
+  return { lat: lat0 - (ch / 2 - sy) * mpp / KY,       // …put back under the cursor
+           lng: lng0 - (sx - cw / 2) * mpp / kx0,
+           mpp };
+}
 
 // The three control points phase 1 exports: scan corners through the human's
 // alignment. Same schema georef.py consumes (MODEL-SPEC §4.6).
@@ -342,14 +390,7 @@ function refreshCoverageUI() {
       inb.slice(0, 6).join(", ") + (inb.length > 6 ? `, +${inb.length - 6} more` : "");
 }
 
-function inBoundsNames() {
-  if (!img || coverage.length < 3) return [];
-  try {
-    const fit = G.fitAlignment(controlPoints());
-    const ring = G.coverageToWorld(fit, coverage);
-    return [...new Set(G.segmentsInBounds(ways, ring).map(s => s.name))].sort();
-  } catch (e) { return []; }
-}
+const inBoundsNames = () => coverageStreets().streets.map(s => s.name);
 
 // --- interaction -----------------------------------------------------------
 let drag = null;   // {kind:"scan"|"view", last:[x,y]}
@@ -408,13 +449,7 @@ cv.addEventListener("wheel", e => {
   const dy = Math.max(-120, Math.min(120, e.deltaY * unit));
   const f = Math.exp(-dy * 0.002);
   if (e.shiftKey || e.ctrlKey || mode !== "align") { // zoom the VIEW
-    // Keep the ground point under the cursor fixed. The scan is not touched:
-    // it is anchored to the ground, so it follows automatically.
-    const [lat0, lng0] = screenToLL(e.clientX, e.clientY);
-    view.mpp /= f;
-    const kxHere = kx();                             // before view.lat moves
-    view.lat = lat0 + (cv.height / 2 - e.clientY) * view.mpp / KY;
-    view.lng = lng0 - (e.clientX - cv.width / 2) * view.mpp / kxHere;
+    view = zoomView(view, cv.width, cv.height, e.clientX, e.clientY, f);
     $("view").value = `${view.lat.toFixed(4)}, ${view.lng.toFixed(4)}, ${view.mpp.toFixed(3)}`;
   } else {                                            // scale the SCAN
     const [cx, cy] = scanCentreScreen();
@@ -546,7 +581,8 @@ $("loadDoc").onclick = async () => {
     if (img) restoreAlignment(doc.alignment); else pendingAlignment = doc.alignment;
   }
   loadedDoc = doc;
-  lastModel = null; reviewSig = null;
+  docSwept = { fully: doc.sweptFully === true, for: doc.sweptFor || [] };
+  lastModel = null; reviewSig = null; reviewDirty = false;
   draw();
   // A document that already has rows is here to be looked at, not aligned
   // again — go straight to review. (Saving from any mode still preserves the
@@ -592,9 +628,22 @@ const esc = s => String(s == null ? "" : s)
 
 let reviewFeatures = [];        // {street,row,kind,pts:[[x,y]]} rebuilt each draw
 let selStreet = null;
+let reviewDirty = false;        // edits made in review that are not on disk yet
 
 const reviewRows = () => (loadedDoc && Array.isArray(loadedDoc.rows)) ? loadedDoc.rows : [];
-const entities = () => (typeof NAME_ENTITIES !== "undefined" ? NAME_ENTITIES : null);
+
+// Entities minted here this session, destined for names-new.js. Kept apart
+// from the loaded sets so "what do I still have to write out?" is answerable.
+const mintedEntities = {};
+function entities() {
+  if (typeof NAME_ENTITIES === "undefined") return null;
+  const base = typeof NEW_NAME_ENTITIES !== "undefined" ? NEW_NAME_ENTITIES : {};
+  return { ...NAME_ENTITIES, ...base, ...mintedEntities };
+}
+const displayForm = e => {
+  const sp = e && e.spellings && e.spellings[e.spellings.length - 1];
+  return sp && sp.forms ? sp.forms[0] : "";
+};
 
 // Where two streets meet. Same 60 m rule check-model.js and doc-geometry use,
 // so "not a cross street" means the same thing here as it does there.
@@ -678,22 +727,51 @@ function stitchRuns(runs) {
   return real.length ? real : parts;      // a lone touching point is still a fact
 }
 
+// A street can clip the coverage polygon by a few metres at a corner — the
+// stub of a side street leaving an intersection just inside the boundary. That
+// is not ground the document says anything about: it is shorter than the
+// junction it leaves from, and no plat could draw a distinguishable corridor
+// there. Including such slivers produces phantom "unaccounted" streets that
+// can never be resolved, and asks the AI pass to explain ink that isn't there.
+// (Huntley Drive on MR066-035 was 6.5 m of exactly this.)
+const MIN_RUN_M = 25;                    // a wide intersection is ~20 m across
+const runMetres = run =>
+  run.slice(1).reduce((s, p, i) => s + G.metres(run[i], p), 0);
+
+// The single answer to "which modern streets does this document cover?" —
+// used by the save bundle, the coverage readout and review mode alike, so
+// they can never disagree about what is in bounds.
+function coverageStreets() {
+  if (!img || coverage.length < 3) return { streets: [], slivers: [], error: null };
+  let ring;
+  try {
+    ring = G.coverageToWorld(G.fitAlignment(controlPoints()), coverage);
+  } catch (e) { return { streets: [], slivers: [], error: e.message }; }
+
+  const merged = new Map();
+  for (const s of G.segmentsInBounds(ways, ring)) {
+    if (!merged.has(s.name)) merged.set(s.name, []);
+    merged.get(s.name).push(...s.runs);
+  }
+  const streets = [], slivers = [];
+  for (const [name, raw] of merged) {
+    const runs = stitchRuns(raw).filter(r => r.length >= 2 && runMetres(r) >= MIN_RUN_M);
+    if (runs.length) streets.push({ name, runs });
+    else slivers.push({ name, metres: Math.max(0, ...stitchRuns(raw).map(runMetres)) });
+  }
+  streets.sort((a, b) => a.name.localeCompare(b.name));
+  slivers.sort((a, b) => a.name.localeCompare(b.name));
+  return { streets, slivers, ring, error: null };
+}
+
 function reviewModel() {
   const problems = [];
   const streets = new Map();                 // name -> {name, runs, rows}
+  const cov = coverageStreets();
   if (!img) problems.push("no render loaded — Load the document first");
   else if (coverage.length < 3) problems.push("the coverage polygon has fewer than 3 points");
-  else {
-    try {
-      const fit = G.fitAlignment(controlPoints());
-      const ring = G.coverageToWorld(fit, coverage);
-      for (const s of G.segmentsInBounds(ways, ring)) {
-        if (!streets.has(s.name)) streets.set(s.name, { name: s.name, runs: [], rows: [] });
-        streets.get(s.name).runs.push(...s.runs);
-      }
-      for (const rec of streets.values()) rec.runs = stitchRuns(rec.runs);
-    } catch (e) { problems.push("the alignment does not fit: " + e.message); }
-  }
+  else if (cov.error) problems.push("the alignment does not fit: " + cov.error);
+  for (const s of cov.streets) streets.set(s.name, { name: s.name, runs: s.runs, rows: [] });
 
   const ENT = entities();
   const vanished = [];
@@ -708,8 +786,13 @@ function reviewModel() {
     if (!r.street) { problems.push(`a ${esc(r.kind || "?")} row has no street`); continue; }
     const rec = streets.get(r.street);
     if (!rec) {
-      problems.push(`a row names “${esc(r.street)}”, which is not inside the coverage ` +
-                    `polygon — a misspelling, or the alignment moved`);
+      const sliver = cov.slivers.find(s => s.name === r.street);
+      problems.push(sliver
+        ? `a row names “${esc(r.street)}”, which only clips the coverage polygon ` +
+          `(${sliver.metres.toFixed(0)} m, under the ${MIN_RUN_M} m minimum) and is ` +
+          `therefore not in bounds — the row can be dropped`
+        : `a row names “${esc(r.street)}”, which is not inside the coverage ` +
+          `polygon — a misspelling, or the alignment moved`);
       continue;
     }
     rec.rows.push(r);
@@ -723,7 +806,7 @@ function reviewModel() {
 
   const list = [...streets.values()].sort((a, b) => a.name.localeCompare(b.name));
   const proposed = reviewRows().filter(r => r.confirmed === false).length;
-  return { streets: list, vanished, problems, proposed,
+  return { streets: list, vanished, problems, proposed, slivers: cov.slivers,
            counts: {
              named: list.filter(s => s.status === "named").length,
              silent: list.filter(s => s.status === "silent").length,
@@ -746,13 +829,9 @@ function drawReview() {
     ctx.stroke();
     ctx.restore();
   };
-  const halo = (text, x, y, colour) => {
-    ctx.save();
-    ctx.font = "bold 14px Georgia"; ctx.lineWidth = 4;
-    ctx.strokeStyle = "rgba(255,254,247,0.9)"; ctx.strokeText(text, x, y);
-    ctx.fillStyle = colour; ctx.fillText(text, x, y);
-    ctx.restore();
-  };
+  // No labels on the map. The point of this mode is to compare a coloured
+  // line against the ink underneath it, and lettering the plat's own label
+  // over its own drawing hides the thing being judged.
   const problems = [];
 
   for (const s of m.streets) {
@@ -776,11 +855,6 @@ function drawReview() {
         const pts = toScr(clipRun(run, pA, pB));
         stroke(pts, colour, selected ? 9 : 6, dashed);
         reviewFeatures.push({ street: s.name, row, kind: row.kind, pts });
-        const label = row.asWritten || (row.kind === "silent" ? "— nothing shown —" : row.name);
-        if (label && pts.length) {
-          const [lx, ly] = pts[Math.floor(pts.length / 2)];
-          if (lx > 0 && lx < cv.width && ly > 0 && ly < cv.height) halo(label, lx + 6, ly - 8, colour);
-        }
       }
     }
   }
@@ -791,8 +865,6 @@ function drawReview() {
     const pts = r.trace.map(([x, y]) => scanToScreen(x, y));
     stroke(pts, REVC.vanished, 6, r.confirmed === false);
     reviewFeatures.push({ street: null, row: r, kind: "vanished", pts });
-    const [lx, ly] = pts[Math.floor(pts.length / 2)];
-    if (r.asWritten) halo(r.asWritten, lx + 6, ly - 8, REVC.vanished);
   }
   lastModel = m; lastDrawProblems = problems;
   refreshReview();
@@ -800,27 +872,161 @@ function drawReview() {
 let lastModel = null, lastDrawProblems = [], reviewSig = null;
 
 // --- review panel ----------------------------------------------------------
-function rowHtml(r, emphasise) {
-  const extA = r.kind === "change" ? r.fromCross : r.from;
-  const extB = r.kind === "change" ? r.toCross : r.to;
-  const end = v => v == null ? "<i>street end</i>"
-    : typeof v === "object" ? (v.px ? `px ${v.px[0]},${v.px[1]}` : `${v.ll[0]}, ${v.ll[1]}`)
-    : esc(v);
-  const bits = [];
-  bits.push(`<b style="color:${REVC[r.kind] || "#241f18"}">${esc(r.kind)}</b>`);
-  if (r.asWritten) bits.push(`“<b>${esc(r.asWritten)}</b>”`);
-  if (r.kind === "change") bits.push(`${esc(r.from)} → ${esc(r.to)}`);
-  else if (r.name) bits.push(`<code>${esc(r.name)}</code>`);
-  const meta = [];
-  if (r.kind !== "vanished") meta.push(`${end(extA)} → ${end(extB)}`);
-  if (r.attests) meta.push(esc(r.attests));
-  if (r.basis) meta.push("basis: " + esc(r.basis));
-  if (r.mechanism) meta.push("mechanism: " + esc(r.mechanism));
-  if (r.confirmed === false) meta.push('<span class="prop">proposed — not confirmed</span>');
-  return `<div style="margin:5px 0;${emphasise ? "background:#f3ecd8;padding:3px 5px;border-radius:3px" : ""}">` +
-         bits.join(" ") + `<div class="hint" style="margin:1px 0">${meta.join(" · ")}</div>` +
-         (r.note ? `<div class="hint">${esc(r.note)}</div>` : "") + "</div>";
+// EVERY field the row carries, not a chosen summary. Reviewing means seeing
+// what is actually in the file — a field this display quietly omitted would be
+// a field nobody ever checks. Known fields lead, in reading order; anything
+// else the file happens to carry follows, so a new field added to the model
+// shows up here without anyone remembering to change this function.
+const ROW_FIELDS = ["kind", "name", "asWritten", "street", "from", "to",
+                    "fromCross", "toCross", "toForm", "mechanism", "attests",
+                    "basis", "date", "trace", "confirmed", "note"];
+function fieldValueHtml(k, v) {
+  if (v === null || v === undefined)
+    return k === "from" || k === "to" || k === "fromCross" || k === "toCross"
+      ? '<i>null — the street\'s own end</i>' : "<i>null</i>";
+  if (Array.isArray(v))
+    return `<code>${esc(JSON.stringify(v).slice(0, 220))}${JSON.stringify(v).length > 220 ? "…" : ""}</code>`;
+  if (typeof v === "object")
+    return v.px ? `<code>px ${v.px[0]}, ${v.px[1]}</code>`
+         : v.ll ? `<code>${v.ll[0]}, ${v.ll[1]}</code>`
+         : `<code>${esc(JSON.stringify(v))}</code>`;
+  if (typeof v === "boolean")
+    return k === "confirmed" && v === false
+      ? '<span class="prop">false — a proposal, not yet checked</span>' : String(v);
+  return esc(v);
 }
+function rowHtml(r, emphasise) {
+  const keys = [...ROW_FIELDS.filter(k => k in r),
+                ...Object.keys(r).filter(k => !ROW_FIELDS.includes(k))];
+  const rows = keys.map(k =>
+    `<tr><td class="fk">${esc(k)}</td><td>${fieldValueHtml(k, r[k])}</td></tr>`).join("");
+  const missing = ROW_FIELDS.filter(k => !(k in r) && ["name", "asWritten"].includes(k))
+    .map(k => `<tr><td class="fk">${k}</td><td class="prop"><i>not set</i></td></tr>`).join("");
+  const i = reviewRows().indexOf(r);
+  return `<div class="rowcard${emphasise ? " on" : ""}" ` +
+         `style="border-left-color:${REVC[r.kind] || "#241f18"}">` +
+         `<table class="fields">${rows}${missing}</table>` +
+         (i >= 0 ? rowControlsHtml(r, i) : "") + `</div>`;
+}
+
+// The two things review is FOR: deciding which naming lineage a label belongs
+// to, and vouching for the row. Both are edits, so both live here rather than
+// in the field table above, which is a faithful view of the file.
+function rowControlsHtml(r, i) {
+  const needsName = r.kind === "state" || r.kind === "vanished";
+  const conf = r.confirmed === false;
+  let html = `<div class="ctl">`;
+  if (needsName) {
+    html += `<div class="ctlrow"><label class="fk">name</label>` +
+      `<input class="npick" list="entlist" data-ri="${i}" value="${esc(r.name || "")}" ` +
+      `placeholder="type a name or id…">` +
+      `<button class="newent" data-ri="${i}" title="mint a new name entity">＋ new</button></div>` +
+      (r.asWritten ? `<div class="hint">The ink reads “${esc(r.asWritten)}”. Pick the lineage ` +
+        `it belongs to — an existing entity if this is the same name propagating, a new one ` +
+        `if it only spells alike.</div>` : "");
+  }
+  html += `<div class="ctlrow"><button class="conf ${conf ? "" : "done"}" data-ri="${i}">` +
+    (conf ? "Confirm this row" : "✓ confirmed — undo") + `</button></div>`;
+  return html + `</div>`;
+}
+
+// Rebuilt whenever the entity set changes so a freshly minted name is
+// immediately offerable. Chrome matches typing against both the id and the
+// label, so "3rd" finds third-street and so does "third".
+function refreshEntityList() {
+  const E = entities() || {};
+  const dl = $("entlist");
+  dl.innerHTML = Object.keys(E).sort((a, b) =>
+    (displayForm(E[a]) || a).localeCompare(displayForm(E[b]) || b))
+    .map(id => `<option value="${esc(id)}">${esc(displayForm(E[id]) || id)}` +
+               `${E[id].pendingResearch || mintedEntities[id] ? " · new" : ""}</option>`).join("");
+}
+
+function bindPopControls() {
+  const p = $("pop");
+  const touch = () => {
+    reviewDirty = true; lastModel = null; reviewSig = null;
+    const sel = selStreet, keep = popRow;
+    draw();
+    if (sel) reopenPop(sel, keep);
+    updateReviewActions();
+  };
+  for (const el of p.querySelectorAll("input.npick")) el.onchange = () => {
+    const r = reviewRows()[+el.dataset.ri], v = el.value.trim();
+    const E = entities() || {};
+    if (v && !E[v]) {
+      alert(`There is no name entity “${v}”.\n\nPick one from the list, or press ＋ new to ` +
+            `mint one — inventing an id by typing it would fail check-model.js.`);
+      el.value = r.name || "";
+      return;
+    }
+    if (v) r.name = v; else delete r.name;
+    touch();
+  };
+  for (const el of p.querySelectorAll("button.newent")) el.onclick = () => {
+    const r = reviewRows()[+el.dataset.ri];
+    if (mintEntityFor(r)) touch();
+  };
+  for (const el of p.querySelectorAll("button.conf")) el.onclick = () => {
+    const r = reviewRows()[+el.dataset.ri];
+    if (r.confirmed === false) {
+      const why = confirmBlocker(r);
+      if (why) return alert(why);
+      delete r.confirmed;              // absent = authored/vouched for (§5.5)
+    } else r.confirmed = false;
+    touch();
+  };
+}
+
+// What must be true before a human can vouch for a row. Only the things that
+// would otherwise fail downstream — this is a gate, not a style guide.
+function confirmBlocker(r) {
+  if ((r.kind === "state" || r.kind === "vanished") && !r.name)
+    return "This row has no name entity yet. Confirming it would assert a naming with " +
+           "nothing to attach it to, and check-model.js would reject it.\n\n" +
+           "Pick a name above, or press ＋ new.";
+  if ((r.kind === "state" || r.kind === "vanished") && !r.asWritten)
+    return "This row has no asWritten — the verbatim ink is what makes it evidence (§5.1).";
+  return null;
+}
+
+function mintEntityFor(r) {
+  const suggestion = (r.asWritten || "")
+    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  const id = (prompt(
+    "New name entity.\n\n" +
+    "An id, lowercase and hyphenated. It names a naming LINEAGE, not a string — " +
+    "if this label is the same name propagating from somewhere the project already " +
+    "knows, cancel and pick that entity instead.\n\n" +
+    "It will be written to names-new.js, marked as needing research.",
+    suggestion) || "").trim();
+  if (!id) return false;
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(id))
+    return alert("Ids are lowercase letters, digits and hyphens."), false;
+  const E = entities() || {};
+  if (E[id]) return alert(`“${id}” already exists — pick it from the list instead.`), false;
+  const form = (prompt(
+    "Display name — how this street's name is written today, or in its latest " +
+    "spelling. This is what the map will show.\n\n" +
+    "Not the abbreviated ink: “ARNOLD ST.” on the plat is “Arnold Street” here.",
+    titleCaseForm(r.asWritten || "")) || "").trim();
+  if (!form) return false;
+  mintedEntities[id] = {
+    spellings: [{ forms: [form] }],
+    namedAfter: null, namedAfterLink: null,
+    categories: ["unknown"], sources: [],
+    disputed: false,
+    note: `Minted in review from ${loadedDoc && loadedDoc.id ? loadedDoc.id : "a document"}` +
+          (r.asWritten ? `, where the ink reads “${r.asWritten}”` : "") +
+          ". Namesake not researched.",
+    possiblySameAs: null, aliases: []
+  };
+  r.name = id;
+  refreshEntityList();
+  return true;
+}
+const titleCaseForm = s => s.toLowerCase().replace(/\b[a-z]/g, c => c.toUpperCase())
+  .replace(/\bSt\.?$/, "Street").replace(/\bAve\.?$/, "Avenue").replace(/\bRd\.?$/, "Road");
 
 function refreshReview() {
   if (mode !== "review") return;
@@ -829,7 +1035,8 @@ function refreshReview() {
   // Panning redraws constantly; rebuilding the list each frame would fight the
   // scrollbar. Only touch the DOM when what it says has actually changed.
   const sig = JSON.stringify([n, c, m.proposed, m.vanished.length, reviewRows().length,
-                              m.streets.map(s => s.name + s.status), m.problems, lastDrawProblems]);
+                              m.streets.map(s => s.name + s.status), m.slivers,
+                              m.problems, lastDrawProblems]);
   if (sig === reviewSig) return;
   reviewSig = sig;
   $("revSummary").innerHTML =
@@ -858,9 +1065,18 @@ function refreshReview() {
       `<span class="swatch" style="border-top-color:${REVC[s.status === "named" ? "state" : s.status]}"></span>` +
       esc(s.name) + (aw.length ? ` <span class="aw">“${esc(aw.join("”, “"))}”</span>` : "") +
       (s.proposed ? ' <span class="badge prop">proposed</span>' : "") + "</li>";
-  }).join("") + "</ul>";
+  }).join("") + "</ul>" +
+    ((m.slivers && m.slivers.length)
+      ? `<div class="hint">Not counted, each clipping the polygon by less than ` +
+        `${MIN_RUN_M} m — a side street's stub at an intersection: ` +
+        m.slivers.map(s => `${esc(s.name)} (${s.metres.toFixed(0)} m)`).join(", ") + "</div>"
+      : "");
+  // Bind AFTER the list's final HTML is in place: assigning innerHTML again
+  // would reparse the subtree and drop these handlers.
   for (const li of $("revStreets").querySelectorAll("li"))
     li.onclick = () => selectStreet(li.dataset.st);
+
+  updateReviewActions();
 
   const probs = [...new Set([...(m.problems || []), ...lastDrawProblems])];
   $("revProblems").innerHTML = probs.length
@@ -875,6 +1091,7 @@ function selectStreet(name) {
   const rec = (lastModel ? lastModel.streets : []).find(s => s.name === name);
   if (!rec) return;
   const mid = f ? f.pts[Math.floor(f.pts.length / 2)] : [cv.width / 2, cv.height / 2];
+  popRow = null;
   showPop(mid[0], mid[1], popHtml(rec, null));
 }
 
@@ -888,15 +1105,26 @@ function popHtml(rec, row) {
   return head + rec.rows.map(r => rowHtml(r, r === row)).join("");
 }
 
+let popPos = [0, 0], popRow = null;
 function showPop(x, y, html) {
   const p = $("pop");
+  popPos = [x, y];
   p.innerHTML = html; p.style.display = "";
   const w = p.offsetWidth, h = p.offsetHeight;
   p.style.left = Math.max(8, Math.min(innerWidth - w - 8, x + 14)) + "px";
   p.style.top = Math.max(8, Math.min(innerHeight - h - 8, y + 14)) + "px";
   const c = p.querySelector(".close"); if (c) c.onclick = hidePop;
+  bindPopControls();
 }
-function hidePop() { $("pop").style.display = "none"; selStreet = null; }
+// After an edit the model is rebuilt, so the popup has to be re-rendered from
+// the new state — in place, so the thing you were reading does not jump away.
+function reopenPop(street, row) {
+  const rec = (lastModel ? lastModel.streets : []).find(s => s.name === street);
+  if (!rec) return;
+  popRow = row;
+  showPop(popPos[0], popPos[1], popHtml(rec, row));
+}
+function hidePop() { $("pop").style.display = "none"; selStreet = null; popRow = null; }
 
 // distance from a point to a polyline, in screen pixels
 function distToPts(pts, x, y) {
@@ -919,7 +1147,7 @@ function pickFeature(x, y) {
   }
   if (!best) { hidePop(); draw(); return; }
   if (best.kind === "vanished") {
-    selStreet = null; draw();
+    selStreet = null; popRow = best.row; draw();
     showPop(x, y, `<span class="close" title="close">×</span><b class="hdr">Vanished street</b>` +
       `<div class="hint">Drawn on the plat with no modern counterpart, so it is stored as a ` +
       `trace in scan pixels rather than against a modern street.</div>` + rowHtml(best.row, true));
@@ -927,19 +1155,158 @@ function pickFeature(x, y) {
   }
   selStreet = best.street; draw();
   const rec = (lastModel ? lastModel.streets : []).find(s => s.name === best.street);
+  popRow = best.row;
   if (rec) showPop(x, y, popHtml(rec, best.row));
 }
+
+// --- the sweep gate and writing review back --------------------------------
+// `sweptFully: true` is the strongest claim the model makes: it licenses
+// arguing from this document's SILENCE. So the button is a gate, not a
+// checkbox — it states in words what is still missing, and refuses while
+// anything is.
+function sweepBlockers() {
+  const m = lastModel || reviewModel();
+  const out = [];
+  if (!m.streets.length) out.push("no streets are in coverage yet");
+  const un = m.streets.filter(s => s.status === "unaccounted");
+  if (un.length) out.push(`${un.length} street${un.length === 1 ? " is" : "s are"} still ` +
+                          `unaccounted: ${un.map(s => s.name).join(", ")}`);
+  if (m.proposed) out.push(`${m.proposed} row${m.proposed === 1 ? " is" : "s are"} still an ` +
+                           `unconfirmed proposal`);
+  const nameless = reviewRows().filter(r => (r.kind === "state" || r.kind === "vanished") && !r.name);
+  if (nameless.length) out.push(`${nameless.length} row${nameless.length === 1 ? " has" : "s have"} ` +
+                                `no name entity`);
+  return out;
+}
+
+function updateReviewActions() {
+  if (mode !== "review") return;
+  const blockers = sweepBlockers();
+  const minted = Object.keys(mintedEntities).length;
+  $("sweepBtn").textContent = docSwept.fully ? "✓ swept — click to undo" : "Mark fully swept";
+  $("sweepBtn").disabled = blockers.length > 0 && !docSwept.fully;
+  $("sweepState").innerHTML = docSwept.fully
+    ? `<b>sweptFully: true</b> — this document's silence can now be argued from. ` +
+      `Covers ${docSwept.for.length} street${docSwept.for.length === 1 ? "" : "s"}.`
+    : blockers.length
+      ? `<span class="warn">Not sweepable yet:</span> ` + blockers.join("; ") + "."
+      : `Everything in coverage is accounted for and confirmed — ready to sweep.`;
+  $("saveReview").disabled = !reviewDirty;
+  $("reviewSaveState").innerHTML = reviewDirty
+    ? `<span class="warn">Unsaved review edits.</span> Writes ` +
+      `<code>documents/&lt;id&gt;/&lt;id&gt;.js</code>` +
+      (minted ? ` and <code>names-new.js</code> (${minted} new entit${minted === 1 ? "y" : "ies"})` : "") + "."
+    : "no unsaved edits";
+}
+
+$("sweepBtn").onclick = () => {
+  if (docSwept.fully) {
+    docSwept = { fully: false, for: [] };
+  } else {
+    const blockers = sweepBlockers();
+    if (blockers.length) return alert("Not yet:\n\n- " + blockers.join("\n- "));
+    const m = lastModel || reviewModel();
+    docSwept = { fully: true, for: m.streets.map(s => s.name) };
+  }
+  reviewDirty = true; reviewSig = null;
+  updateReviewActions(); draw();
+};
+
+// names-new.js is rewritten whole: the entities already in it, plus the ones
+// minted this session. Appending textually to a file the human may also have
+// edited is how you lose their edits.
+function namesNewText() {
+  const existing = typeof NEW_NAME_ENTITIES !== "undefined" ? NEW_NAME_ENTITIES : {};
+  const all = { ...existing, ...mintedEntities };
+  const body = Object.keys(all).sort().map(id => {
+    const e = all[id];
+    return `  ${JSON.stringify(id)}: {\n` +
+      `    spellings: ${JSON.stringify(e.spellings)},\n` +
+      `    namedAfter: ${JSON.stringify(e.namedAfter ?? null)},\n` +
+      `    namedAfterLink: ${JSON.stringify(e.namedAfterLink ?? null)},\n` +
+      `    categories: ${JSON.stringify(e.categories || ["unknown"])},\n` +
+      `    sources: ${JSON.stringify(e.sources || [])},\n` +
+      `    disputed: false,\n` +
+      `    note: ${JSON.stringify(e.note ?? null)},\n` +
+      `    possiblySameAs: null, aliases: []\n  }`;
+  }).join(",\n\n");
+  return `// names-new.js — name entities created in the document tool's review mode.
+//
+// SEPARATE FROM names.js ON PURPOSE. names.js is hand-authored: every entity
+// there has had its namesake looked into and its lineage decided. Review needs
+// to mint an id the moment a plat shows a label nobody has entered yet, and a
+// browser tool should not be writing into the file that holds that research.
+// Entities here are used by check-model.js and generate.js exactly as if they
+// were in names.js, and are marked pendingResearch so nothing pretends they
+// have been looked at.
+//
+// The lifecycle: research the namesake, fill in namedAfter / categories /
+// sources, move the entity into names.js, delete it from here. Anything still
+// sitting in this file is a to-do list.
+//
+// WRITTEN BY THE TOOL — it rewrites this file whole when you save a review, so
+// hand edits to entities that are still listed here will be overwritten. Move
+// an entity into names.js to make your edits stick.
+
+const NEW_NAME_ENTITIES = {
+
+${body}
+
+};
+
+if (typeof module !== "undefined") module.exports = { NEW_NAME_ENTITIES };
+`;
+}
+
+$("saveReview").onclick = async () => {
+  const id = ($("f_id").value || (loadedDoc && loadedDoc.id) || "").trim();
+  if (!id) return alert("No document id — load a document first.");
+  if (!loadedDoc) return alert("Nothing loaded to save.");
+
+  const dirState = await useProjectDir(true);
+  if (dirState !== "ok")
+    return alert(dirState === "bad"
+      ? "Nothing was written — the remembered folder is not the project root. " +
+        "Reconnect it in the Write section and try again."
+      : "Review edits are written straight into the project folder, so it has to " +
+        "be connected. Use “Connect project folder…” in the Write section.");
+
+  // Keep whatever prose header the file carries; it is often the most useful
+  // thing in it and none of it is ours to rewrite.
+  let prefix = "";
+  try {
+    const src = await (await fetch(`documents/${id}/${id}.js?t=${Date.now()}`)).text();
+    const i = src.indexOf("module.exports");
+    if (i > 0) prefix = src.slice(0, i);
+  } catch (e) { /* new document */ }
+
+  try {
+    await writeInto(projectDir, ["documents", id], `${id}.js`, serialiseDoc(prefix));
+    if (Object.keys(mintedEntities).length)
+      await writeInto(projectDir, [], "names-new.js", namesNewText());
+  } catch (e) { return alert("Could not write: " + e.message); }
+
+  reviewDirty = false;
+  updateReviewActions();
+  statusEl.textContent = `saved documents/${id}/${id}.js` +
+    (Object.keys(mintedEntities).length ? " + names-new.js" : "") +
+    " — run node check-model.js && node generate.js";
+};
 
 // Re-read only the rows, so pasting the AI's output into the .js does not cost
 // a reload and a re-align.
 $("revReload").onclick = async () => {
   const id = ($("f_id").value || $("loadId").value).trim().replace(/\.js$/, "");
   if (!id) return alert("No document id — load a document first.");
+  if (reviewDirty && !confirm("You have unsaved review edits — names assigned, rows " +
+      "confirmed. Re-reading from disk throws them away.\n\nContinue?")) return;
   try {
     const src = await (await fetch(`documents/${id}/${id}.js?t=${Date.now()}`)).text();
     const body = src.slice(src.indexOf("module.exports")).replace(/^module\.exports\s*=\s*/, "");
     const doc = new Function("return " + body.replace(/;\s*$/, ""))();
     loadedDoc = Object.assign(loadedDoc || {}, doc);
+    docSwept = { fully: doc.sweptFully === true, for: doc.sweptFor || [] };
+    reviewDirty = false;
     lastModel = null;
     draw(); refreshReview();
     statusEl.textContent = `re-read ${(doc.rows || []).length} row(s) from documents/${id}/${id}.js`;
@@ -993,8 +1360,8 @@ ${pts.join(",\n")}
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: ${docSwept.fully ? "true" : "false"},
+  sweptFor: ${JSON.stringify(docSwept.for || [])},
 
 ${rowsSrc}};
 `;
@@ -1117,14 +1484,10 @@ $("connectDir").onclick = async () => {
 function documentStreets() {
   if (!img || coverage.length < 3) return null;
   const fit = G.fitAlignment(controlPoints());
-  const ring = G.coverageToWorld(fit, coverage);
-
-  const merged = new Map();
-  for (const s of G.segmentsInBounds(ways, ring)) {
-    if (!merged.has(s.name)) merged.set(s.name, []);
-    merged.get(s.name).push(...s.runs);
-  }
-  for (const [name, runs] of merged) merged.set(name, stitchRuns(runs));
+  const cov = coverageStreets();
+  if (cov.error) return null;
+  const ring = cov.ring;
+  const merged = new Map(cov.streets.map(s => [s.name, s.runs]));
 
   // Cross streets are what `from`/`to` are written in terms of, so they have
   // to come along. Restrict the search to a padded box around the coverage
@@ -1174,7 +1537,7 @@ function documentStreets() {
     });
   }
   streets.sort((a, b) => a.name.localeCompare(b.name));
-  return { ring, streets };
+  return { ring, streets, slivers: cov.slivers };
 }
 
 function streetsJsonText(id) {
@@ -1195,28 +1558,16 @@ function streetsJsonText(id) {
           "usable as `from`/`to` in a row.",
     coveragePx: coverage,
     coverageLl: d.ring.map(p => [+p[0].toFixed(6), +p[1].toFixed(6)]),
-    streets: d.streets
+    streets: d.streets,
+    // Streets that only clip the polygon by a few metres — a side street's
+    // stub at an intersection. Listed so it is clear they were considered and
+    // ruled out, not missed. Do not write rows for these.
+    excludedAsSlivers: d.slivers.map(s => ({ name: s.name, metres: +s.metres.toFixed(1) }))
   };
   // Coordinate pairs on one line each; the default pretty-printer puts every
   // number on its own line and the file becomes unreadable.
   return JSON.stringify(obj, null, 2)
     .replace(/\[\s*(-?[\d.]+),\s*(-?[\d.]+)\s*\]/g, "[$1, $2]");
-}
-
-// Existing name entities, so the AI pass can reuse an id instead of inventing
-// one. An invented id fails check-model.js and shows up in review as a
-// problem, which is a slow way to find out.
-function entityListMarkdown() {
-  const E = entities();
-  if (!E) return "";
-  const lines = Object.keys(E).sort().map(id => {
-    const sp = E[id].spellings[E[id].spellings.length - 1];
-    return `- \`${id}\` — ${sp.forms.join(", ")}`;
-  });
-  return `\n## Name entities that already exist\n\nUse one of these ids in \`name\` ` +
-         `when the label belongs to a lineage the project already knows about. If ` +
-         `none fits, leave \`name\` out and put the label in a comment — inventing ` +
-         `an id is worse than leaving the gap.\n\n${lines.join("\n")}\n`;
 }
 
 function taskMarkdown(id) {
@@ -1279,35 +1630,51 @@ ${streets.map(n => "- " + n).join("\n")}
    wrong confident answer is the worst outcome; an honest "two candidates, low
    confidence" is fine.
 
-## What to hand back
+## Where to put the answer
 
-Rows to paste into \`${id}.js\`, in this shape — all of them
-\`confirmed: false\`, since a human confirms them afterwards:
+**Edit \`${id}.js\` directly.** Replace its empty \`rows: []\` with the rows
+below. Do not put them in a new file: a separate file has to be merged in by
+hand, and the review tool only ever reads \`${id}.js\`. Leave the rest of that
+file alone — the coverage polygon and the alignment are a human's work.
+
+Rows take these shapes, all of them \`confirmed: false\`, since a human checks
+them afterwards:
 
 \`\`\`js
 // the plat labels this stretch of a modern street
-{ kind: "state", name: "<name-entity-id>", asWritten: "<label exactly as lettered>",
+{ kind: "state", asWritten: "<label exactly as lettered>",
   street: "<modern street>", from: "<cross street>", to: "<cross street>",
-  basis: "alignment", confirmed: false },
+  basis: "alignment", confirmed: false, note: "<why, if it is not obvious>" },
 
 // the sheet covers this stretch and shows no street there
 { kind: "silent", street: "<modern street>", from: "<cross street>", to: "<cross street>",
   confirmed: false },
 
 // drawn on the plat, no modern counterpart at all
-{ kind: "vanished", name: "<name-entity-id>", asWritten: "<label as lettered>",
+{ kind: "vanished", asWritten: "<label as lettered>",
   trace: [[x, y], [x, y]], basis: "alignment", confirmed: false }
 \`\`\`
 
-\`asWritten\` is verbatim ink, typos included. \`trace\` is scan pixels against
-the render above.
+**Do not write a \`name\` field.** You are reading one sheet; \`name\` is a
+claim about which naming *lineage* a label belongs to, and that can only be
+decided against the whole corpus — whether this "Figueroa" is the same Figueroa
+as the one three blocks east, or a different street that spells alike. Put the
+ink in \`asWritten\` and leave identity to the human review step, which has the
+project's name list in front of it.
+
+\`asWritten\` is verbatim ink, typos and abbreviations included. \`trace\` is
+scan pixels against the render above.
 
 \`street\` must be one of the names listed above, spelled exactly. \`from\` and
 \`to\` must be names from that street's \`crossings\` in \`${id}-streets.json\`,
 or \`null\` for the street's own end within the coverage — anything else is
 rejected downstream. If the stretch ends mid-block, give a point instead:
 \`from: { px: [x, y] }\`.
-${entityListMarkdown()}`;
+
+Put your reasoning in each row's \`note\` field rather than in comments around
+it: the tool rewrites this file when the document is re-saved, and \`note\` is
+data that survives while comments inside the object do not.
+`;
 }
 
 async function writeInto(dir, parts, name, text) {
@@ -1426,6 +1793,11 @@ $("save").onclick = async () => {
 };
 
 addEventListener("resize", draw);
+refreshEntityList();
+addEventListener("beforeunload", e => {
+  // Review edits live in memory until Save review; a reload would drop them.
+  if (reviewDirty) { e.preventDefault(); e.returnValue = ""; }
+});
 setMode("align");
 draw();
 </script>

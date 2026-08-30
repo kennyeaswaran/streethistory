@@ -6,6 +6,20 @@
 const fs = require("fs");
 const path = require("path");
 const { NAME_ENTITIES } = require("./names.js");
+// Entities minted in review mode live in a separate file so a browser tool
+// never writes into hand-authored names.js (see names-new.js). They are merged
+// here and validated identically; `pendingResearch` marks them as un-researched.
+let NEW_NAME_ENTITIES = {};
+try { ({ NEW_NAME_ENTITIES } = require("./names-new.js")); } catch (e) { /* none yet */ }
+for (const [id, e] of Object.entries(NEW_NAME_ENTITIES)) {
+  if (NAME_ENTITIES[id]) {
+    console.error(`ERROR: names-new.js "${id}" also exists in names.js — ` +
+                  `it has probably been researched and moved; delete it from names-new.js.`);
+    process.exitCode = 1;
+  }
+  NAME_ENTITIES[id] = { ...e, pendingResearch: true };
+}
+
 const { DOCUMENTS } = require("./documents/index.js");
 
 let errors = 0;
@@ -127,6 +141,14 @@ for (const doc of DOCUMENTS) {
       if (row.confirmed === false)
         err(d, `sweptFully:true but rows[${i}] is still an unconfirmed proposal (§5.5)`);
 
+  // A row still marked `confirmed: false` is a proposal nobody has checked;
+  // holding it to the full contract would mean the checker fails on every
+  // fresh AI pass, which trains people to ignore it. Warn instead — and note
+  // that sweptFully:true is already blocked while any proposal remains, so an
+  // incomplete proposal can never reach the generated data unnoticed.
+  const proposalOrErr = (row, r, msg) =>
+    row.confirmed === false ? warn(r, "proposal:", msg) : err(r, msg);
+
   for (const [i, row] of (doc.rows || []).entries()) {
     const r = `${d}.rows[${i}]`;
     if (!["state", "change", "annotation", "silent", "vanished"].includes(row.kind)) { err(r, "unknown kind:", row.kind); continue; }
@@ -138,7 +160,9 @@ for (const doc of DOCUMENTS) {
         err(r, "vanished row needs a trace of at least 2 points");
       else if (!row.trace.every(pt => Array.isArray(pt) && pt.length === 2 && pt.every(Number.isFinite)))
         err(r, "vanished trace points must be [x, y] scan pixels");
-      if (!resolve(row.name)) err(r, "name id does not resolve:", row.name);
+      if (row.name == null) proposalOrErr(row, r,
+        "vanished row has no name id — identity is assigned in review (§5.5)");
+      else if (!resolve(row.name)) err(r, "name id does not resolve:", row.name);
       if (!row.asWritten) err(r, "vanished row missing asWritten (verbatim ink — §5.1)");
       if (row.street) err(r, "vanished row must not name a modern street — that is what makes it vanished");
       continue;
@@ -150,7 +174,16 @@ for (const doc of DOCUMENTS) {
       if (row.asWritten) err(r, "silent row must not carry asWritten");
     }
     if (row.kind === "state") {
-      if (doc.type !== "osm" && !resolve(row.name)) err(r, "name id does not resolve:", row.name);
+      // An unconfirmed proposal is allowed to have no `name` yet. Identity is a
+      // claim about a naming LINEAGE, which needs the whole corpus in view, so
+      // the AI pass is told to leave it out and record the ink in asWritten
+      // instead; review is where it gets assigned. Anything not marked as a
+      // proposal must still resolve.
+      if (doc.type !== "osm") {
+        if (row.name == null) proposalOrErr(row, r,
+          "state row has no name id — identity is assigned in review (§5.5)");
+        else if (!resolve(row.name)) err(r, "name id does not resolve:", row.name);
+      }
       if (doc.type !== "osm" && !row.asWritten) err(r, "state row missing asWritten (verbatim ink — §5.1)");
       if (row.attests && !ATTESTS.includes(row.attests)) err(r, "bad attests override:", row.attests);
     }
@@ -211,6 +244,13 @@ for (const [form, owners] of formOwners) {
   if (new Set(labels).size < labels.length)
     err(`form "${form}"`, "shared by", uniqIds.join(", "), "— disambiguations do not produce distinct labels");
 }
+
+// Entities minted in review mode are usable but un-researched. Named here so
+// they stay visible: an entry in names-new.js is a to-do, not a resting place.
+const pending = Object.entries(NAME_ENTITIES).filter(([, e]) => e.pendingResearch).map(([id]) => id);
+if (pending.length)
+  warn("names-new.js", `${pending.length} entit${pending.length === 1 ? "y" : "ies"} awaiting ` +
+       `research (namesake, sources), then a move into names.js:`, pending.join(", "));
 
 if (errors) { console.error(`\n${errors} error(s).`); process.exit(1); }
 console.log(`Model checks pass: ${Object.keys(NAME_ENTITIES).length} entities, ` +

@@ -5,9 +5,9 @@ the design reasoning is in TOOL-SPEC.md and the data contract in MODEL-SPEC.md.
 
 **Phase 1** is align the scan, draw the coverage polygon, fill the header,
 save. Rows — which street was called what — come from the AI pass in between.
-**Phase 2 is the Review mode**, which today *shows* you what those rows claim
-but does not yet let you confirm or correct them; corrections still go into
-the `.js` by hand.
+**Phase 2 is the Review mode**: it draws what those rows claim on the sheet
+they were read from, lets you give each one a name entity, tick it off, and
+mark the document swept.
 
 ---
 
@@ -209,11 +209,13 @@ with its coverage drawn and no streets identified is a complete, correct
 intermediate state, not an unfinished one. The rest of the sequence:
 
 1. **Phase 1** — align, bound, save the header.
-2. **The AI pass** — drag `documents/<id>/` into an assistant; `TASK.md` in it
-   is the brief, and it already restates the traps and the row shapes. What
-   comes back is rows marked `confirmed: false`. Paste them into the `rows: []`
-   array in `documents/<id>/<id>.js`. (`overlay-trial/INSTRUCTIONS-v2.md` and
-   `ANSWER-KEY.md` are the benchmark for deciding which assistant to trust
+2. **The AI pass** — drag `documents/<id>/` into an assistant. `TASK.md` in it
+   is the whole brief: the traps, the row shapes, and an instruction to edit
+   `<id>.js` **directly** rather than hand back a separate file to be merged.
+   `<id>-streets.json` beside it carries the modern street geometry in render
+   pixels, so the folder is self-sufficient. What comes back is rows marked
+   `confirmed: false` and no `name` field. (`overlay-trial/INSTRUCTIONS-v2.md`
+   and `ANSWER-KEY.md` are the benchmark for deciding which assistant to trust
    with this.)
 3. **Review** — read below.
 
@@ -233,37 +235,72 @@ scan, each in the colour of what the rows say about it:
 | **red** | **unaccounted** — in coverage, and no row says anything |
 | purple | drawn on the plat with no modern counterpart (`vanished`) |
 
-Solid means authored or confirmed; **dashed means proposed** — a
-`confirmed: false` row nobody has checked. The plat's own label is lettered
-along each stretch, so you can read the AI's claim against the ink underneath
-it without opening the file.
+Solid means confirmed; **dashed means proposed** — a `confirmed: false` row
+nobody has checked. Nothing is lettered on the map on purpose: the point is to
+compare a coloured line against the ink underneath it, and writing the plat's
+own label over its own drawing hides the thing you are judging.
 
-Click any coloured street for the rows behind it in full — entity id,
-`asWritten`, extent, `attests`, `basis`, note. The panel on the left lists every
-street in coverage with unaccounted ones first, and ends with a **"Wants a
-look"** section: rows naming a street that is not in the coverage polygon, name
-entity ids that are not in `names.js`, cross streets that do not actually meet
-the street they are given as an extent for. Those are the errors worth catching
-before anything else, because each one means a row that will not survive
-`node check-model.js`.
+**Click a street** and the popup shows every field of every row on it, exactly
+as the file has them — not a summary, because a field a summary omitted would
+be a field nobody ever checks.
 
-Red is the number that matters. `sweptFully: true` says every street in
-coverage has been accounted for, so while anything is still red the document
-is not swept — and the tool will not let you claim otherwise, because it does
-not write that field at all yet.
+### Giving a row its name entity
 
-**"Re-read rows from disk"** re-fetches just the rows from the document file,
-so the loop is: paste the AI's rows into the `.js`, press the button, look.
-The alignment and coverage stay exactly where they are.
+The AI pass is told *not* to fill in `name`. That is deliberate: `name` says
+which naming **lineage** a label belongs to, and that can only be decided
+against the whole corpus — whether a plat's "Figueroa" is the same Figueroa as
+the one three blocks east or a different street that spells alike. One sheet
+does not contain the answer. So the assistant records the ink in `asWritten`
+and identity is assigned here, where the name list is in front of you.
 
-### What Review deliberately does not do
+In the popup, each `state` or `vanished` row gets a **name** box. Type and it
+matches on both id and display name (`3rd` and `third` both find
+`third-street`). Only ids that exist are accepted.
 
-There is no confirm button and no editing. Correcting a row means editing
-`documents/<id>/<id>.js` and pressing Re-read. That is on purpose for now: an
-edit that silently rewrites what a document says is a much more dangerous
-operation than moving a scan around, and it wants the same care the alignment
-got. When it is built, the rule from TOOL-SPEC §7 still holds — confirming a
-row must never be easier than reading it.
+**＋ new** mints one. It asks for an id and a display name and writes the
+entity to **`names-new.js`**, not `names.js` — a browser tool has no business
+writing into the file that holds the namesake research. Entities there work
+everywhere `names.js` entities do, and `check-model.js` lists them every run as
+awaiting research. When you have looked one up, move it into `names.js` and
+delete it from `names-new.js`; **the tool rewrites that file whole on every
+review save**, so edits to entities still listed there will be lost.
+
+### Confirming, and the sweep
+
+**Confirm this row** removes `confirmed: false`. Until then, `generate.js`
+holds the row back entirely — a proposal is not evidence, and one that reached
+the map would make review optional in practice. `generate` says how many it is
+holding on each run.
+
+A row cannot be confirmed without a name entity and without `asWritten`.
+
+**Mark fully swept** sets `sweptFully: true`, which is the strongest claim the
+model makes: it licenses arguing from this document's *silence*. So it is a
+gate rather than a checkbox, and it says in words what is missing — any street
+still unaccounted, any row still proposed, any row without a name. When it goes
+through it also fills `sweptFor` with the streets in coverage.
+
+**Save review** writes `documents/<id>/<id>.js` and, if you minted any,
+`names-new.js`. Nothing is written until you press it, and reloading the page
+with unsaved edits will warn you. Then, as always, `node check-model.js` and
+`node generate.js`.
+
+### Slivers
+
+A street can clip the coverage polygon by a few metres — the stub of a side
+street leaving an intersection just inside the boundary. Anything under 25 m,
+shorter than the junction it leaves from, is **not** treated as in bounds: no
+plat could draw a distinguishable corridor there, and counting it would leave a
+permanently red street that can never be resolved. The panel lists what was
+excluded and how long it was, so it is clear they were ruled out rather than
+missed.
+
+### What Review still does not do
+
+It cannot change a row's `street` or extent. If the AI matched a corridor to
+the wrong street, that is an edit to `documents/<id>/<id>.js` followed by
+**Re-read rows from disk** — which discards unsaved review edits, so save
+first.
 
 ## When something looks wrong
 
@@ -284,3 +321,7 @@ row must never be easier than reading it.
 | Review mode is empty / all red | the document has no rows yet — that is what the AI pass produces |
 | "Re-read rows from disk" errors | the `.js` no longer parses; a pasted row is probably missing a comma or a brace |
 | A row you pasted does not appear | check "Wants a look" — its `street` is probably misspelled or outside coverage |
+| A street you expect is missing from Review | it may be a sliver — the panel lists what was excluded under the street list |
+| "Save review" is greyed out | there are no unsaved edits |
+| Review edits vanished | "Re-read rows from disk" discards them; save first |
+| `check-model` warns about names-new.js | those entities still need their namesake researched and moving into `names.js` |
