@@ -263,8 +263,16 @@ entity to **`names-new.js`**, not `names.js` — a browser tool has no business
 writing into the file that holds the namesake research. Entities there work
 everywhere `names.js` entities do, and `check-model.js` lists them every run as
 awaiting research. When you have looked one up, move it into `names.js` and
-delete it from `names-new.js`; **the tool rewrites that file whole on every
-review save**, so edits to entities still listed there will be lost.
+delete it from `names-new.js`.
+
+Two things to know about that file. **The tool rewrites it whole on every
+review save** — it re-reads it from disk first, so a hand edit made while the
+page was open is merged rather than lost, but an entity you are actively
+working on is safer moved into `names.js` first. And what it writes about
+provenance goes in **`internalNote`**, never `note`: `note` is *published* —
+the generator prints it as a former name's origin line on the public site —
+while `internalNote` is not rendered anywhere. Identity decisions, dead-end
+searches and who decided what all belong in `internalNote`.
 
 ### Confirming, and the sweep
 

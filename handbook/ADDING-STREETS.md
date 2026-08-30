@@ -189,6 +189,20 @@ model, is eventually most streets — are split:
   distinct from grey = not yet researched at all). The checker enforces that
   `namedAfter: null` and "unknown" travel together. Keep sources as the record
   of what WAS found, and use the note for clearly-labeled leads.
+- **internalNote** — everything that is *about the work* rather than about the
+  street. `note` is published: for a former name with no `namedAfter`, the
+  generator prints it as that name's origin line. So identity decisions and who
+  made them, which sources were checked and came up empty, why two similarly
+  spelled entities were kept apart — all of that goes in `internalNote`, which
+  nothing renders. A recorded negative result is worth keeping; it stops the
+  next pass repeating the search. The checker warns when a `note` reads like a
+  working note.
+- **Entities minted by the review tool** arrive in **`names-new.js`**, not
+  here, marked `pendingResearch`, and `check-model.js` lists them every run.
+  Researching one means filling in `namedAfter` / `categories` / `sources` and
+  **moving it into `names.js`**, then deleting it from `names-new.js`. Do the
+  move before doing real work on the entry: the tool rewrites that file on
+  every review save.
 
 ## Street-first passes (when a specific street needs answering)
 

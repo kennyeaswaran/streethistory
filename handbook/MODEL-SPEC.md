@@ -135,8 +135,12 @@ Record a suspicion with `possiblySameAs` rather than acting on it.
       url: "https://lastreetnames.com/street/figueroa-street/" }
   ],
   disputed: false,                  // with the "disputed" category, as today
-  note: null,                       // about the NAMING CLAIM only — historiography,
-                                    // contested attributions, negative results
+  note: null,                       // PUBLIC. About the NAMING CLAIM only —
+                                    // historiography, contested attributions,
+                                    // negative results
+  internalNote: null,               // NOT public. Working notes: identity
+                                    // decisions and who made them, what was
+                                    // searched and not found, provenance
   possiblySameAs: null,
   aliases: []                       // ids merged into this one; never reused
 },
@@ -169,6 +173,46 @@ spelling period and this whole mechanism sits idle.
 whether Georgia reverting in 1897 resumes the old entity or starts a new one.
 Written this way it assumes resumption. It is a good illustration of where
 that decision bites, and should not be read as the decision having been made.
+
+### `note` is published; `internalNote` is not
+
+`note` reaches readers. When a **former** name has no `namedAfter`, the
+generator prints the note as that name's origin line on the street's page
+(§6.6) — so a note is a sentence a reader should see, in the register of the
+rest of the site.
+
+Everything else about an entity goes in `internalNote`, which nothing renders:
+which identity decision was taken and by whom, which sources were checked and
+came up empty, that an entity was minted by the review tool and from what.
+That material is worth keeping — a recorded negative result stops the next
+pass repeating the search — but it is working apparatus, not history.
+
+Getting this backwards is easy and was done: "Kenny: worth a look" and a
+paragraph comparing two Hobart Streets both reached the public site through
+`note`. `check-model.js` now warns when a `note` reads like a working note.
+
+### Entities minted during review: `names-new.js`
+
+Review (TOOL-SPEC §4) has to mint an entity the moment a plat shows a label
+nobody has entered, and a browser tool should not write into the file holding
+the project's namesake research. So new entities land in **`names-new.js`**,
+exported as `NEW_NAME_ENTITIES` and merged by `check-model.js` and
+`generate.js` exactly as if they were in `names.js`, with `pendingResearch`
+set. An id may not appear in both files.
+
+The lifecycle: research the namesake, fill in `namedAfter` / `categories` /
+`sources`, move the entity into `names.js`, delete it from `names-new.js`.
+Anything still sitting in `names-new.js` is a to-do list, and `check-model.js`
+names them on every run. The tool rewrites the file whole on each review save
+— re-reading it from disk first, so hand edits are merged rather than lost —
+which is another reason to move an entity out before doing real work on it.
+
+**Identity cannot be deferred the way namesakes can.** An absent `namedAfter`
+says "not researched", which is true and harms nothing. A wrong identity
+silently asserts that two namings are one lineage, and the generator will bind
+a modern street to the entity by name alone. So decide identity at merge time
+— including against modern streets that merely spell alike — and leave the
+namesake for later.
 
 ### Two spellings at once, and two renderings of one spelling
 
@@ -327,6 +371,30 @@ Required, and load-bearing: without it, "no street drawn here" is
 indistinguishable from "we never looked at this part of the sheet," and the
 "latest document showing the segment did **not** yet exist" color scheme (§8)
 is unimplementable.
+
+**What counts as inside it** is decided in metres of ground, not in vertices.
+A modern way is clipped at the polygon **boundary**, not at its last vertex
+inside — OSM records a straight street as two points hundreds of metres apart,
+so vertex testing threw away everything between the last inside vertex and the
+edge, and missed entirely a way that crossed with no vertex inside.
+
+Two escape hatches, for the two ways a hand-traced boundary goes wrong, and
+they are not interchangeable:
+
+- **Slivers, handled automatically.** A street whose in-coverage run is
+  shorter than **25 m** — less than the width of the junction it leaves from —
+  is not in bounds at all. No plat could draw a distinguishable corridor
+  there, and counting it leaves a stretch that can never honestly be resolved.
+  The excluded names and their lengths are reported, so they read as ruled out
+  rather than missed.
+- **`coverageExcept: ["Dawson Street", …]`, authored.** Ground the polygon
+  strays onto that the document does not inform about, beyond what the sliver
+  rule catches. This is a claim about the POLYGON. A `silent` row is a claim
+  about the MAP — that the document covers this ground and draws nothing on it
+  — and only the second licenses arguing that no street was there. Conflating
+  them turns a traced boundary's slop into a false historical claim, so the
+  review tool offers both and chooses neither. `check-model.js` rejects a
+  document that both excludes a street and carries rows for it.
 
 ### 4.5 Two different completenesses, and the half-entered sheet
 
@@ -506,6 +574,18 @@ and merges adjacent intervals with identical timelines (§6.1), so a mid-block
 cut either survives because the timelines differ or dissolves because they
 don't. The checker must accept both forms.
 
+**`from` and `to` follow canonical order, not the order you noticed them in.**
+`from` is the **west** end of an east-west street and the **south** end of a
+north-south one; `to` is the other. `null` means the street's own end on that
+side. Written backwards, a row can resolve to an interval of zero length —
+`from: null, to: X` where X sits at the street's own end covers nothing at
+all — and that used to produce no segment, no history, and no complaint. The
+generator now reports any row whose ends resolve to the same point.
+
+Worth knowing why the review tool cannot catch this: it clips by nearest
+vertex and is order-agnostic, so both orderings look identical there. Only the
+generator's scalar projection can see the difference.
+
 ### 5.5 `confirmed` and `note` on every row
 
 `confirmed: false` marks a **proposal** — generated by the AI pass
@@ -518,6 +598,25 @@ this field existed are not retroactively suspect.
 A document may not be marked `sweptFully` while any row is explicitly
 `confirmed: false`. The `osm` pseudo-document is exempt: it is derived at load
 time, read by nobody, and tertiary anyway (§4.1).
+
+**A proposal does not reach the map.** `generate.js` holds back every row
+still marked `confirmed: false` and says how many on each run. A proposal that
+generated a public claim would make review optional in practice; review is
+where a proposal becomes evidence, by having the flag removed.
+
+**A proposal may have no `name`.** Identity is a claim about a naming
+lineage, and one sheet does not contain the answer — whether a plat's
+"Figueroa" is the same Figueroa as the one three blocks east cannot be read
+off that plat. So the AI pass is told to leave `name` out and record the ink
+in `asWritten`, and identity is assigned in review against the whole name
+list. `check-model.js` treats a nameless proposal as a warning; a row that is
+not marked as a proposal must still resolve, and a row cannot be confirmed
+without one.
+
+**Silence is accounted in metres, not in street names.** A street may be named
+along one stretch and unaccounted along the next, so `sweptFully` requires
+that no stretch of any in-coverage street is left un-spoken-for, above the
+same 25 m floor as §4.4's sliver rule.
 
 Every row may also carry `note` — free text about *this row*. It exists so
 the document tool can round-trip a file without eating anything: a caveat

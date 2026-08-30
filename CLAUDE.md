@@ -46,6 +46,8 @@ or newspaper report each, many streets at once).
   *.js *.py                     the runnable pieces: generate, the checkers,
                                 doc-geometry, intersect, georef
   names.js  streets-data.js     the authored name layer; the live map data
+  names-new.js                  entities minted in the tool, awaiting research
+                                and a move into names.js (rewritten by the tool)
   handbook/                     every guide, spec and standing decision
   documents/<id>/               ONE FOLDER PER DOCUMENT — its .js, its
                                 alignment, its render, its scan, its Part A.
@@ -163,3 +165,17 @@ can type each into the map's search box and eyeball the popup.
   `node check-model.js`; diff a street with `node diff-street.js "3rd Street"`.
   `preview.html` renders the generated data and is the future index.html —
   a standing file, edited directly, NOT regenerated from index.html.
+- **The document tool is built end to end** (2026-08-30): align → coverage →
+  drag `documents/<id>/` into an assistant → review, name, confirm, sweep.
+  handbook/DOCUMENT-TOOL-GUIDE.md is the how-to, handbook/TOOL-SPEC.md the
+  design. Three test suites, and they see different things: `node
+  test-doc-geometry.js` (pure geometry), `node test-review.js` (the review
+  model, extracted from the page rather than copied so it cannot drift), and
+  `node browser-test.js` (the real page in Playwright — which is NOT installed
+  on Kenny's machine, so that one runs in the assistant's sandbox). Two bugs
+  that shipped were invisible to anything but the third: a stylesheet rule that
+  hid the review panel and every popup, and stale indices that made buttons
+  silently do nothing. **If you change the tool, run the browser suite.**
+- **`note` on a name entity is PUBLIC**; working notes go in `internalNote`
+  (MODEL-SPEC §3). This was got backwards once and put "Kenny: worth a look"
+  on the site.

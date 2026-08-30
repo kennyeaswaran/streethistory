@@ -60,6 +60,25 @@ the modern segments inside it.
 Not part of the tool; the tool's job is to make it possible and to consume the
 result.
 
+**What is exported, as built** (the per-street overlay images below remain the
+plan; this is what phase 1 writes today). Saving a document produces a folder
+meant to be handed over whole:
+
+| file | what it is for |
+|---|---|
+| `<id>-100dpi.png` | the sheet, at the resolution every pixel coordinate is measured against |
+| `<id>.js` | the document — **the AI pass edits this directly**, replacing `rows: []` |
+| `<id>-alignment.json` | the human's control points |
+| `<id>-streets.json` | every modern street inside coverage, **in render pixels** as well as lat/lng, with its intersections — and the names excluded as slivers or overshoot, so they read as ruled out rather than missed |
+| `TASK.md` | the brief: the traps, the row shapes, the closed vocabulary for `street` / `from` / `to` |
+
+`<id>-streets.json` is what makes the folder self-sufficient: without modern
+geometry in the scan's own pixel space, an assistant has a picture and no way
+to know where anything modern is, which is the one thing the task turns on.
+`TASK.md` is regenerated on every save, so it must never carry answers — it is
+handed to the system being tested. It says to write reasoning into each row's
+`note`, since the tool rewrites the file and comments do not survive.
+
 **Export**: for each modern street with geometry inside the coverage polygon,
 one image with that street drawn in bold red over the scan and the rest of the
 network in faint grey. This is `georef.py overlay-one` driven from the stored
@@ -84,7 +103,12 @@ unchanged names right and the ★ rows wrong is name-matching, not reading
 geometry.
 
 **Everything returned lands `confirmed: false`** (§5.5). Proposals are never
-data until a human says so.
+data until a human says so, and `generate.js` holds them back from the map
+entirely until the flag is gone.
+
+**And nothing returned carries a `name`.** The pass is told to leave it out and
+put the ink in `asWritten`: identity needs the whole corpus in view, not one
+sheet (MODEL-SPEC §5.5). It is assigned in review.
 
 ## 4. Phase 2 — review, correct, confirm
 
@@ -93,14 +117,24 @@ segments inside the coverage polygon, coloured:
 
 | colour | meaning |
 |---|---|
-| identified | a `state` row covers this segment |
+| identified | a `state` row covers this stretch |
 | no counterpart | a `silent` row covers it — the map shows nothing here |
-| unaccounted | in bounds, no row either way |
+| unaccounted | in bounds, and no row speaks for it |
 | vanished | a `vanished` trace: drawn pavement with no modern successor |
 
-Confirmed rows render in a stronger tone of their colour, so unconfirmed work
-is findable at a glance. Ghost traces sit in place on the scan; clutter is
-managed by zooming, not by hiding them.
+Proposals render dashed, so unconfirmed work is findable at a glance. Ghost
+traces sit in place on the scan; clutter is managed by zooming, not by hiding
+them. Nothing is lettered on the map: the point of the mode is to compare a
+coloured line against the ink beneath it, and writing the plat's own label
+over its own drawing hides the thing being judged.
+
+**Unaccounted is a stretch, not a street.** A document can name one stretch of
+a street and say nothing about the next, and that is the normal case. Colour
+by street would paint the whole of it "identified" the moment one row existed
+— which is what happened, and the missing 152 m of Douglas Street on
+MR006-138 sat invisible as background until this was fixed. What no row speaks
+for is computed per run in metres and drawn over exactly the part that is
+missing (`runGaps`, §6).
 
 **Clicking a segment** opens a popup showing everything in its row — modern
 name and bounds, the name entity and its display form, `asWritten`, `basis`,
@@ -120,23 +154,32 @@ popup offers:
   cross-street when one is near, otherwise store the point in scan pixels
   (§5.4).
 - **Mark as silent** — flip a `state` row to a `silent` one.
+- **On an unaccounted stretch, two offers and no default**: *sheet shows
+  nothing here*, which writes a `silent` row with the extents worked out by
+  snapping; or *outside coverage*, which records the street in
+  `coverageExcept`. They are different claims and only the first is evidence
+  (MODEL-SPEC §4.4).
 - **Set `basis` and the `attests` override** — whether this map *dedicates*
   the street (`planned-on`) or merely draws one already there (`planned-by`)
   is a judgement best made looking at the plat.
 
-**Tracing a vanished street**: draw a polyline along the drawn corridor,
-attach an entity and `asWritten`. Stored in scan pixels (§4.6), so a later
-re-alignment moves the ghost with the map.
+**Tracing a vanished street**: draw a polyline along the drawn corridor and
+type `asWritten` verbatim. Stored in scan pixels (§4.6), so a later
+re-alignment moves the ghost with the map. It lands `confirmed: false` with no
+entity, and the popup opens on it — an unnamed trace cannot be confirmed and
+blocks the sweep, which is how it avoids being forgotten.
 
 **Export notes for the next AI pass**: rather than retyping, the tool emits
 the unconfirmed and rejected rows with the human's comments, formatted as a
 prompt for another round. That is what makes phase 3–4 alternate rather than
 being one-shot.
 
-**The sweep gate**: `sweptFully` may be set only when no segment is
-unaccounted and every row is confirmed. Setting it is what licenses negative
-inference from this document (§4.5), so the tool should say so at the moment
-of ticking it rather than treating it as a status field.
+**The sweep gate**: `sweptFully` may be set only when no *stretch* is
+unaccounted, every row is confirmed, and every naming row has an entity.
+Setting it is what licenses negative inference from this document (§4.5), so
+it is a gate that states what is still missing — in metres and street names —
+rather than a status field. It fills `sweptFor` with the streets in coverage
+when it goes through.
 
 ## 5. Reading and writing `documents/<id>.js`
 
@@ -169,16 +212,39 @@ they are where silent wrongness would hide:
   Round-tripping a point must return it within a pixel.
 - `pointInPolygon` — is a coordinate inside coverage.
 - `segmentsInBounds` — which geometry ways intersect the coverage polygon,
-  and where they enter and leave it.
+  and where they enter and leave it. Clipped at the **boundary**: a way whose
+  next vertex is outside must still contribute the part that is inside, and a
+  way that crosses with no vertex inside must not vanish.
+- `stitchRuns` — OSM splits a street into many ways; join the in-bounds pieces
+  back into continuous polylines before measuring or clipping anything.
+- `runGaps` — given a run and the ranges rows speak for, the stretches nothing
+  speaks for, above the 25 m floor. This is what makes the sweep gate a claim
+  about ground rather than about street names.
+- `zoomView` — zoom about a fixed screen point. A sign error here does not look
+  like a broken zoom; it looks like the map scrolling away under you.
 - `nearestCrossStreet` — given a point on street X, the nearest street
   intersecting X, and the distance. This is `intersect.js`'s job in the
   browser; reuse its logic rather than reimplementing.
 - `snapOrPoint` — cross-street name if one is within tolerance, else a pixel
   point (§5.4).
 
-Test with fixtures from the real data: MR066-035's committed alignment, and
-known intersections (`node intersect.js "3rd Street" "Bixel Street"`) as
-expected values for the snapping.
+Test with fixtures from the real data: MR066-035's committed alignment (frozen
+in `fixtures/`, so a document being edited cannot break the tests), and known
+intersections (`node intersect.js "3rd Street" "Bixel Street"`) as expected
+values for the snapping.
+
+Three suites, and they catch different things:
+
+| suite | what it runs | what it can see |
+|---|---|---|
+| `node test-doc-geometry.js` | `doc-geometry.js` | the pure geometry: alignment round-trips, polygon clipping, snapping |
+| `node test-review.js` | the review model, **extracted from `document-tool.html`** rather than copied, so it cannot drift | gaps, the confirm and sweep gates, extents, slivers |
+| `node browser-test.js` | the real page in a real browser (Playwright) | everything the other two structurally cannot: whether a panel is on screen, whether a click reaches it, whether a button does anything |
+
+The third exists because two shipped bugs were invisible to unit tests — a
+stylesheet rule that made the review panel and every popup `display:none`, and
+a stale index that made the gap buttons silently do nothing. Playwright is not
+installed on Kenny's machine; that suite runs in the assistant's sandbox.
 
 ## 7. What the tool must not do
 
@@ -187,9 +253,17 @@ expected values for the snapping.
 - **Promote `asWritten` into a name's spellings.** That is a judgement about
   what was a real form versus a scribal error (§5.1).
 - **Infer dates.** Dates come from the document header and the generator.
-- **Write `names.js`.** New entities created in the tool are emitted as a
-  patch for review, not merged silently into the authored file.
-- **Set `sweptFully` on its own**, ever.
+- **Write `names.js`.** New entities go to `names-new.js`, quarantined and
+  marked `pendingResearch` (MODEL-SPEC §3); the authored file stays a human's.
+  The tool re-reads `names-new.js` from disk before rewriting it, so a hand
+  edit made while the page was open is merged rather than overwritten.
+- **Set `sweptFully` on its own**, ever. A human presses it, and only once
+  nothing in coverage is unaccounted, no proposal is outstanding, and every
+  naming row has an entity — the tool states what is missing rather than
+  choosing for you.
+- **Decide whether a stretch is `silent` or outside coverage.** Both are
+  offered on an unaccounted stretch and neither is default: one is a claim
+  about the map, the other about the polygon (MODEL-SPEC §4.4).
 
 ## 8. First subject: MR066-035
 
