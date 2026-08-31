@@ -140,6 +140,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -159,6 +160,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -183,6 +185,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -207,6 +210,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -236,6 +240,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -260,6 +265,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -284,6 +290,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -303,6 +310,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -322,6 +330,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -341,6 +350,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -360,6 +370,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -384,6 +395,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -408,6 +420,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -432,6 +445,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -451,6 +465,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -470,6 +485,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -494,6 +510,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -518,6 +535,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -543,6 +561,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -568,6 +587,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -595,6 +615,7 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
         },
         "note": null,
+        "attested": true,
         "categories": [
           "number"
         ],
@@ -623,6 +644,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -648,6 +670,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -687,6 +710,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "number"
         ],
@@ -744,6 +768,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "number",
           "renamed"
@@ -777,6 +802,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -801,6 +827,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -825,6 +852,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -873,6 +901,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "number",
           "renamed"
@@ -905,6 +934,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -944,6 +974,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "number"
         ],
@@ -976,6 +1007,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -1008,6 +1040,7 @@ const STREET_DATA = {
         },
         "built": "not yet researched",
         "note": null,
+        "attested": true,
         "categories": [
           "number"
         ],
@@ -1033,7 +1066,7 @@ const STREET_DATA = {
         "to": "Alameda Street"
       },
       {
-        "label": "beyond Alameda (Georgia St)",
+        "label": "Alameda to Santa Fe (Georgia St)",
         "name": "3rd Street",
         "entityId": "third-street",
         "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
@@ -1054,7 +1087,7 @@ const STREET_DATA = {
             "entityId": "georgia-east",
             "formInForce": "Georgia Street",
             "how": "origin",
-            "origin": "labeled “Georgia St” on the 1875 Map of the Thomas Tract, sheet 2 (M.R. 3-61) and the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
+            "origin": "labeled “Georgia St” on the 1875 Map of the Thomas Tract, sheet 2 (M.R. 3-61), the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
           {
@@ -1069,6 +1102,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "number",
           "renamed"
@@ -1096,149 +1130,8 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2381,
-        "maxLng": -118.2376,
-        "from": "Alameda Street",
-        "to": {
-          "px": [
-            633,
-            1311
-          ]
-        }
-      },
-      {
-        "label": "part of (Georgia St)",
-        "name": "3rd Street",
-        "entityId": "third-street",
-        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1887",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-        },
-        "built": {
-          "text": "already “Georgia St” by May 19, 1875 (Map of the Thomas Tract, sheet 2 (M.R. 3-61))",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
-        },
-        "nameHistory": [
-          {
-            "from": "by 1875",
-            "until": "?",
-            "name": "Georgia Street",
-            "entityId": "georgia-east",
-            "formInForce": "Georgia Street",
-            "how": "origin",
-            "origin": "labeled “Georgia St” on the 1875 Map of the Thomas Tract, sheet 2 (M.R. 3-61) and the 1887 Mills and Wicks Extension map, sheet 1 {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "3rd Street",
-            "entityId": "third-street",
-            "formInForce": "3rd Street",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "categories": [
-          "number",
-          "renamed"
-        ],
-        "formerCategories": [
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Recorded map: Map of the Thomas Tract, being a portion of the Johnson and Mott Tract, M.R. 3-60/61 (recorded May 19, 1875, at the request of Milton Thomas; J.W. Gillette, County Recorder) (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
-          },
-          {
-            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-          }
-        ],
-        "minLng": -118.2376,
-        "maxLng": -118.235,
-        "from": {
-          "px": [
-            633,
-            1311
-          ]
-        },
-        "to": {
-          "px": [
-            778,
-            120
-          ]
-        }
-      },
-      {
-        "label": "beyond Santa Fe (Georgia St)",
-        "name": "3rd Street",
-        "entityId": "third-street",
-        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
-        "namedAfterLink": null,
-        "planned": null,
-        "built": {
-          "text": "already “Georgia St” by May 19, 1875 (Map of the Thomas Tract, sheet 2 (M.R. 3-61))",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
-        },
-        "nameHistory": [
-          {
-            "from": "by 1875",
-            "until": "?",
-            "name": "Georgia Street",
-            "entityId": "georgia-east",
-            "formInForce": "Georgia Street",
-            "how": "origin",
-            "origin": "labeled “Georgia St” on the 1875 Map of the Thomas Tract, sheet 2 (M.R. 3-61) {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "3rd Street",
-            "entityId": "third-street",
-            "formInForce": "3rd Street",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "categories": [
-          "number",
-          "renamed"
-        ],
-        "formerCategories": [
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Recorded map: Map of the Thomas Tract, being a portion of the Johnson and Mott Tract, M.R. 3-60/61 (recorded May 19, 1875, at the request of Milton Thomas; J.W. Gillette, County Recorder) (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
-          }
-        ],
-        "minLng": -118.235,
         "maxLng": -118.2326,
-        "from": {
-          "px": [
-            778,
-            120
-          ]
-        },
+        "from": "Alameda Street",
         "to": "Santa Fe Avenue",
         "gapAfter": true
       },
@@ -1251,6 +1144,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -1280,6 +1174,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": true,
         "categories": [
           "unresearched"
         ],
@@ -1327,6 +1222,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "unresearched",
           "renamed"
@@ -1364,6 +1260,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -1388,6 +1285,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -1409,7 +1307,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Central (original 4th St)",
+        "label": "part of (original 4th St)",
         "name": "4th Street",
         "entityId": "fourth-street",
         "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
@@ -1427,11 +1325,12 @@ const STREET_DATA = {
             "entityId": "fourth-street",
             "formInForce": "4th Street",
             "how": "origin",
-            "origin": "labeled “Fourth St” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
+            "origin": "labeled “Fourth St” on the 1888 Wolfskill Orchard Tract (sheets 4, 5) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "number"
         ],
@@ -1447,44 +1346,13 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2434,
-        "maxLng": -118.2397,
+        "maxLng": -118.2391,
         "from": {
           "px": [
             967,
             567
           ]
         },
-        "to": "Central Avenue"
-      },
-      {
-        "label": "beyond Central",
-        "name": "4th Street",
-        "entityId": "fourth-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 4th Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLng": -118.2397,
-        "maxLng": -118.2391,
-        "from": "Central Avenue",
         "to": {
           "px": [
             230,
@@ -1501,6 +1369,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": true,
         "categories": [
           "number"
         ],
@@ -1555,6 +1424,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "number",
           "renamed"
@@ -1587,84 +1457,8 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2381,
-        "maxLng": -118.2377,
-        "from": "Alameda Street",
-        "to": {
-          "px": [
-            491,
-            1533
-          ]
-        }
-      },
-      {
-        "label": "part of (Huber St)",
-        "name": "4th Street",
-        "entityId": "fourth-street",
-        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 4th Street",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1887",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1887",
-            "until": "?",
-            "name": "Huber Street",
-            "entityId": "huber-st",
-            "formInForce": "Huber Street",
-            "how": "origin",
-            "origin": "labeled “HUBER ST.” on the 1887 Mills and Wicks Extension map, sheet 1 {{(source)}} — Not documented; most likely Caroline Howard (née Huber), wife of the tract developer Dr. Frederick Preston Howard — the same inference that explains Carolina Street, one block east, now Hewitt Street",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "4th Street",
-            "entityId": "fourth-street",
-            "formInForce": "4th Street",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "categories": [
-          "number",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person",
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-          },
-          {
-            "title": "L.A. Street Names: Colyton Street (Howard’s tract; Carolina St. for his wife Caroline née Huber)",
-            "url": "https://lastreetnames.com/street/colyton-street/"
-          },
-          {
-            "title": "Recorded map: F.P. Howard & Co.’s Subdivision of the Bliss Tract, M.R. 12-42 (Aug. 1886) — shows “Huber Street” at 828 E 4th St’s location",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
-          }
-        ],
-        "minLng": -118.2377,
         "maxLng": -118.2349,
-        "from": {
-          "px": [
-            491,
-            1533
-          ]
-        },
+        "from": "Alameda Street",
         "to": {
           "px": [
             747,
@@ -1705,6 +1499,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "number",
           "renamed"
@@ -1747,6 +1542,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -1781,6 +1577,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -1805,6 +1602,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -1844,11 +1642,12 @@ const STREET_DATA = {
             "entityId": "fifth-street",
             "formInForce": "5th Street",
             "how": "origin",
-            "origin": "labeled “Fifth St” on the 1888 Wolfskill Orchard Tract, sheet 3 (M.R. 30-11) and the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}}",
+            "origin": "labeled “Fifth St” on the 1888 Wolfskill Orchard Tract (sheets 3, 4) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "number"
         ],
@@ -1913,6 +1712,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "number",
           "renamed"
@@ -1954,6 +1754,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -1988,6 +1789,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -2004,47 +1806,6 @@ const STREET_DATA = {
           "px": [
             998,
             342
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "6th Street",
-        "entityId": "sixth-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLng": -118.2454,
-        "maxLng": -118.2415,
-        "from": {
-          "px": [
-            998,
-            342
-          ]
-        },
-        "to": {
-          "px": [
-            1059,
-            858
           ]
         }
       },
@@ -2067,11 +1828,12 @@ const STREET_DATA = {
             "entityId": "sixth-street",
             "formInForce": "6th Street",
             "how": "origin",
-            "origin": "labeled “Sixth St” on the 1888 Wolfskill Orchard Tract, sheet 1 (M.R. 30-9) and the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}}",
+            "origin": "labeled “Sixth St” on the 1888 Wolfskill Orchard Tract (sheets 1–3) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "number"
         ],
@@ -2086,12 +1848,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "minLng": -118.2415,
+        "minLng": -118.2454,
         "maxLng": -118.2384,
         "from": {
           "px": [
-            1059,
-            858
+            998,
+            342
           ]
         },
         "to": "Alameda Street"
@@ -2105,6 +1867,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -2130,6 +1893,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -2159,6 +1923,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -2183,6 +1948,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -2212,6 +1978,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -2228,47 +1995,6 @@ const STREET_DATA = {
           "px": [
             668,
             108
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "7th Street",
-        "entityId": "seventh-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 7th Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLng": -118.2469,
-        "maxLng": -118.2431,
-        "from": {
-          "px": [
-            668,
-            108
-          ]
-        },
-        "to": {
-          "px": [
-            685,
-            624
           ]
         }
       },
@@ -2291,11 +2017,12 @@ const STREET_DATA = {
             "entityId": "seventh-street",
             "formInForce": "7th Street",
             "how": "origin",
-            "origin": "labeled “Seventh St” on the 1888 Wolfskill Orchard Tract, sheet 1 (M.R. 30-9) {{(source)}}",
+            "origin": "labeled “Seventh St” on the 1888 Wolfskill Orchard Tract (sheets 1, 2) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "number"
         ],
@@ -2310,12 +2037,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "minLng": -118.2431,
+        "minLng": -118.2469,
         "maxLng": -118.2386,
         "from": {
           "px": [
-            685,
-            624
+            668,
+            108
           ]
         },
         "to": "Alameda Street"
@@ -2329,6 +2056,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "number"
         ],
@@ -2358,6 +2086,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -2382,6 +2111,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -2406,6 +2136,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -2425,6 +2156,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -2444,6 +2176,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -2463,6 +2196,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -2482,6 +2216,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -2505,7 +2240,8 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
+        "attested": false,
         "categories": [
           "nature",
           "descriptive"
@@ -2545,127 +2281,12 @@ const STREET_DATA = {
             "entityId": "alameda-st",
             "formInForce": "Alameda Street",
             "how": "origin",
-            "origin": "labeled “ALAMEDA ST” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
+            "origin": "labeled “ALAMEDA ST” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract (sheets 4, 5) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           }
         ],
-        "note": null,
-        "categories": [
-          "nature",
-          "descriptive"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
-            "url": "https://lastreetnames.com/street/alameda-street/"
-          },
-          {
-            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.044,
-        "maxLat": 34.0461,
-        "from": {
-          "px": [
-            192,
-            29
-          ]
-        },
-        "to": {
-          "px": [
-            626,
-            1459
-          ]
-        }
-      },
-      {
-        "label": "part of (original Alameda St)",
-        "name": "Alameda Street",
-        "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”)",
-        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
-        "planned": {
-          "text": "by 1887",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1887",
-            "until": null,
-            "name": "Alameda Street",
-            "entityId": "alameda-st",
-            "formInForce": "Alameda Street",
-            "how": "origin",
-            "origin": "labeled “ALAMEDA ST” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-          }
-        ],
-        "note": null,
-        "categories": [
-          "nature",
-          "descriptive"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
-            "url": "https://lastreetnames.com/street/alameda-street/"
-          },
-          {
-            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.0436,
-        "maxLat": 34.044,
-        "from": {
-          "px": [
-            626,
-            1459
-          ]
-        },
-        "to": {
-          "px": [
-            248,
-            1253
-          ]
-        }
-      },
-      {
-        "label": "part of (original Alameda St)",
-        "name": "Alameda Street",
-        "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”)",
-        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
-        "planned": {
-          "text": "by 1887",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1887",
-            "until": null,
-            "name": "Alameda Street",
-            "entityId": "alameda-st",
-            "formInForce": "Alameda Street",
-            "how": "origin",
-            "origin": "labeled “ALAMEDA ST” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-          }
-        ],
-        "note": null,
+        "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
+        "attested": true,
         "categories": [
           "nature",
           "descriptive"
@@ -2686,11 +2307,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0432,
-        "maxLat": 34.0436,
+        "maxLat": 34.0461,
         "from": {
           "px": [
-            248,
-            1253
+            192,
+            29
           ]
         },
         "to": {
@@ -2719,137 +2340,12 @@ const STREET_DATA = {
             "entityId": "alameda-st",
             "formInForce": "Alameda Street",
             "how": "extension",
-            "origin": "labeled “Alameda St” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}}",
+            "origin": "labeled “Alameda St” on the 1888 Wolfskill Orchard Tract (sheets 1, 2, 4) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "note": null,
-        "categories": [
-          "nature",
-          "descriptive"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
-            "url": "https://lastreetnames.com/street/alameda-street/"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.0419,
-        "maxLat": 34.0432,
-        "from": {
-          "px": [
-            133,
-            709
-          ]
-        },
-        "to": {
-          "px": [
-            962,
-            1577
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "Alameda Street",
-        "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
-        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "nature",
-          "descriptive"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
-            "url": "https://lastreetnames.com/street/alameda-street/"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.0386,
-        "maxLat": 34.0419,
-        "from": {
-          "px": [
-            962,
-            1577
-          ]
-        },
-        "to": {
-          "px": [
-            829,
-            1381
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "Alameda Street",
-        "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
-        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "nature",
-          "descriptive"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
-            "url": "https://lastreetnames.com/street/alameda-street/"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.038,
-        "maxLat": 34.0386,
-        "from": {
-          "px": [
-            829,
-            1381
-          ]
-        },
-        "to": {
-          "px": [
-            172,
-            1574
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "Alameda Street",
-        "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
-        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
+        "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
+        "attested": true,
         "categories": [
           "nature",
           "descriptive"
@@ -2866,11 +2362,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0348,
-        "maxLat": 34.038,
+        "maxLat": 34.0432,
         "from": {
           "px": [
-            172,
-            1574
+            133,
+            709
           ]
         },
         "to": {
@@ -2888,7 +2384,8 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
+        "attested": false,
         "categories": [
           "nature",
           "descriptive"
@@ -2919,6 +2416,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -2938,6 +2436,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -2962,6 +2461,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -2986,6 +2486,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -3010,6 +2511,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3029,6 +2531,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3048,6 +2551,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3072,6 +2576,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -3096,6 +2601,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -3120,6 +2626,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3139,6 +2646,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3158,6 +2666,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3177,6 +2686,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3196,6 +2706,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3218,6 +2729,7 @@ const STREET_DATA = {
     },
     "built": "not yet researched",
     "note": null,
+    "attested": true,
     "categories": [
       "unresearched"
     ],
@@ -3237,6 +2749,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3256,6 +2769,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3275,6 +2789,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3294,6 +2809,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3318,6 +2834,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -3342,6 +2859,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -3371,6 +2889,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -3395,6 +2914,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -3419,6 +2939,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3438,6 +2959,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3462,6 +2984,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -3510,6 +3033,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "unresearched",
           "renamed"
@@ -3548,6 +3072,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -3572,6 +3097,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -3601,6 +3127,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -3649,6 +3176,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "unresearched",
           "renamed"
@@ -3682,6 +3210,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unknown"
         ],
@@ -3706,6 +3235,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unknown"
         ],
@@ -3746,6 +3276,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "unknown"
         ],
@@ -3770,6 +3301,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unknown"
         ],
@@ -3795,6 +3327,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unknown"
         ],
@@ -3819,6 +3352,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3838,6 +3372,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3857,6 +3392,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3876,6 +3412,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3895,6 +3432,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3914,6 +3452,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -3938,6 +3477,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": true,
         "categories": [
           "unresearched"
         ],
@@ -3967,6 +3507,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -4016,7 +3557,8 @@ const STREET_DATA = {
             "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           }
         ],
-        "note": null,
+        "note": "The Feb. 2, 1897 draft ordinance would have made this street “De La Guerra”; the council's Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text.",
+        "attested": true,
         "categories": [
           "unknown",
           "renamed"
@@ -4070,7 +3612,8 @@ const STREET_DATA = {
             "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           }
         ],
-        "note": null,
+        "note": "The Feb. 2, 1897 draft ordinance would have made this street “De La Guerra”; the council's Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text.",
+        "attested": true,
         "categories": [
           "unknown",
           "renamed"
@@ -4104,6 +3647,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -4123,6 +3667,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -4142,6 +3687,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -4161,6 +3707,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -4180,6 +3727,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -4199,6 +3747,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -4218,6 +3767,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -4237,6 +3787,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -4256,6 +3807,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -4275,6 +3827,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -4294,6 +3847,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -4318,6 +3872,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "descriptive"
         ],
@@ -4362,6 +3917,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "descriptive",
           "renamed"
@@ -4415,6 +3971,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "descriptive",
           "renamed"
@@ -4444,358 +4001,6 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (Wolfskill Ave)",
-        "name": "Central Avenue",
-        "entityId": "central-ave",
-        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "Feb. 1897",
-            "name": "Wolfskill Avenue",
-            "entityId": "wolfskill-ave",
-            "formInForce": "Wolfskill Avenue",
-            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Central Avenue",
-            "entityId": "central-ave",
-            "formInForce": "Central Avenue",
-            "how": "renaming",
-            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
-        "note": null,
-        "categories": [
-          "descriptive",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Central Avenue",
-            "url": "https://lastreetnames.com/street/central-avenue/"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
-        "minLat": 34.0447,
-        "maxLat": 34.0466,
-        "from": {
-          "px": [
-            824,
-            995
-          ]
-        },
-        "to": {
-          "px": [
-            750,
-            1191
-          ]
-        }
-      },
-      {
-        "label": "part of (Wolfskill Ave)",
-        "name": "Central Avenue",
-        "entityId": "central-ave",
-        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "Feb. 1897",
-            "name": "Wolfskill Avenue",
-            "entityId": "wolfskill-ave",
-            "formInForce": "Wolfskill Avenue",
-            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Central Avenue",
-            "entityId": "central-ave",
-            "formInForce": "Central Avenue",
-            "how": "renaming",
-            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
-        "note": null,
-        "categories": [
-          "descriptive",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Central Avenue",
-            "url": "https://lastreetnames.com/street/central-avenue/"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
-        "minLat": 34.0436,
-        "maxLat": 34.0447,
-        "from": {
-          "px": [
-            750,
-            1191
-          ]
-        },
-        "to": {
-          "px": [
-            242,
-            985
-          ]
-        }
-      },
-      {
-        "label": "part of (Wolfskill Ave)",
-        "name": "Central Avenue",
-        "entityId": "central-ave",
-        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "Feb. 1897",
-            "name": "Wolfskill Avenue",
-            "entityId": "wolfskill-ave",
-            "formInForce": "Wolfskill Avenue",
-            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Central Avenue",
-            "entityId": "central-ave",
-            "formInForce": "Central Avenue",
-            "how": "renaming",
-            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
-        "note": null,
-        "categories": [
-          "descriptive",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Central Avenue",
-            "url": "https://lastreetnames.com/street/central-avenue/"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
-        "minLat": 34.0421,
-        "maxLat": 34.0436,
-        "from": {
-          "px": [
-            242,
-            985
-          ]
-        },
-        "to": {
-          "px": [
-            986,
-            1303
-          ]
-        }
-      },
-      {
-        "label": "part of (Wolfskill Ave)",
-        "name": "Central Avenue",
-        "entityId": "central-ave",
-        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "Feb. 1897",
-            "name": "Wolfskill Avenue",
-            "entityId": "wolfskill-ave",
-            "formInForce": "Wolfskill Avenue",
-            "how": "origin",
-            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) and the 1888 Wolfskill Orchard Tract, sheet 3 (M.R. 30-11) and the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Central Avenue",
-            "entityId": "central-ave",
-            "formInForce": "Central Avenue",
-            "how": "renaming",
-            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
-        "note": null,
-        "categories": [
-          "descriptive",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Central Avenue",
-            "url": "https://lastreetnames.com/street/central-avenue/"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
-        "minLat": 34.0416,
-        "maxLat": 34.0421,
-        "from": {
-          "px": [
-            986,
-            1303
-          ]
-        },
-        "to": {
-          "px": [
-            132,
-            1193
-          ]
-        }
-      },
-      {
-        "label": "part of (Wolfskill Ave)",
-        "name": "Central Avenue",
-        "entityId": "central-ave",
-        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "Feb. 1897",
-            "name": "Wolfskill Avenue",
-            "entityId": "wolfskill-ave",
-            "formInForce": "Wolfskill Avenue",
-            "how": "origin",
-            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) and the 1888 Wolfskill Orchard Tract, sheet 3 (M.R. 30-11) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Central Avenue",
-            "entityId": "central-ave",
-            "formInForce": "Central Avenue",
-            "how": "renaming",
-            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
-        "note": null,
-        "categories": [
-          "descriptive",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Central Avenue",
-            "url": "https://lastreetnames.com/street/central-avenue/"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
-        "minLat": 34.0412,
-        "maxLat": 34.0416,
-        "from": {
-          "px": [
-            132,
-            1193
-          ]
-        },
-        "to": {
-          "px": [
-            368,
-            1232
-          ]
-        }
-      },
-      {
         "label": "beyond 6th (Wolfskill Ave)",
         "name": "Central Avenue",
         "entityId": "central-ave",
@@ -4814,7 +4019,7 @@ const STREET_DATA = {
             "entityId": "wolfskill-ave",
             "formInForce": "Wolfskill Avenue",
             "how": "origin",
-            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
+            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract (sheets 2–5) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -4829,6 +4034,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "descriptive",
           "renamed"
@@ -4852,11 +4058,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.039,
-        "maxLat": 34.0412,
+        "maxLat": 34.0466,
         "from": {
           "px": [
-            368,
-            1232
+            824,
+            995
           ]
         },
         "to": "6th Street"
@@ -4891,6 +4097,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "descriptive",
           "renamed"
@@ -4920,41 +4127,6 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "part of",
-        "name": "Ceres Avenue",
-        "entityId": "ceres-ave",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "Wikipedia: Ceres (mythology)",
-            "url": "https://en.wikipedia.org/wiki/Ceres_(mythology)"
-          },
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.04,
-        "from": null,
-        "to": {
-          "px": [
-            1077,
-            907
-          ]
-        }
-      },
-      {
         "label": "part of (original Ceres Ave)",
         "name": "Ceres Avenue",
         "entityId": "ceres-ave",
@@ -4973,11 +4145,12 @@ const STREET_DATA = {
             "entityId": "ceres-ave",
             "formInForce": "Ceres Avenue",
             "how": "origin",
-            "origin": "labeled “Ceres Ave” on the 1888 Wolfskill Orchard Tract, sheet 1 (M.R. 30-9) and the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}}",
+            "origin": "labeled “Ceres Ave” on the 1888 Wolfskill Orchard Tract (sheets 1–3) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "note": null,
+        "note": "Ceres was the Roman goddess of agriculture and the harvest, which would be a fitting name for a street laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source says that is what was meant, and none names anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
+        "attested": true,
         "categories": [
           "unknown"
         ],
@@ -4993,13 +4166,7 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.038,
-        "maxLat": 34.04,
-        "from": {
-          "px": [
-            1077,
-            907
-          ]
-        },
+        "from": null,
         "to": {
           "px": [
             668,
@@ -5015,7 +4182,8 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Ceres was the Roman goddess of agriculture and the harvest, which would be a fitting name for a street laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source says that is what was meant, and none names anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
+        "attested": false,
         "categories": [
           "unknown"
         ],
@@ -5049,6 +4217,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5068,6 +4237,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5087,6 +4257,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5106,6 +4277,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5125,6 +4297,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5144,6 +4317,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5163,6 +4337,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5182,6 +4357,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5226,6 +4402,7 @@ const STREET_DATA = {
       }
     ],
     "note": null,
+    "attested": true,
     "categories": [
       "unresearched",
       "renamed"
@@ -5254,6 +4431,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -5278,6 +4456,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -5302,6 +4481,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5321,6 +4501,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5340,6 +4521,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5359,6 +4541,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5378,6 +4561,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5397,6 +4581,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5416,6 +4601,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5440,6 +4626,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -5464,6 +4651,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -5488,6 +4676,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -5512,6 +4701,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unknown"
         ],
@@ -5550,6 +4740,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "unknown"
         ],
@@ -5589,6 +4780,7 @@ const STREET_DATA = {
       }
     ],
     "note": null,
+    "attested": true,
     "categories": [
       "unknown"
     ],
@@ -5622,302 +4814,8 @@ const STREET_DATA = {
             "name": "Stanford Avenue",
             "entityId": "stanford-ave",
             "formInForce": "Stanford Avenue",
-            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "Crocker Street",
-            "entityId": "crocker-street",
-            "formInForce": "Crocker Street",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "categories": [
-          "person",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person",
-          "governor"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
-            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Wikipedia: Charles Crocker",
-            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Wikipedia: Leland Stanford",
-            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
-          }
-        ],
-        "minLat": 34.0454,
-        "from": null,
-        "to": {
-          "px": [
-            863,
-            947
-          ]
-        }
-      },
-      {
-        "label": "part of (Stanford Ave)",
-        "name": "Crocker Street",
-        "entityId": "crocker-street",
-        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "?",
-            "name": "Stanford Avenue",
-            "entityId": "stanford-ave",
-            "formInForce": "Stanford Avenue",
-            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "Crocker Street",
-            "entityId": "crocker-street",
-            "formInForce": "Crocker Street",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "categories": [
-          "person",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person",
-          "governor"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
-            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Wikipedia: Charles Crocker",
-            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Wikipedia: Leland Stanford",
-            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
-          }
-        ],
-        "minLat": 34.0448,
-        "maxLat": 34.0454,
-        "from": {
-          "px": [
-            863,
-            947
-          ]
-        },
-        "to": {
-          "px": [
-            450,
-            668
-          ]
-        }
-      },
-      {
-        "label": "part of (Stanford Ave)",
-        "name": "Crocker Street",
-        "entityId": "crocker-street",
-        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "?",
-            "name": "Stanford Avenue",
-            "entityId": "stanford-ave",
-            "formInForce": "Stanford Avenue",
-            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "Crocker Street",
-            "entityId": "crocker-street",
-            "formInForce": "Crocker Street",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "categories": [
-          "person",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person",
-          "governor"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
-            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Wikipedia: Charles Crocker",
-            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Wikipedia: Leland Stanford",
-            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
-          }
-        ],
-        "minLat": 34.0437,
-        "maxLat": 34.0448,
-        "from": {
-          "px": [
-            450,
-            668
-          ]
-        },
-        "to": {
-          "px": [
-            829,
-            771
-          ]
-        }
-      },
-      {
-        "label": "part of (Stanford Ave)",
-        "name": "Crocker Street",
-        "entityId": "crocker-street",
-        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "?",
-            "name": "Stanford Avenue",
-            "entityId": "stanford-ave",
-            "formInForce": "Stanford Avenue",
-            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract, sheet 3 (M.R. 30-11) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "Crocker Street",
-            "entityId": "crocker-street",
-            "formInForce": "Crocker Street",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "categories": [
-          "person",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person",
-          "governor"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
-            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Wikipedia: Charles Crocker",
-            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Wikipedia: Leland Stanford",
-            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
-          }
-        ],
-        "minLat": 34.0419,
-        "maxLat": 34.0437,
-        "from": {
-          "px": [
-            829,
-            771
-          ]
-        },
-        "to": {
-          "px": [
-            908,
-            554
-          ]
-        }
-      },
-      {
-        "label": "part of (Stanford Ave)",
-        "name": "Crocker Street",
-        "entityId": "crocker-street",
-        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "?",
-            "name": "Stanford Avenue",
-            "entityId": "stanford-ave",
-            "formInForce": "Stanford Avenue",
             "how": "origin",
-            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
+            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract (sheets 2–5) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -5931,7 +4829,8 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
+        "attested": true,
         "categories": [
           "person",
           "renamed"
@@ -5960,13 +4859,7 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0401,
-        "maxLat": 34.0419,
-        "from": {
-          "px": [
-            908,
-            554
-          ]
-        },
+        "from": null,
         "to": {
           "px": [
             527,
@@ -5982,7 +4875,8 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
+        "attested": false,
         "categories": [
           "person"
         ],
@@ -6016,6 +4910,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6035,6 +4930,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6054,6 +4950,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6073,6 +4970,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6092,6 +4990,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6111,6 +5010,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6130,6 +5030,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unknown"
     ],
@@ -6154,6 +5055,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": true,
         "categories": [
           "unresearched"
         ],
@@ -6207,6 +5109,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "unresearched",
           "renamed"
@@ -6240,6 +5143,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -6264,6 +5168,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6283,6 +5188,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6307,6 +5213,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -6331,6 +5238,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -6355,6 +5263,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6374,6 +5283,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6393,6 +5303,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6412,6 +5323,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6431,6 +5343,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6490,6 +5403,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "person",
           "governor",
@@ -6539,6 +5453,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "person",
           "governor"
@@ -6564,6 +5479,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6583,6 +5499,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6602,6 +5519,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6621,6 +5539,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6640,6 +5559,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6659,6 +5579,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6683,6 +5604,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -6707,6 +5629,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -6731,6 +5654,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6755,6 +5679,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "person",
           "alive"
@@ -6795,6 +5720,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "person",
           "alive"
@@ -6824,6 +5750,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6843,6 +5770,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -6897,6 +5825,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "person",
           "alive",
@@ -6961,6 +5890,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "person",
           "alive",
@@ -6995,6 +5925,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7010,98 +5941,6 @@ const STREET_DATA = {
     "name": "Gladys Avenue",
     "orientation": "NS",
     "segments": [
-      {
-        "label": "part of",
-        "name": "Gladys Avenue",
-        "entityId": "gladys-ave",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth named as the block's bounding streets",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
-          },
-          {
-            "title": "Recorded map: Wilde and Strong's Subdivision of the Frank Sabichi Tract, M.R. 66-64 (recorded Sept. 21, 1897) — Gladys continuing south alongside Ruth, Towne and Crocker",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
-          },
-          {
-            "title": "LA Parks: Gladys Park (6th and Gladys)",
-            "url": "https://recreation.parks.lacity.gov/park/6th-gladys-street"
-          }
-        ],
-        "minLat": 34.0423,
-        "from": null,
-        "to": {
-          "px": [
-            591,
-            1156
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "Gladys Avenue",
-        "entityId": "gladys-ave",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth named as the block's bounding streets",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
-          },
-          {
-            "title": "Recorded map: Wilde and Strong's Subdivision of the Frank Sabichi Tract, M.R. 66-64 (recorded Sept. 21, 1897) — Gladys continuing south alongside Ruth, Towne and Crocker",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
-          },
-          {
-            "title": "LA Parks: Gladys Park (6th and Gladys)",
-            "url": "https://recreation.parks.lacity.gov/park/6th-gladys-street"
-          }
-        ],
-        "minLat": 34.0406,
-        "maxLat": 34.0423,
-        "from": {
-          "px": [
-            591,
-            1156
-          ]
-        },
-        "to": {
-          "px": [
-            659,
-            968
-          ]
-        }
-      },
       {
         "label": "part of (original Gladys Ave)",
         "name": "Gladys Avenue",
@@ -7121,11 +5960,12 @@ const STREET_DATA = {
             "entityId": "gladys-ave",
             "formInForce": "Gladys Avenue",
             "how": "origin",
-            "origin": "labeled “Gladys Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}}",
+            "origin": "labeled “Gladys Ave” on the 1888 Wolfskill Orchard Tract (sheets 2–4) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "note": null,
+        "note": "The next street over from Ruth Avenue, and part of the same run of women's names that continues south across the Sabichi family's land as Agatha Street — Agatha Sabichi's mother was a daughter of the pioneer settler William Wolfskill. No source names a Gladys in the family or among the subdividers. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
+        "attested": true,
         "categories": [
           "unknown"
         ],
@@ -7149,13 +5989,7 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0385,
-        "maxLat": 34.0406,
-        "from": {
-          "px": [
-            659,
-            968
-          ]
-        },
+        "from": null,
         "to": {
           "px": [
             230,
@@ -7171,7 +6005,8 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "The next street over from Ruth Avenue, and part of the same run of women's names that continues south across the Sabichi family's land as Agatha Street — Agatha Sabichi's mother was a daughter of the pioneer settler William Wolfskill. No source names a Gladys in the family or among the subdividers. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
+        "attested": false,
         "categories": [
           "unknown"
         ],
@@ -7218,6 +6053,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -7266,6 +6102,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "unresearched",
           "renamed"
@@ -7294,6 +6131,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7313,6 +6151,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7332,6 +6171,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7351,6 +6191,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7370,6 +6211,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7394,6 +6236,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -7418,6 +6261,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -7465,6 +6309,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "unknown"
         ],
@@ -7492,6 +6337,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -7519,6 +6365,7 @@ const STREET_DATA = {
         },
         "built": "not yet researched",
         "note": null,
+        "attested": true,
         "categories": [
           "unknown"
         ],
@@ -7543,6 +6390,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -7564,17 +6412,21 @@ const STREET_DATA = {
         "entityId": "hewitt",
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+        },
         "built": "not yet researched",
         "note": null,
+        "attested": true,
         "categories": [
           "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           }
         ],
         "maxLat": 34.0436,
@@ -7591,6 +6443,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7610,6 +6463,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7629,6 +6483,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7648,6 +6503,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7672,6 +6528,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -7696,6 +6553,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -7720,6 +6578,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7739,6 +6598,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7758,6 +6618,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7777,6 +6638,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": true,
     "categories": [
       "unresearched"
     ],
@@ -7801,6 +6663,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -7825,6 +6688,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -7849,6 +6713,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7868,6 +6733,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7887,6 +6753,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7906,6 +6773,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7930,6 +6798,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -7954,6 +6823,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -7978,6 +6848,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -7997,6 +6868,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8016,6 +6888,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8035,6 +6908,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8054,6 +6928,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8073,6 +6948,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": true,
     "categories": [
       "unresearched"
     ],
@@ -8092,6 +6968,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8136,6 +7013,7 @@ const STREET_DATA = {
       }
     ],
     "note": null,
+    "attested": true,
     "categories": [
       "unresearched",
       "renamed"
@@ -8159,6 +7037,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8178,6 +7057,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8197,6 +7077,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8216,6 +7097,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8235,6 +7117,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8254,6 +7137,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8273,6 +7157,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8292,6 +7177,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8311,6 +7197,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8330,6 +7217,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8349,6 +7237,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8368,6 +7257,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8387,6 +7277,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8406,6 +7297,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8425,6 +7317,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8444,6 +7337,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8463,6 +7357,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8482,6 +7377,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8501,6 +7397,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8520,6 +7417,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8539,6 +7437,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8563,6 +7462,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -8587,6 +7487,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -8611,6 +7512,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8630,6 +7532,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8649,6 +7552,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8671,6 +7575,7 @@ const STREET_DATA = {
     },
     "built": "not yet researched",
     "note": null,
+    "attested": true,
     "categories": [
       "unresearched"
     ],
@@ -8690,6 +7595,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8709,6 +7615,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8728,6 +7635,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8747,6 +7655,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8766,6 +7675,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -8790,6 +7700,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -8838,6 +7749,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "unresearched",
           "renamed"
@@ -8870,6 +7782,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -8919,6 +7832,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "unresearched",
           "renamed"
@@ -8951,6 +7865,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -8980,6 +7895,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -9004,6 +7920,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -9028,6 +7945,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9047,6 +7965,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9071,6 +7990,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -9095,6 +8015,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -9119,6 +8040,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9143,6 +8065,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -9167,6 +8090,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -9191,6 +8115,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9210,6 +8135,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9229,6 +8155,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9248,6 +8175,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9267,6 +8195,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9291,6 +8220,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -9315,6 +8245,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -9353,7 +8284,8 @@ const STREET_DATA = {
         "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
       }
     ],
-    "note": null,
+    "note": "Platted with the rest of the Wolfskill Orchard Tract in 1887 and apparently never renamed — only the generic drifted, from the plat's “Omar Ave” to today's Omar Street. No source names an Omar.",
+    "attested": true,
     "categories": [
       "unknown"
     ],
@@ -9373,6 +8305,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9392,6 +8325,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9411,6 +8345,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9430,6 +8365,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9449,6 +8385,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9472,7 +8409,8 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Kines dates the naming to 1883, a year before M.R. 6-138 was recorded, so the plat draws a street that already had the name — consistent with the document's planned-by default. Not to be confused with Patton Avenue/Place elsewhere in the county.",
+        "attested": false,
         "categories": [
           "person"
         ],
@@ -9523,7 +8461,8 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           }
         ],
-        "note": null,
+        "note": "Kines dates the naming to 1883, a year before M.R. 6-138 was recorded, so the plat draws a street that already had the name — consistent with the document's planned-by default. Not to be confused with Patton Avenue/Place elsewhere in the county.",
+        "attested": true,
         "categories": [
           "person"
         ],
@@ -9565,6 +8504,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9584,6 +8524,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9603,6 +8544,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9622,6 +8564,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9641,6 +8584,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9660,6 +8604,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9679,6 +8624,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9703,6 +8649,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -9751,6 +8698,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "unresearched",
           "renamed"
@@ -9779,6 +8727,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9798,6 +8747,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9820,6 +8770,7 @@ const STREET_DATA = {
     },
     "built": "not yet researched",
     "note": null,
+    "attested": true,
     "categories": [
       "unresearched"
     ],
@@ -9839,6 +8790,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9858,6 +8810,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9877,6 +8830,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9896,6 +8850,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9915,6 +8870,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -9938,7 +8894,8 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
+        "attested": false,
         "categories": [
           "place",
           "destination"
@@ -9964,190 +8921,6 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of",
-        "name": "San Pedro Street",
-        "entityId": "san-pedro",
-        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "place",
-          "destination"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: San Pedro Street",
-            "url": "https://lastreetnames.com/street/san-pedro-street/"
-          },
-          {
-            "title": "Wikipedia: San Pedro Street",
-            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.0461,
-        "maxLat": 34.0475,
-        "from": {
-          "px": [
-            981,
-            508
-          ]
-        },
-        "to": {
-          "px": [
-            1004,
-            645
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "San Pedro Street",
-        "entityId": "san-pedro",
-        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "place",
-          "destination"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: San Pedro Street",
-            "url": "https://lastreetnames.com/street/san-pedro-street/"
-          },
-          {
-            "title": "Wikipedia: San Pedro Street",
-            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.0457,
-        "maxLat": 34.0461,
-        "from": {
-          "px": [
-            1004,
-            645
-          ]
-        },
-        "to": {
-          "px": [
-            614,
-            418
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "San Pedro Street",
-        "entityId": "san-pedro",
-        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "place",
-          "destination"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: San Pedro Street",
-            "url": "https://lastreetnames.com/street/san-pedro-street/"
-          },
-          {
-            "title": "Wikipedia: San Pedro Street",
-            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.0444,
-        "maxLat": 34.0457,
-        "from": {
-          "px": [
-            614,
-            418
-          ]
-        },
-        "to": {
-          "px": [
-            952,
-            571
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "San Pedro Street",
-        "entityId": "san-pedro",
-        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "place",
-          "destination"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: San Pedro Street",
-            "url": "https://lastreetnames.com/street/san-pedro-street/"
-          },
-          {
-            "title": "Wikipedia: San Pedro Street",
-            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.0424,
-        "maxLat": 34.0444,
-        "from": {
-          "px": [
-            952,
-            571
-          ]
-        },
-        "to": {
-          "px": [
-            1006,
-            389
-          ]
-        }
-      },
-      {
         "label": "part of (original San Pedro St)",
         "name": "San Pedro Street",
         "entityId": "san-pedro",
@@ -10166,11 +8939,12 @@ const STREET_DATA = {
             "entityId": "san-pedro",
             "formInForce": "San Pedro Street",
             "how": "origin",
-            "origin": "labeled “San Pedro Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}}",
+            "origin": "labeled “San Pedro Ave” on the 1888 Wolfskill Orchard Tract (sheets 2–5) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "note": null,
+        "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
+        "attested": true,
         "categories": [
           "place",
           "destination"
@@ -10191,11 +8965,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0406,
-        "maxLat": 34.0424,
+        "maxLat": 34.0475,
         "from": {
           "px": [
-            1006,
-            389
+            981,
+            508
           ]
         },
         "to": {
@@ -10213,7 +8987,8 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
+        "attested": false,
         "categories": [
           "place",
           "destination"
@@ -10248,6 +9023,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10267,6 +9043,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10286,6 +9063,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10305,6 +9083,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10324,6 +9103,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10343,6 +9123,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10362,6 +9143,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10381,6 +9163,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10400,6 +9183,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10419,6 +9203,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10438,6 +9223,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10457,6 +9243,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10490,239 +9277,8 @@ const STREET_DATA = {
             "name": "Ruth Avenue",
             "entityId": "ruth-ave",
             "formInForce": "Ruth Avenue",
-            "origin": "labeled “Ruth Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — presumably a daughter of the landowner Joseph Wolfskill, whose orchard was being subdivided — the plat sets Ruth beside Gladys, and the Sabichi tract to the south continues the run of women's names with Agatha. No source names her. The street was still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing it and the council committee put the name back; it took the Stanford name later",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "Stanford Avenue",
-            "entityId": "stanford-ave",
-            "formInForce": "Stanford Avenue",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "categories": [
-          "person",
-          "governor",
-          "renamed"
-        ],
-        "formerCategories": [
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
-            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Wikipedia: Leland Stanford",
-            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
-          },
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Los Angeles Herald, “Talking Retrenchment” (the renaming committee restores Ruth Avenue), Feb. 21, 1897",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28"
-          },
-          {
-            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — names Ruth as one of the block's bounding streets",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
-          }
-        ],
-        "minLat": 34.0439,
-        "from": null,
-        "to": {
-          "px": [
-            280,
-            927
-          ]
-        }
-      },
-      {
-        "label": "part of (Ruth Ave)",
-        "name": "Stanford Avenue",
-        "entityId": "stanford-ave",
-        "namedAfter": "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863, once this stretch was folded into Stanford Avenue",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Leland_Stanford",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "?",
-            "name": "Ruth Avenue",
-            "entityId": "ruth-ave",
-            "formInForce": "Ruth Avenue",
-            "origin": "labeled “Ruth Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — presumably a daughter of the landowner Joseph Wolfskill, whose orchard was being subdivided — the plat sets Ruth beside Gladys, and the Sabichi tract to the south continues the run of women's names with Agatha. No source names her. The street was still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing it and the council committee put the name back; it took the Stanford name later",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "Stanford Avenue",
-            "entityId": "stanford-ave",
-            "formInForce": "Stanford Avenue",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "categories": [
-          "person",
-          "governor",
-          "renamed"
-        ],
-        "formerCategories": [
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
-            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Wikipedia: Leland Stanford",
-            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
-          },
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Los Angeles Herald, “Talking Retrenchment” (the renaming committee restores Ruth Avenue), Feb. 21, 1897",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28"
-          },
-          {
-            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — names Ruth as one of the block's bounding streets",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
-          }
-        ],
-        "minLat": 34.0428,
-        "maxLat": 34.0439,
-        "from": {
-          "px": [
-            280,
-            927
-          ]
-        },
-        "to": {
-          "px": [
-            669,
-            1031
-          ]
-        }
-      },
-      {
-        "label": "part of (Ruth Ave)",
-        "name": "Stanford Avenue",
-        "entityId": "stanford-ave",
-        "namedAfter": "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863, once this stretch was folded into Stanford Avenue",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Leland_Stanford",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "?",
-            "name": "Ruth Avenue",
-            "entityId": "ruth-ave",
-            "formInForce": "Ruth Avenue",
-            "origin": "labeled “Ruth Ave” on the 1888 Wolfskill Orchard Tract, sheet 3 (M.R. 30-11) {{(source)}} — presumably a daughter of the landowner Joseph Wolfskill, whose orchard was being subdivided — the plat sets Ruth beside Gladys, and the Sabichi tract to the south continues the run of women's names with Agatha. No source names her. The street was still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing it and the council committee put the name back; it took the Stanford name later",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "Stanford Avenue",
-            "entityId": "stanford-ave",
-            "formInForce": "Stanford Avenue",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "categories": [
-          "person",
-          "governor",
-          "renamed"
-        ],
-        "formerCategories": [
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
-            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Wikipedia: Leland Stanford",
-            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
-          },
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Los Angeles Herald, “Talking Retrenchment” (the renaming committee restores Ruth Avenue), Feb. 21, 1897",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28"
-          },
-          {
-            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — names Ruth as one of the block's bounding streets",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
-          }
-        ],
-        "minLat": 34.041,
-        "maxLat": 34.0428,
-        "from": {
-          "px": [
-            669,
-            1031
-          ]
-        },
-        "to": {
-          "px": [
-            741,
-            833
-          ]
-        }
-      },
-      {
-        "label": "part of (Ruth Ave)",
-        "name": "Stanford Avenue",
-        "entityId": "stanford-ave",
-        "namedAfter": "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863, once this stretch was folded into Stanford Avenue",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Leland_Stanford",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "?",
-            "name": "Ruth Avenue",
-            "entityId": "ruth-ave",
-            "formInForce": "Ruth Avenue",
             "how": "origin",
-            "origin": "labeled “Ruth Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}} — presumably a daughter of the landowner Joseph Wolfskill, whose orchard was being subdivided — the plat sets Ruth beside Gladys, and the Sabichi tract to the south continues the run of women's names with Agatha. No source names her. The street was still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing it and the council committee put the name back; it took the Stanford name later",
+            "origin": "labeled “Ruth Ave” on the 1888 Wolfskill Orchard Tract (sheets 2–5) {{(source)}} — presumably a daughter of the landowner Joseph Wolfskill, whose orchard was being subdivided — the plat sets Ruth beside Gladys, and the Sabichi tract to the south continues the run of women's names with Agatha. No source names her. The street was still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing it and the council committee put the name back; it took the Stanford name later",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -10736,7 +9292,8 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Part of the same 1887 Southern Pacific package as Towne Avenue. The name did not stay put: the street platted “Stanford” in 1887 is modern Crocker Street, and the Stanford name moved a block east onto the former Ruth Avenue — modern Stanford Avenue — some time after Feb. 1897.",
+        "attested": true,
         "categories": [
           "person",
           "governor",
@@ -10769,13 +9326,7 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0389,
-        "maxLat": 34.041,
-        "from": {
-          "px": [
-            741,
-            833
-          ]
-        },
+        "from": null,
         "to": {
           "px": [
             308,
@@ -10791,7 +9342,8 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Leland_Stanford",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Part of the same 1887 Southern Pacific package as Towne Avenue. The name did not stay put: the street platted “Stanford” in 1887 is modern Crocker Street, and the Stanford name moved a block east onto the former Ruth Avenue — modern Stanford Avenue — some time after Feb. 1897.",
+        "attested": false,
         "categories": [
           "person",
           "governor"
@@ -10830,6 +9382,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10849,6 +9402,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10868,6 +9422,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10887,6 +9442,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10906,6 +9462,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10925,6 +9482,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10944,6 +9502,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -10959,168 +9518,6 @@ const STREET_DATA = {
     "name": "Towne Avenue",
     "orientation": "NS",
     "segments": [
-      {
-        "label": "part of",
-        "name": "Towne Avenue",
-        "entityId": "towne-ave",
-        "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad — how and when this stretch joined Towne Avenue is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "person",
-          "alive"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Towne Avenue",
-            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.045,
-        "from": null,
-        "to": {
-          "px": [
-            796,
-            1091
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "Towne Avenue",
-        "entityId": "towne-ave",
-        "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad — how and when this stretch joined Towne Avenue is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "person",
-          "alive"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Towne Avenue",
-            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.0443,
-        "maxLat": 34.045,
-        "from": {
-          "px": [
-            796,
-            1091
-          ]
-        },
-        "to": {
-          "px": [
-            365,
-            798
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "Towne Avenue",
-        "entityId": "towne-ave",
-        "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad — how and when this stretch joined Towne Avenue is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "person",
-          "alive"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Towne Avenue",
-            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.0432,
-        "maxLat": 34.0443,
-        "from": {
-          "px": [
-            365,
-            798
-          ]
-        },
-        "to": {
-          "px": [
-            750,
-            898
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "Towne Avenue",
-        "entityId": "towne-ave",
-        "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad — how and when this stretch joined Towne Avenue is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "categories": [
-          "person",
-          "alive"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Towne Avenue",
-            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "minLat": 34.0414,
-        "maxLat": 34.0432,
-        "from": {
-          "px": [
-            750,
-            898
-          ]
-        },
-        "to": {
-          "px": [
-            827,
-            689
-          ]
-        }
-      },
       {
         "label": "part of (original Towne Ave)",
         "name": "Towne Avenue",
@@ -11140,11 +9537,12 @@ const STREET_DATA = {
             "entityId": "towne-ave",
             "formInForce": "Towne Avenue",
             "how": "origin",
-            "origin": "labeled “Towne Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}}",
+            "origin": "labeled “Towne Ave” on the 1888 Wolfskill Orchard Tract (sheets 2–5) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "note": null,
+        "note": "Named when the subdividers of Joseph Wolfskill's downtown orchard gave 13 acres at 4th and Alameda for a new Southern Pacific station — the Arcade Depot, opened 1888 — and lettered the railroad's officers onto the surrounding streets. Stanford Avenue and Crocker Street come from the same deal.",
+        "attested": true,
         "categories": [
           "person",
           "alive"
@@ -11161,13 +9559,7 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0395,
-        "maxLat": 34.0414,
-        "from": {
-          "px": [
-            827,
-            689
-          ]
-        },
+        "from": null,
         "to": {
           "px": [
             411,
@@ -11183,7 +9575,8 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Named when the subdividers of Joseph Wolfskill's downtown orchard gave 13 acres at 4th and Alameda for a new Southern Pacific station — the Arcade Depot, opened 1888 — and lettered the railroad's officers onto the surrounding streets. Stanford Avenue and Crocker Street come from the same deal.",
+        "attested": false,
         "categories": [
           "person",
           "alive"
@@ -11223,6 +9616,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -11275,6 +9669,7 @@ const STREET_DATA = {
           }
         ],
         "note": null,
+        "attested": true,
         "categories": [
           "unresearched",
           "renamed"
@@ -11312,6 +9707,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11331,6 +9727,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11350,6 +9747,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11369,6 +9767,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11388,6 +9787,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11407,6 +9807,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11426,6 +9827,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11445,6 +9847,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11469,6 +9872,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -11493,6 +9897,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -11517,6 +9922,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11536,6 +9942,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11570,6 +9977,7 @@ const STREET_DATA = {
       }
     ],
     "note": null,
+    "attested": true,
     "categories": [
       "unknown"
     ],
@@ -11589,6 +9997,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11608,6 +10017,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11627,6 +10037,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11646,6 +10057,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11665,6 +10077,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": true,
     "categories": [
       "unresearched"
     ],
@@ -11684,6 +10097,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11708,6 +10122,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -11732,6 +10147,7 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
+        "attested": false,
         "categories": [
           "unresearched"
         ],
@@ -11756,6 +10172,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11775,6 +10192,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11794,6 +10212,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11813,6 +10232,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],
@@ -11832,6 +10252,7 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
+    "attested": false,
     "categories": [
       "unresearched"
     ],

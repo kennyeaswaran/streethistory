@@ -176,6 +176,11 @@ can type each into the map's search box and eyeball the popup.
   that shipped were invisible to anything but the third: a stylesheet rule that
   hid the review panel and every popup, and stale indices that made buttons
   silently do nothing. **If you change the tool, run the browser suite.**
+  `node preview-test.js` is the same idea for the MAP — it drives
+  `preview.html` over the generated data and reads the colours back off the
+  polylines, which is the only way to check a claim like "this stretch is
+  grey". It needs `npm install leaflet@1.9.4 --no-save` first, and it too runs
+  in the assistant's sandbox.
 - **`note` on a name entity is PUBLIC**; working notes go in `internalNote`
   (MODEL-SPEC §3). This was got backwards once and put "Kenny: worth a look"
   on the site.

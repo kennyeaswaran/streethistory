@@ -422,17 +422,47 @@ function buildStreet(streetName) {
     const gapBefore = last && iv.a - last.b > SNAP;
     if (last && !gapBefore && sig(last.timeline) === sig(iv.timeline)) {
       last.b = iv.b; last.crossB = iv.crossB;
+      // The witnesses either side of the boundary are not the same objects,
+      // and both have to survive: the merged stretch is cited from all of them.
+      last.rows = last.rows.concat(iv.rows.filter(r => !last.rows.includes(r)));
+      last.timeline = mergeTimelines(last.timeline, iv.timeline);
     } else {
       if (gapBefore && last) last.gapAfter = true;
-      merged.push({ ...iv });
+      merged.push({ ...iv, rows: iv.rows.slice(), timeline: iv.timeline.slice() });
     }
   }
   return { street, merged, pav };
 }
 
+// WHICH DOCUMENT SAW IT IS NOT PART OF WHAT A TIMELINE SAYS (§6.1).
+//
+// A multi-sheet map tiles a street across several sheets, each witnessing its
+// own stretch. With the witness in the signature, such a street comes out in
+// one segment per sheet, every one of them repeating the same history —
+// Crocker Street was five identical "part of (Stanford Ave)" bands, one for
+// each sheet of M.R. 30-9/13. The stretches abut and every metre of them is
+// attested, so nothing is being inferred here: this is bookkeeping, not the
+// rectangle rule (§6.2a).
 function sig(timeline) {
   return JSON.stringify(timeline.map(p => [p.entity, p.form, p.start, p.startKind,
-    p.end, p.endKind, p.how, p.docs.map(d => d.id).sort()]));
+    p.end, p.endKind, p.how]));
+}
+
+// Merging two identical timelines: the same periods, with more witnesses
+// behind each. Periods correspond one to one — the signature they matched on
+// fixes their order — and neither input is mutated, because adjacent
+// intervals share period objects.
+function mergeTimelines(A, B) {
+  return A.map((p, i) => {
+    const q = B[i];
+    if (!q) return p;
+    const sightings = p.ctx.sightings.slice();
+    for (const s of q.ctx.sightings) if (!sightings.includes(s)) sightings.push(s);
+    sightings.sort((x, y) => dkey(docDate(x.doc)) < dkey(docDate(y.doc)) ? -1 : 1);
+    const docs = p.docs.slice();
+    for (const d of q.docs) if (!docs.includes(d)) docs.push(d);
+    return { ...p, docs, ctx: { ...p.ctx, sightings } };
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -643,6 +673,49 @@ function fmtEnd(p) {
 }
 function docShort(doc) { return doc.shortTitle || doc.title.replace(/^Recorded map: /, "").split(",")[0]; }
 
+// "2, 4, 5, 6" -> "2, 4–6". Sheet lists get long enough to be worth it.
+function runsOf(ns) {
+  const out = [];
+  for (let i = 0; i < ns.length; i++) {
+    let j = i;
+    while (j + 1 < ns.length && ns[j + 1] === ns[j] + 1) j++;
+    out.push(j > i + 0 ? (j > i + 1 ? `${ns[i]}–${ns[j]}` : `${ns[i]}, ${ns[j]}`) : String(ns[i]));
+    i = j;
+  }
+  return out.join(", ");
+}
+const andList = xs => xs.length < 2 ? (xs[0] || "")
+  : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`;
+
+// Citing a multi-sheet map, once (§4.4a).
+//
+// Sheets of one recorded map are separate documents sharing a title and a url
+// — that shared url is what makes them one map bibliographically. Now that a
+// merged segment can be attested by four of them at once, naming each by its
+// full sheet title produces a sentence nobody finishes: "on the 1888 Wolfskill
+// Orchard Tract, sheet 2 (M.R. 30-10) and the 1888 Wolfskill Orchard Tract,
+// sheet 3 (M.R. 30-11) and…". So sheets of one map collapse to the map, with
+// the sheets named from the `-pN` ids the folder convention guarantees.
+function citeDocs(docs) {
+  const byUrl = new Map();
+  for (const d of docs) {
+    if (!byUrl.has(d.url)) byUrl.set(d.url, []);
+    if (!byUrl.get(d.url).includes(d)) byUrl.get(d.url).push(d);
+  }
+  return [...byUrl.values()].map(ds => {
+    const year = dyear(docDate(ds[0]));
+    if (ds.length === 1) return `the ${year} ${docShort(ds[0])}`;
+    const base = docShort(ds[0]).replace(/,\s*sheets?\s.*$/i, "");
+    const ns = ds.map(d => (String(d.id).match(/-p(\d+)$/) || [])[1])
+                 .filter(Boolean).map(Number).sort((a, b) => a - b);
+    // Only claim sheet numbers when every document offered one; otherwise the
+    // list would silently be short.
+    return ns.length === ds.length
+      ? `the ${year} ${base} (sheets ${runsOf(ns)})`
+      : `the ${year} ${base}`;
+  });
+}
+
 function originLine(streetName, p, tl) {
   const e = entities[p.entity];
   const isCurrent = p.end === null;
@@ -657,9 +730,7 @@ function originLine(streetName, p, tl) {
     parts.push(`${mech} per ${docShort(open.doc)} {{(source)}}`);
     link = open.doc.url; marked = true;
   } else if (dated.length && (p.ctx.spellingIndex || 0) === 0) {
-    const names = dated.map(s => `${dyear(docDate(s.doc))} ${docShort(s.doc)}`);
-    const uniq = [...new Set(names)];
-    parts.push(`labeled “${dated[0].asWritten}” on the ${uniq.join(" and the ")} {{(source)}}`);
+    parts.push(`labeled “${dated[0].asWritten}” on ${andList(citeDocs(dated.map(s => s.doc)))} {{(source)}}`);
     link = dated[0].doc.url; marked = true;
   } else if (p.startKind === "prose" && p.ctx.proseSource) {
     parts.push(`this spelling attested from ${dyear(p.start)} {{(source)}}`);
@@ -861,9 +932,27 @@ for (const streetName of [...streets.keys()].sort()) {
     });
     if (items.length >= 2 || (items.length === 1 && items[0].how)) entry.nameHistory = items;
 
-    entry.note = null;
-    const ann = seg.rows.filter(r => r.kind === "annotation");
-    if (ann.length) entry.note = ann.map(a => a.text).join(" ");
+    // The current name's own note had nowhere to go.
+    //
+    // An entity's `note` is public and is about the naming claim (§3). A
+    // FORMER name's note rides on its history line (originLine), but the
+    // CURRENT name's had no home at all: where `namedAfter` is null the note
+    // is the only thing the project has to say, and it was being dropped.
+    // Ceres Avenue showed a link to the Roman harvest goddess and not one word
+    // about why she might be on a subdivided orchard.
+    const notes = [];
+    if (cur && entities[cur.entity] && entities[cur.entity].note)
+      notes.push(entities[cur.entity].note);
+    for (const a of seg.rows.filter(r => r.kind === "annotation")) notes.push(a.text);
+    entry.note = notes.length ? notes.join(" ") : null;
+
+    // Blue on the map means THIS STRETCH has testimony, not that its current
+    // name has been looked up (§8 scheme 1). Every stretch of every street
+    // carries an `osm` row — that is the base map, not research — so what
+    // counts is a sighting from anything else. Without this, a numbered street
+    // ran blue from end to end on the strength of one entity in names.js,
+    // while the blocks a plat actually letters looked no different.
+    entry.attested = seg.rows.some(r => !r.osm);
 
     const e = cur ? entities[cur.entity] : null;
     const cats = e ? [...e.categories] : ["unresearched"];

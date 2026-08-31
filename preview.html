@@ -128,10 +128,10 @@
   <button class="clear" onclick="clearFilters()">Clear highlights</button>
   <button class="clear" id="saveGeom" style="display:none" title="Saves streets-geometry.js — put it next to index.html and the map will load instantly without Overpass">Save geometry file</button>
   <div class="legend">
-    <div><span class="swatch" style="background:#2e6f9e"></span> history available</div>
+    <div><span class="swatch" style="background:#2e6f9e"></span> a document speaks about this stretch</div>
     <div><span class="swatch" style="background:#e8a020"></span> search / filter: current match</div>
     <div><span class="swatch" style="background:#8e6bb8"></span> search / filter: match on a former name</div>
-    <div><span class="swatch" style="background:#c0c0c0"></span> not yet researched</div>
+    <div><span class="swatch" style="background:#c0c0c0"></span> nothing but the base map yet</div>
   </div>
   <div class="count" id="count"></div>
 </div>
@@ -302,8 +302,16 @@ function styleFor(street) {
       return { color: COLOR_UNKNOWN, opacity: 1 };
     return { color: COLOR_DIMMED, opacity: 0.8 };
   }
-  // grey = the only sighting is the OSM extract itself (§8 scheme 1)
-  if (!data || data.categories.includes("unresearched"))
+  // grey = the only sighting is the OSM extract itself (§8 scheme 1).
+  //
+  // Per SEGMENT, not per name. `attested` is the generator's answer to "does
+  // any document other than the base map speak about this stretch?" — which is
+  // the question the scheme is asking. Reading it off the entity instead (is
+  // the current name a stub?) painted whole numbered streets blue on the
+  // strength of one names.js entry, so blue meant "somebody has heard of this
+  // street" rather than "here is a document about this ground".
+  if (!data || data.attested === false ||
+      (data.attested === undefined && data.categories.includes("unresearched")))
     return { color: COLOR_NODATA, opacity: 0.7 };
   return { color: COLOR_DATA, opacity: 0.9 };     // violet base retired (§8)
 }
@@ -361,7 +369,7 @@ function popupHtml(street) {
   const d = street.entry;
   if (!d) {
     return `<div class="street-popup"><h3>${esc(street.name)}</h3>
-      <p class="nodata">No history researched yet. Streets shown in blue have entries.</p></div>`;
+      <p class="nodata">No document has spoken about this stretch yet — only the base map. Blue stretches have one.</p></div>`;
   }
   let html = `<div class="street-popup"><h3>${esc(d.name)}</h3>`;
   // Segmented street: row of chips, one per stretch; the others jump there.

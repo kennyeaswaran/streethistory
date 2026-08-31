@@ -36,3 +36,6 @@ overlay-trial/**/*.png
 # Written by start-tools.command each time it serves the folder, so the tool
 # can name the folder you have to connect. It records THIS machine's path.
 project-info.json
+
+# preview-test.js stands a local Leaflet in for the CDN copy.
+node_modules/

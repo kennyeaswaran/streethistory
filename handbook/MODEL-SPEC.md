@@ -698,6 +698,15 @@ intervals whose timelines are identical.**
 The merge step is not optional. Documents end mid-block, so raw boundaries
 proliferate; without merging you get twenty segments where there are three.
 
+**Two intervals with the same timeline are the same segment even when
+different documents attest them.** A multi-sheet map (§4.4a) tiles a street
+across several sheets, each sheet witnessing its own stretch; if the identity
+of the witness is part of what makes a timeline distinct, the street comes out
+in one piece per sheet, each repeating the same history. The merged segment
+cites the union of the documents behind it. Note that this is not the
+rectangle rule below and does not depend on it: the sheets abut, every metre
+is directly attested, and nothing is being inferred.
+
 ### 6.2 Timelines and the constancy rule
 
 Within a segment, a name's period runs from its earliest sighting to its
@@ -707,6 +716,150 @@ between, the segment simply bore that name 1875–1888. Viewers see a gap only
 where two *different* names meet without a change row pinning the transition.
 
 A `change` row pins a transition to a date and overrides the inferred bracket.
+
+### 6.2a The rectangle rule — filling the spatial axis
+
+§6.2 fills the **time** axis freely and the **space** axis not at all. A name
+attested in 1875 and again in 1888 held the segment throughout; a name attested
+on one stretch and again on the next stretch, by two different sheets, produces
+two segments that repeat the same history. That asymmetry is not principled, it
+is just what got built first.
+
+The rule below fills space the way §6.2 fills time. It is stated in terms of
+**two independent axes of evidence**, and getting them apart is most of the
+work:
+
+- **existence** — was there a street on this ground at this date? Attested by
+  `state` and `unnamed` rows alike (§4.2's four `attests` values), denied by
+  `absent`.
+- **name** — what was it called? Attested only by `state` rows, contradicted by
+  a `state` row for a different entity or by a `change` row.
+
+**The rule fills the name axis and is clipped by the existence axis.** A name
+may not be inferred onto ground that is not yet known to have been a street:
+two sightings of one name in 1888 and 1897 at opposite ends of a street say
+nothing about the far end *in 1888* if the far end was not planned until 1893.
+Without this clip the rule would quietly manufacture streets.
+
+#### The existence frontier
+
+For one continuous run of pavement `R` and a date `t`, the **planned hull**
+`planned(R, t)` is the convex hull, within `R`, of every interval carrying a
+`state` or `unnamed` row from a document dated at or before `t`.
+
+Hull, not union: a street shown planned at both ends by 1888 was planned in the
+middle. This is the same inference as the name rule, one axis down, and it
+should be as visible as the other — see *Grades of support* below.
+
+`absent` **cuts the run.** An interval that some sheet dated `t′` says carries
+no street is not part of `planned(R, t)` for any `t ≤ t′`, and the hull may be
+taken on either side of it but never across it. A sheet saying "nothing here"
+in the middle of a corridor is exactly the evidence that the corridor was not
+one street yet, and hulling over it would erase the finding. (`absent` says
+nothing about `t > t′`; ground can be platted after a sheet shows it empty. A
+row attesting a street *earlier* than an `absent` on the same ground is a
+conflict to report, not to resolve — see §9.)
+
+`unnamed` is the useful asymmetric case, and the reason §5.2a earns its keep:
+it **confirms existence and says nothing about the name.** A sheet that draws
+the roadway and letters nothing on it extends the planned hull and does not
+block the name rectangle.
+
+#### The name rectangle
+
+For an entity `E` on a run `R`, build the grid whose columns are the elementary
+spatial intervals (§6.1's cuts) and whose rows are the distinct document dates.
+Mark each cell:
+
+- **attests `E`** — a `state` row for `E` covers that interval at that date;
+- **contradicts `E`** — a `state` row for a different entity covers it, or a
+  `change` row falls on that date within it.
+
+Then take the **maximal rectangles containing at least two cells attesting `E`
+and no cell contradicting `E`**, and clip each rectangle at every date `t` to
+`planned(R, t)`. Within a surviving rectangle, `E` held that ground over that
+window.
+
+Working in maximal rectangles rather than merging pairs and re-merging is what
+makes cascading safe. Cascading is wanted — three sightings along a street
+should produce one stretch, not two overlapping ones — but pairwise merging
+followed by re-merging can grow a claim past anything a pair justified, and it
+depends on the order the pairs are visited. A contradiction in the middle of
+three sightings should *split* the result, not block it: the rectangle covering
+the first two survives and the third stands alone. Maximal rectangles give that
+for free and are order-independent.
+
+#### What each row kind does to each axis
+
+| row kind | existence axis | name axis |
+|---|---|---|
+| `state` for `E` | attests | attests `E`; contradicts every other entity |
+| `state` for another entity | attests | contradicts `E` |
+| `unnamed` | attests | says nothing — does not block |
+| `absent` | denies; cuts the run for hull purposes | nothing to say |
+| `change` | — | pins a transition; contradicts filling across its date |
+| `annotation` | only if the row asserts existence | only if it asserts a name |
+| `vanished` | not on a modern run at all | — |
+
+#### Grades of support, and why the rule needs them
+
+The precondition "nothing contradicts" is **nearly vacuous in this corpus.**
+Most ground has never been covered by any document, so "no map gives another
+name in between" is true almost everywhere, and a rule resting on it alone
+would fire almost always — "always merge" wearing a justification.
+
+What rescues it is the distinction the model already pays for: silence that was
+*looked at* versus silence that is merely absence. Every metre a filled
+rectangle covers is one of three grades:
+
+1. **attested** — a row letters the name on this ground.
+2. **swept-silent** — no row, but the ground lies inside the coverage of a
+   document with `sweptFully: true` that lettered nothing there. This is
+   evidence (§4.5): someone examined it and found nothing to say.
+3. **unexamined** — no document's coverage has ever included it. This is not
+   evidence of anything.
+
+All three may be filled; **they must not be presented alike.** A segment whose
+extent came partly from grade 3 may not carry an origin line reading "labeled
+'Stanford Ave' on sheet 4" across ground sheet 4 never lettered. The generated
+segment carries which grade each part of its extent came from, and the origin
+line names the bridge: *"labeled 'Stanford Ave' on sheets 2–5; the block
+between them carries the name by inference, with nothing recorded against it."*
+
+This is the same discipline §5.4 applies to extents and §6.3 applies to `how`:
+the model is allowed to infer, and is not allowed to let an inference wear the
+clothes of testimony.
+
+#### Cases
+
+| case | result |
+|---|---|
+| same name, adjacent stretches, same sheet-set | merge (this is not even inference — see §6.1) |
+| same name, adjacent stretches, different sheets of one map | merge |
+| same name, stretches a block apart, 1888 and 1897, nothing between | fill; the bridge is grade 2 or 3 |
+| …and a third sheet letters a different name on the block between | two rectangles, split at the contradiction |
+| …and a `change` row falls in 1893 anywhere in the span | no fill across 1893; fill either side |
+| …and the block between carries an `unnamed` row | fill, and the block is grade 1 for existence |
+| …and the block between carries an `absent` row dated 1890 | no fill across it at any date up to 1890 |
+| same name at both ends, far end not planned until 1893 | fill 1893 onward only; the 1888 claim stops at that date's planned hull |
+| same name either side of a pavement gap | never fill across the gap (§6.1) |
+| one sighting only | nothing to fill — a rectangle needs two corners |
+
+#### Open questions
+
+- **Vacation.** The existence frontier is monotone: once planned, planned. Real
+  streets get vacated, and `vanished` rows record the extreme case. Whether a
+  vacation should retract the hull, and what evidence would license it, is not
+  settled here.
+- **How far is too far.** The rule has no distance limit. Two sightings of a
+  common name at opposite ends of a long street would fill everything between.
+  A cap is one answer; a *report* — how many segments were produced by bridging,
+  and how much of each is grade 3 — is the cheaper one and should come first.
+- **`exhaustive-in-scope` documents.** Ordinance 4093 claims to list every
+  renaming on its date. That should let a rectangle span it as a strong grade 2
+  rather than merely uncontradicted, and the rule does not yet say so.
+- **Grades on the existence axis.** The planned hull is itself an inference and
+  presently carries no grade. It probably wants the same three.
 
 ### 6.3 `how`, derived
 
@@ -779,6 +932,10 @@ name-periods carry **both the form in force and the entity id**, so
 spelling-set matching and entity queries work without loading the document
 corpus.
 
+Each segment also carries **`attested`** — true when any row on it comes from
+a document other than the OSM base map. It is what the default colour scheme
+(§8) asks about, and the generator is the only thing positioned to answer it.
+
 **Carry every link through.** A generated segment's sources come from the
 document registry (title, url, date) joined with the name's own origin
 citations and `namedAfterLink`; nothing is retyped. This is worth stating
@@ -793,12 +950,24 @@ generator's job is to make each document described once and cited everywhere.
 annotations, and every authored disambiguation. It computes structure; it
 never invents meaning.
 
+It does have to **carry** that meaning out, all of it. An entity's public
+`note` reaches the segment: on a former name through its history line, and on
+the current name as the segment's own note, joined with any annotation rows.
+Where `namedAfter` is null the note is the only thing the project has to say
+about the naming — Ceres Avenue linked the Roman harvest goddess and printed
+not one word about why she might be on a subdivided orchard.
+
 ## 8. Map requirements (on generated output)
 
 Color schemes, one active at a time, with the legend reflecting the active one:
 
-1. **Default** — grey if the segment has no sighting but `osm`; blue if it has
-   research behind it.
+1. **Default** — grey if the segment has no sighting but `osm`; blue if a
+   document speaks about it. **Per segment, not per name**: the generator
+   answers this with `attested` on each segment (any row that is not the OSM
+   base map), and the map reads that field. Deciding it from the current name
+   instead — is its entity a stub? — paints a whole numbered street blue on
+   the strength of one `names.js` entry, so blue comes to mean "somebody has
+   heard of this street" rather than "here is a document about this ground".
 2. **Name category** — single-select (radio, not checkboxes), normally folded
    under a caret. "Origin unknown" is a category here rather than its own base
    color; the current violet base color retires.
@@ -899,6 +1068,10 @@ First documents to encode, in order:
    the Figueroa lineage.
 
 ## 12. Deliberately deferred
+
+- The **rectangle rule** (§6.2a) is specified and not implemented. §6.1's
+  document-identity merge — the prerequisite, and pure bookkeeping where
+  §6.2a changes what the map claims — is done (2026-08-31).
 
 - Restructuring nameHistory dates from strings into `{ earliest, latest }`.
   The derived model wants it; it is a migration across every entry and should

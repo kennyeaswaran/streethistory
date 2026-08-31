@@ -274,8 +274,9 @@ Three suites, and they catch different things:
 | `node test-doc-geometry.js` | `doc-geometry.js` | the pure geometry: alignment round-trips, polygon clipping, snapping |
 | `node test-review.js` | the review model, **extracted from `document-tool.html`** rather than copied, so it cannot drift | gaps, the confirm and sweep gates, extents, slivers |
 | `node browser-test.js` | the real page in a real browser (Playwright) | everything the other two structurally cannot: whether a panel is on screen, whether a click reaches it, whether a button does anything |
+| `node preview-test.js` | `preview.html` on generated data, in a real browser | what the MAP says: which stretches are blue, what a popup prints. Needs `npm install leaflet@1.9.4 --no-save` to stand in for the CDN copy |
 
-The third exists because two shipped bugs were invisible to unit tests — a
+The last two exist because two shipped bugs were invisible to unit tests — a
 stylesheet rule that made the review panel and every popup `display:none`, and
 a stale index that made the gap buttons silently do nothing. Playwright is not
 installed on Kenny's machine; that suite runs in the assistant's sandbox.
