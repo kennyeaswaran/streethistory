@@ -459,21 +459,109 @@ const STREET_DATA = {
   },
   "1st Street": {
     "name": "1st Street",
-    "entityId": "1st-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "EW",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "west of Alameda",
+        "name": "1st Street",
+        "entityId": "first-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 1st Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
+        "attested": false,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "maxLng": -118.2381,
+        "from": null,
+        "to": "Alameda Street"
+      },
+      {
+        "label": "beyond Alameda (original 1st St)",
+        "name": "1st Street",
+        "entityId": "first-street",
+        "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1875",
+            "until": null,
+            "name": "1st Street",
+            "entityId": "first-street",
+            "formInForce": "1st Street",
+            "how": "origin",
+            "origin": "labeled “FIRST ST” on the 1875 Thomas Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          }
+        ],
+        "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
+        "attested": true,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          }
+        ],
+        "minLng": -118.2381,
+        "maxLng": -118.2345,
+        "from": "Alameda Street",
+        "to": {
+          "px": [
+            349,
+            100
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "1st Street",
+        "entityId": "first-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 1st Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
+        "attested": false,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.2345,
+        "from": {
+          "px": [
+            349,
+            100
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -579,7 +667,7 @@ const STREET_DATA = {
         "gapAfter": true
       },
       {
-        "label": "Loma Drive to Columbia (discontinuous)",
+        "label": "beyond Loma Drive (discontinuous)",
         "name": "2nd Street",
         "entityId": "second-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 2nd Street is not yet researched",
@@ -599,21 +687,26 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2651,
-        "maxLng": -118.2628,
+        "maxLng": -118.2632,
         "from": "Loma Drive",
-        "to": "Columbia Avenue"
+        "to": {
+          "px": [
+            232,
+            738
+          ]
+        }
       },
       {
-        "label": "Columbia to Witmer",
+        "label": "beyond Lucas",
         "name": "2nd Street",
         "entityId": "second-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 2nd Street is not yet researched",
         "namedAfterLink": null,
-        "planned": null,
-        "built": {
-          "text": "already “W. 2nd” by Nov. 1909 (Crownwood tract map, sheet 1 (M.B. 15-166 sheet 11))",
-          "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+        "planned": {
+          "text": "by 1909",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
         },
+        "built": "not yet researched",
         "note": null,
         "attested": true,
         "categories": [
@@ -626,17 +719,22 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Recorded map: \"Crownwood\" (Witmer's Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166 (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
-        "minLng": -118.2628,
-        "maxLng": -118.2615,
-        "from": "Columbia Avenue",
-        "to": "Witmer Street"
+        "minLng": -118.2632,
+        "maxLng": -118.26,
+        "from": {
+          "px": [
+            232,
+            738
+          ]
+        },
+        "to": "Lucas Avenue"
       },
       {
-        "label": "Witmer to Figueroa",
+        "label": "Lucas to Figueroa",
         "name": "2nd Street",
         "entityId": "second-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 2nd Street is not yet researched",
@@ -655,9 +753,9 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           }
         ],
-        "minLng": -118.2615,
+        "minLng": -118.26,
         "maxLng": -118.2528,
-        "from": "Witmer Street",
+        "from": "Lucas Avenue",
         "to": "Figueroa Street",
         "gapAfter": true
       },
@@ -734,8 +832,8 @@ const STREET_DATA = {
         "from": "Hill Street",
         "to": {
           "px": [
-            196,
-            1502
+            987,
+            1521
           ]
         }
       },
@@ -758,7 +856,7 @@ const STREET_DATA = {
             "entityId": "guadalupe",
             "formInForce": "Guadalupe Street",
             "how": "origin",
-            "origin": "labeled “GUADALUPE ST” on the 1875 Thomas Tract {{(source)}} — known only from the 1875 Thomas Tract map, in 2nd Street's position east of Alameda",
+            "origin": "labeled “GUADALUPE ST” on the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known only from the 1875 Thomas Tract map, in 2nd Street's position east of Alameda",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
           {
@@ -793,17 +891,17 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2382,
-        "maxLng": -118.2345,
+        "maxLng": -118.2344,
         "from": {
           "px": [
-            196,
-            1502
+            987,
+            1521
           ]
         },
         "to": {
           "px": [
-            205,
-            76
+            997,
+            67
           ]
         }
       },
@@ -827,12 +925,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           }
         ],
-        "minLng": -118.2345,
+        "minLng": -118.2344,
         "maxLng": -118.2327,
         "from": {
           "px": [
-            205,
-            76
+            997,
+            67
           ]
         },
         "to": "Santa Fe Avenue",
@@ -889,7 +987,7 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "west of Bixel",
+        "label": "part of",
         "name": "3rd Street",
         "entityId": "third-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
@@ -908,8 +1006,119 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           }
         ],
-        "maxLng": -118.2598,
+        "maxLng": -118.2647,
         "from": null,
+        "to": {
+          "px": [
+            61,
+            1679
+          ]
+        }
+      },
+      {
+        "label": "part of (Crown Hill Ave)",
+        "name": "3rd Street",
+        "entityId": "third-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1909",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1909",
+            "until": "?",
+            "name": "Crown Hill Avenue",
+            "entityId": "crown-hill-ave",
+            "formInForce": "Crown Hill Avenue",
+            "how": "origin",
+            "origin": "labeled “CROWN HILL AVE.” on the 1909 Crownwood (sheets 1, 2) {{(source)}} — Not documented, but plainly Crown Hill itself — the rise the street climbs, and the Witmer family's 650 acres",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "3rd Street",
+            "entityId": "third-street",
+            "formInForce": "3rd Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+          },
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Witmer Street (on the Witmers’ 650 acres at Crown Hill)",
+            "url": "https://lastreetnames.com/street/witmer-street/"
+          }
+        ],
+        "minLng": -118.2647,
+        "maxLng": -118.2613,
+        "from": {
+          "px": [
+            61,
+            1679
+          ]
+        },
+        "to": {
+          "px": [
+            1152,
+            1521
+          ]
+        }
+      },
+      {
+        "label": "beyond Bixel",
+        "name": "3rd Street",
+        "entityId": "third-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.2613,
+        "maxLng": -118.2598,
+        "from": {
+          "px": [
+            1152,
+            1521
+          ]
+        },
         "to": "Bixel Street"
       },
       {
@@ -2340,12 +2549,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/alameda-street/"
           }
         ],
-        "minLat": 34.0473,
+        "minLat": 34.0491,
         "from": null,
         "to": {
           "px": [
-            128,
-            1448
+            97,
+            1472
           ]
         }
       },
@@ -2368,7 +2577,7 @@ const STREET_DATA = {
             "entityId": "alameda-st",
             "formInForce": "Alameda Street",
             "how": "origin",
-            "origin": "labeled “ALAMEDA STREET” on the 1875 Thomas Tract, the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
+            "origin": "labeled “ALAMEDA STREET” on the 1875 Thomas Tract (sheets 1, 2), the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
@@ -2398,11 +2607,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0452,
-        "maxLat": 34.0473,
+        "maxLat": 34.0491,
         "from": {
           "px": [
-            128,
-            1448
+            97,
+            1472
           ]
         },
         "to": {
@@ -4573,27 +4782,81 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "north of 6th (discontinuous)",
+        "label": "beyond 2nd (original Columbia Ave)",
+        "name": "Columbia Avenue",
+        "entityId": "columbia-avenue",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1909",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1909",
+            "until": null,
+            "name": "Columbia Avenue",
+            "entityId": "columbia-avenue",
+            "formInForce": "Columbia Avenue",
+            "how": "origin",
+            "origin": "labeled “COLUMBIA AVENUE” on the 1909 Crownwood {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+          }
+        ],
+        "note": "Namesake untraced. The 1909 Crownwood sheet letters it, which is the earliest evidence the project holds for the street, but nothing found says who or what Columbia was meant to be.",
+        "attested": true,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+          }
+        ],
+        "minLat": 34.0592,
+        "from": null,
+        "to": {
+          "px": [
+            213,
+            1798
+          ]
+        }
+      },
+      {
+        "label": "beyond 6th (discontinuous)",
         "name": "Columbia Avenue",
         "entityId": "columbia-avenue",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Namesake untraced. The 1909 Crownwood sheet letters it, which is the earliest evidence the project holds for the street, but nothing found says who or what Columbia was meant to be.",
         "attested": false,
         "categories": [
-          "unresearched"
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           }
         ],
         "minLat": 34.0527,
-        "from": null,
+        "maxLat": 34.0592,
+        "from": {
+          "px": [
+            213,
+            1798
+          ]
+        },
         "to": "6th Street",
         "gapAfter": true
       },
@@ -4605,16 +4868,16 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Namesake untraced. The 1909 Crownwood sheet letters it, which is the earliest evidence the project holds for the street, but nothing found says who or what Columbia was meant to be.",
         "attested": false,
         "categories": [
-          "unresearched"
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           }
         ],
         "maxLat": 34.0527,
@@ -5054,21 +5317,80 @@ const STREET_DATA = {
   },
   "Crown Hill Avenue": {
     "name": "Crown Hill Avenue",
-    "entityId": "crown-hill-avenue",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Crown Hill Avenue",
+        "entityId": "crown-hill-ave",
+        "namedAfter": "Not documented, but plainly {{Crown Hill}} itself — how and when this stretch joined Crown Hill Avenue is not yet researched",
+        "namedAfterLink": "https://lastreetnames.com/street/witmer-street/",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Named for the hill rather than for anyone. No source states it, but the street runs over Crown Hill and nothing else called Crown Hill is in the neighbourhood.",
+        "attested": false,
+        "categories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Witmer Street (on the Witmers’ 650 acres at Crown Hill)",
+            "url": "https://lastreetnames.com/street/witmer-street/"
+          }
+        ],
+        "minLat": 34.0599,
+        "from": null,
+        "to": {
+          "px": [
+            91,
+            1516
+          ]
+        }
+      },
+      {
+        "label": "beyond 3rd",
+        "name": "Crown Hill Avenue",
+        "entityId": "crown-hill-ave",
+        "namedAfter": "Not documented, but plainly {{Crown Hill}} itself — how and when this stretch joined Crown Hill Avenue is not yet researched",
+        "namedAfterLink": "https://lastreetnames.com/street/witmer-street/",
+        "planned": {
+          "text": "by 1909",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+        },
+        "built": "not yet researched",
+        "note": "Named for the hill rather than for anyone. No source states it, but the street runs over Crown Hill and nothing else called Crown Hill is in the neighbourhood.",
+        "attested": true,
+        "categories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Witmer Street (on the Witmers’ 650 acres at Crown Hill)",
+            "url": "https://lastreetnames.com/street/witmer-street/"
+          },
+          {
+            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+          }
+        ],
+        "maxLat": 34.0599,
+        "from": {
+          "px": [
+            91,
+            1516
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -6433,35 +6755,6 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "part of",
-        "name": "Hewitt Street",
-        "entityId": "hewitt",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": "not yet researched",
-        "built": "not yet researched",
-        "note": null,
-        "attested": false,
-        "categories": [
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
-          }
-        ],
-        "minLat": 34.0473,
-        "from": null,
-        "to": {
-          "px": [
-            122,
-            701
-          ]
-        }
-      },
-      {
         "label": "beyond 3rd (original Hewitt St)",
         "name": "Hewitt Street",
         "entityId": "hewitt",
@@ -6480,7 +6773,7 @@ const STREET_DATA = {
             "entityId": "hewitt",
             "formInForce": "Hewitt Street",
             "how": "origin",
-            "origin": "labeled “HEWITT STREET” on the 1875 Thomas Tract {{(source)}}",
+            "origin": "labeled “HEWITT STREET” on the 1875 Thomas Tract (sheets 1, 2) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
@@ -6501,13 +6794,7 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0458,
-        "maxLat": 34.0473,
-        "from": {
-          "px": [
-            122,
-            701
-          ]
-        },
+        "from": null,
         "to": "3rd Street"
       },
       {
@@ -7453,21 +7740,134 @@ const STREET_DATA = {
   },
   "Lucas Avenue": {
     "name": "Lucas Avenue",
-    "entityId": "lucas-avenue",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Lucas Avenue",
+        "entityId": "lucas-avenue",
+        "namedAfter": "{{John Henry “J.H.” Lucas}} (1836–1924), attorney, who was selling the tract it was named on — how and when this stretch joined Lucas Avenue is not yet researched",
+        "namedAfterLink": "https://lastreetnames.com/street/lucas-avenue/",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
+        "attested": false,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Lucas Avenue (“named in 1884 on a tract he was selling with Edward Bentley and Moye Wicks”)",
+            "url": "https://lastreetnames.com/street/lucas-avenue/"
+          },
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          }
+        ],
+        "minLat": 34.0612,
+        "from": null,
+        "to": {
+          "px": [
+            967,
+            66
+          ]
+        }
+      },
+      {
+        "label": "part of (original Lucas Ave)",
+        "name": "Lucas Avenue",
+        "entityId": "lucas-avenue",
+        "namedAfter": "{{John Henry “J.H.” Lucas}} (1836–1924), attorney, who was selling the tract it was named on",
+        "namedAfterLink": "https://lastreetnames.com/street/lucas-avenue/",
+        "planned": {
+          "text": "by 1909",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1909",
+            "until": null,
+            "name": "Lucas Avenue",
+            "entityId": "lucas-avenue",
+            "formInForce": "Lucas Avenue",
+            "how": "origin",
+            "origin": "labeled “LUCAS AVENUE” on the 1909 Crownwood {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+          }
+        ],
+        "note": "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
+        "attested": true,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Lucas Avenue (“named in 1884 on a tract he was selling with Edward Bentley and Moye Wicks”)",
+            "url": "https://lastreetnames.com/street/lucas-avenue/"
+          },
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+          }
+        ],
+        "minLat": 34.0581,
+        "maxLat": 34.0612,
+        "from": {
+          "px": [
+            967,
+            66
+          ]
+        },
+        "to": {
+          "px": [
+            1017,
+            1644
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Lucas Avenue",
+        "entityId": "lucas-avenue",
+        "namedAfter": "{{John Henry “J.H.” Lucas}} (1836–1924), attorney, who was selling the tract it was named on — how and when this stretch joined Lucas Avenue is not yet researched",
+        "namedAfterLink": "https://lastreetnames.com/street/lucas-avenue/",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
+        "attested": false,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Lucas Avenue (“named in 1884 on a tract he was selling with Edward Bentley and Moye Wicks”)",
+            "url": "https://lastreetnames.com/street/lucas-avenue/"
+          },
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          }
+        ],
+        "maxLat": 34.0581,
+        "from": {
+          "px": [
+            1017,
+            1644
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -7899,14 +8299,14 @@ const STREET_DATA = {
         "gapAfter": true
       },
       {
-        "label": "Columbia to Witmer (3rd St) (discontinuous)",
+        "label": "Columbia to Lucas (3rd St) (discontinuous)",
         "name": "Miramar Street",
         "entityId": "miramar-street",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
           "text": "by 1909",
-          "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -7916,8 +8316,8 @@ const STREET_DATA = {
             "name": "3rd Street",
             "entityId": "third-street",
             "formInForce": "3rd Street",
-            "origin": "labeled “por. of 3rd St. Ord. 39,578” on the 1909 Crownwood tract map, sheet 1 (M.B. 15-166 sheet 11) {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
-            "originLink": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+            "origin": "labeled “W. 3RD STREET” on the 1909 Crownwood (sheets 1, 2) {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           },
           {
             "from": "?",
@@ -7942,8 +8342,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Recorded map: \"Crownwood\" (Witmer's Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166 (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           },
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
@@ -7951,33 +8351,8 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2675,
-        "maxLng": -118.2622,
-        "from": "Columbia Avenue",
-        "to": "Witmer Street"
-      },
-      {
-        "label": "Witmer to Lucas",
-        "name": "Miramar Street",
-        "entityId": "miramar-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": "not yet researched",
-        "built": "not yet researched",
-        "note": null,
-        "attested": false,
-        "categories": [
-          "unresearched"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
-          }
-        ],
-        "minLng": -118.2622,
         "maxLng": -118.261,
-        "from": "Witmer Street",
+        "from": "Columbia Avenue",
         "to": "Lucas Avenue",
         "gapAfter": true
       },
@@ -10412,21 +10787,134 @@ const STREET_DATA = {
   },
   "Witmer Street": {
     "name": "Witmer Street",
-    "entityId": "witmer-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Witmer Street",
+        "entityId": "witmer-street",
+        "namedAfter": "{{Henry Clayton Witmer}} (1856–1909), banker and real-estate developer, whose family's land was Crown Hill — how and when this stretch joined Witmer Street is not yet researched",
+        "namedAfterLink": "https://lastreetnames.com/street/witmer-street/",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
+        "attested": false,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Witmer Street (“Witmer Street itself was named in January 1886”)",
+            "url": "https://lastreetnames.com/street/witmer-street/"
+          },
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          }
+        ],
+        "minLat": 34.0612,
+        "from": null,
+        "to": {
+          "px": [
+            851,
+            421
+          ]
+        }
+      },
+      {
+        "label": "part of (original Witmer St)",
+        "name": "Witmer Street",
+        "entityId": "witmer-street",
+        "namedAfter": "{{Henry Clayton Witmer}} (1856–1909), banker and real-estate developer, whose family's land was Crown Hill",
+        "namedAfterLink": "https://lastreetnames.com/street/witmer-street/",
+        "planned": {
+          "text": "by 1909",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1909",
+            "until": null,
+            "name": "Witmer Street",
+            "entityId": "witmer-street",
+            "formInForce": "Witmer Street",
+            "how": "origin",
+            "origin": "labeled “WITMER” on the 1909 Crownwood (sheets 1, 2) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+          }
+        ],
+        "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
+        "attested": true,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Witmer Street (“Witmer Street itself was named in January 1886”)",
+            "url": "https://lastreetnames.com/street/witmer-street/"
+          },
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+          }
+        ],
+        "minLat": 34.0588,
+        "maxLat": 34.0612,
+        "from": {
+          "px": [
+            851,
+            421
+          ]
+        },
+        "to": {
+          "px": [
+            594,
+            1793
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Witmer Street",
+        "entityId": "witmer-street",
+        "namedAfter": "{{Henry Clayton Witmer}} (1856–1909), banker and real-estate developer, whose family's land was Crown Hill — how and when this stretch joined Witmer Street is not yet researched",
+        "namedAfterLink": "https://lastreetnames.com/street/witmer-street/",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
+        "attested": false,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Witmer Street (“Witmer Street itself was named in January 1886”)",
+            "url": "https://lastreetnames.com/street/witmer-street/"
+          },
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          }
+        ],
+        "maxLat": 34.0588,
+        "from": {
+          "px": [
+            594,
+            1793
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -10453,6 +10941,23 @@ const STREET_DATA = {
 };
 
 const VANISHED_STREETS = [
+  {
+    "entity": "garey",
+    "asWritten": "GAREY STREET",
+    "doc": "mr003-060-p1",
+    "basis": "alignment",
+    "note": "The plat draws and labels this segment west of Guadalupe, but none of the supplied modern street traces follows it on page 1.",
+    "path": [
+      [
+        34.048589,
+        -118.235132
+      ],
+      [
+        34.047166,
+        -118.235156
+      ]
+    ]
+  },
   {
     "entity": "council-street",
     "asWritten": "Council Street",
@@ -10501,6 +11006,23 @@ const VANISHED_STREETS = [
       [
         34.043696,
         -118.238109
+      ]
+    ]
+  },
+  {
+    "entity": "third-street",
+    "asWritten": "W. 3RD ST.",
+    "doc": "tr0015-166a-p2",
+    "basis": "alignment",
+    "note": "A separate W. 3RD ST. stub is drawn east of Lucas, but none of the supplied modern street traces follows it.",
+    "path": [
+      [
+        34.059009,
+        -118.261165
+      ],
+      [
+        34.058878,
+        -118.260883
       ]
     ]
   }

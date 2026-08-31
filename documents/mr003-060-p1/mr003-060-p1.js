@@ -57,7 +57,7 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "One modern branch runs from Alameda to the page edge inside the broad corridor lettered FIRST ST.",
-      "name": "first-st"
+      "name": "first-street"
     },
     {
       "kind": "state",
@@ -72,7 +72,7 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "The second modern branch also remains within the same wide FIRST ST corridor.",
-      "name": "first-st"
+      "name": "first-street"
     },
     {
       "kind": "state",

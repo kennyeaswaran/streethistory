@@ -1,5 +1,5 @@
 {
-  "image": "documents/tr0015-166a-p1/tr0015-166a-p1-100dpi.png",
+  "image": "documents/tr0015-166a-p2/tr0015-166a-p2-100dpi.png",
   "points": [
     {
       "px": [
@@ -7,21 +7,21 @@
         0
       ],
       "ll": [
-        34.062914,
-        -118.262822
+        34.062332,
+        -118.261992
       ],
       "note": "document-tool corner (0,0)"
     },
     {
       "px": [
-        1140,
+        1138,
         0
       ],
       "ll": [
-        34.061745,
-        -118.260154
+        34.061107,
+        -118.259366
       ],
-      "note": "document-tool corner (1140,0)"
+      "note": "document-tool corner (1138,0)"
     },
     {
       "px": [
@@ -29,8 +29,8 @@
         1842
       ],
       "ll": [
-        34.059317,
-        -118.265086
+        34.058785,
+        -118.264368
       ],
       "note": "document-tool corner (0,1842)"
     }

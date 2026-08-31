@@ -1,57 +1,160 @@
-// "Crownwood" (Witmer's Subdivision of parts of Lots 2 and 7, Block 38,
-// Hancock Survey), M.B. 15-166 — surveyed Nov. 1909 by Chas. Forman Jr.
-// Its "por. of 3rd St. Ord. 39,578" stretch through Crown Hill is, per
-// alignment, modern MIRAMAR Street — not modern 3rd (the second of the two
-// name-continuity traps on 3rd's western reach).
-
 module.exports = {
   id: "tr0015-166a-p1",
-  title: "Recorded map: \"Crownwood\" (Witmer's Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
-  shortTitle: "Crownwood tract map, sheet 1 (M.B. 15-166 sheet 11)",
-  url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf",
+  title: "Plat of \"Crownwood\"",
+  shortTitle: "Crownwood",
+  url: "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf",
   scan: "documents/tr0015-166a-p1/tr0015-166a-p1.pdf",
   transcription: null,
 
-  date: { on: "1909-11" },
+  date: { on: "1909-12-10" },   
   type: "tract-map",
   attests: "planned-by",
   completeness: "incidental",
-  // Crown Hill, roughly Columbia/Witmer between 2nd and Miramar (replace via
-  // georef when the sheet is aligned).
-  coverage: [[34.0625, -118.2650], [34.0625, -118.2600],
-             [34.0585, -118.2600], [34.0585, -118.2650]],
-  // Page 1 of a two-page county file: sheet 11 is this Crownwood plat, sheet
-  // 12 is a separate sheet of the same book, unread (its own -p2 folder when
-  // it is read). One sheet, one alignment, one coverage — MODEL-SPEC §4.4a.
-  // Alignment carried over from the older align.html pass; its three control
-  // points are the corners of the 820x1326 render, which is exactly the render
-  // in this folder, so they transfer unchanged.
+  readBy: "human",
+
+  // Coverage is the ground this document informs about — the tract boundary,
+  // not the sheet edge (MODEL-SPEC §4.4). SCAN PIXELS against alignment.image,
+  // so a better alignment carries it along (§4.6).
+  coverage: [
+    [39, 1800], [758, 1791], [727, 1348], [1013, 1081],
+    [1008, 389], [268, 542]
+  ],
   alignment: {
     image: "documents/tr0015-166a-p1/tr0015-166a-p1-100dpi.png",
     dpi: 100,
     points: [
-      { px: [0, 0], ll: [34.062983, -118.262724], note: "align.html corner (0,0)" },
-      { px: [820, 0], ll: [34.061735, -118.260046], note: "align.html corner (820,0)" },
-      { px: [0, 1326], ll: [34.059371, -118.265144], note: "align.html corner (0,1326)" }
+      { px: [0, 0], ll: [34.062914, -118.262822], note: "document-tool corner (0,0)" },
+      { px: [1140, 0], ll: [34.061745, -118.260154], note: "document-tool corner (1140,0)" },
+      { px: [0, 1842], ll: [34.059317, -118.265086], note: "document-tool corner (0,1842)" }
     ]
   },
+
   sweptFully: false,
-  sweptFor: ["2nd Street", "Miramar Street"],
-  readBy: "instance+alignment",
+  sweptFor: [],
 
   rows: [
-    // 2nd St's curving Crown Hill alignment — drawn but unlabeled directly;
-    // confirmed via its "W. 2nd" bearing annotation.
-    { kind: "state", name: "second-street", asWritten: "W. 2nd",
-      street: "2nd Street", from: "Columbia Avenue", to: "Witmer Street",
-      attests: "built-by",
-      basis: "alignment" },
-
-    // The stretch the sheet "establishes" as 3rd St under Ord. 39,578 —
-    // modern Miramar by alignment, multiple points matching within meters.
-    { kind: "state", name: "third-street", asWritten: "por. of 3rd St. Ord. 39,578",
-      street: "Miramar Street", from: "Columbia Avenue", to: "Witmer Street",
-      basis: "alignment" }          // planned-by (doc default): designated, not
-                                    // shown occupied
+    {
+      "kind": "state",
+      "asWritten": "W. 2ND ST.",
+      "street": "2nd Street",
+      "from": {
+        "px": [
+          232,
+          738
+        ]
+      },
+      "to": {
+        "px": [
+          1009,
+          556
+        ]
+      },
+      "basis": "alignment",
+      "note": "The aligned modern trace follows the full curved roadway lettered W. 2ND at its west end and ST. near its east end.",
+      "name": "second-street"
+    },
+    {
+      "kind": "absent",
+      "street": "3rd Street",
+      "from": {
+        "px": [
+          61,
+          1679
+        ]
+      },
+      "to": "Columbia Avenue",
+      "basis": "alignment",
+      "note": "The modern 3rd Street centerline follows the east-west continuation of the plat's CROWN HILL AVE. corridor."
+    },
+    {
+      "kind": "state",
+      "asWritten": "CROWN HILL AVE.",
+      "street": "3rd Street",
+      "from": "Columbia Avenue",
+      "to": {
+        "px": [
+          749,
+          1663
+        ]
+      },
+      "basis": "alignment",
+      "note": "The modern 3rd Street centerline follows the east-west continuation of the plat's CROWN HILL AVE. corridor.",
+      "name": "crown-hill-ave"
+    },
+    {
+      "kind": "state",
+      "asWritten": "COLUMBIA AVENUE",
+      "street": "Columbia Avenue",
+      "from": "2nd Street",
+      "to": {
+        "px": [
+          213,
+          1798
+        ]
+      },
+      "basis": "alignment",
+      "note": "COLUMBIA and AVENUE are lettered on different portions of this continuous north-south corridor; the modern trace follows it through the Crown Hill junction.",
+      "name": "columbia-avenue"
+    },
+    {
+      "kind": "state",
+      "asWritten": "CROWN HILL AVE.",
+      "street": "Crown Hill Avenue",
+      "from": {
+        "px": [
+          91,
+          1516
+        ]
+      },
+      "to": "3rd Street",
+      "basis": "alignment",
+      "note": "The short modern Crown Hill Avenue segment follows the diagonal western arm of the corridor lettered CROWN HILL AVE.",
+      "name": "crown-hill-ave"
+    },
+    {
+      "kind": "state",
+      "asWritten": "W. 3RD STREET",
+      "street": "Miramar Street",
+      "from": "Columbia Avenue",
+      "to": {
+        "px": [
+          993,
+          1099
+        ]
+      },
+      "basis": "alignment",
+      "note": "The modern Miramar Street line stays within the roadway carrying W. 3RD west of Witmer and STREET east of it.",
+      "name": "third-street"
+    },
+    {
+      "kind": "state",
+      "asWritten": "WITMER",
+      "street": "Witmer Street",
+      "from": {
+        "px": [
+          851,
+          421
+        ]
+      },
+      "to": "Miramar Street",
+      "basis": "alignment",
+      "note": "North of Miramar, the modern centerline follows the eastern roadway lettered WITMER.",
+      "name": "witmer-street"
+    },
+    {
+      "kind": "state",
+      "asWritten": "WITMER",
+      "street": "Witmer Street",
+      "from": "Miramar Street",
+      "to": {
+        "px": [
+          594,
+          1793
+        ]
+      },
+      "basis": "alignment",
+      "note": "South of Miramar, modern Witmer resumes on the offset western roadway, which is also lettered WITMER.",
+      "name": "witmer-street"
+    }
   ]
 };

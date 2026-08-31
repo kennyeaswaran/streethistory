@@ -27,6 +27,23 @@ const NAME_ENTITIES = {
   // entity that spells alike.) "Third"/"3rd" is a RENDERING, not a second
   // form — the generator owns the ordinal table (§3).
 
+  "first-street": {
+    spellings: [{ forms: ["1st Street"] }],
+    namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+    namedAfterLink: null,
+    categories: ["number"],
+    sources: [
+      { title: "L.A. Street Names: 1st Street (on the numbering system)",
+        url: "https://lastreetnames.com/street/0001st-street/" }
+    ],
+    disputed: false,
+    note: "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
+    internalNote: "Renamed from the minted id `first-st`, 2026-08-31, to match its " +
+      "siblings second-street\u2026seventh-street: the numbered grid is one entity per " +
+      "number and the ids should look like it. Prose carried over from streets-data.js.",
+    possiblySameAs: null, aliases: ["first-st"]
+  },
+
   "second-street": {
     spellings: [{ forms: ["2nd Street"] }],
     namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
@@ -648,6 +665,97 @@ const NAME_ENTITIES = {
       "(Poplar St)”). Same open question as Huber: nothing documents Poplar → Lugo " +
       "→ 5th by name, and research-leads.md asks for a CDNC or directory search. The " +
       "tree reading is mine, offered as a guess and labelled as one.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- Crown Hill, and the 1909 "Crownwood" sheet (M.B. 15-166) -----------
+  //
+  // Witmer's own subdivision, so the sheet is evidence about the family that
+  // named half the streets on it. Kines covers two of these four; the other
+  // two are not covered anywhere I can find, and say so.
+
+  "witmer-street": {
+    spellings: [{ forms: ["Witmer Street"] }],
+    namedAfter: "{{Henry Clayton Witmer}} (1856\u20131909), banker and real-estate developer, whose family's land was Crown Hill",
+    namedAfterLink: "https://lastreetnames.com/street/witmer-street/",
+    categories: ["person", "alive"],
+    sources: [
+      { title: "L.A. Street Names: Witmer Street (\u201cWitmer Street itself was named in January 1886\u201d)",
+        url: "https://lastreetnames.com/street/witmer-street/" },
+      { title: "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+        url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
+    ],
+    disputed: false,
+    note: "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
+    internalNote: "As strong as an identification gets: the plat itself is " +
+      "\u201cWitmer\u2019s Subdivision\u201d, so the sheet and the namesake attest each other. " +
+      "The 1909 sheet also explains modern Witmer\u2019s odd OSM geometry \u2014 the two " +
+      "disconnected ways are a real jog the plat draws (research-leads.md). " +
+      "Wicks is the Wicks of the Mills and Wicks Extension (M.R. 13-87) already in " +
+      "the corpus, and of Lucas Avenue\u2019s tract: worth a cross-link when the map has one.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "lucas-avenue": {
+    spellings: [{ forms: ["Lucas Avenue"] }],
+    namedAfter: "{{John Henry \u201cJ.H.\u201d Lucas}} (1836\u20131924), attorney, who was selling the tract it was named on",
+    namedAfterLink: "https://lastreetnames.com/street/lucas-avenue/",
+    categories: ["person", "alive"],
+    sources: [
+      { title: "L.A. Street Names: Lucas Avenue (\u201cnamed in 1884 on a tract he was selling with Edward Bentley and Moye Wicks\u201d)",
+        url: "https://lastreetnames.com/street/lucas-avenue/" },
+      { title: "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+        url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
+    ],
+    disputed: false,
+    note: "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
+    internalNote: "Kines hedges with \u201csurely honors\u201d rather than a record; the " +
+      "argument is that the street was named on his own tract. Moye Wicks is Moses L. " +
+      "Wicks \u2014 Witmer\u2019s California Bank partner, and the Wicks of M.R. 13-87. " +
+      "The 1909 Crownwood sheet letters this street but does not date it; the 1884 " +
+      "date is Kines\u2019s.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "crown-hill-ave": {
+    spellings: [{ forms: ["Crown Hill Avenue"] }],
+    namedAfter: "Not documented, but plainly {{Crown Hill}} itself \u2014 the rise the street climbs, and the Witmer family's 650 acres",
+    namedAfterLink: "https://lastreetnames.com/street/witmer-street/",
+    categories: ["place"],
+    sources: [
+      { title: "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+        url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" },
+      { title: "L.A. Street Names: Witmer Street (on the Witmers\u2019 650 acres at Crown Hill)",
+        url: "https://lastreetnames.com/street/witmer-street/" }
+    ],
+    disputed: false,
+    note: "Named for the hill rather than for anyone. No source states it, but the street runs over Crown Hill and nothing else called Crown Hill is in the neighbourhood.",
+    internalNote: "NOT COVERED BY KINES (checked 2026-08-31; the site has no Crown Hill " +
+      "Avenue page and Crown Hill is not one of its neighbourhoods). The namesake is an " +
+      "inference from the place name \u2014 safe, but an inference. " +
+      "NOTE THE EXTENT: the 1909 sheet letters CROWN HILL AVE. along ground that is " +
+      "modern 3rd Street as well as modern Crown Hill Avenue, so this entity\u2019s rows " +
+      "sit on two modern streets and the name has since shrunk to one of them.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "columbia-avenue": {
+    spellings: [{ forms: ["Columbia Avenue"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+        url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
+    ],
+    disputed: false,
+    note: "Namesake untraced. The 1909 Crownwood sheet letters it, which is the earliest evidence the project holds for the street, but nothing found says who or what Columbia was meant to be.",
+    internalNote: "NOT COVERED BY KINES (checked 2026-08-31 \u2014 no page, and not in the " +
+      "Westlake list); a web search turns up nothing for this street specifically. " +
+      "research-leads.md had already banked this tract as the future source for a " +
+      "Columbia Avenue entry, which is now this. Candidates nobody has evidence for: " +
+      "Columbia as the personification of America, Columbia College, or a transferred " +
+      "eastern place name. Do not write any of them down as the answer.",
     possiblySameAs: null, aliases: []
   }
 };

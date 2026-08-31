@@ -70,7 +70,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "1st Street",
-    "entity": "1st-street",
+    "entity": "first-street",
     "label": "1st Street",
     "street": "1st Street"
   },
@@ -102,6 +102,12 @@ const SEARCH_INDEX = [
     "form": "3rd Street",
     "entity": "third-street",
     "label": "3rd Street",
+    "street": "3rd Street"
+  },
+  {
+    "form": "Crown Hill Avenue",
+    "entity": "crown-hill-ave",
+    "label": "Crown Hill Avenue",
     "street": "3rd Street"
   },
   {
@@ -661,12 +667,6 @@ const SEARCH_INDEX = [
     "entity": "stanford-ave",
     "label": "Stanford Avenue",
     "street": "Crocker Street"
-  },
-  {
-    "form": "Crown Hill Avenue",
-    "entity": "crown-hill-avenue",
-    "label": "Crown Hill Avenue",
-    "street": "Crown Hill Avenue"
   },
   {
     "form": "Custer Avenue",
