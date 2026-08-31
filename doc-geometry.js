@@ -117,6 +117,25 @@
     return ring.map(([x, y]) => scanToWorld(fit, x, y));
   }
 
+  // WHICH SPACE IS THIS RING IN? (§4.6)
+  //
+  // A coverage ring is either scan pixels or [lat,lng], and nothing in the
+  // file says which. The test is on the VALUES: no latitude exceeds 90 and no
+  // longitude exceeds 180, while a 100 dpi render is over a thousand pixels
+  // across, so any coordinate outside that range means pixels.
+  //
+  // The obvious cheap test — "is the first x large?" — is what was here, and
+  // it was wrong on half the corpus: a polygon traced from the sheet's
+  // top-left corner starts at x=88, and every such document was read as
+  // degrees, silently turning the checks that use the ring into no-ops.
+  // Whether the FIRST vertex happens to be large says nothing; whether ANY
+  // coordinate is out of range says everything.
+  function ringIsPixels(ring) {
+    if (!Array.isArray(ring) || !ring.length) return false;
+    return ring.some(pt => Array.isArray(pt) && pt.length === 2 &&
+      (Math.abs(pt[0]) > 90 || Math.abs(pt[1]) > 180));
+  }
+
   // --- which modern ways lie inside coverage -------------------------------
   // ways: [{ name, geometry: [{lat, lon}] }]; ring: [[lat,lng], ...]
   // Returns one record per way with the in-bounds portions as point runs, so
@@ -241,6 +260,6 @@
   return { makeProj, fitAlignment, scanToWorld, worldToScan, pointInPolygon,
            ringCrossings,
            placementFromAlignment, placementToWorld,
-           coverageToWorld, segmentsInBounds, nearestCrossStreet, snapOrPoint,
+           coverageToWorld, ringIsPixels, segmentsInBounds, nearestCrossStreet, snapOrPoint,
            metres };
 });

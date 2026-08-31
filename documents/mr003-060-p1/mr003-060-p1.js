@@ -12,39 +12,161 @@
 
 module.exports = {
   id: "mr003-060-p1",
-  title: "Recorded map: Map of the Thomas Tract, being a portion of the Johnson and Mott Tract, M.R. 3-60/61 (recorded May 19, 1875, at the request of Milton Thomas; J.W. Gillette, County Recorder)",
-  shortTitle: "Map of the Thomas Tract, sheet 1 (M.R. 3-60)",
+  title: "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract",
+  shortTitle: "Thomas Tract",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf",
   scan: "documents/mr003-060-p1/mr003-060-p1.pdf",
   transcription: "documents/mr003-060-p1/mr003-060-p1-partA.md",
 
-  date: { on: "1875-05-19" },
+  date: { on: "1875-05-19" },   
   type: "tract-map",
-  attests: "planned-on",            // doc default; rows override where the
-                                    // street predates / merely abuts the tract
+  attests: "planned-by",
   completeness: "incidental",
-  // PLACEHOLDER footprint: the Garey/Hewitt blocks east of Alameda, 1st–3rd.
-  // Not measured — redraw it in the document tool once this sheet is aligned,
-  // and it becomes scan pixels then (§4.6). Negative inference is moot until
-  // that happens (sweptFully: false).
-  coverage: [[34.0490, -118.2385], [34.0490, -118.2350],
-             [34.0450, -118.2350], [34.0450, -118.2385]],
-  sweptFully: false,                // sheet 1's street list may be incomplete
-                                    // (see Part A) — one full re-read pending
-  sweptFor: ["Hewitt Street", "Garey Street"],
-  readBy: "instance",
+  readBy: "human",
+
+  // Coverage is the ground this document informs about — the tract boundary,
+  // not the sheet edge (MODEL-SPEC §4.4). SCAN PIXELS against alignment.image,
+  // so a better alignment carries it along (§4.6).
+  coverage: [
+    [88, 1533], [1039, 1520], [1062, 64], [297, 103]
+  ],
+  alignment: {
+    image: "documents/mr003-060-p1/mr003-060-p1-100dpi.png",
+    dpi: 100,
+    points: [
+      { px: [0, 0], ll: [34.049368, -118.234246], note: "document-tool corner (0,0)" },
+      { px: [1115, 0], ll: [34.04691, -118.234215], note: "document-tool corner (1115,0)" },
+      { px: [0, 1757], ll: [34.049328, -118.238889], note: "document-tool corner (0,1757)" }
+    ]
+  },
+
+  sweptFully: true,
+  sweptFor: ["1st Street","2nd Street","Alameda Street","Hewitt Street","Rose Street"],
 
   rows: [
-    // Streets the tract fronts that predate it (TRACT-RESEARCH.md: "a street
-    // may predate the tract fronting it") — built-by, not planned-on.
-    { kind: "state", name: "hewitt", asWritten: "Hewitt",
-      street: "Hewitt Street", from: "1st Street", to: "3rd Street",
-      attests: "built-by",
-      basis: "lot-level" },         // Lot 1, Block E = 106 S Hewitt (NavigateLA)
-
-    { kind: "state", name: "garey", asWritten: "Garey",
-      street: "Garey Street", from: "2nd Street", to: "3rd Street",
-      attests: "built-by",
-      basis: "lot-level" }
+    {
+      "kind": "state",
+      "asWritten": "FIRST ST",
+      "street": "1st Street",
+      "from": "Alameda Street",
+      "to": {
+        "px": [
+          349,
+          100
+        ]
+      },
+      "basis": "alignment",
+      "note": "One modern branch runs from Alameda to the page edge inside the broad corridor lettered FIRST ST.",
+      "name": "first-st"
+    },
+    {
+      "kind": "state",
+      "asWritten": "FIRST ST",
+      "street": "1st Street",
+      "from": "Alameda Street",
+      "to": {
+        "px": [
+          410,
+          97
+        ]
+      },
+      "basis": "alignment",
+      "note": "The second modern branch also remains within the same wide FIRST ST corridor.",
+      "name": "first-st"
+    },
+    {
+      "kind": "state",
+      "asWritten": "GUADALUPE ST",
+      "street": "2nd Street",
+      "from": {
+        "px": [
+          987,
+          1521
+        ]
+      },
+      "to": {
+        "px": [
+          997,
+          67
+        ]
+      },
+      "basis": "alignment",
+      "note": "The trace runs in the roadway along the sheet's east edge; its GUADALUPE ST label is lettered on page 2.",
+      "name": "guadalupe"
+    },
+    {
+      "kind": "state",
+      "asWritten": "ALAMEDA STREET",
+      "street": "Alameda Street",
+      "from": {
+        "px": [
+          97,
+          1472
+        ]
+      },
+      "to": {
+        "px": [
+          1040,
+          1472
+        ]
+      },
+      "basis": "alignment",
+      "note": "ALAMEDA is lettered on this page and STREET on page 2; the modern centerline follows the shared corridor.",
+      "name": "alameda-st"
+    },
+    {
+      "kind": "state",
+      "asWritten": "HEWITT STREET",
+      "street": "Hewitt Street",
+      "from": {
+        "px": [
+          307,
+          714
+        ]
+      },
+      "to": {
+        "px": [
+          1052,
+          727
+        ]
+      },
+      "basis": "alignment",
+      "note": "HEWITT is lettered here and STREET on page 2; the aligned trace stays inside that roadway to the coverage edge.",
+      "name": "hewitt"
+    },
+    {
+      "kind": "unnamed",
+      "street": "Rose Street",
+      "from": {
+        "px": [
+          242,
+          1081
+        ]
+      },
+      "to": {
+        "px": [
+          1046,
+          1090
+        ]
+      },
+      "note": "The modern Rose Street line crosses the interior of Block C just north of its boundary with Block A; no roadway is drawn."
+    },
+    {
+      "kind": "vanished",
+      "asWritten": "GAREY STREET",
+      "trace": [
+        [
+          350,
+          339
+        ],
+        [
+          995,
+          355
+        ]
+      ],
+      "basis": "alignment",
+      "note": "The plat draws and labels this segment west of Guadalupe, but none of the supplied modern street traces follows it on page 1.",
+      "name": "garey"
+    }
   ]
 };

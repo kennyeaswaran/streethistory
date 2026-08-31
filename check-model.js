@@ -195,7 +195,7 @@ for (const doc of DOCUMENTS) {
   if (doc.coverage && doc.coverage.length >= 3 && doc.alignment) {
     let ring = null;
     try {
-      ring = typeof doc.coverage[0][0] === "number" && doc.coverage[0][0] > 1000
+      ring = DocGeom.ringIsPixels(doc.coverage)
         ? DocGeom.coverageToWorld(DocGeom.fitAlignment(doc.alignment.points), doc.coverage)
         : doc.coverage;
     } catch (e) { /* alignment problems are reported elsewhere */ }

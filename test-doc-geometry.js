@@ -206,5 +206,27 @@ console.log("scan placement (what the document tool stores)");
   ok("…nor its rotation", Math.abs(pl.rot - pl2.rot) < 0.001);
 }
 
+console.log("which space a coverage ring is in");
+{
+  // The bug this replaces: "is the first x > 1000?". A polygon traced from the
+  // sheet's top-left corner starts small, and seven of the corpus's fourteen
+  // documents were being read as degrees — which silently turned every check
+  // that uses the ring into a no-op.
+  ok("a ring traced from near the top-left corner is still pixels",
+     G.ringIsPixels([[88, 1533], [1039, 1520], [1062, 64], [297, 103]]));
+  ok("…so is one that starts large", G.ringIsPixels([[1092, 878], [200, 100], [300, 900]]));
+  ok("an LA lat/lng ring is not pixels",
+     !G.ringIsPixels([[34.0625, -118.265], [34.0625, -118.26], [34.0585, -118.26]]));
+  ok("a latitude over 90 gives it away", G.ringIsPixels([[91, 10], [20, 30], [40, 50]]));
+  ok("so does a longitude over 180", G.ringIsPixels([[10, 181], [20, 30], [40, 50]]));
+  ok("an empty or absent ring is not pixels",
+     !G.ringIsPixels([]) && !G.ringIsPixels(null) && !G.ringIsPixels(undefined));
+
+  // Round trip: a pixel ring through the alignment and back.
+  const world = G.coverageToWorld(fit, [[0, 0], [100, 0], [0, 100]]);
+  ok("converting a pixel ring gives a lat/lng ring", !G.ringIsPixels(world),
+     JSON.stringify(world[0]));
+}
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

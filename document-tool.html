@@ -746,6 +746,18 @@ $("loadDoc").onclick = async () => {
       $("renderPath").value = used || doc.alignment.image;
     }
     if (img) restoreAlignment(doc.alignment); else pendingAlignment = doc.alignment;
+    // A coverage ring is scan pixels HERE (§4.6), but older documents wrote
+    // theirs in [lat,lng] before they had an alignment to measure against.
+    // Loaded verbatim, such a ring lands at pixel (34, -118) — a dot in the
+    // top-left corner — and the polygon silently means nothing. Convert it
+    // instead, so what appears is the footprint somebody actually drew.
+    if (G.ringIsPixels && !G.ringIsPixels(coverage) && coverage.length) {
+      try {
+        const fit = G.fitAlignment(doc.alignment.points);
+        coverage = coverage.map(([la, ln]) =>
+          G.worldToScan(fit, la, ln).map(v => Math.round(v)));
+      } catch (e) { /* a bad alignment is reported on its own */ }
+    }
   }
   loadedDoc = doc;
   docSwept = { fully: doc.sweptFully === true, for: doc.sweptFor || [] };

@@ -18,7 +18,6 @@
 
 const NEW_NAME_ENTITIES = {
 
-
   "council-street": {
     spellings: [{"forms":["Council Street"]}],
     namedAfter: null,
@@ -58,6 +57,18 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+  "first-st": {
+    spellings: [{"forms":["First Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-060-p1, where the ink reads “FIRST ST”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
 
   "hobart-street": {
     spellings: [{"forms":["Hobart Street"]}],
@@ -98,13 +109,6 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
-
-
-
-
-
-
-
   "state-colton": {
     spellings: [{"forms":["State Street"]}],
     namedAfter: null,
@@ -117,7 +121,6 @@ const NEW_NAME_ENTITIES = {
     possiblySameAs: null,
     aliases: []
   },
-
 
   "waters-street": {
     spellings: [{"forms":["Waters Street"]}],
