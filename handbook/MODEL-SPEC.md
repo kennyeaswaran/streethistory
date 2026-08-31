@@ -252,21 +252,27 @@ on the document's change row, since the document is what attests it.
 
 ## 4. Documents
 
-One file per document, `documents/<doc-id>.js`. The prose transcription (Part
-A — verbatim labels, title block, caveats) stays where it is, in
-`tracts/transcriptions/` or `omnibus-*.md`; this file is the machine-readable
-Part B, and the two cross-reference by id.
+One folder per document, `documents/<doc-id>/`, holding `<doc-id>.js` (this
+file), the scan, its 100 dpi render, and the document's Part A prose — the
+folder is the unit you hand to another AI system (CLAUDE.md, "Folder layout").
+A multi-page scan is one document PER PAGE, `<doc-id>-p1`, `<doc-id>-p2`
+(§4.4a): a document carries one alignment and one coverage polygon, and two
+sheets have two of each. Part A (verbatim labels, title block, caveats) lives
+beside the .js in the same folder; the two cross-reference by id.
 
 ```js
 {
-  id: "mr003-060",
+  id: "mr003-060-p1",                // sheet 1 of a two-sheet county file;
+                                     // sheet 2 is "mr003-060-p2" (§4.4a)
   title: "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract",
+  shortTitle: "Map of the Thomas Tract, sheet 1 (M.R. 3-60)",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf",
-  scan: "tracts/MR003-060.pdf",      // optional: the local source file, so the
+  scan: "documents/mr003-060-p1/mr003-060-p1.pdf",
+                                     // optional: the local source file, so the
                                      // document tool can open it without a
                                      // picker and a future map could offer the
-                                     // sheet as an overlay
-  transcription: "tracts/transcriptions/MR003-060.md",
+                                     // sheet as an overlay. Project-relative.
+  transcription: "documents/mr003-060-p1/mr003-060-p1-partA.md",
 
   date: { on: "1875-05-19" },        // or { after: "1906", before: "1950-06" }
                                      // for a Sanborn sheet with an undated paste-on
@@ -884,8 +890,8 @@ bug. Unexplained differences block the switch.
 
 First documents to encode, in order:
 
-1. **`mr003-060`** — Thomas Tract (1875), already transcribed; touches 3rd,
-   2nd, Garey and Hewitt.
+1. **`mr003-060-p1` / `mr003-060-p2`** — Thomas Tract (1875), already
+   transcribed; sheet 1 touches Garey and Hewitt, sheet 2 touches 2nd and 3rd.
 2. **`ord-4093`** — the 1897 ordinance's in-coverage rows, all `change` kind,
    `completeness: "exhaustive-in-scope"`. This is where the deferred 1897
    apply pass goes, rather than into hand-edits we would throw away.

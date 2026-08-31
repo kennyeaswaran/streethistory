@@ -35,7 +35,7 @@ module.exports = {
   scan: "documents/mr013-087-p1/mr013-087-p1.pdf",
   transcription: null,
 
-  date: { on: "1887-01" },   // latest survey work on the sheet; the main subdivision is Apr.–May 1886
+  date: { on: "1887-01" },   
   type: "tract-map",
   attests: "planned-by",
   completeness: "incidental",
@@ -58,28 +58,15 @@ module.exports = {
     ]
   },
 
-  // 4th Street west of Alameda: the polygon overshoots past the crossing onto
-  // ground this tract does not speak about (Kenny, 2026-08-31). Not the same as
-  // an `absent` row, which would claim the sheet SHOWS no street there.
+  // The polygon strays onto these; the document does not inform about them.
+  // NOT the same as a absent row, which says the sheet covers the ground and
+  // draws nothing there (MODEL-SPEC §4.4, §5.2).
   coverageExcept: [{"street":"4th Street","from":{"px":[95,668]},"to":"Alameda Street"}],
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["3rd Street","4th Place","4th Street","Alameda Street","Avery Street","Hewitt Street","Merrick Street","Rose Street","Traction Avenue"],
 
   rows: [
-    {
-      "kind": "absent",
-      "street": "3rd Street",
-      "from": {
-        "px": [
-          145,
-          146
-        ]
-      },
-      "to": "Alameda Street",
-      "confirmed": false,
-      "note": "West of Alameda the modern centerline leaves the drawn GEORGIA ST corridor and the sheet shows no street along it."
-    },
     {
       "kind": "state",
       "asWritten": "GEORGIA ST",
@@ -93,8 +80,7 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "The modern centerline runs along the middle of the GEORGIA ST corridor east of Alameda.",
-      "name": "georgia-east",
-      "confirmed": false
+      "name": "georgia-east"
     },
     {
       "kind": "absent",
@@ -129,7 +115,7 @@ module.exports = {
       "name": "huber-st"
     },
     {
-      "kind": "absent",
+      "kind": "state",
       "street": "4th Street",
       "from": {
         "px": [
@@ -143,8 +129,10 @@ module.exports = {
           800
         ]
       },
-      "confirmed": false,
-      "note": "Past the THIRD intersection the modern curve has no matching street corridor on the plat."
+      "note": "Past the THIRD intersection the modern curve has no matching street corridor on the plat.",
+      "basis": "alignment",
+      "name": "third-street",
+      "asWritten": "THIRD"
     },
     {
       "kind": "state",
@@ -176,7 +164,6 @@ module.exports = {
         ]
       },
       "to": "Traction Avenue",
-      "confirmed": false,
       "note": "The modern trace occupies an unlabeled gap between blocks; the plat does not letter a street name along this stretch. [Reclassified absent → unnamed, 2026-08-31: the note describes drawn linework with no lettering, which is what `unnamed` is for.]",
       "basis": "alignment"
     },
@@ -190,7 +177,6 @@ module.exports = {
         ]
       },
       "to": "3rd Street",
-      "confirmed": false,
       "note": "North of modern 3rd the sheet has parallel contextual lines but no lettered street corridor on this alignment. [Reclassified absent → unnamed, 2026-08-31: the note describes drawn linework with no lettering, which is what `unnamed` is for.]",
       "basis": "alignment"
     },
@@ -205,7 +191,7 @@ module.exports = {
       "name": "hewitt"
     },
     {
-      "kind": "absent",
+      "kind": "unnamed",
       "street": "Hewitt Street",
       "from": "4th Street",
       "to": {
@@ -214,15 +200,13 @@ module.exports = {
           766
         ]
       },
-      "confirmed": false,
       "note": "South of modern 4th the plat shows no lettered street corridor matching the modern segment."
     },
     {
-      "kind": "absent",
+      "kind": "unnamed",
       "street": "Merrick Street",
       "from": "Traction Avenue",
       "to": "4th Street",
-      "confirmed": false,
       "note": "The modern centerline follows the outside of the platted lots and dashed contextual lines, not a named street corridor."
     },
     {
@@ -235,7 +219,6 @@ module.exports = {
         ]
       },
       "to": "3rd Street",
-      "confirmed": false,
       "note": "The sheet has parallel contextual lines north of GEORGIA ST here, but no street name is lettered on this alignment. [Reclassified absent → unnamed, 2026-08-31: the note describes drawn linework with no lettering, which is what `unnamed` is for.]",
       "basis": "alignment"
     },
@@ -253,23 +236,6 @@ module.exports = {
       "basis": "alignment",
       "note": "The modern Traction Avenue centerline follows the broad diagonal corridor lettered SECOND.",
       "name": "second-street"
-    },
-    {
-      "kind": "vanished",
-      "asWritten": "Alley 20.00 ft. wide",
-      "trace": [
-        [
-          505,
-          340
-        ],
-        [
-          960,
-          690
-        ]
-      ],
-      "basis": "alignment",
-      "confirmed": false,
-      "note": "This narrow corridor runs between and parallel to SECOND and THIRD; none of the supplied modern street traces follows it."
     }
   ]
 };

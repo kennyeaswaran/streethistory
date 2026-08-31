@@ -530,6 +530,24 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("…and un-confirms it, since it now says something else",
        await page.evaluate(() => loadedDoc.rows.some(r => r.kind === "unnamed" && r.confirmed === false)));
 
+    // Reclassifying INTO state strips asWritten, so the field has to be there
+    // to type it back in — otherwise the row can never be confirmed and the
+    // sheet can never be finished.
+    await page.selectOption("#pop select.kindpick", "state");
+    await page.waitForTimeout(350);
+    ok("a state row offers an asWritten box",
+       await page.locator("#pop input.awpick").count() === 1);
+    ok("…which starts empty after the reclassification",
+       (await page.inputValue("#pop input.awpick")) === "",
+       await page.inputValue("#pop input.awpick"));
+    await page.fill("#pop input.awpick", "THIRD St");
+    await page.locator("#pop input.awpick").press("Enter");
+    await page.waitForTimeout(350);
+    ok("typing the ink lands on the row",
+       await page.evaluate(() => loadedDoc.rows.some(r => r.asWritten === "THIRD St")));
+    ok("…and the popup stays on that row",
+       (await page.inputValue("#pop input.awpick")) === "THIRD St");
+
     dialogs.length = 0;
     await page.locator("#pop button.delrow").first().click();
     await page.waitForTimeout(300);

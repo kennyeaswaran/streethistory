@@ -591,7 +591,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": null,
         "built": {
-          "text": "already “W. 2nd” by Nov. 1909 (Crownwood tract map)",
+          "text": "already “W. 2nd” by Nov. 1909 (Crownwood tract map, sheet 1 (M.B. 15-166 sheet 11))",
           "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
         },
         "note": null,
@@ -729,7 +729,7 @@ const STREET_DATA = {
             "entityId": "guadalupe",
             "formInForce": "Guadalupe Street",
             "how": "origin",
-            "origin": "labeled “Guadalupe” on the 1875 Map of the Thomas Tract {{(source)}} — known only from the 1875 Thomas Tract map, in 2nd Street's position east of Alameda",
+            "origin": "labeled “Guadalupe” on the 1875 Map of the Thomas Tract, sheet 2 (M.R. 3-61) {{(source)}} — known only from the 1875 Thomas Tract map, in 2nd Street's position east of Alameda",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
           {
@@ -992,14 +992,17 @@ const STREET_DATA = {
         "to": "Alameda Street"
       },
       {
-        "label": "Alameda to Santa Fe (Georgia St)",
+        "label": "beyond Alameda (Georgia St)",
         "name": "3rd Street",
         "entityId": "third-street",
         "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
         "namedAfterLink": null,
-        "planned": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+        },
         "built": {
-          "text": "already “Georgia St” by May 19, 1875 (Map of the Thomas Tract)",
+          "text": "already “Georgia St” by May 19, 1875 (Map of the Thomas Tract, sheet 2 (M.R. 3-61))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
         },
         "nameHistory": [
@@ -1010,7 +1013,77 @@ const STREET_DATA = {
             "entityId": "georgia-east",
             "formInForce": "Georgia Street",
             "how": "origin",
-            "origin": "labeled “Georgia St” on the 1875 Map of the Thomas Tract and the 1887 Wolfskill Orchard Tract map {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
+            "origin": "labeled “Georgia St” on the 1875 Map of the Thomas Tract, sheet 2 (M.R. 3-61) and the 1887 Mills and Wicks Extension map, sheet 1 and the 1887 Wolfskill Orchard Tract map {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "3rd Street",
+            "entityId": "third-street",
+            "formInForce": "3rd Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Recorded map: Map of the Thomas Tract, being a portion of the Johnson and Mott Tract, M.R. 3-60/61 (recorded May 19, 1875, at the request of Milton Thomas; J.W. Gillette, County Recorder) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          },
+          {
+            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLng": -118.2381,
+        "maxLng": -118.235,
+        "from": "Alameda Street",
+        "to": {
+          "px": [
+            778,
+            120
+          ]
+        }
+      },
+      {
+        "label": "beyond Santa Fe (Georgia St)",
+        "name": "3rd Street",
+        "entityId": "third-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
+        "namedAfterLink": null,
+        "planned": null,
+        "built": {
+          "text": "already “Georgia St” by May 19, 1875 (Map of the Thomas Tract, sheet 2 (M.R. 3-61))",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+        },
+        "nameHistory": [
+          {
+            "from": "by 1875",
+            "until": "?",
+            "name": "Georgia Street",
+            "entityId": "georgia-east",
+            "formInForce": "Georgia Street",
+            "how": "origin",
+            "origin": "labeled “Georgia St” on the 1875 Map of the Thomas Tract, sheet 2 (M.R. 3-61) and the 1887 Wolfskill Orchard Tract map {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
           {
@@ -1047,9 +1120,14 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "minLng": -118.2381,
+        "minLng": -118.235,
         "maxLng": -118.2326,
-        "from": "Alameda Street",
+        "from": {
+          "px": [
+            778,
+            120
+          ]
+        },
         "to": "Santa Fe Avenue",
         "gapAfter": true
       },
@@ -1233,7 +1311,7 @@ const STREET_DATA = {
             "entityId": "huber-st",
             "formInForce": "Huber Street",
             "how": "origin",
-            "origin": "labeled “HUBER ST.” on the 1887 Mills and Wicks Extension map, sheet 1 {{(source)}} — no namesake documented",
+            "origin": "labeled “HUBER ST.” on the 1887 Mills and Wicks Extension map, sheet 1 {{(source)}} — Not documented; most likely Caroline Howard (née Huber), wife of the tract developer Dr. Frederick Preston Howard — the same inference that explains Carolina Street, one block east, now Hewitt Street",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
@@ -1253,7 +1331,77 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
+          "person",
           "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Colyton Street (Howard’s tract; Carolina St. for his wife Caroline née Huber)",
+            "url": "https://lastreetnames.com/street/colyton-street/"
+          },
+          {
+            "title": "Recorded map: F.P. Howard & Co.’s Subdivision of the Bliss Tract, M.R. 12-42 (Aug. 1886) — shows “Huber Street” at 828 E 4th St’s location",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
+          }
+        ],
+        "minLng": -118.2381,
+        "maxLng": -118.2349,
+        "from": "Alameda Street",
+        "to": {
+          "px": [
+            747,
+            686
+          ]
+        }
+      },
+      {
+        "label": "part of (3rd St)",
+        "name": "4th Street",
+        "entityId": "fourth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 4th Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": "?",
+            "name": "3rd Street",
+            "entityId": "third-street",
+            "formInForce": "3rd Street",
+            "origin": "labeled “THIRD” on the 1887 Mills and Wicks Extension map, sheet 1 {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "4th Street",
+            "entityId": "fourth-street",
+            "formInForce": "4th Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "number"
         ],
         "disputed": false,
         "sources": [
@@ -1266,13 +1414,18 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           }
         ],
-        "minLng": -118.2381,
-        "maxLng": -118.2349,
-        "from": "Alameda Street",
-        "to": {
+        "minLng": -118.2349,
+        "maxLng": -118.2342,
+        "from": {
           "px": [
             747,
             686
+          ]
+        },
+        "to": {
+          "px": [
+            883,
+            800
           ]
         }
       },
@@ -1295,11 +1448,11 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           }
         ],
-        "minLng": -118.2349,
+        "minLng": -118.2342,
         "from": {
           "px": [
-            747,
-            686
+            883,
+            800
           ]
         },
         "to": null
@@ -1665,19 +1818,20 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
+        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
         "categories": [
-          "unknown"
+          "nature",
+          "descriptive"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
+            "url": "https://lastreetnames.com/street/alameda-street/"
           }
         ],
         "minLat": 34.0461,
@@ -1693,8 +1847,8 @@ const STREET_DATA = {
         "label": "part of (original Alameda St)",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”)",
+        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
@@ -1714,10 +1868,15 @@ const STREET_DATA = {
         ],
         "note": null,
         "categories": [
-          "unknown"
+          "nature",
+          "descriptive"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
+            "url": "https://lastreetnames.com/street/alameda-street/"
+          },
           {
             "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
@@ -1742,19 +1901,20 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
+        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
         "categories": [
-          "unknown"
+          "nature",
+          "descriptive"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
+            "url": "https://lastreetnames.com/street/alameda-street/"
           }
         ],
         "maxLat": 34.0432,
@@ -2069,7 +2229,10 @@ const STREET_DATA = {
     "entityId": "avery-street",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1887",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+    },
     "built": "not yet researched",
     "note": null,
     "categories": [
@@ -2078,8 +2241,8 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
       }
     ]
   },
@@ -4664,7 +4827,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": null,
         "built": {
-          "text": "already “Garey” by May 19, 1875 (Map of the Thomas Tract)",
+          "text": "already “Garey” by May 19, 1875 (Map of the Thomas Tract, sheet 1 (M.R. 3-60))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
         },
         "nameHistory": [
@@ -4675,7 +4838,7 @@ const STREET_DATA = {
             "entityId": "garey",
             "formInForce": "Garey Street",
             "how": "origin",
-            "origin": "labeled “Garey” on the 1875 Map of the Thomas Tract {{(source)}}",
+            "origin": "labeled “Garey” on the 1875 Map of the Thomas Tract, sheet 1 (M.R. 3-60) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
@@ -5149,9 +5312,12 @@ const STREET_DATA = {
         "entityId": "hewitt",
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+        },
         "built": {
-          "text": "already “Hewitt” by May 19, 1875 (Map of the Thomas Tract)",
+          "text": "already “Hewitt” by May 19, 1875 (Map of the Thomas Tract, sheet 1 (M.R. 3-60))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
         },
         "nameHistory": [
@@ -5162,7 +5328,7 @@ const STREET_DATA = {
             "entityId": "hewitt",
             "formInForce": "Hewitt Street",
             "how": "origin",
-            "origin": "labeled “Hewitt” on the 1875 Map of the Thomas Tract {{(source)}}",
+            "origin": "labeled “Hewitt” on the 1875 Map of the Thomas Tract, sheet 1 (M.R. 3-60) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
@@ -5175,6 +5341,10 @@ const STREET_DATA = {
           {
             "title": "Recorded map: Map of the Thomas Tract, being a portion of the Johnson and Mott Tract, M.R. 3-60/61 (recorded May 19, 1875, at the request of Milton Thomas; J.W. Gillette, County Recorder)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          },
+          {
+            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           }
         ],
         "minLat": 34.0458,
@@ -5233,7 +5403,31 @@ const STREET_DATA = {
         "to": "4th Place"
       },
       {
-        "label": "south of 4th Pl",
+        "label": "4th Pl to 4th",
+        "name": "Hewitt Street",
+        "entityId": null,
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLat": 34.0436,
+        "maxLat": 34.0445,
+        "from": "4th Place",
+        "to": "4th Street"
+      },
+      {
+        "label": "south of 4th",
         "name": "Hewitt Street",
         "entityId": "hewitt",
         "namedAfter": null,
@@ -5251,8 +5445,8 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "maxLat": 34.0445,
-        "from": "4th Place",
+        "maxLat": 34.0436,
+        "from": "4th Street",
         "to": null
       }
     ]
@@ -6339,7 +6533,10 @@ const STREET_DATA = {
     "entityId": "merrick-street",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1887",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+    },
     "built": "not yet researched",
     "note": null,
     "categories": [
@@ -6348,8 +6545,8 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
       }
     ]
   },
@@ -6494,7 +6691,7 @@ const STREET_DATA = {
             "name": "3rd Street",
             "entityId": "third-street",
             "formInForce": "3rd Street",
-            "origin": "labeled “por. of 3rd St. Ord. 39,578” on the 1909 Crownwood tract map {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "origin": "labeled “por. of 3rd St. Ord. 39,578” on the 1909 Crownwood tract map, sheet 1 (M.B. 15-166 sheet 11) {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
             "originLink": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           },
           {
@@ -7470,7 +7667,10 @@ const STREET_DATA = {
     "entityId": "rose-street",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1887",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+    },
     "built": "not yet researched",
     "note": null,
     "categories": [
@@ -7479,8 +7679,8 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
       }
     ]
   },

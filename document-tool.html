@@ -1157,11 +1157,17 @@ function fieldValueHtml(k, v) {
   return esc(v);
 }
 function rowHtml(r, emphasise) {
-  const keys = [...ROW_FIELDS.filter(k => k in r),
-                ...Object.keys(r).filter(k => !ROW_FIELDS.includes(k))];
+  // Anything the controls below render is left out of this table. Showing a
+  // field twice — once as text, once as a box — makes the text look like the
+  // field, and it is the one you cannot type in.
+  const edited = new Set(["kind", "confirmed",
+    ...(r.kind === "state" || r.kind === "vanished" ? ["asWritten", "name"] : [])]);
+  const keys = [...ROW_FIELDS.filter(k => k in r && !edited.has(k)),
+                ...Object.keys(r).filter(k => !ROW_FIELDS.includes(k) && !edited.has(k))];
   const rows = keys.map(k =>
     `<tr><td class="fk">${esc(k)}</td><td>${fieldValueHtml(k, r[k])}</td></tr>`).join("");
-  const missing = ROW_FIELDS.filter(k => !(k in r) && ["name", "asWritten"].includes(k))
+  const missing = ROW_FIELDS.filter(k => !(k in r) && !edited.has(k) &&
+      ["name", "asWritten"].includes(k))
     .map(k => `<tr><td class="fk">${k}</td><td class="prop"><i>not set</i></td></tr>`).join("");
   const i = reviewRows().indexOf(r);
   return `<div class="rowcard${emphasise ? " on" : ""}" ` +
@@ -1177,18 +1183,10 @@ function rowControlsHtml(r, i) {
   const needsName = r.kind === "state" || r.kind === "vanished";
   const conf = r.confirmed === false;
   let html = `<div class="ctl">`;
-  if (needsName) {
-    html += `<div class="ctlrow"><label class="fk">name</label>` +
-      `<input class="npick" list="entlist" data-ri="${i}" value="${esc(r.name || "")}" ` +
-      `placeholder="type a name or id…">` +
-      `<button class="newent" data-ri="${i}" title="mint a new name entity">＋ new</button></div>` +
-      (r.asWritten ? `<div class="hint">The ink reads “${esc(r.asWritten)}”. Pick the lineage ` +
-        `it belongs to — an existing entity if this is the same name propagating, a new one ` +
-        `if it only spells alike.</div>` : "");
-  }
-  // What this row CLAIMS. The AI pass reliably confuses "no name lettered"
-  // with "no street here", and until now that could only be fixed by editing
-  // the file — so it is fixed here, where the mistake is visible on the scan.
+
+  // What this row CLAIMS, first: everything below depends on it. The AI pass
+  // reliably confuses "no name lettered" with "no street here", and until this
+  // existed that could only be fixed by editing the file.
   const KINDS = r.kind === "vanished" ? [] : ["state", "unnamed", "absent"];
   if (KINDS.length) {
     html += `<div class="ctlrow"><label class="fk">kind</label>` +
@@ -1197,6 +1195,25 @@ function rowControlsHtml(r, i) {
                      `</option>`).join("") + `</select></div>` +
       `<div class="hint">${esc(KIND_MEANS[r.kind] || "")}</div>`;
   }
+
+  if (needsName) {
+    // The ink, then which lineage it belongs to — the order the judgement
+    // actually happens in. A row reclassified into `state` has no asWritten
+    // at all until it is typed here, and cannot be confirmed without one.
+    html += `<div class="ctlrow"><label class="fk">asWritten</label>` +
+      `<input class="awpick" type="text" data-ri="${i}" value="${esc(r.asWritten || "")}" ` +
+      `placeholder="the label, exactly as lettered"></div>` +
+      `<div class="hint">Verbatim ink — abbreviations, capitals and typos kept. ` +
+      `“THIRD St”, not “3rd Street”.</div>` +
+      `<div class="ctlrow"><label class="fk">name</label>` +
+      `<input class="npick" type="text" list="entlist" data-ri="${i}" ` +
+      `value="${esc(r.name || "")}" placeholder="type a name or id…">` +
+      `<button class="newent" data-ri="${i}" title="mint a new name entity">＋ new</button></div>` +
+      (r.asWritten ? `<div class="hint">Which lineage does “${esc(r.asWritten)}” belong to? ` +
+        `An existing entity if this is the same name propagating, a new one if it only ` +
+        `spells alike.</div>` : "");
+  }
+
   if (r.kind === "vanished")
     html += `<div class="ctlrow"><button class="retrace" data-ri="${i}">` +
       `Re-trace on the scan</button></div>`;
@@ -1301,6 +1318,15 @@ function bindPopControls() {
     if (coverageExcept.some(x => x === gap.street)) return;
     dropFromCoverage(gap.street, `Drop ALL of ${gap.street} from the document's coverage?`);
   };
+  for (const el of p.querySelectorAll("input.awpick")) el.onchange = () => {
+    const r = reviewRows()[+el.dataset.ri], v = el.value.trim();
+    if (v === (r.asWritten || "")) return;
+    if (v) r.asWritten = v; else delete r.asWritten;
+    // The ink IS the evidence, so changing it means the row asserts something
+    // different and wants looking at again.
+    if (r.confirmed !== false) r.confirmed = false;
+    touch();
+  };
   for (const el of p.querySelectorAll("select.kindpick")) el.onchange = () => {
     const r = reviewRows()[+el.dataset.ri], k = el.value;
     if (k === r.kind) return;
@@ -1353,7 +1379,8 @@ function confirmBlocker(r) {
            "nothing to attach it to, and check-model.js would reject it.\n\n" +
            "Pick a name above, or press ＋ new.";
   if ((r.kind === "state" || r.kind === "vanished") && !r.asWritten)
-    return "This row has no asWritten — the verbatim ink is what makes it evidence (§5.1).";
+    return "This row has no asWritten. The verbatim ink is what makes it evidence (§5.1) — " +
+           "type the label exactly as the sheet letters it in the asWritten box above.";
   return null;
 }
 

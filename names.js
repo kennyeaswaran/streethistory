@@ -171,6 +171,42 @@ const NAME_ENTITIES = {
     possiblySameAs: null, aliases: []
   },
 
+  // ---- Alameda, and the Mills and Wicks / Bliss tract pocket --------------
+
+  "alameda-st": {
+    spellings: [{ forms: ["Alameda Street"] }],
+    namedAfter: "Spanish for a tree-lined avenue, from {{\u00e1lamo}} (\u201ccottonwood tree\u201d)",
+    namedAfterLink: "https://en.wiktionary.org/wiki/alameda",
+    categories: ["nature", "descriptive"],
+    sources: [
+      { title: "L.A. Street Names: Alameda Street (\u201cofficially named on February 2nd, 1855\u201d)",
+        url: "https://lastreetnames.com/street/alameda-street/" }
+    ],
+    disputed: false,
+    note: "Officially named Feb. 2, 1855, though the road \u2014 or an earlier one nearby \u2014 may already have been informally called an alameda.",
+    internalNote: "Carried over from the hand-authored streets-data.js entry for Alameda Street, which cites the same Kines page. M.R. 13-87 is the first DOCUMENT row attesting it in this model.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "huber-st": {
+    spellings: [{ forms: ["Huber Street"] }],
+    namedAfter: "Not documented; most likely {{Caroline Howard (n\u00e9e Huber)}}, wife of the tract developer Dr. Frederick Preston Howard \u2014 the same inference that explains Carolina Street, one block east, now Hewitt Street",
+    namedAfterLink: "https://lastreetnames.com/street/colyton-street/",
+    categories: ["person", "unknown"],
+    sources: [
+      { title: "L.A. Street Names: Colyton Street (Howard\u2019s tract; Carolina St. for his wife Caroline n\u00e9e Huber)",
+        url: "https://lastreetnames.com/street/colyton-street/" },
+      { title: "Recorded map: F.P. Howard & Co.\u2019s Subdivision of the Bliss Tract, M.R. 12-42 (Aug. 1886) \u2014 shows \u201cHuber Street\u201d at 828 E 4th St\u2019s location",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf" },
+      { title: "Recorded map: Mills and Wicks Extension of Second St., M.R. 13-87 \u2014 shows \u201cHUBER ST.\u201d as its south boundary, Apr.\u2013May 1886",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf" }
+    ],
+    disputed: false,
+    note: "Named on the 1886 subdivisions between Alameda and the Santa Fe grounds; the namesake is an inference from the neighbouring Carolina Street, not a record.",
+    internalNote: "The reasoning is already worked out in streets-data.js (4th Street, \u201cAlameda to Hewitt (Huber St)\u201d) and handbook/research-leads.md. STILL UNPROVEN: nothing documents Huber -> 4th/Larkin/Short by name; research-leads asks for a CDNC or 1890s city-directory search. NB the Bliss Tract sheet is M.R. 12-42 \u2014 inbox/MR011-042.pdf is the Goodwin Tract, a different sheet, so 12-42 still needs downloading.",
+    possiblySameAs: null, aliases: []
+  },
+
   // ---- the 1884 Glassell tract (M.R. 6-138) -------------------------------
   // Andrew Glassell subdivided Lot 7 etc. of Block 39, Hancock Survey No. 1,
   // and put his nephew and law partner's name on a street through it. The rest

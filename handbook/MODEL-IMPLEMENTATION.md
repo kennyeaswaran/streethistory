@@ -18,11 +18,13 @@ it, for Kenny's review; MODEL-SPEC.md is unedited and remains the contract.
 | `generated/` | `streets-data.gen.js` (today's consumable shape — the existing `check-data.js` passes on it unmodified), `search-index.js`, `report.md` |
 
 Documents encoded (§11's list, plus what 3rd Street's evidence base needed):
-`ord-1849` (Ord survey; partial — 2nd, 3rd, Chapules rows), `mr003-060`
-(Thomas Tract), `mr030-009` (Wolfskill Orchard), `mr066-035`
-(Washington/Compromise, including its adversarial Third-St-is-Miramar row),
-`tr0015-166a` (Crownwood), `ord-4093` (the 1897 renaming — the deferred apply
-pass now lives here as change rows), `lah-1874-02-27` (Chapules→Pearl), `osm`.
+`ord-1849` (Ord survey; partial — 2nd, 3rd, Chapules rows), `mr003-060-p1`
+and `mr003-060-p2` (Thomas Tract, one document per sheet), `mr030-009`
+(Wolfskill Orchard), `mr066-035` (Washington/Compromise, including its
+adversarial Third-St-is-Miramar row), `tr0015-166a-p1` (Crownwood),
+`ord-4093` (the 1897 renaming — the deferred apply pass now lives here as
+change rows), `lah-1874-02-27` (Chapules→Pearl), `mr006-138`, `mr013-087-p1`,
+`osm`.
 
 Decision recorded (closes a §12 item, per Kenny 2026-08-24): **a revived name
 resumes its old entity** — Georgia's 1897 revert is one entity, three ordered
@@ -55,7 +57,7 @@ diff-street.js "3rd Street"` reports 12 differing fields, every one accounted:
    uncertain. If Kenny prefers the hedge, flip the row to `planned-by`.
 4. **Segment notes dropped (segs 0, 1, 6)** — the two Miramar-caution notes
    are cross-street disambiguation: in the new model that testimony lives as
-   rows on *Miramar itself* (mr066-035, tr0015-166a), where the generated
+   rows on *Miramar itself* (mr066-035, tr0015-166a-p1), where the generated
    Miramar entry now shows its "3rd St" periods — the fact moved to the ground
    it's about. The seg-6 note (rail yards, no bridge) is a place fact that
    should return as an **annotation row** with a citation when one is found;

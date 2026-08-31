@@ -296,7 +296,13 @@ Each row offers:
 - **kind** — `state` / `unnamed` / `absent`, with what each claims written
   beside it. Changing it drops the fields the new kind cannot carry and
   un-confirms the row, since it now says something else.
-- **name** — the entity picker, for `state` and `vanished` rows.
+- **asWritten** — the label exactly as the sheet letters it, abbreviations and
+  typos kept: "THIRD St", not "3rd Street". A row reclassified *into* `state`
+  starts with this empty, and cannot be confirmed until it is filled — the ink
+  is what makes the row evidence. Editing it un-confirms the row.
+- **name** — the entity picker, under the ink, because that is the order the
+  judgement happens in: read the label, then decide which lineage it belongs
+  to.
 - **Confirm this row**, and **Delete this row**.
 - **Re-trace on the scan**, on a `vanished` row: draw a new polyline, keep the
   label and the entity.

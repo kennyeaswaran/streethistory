@@ -18,19 +18,6 @@
 
 const NEW_NAME_ENTITIES = {
 
-  "alameda-st": {
-    spellings: [{"forms":["Alameda Street"]}],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown"],
-    sources: [],
-    disputed: false,
-    note: null,
-    internalNote: "Minted in review from mr013-087-p1, where the ink reads “ALAMEDA ST”. Namesake not researched.",
-    possiblySameAs: null,
-    aliases: []
-  },
-
   "council-street": {
     spellings: [{"forms":["Council Street"]}],
     namedAfter: null,
@@ -92,19 +79,6 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Namesake untraced. Not covered by Kines (checked 2026-08-30). Modern Rockwood Street, which handbook/research-leads.md records as renamed AND realigned by about 43 m — the date of the realignment is a separate open question.",
-    possiblySameAs: null,
-    aliases: []
-  },
-
-  "huber-st": {
-    spellings: [{"forms":["Huber Street"]}],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown"],
-    sources: [],
-    disputed: false,
-    note: null,
-    internalNote: "Minted in review from mr013-087-p1, where the ink reads “HUBER ST.”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   },
