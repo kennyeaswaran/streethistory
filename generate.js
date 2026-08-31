@@ -202,7 +202,7 @@ const nonOsmDocs = DOCUMENTS.filter(d => d.type !== "osm");
 
 function entityHasRowsOnStreet(id, streetName) {
   for (const doc of nonOsmDocs) for (const r of doc.rows) {
-    if (r.kind === "annotation" || r.kind === "silent") continue;
+    if (r.kind === "annotation" || r.kind === "absent" || r.kind === "unnamed") continue;
     const ids = r.kind === "change" ? [r.from, r.to] : [r.name];
     if (ids.map(resolveEntity).includes(id) && r.street === streetName) return true;
   }
@@ -348,11 +348,19 @@ for (const doc of nonOsmDocs) {
                            mechanism: row.mechanism || null, date: docDate(doc) });
     } else if (row.kind === "annotation") {
       addRow(row.street, { ...base, kind: "annotation", text: row.text, url: row.url });
-    } else if (row.kind === "silent") {
+    } else if (row.kind === "unnamed") {
+      // §5.2a: the document draws the roadway and letters no name on it. It
+      // dates the PAVEMENT and says nothing about the name, so it feeds
+      // planned/built exactly as a state row does and never reaches a
+      // timeline. Without this kind such a stretch has to be recorded as
+      // either a name it does not attest or an absence it contradicts.
+      addRow(row.street, { ...base, kind: "unnamed", note: row.note || null,
+                           attests: rowAttests(row, doc) });
+    } else if (row.kind === "absent") {
       // §5.2 — "this document covers this ground and shows nothing here".
       // Carried so the tool's sweep gate and (later) the age colour schemes
       // can read it; it is not evidence OF a name, so it never becomes a source.
-      addRow(row.street, { ...base, kind: "silent", note: row.note || null });
+      addRow(row.street, { ...base, kind: "absent", note: row.note || null });
     }
   }
 }
@@ -700,7 +708,9 @@ function namedAfterFor(streetName, seg) {
 }
 
 function plannedBuiltFor(seg) {
-  const states = seg.rows.filter(r => r.kind === "state" && !r.osm);
+  // `unnamed` counts here and nowhere else: drawn pavement with no lettering
+  // dates the roadway just as well as a labelled one does.
+  const states = seg.rows.filter(r => (r.kind === "state" || r.kind === "unnamed") && !r.osm);
   const byAttest = k => states.filter(s => s.attests === k)
     .sort((x, y) => dkey(docDate(x.doc)) < dkey(docDate(y.doc)) ? -1 : 1);
   const po = byAttest("planned-on")[0], pb = byAttest("planned-by")[0];
@@ -709,7 +719,10 @@ function plannedBuiltFor(seg) {
   if (po) planned = { text: dyear(docDate(po.doc)), url: po.doc.url };
   else if (pb) planned = { text: "by " + dyear(docDate(pb.doc)), url: pb.doc.url };
   if (bo) built = { text: dfmtFull(docDate(bo.doc)), url: bo.doc.url };
-  else if (bb) built = { text: `already “${bb.asWritten}” by ${dfmtFull(docDate(bb.doc))} (${docShort(bb.doc)})`, url: bb.doc.url };
+  else if (bb) built = { text: bb.asWritten
+      ? `already “${bb.asWritten}” by ${dfmtFull(docDate(bb.doc))} (${docShort(bb.doc)})`
+      : `drawn, unlabelled, by ${dfmtFull(docDate(bb.doc))} (${docShort(bb.doc)})`,
+    url: bb.doc.url };
   if (!planned && !built) return { planned: "not yet researched", built: "not yet researched" };
   return { planned: planned || null, built: built || "not yet researched" };
 }
@@ -722,7 +735,7 @@ function sourcesFor(seg, curEntity) {
   // once, from the registry (§6.6).
   if (curEntity) for (const s of entities[curEntity].sources || []) push(s.title, s.url);
   const docs = [];
-  for (const r of seg.rows) if (!r.osm && r.kind !== "annotation" && r.kind !== "silent" && !docs.includes(r.doc)) docs.push(r.doc);
+  for (const r of seg.rows) if (!r.osm && r.kind !== "annotation" && r.kind !== "absent" && !docs.includes(r.doc)) docs.push(r.doc);
   docs.sort((x, y) => dkey(docDate(x)) < dkey(docDate(y)) ? -1 : 1);
   for (const d of docs) {
     const weakBasis = seg.rows.some(r => r.doc === d && ["alignment", "position"].includes(r.basis));

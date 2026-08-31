@@ -94,7 +94,7 @@ module.exports = {
       "note": "Predates ord-4093's Figueroa->Boylston change by three years; the plat draws only the corridor's west edge."
     },
     {
-      "kind": "silent",
+      "kind": "absent",
       "street": "4th Street",
       "from": "3rd Street",
       "to": "Boylston Street",

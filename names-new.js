@@ -18,6 +18,19 @@
 
 const NEW_NAME_ENTITIES = {
 
+  "alameda-st": {
+    spellings: [{"forms":["Alameda Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr013-087-p1, where the ink reads “ALAMEDA ST”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "council-street": {
     spellings: [{"forms":["Council Street"]}],
     namedAfter: null,
@@ -27,7 +40,8 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Namesake untraced. Not covered by Kines (checked 2026-08-30). Part of it survives as modern Council Street; the stretch inside this tract does not.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "court-street": {
@@ -39,7 +53,8 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Namesake untraced. Kines has a Court Street page but it is Monrovia’s (renamed from Bonita Court in 1966 to stop postal confusion) and has nothing to do with this one. Not covered for Los Angeles (checked 2026-08-30).",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "diamond-street": {
@@ -51,7 +66,8 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Namesake untraced. IDENTITY DECIDED (Kenny, 2026-08-30): one entity covering both the plat’s Diamond Street — modern Beverly Boulevard through this tract — and the modern Diamond Street that survives 869 m east. The two lie on roughly the same east-west line, about 30 m apart, so this reads as one naming that lost its middle rather than two that spell alike. NB handbook/research-leads.md records an earlier pass calling Diamond “unchanged since 1884”; that was name-matching, and the surviving stretch is outside MR006-138’s coverage.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "hobart-street": {
@@ -63,7 +79,8 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Namesake untraced. NOT the same entity as Hobart Boulevard in Koreatown: Kines dates that one to 1887 and names it for Hobart Addison Stewart (1868-1915), a Flint, Michigan dairy farmer, on a subdivision by different people. This Hobart Street is three years earlier and a different roadway (modern Lake Shore Terrace). Do not merge on the strength of the spelling.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "home-street": {
@@ -75,7 +92,21 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Namesake untraced. Not covered by Kines (checked 2026-08-30). Modern Rockwood Street, which handbook/research-leads.md records as renamed AND realigned by about 43 m — the date of the realignment is a separate open question.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "huber-st": {
+    spellings: [{"forms":["Huber Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr013-087-p1, where the ink reads “HUBER ST.”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
   },
 
   "lake-avenue": {
@@ -87,7 +118,8 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: "Namesake untraced. Two candidates: Echo Park Lake, the city reservoir this street runs toward, which was already there in 1884; or Lake Vineyard, the ranch of Benjamin D. Wilson, whose daughter Ruth married George S. Patton — whose own street is on this same plat — in the year it was recorded",
     internalNote: "Neither candidate is sourced. Kines’s Lake Avenue page is Pasadena/Altadena’s, named for Lake Vineyard, and is a different street; the coincidence is suggestive but no more. Wanted: a contemporary source. The reservoir reading is the simpler one and should be preferred until something says otherwise.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "state-colton": {
@@ -99,7 +131,8 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Namesake untraced. RENAMED FROM state-street, 2026-08-30: there is another State Street in Boyle Heights, and a bare “state-street” id was a collision waiting to happen. This entity is ONLY the 1884 Glassell-tract State Street that is modern Colton Street. When Boyle Heights is encoded, its State Street must get its own disambiguated entity and must NOT be merged into this one — Kenny is confident they are unrelated namings.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "waters-street": {
@@ -111,7 +144,8 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Namesake untraced. Not covered by Kines (checked 2026-08-30). Modern Douglas Street north of Colton; the stretch south of it is gone. Note the nearby “Walters St” (Ord Street, 1886-1890) in research-leads — a different street, and a spelling trap.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "welcome-street": {
@@ -123,7 +157,8 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Namesake untraced. Not covered by Kines (checked 2026-08-30). Survives under the same name.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   }
 
 };

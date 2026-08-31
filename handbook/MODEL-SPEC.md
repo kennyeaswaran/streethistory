@@ -387,9 +387,12 @@ they are not interchangeable:
   there, and counting it leaves a stretch that can never honestly be resolved.
   The excluded names and their lengths are reported, so they read as ruled out
   rather than missed.
-- **`coverageExcept: ["Dawson Street", …]`, authored.** Ground the polygon
-  strays onto that the document does not inform about, beyond what the sliver
-  rule catches. This is a claim about the POLYGON. A `silent` row is a claim
+- **`coverageExcept`, authored.** Ground the polygon strays onto that the
+  document does not inform about, beyond what the sliver rule catches. Two
+  shapes, because overshoot usually happens *past a crossing* rather than onto
+  a whole street: `"Dawson Street"` drops all of it, and
+  `{ street: "4th Street", from: { px: [95, 668] }, to: "Alameda Street" }`
+  drops one stretch of a street that is otherwise in scope. This is a claim about the POLYGON. A `absent` row is a claim
   about the MAP — that the document covers this ground and draws nothing on it
   — and only the second licenses arguing that no street was there. Conflating
   them turns a traced boundary's slop into a false historical claim, so the
@@ -466,7 +469,7 @@ Documents with no scan — ordinances, newspaper reports, `osm` — have no
 
 ## 5. Rows
 
-Five kinds: `state`, `change` and `annotation` below, plus `silent` (§5.2) and
+Five kinds: `state`, `change` and `annotation` below, plus `absent` (§5.2) and
 `vanished` (§5.3), added 2026-08-25. Extents are stated in **modern**
 cross-street names wherever a cross-street is available — identification has
 already happened, and the plat's own wording lives in Part A — with points
@@ -517,10 +520,10 @@ perfectly normal and is not an error — though the generator should report the
 distinct unmatched strings, since a form recurring across independent
 documents is probably a real spelling nobody has recorded yet.
 
-### 5.2 `silent` — the map covers this ground and shows nothing here
+### 5.2 `absent` — the map covers this ground and draws no street here
 
 ```js
-{ kind: "silent", street: "Willow Street", from: "6th Street", to: "Mesquit Street",
+{ kind: "absent", street: "Willow Street", from: "6th Street", to: "Mesquit Street",
   confirmed: true, note: "blank inside the tract boundary; no street drawn" }
 ```
 
@@ -533,12 +536,41 @@ So silence becomes statable at segment granularity. It is what licenses the
 "no counterpart" verdict in the document tool, it is what makes the
 every-segment-accounted gate on `sweptFully` (§4.5) checkable, and it is
 weak evidence in its own right — on an `exhaustive-in-scope` document (§4.3)
-a `silent` row over a stretch means the street did not exist under any name
+a `absent` row over a stretch means the street did not exist under any name
 at that date, which is what feeds the "latest document showing it did not yet
 exist" colour scheme (§8).
 
-Coverage-plus-`sweptFully` still governs whole-document silence; `silent` rows
+Coverage-plus-`sweptFully` still governs whole-document silence; `absent` rows
 are the reviewable, per-segment version, and they should agree.
+
+### 5.2a `unnamed` — pavement drawn, nothing lettered on it
+
+```js
+{ kind: "unnamed", street: "Hewitt Street", from: { px: [566, 30] }, to: "3rd Street",
+  basis: "alignment", confirmed: false,
+  note: "Two parallel edge lines with no name between them." }
+```
+
+The third thing a sheet can do, and the one the AI pass reliably gets wrong. A
+plat draws plenty of roadway it does not letter: alleys, rights-of-way, the
+far side of a boundary street, corridors whose name sits on another sheet.
+
+Three claims, and they are not interchangeable:
+
+| what the sheet does | kind | what it is evidence of |
+|---|---|---|
+| letters a name along the corridor | `state` | the roadway **and** its name |
+| draws the corridor, letters nothing | `unnamed` | the roadway only |
+| draws no street on this ground | `absent` | the **absence** of a roadway |
+
+So `unnamed` dates the pavement exactly as a `state` row does — it feeds
+`planned` / `built` (§6.4) — and never reaches a name timeline. It carries no
+`name` and no `asWritten`, because there is no ink to quote.
+
+Without it, a drawn-but-unlabelled corridor has to be recorded as either a name
+the document does not attest or an absence the document contradicts. Both were
+happening: on M.R. 13-87 an AI pass called three drawn corridors `absent`,
+which is the claim the project argues *from*.
 
 ### 5.3 `vanished` — drawn pavement with no modern counterpart
 
@@ -591,9 +623,18 @@ cut either survives because the timelines differ or dissolves because they
 don't. The checker must accept both forms.
 
 **`from` and `to` follow canonical order, not the order you noticed them in.**
-`from` is the **west** end of an east-west street and the **south** end of a
+`from` is the **west** end of an east-west street and the **north** end of a
 north-south one; `to` is the other. `null` means the street's own end on that
-side. Written backwards, a row can resolve to an interval of zero length —
+side.
+
+**`null` is a bigger claim than it looks.** It means the modern street's own
+end, which for a long street is far outside any one sheet — so `from: null` on
+a stretch that merely runs off the edge of coverage claims the document
+testifies about every block between here and the far side of the city, and on
+an `absent` row that is a false negative at city scale. Use it only where the
+street genuinely ends inside the polygon; otherwise end at the last crossing
+inside, or give a point. `check-model.js` warns on every `null` end whose
+street leaves the coverage polygon. Written backwards, a row can resolve to an interval of zero length —
 `from: null, to: X` where X sits at the street's own end covers nothing at
 all — and that used to produce no segment, no history, and no complaint. The
 generator now reports any row whose ends resolve to the same point.
@@ -799,7 +840,7 @@ Added with the 2026-08-25 amendments: pixel-space extents and traces require
 the document to have an `alignment` (§4.6), and their pixels must lie within
 the alignment image's bounds; `vanished` traces need at least two points;
 `sweptFully: true` requires every row `confirmed` and — per the tool's gate
-(TOOL-SPEC.md) — every in-bounds segment accounted by some row; and a `silent`
+(TOOL-SPEC.md) — every in-bounds segment accounted by some row; and a `absent`
 row overlapping a `state` row for the same document is a contradiction, not a
 judgement call.
 

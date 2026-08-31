@@ -76,7 +76,7 @@ them afterwards:
   basis: "alignment", confirmed: false, note: "<why, if it is not obvious>" },
 
 // the sheet covers this stretch and shows no street there
-{ kind: "silent", street: "<modern street>", from: "<cross street>", to: "<cross street>",
+{ kind: "absent", street: "<modern street>", from: "<cross street>", to: "<cross street>",
   confirmed: false },
 
 // drawn on the plat, no modern counterpart at all

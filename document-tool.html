@@ -325,7 +325,7 @@ let pendingAlignment = null, loadedDoc = null;
 let docSwept = { fully: false, for: [] };
 // A hand-traced polygon cannot follow a boundary exactly, so it sometimes
 // catches a few metres of a street the document says nothing about. Marking
-// those `silent` would be a lie in the direction that matters most: silence is
+// those `absent` would be a lie in the direction that matters most: silence is
 // EVIDENCE, and licenses arguing that no street was there. This says the
 // opposite — the polygon overshoots, this ground was never covered.
 let coverageExcept = [];
@@ -555,7 +555,7 @@ function setMode(m) {
   cv.classList.toggle("review", m === "review");
   for (const b of document.querySelectorAll(".modebody"))
     setVisible(b, b.dataset.mode === m);
-  if (m !== "review") { hidePop(); tracing = null; updateTraceUI(); }
+  if (m !== "review") { hidePop(); tracing = null; retracing = null; updateTraceUI(); }
   setModeHint();
   cv.classList.toggle("panhand", m === "align" && dragTarget === "view");
   reviewSig = null;                 // force the panel to rebuild on entry
@@ -658,7 +658,7 @@ function loadRender(src, name, realPath) {
 // on disk as `alignment.image`. A canvas rendered on the fly would be at
 // whatever size the browser chose and would exist nowhere afterwards, so every
 // stored pixel would point at a file that was never written. Hence pdftoppm,
-// and hence this message rather than a silent failure — which is what a PDF
+// and hence this message rather than a absent failure — which is what a PDF
 // used to get, since the file picker filtered them out entirely and the path
 // loader just said "could not load".
 function pdfAdvice(pathOrName) {
@@ -748,7 +748,7 @@ $("loadDoc").onclick = async () => {
   coverageExcept = Array.isArray(doc.coverageExcept) ? doc.coverageExcept.slice() : [];
   // A popup describes one row of one document, and it sits over the canvas —
   // left open across a load it both lies and swallows the next click.
-  hidePop(); tracing = null; updateTraceUI();
+  hidePop(); tracing = null; retracing = null; updateTraceUI();
   lastModel = null; reviewSig = null; reviewDirty = false;
   refreshOpenBox();
   draw();
@@ -788,9 +788,19 @@ const REVC = {
   state:       "#1a7a3c",   // the document names this stretch
   change:      "#1f5fa8",   // a renaming happens here
   annotation:  "#0f8a8a",
-  silent:      "#6f6f6f",   // covered, and nothing is drawn there
+  unnamed:     "#b8860b",   // pavement drawn, no name lettered on it
+  absent:      "#6f6f6f",   // covered, and NO street is drawn there
   unaccounted: "#c0392b",   // in coverage, no row says anything
   vanished:    "#8e44ad"    // drawn on the plat, no modern counterpart
+};
+// What each row kind claims, in one line — shown wherever a kind is offered,
+// because "absent" and "unnamed" are exactly the pair people conflate.
+const KIND_MEANS = {
+  state:    "the document letters a name along this stretch",
+  unnamed:  "the document draws the roadway here but letters no name on it",
+  absent:   "the document covers this ground and draws NO street here",
+  change:   "a renaming happens here",
+  vanished: "drawn on the plat, with no modern street to hang it on"
 };
 const esc = s => String(s == null ? "" : s)
   .replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -802,6 +812,7 @@ let reviewDirty = false;        // edits made in review that are not on disk yet
 // from, which is exactly what makes it vanished. Points are scan pixels, so
 // the trace rides on the alignment like everything else stored on a scan.
 let tracing = null;             // null when not tracing, else [[x, y], ...]
+let retracing = null;           // the vanished row whose trace is being redrawn
 
 const reviewRows = () => (loadedDoc && Array.isArray(loadedDoc.rows)) ? loadedDoc.rows : [];
 
@@ -878,7 +889,7 @@ function clipRun(run, pA, pB) {
 // What the rows DON'T say anything about.
 //
 // Accounting street by street is not enough: a document can name one stretch
-// of a street and be silent about the rest, and a street with any row at all
+// of a street and be absent about the rest, and a street with any row at all
 // used to count as handled — so the uncovered part drew as pale background and
 // there was no way to notice it, let alone act on it. Coverage is a claim
 // about GROUND, so the gaps have to be found in metres, not in street names.
@@ -957,7 +968,7 @@ function coverageStreets() {
   }
   const streets = [], slivers = [], excepted = [];
   for (const [name, raw] of merged) {
-    if (coverageExcept.includes(name)) { excepted.push(name); continue; }
+    if (coverageExcept.some(x => x === name)) { excepted.push(name); continue; }
     const runs = stitchRuns(raw).filter(r => r.length >= 2 && runMetres(r) >= MIN_RUN_M);
     if (runs.length) streets.push({ name, runs });
     else slivers.push({ name, metres: Math.max(0, ...stitchRuns(raw).map(runMetres)) });
@@ -1002,6 +1013,19 @@ function reviewModel() {
   }
 
   const gapProblems = [];
+  // A whole street can be dropped from coverage, but so can one STRETCH of
+  // one — a hand-traced boundary often overshoots onto the far side of a
+  // crossing, and the street itself is squarely in scope. An excepted stretch
+  // is treated exactly like a covered one: nothing has to be said about it.
+  for (const rec of streets.values()) rec.excepted = [];
+  for (const x of coverageExcept) {
+    if (typeof x !== "object" || !x.street) continue;
+    const rec = streets.get(x.street);
+    if (!rec) { problems.push(`coverageExcept names “${esc(x.street)}”, which is not in coverage`); continue; }
+    const pA = extentPoint(x.street, x.from, problems), pB = extentPoint(x.street, x.to, problems);
+    rec.runs.forEach((run, i) => rec.excepted.push({ i, range: clipRange(run, pA, pB) }));
+  }
+
   for (const rec of streets.values()) {
     // Which stretch of which run each row speaks for, and what is left over.
     rec.covered = rec.runs.map(() => []);
@@ -1012,6 +1036,9 @@ function reviewModel() {
       const pB = extentPoint(rec.name, extB, gapProblems);
       rec.runs.forEach((run, i) => rec.covered[i].push(clipRange(run, pA, pB)));
     }
+    // An excepted stretch counts as accounted for: it is not ground this
+    // document was ever speaking about.
+    for (const e of rec.excepted) rec.covered[e.i].push(e.range);
     rec.gaps = [];
     rec.runs.forEach((run, i) => {
       for (const [a, b] of runGaps(run, rec.covered[i]))
@@ -1022,7 +1049,8 @@ function reviewModel() {
     rec.status = !rec.rows.length ? "unaccounted"
       : rec.gaps.length ? "partial"
       : (kinds.has("state") || kinds.has("change") || kinds.has("annotation")) ? "named"
-      : "silent";
+      : kinds.has("unnamed") ? "unnamed"
+      : "absent";
     rec.proposed = rec.rows.some(r => r.confirmed === false);
   }
 
@@ -1033,8 +1061,9 @@ function reviewModel() {
            slivers: cov.slivers, excepted: cov.excepted || [],
            counts: {
              named: list.filter(s => s.status === "named").length,
-             silent: list.filter(s => s.status === "silent").length,
+             absent: list.filter(s => s.status === "absent").length,
              partial: list.filter(s => s.status === "partial").length,
+             unnamed: list.filter(s => s.status === "unnamed").length,
              unaccounted: list.filter(s => s.status === "unaccounted").length,
              gapMetres: Math.round(gaps.reduce((m, g) => m + g.metres, 0))
            } };
@@ -1157,8 +1186,23 @@ function rowControlsHtml(r, i) {
         `it belongs to — an existing entity if this is the same name propagating, a new one ` +
         `if it only spells alike.</div>` : "");
   }
+  // What this row CLAIMS. The AI pass reliably confuses "no name lettered"
+  // with "no street here", and until now that could only be fixed by editing
+  // the file — so it is fixed here, where the mistake is visible on the scan.
+  const KINDS = r.kind === "vanished" ? [] : ["state", "unnamed", "absent"];
+  if (KINDS.length) {
+    html += `<div class="ctlrow"><label class="fk">kind</label>` +
+      `<select class="kindpick" data-ri="${i}">` +
+      KINDS.map(k => `<option value="${k}"${k === r.kind ? " selected" : ""}>${k}` +
+                     `</option>`).join("") + `</select></div>` +
+      `<div class="hint">${esc(KIND_MEANS[r.kind] || "")}</div>`;
+  }
+  if (r.kind === "vanished")
+    html += `<div class="ctlrow"><button class="retrace" data-ri="${i}">` +
+      `Re-trace on the scan</button></div>`;
   html += `<div class="ctlrow"><button class="conf ${conf ? "" : "done"}" data-ri="${i}">` +
     (conf ? "Confirm this row" : "✓ confirmed — undo") + `</button></div>`;
+  html += `<div class="ctlrow"><button class="delrow" data-ri="${i}">Delete this row</button></div>`;
   return html + `</div>`;
 }
 
@@ -1199,32 +1243,96 @@ function bindPopControls() {
     const r = reviewRows()[+el.dataset.ri];
     if (mintEntityFor(r)) touch();
   };
-  for (const el of p.querySelectorAll("button.mksilent")) el.onclick = () => {
+  // The "also on this street" list navigates; it does not act.
+  for (const el of p.querySelectorAll("li[data-sib]")) el.onclick = () => {
+    const rec = (lastModel ? lastModel.streets : []).find(x => x.name === selStreet);
+    if (!rec) return;
+    const i = el.dataset.sib.indexOf(":");
+    const what = el.dataset.sib.slice(0, i), ref = el.dataset.sib.slice(i + 1);
+    popRow = what === "row" ? rec.rows[+ref] : null;
+    popGap = what === "gap" ? findGap(ref) : null;
+    if (!popRow && !popGap) return;
+    const find = () => reviewFeatures.find(x => what === "row"
+      ? x.row === popRow : x.gap && gapKey(x.gap) === ref);
+    if (revealFeature(find())) { /* redrawn; features rebuilt */ }
+    const f = find();
+    const mid = f && f.pts.length ? f.pts[Math.floor(f.pts.length / 2)] : popPos;
+    const rec2 = (lastModel ? lastModel.streets : []).find(x => x.name === selStreet) || rec;
+    if (what === "gap") popGap = findGap(ref);
+    else popRow = rec2.rows[+ref];
+    showPop(mid[0], mid[1], popHtml(rec2, popRow, popGap));
+  };
+
+  for (const el of p.querySelectorAll("button.mkabsent")) el.onclick = () => {
     const gap = findGap(el.dataset.gk);
     if (!gap) return alert("That stretch is no longer in the model — reopen it and try again.");
     const rec = lastModel.streets.find(s => s.name === gap.street);
     const ends = gapExtents(rec, gap);
     loadedDoc.rows = loadedDoc.rows || [];
-    loadedDoc.rows.push({ kind: "silent", street: gap.street,
+    loadedDoc.rows.push({ kind: "absent", street: gap.street,
                           from: ends.from, to: ends.to, confirmed: false,
                           note: `Added in review: the sheet covers this ${Math.round(gap.metres)} m ` +
                                 `and draws no street along it.` });
     popGap = null;
     touch();
   };
-  for (const el of p.querySelectorAll("button.mkexcept")) el.onclick = () => {
-    const gap = findGap(el.dataset.gk);
-    if (!gap) return alert("That stretch is no longer in the model — reopen it and try again.");
-    if (!confirm(`Drop ${gap.street} from this document's coverage?\n\n` +
-        `Use this when the polygon strays onto ground the document does not ` +
-        `actually inform about — not when the sheet covers it and draws nothing, ` +
-        `which is "shows nothing here" instead.\n\n` +
+  const dropFromCoverage = (entry, blurb) => {
+    if (!confirm(`${blurb}\n\nUse this when the polygon strays onto ground the ` +
+        `document does not actually inform about — NOT when the sheet covers it ` +
+        `and draws no street, which is "no street drawn here" instead.\n\n` +
         `It is recorded in the document as coverageExcept, and reversible from ` +
         `the panel.`)) return;
-    if (!coverageExcept.includes(gap.street)) coverageExcept.push(gap.street);
+    coverageExcept.push(entry);
     hidePop();
     reviewDirty = true; lastModel = null; reviewSig = null;
     draw(); updateReviewActions();
+  };
+  for (const el of p.querySelectorAll("button.mkexcept")) el.onclick = () => {
+    const gap = findGap(el.dataset.gk);
+    if (!gap) return alert("That stretch is no longer in the model — reopen it and try again.");
+    const rec = lastModel.streets.find(x => x.name === gap.street);
+    const ends = gapExtents(rec, gap);
+    dropFromCoverage({ street: gap.street, from: ends.from, to: ends.to },
+      `Drop this ${Math.round(gap.metres)} m of ${gap.street} from the document's coverage?`);
+  };
+  for (const el of p.querySelectorAll("button.mkexceptall")) el.onclick = () => {
+    const gap = findGap(el.dataset.gk);
+    if (!gap) return alert("That stretch is no longer in the model — reopen it and try again.");
+    if (coverageExcept.some(x => x === gap.street)) return;
+    dropFromCoverage(gap.street, `Drop ALL of ${gap.street} from the document's coverage?`);
+  };
+  for (const el of p.querySelectorAll("select.kindpick")) el.onchange = () => {
+    const r = reviewRows()[+el.dataset.ri], k = el.value;
+    if (k === r.kind) return;
+    // The three kinds carry different fields, and leaving the old ones behind
+    // would make the row fail validation in a way nothing here would show.
+    r.kind = k;
+    if (k === "absent" || k === "unnamed") { delete r.name; delete r.asWritten; }
+    if (k !== "state" && k !== "unnamed") delete r.attests;
+    if (k === "state" && !("basis" in r)) r.basis = "alignment";
+    if (r.confirmed !== false) r.confirmed = false;   // re-classified, so re-check it
+    touch();
+  };
+  for (const el of p.querySelectorAll("button.delrow")) el.onclick = () => {
+    const rows = reviewRows(), r = rows[+el.dataset.ri];
+    if (!r) return;
+    const what = r.kind + (r.asWritten ? ` “${r.asWritten}”` : "") +
+                 (r.street ? ` on ${r.street}` : "");
+    if (!confirm(`Delete this row?\n\n  ${what}\n\n` +
+                 `The stretch goes back to being unaccounted, and the document ` +
+                 `cannot be swept until something is said about it again.`)) return;
+    rows.splice(+el.dataset.ri, 1);
+    popRow = null; popGap = null;
+    hidePop();
+    reviewDirty = true; lastModel = null; reviewSig = null;
+    draw(); updateReviewActions();
+  };
+  for (const el of p.querySelectorAll("button.retrace")) el.onclick = () => {
+    const r = reviewRows()[+el.dataset.ri];
+    if (!r) return;
+    // Re-tracing replaces the polyline and keeps everything else — the label,
+    // the entity, whether it was confirmed. Cancelling leaves the old one.
+    tracing = []; retracing = r; hidePop(); updateTraceUI(); draw();
   };
   for (const el of p.querySelectorAll("button.conf")) el.onclick = () => {
     const r = reviewRows()[+el.dataset.ri];
@@ -1313,19 +1421,20 @@ function refreshReview() {
   const sw = k => `<span class="swatch" style="border-top-color:${REVC[k]}"></span>`;
   $("revLegend").innerHTML =
     `<div class="hint">${sw("state")}named by this document (${c.named})</div>` +
-    `<div class="hint">${sw("silent")}covered, nothing drawn there (${c.silent})</div>` +
+    `<div class="hint">${sw("unnamed")}drawn, but no name lettered on it (${c.unnamed})</div>` +
+    `<div class="hint">${sw("absent")}covered, and <b>no street drawn</b> there (${c.absent})</div>` +
     `<div class="hint">${sw("unaccounted")}<b>unaccounted</b> — no row speaks for this ` +
     `stretch (${m.gaps.length} stretch${m.gaps.length === 1 ? "" : "es"}, ${c.gapMetres} m)</div>` +
     `<div class="hint">${sw("vanished")}drawn on the plat, no modern street (${m.vanished.length})</div>` +
     `<div class="hint">dashed = <span class="prop">proposed</span>, awaiting a human</div>`;
 
-  const order = { unaccounted: 0, named: 1, silent: 2 };
+  const order = { unaccounted: 0, named: 1, absent: 2 };
   const items = m.streets.slice().sort((a, b) =>
     (order[a.status] - order[b.status]) || a.name.localeCompare(b.name));
   $("revStreets").innerHTML = "<ul class='stlist'>" + items.map(s => {
     const aw = s.rows.map(r => r.asWritten).filter(Boolean);
     return `<li data-st="${esc(s.name)}">` +
-      `<span class="swatch" style="border-top-color:${REVC[s.status === "named" ? "state" : s.status]}"></span>` +
+      `<span class="swatch" style="border-top-color:${REVC[s.status === "named" ? "state" : s.status] || REVC.state}"></span>` +
       esc(s.name) + (aw.length ? ` <span class="aw">“${esc(aw.join("”, “"))}”</span>` : "") +
       (s.proposed ? ' <span class="badge prop">proposed</span>' : "") + "</li>";
   }).join("") + "</ul>" +
@@ -1334,13 +1443,16 @@ function refreshReview() {
         `${MIN_RUN_M} m — a side street's stub at an intersection: ` +
         m.slivers.map(s => `${esc(s.name)} (${s.metres.toFixed(0)} m)`).join(", ") + "</div>"
       : "") +
-    ((m.excepted && m.excepted.length)
+    (coverageExcept.length
       ? `<div class="hint">Dropped from coverage as polygon overshoot: ` +
-        m.excepted.map(n => `${esc(n)} <a href="#" data-unexcept="${esc(n)}">undo</a>`).join(", ") +
-        `</div>` : "");
+        coverageExcept.map((x, i) => (typeof x === "string"
+            ? esc(x) + " (all)"
+            : `${esc(x.street)} (a stretch)`) +
+          ` <a href="#" data-unexcept="${i}">undo</a>`).join(", ") + `</div>`
+      : "");
   for (const a of $("revStreets").querySelectorAll("a[data-unexcept]")) a.onclick = e => {
     e.preventDefault();
-    coverageExcept = coverageExcept.filter(n => n !== a.dataset.unexcept);
+    coverageExcept = coverageExcept.filter((_, i) => i !== +a.dataset.unexcept);
     reviewDirty = true; lastModel = null; reviewSig = null;
     draw(); updateReviewActions();
   };
@@ -1391,14 +1503,44 @@ function selectStreet(name) {
   showPop(mid[0], mid[1], popHtml(rec, null, popGap));
 }
 
+// ONE stretch at a time.
+//
+// This used to list every row on the modern street, which made the controls
+// ambiguous the moment a street had three of them — you could not tell which
+// row a button belonged to, and "which stretch am I excluding?" had no answer.
+// A click is about the stretch under the cursor; the rest of the street is
+// listed by name only, as a way to get to them.
 function popHtml(rec, row, gap) {
   const head = `<span class="close" title="close">×</span><b class="hdr">${esc(rec.name)}</b>`;
-  return head + (gap ? gapHtml(rec, gap) : "") +
-         rec.rows.map(r => rowHtml(r, r === row)).join("");
+  const body = gap ? gapHtml(rec, gap)
+             : row ? rowHtml(row, true)
+             : rec.rows.length ? rowHtml(rec.rows[0], true)
+             : `<div class="hint">No row speaks for this street yet.</div>`;
+  return head + body + siblingsHtml(rec, row, gap);
+}
+
+// The rest of this street, one line each — links, not more forms.
+function siblingsHtml(rec, row, gap) {
+  const items = [];
+  rec.rows.forEach((r, i) => {
+    if (r === row) return;
+    items.push(`<li data-sib="row:${i}"><span class="swatch" style="border-top-color:` +
+      `${REVC[r.kind] || REVC.state}"></span>${esc(r.kind)}` +
+      (r.asWritten ? ` “${esc(r.asWritten)}”` : "") + `</li>`);
+  });
+  (rec.gaps || []).forEach(g => {
+    if (gap && gapKey(g) === gapKey(gap)) return;
+    items.push(`<li data-sib="gap:${esc(gapKey(g))}"><span class="swatch" ` +
+      `style="border-top-color:${REVC.unaccounted}"></span>unaccounted · ` +
+      `${Math.round(g.metres)} m</li>`);
+  });
+  if (!items.length) return "";
+  return `<div class="ctl"><div class="hint">Also on ${esc(rec.name)} — click to ` +
+         `go there:</div><ul class="stlist">${items.join("")}</ul></div>`;
 }
 
 // Two honest answers to "no row speaks for this stretch", and they are not the
-// same claim. `silent` says the document covers this ground and draws nothing
+// same claim. `absent` says the document covers this ground and draws nothing
 // on it — evidence, and the thing that later licenses "no street was here".
 // Excluding says the polygon simply overshoots, and the document never spoke
 // about this ground at all. Guessing between them by hand is how a traced
@@ -1417,12 +1559,14 @@ function gapHtml(rec, gap) {
     `<b style="color:${REVC.unaccounted}">unaccounted</b> · ${Math.round(gap.metres)} m` +
     `<div class="hint">${esc(describeEnd(ends.from))} → ${esc(describeEnd(ends.to))} — ` +
     `no row says what this sheet shows along here.</div>` +
-    `<div class="ctlrow"><button class="mksilent" data-gk="${esc(key)}">` +
+    `<div class="ctlrow"><button class="mkabsent" data-gk="${esc(key)}">` +
     `Sheet shows nothing here</button></div>` +
     `<div class="ctlrow"><button class="mkexcept" data-gk="${esc(key)}">` +
-    `Outside coverage — polygon overshoots</button></div>` +
+    `Outside coverage — this stretch</button></div>` +
+    `<div class="ctlrow"><button class="mkexceptall" data-gk="${esc(key)}">` +
+    `Outside coverage — all of ${esc(rec.name)}</button></div>` +
     `<div class="hint">The first is a claim about the map and becomes a ` +
-    `<code>silent</code> row. The second is a claim about the polygon and drops ` +
+    `<code>absent</code> row. The second is a claim about the polygon and drops ` +
     `<b>${esc(rec.name)}</b> from this document's coverage entirely.</div></div>`;
 }
 
@@ -1659,20 +1803,38 @@ function updateTraceUI() {
   setVisible($("traceDone"), on);
   setVisible($("traceCancel"), on);
   setVisible($("traceStart"), !on);
+  $("traceStart").textContent = "Trace a vanished street";
   $("traceState").innerHTML = !on ? ""
     : tracing.length < 2
       ? `<span class="warn">${tracing.length} point${tracing.length === 1 ? "" : "s"}</span> — ` +
         `click along the corridor's centre line; two points is the minimum.`
-      : `${tracing.length} points. Click to extend, or Finish.`;
+      : `${tracing.length} points. Click to extend, or Finish.` +
+        (retracing ? ` <b>Replacing the trace on “${esc(retracing.asWritten || "")}”.</b>` : "");
   cv.classList.toggle("coverage", on);        // crosshair
 }
 $("traceStart").onclick = () => {
   if (!img) return alert("Load the document first.");
   tracing = []; hidePop(); updateTraceUI(); draw();
 };
-$("traceCancel").onclick = () => { tracing = null; updateTraceUI(); draw(); };
+$("traceCancel").onclick = () => { tracing = null; retracing = null; updateTraceUI(); draw(); };
 $("traceDone").onclick = () => {
   if (!tracing || tracing.length < 2) return alert("A trace needs at least two points.");
+  if (retracing) {
+    retracing.trace = tracing.slice();
+    if (retracing.confirmed !== false) retracing.confirmed = false;  // re-check it
+    const row = retracing;
+    tracing = null; retracing = null;
+    reviewDirty = true; lastModel = null; reviewSig = null;
+    updateTraceUI(); draw();
+    const f = reviewFeatures.find(x => x.row === row);
+    if (f && f.pts.length) {
+      const mid = f.pts[Math.floor(f.pts.length / 2)];
+      popRow = row;
+      showPop(mid[0], mid[1], `<span class="close" title="close">×</span>` +
+        `<b class="hdr">Vanished street</b>` + rowHtml(row, true));
+    }
+    return;
+  }
   const asWritten = (prompt(
     "The label, exactly as the plat letters it — typos, abbreviations and all. " +
     "This is the evidence; the tidy form belongs to the name entity.", "") || "").trim();
@@ -1788,9 +1950,9 @@ ${covLines.join(",\n")}
   alignment: ${alignmentBlock()},
 
 ${coverageExcept.length ? `  // The polygon strays onto these; the document does not inform about them.
-  // NOT the same as a silent row, which says the sheet covers the ground and
+  // NOT the same as a absent row, which says the sheet covers the ground and
   // draws nothing there (MODEL-SPEC §4.4, §5.2).
-  coverageExcept: ${JSON.stringify(coverageExcept.slice().sort())},
+  coverageExcept: ${JSON.stringify(coverageExcept)},
 
 ` : ""}  sweptFully: ${docSwept.fully ? "true" : "false"},
   sweptFor: ${JSON.stringify(docSwept.for || [])},
@@ -2015,7 +2177,7 @@ function streetsJsonText(id) {
     // ruled out, not missed. Do not write rows for these.
     excludedAsSlivers: d.slivers.map(s => ({ name: s.name, metres: +s.metres.toFixed(1) })),
     // Ground the polygon strays onto that the document does not inform about.
-    // Do not write rows for these either — not even silent ones.
+    // Do not write rows for these either — not even absent ones.
     excludedAsOvershoot: coverageExcept.slice().sort()
   };
   // Coordinate pairs on one line each; the default pretty-printer puts every
@@ -2095,19 +2257,63 @@ Rows take these shapes, all of them \`confirmed: false\`, since a human checks
 them afterwards:
 
 \`\`\`js
-// the plat labels this stretch of a modern street
+// the plat LETTERS A NAME along this stretch
 { kind: "state", asWritten: "<label exactly as lettered>",
   street: "<modern street>", from: "<cross street>", to: "<cross street>",
   basis: "alignment", confirmed: false, note: "<why, if it is not obvious>" },
 
-// the sheet covers this stretch and shows no street there
-{ kind: "silent", street: "<modern street>", from: "<cross street>", to: "<cross street>",
-  confirmed: false },
+// the plat DRAWS THE ROADWAY here but letters no name on it
+{ kind: "unnamed", street: "<modern street>", from: "<cross street>", to: "<cross street>",
+  basis: "alignment", confirmed: false, note: "<what is drawn>" },
+
+// the plat covers this ground and draws NO STREET here at all
+{ kind: "absent", street: "<modern street>", from: "<cross street>", to: "<cross street>",
+  confirmed: false, note: "<what is there instead>" },
 
 // drawn on the plat, no modern counterpart at all
 { kind: "vanished", asWritten: "<label as lettered>",
   trace: [[x, y], [x, y]], basis: "alignment", confirmed: false }
 \`\`\`
+
+### The three kinds are three different claims. Read this twice.
+
+| what you see on the sheet | kind |
+|---|---|
+| a corridor with a name lettered along it | \`state\` |
+| a corridor, edge lines, an alley or a right-of-way — but no name on it | \`unnamed\` |
+| lot interiors, blank paper, a block with no street through it | \`absent\` |
+
+\`absent\` is the strong one: it says the sheet **shows there was no street
+here**, and the project later argues from that. If the sheet draws lines you
+think are a street but cannot find a name for, that is \`unnamed\`, not
+\`absent\`. If you are unsure whether the lines are a street at all, say so in
+\`note\` and use \`unnamed\` — it claims less.
+
+Neither \`unnamed\` nor \`absent\` may carry \`name\` or \`asWritten\`. There is
+no ink to quote.
+
+### Which end is \`from\`
+
+\`from\` is the **west** end of an east-west street and the **north** end of a
+north-south one. \`to\` is the other end. This is fixed, and it is not the order
+you happened to read the sheet in — a row written the other way round produces
+a mislabelled segment or, if both ends land in the same place, no segment at
+all.
+
+### \`null\` is almost never what you want
+
+\`null\` means **the modern street's own end**, which for a street like 3rd
+Street is miles outside this sheet. Writing \`from: null\` on a stretch that
+merely runs off the edge of the coverage claims the document testifies about
+every block between here and the far end of the city.
+
+Use \`null\` only when the modern street genuinely ends inside the coverage
+polygon. Where a stretch runs to the edge of coverage, end it at the last
+crossing inside, or give a point: \`to: { px: [x, y] }\`.
+
+**Do not invent a \`date\` shape.** If you can read the survey or recording date
+off the sheet, give it as \`date: { on: "1886-05" }\` — or \`after\` / \`before\`
+for a range. Never write the string \`"undefined"\`.
 
 **Do not write a \`name\` field.** You are reading one sheet; \`name\` is a
 claim about which naming *lineage* a label belongs to, and that can only be
@@ -2198,7 +2404,7 @@ $("save").onclick = async () => {
 
   // Three save dialogs for three files that all belong in one folder is the
   // wrong shape. If the project folder isn't connected yet, ask for it ONCE,
-  // here, and remember it — after that saving is silent.
+  // here, and remember it — after that saving is absent.
   if (!projectDir && window.showDirectoryPicker) {
     alert("Choose the PROJECT FOLDER" +
           (projectFolderName ? ` — the one named “${projectFolderName}”` : "") + ".\n\n" +

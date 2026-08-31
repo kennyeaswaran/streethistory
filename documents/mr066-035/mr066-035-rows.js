@@ -76,7 +76,7 @@
 // coverage ends.  The plat draws no corridor along it.  (Rule 3.)
 // NOTE: `to` is the next crossing on 4th Street; coverage actually stops at the
 // tract boundary near px (636,1119), well short of Boylston.
-{ kind: "silent", street: "4th Street", from: "3rd Street", to: "Boylston Street",
+{ kind: "absent", street: "4th Street", from: "3rd Street", to: "Boylston Street",
   confirmed: false },
 
 // --- Huntley Drive: UNRESOLVED, two readings --------------------------------
@@ -90,7 +90,7 @@
 // facts point opposite ways and 6.5 m is too little ink to settle it.
 // DECIDER: the full modern Huntley Drive centreline south of Miramar Street.
 // If it is collinear with the stub, reading A; if it runs where the (898,1110)
-// crossing implies, Huntley is its own corridor and the plat is silent.
+// crossing implies, Huntley is its own corridor and the plat is absent.
 //
 // A) name: no entity id known -- the label reads "FIGUEROA ST."
 // { kind: "state", asWritten: "FIGUEROA ST.",
@@ -98,7 +98,7 @@
 //   basis: "alignment", confirmed: false },
 //
 // B)
-// { kind: "silent", street: "Huntley Drive", from: "Miramar Street",
+// { kind: "absent", street: "Huntley Drive", from: "Miramar Street",
 //   to: "3rd Street", confirmed: false },
 
 // --- vanished: none ---------------------------------------------------------

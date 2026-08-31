@@ -235,11 +235,16 @@ scan, each in the colour of what the rows say about it:
 
 | colour | meaning |
 |---|---|
-| green | the document names this stretch (`state`) |
-| blue | a renaming happens here (`change`) |
-| grey | covered, and the sheet draws nothing there (`silent`) |
-| **red** | **unaccounted** — in coverage, and no row says anything |
+| green | the sheet **letters a name** along this stretch (`state`) |
+| amber | the sheet **draws the roadway** and letters nothing on it (`unnamed`) |
+| grey | the sheet covers this ground and draws **no street** here (`absent`) |
+| **red** | **unaccounted** — no row speaks for it |
 | purple | drawn on the plat with no modern counterpart (`vanished`) |
+
+Those first three are three different claims, and an AI pass will conflate the
+middle and the last one every time. `absent` is the strong one — it is what
+later licenses arguing no street was there. Drawn linework with no name on it
+is `unnamed`, which dates the pavement and says nothing about the name.
 
 Solid means confirmed; **dashed means proposed** — a `confirmed: false` row
 nobody has checked. Nothing is lettered on the map on purpose: the point is to
@@ -279,6 +284,23 @@ the generator prints it as a former name's origin line on the public site —
 while `internalNote` is not rendered anywhere. Identity decisions, dead-end
 searches and who decided what all belong in `internalNote`.
 
+### Editing what a row says
+
+The popup is about **one stretch** — the one you clicked. The rest of the
+street is listed underneath as links to jump to. It used to show every row on
+the street at once, which made it impossible to tell which stretch a button
+belonged to.
+
+Each row offers:
+
+- **kind** — `state` / `unnamed` / `absent`, with what each claims written
+  beside it. Changing it drops the fields the new kind cannot carry and
+  un-confirms the row, since it now says something else.
+- **name** — the entity picker, for `state` and `vanished` rows.
+- **Confirm this row**, and **Delete this row**.
+- **Re-trace on the scan**, on a `vanished` row: draw a new polyline, keep the
+  label and the entity.
+
 ### Confirming, and the sweep
 
 **Confirm this row** removes `confirmed: false`. Until then, `generate.js`
@@ -286,19 +308,14 @@ holds the row back entirely — a proposal is not evidence, and one that reached
 the map would make review optional in practice. `generate` says how many it is
 holding on each run.
 
-A row cannot be confirmed without a name entity and without `asWritten`.
+A row cannot be confirmed without a name entity and without `asWritten` — where
+its kind needs them.
 
 **Mark fully swept** sets `sweptFully: true`, which is the strongest claim the
 model makes: it licenses arguing from this document's *silence*. So it is a
 gate rather than a checkbox, and it says in words what is missing — how many
 metres across how many stretches are still unaccounted, any row still proposed,
-any row without a name. When it goes through it also fills `sweptFor` with the
-streets in coverage.
-
-**Save review** writes `documents/<id>/<id>.js` and, if you minted any,
-`names-new.js`. Nothing is written until you press it, and reloading the page
-with unsaved edits will warn you. Then, as always, `node check-model.js` and
-`node generate.js`.
+any row without a name. When it goes through it also fills `sweptFor`.
 
 ### Red is a stretch, not a street
 
@@ -312,13 +329,15 @@ Clicking a red stretch offers exactly two answers, and they are different
 claims:
 
 - **Sheet shows nothing here** — the document covers this ground and draws no
-  street on it. This is *evidence*: it becomes a `silent` row and it is what
+  street on it. This is *evidence*: it becomes a `absent` row and it is what
   later licenses arguing that no street was there. The extents are worked out
   for you, snapping to a cross street where one is close and falling back to a
   scan pixel mid-block.
-- **Outside coverage — polygon overshoots** — the document never spoke about
-  this ground at all; the traced boundary just strayed onto it. This records
-  the street in `coverageExcept` and drops it from the document's coverage.
+- **Outside coverage — this stretch**, or **all of this street** — the document
+  never spoke about that ground; the traced boundary just strayed onto it. Both
+  record it in `coverageExcept`. The stretch form is usually what you want: a
+  polygon typically overshoots *past a crossing* onto a street that is squarely
+  in scope elsewhere.
 
 Guessing between them by hand is how a traced boundary's slop turns into a
 false historical claim, which is why the tool will not choose for you. The

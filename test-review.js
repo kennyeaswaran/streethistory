@@ -156,7 +156,7 @@ console.log("a plausible AI pass");
       from: "Bixel Street", to: "Boylston Street", basis: "alignment", confirmed: false },
     { kind: "state", name: "third-street", asWritten: "Arnold St", street: "3rd Street",
       from: "Bixel Street", to: null, basis: "alignment", confirmed: false },
-    { kind: "silent", street: "4th Street", from: null, to: null, confirmed: false },
+    { kind: "absent", street: "4th Street", from: null, to: null, confirmed: false },
     { kind: "vanished", name: "third-street", asWritten: "Gone St",
       trace: [[300, 500], [600, 800]], basis: "alignment", confirmed: false }
   ]);
@@ -168,7 +168,7 @@ console.log("a plausible AI pass");
   ok("a partly covered one reads as partial", m.counts.partial === 1, JSON.stringify(m.counts));
   ok("and the leftover is measured, not just noted", m.counts.gapMetres > 0,
      String(m.counts.gapMetres));
-  ok("a silent row is not a naming", by["4th Street"].status === "silent");
+  ok("a absent row is not a naming", by["4th Street"].status === "absent");
   ok("everything unmentioned stays unaccounted", m.counts.unaccounted === 2, JSON.stringify(m.counts));
   ok("a vanished row is held apart from the streets", m.vanished.length === 1);
   ok("confirmed:false is counted as awaiting review", m.proposed === 4, String(m.proposed));
@@ -335,8 +335,8 @@ console.log("the gate on confirming a row");
   ok("a complete state row can be confirmed",
      API.confirmBlocker({ kind: "state", name: "arnold", asWritten: "ARNOLD ST.",
                           street: "3rd Street" }) === null);
-  ok("a silent row needs neither — it names nothing",
-     API.confirmBlocker({ kind: "silent", street: "4th Street" }) === null);
+  ok("a absent row needs neither — it names nothing",
+     API.confirmBlocker({ kind: "absent", street: "4th Street" }) === null);
   ok("a vanished row is held to the same standard as a state row",
      /no name entity/.test(API.confirmBlocker({ kind: "vanished", asWritten: "Gone St" }) || ""));
 }
@@ -353,7 +353,7 @@ console.log("the gate on sweptFully");
     { kind: "state", name: "third-street", asWritten: "THIRD ST.", street: "Miramar Street", confirmed: false },
     { kind: "state", name: "bixel", asWritten: "BIXEL ST", street: "Bixel Street", confirmed: false },
     { kind: "state", name: "figueroa-gov", asWritten: "FIGUEROA ST.", street: "Boylston Street", confirmed: false },
-    { kind: "silent", street: "4th Street", confirmed: false }
+    { kind: "absent", street: "4th Street", confirmed: false }
   ];
   setRows(full);
   b = API.sweepBlockers().join(" | ");

@@ -43,7 +43,7 @@ module.exports = {
   },
 
   // The polygon strays onto these; the document does not inform about them.
-  // NOT the same as a silent row, which says the sheet covers the ground and
+  // NOT the same as a absent row, which says the sheet covers the ground and
   // draws nothing there (MODEL-SPEC §4.4, §5.2).
   coverageExcept: ["Dawson Street","Pizarro Street"],
 
@@ -122,7 +122,7 @@ module.exports = {
       "name": "waters-street"
     },
     {
-      "kind": "silent",
+      "kind": "absent",
       "street": "Glendale Boulevard",
       "from": {
         "px": [
@@ -159,7 +159,7 @@ module.exports = {
       "name": "hobart-street"
     },
     {
-      "kind": "silent",
+      "kind": "absent",
       "street": "Laveta Terrace",
       "from": "Glendale Boulevard",
       "to": {
@@ -238,14 +238,14 @@ module.exports = {
       "name": "waters-street"
     },
     {
-      "kind": "silent",
+      "kind": "absent",
       "street": "Douglas Street",
       "from": null,
       "to": "Colton Street",
       "note": "Added in review: the sheet covers this 152 m and draws no street along it."
     },
     {
-      "kind": "silent",
+      "kind": "absent",
       "street": "Glendale Boulevard",
       "from": "Laveta Terrace",
       "to": null,

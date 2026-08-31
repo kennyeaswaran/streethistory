@@ -92,7 +92,7 @@ an appendix mapping verdicts to row kinds:
 | verdict | row |
 |---|---|
 | FULL / PARTIAL | `state` on that street, extent from the matched portion |
-| NONE / CROSSING | `silent` on that street's in-bounds extent |
+| NONE / CROSSING | `absent` on that street's in-bounds extent |
 | a plat corridor no modern street matched | `vanished`, traced in scan pixels |
 
 **Which model does it is an empirical question with an answer already in the
@@ -117,10 +117,13 @@ segments inside the coverage polygon, coloured:
 
 | colour | meaning |
 |---|---|
-| identified | a `state` row covers this stretch |
-| no counterpart | a `silent` row covers it — the map shows nothing here |
-| unaccounted | in bounds, and no row speaks for it |
-| vanished | a `vanished` trace: drawn pavement with no modern successor |
+| green | a `state` row: the sheet letters a name along this stretch |
+| amber | an `unnamed` row: the sheet draws the roadway and letters nothing |
+| grey | an `absent` row: the sheet draws no street on this ground |
+| red | unaccounted — no row speaks for it |
+| purple | a `vanished` trace: drawn pavement with no modern successor |
+
+
 
 Proposals render dashed, so unconfirmed work is findable at a glance. Ghost
 traces sit in place on the scan; clutter is managed by zooming, not by hiding
@@ -136,12 +139,22 @@ MR006-138 sat invisible as background until this was fixed. What no row speaks
 for is computed per run in metres and drawn over exactly the part that is
 missing (`runGaps`, §6).
 
-**Clicking a segment** opens a popup showing everything in its row — modern
+**Clicking a stretch** opens a popup about **that stretch only**, showing
+everything in its row — modern
 name and bounds, the name entity and its display form, `asWritten`, `basis`,
 `attests`, `note` — because all of it is what the human is confirming. The
 popup offers:
 
 - **Confirm** (the checkbox that matters).
+- **Change the kind** — `state` / `unnamed` / `absent`, with what each claims
+  written beside it. This is the correction the AI pass most often needs, and
+  it can only be made looking at the ink. Changing a kind drops the fields the
+  new kind cannot carry and un-confirms the row, because it now says something
+  else.
+- **Delete the row** — the stretch goes back to unaccounted, and the sweep gate
+  notices.
+- **Re-trace a `vanished` row** — replaces the polyline and keeps the label,
+  the entity and everything else.
 - **Change the identification** — type to search name entities across all
   recorded forms, with the same disambiguation labels the map's search uses,
   plus *create a new entity*. Creating one must show any existing entity with
@@ -153,11 +166,12 @@ popup offers:
 - **Split the extent** — click a point along the segment. Snap to a
   cross-street when one is near, otherwise store the point in scan pixels
   (§5.4).
-- **Mark as silent** — flip a `state` row to a `silent` one.
-- **On an unaccounted stretch, two offers and no default**: *sheet shows
-  nothing here*, which writes a `silent` row with the extents worked out by
-  snapping; or *outside coverage*, which records the street in
-  `coverageExcept`. They are different claims and only the first is evidence
+- **Mark as absent** — flip a `state` row to a `absent` one.
+- **On an unaccounted stretch, three offers and no default**: *sheet shows
+  nothing here*, which writes an `absent` row with the extents worked out by
+  snapping; *outside coverage — this stretch*; or *outside coverage — all of
+  this street*. The first is a claim about the map, the other two about the
+  polygon. They are different claims and only the first is evidence
   (MODEL-SPEC §4.4).
 - **Set `basis` and the `attests` override** — whether this map *dedicates*
   the street (`planned-on`) or merely draws one already there (`planned-by`)
@@ -168,6 +182,11 @@ type `asWritten` verbatim. Stored in scan pixels (§4.6), so a later
 re-alignment moves the ghost with the map. It lands `confirmed: false` with no
 entity, and the popup opens on it — an unnamed trace cannot be confirmed and
 blocks the sweep, which is how it avoids being forgotten.
+
+**The other stretches of the same street** are listed under the row as links,
+not as more forms. Showing every row on a street at once made the controls
+ambiguous the moment there were three of them — "which stretch am I excluding?"
+had no answer.
 
 **Export notes for the next AI pass**: rather than retyping, the tool emits
 the unconfirmed and rejected rows with the human's comments, formatted as a
@@ -206,7 +225,7 @@ API is unavailable.
 ## 6. The geometry core, and how to test it without a browser
 
 Put these in a plain module the page imports and Node can require, because
-they are where silent wrongness would hide:
+they are where absent wrongness would hide:
 
 - `scanToWorld` / `worldToScan` — pixel ↔ lat/lng through the alignment.
   Round-tripping a point must return it within a pixel.
@@ -261,7 +280,7 @@ installed on Kenny's machine; that suite runs in the assistant's sandbox.
   nothing in coverage is unaccounted, no proposal is outstanding, and every
   naming row has an entity — the tool states what is missing rather than
   choosing for you.
-- **Decide whether a stretch is `silent` or outside coverage.** Both are
+- **Decide whether a stretch is `absent` or outside coverage.** Both are
   offered on an unaccounted stretch and neither is default: one is a claim
   about the map, the other about the polygon (MODEL-SPEC §4.4).
 

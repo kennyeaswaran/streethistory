@@ -56,7 +56,7 @@ Rows to paste into `mr066-035.js`, in this shape — all of them
   basis: "alignment", confirmed: false },
 
 // the sheet covers this stretch and shows no street there
-{ kind: "silent", street: "<modern street>", from: "<cross street>", to: "<cross street>",
+{ kind: "absent", street: "<modern street>", from: "<cross street>", to: "<cross street>",
   confirmed: false },
 
 // drawn on the plat, no modern counterpart at all

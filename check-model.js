@@ -20,6 +20,7 @@ for (const [id, e] of Object.entries(NEW_NAME_ENTITIES)) {
   NAME_ENTITIES[id] = { ...e, pendingResearch: true };
 }
 
+const DocGeom = require("./doc-geometry.js");
 const { DOCUMENTS } = require("./documents/index.js");
 
 let errors = 0;
@@ -127,19 +128,27 @@ for (const doc of DOCUMENTS) {
 
   // §4.4: a hand-traced polygon sometimes strays a few metres onto ground the
   // document says nothing about. Naming those streets here is a claim about
-  // the POLYGON; a silent row would be a claim about the MAP, and only the
+  // the POLYGON; a absent row would be a claim about the MAP, and only the
   // latter licenses arguing from the document's silence. Keeping them apart is
   // the point, so a name that is not a real street — or that also carries rows
   // — means one of the two has been used for the other.
   if (doc.coverageExcept !== undefined) {
-    if (!Array.isArray(doc.coverageExcept)) err(d, "coverageExcept must be an array of street names");
-    else for (const n of doc.coverageExcept) {
-      if (!streets.has(n)) err(d, "coverageExcept names a street not in the geometry:", n);
-      if ((doc.rows || []).some(r => r.street === n))
-        err(d, `coverageExcept lists "${n}" but rows also speak for it — it is either ` +
-               `covered or it is not`);
-      if ((doc.sweptFor || []).includes(n))
-        err(d, `coverageExcept and sweptFor both list "${n}"`);
+    if (!Array.isArray(doc.coverageExcept)) err(d, "coverageExcept must be an array");
+    else for (const x of doc.coverageExcept) {
+      // Either a street name (all of it) or {street, from, to} (one stretch).
+      // The stretch form exists because a polygon usually overshoots past a
+      // crossing, not onto a whole street the document is otherwise silent on.
+      const n = typeof x === "string" ? x : x && x.street;
+      if (!n || !streets.has(n)) { err(d, "coverageExcept names a street not in the geometry:", n); continue; }
+      if (typeof x === "string") {
+        if ((doc.rows || []).some(r => r.street === n))
+          err(d, `coverageExcept drops all of "${n}" but rows also speak for it — it is ` +
+                 `either covered or it is not; drop a stretch instead`);
+        if ((doc.sweptFor || []).includes(n))
+          err(d, `coverageExcept and sweptFor both list "${n}"`);
+      } else if (x.from === undefined || x.to === undefined) {
+        err(d, `coverageExcept entry for "${n}" needs from and to (null for the street's own end)`);
+      }
     }
   }
   }
@@ -177,9 +186,34 @@ for (const doc of DOCUMENTS) {
   const proposalOrErr = (row, r, msg) =>
     row.confirmed === false ? warn(r, "proposal:", msg) : err(r, msg);
 
+  // §5.4: `null` means the modern street's own end, which for a long street is
+  // far outside any one sheet. A row that ends in `null` on a street whose
+  // geometry leaves the coverage polygon claims testimony over ground the
+  // document never showed — and for an `absent` row that is a false negative
+  // spanning half the city. Warned, not errored: on a short street that really
+  // does end inside coverage, `null` is exactly right.
+  if (doc.coverage && doc.coverage.length >= 3 && doc.alignment) {
+    let ring = null;
+    try {
+      ring = typeof doc.coverage[0][0] === "number" && doc.coverage[0][0] > 1000
+        ? DocGeom.coverageToWorld(DocGeom.fitAlignment(doc.alignment.points), doc.coverage)
+        : doc.coverage;
+    } catch (e) { /* alignment problems are reported elsewhere */ }
+    if (ring) for (const [i, row] of (doc.rows || []).entries()) {
+      if (!row.street || (row.from !== null && row.to !== null)) continue;
+      const pts = streets.get(row.street);
+      if (!pts) continue;
+      const outside = pts.filter(p => !DocGeom.pointInPolygon([p.lat, p.lon], ring)).length;
+      if (outside)
+        warn(`${d}.rows[${i}]`, `${row.kind} row on ${row.street} ends in null, but that ` +
+             `street runs outside this document's coverage — null means the STREET's end, ` +
+             `not the coverage edge, so this claims more ground than the sheet shows`);
+    }
+  }
+
   for (const [i, row] of (doc.rows || []).entries()) {
     const r = `${d}.rows[${i}]`;
-    if (!["state", "change", "annotation", "silent", "vanished"].includes(row.kind)) { err(r, "unknown kind:", row.kind); continue; }
+    if (!["state", "change", "annotation", "absent", "unnamed", "vanished"].includes(row.kind)) { err(r, "unknown kind:", row.kind); continue; }
     // §5.3 vanished rows describe absent pavement: no modern street, a traced
     // polyline in scan pixels instead.
     if (row.kind === "vanished") {
@@ -197,9 +231,17 @@ for (const doc of DOCUMENTS) {
     }
     if (doc.type !== "osm" && !streets.has(row.street)) err(r, "street not in geometry:", row.street);
     // §5.2 silence is stated, not inferred, so it can be reviewed and ticked off.
-    if (row.kind === "silent") {
-      if (row.name) err(r, "silent row must not carry a name — it records that the map shows nothing here");
-      if (row.asWritten) err(r, "silent row must not carry asWritten");
+    if (row.kind === "absent") {
+      if (row.name) err(r, "absent row must not carry a name — it records that the map shows NO STREET here");
+      if (row.asWritten) err(r, "absent row must not carry asWritten");
+    }
+    // §5.2a — pavement drawn, nothing lettered. Positive evidence that the
+    // roadway existed; no evidence at all about its name, which is exactly
+    // what distinguishes it from `absent` (no roadway) and from `state`.
+    if (row.kind === "unnamed") {
+      if (row.name) err(r, "unnamed row must not carry a name — the point of it is that the document names nothing here");
+      if (row.asWritten) err(r, "unnamed row must not carry asWritten — there is no ink to quote");
+      if (row.attests && !ATTESTS.includes(row.attests)) err(r, "bad attests override:", row.attests);
     }
     if (row.kind === "state") {
       // An unconfirmed proposal is allowed to have no `name` yet. Identity is a

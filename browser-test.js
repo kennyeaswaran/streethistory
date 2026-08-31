@@ -359,6 +359,8 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("the popup opens on it so it is not forgotten",
        (await page.textContent("#pop")).includes("Waters Street"),
        (await page.textContent("#pop") || "").slice(0, 80));
+    ok("a vanished row can be re-traced",
+       await page.locator("#pop button.retrace").count() === 1);
     ok("the sweep now refuses on the nameless row",
        /no name entity/.test(await page.textContent("#sweepState")),
        await page.textContent("#sweepState"));
@@ -387,8 +389,10 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     // Also un-sweep it and put back the streets already excluded as overshoot,
     // so the sweep gate and the exclusion flow both have something to act on.
     await page.evaluate(() => {
+      // Keep only the `state` row on Douglas, whatever the others are called —
+      // this fixture is live data and its row kinds have been renamed once.
       loadedDoc.rows = loadedDoc.rows.filter(r => r.street !== "Douglas Street" ||
-                                                  r.kind !== "silent");
+                                                  r.kind === "state");
       docSwept = { fully: false, for: [] };
       coverageExcept = [];
       lastModel = null; reviewSig = null; draw(); updateReviewActions();
@@ -421,28 +425,32 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
        at && at[0] > 0 && at[1] > 0 && at[0] < 1500 && at[1] < 950, JSON.stringify(at));
     await page.mouse.click(at[0], at[1]);
     await page.waitForTimeout(250);
-    ok("clicking it offers a silent row", await page.locator("#pop button.mksilent").count() === 1);
-    ok("…and an exclusion", await page.locator("#pop button.mkexcept").count() === 1);
+    ok("clicking it offers an absent row", await page.locator("#pop button.mkabsent").count() === 1);
+    ok("…and an exclusion of this stretch", await page.locator("#pop button.mkexcept").count() === 1);
+    ok("…and of the whole street", await page.locator("#pop button.mkexceptall").count() === 1);
     ok("…and names the ends in row vocabulary",
        /Colton|px /.test(await page.textContent("#pop")),
        (await page.textContent("#pop")).slice(0, 140));
 
     const rows0 = await page.evaluate(() => loadedDoc.rows.length);
-    await page.locator("#pop button.mksilent").first().click();
+    await page.locator("#pop button.mkabsent").first().click();
     await page.waitForTimeout(400);
     const after = await m();
-    ok("a silent row closes the gap",
+    ok("a absent row closes the gap",
        !after.gaps.some(g => g.street === "Douglas Street"), JSON.stringify(after.gaps));
     ok("…and it is a real row with extents",
        await page.evaluate(() => {
          const r = loadedDoc.rows[loadedDoc.rows.length - 1];
-         return r.kind === "silent" && r.street === "Douglas Street" && "from" in r && "to" in r;
+         return r.kind === "absent" && r.street === "Douglas Street" && "from" in r && "to" in r;
        }));
     ok("…added as a proposal, not silently vouched for",
        await page.evaluate(() => loadedDoc.rows[loadedDoc.rows.length - 1].confirmed === false));
     ok("…and one row longer", await page.evaluate(() => loadedDoc.rows.length) === rows0 + 1);
 
     console.log("dropping a street the polygon overshoots");
+    // Close the popup first: it sits over the canvas and would swallow the click.
+    await page.evaluate(() => hidePop());
+    await page.waitForTimeout(120);
     const gap2 = await page.evaluate(() => {
       const f = reviewFeatures.find(x => x.gap && x.gap.street !== "Douglas Street");
       if (!f) return null;
@@ -458,12 +466,15 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     page.once("dialog", () => {});          // no-op; the global handler dismisses
     await page.locator("#pop button.mkexcept").first().click();
     await page.waitForTimeout(200);
-    ok("it asks before dropping a street from coverage",
-       dialogs.some(d => /Drop .* from this document/.test(d)), dialogs.join(" | "));
+    ok("it asks before dropping ground from coverage",
+       dialogs.some(d => /Drop .* from the document's coverage/.test(d)), dialogs.join(" | "));
+    ok("…and says which stretch, in metres", dialogs.some(d => /Drop this \d+ m of/.test(d)),
+       dialogs.join(" | "));
     ok("…and dismissing means nothing changed",
        await page.evaluate(() => coverageExcept.length) === 0);
 
     // Now accept it.
+    // push the whole-street form, which is what "all of <street>" writes
     await page.evaluate(s => { coverageExcept.push(s); lastModel = null; reviewSig = null; draw(); },
                         gap2.street);
     await page.waitForTimeout(300);
@@ -483,6 +494,49 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     await page.waitForTimeout(300);
     ok("undo puts it back",
        gap2.street in (await m()).status, Object.keys((await m()).status).join(", "));
+
+  console.log("re-classifying a row, and deleting one");
+  {
+    // The AI pass reliably confuses "no name lettered here" with "no street
+    // here"; both were `silent`/`absent` until `unnamed` existed.
+    await page.evaluate(() => hidePop());
+    // A street with more than one row, so the "also on this street" list has
+    // something in it — that list is what replaced showing every row at once.
+    const multi = await page.evaluate(() => {
+      const s = lastModel.streets.find(x => x.rows.length > 1);
+      return s ? s.name : null;
+    });
+    ok("a street with several rows exists to test on", !!multi, String(multi));
+    const at = await page.evaluate(n => clearestPointOn(
+      f => f.row && f.row.kind === "state" && f.street === n), multi);
+    await page.mouse.click(at[0], at[1]);
+    await page.waitForTimeout(250);
+    ok("the popup offers the row's kind", await page.locator("#pop select.kindpick").count() === 1);
+    ok("…with only one row's controls, not every row on the street",
+       await page.locator("#pop button.conf").count() === 1,
+       String(await page.locator("#pop button.conf").count()));
+    ok("…and lists the street's other stretches as links",
+       await page.locator("#pop li[data-sib]").count() > 0);
+
+    const before = await page.evaluate(() => loadedDoc.rows.length);
+    await page.selectOption("#pop select.kindpick", "unnamed");
+    await page.waitForTimeout(350);
+    const changed = await page.evaluate(() =>
+      loadedDoc.rows.filter(r => r.kind === "unnamed").length);
+    ok("changing the kind takes", changed === 1, String(changed));
+    ok("…and strips the fields that kind cannot carry",
+       await page.evaluate(() => loadedDoc.rows.every(r =>
+         r.kind !== "unnamed" || (!r.name && !r.asWritten))));
+    ok("…and un-confirms it, since it now says something else",
+       await page.evaluate(() => loadedDoc.rows.some(r => r.kind === "unnamed" && r.confirmed === false)));
+
+    dialogs.length = 0;
+    await page.locator("#pop button.delrow").first().click();
+    await page.waitForTimeout(300);
+    ok("deleting asks first", dialogs.some(d => /Delete this row/.test(d)), dialogs.join(" | "));
+    ok("…and dismissing keeps it",
+       await page.evaluate(() => loadedDoc.rows.length) === before);
+  }
 
     // nothing was saved, and reloading discards every in-memory change above
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
