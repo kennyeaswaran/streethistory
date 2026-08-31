@@ -163,9 +163,17 @@ popup offers:
   remembered.
 - **Edit `asWritten`** — verbatim ink, typos included; never auto-promoted
   into the entity's spellings (§5.1).
-- **Split the extent** — click a point along the segment. Snap to a
-  cross-street when one is near, otherwise store the point in scan pixels
-  (§5.4).
+- **Split the stretch in two** — click a point along the segment; it becomes
+  a cross-street name when one is within 40 m, a scan pixel otherwise (§5.4).
+  One row goes in, two come out, meeting at that point, and **both come back
+  unconfirmed**: the reason to split is that the original claim was wrong
+  about part of its ground, and which part is what has not been decided. The
+  half that keeps `from` keeps the canonical direction, so both stay in the
+  order §5.4 reads them in. The boundary can only land on a vertex of the
+  modern geometry — extents resolve by snapping to the nearest one — so where
+  a stretch has no vertex between its ends the tool says so rather than
+  storing a boundary it cannot honour. This is the alternative to narrowing an
+  extent, which would silently drop the other half out of the accounting.
 - **Mark as absent** — flip a `state` row to a `absent` one.
 - **On an unaccounted stretch, three offers and no default**: *sheet shows
   nothing here*, which writes an `absent` row with the extents worked out by
@@ -198,7 +206,14 @@ unaccounted, every row is confirmed, and every naming row has an entity.
 Setting it is what licenses negative inference from this document (§4.5), so
 it is a gate that states what is still missing — in metres and street names —
 rather than a status field. It fills `sweptFor` with the streets in coverage
-when it goes through.
+when it goes through. It also **lists the rows it is waiting on**, each with
+its length and each a way to get to that row: a count is a dead end when the
+blocker is a 30 m duplicate drawn underneath a 200 m row on the same street,
+which is a shape the AI pass produces. Whatever the popup is about is drawn
+haloed and last, so a stretch buried under a longer one becomes visible the
+moment it is the subject. The list is shown for an already-swept document too:
+editing one leaves proposals behind, and `sweptFully: true` standing over
+unconfirmed rows claims a silence the rows no longer back.
 
 ## 5. Reading and writing `documents/<id>.js`
 

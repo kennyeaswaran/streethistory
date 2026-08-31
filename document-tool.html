@@ -226,9 +226,11 @@
       Click a coloured street to see every field of its rows, give each one a
       name entity, and vouch for it.</div>
     <div id="revSummary"></div>
+    <div id="splitState" class="hint" style="display:none"></div>
 
     <h3>Sweep</h3>
     <div class="hint" id="sweepState"></div>
+    <div id="sweepBlockers"></div>
     <button id="sweepBtn">Mark fully swept</button>
     <button class="primary" id="saveReview">Save review</button>
     <div class="hint" id="reviewSaveState"></div>
@@ -476,8 +478,9 @@ addEventListener("mouseup", e => {
     draw();
   }
   if (mode === "review" && drag && !drag.moved) {
-    if (tracing) { tracing.push(screenToScan(e.clientX, e.clientY).map(v => Math.round(v)));
-                   updateTraceUI(); draw(); }
+    if (splitting) doSplit(e.clientX, e.clientY);
+    else if (tracing) { tracing.push(screenToScan(e.clientX, e.clientY).map(v => Math.round(v)));
+                        updateTraceUI(); draw(); }
     else pickFeature(e.clientX, e.clientY);
   }
   drag = null; cv.classList.remove("panning");
@@ -555,7 +558,8 @@ function setMode(m) {
   cv.classList.toggle("review", m === "review");
   for (const b of document.querySelectorAll(".modebody"))
     setVisible(b, b.dataset.mode === m);
-  if (m !== "review") { hidePop(); tracing = null; retracing = null; updateTraceUI(); }
+  if (m !== "review") { hidePop(); tracing = null; retracing = null; splitting = null;
+                        updateTraceUI(); updateSplitUI(); }
   setModeHint();
   cv.classList.toggle("panhand", m === "align" && dragTarget === "view");
   reviewSig = null;                 // force the panel to rebuild on entry
@@ -748,7 +752,8 @@ $("loadDoc").onclick = async () => {
   coverageExcept = Array.isArray(doc.coverageExcept) ? doc.coverageExcept.slice() : [];
   // A popup describes one row of one document, and it sits over the canvas —
   // left open across a load it both lies and swallows the next click.
-  hidePop(); tracing = null; retracing = null; updateTraceUI();
+  hidePop(); tracing = null; retracing = null; splitting = null;
+  updateTraceUI(); updateSplitUI();
   lastModel = null; reviewSig = null; reviewDirty = false;
   refreshOpenBox();
   draw();
@@ -813,6 +818,12 @@ let reviewDirty = false;        // edits made in review that are not on disk yet
 // the trace rides on the alignment like everything else stored on a scan.
 let tracing = null;             // null when not tracing, else [[x, y], ...]
 let retracing = null;           // the vanished row whose trace is being redrawn
+// A row states one thing about one stretch. When only PART of that stretch is
+// wrong — the sheet's corridor leaves the modern street half way along, the
+// label covers less ground than the row claims — the honest repair is two
+// rows, not a fudged extent. `splitting` holds the row waiting for the click
+// that says where the boundary is.
+let splitting = null;
 
 const reviewRows = () => (loadedDoc && Array.isArray(loadedDoc.rows)) ? loadedDoc.rows : [];
 
@@ -885,6 +896,43 @@ function clipRun(run, pA, pB) {
   const [a, b] = clipRange(run, pA, pB);
   return run.slice(a, b + 1);
 }
+
+// How much ground a row actually speaks for: its stretch summed over every
+// in-coverage run of its street. "Is this thing too small to matter?" is a
+// real question about a row — a 12 m proposal on a street that also carries a
+// 400 m one is almost always a stray — and answering it by eye, on a stretch
+// drawn underneath a longer one, is not possible.
+function rowMetres(r) {
+  if (!r || r.kind === "vanished" || !r.street) return null;
+  // `lastModel || reviewModel()`, the same fallback the sweep gate uses: this
+  // is called from the panel and from the popup, and a measurement that came
+  // back null because nothing had drawn yet would read as "no stretch".
+  const m = lastModel || reviewModel();
+  const rec = m.streets.find(s => s.name === r.street);
+  if (!rec) return null;
+  const junk = [];
+  const pA = extentPoint(rec.name, r.kind === "change" ? r.fromCross : r.from, junk);
+  const pB = extentPoint(rec.name, r.kind === "change" ? r.toCross : r.to, junk);
+  return Math.round(rec.runs.reduce((m, run) => m + runMetres(clipRun(run, pA, pB)), 0));
+}
+
+// The arithmetic of a split, apart from the clicking. One row in, two out,
+// meeting at `at`. The half that keeps `from` keeps the canonical direction
+// (§5.4: west, or north), so both halves stay in the order the model reads
+// them in. Neither inherits confirmation: the reason to split a row is that
+// its claim was wrong about part of its ground, and which part is exactly
+// what has not been decided yet.
+function splitRowAt(r, at) {
+  const kA = r.kind === "change" ? "fromCross" : "from";
+  const kB = r.kind === "change" ? "toCross" : "to";
+  const A = { ...r }, B = { ...r };
+  A[kB] = at; B[kA] = at;
+  A.confirmed = false; B.confirmed = false;
+  return [A, B];
+}
+// undefined and null both mean "the street's own end" in an extent.
+const sameExtent = (a, b) => JSON.stringify(a === undefined ? null : a) ===
+                             JSON.stringify(b === undefined ? null : b);
 
 // What the rows DON'T say anything about.
 //
@@ -1099,9 +1147,13 @@ function drawReview() {
       const colour = REVC[row.kind] || REVC.state;
       const dashed = row.confirmed === false;
       for (const run of s.runs) {
-        const pts = toScr(clipRun(run, pA, pB));
+        // The ground points, kept alongside the screen ones: splitting a row
+        // needs a real position on the street, and re-deriving it from screen
+        // pixels would put the boundary wherever the view happened to be.
+        const world = clipRun(run, pA, pB);
+        const pts = toScr(world);
         stroke(pts, colour, selected ? 9 : 6, dashed);
-        reviewFeatures.push({ street: s.name, row, kind: row.kind, pts });
+        reviewFeatures.push({ street: s.name, row, kind: row.kind, pts, world });
       }
     }
     // Whatever no row speaks for, drawn last so it is never hidden under one.
@@ -1126,6 +1178,29 @@ function drawReview() {
     const pts = r.trace.map(([x, y]) => scanToScreen(x, y));
     stroke(pts, REVC.vanished, 6, r.confirmed === false);
     reviewFeatures.push({ street: null, row: r, kind: "vanished", pts });
+  }
+
+  // Whatever the popup is about, haloed and drawn last.
+  //
+  // A short row on a street that also carries a long one is invisible: the
+  // long row is painted over it in the same palette, and there is nothing on
+  // screen to click. That is not a cosmetic problem — a 12 m proposal nobody
+  // can find blocks the sweep with no way to reach it. (Towne Avenue on
+  // mr030-009-p5 was exactly this.)
+  if (popRow) {
+    for (const f of reviewFeatures) {
+      if (f.row !== popRow || f.pts.length < 2) continue;
+      stroke(f.pts, "#fff", 16, false);
+      stroke(f.pts, REVC[popRow.kind] || REVC.state, 8, popRow.confirmed === false);
+      // End caps, so a stretch shorter than its own line width still reads as
+      // a stretch with two ends rather than a blob.
+      ctx.save();
+      ctx.fillStyle = "#1b1712";
+      for (const e of [f.pts[0], f.pts[f.pts.length - 1]]) {
+        ctx.beginPath(); ctx.arc(e[0], e[1], 4, 0, 7); ctx.fill();
+      }
+      ctx.restore();
+    }
   }
   lastModel = m; lastDrawProblems = problems;
   refreshReview();
@@ -1170,9 +1245,15 @@ function rowHtml(r, emphasise) {
       ["name", "asWritten"].includes(k))
     .map(k => `<tr><td class="fk">${k}</td><td class="prop"><i>not set</i></td></tr>`).join("");
   const i = reviewRows().indexOf(r);
+  const len = rowMetres(r);
   return `<div class="rowcard${emphasise ? " on" : ""}" ` +
          `style="border-left-color:${REVC[r.kind] || "#241f18"}">` +
          `<table class="fields">${rows}${missing}</table>` +
+         (len != null
+           ? `<div class="hint">Speaks for <b>${len} m</b> of ${esc(r.street)}` +
+             (len < MIN_RUN_M ? ` — shorter than the ${MIN_RUN_M} m a street has to ` +
+               `clip the polygon by to be in coverage at all, so it is very likely a stray.` : ".") +
+             `</div>` : "") +
          (i >= 0 ? rowControlsHtml(r, i) : "") + `</div>`;
 }
 
@@ -1217,6 +1298,14 @@ function rowControlsHtml(r, i) {
   if (r.kind === "vanished")
     html += `<div class="ctlrow"><button class="retrace" data-ri="${i}">` +
       `Re-trace on the scan</button></div>`;
+  // A row is one claim about one stretch. When the claim holds for part of it
+  // and not the rest, the repair is two rows — one for each claim — not a
+  // narrowed extent that silently drops the other half from the sweep.
+  if (r.street && r.kind !== "vanished" && r.kind !== "annotation")
+    html += `<div class="ctlrow"><button class="splitrow" data-ri="${i}">` +
+      `Split this stretch in two…</button></div>` +
+      `<div class="hint">Then say something different about each half — or delete ` +
+      `the half that is wrong, and answer it as an unaccounted stretch.</div>`;
   html += `<div class="ctlrow"><button class="conf ${conf ? "" : "done"}" data-ri="${i}">` +
     (conf ? "Confirm this row" : "✓ confirmed — undo") + `</button></div>`;
   html += `<div class="ctlrow"><button class="delrow" data-ri="${i}">Delete this row</button></div>`;
@@ -1352,6 +1441,15 @@ function bindPopControls() {
     hidePop();
     reviewDirty = true; lastModel = null; reviewSig = null;
     draw(); updateReviewActions();
+  };
+  for (const el of p.querySelectorAll("button.splitrow")) el.onclick = () => {
+    const r = reviewRows()[+el.dataset.ri];
+    if (!r) return;
+    // Not hidePop(): the row has to stay selected, because the highlighted
+    // stretch is the thing being clicked on.
+    splitting = r; setVisible($("pop"), false);
+    selStreet = r.street || null; popRow = r; popGap = null;
+    updateSplitUI(); draw();
   };
   for (const el of p.querySelectorAll("button.retrace")) el.onclick = () => {
     const r = reviewRows()[+el.dataset.ri];
@@ -1690,18 +1788,51 @@ function sweepBlockers() {
   return out;
 }
 
+// The rows the gate is waiting on, as objects rather than a count. A blocker
+// stated only as a number is a dead end when the row is 12 m long and drawn
+// underneath a 400 m one on the same street: the count says something is
+// wrong and gives you no way to reach it.
+const blockingRows = () => reviewRows().filter(r =>
+  r.confirmed === false || ((r.kind === "state" || r.kind === "vanished") && !r.name));
+
 function updateReviewActions() {
   if (mode !== "review") return;
   const blockers = sweepBlockers();
   const minted = Object.keys(mintedEntities).length;
   $("sweepBtn").textContent = docSwept.fully ? "✓ swept — click to undo" : "Mark fully swept";
   $("sweepBtn").disabled = blockers.length > 0 && !docSwept.fully;
+  // A document can be marked swept and then edited — splitting a row leaves two
+  // proposals behind it, and the generator holds proposals back. Saying
+  // "sweptFully: true" and nothing else at that point hides a claim of silence
+  // the rows no longer support.
   $("sweepState").innerHTML = docSwept.fully
-    ? `<b>sweptFully: true</b> — this document's silence can now be argued from. ` +
-      `Covers ${docSwept.for.length} street${docSwept.for.length === 1 ? "" : "s"}.`
+    ? (blockers.length
+        ? `<span class="warn">Marked swept, but no longer true:</span> ` +
+          blockers.join("; ") + `. Settle these, or undo the sweep — as it stands ` +
+          `the document licenses arguing from a silence its own rows do not back.`
+        : `<b>sweptFully: true</b> — this document's silence can now be argued from. ` +
+          `Covers ${docSwept.for.length} street${docSwept.for.length === 1 ? "" : "s"}.`)
     : blockers.length
       ? `<span class="warn">Not sweepable yet:</span> ` + blockers.join("; ") + "."
       : `Everything in coverage is accounted for and confirmed — ready to sweep.`;
+
+  const brs = blockingRows();
+  $("sweepBlockers").innerHTML = brs.length
+    ? `<div class="hint">Rows still waiting — click one to go to it:</div><ul class="stlist">` +
+      brs.map(r => {
+        const i = reviewRows().indexOf(r), len = rowMetres(r);
+        const flags = (r.confirmed === false ? ` <span class="badge prop">proposed</span>` : "") +
+          ((r.kind === "state" || r.kind === "vanished") && !r.name
+            ? ` <span class="badge prop">no name</span>` : "");
+        return `<li data-br="${i}"><span class="swatch" style="border-top-color:` +
+          `${REVC[r.kind] || REVC.state}"></span>${esc(r.kind)}` +
+          (r.asWritten ? ` “${esc(r.asWritten)}”` : "") +
+          (r.street ? ` on ${esc(r.street)}` : "") +
+          (len != null ? ` <span class="aw">${len} m</span>` : "") + flags + `</li>`;
+      }).join("") + `</ul>`
+    : "";
+  for (const li of $("sweepBlockers").querySelectorAll("li[data-br]"))
+    li.onclick = () => focusRow(reviewRows()[+li.dataset.br]);
   $("saveReview").disabled = !reviewDirty;
   $("reviewSaveState").innerHTML = reviewDirty
     ? `<span class="warn">Unsaved review edits.</span> Writes ` +
@@ -1824,6 +1955,108 @@ $("saveReview").onclick = async () => {
     " — run node check-model.js && node generate.js";
 };
 
+// --- splitting a row in two ------------------------------------------------
+// Where a row's claim holds for part of its stretch and not the rest. Two
+// rows say that; a narrowed extent does not — it drops the other half out of
+// the accounting entirely, and the sweep gate would pass while nothing had
+// been decided about that ground.
+function updateSplitUI() {
+  const el = $("splitState");
+  setVisible(el, !!splitting);
+  cv.classList.toggle("coverage", !!splitting || !!tracing);      // crosshair
+  if (!splitting) return;
+  const len = rowMetres(splitting);
+  el.innerHTML =
+    `<b>Splitting the ${esc(splitting.kind)} row` +
+    (splitting.asWritten ? ` “${esc(splitting.asWritten)}”` : "") +
+    ` on ${esc(splitting.street)}</b>` + (len != null ? ` (${len} m)` : "") + `. ` +
+    `Click the point on its highlighted stretch where one claim stops and the ` +
+    `other starts. Both halves come back needing confirmation. ` +
+    `<a href="#" id="splitCancel">cancel</a>`;
+  const a = $("splitCancel");
+  if (a) a.onclick = e => { e.preventDefault(); splitting = null; updateSplitUI(); draw(); };
+}
+
+function doSplit(x, y) {
+  const r = splitting;
+  const feats = reviewFeatures.filter(f => f.row === r && f.world && f.world.length >= 2);
+  if (!feats.length) {
+    alert("This row isn't drawn on the map, so there is no stretch to split.");
+    splitting = null; updateSplitUI(); draw(); return;
+  }
+  // The boundary can only land on a vertex of the modern geometry. An extent
+  // is resolved by snapping to the nearest run vertex (clipRange), so a point
+  // chosen between two of them would be drawn at one of them anyway — better
+  // to say so than to store a boundary the model cannot honour. The two ends
+  // are excluded: splitting at an end makes a zero-length row.
+  let best = null, bd = 40;
+  for (const f of feats)
+    for (let i = 1; i < f.pts.length - 1; i++) {
+      const d = Math.hypot(x - f.pts[i][0], y - f.pts[i][1]);
+      if (d < bd) { bd = d; best = { f, i }; }
+    }
+  if (!best) {
+    if (feats.every(f => f.pts.length < 3))
+      alert("This stretch is drawn with nothing between its two ends, so there is " +
+            "nowhere to put a boundary: an extent snaps to a vertex of the modern " +
+            "street, and this run has none in between.\n\nA finer split has to be " +
+            "written into the file by hand.");
+    else
+      alert("Click on the highlighted stretch itself — the split point has to sit on it.");
+    return;
+  }
+  const p = best.f.world[best.i];
+  const toPx = img ? (lat, lon) => G.worldToScan(G.fitAlignment(controlPoints()), lat, lon) : null;
+  const at = G.snapOrPoint(streetPoints, r.street, p, toPx, { maxM: 40 }).value;
+
+  const kA = r.kind === "change" ? "fromCross" : "from";
+  const kB = r.kind === "change" ? "toCross" : "to";
+  if (sameExtent(at, r[kA]) || sameExtent(at, r[kB]))
+    return alert("That point is already one of this row's ends — pick somewhere along it.");
+
+  const rows = reviewRows(), i = rows.indexOf(r);
+  const [A, B] = splitRowAt(r, at);
+  rows.splice(i, 1, A, B);
+
+  splitting = null; popGap = null; popRow = A; selStreet = r.street || null;
+  reviewDirty = true; lastModel = null; reviewSig = null;
+  updateSplitUI(); draw();
+  const rec = (lastModel ? lastModel.streets : []).find(s => s.name === r.street);
+  if (rec) showPop(x, y, popHtml(rec, A, null));
+}
+
+// Bring a row into view and open it, however small it is and whatever is
+// drawn on top of it. drawReview haloes whatever the popup is about, so a
+// stretch buried under a longer row on the same street becomes visible the
+// moment it becomes the subject.
+function focusRow(r) {
+  if (!r) return;
+  selStreet = r.street || null;
+  popRow = r; popGap = null;
+  draw();                                       // rebuilds reviewFeatures
+  let f = reviewFeatures.find(x => x.row === r && x.pts.length);
+  if (f) {
+    // Always recentre, not only when the stretch is off screen: "on screen"
+    // and "findable" are not the same thing for 12 m of street.
+    const mid = f.pts[Math.floor(f.pts.length / 2)];
+    const [lat, lng] = screenToLL(mid[0], mid[1]);
+    view.lat = lat; view.lng = lng;
+    $("view").value = `${view.lat.toFixed(4)}, ${view.lng.toFixed(4)}, ${view.mpp.toFixed(3)}`;
+    draw();
+    f = reviewFeatures.find(x => x.row === r && x.pts.length);
+  }
+  const at = f && f.pts.length ? f.pts[Math.floor(f.pts.length / 2)]
+                               : [cv.width / 2, cv.height / 2];
+  const close = `<span class="close" title="close">×</span>`;
+  if (r.kind === "vanished")
+    return showPop(at[0], at[1], close + `<b class="hdr">Vanished street</b>` + rowHtml(r, true));
+  const rec = (lastModel ? lastModel.streets : []).find(s => s.name === r.street);
+  if (rec) return showPop(at[0], at[1], popHtml(rec, r, null));
+  showPop(at[0], at[1], close + `<b class="hdr">${esc(r.street || "row")}</b>` +
+    `<div class="hint warn">This row's street is not inside the coverage polygon, so ` +
+    `nothing is drawn for it. It can still be deleted here.</div>` + rowHtml(r, true));
+}
+
 // --- tracing a vanished street ---------------------------------------------
 function updateTraceUI() {
   const on = !!tracing;
@@ -1837,7 +2070,7 @@ function updateTraceUI() {
         `click along the corridor's centre line; two points is the minimum.`
       : `${tracing.length} points. Click to extend, or Finish.` +
         (retracing ? ` <b>Replacing the trace on “${esc(retracing.asWritten || "")}”.</b>` : "");
-  cv.classList.toggle("coverage", on);        // crosshair
+  cv.classList.toggle("coverage", on || !!splitting);        // crosshair
 }
 $("traceStart").onclick = () => {
   if (!img) return alert("Load the document first.");

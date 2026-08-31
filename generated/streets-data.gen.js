@@ -968,7 +968,7 @@ const STREET_DATA = {
         "to": "Main Street"
       },
       {
-        "label": "Main to Alameda",
+        "label": "beyond Main",
         "name": "3rd Street",
         "entityId": "third-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
@@ -987,8 +987,49 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2459,
-        "maxLng": -118.2381,
+        "maxLng": -118.2427,
         "from": "Main Street",
+        "to": {
+          "px": [
+            954,
+            467
+          ]
+        }
+      },
+      {
+        "label": "beyond Alameda",
+        "name": "3rd Street",
+        "entityId": "third-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLng": -118.2427,
+        "maxLng": -118.2381,
+        "from": {
+          "px": [
+            954,
+            467
+          ]
+        },
         "to": "Alameda Street"
       },
       {
@@ -1013,7 +1054,7 @@ const STREET_DATA = {
             "entityId": "georgia-east",
             "formInForce": "Georgia Street",
             "how": "origin",
-            "origin": "labeled “Georgia St” on the 1875 Map of the Thomas Tract, sheet 2 (M.R. 3-61) and the 1887 Mills and Wicks Extension map, sheet 1 and the 1887 Wolfskill Orchard Tract map {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
+            "origin": "labeled “Georgia St” on the 1875 Map of the Thomas Tract, sheet 2 (M.R. 3-61) and the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
           {
@@ -1050,27 +1091,30 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888) (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "minLng": -118.2381,
-        "maxLng": -118.235,
+        "maxLng": -118.2376,
         "from": "Alameda Street",
         "to": {
           "px": [
-            778,
-            120
+            633,
+            1311
           ]
         }
       },
       {
-        "label": "beyond Santa Fe (Georgia St)",
+        "label": "part of (Georgia St)",
         "name": "3rd Street",
         "entityId": "third-street",
         "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
         "namedAfterLink": null,
-        "planned": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+        },
         "built": {
           "text": "already “Georgia St” by May 19, 1875 (Map of the Thomas Tract, sheet 2 (M.R. 3-61))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
@@ -1083,7 +1127,7 @@ const STREET_DATA = {
             "entityId": "georgia-east",
             "formInForce": "Georgia Street",
             "how": "origin",
-            "origin": "labeled “Georgia St” on the 1875 Map of the Thomas Tract, sheet 2 (M.R. 3-61) and the 1887 Wolfskill Orchard Tract map {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
+            "origin": "labeled “Georgia St” on the 1875 Map of the Thomas Tract, sheet 2 (M.R. 3-61) and the 1887 Mills and Wicks Extension map, sheet 1 {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
           {
@@ -1116,8 +1160,75 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888) (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          }
+        ],
+        "minLng": -118.2376,
+        "maxLng": -118.235,
+        "from": {
+          "px": [
+            633,
+            1311
+          ]
+        },
+        "to": {
+          "px": [
+            778,
+            120
+          ]
+        }
+      },
+      {
+        "label": "beyond Santa Fe (Georgia St)",
+        "name": "3rd Street",
+        "entityId": "third-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
+        "namedAfterLink": null,
+        "planned": null,
+        "built": {
+          "text": "already “Georgia St” by May 19, 1875 (Map of the Thomas Tract, sheet 2 (M.R. 3-61))",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+        },
+        "nameHistory": [
+          {
+            "from": "by 1875",
+            "until": "?",
+            "name": "Georgia Street",
+            "entityId": "georgia-east",
+            "formInForce": "Georgia Street",
+            "how": "origin",
+            "origin": "labeled “Georgia St” on the 1875 Map of the Thomas Tract, sheet 2 (M.R. 3-61) {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "3rd Street",
+            "entityId": "third-street",
+            "formInForce": "3rd Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Recorded map: Map of the Thomas Tract, being a portion of the Johnson and Mott Tract, M.R. 3-60/61 (recorded May 19, 1875, at the request of Milton Thomas; J.W. Gillette, County Recorder) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "minLng": -118.235,
@@ -1269,7 +1380,7 @@ const STREET_DATA = {
         "gapAfter": true
       },
       {
-        "label": "Lucas to Alameda (discontinuous)",
+        "label": "beyond Lucas (discontinuous)",
         "name": "4th Street",
         "entityId": "fourth-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 4th Street is not yet researched",
@@ -1288,12 +1399,205 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2658,
-        "maxLng": -118.2381,
+        "maxLng": -118.2434,
         "from": "Lucas Avenue",
+        "to": {
+          "px": [
+            967,
+            567
+          ]
+        }
+      },
+      {
+        "label": "beyond Central (original 4th St)",
+        "name": "4th Street",
+        "entityId": "fourth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "4th Street",
+            "entityId": "fourth-street",
+            "formInForce": "4th Street",
+            "how": "origin",
+            "origin": "labeled “Fourth St” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLng": -118.2434,
+        "maxLng": -118.2397,
+        "from": {
+          "px": [
+            967,
+            567
+          ]
+        },
+        "to": "Central Avenue"
+      },
+      {
+        "label": "beyond Central",
+        "name": "4th Street",
+        "entityId": "fourth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 4th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLng": -118.2397,
+        "maxLng": -118.2391,
+        "from": "Central Avenue",
+        "to": {
+          "px": [
+            230,
+            1088
+          ]
+        }
+      },
+      {
+        "label": "beyond Alameda",
+        "name": "4th Street",
+        "entityId": "fourth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 4th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.2391,
+        "maxLng": -118.2381,
+        "from": {
+          "px": [
+            230,
+            1088
+          ]
+        },
         "to": "Alameda Street"
       },
       {
         "label": "beyond Alameda (Huber St)",
+        "name": "4th Street",
+        "entityId": "fourth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 4th Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": "?",
+            "name": "Huber Street",
+            "entityId": "huber-st",
+            "formInForce": "Huber Street",
+            "how": "origin",
+            "origin": "labeled “HUBER ST.” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — Not documented; most likely Caroline Howard (née Huber), wife of the tract developer Dr. Frederick Preston Howard — the same inference that explains Carolina Street, one block east, now Hewitt Street",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "4th Street",
+            "entityId": "fourth-street",
+            "formInForce": "4th Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person",
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Colyton Street (Howard’s tract; Carolina St. for his wife Caroline née Huber)",
+            "url": "https://lastreetnames.com/street/colyton-street/"
+          },
+          {
+            "title": "Recorded map: F.P. Howard & Co.’s Subdivision of the Bliss Tract, M.R. 12-42 (Aug. 1886) — shows “Huber Street” at 828 E 4th St’s location",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
+          }
+        ],
+        "minLng": -118.2381,
+        "maxLng": -118.2377,
+        "from": "Alameda Street",
+        "to": {
+          "px": [
+            491,
+            1533
+          ]
+        }
+      },
+      {
+        "label": "part of (Huber St)",
         "name": "4th Street",
         "entityId": "fourth-street",
         "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 4th Street",
@@ -1353,9 +1657,14 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
           }
         ],
-        "minLng": -118.2381,
+        "minLng": -118.2377,
         "maxLng": -118.2349,
-        "from": "Alameda Street",
+        "from": {
+          "px": [
+            491,
+            1533
+          ]
+        },
         "to": {
           "px": [
             747,
@@ -1488,7 +1797,7 @@ const STREET_DATA = {
         "gapAfter": true
       },
       {
-        "label": "Witmer to Central (discontinuous)",
+        "label": "beyond Witmer (discontinuous)",
         "name": "5th Street",
         "entityId": "fifth-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 5th Street is not yet researched",
@@ -1507,13 +1816,137 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2706,
-        "maxLng": -118.2398,
+        "maxLng": -118.2443,
         "from": "Witmer Street",
-        "to": "Central Avenue",
+        "to": {
+          "px": [
+            946,
+            489
+          ]
+        }
+      },
+      {
+        "label": "part of (original 5th St)",
+        "name": "5th Street",
+        "entityId": "fifth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "5th Street",
+            "entityId": "fifth-street",
+            "formInForce": "5th Street",
+            "how": "origin",
+            "origin": "labeled “Fifth St” on the 1888 Wolfskill Orchard Tract, sheet 3 (M.R. 30-11) and the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLng": -118.2443,
+        "maxLng": -118.2398,
+        "from": {
+          "px": [
+            946,
+            489
+          ]
+        },
+        "to": {
+          "px": [
+            913,
+            1302
+          ]
+        },
         "gapAfter": true
       },
       {
-        "label": "east of Alameda (discontinuous)",
+        "label": "beyond Alameda (Poplar St) (discontinuous)",
+        "name": "5th Street",
+        "entityId": "fifth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 5th Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "?",
+            "name": "Poplar Street",
+            "entityId": "poplar-st",
+            "formInForce": "Poplar Street",
+            "how": "origin",
+            "origin": "labeled “Poplar St” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}} — named on Dr. Frederick Preston Howard's Bliss Tract in 1886, one block south of the Huber Street that runs through the same subdivision. No namesake is documented; a poplar would be in keeping with the orchard ground it was cut through, but nothing says so",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "5th Street",
+            "entityId": "fifth-street",
+            "formInForce": "5th Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Recorded map: F.P. Howard & Co.'s Subdivision of the Bliss Tract, M.R. 12-42 (subdivided Aug. 1886 by Geo. E. Knox) — shows “Poplar Street” at 1100 E 5th St's location",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
+          }
+        ],
+        "minLng": -118.2398,
+        "maxLng": -118.2377,
+        "from": "Alameda Street",
+        "to": {
+          "px": [
+            880,
+            1668
+          ]
+        }
+      },
+      {
+        "label": "part of",
         "name": "5th Street",
         "entityId": "fifth-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 5th Street is not yet researched",
@@ -1531,8 +1964,13 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           }
         ],
-        "minLng": -118.2398,
-        "from": "Alameda Street",
+        "minLng": -118.2377,
+        "from": {
+          "px": [
+            880,
+            1668
+          ]
+        },
         "to": null
       }
     ]
@@ -1544,44 +1982,162 @@ const STREET_DATA = {
       {
         "label": "part of",
         "name": "6th Street",
-        "entityId": "6th-street",
-        "namedAfter": null,
+        "entityId": "sixth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
         "categories": [
-          "unresearched"
+          "number"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
           }
         ],
-        "maxLng": -118.2281,
+        "maxLng": -118.2454,
         "from": null,
+        "to": {
+          "px": [
+            998,
+            342
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "6th Street",
+        "entityId": "sixth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLng": -118.2454,
+        "maxLng": -118.2415,
+        "from": {
+          "px": [
+            998,
+            342
+          ]
+        },
+        "to": {
+          "px": [
+            1059,
+            858
+          ]
+        }
+      },
+      {
+        "label": "beyond Alameda (original 6th St)",
+        "name": "6th Street",
+        "entityId": "sixth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "6th Street",
+            "entityId": "sixth-street",
+            "formInForce": "6th Street",
+            "how": "origin",
+            "origin": "labeled “Sixth St” on the 1888 Wolfskill Orchard Tract, sheet 1 (M.R. 30-9) and the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLng": -118.2415,
+        "maxLng": -118.2384,
+        "from": {
+          "px": [
+            1059,
+            858
+          ]
+        },
+        "to": "Alameda Street"
+      },
+      {
+        "label": "Alameda to ?",
+        "name": "6th Street",
+        "entityId": "sixth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.2384,
+        "maxLng": -118.2281,
+        "from": "Alameda Street",
         "to": null,
         "gapAfter": true
       },
       {
         "label": "east of Mission Rd (discontinuous)",
         "name": "6th Street",
-        "entityId": "6th-street",
-        "namedAfter": null,
+        "entityId": "sixth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
         "categories": [
-          "unresearched"
+          "number"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
           }
         ],
         "minLng": -118.2281,
@@ -1645,20 +2201,147 @@ const STREET_DATA = {
   },
   "7th Street": {
     "name": "7th Street",
-    "entityId": "7th-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "EW",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "7th Street",
+        "entityId": "seventh-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 7th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "maxLng": -118.2469,
+        "from": null,
+        "to": {
+          "px": [
+            668,
+            108
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "7th Street",
+        "entityId": "seventh-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 7th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLng": -118.2469,
+        "maxLng": -118.2431,
+        "from": {
+          "px": [
+            668,
+            108
+          ]
+        },
+        "to": {
+          "px": [
+            685,
+            624
+          ]
+        }
+      },
+      {
+        "label": "beyond Alameda (original 7th St)",
+        "name": "7th Street",
+        "entityId": "seventh-street",
+        "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "7th Street",
+            "entityId": "seventh-street",
+            "formInForce": "7th Street",
+            "how": "origin",
+            "origin": "labeled “Seventh St” on the 1888 Wolfskill Orchard Tract, sheet 1 (M.R. 30-9) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLng": -118.2431,
+        "maxLng": -118.2386,
+        "from": {
+          "px": [
+            685,
+            624
+          ]
+        },
+        "to": "Alameda Street"
+      },
+      {
+        "label": "east of Alameda",
+        "name": "7th Street",
+        "entityId": "seventh-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 7th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.2386,
+        "from": "Alameda Street",
+        "to": null
       }
     ]
   },
@@ -1862,7 +2545,7 @@ const STREET_DATA = {
             "entityId": "alameda-st",
             "formInForce": "Alameda Street",
             "how": "origin",
-            "origin": "labeled “ALAMEDA ST” on the 1887 Mills and Wicks Extension map, sheet 1 {{(source)}}",
+            "origin": "labeled “ALAMEDA ST” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           }
         ],
@@ -1880,9 +2563,13 @@ const STREET_DATA = {
           {
             "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "minLat": 34.0432,
+        "minLat": 34.044,
         "maxLat": 34.0461,
         "from": {
           "px": [
@@ -1892,8 +2579,304 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
+            626,
+            1459
+          ]
+        }
+      },
+      {
+        "label": "part of (original Alameda St)",
+        "name": "Alameda Street",
+        "entityId": "alameda-st",
+        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”)",
+        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": null,
+            "name": "Alameda Street",
+            "entityId": "alameda-st",
+            "formInForce": "Alameda Street",
+            "how": "origin",
+            "origin": "labeled “ALAMEDA ST” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "nature",
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
+            "url": "https://lastreetnames.com/street/alameda-street/"
+          },
+          {
+            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0436,
+        "maxLat": 34.044,
+        "from": {
+          "px": [
+            626,
+            1459
+          ]
+        },
+        "to": {
+          "px": [
+            248,
+            1253
+          ]
+        }
+      },
+      {
+        "label": "part of (original Alameda St)",
+        "name": "Alameda Street",
+        "entityId": "alameda-st",
+        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”)",
+        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": null,
+            "name": "Alameda Street",
+            "entityId": "alameda-st",
+            "formInForce": "Alameda Street",
+            "how": "origin",
+            "origin": "labeled “ALAMEDA ST” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "nature",
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
+            "url": "https://lastreetnames.com/street/alameda-street/"
+          },
+          {
+            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0432,
+        "maxLat": 34.0436,
+        "from": {
+          "px": [
+            248,
+            1253
+          ]
+        },
+        "to": {
+          "px": [
             133,
             709
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Alameda Street",
+        "entityId": "alameda-st",
+        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
+        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "Alameda Street",
+            "entityId": "alameda-st",
+            "formInForce": "Alameda Street",
+            "how": "extension",
+            "origin": "labeled “Alameda St” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "nature",
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
+            "url": "https://lastreetnames.com/street/alameda-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0419,
+        "maxLat": 34.0432,
+        "from": {
+          "px": [
+            133,
+            709
+          ]
+        },
+        "to": {
+          "px": [
+            962,
+            1577
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Alameda Street",
+        "entityId": "alameda-st",
+        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
+        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "nature",
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
+            "url": "https://lastreetnames.com/street/alameda-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0386,
+        "maxLat": 34.0419,
+        "from": {
+          "px": [
+            962,
+            1577
+          ]
+        },
+        "to": {
+          "px": [
+            829,
+            1381
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Alameda Street",
+        "entityId": "alameda-st",
+        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
+        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "nature",
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
+            "url": "https://lastreetnames.com/street/alameda-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.038,
+        "maxLat": 34.0386,
+        "from": {
+          "px": [
+            829,
+            1381
+          ]
+        },
+        "to": {
+          "px": [
+            172,
+            1574
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Alameda Street",
+        "entityId": "alameda-st",
+        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
+        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "nature",
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
+            "url": "https://lastreetnames.com/street/alameda-street/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0348,
+        "maxLat": 34.038,
+        "from": {
+          "px": [
+            172,
+            1574
+          ]
+        },
+        "to": {
+          "px": [
+            94,
+            1402
           ]
         }
       },
@@ -1917,11 +2900,11 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/alameda-street/"
           }
         ],
-        "maxLat": 34.0432,
+        "maxLat": 34.0348,
         "from": {
           "px": [
-            133,
-            709
+            94,
+            1402
           ]
         },
         "to": null
@@ -2947,7 +3930,7 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "west of Omar",
+        "label": "part of",
         "name": "Boyd Street",
         "entityId": "boyd-street",
         "namedAfter": null,
@@ -2967,7 +3950,12 @@ const STREET_DATA = {
         ],
         "maxLng": -118.2417,
         "from": null,
-        "to": "Omar Street",
+        "to": {
+          "px": [
+            686,
+            646
+          ]
+        },
         "gapAfter": true
       },
       {
@@ -3398,25 +4386,82 @@ const STREET_DATA = {
         "to": "2nd Street"
       },
       {
-        "label": "south of 2nd (Wolfskill Ave)",
+        "label": "beyond 2nd (Wolfskill Ave)",
         "name": "Central Avenue",
         "entityId": "central-ave",
         "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
-        "planned": null,
-        "built": {
-          "text": "already “Wolfskill” by Aug. 1887 (Wolfskill Orchard Tract map)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
+        "planned": "not yet researched",
+        "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1887",
+            "from": "?",
             "until": "Feb. 1897",
             "name": "Wolfskill Avenue",
             "entityId": "wolfskill-ave",
             "formInForce": "Wolfskill Avenue",
-            "how": "origin",
-            "origin": "labeled “Wolfskill” on the 1887 Wolfskill Orchard Tract map {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
+            "origin": "arrival on this stretch not directly documented — {{William Wolfskill}}'s old citrus ranch, which the street ran through",
+            "originLink": "https://en.wikipedia.org/wiki/William_Wolfskill"
+          },
+          {
+            "from": "Feb. 1897",
+            "until": null,
+            "name": "Central Avenue",
+            "entityId": "central-ave",
+            "formInForce": "Central Avenue",
+            "how": "renaming",
+            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "descriptive",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Central Avenue",
+            "url": "https://lastreetnames.com/street/central-avenue/"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "minLat": 34.0466,
+        "maxLat": 34.0477,
+        "from": "2nd Street",
+        "to": {
+          "px": [
+            824,
+            995
+          ]
+        }
+      },
+      {
+        "label": "part of (Wolfskill Ave)",
+        "name": "Central Avenue",
+        "entityId": "central-ave",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "Feb. 1897",
+            "name": "Wolfskill Avenue",
+            "entityId": "wolfskill-ave",
+            "formInForce": "Wolfskill Avenue",
+            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -3445,7 +4490,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/central-avenue/"
           },
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -3453,28 +4498,546 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           }
         ],
-        "maxLat": 34.0477,
-        "from": "2nd Street",
+        "minLat": 34.0447,
+        "maxLat": 34.0466,
+        "from": {
+          "px": [
+            824,
+            995
+          ]
+        },
+        "to": {
+          "px": [
+            750,
+            1191
+          ]
+        }
+      },
+      {
+        "label": "part of (Wolfskill Ave)",
+        "name": "Central Avenue",
+        "entityId": "central-ave",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "Feb. 1897",
+            "name": "Wolfskill Avenue",
+            "entityId": "wolfskill-ave",
+            "formInForce": "Wolfskill Avenue",
+            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "Feb. 1897",
+            "until": null,
+            "name": "Central Avenue",
+            "entityId": "central-ave",
+            "formInForce": "Central Avenue",
+            "how": "renaming",
+            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "descriptive",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Central Avenue",
+            "url": "https://lastreetnames.com/street/central-avenue/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "minLat": 34.0436,
+        "maxLat": 34.0447,
+        "from": {
+          "px": [
+            750,
+            1191
+          ]
+        },
+        "to": {
+          "px": [
+            242,
+            985
+          ]
+        }
+      },
+      {
+        "label": "part of (Wolfskill Ave)",
+        "name": "Central Avenue",
+        "entityId": "central-ave",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "Feb. 1897",
+            "name": "Wolfskill Avenue",
+            "entityId": "wolfskill-ave",
+            "formInForce": "Wolfskill Avenue",
+            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "Feb. 1897",
+            "until": null,
+            "name": "Central Avenue",
+            "entityId": "central-ave",
+            "formInForce": "Central Avenue",
+            "how": "renaming",
+            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "descriptive",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Central Avenue",
+            "url": "https://lastreetnames.com/street/central-avenue/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "minLat": 34.0421,
+        "maxLat": 34.0436,
+        "from": {
+          "px": [
+            242,
+            985
+          ]
+        },
+        "to": {
+          "px": [
+            986,
+            1303
+          ]
+        }
+      },
+      {
+        "label": "part of (Wolfskill Ave)",
+        "name": "Central Avenue",
+        "entityId": "central-ave",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "Feb. 1897",
+            "name": "Wolfskill Avenue",
+            "entityId": "wolfskill-ave",
+            "formInForce": "Wolfskill Avenue",
+            "how": "origin",
+            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) and the 1888 Wolfskill Orchard Tract, sheet 3 (M.R. 30-11) and the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "Feb. 1897",
+            "until": null,
+            "name": "Central Avenue",
+            "entityId": "central-ave",
+            "formInForce": "Central Avenue",
+            "how": "renaming",
+            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "descriptive",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Central Avenue",
+            "url": "https://lastreetnames.com/street/central-avenue/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "minLat": 34.0416,
+        "maxLat": 34.0421,
+        "from": {
+          "px": [
+            986,
+            1303
+          ]
+        },
+        "to": {
+          "px": [
+            132,
+            1193
+          ]
+        }
+      },
+      {
+        "label": "part of (Wolfskill Ave)",
+        "name": "Central Avenue",
+        "entityId": "central-ave",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "Feb. 1897",
+            "name": "Wolfskill Avenue",
+            "entityId": "wolfskill-ave",
+            "formInForce": "Wolfskill Avenue",
+            "how": "origin",
+            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) and the 1888 Wolfskill Orchard Tract, sheet 3 (M.R. 30-11) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "Feb. 1897",
+            "until": null,
+            "name": "Central Avenue",
+            "entityId": "central-ave",
+            "formInForce": "Central Avenue",
+            "how": "renaming",
+            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "descriptive",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Central Avenue",
+            "url": "https://lastreetnames.com/street/central-avenue/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "minLat": 34.0412,
+        "maxLat": 34.0416,
+        "from": {
+          "px": [
+            132,
+            1193
+          ]
+        },
+        "to": {
+          "px": [
+            368,
+            1232
+          ]
+        }
+      },
+      {
+        "label": "beyond 6th (Wolfskill Ave)",
+        "name": "Central Avenue",
+        "entityId": "central-ave",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "Feb. 1897",
+            "name": "Wolfskill Avenue",
+            "entityId": "wolfskill-ave",
+            "formInForce": "Wolfskill Avenue",
+            "how": "origin",
+            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "Feb. 1897",
+            "until": null,
+            "name": "Central Avenue",
+            "entityId": "central-ave",
+            "formInForce": "Central Avenue",
+            "how": "renaming",
+            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "descriptive",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Central Avenue",
+            "url": "https://lastreetnames.com/street/central-avenue/"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "minLat": 34.039,
+        "maxLat": 34.0412,
+        "from": {
+          "px": [
+            368,
+            1232
+          ]
+        },
+        "to": "6th Street"
+      },
+      {
+        "label": "south of 6th (Wolfskill Ave)",
+        "name": "Central Avenue",
+        "entityId": "central-ave",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "?",
+            "until": "Feb. 1897",
+            "name": "Wolfskill Avenue",
+            "entityId": "wolfskill-ave",
+            "formInForce": "Wolfskill Avenue",
+            "origin": "arrival on this stretch not directly documented — {{William Wolfskill}}'s old citrus ranch, which the street ran through",
+            "originLink": "https://en.wikipedia.org/wiki/William_Wolfskill"
+          },
+          {
+            "from": "Feb. 1897",
+            "until": null,
+            "name": "Central Avenue",
+            "entityId": "central-ave",
+            "formInForce": "Central Avenue",
+            "how": "renaming",
+            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "descriptive",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Central Avenue",
+            "url": "https://lastreetnames.com/street/central-avenue/"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "maxLat": 34.039,
+        "from": "6th Street",
         "to": null
       }
     ]
   },
   "Ceres Avenue": {
     "name": "Ceres Avenue",
-    "entityId": "ceres-avenue",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Ceres Avenue",
+        "entityId": "ceres-ave",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Wikipedia: Ceres (mythology)",
+            "url": "https://en.wikipedia.org/wiki/Ceres_(mythology)"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.04,
+        "from": null,
+        "to": {
+          "px": [
+            1077,
+            907
+          ]
+        }
+      },
+      {
+        "label": "part of (original Ceres Ave)",
+        "name": "Ceres Avenue",
+        "entityId": "ceres-ave",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "Ceres Avenue",
+            "entityId": "ceres-ave",
+            "formInForce": "Ceres Avenue",
+            "how": "origin",
+            "origin": "labeled “Ceres Ave” on the 1888 Wolfskill Orchard Tract, sheet 1 (M.R. 30-9) and the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Wikipedia: Ceres (mythology)",
+            "url": "https://en.wikipedia.org/wiki/Ceres_(mythology)"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.038,
+        "maxLat": 34.04,
+        "from": {
+          "px": [
+            1077,
+            907
+          ]
+        },
+        "to": {
+          "px": [
+            668,
+            647
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Ceres Avenue",
+        "entityId": "ceres-ave",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Wikipedia: Ceres (mythology)",
+            "url": "https://en.wikipedia.org/wiki/Ceres_(mythology)"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "maxLat": 34.038,
+        "from": {
+          "px": [
+            668,
+            647
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -4039,20 +5602,409 @@ const STREET_DATA = {
   },
   "Crocker Street": {
     "name": "Crocker Street",
-    "entityId": "crocker-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of (Stanford Ave)",
+        "name": "Crocker Street",
+        "entityId": "crocker-street",
+        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "?",
+            "name": "Stanford Avenue",
+            "entityId": "stanford-ave",
+            "formInForce": "Stanford Avenue",
+            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Crocker Street",
+            "entityId": "crocker-street",
+            "formInForce": "Crocker Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "person",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person",
+          "governor"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Charles Crocker",
+            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Wikipedia: Leland Stanford",
+            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
+          }
+        ],
+        "minLat": 34.0454,
+        "from": null,
+        "to": {
+          "px": [
+            863,
+            947
+          ]
+        }
+      },
+      {
+        "label": "part of (Stanford Ave)",
+        "name": "Crocker Street",
+        "entityId": "crocker-street",
+        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "?",
+            "name": "Stanford Avenue",
+            "entityId": "stanford-ave",
+            "formInForce": "Stanford Avenue",
+            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Crocker Street",
+            "entityId": "crocker-street",
+            "formInForce": "Crocker Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "person",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person",
+          "governor"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Charles Crocker",
+            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Wikipedia: Leland Stanford",
+            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
+          }
+        ],
+        "minLat": 34.0448,
+        "maxLat": 34.0454,
+        "from": {
+          "px": [
+            863,
+            947
+          ]
+        },
+        "to": {
+          "px": [
+            450,
+            668
+          ]
+        }
+      },
+      {
+        "label": "part of (Stanford Ave)",
+        "name": "Crocker Street",
+        "entityId": "crocker-street",
+        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "?",
+            "name": "Stanford Avenue",
+            "entityId": "stanford-ave",
+            "formInForce": "Stanford Avenue",
+            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Crocker Street",
+            "entityId": "crocker-street",
+            "formInForce": "Crocker Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "person",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person",
+          "governor"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Charles Crocker",
+            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Wikipedia: Leland Stanford",
+            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
+          }
+        ],
+        "minLat": 34.0437,
+        "maxLat": 34.0448,
+        "from": {
+          "px": [
+            450,
+            668
+          ]
+        },
+        "to": {
+          "px": [
+            829,
+            771
+          ]
+        }
+      },
+      {
+        "label": "part of (Stanford Ave)",
+        "name": "Crocker Street",
+        "entityId": "crocker-street",
+        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "?",
+            "name": "Stanford Avenue",
+            "entityId": "stanford-ave",
+            "formInForce": "Stanford Avenue",
+            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract, sheet 3 (M.R. 30-11) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Crocker Street",
+            "entityId": "crocker-street",
+            "formInForce": "Crocker Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "person",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person",
+          "governor"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Charles Crocker",
+            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Wikipedia: Leland Stanford",
+            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
+          }
+        ],
+        "minLat": 34.0419,
+        "maxLat": 34.0437,
+        "from": {
+          "px": [
+            829,
+            771
+          ]
+        },
+        "to": {
+          "px": [
+            908,
+            554
+          ]
+        }
+      },
+      {
+        "label": "part of (Stanford Ave)",
+        "name": "Crocker Street",
+        "entityId": "crocker-street",
+        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "?",
+            "name": "Stanford Avenue",
+            "entityId": "stanford-ave",
+            "formInForce": "Stanford Avenue",
+            "how": "origin",
+            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Crocker Street",
+            "entityId": "crocker-street",
+            "formInForce": "Crocker Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "person",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person",
+          "governor"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Charles Crocker",
+            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Wikipedia: Leland Stanford",
+            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
+          }
+        ],
+        "minLat": 34.0401,
+        "maxLat": 34.0419,
+        "from": {
+          "px": [
+            908,
+            554
+          ]
+        },
+        "to": {
+          "px": [
+            527,
+            293
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Crocker Street",
+        "entityId": "crocker-street",
+        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific — how and when this stretch joined Crocker Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Charles Crocker",
+            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
+          }
+        ],
+        "maxLat": 34.0401,
+        "from": {
+          "px": [
+            527,
+            293
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -5056,20 +7008,200 @@ const STREET_DATA = {
   },
   "Gladys Avenue": {
     "name": "Gladys Avenue",
-    "entityId": "gladys-avenue",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Gladys Avenue",
+        "entityId": "gladys-ave",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth named as the block's bounding streets",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
+          },
+          {
+            "title": "Recorded map: Wilde and Strong's Subdivision of the Frank Sabichi Tract, M.R. 66-64 (recorded Sept. 21, 1897) — Gladys continuing south alongside Ruth, Towne and Crocker",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
+          },
+          {
+            "title": "LA Parks: Gladys Park (6th and Gladys)",
+            "url": "https://recreation.parks.lacity.gov/park/6th-gladys-street"
+          }
+        ],
+        "minLat": 34.0423,
+        "from": null,
+        "to": {
+          "px": [
+            591,
+            1156
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Gladys Avenue",
+        "entityId": "gladys-ave",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth named as the block's bounding streets",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
+          },
+          {
+            "title": "Recorded map: Wilde and Strong's Subdivision of the Frank Sabichi Tract, M.R. 66-64 (recorded Sept. 21, 1897) — Gladys continuing south alongside Ruth, Towne and Crocker",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
+          },
+          {
+            "title": "LA Parks: Gladys Park (6th and Gladys)",
+            "url": "https://recreation.parks.lacity.gov/park/6th-gladys-street"
+          }
+        ],
+        "minLat": 34.0406,
+        "maxLat": 34.0423,
+        "from": {
+          "px": [
+            591,
+            1156
+          ]
+        },
+        "to": {
+          "px": [
+            659,
+            968
+          ]
+        }
+      },
+      {
+        "label": "part of (original Gladys Ave)",
+        "name": "Gladys Avenue",
+        "entityId": "gladys-ave",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "Gladys Avenue",
+            "entityId": "gladys-ave",
+            "formInForce": "Gladys Avenue",
+            "how": "origin",
+            "origin": "labeled “Gladys Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth named as the block's bounding streets",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
+          },
+          {
+            "title": "Recorded map: Wilde and Strong's Subdivision of the Frank Sabichi Tract, M.R. 66-64 (recorded Sept. 21, 1897) — Gladys continuing south alongside Ruth, Towne and Crocker",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
+          },
+          {
+            "title": "LA Parks: Gladys Park (6th and Gladys)",
+            "url": "https://recreation.parks.lacity.gov/park/6th-gladys-street"
+          }
+        ],
+        "minLat": 34.0385,
+        "maxLat": 34.0406,
+        "from": {
+          "px": [
+            659,
+            968
+          ]
+        },
+        "to": {
+          "px": [
+            230,
+            674
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Gladys Avenue",
+        "entityId": "gladys-ave",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth named as the block's bounding streets",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
+          },
+          {
+            "title": "Recorded map: Wilde and Strong's Subdivision of the Frank Sabichi Tract, M.R. 66-64 (recorded Sept. 21, 1897) — Gladys continuing south alongside Ruth, Towne and Crocker",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
+          },
+          {
+            "title": "LA Parks: Gladys Park (6th and Gladys)",
+            "url": "https://recreation.parks.lacity.gov/park/6th-gladys-street"
+          }
+        ],
+        "maxLat": 34.0385,
+        "from": {
+          "px": [
+            230,
+            674
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -7201,20 +9333,35 @@ const STREET_DATA = {
   },
   "Omar Street": {
     "name": "Omar Street",
-    "entityId": "omar-street",
+    "entityId": "omar-ave",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1888",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+    },
     "built": "not yet researched",
+    "nameHistory": [
+      {
+        "from": "by 1888",
+        "until": null,
+        "name": "Omar Street",
+        "entityId": "omar-ave",
+        "formInForce": "Omar Street",
+        "how": "origin",
+        "origin": "labeled “Omar Ave” on the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+      }
+    ],
     "note": null,
     "categories": [
-      "unresearched"
+      "unknown"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887) — shows “Omar Ave” at 312 Omar St's location",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
       }
     ]
   },
@@ -7781,20 +9928,315 @@ const STREET_DATA = {
   },
   "San Pedro Street": {
     "name": "San Pedro Street",
-    "entityId": "san-pedro-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "San Pedro Street",
+        "entityId": "san-pedro",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "place",
+          "destination"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: San Pedro Street",
+            "url": "https://lastreetnames.com/street/san-pedro-street/"
+          },
+          {
+            "title": "Wikipedia: San Pedro Street",
+            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          }
+        ],
+        "minLat": 34.0475,
+        "from": null,
+        "to": {
+          "px": [
+            981,
+            508
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "San Pedro Street",
+        "entityId": "san-pedro",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "place",
+          "destination"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: San Pedro Street",
+            "url": "https://lastreetnames.com/street/san-pedro-street/"
+          },
+          {
+            "title": "Wikipedia: San Pedro Street",
+            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0461,
+        "maxLat": 34.0475,
+        "from": {
+          "px": [
+            981,
+            508
+          ]
+        },
+        "to": {
+          "px": [
+            1004,
+            645
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "San Pedro Street",
+        "entityId": "san-pedro",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "place",
+          "destination"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: San Pedro Street",
+            "url": "https://lastreetnames.com/street/san-pedro-street/"
+          },
+          {
+            "title": "Wikipedia: San Pedro Street",
+            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0457,
+        "maxLat": 34.0461,
+        "from": {
+          "px": [
+            1004,
+            645
+          ]
+        },
+        "to": {
+          "px": [
+            614,
+            418
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "San Pedro Street",
+        "entityId": "san-pedro",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "place",
+          "destination"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: San Pedro Street",
+            "url": "https://lastreetnames.com/street/san-pedro-street/"
+          },
+          {
+            "title": "Wikipedia: San Pedro Street",
+            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0444,
+        "maxLat": 34.0457,
+        "from": {
+          "px": [
+            614,
+            418
+          ]
+        },
+        "to": {
+          "px": [
+            952,
+            571
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "San Pedro Street",
+        "entityId": "san-pedro",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "place",
+          "destination"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: San Pedro Street",
+            "url": "https://lastreetnames.com/street/san-pedro-street/"
+          },
+          {
+            "title": "Wikipedia: San Pedro Street",
+            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0424,
+        "maxLat": 34.0444,
+        "from": {
+          "px": [
+            952,
+            571
+          ]
+        },
+        "to": {
+          "px": [
+            1006,
+            389
+          ]
+        }
+      },
+      {
+        "label": "part of (original San Pedro St)",
+        "name": "San Pedro Street",
+        "entityId": "san-pedro",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "San Pedro Street",
+            "entityId": "san-pedro",
+            "formInForce": "San Pedro Street",
+            "how": "origin",
+            "origin": "labeled “San Pedro Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "place",
+          "destination"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: San Pedro Street",
+            "url": "https://lastreetnames.com/street/san-pedro-street/"
+          },
+          {
+            "title": "Wikipedia: San Pedro Street",
+            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0406,
+        "maxLat": 34.0424,
+        "from": {
+          "px": [
+            1006,
+            389
+          ]
+        },
+        "to": {
+          "px": [
+            632,
+            116
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "San Pedro Street",
+        "entityId": "san-pedro",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "place",
+          "destination"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: San Pedro Street",
+            "url": "https://lastreetnames.com/street/san-pedro-street/"
+          },
+          {
+            "title": "Wikipedia: San Pedro Street",
+            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          }
+        ],
+        "maxLat": 34.0406,
+        "from": {
+          "px": [
+            632,
+            116
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -8028,20 +10470,355 @@ const STREET_DATA = {
   },
   "Stanford Avenue": {
     "name": "Stanford Avenue",
-    "entityId": "stanford-avenue",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of (Ruth Ave)",
+        "name": "Stanford Avenue",
+        "entityId": "stanford-ave",
+        "namedAfter": "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863, once this stretch was folded into Stanford Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Leland_Stanford",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "?",
+            "name": "Ruth Avenue",
+            "entityId": "ruth-ave",
+            "formInForce": "Ruth Avenue",
+            "origin": "labeled “Ruth Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — presumably a daughter of the landowner Joseph Wolfskill, whose orchard was being subdivided — the plat sets Ruth beside Gladys, and the Sabichi tract to the south continues the run of women's names with Agatha. No source names her. The street was still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing it and the council committee put the name back; it took the Stanford name later",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Stanford Avenue",
+            "entityId": "stanford-ave",
+            "formInForce": "Stanford Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "person",
+          "governor",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Leland Stanford",
+            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, “Talking Retrenchment” (the renaming committee restores Ruth Avenue), Feb. 21, 1897",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28"
+          },
+          {
+            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — names Ruth as one of the block's bounding streets",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
+          }
+        ],
+        "minLat": 34.0439,
+        "from": null,
+        "to": {
+          "px": [
+            280,
+            927
+          ]
+        }
+      },
+      {
+        "label": "part of (Ruth Ave)",
+        "name": "Stanford Avenue",
+        "entityId": "stanford-ave",
+        "namedAfter": "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863, once this stretch was folded into Stanford Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Leland_Stanford",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "?",
+            "name": "Ruth Avenue",
+            "entityId": "ruth-ave",
+            "formInForce": "Ruth Avenue",
+            "origin": "labeled “Ruth Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — presumably a daughter of the landowner Joseph Wolfskill, whose orchard was being subdivided — the plat sets Ruth beside Gladys, and the Sabichi tract to the south continues the run of women's names with Agatha. No source names her. The street was still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing it and the council committee put the name back; it took the Stanford name later",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Stanford Avenue",
+            "entityId": "stanford-ave",
+            "formInForce": "Stanford Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "person",
+          "governor",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Leland Stanford",
+            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, “Talking Retrenchment” (the renaming committee restores Ruth Avenue), Feb. 21, 1897",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28"
+          },
+          {
+            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — names Ruth as one of the block's bounding streets",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
+          }
+        ],
+        "minLat": 34.0428,
+        "maxLat": 34.0439,
+        "from": {
+          "px": [
+            280,
+            927
+          ]
+        },
+        "to": {
+          "px": [
+            669,
+            1031
+          ]
+        }
+      },
+      {
+        "label": "part of (Ruth Ave)",
+        "name": "Stanford Avenue",
+        "entityId": "stanford-ave",
+        "namedAfter": "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863, once this stretch was folded into Stanford Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Leland_Stanford",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "?",
+            "name": "Ruth Avenue",
+            "entityId": "ruth-ave",
+            "formInForce": "Ruth Avenue",
+            "origin": "labeled “Ruth Ave” on the 1888 Wolfskill Orchard Tract, sheet 3 (M.R. 30-11) {{(source)}} — presumably a daughter of the landowner Joseph Wolfskill, whose orchard was being subdivided — the plat sets Ruth beside Gladys, and the Sabichi tract to the south continues the run of women's names with Agatha. No source names her. The street was still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing it and the council committee put the name back; it took the Stanford name later",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Stanford Avenue",
+            "entityId": "stanford-ave",
+            "formInForce": "Stanford Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "person",
+          "governor",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Leland Stanford",
+            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, “Talking Retrenchment” (the renaming committee restores Ruth Avenue), Feb. 21, 1897",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28"
+          },
+          {
+            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — names Ruth as one of the block's bounding streets",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
+          }
+        ],
+        "minLat": 34.041,
+        "maxLat": 34.0428,
+        "from": {
+          "px": [
+            669,
+            1031
+          ]
+        },
+        "to": {
+          "px": [
+            741,
+            833
+          ]
+        }
+      },
+      {
+        "label": "part of (Ruth Ave)",
+        "name": "Stanford Avenue",
+        "entityId": "stanford-ave",
+        "namedAfter": "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863, once this stretch was folded into Stanford Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Leland_Stanford",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "?",
+            "name": "Ruth Avenue",
+            "entityId": "ruth-ave",
+            "formInForce": "Ruth Avenue",
+            "how": "origin",
+            "origin": "labeled “Ruth Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}} — presumably a daughter of the landowner Joseph Wolfskill, whose orchard was being subdivided — the plat sets Ruth beside Gladys, and the Sabichi tract to the south continues the run of women's names with Agatha. No source names her. The street was still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing it and the council committee put the name back; it took the Stanford name later",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Stanford Avenue",
+            "entityId": "stanford-ave",
+            "formInForce": "Stanford Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "categories": [
+          "person",
+          "governor",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Leland Stanford",
+            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, “Talking Retrenchment” (the renaming committee restores Ruth Avenue), Feb. 21, 1897",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28"
+          },
+          {
+            "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — names Ruth as one of the block's bounding streets",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
+          }
+        ],
+        "minLat": 34.0389,
+        "maxLat": 34.041,
+        "from": {
+          "px": [
+            741,
+            833
+          ]
+        },
+        "to": {
+          "px": [
+            308,
+            534
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Stanford Avenue",
+        "entityId": "stanford-ave",
+        "namedAfter": "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863 — how and when this stretch joined Stanford Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Leland_Stanford",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "person",
+          "governor"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Leland Stanford",
+            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "maxLat": 34.0389,
+        "from": {
+          "px": [
+            308,
+            534
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -8180,20 +10957,256 @@ const STREET_DATA = {
   },
   "Towne Avenue": {
     "name": "Towne Avenue",
-    "entityId": "towne-avenue",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Towne Avenue",
+        "entityId": "towne-ave",
+        "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad — how and when this stretch joined Towne Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.045,
+        "from": null,
+        "to": {
+          "px": [
+            796,
+            1091
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Towne Avenue",
+        "entityId": "towne-ave",
+        "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad — how and when this stretch joined Towne Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0443,
+        "maxLat": 34.045,
+        "from": {
+          "px": [
+            796,
+            1091
+          ]
+        },
+        "to": {
+          "px": [
+            365,
+            798
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Towne Avenue",
+        "entityId": "towne-ave",
+        "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad — how and when this stretch joined Towne Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0432,
+        "maxLat": 34.0443,
+        "from": {
+          "px": [
+            365,
+            798
+          ]
+        },
+        "to": {
+          "px": [
+            750,
+            898
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Towne Avenue",
+        "entityId": "towne-ave",
+        "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad — how and when this stretch joined Towne Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0414,
+        "maxLat": 34.0432,
+        "from": {
+          "px": [
+            750,
+            898
+          ]
+        },
+        "to": {
+          "px": [
+            827,
+            689
+          ]
+        }
+      },
+      {
+        "label": "part of (original Towne Ave)",
+        "name": "Towne Avenue",
+        "entityId": "towne-ave",
+        "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "Towne Avenue",
+            "entityId": "towne-ave",
+            "formInForce": "Towne Avenue",
+            "how": "origin",
+            "origin": "labeled “Towne Ave” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "note": null,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0395,
+        "maxLat": 34.0414,
+        "from": {
+          "px": [
+            827,
+            689
+          ]
+        },
+        "to": {
+          "px": [
+            411,
+            401
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Towne Avenue",
+        "entityId": "towne-ave",
+        "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad — how and when this stretch joined Towne Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "maxLat": 34.0395,
+        "from": {
+          "px": [
+            411,
+            401
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -8864,6 +11877,23 @@ const VANISHED_STREETS = [
       [
         34.062612,
         -118.259736
+      ]
+    ]
+  },
+  {
+    "entity": "fourth-street",
+    "asWritten": "Fourth St",
+    "doc": "mr030-009-p4",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.043785,
+        -118.239741
+      ],
+      [
+        34.043696,
+        -118.238109
       ]
     ]
   }

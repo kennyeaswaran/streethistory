@@ -181,6 +181,12 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     await page.waitForTimeout(400);
   }
 
+  // The corpus moves: mr066-035 has since been swept for real. The gate tests
+  // below are about the gate itself, not about this document's current state,
+  // so run them from unswept.
+  await page.evaluate(() => { docSwept = { fully: false, for: [] };
+                              reviewSig = null; updateReviewActions(); });
+
   console.log("aligning a second sheet into the first sheet's folder");
   {
     // A document holds one alignment. Overwriting it is how a multi-page scan
@@ -632,6 +638,132 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   ok("and review comes back on return", JSON.stringify(await shown()) === '["review"]',
      JSON.stringify(await shown()));
   ok("the project folder control is visible in every mode", (await vis("#connectDir")).h > 0);
+
+  console.log("splitting a row in two");
+  {
+    await page.click("#mReview");
+    await page.waitForTimeout(200);
+    // A long, unambiguous state row to cut in half.
+    const target = await page.evaluate(() => {
+      let best = null;
+      for (const f of reviewFeatures) {
+        if (!f.row || f.row.kind !== "state" || f.pts.length < 4) continue;
+        const len = f.pts.slice(1).reduce((t, p, i) =>
+          t + Math.hypot(p[0] - f.pts[i][0], p[1] - f.pts[i][1]), 0);
+        if (!best || len > best.len) best = { street: f.street, len, i: loadedDoc.rows.indexOf(f.row) };
+      }
+      return best;
+    });
+    ok("there is a long row to split", target && target.i >= 0, JSON.stringify(target));
+
+    const nBefore = await page.evaluate(() => loadedDoc.rows.length);
+    await page.evaluate(i => focusRow(loadedDoc.rows[i]), target.i);
+    await page.waitForTimeout(250);
+    ok("the split control is offered on a row",
+       await page.locator("#pop button.splitrow").count() === 1,
+       String(await page.locator("#pop button.splitrow").count()));
+
+    await page.locator("#pop button.splitrow").first().click();
+    await page.waitForTimeout(200);
+    ok("the panel says what is being split",
+       (await vis("#splitState")).display !== "none" &&
+       /Splitting the state row/.test(await page.textContent("#splitState")),
+       await page.textContent("#splitState"));
+    ok("…and the popup gets out of the way", (await vis("#pop")).display === "none");
+    ok("…while the row stays selected, so it is still highlighted",
+       await page.evaluate(i => popRow === loadedDoc.rows[i], target.i));
+
+    // A click nowhere near it must not split anything.
+    const away = await page.evaluate(() => {
+      const f = reviewFeatures.find(x => x.row === popRow);
+      const mid = f.pts[Math.floor(f.pts.length / 2)];
+      return [Math.round(mid[0]) + 300, Math.round(mid[1]) + 300];
+    });
+    await page.mouse.move(away[0], away[1]);
+    await page.mouse.down(); await page.mouse.up();
+    await page.waitForTimeout(200);
+    ok("a click off the stretch splits nothing",
+       await page.evaluate(() => loadedDoc.rows.length) === nBefore &&
+       await page.evaluate(() => !!splitting));
+    ok("…and says why", dialogs.some(d => /has to sit on it|nowhere to put a boundary/.test(d)),
+       dialogs.slice(-1).join(""));
+
+    const on = await page.evaluate(() => {
+      const f = reviewFeatures.find(x => x.row === popRow);
+      const p = f.pts[Math.floor(f.pts.length / 2)];
+      return [Math.round(p[0]), Math.round(p[1])];
+    });
+    await page.mouse.move(on[0], on[1]);
+    await page.mouse.down(); await page.mouse.up();
+    await page.waitForTimeout(300);
+    const after = await page.evaluate(() => loadedDoc.rows.length);
+    ok("clicking on the stretch makes two rows out of one", after === nBefore + 1,
+       `${nBefore} -> ${after}`);
+    ok("…both awaiting confirmation",
+       await page.evaluate(i => loadedDoc.rows[i].confirmed === false &&
+                                loadedDoc.rows[i + 1].confirmed === false, target.i));
+    ok("…meeting at the same point",
+       await page.evaluate(i => JSON.stringify(loadedDoc.rows[i].to) ===
+                                JSON.stringify(loadedDoc.rows[i + 1].from) &&
+                                loadedDoc.rows[i].to != null, target.i));
+    ok("…on the same street, with the same ink",
+       await page.evaluate(i => loadedDoc.rows[i].street === loadedDoc.rows[i + 1].street &&
+                                loadedDoc.rows[i].asWritten === loadedDoc.rows[i + 1].asWritten,
+                           target.i));
+    ok("the split mode ends itself", await page.evaluate(() => !splitting) &&
+       (await vis("#splitState")).display === "none");
+    ok("…and the popup comes back on the first half",
+       (await vis("#pop")).display !== "none" &&
+       await page.evaluate(i => popRow === loadedDoc.rows[i], target.i));
+    ok("the popup says how much ground the half speaks for",
+       /Speaks for \d+ m of/.test(await page.textContent("#pop")),
+       (await page.textContent("#pop")).slice(0, 200));
+    ok("Save review is dirty again", !(await page.locator("#saveReview").isDisabled()));
+  }
+
+  console.log("getting to a row you cannot see");
+  {
+    const blockers = await page.textContent("#sweepBlockers");
+    ok("the blocking rows are listed, not just counted",
+       /Rows still waiting/.test(blockers), blockers.slice(0, 160));
+    const n = await page.locator("#sweepBlockers li[data-br]").count();
+    ok("…one line each", n >= 2, String(n));
+    ok("…with the stretch's length on it, so a stray is recognisable",
+       /\d+ m/.test(blockers), blockers.slice(0, 200));
+
+    // The case this exists for: a row too short to find, drawn underneath a
+    // longer one on the same street.
+    await page.evaluate(() => {
+      const long = loadedDoc.rows.find(r => r.kind === "state" && r.street);
+      const rec = lastModel.streets.find(s => s.name === long.street);
+      const run = rec.runs[0];
+      const px = i => ({ px: G.worldToScan(G.fitAlignment(controlPoints()),
+                                           run[i].lat, run[i].lon).map(v => Math.round(v)) });
+      loadedDoc.rows.push({ kind: "state", asWritten: "STRAY", street: long.street,
+                            from: px(0), to: px(1), confirmed: false });
+      lastModel = null; reviewSig = null; hidePop(); draw();
+    });
+    await page.waitForTimeout(250);
+    const li = page.locator("#sweepBlockers li[data-br]", { hasText: "STRAY" });
+    ok("the stray shows up in the list", await li.count() === 1, String(await li.count()));
+    await li.first().click();
+    await page.waitForTimeout(300);
+    ok("clicking it opens that exact row",
+       await page.evaluate(() => popRow && popRow.asWritten === "STRAY"),
+       await page.evaluate(() => popRow && popRow.asWritten));
+    ok("…and the popup is on screen", (await vis("#pop")).display !== "none");
+    ok("…offering delete", await page.locator("#pop button.delrow").count() === 1);
+    const nb = await page.evaluate(() => loadedDoc.rows.length);
+    answers.push("");                                  // the confirm() below
+    page.once("dialog", () => {});
+    await page.evaluate(() => { window.__c = window.confirm; window.confirm = () => true; });
+    await page.locator("#pop button.delrow").first().click();
+    await page.waitForTimeout(300);
+    await page.evaluate(() => { window.confirm = window.__c; });
+    ok("deleting it removes it",
+       await page.evaluate(() => loadedDoc.rows.length) === nb - 1 &&
+       await page.evaluate(() => !loadedDoc.rows.some(r => r.asWritten === "STRAY")));
+  }
 
   ok("still no page errors",
      errors.filter(e => !/404/.test(e)).length === 0, errors.slice(0, 3).join(" | "));

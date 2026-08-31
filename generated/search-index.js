@@ -147,8 +147,14 @@ const SEARCH_INDEX = [
     "street": "5th Street"
   },
   {
+    "form": "Poplar Street",
+    "entity": "poplar-st",
+    "label": "Poplar Street",
+    "street": "5th Street"
+  },
+  {
     "form": "6th Street",
-    "entity": "6th-street",
+    "entity": "sixth-street",
     "label": "6th Street",
     "street": "6th Street"
   },
@@ -160,7 +166,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "7th Street",
-    "entity": "7th-street",
+    "entity": "seventh-street",
     "label": "7th Street",
     "street": "7th Street"
   },
@@ -508,7 +514,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Ceres Avenue",
-    "entity": "ceres-avenue",
+    "entity": "ceres-ave",
     "label": "Ceres Avenue",
     "street": "Ceres Avenue"
   },
@@ -648,6 +654,12 @@ const SEARCH_INDEX = [
     "form": "Crocker Street",
     "entity": "crocker-street",
     "label": "Crocker Street",
+    "street": "Crocker Street"
+  },
+  {
+    "form": "Stanford Avenue",
+    "entity": "stanford-ave",
+    "label": "Stanford Avenue",
     "street": "Crocker Street"
   },
   {
@@ -838,7 +850,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Gladys Avenue",
-    "entity": "gladys-avenue",
+    "entity": "gladys-ave",
     "label": "Gladys Avenue",
     "street": "Gladys Avenue"
   },
@@ -1306,7 +1318,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Omar Street",
-    "entity": "omar-street",
+    "entity": "omar-ave",
     "label": "Omar Street",
     "street": "Omar Street"
   },
@@ -1450,7 +1462,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "San Pedro Street",
-    "entity": "san-pedro-street",
+    "entity": "san-pedro",
     "label": "San Pedro Street",
     "street": "San Pedro Street"
   },
@@ -1527,9 +1539,9 @@ const SEARCH_INDEX = [
     "street": "Stadium Way"
   },
   {
-    "form": "Stanford Avenue",
-    "entity": "stanford-avenue",
-    "label": "Stanford Avenue",
+    "form": "Ruth Avenue",
+    "entity": "ruth-ave",
+    "label": "Ruth Avenue",
     "street": "Stanford Avenue"
   },
   {
@@ -1576,7 +1588,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Towne Avenue",
-    "entity": "towne-avenue",
+    "entity": "towne-ave",
     "label": "Towne Avenue",
     "street": "Towne Avenue"
   },

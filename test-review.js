@@ -76,7 +76,7 @@ const sandbox = {
 Object.defineProperty(sandbox, "loadedDoc", { get: () => ({ rows }) });
 vm.createContext(sandbox);
 vm.runInContext("const KY = 110540; let lastModel = null; let coverageExcept = [];\n" + zoomSource + source + bundleSource + gateSource +
-  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers, runGaps, clipRange };", sandbox);
+  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers, runGaps, clipRange, splitRowAt, sameExtent, blockingRows, rowMetres, setModel: m => { lastModel = m; } };", sandbox);
 const API = sandbox.API;
 const setRows = r => { rows = r; };
 
@@ -390,6 +390,101 @@ console.log("the gate on sweptFully");
      API.sweepBlockers().length === 0, API.sweepBlockers().join(" | "));
   ok("the Huntley sliver still does not have to be accounted for",
      !/Huntley/.test(API.sweepBlockers().join(" | ")));
+}
+
+console.log("splitting a row in two");
+{
+  // The property that makes a split safe: the two halves together account for
+  // exactly the ground the one row did. A split that quietly lost a stretch
+  // would leave the sweep passing on ground nobody had decided anything about.
+  const whole = { kind: "state", name: "bixel", asWritten: "BIXEL ST", street: "Bixel Street" };
+  setRows([whole]);
+  API.setModel(null);
+  const before = API.reviewModel();
+  const bx = before.streets.find(s => s.name === "Bixel Street");
+  const run = bx.runs[0];
+  const mid = run[Math.floor(run.length / 2)];
+  const at = { px: G.worldToScan(fit, mid.lat, mid.lon).map(v => Math.round(v)) };
+
+  const [A, B] = API.splitRowAt(whole, at);
+  ok("the first half keeps `from` and takes the split point as `to`",
+     A.from === undefined && JSON.stringify(A.to) === JSON.stringify(at));
+  ok("the second half starts at the split point and keeps `to`",
+     JSON.stringify(B.from) === JSON.stringify(at) && B.to === undefined);
+  ok("neither half inherits confirmation",
+     A.confirmed === false && B.confirmed === false);
+  ok("everything else is carried across unchanged",
+     A.name === "bixel" && B.name === "bixel" && A.asWritten === "BIXEL ST" &&
+     B.street === "Bixel Street");
+  ok("splitting does not mutate the row it was given",
+     whole.to === undefined && whole.confirmed === undefined);
+
+  setRows([A, B]);
+  API.setModel(null);
+  const after = API.reviewModel();
+  const gapsFor = m => Math.round((m.gaps.filter(g => g.street === "Bixel Street"))
+    .reduce((t, g) => t + g.metres, 0));
+  ok("the two halves leave exactly the gaps the one row left",
+     gapsFor(after) === gapsFor(before), `${gapsFor(before)} m -> ${gapsFor(after)} m`);
+  ok("...and the halves add up to the whole",
+     Math.abs(API.rowMetres(A) + API.rowMetres(B) - API.rowMetres(whole)) <= 2,
+     `${API.rowMetres(A)} + ${API.rowMetres(B)} vs ${API.rowMetres(whole)}`);
+  ok("each half is shorter than the whole",
+     API.rowMetres(A) > 0 && API.rowMetres(B) > 0 &&
+     API.rowMetres(A) < API.rowMetres(whole));
+
+  // A change row carries its extent in fromCross/toCross, not from/to.
+  const ch = { kind: "change", from: "aztec-avenue", to: "belmont-avenue",
+               street: "Bixel Street", fromCross: null, toCross: null };
+  const [CA, CB] = API.splitRowAt(ch, at);
+  ok("a change row splits on fromCross/toCross, leaving from/to as entity ids",
+     CA.from === "aztec-avenue" && JSON.stringify(CA.toCross) === JSON.stringify(at) &&
+     JSON.stringify(CB.fromCross) === JSON.stringify(at));
+
+  ok("null and undefined are the same extent", API.sameExtent(null, undefined));
+  ok("a point equal to an end is caught", API.sameExtent(at, { px: at.px.slice() }));
+  ok("...and a different point is not", !API.sameExtent(at, { px: [at.px[0] + 1, at.px[1]] }));
+}
+
+console.log("reaching the rows that block a sweep");
+{
+  // A blocker stated as a count is unreachable when the row is metres long and
+  // drawn underneath a longer one. The panel lists the rows themselves, so
+  // this is the list it lists.
+  const good = { kind: "state", name: "bixel", asWritten: "BIXEL ST", street: "Bixel Street" };
+  const prop = { kind: "absent", street: "4th Street", confirmed: false };
+  const nameless = { kind: "state", asWritten: "ARNOLD ST.", street: "3rd Street" };
+  const both = { kind: "state", asWritten: "X", street: "Miramar Street", confirmed: false };
+  setRows([good, prop, nameless, both]);
+  API.setModel(null);
+  const b = API.blockingRows();
+  ok("a confirmed, named row is not a blocker", !b.includes(good));
+  ok("an unconfirmed row is", b.includes(prop));
+  ok("a nameless state row is, even though it is confirmed", b.includes(nameless));
+  ok("a row that is both appears once", b.filter(r => r === both).length === 1);
+  ok("the list and the count agree",
+     b.length === 3 && /unconfirmed proposal/.test(API.sweepBlockers().join(" | ")) &&
+     /no name entity/.test(API.sweepBlockers().join(" | ")), String(b.length));
+
+  // The measurement the panel shows next to each one — the thing that makes
+  // "this is a stray, delete it" a judgement rather than a guess.
+  setRows([good]);
+  API.setModel(null);
+  API.reviewModel();
+  const full = API.rowMetres(good);
+  const bxRun = API.reviewModel().streets.find(s => s.name === "Bixel Street").runs[0];
+  const px = i => ({ px: G.worldToScan(fit, bxRun[i].lat, bxRun[i].lon).map(v => Math.round(v)) });
+  const stub = { ...good, from: px(0), to: px(1) };
+  setRows([stub]);
+  API.setModel(null);
+  API.reviewModel();
+  ok("a whole-street row measures the whole street in coverage", full > 50, String(full));
+  ok("a one-vertex stub measures far less", API.rowMetres(stub) < full / 2,
+     `${API.rowMetres(stub)} vs ${full}`);
+  ok("a row on a street outside coverage measures nothing",
+     API.rowMetres({ kind: "state", street: "Wilshire Boulevard" }) === null);
+  ok("a vanished row has no stretch to measure",
+     API.rowMetres({ kind: "vanished", asWritten: "Gone St", trace: [[0,0],[9,9]] }) === null);
 }
 
 console.log(`\n${pass} passed, ${fail} failed`);

@@ -304,8 +304,44 @@ Each row offers:
   judgement happens in: read the label, then decide which lineage it belongs
   to.
 - **Confirm this row**, and **Delete this row**.
+- **Split this stretch in two…** — see below.
 - **Re-trace on the scan**, on a `vanished` row: draw a new polyline, keep the
   label and the entity.
+
+Under the fields the popup says how much ground the row speaks for, in metres.
+That is the answer to "is this thing a stray?" — a 30 m row on a street that
+also carries a 200 m one is almost always the AI pass having written the same
+label twice, and a row shorter than the 25 m sliver rule is flagged as such.
+
+### When a row is right about only part of its stretch
+
+A row is one claim about one stretch. When the claim holds for part of it and
+not the rest — the sheet's corridor leaves the modern street half way along,
+the lettering covers less ground than the row was given — the repair is two
+rows, not a narrowed extent. Narrowing drops the other half out of the
+accounting entirely, and the sweep gate would then pass with nothing decided
+about that ground.
+
+**Split this stretch in two…** puts the canvas into split mode: the row stays
+highlighted, and you click the point along it where one claim stops and the
+other starts. The boundary is expressed the way every extent is (MODEL-SPEC
+§5.4) — a cross street when one is within 40 m, a scan pixel otherwise. The
+first half keeps `from` and takes the point as `to`; the second starts at the
+point and keeps `to`, so both stay in canonical order (west, or north, first).
+
+**Both halves come back unconfirmed.** The reason to split is that the original
+claim was wrong about part of its ground, and which part is exactly what has
+not been decided yet.
+
+Then say something different about each half: change the kind, retype the ink,
+give it a different entity — or delete the half that is wrong, which turns it
+red, and answer it as an unaccounted stretch (`absent`, or out of coverage).
+
+One limit: the boundary can only land on a **vertex of the modern street**.
+Extents resolve by snapping to the nearest vertex, so a point chosen between
+two of them would be drawn at one of them anyway. Where a stretch has no vertex
+between its ends, the tool says so rather than storing a boundary it cannot
+honour; a finer split has to go into the file by hand.
 
 ### Confirming, and the sweep
 
@@ -322,6 +358,19 @@ model makes: it licenses arguing from this document's *silence*. So it is a
 gate rather than a checkbox, and it says in words what is missing — how many
 metres across how many stretches are still unaccounted, any row still proposed,
 any row without a name. When it goes through it also fills `sweptFor`.
+
+Under that, the rows it is waiting on are **listed one by one**, with their
+length, and clicking one goes to it: the map recentres on it and the popup
+opens, where it can be named, confirmed or deleted. A count on its own is a
+dead end when the row is 30 m long and drawn underneath a 200 m one on the same
+street — which is what a duplicate from the AI pass looks like. Whatever the
+popup is about is drawn haloed and on top, so it is visible however small it is
+and whatever is over it.
+
+The list is shown for a document that is *already* swept too, and the panel
+says so in as many words: editing a swept document — splitting a row, say —
+leaves proposals behind it, and `sweptFully: true` standing over unconfirmed
+rows claims a silence the rows no longer back.
 
 ### Red is a stretch, not a street
 
@@ -371,7 +420,8 @@ confirmed, and the document cannot be swept.
 
 ### What Review still does not do
 
-It cannot change a row's `street` or extent. If the AI matched a corridor to
+It cannot change a row's `street`, or move an extent to somewhere the split
+tool cannot reach. If the AI matched a corridor to
 the wrong street, that is an edit to `documents/<id>/<id>.js` followed by
 **Re-read rows from disk** — which discards unsaved review edits, so save
 first.

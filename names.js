@@ -75,6 +75,41 @@ const NAME_ENTITIES = {
     disputed: false, note: null, possiblySameAs: null, aliases: []
   },
 
+  "sixth-street": {
+    spellings: [{ forms: ["6th Street"] }],
+    namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+    namedAfterLink: null,
+    categories: ["number"],
+    sources: [
+      { title: "L.A. Street Names: 1st Street (on the numbering system)",
+        url: "https://lastreetnames.com/street/0001st-street/" }
+    ],
+    disputed: false, note: null,
+    internalNote: "One entity for the whole downtown grid, as with 2nd–5th. The 1849 " +
+      "Ord/Hutton survey laid out Calle 6ª between Pearl (now Figueroa) and Main; the " +
+      "Wolfskill Orchard Tract's “Sixth St” east of Alameda is the same numbering " +
+      "propagating east. WHEN that eastward stretch was cut through, and whether it first " +
+      "carried another name, is not researched — streets-data.js hedges it as " +
+      "“presumably an eastward extension” and this entity inherits the hedge.",
+    possiblySameAs: null, aliases: ["sixth-st"]
+  },
+
+  "seventh-street": {
+    spellings: [{ forms: ["7th Street"] }],
+    namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+    namedAfterLink: null,
+    categories: ["number"],
+    sources: [
+      { title: "L.A. Street Names: 1st Street (on the numbering system)",
+        url: "https://lastreetnames.com/street/0001st-street/" }
+    ],
+    disputed: false, note: null,
+    internalNote: "As sixth-street: Calle 7ª on the 1849 Ord/Hutton survey west of Main, " +
+      "the same numbering east of Alameda on the Wolfskill Orchard Tract. The date the " +
+      "eastward stretch joined the grid is unresearched.",
+    possiblySameAs: null, aliases: ["seventh-st"]
+  },
+
   // ---- the two Georgias (different entities, same spelling; §3) -----------
 
   // East-of-Alameda Georgia: the name on 3rd Street's Alameda–Santa Fe
@@ -378,6 +413,242 @@ const NAME_ENTITIES = {
         url: "https://lastreetnames.com/street/central-avenue/" }
     ],
     disputed: false, note: null, possiblySameAs: null, aliases: []
+  },
+
+  // ---- the Wolfskill Orchard Tract, 1887 (M.R. 30-9/13) -------------------
+  //
+  // Joseph Wolfskill's downtown orchard, subdivided into five sheets. Three
+  // naming threads run through it, and they are worth keeping apart: the
+  // Southern Pacific brass (Towne, Stanford), a run of women's names (Ruth,
+  // Gladys), and what looks like an orchard theme (Ceres). Everything here was
+  // researched for the hand-authored streets-data.js; these entities carry
+  // that work across, with its hedges intact.
+
+  "towne-ave": {
+    spellings: [{ forms: ["Towne Avenue"] }],
+    namedAfter: "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Alban_N._Towne",
+    categories: ["person", "alive"],
+    sources: [
+      { title: "L.A. Street Names: Towne Avenue",
+        url: "https://lastreetnames.com/street/towne-avenue-dtla/" },
+      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }
+    ],
+    disputed: false,
+    note: "Named when the subdividers of Joseph Wolfskill's downtown orchard gave 13 acres " +
+      "at 4th and Alameda for a new Southern Pacific station — the Arcade Depot, opened " +
+      "1888 — and lettered the railroad's officers onto the surrounding streets. Stanford " +
+      "Avenue and Crocker Street come from the same deal.",
+    internalNote: "Carried over from streets-data.js. The plat letters this street " +
+      "“Towne” outright, so the identification needs no inference.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // The Stanford NAME, which is on a different roadway now than it was in
+  // 1887: it originated on modern Crocker Street and moved a block east onto
+  // the former Ruth Avenue after Feb. 1897. One lineage, one namesake, two
+  // grounds — a transfer, exactly like Figueroa's (§3).
+  "stanford-ave": {
+    spellings: [{ forms: ["Stanford Avenue"] }],
+    namedAfter: "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Leland_Stanford",
+    categories: ["person", "governor"],
+    sources: [
+      { title: "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+        url: "https://lastreetnames.com/street/towne-avenue-dtla/" },
+      { title: "Wikipedia: Leland Stanford",
+        url: "https://en.wikipedia.org/wiki/Leland_Stanford" },
+      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }
+    ],
+    disputed: false,
+    note: "Part of the same 1887 Southern Pacific package as Towne Avenue. The name did not " +
+      "stay put: the street platted “Stanford” in 1887 is modern Crocker Street, and " +
+      "the Stanford name moved a block east onto the former Ruth Avenue — modern Stanford " +
+      "Avenue — some time after Feb. 1897.",
+    internalNote: "ROWS ON THIS ENTITY SIT ON MODERN CROCKER STREET, and that is correct: " +
+      "mr030-009 letters “Stanford Ave” there. The transfer onto modern Stanford " +
+      "Avenue is not yet a document row; when the swap ordinance is found it wants a `change` " +
+      "row. The exact year is unresearched — streets-data.js only establishes that Ruth " +
+      "was still Ruth in Feb. 1897.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // The other half of the swap. Crocker is the name that arrived on the 1887
+  // "Stanford Avenue" when the Stanford name left it — so this entity and
+  // stanford-ave describe the same ground at different times, and neither is
+  // the other's continuation: they are two namings, both for railroad men.
+  "crocker-street": {
+    spellings: [{ forms: ["Crocker Street"] }],
+    namedAfter: "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Charles_Crocker",
+    categories: ["person"],
+    sources: [
+      { title: "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+        url: "https://lastreetnames.com/street/towne-avenue-dtla/" },
+      { title: "Wikipedia: Charles Crocker",
+        url: "https://en.wikipedia.org/wiki/Charles_Crocker" }
+    ],
+    disputed: false,
+    note: "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, " +
+      "after Towne and Stanford — though this one arrived later than the other two, when the " +
+      "street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's " +
+      "instead.",
+    internalNote: "Added 2026-08-31 to replace the generator's auto-stub: the Stanford " +
+      "transfer is only half a story without it. The renaming year is unresearched; " +
+      "streets-data.js establishes only that it is after Feb. 1897, when Ruth was still Ruth. " +
+      "No document row attests Crocker yet — the entity exists so the modern name on that " +
+      "ground is not an “unresearched” placeholder.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "ruth-ave": {
+    spellings: [{ forms: ["Ruth Avenue"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "Los Angeles Herald, “Talking Retrenchment” (the renaming committee restores Ruth Avenue), Feb. 21, 1897",
+        url: "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28" },
+      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" },
+      { title: "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the " +
+          "Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — names Ruth as one " +
+          "of the block's bounding streets",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf" }
+    ],
+    disputed: false,
+    note: "Presumably a daughter of the landowner Joseph Wolfskill, whose orchard was being " +
+      "subdivided — the plat sets Ruth beside Gladys, and the Sabichi tract to the south " +
+      "continues the run of women's names with Agatha. No source names her. The street was " +
+      "still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing " +
+      "it and the council committee put the name back; it took the Stanford name later.",
+    internalNote: "Carried over from streets-data.js (Stanford Avenue's nameHistory). The " +
+      "daughter reading is an inference from the naming pattern, not a record.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "gladys-ave": {
+    spellings: [{ forms: ["Gladys Avenue"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" },
+      { title: "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the " +
+          "Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth " +
+          "named as the block's bounding streets",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf" },
+      { title: "Recorded map: Wilde and Strong's Subdivision of the Frank Sabichi Tract, " +
+          "M.R. 66-64 (recorded Sept. 21, 1897) — Gladys continuing south alongside Ruth, " +
+          "Towne and Crocker",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf" },
+      { title: "LA Parks: Gladys Park (6th and Gladys)",
+        url: "https://recreation.parks.lacity.gov/park/6th-gladys-street" }
+    ],
+    disputed: false,
+    note: "The next street over from Ruth Avenue, and part of the same run of women's names " +
+      "that continues south across the Sabichi family's land as Agatha Street — Agatha " +
+      "Sabichi's mother was a daughter of the pioneer settler William Wolfskill. No source " +
+      "names a Gladys in the family or among the subdividers. The street runs through the " +
+      "heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
+    internalNote: "Carried over from streets-data.js. Searched without result (Kines has no " +
+      "page). The women's-name pattern is the whole of the argument.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "ceres-ave": {
+    spellings: [{ forms: ["Ceres Avenue"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "Wikipedia: Ceres (mythology)",
+        url: "https://en.wikipedia.org/wiki/Ceres_(mythology)" },
+      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }
+    ],
+    disputed: false,
+    note: "Ceres was the Roman goddess of agriculture and the harvest, which would be a " +
+      "fitting name for a street laid through Joseph Wolfskill's orchard as it was being cut " +
+      "into building lots in 1887. No source says that is what was meant, and none names " +
+      "anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a " +
+      "choice rather than a coincidence.",
+    internalNote: "Carried over from streets-data.js, whose note said the same thing. " +
+      "Re-searched 2026-08-31 (web + Kines): still nothing. Treat as settled-unknown rather " +
+      "than an open lead — the note is the answer the project can give.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "omar-ave": {
+    spellings: [{ forms: ["Omar Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. " +
+          "Dockweiler, July–Aug. 1887) — shows “Omar Ave” at 312 Omar St's location",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }
+    ],
+    disputed: false,
+    note: "Platted with the rest of the Wolfskill Orchard Tract in 1887 and apparently never " +
+      "renamed — only the generic drifted, from the plat's “Omar Ave” to today's " +
+      "Omar Street. No source names an Omar.",
+    internalNote: "Carried over from streets-data.js. NavigateLA still lists the modern street " +
+      "as “Omar Ave” while OSM has Omar Street, so the Ave/Street difference is a " +
+      "wobble in the records rather than a documented respelling — ONE spelling period " +
+      "here on purpose, using OSM's form. Identified through 312 Omar St.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "san-pedro": {
+    spellings: [{ forms: ["San Pedro Street"] }],
+    namedAfter: "The port town of {{San Pedro}}, which the street ran toward",
+    namedAfterLink: "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
+    categories: ["place", "destination"],
+    sources: [
+      { title: "L.A. Street Names: San Pedro Street",
+        url: "https://lastreetnames.com/street/san-pedro-street/" },
+      { title: "Wikipedia: San Pedro Street",
+        url: "https://en.wikipedia.org/wiki/San_Pedro_Street" }
+    ],
+    disputed: false,
+    note: "Much older than the tract that letters it here; it no longer reaches San Pedro, " +
+      "merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street " +
+      "in 1997.",
+    internalNote: "Carried over from streets-data.js. The Wolfskill plat letters it " +
+      "“San Pedro Ave”; that is the plat's generic, not a spelling period of the " +
+      "name — hence one period, and the ink lives in the row's asWritten (§5.1). " +
+      "Id renamed from san-pedro-ave, 2026-08-31, for the same reason.",
+    possiblySameAs: null, aliases: ["san-pedro-ave"]
+  },
+
+  // ---- the Bliss Tract's other name ---------------------------------------
+
+  "poplar-st": {
+    spellings: [{ forms: ["Poplar Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "Recorded map: F.P. Howard & Co.'s Subdivision of the Bliss Tract, M.R. 12-42 " +
+          "(subdivided Aug. 1886 by Geo. E. Knox) — shows “Poplar Street” at " +
+          "1100 E 5th St's location",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf" },
+      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }
+    ],
+    disputed: false,
+    note: "Named on Dr. Frederick Preston Howard's Bliss Tract in 1886, one block south of the " +
+      "Huber Street that runs through the same subdivision. No namesake is documented; a poplar " +
+      "would be in keeping with the orchard ground it was cut through, but nothing says so.",
+    internalNote: "Carried over from streets-data.js (5th Street, “Alameda to Hewitt " +
+      "(Poplar St)”). Same open question as Huber: nothing documents Poplar → Lugo " +
+      "→ 5th by name, and research-leads.md asks for a CDNC or directory search. The " +
+      "tree reading is mine, offered as a guess and labelled as one.",
+    possiblySameAs: null, aliases: []
   }
 };
 
