@@ -1011,11 +1011,35 @@ Color schemes, one active at a time, with the legend reflecting the active one:
 
 1. **Default** — grey if the segment has no sighting but `osm`; blue if a
    document speaks about it. **Per segment, not per name**: the generator
-   answers this with `attested` on each segment (any row that is not the OSM
-   base map), and the map reads that field. Deciding it from the current name
+   answers this with `attested` on each segment, and the map reads that field.
+   Deciding it from the current name
    instead — is its entity a stub? — paints a whole numbered street blue on
    the strength of one `names.js` entry, so blue comes to mean "somebody has
    heard of this street" rather than "here is a document about this ground".
+
+   **Amended 2026-08-31: `attested` counts POSITIVE rows only** (`state`,
+   `unnamed`, `change`, `annotation`). An `absent` row is testimony of the
+   opposite sign — "attested as existing" and "attested as not-yet-existing"
+   must not look alike — so an absent-only segment stays grey, its finding
+   surfaces in the popup via the generated `absentAsOf` field ("No street
+   yet as of 1849"), and the rows wait for scheme 4.
+
+   **Blue is a saturation ramp, not one color.** The generator emits
+   `knownFraction` per attested segment: the fraction of [1850,
+   extract-date] whose state the derived timeline PINS — a documented name
+   period (from its pinned start or earliest dated sighting, through its
+   pinned end, the extract date, or its latest dated sighting when the end
+   is "?"), or documented not-yet-existence (years up to an `absent`
+   sighting, the frontier being monotone; years before the ground's first
+   period when it begins with an exact planning act). The "?" gaps between
+   names, un-dated early history, and years before a "by" date all count as
+   unknown. Full `#2e6f9e` only at 1.0; the map ramps paler grey-blue as the
+   number falls, keeps a floor that still reads as "documented" beside grey,
+   and caps the ramp when `built` is unresearched (pavement is outside
+   `knownFraction`, but a segment missing it should not read as settled).
+   The popup states the number in years. When the rectangle rule (§6.2a)
+   lands, its grade-3 (unexamined-bridge) years should count fractionally
+   here, not fully — the two features want the same machinery.
 2. **Name category** — single-select (radio, not checkboxes), normally folded
    under a caret. "Origin unknown" is a category here rather than its own base
    color; the current violet base color retires.

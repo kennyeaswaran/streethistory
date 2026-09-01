@@ -2,7 +2,7 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 273; entries: 435
+- Streets: 273; entries: 433
 - Stub entities minted from OSM (unresearched): 234
 - Curated entities: 66
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
@@ -12,7 +12,6 @@
 - mr053-069: row on Spring Street (absent) spans nothing — its two ends resolve to the same point. the two cross streets meet this one at the same place.
 
 ## Partially swept documents (no negative inference contributed)
-- ord-1849: sweptFor = ["2nd Street","3rd Street","Figueroa Street"]
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
 - tr0015-166a-p1: sweptFor = []
 - tr0015-166a-p2: sweptFor = []
@@ -85,8 +84,6 @@
 - third-street: "THIRD ST." ×1
 - bixel: "BIXEL ST" ×1
 - figueroa-gov: "FIGUEROA ST." ×1
-- third-street: "Calle 3ª" ×1
-- second-street: "Calle 2ª" ×1
 - second-street: "W. 2ND ST." ×1
 - crown-hill-ave: "CROWN HILL AVE." ×3
 

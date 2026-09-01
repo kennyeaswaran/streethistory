@@ -697,6 +697,51 @@ function fmtEnd(p) {
 }
 function docShort(doc) { return doc.shortTitle || doc.title.replace(/^Recorded map: /, "").split(",")[0]; }
 
+// ---------------------------------------------------------------------------
+// knownFraction: how much of [1850, extract-date] the derived timeline PINS
+// this stretch's state (§8 scheme 1's saturation ramp; Kenny, 2026-08-31).
+// A year counts as known when it falls in
+//   - a documented name period: from its pinned start (exact / change /
+//     prose / "by X" — the name held from X) or its earliest dated sighting,
+//     through its pinned end, the extract date (current names), or its
+//     LATEST dated sighting when the end is "?" (§6.2 constancy fills
+//     between sightings, not past them);
+//   - documented not-yet-existence: any year up to an `absent` sighting
+//     (the existence frontier is monotone — not planned at t means not
+//     planned before t), or before the ground's first period when that
+//     period starts with an exact planning act.
+// The "?" gaps between names, un-dated early history, and everything before
+// a "by" date count as unknown — precisely the years research hasn't pinned.
+// `built` being unknown is deliberately NOT in this number (pavement, not
+// names); the map caps saturation on it separately.
+const ERA_START = 1850;
+function knownFraction(seg, tl, nowYear) {
+  const iv = [];
+  tl.forEach((p, idx) => {
+    const dated = (p.ctx.sightings || []).filter(x => !x.osm)
+      .map(x => +dyear(docDate(x.doc)));
+    let s = p.start ? +dyear(p.start) : (dated.length ? Math.min(...dated) : null);
+    let e = p.end === null ? nowYear
+          : p.end === "?" ? (dated.length ? Math.max(...dated) : null)
+          : +dyear(p.end);
+    if (s !== null && e !== null && e >= s) iv.push([s, e]);
+    if (idx === 0 && p.startKind === "exact" && p.start)
+      iv.push([ERA_START, +dyear(p.start)]);
+  });
+  for (const r of seg.rows)
+    if (r.kind === "absent") iv.push([ERA_START, +dyear(docDate(r.doc))]);
+  // union measure, clipped to the era
+  const cl = iv.map(([a, b]) => [Math.max(a, ERA_START), Math.min(b, nowYear)])
+    .filter(([a, b]) => b > a).sort((x, y) => x[0] - y[0]);
+  let total = 0, cur = null;
+  for (const [a, b] of cl) {
+    if (!cur || a > cur[1]) { if (cur) total += cur[1] - cur[0]; cur = [a, b]; }
+    else cur[1] = Math.max(cur[1], b);
+  }
+  if (cur) total += cur[1] - cur[0];
+  return Math.max(0, Math.min(1, total / (nowYear - ERA_START)));
+}
+
 // "2, 4, 5, 6" -> "2, 4–6". Sheet lists get long enough to be worth it.
 function runsOf(ns) {
   const out = [];
@@ -986,7 +1031,21 @@ for (const streetName of [...streets.keys()].sort()) {
     // counts is a sighting from anything else. Without this, a numbered street
     // ran blue from end to end on the strength of one entity in names.js,
     // while the blocks a plat actually letters looked no different.
-    entry.attested = seg.rows.some(r => !r.osm);
+    //
+    // And the testimony must be POSITIVE (Kenny, 2026-08-31): a stretch whose
+    // only non-OSM row is an `absent` — a sheet showing NO street here yet —
+    // must not look the same as one a document letters. It stays grey, and
+    // the absence surfaces in the popup via `absentAsOf` below (it will also
+    // feed §8 scheme 4 when that lands).
+    entry.attested = seg.rows.some(r => !r.osm && r.kind !== "absent");
+    const absents = seg.rows.filter(r => r.kind === "absent")
+      .sort((x, y) => dkey(docDate(x.doc)) < dkey(docDate(y.doc)) ? 1 : -1);
+    if (absents.length)
+      entry.absentAsOf = { text: `${dyear(docDate(absents[0].doc))} (${docShort(absents[0].doc)})`,
+                           url: absents[0].doc.url };
+    if (entry.attested)
+      entry.knownFraction = +knownFraction(seg, tl,
+        +dyear(docDate(osmDoc))).toFixed(2);
 
     const e = cur ? entities[cur.entity] : null;
     const cats = e ? [...e.categories] : ["unresearched"];

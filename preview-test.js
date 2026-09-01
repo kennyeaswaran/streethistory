@@ -18,6 +18,10 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
                           : (fail++, console.error("  FAIL " + n + (d ? " — " + d : "")));
 
 const BLUE = "#2e6f9e", GREY = "#c0c0c0";
+// Blue is now a RAMP (§8 scheme 1 + saturation, 2026-08-31): full #2e6f9e
+// only when the whole story is pinned, hsl(205 …) shades otherwise.
+const isBlue = c => c === BLUE || /^hsl\(205[ ,]/.test(String(c));
+const satOf = c => { const m = /^hsl\(205[ ,]+(\d+)%/.exec(String(c)); return m ? +m[1] : (c === BLUE ? 55 : -1); };
 
 (async () => {
   const LEAFLET_DIR = path.join(__dirname, "node_modules/leaflet/dist");
@@ -70,21 +74,21 @@ const BLUE = "#2e6f9e", GREY = "#c0c0c0";
   }, [name, label]);
 
   console.log("blue means a document speaks about THIS stretch");
-  ok("Colton Street is blue", await colourOf("Colton Street", null) === BLUE,
+  ok("Colton Street is blue", isBlue(await colourOf("Colton Street", null)),
      String(await colourOf("Colton Street", null)));
   ok("the Waters St stretch of Douglas is blue",
-     await colourOf("Douglas Street", "beyond Colton (Waters St)") === BLUE,
+     isBlue(await colourOf("Douglas Street", "beyond Colton (Waters St)")),
      String(await colourOf("Douglas Street", "beyond Colton (Waters St)")));
   ok("…and the stretch south of Colton, which nothing attests, is grey",
      await colourOf("Douglas Street", "south of Colton") === GREY,
      String(await colourOf("Douglas Street", "south of Colton")));
 
   console.log("a numbered street is no longer blue end to end");
-  ok("3rd Street west of Bixel is grey",
-     await colourOf("3rd Street", "west of Bixel") === GREY,
-     String(await colourOf("3rd Street", "west of Bixel")));
+  ok("3rd Street beyond Bixel is grey",
+     await colourOf("3rd Street", "beyond Bixel") === GREY,
+     String(await colourOf("3rd Street", "beyond Bixel")));
   ok("…while its Arnold St stretch is blue",
-     await colourOf("3rd Street", "Bixel to Boylston (Arnold St)") === BLUE,
+     isBlue(await colourOf("3rd Street", "Bixel to Boylston (Arnold St)")),
      String(await colourOf("3rd Street", "Bixel to Boylston (Arnold St)")));
 
   // The whole point: most of the map should be grey, and it was not before.
@@ -92,12 +96,35 @@ const BLUE = "#2e6f9e", GREY = "#c0c0c0";
     let blue = 0, grey = 0;
     for (const [, st] of streets) {
       const c = st.ways.length ? st.ways[0].options.color : null;
-      if (c === "#2e6f9e") blue++; else if (c === "#c0c0c0") grey++;
+      if (c === "#2e6f9e" || /^hsl\(205[ ,]/.test(String(c))) blue++;
+      else if (c === "#c0c0c0") grey++;
     }
     return { blue, grey };
   });
   ok("most stretches are grey", tally.grey > tally.blue * 2, JSON.stringify(tally));
   ok("…but a real number are blue", tally.blue > 20, JSON.stringify(tally));
+
+  console.log("negative testimony renders grey, not blue (2026-08-31)");
+  // A stretch whose ONLY document row is an `absent` — a sheet showing no
+  // street here yet — must not look like an attested one…
+  ok("Hope St beyond 6th (absent-only) is grey",
+     await colourOf("Hope Street", "beyond 6th") === GREY,
+     String(await colourOf("Hope Street", "beyond 6th")));
+  // …but the finding still reaches the popup.
+  const hopePop = await page.evaluate(() => {
+    for (const [, st] of streets)
+      if (st.name === "Hope Street" && st.entry && st.entry.label === "beyond 6th")
+        return popupHtml(st);
+    return "";
+  });
+  ok("…and its popup says so", /No street yet/.test(hopePop) && /1849/.test(hopePop),
+     hopePop.slice(0, 160));
+
+  console.log("saturation tracks how much of the story is pinned");
+  const satOriginal = satOf(await colourOf("3rd Street", "beyond Hill (original 3rd St)"));
+  const satArnold = satOf(await colourOf("3rd Street", "Bixel to Boylston (Arnold St)"));
+  ok("the pinned-since-1849 stretch is deeper blue than the one-sighting Arnold stretch",
+     satOriginal > satArnold + 10, `original=${satOriginal}% arnold=${satArnold}%`);
 
   console.log("the entity's own note reaches the popup");
   const pop = await page.evaluate(() => {

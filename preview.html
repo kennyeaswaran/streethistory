@@ -128,7 +128,7 @@
   <button class="clear" onclick="clearFilters()">Clear highlights</button>
   <button class="clear" id="saveGeom" style="display:none" title="Saves streets-geometry.js — put it next to index.html and the map will load instantly without Overpass">Save geometry file</button>
   <div class="legend">
-    <div><span class="swatch" style="background:#2e6f9e"></span> a document speaks about this stretch</div>
+    <div><span class="swatch" style="background:linear-gradient(to right, hsl(205 25% 68%), #2e6f9e)"></span> documented here (deeper = more of its history pinned)</div>
     <div><span class="swatch" style="background:#e8a020"></span> search / filter: current match</div>
     <div><span class="swatch" style="background:#8e6bb8"></span> search / filter: match on a former name</div>
     <div><span class="swatch" style="background:#c0c0c0"></span> nothing but the base map yet</div>
@@ -313,7 +313,22 @@ function styleFor(street) {
   if (!data || data.attested === false ||
       (data.attested === undefined && data.categories.includes("unresearched")))
     return { color: COLOR_NODATA, opacity: 0.7 };
-  return { color: COLOR_DATA, opacity: 0.9 };     // violet base retired (§8)
+  return { color: blueFor(data), opacity: 0.9 };  // violet base retired (§8)
+}
+
+// Scheme 1's saturation ramp: full COLOR_DATA blue only when the whole
+// 1850→now story is pinned (generated knownFraction = 1); paler, greyer blue
+// as more of it is unknown. A built date still unresearched caps the ramp —
+// that fact is about pavement, so it is outside knownFraction, but a segment
+// missing it should not read as fully settled. Even f=0 keeps enough blue to
+// separate "a document letters this ground" from COLOR_NODATA grey.
+function blueFor(data) {
+  let f = typeof data.knownFraction === "number" ? data.knownFraction : 0;
+  const builtKnown = data.built && typeof data.built === "object";
+  if (!builtKnown) f = Math.min(f, 0.85);
+  const t = Math.max(0, Math.min(1, f));
+  // COLOR_DATA #2e6f9e ≈ hsl(205 55% 40%); ramp from hsl(205 25% 68%)
+  return `hsl(205 ${(25 + 30 * t).toFixed(0)}% ${(68 - 28 * t).toFixed(0)}%)`;
 }
 
 function restyleAll() {
@@ -394,7 +409,14 @@ function popupHtml(street) {
   html += `<table class="facts">`;
   if (fact(d.planned)) html += `<tr><td>Planned</td><td>${fact(d.planned)}</td></tr>`;
   if (fact(d.built)) html += `<tr><td>Built</td><td>${fact(d.built)}</td></tr>`;
+  // negative testimony: a document that covers this ground and shows no
+  // street here yet — the stretch renders grey, but the finding is real
+  if (d.absentAsOf) html += `<tr><td>No street yet</td><td>${fact({ text: "as of " + d.absentAsOf.text, url: d.absentAsOf.url })}</td></tr>`;
   html += `</table>`;
+  if (typeof d.knownFraction === "number") {
+    const era = new Date().getFullYear() - 1850;
+    html += `<div style="font-size:11px;color:#8a8578;margin:2px 0 4px">history pinned for ~${Math.round(d.knownFraction * era)} of ${era} years since 1850</div>`;
+  }
   // Name history: every renamed street gets one; a single-item history is
   // allowed when it documents HOW the current name arrived (how: "origin" /
   // "extension" / "renaming" / "transfer" — rendered as a small badge).

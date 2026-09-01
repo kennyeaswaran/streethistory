@@ -214,6 +214,7 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched"
         ],
@@ -277,6 +278,7 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched"
         ],
@@ -486,7 +488,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -526,6 +532,7 @@ const STREET_DATA = {
         ],
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "number"
         ],
@@ -563,7 +570,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -597,6 +608,7 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
         "attested": true,
+        "knownFraction": 0.86,
         "categories": [
           "number"
         ],
@@ -796,6 +808,7 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "knownFraction": 0.66,
         "categories": [
           "number"
         ],
@@ -847,7 +860,7 @@ const STREET_DATA = {
         "gapAfter": true
       },
       {
-        "label": "beyond Hope (discontinuous)",
+        "label": "Hope to Broadway (discontinuous)",
         "name": "2nd Street",
         "entityId": "second-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 2nd Street is not yet researched",
@@ -855,7 +868,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -867,54 +884,8 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2528,
-        "maxLng": -118.2478,
-        "from": "Hope Street",
-        "to": {
-          "px": [
-            361,
-            1188
-          ]
-        }
-      },
-      {
-        "label": "beyond Broadway",
-        "name": "2nd Street",
-        "entityId": "second-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 2nd Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "1849",
-          "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "attested": true,
-        "categories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord's Survey, county-recorder's certified copy, M.R. 53-66/73 (“A full true and correct copy of original,” recorded Dec. 2, 1893) — sheets 68–69 draw the original downtown grid, including the numbered cross streets (Calle 1ª–8ª)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          }
-        ],
-        "minLng": -118.2478,
         "maxLng": -118.2467,
-        "from": {
-          "px": [
-            361,
-            1188
-          ]
-        },
+        "from": "Hope Street",
         "to": "Broadway"
       },
       {
@@ -924,8 +895,8 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
         "namedAfterLink": null,
         "planned": {
-          "text": "1849",
-          "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          "text": "by 1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -936,12 +907,17 @@ const STREET_DATA = {
             "entityId": "second-street",
             "formInForce": "2nd Street",
             "how": "origin",
-            "origin": "labeled “CALLE 2a”, “2D ST”, “Calle 2ª” and “2ND ST.” on the 1849 Hutton / Ord Survey and the 1849 Ord/Hutton survey {{(source)}}",
+            "origin": "labeled “CALLE 2a”, “2D ST” and “2ND ST.” on the 1849 Hutton / Ord Survey {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 1,
         "categories": [
           "number"
         ],
@@ -954,14 +930,6 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord's Survey, county-recorder's certified copy, M.R. 53-66/73 (“A full true and correct copy of original,” recorded Dec. 2, 1893) — sheets 68–69 draw the original downtown grid, including the numbered cross streets (Calle 1ª–8ª)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
@@ -984,13 +952,14 @@ const STREET_DATA = {
         "entityId": "second-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 2nd Street is not yet researched",
         "namedAfterLink": null,
-        "planned": {
-          "text": "1849",
-          "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-        },
+        "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -999,14 +968,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord's Survey, county-recorder's certified copy, M.R. 53-66/73 (“A full true and correct copy of original,” recorded Dec. 2, 1893) — sheets 68–69 draw the original downtown grid, including the numbered cross streets (Calle 1ª–8ª)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2442,
@@ -1059,6 +1020,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "number",
           "renamed"
@@ -1101,7 +1067,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -1242,6 +1212,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1909 (Crownwood)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+        },
+        "knownFraction": 0.34,
         "categories": [
           "number",
           "renamed"
@@ -1348,6 +1323,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "number",
           "renamed"
@@ -1372,7 +1348,7 @@ const STREET_DATA = {
         "to": "Boylston Street"
       },
       {
-        "label": "Boylston to Figueroa",
+        "label": "Boylston to Hill",
         "name": "3rd Street",
         "entityId": "third-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
@@ -1381,6 +1357,10 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -1392,44 +1372,8 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2578,
-        "maxLng": -118.2546,
-        "from": "Boylston Street",
-        "to": "Figueroa Street"
-      },
-      {
-        "label": "Figueroa to Hill",
-        "name": "3rd Street",
-        "entityId": "third-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "1849",
-          "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "attested": true,
-        "categories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord's Survey, county-recorder's certified copy, M.R. 53-66/73 (“A full true and correct copy of original,” recorded Dec. 2, 1893) — sheets 68–69 draw the original downtown grid, including the numbered cross streets (Calle 1ª–8ª)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          }
-        ],
-        "minLng": -118.2546,
         "maxLng": -118.2491,
-        "from": "Figueroa Street",
+        "from": "Boylston Street",
         "to": "Hill Street"
       },
       {
@@ -1439,8 +1383,8 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
         "namedAfterLink": null,
         "planned": {
-          "text": "1849",
-          "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          "text": "by 1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -1451,12 +1395,13 @@ const STREET_DATA = {
             "entityId": "third-street",
             "formInForce": "3rd Street",
             "how": "origin",
-            "origin": "labeled “CALLE 3a”, “3RD ST”, “Calle 3ª” and “3RD ST.” on the 1849 Hutton / Ord Survey and the 1849 Ord/Hutton survey {{(source)}}",
+            "origin": "labeled “CALLE 3a”, “3RD ST” and “3RD ST.” on the 1849 Hutton / Ord Survey {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "number"
         ],
@@ -1469,14 +1414,6 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord's Survey, county-recorder's certified copy, M.R. 53-66/73 (“A full true and correct copy of original,” recorded Dec. 2, 1893) — sheets 68–69 draw the original downtown grid, including the numbered cross streets (Calle 1ª–8ª)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
@@ -1502,7 +1439,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -1541,6 +1482,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.78,
         "categories": [
           "number"
         ],
@@ -1605,6 +1551,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.07,
         "categories": [
           "number",
           "renamed"
@@ -1655,7 +1606,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -1721,7 +1676,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1887 (Mills and Wicks Extension map, sheet 1)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -1770,6 +1729,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -1811,6 +1775,7 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched"
         ],
@@ -1877,6 +1842,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -1944,7 +1914,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -1985,6 +1959,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 1,
         "categories": [
           "number"
         ],
@@ -2026,7 +2005,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -2065,6 +2048,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1888 (Wolfskill Orchard Tract, sheet 4 (M.R. 30-12))",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "knownFraction": 1,
         "categories": [
           "number"
         ],
@@ -2103,7 +2091,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1888 (Wolfskill Orchard Tract, sheet 4 (M.R. 30-12))",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -2159,6 +2151,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.01,
         "categories": [
           "number",
           "renamed"
@@ -2234,6 +2231,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "number",
           "renamed"
@@ -2276,7 +2278,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -2336,7 +2342,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -2377,6 +2387,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 1,
         "categories": [
           "number"
         ],
@@ -2414,7 +2429,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -2453,6 +2472,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.78,
         "categories": [
           "number"
         ],
@@ -2518,6 +2542,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "number",
           "renamed"
@@ -2559,7 +2588,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -2594,7 +2627,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -2634,6 +2671,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 1,
         "categories": [
           "number"
         ],
@@ -2671,7 +2713,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -2710,6 +2756,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.78,
         "categories": [
           "number"
         ],
@@ -2743,7 +2794,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -2854,7 +2909,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -2899,6 +2958,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 1,
         "categories": [
           "number"
         ],
@@ -2941,7 +3005,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -2980,6 +3048,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.78,
         "categories": [
           "number"
         ],
@@ -3013,7 +3086,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "number"
         ],
@@ -3142,6 +3219,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "number"
         ],
@@ -3254,6 +3332,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "number"
         ],
@@ -3344,6 +3423,7 @@ const STREET_DATA = {
     ],
     "note": "Lettered “Calle de las Adobes” on the 1849 survey and still Adobe Street today. The obvious reading is the adobe houses along it, but no source says so.",
     "attested": true,
+    "knownFraction": 1,
     "categories": [
       "unknown"
     ],
@@ -3396,6 +3476,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "nature",
           "descriptive"
@@ -3449,6 +3534,7 @@ const STREET_DATA = {
         ],
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
+        "knownFraction": 0.86,
         "categories": [
           "nature",
           "descriptive"
@@ -3516,6 +3602,7 @@ const STREET_DATA = {
         ],
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
+        "knownFraction": 0.79,
         "categories": [
           "nature",
           "descriptive"
@@ -3579,6 +3666,7 @@ const STREET_DATA = {
         ],
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
+        "knownFraction": 0.78,
         "categories": [
           "nature",
           "descriptive"
@@ -3626,6 +3714,7 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "nature",
           "descriptive"
@@ -3680,7 +3769,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -3705,7 +3798,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -3765,7 +3862,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -3815,6 +3916,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -3851,7 +3953,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -3971,7 +4077,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -3991,7 +4101,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -4011,7 +4125,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -4055,6 +4173,7 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": true,
+    "knownFraction": 0,
     "categories": [
       "unresearched"
     ],
@@ -4078,6 +4197,11 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": true,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
+    "knownFraction": 0,
     "categories": [
       "unresearched"
     ],
@@ -4097,7 +4221,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -4141,6 +4269,7 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": true,
+    "knownFraction": 0,
     "categories": [
       "unresearched"
     ],
@@ -4240,7 +4369,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -4270,7 +4403,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -4395,6 +4532,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -4433,7 +4571,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -4463,7 +4605,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -4548,6 +4694,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -4648,6 +4795,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0.75,
         "categories": [
           "unknown"
         ],
@@ -4743,7 +4891,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -4763,7 +4915,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -4848,7 +5004,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1888 (Wolfskill Orchard Tract, sheet 5 (M.R. 30-13))",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -4930,6 +5090,7 @@ const STREET_DATA = {
         ],
         "note": "The Feb. 2, 1897 draft ordinance would have made this street “De La Guerra”; the council's Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text.",
         "attested": true,
+        "knownFraction": 0.98,
         "categories": [
           "unknown",
           "renamed"
@@ -4985,6 +5146,7 @@ const STREET_DATA = {
         ],
         "note": "The Feb. 2, 1897 draft ordinance would have made this street “De La Guerra”; the council's Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text.",
         "attested": true,
+        "knownFraction": 0.98,
         "categories": [
           "unknown",
           "renamed"
@@ -5018,7 +5180,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -5043,7 +5209,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -5093,6 +5263,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -5137,7 +5308,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -5188,6 +5363,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -5271,7 +5447,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -5291,7 +5471,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -5351,7 +5535,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -5371,7 +5559,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -5456,7 +5648,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "descriptive"
         ],
@@ -5507,6 +5703,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.73,
         "categories": [
           "descriptive",
           "renamed"
@@ -5566,6 +5767,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.73,
         "categories": [
           "descriptive",
           "renamed"
@@ -5629,6 +5835,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.78,
         "categories": [
           "descriptive",
           "renamed"
@@ -5692,6 +5903,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1888 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "knownFraction": 0.95,
         "categories": [
           "descriptive",
           "renamed"
@@ -5745,6 +5961,11 @@ const STREET_DATA = {
         ],
         "note": "Ceres was the Roman goddess of agriculture and the harvest, which would be a fitting name for a street laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source says that is what was meant, and none names anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.78,
         "categories": [
           "unknown"
         ],
@@ -5777,7 +5998,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Ceres was the Roman goddess of agriculture and the harvest, which would be a fitting name for a street laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source says that is what was meant, and none names anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "unknown"
         ],
@@ -5816,7 +6041,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -5866,6 +6095,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -5907,6 +6141,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "unresearched"
         ],
@@ -5936,7 +6175,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -5956,7 +6199,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -5996,7 +6243,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -6016,7 +6267,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -6036,7 +6291,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -6061,7 +6320,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "A church request in June 1849 for a colegio — a secondary school — on this ground prompted Ord and Hutton to letter it “Calle del Colegio” a month later. The school was never built; the street kept the name.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "descriptive"
         ],
@@ -6109,6 +6372,7 @@ const STREET_DATA = {
         ],
         "note": "A church request in June 1849 for a colegio — a secondary school — on this ground prompted Ord and Hutton to letter it “Calle del Colegio” a month later. The school was never built; the street kept the name.",
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "descriptive"
         ],
@@ -6150,6 +6414,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": "A church request in June 1849 for a colegio — a secondary school — on this ground prompted Ord and Hutton to letter it “Calle del Colegio” a month later. The school was never built; the street kept the name.",
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "descriptive"
         ],
@@ -6213,6 +6482,7 @@ const STREET_DATA = {
     ],
     "note": null,
     "attested": true,
+    "knownFraction": 0,
     "categories": [
       "unresearched",
       "renamed"
@@ -6257,6 +6527,7 @@ const STREET_DATA = {
         ],
         "note": "Namesake untraced. The 1909 Crownwood sheet letters it, which is the earliest evidence the project holds for the street, but nothing found says who or what Columbia was meant to be.",
         "attested": true,
+        "knownFraction": 0.66,
         "categories": [
           "unknown"
         ],
@@ -6345,7 +6616,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -6365,7 +6640,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -6385,7 +6664,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -6445,7 +6728,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -6465,7 +6752,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -6540,7 +6831,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -6605,6 +6900,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0.81,
         "categories": [
           "unknown"
         ],
@@ -6645,6 +6941,7 @@ const STREET_DATA = {
     ],
     "note": null,
     "attested": true,
+    "knownFraction": 0.81,
     "categories": [
       "unknown"
     ],
@@ -6695,6 +6992,11 @@ const STREET_DATA = {
         ],
         "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "person",
           "renamed"
@@ -6740,7 +7042,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "person"
         ],
@@ -6816,6 +7122,7 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": "Named for the hill rather than for anyone. No source states it, but the street runs over Crown Hill and nothing else called Crown Hill is in the neighbourhood.",
         "attested": true,
+        "knownFraction": 0.66,
         "categories": [
           "place"
         ],
@@ -6978,7 +7285,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1884 (Glassell's Subdivision map)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -7033,6 +7344,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1884 (Glassell's Subdivision map)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        },
+        "knownFraction": 0.19,
         "categories": [
           "unresearched",
           "renamed"
@@ -7091,7 +7407,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -7186,7 +7506,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -7266,7 +7590,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -7288,10 +7616,7 @@ const STREET_DATA = {
         "entityId": "figueroa-gov",
         "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
-        "planned": {
-          "text": "1849",
-          "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-        },
+        "planned": "not yet researched",
         "built": "not yet researched",
         "nameHistory": [
           {
@@ -7300,8 +7625,8 @@ const STREET_DATA = {
             "name": "Calle de los Chapules",
             "entityId": "chapules",
             "formInForce": "Calle de los Chapules",
-            "origin": "labeled “Calle de los Chapules” on the 1849 Ord/Hutton survey {{(source)}} — The insect (“Grasshopper Street”): grasshoppers crossing this line from the western plains doomed the grape harvest",
-            "originLink": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+            "origin": "this spelling attested from 1849 {{(source)}} — The insect (“Grasshopper Street”): grasshoppers crossing this line from the western plains doomed the grape harvest",
+            "originLink": "https://lastreetnames.com/street/figueroa-street/"
           },
           {
             "from": "Feb. 1874",
@@ -7326,6 +7651,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
+        "knownFraction": 1,
         "categories": [
           "person",
           "governor",
@@ -7340,14 +7670,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Figueroa Street",
             "url": "https://lastreetnames.com/street/figueroa-street/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord's Survey, county-recorder's certified copy, M.R. 53-66/73 (“A full true and correct copy of original,” recorded Dec. 2, 1893) — sheets 68–69 draw the original downtown grid, including the numbered cross streets (Calle 1ª–8ª)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
             "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874 (council renames Grasshopper St → Pearl St)",
@@ -7378,8 +7700,8 @@ const STREET_DATA = {
         "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
         "planned": {
-          "text": "1849",
-          "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          "text": "by 1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -7390,7 +7712,7 @@ const STREET_DATA = {
             "entityId": "chapules",
             "formInForce": "Calle de los Chapules",
             "how": "origin",
-            "origin": "labeled “CALLE DE LAS CHAPULES”, “GRASSHOPPER ST”, “Calle de los Chapules”, “GRASSHOPPER ST.” and “CALLE DE LAS CHAPULAS” on the 1849 Hutton / Ord Survey and the 1849 Ord/Hutton survey {{(source)}} — The insect (“Grasshopper Street”): grasshoppers crossing this line from the western plains doomed the grape harvest",
+            "origin": "labeled “CALLE DE LAS CHAPULES”, “GRASSHOPPER ST”, “GRASSHOPPER ST.” and “CALLE DE LAS CHAPULAS” on the 1849 Hutton / Ord Survey {{(source)}} — The insect (“Grasshopper Street”): grasshoppers crossing this line from the western plains doomed the grape harvest",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
@@ -7416,6 +7738,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "person",
           "governor",
@@ -7436,11 +7759,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord's Survey, county-recorder's certified copy, M.R. 53-66/73 (“A full true and correct copy of original,” recorded Dec. 2, 1893) — sheets 68–69 draw the original downtown grid, including the numbered cross streets (Calle 1ª–8ª)",
+            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
@@ -7477,10 +7796,7 @@ const STREET_DATA = {
         "entityId": "figueroa-gov",
         "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
-        "planned": {
-          "text": "1849",
-          "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-        },
+        "planned": "not yet researched",
         "built": "not yet researched",
         "nameHistory": [
           {
@@ -7489,8 +7805,8 @@ const STREET_DATA = {
             "name": "Calle de los Chapules",
             "entityId": "chapules",
             "formInForce": "Calle de los Chapules",
-            "origin": "labeled “Calle de los Chapules” on the 1849 Ord/Hutton survey {{(source)}} — The insect (“Grasshopper Street”): grasshoppers crossing this line from the western plains doomed the grape harvest",
-            "originLink": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+            "origin": "this spelling attested from 1849 {{(source)}} — The insect (“Grasshopper Street”): grasshoppers crossing this line from the western plains doomed the grape harvest",
+            "originLink": "https://lastreetnames.com/street/figueroa-street/"
           },
           {
             "from": "Feb. 1874",
@@ -7515,6 +7831,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "person",
           "governor",
@@ -7529,14 +7846,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Figueroa Street",
             "url": "https://lastreetnames.com/street/figueroa-street/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord's Survey, county-recorder's certified copy, M.R. 53-66/73 (“A full true and correct copy of original,” recorded Dec. 2, 1893) — sheets 68–69 draw the original downtown grid, including the numbered cross streets (Calle 1ª–8ª)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
             "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874 (council renames Grasshopper St → Pearl St)",
@@ -7641,7 +7950,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Lettered “Calle de las Flores” on the 1849 survey. The hillside-blossom explanation is the one always given and nothing documents it.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
         "categories": [
           "nature"
         ],
@@ -7689,6 +8002,7 @@ const STREET_DATA = {
         ],
         "note": "Lettered “Calle de las Flores” on the 1849 survey. The hillside-blossom explanation is the one always given and nothing documents it.",
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "nature"
         ],
@@ -7768,7 +8082,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -7788,7 +8106,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -7950,6 +8272,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.86,
         "categories": [
           "person",
           "alive"
@@ -8055,6 +8382,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0.86,
         "categories": [
           "person",
           "alive",
@@ -8120,6 +8448,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0.86,
         "categories": [
           "person",
           "alive",
@@ -8154,7 +8483,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -8195,6 +8528,11 @@ const STREET_DATA = {
         ],
         "note": "The next street over from Ruth Avenue, and part of the same run of women's names that continues south across the Sabichi family's land as Agatha Street — Agatha Sabichi's mother was a daughter of the pioneer settler William Wolfskill. No source names a Gladys in the family or among the subdividers. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.78,
         "categories": [
           "unknown"
         ],
@@ -8235,7 +8573,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "The next street over from Ruth Avenue, and part of the same run of women's names that continues south across the Sabichi family's land as Agatha Street — Agatha Sabichi's mother was a daughter of the pioneer settler William Wolfskill. No source names a Gladys in the family or among the subdividers. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "unknown"
         ],
@@ -8332,6 +8674,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1884 (Glassell's Subdivision map)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        },
+        "knownFraction": 0.19,
         "categories": [
           "unresearched",
           "renamed"
@@ -8385,7 +8732,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -8435,6 +8786,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -8514,7 +8866,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -8650,6 +9006,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.86,
         "categories": [
           "unknown"
         ],
@@ -8706,6 +9067,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.79,
         "categories": [
           "unknown"
         ],
@@ -8759,6 +9125,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "unknown"
         ],
@@ -8783,7 +9154,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -8808,7 +9183,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "place"
         ],
@@ -8870,6 +9249,11 @@ const STREET_DATA = {
         ],
         "note": "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "place",
           "renamed"
@@ -8923,7 +9307,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
         "categories": [
           "place"
         ],
@@ -8986,6 +9374,7 @@ const STREET_DATA = {
         ],
         "note": "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "place"
         ],
@@ -9055,7 +9444,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -9080,7 +9473,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
         "categories": [
           "aspiration",
           "person",
@@ -9120,7 +9517,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
         "categories": [
           "aspiration",
           "person",
@@ -9176,6 +9577,7 @@ const STREET_DATA = {
         ],
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "aspiration",
           "person",
@@ -9279,7 +9681,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -9299,7 +9705,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -9319,7 +9729,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1888 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -9434,7 +9848,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -9529,7 +9947,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -9549,7 +9971,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -9629,7 +10055,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1888 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -9695,6 +10125,7 @@ const STREET_DATA = {
     ],
     "note": null,
     "attested": true,
+    "knownFraction": 0,
     "categories": [
       "unresearched",
       "renamed"
@@ -9798,7 +10229,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -9818,7 +10253,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -9878,7 +10317,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -9942,6 +10385,11 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": true,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
+    "knownFraction": 0,
     "categories": [
       "unresearched"
     ],
@@ -10020,6 +10468,7 @@ const STREET_DATA = {
         ],
         "note": "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
         "attested": true,
+        "knownFraction": 0.66,
         "categories": [
           "person",
           "alive"
@@ -10102,6 +10551,7 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": true,
+    "knownFraction": 0,
     "categories": [
       "unresearched"
     ],
@@ -10121,7 +10571,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -10150,6 +10604,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "descriptive"
         ],
@@ -10233,6 +10692,7 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "descriptive"
         ],
@@ -10299,6 +10759,7 @@ const STREET_DATA = {
         ],
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "descriptive"
         ],
@@ -10352,7 +10813,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
         "categories": [
           "descriptive"
         ],
@@ -10389,7 +10854,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -10449,7 +10918,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -10544,7 +11017,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -10564,7 +11041,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -10584,7 +11065,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -10608,6 +11093,11 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": true,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
+    "knownFraction": 0,
     "categories": [
       "unresearched"
     ],
@@ -10667,7 +11157,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -10707,7 +11201,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -10782,6 +11280,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -10840,6 +11339,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -10952,7 +11452,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -11072,7 +11576,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -11127,7 +11635,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -11152,7 +11664,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -11216,7 +11732,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -11271,7 +11791,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
         "categories": [
           "nature"
         ],
@@ -11319,6 +11843,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "nature"
         ],
@@ -11402,6 +11927,7 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": true,
+    "knownFraction": 0,
     "categories": [
       "unresearched"
     ],
@@ -11434,6 +11960,7 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched"
         ],
@@ -11499,6 +12026,11 @@ const STREET_DATA = {
     ],
     "note": "Platted with the rest of the Wolfskill Orchard Tract in 1887 and apparently never renamed — only the generic drifted, from the plat's “Omar Ave” to today's Omar Street. No source names an Omar.",
     "attested": true,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
+    "knownFraction": 0.78,
     "categories": [
       "unknown"
     ],
@@ -11523,7 +12055,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -11578,6 +12114,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -11619,7 +12156,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -11644,7 +12185,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -11782,6 +12327,7 @@ const STREET_DATA = {
         ],
         "note": "Kines dates the naming to 1883, a year before M.R. 6-138 was recorded, so the plat draws a street that already had the name — consistent with the document's planned-by default. Not to be confused with Patton Avenue/Place elsewhere in the county.",
         "attested": true,
+        "knownFraction": 0.81,
         "categories": [
           "person"
         ],
@@ -12018,6 +12564,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -12046,7 +12593,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -12066,7 +12617,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -12090,6 +12645,11 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": true,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
+    "knownFraction": 0,
     "categories": [
       "unresearched"
     ],
@@ -12193,7 +12753,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -12222,6 +12786,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "place",
           "destination"
@@ -12275,6 +12844,7 @@ const STREET_DATA = {
         ],
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
+        "knownFraction": 0.78,
         "categories": [
           "place",
           "destination"
@@ -12361,6 +12931,11 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": true,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
+    "knownFraction": 0,
     "categories": [
       "unresearched"
     ],
@@ -12380,7 +12955,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -12400,7 +12979,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -12500,7 +13083,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -12540,7 +13127,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -12569,6 +13160,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — and neither is verified.",
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "person",
           "unknown"
@@ -12634,6 +13230,7 @@ const STREET_DATA = {
         ],
         "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — and neither is verified.",
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "person",
           "unknown",
@@ -12691,7 +13288,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — and neither is verified.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
         "categories": [
           "person",
           "unknown"
@@ -12745,6 +13346,7 @@ const STREET_DATA = {
         ],
         "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — and neither is verified.",
         "attested": true,
+        "knownFraction": 1,
         "categories": [
           "person",
           "unknown"
@@ -12790,7 +13392,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -12841,6 +13447,11 @@ const STREET_DATA = {
         ],
         "note": "Part of the same 1887 Southern Pacific package as Towne Avenue. The name did not stay put: the street platted “Stanford” in 1887 is modern Crocker Street, and the Stanford name moved a block east onto the former Ruth Avenue — modern Stanford Avenue — some time after Feb. 1897.",
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
         "categories": [
           "person",
           "governor",
@@ -12890,7 +13501,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Part of the same 1887 Southern Pacific package as Towne Avenue. The name did not stay put: the street platted “Stanford” in 1887 is modern Crocker Street, and the Stanford name moved a block east onto the former Ruth Avenue — modern Stanford Avenue — some time after Feb. 1897.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "person",
           "governor"
@@ -12929,7 +13544,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -13009,7 +13628,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -13049,7 +13672,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -13090,6 +13717,11 @@ const STREET_DATA = {
         ],
         "note": "Named when the subdividers of Joseph Wolfskill's downtown orchard gave 13 acres at 4th and Alameda for a new Southern Pacific station — the Arcade Depot, opened 1888 — and lettered the railroad's officers onto the surrounding streets. Stanford Avenue and Crocker Street come from the same deal.",
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.78,
         "categories": [
           "person",
           "alive"
@@ -13123,7 +13755,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Named when the subdividers of Joseph Wolfskill's downtown orchard gave 13 acres at 4th and Alameda for a new Southern Pacific station — the Arcade Depot, opened 1888 — and lettered the railroad's officers onto the surrounding streets. Stanford Avenue and Crocker Street come from the same deal.",
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "person",
           "alive"
@@ -13163,7 +13799,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1875 (Thomas Tract)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -13217,6 +13857,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1875 (Thomas Tract)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+        },
+        "knownFraction": 0.14,
         "categories": [
           "unresearched",
           "renamed"
@@ -13419,7 +14064,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -13449,7 +14098,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -13474,7 +14127,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -13530,6 +14187,7 @@ const STREET_DATA = {
     ],
     "note": null,
     "attested": true,
+    "knownFraction": 0.81,
     "categories": [
       "unknown"
     ],
@@ -13569,7 +14227,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -13629,7 +14291,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1888 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -13674,7 +14340,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "categories": [
           "unresearched"
         ],
@@ -13729,7 +14399,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -13769,7 +14443,11 @@ const STREET_DATA = {
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
-    "attested": true,
+    "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -13844,6 +14522,7 @@ const STREET_DATA = {
         ],
         "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
         "attested": true,
+        "knownFraction": 0.66,
         "categories": [
           "person",
           "alive"
@@ -13953,6 +14632,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
+        "knownFraction": 0,
         "categories": [
           "unresearched",
           "renamed"
@@ -13993,7 +14673,11 @@ const STREET_DATA = {
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
         "categories": [
           "unresearched"
         ],
