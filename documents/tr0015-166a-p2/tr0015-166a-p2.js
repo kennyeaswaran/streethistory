@@ -29,8 +29,8 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["2nd Street","3rd Street","Emerald Drive","Lucas Avenue","Miramar Street","Witmer Street"],
 
   rows: [
     {
@@ -80,8 +80,8 @@ module.exports = {
         ]
       },
       "basis": "alignment",
-      "confirmed": false,
-      "note": "The short modern Emerald Drive trace east of Lucas lies in the roadway lettered FARMER ST."
+      "note": "The short modern Emerald Drive trace east of Lucas lies in the roadway lettered FARMER ST.",
+      "name": "farmer"
     },
     {
       "kind": "state",
