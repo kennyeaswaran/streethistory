@@ -381,7 +381,13 @@ const NAME_ENTITIES = {
       { title: "L.A. Street Names: Figueroa Street",
         url: "https://lastreetnames.com/street/figueroa-street/" }
     ],
-    disputed: false, note: null, possiblySameAs: null, aliases: []
+    disputed: false, note: null,
+    internalNote: "The Ord survey letters this street in both languages \u2014 " +
+      "\u201cGRASSHOPPER ST.\u201d and \u201cCALLE DE LAS CHAPULES\u201d \u2014 which is why " +
+      "`grasshopper` got minted in review before anyone noticed this entity already held " +
+      "the name. Folded in 2026-08-31; the id stays an alias so rows that cited it still " +
+      "resolve (\u00a73: merging is cheap, splitting is not).",
+    possiblySameAs: null, aliases: ["grasshopper"]
   },
 
   "boylston": {
@@ -756,6 +762,361 @@ const NAME_ENTITIES = {
       "Columbia Avenue entry, which is now this. Candidates nobody has evidence for: " +
       "Columbia as the personification of America, Columbia College, or a transferred " +
       "eastern place name. Do not write any of them down as the answer.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- the Ord/Hutton survey, Aug. 1849 (M.R. 53-66/73) ------------------
+  //
+  // The survey letters most of its streets twice, in Spanish and English, so
+  // every row here carries both forms and each entity carries the English
+  // one. Nearly all of this was already worked out in streets-data.js; what
+  // is new is that it now hangs off the document that attests it.
+
+  "eighth-street": {
+    spellings: [{ forms: ["8th Street"] }],
+    namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+    namedAfterLink: null,
+    categories: ["number"],
+    sources: [
+      { title: "L.A. Street Names: 1st Street (on the numbering system)",
+        url: "https://lastreetnames.com/street/0001st-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" }
+    ],
+    disputed: false,
+    note: null,
+    internalNote: "One entity per number across the downtown grid, as with 1st–7th. The Ord survey letters it “CALLE 8a”; the English ordinal is the form everything since has used.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "ninth-street": {
+    spellings: [{ forms: ["9th Street"] }],
+    namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+    namedAfterLink: null,
+    categories: ["number"],
+    sources: [
+      { title: "L.A. Street Names: 1st Street (on the numbering system)",
+        url: "https://lastreetnames.com/street/0001st-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" }
+    ],
+    disputed: false,
+    note: null,
+    internalNote: "One entity per number across the downtown grid, as with 1st–7th. The Ord survey letters it “CALLE 9a”; the English ordinal is the form everything since has used.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "main-street-dtla": {
+    spellings: [{ forms: ["Main Street"] }],
+    namedAfter: "Its standing as the pueblo’s principal street — an anglicization of Calle Principal",
+    namedAfterLink: null,
+    categories: ["descriptive"],
+    sources: [
+      { title: "L.A. Street Names: Main Street",
+        url: "https://lastreetnames.com/street/main-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
+      { title: "Wikipedia: Main Street (Los Angeles)",
+        url: "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)" }
+    ],
+    disputed: false,
+    note: "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
+    internalNote: "Disambiguated at minting because Main Street is a name every town has. streets-data.js records the Calle Real and Calle Principal periods as undated; they are not entered as spelling periods here because no document in the corpus attests them.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "hill-street-downtown": {
+    spellings: [{ forms: ["Hill Street"] }],
+    namedAfter: "{{Bunker Hill}} — the knoll the street runs along, though the hill was not formally named until 1873, after the street",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
+    categories: ["place"],
+    sources: [
+      { title: "L.A. Street Names: Hill Street",
+        url: "https://lastreetnames.com/street/hill-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
+      { title: "Wikipedia: Bunker Hill (Los Angeles)",
+        url: "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)" }
+    ],
+    disputed: false,
+    note: "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
+    internalNote: "Disambiguated at minting: the downtown Hill Street name was EXTENDED north onto Castelar Street in 1960, so modern N. Hill Street in Chinatown is this lineage arriving, not a second Hill Street — but the 1849 street under it is `bull`, and the two must not be merged. The survey attests the name only within the 1849 grid; its southern extent is not pinned down.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "bull": {
+    spellings: [{ forms: ["Bull Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "L.A. Street Names: Hill Street (on Calle del Toro / Castelar / N. Hill)",
+        url: "https://lastreetnames.com/street/hill-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
+      { title: "Los Angeles Herald, “Common Council”, Feb. 14, 1874 (the petition renaming Bull St. to Castelar)",
+        url: "http://cdnc.ucr.edu/cgi-bin/cdnc?a=d&d=LAH18740214.2.12" }
+    ],
+    disputed: false,
+    note: "Lettered “Calle del Toro” on the 1849 survey. No namesake is documented; bullfights were reportedly held in the area until 1872. Renamed Castelar Street by petition in February 1874, apparently for Emilio Castelar, president of Spain’s First Republic — the same petition that changed Hornet Street to Yale.",
+    internalNote: "NOT the same entity as hill-street-downtown, though modern N. Hill Street carries that name today: the downtown Hill name was extended north over this street in 1960. Castelar wants its own entity when a document attests it.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "fort-street": {
+    spellings: [{ forms: ["Fort Street"] }],
+    namedAfter: "{{Fort Moore}}, built on the hill above it after the Mexican–American War",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Fort_Moore",
+    categories: ["place"],
+    sources: [
+      { title: "L.A. Street Names: Broadway (on Fort Street)",
+        url: "https://lastreetnames.com/street/broadway/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
+      { title: "Wikipedia: Broadway (Los Angeles)",
+        url: "https://en.wikipedia.org/wiki/Broadway_(Los_Angeles)" }
+    ],
+    disputed: false,
+    note: "Lettered “Calle Fortin” on the 1849 survey. Renamed Broadway in February 1890, after New York’s, on a petition by the printer Fred Lind Alles.",
+    internalNote: "Carried over from streets-data.js when the Ord survey was encoded, 2026-08-31. The survey letters this street in both languages, so the row’s asWritten holds both forms and this entity holds the English one.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "eternity": {
+    spellings: [{ forms: ["Eternity Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "L.A. Street Names: Broadway (on Calle Eternidad)",
+        url: "https://lastreetnames.com/street/broadway/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" },
+      { title: "Homestead Museum: Calle Eternidad in the 1880s",
+        url: "https://homesteadmuseum.blog/2016/07/18/museum-director-musings-through-the-viewfinder-on-calle-eternidad-1880s/" }
+    ],
+    disputed: false,
+    note: "Lettered “Calle de la Eternidad” on the 1849 survey. It led to Calvary Cemetery, established in 1844, which is the usual explanation — though an 1895 account claims instead that it was so named because it had neither beginning nor end. Renamed Buena Vista in 1888, and folded into North Broadway in November 1909.",
+    internalNote: "Carried over from streets-data.js when the Ord survey was encoded, 2026-08-31. The survey letters this street in both languages, so the row’s asWritten holds both forms and this entity holds the English one.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "high-street-chinatown": {
+    spellings: [{ forms: ["High Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "L.A. Street Names: Ord Street (on Calle Alta / Walters / Ord)",
+        url: "https://lastreetnames.com/street/ord-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
+    ],
+    disputed: false,
+    note: "Lettered “Calle Alta” on the 1849 survey, with no namesake recorded. It became Walters Street in 1886, for a resident named George Walters, and Ord Street in 1890 — for the surveyor who had declined to name anything after himself in 1849.",
+    internalNote: "Disambiguated at minting. Note the spelling trap next door: `waters-street` is a DIFFERENT street (modern Douglas Street, from M.R. 6-138), and Walters Street here is a third name again.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "hornet": {
+    spellings: [{ forms: ["Hornet Street"] }],
+    namedAfter: "The insect — avispa is “wasp”, and insects were a common naming source in the young pueblo, as with the Calle de los Chapules that became Figueroa",
+    namedAfterLink: null,
+    categories: ["nature"],
+    sources: [
+      { title: "L.A. Street Names: Yale Street",
+        url: "https://lastreetnames.com/street/yale-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
+    ],
+    disputed: false,
+    note: "Lettered “Calle de las Avispas” on the 1849 survey — literally Wasp Street, though the English half of the label says Hornet. Renamed Yale in February 1874, by the same petition that turned Bull Street into Castelar.",
+    internalNote: "The English and Spanish halves of this label do not translate each other: avispa is a wasp, not a hornet. That is on the sheet, not a transcription slip, and both forms belong in the row’s asWritten.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "virgin": {
+    spellings: [{ forms: ["Virgin Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "L.A. Street Names: Alpine Street",
+        url: "https://lastreetnames.com/street/alpine-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
+    ],
+    disputed: false,
+    note: "Lettered “Calle de las Vírgenes” on the 1849 survey, which gives no explanation — bachelorettes, nuns and the Virgin Mary have all been suggested and none is documented. Renamed Alpine Street in August 1887 by petition of the real-estate agent William P. McIntosh, who had run a Sierra lumber company near Alpine County and gave no reason.",
+    internalNote: "Carried over from streets-data.js when the Ord survey was encoded, 2026-08-31. The survey letters this street in both languages, so the row’s asWritten holds both forms and this entity holds the English one.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "charity": {
+    spellings: [{ forms: ["Charity Street"] }],
+    namedAfter: "The virtue",
+    namedAfterLink: null,
+    categories: ["aspiration"],
+    sources: [
+      { title: "L.A. Street Names: Grand Avenue",
+        url: "https://lastreetnames.com/street/grand-avenue/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
+      { title: "Wikipedia: Grand Avenue (Los Angeles)",
+        url: "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)" }
+    ],
+    disputed: false,
+    note: "Lettered “Calle de Caridad” on the 1849 survey. Residents petitioned to be rid of it in 1886–87, tired of jokes about living on charity, and got Grand Avenue instead — a name chosen for sounding well rather than for meaning anything.",
+    internalNote: "streets-data.js also records Calle de Caridad as an unverified early name for SPRING Street. If that is ever confirmed it is a second entity that spells alike, not this one.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "spring": {
+    spellings: [{ forms: ["Spring Street"] }],
+    namedAfter: "Possibly {{Trinidad Ortega}} (1832–1903), who was nicknamed “Primavera”",
+    namedAfterLink: null,
+    categories: ["person", "unknown"],
+    sources: [
+      { title: "L.A. Street Names: Spring Street",
+        url: "https://lastreetnames.com/street/spring-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
+      { title: "Wikipedia: Spring Street (Los Angeles)",
+        url: "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)" }
+    ],
+    disputed: false,
+    note: "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — and neither is verified.",
+    internalNote: "namedAfter is hedged on purpose: Kines gives the Ortega story without a record. Category keeps `unknown` alongside `person` so the map does not present a guess as an answer.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "college": {
+    spellings: [{ forms: ["College Street"] }],
+    namedAfter: "Descriptive — a colegio was to be built here",
+    namedAfterLink: null,
+    categories: ["descriptive"],
+    sources: [
+      { title: "L.A. Street Names: College Street",
+        url: "https://lastreetnames.com/street/college-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
+    ],
+    disputed: false,
+    note: "A church request in June 1849 for a colegio — a secondary school — on this ground prompted Ord and Hutton to letter it “Calle del Colegio” a month later. The school was never built; the street kept the name.",
+    internalNote: "Carried over from streets-data.js when the Ord survey was encoded, 2026-08-31. The survey letters this street in both languages, so the row’s asWritten holds both forms and this entity holds the English one.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "flower": {
+    spellings: [{ forms: ["Flower Street"] }],
+    namedAfter: "Supposedly the blossom-covered hills behind it",
+    namedAfterLink: null,
+    categories: ["nature"],
+    sources: [
+      { title: "L.A. Street Names: Flower Street",
+        url: "https://lastreetnames.com/street/flower-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" }
+    ],
+    disputed: false,
+    note: "Lettered “Calle de las Flores” on the 1849 survey. The hillside-blossom explanation is the one always given and nothing documents it.",
+    internalNote: "Carried over from streets-data.js when the Ord survey was encoded, 2026-08-31. The survey letters this street in both languages, so the row’s asWritten holds both forms and this entity holds the English one.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "olive": {
+    spellings: [{ forms: ["Olive Street"] }],
+    namedAfter: "{{The olive}} — though no particular tree or grove here is documented",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Olive",
+    categories: ["nature"],
+    sources: [
+      { title: "L.A. Street Names: Olive Street",
+        url: "https://lastreetnames.com/street/olive-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" }
+    ],
+    disputed: false,
+    note: null,
+    internalNote: "Carried over from streets-data.js when the Ord survey was encoded, 2026-08-31. The survey letters this street in both languages, so the row’s asWritten holds both forms and this entity holds the English one.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "hope": {
+    spellings: [{ forms: ["Hope Street"] }],
+    namedAfter: "The virtue — or possibly {{Dr. Alexander W. Hope}} (c. 1820–1856), which the sources do not settle",
+    namedAfterLink: null,
+    categories: ["aspiration", "person", "unknown"],
+    sources: [
+      { title: "L.A. Street Names: Hope Street",
+        url: "https://lastreetnames.com/street/hope-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" }
+    ],
+    disputed: false,
+    note: "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
+    internalNote: "Genuinely contested rather than merely unresearched, so both readings are in namedAfter and `unknown` stays in the categories. Not marked `disputed`: that flag is for a claim the project takes a side against, not for an open question.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "adobe": {
+    spellings: [{ forms: ["Adobe Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
+    ],
+    disputed: false,
+    note: "Lettered “Calle de las Adobes” on the 1849 survey and still Adobe Street today. The obvious reading is the adobe houses along it, but no source says so.",
+    internalNote: "NOT in streets-data.js at all — the old file has no Adobe Street entry, so there was nothing to carry over and nothing found since. Kines has no page (checked 2026-08-31).",
+    possiblySameAs: null, aliases: []
+  },
+
+  "short-street-chavez": {
+    spellings: [{ forms: ["Short Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
+      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
+    ],
+    disputed: false,
+    note: "Lettered on the 1849 survey along ground now part of Cesar E. Chavez Avenue. Descriptive, presumably, but nothing documents it.",
+    internalNote: "READ THE INK AGAIN BEFORE TRUSTING THIS ONE. The row records “CORTE ST”, and corte in Spanish is a court or a cut, not “short” — that would be corta. Either the sheet letters Calle Corta and the transcription dropped a letter, or the name is Corte and the English id is wrong. streets-data.js knows nothing about it: its Chavez entry starts at Macy Street. Disambiguated at minting because Short Street is a name that recurs.",
     possiblySameAs: null, aliases: []
   }
 };

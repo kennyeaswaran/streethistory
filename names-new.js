@@ -19,6 +19,9 @@
 const NEW_NAME_ENTITIES = {
 
 
+
+
+
   "council-street": {
     spellings: [{"forms":["Council Street"]}],
     namedAfter: null,
@@ -45,7 +48,6 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
-
   "diamond-street": {
     spellings: [{"forms":["Diamond Street"]}],
     namedAfter: null,
@@ -58,6 +60,12 @@ const NEW_NAME_ENTITIES = {
     possiblySameAs: null,
     aliases: []
   },
+
+
+
+
+
+
 
 
   "hobart-street": {
@@ -86,6 +94,8 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+
+
   "lake-avenue": {
     spellings: [{"forms":["Lake Avenue"]}],
     namedAfter: null,
@@ -100,6 +110,10 @@ const NEW_NAME_ENTITIES = {
   },
 
 
+
+
+
+
   "state-colton": {
     spellings: [{"forms":["State Street"]}],
     namedAfter: null,
@@ -112,6 +126,7 @@ const NEW_NAME_ENTITIES = {
     possiblySameAs: null,
     aliases: []
   },
+
 
   "waters-street": {
     spellings: [{"forms":["Waters Street"]}],

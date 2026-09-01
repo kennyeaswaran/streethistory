@@ -1,0 +1,38 @@
+{
+  "image": "documents/mr053-068/mr053-068-100dpi.png",
+  "points": [
+    {
+      "px": [
+        0,
+        0
+      ],
+      "ll": [
+        34.051578,
+        -118.277448
+      ],
+      "note": "document-tool corner (0,0)"
+    },
+    {
+      "px": [
+        1113,
+        0
+      ],
+      "ll": [
+        34.064826,
+        -118.264865
+      ],
+      "note": "document-tool corner (1113,0)"
+    },
+    {
+      "px": [
+        0,
+        1725
+      ],
+      "ll": [
+        34.035305,
+        -118.252842
+      ],
+      "note": "document-tool corner (0,1725)"
+    }
+  ]
+}

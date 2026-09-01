@@ -542,17 +542,35 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     await page.selectOption("#pop select.kindpick", "state");
     await page.waitForTimeout(350);
     ok("a state row offers an asWritten box",
-       await page.locator("#pop input.awpick").count() === 1);
+       await page.locator("#pop textarea.awpick").count() === 1);
     ok("…which starts empty after the reclassification",
-       (await page.inputValue("#pop input.awpick")) === "",
-       await page.inputValue("#pop input.awpick"));
-    await page.fill("#pop input.awpick", "THIRD St");
-    await page.locator("#pop input.awpick").press("Enter");
+       (await page.inputValue("#pop textarea.awpick")) === "",
+       await page.inputValue("#pop textarea.awpick"));
+    await page.fill("#pop textarea.awpick", "THIRD St");
+    // A textarea keeps Enter for a newline — that is how a second lettered
+    // form is typed — so the edit commits on blur, not on Enter.
+    await page.locator("#pop textarea.awpick").blur();
     await page.waitForTimeout(350);
     ok("typing the ink lands on the row",
        await page.evaluate(() => loadedDoc.rows.some(r => r.asWritten === "THIRD St")));
     ok("…and the popup stays on that row",
-       (await page.inputValue("#pop input.awpick")) === "THIRD St");
+       (await page.inputValue("#pop textarea.awpick")) === "THIRD St");
+
+    // The Ord survey case: one row, two lettered forms, one per line.
+    await page.fill("#pop textarea.awpick", "THIRD St\nCALLE 3a");
+    await page.locator("#pop textarea.awpick").blur();
+    await page.waitForTimeout(350);
+    ok("two lines become two forms on one row",
+       await page.evaluate(() => loadedDoc.rows.some(r =>
+         Array.isArray(r.asWritten) && r.asWritten.length === 2 &&
+         r.asWritten[1] === "CALLE 3a")),
+       await page.evaluate(() => JSON.stringify(loadedDoc.rows.map(r => r.asWritten).filter(Boolean).slice(-3))));
+    ok("…and the box shows them back, one per line",
+       (await page.inputValue("#pop textarea.awpick")) === "THIRD St\nCALLE 3a",
+       JSON.stringify(await page.inputValue("#pop textarea.awpick")));
+    await page.fill("#pop textarea.awpick", "THIRD St");
+    await page.locator("#pop textarea.awpick").blur();
+    await page.waitForTimeout(300);
 
     dialogs.length = 0;
     await page.locator("#pop button.delrow").first().click();
@@ -763,6 +781,76 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("deleting it removes it",
        await page.evaluate(() => loadedDoc.rows.length) === nb - 1 &&
        await page.evaluate(() => !loadedDoc.rows.some(r => r.asWritten === "STRAY")));
+  }
+
+  console.log("Tab walks the rows that still need something");
+  {
+    await page.click("#mReview");
+    await page.waitForTimeout(200);
+    // Leave a couple of rows waiting, deterministically.
+    await page.evaluate(() => {
+      loadedDoc.rows.slice(0, 2).forEach(r => { r.confirmed = false; });
+      lastModel = null; reviewSig = null; hidePop(); draw();
+    });
+    await page.waitForTimeout(200);
+    const waiting = await page.evaluate(() => blockingRows().length);
+    ok("there are rows waiting to walk", waiting >= 2, String(waiting));
+
+    await page.evaluate(() => document.activeElement && document.activeElement.blur());
+    await page.keyboard.press("Tab");
+    await page.waitForTimeout(250);
+    const first = await page.evaluate(() => loadedDoc.rows.indexOf(popRow));
+    ok("Tab opens a row that is waiting",
+       await page.evaluate(() => !!popRow && blockingRows().includes(popRow)), String(first));
+    ok("…and the popup is on screen", (await vis("#pop")).display !== "none");
+
+    await page.evaluate(() => document.activeElement && document.activeElement.blur());
+    await page.keyboard.press("Tab");
+    await page.waitForTimeout(250);
+    const second = await page.evaluate(() => loadedDoc.rows.indexOf(popRow));
+    ok("Tab again moves on", second !== first, `${first} -> ${second}`);
+
+    await page.evaluate(() => document.activeElement && document.activeElement.blur());
+    await page.keyboard.down("Shift"); await page.keyboard.press("Tab"); await page.keyboard.up("Shift");
+    await page.waitForTimeout(250);
+    ok("shift-Tab goes back",
+       await page.evaluate(() => loadedDoc.rows.indexOf(popRow)) === first,
+       String(await page.evaluate(() => loadedDoc.rows.indexOf(popRow))));
+
+    // Typing in the popup must keep its own Tab.
+    const box = page.locator("#pop textarea.awpick, #pop input.npick").first();
+    if (await box.count()) {
+      await box.focus();
+      const held = await page.evaluate(() => loadedDoc.rows.indexOf(popRow));
+      await page.keyboard.press("Tab");
+      await page.waitForTimeout(200);
+      ok("Tab inside a field does not jump the map",
+         await page.evaluate(() => loadedDoc.rows.indexOf(popRow)) === held);
+    }
+  }
+
+  console.log("a vanished corridor with nothing lettered on it");
+  {
+    const before = await page.evaluate(() => loadedDoc.rows.length);
+    await page.click("#traceStart");
+    await page.waitForTimeout(150);
+    await page.mouse.click(700, 400); await page.waitForTimeout(80);
+    await page.mouse.click(780, 470); await page.waitForTimeout(80);
+    answers.push("");                       // the prompt: left EMPTY on purpose
+    await page.click("#traceDone");
+    await page.waitForTimeout(300);
+    ok("an empty label makes an unlettered trace, not a rejected one",
+       await page.evaluate(() => loadedDoc.rows.length) === before + 1 &&
+       await page.evaluate(() => loadedDoc.rows[loadedDoc.rows.length - 1].kind) === "vanished-unnamed",
+       await page.evaluate(() => loadedDoc.rows[loadedDoc.rows.length - 1].kind));
+    ok("…carrying no ink and no name",
+       await page.evaluate(() => {
+         const r = loadedDoc.rows[loadedDoc.rows.length - 1];
+         return r.asWritten === undefined && r.name === undefined;
+       }));
+    ok("…and it does not block the sweep for having no name",
+       !/no name entity/.test(await page.textContent("#sweepState")),
+       await page.textContent("#sweepState"));
   }
 
   ok("still no page errors",

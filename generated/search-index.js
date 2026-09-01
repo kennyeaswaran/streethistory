@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-08-31
+// Built: 2026-09-01
 const SEARCH_INDEX = [
   {
     "form": "10th Street",
@@ -184,7 +184,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "8th Street",
-    "entity": "8th-street",
+    "entity": "eighth-street",
     "label": "8th Street",
     "street": "8th Street"
   },
@@ -196,13 +196,13 @@ const SEARCH_INDEX = [
   },
   {
     "form": "9th Street",
-    "entity": "9th-street",
+    "entity": "ninth-street",
     "label": "9th Street",
     "street": "9th Street"
   },
   {
     "form": "Adobe Street",
-    "entity": "adobe-street",
+    "entity": "adobe",
     "label": "Adobe Street",
     "street": "Adobe Street"
   },
@@ -240,6 +240,12 @@ const SEARCH_INDEX = [
     "form": "Alpine Street",
     "entity": "alpine-street",
     "label": "Alpine Street",
+    "street": "Alpine Street"
+  },
+  {
+    "form": "Virgin Street",
+    "entity": "virgin",
+    "label": "Virgin Street",
     "street": "Alpine Street"
   },
   {
@@ -447,6 +453,18 @@ const SEARCH_INDEX = [
     "street": "Broadway"
   },
   {
+    "form": "Fort Street",
+    "entity": "fort-street",
+    "label": "Fort Street",
+    "street": "Broadway"
+  },
+  {
+    "form": "Eternity Street",
+    "entity": "eternity",
+    "label": "Eternity Street",
+    "street": "Broadway"
+  },
+  {
     "form": "Bruno Street",
     "entity": "bruno-street",
     "label": "Bruno Street",
@@ -531,6 +549,12 @@ const SEARCH_INDEX = [
     "street": "Cesar E Chavez Avenue"
   },
   {
+    "form": "Short Street",
+    "entity": "short-street-chavez",
+    "label": "Short Street",
+    "street": "Cesar E Chavez Avenue"
+  },
+  {
     "form": "Channing Street",
     "entity": "channing-street",
     "label": "Channing Street",
@@ -568,7 +592,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "College Street",
-    "entity": "college-street",
+    "entity": "college",
     "label": "College Street",
     "street": "College Street"
   },
@@ -784,7 +808,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Flower Street",
-    "entity": "flower-street",
+    "entity": "flower",
     "label": "Flower Street",
     "street": "Flower Street"
   },
@@ -879,6 +903,12 @@ const SEARCH_INDEX = [
     "street": "Grand Avenue"
   },
   {
+    "form": "Charity Street",
+    "entity": "charity",
+    "label": "Charity Street",
+    "street": "Grand Avenue"
+  },
+  {
     "form": "Grand Avenue Lower Level",
     "entity": "grand-avenue-lower-level",
     "label": "Grand Avenue Lower Level",
@@ -916,8 +946,14 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Hill Street",
-    "entity": "hill-street",
+    "entity": "hill-street-downtown",
     "label": "Hill Street",
+    "street": "Hill Street"
+  },
+  {
+    "form": "Bull Street",
+    "entity": "bull",
+    "label": "Bull Street",
     "street": "Hill Street"
   },
   {
@@ -934,7 +970,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Hope Street",
-    "entity": "hope-street",
+    "entity": "hope",
     "label": "Hope Street",
     "street": "Hope Street"
   },
@@ -1144,7 +1180,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Main Street",
-    "entity": "main-street",
+    "entity": "main-street-dtla",
     "label": "Main Street",
     "street": "Main Street"
   },
@@ -1300,7 +1336,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Olive Street",
-    "entity": "olive-street",
+    "entity": "olive",
     "label": "Olive Street",
     "street": "Olive Street"
   },
@@ -1326,6 +1362,12 @@ const SEARCH_INDEX = [
     "form": "Ord Street",
     "entity": "ord-street",
     "label": "Ord Street",
+    "street": "Ord Street"
+  },
+  {
+    "form": "High Street",
+    "entity": "high-street-chinatown",
+    "label": "High Street",
     "street": "Ord Street"
   },
   {
@@ -1528,7 +1570,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Spring Street",
-    "entity": "spring-street",
+    "entity": "spring",
     "label": "Spring Street",
     "street": "Spring Street"
   },
@@ -1740,6 +1782,12 @@ const SEARCH_INDEX = [
     "form": "Yale Street",
     "entity": "yale-street",
     "label": "Yale Street",
+    "street": "Yale Street"
+  },
+  {
+    "form": "Hornet Street",
+    "entity": "hornet",
+    "label": "Hornet Street",
     "street": "Yale Street"
   }
 ];

@@ -526,6 +526,32 @@ perfectly normal and is not an error — though the generator should report the
 distinct unmatched strings, since a form recurring across independent
 documents is probably a real spelling nobody has recorded yet.
 
+**One stretch can be lettered more than once, and that is one row.** The Ord
+survey letters most of its streets in both languages at once — "GRASSHOPPER
+ST." and "CALLE DE LAS CHAPULES" name the same street on the same sheet — so
+`asWritten` is a string **or an array of strings**, in reading order:
+
+```js
+{ kind: "state", name: "chapules", street: "Figueroa Street",
+  asWritten: ["GRASSHOPPER ST.", "CALLE DE LAS CHAPULES"] }
+```
+
+The alternatives are both worse. Two rows double-count the ground, draw as two
+overlapping periods, and invite exactly the mistake that happened here — the
+same lineage entered twice under two ids, `chapules` and `grasshopper`. One
+string joined with a slash records punctuation the sheet does not have, in a
+field whose whole point is that it is verbatim.
+
+Every form counts for spelling matching, and each is reported separately when
+it matches nothing: the English half of a bilingual label can match a recorded
+spelling while the Spanish half does not, and that asymmetry is the
+interesting part. The FIRST form is the one prose quotes when it can only
+quote one.
+
+Two labels lettered along *different stretches* of one street are still two
+rows — that is two pieces of testimony about two pieces of ground, not one
+label written twice.
+
 ### 5.2 `absent` — the map covers this ground and draws no street here
 
 ```js
@@ -607,6 +633,28 @@ ghost streets is a display decision, deliberately left open.
 Precision: a trace is a human following ink through an alignment good to
 roughly a street width. Never render it as though it were surveyed, and keep
 the document id with it so the provenance stays visible.
+
+### 5.3a `vanished-unnamed` — drawn pavement, no modern counterpart, no name
+
+```js
+{ kind: "vanished-unnamed", trace: [[880, 210], [905, 470], [960, 512]],
+  confirmed: false, basis: "alignment" }
+```
+
+`unnamed` (§5.2a) crossed with `vanished` (§5.3), and the one claim the other
+kinds cannot make: the sheet draws a corridor, no modern street follows it,
+and nothing is lettered on it.
+
+It carries **no `name` and no `asWritten`**, and the checker rejects either —
+a `vanished` row that has lost its ink is a half-filled row, which is a state
+the sweep gate exists to catch, and this kind must not become a place to hide
+one. Recording the same thing as `vanished` with `asWritten: "unnamed"` is
+worse still: that is a claim about what the sheet letters, and it is false.
+
+Being complete on arrival, it can be confirmed immediately and never blocks a
+sweep for want of a name entity. It contributes pavement, not naming: the
+generator emits it among the vanished traces with a null entity, and nothing
+about it reaches a timeline.
 
 ### 5.4 Extents that end mid-block
 

@@ -85,6 +85,20 @@ for (const [id, e] of Object.entries(NAME_ENTITIES)) {
 }
 const resolve = id => ids.has(id) ? id : aliasOwner[id];
 
+// ONE ROW, MORE THAN ONE FORM OF THE INK (§5.1).
+//
+// The Ord survey letters most of its streets twice, in English and in
+// Spanish: "GRASSHOPPER ST." and "CALLE DE LAS CHAPULES" name one street on
+// one sheet. Entered as two rows they double-count the same ground and draw
+// as two overlapping periods; joined with a slash they record punctuation the
+// sheet does not have. So `asWritten` may be a string or an ARRAY of strings,
+// in reading order, and everything downstream asks for the forms rather than
+// the field.
+function asWrittenForms(v) {
+  if (v == null) return [];
+  return (Array.isArray(v) ? v : [v]).filter(x => typeof x === "string" && x.trim());
+}
+
 // ---- documents ------------------------------------------------------------
 const DATE_RE = /^\d{4}(-\d{2}(-\d{2})?)?$/;
 const TYPES = ["tract-map", "survey", "sanborn", "directory", "ordinance", "osm", "annotation", "news-report"];
@@ -213,20 +227,32 @@ for (const doc of DOCUMENTS) {
 
   for (const [i, row] of (doc.rows || []).entries()) {
     const r = `${d}.rows[${i}]`;
-    if (!["state", "change", "annotation", "absent", "unnamed", "vanished"].includes(row.kind)) { err(r, "unknown kind:", row.kind); continue; }
+    if (!["state", "change", "annotation", "absent", "unnamed", "vanished",
+          "vanished-unnamed"].includes(row.kind)) { err(r, "unknown kind:", row.kind); continue; }
     // §5.3 vanished rows describe absent pavement: no modern street, a traced
-    // polyline in scan pixels instead.
-    if (row.kind === "vanished") {
-      if (!doc.alignment) err(r, "vanished row needs the document to have an alignment (§4.6) — its trace is in scan pixels");
+    // polyline in scan pixels instead. `vanished-unnamed` is the same corridor
+    // with nothing lettered on it — `unnamed` (§5.2a) crossed with `vanished`,
+    // and the one combination the other five kinds cannot express.
+    if (row.kind === "vanished" || row.kind === "vanished-unnamed") {
+      if (!doc.alignment) err(r, `${row.kind} row needs the document to have an alignment (§4.6) — its trace is in scan pixels`);
       if (!Array.isArray(row.trace) || row.trace.length < 2)
-        err(r, "vanished row needs a trace of at least 2 points");
+        err(r, `${row.kind} row needs a trace of at least 2 points`);
       else if (!row.trace.every(pt => Array.isArray(pt) && pt.length === 2 && pt.every(Number.isFinite)))
-        err(r, "vanished trace points must be [x, y] scan pixels");
+        err(r, `${row.kind} trace points must be [x, y] scan pixels`);
+      if (row.street) err(r, `${row.kind} row must not name a modern street — that is what makes it vanished`);
+      if (row.kind === "vanished-unnamed") {
+        // Nothing is lettered, so there is nothing to name it after and no
+        // ink to record. Carrying either would make it a `vanished` row that
+        // someone half-filled in, which is the state this kind exists to end.
+        if (row.name) err(r, "vanished-unnamed row must not carry a name — nothing is lettered on it");
+        if (row.asWritten) err(r, "vanished-unnamed row must not carry asWritten — if there IS ink, it is a `vanished` row");
+        continue;
+      }
       if (row.name == null) proposalOrErr(row, r,
         "vanished row has no name id — identity is assigned in review (§5.5)");
       else if (!resolve(row.name)) err(r, "name id does not resolve:", row.name);
-      if (!row.asWritten) err(r, "vanished row missing asWritten (verbatim ink — §5.1)");
-      if (row.street) err(r, "vanished row must not name a modern street — that is what makes it vanished");
+      if (!asWrittenForms(row.asWritten).length)
+        err(r, "vanished row missing asWritten (verbatim ink — §5.1)");
       continue;
     }
     if (doc.type !== "osm" && !streets.has(row.street)) err(r, "street not in geometry:", row.street);
@@ -254,7 +280,16 @@ for (const doc of DOCUMENTS) {
           "state row has no name id — identity is assigned in review (§5.5)");
         else if (!resolve(row.name)) err(r, "name id does not resolve:", row.name);
       }
-      if (doc.type !== "osm" && !row.asWritten) err(r, "state row missing asWritten (verbatim ink — §5.1)");
+      const forms = asWrittenForms(row.asWritten);
+      if (doc.type !== "osm" && !forms.length) err(r, "state row missing asWritten (verbatim ink — §5.1)");
+      if (Array.isArray(row.asWritten)) {
+        if (row.asWritten.length !== forms.length)
+          err(r, "asWritten array holds something that is not a non-empty string");
+        if (new Set(forms.map(f => f.toLowerCase())).size !== forms.length)
+          err(r, "asWritten lists the same form twice:", JSON.stringify(row.asWritten));
+        if (forms.length === 1)
+          warn(r, "asWritten is an array of one — write the single form as a plain string");
+      }
       if (row.attests && !ATTESTS.includes(row.attests)) err(r, "bad attests override:", row.attests);
     }
     if (row.kind === "change") {

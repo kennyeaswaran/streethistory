@@ -153,6 +153,14 @@ popup offers:
   else.
 - **Delete the row** — the stretch goes back to unaccounted, and the sweep gate
   notices.
+- **A row that spans no ground is reported, not removed.** Both its ends
+  resolve to the same point, so it makes no segment and accounts for no metres.
+  The tool finds it (by the vertex test its own accounting uses AND by the
+  axis-projection test the generator segments on, since a row can vanish in
+  either model), badges it, and says what is usually wrong — reversed ends.
+  Deleting it automatically would throw away a real claim along with its
+  diagnosis; §7 already says the tool does not decide identity, and this is the
+  same rule about extent.
 - **Re-trace a `vanished` row** — replaces the polyline and keeps the label,
   the entity and everything else.
 - **Change the identification** — type to search name entities across all
@@ -162,7 +170,9 @@ popup offers:
   entities unless spelling *and* extent match) is visible rather than
   remembered.
 - **Edit `asWritten`** — verbatim ink, typos included; never auto-promoted
-  into the entity's spellings (§5.1).
+  into the entity's spellings (§5.1). One form per line where a sheet letters
+  a stretch more than once (English and Spanish on the Ord survey): one row,
+  several forms.
 - **Split the stretch in two** — click a point along the segment; it becomes
   a cross-street name when one is within 40 m, a scan pixel otherwise (§5.4).
   One row goes in, two come out, meeting at that point, and **both come back
@@ -186,7 +196,8 @@ popup offers:
   is a judgement best made looking at the plat.
 
 **Tracing a vanished street**: draw a polyline along the drawn corridor and
-type `asWritten` verbatim. Stored in scan pixels (§4.6), so a later
+type `asWritten` verbatim — or leave it empty, which records the corridor as
+`vanished-unnamed` (§5.3a) rather than refusing the trace. Stored in scan pixels (§4.6), so a later
 re-alignment moves the ghost with the map. It lands `confirmed: false` with no
 entity, and the popup opens on it — an unnamed trace cannot be confirmed and
 blocks the sweep, which is how it avoids being forgotten.
@@ -201,8 +212,11 @@ the unconfirmed and rejected rows with the human's comments, formatted as a
 prompt for another round. That is what makes phase 3–4 alternate rather than
 being one-shot.
 
-**The sweep gate**: `sweptFully` may be set only when no *stretch* is
-unaccounted, every row is confirmed, and every naming row has an entity.
+**The sweep gate**, which runs in **both directions**: `sweptFully` may be set
+only when no *stretch* is unaccounted, every row is confirmed, every naming row
+has an entity, and no row's two ends land in the same place — and it is WITHDRAWN the moment an edit makes any of
+that untrue again. A gate that only guards the way in leaves the model's
+strongest claim standing over rows that stopped supporting it.
 Setting it is what licenses negative inference from this document (§4.5), so
 it is a gate that states what is still missing — in metres and street names —
 rather than a status field. It fills `sweptFor` with the streets in coverage

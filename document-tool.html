@@ -546,7 +546,8 @@ function setModeHint() {
     ? "Match the <b>shape</b> of the grid — corners, angles, block sizes — never the names."
     : mode === "coverage"
     ? "Click adds a coverage point · drag pans · wheel zooms. The scan is locked while tracing."
-    : "Click a coloured street to see what the rows claim about it · drag pans · wheel zooms.";
+    : "Click a coloured street to see what the rows claim about it · drag pans · " +
+      "wheel zooms · <b>Tab</b> jumps to the next row still waiting.";
 }
 
 function setMode(m) {
@@ -765,6 +766,7 @@ $("loadDoc").onclick = async () => {
   // A popup describes one row of one document, and it sits over the canvas —
   // left open across a load it both lies and swallows the next click.
   hidePop(); tracing = null; retracing = null; splitting = null;
+  sweptWasRetracted = false;
   updateTraceUI(); updateSplitUI();
   lastModel = null; reviewSig = null; reviewDirty = false;
   refreshOpenBox();
@@ -808,7 +810,8 @@ const REVC = {
   unnamed:     "#b8860b",   // pavement drawn, no name lettered on it
   absent:      "#6f6f6f",   // covered, and NO street is drawn there
   unaccounted: "#c0392b",   // in coverage, no row says anything
-  vanished:    "#8e44ad"    // drawn on the plat, no modern counterpart
+  vanished:    "#8e44ad",   // drawn on the plat, no modern counterpart
+  "vanished-unnamed": "#b07bd0"  // …and with nothing lettered on it
 };
 // What each row kind claims, in one line — shown wherever a kind is offered,
 // because "absent" and "unnamed" are exactly the pair people conflate.
@@ -817,8 +820,29 @@ const KIND_MEANS = {
   unnamed:  "the document draws the roadway here but letters no name on it",
   absent:   "the document covers this ground and draws NO street here",
   change:   "a renaming happens here",
-  vanished: "drawn on the plat, with no modern street to hang it on"
+  vanished: "drawn on the plat, with no modern street to hang it on",
+  "vanished-unnamed": "drawn on the plat, no modern street AND nothing lettered on it"
 };
+
+// ONE ROW, MORE THAN ONE FORM OF THE INK (§5.1).
+//
+// The Ord survey letters most of its streets twice, English and Spanish:
+// "GRASSHOPPER ST." and "CALLE DE LAS CHAPULES" are one street on one sheet.
+// So `asWritten` is a string or an array of them. Two rows would double-count
+// the ground; one string joined by a slash would record punctuation the sheet
+// does not have.
+function asWrittenForms(v) {
+  if (v == null) return [];
+  return (Array.isArray(v) ? v : [v]).filter(x => typeof x === "string" && x.trim());
+}
+// What the box shows and parses back: one form per line.
+const asWrittenText = v => asWrittenForms(v).join("\n");
+function asWrittenParse(text) {
+  const f = text.split("\n").map(x => x.trim()).filter(Boolean);
+  return f.length === 0 ? null : f.length === 1 ? f[0] : f;
+}
+const VANISHED_KINDS = ["vanished", "vanished-unnamed"];
+const isVanished = r => VANISHED_KINDS.includes(r.kind);
 const esc = s => String(s == null ? "" : s)
   .replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -915,7 +939,7 @@ function clipRun(run, pA, pB) {
 // 400 m one is almost always a stray — and answering it by eye, on a stretch
 // drawn underneath a longer one, is not possible.
 function rowMetres(r) {
-  if (!r || r.kind === "vanished" || !r.street) return null;
+  if (!r || isVanished(r) || !r.street) return null;
   // `lastModel || reviewModel()`, the same fallback the sweep gate uses: this
   // is called from the panel and from the popup, and a measurement that came
   // back null because nothing had drawn yet would read as "no stretch".
@@ -1056,7 +1080,7 @@ function reviewModel() {
       if (ENT && id && !ENT[id])
         problems.push(`no name entity “${esc(id)}” in names.js (row on ${esc(r.street || "?")})`);
 
-    if (r.kind === "vanished") { vanished.push(r); continue; }
+    if (isVanished(r)) { vanished.push(r); continue; }
     if (!r.street) { problems.push(`a ${esc(r.kind || "?")} row has no street`); continue; }
     const rec = streets.get(r.street);
     if (!rec) {
@@ -1188,8 +1212,8 @@ function drawReview() {
   for (const r of m.vanished) {
     if (!Array.isArray(r.trace) || r.trace.length < 2 || !img) continue;
     const pts = r.trace.map(([x, y]) => scanToScreen(x, y));
-    stroke(pts, REVC.vanished, 6, r.confirmed === false);
-    reviewFeatures.push({ street: null, row: r, kind: "vanished", pts });
+    stroke(pts, REVC[r.kind] || REVC.vanished, 6, r.confirmed === false);
+    reviewFeatures.push({ street: null, row: r, kind: r.kind, pts });
   }
 
   // Whatever the popup is about, haloed and drawn last.
@@ -1261,6 +1285,13 @@ function rowHtml(r, emphasise) {
   return `<div class="rowcard${emphasise ? " on" : ""}" ` +
          `style="border-left-color:${REVC[r.kind] || "#241f18"}">` +
          `<table class="fields">${rows}${missing}</table>` +
+         (rowSpansNothing(r)
+           ? `<div class="hint warn"><b>This row spans no ground.</b> Its two ends resolve to ` +
+             `the same place on ${esc(r.street)}, so it makes no segment, accounts for no ` +
+             `metres, and leaves the stretch it was meant to cover unaccounted.<br>` +
+             `Usually the ends are the wrong way round — <code>from</code> is the ` +
+             `<b>west</b> end of an east-west street and the <b>south</b> end of a ` +
+             `north-south one — so try swapping them before deleting it.</div>` : "") +
          (len != null
            ? `<div class="hint">Speaks for <b>${len} m</b> of ${esc(r.street)}` +
              (len < MIN_RUN_M ? ` — shorter than the ${MIN_RUN_M} m a street has to ` +
@@ -1280,7 +1311,9 @@ function rowControlsHtml(r, i) {
   // What this row CLAIMS, first: everything below depends on it. The AI pass
   // reliably confuses "no name lettered" with "no street here", and until this
   // existed that could only be fixed by editing the file.
-  const KINDS = r.kind === "vanished" ? [] : ["state", "unnamed", "absent"];
+  // A traced row chooses between the two vanished kinds; a row on a modern
+  // street chooses among the three that speak about one.
+  const KINDS = isVanished(r) ? VANISHED_KINDS : ["state", "unnamed", "absent"];
   if (KINDS.length) {
     html += `<div class="ctlrow"><label class="fk">kind</label>` +
       `<select class="kindpick" data-ri="${i}">` +
@@ -1293,21 +1326,24 @@ function rowControlsHtml(r, i) {
     // The ink, then which lineage it belongs to — the order the judgement
     // actually happens in. A row reclassified into `state` has no asWritten
     // at all until it is typed here, and cannot be confirmed without one.
+    const forms = asWrittenForms(r.asWritten);
     html += `<div class="ctlrow"><label class="fk">asWritten</label>` +
-      `<input class="awpick" type="text" data-ri="${i}" value="${esc(r.asWritten || "")}" ` +
-      `placeholder="the label, exactly as lettered"></div>` +
+      `<textarea class="awpick" rows="${Math.max(1, forms.length)}" data-ri="${i}" ` +
+      `placeholder="the label, exactly as lettered">${esc(asWrittenText(r.asWritten))}</textarea></div>` +
       `<div class="hint">Verbatim ink — abbreviations, capitals and typos kept. ` +
-      `“THIRD St”, not “3rd Street”.</div>` +
+      `“THIRD St”, not “3rd Street”. <b>One form per line</b> where the sheet ` +
+      `letters the same street more than once — the Ord survey letters most of ` +
+      `its streets in English and in Spanish, and that is one row, not two.</div>` +
       `<div class="ctlrow"><label class="fk">name</label>` +
       `<input class="npick" type="text" list="entlist" data-ri="${i}" ` +
       `value="${esc(r.name || "")}" placeholder="type a name or id…">` +
       `<button class="newent" data-ri="${i}" title="mint a new name entity">＋ new</button></div>` +
-      (r.asWritten ? `<div class="hint">Which lineage does “${esc(r.asWritten)}” belong to? ` +
+      (forms.length ? `<div class="hint">Which lineage does ${forms.map(f => `“${esc(f)}”`).join(" / ")} belong to? ` +
         `An existing entity if this is the same name propagating, a new one if it only ` +
         `spells alike.</div>` : "");
   }
 
-  if (r.kind === "vanished")
+  if (isVanished(r))
     html += `<div class="ctlrow"><button class="retrace" data-ri="${i}">` +
       `Re-trace on the scan</button></div>`;
   // A row is one claim about one stretch. When the claim holds for part of it
@@ -1419,9 +1455,9 @@ function bindPopControls() {
     if (coverageExcept.some(x => x === gap.street)) return;
     dropFromCoverage(gap.street, `Drop ALL of ${gap.street} from the document's coverage?`);
   };
-  for (const el of p.querySelectorAll("input.awpick")) el.onchange = () => {
-    const r = reviewRows()[+el.dataset.ri], v = el.value.trim();
-    if (v === (r.asWritten || "")) return;
+  for (const el of p.querySelectorAll("textarea.awpick")) el.onchange = () => {
+    const r = reviewRows()[+el.dataset.ri], v = asWrittenParse(el.value);
+    if (JSON.stringify(v) === JSON.stringify(r.asWritten ?? null)) return;
     if (v) r.asWritten = v; else delete r.asWritten;
     // The ink IS the evidence, so changing it means the row asserts something
     // different and wants looking at again.
@@ -1434,7 +1470,9 @@ function bindPopControls() {
     // The three kinds carry different fields, and leaving the old ones behind
     // would make the row fail validation in a way nothing here would show.
     r.kind = k;
-    if (k === "absent" || k === "unnamed") { delete r.name; delete r.asWritten; }
+    if (k === "absent" || k === "unnamed" || k === "vanished-unnamed") {
+      delete r.name; delete r.asWritten;
+    }
     if (k !== "state" && k !== "unnamed") delete r.attests;
     if (k === "state" && !("basis" in r)) r.basis = "alignment";
     if (r.confirmed !== false) r.confirmed = false;   // re-classified, so re-check it
@@ -1488,7 +1526,7 @@ function confirmBlocker(r) {
     return "This row has no name entity yet. Confirming it would assert a naming with " +
            "nothing to attach it to, and check-model.js would reject it.\n\n" +
            "Pick a name above, or press ＋ new.";
-  if ((r.kind === "state" || r.kind === "vanished") && !r.asWritten)
+  if ((r.kind === "state" || r.kind === "vanished") && !asWrittenForms(r.asWritten).length)
     return "This row has no asWritten. The verbatim ink is what makes it evidence (§5.1) — " +
            "type the label exactly as the sheet letters it in the asWritten box above.";
   return null;
@@ -1562,7 +1600,10 @@ function refreshReview() {
     `<div class="hint">${sw("absent")}covered, and <b>no street drawn</b> there (${c.absent})</div>` +
     `<div class="hint">${sw("unaccounted")}<b>unaccounted</b> — no row speaks for this ` +
     `stretch (${m.gaps.length} stretch${m.gaps.length === 1 ? "" : "es"}, ${c.gapMetres} m)</div>` +
-    `<div class="hint">${sw("vanished")}drawn on the plat, no modern street (${m.vanished.length})</div>` +
+    `<div class="hint">${sw("vanished")}drawn on the plat, no modern street ` +
+    `(${m.vanished.filter(r => r.kind === "vanished").length})</div>` +
+    `<div class="hint">${sw("vanished-unnamed")}…and nothing lettered on it ` +
+    `(${m.vanished.filter(r => r.kind === "vanished-unnamed").length})</div>` +
     `<div class="hint">dashed = <span class="prop">proposed</span>, awaiting a human</div>`;
 
   const order = { unaccounted: 0, named: 1, absent: 2 };
@@ -1765,11 +1806,15 @@ function pickFeature(x, y) {
     if (d < bd) { bd = d; best = f; }
   }
   if (!best) { hidePop(); draw(); return; }
-  if (best.kind === "vanished") {
+  if (isVanished(best.row || {})) {
     selStreet = null; popRow = best.row; draw();
-    showPop(x, y, `<span class="close" title="close">×</span><b class="hdr">Vanished street</b>` +
+    const unlettered = best.row.kind === "vanished-unnamed";
+    showPop(x, y, `<span class="close" title="close">×</span><b class="hdr">` +
+      `${unlettered ? "Vanished, unlettered" : "Vanished street"}</b>` +
       `<div class="hint">Drawn on the plat with no modern counterpart, so it is stored as a ` +
-      `trace in scan pixels rather than against a modern street.</div>` + rowHtml(best.row, true));
+      `trace in scan pixels rather than against a modern street.` +
+      (unlettered ? ` Nothing is lettered on it, so it carries no name and no ink — it is a ` +
+        `fact about pavement only.` : "") + `</div>` + rowHtml(best.row, true));
     return;
   }
   selStreet = best.street; draw();
@@ -1797,18 +1842,92 @@ function sweepBlockers() {
   const nameless = reviewRows().filter(r => (r.kind === "state" || r.kind === "vanished") && !r.name);
   if (nameless.length) out.push(`${nameless.length} row${nameless.length === 1 ? " has" : "s have"} ` +
                                 `no name entity`);
+  const empty = emptyRows();
+  if (empty.length) out.push(`${empty.length} row${empty.length === 1 ? "" : "s"} span${empty.length === 1 ? "s" : ""} ` +
+                             `no ground (${[...new Set(empty.map(r => r.street))].join(", ")})`);
   return out;
 }
+
+// A ROW WHOSE TWO ENDS ARE THE SAME PLACE SAYS NOTHING ABOUT ANY GROUND.
+//
+// It produces no segment, contributes no metres, and leaves the stretch it was
+// meant to cover unaccounted — while looking, in the file, like a row that has
+// been dealt with. The generator has complained about these since Colton
+// Street, but only after a save and a build.
+//
+// The usual cause is not a row that should be deleted: it is a row whose ends
+// are the wrong way round (`from` is the WEST end of an EW street and the
+// SOUTH end of an NS one, so `from: null, to: X` where X sits at that same end
+// is empty, while `from: X, to: null` is the whole street). Colton Street's
+// naming would have been lost outright if the tool had quietly dropped it.
+// Hence: found, shown and explained, with delete one click away — not deleted.
+function rowSpansNothing(r) {
+  if (!r || !r.street || isVanished(r) || r.kind === "annotation") return false;
+  const m = lastModel || reviewModel();
+  const rec = m.streets.find(s => s.name === r.street);
+  if (!rec || !rec.runs.length) return false;
+  const junk = [];
+  const pA = extentPoint(rec.name, r.kind === "change" ? r.fromCross : r.from, junk);
+  const pB = extentPoint(rec.name, r.kind === "change" ? r.toCross : r.to, junk);
+  if (!pA && !pB) return false;                    // both ends null: the whole street
+  // clipRange widens a collapsed range by a vertex either side so that
+  // something draws. That is right for drawing and wrong for judging, so ask
+  // before the widening — and only call it empty if it is empty on EVERY run.
+  const idx = (run, pt) => {
+    let bi = 0, bd = Infinity;
+    run.forEach((p, i) => { const d = G.metres(p, pt); if (d < bd) { bd = d; bi = i; } });
+    return bi;
+  };
+  const sameVertex = rec.runs.every(run =>
+    (pA ? idx(run, pA) : 0) === (pB ? idx(run, pB) : run.length - 1));
+  if (sameVertex) return true;
+
+  // …and the generator's own test as well, because it segments differently.
+  // It cuts along ONE axis — latitude for a north-south street, longitude for
+  // an east-west one — so two ends that are metres apart across a diagonal
+  // street can still project to the same cut and produce no segment there.
+  // A row that vanishes in either model is a row that says nothing, and
+  // reporting it only at build time is how these get missed.
+  const span = (f) => Math.max(...rec.runs.flat().map(f)) - Math.min(...rec.runs.flat().map(f));
+  const axis = span(p => p.lat) >= span(p => p.lon) ? "lat" : "lon";
+  const sc = pt => pt[axis];
+  const ends = rec.runs.flat().map(sc);
+  const sA = pA ? sc(pA) : Math.min(...ends), sB = pB ? sc(pB) : Math.max(...ends);
+  return Math.abs(sB - sA) < 4e-5;              // the generator's threshold, ~4 m
+}
+const emptyRows = () => reviewRows().filter(rowSpansNothing);
 
 // The rows the gate is waiting on, as objects rather than a count. A blocker
 // stated only as a number is a dead end when the row is 12 m long and drawn
 // underneath a 400 m one on the same street: the count says something is
 // wrong and gives you no way to reach it.
 const blockingRows = () => reviewRows().filter(r =>
-  r.confirmed === false || ((r.kind === "state" || r.kind === "vanished") && !r.name));
+  r.confirmed === false || ((r.kind === "state" || r.kind === "vanished") && !r.name) ||
+  rowSpansNothing(r));
 
+// A SWEEP THAT IS NO LONGER TRUE IS RETRACTED, NOT REPORTED.
+//
+// `sweptFully: true` licenses arguing from this document's silence, and the
+// gate refuses to set it while anything is unaccounted or unconfirmed. But
+// nothing stopped an EDIT after the fact from putting the document back into
+// that state — tracing a new vanished street, splitting a row, deleting one —
+// and the claim just stayed true on disk. mr053-068 was saved swept with an
+// unconfirmed proposal in it, and only check-model.js noticed.
+//
+// So the gate runs in both directions: whatever would refuse the sweep also
+// takes it away.
+function retractSweepIfBroken() {
+  if (!docSwept.fully) return false;
+  if (!sweepBlockers().length) return false;
+  docSwept = { fully: false, for: [] };
+  reviewDirty = true; reviewSig = null;
+  return true;
+}
+
+let sweptWasRetracted = false;
 function updateReviewActions() {
   if (mode !== "review") return;
+  if (retractSweepIfBroken()) sweptWasRetracted = true;
   const blockers = sweepBlockers();
   const minted = Object.keys(mintedEntities).length;
   $("sweepBtn").textContent = docSwept.fully ? "✓ swept — click to undo" : "Mark fully swept";
@@ -1818,14 +1937,12 @@ function updateReviewActions() {
   // "sweptFully: true" and nothing else at that point hides a claim of silence
   // the rows no longer support.
   $("sweepState").innerHTML = docSwept.fully
-    ? (blockers.length
-        ? `<span class="warn">Marked swept, but no longer true:</span> ` +
-          blockers.join("; ") + `. Settle these, or undo the sweep — as it stands ` +
-          `the document licenses arguing from a silence its own rows do not back.`
-        : `<b>sweptFully: true</b> — this document's silence can now be argued from. ` +
-          `Covers ${docSwept.for.length} street${docSwept.for.length === 1 ? "" : "s"}.`)
+    ? `<b>sweptFully: true</b> — this document's silence can now be argued from. ` +
+      `Covers ${docSwept.for.length} street${docSwept.for.length === 1 ? "" : "s"}.`
     : blockers.length
-      ? `<span class="warn">Not sweepable yet:</span> ` + blockers.join("; ") + "."
+      ? `<span class="warn">Not sweepable yet:</span> ` + blockers.join("; ") + "." +
+        (sweptWasRetracted ? ` <b>The sweep was withdrawn</b> when this became true — ` +
+          `settle it and mark it again.` : "")
       : `Everything in coverage is accounted for and confirmed — ready to sweep.`;
 
   const brs = blockingRows();
@@ -1835,7 +1952,8 @@ function updateReviewActions() {
         const i = reviewRows().indexOf(r), len = rowMetres(r);
         const flags = (r.confirmed === false ? ` <span class="badge prop">proposed</span>` : "") +
           ((r.kind === "state" || r.kind === "vanished") && !r.name
-            ? ` <span class="badge prop">no name</span>` : "");
+            ? ` <span class="badge prop">no name</span>` : "") +
+          (rowSpansNothing(r) ? ` <span class="badge prop">spans nothing</span>` : "");
         return `<li data-br="${i}"><span class="swatch" style="border-top-color:` +
           `${REVC[r.kind] || REVC.state}"></span>${esc(r.kind)}` +
           (r.asWritten ? ` “${esc(r.asWritten)}”` : "") +
@@ -2037,6 +2155,44 @@ function doSplit(x, y) {
   if (rec) showPop(x, y, popHtml(rec, A, null));
 }
 
+// TAB WALKS THE ROWS THAT STILL NEED SOMETHING.
+//
+// A sheet of the Ord survey carries a hundred rows, a dozen of which are
+// waiting, and finding them by eye means hunting a dashed line across a
+// city block. Tab goes to the next one, shift-Tab to the previous, and the
+// list wraps.
+//
+// Only when focus is NOT in a field: inside the popup's boxes Tab still moves
+// between them, which is what anyone typing expects. Ctrl-Tab was the other
+// suggestion, and browsers keep that one for themselves.
+function jumpToBlocker(dir) {
+  const list = blockingRows();
+  if (!list.length) return false;
+  const at = list.indexOf(popRow);
+  // Not on a blocker (or on none): start at the first, so the first press
+  // always lands somewhere rather than depending on where the popup was.
+  const next = at < 0 ? (dir > 0 ? 0 : list.length - 1)
+                      : (at + dir + list.length) % list.length;
+  focusRow(list[next]);
+  return true;
+}
+addEventListener("keydown", e => {
+  if (mode !== "review" || e.key !== "Tab" || e.ctrlKey || e.metaKey || e.altKey) return;
+  const el = document.activeElement;
+  if (el && (el.matches("input, textarea, select") || el.isContentEditable)) return;
+  if (!reviewRows().length) return;
+  e.preventDefault();
+  if (!jumpToBlocker(e.shiftKey ? -1 : 1)) setStatusNote("Nothing is waiting — every row is confirmed and named.");
+});
+// A one-off line under the mode hint, so a keypress that did nothing says so.
+function setStatusNote(text) {
+  const el = $("modeHint");
+  if (!el) return;
+  el.innerHTML = esc(text);
+  clearTimeout(setStatusNote._t);
+  setStatusNote._t = setTimeout(setModeHint, 2500);
+}
+
 // Bring a row into view and open it, however small it is and whatever is
 // drawn on top of it. drawReview haloes whatever the popup is about, so a
 // stretch buried under a longer row on the same street becomes visible the
@@ -2060,8 +2216,10 @@ function focusRow(r) {
   const at = f && f.pts.length ? f.pts[Math.floor(f.pts.length / 2)]
                                : [cv.width / 2, cv.height / 2];
   const close = `<span class="close" title="close">×</span>`;
-  if (r.kind === "vanished")
-    return showPop(at[0], at[1], close + `<b class="hdr">Vanished street</b>` + rowHtml(r, true));
+  if (isVanished(r))
+    return showPop(at[0], at[1], close +
+      `<b class="hdr">${r.kind === "vanished-unnamed" ? "Vanished, unlettered"
+                                                      : "Vanished street"}</b>` + rowHtml(r, true));
   const rec = (lastModel ? lastModel.streets : []).find(s => s.name === r.street);
   if (rec) return showPop(at[0], at[1], popHtml(rec, r, null));
   showPop(at[0], at[1], close + `<b class="hdr">${esc(r.street || "row")}</b>` +
@@ -2103,16 +2261,28 @@ $("traceDone").onclick = () => {
       const mid = f.pts[Math.floor(f.pts.length / 2)];
       popRow = row;
       showPop(mid[0], mid[1], `<span class="close" title="close">×</span>` +
-        `<b class="hdr">Vanished street</b>` + rowHtml(row, true));
+        `<b class="hdr">${row.kind === "vanished-unnamed" ? "Vanished, unlettered"
+                                                          : "Vanished street"}</b>` +
+        rowHtml(row, true));
     }
     return;
   }
-  const asWritten = (prompt(
+  // Leaving the box empty is not a mistake any more: a corridor the plat draws
+  // and letters NOTHING on is a real thing to record, and it was the one claim
+  // the kinds could not express (§5.3a).
+  const typed = (prompt(
     "The label, exactly as the plat letters it — typos, abbreviations and all. " +
-    "This is the evidence; the tidy form belongs to the name entity.", "") || "").trim();
-  if (!asWritten) return;                     // §5.1: no ink, no row
-  const row = { kind: "vanished", asWritten, trace: tracing.slice(),
-                basis: "alignment", confirmed: false };
+    "This is the evidence; the tidy form belongs to the name entity.\n\n" +
+    "One form per line where the sheet letters it more than once (English and " +
+    "Spanish, say).\n\n" +
+    "LEAVE EMPTY if the plat draws this corridor with no name on it at all.", "") || "");
+  if (typed === null) return;
+  const asWritten = asWrittenParse(typed);
+  const row = asWritten
+    ? { kind: "vanished", asWritten, trace: tracing.slice(),
+        basis: "alignment", confirmed: false }
+    : { kind: "vanished-unnamed", trace: tracing.slice(),
+        basis: "alignment", confirmed: false };
   loadedDoc.rows = loadedDoc.rows || [];
   loadedDoc.rows.push(row);
   tracing = null;

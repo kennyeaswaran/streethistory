@@ -169,6 +169,23 @@ function canon(name) { return canonTokens(name).join(" "); }
 
 // Does a document's verbatim string match a form? (§5.1: matching only —
 // asWritten is never promoted to a spelling.) Type word may be absent.
+// ONE ROW, MORE THAN ONE FORM OF THE INK (§5.1). The Ord survey letters most
+// of its streets in English and in Spanish at once, so `asWritten` is a string
+// or an array of them, in reading order. The FIRST is the one prose quotes —
+// on a bilingual sheet that is the form the reader is most likely to be able
+// to look up — and all of them count for spelling matching.
+function asWrittenForms(v) {
+  if (v == null) return [];
+  return (Array.isArray(v) ? v : [v]).filter(x => typeof x === "string" && x.trim());
+}
+const asWrittenLead = v => asWrittenForms(v)[0] || null;
+// "GRASSHOPPER ST." and "CALLE DE LAS CHAPULES", for a prose clause.
+const asWrittenQuoted = v => {
+  const f = asWrittenForms(v);
+  return f.length < 2 ? (f[0] ? `“${f[0]}”` : "")
+    : f.slice(0, -1).map(x => `“${x}”`).join(", ") + ` and “${f[f.length - 1]}”`;
+};
+
 function formMatches(asWritten, form) {
   const a = canon(normalizeName(asWritten)), f = canon(form);
   if (a === f) return true;
@@ -265,15 +282,18 @@ for (const doc of nonOsmDocs) {
     // §5.3: no modern street to hang an extent on — the extent IS the trace,
     // stored in scan pixels and derived through the document's alignment so a
     // better alignment moves the ghost with the map (§4.6).
-    if (row.kind === "vanished") {
-      if (!doc.alignment) { problems.push(`${doc.id}: vanished row without an alignment`); continue; }
+    if (row.kind === "vanished" || row.kind === "vanished-unnamed") {
+      if (!doc.alignment) { problems.push(`${doc.id}: ${row.kind} row without an alignment`); continue; }
       let fit;
       try { fit = DocGeom.fitAlignment(doc.alignment.points); }
       catch (e) { problems.push(`${doc.id}: alignment does not fit (${e.message})`); continue; }
-      const ent = resolveEntity(row.name);
-      if (!ent) { problems.push(`${doc.id}: unknown entity ${row.name}`); continue; }
+      // A corridor with nothing lettered on it has no entity to resolve — it
+      // is a fact about pavement, not about a name (§5.3a).
+      const unlettered = row.kind === "vanished-unnamed";
+      const ent = unlettered ? null : resolveEntity(row.name);
+      if (!unlettered && !ent) { problems.push(`${doc.id}: unknown entity ${row.name}`); continue; }
       vanished.push({
-        entity: ent, asWritten: row.asWritten, doc: doc.id,
+        entity: ent, asWritten: unlettered ? null : row.asWritten, doc: doc.id,
         basis: row.basis || "alignment", note: row.note || null,
         // Traced by a human through an alignment good to roughly a street
         // width — never render this as though it were surveyed.
@@ -321,7 +341,7 @@ for (const doc of nonOsmDocs) {
     // (MR006-138's Colton Street row was exactly this.)
     if (b - a < 4e-5) {
       const other = isNS ? "from: <cross>, to: null" : "from: <cross>, to: null";
-      problems.push(`${doc.id}: row on ${row.street} (${row.asWritten || row.kind}) spans ` +
+      problems.push(`${doc.id}: row on ${row.street} (${asWrittenLead(row.asWritten) || row.kind}) spans ` +
         `nothing — its two ends resolve to the same point. ${row.from === null || row.to === null
           ? `\`from\` is the ${isNS ? "SOUTH" : "WEST"} end and \`to\` the ` +
             `${isNS ? "NORTH" : "EAST"} end; try ${other}.`
@@ -336,9 +356,13 @@ for (const doc of nonOsmDocs) {
       addRow(row.street, { ...base, kind: "state", entity: ent, asWritten: row.asWritten,
                            attests: rowAttests(row, doc) });
       // §5.1 report: recurring unmatched forms are probably real spellings.
+      // Each lettered form is checked on its own — the English half of a
+      // bilingual label can match a recorded spelling while the Spanish half
+      // does not, and that asymmetry is the interesting part.
       const e = entities[ent];
-      if (!e.spellings.some(sp => sp.forms.some(f => formMatches(row.asWritten, f)))) {
-        const k = `${ent}: "${row.asWritten}"`;
+      for (const w of asWrittenForms(row.asWritten)) {
+        if (e.spellings.some(sp => sp.forms.some(f => formMatches(w, f)))) continue;
+        const k = `${ent}: "${w}"`;
         report.unmatchedAsWritten.set(k, (report.unmatchedAsWritten.get(k) || 0) + 1);
       }
     } else if (row.kind === "change") {
@@ -696,23 +720,30 @@ const andList = xs => xs.length < 2 ? (xs[0] || "")
 // Orchard Tract, sheet 2 (M.R. 30-10) and the 1888 Wolfskill Orchard Tract,
 // sheet 3 (M.R. 30-11) and…". So sheets of one map collapse to the map, with
 // the sheets named from the `-pN` ids the folder convention guarantees.
+const sheetBase = d => docShort(d).replace(/,\s*sheets?\s.*$/i, "").trim();
 function citeDocs(docs) {
-  const byUrl = new Map();
+  // Grouped by SHORT TITLE, not by url. A multi-page county file gives its
+  // sheets one url, but the Ord survey's eight sheets are eight separate
+  // county PDFs with eight urls and one title — and citing "the 1849 Hutton /
+  // Ord Survey, the 1849 Hutton / Ord Survey and the 1849 Hutton / Ord Survey"
+  // is how that reads if the url is the key. What makes them one map is that
+  // they are one map, which the title is the honest handle for.
+  const byTitle = new Map();
   for (const d of docs) {
-    if (!byUrl.has(d.url)) byUrl.set(d.url, []);
-    if (!byUrl.get(d.url).includes(d)) byUrl.get(d.url).push(d);
+    const k = `${dyear(docDate(d))}|${sheetBase(d)}`;
+    if (!byTitle.has(k)) byTitle.set(k, []);
+    if (!byTitle.get(k).includes(d)) byTitle.get(k).push(d);
   }
-  return [...byUrl.values()].map(ds => {
+  return [...byTitle.values()].map(ds => {
     const year = dyear(docDate(ds[0]));
     if (ds.length === 1) return `the ${year} ${docShort(ds[0])}`;
-    const base = docShort(ds[0]).replace(/,\s*sheets?\s.*$/i, "");
     const ns = ds.map(d => (String(d.id).match(/-p(\d+)$/) || [])[1])
                  .filter(Boolean).map(Number).sort((a, b) => a - b);
     // Only claim sheet numbers when every document offered one; otherwise the
     // list would silently be short.
     return ns.length === ds.length
-      ? `the ${year} ${base} (sheets ${runsOf(ns)})`
-      : `the ${year} ${base}`;
+      ? `the ${year} ${sheetBase(ds[0])} (sheets ${runsOf(ns)})`
+      : `the ${year} ${sheetBase(ds[0])}`;
   });
 }
 
@@ -730,7 +761,10 @@ function originLine(streetName, p, tl) {
     parts.push(`${mech} per ${docShort(open.doc)} {{(source)}}`);
     link = open.doc.url; marked = true;
   } else if (dated.length && (p.ctx.spellingIndex || 0) === 0) {
-    parts.push(`labeled “${dated[0].asWritten}” on ${andList(citeDocs(dated.map(s => s.doc)))} {{(source)}}`);
+    // A stretch can be lettered more than one way on one sheet, and more than
+    // one sheet can letter it: quote every distinct form, once each.
+    const forms = [...new Set(dated.flatMap(x => asWrittenForms(x.asWritten)))];
+    parts.push(`labeled ${asWrittenQuoted(forms)} on ${andList(citeDocs(dated.map(s => s.doc)))} {{(source)}}`);
     link = dated[0].doc.url; marked = true;
   } else if (p.startKind === "prose" && p.ctx.proseSource) {
     parts.push(`this spelling attested from ${dyear(p.start)} {{(source)}}`);
@@ -790,8 +824,8 @@ function plannedBuiltFor(seg) {
   if (po) planned = { text: dyear(docDate(po.doc)), url: po.doc.url };
   else if (pb) planned = { text: "by " + dyear(docDate(pb.doc)), url: pb.doc.url };
   if (bo) built = { text: dfmtFull(docDate(bo.doc)), url: bo.doc.url };
-  else if (bb) built = { text: bb.asWritten
-      ? `already “${bb.asWritten}” by ${dfmtFull(docDate(bb.doc))} (${docShort(bb.doc)})`
+  else if (bb) built = { text: asWrittenForms(bb.asWritten).length
+      ? `already ${asWrittenQuoted(bb.asWritten)} by ${dfmtFull(docDate(bb.doc))} (${docShort(bb.doc)})`
       : `drawn, unlabelled, by ${dfmtFull(docDate(bb.doc))} (${docShort(bb.doc)})`,
     url: bb.doc.url };
   if (!planned && !built) return { planned: "not yet researched", built: "not yet researched" };
@@ -1086,7 +1120,8 @@ if (vanished.length) {
   rep.push("", "## Vanished streets (§5.3)", "",
     "Traced through a document alignment; approximate to roughly a street width.", "");
   for (const v of vanished)
-    rep.push(`- **${v.asWritten}** (${v.entity}) — ${v.path.length} points, from ${v.doc}`);
+    rep.push(`- **${v.entity ? asWrittenForms(v.asWritten).join(" / ") : "(unlettered)"}**` +
+             `${v.entity ? ` (${v.entity})` : ""} — ${v.path.length} points, from ${v.doc}`);
 }
 fs.writeFileSync(path.join(OUT_DIR, "report.md"), rep.join("\n") + "\n");
 

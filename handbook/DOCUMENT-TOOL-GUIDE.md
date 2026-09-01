@@ -300,6 +300,11 @@ Each row offers:
   typos kept: "THIRD St", not "3rd Street". A row reclassified *into* `state`
   starts with this empty, and cannot be confirmed until it is filled — the ink
   is what makes the row evidence. Editing it un-confirms the row.
+  **One form per line** where the sheet letters the same stretch more than
+  once: the Ord survey letters most of its streets in English and in Spanish,
+  and that is one row with two forms, not two rows (MODEL-SPEC §5.1). The box
+  is a text area, so Enter starts a second form and the edit commits when you
+  click away.
 - **name** — the entity picker, under the ink, because that is the order the
   judgement happens in: read the label, then decide which lineage it belongs
   to.
@@ -353,6 +358,12 @@ holding on each run.
 A row cannot be confirmed without a name entity and without `asWritten` — where
 its kind needs them.
 
+**Tab goes to the next row that is waiting**, shift-Tab to the previous, and
+the list wraps. On a sheet with a hundred rows and a dozen unconfirmed ones,
+hunting for a dashed line across a city block is most of the work. Inside the
+popup's boxes Tab still moves between fields, which is what anyone typing
+expects — the jump only happens when focus is not in a field.
+
 **Mark fully swept** sets `sweptFully: true`, which is the strongest claim the
 model makes: it licenses arguing from this document's *silence*. So it is a
 gate rather than a checkbox, and it says in words what is missing — how many
@@ -367,10 +378,27 @@ street — which is what a duplicate from the AI pass looks like. Whatever the
 popup is about is drawn haloed and on top, so it is visible however small it is
 and whatever is over it.
 
-The list is shown for a document that is *already* swept too, and the panel
-says so in as many words: editing a swept document — splitting a row, say —
-leaves proposals behind it, and `sweptFully: true` standing over unconfirmed
-rows claims a silence the rows no longer back.
+**A row whose two ends land in the same place** now blocks the sweep and shows
+up in that list, badged "spans nothing". It makes no segment, accounts for no
+metres, and leaves the stretch it was meant to cover unaccounted — while
+looking, in the file, like a row somebody has dealt with. The generator has
+complained about these since Colton Street, but only after a save and a build.
+
+The tool finds them and explains them; it does **not** delete them. The usual
+cause is not a junk row but a real claim whose ends are the wrong way round —
+`from` is the *west* end of an east-west street and the *south* end of a
+north-south one, so `from: null, to: X` where X sits at that same end is
+empty, while `from: X, to: null` is the whole street. Colton Street's naming
+would have been lost outright if the tool had quietly dropped it. Swap the ends
+first; delete only if the row really has nothing to say.
+
+**Editing a swept document takes the sweep back.** The gate used to run only
+on the way in, so an edit afterwards — tracing a new vanished street,
+splitting a row, deleting one — could leave `sweptFully: true` standing over
+rows that no longer supported it, and only `check-model.js` would notice.
+(M.R. 53-68 was saved exactly that way.) Now whatever would refuse the sweep
+also withdraws it, the panel says it has been withdrawn, and the rows waiting
+are listed underneath.
 
 ### Red is a stretch, not a street
 
@@ -413,7 +441,13 @@ big for that rule to catch.
 
 **Trace a vanished street** puts the canvas into tracing: click along the
 corridor's centre line, press Finish, and type the label exactly as the plat
-letters it. It writes a `vanished` row whose `trace` is in scan pixels, so it
+letters it — one form per line if it is lettered more than once, and **leave
+the box empty if the plat draws the corridor with no name on it at all**. An
+empty box is not a cancelled trace: it makes a `vanished-unnamed` row
+(MODEL-SPEC §5.3a), which carries no ink and no entity because there is none
+to carry, and which can be confirmed straight away. Recording that case as a
+`vanished` row labelled "unnamed" says the sheet letters the word *unnamed*,
+which is false. It writes a `vanished` row whose `trace` is in scan pixels, so it
 rides on the alignment like everything else stored against a scan, and opens
 the popup so you can give it a name entity. Until it has one it cannot be
 confirmed, and the document cannot be swept.

@@ -75,8 +75,9 @@ const sandbox = {
 };
 Object.defineProperty(sandbox, "loadedDoc", { get: () => ({ rows }) });
 vm.createContext(sandbox);
-vm.runInContext("const KY = 110540; let lastModel = null; let coverageExcept = [];\n" + zoomSource + source + bundleSource + gateSource +
-  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers, runGaps, clipRange, splitRowAt, sameExtent, blockingRows, rowMetres, setModel: m => { lastModel = m; } };", sandbox);
+vm.runInContext("const KY = 110540; let lastModel = null; let coverageExcept = [];\n" +
+  "let docSwept = { fully: false, for: [] };\n" + zoomSource + source + bundleSource + gateSource +
+  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers, runGaps, clipRange, splitRowAt, sameExtent, blockingRows, rowMetres, asWrittenForms, retractSweepIfBroken, setModel: m => { lastModel = m; }, rowSpansNothing, emptyRows, setSwept: v => { docSwept = v; }, getSwept: () => docSwept };", sandbox);
 const API = sandbox.API;
 const setRows = r => { rows = r; };
 
@@ -485,6 +486,135 @@ console.log("reaching the rows that block a sweep");
      API.rowMetres({ kind: "state", street: "Wilshire Boulevard" }) === null);
   ok("a vanished row has no stretch to measure",
      API.rowMetres({ kind: "vanished", asWritten: "Gone St", trace: [[0,0],[9,9]] }) === null);
+}
+
+console.log("a vanished corridor with nothing lettered on it");
+{
+  // The one claim the six kinds could not make: the plat draws a street, no
+  // modern street follows it, AND it carries no name. Entered as `vanished`
+  // with asWritten "unnamed" it was a lie about the ink; entered as `vanished`
+  // with nothing it looked like a half-filled row and blocked the sweep.
+  const lettered = { kind: "vanished", asWritten: "CALLE PRINCIPAL", name: "chapules",
+                     trace: [[0, 0], [9, 9]] };
+  const bare = { kind: "vanished-unnamed", trace: [[0, 0], [9, 9]] };
+  ok("a lettered vanished row still needs a name", API.confirmBlocker({ ...lettered, name: undefined }) !== null);
+  ok("…and still needs its ink", API.confirmBlocker({ ...lettered, asWritten: undefined }) !== null);
+  ok("a complete lettered vanished row can be confirmed", API.confirmBlocker(lettered) === null);
+  ok("an unlettered one needs neither, and can be confirmed",
+     API.confirmBlocker(bare) === null, String(API.confirmBlocker(bare)));
+
+  setRows([bare]);
+  API.setModel(null);
+  ok("…and it is not counted as a row missing its name entity",
+     !/no name entity/.test(API.sweepBlockers().join(" | ")), API.sweepBlockers().join(" | "));
+  ok("…nor listed as a blocker", !API.blockingRows().includes(bare));
+}
+
+console.log("one row, more than one form of the ink");
+{
+  ok("a plain string is one form",
+     JSON.stringify(API.asWrittenForms("GRASSHOPPER ST.")) === '["GRASSHOPPER ST."]');
+  ok("an array is all of them",
+     API.asWrittenForms(["GRASSHOPPER ST.", "CALLE DE LAS CHAPULES"]).length === 2);
+  ok("nothing is no forms",
+     API.asWrittenForms(null).length === 0 && API.asWrittenForms(undefined).length === 0 &&
+     API.asWrittenForms([]).length === 0);
+  ok("blank strings do not count as ink",
+     API.asWrittenForms(["", "   ", "REAL"]).length === 1);
+
+  // The gate reads the forms, not the field: a bilingual row is as confirmable
+  // as a monolingual one, and an empty array is as unconfirmable as no field.
+  const bi = { kind: "state", name: "chapules", street: "3rd Street",
+               asWritten: ["GRASSHOPPER ST.", "CALLE DE LAS CHAPULES"] };
+  ok("a row lettered twice can be confirmed", API.confirmBlocker(bi) === null,
+     String(API.confirmBlocker(bi)));
+  ok("an empty array is still no ink",
+     /asWritten/.test(API.confirmBlocker({ ...bi, asWritten: [] }) || ""));
+}
+
+console.log("a sweep that stops being true is withdrawn");
+{
+  // mr053-068 was saved sweptFully:true with an unconfirmed proposal in it:
+  // the gate only ever ran on the way IN, so an edit afterwards left the
+  // strongest claim the model makes standing over rows that no longer support
+  // it, and only check-model.js noticed.
+  // A set that really does account for every metre — anything less and the
+  // sweep would be withdrawn for having gaps, which is not what is under test.
+  const covered = [
+    { kind: "state", name: "arnold", asWritten: "ARNOLD ST.", street: "3rd Street" },
+    { kind: "state", name: "third-street", asWritten: "THIRD ST.", street: "Miramar Street" },
+    { kind: "state", name: "bixel", asWritten: "BIXEL ST", street: "Bixel Street" },
+    { kind: "state", name: "figueroa-gov", asWritten: "FIGUEROA ST.", street: "Boylston Street" },
+    { kind: "absent", street: "4th Street" }
+  ];
+  setRows(covered);
+  API.setModel(null);
+  API.setSwept({ fully: true, for: [] });
+  ok("a sweep with nothing wrong stands", API.retractSweepIfBroken() === false &&
+     API.getSwept().fully === true, API.sweepBlockers().join(" | "));
+
+  setRows([...covered, { kind: "vanished", trace: [[0, 0], [9, 9]], confirmed: false }]);
+  API.setModel(null);
+  ok("tracing an unconfirmed vanished street withdraws it",
+     API.retractSweepIfBroken() === true && API.getSwept().fully === false);
+  ok("…and it stays withdrawn rather than flapping",
+     API.retractSweepIfBroken() === false && API.getSwept().fully === false);
+
+  // An unlettered trace is complete on arrival, so it must NOT cost the sweep
+  // once confirmed — otherwise the new kind would be unusable on a swept sheet.
+  setRows([...covered, { kind: "vanished-unnamed", trace: [[0, 0], [9, 9]] }]);
+  API.setModel(null);
+  API.setSwept({ fully: true, for: [] });
+  ok("a confirmed unlettered trace does not cost the sweep",
+     API.retractSweepIfBroken() === false && API.getSwept().fully === true);
+  API.setSwept({ fully: false, for: [] });
+}
+
+console.log("rows whose two ends are the same place");
+{
+  // These make no segment, account for no metres, and leave the ground they
+  // were meant to cover unaccounted — while looking, in the file, like a row
+  // somebody has dealt with. Colton Street's naming was one of them.
+  const whole = { kind: "state", name: "bixel", asWritten: "BIXEL ST", street: "Bixel Street" };
+  setRows([whole]);
+  API.setModel(null);
+  const bx = API.reviewModel().streets.find(s => s.name === "Bixel Street");
+  const run = bx.runs[0];
+  const px = i => ({ px: G.worldToScan(fit, run[i].lat, run[i].lon).map(v => Math.round(v)) });
+
+  ok("a whole-street row spans plenty", !API.rowSpansNothing(whole));
+  const oneVertex = { ...whole, from: px(0), to: px(0) };
+  setRows([oneVertex]); API.setModel(null);
+  ok("both ends on the same point spans nothing", API.rowSpansNothing(oneVertex));
+  const twoVertices = { ...whole, from: px(0), to: px(run.length - 1) };
+  setRows([twoVertices]); API.setModel(null);
+  ok("…but end to end does not", !API.rowSpansNothing(twoVertices));
+
+  // The case the generator catches and vertex-snapping does not: two ends
+  // metres apart across a diagonal street that project to the same cut.
+  ok("a traced vanished row is never called empty — it has no street",
+     !API.rowSpansNothing({ kind: "vanished", asWritten: "X", trace: [[0, 0], [9, 9]] }));
+  ok("a row on a street outside coverage is not called empty either",
+     !API.rowSpansNothing({ kind: "state", street: "Wilshire Boulevard", from: null, to: null }));
+
+  setRows([whole, oneVertex]);
+  API.setModel(null);
+  ok("the empty one is listed", API.emptyRows().length === 1);
+  ok("…and it blocks the sweep, in words",
+     /span/.test(API.sweepBlockers().join(" | ")), API.sweepBlockers().join(" | "));
+  ok("…and is reachable from the blockers list", API.blockingRows().includes(oneVertex));
+
+  // The point of NOT deleting it automatically: the usual cause is reversed
+  // ends, and the row is real. Swapping them fixes it in place.
+  // Why the tool must not delete these for you: a collapsed row is a real
+  // claim with a bad extent, and moving ONE end brings it back. Deleting it
+  // would throw away the testimony and the diagnosis together — which is what
+  // would have happened to Colton Street.
+  const fixed = { ...oneVertex, to: px(run.length - 1) };
+  setRows([fixed]); API.setModel(null);
+  ok("moving one end revives a collapsed row", !API.rowSpansNothing(fixed));
+  ok("…and the row is otherwise untouched",
+     fixed.name === "bixel" && fixed.asWritten === "BIXEL ST");
 }
 
 console.log(`\n${pass} passed, ${fail} failed`);
