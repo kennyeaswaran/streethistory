@@ -74,8 +74,9 @@ const satOf = c => { const m = /^hsl\(205[ ,]+(\d+)%/.exec(String(c)); return m 
   }, [name, label]);
 
   console.log("blue means a document speaks about THIS stretch");
-  ok("Colton Street is blue", isBlue(await colourOf("Colton Street", null)),
-     String(await colourOf("Colton Street", null)));
+  ok("Colton's State St stretch is blue",
+     isBlue(await colourOf("Colton Street", "Belmont to Toluca (State St)")),
+     String(await colourOf("Colton Street", "Belmont to Toluca (State St)")));
   ok("the Waters St stretch of Douglas is blue",
      isBlue(await colourOf("Douglas Street", "beyond Colton (Waters St)")),
      String(await colourOf("Douglas Street", "beyond Colton (Waters St)")));
@@ -103,6 +104,17 @@ const satOf = c => { const m = /^hsl\(205[ ,]+(\d+)%/.exec(String(c)); return m 
   });
   ok("most stretches are grey", tally.grey > tally.blue * 2, JSON.stringify(tally));
   ok("…but a real number are blue", tally.blue > 20, JSON.stringify(tally));
+
+  console.log("rows are truncated to the document's footprint (2026-08-31)");
+  // mr006-138's Court Street row says from:null,to:null — the street's own
+  // ends — but the sheet only shows the Westlake stretch. The claim must not
+  // reach the 1.3 km beyond the coverage polygon.
+  ok("Court St inside the sheet is blue",
+     isBlue(await colourOf("Court Street", "Union to Toluca (original Court St)")),
+     String(await colourOf("Court Street", "Union to Toluca (original Court St)")));
+  ok("…and Court St beyond the sheet is grey",
+     await colourOf("Court Street", "east of Toluca") === GREY,
+     String(await colourOf("Court Street", "east of Toluca")));
 
   console.log("negative testimony renders grey, not blue (2026-08-31)");
   // A stretch whose ONLY document row is an `absent` — a sheet showing no

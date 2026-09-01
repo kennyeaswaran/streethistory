@@ -1753,7 +1753,7 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2367,
-        "maxLng": -118.2349,
+        "maxLng": -118.2346,
         "from": "Hewitt Street",
         "to": {
           "px": [
@@ -1768,32 +1768,21 @@ const STREET_DATA = {
         "entityId": null,
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": {
-          "text": "by 1887",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-        },
+        "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
-        "attested": true,
-        "knownFraction": 0,
+        "attested": false,
         "categories": [
           "unresearched"
-        ],
-        "formerCategories": [
-          "number"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-          },
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
           }
         ],
-        "minLng": -118.2349,
+        "minLng": -118.2346,
         "maxLng": -118.234,
         "from": {
           "px": [
@@ -1809,60 +1798,27 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond 4th (3rd St)",
+        "label": "part of",
         "name": "4th Place",
         "entityId": "4th-place",
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": {
-          "text": "by 1887",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-        },
+        "planned": "not yet researched",
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1887",
-            "until": "?",
-            "name": "3rd Street",
-            "entityId": "third-street",
-            "formInForce": "3rd Street",
-            "origin": "labeled “THIRD” on the 1887 Mills and Wicks Extension map, sheet 1 {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "4th Place",
-            "entityId": "4th-place",
-            "formInForce": "4th Place",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
         "note": null,
-        "attested": true,
+        "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
-        ],
-        "formerCategories": [
-          "number"
+          "unresearched"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
-          },
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
           }
         ],
         "minLng": -118.234,
@@ -6450,51 +6406,85 @@ const STREET_DATA = {
   },
   "Colton Street": {
     "name": "Colton Street",
-    "entityId": "colton-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": {
-      "text": "by 1884",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
-    },
-    "built": "not yet researched",
-    "nameHistory": [
+    "orientation": "EW",
+    "segments": [
       {
-        "from": "by 1884",
-        "until": "?",
-        "name": "State Street",
-        "entityId": "state-colton",
-        "formInForce": "State Street",
-        "how": "origin",
-        "origin": "labeled “State Street” on the 1884 Glassell's Subdivision map {{(source)}} — no namesake documented",
-        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
-      },
-      {
-        "from": "?",
-        "until": null,
+        "label": "Belmont to Toluca (State St)",
         "name": "Colton Street",
         "entityId": "colton-street",
-        "formInForce": "Colton Street",
-        "how": "renaming",
-        "origin": "arrival on this stretch not directly documented",
-        "originLink": null
-      }
-    ],
-    "note": null,
-    "attested": true,
-    "knownFraction": 0,
-    "categories": [
-      "unresearched",
-      "renamed"
-    ],
-    "formerCategories": [
-      "unknown"
-    ],
-    "disputed": false,
-    "sources": [
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": "?",
+            "name": "State Street",
+            "entityId": "state-colton",
+            "formInForce": "State Street",
+            "how": "origin",
+            "origin": "labeled “State Street” on the 1884 Glassell's Subdivision map {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Colton Street",
+            "entityId": "colton-street",
+            "formInForce": "Colton Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          }
+        ],
+        "maxLng": -118.2577,
+        "from": null,
+        "to": "Toluca Street"
+      },
       {
-        "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
-        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        "label": "east of Toluca",
+        "name": "Colton Street",
+        "entityId": "colton-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLng": -118.2577,
+        "from": "Toluca Street",
+        "to": null
       }
     ]
   },
@@ -6919,37 +6909,96 @@ const STREET_DATA = {
   },
   "Court Street": {
     "name": "Court Street",
-    "entityId": "court-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": {
-      "text": "by 1884",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
-    },
-    "built": "not yet researched",
-    "nameHistory": [
+    "orientation": "EW",
+    "segments": [
       {
-        "from": "by 1884",
-        "until": null,
+        "label": "west of Union",
         "name": "Court Street",
         "entityId": "court-street",
-        "formInForce": "Court Street",
-        "how": "origin",
-        "origin": "labeled “Court Street” on the 1884 Glassell's Subdivision map {{(source)}}",
-        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
-      }
-    ],
-    "note": null,
-    "attested": true,
-    "knownFraction": 0.81,
-    "categories": [
-      "unknown"
-    ],
-    "disputed": false,
-    "sources": [
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "maxLng": -118.2638,
+        "from": null,
+        "to": "Union Avenue"
+      },
       {
-        "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
-        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        "label": "Union to Toluca (original Court St)",
+        "name": "Court Street",
+        "entityId": "court-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": null,
+            "name": "Court Street",
+            "entityId": "court-street",
+            "formInForce": "Court Street",
+            "how": "origin",
+            "origin": "labeled “Court Street” on the 1884 Glassell's Subdivision map {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.81,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          }
+        ],
+        "minLng": -118.2638,
+        "maxLng": -118.2571,
+        "from": "Union Avenue",
+        "to": "Toluca Street"
+      },
+      {
+        "label": "east of Toluca",
+        "name": "Court Street",
+        "entityId": "court-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLng": -118.2571,
+        "from": "Toluca Street",
+        "to": null
       }
     ]
   },
@@ -7286,10 +7335,6 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": false,
-        "absentAsOf": {
-          "text": "1884 (Glassell's Subdivision map)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
-        },
         "categories": [
           "unresearched"
         ],
@@ -7611,7 +7656,70 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "part of (Pearl St)",
+        "label": "north of 3rd (Pearl St)",
+        "name": "Figueroa Street",
+        "entityId": "figueroa-gov",
+        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "?",
+            "until": "Feb. 1897",
+            "name": "Pearl Street",
+            "entityId": "pearl",
+            "formInForce": "Pearl Street",
+            "origin": "arrival on this stretch not directly documented — No namesake documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own",
+            "originLink": null
+          },
+          {
+            "from": "Feb. 1897",
+            "until": null,
+            "name": "Figueroa Street",
+            "entityId": "figueroa-gov",
+            "formInForce": "Figueroa Street",
+            "how": "transfer",
+            "origin": "the name arrived from another roadway, renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.73,
+        "categories": [
+          "person",
+          "governor",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Figueroa Street",
+            "url": "https://lastreetnames.com/street/figueroa-street/"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          },
+          {
+            "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
+          },
+          {
+            "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          }
+        ],
+        "minLat": 34.0549,
+        "from": null,
+        "to": "3rd Street"
+      },
+      {
+        "label": "beyond 3rd (Pearl St)",
         "name": "Figueroa Street",
         "entityId": "figueroa-gov",
         "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
@@ -7685,7 +7793,8 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.049,
-        "from": null,
+        "maxLat": 34.0549,
+        "from": "3rd Street",
         "to": {
           "px": [
             455,
@@ -9357,7 +9466,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
         "planned": {
           "text": "by 1849",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -9368,8 +9477,8 @@ const STREET_DATA = {
             "entityId": "hill-street-downtown",
             "formInForce": "Hill Street",
             "how": "origin",
-            "origin": "labeled “HILL ST”, “HILL STREET” and “CALLE LOMA” on the 1849 Hutton / Ord Survey {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+            "origin": "labeled “HILL STREET”, “CALLE LOMA” and “HILL ST” on the 1849 Hutton / Ord Survey {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "note": "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
@@ -9398,18 +9507,65 @@ const STREET_DATA = {
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
+        "minLat": 34.0383,
         "maxLat": 34.0525,
         "from": {
           "px": [
             310,
             1187
+          ]
+        },
+        "to": {
+          "px": [
+            477,
+            1265
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Hill Street",
+        "entityId": "hill-street-downtown",
+        "namedAfter": "{{Bunker Hill}} — how and when this stretch joined Hill Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
+        "attested": false,
+        "categories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Hill Street",
+            "url": "https://lastreetnames.com/street/hill-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Wikipedia: Bunker Hill (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)"
+          }
+        ],
+        "maxLat": 34.0383,
+        "from": {
+          "px": [
+            477,
+            1265
           ]
         },
         "to": null

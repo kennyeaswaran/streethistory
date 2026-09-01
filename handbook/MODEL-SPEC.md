@@ -688,7 +688,21 @@ testifies about every block between here and the far side of the city, and on
 an `absent` row that is a false negative at city scale. Use it only where the
 street genuinely ends inside the polygon; otherwise end at the last crossing
 inside, or give a point. `check-model.js` warns on every `null` end whose
-street leaves the coverage polygon. Written backwards, a row can resolve to an interval of zero length —
+street leaves the coverage polygon.
+
+**And the generator truncates regardless (2026-08-31).** Every row from a
+document with a coverage polygon is clipped to the street's portion inside
+it (edge-aware, with ~30 m of slack for alignment imprecision; an end that
+moves loses its cross-street name, since the claim no longer reaches that
+crossing). So a `null` end that overreaches degrades from a false claim to
+an authoring wart the checker nags about: mr006-138's Court Street row —
+`from: null, to: null` on a street that runs 1.3 km past the sheet — pinned
+the whole street to 1884 until this clip, and now attests exactly the
+stretch the sheet shows. A whole-street `coverageExcept` entry exempts its
+street from footprint semantics entirely; a row lying wholly outside its
+document's coverage is reported as a problem.
+
+Written backwards, a row can resolve to an interval of zero length —
 `from: null, to: X` where X sits at the street's own end covers nothing at
 all — and that used to produce no segment, no history, and no complaint. The
 generator now reports any row whose ends resolve to the same point.
@@ -823,19 +837,26 @@ Mark each cell:
 - **contradicts `E`** — a `state` row for a different entity covers it, or a
   `change` row falls on that date within it.
 
-Then take the **maximal rectangles containing at least two cells attesting `E`
-and no cell contradicting `E`**, and clip each rectangle at every date `t` to
-`planned(R, t)`. Within a surviving rectangle, `E` held that ground over that
-window.
+Then fill **the union of every uncontradicted box** (formulation settled
+2026-08-31): for each set of sightings of `E` on the run, form the product of
+their spatial hull and their temporal hull; a box containing any cell
+contradicting `E` contributes nothing; each surviving box is filled, clipped
+at every date `t` to `planned(R, t)`.
 
-Working in maximal rectangles rather than merging pairs and re-merging is what
-makes cascading safe. Cascading is wanted — three sightings along a street
-should produce one stretch, not two overlapping ones — but pairwise merging
-followed by re-merging can grow a claim past anything a pair justified, and it
-depends on the order the pairs are visited. A contradiction in the middle of
-three sightings should *split* the result, not block it: the rectangle covering
-the first two survives and the third stands alone. Maximal rectangles give that
-for free and are order-independent.
+Hulls *of sightings*, not "maximal uncontradicted rectangles" — an earlier
+draft said the latter, and it licenses more than intended: since unexamined
+ground never contradicts, a maximal rectangle extends past the outermost
+sightings, across every unexamined column to the end of the run and beyond
+the first and last dates. That is extrapolation wearing interpolation's
+clothes. Bounding boxes of sightings interpolate only — the same inference
+as the planned hull, one axis down.
+
+The union over sighting-sets is what makes cascading safe and
+order-independent: three sightings along a street fill one span (their joint
+box); a contradiction inside a box kills that box while every smaller box
+excluding it survives, so a contradiction in the middle of three sightings
+*splits* the result rather than blocking it. A single sighting's box is the
+sighting itself — nothing to fill; a rectangle still needs two corners.
 
 #### What each row kind does to each axis
 
@@ -845,7 +866,7 @@ for free and are order-independent.
 | `state` for another entity | attests | contradicts `E` |
 | `unnamed` | attests | says nothing — does not block |
 | `absent` | denies; cuts the run for hull purposes | nothing to say |
-| `change` | — | pins a transition; contradicts filling across its date |
+| `change` A→B at `t` | — | pins a transition. Settled 2026-08-31: it implies the ground WAS A before `t` and B after — so for a third entity `E ∉ {A, B}` it contradicts at **all** dates, for `E = A` it contradicts after `t`, for `E = B` before `t`. A respelling row (`from === to`, §5.5) contradicts nothing for its own entity — it pins a form boundary inside one lineage |
 | `annotation` | only if the row asserts existence | only if it asserts a name |
 | `vanished` | not on a modern run at all | — |
 
@@ -903,6 +924,13 @@ clothes of testimony.
   common name at opposite ends of a long street would fill everything between.
   A cap is one answer; a *report* — how many segments were produced by bridging,
   and how much of each is grade 3 — is the cheaper one and should come first.
+  Settled in part (2026-08-31): the modern OSM sighting is a legitimate
+  corner. A historical sighting of the still-current name plus OSM fills the
+  span since — the Alameda case, attested as existing for a long time under
+  one name, and that fill is wanted; anywhere the name changed in between, a
+  `state` or `change` row contradicts and splits. The existence clip keeps
+  the fill off ground not yet planned at each date, and the bridging report
+  remains the guard on what's left.
 - **`exhaustive-in-scope` documents.** Ordinance 4093 claims to list every
   renaming on its date. That should let a rectangle span it as a strong grade 2
   rather than merely uncontradicted, and the rule does not yet say so.

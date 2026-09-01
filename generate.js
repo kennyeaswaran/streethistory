@@ -275,6 +275,43 @@ function addRow(streetName, rec) {
 }
 const problems = [];
 
+// ---------------------------------------------------------------------------
+// Truncate every row to its document's footprint (§4.4/§5.4, tightened
+// 2026-08-31): a row may not claim ground the sheet never showed, however its
+// ends are written — a `null` end (the street's own end) on a street that
+// runs past the polygon was quietly claiming blocks the document has no
+// testimony about (mr006-138's Court Street row pinned 1.3 km off one
+// sheet-width of ink). check-model's warning on such ends stays — the
+// authored file should still say what it means — but the generated claim is
+// clipped regardless. Edge-aware via DocGeom.segmentsInBounds (vertex-only
+// tests lose the ground between the last inside vertex and the boundary).
+const CLIP_BUF = 3e-4; // ~30 m of slack for alignment imprecision
+const clipCache = new Map();
+function coverageScalarHull(doc, streetName, street) {
+  if (!doc.coverage) return null;
+  // coverageExcept: a whole street ("Name") or one stretch ({street, from,
+  // to}). A whole-street disclaimer means the polygon overshoots onto ground
+  // the sheet does not actually show — no footprint semantics for that
+  // street at all. (A stretch-form disclaimer narrows the sweep gate, not the
+  // hull; rows on such streets are still clipped to the polygon.)
+  if ((doc.coverageExcept || []).some(x => typeof x === "string" && normalizeName(x) === streetName))
+    return null;
+  const key = doc.id + "|" + streetName;
+  if (clipCache.has(key)) return clipCache.get(key);
+  let ringLL = doc.coverage;
+  if (DocGeom.ringIsPixels(ringLL)) {
+    if (!doc.alignment) { clipCache.set(key, null); return null; } // checker's problem
+    try { ringLL = DocGeom.coverageToWorld(DocGeom.fitAlignment(doc.alignment.points), ringLL); }
+    catch (e) { clipCache.set(key, null); return null; }
+  }
+  const inb = DocGeom.segmentsInBounds(
+    street.ways.map(w => ({ name: streetName, geometry: w.geometry })), ringLL);
+  const ss = inb.flatMap(r => r.runs.flat()).map(p => scalarOf(street, p));
+  const hull = ss.length ? [Math.min(...ss) - CLIP_BUF, Math.max(...ss) + CLIP_BUF] : [];
+  clipCache.set(key, hull);
+  return hull;
+}
+
 for (const doc of nonOsmDocs) {
   if (doc.sweptFully === false) report.partialDocs.push(`${doc.id}: sweptFor = ${JSON.stringify(doc.sweptFor)}`);
   for (const row of doc.rows) {
@@ -331,7 +368,25 @@ for (const doc of nonOsmDocs) {
       return x.scalar;
     });
     if (iv.includes(null)) continue;
-    const [a, b] = [Math.min(iv[0], iv[1]), Math.max(iv[0], iv[1])];
+    let [a, b] = [Math.min(iv[0], iv[1]), Math.max(iv[0], iv[1])];
+    let [endA, endB] = [iv[0] <= iv[1] ? ends[0] : ends[1],
+                        iv[0] <= iv[1] ? ends[1] : ends[0]];
+    // Clip to the document's footprint. An end that moves loses its
+    // cross-street name — the claim no longer reaches that crossing.
+    const hull = coverageScalarHull(doc, row.street, street);
+    if (hull) {
+      if (!hull.length) {
+        problems.push(`${doc.id}: row on ${row.street} — the street does not enter this document's coverage at all`);
+        continue;
+      }
+      const [lo, hi] = hull;
+      if (b <= lo || a >= hi) {
+        problems.push(`${doc.id}: row on ${row.street} (${asWrittenLead(row.asWritten) || row.kind}) lies entirely outside the document's coverage footprint`);
+        continue;
+      }
+      if (a < lo - 4e-5) { a = lo; endA = null; }
+      if (b > hi + 4e-5) { b = hi; endB = null; }
+    }
     // Both ends landing in the same place means the row covers nothing, and it
     // used to produce NO segment and NO complaint — the street simply came out
     // with no history and the build said "0 row problems". The usual cause is
@@ -348,8 +403,7 @@ for (const doc of nonOsmDocs) {
           : "the two cross streets meet this one at the same place."}`);
       continue;
     }
-    const base = { doc, a, b, crossA: iv[0] <= iv[1] ? ends[0] : ends[1],
-                   crossB: iv[0] <= iv[1] ? ends[1] : ends[0], basis: row.basis || null };
+    const base = { doc, a, b, crossA: endA, crossB: endB, basis: row.basis || null };
     if (row.kind === "state") {
       const ent = resolveEntity(row.name);
       if (!ent) { problems.push(`${doc.id}: unknown entity ${row.name}`); continue; }
