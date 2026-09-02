@@ -508,11 +508,21 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     await page.evaluate(() => hidePop());
     // A street with more than one row, so the "also on this street" list has
     // something in it — that list is what replaced showing every row at once.
+    // Needs a street with more than one row AND a `state` row drawn on it —
+    // the click below aims at a state feature, and a street whose rows are all
+    // `absent` has nothing to hit.
     const multi = await page.evaluate(() => {
-      const s = lastModel.streets.find(x => x.rows.length > 1);
+      const s = lastModel.streets.find(x => x.rows.length > 1 &&
+        x.rows.some(r => r.kind === "state") &&
+        reviewFeatures.some(f => f.street === x.name && f.row && f.row.kind === "state"));
       return s ? s.name : null;
     });
     ok("a street with several rows exists to test on", !!multi, String(multi));
+    // Bring it on screen before aiming: the clearest point on a feature is
+    // often outside the window, and a click at y=987 in a 950-high viewport is
+    // not a click at all.
+    await page.evaluate(n => centreOn(f => f.row && f.row.kind === "state" && f.street === n), multi);
+    await page.waitForTimeout(200);
     const at = await page.evaluate(n => clearestPointOn(
       f => f.row && f.row.kind === "state" && f.street === n), multi);
     await page.mouse.click(at[0], at[1]);

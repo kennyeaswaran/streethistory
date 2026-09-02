@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-01
+// Built: 2026-09-02
 const NEIGHBORHOODS = [
   {
     "id": "dtla",
@@ -134,21 +134,25 @@ const SIMILAR_PROJECTS = [
 const STREET_DATA = {
   "10th Street": {
     "name": "10th Street",
-    "entityId": "10th-street",
-    "namedAfter": null,
+    "entityId": "tenth-street",
+    "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 10th Street is not yet researched",
     "namedAfterLink": null,
     "planned": "not yet researched",
     "built": "not yet researched",
-    "note": null,
+    "note": "Renamed Olympic Boulevard in 1935, for the 1932 Games — the request went in in July 1929, and that they had been the tenth Olympiad seems to have gone unremarked.",
     "attested": false,
     "categories": [
-      "unresearched"
+      "number"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "L.A. Street Names: 1st Street (on the numbering system)",
+        "url": "https://lastreetnames.com/street/0001st-street/"
+      },
+      {
+        "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
       }
     ]
   },
@@ -179,21 +183,25 @@ const STREET_DATA = {
       {
         "label": "west of L. A. Live Way",
         "name": "11th Street",
-        "entityId": "11th-street",
-        "namedAfter": null,
+        "entityId": "eleventh-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 11th Street is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "number"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           }
         ],
         "maxLng": -118.27,
@@ -202,10 +210,72 @@ const STREET_DATA = {
         "gapAfter": true
       },
       {
-        "label": "part of (discontinuous)",
+        "label": "beyond Figueroa (original 11th St) (discontinuous)",
         "name": "11th Street",
-        "entityId": "11th-street",
-        "namedAfter": null,
+        "entityId": "eleventh-street",
+        "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1875",
+            "until": null,
+            "name": "11th Street",
+            "entityId": "eleventh-street",
+            "formInForce": "11th Street",
+            "how": "origin",
+            "origin": "labeled “ELEVENTH STREET” on the 1875 Blocks 73 & 72 of Ord's Survey {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.86,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-033.pdf"
+          }
+        ],
+        "minLng": -118.27,
+        "maxLng": -118.263,
+        "from": "Figueroa Street",
+        "to": {
+          "px": [
+            1006,
+            1254
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "11th Street",
+        "entityId": "eleventh-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 11th Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1849",
@@ -216,20 +286,28 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched"
+          "number"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
           {
             "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLng": -118.27,
+        "minLng": -118.263,
         "from": {
           "px": [
-            630,
-            885
+            1006,
+            1254
           ]
         },
         "to": null
@@ -2742,7 +2820,7 @@ const STREET_DATA = {
         "to": "Alameda Street"
       },
       {
-        "label": "Alameda to ?",
+        "label": "beyond Alameda",
         "name": "6th Street",
         "entityId": "sixth-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
@@ -2766,8 +2844,94 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2384,
-        "maxLng": -118.2281,
+        "maxLng": -118.2328,
         "from": "Alameda Street",
+        "to": {
+          "px": [
+            156,
+            877
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "6th Street",
+        "entityId": "sixth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.8,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan of the Goodwin Tract (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          }
+        ],
+        "minLng": -118.2328,
+        "maxLng": -118.2288,
+        "from": {
+          "px": [
+            156,
+            877
+          ]
+        },
+        "to": {
+          "px": [
+            929,
+            921
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "6th Street",
+        "entityId": "sixth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.2288,
+        "maxLng": -118.2281,
+        "from": {
+          "px": [
+            929,
+            921
+          ]
+        },
         "to": null,
         "gapAfter": true
       },
@@ -3282,7 +3446,7 @@ const STREET_DATA = {
             "entityId": "ninth-street",
             "formInForce": "9th Street",
             "how": "origin",
-            "origin": "labeled “CALLE 9a” on the 1849 Hutton / Ord Survey {{(source)}}",
+            "origin": "labeled “CALLE 9a” and “NINTH STREET” on the 1849 Hutton / Ord Survey and the 1893 Hammel and Denker Tract {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -3309,6 +3473,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
         "maxLng": -118.2537,
@@ -3317,6 +3485,65 @@ const STREET_DATA = {
           "px": [
             855,
             1517
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "9th Street",
+        "entityId": "ninth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1893",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1893",
+            "until": null,
+            "name": "9th Street",
+            "entityId": "ninth-street",
+            "formInForce": "9th Street",
+            "how": "extension",
+            "origin": "labeled “NINTH STREET” on the 1893 Hammel and Denker Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.76,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          }
+        ],
+        "minLng": -118.2537,
+        "maxLng": -118.2529,
+        "from": {
+          "px": [
+            855,
+            1517
+          ]
+        },
+        "to": {
+          "px": [
+            1045,
+            412
           ]
         }
       },
@@ -3344,11 +3571,11 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           }
         ],
-        "minLng": -118.2537,
+        "minLng": -118.2529,
         "from": {
           "px": [
-            855,
-            1517
+            1045,
+            412
           ]
         },
         "to": null
@@ -7572,18 +7799,52 @@ const STREET_DATA = {
     "entityId": "emerald-drive",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1909",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+    },
     "built": "not yet researched",
+    "nameHistory": [
+      {
+        "from": "by 1909",
+        "until": "?",
+        "name": "Farmer Street",
+        "entityId": "farmer",
+        "formInForce": "Farmer Street",
+        "how": "origin",
+        "origin": "labeled “FARMER ST.” on the 1909 Crownwood {{(source)}} — lettered on the 1909 Crownwood sheet along ground that is now Emerald Drive. Nothing found says who or what Farmer was",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+      },
+      {
+        "from": "?",
+        "until": null,
+        "name": "Emerald Drive",
+        "entityId": "emerald-drive",
+        "formInForce": "Emerald Drive",
+        "how": "renaming",
+        "origin": "arrival on this stretch not directly documented",
+        "originLink": null
+      }
+    ],
     "note": null,
-    "attested": false,
+    "attested": true,
+    "knownFraction": 0,
     "categories": [
-      "unresearched"
+      "unresearched",
+      "renamed"
+    ],
+    "formerCategories": [
+      "unknown"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+      },
+      {
+        "title": "Recorded map: “Crownwood” (Witmer’s Subdivision), M.B. 15-166 (surveyed Nov. 1909)",
+        "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
       }
     ]
   },
@@ -7830,7 +8091,7 @@ const STREET_DATA = {
             "name": "Pearl Street",
             "entityId": "pearl",
             "formInForce": "Pearl Street",
-            "how": "renaming",
+            "how": "origin",
             "origin": "renamed per the Feb. 1874 council action (Herald report) {{(source)}} — No namesake documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own",
             "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
           },
@@ -7876,6 +8137,10 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
           },
           {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
+          },
+          {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           },
@@ -7905,7 +8170,10 @@ const STREET_DATA = {
         "entityId": "figueroa-gov",
         "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+        },
         "built": "not yet researched",
         "nameHistory": [
           {
@@ -7961,6 +8229,10 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
           },
           {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           },
@@ -7980,7 +8252,58 @@ const STREET_DATA = {
         "to": "Pico Boulevard"
       },
       {
-        "label": "south of Pico",
+        "label": "beyond Pico (original Figueroa St)",
+        "name": "Figueroa Street",
+        "entityId": "figueroa-gov",
+        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": null,
+            "name": "Figueroa Street",
+            "entityId": "figueroa-gov",
+            "formInForce": "Figueroa Street",
+            "how": "origin",
+            "origin": "labeled “Figueroa St” on the 1885 Cameron Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.8,
+        "categories": [
+          "person",
+          "governor"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Figueroa Street",
+            "url": "https://lastreetnames.com/street/figueroa-street/"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          }
+        ],
+        "minLat": 34.0393,
+        "maxLat": 34.0406,
+        "from": "Pico Boulevard",
+        "to": {
+          "px": [
+            311,
+            850
+          ]
+        }
+      },
+      {
+        "label": "part of",
         "name": "Figueroa Street",
         "entityId": "figueroa-gov",
         "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835 — how and when this stretch joined Figueroa Street is not yet researched",
@@ -8000,8 +8323,13 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/figueroa-street/"
           }
         ],
-        "maxLat": 34.0406,
-        "from": "Pico Boulevard",
+        "maxLat": 34.0393,
+        "from": {
+          "px": [
+            311,
+            850
+          ]
+        },
         "to": null
       }
     ]
@@ -8105,7 +8433,7 @@ const STREET_DATA = {
             "entityId": "flower",
             "formInForce": "Flower Street",
             "how": "origin",
-            "origin": "labeled “CALLE DE LAS FLORES” and “FLOWER” on the 1849 Hutton / Ord Survey {{(source)}}",
+            "origin": "labeled “CALLE DE LAS FLORES”, “FLOWER” and “FLOWER STREET” on the 1849 Hutton / Ord Survey and the 1875 Blocks 73 & 72 of Ord's Survey {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -8132,6 +8460,14 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-033.pdf"
           }
         ],
         "minLat": 34.0411,
@@ -8172,11 +8508,105 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
+        "minLat": 34.0405,
         "maxLat": 34.0411,
         "from": {
           "px": [
             470,
             962
+          ]
+        },
+        "to": {
+          "px": [
+            591,
+            373
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Flower Street",
+        "entityId": "flower",
+        "namedAfter": "Supposedly the blossom-covered hills behind it — how and when this stretch joined Flower Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+        },
+        "built": "not yet researched",
+        "note": "Lettered “Calle de las Flores” on the 1849 survey. The hillside-blossom explanation is the one always given and nothing documents it.",
+        "attested": true,
+        "knownFraction": 0.8,
+        "categories": [
+          "nature"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Flower Street",
+            "url": "https://lastreetnames.com/street/flower-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          }
+        ],
+        "minLat": 34.0387,
+        "maxLat": 34.0405,
+        "from": {
+          "px": [
+            591,
+            373
+          ]
+        },
+        "to": {
+          "px": [
+            576,
+            845
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Flower Street",
+        "entityId": "flower",
+        "namedAfter": "Supposedly the blossom-covered hills behind it — how and when this stretch joined Flower Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Lettered “Calle de las Flores” on the 1849 survey. The hillside-blossom explanation is the one always given and nothing documents it.",
+        "attested": false,
+        "categories": [
+          "nature"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Flower Street",
+            "url": "https://lastreetnames.com/street/flower-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "maxLat": 34.0387,
+        "from": {
+          "px": [
+            576,
+            845
           ]
         },
         "to": null
@@ -8926,13 +9356,94 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
           }
         ],
-        "minLat": 34.0397,
+        "minLat": 34.0394,
         "maxLat": 34.0487,
         "from": "6th Street",
         "to": {
           "px": [
-            474,
-            1115
+            1141,
+            369
+          ]
+        }
+      },
+      {
+        "label": "part of (Charity St)",
+        "name": "Grand Avenue",
+        "entityId": "grand-avenue",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "?",
+            "name": "Charity Street",
+            "entityId": "charity",
+            "formInForce": "Charity Street",
+            "how": "extension",
+            "origin": "labeled “Charity St” on the 1885 Cameron Tract {{(source)}} — The virtue",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Grand Avenue",
+            "entityId": "grand-avenue",
+            "formInForce": "Grand Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "aspiration"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Grand Avenue",
+            "url": "https://lastreetnames.com/street/grand-avenue/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Wikipedia: Grand Avenue (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
+          }
+        ],
+        "minLat": 34.0376,
+        "maxLat": 34.0394,
+        "from": {
+          "px": [
+            1141,
+            369
+          ]
+        },
+        "to": {
+          "px": [
+            1150,
+            836
           ]
         }
       },
@@ -8956,11 +9467,11 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "maxLat": 34.0397,
+        "maxLat": 34.0376,
         "from": {
           "px": [
-            474,
-            1115
+            1150,
+            836
           ]
         },
         "to": null
@@ -9727,7 +10238,7 @@ const STREET_DATA = {
             "entityId": "hope",
             "formInForce": "Hope Street",
             "how": "origin",
-            "origin": "labeled “HOPE ST.” and “CALLE DE LAS ESPERANZAS” on the 1849 Hutton / Ord Survey {{(source)}}",
+            "origin": "labeled “HOPE ST.”, “CALLE DE LAS ESPERANZAS” and “HOPE STREET” on the 1849 Hutton / Ord Survey and the 1875 Blocks 73 & 72 of Ord's Survey {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -9756,6 +10267,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-033.pdf"
           }
         ],
         "minLat": 34.0404,
@@ -9798,11 +10313,109 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
+        "minLat": 34.0399,
         "maxLat": 34.0404,
         "from": {
           "px": [
             472,
             1039
+          ]
+        },
+        "to": {
+          "px": [
+            872,
+            371
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Hope Street",
+        "entityId": "hope",
+        "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+        },
+        "built": "not yet researched",
+        "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
+        "attested": true,
+        "knownFraction": 0.8,
+        "categories": [
+          "aspiration",
+          "person",
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Hope Street",
+            "url": "https://lastreetnames.com/street/hope-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          }
+        ],
+        "minLat": 34.0382,
+        "maxLat": 34.0399,
+        "from": {
+          "px": [
+            872,
+            371
+          ]
+        },
+        "to": {
+          "px": [
+            848,
+            841
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Hope Street",
+        "entityId": "hope",
+        "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
+        "attested": false,
+        "categories": [
+          "aspiration",
+          "person",
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Hope Street",
+            "url": "https://lastreetnames.com/street/hope-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "maxLat": 34.0382,
+        "from": {
+          "px": [
+            848,
+            841
           ]
         },
         "to": null
@@ -9855,25 +10468,104 @@ const STREET_DATA = {
   },
   "Imperial Street": {
     "name": "Imperial Street",
-    "entityId": "imperial-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "absentAsOf": {
-      "text": "1849 (Hutton / Ord Survey)",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
-    },
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of (Palm St)",
+        "name": "Imperial Street",
+        "entityId": "imperial-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": "?",
+            "name": "Palm Street",
+            "entityId": "palm-st-arts-district",
+            "formInForce": "Palm Street",
+            "how": "origin",
+            "origin": "labeled “Palm St” on the 1886 Goodwin Tract {{(source)}} — one of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Imperial Street. When it became Imperial Street, and why, is not researched — and it has nothing to do with Imperial Highway, named far to the south in 1929–31",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Imperial Street",
+            "entityId": "imperial-street",
+            "formInForce": "Imperial Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "nature",
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Plan of the Goodwin Tract (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          },
+          {
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          }
+        ],
+        "minLat": 34.0368,
+        "from": null,
+        "to": {
+          "px": [
+            378,
+            1248
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Imperial Street",
+        "entityId": "imperial-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "maxLat": 34.0368,
+        "from": {
+          "px": [
+            378,
+            1248
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -10531,33 +11223,156 @@ const STREET_DATA = {
   },
   "Los Angeles Street": {
     "name": "Los Angeles Street",
-    "entityId": "los-angeles-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": {
-      "text": "by 1849",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
-    },
-    "built": "not yet researched",
-    "note": null,
-    "attested": true,
-    "absentAsOf": {
-      "text": "1849 (Hutton / Ord Survey)",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
-    },
-    "knownFraction": 0,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "Plan de la Ciudad de Los Angeles",
-        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        "label": "part of",
+        "name": "Los Angeles Street",
+        "entityId": "los-angeles-street",
+        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "planned": {
+          "text": "by 1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
+        "built": "not yet researched",
+        "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
+        "categories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Los Angeles Street",
+            "url": "https://lastreetnames.com/street/los-angeles-street/"
+          },
+          {
+            "title": "Wikipedia: Los Angeles Street",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          }
+        ],
+        "minLat": 34.041,
+        "from": null,
+        "to": {
+          "px": [
+            536,
+            284
+          ]
+        }
       },
       {
-        "title": "Plan de la Ciudad de Los Angeles",
-        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        "label": "part of (original Los Angeles St)",
+        "name": "Los Angeles Street",
+        "entityId": "los-angeles-street",
+        "namedAfter": "The city itself — ultimately {{Nuestra Señora de los Ángeles de Porciúncula}}, the 1769 Spanish naming of the river",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "planned": {
+          "text": "by 1893",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1893",
+            "until": null,
+            "name": "Los Angeles Street",
+            "entityId": "los-angeles-street",
+            "formInForce": "Los Angeles Street",
+            "how": "origin",
+            "origin": "labeled “LOS ANGELES STREET” on the 1893 Hammel and Denker Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          }
+        ],
+        "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+        },
+        "knownFraction": 0.76,
+        "categories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Los Angeles Street",
+            "url": "https://lastreetnames.com/street/los-angeles-street/"
+          },
+          {
+            "title": "Wikipedia: Los Angeles Street",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          }
+        ],
+        "minLat": 34.0391,
+        "maxLat": 34.041,
+        "from": {
+          "px": [
+            536,
+            284
+          ]
+        },
+        "to": {
+          "px": [
+            487,
+            1347
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Los Angeles Street",
+        "entityId": "los-angeles-street",
+        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+        },
+        "categories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Los Angeles Street",
+            "url": "https://lastreetnames.com/street/los-angeles-street/"
+          },
+          {
+            "title": "Wikipedia: Los Angeles Street",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          }
+        ],
+        "maxLat": 34.0391,
+        "from": {
+          "px": [
+            487,
+            1347
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -10961,7 +11776,7 @@ const STREET_DATA = {
         "to": "7th Street"
       },
       {
-        "label": "south of 7th",
+        "label": "7th to 9th",
         "name": "Main Street",
         "entityId": "main-street-dtla",
         "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
@@ -10996,8 +11811,108 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           }
         ],
+        "minLat": 34.0416,
         "maxLat": 34.0439,
         "from": "7th Street",
+        "to": "9th Street"
+      },
+      {
+        "label": "beyond 9th",
+        "name": "Main Street",
+        "entityId": "main-street-dtla",
+        "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1893",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+        },
+        "built": "not yet researched",
+        "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+        },
+        "knownFraction": 0.76,
+        "categories": [
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Main Street",
+            "url": "https://lastreetnames.com/street/main-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Wikipedia: Main Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          }
+        ],
+        "minLat": 34.0399,
+        "maxLat": 34.0416,
+        "from": "9th Street",
+        "to": {
+          "px": [
+            100,
+            1386
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Main Street",
+        "entityId": "main-street-dtla",
+        "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+        },
+        "categories": [
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Main Street",
+            "url": "https://lastreetnames.com/street/main-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Wikipedia: Main Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          }
+        ],
+        "maxLat": 34.0399,
+        "from": {
+          "px": [
+            100,
+            1386
+          ]
+        },
         "to": null
       }
     ]
@@ -11167,25 +12082,147 @@ const STREET_DATA = {
   },
   "Mateo Street": {
     "name": "Mateo Street",
-    "entityId": "mateo-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "absentAsOf": {
-      "text": "1849 (Hutton / Ord Survey)",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
-    },
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Mateo Street",
+        "entityId": "mateo-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLat": 34.0393,
+        "from": null,
+        "to": {
+          "px": [
+            188,
+            648
+          ]
+        }
+      },
+      {
+        "label": "part of (Spruce St)",
+        "name": "Mateo Street",
+        "entityId": "mateo-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": "?",
+            "name": "Spruce Street",
+            "entityId": "spruce",
+            "formInForce": "Spruce Street",
+            "how": "origin",
+            "origin": "labeled “Spruce St” on the 1886 Goodwin Tract {{(source)}} — one of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Mateo Street",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Mateo Street",
+            "entityId": "mateo-street",
+            "formInForce": "Mateo Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "nature",
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Plan of the Goodwin Tract (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          },
+          {
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          }
+        ],
+        "minLat": 34.0369,
+        "maxLat": 34.0393,
+        "from": {
+          "px": [
+            188,
+            648
+          ]
+        },
+        "to": {
+          "px": [
+            168,
+            1199
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Mateo Street",
+        "entityId": "mateo-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "maxLat": 34.0369,
+        "from": {
+          "px": [
+            168,
+            1199
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -11287,21 +12324,91 @@ const STREET_DATA = {
   },
   "Mesquit Street": {
     "name": "Mesquit Street",
-    "entityId": "mesquit-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "beyond Santa Fe (original Mesquit St)",
+        "name": "Mesquit Street",
+        "entityId": "mesquit",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": null,
+            "name": "Mesquit Street",
+            "entityId": "mesquit",
+            "formInForce": "Mesquit Street",
+            "how": "origin",
+            "origin": "labeled “Mesquit St” on the 1886 Goodwin Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          }
+        ],
+        "note": "Presumably the mesquite, alongside the Goodwin Tract's other plant names, but nothing documents it. The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
+        "attested": true,
+        "knownFraction": 0.8,
+        "categories": [
+          "nature",
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          },
+          {
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          }
+        ],
+        "minLat": 34.0366,
+        "from": null,
+        "to": {
+          "px": [
+            789,
+            1344
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Mesquit Street",
+        "entityId": "mesquit",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Presumably the mesquite, alongside the Goodwin Tract's other plant names, but nothing documents it. The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
+        "attested": false,
+        "categories": [
+          "nature",
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          },
+          {
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          }
+        ],
+        "maxLat": 34.0366,
+        "from": {
+          "px": [
+            789,
+            1344
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -12104,7 +13211,117 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "west of San Julian",
+        "label": "part of",
+        "name": "Olympic Boulevard",
+        "entityId": "olympic-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "maxLng": -118.2643,
+        "from": null,
+        "to": {
+          "px": [
+            -25,
+            316
+          ]
+        }
+      },
+      {
+        "label": "part of (10th St)",
+        "name": "Olympic Boulevard",
+        "entityId": "olympic-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1875",
+            "until": "?",
+            "name": "10th Street",
+            "entityId": "tenth-street",
+            "formInForce": "10th Street",
+            "how": "origin",
+            "origin": "labeled “TENTH STREET” on the 1875 Blocks 73 & 72 of Ord's Survey {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Olympic Boulevard",
+            "entityId": "olympic-boulevard",
+            "formInForce": "Olympic Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-033.pdf"
+          },
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          }
+        ],
+        "minLng": -118.2643,
+        "maxLng": -118.2616,
+        "from": {
+          "px": [
+            -25,
+            316
+          ]
+        },
+        "to": {
+          "px": [
+            1020,
+            151
+          ]
+        }
+      },
+      {
+        "label": "part of",
         "name": "Olympic Boulevard",
         "entityId": "olympic-boulevard",
         "namedAfter": null,
@@ -12127,8 +13344,125 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
+        "minLng": -118.2616,
+        "maxLng": -118.257,
+        "from": {
+          "px": [
+            1020,
+            151
+          ]
+        },
+        "to": {
+          "px": [
+            -8,
+            1088
+          ]
+        }
+      },
+      {
+        "label": "part of (10th St)",
+        "name": "Olympic Boulevard",
+        "entityId": "olympic-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1893",
+            "until": "?",
+            "name": "10th Street",
+            "entityId": "tenth-street",
+            "formInForce": "10th Street",
+            "origin": "labeled “TENTH STREET” on the 1893 Hammel and Denker Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Olympic Boulevard",
+            "entityId": "olympic-boulevard",
+            "formInForce": "Olympic Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          },
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          }
+        ],
+        "minLng": -118.257,
+        "maxLng": -118.2543,
+        "from": {
+          "px": [
+            -8,
+            1088
+          ]
+        },
+        "to": {
+          "px": [
+            1077,
+            997
+          ]
+        }
+      },
+      {
+        "label": "beyond San Julian",
+        "name": "Olympic Boulevard",
+        "entityId": "olympic-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLng": -118.2543,
         "maxLng": -118.2522,
-        "from": null,
+        "from": {
+          "px": [
+            1077,
+            997
+          ]
+        },
         "to": "San Julian Street",
         "gapAfter": true
       },
@@ -12539,21 +13873,139 @@ const STREET_DATA = {
   },
   "Pico Boulevard": {
     "name": "Pico Boulevard",
-    "entityId": "pico-boulevard",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "EW",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Pico Boulevard",
+        "entityId": "pico-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "maxLng": -118.2685,
+        "from": null,
+        "to": {
+          "px": [
+            211,
+            498
+          ]
+        }
+      },
+      {
+        "label": "part of (Pico St)",
+        "name": "Pico Boulevard",
+        "entityId": "pico-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "?",
+            "name": "Pico Street",
+            "entityId": "pico",
+            "formInForce": "Pico Street",
+            "how": "origin",
+            "origin": "labeled “Pico Street” on the 1885 Cameron Tract {{(source)}} — Pío de Jesús Pico (1801–1894), the last Mexican governor of Alta California and a major landowner",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Pico Boulevard",
+            "entityId": "pico-boulevard",
+            "formInForce": "Pico Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person",
+          "governor"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Pico Boulevard",
+            "url": "https://lastreetnames.com/street/pico-boulevard/"
+          },
+          {
+            "title": "Wikipedia: Pío Pico",
+            "url": "https://en.wikipedia.org/wiki/Pio_Pico"
+          }
+        ],
+        "minLng": -118.2685,
+        "maxLng": -118.2641,
+        "from": {
+          "px": [
+            211,
+            498
+          ]
+        },
+        "to": {
+          "px": [
+            1198,
+            497
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Pico Boulevard",
+        "entityId": "pico-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLng": -118.2641,
+        "from": {
+          "px": [
+            1198,
+            497
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -13129,25 +14581,143 @@ const STREET_DATA = {
   },
   "Santa Fe Avenue": {
     "name": "Santa Fe Avenue",
-    "entityId": "santa-fe-avenue",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "absentAsOf": {
-      "text": "1849 (Hutton / Ord Survey)",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
-    },
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Santa Fe Avenue",
+        "entityId": "santa-fe-avenue",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLat": 34.0395,
+        "from": null,
+        "to": {
+          "px": [
+            607,
+            652
+          ]
+        }
+      },
+      {
+        "label": "part of (Tulip St)",
+        "name": "Santa Fe Avenue",
+        "entityId": "santa-fe-avenue",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": "?",
+            "name": "Tulip Street",
+            "entityId": "tulip",
+            "formInForce": "Tulip Street",
+            "how": "origin",
+            "origin": "labeled “Tulip St” on the 1886 Goodwin Tract {{(source)}} — one of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Santa Fe Avenue. It lasted a matter of months: the Atchison, Topeka and Santa Fe reached Los Angeles in May 1887 and the street took the railway's name",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Santa Fe Avenue",
+            "entityId": "santa-fe-avenue",
+            "formInForce": "Santa Fe Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "nature",
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Plan of the Goodwin Tract (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          },
+          {
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          }
+        ],
+        "minLat": 34.0367,
+        "maxLat": 34.0395,
+        "from": {
+          "px": [
+            607,
+            652
+          ]
+        },
+        "to": {
+          "px": [
+            584,
+            1296
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Santa Fe Avenue",
+        "entityId": "santa-fe-avenue",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "maxLat": 34.0367,
+        "from": {
+          "px": [
+            584,
+            1296
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -13176,18 +14746,22 @@ const STREET_DATA = {
     "entityId": "santee-alley",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1893",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+    },
     "built": "not yet researched",
     "note": null,
-    "attested": false,
+    "attested": true,
+    "knownFraction": 0,
     "categories": [
       "unresearched"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
       }
     ]
   },
@@ -13213,21 +14787,135 @@ const STREET_DATA = {
   },
   "Santee Street": {
     "name": "Santee Street",
-    "entityId": "santee-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "NS",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Santee Street",
+        "entityId": "santee-street",
+        "namedAfter": "{{Milton Santee}} (1835–1901), city councilman 1884–1886, later a mining and railroad investor — how and when this stretch joined Santee Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Milton_Santee",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Santee later moved to San Diego County, where in 1893 his second wife had the town of Cowleston renamed Santee in his honour — a name it still keeps.",
+        "attested": false,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Santee Street",
+            "url": "https://lastreetnames.com/street/santee-street/"
+          },
+          {
+            "title": "Wikipedia: Milton Santee",
+            "url": "https://en.wikipedia.org/wiki/Milton_Santee"
+          }
+        ],
+        "minLat": 34.0403,
+        "from": null,
+        "to": {
+          "px": [
+            850,
+            283
+          ]
+        }
+      },
+      {
+        "label": "part of (original Santee St)",
+        "name": "Santee Street",
+        "entityId": "santee-street",
+        "namedAfter": "{{Milton Santee}} (1835–1901), city councilman 1884–1886, later a mining and railroad investor",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Milton_Santee",
+        "planned": {
+          "text": "by 1893",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1893",
+            "until": null,
+            "name": "Santee Street",
+            "entityId": "santee-street",
+            "formInForce": "Santee Street",
+            "how": "origin",
+            "origin": "labeled “SANTEE STREET” on the 1893 Hammel and Denker Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          }
+        ],
+        "note": "Santee later moved to San Diego County, where in 1893 his second wife had the town of Cowleston renamed Santee in his honour — a name it still keeps.",
+        "attested": true,
+        "knownFraction": 0.76,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Santee Street",
+            "url": "https://lastreetnames.com/street/santee-street/"
+          },
+          {
+            "title": "Wikipedia: Milton Santee",
+            "url": "https://en.wikipedia.org/wiki/Milton_Santee"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          }
+        ],
+        "minLat": 34.0384,
+        "maxLat": 34.0403,
+        "from": {
+          "px": [
+            850,
+            283
+          ]
+        },
+        "to": {
+          "px": [
+            850,
+            1310
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Santee Street",
+        "entityId": "santee-street",
+        "namedAfter": "{{Milton Santee}} (1835–1901), city councilman 1884–1886, later a mining and railroad investor — how and when this stretch joined Santee Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Milton_Santee",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Santee later moved to San Diego County, where in 1893 his second wife had the town of Cowleston renamed Santee in his honour — a name it still keeps.",
+        "attested": false,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Santee Street",
+            "url": "https://lastreetnames.com/street/santee-street/"
+          },
+          {
+            "title": "Wikipedia: Milton Santee",
+            "url": "https://en.wikipedia.org/wiki/Milton_Santee"
+          }
+        ],
+        "maxLat": 34.0384,
+        "from": {
+          "px": [
+            850,
+            1310
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -13478,7 +15166,7 @@ const STREET_DATA = {
         "to": "1st Street"
       },
       {
-        "label": "beyond 1st (original Spring St)",
+        "label": "1st to 9th (original Spring St)",
         "name": "Spring Street",
         "entityId": "spring",
         "namedAfter": "Possibly {{Trinidad Ortega}} (1832–1903), who was nicknamed “Primavera”",
@@ -14488,57 +16176,78 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "part of",
+        "label": "Mateo to Santa Fe (original Willow St)",
         "name": "Willow Street",
-        "entityId": "willow-street",
+        "entityId": "willow",
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+        },
         "built": "not yet researched",
-        "note": null,
-        "attested": false,
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": null,
+            "name": "Willow Street",
+            "entityId": "willow",
+            "formInForce": "Willow Street",
+            "how": "origin",
+            "origin": "labeled “Willow St” on the 1886 Goodwin Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          }
+        ],
+        "note": "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along Willow Street, which keeps the name.",
+        "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "knownFraction": 0.8,
         "categories": [
-          "unresearched"
+          "nature",
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          },
+          {
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
           }
         ],
         "maxLng": -118.2306,
         "from": null,
-        "to": {
-          "px": [
-            602,
-            1270
-          ]
-        },
+        "to": "Santa Fe Avenue",
         "gapAfter": true
       },
       {
         "label": "east of Mission Rd (discontinuous)",
         "name": "Willow Street",
-        "entityId": "willow-street",
+        "entityId": "willow",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along Willow Street, which keeps the name.",
         "attested": false,
         "categories": [
-          "unresearched"
+          "nature",
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          },
+          {
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
           }
         ],
         "minLng": -118.2306,
@@ -14910,6 +16619,108 @@ const VANISHED_STREETS = [
     ]
   },
   {
+    "entity": "cameron-lane",
+    "asWritten": "CAMERON LANE",
+    "doc": "mr007-021",
+    "basis": "alignment",
+    "note": "The plat draws this east-west lane through Blocks A, B, and C, but none of the supplied modern street traces follows it.",
+    "path": [
+      [
+        34.040143,
+        -118.26836
+      ],
+      [
+        34.038423,
+        -118.264611
+      ]
+    ]
+  },
+  {
+    "entity": "alexander-lane",
+    "asWritten": "ALEXANDER LANE",
+    "doc": "mr007-021",
+    "basis": "alignment",
+    "note": "This named north-south lane is drawn through Block A with no supplied modern counterpart.",
+    "path": [
+      [
+        34.039875,
+        -118.267775
+      ],
+      [
+        34.039007,
+        -118.268346
+      ]
+    ]
+  },
+  {
+    "entity": "centerbrook-lane",
+    "asWritten": "CENTERBROOK LANE",
+    "doc": "mr007-021",
+    "basis": "alignment",
+    "note": "This named north-south lane is drawn through Block B with no supplied modern counterpart.",
+    "path": [
+      [
+        34.039322,
+        -118.266569
+      ],
+      [
+        34.038454,
+        -118.26714
+      ]
+    ]
+  },
+  {
+    "entity": "catesby-lane",
+    "asWritten": "CATSBY LANE",
+    "doc": "mr007-021",
+    "basis": "alignment",
+    "note": "This named north-south lane is drawn through Block C with no supplied modern counterpart.",
+    "path": [
+      [
+        34.038729,
+        -118.265277
+      ],
+      [
+        34.037869,
+        -118.265844
+      ]
+    ]
+  },
+  {
+    "entity": "willow",
+    "asWritten": "Willow St",
+    "doc": "mr011-042",
+    "basis": "alignment",
+    "note": "The labeled Willow St roadway continues east of modern Willow Street's end at Santa Fe Avenue, with no supplied modern counterpart.",
+    "path": [
+      [
+        34.039359,
+        -118.230626
+      ],
+      [
+        34.039485,
+        -118.228944
+      ]
+    ]
+  },
+  {
+    "entity": "mesquit",
+    "asWritten": "Mesquit St",
+    "doc": "mr011-042",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.038201,
+        -118.229437
+      ],
+      [
+        34.038494,
+        -118.229456
+      ]
+    ]
+  },
+  {
     "entity": "fourth-street",
     "asWritten": "Fourth St",
     "doc": "mr030-009-p4",
@@ -14923,6 +16734,40 @@ const VANISHED_STREETS = [
       [
         34.043696,
         -118.238109
+      ]
+    ]
+  },
+  {
+    "entity": null,
+    "asWritten": null,
+    "doc": "mr053-063",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.038621,
+        -118.254526
+      ],
+      [
+        34.03947,
+        -118.253508
+      ]
+    ]
+  },
+  {
+    "entity": null,
+    "asWritten": null,
+    "doc": "mr053-063",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.039743,
+        -118.253794
+      ],
+      [
+        34.039293,
+        -118.253291
       ]
     ]
   },

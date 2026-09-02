@@ -29,8 +29,8 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["2nd Street","3rd Street","Columbia Avenue","Crown Hill Avenue","Miramar Street","Witmer Street"],
 
   rows: [
     {

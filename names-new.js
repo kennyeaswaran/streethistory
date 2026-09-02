@@ -18,6 +18,10 @@
 
 const NEW_NAME_ENTITIES = {
 
+
+
+
+
   "council-street": {
     spellings: [{"forms":["Council Street"]}],
     namedAfter: null,
@@ -57,31 +61,8 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
-  "eleventh-street": {
-    spellings: [{"forms":["Eleventh Street"]}],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown"],
-    sources: [],
-    disputed: false,
-    note: null,
-    internalNote: "Minted in review from mr003-032, where the ink reads “ELEVENTH STREET”. Namesake not researched.",
-    possiblySameAs: null,
-    aliases: []
-  },
 
-  "farmer": {
-    spellings: [{"forms":["Farmer Street"]}],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown"],
-    sources: [],
-    disputed: false,
-    note: null,
-    internalNote: "Minted in review from tr0015-166a-p2, where the ink reads “FARMER ST.”. Namesake not researched.",
-    possiblySameAs: null,
-    aliases: []
-  },
+
 
   "hobart-street": {
     spellings: [{"forms":["Hobart Street"]}],
@@ -122,6 +103,13 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+
+
+
+
+
+
+
   "state-colton": {
     spellings: [{"forms":["State Street"]}],
     namedAfter: null,
@@ -135,18 +123,7 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
-  "tenth-street": {
-    spellings: [{"forms":["Tenth Street"]}],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown"],
-    sources: [],
-    disputed: false,
-    note: null,
-    internalNote: "Minted in review from mr003-032, where the ink reads “TENTH STREET”. Namesake not researched.",
-    possiblySameAs: null,
-    aliases: []
-  },
+
 
   "waters-street": {
     spellings: [{"forms":["Waters Street"]}],

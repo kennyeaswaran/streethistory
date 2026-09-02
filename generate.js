@@ -395,11 +395,18 @@ for (const doc of nonOsmDocs) {
     // that same end is empty, while `from: X, to: null` is the whole street.
     // (MR006-138's Colton Street row was exactly this.)
     if (b - a < 4e-5) {
-      const other = isNS ? "from: <cross>, to: null" : "from: <cross>, to: null";
+      // The advice used to name the ends BACKWARDS — it said `from` was the
+      // south end of a north-south street, which is the opposite of both §5.4
+      // and the arithmetic ten lines above — and then suggested the same
+      // swap either way. Anyone who followed it moved the wrong end.
+      const fromEnd = isNS ? "NORTH" : "WEST", toEnd = isNS ? "SOUTH" : "EAST";
       problems.push(`${doc.id}: row on ${row.street} (${asWrittenLead(row.asWritten) || row.kind}) spans ` +
         `nothing — its two ends resolve to the same point. ${row.from === null || row.to === null
-          ? `\`from\` is the ${isNS ? "SOUTH" : "WEST"} end and \`to\` the ` +
-            `${isNS ? "NORTH" : "EAST"} end; try ${other}.`
+          ? `\`from\` is the ${fromEnd} end and \`to\` the ${toEnd} end, so ` +
+            `\`from: null\` starts at the ${fromEnd.toLowerCase()} end and \`to: null\` ` +
+            `runs to the ${toEnd.toLowerCase()} one; if the given end is at the ` +
+            `${row.from === null ? fromEnd.toLowerCase() : toEnd.toLowerCase()} end ` +
+            `the row is empty, and swapping from and to gives the stretch you meant.`
           : "the two cross streets meet this one at the same place."}`);
       continue;
     }

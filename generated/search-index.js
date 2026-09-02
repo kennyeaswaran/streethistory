@@ -1,10 +1,10 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-01
+// Built: 2026-09-02
 const SEARCH_INDEX = [
   {
     "form": "10th Street",
-    "entity": "10th-street",
+    "entity": "tenth-street",
     "label": "10th Street",
     "street": "10th Street"
   },
@@ -16,7 +16,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "11th Street",
-    "entity": "11th-street",
+    "entity": "eleventh-street",
     "label": "11th Street",
     "street": "11th Street"
   },
@@ -759,6 +759,12 @@ const SEARCH_INDEX = [
     "street": "Elmyra Street"
   },
   {
+    "form": "Farmer Street",
+    "entity": "farmer",
+    "label": "Farmer Street",
+    "street": "Emerald Drive"
+  },
+  {
     "form": "Emerald Drive",
     "entity": "emerald-drive",
     "label": "Emerald Drive",
@@ -990,6 +996,12 @@ const SEARCH_INDEX = [
     "form": "Imperial Street",
     "entity": "imperial-street",
     "label": "Imperial Street",
+    "street": "Imperial Street"
+  },
+  {
+    "form": "Palm Street",
+    "entity": "palm-st-arts-district",
+    "label": "Palm Street",
     "street": "Imperial Street"
   },
   {
@@ -1227,6 +1239,12 @@ const SEARCH_INDEX = [
     "street": "Mateo Street"
   },
   {
+    "form": "Spruce Street",
+    "entity": "spruce",
+    "label": "Spruce Street",
+    "street": "Mateo Street"
+  },
+  {
     "form": "Mei Ling Way",
     "entity": "mei-ling-way",
     "label": "Mei Ling Way",
@@ -1252,7 +1270,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Mesquit Street",
-    "entity": "mesquit-street",
+    "entity": "mesquit",
     "label": "Mesquit Street",
     "street": "Mesquit Street"
   },
@@ -1413,6 +1431,12 @@ const SEARCH_INDEX = [
     "street": "Pico Boulevard"
   },
   {
+    "form": "Pico Street",
+    "entity": "pico",
+    "label": "Pico Street",
+    "street": "Pico Boulevard"
+  },
+  {
     "form": "Pizarro Street",
     "entity": "pizarro-street",
     "label": "Pizarro Street",
@@ -1524,6 +1548,12 @@ const SEARCH_INDEX = [
     "form": "Santa Fe Avenue",
     "entity": "santa-fe-avenue",
     "label": "Santa Fe Avenue",
+    "street": "Santa Fe Avenue"
+  },
+  {
+    "form": "Tulip Street",
+    "entity": "tulip",
+    "label": "Tulip Street",
     "street": "Santa Fe Avenue"
   },
   {
@@ -1750,7 +1780,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Willow Street",
-    "entity": "willow-street",
+    "entity": "willow",
     "label": "Willow Street",
     "street": "Willow Street"
   },

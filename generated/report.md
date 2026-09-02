@@ -2,19 +2,15 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 273; entries: 438
-- Stub entities minted from OSM (unresearched): 234
-- Curated entities: 66
+- Streets: 273; entries: 466
+- Stub entities minted from OSM (unresearched): 228
+- Curated entities: 81
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
-## Row problems
-- mr053-069: row on Los Angeles Street (absent) spans nothing — its two ends resolve to the same point. the two cross streets meet this one at the same place.
-- mr053-069: row on Spring Street (absent) spans nothing — its two ends resolve to the same point. the two cross streets meet this one at the same place.
-
 ## Partially swept documents (no negative inference contributed)
+- mr011-042: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
 - tr0015-166a-p1: sweptFor = []
-- tr0015-166a-p2: sweptFor = []
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
 - first-street: "FIRST ST" ×2
@@ -86,6 +82,7 @@
 - figueroa-gov: "FIGUEROA ST." ×1
 - second-street: "W. 2ND ST." ×1
 - crown-hill-ave: "CROWN HILL AVE." ×3
+- farmer: "FARMER ST." ×1
 
 
 ## Vanished streets (§5.3)
@@ -95,7 +92,15 @@ Traced through a document alignment; approximate to roughly a street width.
 - **GAREY STREET** (garey) — 2 points, from mr003-060-p1
 - **Council Street** (council-street) — 2 points, from mr006-138
 - **Waters Street** (waters-street) — 2 points, from mr006-138
+- **CAMERON LANE** (cameron-lane) — 2 points, from mr007-021
+- **ALEXANDER LANE** (alexander-lane) — 2 points, from mr007-021
+- **CENTERBROOK LANE** (centerbrook-lane) — 2 points, from mr007-021
+- **CATSBY LANE** (catesby-lane) — 2 points, from mr007-021
+- **Willow St** (willow) — 2 points, from mr011-042
+- **Mesquit St** (mesquit) — 2 points, from mr011-042
 - **Fourth St** (fourth-street) — 2 points, from mr030-009-p4
+- **(unlettered)** — 2 points, from mr053-063
+- **(unlettered)** — 2 points, from mr053-063
 - **CALLE PRINCIPAL** (main-street-dtla) — 2 points, from mr053-067
 - **CALLE PRIMAVERA** (spring) — 2 points, from mr053-067
 - **CALLE PRINCIPAL** (main-street-dtla) — 2 points, from mr053-068

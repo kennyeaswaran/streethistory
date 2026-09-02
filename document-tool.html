@@ -913,23 +913,43 @@ function extentPoint(street, val, problems) {
   return p;
 }
 
+// WHICH WAY ROUND IS A RUN? §5.4 fixes the vocabulary — `from` is the NORTH
+// end of a north-south street and the WEST end of an east-west one — but a
+// run's point order comes from OSM, which has no such convention. Half of them
+// are drawn the other way. Anything that turns a null end into a run index has
+// to ask, and everything here used to assume index 0 was `from`.
+const streetIsNS = rec => {
+  const pts = rec.runs.flat();
+  const span = f => Math.max(...pts.map(f)) - Math.min(...pts.map(f));
+  return span(p => p.lat) >= span(p => p.lon);
+};
+function runEnds(run, isNS) {
+  const sc = p => isNS ? p.lat : p.lon;
+  const last = run.length - 1;
+  // `from` is north / west, so it is whichever END of this run sits that way.
+  const fromIdx = (isNS ? sc(run[0]) >= sc(run[last]) : sc(run[0]) <= sc(run[last])) ? 0 : last;
+  return { fromIdx, toIdx: fromIdx === 0 ? last : 0 };
+}
+
 // The portion of one in-bounds run between two ground points. Ends that fall
 // outside the run clamp to it, which is right: the run is already clipped to
 // coverage, and a row may legitimately run past the polygon's edge.
-function clipRange(run, pA, pB) {
+function clipRange(run, pA, pB, isNS) {
+  const ends = runEnds(run, isNS === undefined
+    ? streetIsNS({ runs: [run] }) : isNS);
   if (!pA && !pB) return [0, run.length - 1];
   const idx = pt => {
     let bi = 0, bd = Infinity;
     run.forEach((p, i) => { const d = G.metres(p, pt); if (d < bd) { bd = d; bi = i; } });
     return bi;
   };
-  let a = pA ? idx(pA) : 0, b = pB ? idx(pB) : run.length - 1;
+  let a = pA ? idx(pA) : ends.fromIdx, b = pB ? idx(pB) : ends.toIdx;
   if (a > b) { const t = a; a = b; b = t; }
   if (a === b) { a = Math.max(0, a - 1); b = Math.min(run.length - 1, b + 1); }
   return [a, b];
 }
-function clipRun(run, pA, pB) {
-  const [a, b] = clipRange(run, pA, pB);
+function clipRun(run, pA, pB, isNS) {
+  const [a, b] = clipRange(run, pA, pB, isNS);
   return run.slice(a, b + 1);
 }
 
@@ -949,7 +969,8 @@ function rowMetres(r) {
   const junk = [];
   const pA = extentPoint(rec.name, r.kind === "change" ? r.fromCross : r.from, junk);
   const pB = extentPoint(rec.name, r.kind === "change" ? r.toCross : r.to, junk);
-  return Math.round(rec.runs.reduce((m, run) => m + runMetres(clipRun(run, pA, pB)), 0));
+  const ns = streetIsNS(rec);
+  return Math.round(rec.runs.reduce((m, run) => m + runMetres(clipRun(run, pA, pB, ns)), 0));
 }
 
 // The arithmetic of a split, apart from the clicking. One row in, two out,
@@ -1107,18 +1128,20 @@ function reviewModel() {
     const rec = streets.get(x.street);
     if (!rec) { problems.push(`coverageExcept names “${esc(x.street)}”, which is not in coverage`); continue; }
     const pA = extentPoint(x.street, x.from, problems), pB = extentPoint(x.street, x.to, problems);
-    rec.runs.forEach((run, i) => rec.excepted.push({ i, range: clipRange(run, pA, pB) }));
+    const ns = streetIsNS(rec);
+    rec.runs.forEach((run, i) => rec.excepted.push({ i, range: clipRange(run, pA, pB, ns) }));
   }
 
   for (const rec of streets.values()) {
     // Which stretch of which run each row speaks for, and what is left over.
+    const nsRec = streetIsNS(rec);
     rec.covered = rec.runs.map(() => []);
     for (const row of rec.rows) {
       const extA = row.kind === "change" ? row.fromCross : row.from;
       const extB = row.kind === "change" ? row.toCross : row.to;
       const pA = extentPoint(rec.name, extA, gapProblems);
       const pB = extentPoint(rec.name, extB, gapProblems);
-      rec.runs.forEach((run, i) => rec.covered[i].push(clipRange(run, pA, pB)));
+      rec.runs.forEach((run, i) => rec.covered[i].push(clipRange(run, pA, pB, nsRec)));
     }
     // An excepted stretch counts as accounted for: it is not ground this
     // document was ever speaking about.
@@ -1186,7 +1209,7 @@ function drawReview() {
         // The ground points, kept alongside the screen ones: splitting a row
         // needs a real position on the street, and re-deriving it from screen
         // pixels would put the boundary wherever the view happened to be.
-        const world = clipRun(run, pA, pB);
+        const world = clipRun(run, pA, pB, streetIsNS(s));
         const pts = toScr(world);
         stroke(pts, colour, selected ? 9 : 6, dashed);
         reviewFeatures.push({ street: s.name, row, kind: row.kind, pts, world });
@@ -1755,8 +1778,17 @@ function gapExtents(rec, gap) {
   const toPx = img ? (lat, lon) => G.worldToScan(G.fitAlignment(controlPoints()), lat, lon) : null;
   const end = (p, atRunEnd) => atRunEnd ? null
     : G.snapOrPoint(streetPoints, rec.name, p, toPx, { maxM: 40 }).value;
-  return { from: end(run[gap.a], gap.a === 0),
-           to:   end(run[gap.b], gap.b === run.length - 1) };
+  // IN CANONICAL ORDER, not in run order (§5.4). `gap.a` and `gap.b` are
+  // indices into a run whose direction came from OSM, so on a run drawn east
+  // to west this wrote `from` at the east end — a row reversed at birth, which
+  // then reads as covering a few metres instead of the whole stretch. Every
+  // "Sheet shows nothing here" click on such a street produced one.
+  const isNS = streetIsNS(rec);
+  const sc = p => isNS ? p.lat : p.lon;
+  let A = { p: run[gap.a], atEnd: gap.a === 0 },
+      B = { p: run[gap.b], atEnd: gap.b === run.length - 1 };
+  if (isNS ? sc(A.p) < sc(B.p) : sc(A.p) > sc(B.p)) { const t = A; A = B; B = t; }
+  return { from: end(A.p, A.atEnd), to: end(B.p, B.atEnd) };
 }
 const describeEnd = v => v == null ? "the street's end in coverage"
   : typeof v === "object" ? (v.px ? `px ${v.px[0]},${v.px[1]}` : `${v.ll[0]}, ${v.ll[1]}`)
@@ -1870,30 +1902,37 @@ function rowSpansNothing(r) {
   const pA = extentPoint(rec.name, r.kind === "change" ? r.fromCross : r.from, junk);
   const pB = extentPoint(rec.name, r.kind === "change" ? r.toCross : r.to, junk);
   if (!pA && !pB) return false;                    // both ends null: the whole street
-  // clipRange widens a collapsed range by a vertex either side so that
-  // something draws. That is right for drawing and wrong for judging, so ask
-  // before the widening — and only call it empty if it is empty on EVERY run.
+
+  // The generator's test, and it has to be the generator's test exactly: it
+  // cuts along ONE axis — latitude for a north-south street, longitude for an
+  // east-west one — and a row that makes no segment there makes none anywhere.
+  //
+  // A NULL END IS THE CANONICAL END, NOT THE NEARER ONE (§5.4): `from` is the
+  // NORTH end of a north-south street and the WEST end of an east-west one.
+  // Resolving it to whichever end happened to be closer is what made this
+  // report Palm Street on MR011-042 as spanning nothing when it spans 161 m —
+  // its `to` sits at the south end, so a nearest-end reading collapsed it
+  // against itself.
+  const pts = rec.runs.flat();
+  const spanOf = f => Math.max(...pts.map(f)) - Math.min(...pts.map(f));
+  const isNS = spanOf(p => p.lat) >= spanOf(p => p.lon);
+  const sc = pt => isNS ? pt.lat : pt.lon;
+  const lo = Math.min(...pts.map(sc)), hi = Math.max(...pts.map(sc));
+  const sA = pA ? sc(pA) : (isNS ? hi : lo);       // `from`: north / west
+  const sB = pB ? sc(pB) : (isNS ? lo : hi);       // `to`:   south / east
+  if (Math.abs(sB - sA) < 4e-5) return true;       // the generator's threshold, ~4 m
+
+  // With both ends given, the row can still collapse in the TOOL's model,
+  // which clips at run vertices rather than along the axis. Two ends closer
+  // together than the modern geometry's own resolution cover nothing here even
+  // when the axis says otherwise.
+  if (!pA || !pB) return false;
   const idx = (run, pt) => {
     let bi = 0, bd = Infinity;
     run.forEach((p, i) => { const d = G.metres(p, pt); if (d < bd) { bd = d; bi = i; } });
     return bi;
   };
-  const sameVertex = rec.runs.every(run =>
-    (pA ? idx(run, pA) : 0) === (pB ? idx(run, pB) : run.length - 1));
-  if (sameVertex) return true;
-
-  // …and the generator's own test as well, because it segments differently.
-  // It cuts along ONE axis — latitude for a north-south street, longitude for
-  // an east-west one — so two ends that are metres apart across a diagonal
-  // street can still project to the same cut and produce no segment there.
-  // A row that vanishes in either model is a row that says nothing, and
-  // reporting it only at build time is how these get missed.
-  const span = (f) => Math.max(...rec.runs.flat().map(f)) - Math.min(...rec.runs.flat().map(f));
-  const axis = span(p => p.lat) >= span(p => p.lon) ? "lat" : "lon";
-  const sc = pt => pt[axis];
-  const ends = rec.runs.flat().map(sc);
-  const sA = pA ? sc(pA) : Math.min(...ends), sB = pB ? sc(pB) : Math.max(...ends);
-  return Math.abs(sB - sA) < 4e-5;              // the generator's threshold, ~4 m
+  return rec.runs.every(run => idx(run, pA) === idx(run, pB));
 }
 const emptyRows = () => reviewRows().filter(rowSpansNothing);
 

@@ -1118,6 +1118,271 @@ const NAME_ENTITIES = {
     note: "Lettered on the 1849 survey along ground now part of Cesar E. Chavez Avenue. Descriptive, presumably, but nothing documents it.",
     internalNote: "READ THE INK AGAIN BEFORE TRUSTING THIS ONE. The row records “CORTE ST”, and corte in Spanish is a court or a cut, not “short” — that would be corta. Either the sheet letters Calle Corta and the transcription dropped a letter, or the name is Corte and the English id is wrong. streets-data.js knows nothing about it: its Chavez entry starts at Macy Street. Disambiguated at minting because Short Street is a name that recurs.",
     possiblySameAs: null, aliases: []
+  },
+
+  // ---- the Cameron Tract (1885), the Goodwin Tract (1886), and others -----
+  //
+  // Two boom-era subdivisions east and south of downtown: one lettered with
+  // its owner's Virginia family, the other with trees. Most of this was
+  // already worked out in streets-data.js.
+
+  "cameron-lane": {
+    spellings: [{ forms: ["Cameron Lane"] }],
+    namedAfter: "{{Cameron Erskine Thom}} (1825–1915), who owned and subdivided the tract — district attorney, state senator, Confederate captain, and mayor of Los Angeles 1882–1884",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Cameron_E._Thom",
+    categories: ["person", "alive"],
+    sources: [
+      { title: "Los Angeles Revisited: The Antebellum Past at Cameron Lane in DTLA",
+        url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" },
+      { title: "Wikipedia: Cameron E. Thom",
+        url: "https://en.wikipedia.org/wiki/Cameron_E._Thom" },
+      { title: "Recorded map: Cameron Tract, M.R. 7-21 (surveyed by H.J. Stevenson, Oct. 1885)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" }
+    ],
+    disputed: false,
+    note: "Thom bought the ground near today's Convention Center in 1855 for $153 and subdivided it as the land boom got going thirty years later, lettering his own family across it: Cameron for himself, Alexander for his grandfather, Catesby and Pembroke for names his brothers and children carried. He had left Los Angeles in 1862 to fight for the Confederacy, was wounded at Gettysburg, came back to serve as district attorney and then as mayor. His family had held slaves in Virginia.",
+    internalNote: "The naming is as well attested as these get: the tract is his and the lanes are his relatives. Pembroke Lane is on the same plat and survives; it has no entity yet because no row cites it.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "alexander-lane": {
+    spellings: [{ forms: ["Alexander Lane"] }],
+    namedAfter: "{{Alexander Thom}} (c. 1698–1784), Cameron Thom's paternal grandfather, a Clan Cameron Highlander who fled to the American colonies in 1746",
+    namedAfterLink: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html",
+    categories: ["person"],
+    sources: [
+      { title: "Los Angeles Revisited: The Antebellum Past at Cameron Lane in DTLA",
+        url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" },
+      { title: "Recorded map: Cameron Tract, M.R. 7-21 (surveyed by H.J. Stevenson, Oct. 1885)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" }
+    ],
+    disputed: false,
+    note: "The oldest name on the tract, and the one that explains the rest: it is Clan Cameron of Lochiel that Cameron Thom's own given name comes from. The lane was absorbed into the Lebanon Street continuation in 1917.",
+    internalNote: "Dates and the 1746 flight are the blog's; nothing else corroborates them here.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "catesby-lane": {
+    spellings: [{ forms: ["Catesby Lane"] }],
+    namedAfter: "The Thom family name — Cameron Thom's son was Charles Catesby Thom, and a brother carried it too",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Cameron_E._Thom",
+    categories: ["person"],
+    sources: [
+      { title: "Los Angeles Revisited: The Antebellum Past at Cameron Lane in DTLA",
+        url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" },
+      { title: "Wikipedia: Cameron E. Thom",
+        url: "https://en.wikipedia.org/wiki/Cameron_E._Thom" },
+      { title: "Recorded map: Cameron Tract, M.R. 7-21 (surveyed by H.J. Stevenson, Oct. 1885)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" }
+    ],
+    disputed: false,
+    note: "Named from the family rather than for one person in particular. The lane no longer exists, though it was still on maps in 1955.",
+    internalNote: "THE PLAT LETTERS IT “CATSBY”, without the E, and the row keeps that spelling as its ink (§5.1). The identification rests on the family names around it. A second minted id, `gatsby-lane`, was the same label misread; it cited no rows and was dropped.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "centerbrook-lane": {
+    spellings: [{ forms: ["Centerbrook Lane"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "Recorded map: Cameron Tract, M.R. 7-21 (surveyed by H.J. Stevenson, Oct. 1885)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" },
+      { title: "Los Angeles Revisited: The Antebellum Past at Cameron Lane in DTLA",
+        url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" }
+    ],
+    disputed: false,
+    note: "Lettered on the 1885 Cameron Tract among the Thom family lanes, but unlike Cameron, Alexander and Catesby it answers to no relative anyone has traced. A Virginia place name would fit the pattern — the family's estate in Culpeper County was Berry Hill, which is not this — but nothing supports it.",
+    internalNote: "NOT in the Los Angeles Revisited article, which names only Cameron, Alexander, Catesby and Pembroke; a web search turns up nothing (checked 2026-09-01). The company it keeps is the only evidence there is.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "palm-st-arts-district": {
+    spellings: [{ forms: ["Palm Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["nature", "unknown"],
+    sources: [
+      { title: "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
+      { title: "Wikipedia: Arts District, Los Angeles",
+        url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
+    ],
+    disputed: false,
+    note: "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Imperial Street. When it became Imperial Street, and why, is not researched — and it has nothing to do with Imperial Highway, named far to the south in 1929–31.",
+    internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. Disambiguated at minting: Palm Street is a name that recurs.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "spruce": {
+    spellings: [{ forms: ["Spruce Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["nature", "unknown"],
+    sources: [
+      { title: "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
+      { title: "Wikipedia: Arts District, Los Angeles",
+        url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
+    ],
+    disputed: false,
+    note: "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Mateo Street.",
+    internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "tulip": {
+    spellings: [{ forms: ["Tulip Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["nature", "unknown"],
+    sources: [
+      { title: "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
+      { title: "Wikipedia: Arts District, Los Angeles",
+        url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
+    ],
+    disputed: false,
+    note: "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Santa Fe Avenue. It lasted a matter of months: the Atchison, Topeka and Santa Fe reached Los Angeles in May 1887 and the street took the railway's name.",
+    internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "willow": {
+    spellings: [{ forms: ["Willow Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["nature", "unknown"],
+    sources: [
+      { title: "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
+      { title: "Wikipedia: Arts District, Los Angeles",
+        url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
+    ],
+    disputed: false,
+    note: "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along Willow Street, which keeps the name.",
+    internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "mesquit": {
+    spellings: [{ forms: ["Mesquit Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["nature", "unknown"],
+    sources: [
+      { title: "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
+      { title: "Wikipedia: Arts District, Los Angeles",
+        url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
+    ],
+    disputed: false,
+    note: "Presumably the mesquite, alongside the Goodwin Tract's other plant names, but nothing documents it. The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
+    internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. Kines has no page. The spelling is the interesting part: a modern oddity that turns out to be original, not a later error.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "santee-street": {
+    spellings: [{ forms: ["Santee Street"] }],
+    namedAfter: "{{Milton Santee}} (1835–1901), city councilman 1884–1886, later a mining and railroad investor",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Milton_Santee",
+    categories: ["person", "alive"],
+    sources: [
+      { title: "L.A. Street Names: Santee Street",
+        url: "https://lastreetnames.com/street/santee-street/" },
+      { title: "Wikipedia: Milton Santee",
+        url: "https://en.wikipedia.org/wiki/Milton_Santee" }
+    ],
+    disputed: false,
+    note: "Santee later moved to San Diego County, where in 1893 his second wife had the town of Cowleston renamed Santee in his honour — a name it still keeps.",
+    internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "los-angeles-street": {
+    spellings: [{ forms: ["Los Angeles Street"] }],
+    namedAfter: "The city itself — ultimately {{Nuestra Señora de los Ángeles de Porciúncula}}, the 1769 Spanish naming of the river",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Los_Angeles_River",
+    categories: ["place"],
+    sources: [
+      { title: "L.A. Street Names: Los Angeles Street",
+        url: "https://lastreetnames.com/street/los-angeles-street/" },
+      { title: "Wikipedia: Los Angeles Street",
+        url: "https://en.wikipedia.org/wiki/Los_Angeles_Street" }
+    ],
+    disputed: false,
+    note: "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
+    internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. The Calle de los Negros block is a DIFFERENT lineage and wants its own entity when a document attests it — do not fold it in here on the strength of the modern name.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "pico": {
+    spellings: [{ forms: ["Pico Street"] }],
+    namedAfter: "{{Pío de Jesús Pico}} (1801–1894), the last Mexican governor of Alta California and a major landowner",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Pio_Pico",
+    categories: ["person", "governor"],
+    sources: [
+      { title: "L.A. Street Names: Pico Boulevard",
+        url: "https://lastreetnames.com/street/pico-boulevard/" },
+      { title: "Wikipedia: Pío Pico",
+        url: "https://en.wikipedia.org/wiki/Pio_Pico" },
+      { title: "Recorded map: Cameron Tract, M.R. 7-21 (surveyed by H.J. Stevenson, Oct. 1885)",
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" }
+    ],
+    disputed: false,
+    note: "Los Angeles never had an official 13th Street downtown — Pico picked up straight after 12th.",
+    internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. The entity is the PICO naming, which the Cameron Tract letters as “Pico Street”; the modern street is a boulevard, and the generic changed without the name doing so.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "tenth-street": {
+    spellings: [{ forms: ["10th Street"] }],
+    namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+    namedAfterLink: null,
+    categories: ["number"],
+    sources: [
+      { title: "L.A. Street Names: 1st Street (on the numbering system)",
+        url: "https://lastreetnames.com/street/0001st-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" }
+    ],
+    disputed: false,
+    note: "Renamed Olympic Boulevard in 1935, for the 1932 Games — the request went in in July 1929, and that they had been the tenth Olympiad seems to have gone unremarked.",
+    internalNote: "One entity per number across the downtown grid, as with 1st–9th. NB the 1849 survey's numbered streets ran only as far as 8th, so when Tenth was laid out is not researched — the numbering propagated south later.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "eleventh-street": {
+    spellings: [{ forms: ["11th Street"] }],
+    namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+    namedAfterLink: null,
+    categories: ["number"],
+    sources: [
+      { title: "L.A. Street Names: 1st Street (on the numbering system)",
+        url: "https://lastreetnames.com/street/0001st-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" }
+    ],
+    disputed: false,
+    note: null,
+    internalNote: "One entity per number across the downtown grid, as with 1st–9th. NB the 1849 survey's numbered streets ran only as far as 8th, so when Eleventh was laid out is not researched — the numbering propagated south later.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "farmer": {
+    spellings: [{ forms: ["Farmer Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [
+      { title: "Recorded map: “Crownwood” (Witmer’s Subdivision), M.B. 15-166 (surveyed Nov. 1909)",
+        url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
+    ],
+    disputed: false,
+    note: "Lettered on the 1909 Crownwood sheet along ground that is now Emerald Drive. Nothing found says who or what Farmer was.",
+    internalNote: "Searched without result (Kines has no page; no web result for a Farmer Street here) — checked 2026-08-31 and again 2026-09-01.",
+    possiblySameAs: null, aliases: []
   }
 };
 

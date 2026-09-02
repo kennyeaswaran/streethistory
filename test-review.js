@@ -77,7 +77,7 @@ Object.defineProperty(sandbox, "loadedDoc", { get: () => ({ rows }) });
 vm.createContext(sandbox);
 vm.runInContext("const KY = 110540; let lastModel = null; let coverageExcept = [];\n" +
   "let docSwept = { fully: false, for: [] };\n" + zoomSource + source + bundleSource + gateSource +
-  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers, runGaps, clipRange, splitRowAt, sameExtent, blockingRows, rowMetres, asWrittenForms, retractSweepIfBroken, setModel: m => { lastModel = m; }, rowSpansNothing, emptyRows, setSwept: v => { docSwept = v; }, getSwept: () => docSwept };", sandbox);
+  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers, runGaps, clipRange, splitRowAt, sameExtent, blockingRows, rowMetres, asWrittenForms, retractSweepIfBroken, setModel: m => { lastModel = m; }, runEnds, streetIsNS, rowSpansNothing, emptyRows, setSwept: v => { docSwept = v; }, getSwept: () => docSwept };", sandbox);
 const API = sandbox.API;
 const setRows = r => { rows = r; };
 
@@ -152,15 +152,25 @@ console.log("what phase 1 leaves behind");
 
 console.log("a plausible AI pass");
 {
+  // 3rd Street's row stops at a mid-block point, so part of it is left over.
+  // It used to stop at `to: null`, which reached only as far as whichever end
+  // OSM drew first; now that a null end means the street's canonical end, that
+  // row would cover the lot and there would be nothing partial to test.
+  setRows([]);
+  API.setModel(null);
+  const thirdRun = API.reviewModel().streets.find(s => s.name === "3rd Street").runs[0];
+  const midPt = thirdRun[Math.floor(thirdRun.length / 2)];
+  const midOn3rd = { px: G.worldToScan(fit, midPt.lat, midPt.lon).map(v => Math.round(v)) };
   setRows([
     { kind: "state", name: "third-street", asWritten: "Third St", street: "Miramar Street",
       from: "Bixel Street", to: "Boylston Street", basis: "alignment", confirmed: false },
     { kind: "state", name: "third-street", asWritten: "Arnold St", street: "3rd Street",
-      from: "Bixel Street", to: null, basis: "alignment", confirmed: false },
+      from: "Bixel Street", to: midOn3rd, basis: "alignment", confirmed: false },
     { kind: "absent", street: "4th Street", from: null, to: null, confirmed: false },
     { kind: "vanished", name: "third-street", asWritten: "Gone St",
       trace: [[300, 500], [600, 800]], basis: "alignment", confirmed: false }
   ]);
+  API.setModel(null);
   const m = API.reviewModel();
   const by = Object.fromEntries(m.streets.map(s => [s.name, s]));
   // A row that covers only part of a street leaves the rest unaccounted, so
@@ -615,6 +625,47 @@ console.log("rows whose two ends are the same place");
   ok("moving one end revives a collapsed row", !API.rowSpansNothing(fixed));
   ok("…and the row is otherwise untouched",
      fixed.name === "bixel" && fixed.asWritten === "BIXEL ST");
+}
+
+console.log("which way round a run is");
+{
+  // §5.4 fixes the vocabulary — `from` is the NORTH end of a north-south
+  // street and the WEST end of an east-west one — but a run's point order
+  // comes from OSM, which has no such convention. Half of them run the other
+  // way, and everything that turned a null end into a run index used to assume
+  // index 0 was `from`.
+  const NS = [{ lat: 34.06, lon: -118.25 }, { lat: 34.05, lon: -118.25 }];   // north -> south
+  const NSrev = NS.slice().reverse();
+  ok("a north-to-south run starts at `from`", API.runEnds(NS, true).fromIdx === 0);
+  ok("a south-to-north run does not", API.runEnds(NSrev, true).fromIdx === 1);
+  ok("…and its `to` is the other end", API.runEnds(NSrev, true).toIdx === 0);
+  const EW = [{ lat: 34.05, lon: -118.26 }, { lat: 34.05, lon: -118.25 }];   // west -> east
+  ok("a west-to-east run starts at `from`", API.runEnds(EW, false).fromIdx === 0);
+  ok("an east-to-west run does not", API.runEnds(EW.slice().reverse(), false).fromIdx === 1);
+
+  ok("a street longer north-south than east-west is NS",
+     API.streetIsNS({ runs: [NS] }) === true);
+  ok("…and the other way round is EW", API.streetIsNS({ runs: [EW] }) === false);
+
+  // The consequence that matters: `from: X, to: null` covers the ground from X
+  // to the street's canonical end, whichever way OSM happened to draw it.
+  setRows([]);
+  API.setModel(null);
+  const m = API.reviewModel();
+  const third = m.streets.find(s => s.name === "3rd Street");
+  const run = third.runs[0];
+  const west = run.reduce((a, b) => a.lon <= b.lon ? a : b);
+  const east = run.reduce((a, b) => a.lon >= b.lon ? a : b);
+  const fwd = API.clipRun(run, west, null, false);
+  const back = API.clipRun(run.slice().reverse(), west, null, false);
+  const len = r => r.slice(1).reduce((t, p, i) => t + G.metres(r[i], p), 0);
+  ok("a null `to` reaches the east end whichever way the run is drawn",
+     Math.abs(len(fwd) - len(back)) < 1, `${len(fwd).toFixed(0)} vs ${len(back).toFixed(0)}`);
+  ok("…and that is nearly the whole run", len(fwd) > len(run) * 0.9,
+     `${len(fwd).toFixed(0)} of ${len(run).toFixed(0)}`);
+  const partial = API.clipRun(run, west, east, false);
+  ok("two given ends are order-insensitive too",
+     Math.abs(len(partial) - len(API.clipRun(run, east, west, false))) < 1);
 }
 
 console.log(`\n${pass} passed, ${fail} failed`);
