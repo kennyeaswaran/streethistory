@@ -173,6 +173,11 @@ popup offers:
   into the entity's spellings (§5.1). One form per line where a sheet letters
   a stretch more than once (English and Spanish on the Ord survey): one row,
   several forms.
+- **A null extent end resolves canonically**, not to the run's first point
+  (MODEL-SPEC §5.4). OSM way direction is arbitrary; `from` is the west/north
+  end whichever way the line was drawn. The tool and the generator share this
+  or they disagree about which half of a street a row covers — and the
+  gap-to-`absent` button must WRITE canonical order for the same reason.
 - **Split the stretch in two** — click a point along the segment; it becomes
   a cross-street name when one is within 40 m, a scan pixel otherwise (§5.4).
   One row goes in, two come out, meeting at that point, and **both come back
@@ -191,9 +196,15 @@ popup offers:
   this street*. The first is a claim about the map, the other two about the
   polygon. They are different claims and only the first is evidence
   (MODEL-SPEC §4.4).
-- **Set `basis` and the `attests` override** — whether this map *dedicates*
-  the street (`planned-on`) or merely draws one already there (`planned-by`)
-  is a judgement best made looking at the plat.
+- **Set the `attests` override** (§4.2) — whether this map *dedicates* the
+  street (`planned-on`) or merely draws one already there (`planned-by`, or
+  `built-by` for pavement it shows) is a judgement best made looking at the
+  plat, and it is per ROW: one sheet does both. The picker offers the
+  document's default as an option so that choosing it clears the override
+  rather than freezing today's default into the row. Changing it un-confirms.
+- **Edit the row's `note`** — the AI pass's reasoning, and sometimes wrong.
+  This does NOT un-confirm: a note is commentary, not a claim (§5.5).
+- `basis` is still file-only.
 
 **Tracing a vanished street**: draw a polyline along the drawn corridor and
 type `asWritten` verbatim — or leave it empty, which records the corridor as
@@ -225,9 +236,37 @@ its length and each a way to get to that row: a count is a dead end when the
 blocker is a 30 m duplicate drawn underneath a 200 m row on the same street,
 which is a shape the AI pass produces. Whatever the popup is about is drawn
 haloed and last, so a stretch buried under a longer one becomes visible the
-moment it is the subject. The list is shown for an already-swept document too:
+moment it is the subject. **Tab** steps through that list and
+shift-Tab back, except inside a field, where it still moves between fields — on
+a sheet of a hundred rows with a dozen waiting, finding them by eye is most of
+the work. The list is shown for an already-swept document too:
 editing one leaves proposals behind, and `sweptFully: true` standing over
 unconfirmed rows claims a silence the rows no longer back.
+
+**Opening: three lists, presented alike.** The Open box lists every folder
+under `documents/` in one of three conditions, each shown the same way, and a
+click opens the folder in the mode that does the next piece of work:
+
+| list | condition | opens in |
+|---|---|---|
+| needs aligning and coverage | a render, and not all four files a coverage save writes | align |
+| needs a first pass or your review | those four files present, not swept — with or without rows | review |
+| swept | `sweptFully: true` | review |
+
+The condition is read off the FOLDER, not off the document file: a save writes
+`<id>.js`, `<id>-alignment.json`, `<id>-streets.json` and `TASK.md` together,
+so fewer than all four means align-and-coverage has not happened, whatever a
+half-written `<id>.js` claims about itself.
+
+Each line carries the map's short name — always bold, a one-sheet map's name
+being a map name too — beside the folder name, brackets sheets of one map under
+it, and is sortable by either. Everything is read from the files themselves
+through the project-folder handle, never from folder names or from which tree a
+folder sits in. Sweep state already lives in the document; a second copy in the
+filename would be free to disagree, and moving folders between an inbox /
+in-progress / done tree would break the project-relative paths inside each file
+(`alignment.image`, `scan`, `transcription`), which has already gone wrong here
+once. `inbox/` stays what it is — scans not yet made into documents.
 
 ## 5. Reading and writing `documents/<id>.js`
 
@@ -268,6 +307,14 @@ they are where absent wrongness would hide:
 - `runGaps` — given a run and the ranges rows speak for, the stretches nothing
   speaks for, above the 25 m floor. This is what makes the sweep gate a claim
   about ground rather than about street names.
+- `foldIndices` / `sameCorridor` — a divided street is two one-way ways over
+  one corridor, which stitch into a run that walks out and walks back; the
+  returning leg lies past the run's canonical end, so no extent can name it. A
+  gap is exempted only where the run turns back on itself (a turn sharper than
+  120°) **and** every point of it stays within 15 m of ground a row already
+  covers. Both, so a street with no fold is never touched. Cutting the run at
+  the fold instead was measured and is worse: it exposes ground the folded
+  indexing had been covering (M.R. 53-69's 47 m became 292 m).
 - `zoomView` — zoom about a fixed screen point. A sign error here does not look
   like a broken zoom; it looks like the map scrolling away under you.
 - `nearestCrossStreet` — given a point on street X, the nearest street

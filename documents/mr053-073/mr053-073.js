@@ -74,7 +74,8 @@ module.exports = {
         ]
       },
       "basis": "alignment",
-      "note": "The modern Alameda alignment follows a broad two-edge road running from the Plaza area through the fields."
+      "note": "The modern Alameda alignment follows a broad two-edge road running from the Plaza area through the fields.",
+      "attests": "built-by"
     },
     {
       "kind": "absent",
@@ -927,7 +928,7 @@ module.exports = {
           941
         ]
       },
-      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment."
+      "attests": "built-by"
     },
     {
       "kind": "absent",
@@ -978,7 +979,8 @@ module.exports = {
           1220
         ]
       },
-      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment."
+      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment.",
+      "attests": "built-by"
     },
     {
       "kind": "absent",
@@ -1013,7 +1015,8 @@ module.exports = {
         ]
       },
       "basis": "alignment",
-      "note": "The modern Main Street runs follow a separate two-edge road through the field and river-edge area, but the survey letters no name on it."
+      "note": "The modern Main Street runs follow a separate two-edge road through the field and river-edge area, but the survey letters no name on it.",
+      "attests": "built-by"
     },
     {
       "kind": "unnamed",
@@ -1031,7 +1034,8 @@ module.exports = {
         ]
       },
       "basis": "alignment",
-      "note": "The modern Main Street runs follow a separate two-edge road through the field and river-edge area, but the survey letters no name on it."
+      "note": "The modern Main Street runs follow a separate two-edge road through the field and river-edge area, but the survey letters no name on it.",
+      "attests": "built-by"
     },
     {
       "kind": "absent",
@@ -1187,7 +1191,8 @@ module.exports = {
           869
         ]
       },
-      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment."
+      "note": "historic street in plaza",
+      "attests": "built-by"
     },
     {
       "kind": "absent",
@@ -1664,7 +1669,7 @@ module.exports = {
           1247
         ]
       },
-      "note": "Beyond the old grid, the later avenue crosses cultivated parcels without a two-edge roadway on this survey."
+      "attests": "built-by"
     },
     {
       "kind": "absent",
@@ -1720,7 +1725,7 @@ module.exports = {
           956
         ]
       },
-      "note": "South of the old grid, the modern continuation crosses field parcels without a two-edge roadway."
+      "attests": "built-by"
     },
     {
       "kind": "vanished-unnamed",

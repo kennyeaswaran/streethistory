@@ -40,13 +40,21 @@
   #openBox { margin:8px 0 4px; border:1px solid #e6dcc2; border-radius:4px;
              padding:4px 8px; background:#fdfbf2; }
   #docList { margin:4px 0 2px; font-size:12px; }
-  #docList h4 { margin:6px 0 2px; font-size:11px; text-transform:uppercase;
+  #docList h4, #docList details.docgroup > summary {
+    margin:6px 0 2px; font-size:11px; text-transform:uppercase;
     letter-spacing:0.5px; color:#8a7a52; font-weight:600; }
+  #docList details.docgroup > summary { cursor:pointer; }
+  #docList details.docgroup > summary:hover { color:#6b5a34; }
   #docList ul { margin:0 0 4px; padding-left:0; list-style:none; }
   #docList li { padding:2px 4px; border-radius:3px; cursor:pointer;
     display:flex; justify-content:space-between; gap:8px; }
   #docList li:hover { background:#f3ecd8; }
   #docList li .st { color:#6f6f6f; font-style:italic; white-space:nowrap; }
+  #docList li .aw { color:#8a7a52; font-style:italic; }
+  #docList li.mapname { cursor:default; }
+  #docList li.mapname:hover { background:none; }
+  #docList .mn { font-weight:600; color:#4a4034; }
+  #docList li.sheet { padding-left:14px; }
   #docList details summary { font-size:11px; color:#8a7a52; cursor:pointer; }
   #openBox summary { cursor:pointer; font-size:12px; color:#4a4034;
                      text-transform:uppercase; letter-spacing:0.06em; }
@@ -133,24 +141,35 @@
        space. Open by default while nothing is loaded, folded away after. -->
   <details id="openBox">
     <summary>Open</summary>
-    <label>A saved document (documents/&lt;id&gt;/)</label>
-    <div class="row">
-      <input type="text" id="loadId" placeholder="mr066-035">
-      <button id="loadDoc" style="flex:0 0 auto">Load</button>
-    </div>
-    <div class="hint">Restores the header, the coverage ring, the render and the
-      alignment. If it already has rows, this goes straight to Review.</div>
-    <div class="row"><button id="listDocs" style="flex:0 0 auto">What's left to do</button></div>
+    <!-- THE LIST IS THE WAY IN. Typing an id is the way in only when you
+         already know which id you want, which is the rarest case: what a
+         person actually has is a pile of folders in three conditions. So the
+         three lists come first and the loaders sit at the bottom. -->
+    <div class="row"><button id="listDocs" style="flex:0 0 auto">Refresh the list</button>
+      <select id="docSort" title="how to order the list">
+        <option value="name">by map name</option>
+        <option value="id">by folder name</option>
+      </select></div>
     <div id="docList"></div>
-    <label style="margin-top:8px">…or a bare scan, to start a new document</label>
-    <div class="row">
-      <input type="text" id="renderPath" placeholder="documents/mr066-035/mr066-035-100dpi.png">
-      <button id="loadRenderBtn" style="flex:0 0 auto">Load</button>
-    </div>
-    <div class="hint">Or from anywhere: <input type="file" id="file" accept="image/*,.pdf,application/pdf"></div>
-    <div class="hint">Starting from a PDF in <code>inbox/</code>? Double-click
-      <code>new-document.command</code> first — it makes the document's folder and
-      the 100&nbsp;dpi render this tool needs.</div>
+    <details id="openByName">
+      <summary>…or open one by name</summary>
+      <label>A saved document (documents/&lt;id&gt;/)</label>
+      <div class="row">
+        <input type="text" id="loadId" placeholder="mr066-035">
+        <button id="loadDoc" style="flex:0 0 auto">Load</button>
+      </div>
+      <div class="hint">Restores the header, the coverage ring, the render and the
+        alignment. If it already has rows, this goes straight to Review.</div>
+      <label style="margin-top:8px">…or a bare scan, to start a new document</label>
+      <div class="row">
+        <input type="text" id="renderPath" placeholder="documents/mr066-035/mr066-035-100dpi.png">
+        <button id="loadRenderBtn" style="flex:0 0 auto">Load</button>
+      </div>
+      <div class="hint">Or from anywhere: <input type="file" id="file" accept="image/*,.pdf,application/pdf"></div>
+      <div class="hint">Starting from a PDF in <code>inbox/</code>? Double-click
+        <code>new-document.command</code> first — it makes the document's folder and
+        the 100&nbsp;dpi render this tool needs.</div>
+    </details>
   </details>
   <div class="hint" id="whatsOpen"></div>
 
@@ -242,16 +261,11 @@
     <h3>Sweep</h3>
     <div class="hint" id="sweepState"></div>
     <div id="sweepBlockers"></div>
-    <button id="sweepBtn">Mark fully swept</button>
-    <button class="primary" id="saveReview">Save review</button>
-    <div class="hint" id="reviewSaveState"></div>
 
-    <h3>Legend</h3>
-    <div id="revLegend"></div>
-    <h3>Streets in coverage</h3>
-    <div id="revStreets"></div>
-    <div id="revProblems"></div>
-
+    <!-- NEXT TO WHAT THE SWEEP IS WAITING ON, not at the bottom of the panel.
+         "This stretch has ink the modern map has no street for" is one of the
+         two answers to an unaccounted stretch, and it was three headings away
+         from the list that asks the question. -->
     <h3>Drawn on the plat, gone today</h3>
     <div class="hint">A corridor the sheet letters that no modern street
       follows — MODEL-SPEC §5.3. Trace it on the scan and it becomes a
@@ -262,6 +276,16 @@
       <button id="traceCancel" style="display:none">Cancel</button>
     </div>
     <div class="hint" id="traceState"></div>
+
+    <button id="sweepBtn">Mark fully swept</button>
+    <button class="primary" id="saveReview">Save review</button>
+    <div class="hint" id="reviewSaveState"></div>
+
+    <h3>Legend</h3>
+    <div id="revLegend"></div>
+    <h3>Streets in coverage</h3>
+    <div id="revStreets"></div>
+    <div id="revProblems"></div>
 
     <h3>If an assistant just edited the file</h3>
     <div class="row"><button id="revReload">Re-read rows from disk</button></div>
@@ -745,6 +769,13 @@ $("loadRenderBtn").onclick = async () => {
 // handle the tool already holds for saving, and each file is read as TEXT —
 // no eval, because this runs over every document and one bad file should not
 // take the list down with it.
+// WHAT A SAVE LEAVES BEHIND IS THE TEST, not what the document file claims.
+// A finished coverage writes four files at once (§3): the document, the
+// alignment, the modern street geometry and TASK.md. A folder with a render
+// and less than all four has not been through align-and-coverage, whatever is
+// in a half-written <id>.js — so the condition is read off the directory.
+const SAVE_FILES = id => [`${id}.js`, `${id}-alignment.json`, `${id}-streets.json`, "TASK.md"];
+const RENDER_RE = /\.(png|jpe?g|gif|webp)$/i;
 async function scanDocuments() {
   const state = await useProjectDir(true);
   if (state !== "ok") return null;
@@ -755,25 +786,61 @@ async function scanDocuments() {
   for await (const [name, h] of docsDir.entries()) {
     // "_" is the parking convention documents/index.js also skips.
     if (h.kind !== "directory" || name.startsWith("_") || name.startsWith(".")) continue;
+    const files = new Set();
+    for await (const [f, fh] of h.entries()) if (fh.kind === "file") files.add(f);
+    const render = [...files].find(f => RENDER_RE.test(f)) || null;
+    const missing = SAVE_FILES(name).filter(f => !files.has(f));
+
     let text = "";
-    try { text = await (await (await h.getFileHandle(`${name}.js`)).getFile()).text(); }
-    catch (e) { out.push({ id: name, state: "nofile" }); continue; }
+    if (files.has(`${name}.js`))
+      try { text = await (await (await h.getFileHandle(`${name}.js`)).getFile()).text(); }
+      catch (e) { /* unreadable reads as absent */ }
     const swept = /sweptFully\s*:\s*true/.test(text);
     const rowsAt = text.indexOf("rows:");
     const rows = rowsAt < 0 ? 0 : (text.slice(rowsAt).match(/\bkind\b\s*"?\s*:/g) || []).length;
-    const aligned = /\balignment\s*:\s*\{/.test(text);
-    out.push({ id: name, rows, swept, aligned,
-               state: swept ? "swept" : rows ? "review" : aligned ? "rows" : "align" });
+    // The short title is what a person calls the map; the folder name is what
+    // the machine calls it. Both, because neither alone tells you what a sheet
+    // is: "mr053-069" says nothing, and "Hutton / Ord Survey" says nothing
+    // about WHICH sheet.
+    const m = text.match(/shortTitle\s*:\s*(["'`])((?:\\.|(?!\1).)*)\1/);
+    const short = m ? m[2].replace(/\\(.)/g, "$1") : null;
+    out.push({ id: name, rows, swept, short, render, missing,
+               state: missing.length ? "align" : swept ? "swept" : "review" });
   }
   return out.sort((x, y) => x.id.localeCompare(y.id));
 }
 
+// SHEETS OF ONE MAP ARE ONE LINE.
+//
+// The Ord survey is six folders and the Wolfskill Orchard Tract is five;
+// listing each by its own short title says "Hutton / Ord Survey" six times and
+// buries the one folder that is actually different. So documents that name the
+// same map are bracketed under it, with their ids beside it. A sheet number in
+// the short title ("…, sheet 2") is part of the sheet's name, not the map's,
+// so it comes off for the grouping and stays on the id.
+const mapName = d => d.short ? d.short.replace(/,\s*sheets?\s.*$/i, "").trim() : null;
+function bracket(docs) {
+  const by = new Map();
+  for (const d of docs) {
+    // No short title yet? Then it is its own line — an unnamed document is
+    // exactly the one you want to see, not folded into a neighbour.
+    const key = mapName(d) || "\u0000" + d.id;
+    if (!by.has(key)) by.set(key, []);
+    by.get(key).push(d);
+  }
+  return [...by.entries()].map(([key, ds]) => ({
+    name: key.startsWith("\u0000") ? null : key, docs: ds
+  }));
+}
+
+// THREE CONDITIONS A FOLDER CAN BE IN, and each one opens in the mode that
+// does the next piece of work. Presented alike, because they are the same kind
+// of thing — a pile of folders waiting — and the middle pile is not more
+// important than the others just because it is where the reading happens.
 const DOC_GROUPS = [
-  ["align",  "Needs aligning",        "no alignment saved yet"],
-  ["rows",   "Needs a first pass",    "aligned, but no rows — hand the folder to an assistant"],
-  ["review", "Needs your review",     "rows are in; confirm them and sweep"],
-  ["nofile", "Folder with no document file", "documents/&lt;id&gt;/&lt;id&gt;.js is missing"],
-  ["swept",  "Swept",                 "done — silence here can be argued from"]
+  ["align",  "Needs aligning and coverage", "a render, and not yet the four files a coverage save writes", "align"],
+  ["review", "Needs a first pass or your review", "aligned and covered; rows to be read in, confirmed, and swept", "review"],
+  ["swept",  "Swept", "done — silence here can be argued from", "review"]
 ];
 async function refreshDocList() {
   const el = $("docList");
@@ -785,28 +852,92 @@ async function refreshDocList() {
     return;
   }
   if (!docs.length) { el.innerHTML = `<div class="hint">No document folders found.</div>`; return; }
-  const row = d => `<li data-doc="${esc(d.id)}"><span>${esc(d.id)}</span>` +
-    `<span class="st">${d.state === "swept" ? "swept"
-      : d.state === "review" ? `${d.rows} row${d.rows === 1 ? "" : "s"}`
-      : d.state === "nofile" ? "no .js" : d.state === "rows" ? "no rows" : "no alignment"}</span></li>`;
+  // What is missing, named as the thing rather than as the filename: "no
+  // alignment" is a condition, "no mr053-069-alignment.json" is a chore.
+  const lacks = d => !d.render ? "no render"
+    : d.missing.includes(`${d.id}.js`) ? "no document file"
+    : d.missing.some(f => /-alignment\.json$/.test(f)) ? "no alignment"
+    : d.missing.some(f => /-streets\.json$/.test(f)) ? "no coverage"
+    : "no TASK.md";
+  const status = d => d.state === "swept" ? "swept"
+    : d.state === "review" ? (d.rows ? `${d.rows} row${d.rows === 1 ? "" : "s"}` : "no rows yet")
+    : lacks(d);
+  // A MAP'S NAME IS BOLD WHEREVER IT APPEARS. It was bold only when a map had
+  // several sheets, so a one-sheet map read as a lesser thing than a six-sheet
+  // one — and scanning the list for a map you half-remember meant reading two
+  // different typographic ranks for the same kind of word.
+  const nm = s => `<b class="mn">${esc(s)}</b>`;
+  const li = (d, cls, label) => `<li${cls ? ` class="${cls}"` : ""} data-doc="${esc(d.id)}" ` +
+    `data-mode="${esc(MODE_FOR[d.state] || "review")}"><span>${label}</span>` +
+    `<span class="st">${status(d)}</span></li>`;
+  const group = g => g.docs.length === 1 && !g.name ? li(g.docs[0], "", esc(g.docs[0].id))
+    : g.docs.length === 1
+      ? li(g.docs[0], "", `${nm(g.name)} <span class="aw">${esc(g.docs[0].id)}</span>`)
+      : `<li class="mapname"><span>${nm(g.name)}</span>` +
+        `<span class="st">${g.docs.length} sheets</span></li>` +
+        g.docs.map(d => li(d, "sheet", esc(d.id))).join("");
   let html = "";
   for (const [key, title, hint] of DOC_GROUPS) {
-    const list = docs.filter(d => d.state === key);
+    let list = docs.filter(d => d.state === key);
     if (!list.length) continue;
-    const body = `<div class="hint">${hint}</div><ul>${list.map(row).join("")}</ul>`;
-    // Everything still to do is open; the finished pile is folded away, since
-    // its only job is to be countable.
-    html += key === "swept"
-      ? `<details><summary>${list.length} swept</summary>${body}</details>`
-      : `<h4>${title} (${list.length})</h4>${body}`;
+    // Sorted by short name puts the ones with no name at the top, because an
+    // unnamed document is the one that still needs a header filled in.
+    const unnamedFirst = g => g.name === null ? 0 : 1;
+    const groups = bracket(list).sort((a, b) => docSort === "name"
+      ? unnamedFirst(a) - unnamedFirst(b) ||
+        (a.name || a.docs[0].id).localeCompare(b.name || b.docs[0].id)
+      : a.docs[0].id.localeCompare(b.docs[0].id));
+    // Each list folds on its own caret. All three start open — they are
+    // presented equally — but a pile you are not working through today is
+    // worth getting out of the way, and the swept pile grows without end.
+    html += `<details class="docgroup" data-group="${key}"` +
+            `${docFolded.has(key) ? "" : " open"}>` +
+            `<summary>${title} (${list.length})</summary>` +
+            `<div class="hint">${hint}</div><ul>${groups.map(group).join("")}</ul></details>`;
   }
   el.innerHTML = html;
-  for (const li of el.querySelectorAll("li[data-doc]")) li.onclick = () => {
-    $("loadId").value = li.dataset.doc;
-    $("loadDoc").click();
-  };
+  for (const row of el.querySelectorAll("li[data-doc]"))
+    row.onclick = () => openDocument(row.dataset.doc, row.dataset.mode);
+  // Remembered across a refresh: the list is rebuilt from scratch every time
+  // it is read, and a caret that reopened itself on every refresh would be a
+  // caret you had to close again after every save.
+  for (const d of el.querySelectorAll("details.docgroup"))
+    d.addEventListener("toggle", () =>
+      d.open ? docFolded.delete(d.dataset.group) : docFolded.add(d.dataset.group));
 }
+const docFolded = new Set();
+const MODE_FOR = Object.fromEntries(DOC_GROUPS.map(([k, , , mode]) => [k, mode]));
+let docSort = "name";
 $("listDocs").onclick = refreshDocList;
+// Opening the box IS the request to see what is in the folder. Expanding it
+// and then having to press a button to find out is one click of nothing.
+$("openBox").addEventListener("toggle", () => {
+  if ($("openBox").open && !$("docList").innerHTML) refreshDocList();
+});
+$("docSort").onchange = () => { docSort = $("docSort").value; if ($("docList").innerHTML) refreshDocList(); };
+
+// A CLICK IN THE LIST LANDS IN THE MODE THAT DOES THE NEXT PIECE OF WORK.
+//
+// A folder that still needs aligning opens in align mode even if a half-saved
+// <id>.js is already there; a folder that has been through coverage opens in
+// review. Typing an id into the box below keeps the old behaviour — no mode is
+// forced, because there the person has said which document but not why.
+async function openDocument(id, mode) {
+  $("loadId").value = id;
+  const docs = await scanDocuments();
+  const d = docs && docs.find(x => x.id === id);
+  // No document file to restore from: the render is all there is, so open it.
+  if (mode === "align" && d && d.missing.includes(`${id}.js`)) {
+    if (!d.render) return alert(`documents/${id}/ has no render to align. ` +
+      `Double-click new-document.command to make one.`);
+    $("renderPath").value = `documents/${id}/${d.render}`;
+    await $("loadRenderBtn").onclick();
+    setMode("align");
+    return;
+  }
+  await $("loadDoc").onclick();
+  if (mode) setMode(mode);
+}
 
 $("loadDoc").onclick = async () => {
   const id = $("loadId").value.trim().replace(/\.js$/, "");
@@ -902,6 +1033,14 @@ const REVC = {
 };
 // What each row kind claims, in one line — shown wherever a kind is offered,
 // because "absent" and "unnamed" are exactly the pair people conflate.
+// §4.2's four values, and what each one commits the row to.
+const ATTESTS = ["planned-on", "planned-by", "built-on", "built-by"];
+const ATTESTS_MEAN = {
+  "planned-on": "this document IS the planning act — the street was dedicated on its date",
+  "planned-by": "planned no later than this date; the document merely shows it",
+  "built-on":   "built on this date (rare — wants an opening or acceptance record)",
+  "built-by":   "the pavement physically existed no later than this date"
+};
 const KIND_MEANS = {
   state:    "the document letters a name along this stretch",
   unnamed:  "the document draws the roadway here but letters no name on it",
@@ -1102,6 +1241,56 @@ function runGaps(run, ranges) {
     runMetres(run.slice(a, b + 1)) >= MIN_RUN_M);
 }
 
+// THE OTHER CARRIAGEWAY IS NOT UNACCOUNTED GROUND.
+//
+// South Hill Street between 1st and 2nd is a divided pair: two one-way ways
+// over one corridor, meeting each other at BOTH ends. stitchRuns joins them
+// into a run that walks out along one carriageway and walks back along the
+// other, and `from`/`to` clip an INDEX RANGE (clipRange) — so the returning
+// leg lies past the run's own canonical end and NO row can reach it. MR053-069
+// could not be marked swept for exactly this: 47 m that no row was able to
+// account for, and no row could have been written that would.
+//
+// Cutting the run at the fold was tried and is worse: it exposes ground on
+// 2nd Street and Los Angeles Street that the folded indexing had been covering,
+// and turns MR053-069's 47 m into 292 m and MR053-071's 147 m into 1213 m.
+//
+// So a gap is exempted only where BOTH of these hold, and the first is what
+// keeps the rule from touching ordinary streets:
+//
+//   1. the run turns back on itself at or inside the gap — a real street
+//      corner is a right angle or gentler, and only a fold reverses direction;
+//   2. every point of the gap is within one roadway of ground the rows do
+//      already account for.
+//
+// MR053-069's gap folds at its first vertex and stays within 10 m of accounted
+// ground the whole way. The far side of a plaza ring does neither: MR053-071's
+// Broad Plaza is a smooth closed ring reaching 48 m away, so it stays a real
+// gap and is answered by a row (from: null, to: null — the whole street).
+//
+// Cutting the run at the fold instead was tried and is worse: it exposes ground
+// on 2nd Street and Los Angeles Street that the folded indexing had been
+// covering, turning MR053-069's 47 m into 292 m and MR053-071's 147 m into
+// 1213 m.
+const SAME_CORRIDOR_M = 15;      // a divided pair is one roadway wide, not a block
+const FOLD_COS = -0.5;           // a turn sharper than 120° is a fold, not a corner
+function foldIndices(run) {
+  const KY = 110540, KX = lat => 111320 * Math.cos(lat * Math.PI / 180);
+  const out = [];
+  for (let i = 1; i < run.length - 1; i++) {
+    const a = run[i - 1], b = run[i], c = run[i + 1], k = KX(b.lat);
+    const ux = (b.lon - a.lon) * k, uy = (b.lat - a.lat) * KY;
+    const vx = (c.lon - b.lon) * k, vy = (c.lat - b.lat) * KY;
+    const lu = Math.hypot(ux, uy), lv = Math.hypot(vx, vy);
+    if (lu && lv && (ux * vx + uy * vy) / (lu * lv) < FOLD_COS) out.push(i);
+  }
+  return out;
+}
+const sameCorridor = (run, a, b, accounted) =>
+  accounted.length > 0 &&
+  foldIndices(run).some(i => i >= a - 1 && i <= b) &&
+  run.slice(a, b + 1).every(p => accounted.some(q => G.metres(p, q) <= SAME_CORRIDOR_M));
+
 // OSM splits one street into many ways, so segmentsInBounds hands back a
 // street as several runs that meet end to end — including one-point runs where
 // a way merely clips the polygon. Join them back into continuous polylines:
@@ -1130,6 +1319,7 @@ function stitchRuns(runs) {
   const real = parts.filter(r => r.length >= 2);
   return real.length ? real : parts;      // a lone touching point is still a fact
 }
+
 
 // A street can clip the coverage polygon by a few metres at a corner — the
 // stub of a side street leaving an intersection just inside the boundary. That
@@ -1232,11 +1422,20 @@ function reviewModel() {
     // An excepted stretch counts as accounted for: it is not ground this
     // document was ever speaking about.
     for (const e of rec.excepted) rec.covered[e.i].push(e.range);
+    // Ground a row already speaks for, as points, so a candidate gap can be
+    // asked whether it is really somewhere else.
+    const accounted = [];
+    rec.runs.forEach((run, i) => {
+      for (const [a, b] of rec.covered[i]) accounted.push(...run.slice(a, b + 1));
+    });
     rec.gaps = [];
     rec.runs.forEach((run, i) => {
-      for (const [a, b] of runGaps(run, rec.covered[i]))
+      for (const [a, b] of runGaps(run, rec.covered[i])) {
+        const pts = run.slice(a, b + 1);
+        if (sameCorridor(run, a, b, accounted)) continue;
         rec.gaps.push({ street: rec.name, runIndex: i, a, b,
-                        pts: run.slice(a, b + 1), metres: runMetres(run.slice(a, b + 1)) });
+                        pts, metres: runMetres(pts) });
+      }
     });
     const kinds = new Set(rec.rows.map(r => r.kind));
     rec.status = !rec.rows.length ? "unaccounted"
@@ -1380,7 +1579,8 @@ function rowHtml(r, emphasise) {
   // Anything the controls below render is left out of this table. Showing a
   // field twice — once as text, once as a box — makes the text look like the
   // field, and it is the one you cannot type in.
-  const edited = new Set(["kind", "confirmed",
+  const edited = new Set(["kind", "confirmed", "note",
+    ...(r.kind === "state" || r.kind === "unnamed" ? ["attests"] : []),
     ...(r.kind === "state" || r.kind === "vanished" ? ["asWritten", "name"] : [])]);
   const keys = [...ROW_FIELDS.filter(k => k in r && !edited.has(k)),
                 ...Object.keys(r).filter(k => !ROW_FIELDS.includes(k) && !edited.has(k))];
@@ -1452,6 +1652,25 @@ function rowControlsHtml(r, i) {
         `spells alike.</div>` : "");
   }
 
+  // WHAT KIND OF EXISTENCE, WHEN THE ROW DISAGREES WITH ITS DOCUMENT (§4.2).
+  //
+  // A sheet has one default — a tract map plans the streets it dedicates — but
+  // it also draws streets that were already there, and the pavement it merely
+  // shows is `built-by`, not `planned-on`. The override is the only way to say
+  // so, and until now the only way to set it was to edit the file. Not a
+  // single row in the corpus carried one.
+  if (r.kind === "state" || r.kind === "unnamed") {
+    const docDefault = ($("f_attests") && $("f_attests").value) || "planned-by";
+    html += `<div class="ctlrow"><label class="fk">attests</label>` +
+      `<select class="atpick" data-ri="${i}">` +
+      `<option value=""${r.attests ? "" : " selected"}>` +
+      `(this document's default: ${esc(docDefault)})</option>` +
+      ATTESTS.map(v => `<option value="${v}"${v === r.attests ? " selected" : ""}>${v}` +
+                       `</option>`).join("") + `</select></div>` +
+      `<div class="hint">${esc(ATTESTS_MEAN[r.attests || docDefault] || "")}` +
+      (r.attests ? ` <b>Overriding the document.</b>` : "") + `</div>`;
+  }
+
   if (isVanished(r))
     html += `<div class="ctlrow"><button class="retrace" data-ri="${i}">` +
       `Re-trace on the scan</button></div>`;
@@ -1463,6 +1682,15 @@ function rowControlsHtml(r, i) {
       `Split this stretch in two…</button></div>` +
       `<div class="hint">Then say something different about each half — or delete ` +
       `the half that is wrong, and answer it as an unaccounted stretch.</div>`;
+  // The AI pass writes its reasoning here, and it is sometimes wrong about
+  // what it saw. Editing it does NOT un-confirm the row: a note is commentary
+  // on the claim, not the claim (§5.5), and re-vouching for a row because a
+  // typo was fixed would make confirmation mean less.
+  html += `<div class="ctlrow"><label class="fk">note</label>` +
+    `<textarea class="notepick" rows="${Math.min(6, Math.max(2, Math.ceil((r.note || "").length / 42)))}" ` +
+    `data-ri="${i}" placeholder="why this reading, or what is there instead">` +
+    `${esc(r.note || "")}</textarea></div>` +
+    `<div class="hint">Working notes about this row. Commits when you click away.</div>`;
   html += `<div class="ctlrow"><button class="conf ${conf ? "" : "done"}" data-ri="${i}">` +
     (conf ? "Confirm this row" : "✓ confirmed — undo") + `</button></div>`;
   html += `<div class="ctlrow"><button class="delrow" data-ri="${i}">Delete this row</button></div>`;
@@ -1573,6 +1801,24 @@ function bindPopControls() {
     if (r.confirmed !== false) r.confirmed = false;
     touch();
   };
+  for (const el of p.querySelectorAll("select.atpick")) el.onchange = () => {
+    const r = reviewRows()[+el.dataset.ri], v = el.value;
+    if (v === (r.attests || "")) return;
+    if (v) r.attests = v; else delete r.attests;
+    // It changes what the row claims about existence, so it wants looking at
+    // again — the same rule kind and asWritten follow.
+    if (r.confirmed !== false) r.confirmed = false;
+    touch();
+  };
+  for (const el of p.querySelectorAll("textarea.notepick")) el.onchange = () => {
+    const r = reviewRows()[+el.dataset.ri], v = el.value.trim();
+    if (v === (r.note || "")) return;
+    if (v) r.note = v; else delete r.note;
+    reviewDirty = true;
+    // Deliberately not touch(): a note is not a claim, so the row keeps its
+    // confirmation and the popup does not jump out from under the cursor.
+    updateReviewActions();
+  };
   for (const el of p.querySelectorAll("select.kindpick")) el.onchange = () => {
     const r = reviewRows()[+el.dataset.ri], k = el.value;
     if (k === r.kind) return;
@@ -1582,7 +1828,7 @@ function bindPopControls() {
     if (k === "absent" || k === "unnamed" || k === "vanished-unnamed") {
       delete r.name; delete r.asWritten;
     }
-    if (k !== "state" && k !== "unnamed") delete r.attests;
+    if (k !== "state" && k !== "unnamed") delete r.attests;   // §4.2 rides on those two
     if (k === "state" && !("basis" in r)) r.basis = "alignment";
     if (r.confirmed !== false) r.confirmed = false;   // re-classified, so re-check it
     touch();
@@ -2838,16 +3084,23 @@ them afterwards:
 
 // drawn on the plat, no modern counterpart at all
 { kind: "vanished", asWritten: "<label as lettered>",
-  trace: [[x, y], [x, y]], basis: "alignment", confirmed: false }
+  trace: [[x, y], [x, y]], basis: "alignment", confirmed: false },
+
+// drawn on the plat, no modern counterpart, AND no name lettered on it
+{ kind: "vanished-unnamed",
+  trace: [[x, y], [x, y]], basis: "alignment", confirmed: false,
+  note: "<what is drawn>" }
 \`\`\`
 
-### The three kinds are three different claims. Read this twice.
+### The kinds are different claims. Read this twice.
 
 | what you see on the sheet | kind |
 |---|---|
 | a corridor with a name lettered along it | \`state\` |
 | a corridor, edge lines, an alley or a right-of-way — but no name on it | \`unnamed\` |
 | lot interiors, blank paper, a block with no street through it | \`absent\` |
+| a corridor no modern street follows, with a name on it | \`vanished\` |
+| a corridor no modern street follows, with no name on it | \`vanished-unnamed\` |
 
 \`absent\` is the strong one: it says the sheet **shows there was no street
 here**, and the project later argues from that. If the sheet draws lines you
@@ -2855,8 +3108,29 @@ think are a street but cannot find a name for, that is \`unnamed\`, not
 \`absent\`. If you are unsure whether the lines are a street at all, say so in
 \`note\` and use \`unnamed\` — it claims less.
 
-Neither \`unnamed\` nor \`absent\` may carry \`name\` or \`asWritten\`. There is
-no ink to quote.
+Neither \`unnamed\` nor \`absent\` nor \`vanished-unnamed\` may carry \`name\` or
+\`asWritten\`. There is no ink to quote. **Do not write
+\`asWritten: "unnamed"\`** — that says the sheet letters the word *unnamed*,
+which is false; use the kind that means it.
+
+### A stretch lettered twice is ONE row
+
+Some sheets letter the same street more than once — the 1849 Ord survey letters
+most of its streets in English and in Spanish at once, "GRASSHOPPER ST." beside
+"CALLE DE LAS CHAPULES". That is one row carrying both forms, in reading order:
+
+\`\`\`js
+{ kind: "state", asWritten: ["GRASSHOPPER ST.", "CALLE DE LAS CHAPULES"],
+  street: "Figueroa Street", from: "...", to: "...",
+  basis: "alignment", confirmed: false }
+\`\`\`
+
+Two rows for one label double-count the ground and come out as two overlapping
+periods on the map. Joining the forms with a slash records punctuation the
+sheet does not have, in a field whose whole point is that it is verbatim.
+
+Two labels along *different stretches* of one street are still two rows — that
+is two pieces of testimony about two pieces of ground.
 
 ### Which end is \`from\`
 
@@ -2888,8 +3162,9 @@ as the one three blocks east, or a different street that spells alike. Put the
 ink in \`asWritten\` and leave identity to the human review step, which has the
 project's name list in front of it.
 
-\`asWritten\` is verbatim ink, typos and abbreviations included. \`trace\` is
-scan pixels against the render above.
+\`asWritten\` is verbatim ink, typos and abbreviations included — a string, or
+an array of them where the sheet letters the stretch more than once. \`trace\`
+is scan pixels against the render above.
 
 \`street\` must be one of the names listed above, spelled exactly. \`from\` and
 \`to\` must be names from that street's \`crossings\` in \`${id}-streets.json\`,

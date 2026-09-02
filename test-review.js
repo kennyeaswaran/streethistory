@@ -77,7 +77,7 @@ Object.defineProperty(sandbox, "loadedDoc", { get: () => ({ rows }) });
 vm.createContext(sandbox);
 vm.runInContext("const KY = 110540; let lastModel = null; let coverageExcept = [];\n" +
   "let docSwept = { fully: false, for: [] };\n" + zoomSource + source + bundleSource + gateSource +
-  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers, runGaps, clipRange, splitRowAt, sameExtent, blockingRows, rowMetres, asWrittenForms, retractSweepIfBroken, setModel: m => { lastModel = m; }, runEnds, streetIsNS, rowSpansNothing, emptyRows, setSwept: v => { docSwept = v; }, getSwept: () => docSwept };", sandbox);
+  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers, runGaps, clipRange, foldIndices, sameCorridor, splitRowAt, sameExtent, blockingRows, rowMetres, asWrittenForms, retractSweepIfBroken, setModel: m => { lastModel = m; }, runEnds, streetIsNS, rowSpansNothing, emptyRows, setSwept: v => { docSwept = v; }, getSwept: () => docSwept };", sandbox);
 const API = sandbox.API;
 const setRows = r => { rows = r; };
 
@@ -666,6 +666,37 @@ console.log("which way round a run is");
   const partial = API.clipRun(run, west, east, false);
   ok("two given ends are order-insensitive too",
      Math.abs(len(partial) - len(API.clipRun(run, east, west, false))) < 1);
+}
+
+console.log("a divided street is one corridor, not an unaccounted stretch");
+{
+  // South Hill Street's shape between 1st and 2nd, in miniature: out along one
+  // one-way carriageway and back along the other, ~14 m apart. stitchRuns joins
+  // the pair into a single run, and `from`/`to` clip an index range — so the
+  // returning leg lies past the run's own canonical end and no row can name it.
+  const m2lat = m => m / 110540, m2lon = m => m / (111320 * Math.cos(34.05 * Math.PI / 180));
+  const P = (e, n) => ({ lat: 34.05 + m2lat(n), lon: -118.25 + m2lon(e) });
+  const fold = [P(0, 0), P(40, 0), P(80, 0), P(40, 14), P(0, 14)];
+  ok("the turn-back is found, and only the turn-back",
+     JSON.stringify(API.foldIndices(fold)) === "[2]", JSON.stringify(API.foldIndices(fold)));
+  const straight = [P(0, 0), P(40, 0), P(80, 0), P(120, 0), P(160, 2)];
+  ok("an ordinary street has no fold in it",
+     API.foldIndices(straight).length === 0, JSON.stringify(API.foldIndices(straight)));
+  ok("a right-angle corner is a corner, not a fold",
+     API.foldIndices([P(0, 0), P(40, 0), P(40, 40)]).length === 0);
+
+  const outward = fold.slice(0, 3);            // what the rows account for
+  ok("the returning carriageway is not reported as unaccounted ground",
+     API.sameCorridor(fold, 3, 4, outward));
+  ok("…but a leg that turns back a whole block away is a real gap",
+     !API.sameCorridor([P(0, 0), P(40, 0), P(80, 0), P(40, 90), P(0, 90)], 3, 4,
+                       [P(0, 0), P(40, 0), P(80, 0)]));
+  ok("a plain leftover at the end of a straight street is still a gap",
+     !API.sameCorridor(straight, 2, 4, straight.slice(0, 2)));
+  ok("…and so is anything on a run with no fold in it at all",
+     !API.sameCorridor(straight, 3, 4, straight.slice(0, 3)));
+  ok("nothing is exempted when no row accounts for anything",
+     !API.sameCorridor(fold, 3, 5, []));
 }
 
 console.log(`\n${pass} passed, ${fail} failed`);

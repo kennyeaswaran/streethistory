@@ -17,7 +17,16 @@ let pass = 0, fail = 0;
 const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
                           : (fail++, console.error("  FAIL " + n + (d ? " — " + d : "")));
 
-const BLUE = "#2e6f9e", GREY = "#c0c0c0";
+// Blue stopped being one colour when scheme 1 grew its saturation ramp
+// (preview.html blueFor): a stretch is painted somewhere between hsl(205 25%
+// 68%) and hsl(205 55% 40%) depending on how much of its story is pinned. The
+// claim under test was never about a particular hex — it is "a document speaks
+// about this stretch" versus "only the OSM extract does" — so the test asks
+// which side of that line the paint falls on, and goes on meaning it as the
+// ramp is tuned.
+const GREY = "#c0c0c0";
+const isBlue = c => /^hsl\(205\b/.test(String(c)) || String(c) === "#2e6f9e";
+const isGrey = c => String(c) === GREY;
 
 (async () => {
   const LEAFLET_DIR = path.join(__dirname, "node_modules/leaflet/dist");
@@ -73,24 +82,24 @@ const BLUE = "#2e6f9e", GREY = "#c0c0c0";
   // Colton splits now that a segment only merges with one that would produce
   // the same entry: the State St stretch is attested, the rest is not.
   ok("Colton's State St stretch is blue",
-     await colourOf("Colton Street", "Belmont to Toluca (State St)") === BLUE,
+     isBlue(await colourOf("Colton Street", "Belmont to Toluca (State St)")),
      String(await colourOf("Colton Street", "Belmont to Toluca (State St)")));
   ok("…and the rest of Colton is grey",
-     await colourOf("Colton Street", "east of Toluca") === GREY,
+     isGrey(await colourOf("Colton Street", "east of Toluca")),
      String(await colourOf("Colton Street", "east of Toluca")));
   ok("the Waters St stretch of Douglas is blue",
-     await colourOf("Douglas Street", "beyond Colton (Waters St)") === BLUE,
+     isBlue(await colourOf("Douglas Street", "beyond Colton (Waters St)")),
      String(await colourOf("Douglas Street", "beyond Colton (Waters St)")));
   ok("…and the stretch south of Colton, which nothing attests, is grey",
-     await colourOf("Douglas Street", "south of Colton") === GREY,
+     isGrey(await colourOf("Douglas Street", "south of Colton")),
      String(await colourOf("Douglas Street", "south of Colton")));
 
   console.log("a numbered street is no longer blue end to end");
   ok("3rd Street beyond Bixel is grey",
-     await colourOf("3rd Street", "beyond Bixel") === GREY,
+     isGrey(await colourOf("3rd Street", "beyond Bixel")),
      String(await colourOf("3rd Street", "beyond Bixel")));
   ok("…while its Arnold St stretch is blue",
-     await colourOf("3rd Street", "Bixel to Boylston (Arnold St)") === BLUE,
+     isBlue(await colourOf("3rd Street", "Bixel to Boylston (Arnold St)")),
      String(await colourOf("3rd Street", "Bixel to Boylston (Arnold St)")));
 
   // The whole point: most of the map should be grey, and it was not before.
@@ -98,7 +107,8 @@ const BLUE = "#2e6f9e", GREY = "#c0c0c0";
     let blue = 0, grey = 0;
     for (const [, st] of streets) {
       const c = st.ways.length ? st.ways[0].options.color : null;
-      if (c === "#2e6f9e") blue++; else if (c === "#c0c0c0") grey++;
+      if (/^hsl\(205\b/.test(String(c)) || c === "#2e6f9e") blue++;
+      else if (c === "#c0c0c0") grey++;
     }
     return { blue, grey };
   });

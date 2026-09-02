@@ -455,6 +455,16 @@ alignment: {
 }
 ```
 
+**Scan pixels or degrees is decided by the VALUES, not by a flag.** A coverage
+ring (§4.4) is stored in one or the other and nothing in the file says which;
+the test is that no latitude exceeds 90 and no longitude exceeds 180, while a
+100 dpi render is over a thousand pixels across. Deciding it from the first
+vertex instead — "is this x large?" — was wrong on half the corpus, because a
+polygon traced from the sheet's top-left corner starts small, and every check
+that used the ring quietly became a no-op on those documents. `ringIsPixels`
+in `doc-geometry.js` is the one answer, so the tool and the checker cannot
+drift apart on it.
+
 This is the same control-point schema `georef.py` already consumes, so the
 document becomes the single home for what used to live in
 `tracts/renders/<name>-alignment.json`. **Keep emitting that sidecar too**:
@@ -670,6 +680,22 @@ polygons, so an extent frequently ends partway along a block. A cross-street
 name wins whenever one is near — it is stable, human-readable, and survives
 re-alignment — and a point is the fallback. Points are scan pixels (§4.6)
 for anything traced on a scan.
+
+**Which end is which is fixed, and `null` follows it.** `from` is the WEST end
+of an east-west street and the NORTH end of a north-south one; `to` is the
+other. A `null` end means *the street's own end on that side* — the west end
+for `from`, the east end for `to` — and that is a fact about the ground, not
+about the data. OSM's ways carry no such convention: about half of them are
+drawn the other way round, so anything resolving a null end to "the first point
+of the run" gets the wrong half of the street on half the streets. Both the
+generator and the tool now resolve it canonically, from the run's extreme
+coordinate, and they agree.
+
+The failure this produces is quiet. A row whose ends are the wrong way round
+usually still *draws*, because clipping sorts them; what it does is collapse
+when one end is null and the given end sits at that same canonical end — the
+row then covers a few metres instead of the stretch that was meant, or nothing
+at all, and reads in the file like a row somebody has dealt with (§6.1).
 
 The generator needs no special case: it already cuts at arbitrary boundaries
 and merges adjacent intervals with identical timelines (§6.1), so a mid-block

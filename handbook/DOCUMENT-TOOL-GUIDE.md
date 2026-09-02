@@ -75,26 +75,48 @@ and the **Project folder** control at the bottom, which both saves need.
 ## Opening something
 
 The **Open** box at the top of the panel. It is open while nothing is loaded and
-folds itself away afterwards; the line under it says what you have open.
+folds itself away afterwards; the line under it says what you have open. Opening
+it reads `documents/` and shows **three lists**, which is the way in.
 
-- **A saved document** — type an id (`mr066-035`, no `.js`) and Load. This is
-  the main path: it restores the header, the coverage ring, the render and the
-  alignment, and if the document already has rows it goes straight to Review.
-- **A bare scan** — type a path (`documents/mr066-035/mr066-035-100dpi.png`) and
-  Load, or pick a file from anywhere. This is how a new document starts.
+### The three lists
 
-### What's left to do
+Every folder under `documents/` is in one of three conditions, and each is
+presented the same way, because they are the same kind of thing — a pile of
+folders waiting:
 
-**Open → "What's left to do"** reads every folder under `documents/` and sorts
-them by what they still need:
+- **Needs aligning and coverage** — the folder has a render and not yet all
+  four files a coverage save writes (`<id>.js`, `<id>-alignment.json`,
+  `<id>-streets.json`, `TASK.md`). Clicking one **opens it in Align mode**.
+- **Needs a first pass or your review** — aligned and covered. Either no rows
+  yet (hand the folder to an assistant) or rows in and waiting to be confirmed
+  and swept; the line says which. Clicking one **opens it in Review mode**.
+- **Swept** — done; silence here can be argued from. Clicking one **opens it in
+  Review mode** too, because that is where you would go to look at it again.
 
-- **needs aligning** — no `alignment` block saved yet
-- **needs a first pass** — aligned, but no rows; this is the state in which you
-  hand the folder to an assistant
-- **needs your review** — rows are in, with the count
-- **swept** — folded away, since its only job is to be countable
+Each list has a **caret of its own**. All three start open, since they are the
+same kind of thing, but a pile you are not working through today folds away —
+and the fold is remembered, because the list is rebuilt from scratch every time
+it is read and a caret that reopened itself would be one you had to close again
+after every save.
 
-Clicking one opens it. The list is read, not stored: sweep state already lives
+The condition is read off the FOLDER, not off the document file: a save writes
+those four files at once, so a folder with fewer than all four has not been
+through align-and-coverage, whatever a half-written `<id>.js` says about
+itself.
+
+Each line carries the map's short name as well as the folder name, always in
+**bold** — a one-sheet map's name is a map name too — and **sheets of one map
+are bracketed under it**: the Ord survey is six folders and the Wolfskill
+Orchard Tract five, so listing each by its own short title would say "Hutton /
+Ord Survey" six times and bury the one folder that is different. A sheet number
+in the short title ("…, sheet 2") belongs to the sheet, not the map, so it
+comes off the bracket and stays on the row.
+
+Sort **by map name** or **by folder name**. By name puts the documents with no
+short title at the top, because an unnamed document is one whose header still
+needs filling in.
+
+The list is read, not stored: sweep state already lives
 in each document file, and putting it in the folder NAME as well — or moving
 folders between an inbox / in-progress / done tree — would be the same fact in
 two places, free to disagree. Moving a folder is worse than duplication: the
@@ -102,10 +124,22 @@ paths inside the file (`alignment.image`, `scan`, `transcription`) are
 project-relative, and every move would break them. That bug has happened here
 once already.
 
-It needs the project folder connected, since it reads the folder rather than
-the served copy. Each document file is read as text and pattern-matched, not
-evaluated, so one malformed file shows as "no .js" instead of taking the list
-down with it.
+### …or open one by name
+
+Folded away at the bottom of the box, since typing an id is the way in only
+when you already know which id you want:
+
+- **A saved document** — type an id (`mr066-035`, no `.js`) and Load. It
+  restores the header, the coverage ring, the render and the alignment, and if
+  the document already has rows it goes straight to Review. No mode is forced
+  here, unlike a click in the lists: you have said which document but not why.
+- **A bare scan** — type a path (`documents/mr066-035/mr066-035-100dpi.png`) and
+  Load, or pick a file from anywhere. This is how a new document starts.
+
+The lists need the project folder connected, since they read the folder rather
+than the served copy. Each document file is read as text and pattern-matched,
+not evaluated, so one malformed file shows as "no document file" instead of
+taking the list down with it.
 
 ## Aligning
 
@@ -332,6 +366,16 @@ Each row offers:
 - **name** — the entity picker, under the ink, because that is the order the
   judgement happens in: read the label, then decide which lineage it belongs
   to.
+- **attests** — the §4.2 override, on `state` and `unnamed` rows. The document
+  has one default; the sheet also draws streets that were already there, and
+  the pavement it merely shows is `built-by`, not `planned-on`. The picker
+  names the document's own default as its first option, and choosing it again
+  removes the field rather than writing the same value twice. Changing it
+  un-confirms the row — it claims something else now.
+- **note** — the AI pass's reasoning, editable. Editing it does *not*
+  un-confirm the row: a note is commentary on the claim, not the claim (§5.5),
+  and re-vouching for a row because a typo was fixed would make confirmation
+  mean less. Commits when you click away.
 - **Confirm this row**, and **Delete this row**.
 - **Split this stretch in two…** — see below.
 - **Re-trace on the scan**, on a `vanished` row: draw a new polyline, keep the
@@ -451,6 +495,30 @@ false historical claim, which is why the tool will not choose for you. The
 panel lists what has been dropped, with an undo, and `check-model.js` refuses a
 document that both excludes a street and carries rows for it.
 
+### The other carriageway
+
+A divided street is two one-way ways over one corridor, meeting each other at
+both ends — South Hill Street between 1st and 2nd is one. Joined into a single
+run, they make a line that walks out along one carriageway and walks back along
+the other, and an extent cannot name the returning leg: `from` and `to` clip a
+range of the run's own vertices, and the returning leg lies past the run's
+canonical end. M.R. 53-69 could not be marked swept for exactly this — 47 m
+that no row could reach, and no row could have been written that would.
+
+So a stretch is exempted from the accounting when the run **turns back on
+itself** there (a real street corner is a right angle or gentler; only a fold
+reverses direction) **and** every point of it stays within 15 m — one roadway
+— of ground the rows already speak for. Both conditions, because the first is
+what keeps the rule away from ordinary streets: with no fold there is no
+exemption, whatever the distances.
+
+A closed ring is a different thing and stays a real gap: Broad Plaza on M.R.
+53-71 is drawn in OSM as a plaza outline rather than a linear street, its far
+side is 48 m from anything a row covers, and there is no fold in it. The answer
+there is a row, not a rule — and since a ring's two ends are the same point,
+the row that can name all of it is `from: null, to: null`, which means the
+whole street.
+
 ### Slivers
 
 Some overshoot is caught automatically. A street that clips the polygon by
@@ -462,6 +530,11 @@ ruled out rather than missed. `coverageExcept` is for the overshoot that is too
 big for that rule to catch.
 
 ### Streets the plat draws and the city has lost
+
+The button for this sits in the **Sweep** section, right under the list of rows
+the sweep is still waiting on: "this ground has ink the modern map has no
+street for" is one of the two answers to an unaccounted stretch, and it used to
+be three headings away from the list that asks the question.
 
 **Trace a vanished street** puts the canvas into tracing: click along the
 corridor's centre line, press Finish, and type the label exactly as the plat

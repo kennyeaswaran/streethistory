@@ -2,12 +2,14 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 273; entries: 543
+- Streets: 273; entries: 545
 - Stub entities minted from OSM (unresearched): 228
 - Curated entities: 81
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
 ## Partially swept documents (no negative inference contributed)
+- mr053-069: sweptFor = []
+- mr053-071: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
@@ -51,7 +53,6 @@
 - third-street: "3RD ST" ×1
 - second-street: "CALLE 2a" ×1
 - second-street: "2D ST" ×1
-- hill-street-downtown: "HILL ST" ×1
 - first-street: "1st ST" ×2
 - second-street: "2ND ST." ×1
 - third-street: "3RD ST." ×1

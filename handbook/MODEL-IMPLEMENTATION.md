@@ -17,14 +17,27 @@ it, for Kenny's review; MODEL-SPEC.md is unedited and remains the contract.
 | `diff-street.js` | the acceptance harness: structural per-field diff of one street, legacy vs generated |
 | `generated/` | `streets-data.gen.js` (today's consumable shape — the existing `check-data.js` passes on it unmodified), `search-index.js`, `report.md` |
 
-Documents encoded (§11's list, plus what 3rd Street's evidence base needed):
-`ord-1849` (Ord survey; partial — 2nd, 3rd, Chapules rows), `mr003-060-p1`
-and `mr003-060-p2` (Thomas Tract, one document per sheet), `mr030-009`
-(Wolfskill Orchard), `mr066-035` (Washington/Compromise, including its
-adversarial Third-St-is-Miramar row), `tr0015-166a-p1` (Crownwood),
-`ord-4093` (the 1897 renaming — the deferred apply pass now lives here as
-change rows), `lah-1874-02-27` (Chapules→Pearl), `mr006-138`, `mr013-087-p1`,
-`osm`.
+Documents encoded — **24 plus `osm`, of which 23 are fully swept** (2026-09-01;
+`node check-model.js` prints the live count, and the tool's Open → "What's left
+to do" lists what is not). Rather than a list that goes stale every week, the
+shape of the corpus:
+
+- **The Ord/Hutton survey, Aug. 1849** — `mr053-063`, `-067`, `-068`, `-069`,
+  `-071`, `-073`, the county recorder's 1893 copies, one document per sheet.
+  The corpus's floor: most downtown streets get their first attestation here,
+  and most are lettered in English and Spanish at once (§5.1).
+- **Boom-era tract maps** — `mr003-032`/`-033` (Ord blocks 72/73),
+  `mr003-060-p1`/`-p2` (Thomas Tract), `mr006-138` (Glassell),
+  `mr007-021` (Cameron Tract), `mr011-042` (Goodwin Tract),
+  `mr013-087-p1` (Mills and Wicks), `mr030-009-p1`…`-p5` (Wolfskill Orchard),
+  `mr066-035` (Washington/Compromise, with its adversarial
+  Third-St-is-Miramar row), `tr0015-166a-p1`/`-p2` (Crownwood).
+- **Transitions** — `ord-4093` (the 1897 citywide renaming; the only document
+  not swept, and partial by design) and `lah-1874-02-27` (Chapules→Pearl).
+- **`osm`** — the base map, a document like any other (§4.1).
+
+`ord-1849`, the hand-written stand-in for the survey, was retired once the
+sheets themselves were encoded.
 
 Decision recorded (closes a §12 item, per Kenny 2026-08-24): **a revived name
 resumes its old entity** — Georgia's 1897 revert is one entity, three ordered

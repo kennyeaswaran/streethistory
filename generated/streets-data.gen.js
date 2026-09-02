@@ -4021,11 +4021,11 @@ const STREET_DATA = {
         "entityId": "alameda-st",
         "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
-        "planned": {
-          "text": "by 1849",
+        "planned": null,
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
-        "built": "not yet researched",
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "absentAsOf": {
@@ -4099,11 +4099,11 @@ const STREET_DATA = {
         "entityId": "alameda-st",
         "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
-        "planned": {
-          "text": "by 1849",
+        "planned": null,
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "built": "not yet researched",
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "knownFraction": 0,
@@ -4144,10 +4144,13 @@ const STREET_DATA = {
         "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”)",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": {
-          "text": "by 1849",
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+        },
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "built": "not yet researched",
         "nameHistory": [
           {
             "from": "by 1875",
@@ -4212,10 +4215,13 @@ const STREET_DATA = {
         "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": {
-          "text": "by 1849",
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+        },
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "built": "not yet researched",
         "nameHistory": [
           {
             "from": "by 1887",
@@ -4276,10 +4282,13 @@ const STREET_DATA = {
         "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": {
-          "text": "by 1849",
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "built": "not yet researched",
         "nameHistory": [
           {
             "from": "by 1888",
@@ -4335,11 +4344,11 @@ const STREET_DATA = {
         "entityId": "alameda-st",
         "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
-        "planned": {
-          "text": "by 1849",
+        "planned": null,
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "built": "not yet researched",
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "knownFraction": 0,
@@ -4944,11 +4953,11 @@ const STREET_DATA = {
     "entityId": "astronaut-ellison-s-onizuka-street",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": {
-      "text": "by 1849",
+    "planned": null,
+    "built": {
+      "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
-    "built": "not yet researched",
     "note": null,
     "attested": true,
     "knownFraction": 0,
@@ -5994,6 +6003,10 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": false,
+    "absentAsOf": {
+      "text": "1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -7174,11 +7187,11 @@ const STREET_DATA = {
         "entityId": "cesar-e-chavez-avenue",
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": {
-          "text": "by 1849",
+        "planned": null,
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
-        "built": "not yet researched",
         "note": null,
         "attested": true,
         "knownFraction": 0,
@@ -7558,11 +7571,11 @@ const STREET_DATA = {
         "entityId": "college",
         "namedAfter": "Descriptive — how and when this stretch joined College Street is not yet researched",
         "namedAfterLink": null,
-        "planned": {
-          "text": "by 1849",
+        "planned": null,
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
-        "built": "not yet researched",
         "note": "A church request in June 1849 for a colegio — a secondary school — on this ground prompted Ord and Hutton to letter it “Calle del Colegio” a month later. The school was never built; the street kept the name.",
         "attested": true,
         "knownFraction": 0,
@@ -11326,7 +11339,7 @@ const STREET_DATA = {
             "entityId": "hill-street-downtown",
             "formInForce": "Hill Street",
             "how": "origin",
-            "origin": "labeled “HILL STREET”, “CALLE LOMA” and “HILL ST” on the 1849 Hutton / Ord Survey {{(source)}}",
+            "origin": "labeled “HILL STREET” and “CALLE LOMA” on the 1849 Hutton / Ord Survey {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -12836,6 +12849,54 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
         "planned": {
           "text": "by 1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Los Angeles Street",
+            "url": "https://lastreetnames.com/street/los-angeles-street/"
+          },
+          {
+            "title": "Wikipedia: Los Angeles Street",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          }
+        ],
+        "minLat": 34.0541,
+        "from": null,
+        "to": {
+          "px": [
+            656,
+            1469
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Los Angeles Street",
+        "entityId": "los-angeles-street",
+        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "planned": {
+          "text": "by 1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "built": "not yet researched",
@@ -12858,14 +12919,16 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
         "minLat": 34.0531,
-        "from": null,
+        "maxLat": 34.0541,
+        "from": {
+          "px": [
+            656,
+            1469
+          ]
+        },
         "to": {
           "px": [
             575,
@@ -13368,11 +13431,11 @@ const STREET_DATA = {
     "entityId": "lyon-street",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": {
-      "text": "by 1849",
+    "planned": null,
+    "built": {
+      "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
-    "built": "not yet researched",
     "note": null,
     "attested": true,
     "knownFraction": 0,
@@ -13462,11 +13525,11 @@ const STREET_DATA = {
         "entityId": "main-street-dtla",
         "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
         "namedAfterLink": null,
-        "planned": {
-          "text": "by 1849",
+        "planned": null,
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
-        "built": "not yet researched",
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
         "knownFraction": 0,
@@ -13713,11 +13776,11 @@ const STREET_DATA = {
         "entityId": "main-street-dtla",
         "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
         "namedAfterLink": null,
-        "planned": {
-          "text": "by 1849",
+        "planned": null,
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
-        "built": "not yet researched",
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
         "knownFraction": 0,
@@ -13759,6 +13822,68 @@ const STREET_DATA = {
           "px": [
             950,
             1408
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Main Street",
+        "entityId": "main-street-dtla",
+        "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
+        "attested": true,
+        "knownFraction": 1,
+        "categories": [
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Main Street",
+            "url": "https://lastreetnames.com/street/main-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Wikipedia: Main Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          }
+        ],
+        "minLat": 34.0548,
+        "maxLat": 34.0582,
+        "from": {
+          "px": [
+            950,
+            1408
+          ]
+        },
+        "to": {
+          "px": [
+            22,
+            842
           ]
         }
       },
@@ -13816,18 +13941,14 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
         "minLat": 34.0439,
-        "maxLat": 34.0582,
+        "maxLat": 34.0548,
         "from": {
           "px": [
-            950,
-            1408
+            22,
+            842
           ]
         },
         "to": "7th Street"
@@ -15545,7 +15666,10 @@ const STREET_DATA = {
       "text": "by 1849",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
     },
-    "built": "not yet researched",
+    "built": {
+      "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+    },
     "note": null,
     "attested": true,
     "knownFraction": 0,
@@ -16894,11 +17018,11 @@ const STREET_DATA = {
         "entityId": "san-pedro",
         "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
-        "planned": {
-          "text": "by 1849",
+        "planned": null,
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "built": "not yet researched",
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0,
@@ -16938,10 +17062,13 @@ const STREET_DATA = {
         "namedAfter": "The port town of {{San Pedro}}, which the street ran toward",
         "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
         "planned": {
-          "text": "by 1849",
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "built": "not yet researched",
         "nameHistory": [
           {
             "from": "by 1888",

@@ -100,7 +100,8 @@ module.exports = {
         ]
       },
       "basis": "alignment",
-      "note": "The modern line follows the long diagonal two-edge road across the cultivated fields."
+      "note": "The modern line follows the long diagonal two-edge road across the cultivated fields.",
+      "attests": "built-by"
     },
     {
       "kind": "unnamed",
@@ -117,7 +118,7 @@ module.exports = {
           369
         ]
       },
-      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment."
+      "attests": "built-by"
     },
     {
       "kind": "absent",
@@ -156,9 +157,9 @@ module.exports = {
     {
       "kind": "absent",
       "street": "Broad Plaza",
-      "from": "Main Street",
-      "to": "1st Street",
-      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment."
+      "from": null,
+      "to": null,
+      "note": "Broad Plaza is drawn in OSM as a closed ring — a plaza outline rather than a linear street — so its two ends are the same point and no pair of extents can name the whole of it. from: null, to: null is the whole street. The sheet draws no roadway anywhere on this ground."
     },
     {
       "kind": "absent",
@@ -857,7 +858,8 @@ module.exports = {
         ]
       },
       "basis": "alignment",
-      "note": "The modern line closely follows the other long diagonal two-edge road across the fields; the survey letters no name on it."
+      "note": "The modern line closely follows the other long diagonal two-edge road across the fields; the survey letters no name on it.",
+      "attests": "built-by"
     },
     {
       "kind": "absent",
@@ -1122,6 +1124,8 @@ module.exports = {
           855
         ]
       },
+      "attests": "built-by",
+      "note": "unnamed path between fields attested on map"
     },
     {
       "kind": "state",
@@ -1245,7 +1249,7 @@ module.exports = {
           570,
           979
         ]
-      },
+      }
     },
     {
       "kind": "state",
@@ -1300,20 +1304,6 @@ module.exports = {
         ]
       },
       "note": "Beyond Main Street, the modern street crosses cultivated parcels and field boundaries; no two-edge roadway follows it."
-    },
-    {
-      "kind": "absent",
-      "street": "Broad Plaza",
-      "from": null,
-      "to": "1st Street",
-      "note": "Added in review: the sheet covers this 147 m and draws no street along it."
-    },
-    {
-      "kind": "absent",
-      "street": "Broad Plaza",
-      "from": null,
-      "to": "Main Street",
-      "note": "Added in review: the sheet covers this 47 m and draws no street along it."
     },
     {
       "kind": "absent",

@@ -93,7 +93,19 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   });
   await page.waitForFunction(() => typeof setMode === "function" || document.getElementById("cv"));
 
+  // The two loaders and the file chooser sit at the BOTTOM of Open now, folded
+  // behind their own summary: the three lists of folders are the way in, and
+  // typing an id is the way in only when you already know which id you want.
+  // A test that types one opens them first, exactly as a person would.
+  const showLoaders = () => page.evaluate(() => {
+    for (const id of ["openBox", "openByName"]) {
+      const d = document.getElementById(id);
+      if (d) d.open = true;
+    }
+  });
+
   console.log("loading a document");
+  await showLoaders();
   await page.fill("#loadId", "mr066-035");
   await page.click("#loadDoc");
   await page.waitForFunction(() => loadedDoc && img, null, { timeout: 15000 });
@@ -151,6 +163,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     dialogs.length = 0;
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
     await page.waitForTimeout(100);
+    await showLoaders();
     await page.fill("#loadId", "_bare-test");
     await page.click("#loadDoc");
     await page.waitForTimeout(1200);
@@ -174,6 +187,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     // back to the document the rest of the run expects (the Open box folds
     // itself away once something is loaded)
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
+    await showLoaders();
     await page.fill("#loadId", "mr066-035");
     await page.click("#loadDoc");
     await page.waitForFunction(() => loadedDoc && loadedDoc.id === "mr066-035",
@@ -219,6 +233,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     // loader said only "could not load".
     dialogs.length = 0;
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
+    await showLoaders();
     await page.fill("#renderPath", "inbox/MR006-138.pdf");
     await page.click("#loadRenderBtn");
     await page.waitForTimeout(300);
@@ -231,6 +246,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("the picker no longer hides PDFs from you",
        /pdf/i.test(await page.getAttribute("#file", "accept")),
        await page.getAttribute("#file", "accept"));
+    await showLoaders();
     await page.fill("#renderPath", "");
   }
 
@@ -383,6 +399,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     // part matching Waters Street and 152 m south of it that nothing covers.
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
     await page.waitForTimeout(100);
+    await showLoaders();
     await page.fill("#loadId", "mr006-138");
     await page.click("#loadDoc");
     await page.waitForFunction(() => loadedDoc && loadedDoc.id === "mr006-138",
@@ -593,6 +610,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     // nothing was saved, and reloading discards every in-memory change above
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
     await page.waitForTimeout(100);
+    await showLoaders();
     await page.fill("#loadId", "mr066-035");
     await page.click("#loadDoc");
     await page.waitForFunction(() => loadedDoc && loadedDoc.id === "mr066-035",
@@ -863,6 +881,66 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
        await page.textContent("#sweepState"));
   }
 
+  console.log("the brief the AI pass reads")
+  {
+    // TASK.md is generated, so it goes stale silently every time the model
+    // gains a way to say something. These are the claims it must teach.
+    const task = await page.evaluate(() => taskMarkdown("mr066-035"));
+    ok("it lists every row kind", ["state", "unnamed", "absent", "vanished", "vanished-unnamed"]
+       .every(k => task.includes(`kind: "${k}"`)),
+       ["state", "unnamed", "absent", "vanished", "vanished-unnamed"]
+         .filter(k => !task.includes(`kind: "${k}"`)).join(", "));
+    ok("…and warns against the placeholder that used to stand in for one",
+       /asWritten: "unnamed"/.test(task) && /which is false/.test(task));
+    ok("it explains a stretch lettered twice", /ONE row/.test(task) &&
+       /CALLE DE LAS CHAPULES/.test(task));
+    ok("…as an array, not a slash", /asWritten: \["/.test(task));
+    ok("it still fixes which end is `from`", /`from` is the \*\*west\*\* end/.test(task));
+    ok("…and still warns about null", /`null` is almost never what you want/.test(task));
+  }
+
+  console.log("editing a row's attests override and its note");
+  {
+    await page.click("#mReview");
+    await page.waitForTimeout(200);
+    const i = await page.evaluate(() =>
+      loadedDoc.rows.findIndex(r => r.kind === "state" || r.kind === "unnamed"));
+    ok("there is a row that may carry an override", i >= 0, String(i));
+    await page.evaluate(n => focusRow(loadedDoc.rows[n]), i);
+    await page.waitForTimeout(250);
+
+    ok("the popup offers attests", await page.locator("#pop select.atpick").count() === 1);
+    ok("…defaulting to the document's, not to a value",
+       await page.inputValue("#pop select.atpick") === "");
+    ok("…and naming what the document's default is",
+       /this document's default/.test(await page.textContent("#pop")));
+    await page.selectOption("#pop select.atpick", "built-by");
+    await page.waitForTimeout(300);
+    ok("choosing one writes the override",
+       await page.evaluate(n => loadedDoc.rows[n].attests === "built-by", i));
+    ok("…and un-confirms the row, since it claims something else now",
+       await page.evaluate(n => loadedDoc.rows[n].confirmed === false, i));
+    await page.selectOption("#pop select.atpick", "");
+    await page.waitForTimeout(300);
+    ok("choosing the default again removes the field entirely",
+       await page.evaluate(n => !("attests" in loadedDoc.rows[n]), i));
+
+    ok("the popup offers the note", await page.locator("#pop textarea.notepick").count() === 1);
+    await page.evaluate(n => { loadedDoc.rows[n].confirmed = undefined;
+                               delete loadedDoc.rows[n].confirmed; }, i);
+    await page.fill("#pop textarea.notepick", "Rewritten by hand.");
+    await page.locator("#pop textarea.notepick").blur();
+    await page.waitForTimeout(300);
+    ok("editing the note lands on the row",
+       await page.evaluate(n => loadedDoc.rows[n].note === "Rewritten by hand.", i));
+    ok("…and does NOT un-confirm it — a note is not a claim",
+       await page.evaluate(n => loadedDoc.rows[n].confirmed !== false, i));
+    await page.fill("#pop textarea.notepick", "");
+    await page.locator("#pop textarea.notepick").blur();
+    await page.waitForTimeout(300);
+    ok("clearing it removes the field", await page.evaluate(n => !("note" in loadedDoc.rows[n]), i));
+  }
+
   console.log("what is left to do");
   {
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
@@ -880,21 +958,162 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("…without throwing", errors.filter(e => !/404/.test(e)).length === 0,
        errors.slice(0, 2).join(" | "));
 
-    // The grouping itself is pure, so drive it with a stub directory.
-    const groups = await page.evaluate(() => {
+    // Bracketing is pure, so drive it directly.
+    const b = await page.evaluate(() => bracket([
+      { id: "mr030-009-p1", short: "Wolfskill Orchard Tract, sheet 1 (M.R. 30-9)" },
+      { id: "mr030-009-p2", short: "Wolfskill Orchard Tract, sheet 2 (M.R. 30-10)" },
+      { id: "mr053-067", short: "Hutton / Ord Survey" },
+      { id: "mr053-068", short: "Hutton / Ord Survey" },
+      { id: "mr066-035", short: "Washington Tract map" },
+      { id: "zz-nameless", short: null }
+    ]).map(g => [g.name, g.docs.map(d => d.id)]));
+    ok("sheets of one map bracket under it, sheet numbers off the map name",
+       JSON.stringify(b[0]) === '["Wolfskill Orchard Tract",["mr030-009-p1","mr030-009-p2"]]',
+       JSON.stringify(b[0]));
+    ok("…and separate folders sharing a title bracket too",
+       JSON.stringify(b[1]) === '["Hutton / Ord Survey",["mr053-067","mr053-068"]]',
+       JSON.stringify(b[1]));
+    ok("a lone map is its own bracket", JSON.stringify(b[2]) === '["Washington Tract map",["mr066-035"]]');
+    ok("a document with no short title is never folded into a neighbour",
+       b[3][0] === null && b[3][1][0] === "zz-nameless", JSON.stringify(b[3]));
+
+    const order = await page.evaluate(() => {
       const docs = [
-        { id: "a-swept", rows: 9, swept: true, aligned: true, state: "swept" },
-        { id: "b-review", rows: 4, swept: false, aligned: true, state: "review" },
-        { id: "c-norows", rows: 0, swept: false, aligned: true, state: "rows" },
-        { id: "d-noalign", rows: 0, swept: false, aligned: false, state: "align" }
+        { id: "a-one", short: "Zebra Tract", state: "review", rows: 1 },
+        { id: "z-two", short: "Apple Tract", state: "review", rows: 1 },
+        { id: "m-none", short: null, state: "review", rows: 1 }
       ];
-      const el = document.getElementById("docList");
-      const saved = window.scanDocuments;
-      window.__docs = docs;
-      return docs.map(d => d.state);
+      const u = g => g.name === null ? 0 : 1;
+      const byName = bracket(docs).sort((x, y) =>
+        u(x) - u(y) || (x.name || x.docs[0].id).localeCompare(y.name || y.docs[0].id));
+      const byId = bracket(docs).sort((x, y) => x.docs[0].id.localeCompare(y.docs[0].id));
+      return { byName: byName.map(g => g.name || g.docs[0].id),
+               byId: byId.map(g => g.docs[0].id) };
     });
-    ok("the four states are the ones the groups cover",
-       JSON.stringify(groups) === '["swept","review","rows","align"]', JSON.stringify(groups));
+    ok("sorting by name puts the unnamed ones first",
+       JSON.stringify(order.byName) === '["m-none","Apple Tract","Zebra Tract"]',
+       JSON.stringify(order.byName));
+    ok("…and sorting by folder name is the other order",
+       JSON.stringify(order.byId) === '["a-one","m-none","z-two"]', JSON.stringify(order.byId));
+    ok("the sort control offers both", await page.locator("#docSort option").count() === 2);
+  }
+
+  console.log("three lists, and each opens in the mode that does the next work");
+  {
+    // scanDocuments needs the File System Access API, which needs a real user
+    // gesture — so the FOLDERS are stubbed and everything downstream of them
+    // is the shipping code: the grouping, the three headings, the bold, and
+    // the mode each row carries.
+    await page.evaluate(() => {
+      window.__realScan = scanDocuments;
+      window.scanDocuments = async () => [
+        { id: "aa-bare",  short: null,        rows: 0, swept: false,
+          render: "aa-bare-100dpi.png", missing: ["aa-bare.js", "aa-bare-alignment.json",
+            "aa-bare-streets.json", "TASK.md"], state: "align" },
+        { id: "bb-noalign", short: "Bee Tract", rows: 0, swept: false,
+          render: "bb-100dpi.png", missing: ["bb-noalign-alignment.json"], state: "align" },
+        { id: "cc-fresh", short: "Cee Tract",  rows: 0,  swept: false, render: "c.png",
+          missing: [], state: "review" },
+        { id: "dd-read",  short: "Dee Tract",  rows: 12, swept: false, render: "d.png",
+          missing: [], state: "review" },
+        { id: "ee-p1",    short: "Eee Survey, sheet 1", rows: 9, swept: true, render: "e1.png",
+          missing: [], state: "swept" },
+        { id: "ee-p2",    short: "Eee Survey, sheet 2", rows: 4, swept: true, render: "e2.png",
+          missing: [], state: "swept" }
+      ];
+    });
+    await page.evaluate(() => refreshDocList());
+    await page.waitForTimeout(150);
+
+    const heads = await page.$$eval("#docList details.docgroup > summary",
+                                    hs => hs.map(h => h.textContent));
+    ok("there are exactly three lists", heads.length === 3, JSON.stringify(heads));
+    ok("…one for folders that still need aligning and coverage",
+       /^Needs aligning and coverage \(2\)/.test(heads[0]), heads[0]);
+    ok("…one for folders waiting on a first pass or a review",
+       /^Needs a first pass or your review \(2\)/.test(heads[1]), heads[1]);
+    ok("…and one for the swept", /^Swept \(2\)/.test(heads[2]), heads[2]);
+    ok("each one has a caret of its own",
+       await page.locator("#docList details.docgroup").count() === 3);
+    ok("…and all three start open, since they are presented equally",
+       await page.$$eval("#docList details.docgroup", ds => ds.every(d => d.open)));
+
+    const rows = await page.$$eval("#docList li[data-doc]", ls => ls.map(l => ({
+      id: l.dataset.doc, mode: l.dataset.mode, bold: !!l.querySelector("b.mn"),
+      st: l.querySelector(".st").textContent })));
+    const by = Object.fromEntries(rows.map(r => [r.id, r]));
+    ok("a folder that still needs aligning opens in align mode",
+       by["aa-bare"].mode === "align" && by["bb-noalign"].mode === "align",
+       JSON.stringify([by["aa-bare"], by["bb-noalign"]]));
+    ok("one that has been through coverage opens in review mode",
+       by["cc-fresh"].mode === "review" && by["dd-read"].mode === "review");
+    ok("…and so does a swept one", by["ee-p1"].mode === "review" && by["ee-p2"].mode === "review");
+    ok("a sheet of a bracketed map is still clickable, and in review mode",
+       by["ee-p2"].mode === "review");
+
+    // The point of the bold: a one-sheet map's name is a map name too.
+    ok("a lone map's name is bold", by["bb-noalign"].bold && by["cc-fresh"].bold,
+       JSON.stringify([by["bb-noalign"], by["cc-fresh"]]));
+    const mapHead = await page.$$eval("#docList li.mapname b.mn", bs => bs.map(b => b.textContent));
+    ok("…and so is the heading a multi-sheet map brackets its sheets under",
+       mapHead.includes("Eee Survey"), JSON.stringify(mapHead));
+    ok("a folder with no short title shows its folder name and no bold map name",
+       !by["aa-bare"].bold, JSON.stringify(by["aa-bare"]));
+
+    // What is missing, said as a condition rather than as a filename.
+    ok("a folder with only a render says so", /no document file/.test(by["aa-bare"].st), by["aa-bare"].st);
+    ok("…one that is missing just the alignment says that", /no alignment/.test(by["bb-noalign"].st),
+       by["bb-noalign"].st);
+    ok("a covered folder with no rows yet says so", /no rows yet/.test(by["cc-fresh"].st), by["cc-fresh"].st);
+    ok("…and one with rows counts them", /12 rows/.test(by["dd-read"].st), by["dd-read"].st);
+
+    // Folding one and reading the list again: the list is rebuilt from scratch
+    // every refresh, so a caret that reopened itself would be a caret you had
+    // to close again after every save.
+    await page.click("#docList details.docgroup:last-of-type > summary");
+    await page.waitForTimeout(50);
+    ok("a list folds away on its caret",
+       await page.$$eval("#docList details.docgroup", ds => ds.map(d => d.open))
+         .then(o => JSON.stringify(o) === "[true,true,false]"));
+    await page.evaluate(() => refreshDocList());
+    await page.waitForTimeout(150);
+    ok("…and stays folded when the list is read again",
+       await page.$$eval("#docList details.docgroup", ds => ds.map(d => d.open))
+         .then(o => JSON.stringify(o) === "[true,true,false]"));
+    await page.click("#docList details.docgroup:last-of-type > summary");
+    await page.waitForTimeout(50);
+    ok("…and opens again on the same caret",
+       await page.$$eval("#docList details.docgroup", ds => ds.every(d => d.open)));
+
+    await page.evaluate(() => { window.scanDocuments = window.__realScan; });
+  }
+
+  console.log("the loaders moved out of the way, and the trace button moved to the sweep");
+  {
+    const order = await page.evaluate(() => {
+      const box = document.getElementById("openBox");
+      const kids = [...box.children].map(e => e.id || e.tagName.toLowerCase());
+      const byName = document.getElementById("openByName");
+      return { kids, foldedByDefault: byName ? !byName.open : null,
+               listBeforeLoaders: kids.indexOf("docList") < kids.indexOf("openByName"),
+               loadersInside: !!(byName && byName.querySelector("#loadId") &&
+                                 byName.querySelector("#renderPath") &&
+                                 byName.querySelector("#file")) };
+    });
+    ok("the two load bars and the file chooser sit together at the bottom",
+       order.loadersInside && order.listBeforeLoaders, JSON.stringify(order.kids));
+
+    const trace = await page.evaluate(() => {
+      const body = document.querySelector('.modebody[data-mode="review"]');
+      const kids = [...body.children];
+      const at = sel => kids.findIndex(e => e.matches(sel) || e.querySelector(sel));
+      return { blockers: at("#sweepBlockers"), trace: at("#traceStart"),
+               sweep: at("#sweepBtn"), streets: at("#revStreets") };
+    });
+    ok("Trace a vanished street sits next to the rows the sweep is waiting on",
+       trace.trace > trace.blockers && trace.trace < trace.sweep, JSON.stringify(trace));
+    ok("…and no longer below the list of streets in coverage",
+       trace.trace < trace.streets, JSON.stringify(trace));
   }
 
   ok("still no page errors",
