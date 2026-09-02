@@ -46,12 +46,7 @@ module.exports = {
           885
         ]
       },
-      "to": {
-        "px": [
-          638,
-          1518
-        ]
-      },
+      "to": "Main Street",
       "basis": "alignment",
       "note": "The modern run follows a two-edge roadway on the survey, but no name is lettered along this stretch."
     },
@@ -64,12 +59,7 @@ module.exports = {
           887
         ]
       },
-      "to": {
-        "px": [
-          519,
-          1519
-        ]
-      },
+      "to": "Main Street",
       "basis": "alignment",
       "note": "The modern run follows a two-edge roadway on the survey, but no name is lettered along this stretch."
     },

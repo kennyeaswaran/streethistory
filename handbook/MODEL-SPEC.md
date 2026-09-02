@@ -760,6 +760,17 @@ intervals whose timelines are identical.**
 The merge step is not optional. Documents end mid-block, so raw boundaries
 proliferate; without merging you get twenty segments where there are three.
 
+**Two intervals merge only if they would produce the same ENTRY**, not merely
+the same timeline. A segment carries more than its name history — the dates
+derived from its rows (§6.4) and whether any document speaks about it at all
+(§6.6's `attested`) — and merging on the timeline alone spreads those across
+ground they were never about. `unnamed` rows are how this surfaced: they make
+no timeline period, because there is no name to put in one, but they do date
+the roadway (§5.2a), so an interval carrying one merged with the interval next
+door that did not. The Ord survey's unnamed stretch of 11th Street then read as
+dating the whole street east of Figueroa to 1849, including the half past Main
+that the 1849 grid never reached.
+
 **Two intervals with the same timeline are the same segment even when
 different documents attest them.** A multi-sheet map (§4.4a) tiles a street
 across several sheets, each sheet witnessing its own stretch; if the identity

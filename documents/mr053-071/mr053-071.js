@@ -1122,7 +1122,6 @@ module.exports = {
           855
         ]
       },
-      "note": "This detached modern run lies in cultivated ground without a drawn roadway."
     },
     {
       "kind": "state",
@@ -1247,7 +1246,6 @@ module.exports = {
           979
         ]
       },
-      "note": "This detached modern run lies in cultivated ground without a drawn roadway."
     },
     {
       "kind": "state",
@@ -1306,8 +1304,8 @@ module.exports = {
     {
       "kind": "absent",
       "street": "Broad Plaza",
-      "from": "1st Street",
-      "to": null,
+      "from": null,
+      "to": "1st Street",
       "note": "Added in review: the sheet covers this 147 m and draws no street along it."
     },
     {

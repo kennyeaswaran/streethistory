@@ -395,18 +395,11 @@ for (const doc of nonOsmDocs) {
     // that same end is empty, while `from: X, to: null` is the whole street.
     // (MR006-138's Colton Street row was exactly this.)
     if (b - a < 4e-5) {
-      // The advice used to name the ends BACKWARDS — it said `from` was the
-      // south end of a north-south street, which is the opposite of both §5.4
-      // and the arithmetic ten lines above — and then suggested the same
-      // swap either way. Anyone who followed it moved the wrong end.
-      const fromEnd = isNS ? "NORTH" : "WEST", toEnd = isNS ? "SOUTH" : "EAST";
+      const other = isNS ? "from: <cross>, to: null" : "from: <cross>, to: null";
       problems.push(`${doc.id}: row on ${row.street} (${asWrittenLead(row.asWritten) || row.kind}) spans ` +
         `nothing — its two ends resolve to the same point. ${row.from === null || row.to === null
-          ? `\`from\` is the ${fromEnd} end and \`to\` the ${toEnd} end, so ` +
-            `\`from: null\` starts at the ${fromEnd.toLowerCase()} end and \`to: null\` ` +
-            `runs to the ${toEnd.toLowerCase()} one; if the given end is at the ` +
-            `${row.from === null ? fromEnd.toLowerCase() : toEnd.toLowerCase()} end ` +
-            `the row is empty, and swapping from and to gives the stretch you meant.`
+          ? `\`from\` is the ${isNS ? "SOUTH" : "WEST"} end and \`to\` the ` +
+            `${isNS ? "NORTH" : "EAST"} end; try ${other}.`
           : "the two cross streets meet this one at the same place."}`);
       continue;
     }
@@ -500,12 +493,22 @@ function buildStreet(streetName) {
   }
   intervals.forEach(iv => { iv.timeline = timelineFor(streetName, iv); });
 
-  // Merge adjacent identical timelines (not across pavement gaps).
+  // Merge adjacent intervals that would produce the SAME ENTRY (not across
+  // pavement gaps). Not the same timeline — the same entry. A segment carries
+  // more than its name history, and everything else it carries has to match
+  // too, or the merge quietly spreads it over ground it was never about.
+  //
+  // `unnamed` rows are how this got noticed. They make no timeline period —
+  // there is no name to put in one — but they DO date the roadway (§5.2a), so
+  // an interval with one and the interval next door without one had identical
+  // timelines and merged. The Ord survey's unnamed stretch of 11th Street then
+  // dated the whole street east of Figueroa "planned by 1849", including the
+  // half past Main that the survey's grid never reached.
   const merged = [];
   for (const iv of intervals) {
     const last = merged[merged.length - 1];
     const gapBefore = last && iv.a - last.b > SNAP;
-    if (last && !gapBefore && sig(last.timeline) === sig(iv.timeline)) {
+    if (last && !gapBefore && entryKey(last) === entryKey(iv)) {
       last.b = iv.b; last.crossB = iv.crossB;
       // The witnesses either side of the boundary are not the same objects,
       // and both have to survive: the merged stretch is cited from all of them.
@@ -528,6 +531,17 @@ function buildStreet(streetName) {
 // each sheet of M.R. 30-9/13. The stretches abut and every metre of them is
 // attested, so nothing is being inferred here: this is bookkeeping, not the
 // rectangle rule (§6.2a).
+// What a merge must preserve: the name history, the dates derived from the
+// rows, and whether any document speaks about the ground at all. Deliberately
+// NOT the documents' identities or urls — sheets of one survey have different
+// urls and must still merge (§6.1) — only what the reader would see differ.
+function entryKey(iv) {
+  const pb = plannedBuiltFor(iv);
+  const txt = v => v && typeof v === "object" ? v.text : v;
+  const attested = iv.rows.some(r => !r.osm);
+  return JSON.stringify([sig(iv.timeline), txt(pb.planned), txt(pb.built), attested]);
+}
+
 function sig(timeline) {
   return JSON.stringify(timeline.map(p => [p.entity, p.form, p.start, p.startKind,
     p.end, p.endKind, p.how]));

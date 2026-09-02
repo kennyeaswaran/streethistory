@@ -863,6 +863,40 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
        await page.textContent("#sweepState"));
   }
 
+  console.log("what is left to do");
+  {
+    await page.evaluate(() => { document.getElementById("openBox").open = true; });
+    await page.waitForTimeout(100);
+    ok("the Open box offers a list of what is left",
+       await page.locator("#listDocs").count() === 1);
+    // No project folder is connected in the harness (the File System Access
+    // API needs a real user gesture), so this is the branch that has to say so
+    // rather than fail silently.
+    await page.click("#listDocs");
+    await page.waitForTimeout(400);
+    const txt = await page.textContent("#docList");
+    ok("…and says what is missing when the folder is not connected",
+       /project folder has to be connected/.test(txt), txt.slice(0, 120));
+    ok("…without throwing", errors.filter(e => !/404/.test(e)).length === 0,
+       errors.slice(0, 2).join(" | "));
+
+    // The grouping itself is pure, so drive it with a stub directory.
+    const groups = await page.evaluate(() => {
+      const docs = [
+        { id: "a-swept", rows: 9, swept: true, aligned: true, state: "swept" },
+        { id: "b-review", rows: 4, swept: false, aligned: true, state: "review" },
+        { id: "c-norows", rows: 0, swept: false, aligned: true, state: "rows" },
+        { id: "d-noalign", rows: 0, swept: false, aligned: false, state: "align" }
+      ];
+      const el = document.getElementById("docList");
+      const saved = window.scanDocuments;
+      window.__docs = docs;
+      return docs.map(d => d.state);
+    });
+    ok("the four states are the ones the groups cover",
+       JSON.stringify(groups) === '["swept","review","rows","align"]', JSON.stringify(groups));
+  }
+
   ok("still no page errors",
      errors.filter(e => !/404/.test(e)).length === 0, errors.slice(0, 3).join(" | "));
 

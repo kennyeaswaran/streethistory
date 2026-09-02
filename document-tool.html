@@ -39,6 +39,15 @@
   .modebody { display:none; }
   #openBox { margin:8px 0 4px; border:1px solid #e6dcc2; border-radius:4px;
              padding:4px 8px; background:#fdfbf2; }
+  #docList { margin:4px 0 2px; font-size:12px; }
+  #docList h4 { margin:6px 0 2px; font-size:11px; text-transform:uppercase;
+    letter-spacing:0.5px; color:#8a7a52; font-weight:600; }
+  #docList ul { margin:0 0 4px; padding-left:0; list-style:none; }
+  #docList li { padding:2px 4px; border-radius:3px; cursor:pointer;
+    display:flex; justify-content:space-between; gap:8px; }
+  #docList li:hover { background:#f3ecd8; }
+  #docList li .st { color:#6f6f6f; font-style:italic; white-space:nowrap; }
+  #docList details summary { font-size:11px; color:#8a7a52; cursor:pointer; }
   #openBox summary { cursor:pointer; font-size:12px; color:#4a4034;
                      text-transform:uppercase; letter-spacing:0.06em; }
   #openBox[open] summary { margin-bottom:4px; }
@@ -131,6 +140,8 @@
     </div>
     <div class="hint">Restores the header, the coverage ring, the render and the
       alignment. If it already has rows, this goes straight to Review.</div>
+    <div class="row"><button id="listDocs" style="flex:0 0 auto">What's left to do</button></div>
+    <div id="docList"></div>
     <label style="margin-top:8px">…or a bare scan, to start a new document</label>
     <div class="row">
       <input type="text" id="renderPath" placeholder="documents/mr066-035/mr066-035-100dpi.png">
@@ -721,6 +732,82 @@ $("loadRenderBtn").onclick = async () => {
 };
 
 // --- load an existing document --------------------------------------------
+// WHAT IS LEFT TO DO.
+//
+// Sweep state already lives in each document file; the question is only how to
+// see it without opening twenty of them. Encoding it in the folder NAME, or
+// moving folders between an inbox / in-progress / done tree, would put the
+// same fact in two places and let them disagree — and every move would break
+// the project-relative paths inside the file (`alignment.image`, `scan`,
+// `transcription`), which is a bug this project has already had once.
+//
+// So: read it, don't store it. The folder is scanned through the project
+// handle the tool already holds for saving, and each file is read as TEXT —
+// no eval, because this runs over every document and one bad file should not
+// take the list down with it.
+async function scanDocuments() {
+  const state = await useProjectDir(true);
+  if (state !== "ok") return null;
+  let docsDir;
+  try { docsDir = await projectDir.getDirectoryHandle("documents"); }
+  catch (e) { return []; }
+  const out = [];
+  for await (const [name, h] of docsDir.entries()) {
+    // "_" is the parking convention documents/index.js also skips.
+    if (h.kind !== "directory" || name.startsWith("_") || name.startsWith(".")) continue;
+    let text = "";
+    try { text = await (await (await h.getFileHandle(`${name}.js`)).getFile()).text(); }
+    catch (e) { out.push({ id: name, state: "nofile" }); continue; }
+    const swept = /sweptFully\s*:\s*true/.test(text);
+    const rowsAt = text.indexOf("rows:");
+    const rows = rowsAt < 0 ? 0 : (text.slice(rowsAt).match(/\bkind\b\s*"?\s*:/g) || []).length;
+    const aligned = /\balignment\s*:\s*\{/.test(text);
+    out.push({ id: name, rows, swept, aligned,
+               state: swept ? "swept" : rows ? "review" : aligned ? "rows" : "align" });
+  }
+  return out.sort((x, y) => x.id.localeCompare(y.id));
+}
+
+const DOC_GROUPS = [
+  ["align",  "Needs aligning",        "no alignment saved yet"],
+  ["rows",   "Needs a first pass",    "aligned, but no rows — hand the folder to an assistant"],
+  ["review", "Needs your review",     "rows are in; confirm them and sweep"],
+  ["nofile", "Folder with no document file", "documents/&lt;id&gt;/&lt;id&gt;.js is missing"],
+  ["swept",  "Swept",                 "done — silence here can be argued from"]
+];
+async function refreshDocList() {
+  const el = $("docList");
+  el.innerHTML = `<div class="hint">Reading documents/…</div>`;
+  const docs = await scanDocuments();
+  if (!docs) {
+    el.innerHTML = `<div class="hint warn">The project folder has to be connected to ` +
+      `read what is in it — use “Connect project folder…” in the Write section.</div>`;
+    return;
+  }
+  if (!docs.length) { el.innerHTML = `<div class="hint">No document folders found.</div>`; return; }
+  const row = d => `<li data-doc="${esc(d.id)}"><span>${esc(d.id)}</span>` +
+    `<span class="st">${d.state === "swept" ? "swept"
+      : d.state === "review" ? `${d.rows} row${d.rows === 1 ? "" : "s"}`
+      : d.state === "nofile" ? "no .js" : d.state === "rows" ? "no rows" : "no alignment"}</span></li>`;
+  let html = "";
+  for (const [key, title, hint] of DOC_GROUPS) {
+    const list = docs.filter(d => d.state === key);
+    if (!list.length) continue;
+    const body = `<div class="hint">${hint}</div><ul>${list.map(row).join("")}</ul>`;
+    // Everything still to do is open; the finished pile is folded away, since
+    // its only job is to be countable.
+    html += key === "swept"
+      ? `<details><summary>${list.length} swept</summary>${body}</details>`
+      : `<h4>${title} (${list.length})</h4>${body}`;
+  }
+  el.innerHTML = html;
+  for (const li of el.querySelectorAll("li[data-doc]")) li.onclick = () => {
+    $("loadId").value = li.dataset.doc;
+    $("loadDoc").click();
+  };
+}
+$("listDocs").onclick = refreshDocList;
+
 $("loadDoc").onclick = async () => {
   const id = $("loadId").value.trim().replace(/\.js$/, "");
   if (!id) return;
@@ -935,8 +1022,7 @@ function runEnds(run, isNS) {
 // outside the run clamp to it, which is right: the run is already clipped to
 // coverage, and a row may legitimately run past the polygon's edge.
 function clipRange(run, pA, pB, isNS) {
-  const ends = runEnds(run, isNS === undefined
-    ? streetIsNS({ runs: [run] }) : isNS);
+  const ends = runEnds(run, isNS === undefined ? streetIsNS({ runs: [run] }) : isNS);
   if (!pA && !pB) return [0, run.length - 1];
   const idx = pt => {
     let bi = 0, bd = Infinity;
@@ -1914,8 +2000,7 @@ function rowSpansNothing(r) {
   // its `to` sits at the south end, so a nearest-end reading collapsed it
   // against itself.
   const pts = rec.runs.flat();
-  const spanOf = f => Math.max(...pts.map(f)) - Math.min(...pts.map(f));
-  const isNS = spanOf(p => p.lat) >= spanOf(p => p.lon);
+  const isNS = streetIsNS(rec);
   const sc = pt => isNS ? pt.lat : pt.lon;
   const lo = Math.min(...pts.map(sc)), hi = Math.max(...pts.map(sc));
   const sA = pA ? sc(pA) : (isNS ? hi : lo);       // `from`: north / west

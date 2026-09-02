@@ -83,6 +83,30 @@ folds itself away afterwards; the line under it says what you have open.
 - **A bare scan** — type a path (`documents/mr066-035/mr066-035-100dpi.png`) and
   Load, or pick a file from anywhere. This is how a new document starts.
 
+### What's left to do
+
+**Open → "What's left to do"** reads every folder under `documents/` and sorts
+them by what they still need:
+
+- **needs aligning** — no `alignment` block saved yet
+- **needs a first pass** — aligned, but no rows; this is the state in which you
+  hand the folder to an assistant
+- **needs your review** — rows are in, with the count
+- **swept** — folded away, since its only job is to be countable
+
+Clicking one opens it. The list is read, not stored: sweep state already lives
+in each document file, and putting it in the folder NAME as well — or moving
+folders between an inbox / in-progress / done tree — would be the same fact in
+two places, free to disagree. Moving a folder is worse than duplication: the
+paths inside the file (`alignment.image`, `scan`, `transcription`) are
+project-relative, and every move would break them. That bug has happened here
+once already.
+
+It needs the project folder connected, since it reads the folder rather than
+the served copy. Each document file is read as text and pattern-matched, not
+evaluated, so one malformed file shows as "no .js" instead of taking the list
+down with it.
+
 ## Aligning
 
 The scan sits over the live modern street network, drawn in red with purple
