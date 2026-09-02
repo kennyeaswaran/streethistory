@@ -1,0 +1,38 @@
+{
+  "image": "documents/mr003-032/mr003-032-100dpi.png",
+  "points": [
+    {
+      "px": [
+        0,
+        0
+      ],
+      "ll": [
+        34.045446,
+        -118.263902
+      ],
+      "note": "document-tool corner (0,0)"
+    },
+    {
+      "px": [
+        1138,
+        0
+      ],
+      "ll": [
+        34.044242,
+        -118.262176
+      ],
+      "note": "document-tool corner (1138,0)"
+    },
+    {
+      "px": [
+        0,
+        1752
+      ],
+      "ll": [
+        34.043229,
+        -118.266123
+      ],
+      "note": "document-tool corner (0,1752)"
+    }
+  ]
+}

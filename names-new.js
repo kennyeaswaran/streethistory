@@ -57,6 +57,19 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+  "eleventh-street": {
+    spellings: [{"forms":["Eleventh Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-032, where the ink reads “ELEVENTH STREET”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "farmer": {
     spellings: [{"forms":["Farmer Street"]}],
     namedAfter: null,
@@ -118,6 +131,19 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Namesake untraced. RENAMED FROM state-street, 2026-08-30: there is another State Street in Boyle Heights, and a bare “state-street” id was a collision waiting to happen. This entity is ONLY the 1884 Glassell-tract State Street that is modern Colton Street. When Boyle Heights is encoded, its State Street must get its own disambiguated entity and must NOT be merged into this one — Kenny is confident they are unrelated namings.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "tenth-street": {
+    spellings: [{"forms":["Tenth Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-032, where the ink reads “TENTH STREET”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   },

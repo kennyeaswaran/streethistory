@@ -253,23 +253,6 @@ module.exports = {
       "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment."
     },
     {
-      "kind": "absent",
-      "street": "Los Angeles Street",
-      "from": {
-        "px": [
-          854,
-          1507
-        ]
-      },
-      "to": {
-        "px": [
-          818,
-          1464
-        ]
-      },
-      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment."
-    },
-    {
       "kind": "unnamed",
       "street": "Los Angeles Street",
       "from": {
@@ -654,18 +637,6 @@ module.exports = {
       "basis": "alignment",
       "note": "The detached southern run also stays within the same historic HILL STREET corridor.",
       "name": "hill-street-downtown"
-    },
-    {
-      "kind": "absent",
-      "street": "Spring Street",
-      "from": {
-        "px": [
-          898,
-          1337
-        ]
-      },
-      "to": "Cesar E Chavez Avenue",
-      "note": "North of 1st Street, the modern continuation crosses the hill and Plaza rather than a drawn roadway."
     },
     {
       "kind": "absent",
