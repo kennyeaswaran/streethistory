@@ -155,11 +155,43 @@ inverts whichever way it is set.
 | shift + either | acts on the map | acts on the scan |
 
 The scan is anchored to the *ground*, not the screen, so moving the map never
-disturbs an alignment you have already made. **Find the scan** re-centres on it
-if you lose it. Coordinates can still be typed under *Jump to coordinates*, but
-you will rarely know them; the readout along the bottom gives the cursor's
-lat/lng, the scan pixel under it, the current scale in metres per pixel and the
-rotation.
+disturbs an alignment you have already made.
+
+Two buttons move the view and the scan towards each other, and the second is
+the one that saves the work:
+
+- **Find the scan** re-centres the view on the sheet and zooms out far enough
+  to see all of it. One hard drag with the map selected can put the sheet a
+  mile off screen, and there is no way to look for something you cannot see.
+  Review has this button too — the row list and the popup both move the view,
+  and getting back to the sheet afterwards used to mean guessing which way to
+  pan.
+- **Place scan here** does the converse: it puts the sheet at the middle of the
+  view. Placing a fresh scan otherwise means dragging it from wherever it first
+  landed to the ground it belongs on, often across miles of city, at whatever
+  zoom makes the drag possible — which is never the zoom you can see both ends
+  at. Pan to the right neighbourhood and put the sheet there instead. It moves
+  the **position only**: rotation and scale are separate judgements with their
+  own controls, and resetting them here would throw away work every time you
+  nudged the placement.
+
+Coordinates can still be typed under *Jump to coordinates*, but you will rarely
+know them; the readout along the bottom gives the cursor's lat/lng, the scan
+pixel under it, the current scale in metres per pixel and the rotation.
+
+### Sheet metadata
+
+The document's own header — id, title, url, date, type, `attests`,
+`completeness`, `readBy` — is behind **Sheet metadata…**, in both Coverage and
+Review, and it opens where a row's popup opens. It is read far more often than
+it is written, and reading it means looking at what the sheet draws at the same
+time; sitting in the Coverage panel it was in the one mode nobody is in at that
+moment. A new document still needs it filled in before the first save, which is
+why Coverage has the button too.
+
+It is one set of live fields, moved into the popup and back rather than copied.
+Both saves read those fields directly, so a second rendering of them would be a
+second answer to what the document says.
 
 What a good alignment looks like: the drawn streets sit *on* the red lines
 along their whole length. Expect up to about a street's width of offset —
@@ -311,7 +343,20 @@ own label over its own drawing hides the thing you are judging.
 
 **Click a street** and the popup shows every field of every row on it, exactly
 as the file has them — not a summary, because a field a summary omitted would
-be a field nobody ever checks.
+be a field nobody ever checks. A field the tool has never heard of still gets
+printed: the reading order is a fixed list, but the table falls through to
+whatever else the row carries, so nothing can sit in the file while the screen
+implies the row is fully described. Six fields — `kind`, `asWritten`, `name`,
+`attests`, `note`, `confirmed` — appear as controls instead of as text, and
+never as both: a field shown twice makes the text look like the field, and it
+is the one you cannot type in.
+
+**The popup opens at the far right, always in the same place.** Beside the
+stretch was the obvious placement and the wrong one — what you check a row
+against is the ink under it, so a panel next to the line is a panel over the
+evidence, and it moved on every click, which meant re-finding the same fields
+somewhere new each time. The controls are on the left and the popup on the
+right, so the middle of the sheet stays clear.
 
 ### Giving a row its name entity
 
@@ -531,10 +576,10 @@ big for that rule to catch.
 
 ### Streets the plat draws and the city has lost
 
-The button for this sits in the **Sweep** section, right under the list of rows
-the sweep is still waiting on: "this ground has ink the modern map has no
-street for" is one of the two answers to an unaccounted stretch, and it used to
-be three headings away from the list that asks the question.
+The button for this sits at the foot of the **Sweep** section's list of rows
+still waiting, with no heading of its own: "this ground has ink the modern map
+has no street for" is one of the two answers to an unaccounted stretch, so it
+belongs at the end of the list that asks the question.
 
 **Trace a vanished street** puts the canvas into tracing: click along the
 corridor's centre line, press Finish, and type the label exactly as the plat

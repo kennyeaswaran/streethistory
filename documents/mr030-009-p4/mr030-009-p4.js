@@ -4,7 +4,7 @@ module.exports = {
   shortTitle: "Wolfskill Orchard Tract, sheet 4 (M.R. 30-12)",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf",
   scan: "documents/mr030-009-p4/mr030-009-p4.pdf",
-  transcription: null,
+  transcription: "documents/mr003-060-p1/mr003-060-p1-partA.md",
 
   date: { on: "1888-01-11" },   
   type: "tract-map",
@@ -154,7 +154,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "The Ave suffix on this continuation completes Stanford on page 2; modern Crocker Street follows it geometrically.",
-      "name": "stanford-ave"
+      "name": "stanford-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -164,7 +165,8 @@ module.exports = {
       "to": "5th Street",
       "basis": "alignment",
       "note": "The primary modern branch stays in the widening Gladys Ave corridor between Central and Fifth.",
-      "name": "gladys-ave"
+      "name": "gladys-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -241,7 +243,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "Modern Stanford Avenue occupies the roadway lettered Ruth on page 2 and Ave on this continuation.",
-      "name": "ruth-ave"
+      "name": "ruth-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -261,7 +264,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "The Ave suffix on this page completes Towne on page 2; the aligned centerline remains in the corridor.",
-      "name": "towne-ave"
+      "name": "towne-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "absent",

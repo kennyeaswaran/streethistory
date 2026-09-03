@@ -4,7 +4,7 @@ module.exports = {
   shortTitle: "Wolfskill Orchard Tract, sheet 2 (M.R. 30-10)",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf",
   scan: "documents/mr030-009-p2/mr030-009-p2.pdf",
-  transcription: null,
+  transcription: "documents/mr003-060-p1/mr003-060-p1-partA.md",
 
   date: { on: "1888-01-11" },   
   type: "tract-map",
@@ -163,7 +163,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "The Ave suffix is visible on this page and Ceres is lettered on page 1; the geometry joins the same corridor.",
-      "name": "ceres-ave"
+      "name": "ceres-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -183,7 +184,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "Geometry, not the modern name, places Crocker Street in the corridor lettered Stanford, completed by Ave on page 4.",
-      "name": "stanford-ave"
+      "name": "stanford-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -203,7 +205,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "Gladys is lettered here and Ave on page 4; the modern centerline stays within the same corridor.",
-      "name": "gladys-ave"
+      "name": "gladys-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -243,7 +246,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "The modern Stanford Avenue geometry matches the corridor lettered Ruth, with Ave supplied on page 4.",
-      "name": "ruth-ave"
+      "name": "ruth-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -263,7 +267,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "Towne is lettered on this page and Ave farther along the same corridor on page 4.",
-      "name": "towne-ave"
+      "name": "towne-ave",
+      "attests": "planned-on"
     }
   ]
 };

@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-02
+// Built: 2026-09-03
 const NEIGHBORHOODS = [
   {
     "id": "dtla",
@@ -134,25 +134,96 @@ const SIMILAR_PROJECTS = [
 const STREET_DATA = {
   "10th Street": {
     "name": "10th Street",
-    "entityId": "tenth-street",
-    "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 10th Street is not yet researched",
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": "Renamed Olympic Boulevard in 1935, for the 1932 Games — the request went in in July 1929, and that they had been the tenth Olympiad seems to have gone unremarked.",
-    "attested": false,
-    "categories": [
-      "number"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "EW",
+    "segments": [
       {
-        "title": "L.A. Street Names: 1st Street (on the numbering system)",
-        "url": "https://lastreetnames.com/street/0001st-street/"
+        "label": "San Pedro to Crocker (11th St)",
+        "name": "10th Street",
+        "entityId": "tenth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 10th Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1893",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1893",
+            "until": "?",
+            "name": "11th Street",
+            "entityId": "eleventh-street",
+            "formInForce": "11th Street",
+            "origin": "labeled “11th St.” on the 1893 Clark and Bryan Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "10th Street",
+            "entityId": "tenth-street",
+            "formInForce": "10th Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Renamed Olympic Boulevard in 1935, for the 1932 Games — the request went in in July 1929, and that they had been the tenth Olympiad seems to have gone unremarked.",
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          }
+        ],
+        "maxLng": -118.2505,
+        "from": null,
+        "to": "Crocker Street"
       },
       {
-        "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+        "label": "east of Crocker",
+        "name": "10th Street",
+        "entityId": "tenth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 10th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Renamed Olympic Boulevard in 1935, for the 1932 Games — the request went in in July 1929, and that they had been the tenth Olympiad seems to have gone unremarked.",
+        "attested": false,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          }
+        ],
+        "minLng": -118.2505,
+        "from": "Crocker Street",
+        "to": null
       }
     ]
   },
@@ -3762,10 +3833,96 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2523,
+        "maxLng": -118.2492,
         "from": {
           "px": [
             358,
             1482
+          ]
+        },
+        "to": {
+          "px": [
+            442,
+            86
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "8th Street",
+        "entityId": "eighth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 8th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1893",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.76,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          }
+        ],
+        "minLng": -118.2492,
+        "maxLng": -118.2479,
+        "from": {
+          "px": [
+            442,
+            86
+          ]
+        },
+        "to": {
+          "px": [
+            914,
+            254
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "8th Street",
+        "entityId": "eighth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 8th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          }
+        ],
+        "minLng": -118.2479,
+        "from": {
+          "px": [
+            914,
+            254
           ]
         },
         "to": null
@@ -3777,18 +3934,55 @@ const STREET_DATA = {
     "entityId": "9th-place",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1893",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+    },
     "built": "not yet researched",
+    "nameHistory": [
+      {
+        "from": "by 1893",
+        "until": "?",
+        "name": "10th Street",
+        "entityId": "tenth-street",
+        "formInForce": "10th Street",
+        "origin": "labeled “10th St.” on the 1893 Clark and Bryan Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+      },
+      {
+        "from": "?",
+        "until": null,
+        "name": "9th Place",
+        "entityId": "9th-place",
+        "formInForce": "9th Place",
+        "how": "renaming",
+        "origin": "arrival on this stretch not directly documented",
+        "originLink": null
+      }
+    ],
     "note": null,
-    "attested": false,
+    "attested": true,
+    "knownFraction": 0,
     "categories": [
-      "unresearched"
+      "unresearched",
+      "renamed"
+    ],
+    "formerCategories": [
+      "number"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+      },
+      {
+        "title": "L.A. Street Names: 1st Street (on the numbering system)",
+        "url": "https://lastreetnames.com/street/0001st-street/"
+      },
+      {
+        "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
       }
     ]
   },
@@ -3941,10 +4135,96 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2529,
+        "maxLng": -118.2505,
         "from": {
           "px": [
             1045,
             412
+          ]
+        },
+        "to": {
+          "px": [
+            365,
+            586
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "9th Street",
+        "entityId": "ninth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 9th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1893",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.76,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          }
+        ],
+        "minLng": -118.2505,
+        "maxLng": -118.2489,
+        "from": {
+          "px": [
+            365,
+            586
+          ]
+        },
+        "to": {
+          "px": [
+            917,
+            750
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "9th Street",
+        "entityId": "ninth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 9th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          }
+        ],
+        "minLng": -118.2489,
+        "from": {
+          "px": [
+            917,
+            750
           ]
         },
         "to": null
@@ -6888,13 +7168,13 @@ const STREET_DATA = {
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1888",
+          "text": "1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "1888",
             "until": null,
             "name": "Ceres Avenue",
             "entityId": "ceres-ave",
@@ -6910,7 +7190,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.78,
+        "knownFraction": 1,
         "categories": [
           "unknown"
         ],
@@ -8300,13 +8580,13 @@ const STREET_DATA = {
         "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
         "planned": {
-          "text": "by 1888",
+          "text": "1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "1888",
             "until": "?",
             "name": "Stanford Avenue",
             "entityId": "stanford-ave",
@@ -8332,7 +8612,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0,
+        "knownFraction": 0.22,
         "categories": [
           "person",
           "renamed"
@@ -8413,6 +8693,108 @@ const STREET_DATA = {
         }
       },
       {
+        "label": "beyond 8th",
+        "name": "Crocker Street",
+        "entityId": "crocker-street",
+        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific — how and when this stretch joined Crocker Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
+        "attested": false,
+        "categories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Charles Crocker",
+            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
+          }
+        ],
+        "minLat": 34.0378,
+        "maxLat": 34.0396,
+        "from": {
+          "px": [
+            62,
+            587
+          ]
+        },
+        "to": "8th Street"
+      },
+      {
+        "label": "beyond 8th (Clark Ave)",
+        "name": "Crocker Street",
+        "entityId": "crocker-street",
+        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
+        "planned": {
+          "text": "by 1893",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1893",
+            "until": "?",
+            "name": "Clark Avenue",
+            "entityId": "clark-ave",
+            "formInForce": "Clark Avenue",
+            "how": "origin",
+            "origin": "labeled “Clark Ave.” on the 1893 Clark and Bryan Tract {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Crocker Street",
+            "entityId": "crocker-street",
+            "formInForce": "Crocker Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "person",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Charles Crocker",
+            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
+          },
+          {
+            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          }
+        ],
+        "minLat": 34.0345,
+        "maxLat": 34.0378,
+        "from": "8th Street",
+        "to": {
+          "px": [
+            778,
+            1341
+          ]
+        }
+      },
+      {
         "label": "part of",
         "name": "Crocker Street",
         "entityId": "crocker-street",
@@ -8436,11 +8818,11 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
           }
         ],
-        "maxLat": 34.0396,
+        "maxLat": 34.0345,
         "from": {
           "px": [
-            62,
-            587
+            778,
+            1341
           ]
         },
         "to": null
@@ -10235,13 +10617,13 @@ const STREET_DATA = {
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1888",
+          "text": "1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "1888",
             "until": null,
             "name": "Gladys Avenue",
             "entityId": "gladys-ave",
@@ -10257,7 +10639,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.78,
+        "knownFraction": 1,
         "categories": [
           "unknown"
         ],
@@ -11339,7 +11721,7 @@ const STREET_DATA = {
             "entityId": "hill-street-downtown",
             "formInForce": "Hill Street",
             "how": "origin",
-            "origin": "labeled “HILL STREET” and “CALLE LOMA” on the 1849 Hutton / Ord Survey {{(source)}}",
+            "origin": "labeled “HILL STREET”, “CALLE LOMA” and “HILL ST” on the 1849 Hutton / Ord Survey {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -16052,13 +16434,13 @@ const STREET_DATA = {
     "namedAfter": null,
     "namedAfterLink": null,
     "planned": {
-      "text": "by 1888",
+      "text": "1888",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
     },
     "built": "not yet researched",
     "nameHistory": [
       {
-        "from": "by 1888",
+        "from": "1888",
         "until": null,
         "name": "Omar Street",
         "entityId": "omar-ave",
@@ -16074,7 +16456,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
-    "knownFraction": 0.78,
+    "knownFraction": 1,
     "categories": [
       "unknown"
     ],
@@ -17147,11 +17529,99 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
           }
         ],
+        "minLat": 34.0387,
         "maxLat": 34.0406,
         "from": {
           "px": [
             632,
             116
+          ]
+        },
+        "to": {
+          "px": [
+            510,
+            64
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "San Pedro Street",
+        "entityId": "san-pedro",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
+        "planned": {
+          "text": "by 1893",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+        },
+        "built": "not yet researched",
+        "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
+        "attested": true,
+        "knownFraction": 0.76,
+        "categories": [
+          "place",
+          "destination"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: San Pedro Street",
+            "url": "https://lastreetnames.com/street/san-pedro-street/"
+          },
+          {
+            "title": "Wikipedia: San Pedro Street",
+            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          },
+          {
+            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          }
+        ],
+        "minLat": 34.0354,
+        "maxLat": 34.0387,
+        "from": {
+          "px": [
+            510,
+            64
+          ]
+        },
+        "to": {
+          "px": [
+            330,
+            1296
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "San Pedro Street",
+        "entityId": "san-pedro",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
+        "attested": false,
+        "categories": [
+          "place",
+          "destination"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: San Pedro Street",
+            "url": "https://lastreetnames.com/street/san-pedro-street/"
+          },
+          {
+            "title": "Wikipedia: San Pedro Street",
+            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          }
+        ],
+        "maxLat": 34.0354,
+        "from": {
+          "px": [
+            330,
+            1296
           ]
         },
         "to": null
@@ -18236,13 +18706,13 @@ const STREET_DATA = {
         "namedAfter": "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863, once this stretch was folded into Stanford Avenue",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Leland_Stanford",
         "planned": {
-          "text": "by 1888",
+          "text": "1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "1888",
             "until": "?",
             "name": "Ruth Avenue",
             "entityId": "ruth-ave",
@@ -18268,7 +18738,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0,
+        "knownFraction": 0.22,
         "categories": [
           "person",
           "governor",
@@ -18639,13 +19109,13 @@ const STREET_DATA = {
         "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
         "planned": {
-          "text": "by 1888",
+          "text": "1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "1888",
             "until": null,
             "name": "Towne Avenue",
             "entityId": "towne-ave",
@@ -18661,7 +19131,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.78,
+        "knownFraction": 1,
         "categories": [
           "person",
           "alive"

@@ -207,6 +207,27 @@ names them on every run. The tool rewrites the file whole on each review save
 — re-reading it from disk first, so hand edits are merged rather than lost —
 which is another reason to move an entity out before doing real work on it.
 
+**`sightings` — every sheet that letters the name.** Each entity in
+`names-new.js` carries a derived list of the documents whose rows point at it,
+with the ink each one uses:
+
+```js
+sightings: [
+  { doc: "mr003-060-p1", sheet: "Colton Tract",   asWritten: ["WATERS ST"] },
+  { doc: "mr006-138",    sheet: "Hancock Survey", asWritten: ["Waters St"] }
+]
+```
+
+That is where research on a pending entity starts: a name appearing on three
+documents twenty years apart is a different problem from one that appears once,
+and working the list out by hand meant grepping the corpus. It is **derived and
+never hand-edited** — recomputed from `documents/` every time the tool rewrites
+the file, which is on every review save, since re-pointing a row at a different
+entity changes it. Where the scan cannot run, the list already on disk is
+carried through unchanged rather than replaced with an empty one. It exists
+only in `names-new.js`: an entity that has reached `names.js` has had its
+namesake decided and does not need the trail any more.
+
 **Identity cannot be deferred the way namesakes can.** An absent `namedAfter`
 says "not researched", which is true and harms nothing. A wrong identity
 silently asserts that two namings are one lineage, and the generator will bind

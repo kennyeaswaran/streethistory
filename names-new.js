@@ -12,17 +12,40 @@
 // sources, move the entity into names.js, delete it from here. Anything still
 // sitting in this file is a to-do list.
 //
+// `sightings` is where to start on one: every sheet in the corpus that letters
+// the name, with the ink each one uses. A name on three documents twenty years
+// apart is a different research problem from one that appears once, and that is
+// worth knowing before opening a browser. It is DERIVED — recomputed from
+// documents/ on every review save — so do not hand-edit it; edit the rows.
+//
 // WRITTEN BY THE TOOL — it rewrites this file whole when you save a review, so
 // hand edits to entities that are still listed here will be overwritten. Move
 // an entity into names.js to make your edits stick.
 
 const NEW_NAME_ENTITIES = {
 
-
-
-
+  "clark-ave": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr053-065","sheet":"Clark and Bryan Tract","asWritten":["Clark Ave."]}
+    ],
+    spellings: [{"forms":["Clark Avenue"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr053-065, where the ink reads “Clark Ave.”. Namesake not researched — but the sheet is the Clark and Bryan Tract, so the tract's own Clark is the obvious first candidate and worth checking before anything else. RECONSTRUCTED 2026-09-02 after an assistant overwrote names-new.js with a stale copy; if the original entry said more than this, it was lost there.",
+    possiblySameAs: null,
+    aliases: []
+  },
 
   "council-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr006-138","sheet":"Glassell's Subdivision map","asWritten":["Council Street"]}
+    ],
     spellings: [{"forms":["Council Street"]}],
     namedAfter: null,
     namedAfterLink: null,
@@ -36,6 +59,10 @@ const NEW_NAME_ENTITIES = {
   },
 
   "court-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr006-138","sheet":"Glassell's Subdivision map","asWritten":["Court Street"]}
+    ],
     spellings: [{"forms":["Court Street"]}],
     namedAfter: null,
     namedAfterLink: null,
@@ -49,6 +76,10 @@ const NEW_NAME_ENTITIES = {
   },
 
   "diamond-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr006-138","sheet":"Glassell's Subdivision map","asWritten":["Diamond Street"]}
+    ],
     spellings: [{"forms":["Diamond Street"]}],
     namedAfter: null,
     namedAfterLink: null,
@@ -61,10 +92,11 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
-
-
-
   "hobart-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr006-138","sheet":"Glassell's Subdivision map","asWritten":["Hobart Street"]}
+    ],
     spellings: [{"forms":["Hobart Street"]}],
     namedAfter: null,
     namedAfterLink: null,
@@ -78,6 +110,10 @@ const NEW_NAME_ENTITIES = {
   },
 
   "home-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr006-138","sheet":"Glassell's Subdivision map","asWritten":["Home Street"]}
+    ],
     spellings: [{"forms":["Home Street"]}],
     namedAfter: null,
     namedAfterLink: null,
@@ -91,6 +127,10 @@ const NEW_NAME_ENTITIES = {
   },
 
   "lake-avenue": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr006-138","sheet":"Glassell's Subdivision map","asWritten":["Lake Avenue"]}
+    ],
     spellings: [{"forms":["Lake Avenue"]}],
     namedAfter: null,
     namedAfterLink: null,
@@ -103,14 +143,11 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
-
-
-
-
-
-
-
   "state-colton": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr006-138","sheet":"Glassell's Subdivision map","asWritten":["State Street"]}
+    ],
     spellings: [{"forms":["State Street"]}],
     namedAfter: null,
     namedAfterLink: null,
@@ -123,9 +160,11 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
-
-
   "waters-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr006-138","sheet":"Glassell's Subdivision map","asWritten":["Waters Street"]}
+    ],
     spellings: [{"forms":["Waters Street"]}],
     namedAfter: null,
     namedAfterLink: null,
@@ -139,6 +178,10 @@ const NEW_NAME_ENTITIES = {
   },
 
   "welcome-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr006-138","sheet":"Glassell's Subdivision map","asWritten":["Welcome Street"]}
+    ],
     spellings: [{"forms":["Welcome Street"]}],
     namedAfter: null,
     namedAfterLink: null,

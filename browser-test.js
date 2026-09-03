@@ -678,7 +678,26 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   await page.waitForTimeout(150);
   ok("coverage mode shows only the coverage body",
      JSON.stringify(await shown()) === '["coverage"]', JSON.stringify(await shown()));
-  ok("the header fields are reachable there", (await vis("#f_title")).h > 0);
+  // The header left the Coverage panel: it is read far more often than it is
+  // written, and reading it means looking at the sheet at the same time. Both
+  // modes now open it where a row's popup opens.
+  ok("the header is not sitting in the coverage panel", (await vis("#f_title")).h === 0);
+  await page.click("#sheetMetaC");
+  await page.waitForTimeout(120);
+  ok("…and Sheet metadata opens it there", (await vis("#f_title")).h > 0);
+  ok("…as the one live set of fields, moved rather than copied",
+     await page.evaluate(() => document.querySelectorAll("#f_title").length === 1 &&
+                               document.getElementById("pop").contains(document.getElementById("f_title"))));
+  ok("…pinned to the far right, like every other popup",
+     await page.evaluate(() => {
+       const r = document.getElementById("pop").getBoundingClientRect();
+       return Math.abs(r.right - (innerWidth - 8)) < 2 && r.top < 20;
+     }));
+  await page.click("#pop .close");
+  await page.waitForTimeout(120);
+  ok("…and closing it puts the fields back rather than destroying them",
+     await page.evaluate(() => !!document.getElementById("f_title") &&
+       document.getElementById("headerHome").contains(document.getElementById("f_title"))));
   await page.click("#mReview");
   await page.waitForTimeout(200);
   ok("and review comes back on return", JSON.stringify(await shown()) === '["review"]',
@@ -897,6 +916,61 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("…as an array, not a slash", /asWritten: \["/.test(task));
     ok("it still fixes which end is `from`", /`from` is the \*\*west\*\* end/.test(task));
     ok("…and still warns about null", /`null` is almost never what you want/.test(task));
+    // The sweep is the strongest claim in the model — that this document's
+    // SILENCE can be argued from. Only the human who checked the rows can make
+    // it, so the brief has to say so rather than leave it to be inferred.
+    ok("it tells the assistant to leave sweptFully alone",
+       /Leave .?sweptFully: false.? exactly as it is/.test(task) &&
+       /silence/i.test(task.slice(task.indexOf("sweptFully: false"))),
+       task.slice(task.indexOf("sweptFully"), task.indexOf("sweptFully") + 120));
+    ok("…and says why confirmed:false is not a hedge",
+       /confirmed: false\\`. That is\s+not a hedge/.test(task) ||
+       /not a hedge about your reading/.test(task));
+  }
+
+  console.log("every field a row can carry reaches the popup");
+  {
+    // A field the popup does not print is a field that can be wrong in the
+    // file and right on the screen. The table is ORDERED by ROW_FIELDS but must
+    // not be LIMITED by it, so this checks a made-up key too. The row is put
+    // into the loaded document and taken out again, because the editable
+    // controls only render for a row the document actually has.
+    const shown = await page.evaluate(() => {
+      const r = { kind: "state", street: "3rd Street", from: "Bixel Street",
+                  to: "Boylston Street", fromCross: "a", toCross: "b", toForm: "Third St",
+                  mechanism: "renaming", attests: "built-by", basis: "alignment",
+                  date: { on: "1888" }, trace: [[1, 2], [3, 4]],
+                  text: "Site of something", url: "https://example.org/x",
+                  note: "why", confirmed: false, name: "third-street",
+                  asWritten: "THIRD ST", somethingNobodyThoughtOf: "42" };
+      loadedDoc.rows.push(r);
+      let html;
+      try { html = rowHtml(r, true); } finally { loadedDoc.rows.pop(); }
+      const d = document.createElement("div"); d.innerHTML = html;
+      return { keys: [...d.querySelectorAll("table.fields td.fk")].map(td => td.textContent),
+               controls: ["kindpick", "awpick", "npick", "atpick", "notepick", "conf"]
+                 .filter(c => html.includes(c)),
+               fields: Object.keys(r) };
+    });
+    // Three fields are deliberately absent from the table because they are
+    // rendered as controls instead — showing a field twice makes the text look
+    // like the field, and it is the one you cannot type in.
+    const asControl = { kind: "kindpick", asWritten: "awpick", name: "npick",
+                        attests: "atpick", note: "notepick", confirmed: "conf" };
+    const unaccounted = shown.fields.filter(k =>
+      !shown.keys.includes(k) && !shown.controls.includes(asControl[k]));
+    ok("every field is either printed or editable", unaccounted.length === 0,
+       unaccounted.join(", "));
+    ok("…including a key the tool has never heard of",
+       shown.keys.includes("somethingNobodyThoughtOf"), shown.keys.join(", "));
+    ok("…and annotation's own two", shown.keys.includes("text") && shown.keys.includes("url"),
+       shown.keys.join(", "));
+    ok("the six that are editable really do render as controls",
+       Object.values(asControl).every(c => shown.controls.includes(c)),
+       shown.controls.join(", "));
+    ok("…and none of those is printed twice",
+       Object.keys(asControl).every(k => !shown.keys.includes(k)),
+       shown.keys.join(", "));
   }
 
   console.log("editing a row's attests override and its note");
@@ -996,6 +1070,106 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("…and sorting by folder name is the other order",
        JSON.stringify(order.byId) === '["a-one","m-none","z-two"]', JSON.stringify(order.byId));
     ok("the sort control offers both", await page.locator("#docSort option").count() === 2);
+  }
+
+  console.log("getting the view and the scan back to each other");
+  {
+    await page.click("#mAlign");
+    await page.waitForTimeout(150);
+
+    // Drag the sheet a long way off, the way one hard drag with the map
+    // selected does, and then find it again.
+    const home = await page.evaluate(() => ({ scan: { ...scan }, view: { ...view } }));
+    await page.evaluate(() => { view.lat += 0.05; view.lng += 0.05; draw(); });
+    const away = await page.evaluate(() =>
+      Math.hypot(view.lat - scan.lat, view.lng - scan.lng));
+    ok("the scan can end up well off screen", away > 0.04, String(away));
+    await page.click("#fitScan");
+    await page.waitForTimeout(120);
+    ok("Find the scan brings the view back to it",
+       await page.evaluate(() => Math.abs(view.lat - scan.lat) < 1e-9 &&
+                                 Math.abs(view.lng - scan.lng) < 1e-9));
+    ok("…and zooms out far enough to see the whole sheet",
+       await page.evaluate(() => view.mpp * cv.width >= img.width * scan.mppx &&
+                                 view.mpp * cv.height >= img.height * scan.mppx));
+
+    // The converse, which is the one that saves the dragging: pan to where the
+    // sheet belongs and put it there.
+    const placed = await page.evaluate(() => {
+      const before = { rot: scan.rot, mppx: scan.mppx };
+      view.lat = 34.09; view.lng = -118.31; draw();
+      alignmentTouched = false;
+      document.getElementById("placeScan").click();
+      return { before, scan: { ...scan }, touched: alignmentTouched };
+    });
+    ok("Place scan here moves the sheet to the middle of the view",
+       Math.abs(placed.scan.lat - 34.09) < 1e-9 && Math.abs(placed.scan.lng - (-118.31)) < 1e-9,
+       JSON.stringify(placed.scan));
+    ok("…and leaves rotation and scale alone, which are separate judgements",
+       placed.scan.rot === placed.before.rot && placed.scan.mppx === placed.before.mppx,
+       JSON.stringify([placed.before, placed.scan]));
+    // Without this the next save re-derives the placement from the STORED
+    // control points and silently undoes the move.
+    ok("…and counts as authoring the alignment, not restoring it", placed.touched === true);
+    ok("…and says what to do next", /rotate and scale/.test(await page.textContent("#modeHint")),
+       await page.textContent("#modeHint"));
+
+    // Review moves the view all the time — the row list and the popup both do
+    // — so it needs the same way back.
+    await page.click("#mReview");
+    await page.waitForTimeout(150);
+    ok("Review has a Find the scan of its own", (await vis("#fitScanR")).h > 0);
+    await page.evaluate(() => { view.lat += 0.05; draw(); });
+    await page.click("#fitScanR");
+    await page.waitForTimeout(120);
+    ok("…and it does the same thing",
+       await page.evaluate(() => Math.abs(view.lat - scan.lat) < 1e-9));
+
+    await page.evaluate(h => { Object.assign(scan, h.scan); Object.assign(view, h.view);
+                               alignmentTouched = false; draw(); }, home);
+    // Switching modes folds the Open box away again; the doc-list tests below
+    // expect it open, as the block that set it up left it.
+    await page.evaluate(() => { document.getElementById("openBox").open = true; });
+    await page.waitForTimeout(100);
+  }
+
+  console.log("a new name records which sheets letter it");
+  {
+    // scanNameSightings walks documents/ through the project handle, which
+    // needs a real user gesture — so the sightings are handed in, and what is
+    // under test is that they reach the file and that a failed scan cannot
+    // erase what is already there.
+    const out = await page.evaluate(() => {
+      const seen = new Map([["waters-street", [
+        { doc: "mr003-060-p1", sheet: "Colton Tract", asWritten: ["WATERS ST"] },
+        { doc: "mr006-138", sheet: "Hancock Survey", asWritten: ["Waters St", "WATERS STREET"] }
+      ]]]);
+      const existing = {
+        "waters-street": { spellings: [{ forms: ["Waters Street"] }], namedAfter: null,
+          categories: ["unknown"], sources: [], aliases: [] },
+        "home-street": { spellings: [{ forms: ["Home Street"] }], namedAfter: null,
+          categories: ["unknown"], sources: [], aliases: [],
+          sightings: [{ doc: "mr053-073", sheet: "Ord", asWritten: ["HOME ST"] }] }
+      };
+      return { fresh: namesNewText(existing, seen), noScan: namesNewText(existing, null) };
+    });
+    ok("the sheets a name appears on are written into names-new.js",
+       /sightings: \[/.test(out.fresh) && /"doc":"mr006-138"/.test(out.fresh),
+       (out.fresh.match(/sightings[\s\S]{0,160}/) || [""])[0]);
+    ok("…with the ink each sheet uses",
+       /"asWritten":\["Waters St","WATERS STREET"\]/.test(out.fresh));
+    ok("…and the sheet's short title, so the id is not the only clue",
+       /"sheet":"Hancock Survey"/.test(out.fresh));
+    ok("a name with no rows anywhere gets no sightings line",
+       !/home-street[\s\S]{0,80}sightings/.test(out.fresh),
+       (out.fresh.match(/home-street[\s\S]{0,120}/) || [""])[0]);
+    // The file is rewritten whole, so a scan that could not run must not be
+    // allowed to write an empty list over a real one.
+    ok("a scan that could not run leaves what is already on disk alone",
+       /"doc":"mr053-073"/.test(out.noScan), "carried through");
+    ok("…and invents nothing for the rest", !/mr006-138/.test(out.noScan));
+    ok("the file still explains where sightings come from",
+       /recomputed from|DERIVED/.test(out.fresh));
   }
 
   console.log("three lists, and each opens in the mode that does the next work");

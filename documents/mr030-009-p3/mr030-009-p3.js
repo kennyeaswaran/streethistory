@@ -4,7 +4,7 @@ module.exports = {
   shortTitle: "Wolfskill Orchard Tract, sheet 3 (M.R. 30-11)",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf",
   scan: "documents/mr030-009-p3/mr030-009-p3.pdf",
-  transcription: null,
+  transcription: "documents/mr003-060-p1/mr003-060-p1-partA.md",
 
   date: { on: "1888-01-11" },   
   type: "tract-map",
@@ -110,7 +110,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "The aligned roadway is the continuation of Ceres Ave, whose name is split across pages 1 and 2.",
-      "name": "ceres-ave"
+      "name": "ceres-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -130,7 +131,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "The modern Crocker Street trace follows the corridor lettered Stanford Ave across the document.",
-      "name": "stanford-ave"
+      "name": "stanford-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -150,7 +152,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "This page continues the roadway lettered Gladys on page 2 and Ave on page 4.",
-      "name": "gladys-ave"
+      "name": "gladys-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -190,7 +193,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "Geometry places modern Stanford Avenue in the historic corridor lettered Ruth Ave.",
-      "name": "ruth-ave"
+      "name": "ruth-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -210,7 +214,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "This is the continuation of the Towne Ave roadway lettered across pages 2 and 4.",
-      "name": "towne-ave"
+      "name": "towne-ave",
+      "attests": "planned-on"
     }
   ]
 };

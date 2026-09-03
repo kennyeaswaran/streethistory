@@ -4,7 +4,7 @@ module.exports = {
   shortTitle: "Wolfskill Orchard Tract, sheet 5 (M.R. 30-13)",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf",
   scan: "documents/mr030-009-p5/mr030-009-p5.pdf",
-  transcription: null,
+  transcription: "documents/mr003-060-p1/mr003-060-p1-partA.md",
 
   date: { on: "1888-01-11" },   
   type: "tract-map",
@@ -29,8 +29,8 @@ module.exports = {
     ]
   },
 
-  sweptFully: true,
-  sweptFor: ["3rd Street","4th Street","Alameda Street","Boyd Street","Central Avenue","Crocker Street","Omar Street","San Pedro Street","Stanford Avenue","Towne Avenue"],
+  sweptFully: false,
+  sweptFor: [],
 
   rows: [
     {
@@ -158,7 +158,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "Modern Crocker Street follows the historic Stanford Ave corridor established across the other sheets.",
-      "name": "stanford-ave"
+      "name": "stanford-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -178,7 +179,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "The supplied centerline stays in the roadway fully lettered Omar Ave on this page.",
-      "name": "omar-ave"
+      "name": "omar-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -218,7 +220,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "The short modern Stanford Avenue segment lies in the continuation of the corridor lettered Ruth Ave.",
-      "name": "ruth-ave"
+      "name": "ruth-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",
@@ -238,7 +241,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "The main modern branch follows the Towne Ave corridor to the coverage edge.",
-      "name": "towne-ave"
+      "name": "towne-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "state",

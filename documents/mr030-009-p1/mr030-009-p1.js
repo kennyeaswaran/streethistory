@@ -4,7 +4,7 @@ module.exports = {
   shortTitle: "Wolfskill Orchard Tract, sheet 1 (M.R. 30-9)",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf",
   scan: "documents/mr030-009-p1/mr030-009-p1.pdf",
-  transcription: null,
+  transcription: "documents/mr003-060-p1/mr003-060-p1-partA.md",
 
   date: { on: "1888-01-11" },   
   type: "tract-map",
@@ -33,8 +33,8 @@ module.exports = {
   // draws nothing there (MODEL-SPEC §4.4, §5.2).
   coverageExcept: [{"street":"6th Street","from":null,"to":"Alameda Street"}],
 
-  sweptFully: true,
-  sweptFor: ["6th Street","7th Street","Alameda Street","Central Avenue","Ceres Avenue","Industrial Street","Kohler Street","Wilde Street"],
+  sweptFully: false,
+  sweptFor: [],
 
   rows: [
     {
@@ -129,7 +129,8 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "Ceres is lettered on this page and Ave on page 2; the aligned trace remains inside that corridor.",
-      "name": "ceres-ave"
+      "name": "ceres-ave",
+      "attests": "planned-on"
     },
     {
       "kind": "absent",

@@ -195,7 +195,11 @@
       <button id="dView">the map under it</button>
     </div>
     <div class="hint" id="dragHint"></div>
-    <div class="row"><button id="fitScan">Find the scan</button></div>
+    <div class="row"><button id="fitScan">Find the scan</button>
+      <button id="placeScan">Place scan here</button></div>
+    <div class="hint">Two directions, and the second is the useful one on a
+      fresh scan: pan the map to where you think the sheet goes, then place it
+      there, rather than dragging it across several miles of city.</div>
     <details id="viewBox">
       <summary>Jump to coordinates</summary>
       <label>Centre (lat, lng) &amp; m/px
@@ -217,7 +221,68 @@
     </div>
     <div class="hint" id="writeHint"></div>
 
-    <h3>Document header</h3>
+    <div class="row"><button id="sheetMetaC">Sheet metadata…</button></div>
+    <div class="hint">id, title, url, date, type — the document's own header.
+      Opens where a row's popup opens. A new document needs it filled in before
+      the first save.</div>
+
+    <button class="primary" id="save">Save document + alignment</button>
+    <div class="hint">Writes the document, the alignment, the modern street
+      geometry and <code>TASK.md</code> into <code>documents/&lt;id&gt;/</code>.</div>
+    <div class="hint" id="nextSteps" style="display:none"></div>
+  </div>
+
+  <!-- REVIEW ------------------------------------------------------------ -->
+  <div class="modebody" data-mode="review">
+    <div class="hint">What the rows say, drawn on the sheet they were read from.
+      Click a coloured street to see every field of its rows, give each one a
+      name entity, and vouch for it.</div>
+    <div class="row"><button id="sheetMeta">Sheet metadata…</button>
+      <button id="fitScanR">Find the scan</button></div>
+    <div id="revSummary"></div>
+    <div id="splitState" class="hint" style="display:none"></div>
+
+    <h3>Sweep</h3>
+    <div class="hint" id="sweepState"></div>
+    <div id="sweepBlockers"></div>
+
+    <!-- AT THE END OF WHAT THE SWEEP IS WAITING ON, and with no heading of its
+         own: "this ground has ink the modern map has no street for" is one of
+         the two answers to an unaccounted stretch, so it belongs at the foot of
+         the list that asks the question rather than in a section three headings
+         away. (MODEL-SPEC §5.3.) -->
+    <div class="row">
+      <button id="traceStart">Trace a vanished street</button>
+      <button id="traceDone" style="display:none">Finish</button>
+      <button id="traceCancel" style="display:none">Cancel</button>
+    </div>
+    <div class="hint" id="traceState"></div>
+
+    <button id="sweepBtn">Mark fully swept</button>
+    <button class="primary" id="saveReview">Save review</button>
+    <div class="hint" id="reviewSaveState"></div>
+
+    <h3>Legend</h3>
+    <div id="revLegend"></div>
+    <h3>Streets in coverage</h3>
+    <div id="revStreets"></div>
+    <div id="revProblems"></div>
+
+    <h3>If an assistant just edited the file</h3>
+    <div class="row"><button id="revReload">Re-read rows from disk</button></div>
+    <div class="hint">Picks up new rows without re-aligning anything.
+      <b>Discards unsaved review edits.</b></div>
+  </div>
+
+  <!-- THE DOCUMENT HEADER IS NOT A MODE'S CONTROL. It is read far more often
+       than it is written — you check what a sheet claims while looking at what
+       it draws — and it was sitting in the Coverage panel, which is the one
+       mode nobody is in at that moment. So it lives here, out of every mode
+       body, and is MOVED into the popup when either mode asks for it: moved
+       rather than re-rendered, so the fields stay the same live elements every
+       save already reads. -->
+  <div id="headerHome" style="display:none">
+    <div id="headerFields">
     <label>id <input type="text" id="f_id" placeholder="mr066-035"></label>
     <label>title <textarea id="f_title" rows="3" placeholder="Recorded map: …"></textarea></label>
     <label>shortTitle <input type="text" id="f_shortTitle" placeholder="Thomas Tract map"></label>
@@ -244,53 +309,7 @@
     <label>readBy <select id="f_readBy">
       <option>human</option><option>instance</option><option>instance+alignment</option></select></label>
 
-    <button class="primary" id="save">Save document + alignment</button>
-    <div class="hint">Writes the document, the alignment, the modern street
-      geometry and <code>TASK.md</code> into <code>documents/&lt;id&gt;/</code>.</div>
-    <div class="hint" id="nextSteps" style="display:none"></div>
-  </div>
-
-  <!-- REVIEW ------------------------------------------------------------ -->
-  <div class="modebody" data-mode="review">
-    <div class="hint">What the rows say, drawn on the sheet they were read from.
-      Click a coloured street to see every field of its rows, give each one a
-      name entity, and vouch for it.</div>
-    <div id="revSummary"></div>
-    <div id="splitState" class="hint" style="display:none"></div>
-
-    <h3>Sweep</h3>
-    <div class="hint" id="sweepState"></div>
-    <div id="sweepBlockers"></div>
-
-    <!-- NEXT TO WHAT THE SWEEP IS WAITING ON, not at the bottom of the panel.
-         "This stretch has ink the modern map has no street for" is one of the
-         two answers to an unaccounted stretch, and it was three headings away
-         from the list that asks the question. -->
-    <h3>Drawn on the plat, gone today</h3>
-    <div class="hint">A corridor the sheet letters that no modern street
-      follows — MODEL-SPEC §5.3. Trace it on the scan and it becomes a
-      <code>vanished</code> row.</div>
-    <div class="row">
-      <button id="traceStart">Trace a vanished street</button>
-      <button id="traceDone" style="display:none">Finish</button>
-      <button id="traceCancel" style="display:none">Cancel</button>
     </div>
-    <div class="hint" id="traceState"></div>
-
-    <button id="sweepBtn">Mark fully swept</button>
-    <button class="primary" id="saveReview">Save review</button>
-    <div class="hint" id="reviewSaveState"></div>
-
-    <h3>Legend</h3>
-    <div id="revLegend"></div>
-    <h3>Streets in coverage</h3>
-    <div id="revStreets"></div>
-    <div id="revProblems"></div>
-
-    <h3>If an assistant just edited the file</h3>
-    <div class="row"><button id="revReload">Re-read rows from disk</button></div>
-    <div class="hint">Picks up new rows without re-aligning anything.
-      <b>Discards unsaved review edits.</b></div>
   </div>
 
   <!-- Both saves need this, so it sits below every mode. -->
@@ -655,12 +674,38 @@ $("setview").onclick = () => {
   const [a, b, c] = $("view").value.split(",").map(s => parseFloat(s));
   if (isFinite(a) && isFinite(b) && isFinite(c)) { view = { lat: a, lng: b, mpp: c }; draw(); }
 };
-$("fitScan").onclick = () => {
+// BRING THE VIEW TO THE SCAN. Losing the sheet is easy — one hard drag with
+// the map selected and it is a mile off screen — and there is no way to look
+// for something you cannot see. Review needs it as much as Align does: the
+// row list and the popup both move the view, and getting back to the sheet
+// afterwards was a matter of guessing which way to pan.
+function fitScan() {
   if (!img) return;
   view.lat = scan.lat; view.lng = scan.lng;
   view.mpp = Math.max(img.width * scan.mppx / cv.width, img.height * scan.mppx / cv.height) * 1.1;
-  $("view").value = `${view.lat.toFixed(4)}, ${view.lng.toFixed(4)}, ${view.mpp.toFixed(3)}`;
+  syncViewBox();
   draw();
+}
+const syncViewBox = () =>
+  $("view").value = `${view.lat.toFixed(4)}, ${view.lng.toFixed(4)}, ${view.mpp.toFixed(3)}`;
+$("fitScan").onclick = fitScan;
+$("fitScanR").onclick = fitScan;
+
+// AND THE CONVERSE: bring the scan to the view.
+//
+// Placing a fresh scan meant dragging it from wherever it first landed to the
+// ground it belongs on — often miles, at whatever zoom made the drag possible,
+// which is not the zoom you can see either end at. Panning the map to the right
+// neighbourhood and putting the sheet there is the same decision made the easy
+// way round. Only the position moves: rotation and scale are their own
+// judgements, with their own controls, and resetting them here would throw away
+// work every time somebody nudged the placement.
+$("placeScan").onclick = () => {
+  if (!img) return;
+  scan.lat = view.lat; scan.lng = view.lng;
+  alignmentTouched = true;          // this IS the alignment now, not the stored one
+  draw();
+  setStatusNote("Scan placed at the centre of the view — now rotate and scale it onto the grid.");
 };
 
 // The render is named after the document (<id>-100dpi.png) and lives in the
@@ -1557,9 +1602,13 @@ let lastModel = null, lastDrawProblems = [], reviewSig = null;
 // a field nobody ever checks. Known fields lead, in reading order; anything
 // else the file happens to carry follows, so a new field added to the model
 // shows up here without anyone remembering to change this function.
+// Every field a row can carry, in reading order. A key that is NOT here still
+// appears — the table falls through to Object.keys, so a field nobody thought
+// of cannot hide in the file while the popup says the row is fully described.
+// This list only decides the ORDER, and which fields get a "not set" line.
 const ROW_FIELDS = ["kind", "name", "asWritten", "street", "from", "to",
                     "fromCross", "toCross", "toForm", "mechanism", "attests",
-                    "basis", "date", "trace", "confirmed", "note"];
+                    "basis", "date", "trace", "text", "url", "confirmed", "note"];
 function fieldValueHtml(k, v) {
   if (v === null || v === undefined)
     return k === "from" || k === "to" || k === "fromCross" || k === "toCross"
@@ -2127,15 +2176,52 @@ const describeEnd = v => v == null ? "the street's end in coverage"
   : v;
 
 let popPos = [0, 0], popRow = null, popGap = null;
+
+// THE POPUP SITS AT THE FAR RIGHT, NOT BESIDE WHAT IT DESCRIBES.
+//
+// Beside was the obvious placement and the wrong one: what you check a row
+// against is the INK UNDER IT, and a panel drawn next to the stretch is a panel
+// over the evidence. It also moved on every click, so reading two rows in a row
+// meant re-finding the same fields somewhere new. Pinned top right — the
+// controls are on the left, so the middle of the sheet stays clear either way —
+// it is always in the same place and never over the answer. The x/y arguments
+// are still taken: every caller has a sensible one, and a later placement rule
+// may want them back.
 function showPop(x, y, html) {
   const p = $("pop");
   popPos = [x, y];
+  headerHome();                      // whatever the popup borrowed goes back
   p.innerHTML = html; setVisible(p, true);
-  const w = p.offsetWidth, h = p.offsetHeight;
-  p.style.left = Math.max(8, Math.min(innerWidth - w - 8, x + 14)) + "px";
-  p.style.top = Math.max(8, Math.min(innerHeight - h - 8, y + 14)) + "px";
+  placePop();
   const c = p.querySelector(".close"); if (c) c.onclick = hidePop;
   bindPopControls();
+}
+function placePop() {
+  const p = $("pop");
+  p.style.left = Math.max(8, innerWidth - p.offsetWidth - 8) + "px";
+  p.style.top = "8px";
+}
+
+// THE DOCUMENT HEADER IS ONE SET OF LIVE INPUTS, MOVED — not copied.
+//
+// Both saves read `$("f_title")` and its neighbours directly, so a second
+// rendering of the same fields would be a second answer to what the document
+// says. It is parked in #headerHome and lent to the popup on request.
+function headerHome() {
+  const f = $("headerFields");
+  if (f && f.parentElement !== $("headerHome")) $("headerHome").appendChild(f);
+}
+function showSheetMeta() {
+  const p = $("pop");
+  hidePop();
+  p.innerHTML = `<span class="close" title="close">×</span>` +
+                `<b class="hdr">Sheet metadata</b>` +
+                `<div class="hint">What this sheet is, when it was made, and what ` +
+                `its silence and its drawing are worth. Both saves write it.</div>`;
+  p.appendChild($("headerFields"));
+  setVisible(p, true);
+  placePop();
+  p.querySelector(".close").onclick = hidePop;
 }
 // After an edit the model is rebuilt, so the popup has to be re-rendered from
 // the new state — in place, so the thing you were reading does not jump away.
@@ -2148,7 +2234,12 @@ function reopenPop(street, row) {
   popGap = g || null;
   showPop(popPos[0], popPos[1], popHtml(rec, row, popGap));
 }
-function hidePop() { setVisible($("pop"), false); selStreet = null; popRow = null; popGap = null; }
+function hidePop() {
+  headerHome();
+  setVisible($("pop"), false); selStreet = null; popRow = null; popGap = null;
+}
+$("sheetMeta").onclick = showSheetMeta;
+$("sheetMetaC").onclick = showSheetMeta;
 
 // distance from a point to a polyline, in screen pixels
 function distToPts(pts, x, y) {
@@ -2371,11 +2462,66 @@ async function currentNamesNew() {
   }
 }
 
-function namesNewText(existing) {
+// WHICH SHEETS LETTER THIS NAME — the first thing anybody researching one
+// wants, and the most tedious thing to work out by hand.
+//
+// names-new.js is a to-do list: every entity in it is waiting for somebody to
+// find out who or what it was named after. That search starts from the
+// evidence, and the evidence is a set of sheets — a name that turns up on a
+// tract map, a survey and a newspaper notice is a different research problem
+// from one that appears once. Nothing in the file said so, and working it out
+// meant grepping the corpus.
+//
+// It is DERIVED, not stored twice: the whole file is rewritten on every review
+// save, and this is recomputed from the documents on disk each time, so it
+// cannot drift the way a hand-kept list would. If the folder cannot be read,
+// or a document file will not parse, the answer is "no opinion" — the previous
+// `sightings` is carried through untouched rather than replaced with a lie.
+async function scanNameSightings() {
+  if (await useProjectDir(true) !== "ok") return null;
+  let docsDir;
+  try { docsDir = await projectDir.getDirectoryHandle("documents"); } catch (e) { return null; }
+  const out = new Map();                       // entity id -> [{doc, sheet, asWritten}]
+  for await (const [name, h] of docsDir.entries()) {
+    if (h.kind !== "directory" || name.startsWith("_") || name.startsWith(".")) continue;
+    let doc = null;
+    try {
+      const text = await (await (await h.getFileHandle(`${name}.js`)).getFile()).text();
+      const body = text.slice(text.indexOf("module.exports")).replace(/^module\.exports\s*=\s*/, "");
+      doc = new Function("return " + body.replace(/;\s*$/, ""))();
+    } catch (e) { continue; }                  // unreadable is skipped, not fatal
+    // The document being saved is on disk by now, but read the copy in memory
+    // anyway: it is the one the human just edited, and re-reading a file the
+    // browser may have cached would quietly lose this save's own new rows.
+    if (loadedDoc && doc && doc.id === loadedDoc.id) doc = loadedDoc;
+    if (!doc || !Array.isArray(doc.rows)) continue;
+    const seen = new Map();
+    for (const r of doc.rows) {
+      if (!r || !r.name) continue;
+      if (!seen.has(r.name)) seen.set(r.name, new Set());
+      for (const f of asWrittenForms(r.asWritten)) seen.get(r.name).add(f);
+    }
+    for (const [id, forms] of seen) {
+      if (!out.has(id)) out.set(id, []);
+      out.get(id).push({ doc: doc.id || name, sheet: doc.shortTitle || null,
+                         asWritten: [...forms].sort() });
+    }
+  }
+  for (const list of out.values()) list.sort((a, b) => a.doc.localeCompare(b.doc));
+  return out;
+}
+
+function namesNewText(existing, sightings) {
   const all = { ...existing, ...mintedEntities };
   const body = Object.keys(all).sort().map(id => {
     const e = all[id];
+    const seen = sightings ? (sightings.get(id) || []) : e.sightings;
     return `  ${JSON.stringify(id)}: {\n` +
+      (seen && seen.length
+        ? `    // Sheets that letter this name — derived, rewritten on every review save.\n` +
+          `    sightings: [\n` +
+          seen.map(x => `      ${JSON.stringify(x)}`).join(",\n") + `\n    ],\n`
+        : "") +
       `    spellings: ${JSON.stringify(e.spellings)},\n` +
       `    namedAfter: ${JSON.stringify(e.namedAfter ?? null)},\n` +
       `    namedAfterLink: ${JSON.stringify(e.namedAfterLink ?? null)},\n` +
@@ -2405,6 +2551,12 @@ function namesNewText(existing) {
 // The lifecycle: research the namesake, fill in namedAfter / categories /
 // sources, move the entity into names.js, delete it from here. Anything still
 // sitting in this file is a to-do list.
+//
+// \`sightings\` is where to start on one: every sheet in the corpus that letters
+// the name, with the ink each one uses. A name on three documents twenty years
+// apart is a different research problem from one that appears once, and that is
+// worth knowing before opening a browser. It is DERIVED — recomputed from
+// documents/ on every review save — so do not hand-edit it; edit the rows.
 //
 // WRITTEN BY THE TOOL — it rewrites this file whole when you save a review, so
 // hand edits to entities that are still listed here will be overwritten. Move
@@ -2444,8 +2596,14 @@ $("saveReview").onclick = async () => {
 
   try {
     await writeInto(projectDir, ["documents", id], `${id}.js`, serialiseDoc(prefix));
-    if (Object.keys(mintedEntities).length)
-      await writeInto(projectDir, [], "names-new.js", namesNewText(await currentNamesNew()));
+    // Rewritten on every review save, not only when this session minted
+    // something: pointing an existing row at a different entity changes which
+    // sheets letter that name, and a `sightings` list that only refreshed on a
+    // mint would be wrong exactly when review had been doing its job.
+    const pending = await currentNamesNew();
+    if (Object.keys(mintedEntities).length || Object.keys(pending).length)
+      await writeInto(projectDir, [], "names-new.js",
+                      namesNewText(pending, await scanNameSightings()));
   } catch (e) { return alert("Could not write: " + e.message); }
 
   reviewDirty = false;
@@ -3064,6 +3222,16 @@ ${streets.map(n => "- " + n).join("\n")}
 below. Do not put them in a new file: a separate file has to be merged in by
 hand, and the review tool only ever reads \`${id}.js\`. Leave the rest of that
 file alone — the coverage polygon and the alignment are a human's work.
+
+**Leave \`sweptFully: false\` exactly as it is.** That flag is not a note that
+you finished; it says this document's SILENCE can be argued from — that where
+these rows say nothing, nothing was there. Only a human who has checked every
+row against the sheet can say that, and setting it here would make their check
+optional in practice. The same goes for \`sweptFor\`: leave it empty.
+
+For the same reason every row you write carries \`confirmed: false\`. That is
+not a hedge about your reading; it is what keeps a proposal out of the map
+until somebody has looked at it.
 
 Rows take these shapes, all of them \`confirmed: false\`, since a human checks
 them afterwards:

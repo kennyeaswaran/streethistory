@@ -79,6 +79,12 @@ to know where anything modern is, which is the one thing the task turns on.
 handed to the system being tested. It says to write reasoning into each row's
 `note`, since the tool rewrites the file and comments do not survive.
 
+It must also say what the assistant may **not** touch. Every row it writes
+carries `confirmed: false`, and `sweptFully` stays `false`: the sweep is the
+claim that this document's *silence* can be argued from, which only the person
+who checked the rows against the sheet can make, and a brief that leaves that
+to be inferred makes the check optional in practice.
+
 **Export**: for each modern street with geometry inside the coverage polygon,
 one image with that street drawn in bold red over the scan and the rest of the
 network in faint grey. This is `georef.py overlay-one` driven from the stored
@@ -242,6 +248,19 @@ a sheet of a hundred rows with a dozen waiting, finding them by eye is most of
 the work. The list is shown for an already-swept document too:
 editing one leaves proposals behind, and `sweptFully: true` standing over
 unconfirmed rows claims a silence the rows no longer back.
+
+**One popup, pinned to the far right.** Row fields, gap answers and the
+document header all open in the same place. Beside the feature is where a
+popup wants to go and is wrong: the thing a row is checked against is the ink
+under it. Every field a row carries must reach that popup — the reading order
+is a fixed list, but the table falls through to whatever else is on the object,
+so no field can sit in the file unshown. Fields rendered as controls are not
+also printed as text.
+
+**The document header is not a mode's control.** It opens from **Sheet
+metadata…** in both Coverage and Review, into the popup, as one set of live
+fields moved rather than copied — both saves read those fields directly, and a
+second rendering of them would be a second answer to what the document says.
 
 **Opening: three lists, presented alike.** The Open box lists every folder
 under `documents/` in one of three conditions, each shown the same way, and a

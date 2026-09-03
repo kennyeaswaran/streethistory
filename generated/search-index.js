@@ -1,7 +1,13 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-02
+// Built: 2026-09-03
 const SEARCH_INDEX = [
+  {
+    "form": "11th Street",
+    "entity": "eleventh-street",
+    "label": "11th Street",
+    "street": "10th Street"
+  },
   {
     "form": "10th Street",
     "entity": "tenth-street",
@@ -13,12 +19,6 @@ const SEARCH_INDEX = [
     "entity": "11th-place",
     "label": "11th Place",
     "street": "11th Place"
-  },
-  {
-    "form": "11th Street",
-    "entity": "eleventh-street",
-    "label": "11th Street",
-    "street": "11th Street"
   },
   {
     "form": "12th Street",
@@ -684,6 +684,12 @@ const SEARCH_INDEX = [
     "form": "Crocker Street",
     "entity": "crocker-street",
     "label": "Crocker Street",
+    "street": "Crocker Street"
+  },
+  {
+    "form": "Clark Avenue",
+    "entity": "clark-ave",
+    "label": "Clark Avenue",
     "street": "Crocker Street"
   },
   {
