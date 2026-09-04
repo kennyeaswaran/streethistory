@@ -158,8 +158,8 @@ in it against its source.
 the hand-authored `streets-data.js`: 107 streets / 140 entries, 72 of them with
 a primary-record anchor, one neighbourhood (`dtla`). All the actual work now
 goes into the document corpus, which generates a much larger map that is not
-switched on yet: **26 documents, 2937 rows, 82 curated name entities → 273
-streets and 557 entries**, plus 228 stub entities minted from OSM that nobody
+switched on yet: **26 documents, 2937 rows, 83 curated name entities → 273
+streets and 557 entries**, plus 227 stub entities minted from OSM that nobody
 has researched. Those stubs are the queue; `generated/report.md` lists them.
 
 - **Reading a sheet is routine now.** A human aligns and traces coverage, an AI

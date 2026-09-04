@@ -784,15 +784,14 @@ const NAME_ENTITIES = {
     sources: [
       { title: "L.A. Street Names: Hill Street (on Calle del Toro / Castelar / N. Hill)",
         url: "https://lastreetnames.com/street/hill-street/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
       { title: "Los Angeles Herald, “Common Council”, Feb. 14, 1874 (the petition renaming Bull St. to Castelar)",
         url: "http://cdnc.ucr.edu/cgi-bin/cdnc?a=d&d=LAH18740214.2.12" }
     ],
     disputed: false,
-    note: "Lettered “Calle del Toro” on the 1849 survey. No namesake is documented; bullfights were reportedly held in the area until 1872. Renamed Castelar Street by petition in February 1874, apparently for Emilio Castelar, president of Spain’s First Republic — the same petition that changed Hornet Street to Yale.",
+    note: "No namesake is documented; bullfights were reportedly held in the area until 1872. Renamed Castelar Street by petition in February 1874, apparently for Emilio Castelar, president of Spain’s First Republic — the same petition that changed Hornet Street to Yale.",
     internalNote: "NOT the same entity as hill-street-downtown, though modern N. Hill Street carries that name today: the downtown Hill name was extended north over this street in 1960. Castelar wants its own entity when a document attests it.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "fort-street": {
@@ -1219,6 +1218,28 @@ const NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "One entity per number across the downtown grid, as with 1st–9th. NB the 1849 survey's numbered streets ran only as far as 8th, so when Eleventh was laid out is not researched — the numbering propagated south later.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // Twelfth is the case that shows what the Ord survey does and does not say.
+  // The sheet draws this corridor and letters nothing along it — recorded as an
+  // `unnamed` row on documents/mr053-067, which dates the pavement without
+  // claiming the name (§5.4). So the survey is cited below although it does not
+  // letter the street: it is the grid that implicitly numbers it.
+  "twelfth-street": {
+    spellings: [{ forms: ["12th Street"] }],
+    namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+    namedAfterLink: null,
+    categories: ["number"],
+    sources: [
+      { title: "L.A. Street Names: 1st Street (on the numbering system)",
+        url: "https://lastreetnames.com/street/0001st-street/" },
+      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" }
+    ],
+    disputed: false,
+    note: null,
+    internalNote: "One entity per number across the downtown grid, as with 1st–11th. NB the 1849 survey's numbered streets ran only as far as 8th, so when Twelfth was laid out is not researched — the numbering propagated south later. The Ord survey draws the corridor unlabelled (documents/mr053-067 carries the `unnamed` row, and the sheet is swept for 12th Street), so it is cited here for the numbering rather than for the name: check-model.js will say the sheet does not letter this name, which is correct and intended. Minted 2026-09-04 at Kenny's request, before the 12th Street pass, so the point would not be lost.",
     possiblySameAs: null, aliases: []
   },
 

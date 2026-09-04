@@ -22,7 +22,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "12th Street",
-    "entity": "12th-street",
+    "entity": "twelfth-street",
     "label": "12th Street",
     "street": "12th Street"
   },

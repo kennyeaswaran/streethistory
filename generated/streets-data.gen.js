@@ -441,21 +441,25 @@ const STREET_DATA = {
       {
         "label": "west of L. A. Live Way",
         "name": "12th Street",
-        "entityId": "12th-street",
-        "namedAfter": null,
+        "entityId": "twelfth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 12th Street is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "number"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           }
         ],
         "maxLng": -118.2709,
@@ -466,8 +470,8 @@ const STREET_DATA = {
       {
         "label": "beyond Main (discontinuous)",
         "name": "12th Street",
-        "entityId": "12th-street",
-        "namedAfter": null,
+        "entityId": "twelfth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 12th Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1849",
@@ -478,10 +482,18 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched"
+          "number"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
@@ -500,21 +512,25 @@ const STREET_DATA = {
       {
         "label": "east of Main",
         "name": "12th Street",
-        "entityId": "12th-street",
-        "namedAfter": null,
+        "entityId": "twelfth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 12th Street is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "number"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           }
         ],
         "minLng": -118.2594,
@@ -11916,7 +11932,7 @@ const STREET_DATA = {
             "entityId": "bull",
             "formInForce": "Bull Street",
             "how": "origin",
-            "origin": "labeled “BULL ST.” and “CALLE DEL TORO” on the 1849 Hutton / Ord Survey {{(source)}} — lettered “Calle del Toro” on the 1849 survey. No namesake is documented; bullfights were reportedly held in the area until 1872. Renamed Castelar Street by petition in February 1874, apparently for Emilio Castelar, president of Spain’s First Republic — the same petition that changed Hornet Street to Yale",
+            "origin": "labeled “BULL ST.” and “CALLE DEL TORO” on the 1849 Hutton / Ord Survey {{(source)}} — no namesake is documented; bullfights were reportedly held in the area until 1872. Renamed Castelar Street by petition in February 1874, apparently for Emilio Castelar, president of Spain’s First Republic — the same petition that changed Hornet Street to Yale",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -11957,10 +11973,6 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
             "title": "Los Angeles Herald, “Common Council”, Feb. 14, 1874 (the petition renaming Bull St. to Castelar)",
