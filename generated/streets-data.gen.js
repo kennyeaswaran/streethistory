@@ -189,7 +189,7 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (M.R. 53-65, Nov. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
           }
         ],
@@ -320,15 +320,15 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           },
           {
-            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-33, Apr. 29, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-033.pdf"
           }
         ],
@@ -370,7 +370,7 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -463,7 +463,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -781,11 +781,11 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           }
         ],
@@ -857,7 +857,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
@@ -1057,7 +1057,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
@@ -1201,11 +1201,11 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           }
         ],
@@ -1312,7 +1312,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
@@ -1504,7 +1504,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           },
           {
@@ -1720,11 +1720,11 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           }
         ],
@@ -1805,7 +1805,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -1843,7 +1843,7 @@ const STREET_DATA = {
             "entityId": "georgia-east",
             "formInForce": "Georgia Street",
             "how": "origin",
-            "origin": "labeled “GEORGIA ST” and “Georgia St” on the 1875 Thomas Tract, the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street",
+            "origin": "labeled “GEORGIA ST” and “Georgia St” on the 1875 Thomas Tract, the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — Likely the state",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
           {
@@ -1878,7 +1878,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
           {
@@ -1886,7 +1886,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -2273,15 +2273,15 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           }
         ],
@@ -2362,7 +2362,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -2474,7 +2474,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -2771,11 +2771,11 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           }
         ],
@@ -2856,7 +2856,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 3, M.R. 30-11, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -2930,7 +2930,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -3090,11 +3090,11 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           }
         ],
@@ -3175,7 +3175,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -3251,7 +3251,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Plan of the Goodwin Tract (identified by map alignment, not a lot-level record)",
+            "title": "Plan of the Goodwin Tract (M.R. 11-42, Oct. 6, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
           }
         ],
@@ -3498,11 +3498,11 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           }
         ],
@@ -3588,7 +3588,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -3794,7 +3794,7 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
@@ -3875,7 +3875,7 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (M.R. 53-65, Nov. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
           }
         ],
@@ -3973,7 +3973,7 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (identified by map alignment, not a lot-level record)",
+        "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (M.R. 53-65, Nov. 1893; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
       },
       {
@@ -4030,15 +4030,15 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
-            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
@@ -4091,7 +4091,7 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
@@ -4177,7 +4177,7 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (M.R. 53-65, Nov. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
           }
         ],
@@ -4266,7 +4266,7 @@ const STREET_DATA = {
         "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
       },
       {
-        "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+        "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
       }
     ]
@@ -4324,7 +4324,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/alameda-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
@@ -4398,7 +4398,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/alameda-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           }
         ],
@@ -4457,11 +4457,11 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/alameda-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
           {
@@ -4469,7 +4469,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -4528,7 +4528,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/alameda-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
@@ -4536,7 +4536,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -4595,11 +4595,11 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/alameda-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -4643,7 +4643,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/alameda-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           }
         ],
@@ -4915,7 +4915,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -5247,7 +5247,7 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "Plan de la Ciudad de Los Angeles",
+        "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
       }
     ]
@@ -5343,7 +5343,7 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+        "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
       }
     ]
@@ -6349,7 +6349,7 @@ const STREET_DATA = {
             "entityId": "eternity",
             "formInForce": "Eternity Street",
             "how": "origin",
-            "origin": "labeled “ETERNITY ST.” and “CALLE DE LA ETERNIDAD” on the 1849 Hutton / Ord Survey {{(source)}} — lettered “Calle de la Eternidad” on the 1849 survey. It led to Calvary Cemetery, established in 1844, which is the usual explanation — though an 1895 account claims instead that it was so named because it had neither beginning nor end. Renamed Buena Vista in 1888, and folded into North Broadway in November 1909",
+            "origin": "labeled “ETERNITY ST.” and “CALLE DE LA ETERNIDAD” on the 1849 Hutton / Ord Survey {{(source)}} — The concept of the eternity after death — it led to Calvary Cemetery, established in 1844. Though an 1895 account claims instead that it was so named because it had neither beginning nor end.",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -6376,11 +6376,11 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan de la Ciudad de Los Angeles",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -6476,28 +6476,20 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
             "title": "L.A. Street Names: Broadway (on Fort Street)",
             "url": "https://lastreetnames.com/street/broadway/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Wikipedia: Broadway (Los Angeles)",
-            "url": "https://en.wikipedia.org/wiki/Broadway_(Los_Angeles)"
           }
         ],
         "minLat": 34.0377,
@@ -7074,7 +7066,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/central-avenue/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -7155,14 +7147,14 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Ceres Avenue",
         "entityId": "ceres-ave",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Ceres}}, the Roman goddess of agriculture and the harvest — how and when this stretch joined Ceres Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Ceres_(mythology)",
         "planned": {
           "text": "1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
-        "note": "Ceres was the Roman goddess of agriculture and the harvest, which would be a fitting name for a street laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source says that is what was meant, and none names anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
+        "note": "This street was laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -7175,11 +7167,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Wikipedia: Ceres (mythology)",
-            "url": "https://en.wikipedia.org/wiki/Ceres_(mythology)"
-          },
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -7196,8 +7184,8 @@ const STREET_DATA = {
         "label": "part of (original Ceres Ave)",
         "name": "Ceres Avenue",
         "entityId": "ceres-ave",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Ceres}}, the Roman goddess of agriculture and the harvest",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Ceres_(mythology)",
         "planned": {
           "text": "1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
@@ -7215,7 +7203,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "note": "Ceres was the Roman goddess of agriculture and the harvest, which would be a fitting name for a street laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source says that is what was meant, and none names anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
+        "note": "This street was laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -7228,11 +7216,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Wikipedia: Ceres (mythology)",
-            "url": "https://en.wikipedia.org/wiki/Ceres_(mythology)"
-          },
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -7255,11 +7239,11 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Ceres Avenue",
         "entityId": "ceres-ave",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Ceres}}, the Roman goddess of agriculture and the harvest — how and when this stretch joined Ceres Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Ceres_(mythology)",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Ceres was the Roman goddess of agriculture and the harvest, which would be a fitting name for a street laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source says that is what was meant, and none names anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
+        "note": "This street was laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
         "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -7270,10 +7254,6 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
-          {
-            "title": "Wikipedia: Ceres (mythology)",
-            "url": "https://en.wikipedia.org/wiki/Ceres_(mythology)"
-          },
           {
             "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
@@ -7298,21 +7278,17 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Ceres Avenue",
         "entityId": "ceres-ave",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Ceres}}, the Roman goddess of agriculture and the harvest — how and when this stretch joined Ceres Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Ceres_(mythology)",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Ceres was the Roman goddess of agriculture and the harvest, which would be a fitting name for a street laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source says that is what was meant, and none names anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
+        "note": "This street was laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
         "attested": false,
         "categories": [
           "unknown"
         ],
         "disputed": false,
         "sources": [
-          {
-            "title": "Wikipedia: Ceres (mythology)",
-            "url": "https://en.wikipedia.org/wiki/Ceres_(mythology)"
-          },
           {
             "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
@@ -7415,7 +7391,7 @@ const STREET_DATA = {
             "entityId": "short-street-chavez",
             "formInForce": "Short Street",
             "how": "origin",
-            "origin": "labeled “C CORTA” and “SHORT ST” on the 1849 Hutton / Ord Survey {{(source)}} — lettered on the 1849 survey along ground now part of Cesar E. Chavez Avenue. Descriptive, presumably, but nothing documents it",
+            "origin": "labeled “C CORTA” and “SHORT ST” on the 1849 Hutton / Ord Survey {{(source)}} — lettered on the 1849 survey along ground that roughly follows one block of what is now Cesar E. Chavez Avenue. Descriptive, presumably, but nothing documents it",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -7446,7 +7422,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -7518,7 +7494,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan de la Ciudad de Los Angeles",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
@@ -7826,7 +7802,7 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
@@ -7910,7 +7886,7 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
@@ -8044,7 +8020,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           },
           {
-            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
@@ -8664,16 +8640,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Wikipedia: Charles Crocker",
-            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Wikipedia: Leland Stanford",
-            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
           }
         ],
         "minLat": 34.0454,
@@ -8740,16 +8708,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Wikipedia: Charles Crocker",
-            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Wikipedia: Leland Stanford",
-            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
           }
         ],
         "minLat": 34.0401,
@@ -8789,10 +8749,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Wikipedia: Charles Crocker",
-            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
           }
         ],
         "minLat": 34.0396,
@@ -8828,10 +8784,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Wikipedia: Charles Crocker",
-            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
           }
         ],
         "minLat": 34.0378,
@@ -8863,7 +8815,7 @@ const STREET_DATA = {
             "entityId": "clark-ave",
             "formInForce": "Clark Avenue",
             "how": "origin",
-            "origin": "labeled “Clark Ave.” on the 1893 Clark and Bryan Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “Clark Ave.” on the 1893 Clark and Bryan Tract {{(source)}} — likely the owner of the tract, since this was the Clark and Bryan Tract",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
           },
           {
@@ -8894,11 +8846,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Wikipedia: Charles Crocker",
-            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
-          },
-          {
-            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (M.R. 53-65, Nov. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
           }
         ],
@@ -8930,10 +8878,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Wikipedia: Charles Crocker",
-            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
           }
         ],
         "maxLat": 34.0345,
@@ -8959,7 +8903,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://lastreetnames.com/street/witmer-street/",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Named for the hill rather than for anyone. No source states it, but the street runs over Crown Hill and nothing else called Crown Hill is in the neighbourhood.",
+        "note": null,
         "attested": false,
         "categories": [
           "place"
@@ -8995,7 +8939,7 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
         },
         "built": "not yet researched",
-        "note": "Named for the hill rather than for anyone. No source states it, but the street runs over Crown Hill and nothing else called Crown Hill is in the neighbourhood.",
+        "note": null,
         "attested": true,
         "knownFraction": 0.66,
         "categories": [
@@ -9012,7 +8956,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/witmer-street/"
           },
           {
-            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
@@ -9438,7 +9382,7 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+        "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
       },
       {
@@ -9590,10 +9534,10 @@ const STREET_DATA = {
           {
             "from": "1849",
             "until": "Feb. 1874",
-            "name": "Calle de los Chapules",
+            "name": "Grasshopper Street",
             "entityId": "chapules",
-            "formInForce": "Calle de los Chapules",
-            "origin": "this spelling attested from 1849 {{(source)}} — The insect (“Grasshopper Street”): grasshoppers crossing this line from the western plains doomed the grape harvest",
+            "formInForce": "Grasshopper Street",
+            "origin": "this spelling attested from 1849 {{(source)}} — The insect: grasshoppers crossing this line from the western plains doomed the grape harvest",
             "originLink": "https://lastreetnames.com/street/figueroa-street/"
           },
           {
@@ -9677,11 +9621,11 @@ const STREET_DATA = {
           {
             "from": "by 1849",
             "until": "Feb. 1874",
-            "name": "Calle de los Chapules",
+            "name": "Grasshopper Street",
             "entityId": "chapules",
-            "formInForce": "Calle de los Chapules",
+            "formInForce": "Grasshopper Street",
             "how": "origin",
-            "origin": "labeled “CALLE DE LAS CHAPULES”, “GRASSHOPPER ST”, “GRASSHOPPER ST.” and “CALLE DE LAS CHAPULAS” on the 1849 Hutton / Ord Survey {{(source)}} — The insect (“Grasshopper Street”): grasshoppers crossing this line from the western plains doomed the grape harvest",
+            "origin": "labeled “CALLE DE LAS CHAPULES”, “GRASSHOPPER ST”, “GRASSHOPPER ST.” and “CALLE DE LAS CHAPULAS” on the 1849 Hutton / Ord Survey {{(source)}} — The insect: grasshoppers crossing this line from the western plains doomed the grape harvest",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
@@ -9724,11 +9668,11 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/figueroa-street/"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
@@ -9736,7 +9680,7 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
           },
           {
-            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           },
           {
@@ -9778,10 +9722,10 @@ const STREET_DATA = {
           {
             "from": "1849",
             "until": "Feb. 1874",
-            "name": "Calle de los Chapules",
+            "name": "Grasshopper Street",
             "entityId": "chapules",
-            "formInForce": "Calle de los Chapules",
-            "origin": "this spelling attested from 1849 {{(source)}} — The insect (“Grasshopper Street”): grasshoppers crossing this line from the western plains doomed the grape harvest",
+            "formInForce": "Grasshopper Street",
+            "origin": "this spelling attested from 1849 {{(source)}} — The insect: grasshoppers crossing this line from the western plains doomed the grape harvest",
             "originLink": "https://lastreetnames.com/street/figueroa-street/"
           },
           {
@@ -9828,7 +9772,7 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
           },
           {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           },
           {
@@ -9887,7 +9831,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/figueroa-street/"
           },
           {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           }
         ],
@@ -9985,7 +9929,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Lettered “Calle de las Flores” on the 1849 survey. The hillside-blossom explanation is the one always given and nothing documents it.",
+        "note": null,
         "attested": false,
         "categories": [
           "nature"
@@ -10022,7 +9966,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Lettered “Calle de las Flores” on the 1849 survey. The hillside-blossom explanation is the one always given and nothing documents it.",
+        "note": null,
         "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -10079,7 +10023,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "note": "Lettered “Calle de las Flores” on the 1849 survey. The hillside-blossom explanation is the one always given and nothing documents it.",
+        "note": null,
         "attested": true,
         "knownFraction": 1,
         "categories": [
@@ -10096,19 +10040,19 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           },
           {
-            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-33, Apr. 29, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-033.pdf"
           }
         ],
@@ -10130,7 +10074,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Lettered “Calle de las Flores” on the 1849 survey. The hillside-blossom explanation is the one always given and nothing documents it.",
+        "note": null,
         "attested": false,
         "categories": [
           "nature"
@@ -10176,7 +10120,7 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
         },
         "built": "not yet researched",
-        "note": "Lettered “Calle de las Flores” on the 1849 survey. The hillside-blossom explanation is the one always given and nothing documents it.",
+        "note": null,
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
@@ -10197,7 +10141,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           }
         ],
@@ -10224,7 +10168,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Lettered “Calle de las Flores” on the 1849 survey. The hillside-blossom explanation is the one always given and nothing documents it.",
+        "note": null,
         "attested": false,
         "categories": [
           "nature"
@@ -10450,8 +10394,8 @@ const STREET_DATA = {
         "label": "north of Temple (discontinuous)",
         "name": "Garey Street",
         "entityId": "garey",
-        "namedAfter": "Almost certainly Thomas Andrew Garey (1830–1909), citrus nurseryman and co-founder of Pomona — how and when this stretch joined Garey Street is not yet researched",
-        "namedAfterLink": null,
+        "namedAfter": "Almost certainly {{Thomas Andrew Garey (1830–1909)}}, citrus nurseryman and co-founder of Pomona — how and when this stretch joined Garey Street is not yet researched",
+        "namedAfterLink": "https://www.findagrave.com/memorial/87759308/thomas-andrew-garey",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
@@ -10476,8 +10420,8 @@ const STREET_DATA = {
         "label": "2nd to 3rd (original Garey St)",
         "name": "Garey Street",
         "entityId": "garey",
-        "namedAfter": "Almost certainly Thomas Andrew Garey (1830–1909), citrus nurseryman and co-founder of Pomona — his was the only Garey family in town when the street was named",
-        "namedAfterLink": null,
+        "namedAfter": "Almost certainly {{Thomas Andrew Garey (1830–1909)}}, citrus nurseryman and co-founder of Pomona — his was the only Garey family in town when the street was named",
+        "namedAfterLink": "https://www.findagrave.com/memorial/87759308/thomas-andrew-garey",
         "planned": {
           "text": "by 1875",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
@@ -10513,7 +10457,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/garey-street/"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
@@ -10571,8 +10515,8 @@ const STREET_DATA = {
         "label": "north of Chick Hearn Court (discontinuous)",
         "name": "Georgia Street",
         "entityId": "georgia-bell",
-        "namedAfter": "{{Georgia Herrick Bell}} (1845–1899), wife of Major Horace Bell, on whose land the street was laid out — how and when this stretch joined Georgia Street is not yet researched",
-        "namedAfterLink": "https://lastreetnames.com/street/georgia-street/",
+        "namedAfter": "Georgia Herrick Bell (1845–1899), wife of {{Major Horace Bell}}, on whose land the street was laid out — how and when this stretch joined Georgia Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Horace_Bell",
         "planned": "not yet researched",
         "built": "not yet researched",
         "nameHistory": [
@@ -10637,8 +10581,8 @@ const STREET_DATA = {
         "label": "south of 15th Drive",
         "name": "Georgia Street",
         "entityId": "georgia-bell",
-        "namedAfter": "{{Georgia Herrick Bell}} (1845–1899), wife of Major Horace Bell, on whose land the street was laid out — how and when this stretch joined Georgia Street is not yet researched",
-        "namedAfterLink": "https://lastreetnames.com/street/georgia-street/",
+        "namedAfter": "Georgia Herrick Bell (1845–1899), wife of {{Major Horace Bell}}, on whose land the street was laid out — how and when this stretch joined Georgia Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Horace_Bell",
         "planned": "not yet researched",
         "built": "not yet researched",
         "nameHistory": [
@@ -10764,10 +10708,6 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
             "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth named as the block's bounding streets",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
           },
@@ -10778,6 +10718,10 @@ const STREET_DATA = {
           {
             "title": "LA Parks: Gladys Park (6th and Gladys)",
             "url": "https://recreation.parks.lacity.gov/park/6th-gladys-street"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "minLat": 34.0385,
@@ -11104,11 +11048,11 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
@@ -11180,7 +11124,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           },
           {
@@ -11449,7 +11393,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
           {
@@ -11653,7 +11597,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
+        "note": null,
         "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -11718,7 +11662,7 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
+        "note": null,
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -11751,7 +11695,7 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -11777,7 +11721,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
+        "note": null,
         "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -11824,7 +11768,7 @@ const STREET_DATA = {
         "label": "part of (original Hill St)",
         "name": "Hill Street",
         "entityId": "hill-street-downtown",
-        "namedAfter": "{{Bunker Hill}} — the knoll the street runs along, though the hill was not formally named until 1873, after the street",
+        "namedAfter": "{{Bunker Hill}} — the knoll the street runs along, though the hill was not formally named until 1873, later than the street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
         "planned": {
           "text": "by 1849",
@@ -11843,7 +11787,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "note": "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
+        "note": null,
         "attested": true,
         "knownFraction": 1,
         "categories": [
@@ -11860,19 +11804,19 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Bunker Hill (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
@@ -11899,7 +11843,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
+        "note": null,
         "attested": false,
         "categories": [
           "place"
@@ -11987,7 +11931,7 @@ const STREET_DATA = {
         "name": "Hope Street",
         "entityId": "hope",
         "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
-        "namedAfterLink": null,
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
@@ -11997,7 +11941,7 @@ const STREET_DATA = {
           "person",
           "unknown"
         ],
-        "disputed": false,
+        "disputed": true,
         "sources": [
           {
             "title": "L.A. Street Names: Hope Street",
@@ -12026,7 +11970,7 @@ const STREET_DATA = {
         "name": "Hope Street",
         "entityId": "hope",
         "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
-        "namedAfterLink": null,
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
@@ -12040,7 +11984,7 @@ const STREET_DATA = {
           "person",
           "unknown"
         ],
-        "disputed": false,
+        "disputed": true,
         "sources": [
           {
             "title": "L.A. Street Names: Hope Street",
@@ -12076,7 +12020,7 @@ const STREET_DATA = {
         "name": "Hope Street",
         "entityId": "hope",
         "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
-        "namedAfterLink": null,
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
@@ -12090,7 +12034,7 @@ const STREET_DATA = {
           "person",
           "unknown"
         ],
-        "disputed": false,
+        "disputed": true,
         "sources": [
           {
             "title": "L.A. Street Names: Hope Street",
@@ -12119,8 +12063,8 @@ const STREET_DATA = {
         "label": "beyond 6th (original Hope St)",
         "name": "Hope Street",
         "entityId": "hope",
-        "namedAfter": "The virtue — or possibly {{Dr. Alexander W. Hope}} (c. 1820–1856), which the sources do not settle",
-        "namedAfterLink": null,
+        "namedAfter": "The virtue — or possibly sheriff and state senator {{Dr. Alexander W. Hope}} (c. 1820–1856), which the sources do not settle",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
         "planned": {
           "text": "by 1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
@@ -12146,7 +12090,7 @@ const STREET_DATA = {
           "person",
           "unknown"
         ],
-        "disputed": false,
+        "disputed": true,
         "sources": [
           {
             "title": "L.A. Street Names: Hope Street",
@@ -12157,15 +12101,15 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-33, Apr. 29, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-033.pdf"
           }
         ],
@@ -12184,7 +12128,7 @@ const STREET_DATA = {
         "name": "Hope Street",
         "entityId": "hope",
         "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
-        "namedAfterLink": null,
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
@@ -12194,7 +12138,7 @@ const STREET_DATA = {
           "person",
           "unknown"
         ],
-        "disputed": false,
+        "disputed": true,
         "sources": [
           {
             "title": "L.A. Street Names: Hope Street",
@@ -12229,7 +12173,7 @@ const STREET_DATA = {
         "name": "Hope Street",
         "entityId": "hope",
         "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
-        "namedAfterLink": null,
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
         "planned": {
           "text": "by 1885",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
@@ -12243,7 +12187,7 @@ const STREET_DATA = {
           "person",
           "unknown"
         ],
-        "disputed": false,
+        "disputed": true,
         "sources": [
           {
             "title": "L.A. Street Names: Hope Street",
@@ -12258,7 +12202,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           }
         ],
@@ -12282,7 +12226,7 @@ const STREET_DATA = {
         "name": "Hope Street",
         "entityId": "hope",
         "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
-        "namedAfterLink": null,
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
@@ -12292,7 +12236,7 @@ const STREET_DATA = {
           "person",
           "unknown"
         ],
-        "disputed": false,
+        "disputed": true,
         "sources": [
           {
             "title": "L.A. Street Names: Hope Street",
@@ -12429,7 +12373,7 @@ const STREET_DATA = {
             "entityId": "palm-st-arts-district",
             "formInForce": "Palm Street",
             "how": "origin",
-            "origin": "labeled “Palm St” on the 1886 Goodwin Tract {{(source)}} — one of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Imperial Street. When it became Imperial Street, and why, is not researched — and it has nothing to do with Imperial Highway, named far to the south in 1929–31",
+            "origin": "labeled “Palm St” on the 1886 Goodwin Tract {{(source)}} — one of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Imperial Street. When it became Imperial Street, and why, is not researched",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
           },
           {
@@ -12461,7 +12405,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan of the Goodwin Tract (identified by map alignment, not a lot-level record)",
+            "title": "Plan of the Goodwin Tract (M.R. 11-42, Oct. 6, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
           },
           {
@@ -13372,11 +13316,11 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
@@ -13417,7 +13361,7 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
@@ -13507,7 +13451,7 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
@@ -13655,7 +13599,7 @@ const STREET_DATA = {
         "label": "part of (original Los Angeles St)",
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
-        "namedAfter": "The city itself — ultimately {{Nuestra Señora de los Ángeles de Porciúncula}}, the 1769 Spanish naming of the river",
+        "namedAfter": "The city itself — ultimately Nuestra Señora de los Ángeles de Porciúncula, the 1769 Spanish naming of {{the river}}",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
         "planned": {
           "text": "by 1893",
@@ -13695,7 +13639,7 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
@@ -13871,7 +13815,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           },
           {
-            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
@@ -13945,7 +13889,7 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "Plan de la Ciudad de Los Angeles",
+        "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
       }
     ]
@@ -14055,7 +13999,7 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
@@ -14165,7 +14109,7 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
@@ -14306,7 +14250,7 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
@@ -14364,11 +14308,11 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
@@ -14391,7 +14335,7 @@ const STREET_DATA = {
         "label": "beyond 7th (original Main St)",
         "name": "Main Street",
         "entityId": "main-street-dtla",
-        "namedAfter": "Its standing as the pueblo’s principal street — an anglicization of Calle Principal",
+        "namedAfter": "Its standing as the pueblo’s principal street",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1849",
@@ -14427,19 +14371,19 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
@@ -14534,7 +14478,7 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
-            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
@@ -14937,7 +14881,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan of the Goodwin Tract (identified by map alignment, not a lot-level record)",
+            "title": "Plan of the Goodwin Tract (M.R. 11-42, Oct. 6, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
           },
           {
@@ -15178,8 +15122,8 @@ const STREET_DATA = {
         "label": "beyond Santa Fe (original Mesquit St)",
         "name": "Mesquit Street",
         "entityId": "mesquit",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Presumably the mesquite, alongside the Goodwin Tract's other plant names, but nothing documents it.",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Mesquite",
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
@@ -15197,22 +15141,21 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
           }
         ],
-        "note": "Presumably the mesquite, alongside the Goodwin Tract's other plant names, but nothing documents it. The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
+        "note": "The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
-          "nature",
-          "unknown"
+          "nature"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
-          },
-          {
             "title": "Wikipedia: Arts District, Los Angeles",
             "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          },
+          {
+            "title": "Plan of the Goodwin Tract (M.R. 11-42, Oct. 6, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
           }
         ],
         "minLat": 34.0366,
@@ -15228,15 +15171,14 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Mesquit Street",
         "entityId": "mesquit",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Presumably the mesquite, alongside the Goodwin Tract's other plant names, but nothing documents it. — how and when this stretch joined Mesquit Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Mesquite",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Presumably the mesquite, alongside the Goodwin Tract's other plant names, but nothing documents it. The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
+        "note": "The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
         "attested": false,
         "categories": [
-          "nature",
-          "unknown"
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -15446,7 +15388,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           },
           {
@@ -16100,12 +16042,12 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLat": 34.039,
@@ -16179,11 +16121,11 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "Plan de la Ciudad de Los Angeles",
+        "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
       },
       {
-        "title": "Plan de la Ciudad de Los Angeles",
+        "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
       }
     ]
@@ -16267,15 +16209,15 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           },
           {
-            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (identified by map alignment, not a lot-level record)",
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-33, Apr. 29, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-033.pdf"
           },
           {
@@ -16322,7 +16264,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -16386,11 +16328,11 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           },
           {
@@ -16462,7 +16404,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           },
           {
@@ -16581,7 +16523,7 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887) — shows “Omar Ave” at 312 Omar St's location",
+        "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
       }
     ]
@@ -16642,7 +16584,7 @@ const STREET_DATA = {
             "entityId": "high-street-chinatown",
             "formInForce": "High Street",
             "how": "origin",
-            "origin": "labeled “CALLE ALTA” and “HIGH ST” on the 1849 Hutton / Ord Survey {{(source)}} — lettered “Calle Alta” on the 1849 survey, with no namesake recorded. It became Walters Street in 1886, for a resident named George Walters, and Ord Street in 1890 — for the surveyor who had declined to name anything after himself in 1849",
+            "origin": "labeled “CALLE ALTA” and “HIGH ST” on the 1849 Hutton / Ord Survey {{(source)}} — it became Walters Street in 1886, for a resident named George Walters, and Ord Street in 1890 — for the surveyor who had declined to name anything after himself in 1849",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -16669,7 +16611,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -16817,7 +16759,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Kines dates the naming to 1883, a year before M.R. 6-138 was recorded, so the plat draws a street that already had the name — consistent with the document's planned-by default. Not to be confused with Patton Avenue/Place elsewhere in the county.",
+        "note": null,
         "attested": false,
         "categories": [
           "person"
@@ -16869,7 +16811,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           }
         ],
-        "note": "Kines dates the naming to 1883, a year before M.R. 6-138 was recorded, so the plat draws a street that already had the name — consistent with the document's planned-by default. Not to be confused with Patton Avenue/Place elsewhere in the county.",
+        "note": null,
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
@@ -17005,7 +16947,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           },
           {
@@ -17318,7 +17260,7 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (identified by map alignment, not a lot-level record)",
+        "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
       },
       {
@@ -17541,7 +17483,7 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           }
         ],
@@ -17599,11 +17541,11 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -17691,7 +17633,7 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
           },
           {
-            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (identified by map alignment, not a lot-level record)",
+            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (M.R. 53-65, Nov. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
           }
         ],
@@ -17769,7 +17711,7 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "Plan de la Ciudad de Los Angeles",
+        "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
       }
     ]
@@ -18000,7 +17942,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan of the Goodwin Tract (identified by map alignment, not a lot-level record)",
+            "title": "Plan of the Goodwin Tract (M.R. 11-42, Oct. 6, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
           },
           {
@@ -18098,7 +18040,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
@@ -18241,7 +18183,7 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Milton_Santee"
           },
           {
-            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (identified by map alignment, not a lot-level record)",
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
@@ -18420,7 +18362,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — and neither is verified.",
+        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
         "attested": false,
         "categories": [
           "person",
@@ -18465,7 +18407,7 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "built": "not yet researched",
-        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — and neither is verified.",
+        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
@@ -18491,7 +18433,7 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
@@ -18518,7 +18460,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — and neither is verified.",
+        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
         "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -18575,7 +18517,7 @@ const STREET_DATA = {
             "name": "Main Street",
             "entityId": "main-street-dtla",
             "formInForce": "Main Street",
-            "origin": "labeled “MAIN STREET” on the 1849 Hutton / Ord Survey {{(source)}} — Its standing as the pueblo’s principal street — an anglicization of Calle Principal",
+            "origin": "labeled “MAIN STREET” on the 1849 Hutton / Ord Survey {{(source)}} — Its standing as the pueblo’s principal street",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -18589,7 +18531,7 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — and neither is verified.",
+        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
@@ -18619,11 +18561,11 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -18648,7 +18590,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — and neither is verified.",
+        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
         "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -18705,7 +18647,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — and neither is verified.",
+        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
         "attested": true,
         "knownFraction": 1,
         "categories": [
@@ -18723,19 +18665,19 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Spring Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
@@ -18872,11 +18814,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Wikipedia: Leland Stanford",
-            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
-          },
-          {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -18922,10 +18860,6 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Wikipedia: Leland Stanford",
-            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
-          },
-          {
             "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
@@ -18964,10 +18898,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
-          },
-          {
-            "title": "Wikipedia: Leland Stanford",
-            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
           },
           {
             "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
@@ -19249,7 +19179,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -19303,7 +19233,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -20063,12 +19993,12 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
-          },
-          {
             "title": "Wikipedia: Arts District, Los Angeles",
             "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          },
+          {
+            "title": "Plan of the Goodwin Tract (M.R. 11-42, Oct. 6, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
           }
         ],
         "maxLng": -118.2306,
@@ -20298,7 +20228,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           },
           {
-            "title": "Plat of \"Crownwood\" (identified by map alignment, not a lot-level record)",
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
@@ -20376,7 +20306,7 @@ const STREET_DATA = {
             "entityId": "hornet",
             "formInForce": "Hornet Street",
             "how": "origin",
-            "origin": "labeled “HORNET ST.” and “CALLE DE LAS AVISPAS” on the 1849 Hutton / Ord Survey {{(source)}} — The insect — avispa is “wasp”, and insects were a common naming source in the young pueblo, as with the Calle de los Chapules that became Figueroa",
+            "origin": "labeled “HORNET ST.” and “CALLE DE LAS AVISPAS” on the 1849 Hutton / Ord Survey {{(source)}} — The insect — insects were a common naming source in the young pueblo, as with the Calle de los Chapules that became Figueroa",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -20403,7 +20333,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan de la Ciudad de Los Angeles (identified by map alignment, not a lot-level record)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {

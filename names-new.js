@@ -29,13 +29,13 @@ const NEW_NAME_ENTITIES = {
     sightings: [
       {"doc":"mr053-065","sheet":"Clark and Bryan Tract","asWritten":["Clark Ave."]}
     ],
-    spellings: [{"forms":["Clark Avenue"]}],
+    spellings: [{ forms: ["Clark Avenue"] }],
     namedAfter: null,
     namedAfterLink: null,
     categories: ["unknown"],
     sources: [],
     disputed: false,
-    note: null,
+    note: "Likely the owner of the tract, since this was the Clark and Bryan Tract.",
     internalNote: "Minted in review from mr053-065, where the ink reads “Clark Ave.”. Namesake not researched — but the sheet is the Clark and Bryan Tract, so the tract's own Clark is the obvious first candidate and worth checking before anything else. RECONSTRUCTED 2026-09-02 after an assistant overwrote names-new.js with a stale copy; if the original entry said more than this, it was lost there.",
     possiblySameAs: null,
     aliases: []
@@ -131,12 +131,12 @@ const NEW_NAME_ENTITIES = {
     sightings: [
       {"doc":"mr006-138","sheet":"Glassell's Subdivision map","asWritten":["Lake Avenue"]}
     ],
-    spellings: [{"forms":["Lake Avenue"]}],
+    spellings: [{ forms: ["Lake Avenue"] }],
     namedAfter: null,
     namedAfterLink: null,
     categories: ["unknown"],
     sources: [],
-    disputed: false,
+    disputed: true,
     note: "Namesake untraced. Two candidates: Echo Park Lake, the city reservoir this street runs toward, which was already there in 1884; or Lake Vineyard, the ranch of Benjamin D. Wilson, whose daughter Ruth married George S. Patton — whose own street is on this same plat — in the year it was recorded",
     internalNote: "Neither candidate is sourced. Kines’s Lake Avenue page is Pasadena/Altadena’s, named for Lake Vineyard, and is a different street; the coincidence is suggestive but no more. Wanted: a contemporary source. The reservoir reading is the simpler one and should be preferred until something says otherwise.",
     possiblySameAs: null,

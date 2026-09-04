@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Streetymology — names tool</title>
+<link rel="icon" href="data:,">
+
+<!--
+  The names tool — the review utility for names.js, the way map-tool.html is
+  the review utility for a document's .js.
+
+  It lists every name ENTITY (MODEL-SPEC.md §3) across names.js and
+  names-new.js, sortable by any column, and opens one into an editor carrying
+  every field the schema has. It runs the same checks check-model.js runs over
+  the name layer, so a problem is visible before the file is saved rather than
+  after.
+
+  THE ONE DESIGN DECISION WORTH KNOWING. names.js is hand-authored prose as
+  much as data: section comments, aligned sources, internalNotes broken across
+  lines. A tool that re-serialised the whole file would flatten all of that on
+  the first save. So this edits SURGICALLY — it parses the file into a list of
+  spans, replaces only the entities you actually changed, and writes every
+  other byte back exactly as it found it. `SRC.parse` + `SRC.render` are a
+  lossless round trip on an untouched file, and test-names-tool.js asserts that
+  against the real names.js on every run.
+
+  MUST BE SERVED, not opened as file:// — the File System Access API needs a
+  secure context and the tool fetches names.js and documents/ over HTTP.
+      utilities/start-names-tool.command   (double-click it)
+      or: python3 -m http.server  →  http://localhost:8000/names-tool.html
+-->
+<style>
+  html, body { margin:0; height:100%; font-family: Georgia, serif;
+               background:#fffef7; color:#241f18; overflow:hidden; }
+  #app { display:flex; flex-direction:column; height:100%; }
+
+  /* ---- top bar ---- */
+  #top { flex:0 0 auto; border-bottom:1px solid #c9b98a; background:#fdfbf2;
+         padding:8px 14px 6px; }
+  #top h1 { font-size:15px; margin:0 0 6px; display:inline-block; }
+  #top h1 .sub { font-weight:normal; color:#6b5f4a; font-size:12px; margin-left:8px; }
+  #bar { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  #q { flex:0 0 260px; }
+  .chips { display:flex; gap:0; }
+  .chips button { border-radius:0; }
+  .chips button:first-child { border-radius:4px 0 0 4px; }
+  .chips button:last-child { border-radius:0 4px 4px 0; }
+  .chips button.on { background:#3c5f8a; color:#fff; border-color:#2e4a6d; }
+  #dirState { font-size:11px; color:#6b5f4a; margin-top:5px; line-height:1.4; }
+
+  /* ---- panes ---- */
+  #panes { flex:1 1 auto; display:flex; min-height:0; }
+  #listPane { flex:1 1 55%; min-width:0; overflow-y:auto; }
+  #editPane { flex:1 1 45%; min-width:340px; max-width:560px; overflow-y:auto;
+              border-left:1px solid #c9b98a; background:#fdfbf2; padding:10px 14px 40px; }
+
+  /* ---- the list ---- */
+  table#list { border-collapse:collapse; width:100%; font-size:13px; }
+  #list th { position:sticky; top:0; z-index:2; background:#f3ecd8;
+             border-bottom:1px solid #c9b98a; text-align:left; font-size:11px;
+             text-transform:uppercase; letter-spacing:0.06em; color:#6b5f4a;
+             padding:5px 8px; cursor:pointer; white-space:nowrap; user-select:none; }
+  #list th:hover { background:#e9dfc4; }
+  #list th .ar { color:#3c5f8a; }
+  #list td { border-bottom:1px solid #efe8d4; padding:4px 8px; vertical-align:top; }
+  #list tr.ent { cursor:pointer; }
+  #list tr.ent:hover td { background:#f6f0dd; }
+  #list tr.ent.on td { background:#e9dfc4; }
+  #list tr.ent.bad td { box-shadow:inset 3px 0 0 #8a3c1e; }
+  td.id code { font-size:12px; }
+  td.disp { font-variant:small-caps; }
+  td.docs, th.docs { text-align:right; }
+  .badge { font-size:10px; border:1px solid #c9b98a; border-radius:8px;
+           padding:0 5px; margin-left:5px; color:#6b5f4a; white-space:nowrap; }
+  .badge.pending { border-color:#c08a3c; color:#8a5c00; background:#fdf4e2; }
+  .cat { display:inline-block; font-size:10px; background:#f3ecd8;
+         border:1px solid #ddd2b4; border-radius:8px; padding:0 6px; margin:0 3px 2px 0; }
+  .cat.unknown, .cat.unresearched { background:#fdf4e2; border-color:#e0c99a; color:#8a5c00; }
+  .na { color:#6b5f4a; font-style:italic; }
+  .na.none { color:#8a3c1e; }
+  #empty { padding:20px 14px; color:#6b5f4a; font-size:13px; }
+
+  /* ---- the editor ---- */
+  h2 { font-size:14px; margin:0 0 2px; }
+  h3 { font-size:11px; margin:14px 0 4px; text-transform:uppercase;
+       letter-spacing:0.06em; color:#6b5f4a; border-top:1px solid #e6dcc2; padding-top:7px; }
+  label { display:block; margin:6px 0 2px; font-size:12px; color:#4a4034; }
+  input[type=text], input[type=url], select, textarea {
+    width:100%; box-sizing:border-box; font:inherit; font-size:12px;
+    border:1px solid #cfc3a4; border-radius:3px; padding:3px 5px; background:#fff; }
+  textarea { resize:vertical; line-height:1.45; }
+  button { font:inherit; font-size:12px; padding:3px 8px; border:1px solid #b8a97c;
+           background:#f3ecd8; border-radius:4px; cursor:pointer; }
+  button:hover { background:#e9dfc4; }
+  button.primary { background:#3c5f8a; color:#fff; border-color:#2e4a6d; }
+  button.primary:hover { background:#33527a; }
+  button:disabled { opacity:0.45; cursor:default; }
+  button.mini { font-size:11px; padding:1px 6px; }
+  .hint { color:#6b5f4a; font-size:11px; line-height:1.45; margin:3px 0 0; }
+  .warn { color:#8a3c1e; }
+  .row { display:flex; gap:6px; align-items:center; }
+  .row > .grow { flex:1; min-width:0; }
+  .card { border:1px solid #e6dcc2; border-radius:4px; background:#fff;
+          padding:6px 8px; margin:5px 0; }
+  .card .cardhead { display:flex; justify-content:space-between; align-items:center;
+                    font-size:11px; color:#8a7a52; text-transform:uppercase;
+                    letter-spacing:0.05em; margin-bottom:2px; }
+  .card .cardhead .acts { display:flex; gap:3px; }
+  .public { color:#8a5c00; }
+
+  /* categories: a button that opens a checkbox list, plus a "new category" row */
+  .drop { position:relative; }
+  .dropbtn { width:100%; text-align:left; background:#fff; border:1px solid #cfc3a4;
+             min-height:24px; }
+  .dropmenu { display:none; position:absolute; z-index:30; left:0; right:0; top:100%;
+              background:#fffef7; border:1px solid #c9b98a; border-radius:4px;
+              box-shadow:0 3px 12px rgba(0,0,0,0.18); padding:5px 8px 7px;
+              max-height:250px; overflow-y:auto; }
+  .dropmenu.open { display:block; }
+  .dropmenu label { display:flex; gap:6px; align-items:baseline; margin:2px 0;
+                    font-size:12px; cursor:pointer; }
+  .dropmenu label input { width:auto; }
+  .dropmenu .n { color:#8a7a52; font-size:10px; margin-left:auto; }
+  .dropmenu hr { border:0; border-top:1px solid #e6dcc2; margin:5px 0; }
+
+  /* validation */
+  #problems { margin:8px 0 0; font-size:12px; }
+  #problems div { padding:3px 6px; border-radius:3px; margin:2px 0; line-height:1.4; }
+  #problems .err { background:#fbeae4; color:#7a3216; }
+  #problems .wrn { background:#fdf4e2; color:#7a5300; }
+
+  #actions { position:sticky; bottom:0; background:#fdfbf2; padding:8px 0 0;
+             border-top:1px solid #e6dcc2; margin-top:12px; }
+  #actions .row { margin-bottom:5px; }
+  #saveState { font-size:11px; color:#6b5f4a; min-height:14px; }
+
+  ul.sight { margin:3px 0; padding-left:0; list-style:none; font-size:12px; }
+  ul.sight li { padding:1px 0; }
+  ul.sight .aw { color:#4a4034; font-style:italic; }
+  code { font-size:11px; background:#f3ecd8; padding:0 3px; border-radius:2px; }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <div id="top">
+    <h1>Names<span class="sub" id="counts">loading…</span></h1>
+    <div id="bar">
+      <input type="text" id="q" placeholder="filter — id, spelling, namesake, category, note">
+      <span class="chips" id="fileChips">
+        <button data-f="all" class="on">all</button>
+        <button data-f="names">names.js</button>
+        <button data-f="new">names-new.js</button>
+      </span>
+      <span class="chips" id="stateChips">
+        <button data-s="any" class="on">any state</button>
+        <button data-s="todo">no namesake</button>
+        <button data-s="problems">problems</button>
+        <button data-s="edited">edited</button>
+      </span>
+      <button id="newEntity">New entity…</button>
+      <button id="connectDir">Connect project folder…</button>
+    </div>
+    <div id="dirState"></div>
+  </div>
+
+  <div id="panes">
+    <div id="listPane">
+      <table id="list">
+        <thead><tr>
+          <th data-k="id">Entity</th>
+          <th data-k="display">Latest spelling</th>
+          <th data-k="cats">Categories</th>
+          <th data-k="named">Namesake</th>
+          <th data-k="docs" class="docs">Docs</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div id="empty" style="display:none"></div>
+    </div>
+    <div id="editPane"><div class="hint" id="editEmpty">
+      Click a row to open it.<br><br>
+      Every field in the schema is editable here. Nothing is written until you
+      press <b>Save</b>, and a save rewrites only the entities you changed —
+      every other byte of <code>names.js</code>, including its section comments
+      and hand-aligned sources, is left exactly as it was.
+    </div><div id="editor" style="display:none"></div></div>
+  </div>
+
+</div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g,
+  c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+
+// ===========================================================================
+// SRC — the surgical source model.
+//
+// names.js is hand-authored. Its section comments ("---- the downtown numbered
+// grid ----"), its aligned source blocks and its internalNotes broken across
+// lines with `+` are all worth more than any consistency a re-serialiser could
+// impose, and a tool that rewrote the file whole would destroy them on the
+// first save of the first entity.
+//
+// So: parse the file into (lead, key, mid, value, sep) spans, one per entity,
+// where concatenating them all reproduces the file byte for byte. Editing
+// replaces one entity's `value` and leaves the rest untouched. `lead` carries
+// whatever comments sit above an entity, so a section heading stays attached
+// to the entity it heads.
+//
+// Extracted and round-trip tested by test-names-tool.js against the real
+// names.js — if this drifts, that test fails before a save can corrupt data.
+// ===========================================================================
+const SRC = {
+
+  // Advance past whitespace and comments. Comments matter: they are the bulk
+  // of what this file is trying not to lose.
+  skip(t, i) {
+    for (;;) {
+      while (i < t.length && /\s/.test(t[i])) i++;
+      if (t[i] === "/" && t[i + 1] === "/") { while (i < t.length && t[i] !== "\n") i++; continue; }
+      if (t[i] === "/" && t[i + 1] === "*") { const j = t.indexOf("*/", i + 2); i = j < 0 ? t.length : j + 2; continue; }
+      return i;
+    }
+  },
+
+  // Index just past a string literal starting at i. Handles ' " and `.
+  endString(t, i) {
+    const q = t[i++];
+    while (i < t.length) {
+      if (t[i] === "\\") { i += 2; continue; }
+      if (t[i] === q) return i + 1;
+      i++;
+    }
+    return i;
+  },
+
+  // Index just past the {...} (or [...]) starting at i, skipping strings and
+  // comments so a brace inside either cannot unbalance the count.
+  endBraced(t, i) {
+    const open = t[i], close = open === "{" ? "}" : "]";
+    let depth = 0;
+    while (i < t.length) {
+      const c = t[i];
+      if (c === '"' || c === "'" || c === "`") { i = this.endString(t, i); continue; }
+      if (c === "/" && (t[i + 1] === "/" || t[i + 1] === "*")) { i = this.skip(t, i); continue; }
+      if (c === open) depth++;
+      else if (c === close) { depth--; if (!depth) return i + 1; }
+      i++;
+    }
+    return i;
+  },
+
+  // Parse `<decl> = {` … `}` into spans. `decl` is the const name, e.g.
+  // "NAME_ENTITIES". Returns null if the declaration isn't there.
+  parse(text, decl) {
+    const m = new RegExp("(?:const|let|var)\\s+" + decl + "\\s*=\\s*\\{").exec(text);
+    if (!m) return null;
+    const openAt = m.index + m[0].length - 1;          // the "{" itself
+    const prefix = text.slice(0, openAt + 1);
+    let i = openAt + 1;
+    const entries = [];
+    for (;;) {
+      const ks = this.skip(text, i);
+      if (text[ks] === "}" || ks >= text.length) {
+        return { text, decl, prefix, entries, suffix: text.slice(i) };
+      }
+      const lead = text.slice(i, ks);
+      let ke;
+      if (text[ks] === '"' || text[ks] === "'") ke = this.endString(text, ks);
+      else { ke = ks; while (ke < text.length && /[\w$-]/.test(text[ke])) ke++; }
+      const keyText = text.slice(ks, ke);
+      const key = /^["']/.test(keyText) ? JSON.parse('"' + keyText.slice(1, -1).replace(/"/g, '\\"') + '"')
+                                        : keyText;
+      let c = this.skip(text, ke);
+      if (text[c] !== ":") return null;                 // not the shape we expect
+      const vs = this.skip(text, c + 1);
+      if (text[vs] !== "{") return null;                // every entity is an object
+      const ve = this.endBraced(text, vs);
+      const mid = text.slice(ke, vs);
+      const valueText = text.slice(vs, ve);
+      // The separator is the comma if there is one; the whitespace before a
+      // closing brace belongs to the next iteration's `lead`, and from there
+      // to `suffix`.
+      const cs = this.skip(text, ve);
+      const sep = text[cs] === "," ? text.slice(ve, cs + 1) : "";
+      entries.push({ key, keyText, lead, mid, valueText, sep, dirty: false });
+      i = sep ? cs + 1 : ve;
+    }
+  },
+
+  render(p) {
+    return p.prefix + p.entries.map(e => e.lead + e.keyText + e.mid + e.valueText + e.sep).join("") + p.suffix;
+  },
+
+  find: (p, id) => p.entries.find(e => e.key === id),
+
+  // Replace one entity's source text. Untouched entities keep their bytes.
+  replace(p, id, valueText) {
+    const e = this.find(p, id);
+    if (!e) return false;
+    e.valueText = valueText; e.dirty = true;
+    return true;
+  },
+
+  append(p, id, valueText) {
+    const last = p.entries[p.entries.length - 1];
+    if (last && !last.sep) last.sep = ",";
+    p.entries.push({ key: id, keyText: JSON.stringify(id), lead: "\n\n  ",
+                     mid: ": ", valueText, sep: "", dirty: true });
+    return true;
+  },
+
+  remove(p, id) {
+    const i = p.entries.findIndex(e => e.key === id);
+    if (i < 0) return false;
+    p.entries.splice(i, 1);
+    const last = p.entries[p.entries.length - 1];
+    if (last) last.sep = "";
+    return true;
+  },
+
+  // Evaluate the parsed object without running the whole file: the entity
+  // literals are data, and this keeps a stray statement in the file from
+  // mattering.
+  evaluate(p) {
+    const body = "({" + p.entries.map(e => e.keyText + ": " + e.valueText).join(",\n") + "})";
+    return new Function("return " + body)();
+  }
+};
+
+// ===========================================================================
+// Serialising ONE entity, in the house style of names.js.
+//
+// Only ever applied to an entity you actually edited. Fields are written in
+// schema order (MODEL-SPEC §3), `internalNote` is omitted when empty rather
+// than written as a null, and `sightings` is written only in names-new.js,
+// where it is the derived field the map tool maintains.
+// ===========================================================================
+const J = v => JSON.stringify(v);
+
+function renderSpelling(sp) {
+  const bits = [`forms: ${J(sp.forms)}`];
+  if (sp.disambiguation) bits.push(`disambiguation: ${J(sp.disambiguation)}`);
+  if (sp.from) bits.push(`from: ${J(sp.from)}`);
+  if (sp.until) bits.push(`until: ${J(sp.until)}`);
+  let s = `{ ${bits.join(", ")}`;
+  if (sp.source && (sp.source.title || sp.source.url))
+    s += `,\n          source: { title: ${J(sp.source.title || "")},\n` +
+         `                    url: ${J(sp.source.url || "")} }`;
+  return s + " }";
+}
+
+function renderEntity(e, opts) {
+  const o = opts || {};
+  const L = [];
+  if (o.sightings && e.sightings && e.sightings.length) {
+    L.push(`    // Sheets that letter this name — derived, rewritten on every review save.`);
+    L.push(`    sightings: [`);
+    L.push(e.sightings.map(s => `      ${J(s)}`).join(",\n"));
+    L.push(`    ],`);
+  }
+  const sp = (e.spellings || []).map(renderSpelling);
+  L.push(sp.length === 1 && !sp[0].includes("\n")
+    ? `    spellings: [${sp[0]}],`
+    : `    spellings: [\n      ${sp.join(",\n      ")}\n    ],`);
+  L.push(`    namedAfter: ${J(e.namedAfter ?? null)},`);
+  L.push(`    namedAfterLink: ${J(e.namedAfterLink ?? null)},`);
+  L.push(`    categories: ${J(e.categories || [])},`);
+  const src = (e.sources || []).filter(s => s.title || s.url);
+  L.push(src.length
+    ? `    sources: [\n` + src.map(s =>
+        `      { title: ${J(s.title || "")},\n        url: ${J(s.url || "")} }`).join(",\n") + `\n    ],`
+    : `    sources: [],`);
+  L.push(`    disputed: ${e.disputed === true},`);
+  // `note` is PUBLIC — generate.js prints it as a former name's origin line.
+  // `internalNote` is not rendered anywhere. Both have to survive a save, and
+  // they must not be confused for each other.
+  L.push(`    note: ${J(e.note ?? null)},`);
+  if (e.internalNote) L.push(`    internalNote: ${J(e.internalNote)},`);
+  L.push(`    possiblySameAs: ${J(e.possiblySameAs ?? null)},`);
+  L.push(`    aliases: ${J(e.aliases || [])}`);
+  return "{\n" + L.join("\n") + "\n  }";
+}
+
+// ===========================================================================
+// Validation — the same gates check-model.js applies to the name layer, run
+// here so a problem is seen while it can still be fixed in the box that made
+// it. Kept deliberately close to check-model.js's wording so the two read as
+// one voice; anything this misses, the checker still catches.
+// ===========================================================================
+function validateAll(all, corpus) {
+  const ids = new Set(Object.keys(all));
+  const aliasOwner = {};
+  const out = {};
+  const push = (id, kind, msg) => { (out[id] = out[id] || []).push({ kind, msg }); };
+  for (const [id, e] of Object.entries(all)) {
+    if (!Array.isArray(e.spellings) || !e.spellings.length) push(id, "err", "no spellings");
+    (e.spellings || []).forEach((sp, i) => {
+      if (!Array.isArray(sp.forms) || !sp.forms.length || sp.forms.some(f => !String(f).trim()))
+        push(id, "err", `spellings[${i}] has no forms`);
+      if ((sp.from || sp.until) && !(sp.source && sp.source.url))
+        push(id, "err", `spellings[${i}] carries prose dates but no source ` +
+                        `(§3 allows explicit from/until only for a form attested in prose, and requires its source)`);
+    });
+    if (!Array.isArray(e.categories) || !e.categories.length) push(id, "err", "no categories");
+    if (e.namedAfter) {
+      const open = (e.namedAfter.match(/\{\{/g) || []).length,
+            close = (e.namedAfter.match(/\}\}/g) || []).length;
+      if (open !== close || open > 1) push(id, "err", "namedAfter has unbalanced or multiple {{}} markers");
+    }
+    for (const s of e.sources || [])
+      if (!/^https?:\/\//.test(s.url || "")) push(id, "err", "bad source url: " + (s.url || "(empty)"));
+    if (e.possiblySameAs && !ids.has(e.possiblySameAs))
+      push(id, "err", "possiblySameAs references unknown id: " + e.possiblySameAs);
+    for (const a of e.aliases || []) {
+      if (ids.has(a)) push(id, "err", "alias collides with a live entity id: " + a);
+      if (aliasOwner[a]) push(id, "err", `alias "${a}" already claimed by ${aliasOwner[a]}`);
+      aliasOwner[a] = id;
+    }
+    if (e.namedAfter === null && !(e.categories || []).some(c => ["unknown", "unresearched"].includes(c)))
+      push(id, "wrn", "namedAfter is null — expected the 'unknown' category (researched, not found) or 'unresearched'");
+    if (typeof e.note === "string" && /\b(Kenny|TODO|check this|research-leads|2026-\d\d-\d\d)\b/.test(e.note))
+      push(id, "wrn", "note reads like a working note, and note is shown to readers — move it to internalNote");
+    if (e.disputed === true && !(e.categories || []).includes("disputed"))
+      push(id, "wrn", "disputed is set but the 'disputed' category is not");
+
+    // CITING A SHEET THAT DOES NOT LETTER THE NAME. An entity may cite a
+    // recorded map that is also a document in the corpus — on a stretch no
+    // sheet covers, that citation is the only link to the evidence, and the
+    // generator keeps it. But citing a sheet with no row for this entity means
+    // either a missing row or, far more often, the wrong sheet of a multi-sheet
+    // plat. Only checkable against the corpus, so it is skipped until the
+    // documents/ scan has run.
+    // One url can be several documents — the county serves all five sheets of
+    // the Wolfskill Orchard Tract as one PDF — so a citation of that url is
+    // answered by a row on ANY of them. Sheets that are separate files are
+    // still separate, and that is where the real errors are.
+    if (corpus) for (const s of e.sources || []) {
+      const cited = corpus.docsByUrl[s.url];
+      if (!cited) continue;
+      const on = corpus.attesting[id] || [];
+      if (cited.some(d => on.includes(d))) continue;
+      const what = cited.length === 1 ? `documents/${cited[0]}/`
+        : `documents/${cited[0]}/ (and ${cited.length - 1} more sharing that scan)`;
+      push(id, "wrn", `sources cites ${what}, but no row there names this entity — ` +
+        (on.length
+          ? `it IS attested on ${on.join(", ")}, so the citation probably names the ` +
+            `wrong sheet of the same map`
+          : `and it is not attested anywhere in the corpus, so either a row is missing or ` +
+            `the citation is wrong`));
+    }
+  }
+  return out;
+}
+
+// ===========================================================================
+// State
+// ===========================================================================
+let files = {                     // one per source file
+  names:    { path: "names.js",     decl: "NAME_ENTITIES",     parsed: null, entities: {} },
+  newNames: { path: "names-new.js", decl: "NEW_NAME_ENTITIES", parsed: null, entities: {} }
+};
+let all = {};                     // id -> entity (both files, merged)
+let where = {};                   // id -> "names" | "newNames"
+let edited = {};                  // id -> edited entity object (unsaved)
+let removed = new Set();          // ids to drop from names-new.js on save (promotions)
+let problems = {};
+let docCounts = {};               // id -> [{doc, sheet, asWritten}]
+let corpus = null;                // { docByUrl, attesting } — filled by the documents/ scan
+let selected = null;
+let sortKey = "id", sortDir = 1;
+let filterFile = "all", filterState = "any", query = "";
+
+const entityOf = id => edited[id] || all[id];
+const displayName = e => {
+  const sp = (e.spellings || [])[(e.spellings || []).length - 1];
+  if (!sp || !sp.forms || !sp.forms.length) return "";
+  return sp.forms[0] + (sp.disambiguation ? ` (${sp.disambiguation})` : "");
+};
+const clone = o => JSON.parse(JSON.stringify(o));
+
+// ===========================================================================
+// Loading
+// ===========================================================================
+async function loadFile(f) {
+  let text;
+  try { text = await (await fetch(f.path + "?t=" + Date.now())).text(); }
+  catch (e) { return null; }
+  if (/^\s*<!DOCTYPE|^\s*<html/i.test(text)) return null;   // a 404 page, not the file
+  const parsed = SRC.parse(text, f.decl);
+  if (!parsed) return null;
+  f.parsed = parsed;
+  f.entities = SRC.evaluate(parsed);
+  return f;
+}
+
+async function loadAll() {
+  const okNames = await loadFile(files.names);
+  if (!okNames) {
+    $("empty").style.display = "";
+    $("empty").innerHTML = '<span class="warn">Could not read <code>names.js</code>.</span> ' +
+      'This page has to be SERVED, not opened as a file — use ' +
+      '<code>utilities/start-names-tool.command</code>, or ' +
+      '<code>python3 -m http.server</code> in the project folder.';
+    return;
+  }
+  await loadFile(files.newNames);        // legitimately absent
+  rebuild();
+  render();
+  scanDocuments();                       // slow-ish; fills the Docs column late
+}
+
+function rebuild() {
+  all = {}; where = {};
+  for (const [id, e] of Object.entries(files.names.entities)) { all[id] = e; where[id] = "names"; }
+  for (const [id, e] of Object.entries(files.newNames.entities)) {
+    if (all[id]) continue;               // check-model.js errors on this; don't hide it, just don't clobber
+    all[id] = e; where[id] = "newNames";
+  }
+  // An edited entity's __file WINS: a promotion changes which file an entity
+  // belongs to before either file has been written, and the list has to show
+  // the entity where it is going, not where it came from.
+  for (const [id, e] of Object.entries(edited)) where[id] = e.__file || where[id] || "names";
+  const merged = {};
+  for (const id of new Set([...Object.keys(all), ...Object.keys(edited)])) {
+    if (removed.has(id) && !edited[id]) continue;   // renamed away, or promoted out
+    merged[id] = entityOf(id);
+  }
+  problems = validateAll(merged, corpus);
+  // check-model.js errors on an id present in both files — it means the entity
+  // has been researched and moved but not deleted from the to-do list.
+  for (const id of Object.keys(files.newNames.entities))
+    if (files.names.entities[id])
+      (problems[id] = problems[id] || []).push({ kind: "err",
+        msg: "in names.js AND names-new.js — it has probably been researched and moved; " +
+             "delete it from names-new.js" });
+  const nNames = Object.keys(files.names.entities).length;
+  const nNew = Object.keys(files.newNames.entities).length;
+  const nProb = Object.values(problems).filter(p => p.some(x => x.kind === "err")).length;
+  $("counts").innerHTML =
+    `${nNames} in names.js · ${nNew} pending in names-new.js` +
+    (nProb ? ` · <span class="warn">${nProb} with errors</span>` : "") +
+    (dirtyCount() ? ` · <b>${dirtyCount()} edited, unsaved</b>` : "");
+}
+const dirtyCount = () => Object.keys(edited).length + removed.size;
+
+// WHICH SHEETS LETTER THIS NAME. names-new.js stores this as `sightings`,
+// written by the map tool; names.js does not, because an entity that has
+// reached names.js has had its identity decided. But it is exactly as useful
+// when reviewing one, so it is computed live here rather than stored: read
+// every document, tally the rows by the entity they point at, and resolve
+// aliases so a row citing a merged-away id still counts.
+async function documentIds() {
+  // The directory handle is the reliable route when the folder is connected.
+  if (projectDir && await ensureDirPermission(false)) {
+    try {
+      const docs = await projectDir.getDirectoryHandle("documents");
+      const out = [];
+      for await (const [name, h] of docs.entries())
+        if (h.kind === "directory" && !name.startsWith("_") && !name.startsWith(".")) out.push(name);
+      return out.sort();
+    } catch (e) { /* fall through */ }
+  }
+  // Otherwise read the server's directory listing. python3 -m http.server —
+  // which is what start-names-tool.command runs — serves one.
+  try {
+    const html = await (await fetch("documents/")).text();
+    const out = [];
+    for (const m of html.matchAll(/href="([^"?/]+)\/"/g))
+      if (!m[1].startsWith("_") && !m[1].startsWith(".")) out.push(decodeURIComponent(m[1]));
+    return out.sort();
+  } catch (e) { return []; }
+}
+
+async function scanDocuments() {
+  const ids = await documentIds();
+  if (!ids.length) return;
+  // Aliases: a row may still cite an id that was merged into another entity.
+  const owner = {};
+  for (const [id, e] of Object.entries(all)) {
+    owner[id] = id;
+    for (const a of e.aliases || []) owner[a] = id;
+  }
+  const out = {}, docsByUrl = {};
+  for (const did of ids) {
+    let doc;
+    try {
+      const text = await (await fetch(`documents/${did}/${did}.js?t=${Date.now()}`)).text();
+      const k = text.indexOf("module.exports");
+      if (k < 0) continue;
+      doc = new Function("return " + text.slice(k).replace(/^module\.exports\s*=\s*/, "").replace(/;\s*$/, ""))();
+    } catch (e) { continue; }             // unreadable is skipped, never fatal
+    if (!doc) continue;
+    const at = u => { if (!docsByUrl[u]) docsByUrl[u] = []; return docsByUrl[u]; };
+    if (doc.url) at(doc.url).push(doc.id || did);
+    for (const c of doc.copies || []) if (c.url) at(c.url).push(doc.id || did);
+    if (!Array.isArray(doc.rows)) continue;
+    const seen = new Map();
+    for (const r of doc.rows) {
+      if (!r) continue;
+      // A `change` row names its entities in from/to rather than name (§5),
+      // and a name attested only by its renaming is still attested.
+      for (const ref of [r.name, r.from, r.to]) {
+        if (typeof ref !== "string" || !ref) continue;
+        const id = owner[ref] || ref;
+        if (!seen.has(id)) seen.set(id, new Set());
+        if (ref !== r.name) continue;
+        const aw = r.asWritten == null ? [] : (Array.isArray(r.asWritten) ? r.asWritten : [r.asWritten]);
+        for (const f of aw) if (typeof f === "string" && f.trim()) seen.get(id).add(f);
+      }
+    }
+    for (const [id, forms] of seen) {
+      (out[id] = out[id] || []).push({ doc: doc.id || did, sheet: doc.shortTitle || null,
+                                       asWritten: [...forms].sort() });
+    }
+  }
+  for (const l of Object.values(out)) l.sort((a, b) => a.doc.localeCompare(b.doc));
+  docCounts = out;
+  corpus = { docsByUrl, attesting: Object.fromEntries(
+    Object.entries(out).map(([id, l]) => [id, l.map(x => x.doc)])) };
+  rebuild();
+  render();
+  if (selected) openEditor(selected);
+}
+
+// ===========================================================================
+// The list
+// ===========================================================================
+function visibleRows() {
+  const q = query.trim().toLowerCase();
+  const ids = Object.keys(all).filter(id => !(removed.has(id) && !edited[id]));
+  for (const id of Object.keys(edited)) if (!ids.includes(id)) ids.push(id);
+  const rows = ids.map(id => {
+    const e = entityOf(id);
+    const p = problems[id] || [];
+    return {
+      id, e,
+      file: where[id],
+      display: displayName(e),
+      cats: (e.categories || []).join(", "),
+      named: e.namedAfter ? e.namedAfter.replace(/[{}]/g, "") : "",
+      docs: (docCounts[id] || []).length,
+      err: p.some(x => x.kind === "err"),
+      wrn: p.some(x => x.kind === "wrn"),
+      dirty: !!edited[id]
+    };
+  }).filter(r => {
+    if (filterFile === "names" && r.file !== "names") return false;
+    if (filterFile === "new" && r.file !== "newNames") return false;
+    if (filterState === "todo" && r.e.namedAfter) return false;
+    if (filterState === "problems" && !r.err && !r.wrn) return false;
+    if (filterState === "edited" && !r.dirty) return false;
+    if (!q) return true;
+    const hay = [r.id, r.display, r.cats, r.named, r.e.note, r.e.internalNote,
+                 ...(r.e.aliases || []), ...(r.e.spellings || []).flatMap(s => s.forms || [])]
+      .join(" ").toLowerCase();
+    return hay.includes(q);
+  });
+  const cmp = (a, b) => {
+    if (sortKey === "docs") return (a.docs - b.docs) || a.id.localeCompare(b.id);
+    const av = String(a[sortKey] || ""), bv = String(b[sortKey] || "");
+    // Blanks sort last whichever way the column is pointing: "which of these
+    // has no namesake yet" is the question, and it is answered by the column,
+    // not by hunting for the empty cells at whichever end they landed.
+    if (!av !== !bv) return !av ? 1 : -1;
+    return av.localeCompare(bv, undefined, { numeric: true, sensitivity: "base" }) || a.id.localeCompare(b.id);
+  };
+  return rows.sort((a, b) => sortDir * cmp(a, b));
+}
+
+function render() {
+  const rows = visibleRows();
+  $("rows").innerHTML = rows.map(r => `
+    <tr class="ent${r.id === selected ? " on" : ""}${r.err ? " bad" : ""}" data-id="${esc(r.id)}">
+      <td class="id"><code>${esc(r.id)}</code>${
+        r.file === "newNames" ? '<span class="badge pending">pending</span>' : ""}${
+        r.dirty ? '<span class="badge">edited</span>' : ""}</td>
+      <td class="disp">${esc(r.display) || '<span class="na none">no spelling</span>'}</td>
+      <td>${(r.e.categories || []).map(c =>
+        `<span class="cat ${esc(c)}">${esc(c)}</span>`).join("") || '<span class="na none">none</span>'}</td>
+      <td>${r.named ? esc(r.named.length > 90 ? r.named.slice(0, 88) + "…" : r.named)
+                    : '<span class="na">not researched</span>'}${
+        r.e.disputed ? '<span class="badge">disputed</span>' : ""}</td>
+      <td class="docs">${r.docs || '<span class="na">·</span>'}</td>
+    </tr>`).join("");
+  $("empty").style.display = rows.length ? "none" : "";
+  if (!rows.length) $("empty").textContent = "Nothing matches that filter.";
+  for (const th of document.querySelectorAll("#list th")) {
+    const k = th.dataset.k;
+    th.innerHTML = th.textContent.replace(/ [▲▼]$/, "") +
+      (k === sortKey ? ` <span class="ar">${sortDir > 0 ? "▲" : "▼"}</span>` : "");
+  }
+  for (const tr of document.querySelectorAll("#rows tr.ent"))
+    tr.onclick = () => openEditor(tr.dataset.id);
+  highlight();
+}
+
+// Which row is open, marked on the row itself. Separate from render() because
+// selecting a row must not rebuild the list: the highlight used to ride along
+// on whatever redraw happened to come next, so it moved while you were editing
+// (every keystroke redraws) and then stopped moving the moment you saved and
+// were only clicking. A class toggle has no such dependency.
+function highlight() {
+  for (const tr of document.querySelectorAll("#rows tr.ent"))
+    tr.classList.toggle("on", tr.dataset.id === selected);
+}
+
+// ARROW KEYS WALK THE LIST. Reviewing is mostly reading one entity after
+// another, and reaching for the mouse between each is the whole cost of doing
+// it. Only when the focus is not in a field — inside one the arrows belong to
+// the text, and Escape hands them back to the list.
+const listIds = () => [...document.querySelectorAll("#rows tr.ent")].map(tr => tr.dataset.id);
+function step(delta) {
+  const ids = listIds();
+  if (!ids.length) return;
+  const i = ids.indexOf(selected);
+  const next = ids[i < 0 ? (delta > 0 ? 0 : ids.length - 1)
+                        : Math.max(0, Math.min(ids.length - 1, i + delta))];
+  if (!next) return;
+  openEditor(next);
+  const tr = document.querySelector(`#rows tr.ent[data-id="${CSS.escape(next)}"]`);
+  if (tr) tr.scrollIntoView({ block: "nearest" });
+}
+const inField = el => !!el && (/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable);
+document.addEventListener("keydown", ev => {
+  if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
+  if (ev.key === "Escape" && inField(ev.target)) { ev.target.blur(); return; }
+  if (inField(ev.target)) return;
+  if (ev.key === "ArrowDown") { ev.preventDefault(); step(1); }
+  else if (ev.key === "ArrowUp") { ev.preventDefault(); step(-1); }
+});
+
+document.querySelectorAll("#list th").forEach(th => th.onclick = () => {
+  const k = th.dataset.k;
+  if (k === sortKey) sortDir = -sortDir; else { sortKey = k; sortDir = 1; }
+  render();
+});
+$("q").oninput = () => { query = $("q").value; render(); };
+$("fileChips").onclick = ev => {
+  const b = ev.target.closest("button"); if (!b) return;
+  filterFile = b.dataset.f;
+  [...$("fileChips").children].forEach(x => x.classList.toggle("on", x === b));
+  render();
+};
+$("stateChips").onclick = ev => {
+  const b = ev.target.closest("button"); if (!b) return;
+  filterState = b.dataset.s;
+  [...$("stateChips").children].forEach(x => x.classList.toggle("on", x === b));
+  render();
+};
+
+// ===========================================================================
+// The editor
+// ===========================================================================
+const allCategories = () => {
+  const c = {};
+  for (const id of Object.keys(all)) for (const x of entityOf(id).categories || []) c[x] = (c[x] || 0) + 1;
+  for (const e of Object.values(edited)) for (const x of e.categories || []) c[x] = c[x] || 0;
+  return c;
+};
+
+function beginEdit(id) {
+  if (!edited[id]) { edited[id] = clone(all[id]); edited[id].__file = where[id]; }
+  return edited[id];
+}
+
+function openEditor(id) {
+  selected = id;
+  highlight();
+  const e = entityOf(id);
+  if (!e) return;
+  const isNew = where[id] === "newNames";
+  const sight = isNew && e.sightings && e.sightings.length ? e.sightings : (docCounts[id] || []);
+  const probs = problems[id] || [];
+  const cats = allCategories();
+  const others = Object.keys(all).filter(x => x !== id).sort();
+
+  $("editEmpty").style.display = "none";
+  $("editor").style.display = "";
+  $("editor").innerHTML = `
+    <h2><code>${esc(id)}</code>${isNew ? '<span class="badge pending">names-new.js</span>'
+                                        : '<span class="badge">names.js</span>'}</h2>
+    <div class="row" style="margin-top:4px">
+      <button class="mini" id="renameBtn">Rename id…</button>
+      ${isNew ? '<button class="mini" id="promoteBtn">Move into names.js…</button>' : ""}
+    </div>
+    ${isNew ? `<p class="hint">The map tool rewrites <code>names-new.js</code> whole on
+      every review save. Edits here survive that (it re-reads the file first), but the
+      lifecycle in MODEL-SPEC §3 is to research the namesake and then <b>move the entity
+      into names.js</b> — that is what makes it yours rather than the tool's.</p>` : ""}
+
+    <h3>Spellings <span class="hint" style="text-transform:none">— ordered, last is the display name</span></h3>
+    <div id="spellings"></div>
+    <button class="mini" id="addSpelling">+ spelling period</button>
+    <p class="hint">Dates are normally <b>derived</b> from the document rows that attest a
+      form, not authored. Fill <code>from</code>/<code>until</code> only for a form attested
+      in prose with no rows to derive from — and then its own source is required.</p>
+
+    <h3>Namesake</h3>
+    <label for="f_named">namedAfter — who or what the name honors</label>
+    <textarea id="f_named" rows="3" placeholder="leave empty for “not researched” / “no namesake documented”">${esc(e.namedAfter || "")}</textarea>
+    <div class="row" style="margin-top:4px">
+      <button class="mini" id="wrapBtn">Wrap selection in {{ }}</button>
+      <span class="hint" style="margin:0">{{…}} marks the span that becomes the link.</span>
+    </div>
+    <label for="f_link">namedAfterLink</label>
+    <input type="url" id="f_link" value="${esc(e.namedAfterLink || "")}" placeholder="https://…">
+
+    <h3>Categories</h3>
+    <div class="drop" id="catDrop">
+      <button class="dropbtn" id="catBtn"></button>
+      <div class="dropmenu" id="catMenu"></div>
+    </div>
+
+    <h3>Sources <span class="hint" style="text-transform:none">— what justifies the origin claim</span></h3>
+    <div id="sources"></div>
+    <button class="mini" id="addSource">+ source</button>
+    <label style="margin-top:8px"><input type="checkbox" id="f_disputed" style="width:auto"
+      ${e.disputed ? "checked" : ""}> disputed</label>
+
+    <h3>Notes</h3>
+    <label for="f_note" class="public">note — PUBLIC. Printed on the site as a former
+      name's origin line when there is no namedAfter.</label>
+    <textarea id="f_note" rows="4">${esc(e.note || "")}</textarea>
+    <label for="f_internal">internalNote — not published. Identity decisions, what was
+      searched and not found, provenance.</label>
+    <textarea id="f_internal" rows="4">${esc(e.internalNote || "")}</textarea>
+
+    <h3>Identity</h3>
+    <label for="f_same">possiblySameAs — a suspicion, recorded rather than acted on</label>
+    <select id="f_same">
+      <option value="">— none —</option>
+      ${others.map(x => `<option value="${esc(x)}"${e.possiblySameAs === x ? " selected" : ""}>${
+        esc(x)}${displayName(all[x]) ? " — " + esc(displayName(all[x])) : ""}</option>`).join("")}
+    </select>
+    <p class="hint">Default when uncertain is <b>separate entities</b>: merging later is
+      cheap, splitting a wrong merge is not, and a wrong merge draws a transfer that never
+      happened. To actually merge, fold this entity's fields into the other one and add
+      this id to that entity's <code>aliases</code> — every document row citing it still resolves.</p>
+    <label>aliases — ids merged into this one; never reused</label>
+    <div id="aliases"></div>
+    <button class="mini" id="addAlias">+ alias</button>
+
+    ${sight.length ? `<h3>Sheets that letter this name</h3>
+      <ul class="sight">${sight.map(s =>
+        `<li><code>${esc(s.doc)}</code>${s.sheet ? " — " + esc(s.sheet) : ""}
+         <span class="aw">${esc((s.asWritten || []).join(" · "))}</span></li>`).join("")}</ul>
+      <p class="hint">${isNew && e.sightings ? "Derived by the map tool and stored in names-new.js."
+        : "Counted live from documents/ — not stored anywhere."}</p>` : ""}
+
+    <div id="problems"></div>
+
+    <div id="actions">
+      <div class="row">
+        <button class="primary grow" id="saveBtn">Save</button>
+        <button id="revertBtn">Revert</button>
+      </div>
+      <div id="saveState"></div>
+    </div>`;
+
+  // ---- repeatable field groups ----
+  renderSpellings(); renderSources(); renderAliases(); renderCats();
+
+  const touch = () => { rebuild(); render(); showProblems(); };
+
+  $("f_named").oninput = ev => {
+    const v = ev.target.value;
+    beginEdit(id).namedAfter = v.trim() ? v : null; touch();
+  };
+  $("f_link").oninput = ev => { beginEdit(id).namedAfterLink = ev.target.value.trim() || null; touch(); };
+  $("f_note").oninput = ev => { beginEdit(id).note = ev.target.value.trim() ? ev.target.value : null; touch(); };
+  $("f_internal").oninput = ev => { beginEdit(id).internalNote = ev.target.value.trim() ? ev.target.value : null; touch(); };
+  $("f_disputed").onchange = ev => { beginEdit(id).disputed = ev.target.checked; touch(); };
+  $("f_same").onchange = ev => { beginEdit(id).possiblySameAs = ev.target.value || null; touch(); };
+  $("wrapBtn").onclick = () => {
+    const t = $("f_named"), a = t.selectionStart, b = t.selectionEnd;
+    if (a === b) return;
+    t.value = t.value.slice(0, a) + "{{" + t.value.slice(a, b) + "}}" + t.value.slice(b);
+    beginEdit(id).namedAfter = t.value; touch();
+  };
+  $("addSpelling").onclick = () => {
+    beginEdit(id).spellings = (entityOf(id).spellings || []).concat([{ forms: [""] }]);
+    renderSpellings(); touch();
+  };
+  $("addSource").onclick = () => {
+    beginEdit(id).sources = (entityOf(id).sources || []).concat([{ title: "", url: "" }]);
+    renderSources(); touch();
+  };
+  $("addAlias").onclick = () => {
+    beginEdit(id).aliases = (entityOf(id).aliases || []).concat([""]);
+    renderAliases(); touch();
+  };
+  $("renameBtn").onclick = () => renameEntity(id);
+  if ($("promoteBtn")) $("promoteBtn").onclick = () => promote(id);
+  $("saveBtn").onclick = () => save();
+  $("revertBtn").onclick = () => {
+    if (!edited[id] || !confirm(`Discard unsaved edits to ${id}?`)) return;
+    delete edited[id]; rebuild(); render(); openEditor(id);
+  };
+  showProblems();
+
+  // -- spellings ------------------------------------------------------------
+  function renderSpellings() {
+    const sps = entityOf(id).spellings || [];
+    $("spellings").innerHTML = sps.map((sp, i) => `
+      <div class="card" data-i="${i}">
+        <div class="cardhead"><span>${i === sps.length - 1 ? "current" : "period " + (i + 1)}</span>
+          <span class="acts">
+            <button class="mini" data-a="up"${i ? "" : " disabled"}>↑</button>
+            <button class="mini" data-a="down"${i < sps.length - 1 ? "" : " disabled"}>↓</button>
+            <button class="mini" data-a="del"${sps.length > 1 ? "" : " disabled"}>×</button>
+          </span></div>
+        <label>forms — concurrent spellings of one name; the first is the display form</label>
+        ${(sp.forms || [""]).map((f, k, fs) => `<div class="row" style="margin:2px 0">
+            <input type="text" class="grow" data-a="form" data-k="${k}" value="${esc(f)}">
+            ${fs.length > 1 ? `
+              <button class="mini" data-a="upform" data-k="${k}"${k ? "" : " disabled"}>↑</button>
+              <button class="mini" data-a="downform" data-k="${k}"${k < fs.length - 1 ? "" : " disabled"}>↓</button>` : ""}
+            <button class="mini" data-a="delform" data-k="${k}"${fs.length > 1 ? "" : " disabled"}>×</button>
+          </div>`).join("")}
+        <button class="mini" data-a="addform">+ form</button>
+        <label>disambiguation</label>
+        <input type="text" data-a="disamb" value="${esc(sp.disambiguation || "")}"
+               placeholder="e.g. west downtown — only where two entities spell alike">
+        <div class="row">
+          <div class="grow"><label>from</label>
+            <input type="text" data-a="from" value="${esc(sp.from || "")}" placeholder="1889"></div>
+          <div class="grow"><label>until</label>
+            <input type="text" data-a="until" value="${esc(sp.until || "")}" placeholder="1897"></div>
+        </div>
+        <label>source for this period${sp.from || sp.until ? " — required, because it carries dates" : ""}</label>
+        <input type="text" data-a="stitle" value="${esc((sp.source || {}).title || "")}" placeholder="title">
+        <input type="url" data-a="surl" style="margin-top:3px"
+               value="${esc((sp.source || {}).url || "")}" placeholder="https://…">
+      </div>`).join("");
+    $("spellings").oninput = ev => {
+      const card = ev.target.closest(".card"); if (!card) return;
+      const i = +card.dataset.i, e2 = beginEdit(id), sp = e2.spellings[i];
+      const a = ev.target.dataset.a, v = ev.target.value;
+      if (a === "form") sp.forms[+ev.target.dataset.k] = v;
+      else if (a === "disamb") { if (v.trim()) sp.disambiguation = v.trim(); else delete sp.disambiguation; }
+      else if (a === "from" || a === "until") {
+        if (v.trim()) sp[a] = v.trim(); else delete sp[a];
+      } else if (a === "stitle" || a === "surl") {
+        sp.source = sp.source || { title: "", url: "" };
+        sp.source[a === "stitle" ? "title" : "url"] = v;
+        if (!sp.source.title && !sp.source.url && !sp.from && !sp.until) delete sp.source;
+      }
+      touch();
+    };
+    $("spellings").onclick = ev => {
+      const b = ev.target.closest("button"); if (!b) return;
+      const card = ev.target.closest(".card"), i = +card.dataset.i;
+      const e2 = beginEdit(id), sps2 = e2.spellings, sp = sps2[i];
+      const a = b.dataset.a;
+      if (a === "up") sps2.splice(i - 1, 0, sps2.splice(i, 1)[0]);
+      else if (a === "down") sps2.splice(i + 1, 0, sps2.splice(i, 1)[0]);
+      else if (a === "del") sps2.splice(i, 1);
+      else if (a === "addform") sp.forms.push("");
+      else if (a === "delform") sp.forms.splice(+b.dataset.k, 1);
+      // Reordering forms is not cosmetic: the FIRST form is the display form,
+      // so moving one to the top is how you say which of two concurrent
+      // spellings — Avispa and Wasp — the site should lead with.
+      else if (a === "upform") { const k = +b.dataset.k; sp.forms.splice(k - 1, 0, sp.forms.splice(k, 1)[0]); }
+      else if (a === "downform") { const k = +b.dataset.k; sp.forms.splice(k + 1, 0, sp.forms.splice(k, 1)[0]); }
+      else return;
+      renderSpellings(); touch();
+    };
+  }
+
+  // -- sources --------------------------------------------------------------
+  function renderSources() {
+    const ss = entityOf(id).sources || [];
+    $("sources").innerHTML = ss.map((s, i) => `
+      <div class="card" data-i="${i}">
+        <div class="cardhead"><span>source ${i + 1}</span>
+          <span class="acts"><button class="mini" data-a="del">×</button></span></div>
+        <input type="text" data-a="title" value="${esc(s.title || "")}" placeholder="title">
+        <input type="url" data-a="url" style="margin-top:3px" value="${esc(s.url || "")}" placeholder="https://…">
+      </div>`).join("") || '<p class="hint">No sources. Our own reasoning counts, if it is labelled as such.</p>';
+    $("sources").oninput = ev => {
+      const card = ev.target.closest(".card"); if (!card) return;
+      beginEdit(id).sources[+card.dataset.i][ev.target.dataset.a] = ev.target.value;
+      touch();
+    };
+    $("sources").onclick = ev => {
+      const b = ev.target.closest("button"); if (!b) return;
+      beginEdit(id).sources.splice(+ev.target.closest(".card").dataset.i, 1);
+      renderSources(); touch();
+    };
+  }
+
+  // -- aliases --------------------------------------------------------------
+  function renderAliases() {
+    const as = entityOf(id).aliases || [];
+    $("aliases").innerHTML = as.map((a, i) => `<div class="row" style="margin:2px 0">
+        <input type="text" class="grow" data-i="${i}" value="${esc(a)}">
+        <button class="mini" data-i="${i}">×</button></div>`).join("")
+      || '<p class="hint">None.</p>';
+    $("aliases").oninput = ev => { beginEdit(id).aliases[+ev.target.dataset.i] = ev.target.value.trim(); touch(); };
+    $("aliases").onclick = ev => {
+      const b = ev.target.closest("button"); if (!b) return;
+      beginEdit(id).aliases.splice(+b.dataset.i, 1); renderAliases(); touch();
+    };
+  }
+
+  // -- categories: a checkbox list, plus a way to coin one -------------------
+  function renderCats() {
+    const mine = entityOf(id).categories || [];
+    $("catBtn").innerHTML = mine.length
+      ? mine.map(c => `<span class="cat ${esc(c)}">${esc(c)}</span>`).join("")
+      : '<span class="na none">none — every entity needs at least one</span>';
+    const counts = cats;
+    const names = Object.keys(counts).sort();
+    $("catMenu").innerHTML =
+      names.map(c => `<label><input type="checkbox" value="${esc(c)}"${
+        mine.includes(c) ? " checked" : ""}> ${esc(c)}<span class="n">${counts[c] || 0}</span></label>`).join("") +
+      `<hr><label style="gap:4px">new: <input type="text" id="newCat" placeholder="category"
+         style="width:auto;flex:1"><button class="mini" id="addCat">add</button></label>`;
+    $("catMenu").querySelectorAll('input[type=checkbox]').forEach(cb => cb.onchange = () => {
+      const e2 = beginEdit(id);
+      const set = new Set(e2.categories || []);
+      cb.checked ? set.add(cb.value) : set.delete(cb.value);
+      e2.categories = [...set];
+      renderCats(); touch();
+      $("catMenu").classList.add("open");
+    });
+    $("addCat").onclick = ev => {
+      ev.preventDefault();
+      const v = $("newCat").value.trim();
+      if (!v) return;
+      const e2 = beginEdit(id);
+      e2.categories = [...new Set([...(e2.categories || []), v])];
+      cats[v] = cats[v] || 0;
+      renderCats(); touch();
+      $("catMenu").classList.add("open");
+    };
+    $("catBtn").onclick = ev => { ev.preventDefault(); $("catMenu").classList.toggle("open"); };
+  }
+
+  function showProblems() {
+    const p = problems[id] || [];
+    $("problems").innerHTML = p.length
+      ? p.map(x => `<div class="${x.kind === "err" ? "err" : "wrn"}">${
+          x.kind === "err" ? "error" : "warning"}: ${esc(x.msg)}</div>`).join("")
+      : "";
+    const errs = Object.values(problems).flat().filter(x => x.kind === "err").length;
+    $("saveBtn").disabled = !dirtyCount() || errs > 0;
+    $("saveState").innerHTML = errs
+      ? `<span class="warn">${errs} error${errs === 1 ? "" : "s"} across the name layer — ` +
+        `fix them before saving.</span> The "problems" filter lists them.`
+      : dirtyCount() ? `${dirtyCount()} entit${dirtyCount() === 1 ? "y" : "ies"} to write.` : "";
+  }
+}
+
+document.addEventListener("click", ev => {
+  if (!ev.target.closest("#catDrop")) {
+    const m = $("catMenu"); if (m) m.classList.remove("open");
+  }
+});
+
+// ===========================================================================
+// Renaming, minting, promoting
+// ===========================================================================
+function renameEntity(id) {
+  const to = prompt(
+    `New id for "${id}".\n\n` +
+    `Document rows point at an entity BY ID. The old id is kept as an alias, ` +
+    `so existing rows still resolve — but new rows should use the new id.`, id);
+  if (!to || to === id) return;
+  if (all[to] || edited[to]) return alert(`"${to}" already exists.`);
+  const e = clone(entityOf(id));
+  e.__file = where[id];
+  e.aliases = [...new Set([...(e.aliases || []), id])];
+  e.__renamedFrom = id;
+  delete edited[id];
+  edited[to] = e;
+  removed.add(id);                    // the old key goes out of whichever file held it
+  where[to] = e.__file;
+  rebuild(); render(); openEditor(to);
+}
+
+$("newEntity").onclick = () => {
+  const id = prompt("Id for the new entity — lowercase, hyphenated, e.g. banning-general.");
+  if (!id) return;
+  if (all[id] || edited[id]) return alert(`"${id}" already exists.`);
+  edited[id] = { __file: "names", spellings: [{ forms: [""] }], namedAfter: null,
+                 namedAfterLink: null, categories: ["unresearched"], sources: [],
+                 disputed: false, note: null, possiblySameAs: null, aliases: [] };
+  where[id] = "names";
+  rebuild(); render(); openEditor(id);
+};
+
+// THE LIFECYCLE STEP names-new.js exists for (MODEL-SPEC §3): research the
+// namesake, then move the entity into names.js and delete it from here. Doing
+// it by hand means two edits that must agree; doing it here means one press
+// and a save that writes both files together.
+function promote(id) {
+  const e = clone(entityOf(id));
+  const missing = [];
+  if (!e.namedAfter) missing.push("namedAfter");
+  if (!(e.sources || []).length) missing.push("sources");
+  if ((e.categories || []).every(c => c === "unresearched")) missing.push("a category other than 'unresearched'");
+  if (missing.length && !confirm(
+      `This entity still has no ${missing.join(", no ")}.\n\n` +
+      `names-new.js is the to-do list; names.js is where an entity goes once its ` +
+      `namesake has been looked into. "unknown" — searched and not found — is a ` +
+      `legitimate answer and belongs in names.js.\n\nMove it anyway?`)) return;
+  delete e.sightings;                 // derived, and only names-new.js carries it
+  e.__file = "names";
+  e.__promotedFrom = "newNames";
+  delete edited[id];
+  edited[id] = e;
+  removed.add(id);                    // …from names-new.js
+  where[id] = "names";
+  rebuild(); render(); openEditor(id);
+}
+
+// ===========================================================================
+// Writing. Both files are written in one press, because a promotion changes
+// both and half of it is worse than neither.
+// ===========================================================================
+const FILE_PATH = { names: "names.js", newNames: "names-new.js" };
+
+// WHAT WILL LAND ON DISK, worked out with no browser in the room. Given the
+// freshly parsed files, the edits and the removals, it returns the new text
+// for each file that needs one — so test-names-tool.js can run a promotion, a
+// rename and an ordinary edit through the real code and read the result,
+// rather than trusting that a UI path nobody can drive does the right thing.
+// It mutates the parses it is handed; the caller re-reads before every save.
+function composeFiles(parsed, edited, removed) {
+  const out = {};
+  for (const k of ["names", "newNames"]) {
+    const p = parsed[k];
+    const mine = Object.entries(edited).filter(([, e]) => (e.__file || "names") === k);
+    // A rename or a promotion takes the id OUT of the file it used to be in.
+    // Anything in `removed` that this file still holds, and that is not being
+    // written back into this same file, is dropped from it.
+    const drops = [...removed].filter(id =>
+      p && SRC.find(p, id) && (edited[id] || {}).__file !== k);
+    if (!mine.length && !drops.length) continue;
+    if (!p) { out[k] = null; continue; }          // file unreadable — the caller says so
+    for (const id of drops) SRC.remove(p, id);
+    for (const [id, e] of mine) {
+      const clean = JSON.parse(JSON.stringify(e));
+      delete clean.__file; delete clean.__renamedFrom; delete clean.__promotedFrom;
+      const body = renderEntity(clean, { sightings: k === "newNames" });
+      if (SRC.find(p, id)) SRC.replace(p, id, body);
+      else SRC.append(p, id, body);
+    }
+    out[k] = SRC.render(p);
+  }
+  return out;
+}
+
+async function save() {
+  const state = await useProjectDir(true);
+  if (state !== "ok")
+    return alert(state === "bad"
+      ? "Nothing was written — the folder this tool had remembered is not the project " +
+        "root. It has been forgotten; connect it again and press Save."
+      : "Edits are written straight into the project folder, so it has to be connected. " +
+        "Use “Connect project folder…”.");
+
+  // Re-read both files at the last moment and re-apply the edits onto what is
+  // actually on disk. The page's copy is from load time, and this file is
+  // where the project's research accumulates — writing a stale copy back would
+  // undo somebody's hand edit silently. If an entity being written has ALSO
+  // changed on disk, stop: that is a conflict, and guessing at it is how you
+  // lose the better of two versions.
+  const fresh = {
+    names:    { path: "names.js",     decl: "NAME_ENTITIES" },
+    newNames: { path: "names-new.js", decl: "NEW_NAME_ENTITIES" }
+  };
+  const conflicts = [];
+  for (const k of ["names", "newNames"]) {
+    const f = fresh[k];
+    let text = null;
+    try { text = await (await fetch(f.path + "?t=" + Date.now())).text(); } catch (e) {}
+    if (text == null || /^\s*<!DOCTYPE|^\s*<html/i.test(text)) { f.parsed = null; continue; }
+    f.parsed = SRC.parse(text, f.decl);
+    if (!f.parsed) return alert(`Could not re-read ${f.path} — nothing was written.`);
+    for (const e of f.parsed.entries) {
+      const was = SRC.find(files[k].parsed || { entries: [] }, e.key);
+      const touchedHere = edited[e.key] || removed.has(e.key);
+      if (touchedHere && was && was.valueText !== e.valueText) conflicts.push(e.key);
+    }
+  }
+  if (conflicts.length)
+    return alert(`Nothing was written.\n\n${conflicts.join(", ")} changed on disk since this ` +
+                 `page loaded. Reload the tool and redo those edits — overwriting them here ` +
+                 `would throw the other version away.`);
+
+  const texts = composeFiles({ names: fresh.names.parsed, newNames: fresh.newNames.parsed },
+                             edited, removed);
+  for (const [k, text] of Object.entries(texts))
+    if (text === null) return alert(`Could not read ${FILE_PATH[k]}, so nothing was written.`);
+
+  const wrote = [];
+  for (const [k, text] of Object.entries(texts)) {
+    await writeInto(projectDir, [], FILE_PATH[k], text);
+    wrote.push(FILE_PATH[k]);
+  }
+
+  edited = {}; removed = new Set();
+  await loadFile(files.names); await loadFile(files.newNames);
+  rebuild(); render();
+  if (selected && all[selected]) openEditor(selected); else { selected = null; $("editor").style.display = "none"; $("editEmpty").style.display = ""; }
+  setDirState(`wrote ${wrote.join(" + ")} — now run <code>node check-model.js</code>`);
+}
+
+async function writeInto(dir, parts, name, text) {
+  let d = dir;
+  for (const part of parts) d = await d.getDirectoryHandle(part, { create: true });
+  const fh = await d.getFileHandle(name, { create: true });
+  const w = await fh.createWritable();
+  await w.write(text); await w.close();
+}
+
+// ===========================================================================
+// The project folder — same handle, same guards, same IndexedDB slot as
+// map-tool.html, so connecting it in one tool connects it in the other.
+// ===========================================================================
+let projectDir = null;
+function idb(fn) {
+  return new Promise((res, rej) => {
+    const open = indexedDB.open("streetymology", 1);
+    open.onupgradeneeded = () => open.result.createObjectStore("handles");
+    open.onerror = () => rej(open.error);
+    open.onsuccess = () => {
+      const tx = open.result.transaction("handles", "readwrite");
+      const req = fn(tx.objectStore("handles"));
+      req.onsuccess = () => res(req.result);
+      req.onerror = () => rej(req.error);
+    };
+  });
+}
+const saveHandle = h => idb(st => st.put(h, "projectDir")).catch(() => {});
+const loadHandle = () => idb(st => st.get("projectDir")).catch(() => null);
+
+let projectFolderName = null;
+fetch("project-info.json").then(r => r.ok ? r.json() : null)
+  .then(j => { if (j && j.folder) { projectFolderName = j.folder; renderDirState(); } })
+  .catch(() => {});
+const folderAdvice = () => projectFolderName
+  ? `Pick the folder named <b>${esc(projectFolderName)}</b> — the one this tool is being served from.`
+  : `Pick the folder holding <code>names.js</code> and <code>documents/</code>.`;
+
+let dirMsg = { text: "not connected — Save needs it", warn: false };
+function setDirState(text, warn) { dirMsg = { text, warn }; renderDirState(); }
+function renderDirState() {
+  $("dirState").innerHTML = (dirMsg.warn ? `<span class="warn">${dirMsg.text}</span>` : dirMsg.text) +
+    (projectDir ? "" : ` ${folderAdvice()}`);
+}
+
+const ROOT_MARKERS = ["names.js", "map-tool.html"];
+async function looksLikeProjectRoot(dir) {
+  for (const m of ROOT_MARKERS) { try { await dir.getFileHandle(m); } catch (e) { return false; } }
+  return true;
+}
+async function ensureDirPermission(gesture) {
+  if (!projectDir) return false;
+  const opts = { mode: "readwrite" };
+  if (await projectDir.queryPermission(opts) === "granted") return true;
+  if (!gesture) return false;
+  return await projectDir.requestPermission(opts) === "granted";
+}
+// The last gate before writing. A handle remembered from a previous session
+// arrives without permission, so the check at restore time cannot see inside
+// it; check again here, where it can.
+async function useProjectDir(gesture) {
+  if (!projectDir) return "no";
+  if (!await ensureDirPermission(gesture)) return "no";
+  if (await looksLikeProjectRoot(projectDir)) return "ok";
+  const bad = projectDir.name;
+  projectDir = null; await saveHandle(null);
+  setDirState(`"${esc(bad)}" is not the project folder — forgotten.`, true);
+  return "bad";
+}
+
+$("connectDir").onclick = async () => {
+  if (!window.showDirectoryPicker)
+    return setDirState("This browser has no directory access — use Chrome.", true);
+  try {
+    const dir = await window.showDirectoryPicker({ mode: "readwrite", id: "streetymology" });
+    if (!await looksLikeProjectRoot(dir))
+      return setDirState(`"${esc(dir.name)}" is not the project folder — no names.js in it.`, true);
+    projectDir = dir;
+    await saveHandle(projectDir);
+    setDirState(`connected: <b>${esc(projectDir.name)}</b> — Save writes names.js in place`);
+    scanDocuments();
+  } catch (e) { if (e.name !== "AbortError") setDirState(e.message, true); }
+};
+
+(async () => {
+  const h = await loadHandle();
+  if (h) {
+    projectDir = h;
+    const granted = await ensureDirPermission(false);
+    if (granted && !await looksLikeProjectRoot(h)) {
+      projectDir = null; await saveHandle(null);
+      setDirState("the folder remembered from last time is not the project root — forgotten", true);
+    } else {
+      setDirState(granted ? `connected: <b>${esc(h.name)}</b> — Save writes names.js in place`
+                          : `<b>${esc(h.name)}</b> remembered — Save will ask to re-confirm access once`);
+    }
+  }
+  await loadAll();
+})();
+
+window.addEventListener("beforeunload", ev => {
+  if (dirtyCount()) { ev.preventDefault(); ev.returnValue = ""; }
+});
+
+// For test-names-tool.js, which runs this page's model in node rather than
+// keeping a second copy that could drift.
+if (typeof module !== "undefined") module.exports = { SRC, renderEntity, renderSpelling, validateAll };
+</script>
+</body>
+</html>

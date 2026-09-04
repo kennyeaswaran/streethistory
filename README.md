@@ -45,6 +45,13 @@ actually informs about, hand the folder to an AI pass, then confirm each row
 and sweep the sheet. Marking a document swept is what licenses arguing from its
 silence, so it is a gate rather than a checkbox.
 
+Names are the other half. A name entity is a naming lineage rather than a
+string, and `names.js` is where the research on one lives.
+`utilities/start-names-tool.command` opens the **names tool**: every entity in
+one sortable list — spelling, categories, namesake, and how many documents
+letter it — and an editor for every field, including moving an entity out of
+`names-new.js` once its namesake has been looked into.
+
 Orientation for AI instances (and a map of every doc below): **CLAUDE.md**. How
 the whole thing fits together: **handbook/PIPELINE.md**. Reading a map in:
 handbook/MAP-TOOL-GUIDE.md; finding one: handbook/TRACT-RESEARCH.md; Sanborn

@@ -352,6 +352,65 @@ for (const doc of DOCUMENTS) {
   }
 }
 
+// ---- an entity citing a document it is not attested on --------------------
+//
+// A name entity's `sources` may link a recorded map that has since been read
+// into documents/. That is fine and often useful: on a stretch no sheet
+// covers, the entity's own citation is the only link to the evidence for the
+// name, so generate.js keeps it (it yields only where the stretch already
+// cites the same document, §6.6).
+//
+// What is NOT fine is citing a sheet that says nothing about this name. It
+// means one of two things, and both are worth knowing: a row is missing, or —
+// the usual cause — the citation names one sheet of a multi-sheet plat while
+// the name is lettered on another. Four entities did exactly that: three cited
+// sheet 5 of the Wolfskill Orchard Tract for names lettered on sheets 1-4, and
+// `bull` cited M.R. 53-68 for a name that appears on 53-73. Nothing else would
+// have caught it, because every one of those links resolves to a real scan.
+{
+  const attesting = new Map();          // entity id -> Set of document ids
+  for (const doc of DOCUMENTS) {
+    if (doc.type === "osm") continue;
+    for (const r of doc.rows || [])
+      for (const ref of [r.name, r.from, r.to].filter(Boolean)) {
+        const id = resolve(ref);
+        if (!id) continue;
+        if (!attesting.has(id)) attesting.set(id, new Set());
+        attesting.get(id).add(doc.id);
+      }
+  }
+  // ONE URL CAN BE SEVERAL DOCUMENTS. The county serves all five sheets of the
+  // Wolfskill Orchard Tract as one PDF, so MR030-009.pdf is the url of
+  // mr030-009-p1 through -p5. A citation of that url is answered by a row on
+  // ANY of them — treating it as the last sheet read would flag three
+  // perfectly good citations. Sheets that are separate FILES (M.R. 53-68 and
+  // 53-73 are) stay separate, which is where the real errors live.
+  const docsByUrl = new Map();
+  const at = url => { if (!docsByUrl.has(url)) docsByUrl.set(url, []); return docsByUrl.get(url); };
+  for (const doc of DOCUMENTS) {
+    if (doc.type === "osm") continue;
+    if (doc.url) at(doc.url).push(doc.id);
+    for (const c of doc.copies || []) if (c.url) at(c.url).push(doc.id);
+  }
+  for (const [id, e] of Object.entries(NAME_ENTITIES)) {
+    for (const src of e.sources || []) {
+      const cited = docsByUrl.get(src.url);
+      if (!cited) continue;
+      const on = attesting.get(id) || new Set();
+      if (cited.some(d => on.has(d))) continue;
+      const elsewhere = [...on];
+      const what = cited.length === 1 ? `documents/${cited[0]}/`
+                                      : `documents/${cited[0]}/ (and ${cited.length - 1} more sharing that scan)`;
+      warn(id, `sources cites ${what}, but no row there names this entity —`,
+           elsewhere.length
+             ? `it IS attested on ${elsewhere.join(", ")}, so the citation probably names ` +
+               `the wrong sheet of the same map`
+             : `and it is not attested anywhere in the corpus, so either a row is missing ` +
+               `or the citation is wrong`);
+    }
+  }
+}
+
 // ---- generator-facing ambiguity check (§9): two entities sharing a form
 // must be separable into distinct search labels.
 const formOwners = new Map();

@@ -795,9 +795,9 @@ const SEARCH_INDEX = [
     "street": "Factory Place"
   },
   {
-    "form": "Calle de los Chapules",
+    "form": "Grasshopper Street",
     "entity": "chapules",
-    "label": "Calle de los Chapules",
+    "label": "Grasshopper Street",
     "street": "Figueroa Street"
   },
   {

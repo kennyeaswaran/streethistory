@@ -135,13 +135,14 @@ const NAME_ENTITIES = {
   // no propagation edge connects them.
   "georgia-east": {
     spellings: [{ forms: ["Georgia Street"], disambiguation: "east of Alameda" }],
-    namedAfter: null,
-    namedAfterLink: null,
+    namedAfter: "Likely {{the state}}",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Georgia_(U.S._state)",
     categories: ["unknown"],
     sources: [],
     disputed: false,
     note: "Very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   // West-downtown Georgia: christened on Bell land by 1874; renamed Georgia
@@ -152,23 +153,17 @@ const NAME_ENTITIES = {
   // reports), so only the first period needs prose dating.
   "georgia-bell": {
     spellings: [
-      // Periods 1 and 2 are attested only in prose (Kines; Forman's Feb. 18,
-      // 1897 testimony) — no document rows to derive dates from — so they
-      // carry explicit dates and their own sources (§3, prose exception).
-      // The 2→3 boundary is pinned by ord-4093's respelling row instead.
-      { forms: ["Georgia Street"], disambiguation: "west downtown",
-        from: "1874", until: "1889",
-        source: { title: "L.A. Street Names: Georgia Street",
-                  url: "https://lastreetnames.com/street/georgia-street/" } },
-      { forms: ["Georgia Bell Street"],
-        from: "1889",
-        source: { title: "Los Angeles Herald, “A Storm of Words” (Forman: renamed Georgia Bell May 10, 1889), Feb. 19, 1897",
-                  url: "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24" } },
+      { forms: ["Georgia Street"], disambiguation: "west downtown", from: "1874", until: "1889",
+          source: { title: "L.A. Street Names: Georgia Street",
+                    url: "https://lastreetnames.com/street/georgia-street/" } },
+      { forms: ["Georgia Bell Street"], from: "1889",
+          source: { title: "Los Angeles Herald, “A Storm of Words” (Forman: renamed Georgia Bell May 10, 1889), Feb. 19, 1897",
+                    url: "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24" } },
       { forms: ["Georgia Street"], disambiguation: "west downtown" }
     ],
-    namedAfter: "{{Georgia Herrick Bell}} (1845–1899), wife of Major Horace Bell, on whose land the street was laid out",
-    namedAfterLink: "https://lastreetnames.com/street/georgia-street/",
-    categories: ["person", "alive"],
+    namedAfter: "Georgia Herrick Bell (1845–1899), wife of {{Major Horace Bell}}, on whose land the street was laid out",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Horace_Bell",
+    categories: ["person","alive"],
     sources: [
       { title: "L.A. Street Names: Georgia Street",
         url: "https://lastreetnames.com/street/georgia-street/" },
@@ -177,7 +172,8 @@ const NAME_ENTITIES = {
     ],
     disputed: false,
     note: null,
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   // The 1886 tract-map name (Downey Harvey and Dunnigan tracts) for stretches
@@ -287,16 +283,18 @@ const NAME_ENTITIES = {
     namedAfterLink: "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)",
     categories: ["person"],
     sources: [
-      { title: "L.A. Street Names: Patton Street (\u201cThis 1883 street was named for its developer, attorney George Smith Patton (1856-1927)\u201d)",
+      { title: "L.A. Street Names: Patton Street (“This 1883 street was named for its developer, attorney George Smith Patton (1856-1927)”)",
         url: "https://lastreetnames.com/street/patton-street/" },
-      { title: "L.A. Street Names: Glassell Street (Glassell\u2019s firm; \u201chis nephew George S. Patton replaced Smith\u201d)",
+      { title: "L.A. Street Names: Glassell Street (Glassell’s firm; “his nephew George S. Patton replaced Smith”)",
         url: "https://lastreetnames.com/street/glassell-street/" },
       { title: "Wikipedia: George S. Patton (attorney)",
         url: "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)" }
     ],
     disputed: false,
-    note: "Kines dates the naming to 1883, a year before M.R. 6-138 was recorded, so the plat draws a street that already had the name — consistent with the document's planned-by default. Not to be confused with Patton Avenue/Place elsewhere in the county.",
-    possiblySameAs: null, aliases: []
+    note: null,
+    internalNote: "Kines dates the naming to 1883, a year before M.R. 6-138 was recorded, so the plat draws a street that already had the name — consistent with the document's planned-by default. Not to be confused with Patton Avenue/Place elsewhere in the county.",
+    possiblySameAs: null,
+    aliases: []
   },
 
   // ---- the Thomas Tract's other names -------------------------------------
@@ -314,14 +312,17 @@ const NAME_ENTITIES = {
 
   "garey": {
     spellings: [{ forms: ["Garey Street"] }],
-    namedAfter: "Almost certainly Thomas Andrew Garey (1830–1909), citrus nurseryman and co-founder of Pomona — his was the only Garey family in town when the street was named",
-    namedAfterLink: null,
-    categories: ["person", "alive"],
+    namedAfter: "Almost certainly {{Thomas Andrew Garey (1830–1909)}}, citrus nurseryman and co-founder of Pomona — his was the only Garey family in town when the street was named",
+    namedAfterLink: "https://www.findagrave.com/memorial/87759308/thomas-andrew-garey",
+    categories: ["person","alive"],
     sources: [
       { title: "L.A. Street Names: Garey Street",
         url: "https://lastreetnames.com/street/garey-street/" }
     ],
-    disputed: false, note: null, possiblySameAs: null, aliases: []
+    disputed: false,
+    note: null,
+    possiblySameAs: null,
+    aliases: []
   },
 
   "hewitt": {
@@ -370,24 +371,23 @@ const NAME_ENTITIES = {
   },
 
   "chapules": {
-    spellings: [{ forms: ["Calle de los Chapules"],
-                  from: "1849", until: "1874",
-                  source: { title: "L.A. Street Names: Figueroa Street",
-                            url: "https://lastreetnames.com/street/figueroa-street/" } }],
-    namedAfter: "The insect (“Grasshopper Street”): grasshoppers crossing this line from the western plains doomed the grape harvest",
-    namedAfterLink: null,
+    spellings: [
+      { forms: ["Grasshopper Street","Calle de los Chapules"], from: "1849", until: "1874",
+          source: { title: "L.A. Street Names: Figueroa Street",
+                    url: "https://lastreetnames.com/street/figueroa-street/" } }
+    ],
+    namedAfter: "{{The insect}}: grasshoppers crossing this line from the western plains doomed the grape harvest",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Grasshopper",
     categories: ["nature"],
     sources: [
       { title: "L.A. Street Names: Figueroa Street",
         url: "https://lastreetnames.com/street/figueroa-street/" }
     ],
-    disputed: false, note: null,
-    internalNote: "The Ord survey letters this street in both languages \u2014 " +
-      "\u201cGRASSHOPPER ST.\u201d and \u201cCALLE DE LAS CHAPULES\u201d \u2014 which is why " +
-      "`grasshopper` got minted in review before anyone noticed this entity already held " +
-      "the name. Folded in 2026-08-31; the id stays an alias so rows that cited it still " +
-      "resolve (\u00a73: merging is cheap, splitting is not).",
-    possiblySameAs: null, aliases: ["grasshopper"]
+    disputed: false,
+    note: null,
+    internalNote: "The Ord survey letters this street in both languages — “GRASSHOPPER ST.” and “CALLE DE LAS CHAPULES” — which is why `grasshopper` got minted in review before anyone noticed this entity already held the name. Folded in 2026-08-31; the id stays an alias so rows that cited it still resolve (§3: merging is cheap, splitting is not).",
+    possiblySameAs: null,
+    aliases: ["grasshopper"]
   },
 
   "boylston": {
@@ -476,26 +476,18 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Stanford Avenue"] }],
     namedAfter: "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
     namedAfterLink: "https://en.wikipedia.org/wiki/Leland_Stanford",
-    categories: ["person", "governor"],
+    categories: ["person","governor"],
     sources: [
       { title: "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
         url: "https://lastreetnames.com/street/towne-avenue-dtla/" },
-      { title: "Wikipedia: Leland Stanford",
-        url: "https://en.wikipedia.org/wiki/Leland_Stanford" },
       { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }
     ],
     disputed: false,
-    note: "Part of the same 1887 Southern Pacific package as Towne Avenue. The name did not " +
-      "stay put: the street platted “Stanford” in 1887 is modern Crocker Street, and " +
-      "the Stanford name moved a block east onto the former Ruth Avenue — modern Stanford " +
-      "Avenue — some time after Feb. 1897.",
-    internalNote: "ROWS ON THIS ENTITY SIT ON MODERN CROCKER STREET, and that is correct: " +
-      "mr030-009 letters “Stanford Ave” there. The transfer onto modern Stanford " +
-      "Avenue is not yet a document row; when the swap ordinance is found it wants a `change` " +
-      "row. The exact year is unresearched — streets-data.js only establishes that Ruth " +
-      "was still Ruth in Feb. 1897.",
-    possiblySameAs: null, aliases: []
+    note: "Part of the same 1887 Southern Pacific package as Towne Avenue. The name did not stay put: the street platted “Stanford” in 1887 is modern Crocker Street, and the Stanford name moved a block east onto the former Ruth Avenue — modern Stanford Avenue — some time after Feb. 1897.",
+    internalNote: "ROWS ON THIS ENTITY SIT ON MODERN CROCKER STREET, and that is correct: mr030-009 letters “Stanford Ave” there. The transfer onto modern Stanford Avenue is not yet a document row; when the swap ordinance is found it wants a `change` row. The exact year is unresearched — streets-data.js only establishes that Ruth was still Ruth in Feb. 1897.",
+    possiblySameAs: null,
+    aliases: []
   },
 
   // The other half of the swap. Crocker is the name that arrived on the 1887
@@ -509,21 +501,13 @@ const NAME_ENTITIES = {
     categories: ["person"],
     sources: [
       { title: "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
-        url: "https://lastreetnames.com/street/towne-avenue-dtla/" },
-      { title: "Wikipedia: Charles Crocker",
-        url: "https://en.wikipedia.org/wiki/Charles_Crocker" }
+        url: "https://lastreetnames.com/street/towne-avenue-dtla/" }
     ],
     disputed: false,
-    note: "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, " +
-      "after Towne and Stanford — though this one arrived later than the other two, when the " +
-      "street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's " +
-      "instead.",
-    internalNote: "Added 2026-08-31 to replace the generator's auto-stub: the Stanford " +
-      "transfer is only half a story without it. The renaming year is unresearched; " +
-      "streets-data.js establishes only that it is after Feb. 1897, when Ruth was still Ruth. " +
-      "No document row attests Crocker yet — the entity exists so the modern name on that " +
-      "ground is not an “unresearched” placeholder.",
-    possiblySameAs: null, aliases: []
+    note: "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
+    internalNote: "Added 2026-08-31 to replace the generator's auto-stub: the Stanford transfer is only half a story without it. The renaming year is unresearched; streets-data.js establishes only that it is after Feb. 1897, when Ruth was still Ruth. No document row attests Crocker yet — the entity exists so the modern name on that ground is not an “unresearched” placeholder.",
+    possiblySameAs: null,
+    aliases: []
   },
 
   "ruth-ave": {
@@ -584,25 +568,18 @@ const NAME_ENTITIES = {
 
   "ceres-ave": {
     spellings: [{ forms: ["Ceres Avenue"] }],
-    namedAfter: null,
-    namedAfterLink: null,
+    namedAfter: "{{Ceres}}, the Roman goddess of agriculture and the harvest",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Ceres_(mythology)",
     categories: ["unknown"],
     sources: [
-      { title: "Wikipedia: Ceres (mythology)",
-        url: "https://en.wikipedia.org/wiki/Ceres_(mythology)" },
       { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }
     ],
     disputed: false,
-    note: "Ceres was the Roman goddess of agriculture and the harvest, which would be a " +
-      "fitting name for a street laid through Joseph Wolfskill's orchard as it was being cut " +
-      "into building lots in 1887. No source says that is what was meant, and none names " +
-      "anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a " +
-      "choice rather than a coincidence.",
-    internalNote: "Carried over from streets-data.js, whose note said the same thing. " +
-      "Re-searched 2026-08-31 (web + Kines): still nothing. Treat as settled-unknown rather " +
-      "than an open lead — the note is the answer the project can give.",
-    possiblySameAs: null, aliases: []
+    note: "This street was laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
+    internalNote: "Carried over from streets-data.js, whose note said the same thing. Re-searched 2026-08-31 (web + Kines): still nothing. Treat as settled-unknown rather than an open lead — the note is the answer the project can give.",
+    possiblySameAs: null,
+    aliases: []
   },
 
   "omar-ave": {
@@ -725,24 +702,20 @@ const NAME_ENTITIES = {
 
   "crown-hill-ave": {
     spellings: [{ forms: ["Crown Hill Avenue"] }],
-    namedAfter: "Not documented, but plainly {{Crown Hill}} itself \u2014 the rise the street climbs, and the Witmer family's 650 acres",
+    namedAfter: "Not documented, but plainly {{Crown Hill}} itself — the rise the street climbs, and the Witmer family's 650 acres",
     namedAfterLink: "https://lastreetnames.com/street/witmer-street/",
     categories: ["place"],
     sources: [
       { title: "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
         url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" },
-      { title: "L.A. Street Names: Witmer Street (on the Witmers\u2019 650 acres at Crown Hill)",
+      { title: "L.A. Street Names: Witmer Street (on the Witmers’ 650 acres at Crown Hill)",
         url: "https://lastreetnames.com/street/witmer-street/" }
     ],
     disputed: false,
-    note: "Named for the hill rather than for anyone. No source states it, but the street runs over Crown Hill and nothing else called Crown Hill is in the neighbourhood.",
-    internalNote: "NOT COVERED BY KINES (checked 2026-08-31; the site has no Crown Hill " +
-      "Avenue page and Crown Hill is not one of its neighbourhoods). The namesake is an " +
-      "inference from the place name \u2014 safe, but an inference. " +
-      "NOTE THE EXTENT: the 1909 sheet letters CROWN HILL AVE. along ground that is " +
-      "modern 3rd Street as well as modern Crown Hill Avenue, so this entity\u2019s rows " +
-      "sit on two modern streets and the name has since shrunk to one of them.",
-    possiblySameAs: null, aliases: []
+    note: null,
+    internalNote: "NOT COVERED BY KINES (checked 2026-08-31; the site has no Crown Hill Avenue page and Crown Hill is not one of its neighbourhoods). The namesake is an inference from the place name — safe, but an inference. NOTE THE EXTENT: the 1909 sheet letters CROWN HILL AVE. along ground that is modern 3rd Street as well as modern Crown Hill Avenue, so this entity’s rows sit on two modern streets and the name has since shrunk to one of them.",
+    possiblySameAs: null,
+    aliases: []
   },
 
   "columbia-avenue": {
@@ -807,8 +780,8 @@ const NAME_ENTITIES = {
   },
 
   "main-street-dtla": {
-    spellings: [{ forms: ["Main Street"] }],
-    namedAfter: "Its standing as the pueblo’s principal street — an anglicization of Calle Principal",
+    spellings: [{ forms: ["Main Street","Calle Principal"] }],
+    namedAfter: "Its standing as the pueblo’s principal street",
     namedAfterLink: null,
     categories: ["descriptive"],
     sources: [
@@ -824,12 +797,13 @@ const NAME_ENTITIES = {
     disputed: false,
     note: "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
     internalNote: "Disambiguated at minting because Main Street is a name every town has. streets-data.js records the Calle Real and Calle Principal periods as undated; they are not entered as spelling periods here because no document in the corpus attests them.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "hill-street-downtown": {
-    spellings: [{ forms: ["Hill Street"] }],
-    namedAfter: "{{Bunker Hill}} — the knoll the street runs along, though the hill was not formally named until 1873, after the street",
+    spellings: [{ forms: ["Hill Street","Calle Loma"] }],
+    namedAfter: "{{Bunker Hill}} — the knoll the street runs along, though the hill was not formally named until 1873, later than the street",
     namedAfterLink: "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
     categories: ["place"],
     sources: [
@@ -843,9 +817,10 @@ const NAME_ENTITIES = {
         url: "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)" }
     ],
     disputed: false,
-    note: "Lettered “Calle Loma” on the 1849 survey. The street named the hill rather than the other way round: Bunker Hill did not carry that name formally until 1873.",
+    note: null,
     internalNote: "Disambiguated at minting: the downtown Hill Street name was EXTENDED north onto Castelar Street in 1960, so modern N. Hill Street in Chinatown is this lineage arriving, not a second Hill Street — but the 1849 street under it is `bull`, and the two must not be merged. The survey attests the name only within the 1849 grid; its southern extent is not pinned down.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "bull": {
@@ -870,29 +845,26 @@ const NAME_ENTITIES = {
   },
 
   "fort-street": {
-    spellings: [{ forms: ["Fort Street"] }],
+    spellings: [{ forms: ["Fort Street","Calle Fortin"] }],
     namedAfter: "{{Fort Moore}}, built on the hill above it after the Mexican–American War",
     namedAfterLink: "https://en.wikipedia.org/wiki/Fort_Moore",
     categories: ["place"],
     sources: [
       { title: "L.A. Street Names: Broadway (on Fort Street)",
         url: "https://lastreetnames.com/street/broadway/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
       { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
-      { title: "Wikipedia: Broadway (Los Angeles)",
-        url: "https://en.wikipedia.org/wiki/Broadway_(Los_Angeles)" }
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" }
     ],
     disputed: false,
     note: "Lettered “Calle Fortin” on the 1849 survey. Renamed Broadway in February 1890, after New York’s, on a petition by the printer Fred Lind Alles.",
     internalNote: "Carried over from streets-data.js when the Ord survey was encoded, 2026-08-31. The survey letters this street in both languages, so the row’s asWritten holds both forms and this entity holds the English one.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "eternity": {
-    spellings: [{ forms: ["Eternity Street"] }],
-    namedAfter: null,
+    spellings: [{ forms: ["Eternity Street","Calle de la Eternidad"] }],
+    namedAfter: "The concept of the eternity after death — it led to Calvary Cemetery, established in 1844. Though an 1895 account claims instead that it was so named because it had neither beginning nor end.",
     namedAfterLink: null,
     categories: ["unknown"],
     sources: [
@@ -906,13 +878,14 @@ const NAME_ENTITIES = {
         url: "https://homesteadmuseum.blog/2016/07/18/museum-director-musings-through-the-viewfinder-on-calle-eternidad-1880s/" }
     ],
     disputed: false,
-    note: "Lettered “Calle de la Eternidad” on the 1849 survey. It led to Calvary Cemetery, established in 1844, which is the usual explanation — though an 1895 account claims instead that it was so named because it had neither beginning nor end. Renamed Buena Vista in 1888, and folded into North Broadway in November 1909.",
+    note: "Renamed Buena Vista in 1888, and folded into North Broadway in November 1909.",
     internalNote: "Carried over from streets-data.js when the Ord survey was encoded, 2026-08-31. The survey letters this street in both languages, so the row’s asWritten holds both forms and this entity holds the English one.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "high-street-chinatown": {
-    spellings: [{ forms: ["High Street"] }],
+    spellings: [{ forms: ["High Street","Calle Alta"] }],
     namedAfter: null,
     namedAfterLink: null,
     categories: ["unknown"],
@@ -925,15 +898,16 @@ const NAME_ENTITIES = {
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
     ],
     disputed: false,
-    note: "Lettered “Calle Alta” on the 1849 survey, with no namesake recorded. It became Walters Street in 1886, for a resident named George Walters, and Ord Street in 1890 — for the surveyor who had declined to name anything after himself in 1849.",
+    note: "It became Walters Street in 1886, for a resident named George Walters, and Ord Street in 1890 — for the surveyor who had declined to name anything after himself in 1849.",
     internalNote: "Disambiguated at minting. Note the spelling trap next door: `waters-street` is a DIFFERENT street (modern Douglas Street, from M.R. 6-138), and Walters Street here is a third name again.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "hornet": {
-    spellings: [{ forms: ["Hornet Street"] }],
-    namedAfter: "The insect — avispa is “wasp”, and insects were a common naming source in the young pueblo, as with the Calle de los Chapules that became Figueroa",
-    namedAfterLink: null,
+    spellings: [{ forms: ["Hornet Street","Calle de las Avispas"] }],
+    namedAfter: "{{The insect}} — insects were a common naming source in the young pueblo, as with the Calle de los Chapules that became Figueroa",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Wasp",
     categories: ["nature"],
     sources: [
       { title: "L.A. Street Names: Yale Street",
@@ -946,7 +920,8 @@ const NAME_ENTITIES = {
     disputed: false,
     note: "Lettered “Calle de las Avispas” on the 1849 survey — literally Wasp Street, though the English half of the label says Hornet. Renamed Yale in February 1874, by the same petition that turned Bull Street into Castelar.",
     internalNote: "The English and Spanish halves of this label do not translate each other: avispa is a wasp, not a hornet. That is on the sheet, not a transcription slip, and both forms belong in the row’s asWritten.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "virgin": {
@@ -993,7 +968,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Spring Street"] }],
     namedAfter: "Possibly {{Trinidad Ortega}} (1832–1903), who was nicknamed “Primavera”",
     namedAfterLink: null,
-    categories: ["person", "unknown"],
+    categories: ["person","unknown"],
     sources: [
       { title: "L.A. Street Names: Spring Street",
         url: "https://lastreetnames.com/street/spring-street/" },
@@ -1005,9 +980,10 @@ const NAME_ENTITIES = {
         url: "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)" }
     ],
     disputed: false,
-    note: "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — and neither is verified.",
+    note: "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
     internalNote: "namedAfter is hedged on purpose: Kines gives the Ortega story without a record. Category keeps `unknown` alongside `person` so the map does not present a guess as an answer.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "college": {
@@ -1030,7 +1006,7 @@ const NAME_ENTITIES = {
   },
 
   "flower": {
-    spellings: [{ forms: ["Flower Street"] }],
+    spellings: [{ forms: ["Flower Street","Calle de las Flores"] }],
     namedAfter: "Supposedly the blossom-covered hills behind it",
     namedAfterLink: null,
     categories: ["nature"],
@@ -1043,9 +1019,10 @@ const NAME_ENTITIES = {
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" }
     ],
     disputed: false,
-    note: "Lettered “Calle de las Flores” on the 1849 survey. The hillside-blossom explanation is the one always given and nothing documents it.",
+    note: null,
     internalNote: "Carried over from streets-data.js when the Ord survey was encoded, 2026-08-31. The survey letters this street in both languages, so the row’s asWritten holds both forms and this entity holds the English one.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "olive": {
@@ -1069,9 +1046,9 @@ const NAME_ENTITIES = {
 
   "hope": {
     spellings: [{ forms: ["Hope Street"] }],
-    namedAfter: "The virtue — or possibly {{Dr. Alexander W. Hope}} (c. 1820–1856), which the sources do not settle",
-    namedAfterLink: null,
-    categories: ["aspiration", "person", "unknown"],
+    namedAfter: "The virtue — or possibly sheriff and state senator {{Dr. Alexander W. Hope}} (c. 1820–1856), which the sources do not settle",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Alexander_W._Hope",
+    categories: ["aspiration","person","unknown"],
     sources: [
       { title: "L.A. Street Names: Hope Street",
         url: "https://lastreetnames.com/street/hope-street/" },
@@ -1080,10 +1057,11 @@ const NAME_ENTITIES = {
       { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" }
     ],
-    disputed: false,
+    disputed: true,
     note: "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
     internalNote: "Genuinely contested rather than merely unresearched, so both readings are in namedAfter and `unknown` stays in the categories. Not marked `disputed`: that flag is for a claim the project takes a side against, not for an open question.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "adobe": {
@@ -1104,7 +1082,7 @@ const NAME_ENTITIES = {
   },
 
   "short-street-chavez": {
-    spellings: [{ forms: ["Short Street"] }],
+    spellings: [{ forms: ["Short Street","Calle Alta"] }],
     namedAfter: null,
     namedAfterLink: null,
     categories: ["unknown"],
@@ -1115,9 +1093,10 @@ const NAME_ENTITIES = {
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
     ],
     disputed: false,
-    note: "Lettered on the 1849 survey along ground now part of Cesar E. Chavez Avenue. Descriptive, presumably, but nothing documents it.",
-    internalNote: "READ THE INK AGAIN BEFORE TRUSTING THIS ONE. The row records “CORTE ST”, and corte in Spanish is a court or a cut, not “short” — that would be corta. Either the sheet letters Calle Corta and the transcription dropped a letter, or the name is Corte and the English id is wrong. streets-data.js knows nothing about it: its Chavez entry starts at Macy Street. Disambiguated at minting because Short Street is a name that recurs.",
-    possiblySameAs: null, aliases: []
+    note: "Lettered on the 1849 survey along ground that roughly follows one block of what is now Cesar E. Chavez Avenue. Descriptive, presumably, but nothing documents it.",
+    internalNote: "The Chavez entry starts at Macy Street. Disambiguated at minting because Short Street is a name that recurs.",
+    possiblySameAs: null,
+    aliases: []
   },
 
   // ---- the Cameron Tract (1885), the Goodwin Tract (1886), and others -----
@@ -1176,9 +1155,10 @@ const NAME_ENTITIES = {
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" }
     ],
     disputed: false,
-    note: "Named from the family rather than for one person in particular. The lane no longer exists, though it was still on maps in 1955.",
+    note: "Named from the family rather than for one person in particular.",
     internalNote: "THE PLAT LETTERS IT “CATSBY”, without the E, and the row keeps that spelling as its ink (§5.1). The identification rests on the family names around it. A second minted id, `gatsby-lane`, was the same label misread; it cited no rows and was dropped.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "centerbrook-lane": {
@@ -1202,7 +1182,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Palm Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["nature", "unknown"],
+    categories: ["nature","unknown"],
     sources: [
       { title: "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
@@ -1210,9 +1190,10 @@ const NAME_ENTITIES = {
         url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
     ],
     disputed: false,
-    note: "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Imperial Street. When it became Imperial Street, and why, is not researched — and it has nothing to do with Imperial Highway, named far to the south in 1929–31.",
+    note: "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Imperial Street. When it became Imperial Street, and why, is not researched.",
     internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. Disambiguated at minting: Palm Street is a name that recurs.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "spruce": {
@@ -1268,9 +1249,9 @@ const NAME_ENTITIES = {
 
   "mesquit": {
     spellings: [{ forms: ["Mesquit Street"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["nature", "unknown"],
+    namedAfter: "Presumably the mesquite, alongside the Goodwin Tract's other plant names, but nothing documents it.",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Mesquite",
+    categories: ["nature"],
     sources: [
       { title: "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
@@ -1278,9 +1259,10 @@ const NAME_ENTITIES = {
         url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
     ],
     disputed: false,
-    note: "Presumably the mesquite, alongside the Goodwin Tract's other plant names, but nothing documents it. The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
+    note: "The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
     internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. Kines has no page. The spelling is the interesting part: a modern oddity that turns out to be original, not a later error.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "santee-street": {
@@ -1302,7 +1284,7 @@ const NAME_ENTITIES = {
 
   "los-angeles-street": {
     spellings: [{ forms: ["Los Angeles Street"] }],
-    namedAfter: "The city itself — ultimately {{Nuestra Señora de los Ángeles de Porciúncula}}, the 1769 Spanish naming of the river",
+    namedAfter: "The city itself — ultimately Nuestra Señora de los Ángeles de Porciúncula, the 1769 Spanish naming of {{the river}}",
     namedAfterLink: "https://en.wikipedia.org/wiki/Los_Angeles_River",
     categories: ["place"],
     sources: [
@@ -1314,14 +1296,15 @@ const NAME_ENTITIES = {
     disputed: false,
     note: "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
     internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. The Calle de los Negros block is a DIFFERENT lineage and wants its own entity when a document attests it — do not fold it in here on the strength of the modern name.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "pico": {
     spellings: [{ forms: ["Pico Street"] }],
     namedAfter: "{{Pío de Jesús Pico}} (1801–1894), the last Mexican governor of Alta California and a major landowner",
     namedAfterLink: "https://en.wikipedia.org/wiki/Pio_Pico",
-    categories: ["person", "governor"],
+    categories: ["person","governor"],
     sources: [
       { title: "L.A. Street Names: Pico Boulevard",
         url: "https://lastreetnames.com/street/pico-boulevard/" },
@@ -1331,9 +1314,10 @@ const NAME_ENTITIES = {
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" }
     ],
     disputed: false,
-    note: "Los Angeles never had an official 13th Street downtown — Pico picked up straight after 12th.",
+    note: "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid.",
     internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. The entity is the PICO naming, which the Cameron Tract letters as “Pico Street”; the modern street is a boulevard, and the generic changed without the name doing so.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "tenth-street": {

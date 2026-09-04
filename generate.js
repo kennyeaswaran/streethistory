@@ -778,6 +778,39 @@ function fmtEnd(p) {
 }
 function docShort(doc) { return doc.shortTitle || doc.title.replace(/^Recorded map: /, "").split(",")[0]; }
 
+// A SOURCE LINE HAS TO BE A CITATION, not just what the sheet letters across
+// its own title block. The registry holds the pieces — the title, the short
+// handle that usually carries the map-book reference and sheet number, and the
+// date — so compose them here, once, and every entry that cites the document
+// gets the same sentence (§6.6: "each document described once and cited
+// everywhere"). This is the line thirty name entities used to retype by hand,
+// each freezing whichever sheet somebody first noticed the name on; four of
+// them named the wrong sheet of a multi-sheet plat.
+//
+// Nothing is invented: a part is added only when the title does not already
+// say it, so a document whose title is already a full citation is left alone.
+const MAP_REF = /\b(?:M\.?\s?[RB]\.?|T\.?\s?R\.?)\s?\d+\s?[-\u2013]\s?\d+/i;
+const HAS_YEAR = /\b(?:1[6-9]\d\d|20\d\d)\b/;
+function docCitation(doc, qualifier) {
+  const short = doc.shortTitle || "";
+  const bits = [];
+  const sheet = (short.match(/sheet \d+/i) || [])[0];
+  if (sheet && !new RegExp(sheet, "i").test(doc.title)) bits.push(sheet);
+  // The reference comes from the short title where there is one, and otherwise
+  // from the folder id, which is where it came from in the first place.
+  const idRef = String(doc.id).match(/^(m[rb])(\d+)-(\d+)/i);
+  const ref = (short.match(MAP_REF) || [])[0] ||
+              (idRef ? `M.${idRef[1][1].toUpperCase()}. ${+idRef[2]}-${+idRef[3]}` : null);
+  if (ref && !doc.title.includes(ref)) bits.push(ref);
+  const when = docDate(doc) ? dfmtFull(docDate(doc)) : null;
+  if (when && !HAS_YEAR.test(doc.title))
+    bits.push(doc.date.on ? when : doc.date.after ? `after ${when}` : `before ${when}`);
+  // The qualifier is a remark about the evidence, not another citation part,
+  // so it is separated by a semicolon rather than folded into the list.
+  const inner = bits.join(", ") + (bits.length && qualifier ? "; " : "") + (qualifier || "");
+  return inner ? `${doc.title} (${inner})` : doc.title;
+}
+
 // ---------------------------------------------------------------------------
 // knownFraction: how much of [1850, extract-date] the derived timeline PINS
 // this stretch's state (§8 scheme 1's saturation ramp; Kenny, 2026-08-31).
@@ -972,19 +1005,33 @@ function sourcesFor(seg, curEntity) {
   // Current name's own origin citations first (the naming claim), then the
   // documents that testify about this ground, oldest first — each described
   // once, from the registry (§6.6).
-  if (curEntity) for (const s of entities[curEntity].sources || []) push(s.title, s.url);
   const docs = [];
   for (const r of seg.rows) if (!r.osm && r.kind !== "annotation" && r.kind !== "absent" && !docs.includes(r.doc)) docs.push(r.doc);
   docs.sort((x, y) => dkey(docDate(x)) < dkey(docDate(y)) ? -1 : 1);
+
+  // WHICH DOCUMENTS THIS STRETCH ALREADY CITES. A name entity's `sources` are
+  // the naming claim and belong on every stretch carrying the name — including
+  // one no sheet covers. But where the entity cites a document this stretch is
+  // about, the corpus says it better: dated, in date order, and naming the
+  // sheet that actually letters the ground rather than the one somebody first
+  // noticed the name on. So the hand-written copy yields, and only there.
+  const citedHere = new Set();
+  for (const d of docs) {
+    if (d.url) citedHere.add(d.url);
+    for (const c of d.copies || []) if (c.url) citedHere.add(c.url);
+  }
+  const entitySources = e => (e && e.sources || []).filter(s => !citedHere.has(s.url));
+
+  if (curEntity) for (const s of entitySources(entities[curEntity])) push(s.title, s.url);
   for (const d of docs) {
     const weakBasis = seg.rows.some(r => r.doc === d && ["alignment", "position"].includes(r.basis));
-    push(d.title + (weakBasis ? " (identified by map alignment, not a lot-level record)" : ""), d.url);
+    push(docCitation(d, weakBasis ? "identified by map alignment, not a lot-level record" : null), d.url);
     for (const c of d.copies || []) push(c.title, c.url);
   }
   // Former entities' claims and prose-dated spellings.
   for (const p of seg.timeline || []) {
     const e = entities[p.entity];
-    if (p.entity !== curEntity) for (const s of e.sources || []) push(s.title, s.url);
+    if (p.entity !== curEntity) for (const s of entitySources(e)) push(s.title, s.url);
     if (p.ctx && p.ctx.proseSource) push(p.ctx.proseSource.title, p.ctx.proseSource.url);
   }
   if (!out.length) push("OpenStreetMap (current extract — this street has no research behind it yet)", "https://www.openstreetmap.org/");
