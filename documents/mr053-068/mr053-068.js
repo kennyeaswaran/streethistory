@@ -6,6 +6,16 @@ module.exports = {
   scan: "documents/mr053-068/mr053-068.pdf",
   transcription: null,
 
+  // ANOTHER SCAN OF THE SAME MAP. The LAPL holds its own copy of the Ord/Hutton
+  // survey — a slightly different version of the same 1849 sheet, not a second
+  // document. Declaring it here means the generator knows the two urls are one
+  // piece of evidence, so a name entity citing the LAPL scan is not printed
+  // beside this sheet as though they were two sources.
+  copies: [
+    { title: "Ord/Hutton survey, \u201cPlan de la Ciudad de Los Angeles\u201d (LAPL\u2019s copy)",
+      url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" }
+  ],
+
   date: { on: "1849-08-29" },   
   form: "drawn",
   type: "tract-map",

@@ -191,6 +191,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (M.R. 53-65, Nov. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           }
         ],
         "maxLng": -118.2505,
@@ -219,6 +223,10 @@ const STREET_DATA = {
           {
             "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           }
         ],
         "minLng": -118.2505,
@@ -273,6 +281,10 @@ const STREET_DATA = {
           {
             "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           }
         ],
         "maxLng": -118.27,
@@ -372,6 +384,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           }
         ],
         "minLng": -118.263,
@@ -406,6 +422,10 @@ const STREET_DATA = {
           {
             "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           }
         ],
         "minLng": -118.2581,
@@ -700,6 +720,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "maxLng": -118.2473,
@@ -733,6 +757,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2473,
@@ -821,6 +849,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2419,
@@ -859,6 +891,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2381,
@@ -889,6 +925,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2345,
@@ -944,6 +984,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "maxLng": -118.2719,
@@ -969,6 +1013,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2719,
@@ -995,6 +1043,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2686,
@@ -1021,6 +1073,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2651,
@@ -1059,6 +1115,10 @@ const STREET_DATA = {
           {
             "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2632,
@@ -1089,6 +1149,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.26,
@@ -1115,6 +1179,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2528,
@@ -1149,6 +1217,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2485,
@@ -1241,6 +1313,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2442,
@@ -1314,6 +1390,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2382,
@@ -1353,6 +1433,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2344,
@@ -1389,6 +1473,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2327,
@@ -1439,6 +1527,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "maxLng": -118.2647,
@@ -1508,12 +1600,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           },
           {
-            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
-            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
-            "title": "L.A. Street Names: Witmer Street (on the Witmers’ 650 acres at Crown Hill)",
-            "url": "https://lastreetnames.com/street/witmer-street/"
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           }
         ],
         "minLng": -118.2647,
@@ -1549,6 +1641,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2613,
@@ -1613,6 +1709,10 @@ const STREET_DATA = {
           {
             "title": "Recorded map: Compromise Subdivision of a portion of the O.T. Johnson tract, known as the Washington Tract, M.R. 66-35 (surveyed Mar. 1894 by E.D. Severance) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2598,
@@ -1638,6 +1738,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2578,
@@ -1672,6 +1776,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2502,
@@ -1760,6 +1868,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2456,
@@ -1807,6 +1919,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2427,
@@ -1888,6 +2004,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2382,
@@ -1927,6 +2047,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2344,
@@ -1963,6 +2087,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2326,
@@ -2054,6 +2182,10 @@ const STREET_DATA = {
           {
             "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
@@ -2162,6 +2294,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "maxLng": -118.2658,
@@ -2187,6 +2323,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2658,
@@ -2221,6 +2361,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2563,
@@ -2317,6 +2461,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2468,
@@ -2364,6 +2512,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2434,
@@ -2403,6 +2555,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2391,
@@ -2478,8 +2634,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "L.A. Street Names: Colyton Street (Howard’s tract; Carolina St. for his wife Caroline née Huber)",
-            "url": "https://lastreetnames.com/street/colyton-street/"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
             "title": "Recorded map: F.P. Howard & Co.’s Subdivision of the Bliss Tract, M.R. 12-42 (Aug. 1886) — shows “Huber Street” at 828 E 4th St’s location",
@@ -2551,6 +2707,14 @@ const STREET_DATA = {
           {
             "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2349,
@@ -2590,6 +2754,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2342,
@@ -2625,6 +2793,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2287,
@@ -2660,6 +2832,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "maxLng": -118.2706,
@@ -2685,6 +2861,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2706,
@@ -2719,6 +2899,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2576,
@@ -2811,6 +2995,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2481,
@@ -2858,6 +3046,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 3, M.R. 30-11, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2443,
@@ -2934,6 +3126,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
             "title": "Recorded map: F.P. Howard & Co.'s Subdivision of the Bliss Tract, M.R. 12-42 (subdivided Aug. 1886 by Geo. E. Knox) — shows “Poplar Street” at 1100 E 5th St's location",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
           }
@@ -2970,6 +3166,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2377,
@@ -3005,6 +3205,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "maxLng": -118.2589,
@@ -3038,6 +3242,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2589,
@@ -3130,6 +3338,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2494,
@@ -3177,6 +3389,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2454,
@@ -3211,6 +3427,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2384,
@@ -3253,6 +3473,10 @@ const STREET_DATA = {
           {
             "title": "Plan of the Goodwin Tract (M.R. 11-42, Oct. 6, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2328,
@@ -3292,6 +3516,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2288,
@@ -3323,6 +3551,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2281,
@@ -3408,6 +3640,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "maxLng": -118.2604,
@@ -3441,6 +3677,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2604,
@@ -3543,6 +3783,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2508,
@@ -3590,6 +3834,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2469,
@@ -3624,6 +3872,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2386,
@@ -3654,6 +3906,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2357,
@@ -3746,8 +4002,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "maxLng": -118.2612,
@@ -3790,10 +4046,6 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
@@ -3828,8 +4080,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2523,
@@ -3871,12 +4123,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
             "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (M.R. 53-65, Nov. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2492,
@@ -3914,8 +4166,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2479,
@@ -3977,6 +4229,10 @@ const STREET_DATA = {
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
       },
       {
+        "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
+      },
+      {
         "title": "L.A. Street Names: 1st Street (on the numbering system)",
         "url": "https://lastreetnames.com/street/0001st-street/"
       },
@@ -4024,10 +4280,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
@@ -4087,12 +4339,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
             "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLng": -118.2537,
@@ -4130,8 +4382,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLng": -118.2529,
@@ -4173,12 +4425,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
             "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (M.R. 53-65, Nov. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLng": -118.2505,
@@ -4216,8 +4468,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLng": -118.2489,
@@ -4261,10 +4513,6 @@ const STREET_DATA = {
     ],
     "disputed": false,
     "sources": [
-      {
-        "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-      },
       {
         "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
@@ -4326,6 +4574,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "minLat": 34.0533,
@@ -4356,6 +4608,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
             "url": "https://lastreetnames.com/street/alameda-street/"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "minLat": 34.0499,
@@ -4400,6 +4656,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "minLat": 34.0491,
@@ -4538,6 +4798,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "minLat": 34.0432,
@@ -4601,6 +4865,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "minLat": 34.0348,
@@ -4645,6 +4913,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "minLat": 34.0332,
@@ -4681,6 +4953,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
             "url": "https://lastreetnames.com/street/alameda-street/"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "maxLat": 34.0332,
@@ -4921,10 +5197,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Alpine Street",
             "url": "https://lastreetnames.com/street/alpine-street/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           }
         ],
         "minLng": -118.2416,
@@ -5837,8 +6109,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Recorded map: Compromise Subdivision of a portion of the O.T. Johnson tract, known as the Washington Tract, M.R. 66-35 (surveyed Mar. 1894 by E.D. Severance)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
           }
         ],
         "minLat": 34.0606,
@@ -5862,8 +6134,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Recorded map: Compromise Subdivision of a portion of the O.T. Johnson tract, known as the Washington Tract, M.R. 66-35 (surveyed Mar. 1894 by E.D. Severance)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
           }
         ],
         "minLat": 34.0582,
@@ -5929,8 +6201,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Recorded map: Compromise Subdivision of a portion of the O.T. Johnson tract, known as the Washington Tract, M.R. 66-35 (surveyed Mar. 1894 by E.D. Severance)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
           }
         ],
         "minLat": 34.0469,
@@ -5955,8 +6227,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Recorded map: Compromise Subdivision of a portion of the O.T. Johnson tract, known as the Washington Tract, M.R. 66-35 (surveyed Mar. 1894 by E.D. Severance)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
           }
         ],
         "maxLat": 34.0469,
@@ -6208,6 +6480,10 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           },
           {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
             "title": "L.A. Street Names: Figueroa Street",
             "url": "https://lastreetnames.com/street/figueroa-street/"
           }
@@ -6262,6 +6538,10 @@ const STREET_DATA = {
           {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           },
           {
             "title": "L.A. Street Names: Figueroa Street",
@@ -6386,10 +6666,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Broadway (on Calle Eternidad)",
             "url": "https://lastreetnames.com/street/broadway/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
             "title": "Homestead Museum: Calle Eternidad in the 1880s",
@@ -6839,6 +7115,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Central Avenue",
             "url": "https://lastreetnames.com/street/central-avenue/"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           }
         ],
         "minLat": 34.0504,
@@ -6872,6 +7152,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Central Avenue",
             "url": "https://lastreetnames.com/street/central-avenue/"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           }
         ],
         "minLat": 34.0493,
@@ -7005,6 +7289,10 @@ const STREET_DATA = {
           {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "minLat": 34.0461,
@@ -7131,6 +7419,10 @@ const STREET_DATA = {
           {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "maxLat": 34.039,
@@ -7255,7 +7547,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Jan. 11, 1888)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -7290,7 +7582,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Jan. 11, 1888)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -7424,10 +7716,6 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           }
         ],
         "minLng": -118.2402,
@@ -7703,11 +7991,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/college-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
@@ -7744,11 +8028,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/college-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
@@ -7798,10 +8078,6 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/college-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
@@ -7840,11 +8116,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/college-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           }
         ],
@@ -7880,10 +8152,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: College Street",
             "url": "https://lastreetnames.com/street/college-street/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
@@ -8051,6 +8319,10 @@ const STREET_DATA = {
           {
             "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
         "minLat": 34.0527,
@@ -8082,6 +8354,10 @@ const STREET_DATA = {
           {
             "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
         "maxLat": 34.0527,
@@ -8437,8 +8713,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           }
         ],
         "maxLng": -118.2631,
@@ -8507,8 +8783,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           }
         ],
         "maxLng": -118.2638,
@@ -8572,8 +8848,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           }
         ],
         "minLng": -118.2571,
@@ -8915,8 +9191,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           },
           {
-            "title": "L.A. Street Names: Witmer Street (on the Witmers’ 650 acres at Crown Hill)",
-            "url": "https://lastreetnames.com/street/witmer-street/"
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
         "minLat": 34.0599,
@@ -8950,10 +9226,6 @@ const STREET_DATA = {
           {
             "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
-          },
-          {
-            "title": "L.A. Street Names: Witmer Street (on the Witmers’ 650 acres at Crown Hill)",
-            "url": "https://lastreetnames.com/street/witmer-street/"
           },
           {
             "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
@@ -9086,8 +9358,8 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
       }
     ]
   },
@@ -9510,8 +9782,12 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           },
           {
-            "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874",
+            "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874 (council renames Grasshopper St → Pearl St)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           },
           {
             "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
@@ -9590,6 +9866,14 @@ const STREET_DATA = {
           {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           },
           {
             "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
@@ -9688,6 +9972,10 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           },
           {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
             "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
           }
@@ -9780,6 +10068,10 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           },
           {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
             "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
           }
@@ -9864,6 +10156,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Figueroa Street",
             "url": "https://lastreetnames.com/street/figueroa-street/"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           }
         ],
         "maxLat": 34.0393,
@@ -9941,12 +10237,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/flower-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0533,
@@ -9982,12 +10274,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/flower-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0501,
@@ -10036,10 +10324,6 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/flower-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
@@ -10086,12 +10370,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/flower-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0405,
@@ -10133,16 +10413,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/flower-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0387,
@@ -10180,12 +10456,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/flower-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "maxLat": 34.0387,
@@ -10409,6 +10681,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Garey Street",
             "url": "https://lastreetnames.com/street/garey-street/"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "minLat": 34.0472,
@@ -10753,10 +11029,6 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
             "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth named as the block's bounding streets",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
           },
@@ -10767,6 +11039,10 @@ const STREET_DATA = {
           {
             "title": "LA Parks: Gladys Park (6th and Gladys)",
             "url": "https://recreation.parks.lacity.gov/park/6th-gladys-street"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "minLat": 34.0379,
@@ -10800,10 +11076,6 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
             "title": "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth named as the block's bounding streets",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf"
           },
@@ -10814,6 +11086,10 @@ const STREET_DATA = {
           {
             "title": "LA Parks: Gladys Park (6th and Gladys)",
             "url": "https://recreation.parks.lacity.gov/park/6th-gladys-street"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "maxLat": 34.0379,
@@ -11060,10 +11336,6 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/grand-avenue/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
             "title": "Wikipedia: Grand Avenue (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
           }
@@ -11128,16 +11400,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           },
           {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
             "title": "L.A. Street Names: Grand Avenue",
             "url": "https://lastreetnames.com/street/grand-avenue/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
             "title": "Wikipedia: Grand Avenue (Los Angeles)",
@@ -11456,6 +11724,10 @@ const STREET_DATA = {
           {
             "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "minLat": 34.0445,
@@ -11514,6 +11786,10 @@ const STREET_DATA = {
           {
             "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "minLat": 34.0431,
@@ -11546,8 +11822,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "maxLat": 34.0431,
@@ -11613,16 +11889,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hill-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
-            "title": "Wikipedia: Bunker Hill (Los Angeles)",
-            "url": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0663,
@@ -11683,20 +11951,16 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hill-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
             "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
-            "title": "Wikipedia: Bunker Hill (Los Angeles)",
-            "url": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
             "title": "Los Angeles Herald, “Common Council”, Feb. 14, 1874 (the petition renaming Bull St. to Castelar)",
@@ -11737,16 +12001,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hill-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
-            "title": "Wikipedia: Bunker Hill (Los Angeles)",
-            "url": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0525,
@@ -11800,14 +12056,6 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hill-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Wikipedia: Bunker Hill (Los Angeles)",
-            "url": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)"
-          },
-          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
@@ -11855,16 +12103,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hill-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
-            "title": "Wikipedia: Bunker Hill (Los Angeles)",
-            "url": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "maxLat": 34.0383,
@@ -11948,12 +12188,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hope-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0526,
@@ -11991,12 +12227,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hope-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0501,
@@ -12041,12 +12273,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hope-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0494,
@@ -12097,10 +12325,6 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hope-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
@@ -12145,12 +12369,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hope-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0399,
@@ -12194,16 +12414,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hope-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0382,
@@ -12243,12 +12459,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hope-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "maxLat": 34.0382,
@@ -13322,6 +13534,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
         "minLat": 34.0541,
@@ -13363,6 +13579,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
         "minLat": 34.0531,
@@ -13402,6 +13622,10 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: Los Angeles Street",
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
         "minLat": 34.0521,
@@ -13453,6 +13677,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
         "minLat": 34.0512,
@@ -13496,6 +13724,10 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: Los Angeles Street",
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
         "minLat": 34.0429,
@@ -13535,6 +13767,10 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: Los Angeles Street",
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
         "minLat": 34.0421,
@@ -13578,6 +13814,10 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: Los Angeles Street",
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
         "minLat": 34.041,
@@ -13684,6 +13924,10 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: Los Angeles Street",
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
         "minLat": 34.0365,
@@ -13723,6 +13967,10 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: Los Angeles Street",
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
         "maxLat": 34.0365,
@@ -13757,12 +14005,12 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "L.A. Street Names: Lucas Avenue (“named in 1884 on a tract he was selling with Edward Bentley and Moye Wicks”)",
-            "url": "https://lastreetnames.com/street/lucas-avenue/"
-          },
-          {
             "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
         "minLat": 34.0612,
@@ -13807,10 +14055,6 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "L.A. Street Names: Lucas Avenue (“named in 1884 on a tract he was selling with Edward Bentley and Moye Wicks”)",
-            "url": "https://lastreetnames.com/street/lucas-avenue/"
-          },
-          {
             "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           },
@@ -13851,12 +14095,12 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "L.A. Street Names: Lucas Avenue (“named in 1884 on a tract he was selling with Edward Bentley and Moye Wicks”)",
-            "url": "https://lastreetnames.com/street/lucas-avenue/"
-          },
-          {
             "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
         "maxLat": 34.0581,
@@ -13942,16 +14186,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/main-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0663,
@@ -13987,20 +14227,16 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/main-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0633,
@@ -14042,16 +14278,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/main-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0612,
@@ -14097,20 +14329,16 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/main-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0607,
@@ -14152,16 +14380,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/main-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0595,
@@ -14238,20 +14462,16 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/main-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0582,
@@ -14296,14 +14516,6 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/main-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
@@ -14314,6 +14526,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0548,
@@ -14367,10 +14583,6 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/main-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
@@ -14385,6 +14597,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0439,
@@ -14421,16 +14637,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/main-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0416,
@@ -14466,20 +14678,16 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/main-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
             "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0399,
@@ -14516,16 +14724,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/main-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0371,
@@ -14563,16 +14767,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/main-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "maxLat": 34.0371,
@@ -15183,12 +15383,12 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
-          },
-          {
             "title": "Wikipedia: Arts District, Los Angeles",
             "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          },
+          {
+            "title": "Plan of the Goodwin Tract (M.R. 11-42, Oct. 6, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
           }
         ],
         "maxLat": 34.0366,
@@ -15392,6 +15592,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           },
           {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
           }
@@ -15449,6 +15653,10 @@ const STREET_DATA = {
           {
             "title": "Recorded map: Compromise Subdivision of a portion of the O.T. Johnson tract, known as the Washington Tract, M.R. 66-35 (surveyed Mar. 1894 by E.D. Severance) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-035.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
@@ -15943,12 +16151,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/olive-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0526,
@@ -15984,12 +16188,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/olive-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0495,
@@ -16038,10 +16238,6 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/olive-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
@@ -16080,12 +16276,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/olive-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "maxLat": 34.039,
@@ -16336,6 +16528,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           },
           {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
+          },
+          {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
@@ -16406,6 +16602,10 @@ const STREET_DATA = {
           {
             "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           },
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
@@ -16617,10 +16817,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Ord Street (on Calle Alta / Walters / Ord)",
             "url": "https://lastreetnames.com/street/ord-street/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           }
         ],
         "minLng": -118.2412,
@@ -16775,8 +16971,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/glassell-street/"
           },
           {
-            "title": "Wikipedia: George S. Patton (attorney)",
-            "url": "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)"
+            "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           }
         ],
         "minLat": 34.0656,
@@ -16826,10 +17022,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Glassell Street (Glassell’s firm; “his nephew George S. Patton replaced Smith”)",
             "url": "https://lastreetnames.com/street/glassell-street/"
-          },
-          {
-            "title": "Wikipedia: George S. Patton (attorney)",
-            "url": "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)"
           },
           {
             "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
@@ -16953,10 +17145,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Pico Boulevard",
             "url": "https://lastreetnames.com/street/pico-boulevard/"
-          },
-          {
-            "title": "Wikipedia: Pío Pico",
-            "url": "https://en.wikipedia.org/wiki/Pio_Pico"
           }
         ],
         "minLng": -118.2685,
@@ -17448,6 +17636,10 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: San Pedro Street",
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "minLat": 34.0494,
@@ -17485,6 +17677,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "minLat": 34.0475,
@@ -17587,6 +17783,10 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: San Pedro Street",
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "minLat": 34.0387,
@@ -17635,6 +17835,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (M.R. 53-65, Nov. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "minLat": 34.0354,
@@ -17675,6 +17879,10 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: San Pedro Street",
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "maxLat": 34.0354,
@@ -18129,8 +18337,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/santee-street/"
           },
           {
-            "title": "Wikipedia: Milton Santee",
-            "url": "https://en.wikipedia.org/wiki/Milton_Santee"
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
         "minLat": 34.0403,
@@ -18179,10 +18387,6 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/santee-street/"
           },
           {
-            "title": "Wikipedia: Milton Santee",
-            "url": "https://en.wikipedia.org/wiki/Milton_Santee"
-          },
-          {
             "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
@@ -18223,8 +18427,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/santee-street/"
           },
           {
-            "title": "Wikipedia: Milton Santee",
-            "url": "https://en.wikipedia.org/wiki/Milton_Santee"
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
         "maxLat": 34.0384,
@@ -18375,16 +18579,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/spring-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Spring Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0673,
@@ -18421,20 +18621,16 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/spring-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Spring Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0635,
@@ -18477,16 +18673,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/spring-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Spring Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0619,
@@ -18549,14 +18741,6 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/spring-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Spring Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)"
           },
@@ -18567,6 +18751,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
             "title": "L.A. Street Names: Main Street",
@@ -18607,16 +18795,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/spring-street/"
           },
           {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
-          },
-          {
-            "title": "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Wikipedia: Spring Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.053,
@@ -18659,10 +18843,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Spring Street",
             "url": "https://lastreetnames.com/street/spring-street/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
             "title": "Wikipedia: Spring Street (Los Angeles)",
@@ -18860,7 +19040,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -18900,7 +19080,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -19277,7 +19457,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -19317,7 +19497,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -19420,6 +19600,10 @@ const STREET_DATA = {
           {
             "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
@@ -20023,12 +20207,12 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
-          },
-          {
             "title": "Wikipedia: Arts District, Los Angeles",
             "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          },
+          {
+            "title": "Plan of the Goodwin Tract (M.R. 11-42, Oct. 6, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
           }
         ],
         "minLng": -118.2306,
@@ -20170,12 +20354,12 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "L.A. Street Names: Witmer Street (“Witmer Street itself was named in January 1886”)",
-            "url": "https://lastreetnames.com/street/witmer-street/"
-          },
-          {
             "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
         "minLat": 34.0612,
@@ -20220,10 +20404,6 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "L.A. Street Names: Witmer Street (“Witmer Street itself was named in January 1886”)",
-            "url": "https://lastreetnames.com/street/witmer-street/"
-          },
-          {
             "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           },
@@ -20264,12 +20444,12 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "L.A. Street Names: Witmer Street (“Witmer Street itself was named in January 1886”)",
-            "url": "https://lastreetnames.com/street/witmer-street/"
-          },
-          {
             "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
             "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "Plat of \"Crownwood\" (Dec. 10, 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           }
         ],
         "maxLat": 34.0588,
@@ -20339,10 +20519,6 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Yale Street",
             "url": "https://lastreetnames.com/street/yale-street/"
-          },
-          {
-            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           }
         ],
         "minLat": 34.0625,

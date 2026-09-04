@@ -776,6 +776,42 @@ function fmtEnd(p) {
   if (p.endKind === "change") return dfmtMonth(p.end);
   return dyear(p.end);
 }
+// WHICH DOCUMENTS LETTER A NAME, and the earliest of them.
+//
+// A name entity's own `sources` used to carry a hand-typed citation of the
+// sheet somebody first noticed the name on — frozen, so it stayed put when an
+// older sheet arrived, and on a multi-sheet plat it often named the wrong
+// sheet. The corpus can answer the question properly, so it does: every
+// stretch that has ever carried a name cites the earliest document in the
+// corpus that letters it, whether or not that document says anything about
+// THIS stretch. Ties (the five Ord sheets share a date) break on id, so the
+// answer is stable.
+const DOCS_ATTESTING = new Map();        // entity id -> [doc, ...] oldest first
+for (const doc of nonOsmDocs) {
+  const here = new Set();
+  for (const r of doc.rows || [])
+    for (const ref of [r.name, r.from, r.to])
+      if (typeof ref === "string" && ref) here.add(aliasOf[ref] || ref);
+  for (const id of here) {
+    if (!DOCS_ATTESTING.has(id)) DOCS_ATTESTING.set(id, []);
+    DOCS_ATTESTING.get(id).push(doc);
+  }
+}
+for (const list of DOCS_ATTESTING.values())
+  list.sort((a, b) => dkey(docDate(a)) < dkey(docDate(b)) ? -1
+                    : dkey(docDate(a)) > dkey(docDate(b)) ? 1
+                    : String(a.id).localeCompare(String(b.id)));
+const earliestDocFor = id => (DOCS_ATTESTING.get(id) || [])[0] || null;
+// Every url by which the corpus can be reached, and which entity ids the
+// document behind it letters. Used to drop a hand-written citation that the
+// corpus already answers — and to KEEP one that it does not, since an entity
+// may cite a sheet for something other than its own name on it.
+const CORPUS_ATTESTS = new Map();        // url -> Set of entity ids
+for (const [id, docs] of DOCS_ATTESTING)
+  for (const d of docs)
+    for (const u of [d.url, ...(d.copies || []).map(c => c.url)])
+      if (u) { if (!CORPUS_ATTESTS.has(u)) CORPUS_ATTESTS.set(u, new Set()); CORPUS_ATTESTS.get(u).add(id); }
+
 function docShort(doc) { return doc.shortTitle || doc.title.replace(/^Recorded map: /, "").split(",")[0]; }
 
 // A SOURCE LINE HAS TO BE A CITATION, not just what the sheet letters across
@@ -1009,29 +1045,43 @@ function sourcesFor(seg, curEntity) {
   for (const r of seg.rows) if (!r.osm && r.kind !== "annotation" && r.kind !== "absent" && !docs.includes(r.doc)) docs.push(r.doc);
   docs.sort((x, y) => dkey(docDate(x)) < dkey(docDate(y)) ? -1 : 1);
 
-  // WHICH DOCUMENTS THIS STRETCH ALREADY CITES. A name entity's `sources` are
-  // the naming claim and belong on every stretch carrying the name — including
-  // one no sheet covers. But where the entity cites a document this stretch is
-  // about, the corpus says it better: dated, in date order, and naming the
-  // sheet that actually letters the ground rather than the one somebody first
-  // noticed the name on. So the hand-written copy yields, and only there.
-  const citedHere = new Set();
-  for (const d of docs) {
-    if (d.url) citedHere.add(d.url);
-    for (const c of d.copies || []) if (c.url) citedHere.add(c.url);
-  }
-  const entitySources = e => (e && e.sources || []).filter(s => !citedHere.has(s.url));
+  // EACH PIECE OF EVIDENCE ONCE. An entity's `sources` are the naming claim,
+  // and they belong here — except where the same evidence already reaches the
+  // reader by a better route:
+  //
+  //   - it is the `namedAfterLink`, which the namedAfter line already links;
+  //   - it is a document in the corpus that letters this name, which the
+  //     generator cites itself, dated and from the registry (a copy of that
+  //     document — the LAPL scan of the Ord survey — counts as the same
+  //     evidence, §4.4a).
+  //
+  // What it does NOT drop is a citation of a corpus document that does *not*
+  // letter this name: an entity may cite a sheet for something other than its
+  // own name on it — a related name, an adjoining tract — and that is a claim
+  // the corpus cannot make on its behalf.
+  const entitySources = (id, e) => (e && e.sources || []).filter(s =>
+    s.url !== e.namedAfterLink && !(CORPUS_ATTESTS.get(s.url) || new Set()).has(id));
 
-  if (curEntity) for (const s of entitySources(entities[curEntity])) push(s.title, s.url);
+  if (curEntity) for (const s of entitySources(curEntity, entities[curEntity])) push(s.title, s.url);
   for (const d of docs) {
     const weakBasis = seg.rows.some(r => r.doc === d && ["alignment", "position"].includes(r.basis));
     push(docCitation(d, weakBasis ? "identified by map alignment, not a lot-level record" : null), d.url);
-    for (const c of d.copies || []) push(c.title, c.url);
+    // A `copy` is another scan of the SAME document, not a second source — it
+    // is here so the two urls are known to be one piece of evidence, not so
+    // the list prints both.
+  }
+  // The earliest sheet that letters each name this stretch has carried, even
+  // where that sheet says nothing about this stretch: it is what the entity's
+  // hand-typed citation used to stand in for, and unlike that citation it
+  // moves when an older sheet arrives.
+  for (const p of seg.timeline || []) {
+    const d = earliestDocFor(p.entity);
+    if (d) push(docCitation(d), d.url);
   }
   // Former entities' claims and prose-dated spellings.
   for (const p of seg.timeline || []) {
     const e = entities[p.entity];
-    if (p.entity !== curEntity) for (const s of entitySources(e)) push(s.title, s.url);
+    if (p.entity !== curEntity) for (const s of entitySources(p.entity, e)) push(s.title, s.url);
     if (p.ctx && p.ctx.proseSource) push(p.ctx.proseSource.title, p.ctx.proseSource.url);
   }
   if (!out.length) push("OpenStreetMap (current extract — this street has no research behind it yet)", "https://www.openstreetmap.org/");

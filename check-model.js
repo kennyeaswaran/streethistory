@@ -352,21 +352,19 @@ for (const doc of DOCUMENTS) {
   }
 }
 
-// ---- an entity citing a document it is not attested on --------------------
+// ---- redundancy in a name entity's `sources` ------------------------------
 //
-// A name entity's `sources` may link a recorded map that has since been read
-// into documents/. That is fine and often useful: on a stretch no sheet
-// covers, the entity's own citation is the only link to the evidence for the
-// name, so generate.js keeps it (it yields only where the stretch already
-// cites the same document, §6.6).
+// `sources` is what justifies the NAMING claim (§3). It is not the place to
+// repeat something the reader already has, and generate.js will not print a
+// duplicate — so an entry of either shape below is dead weight that will
+// quietly go stale. `node prune-sources.js` removes both.
 //
-// What is NOT fine is citing a sheet that says nothing about this name. It
-// means one of two things, and both are worth knowing: a row is missing, or —
-// the usual cause — the citation names one sheet of a multi-sheet plat while
-// the name is lettered on another. Four entities did exactly that: three cited
-// sheet 5 of the Wolfskill Orchard Tract for names lettered on sheets 1-4, and
-// `bull` cited M.R. 53-68 for a name that appears on 53-73. Nothing else would
-// have caught it, because every one of those links resolves to a real scan.
+// The third case is the one that is NOT redundant, and it is flagged only so
+// that a wrong sheet cannot hide inside it: an entity may legitimately cite a
+// document that does not letter its name — tenth-street and eleventh-street
+// cite the Ord survey because the numbering was in place by 1849, not because
+// they are drawn on it — but `bull` cites M.R. 53-68 for a name lettered on
+// 53-73, which is a citation one sheet off.
 {
   const attesting = new Map();          // entity id -> Set of document ids
   for (const doc of DOCUMENTS) {
@@ -380,11 +378,11 @@ for (const doc of DOCUMENTS) {
       }
   }
   // ONE URL CAN BE SEVERAL DOCUMENTS. The county serves all five sheets of the
-  // Wolfskill Orchard Tract as one PDF, so MR030-009.pdf is the url of
-  // mr030-009-p1 through -p5. A citation of that url is answered by a row on
-  // ANY of them — treating it as the last sheet read would flag three
-  // perfectly good citations. Sheets that are separate FILES (M.R. 53-68 and
-  // 53-73 are) stay separate, which is where the real errors live.
+  // Wolfskill Orchard Tract as one PDF, and the LAPL's scan of the Ord survey
+  // is declared as a `copy` of all five Ord sheets — so a citation of either
+  // url is answered by a row on ANY of the documents behind it. Sheets that
+  // are separate FILES (M.R. 53-68 and 53-73 are) stay separate, which is
+  // where the real errors live.
   const docsByUrl = new Map();
   const at = url => { if (!docsByUrl.has(url)) docsByUrl.set(url, []); return docsByUrl.get(url); };
   for (const doc of DOCUMENTS) {
@@ -394,19 +392,27 @@ for (const doc of DOCUMENTS) {
   }
   for (const [id, e] of Object.entries(NAME_ENTITIES)) {
     for (const src of e.sources || []) {
+      if (src.url === e.namedAfterLink) {
+        warn(id, "sources repeats namedAfterLink — the namedAfter line already links it, " +
+                 "and the generator prints it once; drop it from sources");
+        continue;
+      }
       const cited = docsByUrl.get(src.url);
       if (!cited) continue;
       const on = attesting.get(id) || new Set();
-      if (cited.some(d => on.has(d))) continue;
+      if (cited.some(d => on.has(d))) {
+        warn(id, `sources cites documents/${cited.find(d => on.has(d))}/, which letters this name —`,
+             "the generator cites the earliest such document itself, dated and from the " +
+             "registry, so this hand copy only freezes one sheet; drop it (prune-sources.js does)");
+        continue;
+      }
       const elsewhere = [...on];
       const what = cited.length === 1 ? `documents/${cited[0]}/`
                                       : `documents/${cited[0]}/ (and ${cited.length - 1} more sharing that scan)`;
-      warn(id, `sources cites ${what}, but no row there names this entity —`,
-           elsewhere.length
-             ? `it IS attested on ${elsewhere.join(", ")}, so the citation probably names ` +
-               `the wrong sheet of the same map`
-             : `and it is not attested anywhere in the corpus, so either a row is missing ` +
-               `or the citation is wrong`);
+      warn(id, `sources cites ${what}, which does NOT letter this name —`,
+           "fine if it is cited for something else (a related name, an adjoining tract, a " +
+           "date the sheet fixes), but check it is not simply the wrong sheet" +
+           (elsewhere.length ? `; the name IS lettered on ${elsewhere.join(", ")}` : ""));
     }
   }
 }

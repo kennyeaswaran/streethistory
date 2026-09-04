@@ -242,12 +242,8 @@ const NAME_ENTITIES = {
     namedAfterLink: "https://lastreetnames.com/street/colyton-street/",
     categories: ["person", "unknown"],
     sources: [
-      { title: "L.A. Street Names: Colyton Street (Howard\u2019s tract; Carolina St. for his wife Caroline n\u00e9e Huber)",
-        url: "https://lastreetnames.com/street/colyton-street/" },
       { title: "Recorded map: F.P. Howard & Co.\u2019s Subdivision of the Bliss Tract, M.R. 12-42 (Aug. 1886) \u2014 shows \u201cHuber Street\u201d at 828 E 4th St\u2019s location",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf" },
-      { title: "Recorded map: Mills and Wicks Extension of Second St., M.R. 13-87 \u2014 shows \u201cHUBER ST.\u201d as its south boundary, Apr.\u2013May 1886",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf" }
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf" }
     ],
     disputed: false,
     note: "Named on the 1886 subdivisions between Alameda and the Santa Fe grounds; the namesake is an inference from the neighbouring Carolina Street, not a record.",
@@ -267,9 +263,7 @@ const NAME_ENTITIES = {
     categories: ["place", "history"],
     sources: [
       { title: "L.A. Street Names: Cortez Street (\u201cwhat is now Belmont Avenue was called Aztec Avenue and what is now Dawson Street was called Montezuma Avenue\u2026 Glassell was clearly going for a theme here\u201d)",
-        url: "https://lastreetnames.com/street/cortez-street/" },
-      { title: "Recorded map: Glassell\u2019s Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf" }
+        url: "https://lastreetnames.com/street/cortez-street/" }
     ],
     disputed: false,
     note: null,
@@ -286,9 +280,7 @@ const NAME_ENTITIES = {
       { title: "L.A. Street Names: Patton Street (“This 1883 street was named for its developer, attorney George Smith Patton (1856-1927)”)",
         url: "https://lastreetnames.com/street/patton-street/" },
       { title: "L.A. Street Names: Glassell Street (Glassell’s firm; “his nephew George S. Patton replaced Smith”)",
-        url: "https://lastreetnames.com/street/glassell-street/" },
-      { title: "Wikipedia: George S. Patton (attorney)",
-        url: "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)" }
+        url: "https://lastreetnames.com/street/glassell-street/" }
     ],
     disputed: false,
     note: null,
@@ -362,8 +354,6 @@ const NAME_ENTITIES = {
     namedAfterLink: null,
     categories: ["unknown"],
     sources: [
-      { title: "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874",
-        url: "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10" },
       { title: "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
         url: "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24" }
     ],
@@ -454,9 +444,7 @@ const NAME_ENTITIES = {
     categories: ["person", "alive"],
     sources: [
       { title: "L.A. Street Names: Towne Avenue",
-        url: "https://lastreetnames.com/street/towne-avenue-dtla/" },
-      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }
+        url: "https://lastreetnames.com/street/towne-avenue-dtla/" }
     ],
     disputed: false,
     note: "Named when the subdividers of Joseph Wolfskill's downtown orchard gave 13 acres " +
@@ -479,9 +467,7 @@ const NAME_ENTITIES = {
     categories: ["person","governor"],
     sources: [
       { title: "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
-        url: "https://lastreetnames.com/street/towne-avenue-dtla/" },
-      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }
+        url: "https://lastreetnames.com/street/towne-avenue-dtla/" }
     ],
     disputed: false,
     note: "Part of the same 1887 Southern Pacific package as Towne Avenue. The name did not stay put: the street platted “Stanford” in 1887 is modern Crocker Street, and the Stanford name moved a block east onto the former Ruth Avenue — modern Stanford Avenue — some time after Feb. 1897.",
@@ -518,8 +504,6 @@ const NAME_ENTITIES = {
     sources: [
       { title: "Los Angeles Herald, “Talking Retrenchment” (the renaming committee restores Ruth Avenue), Feb. 21, 1897",
         url: "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28" },
-      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" },
       { title: "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the " +
           "Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — names Ruth as one " +
           "of the block's bounding streets",
@@ -542,8 +526,6 @@ const NAME_ENTITIES = {
     namedAfterLink: null,
     categories: ["unknown"],
     sources: [
-      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" },
       { title: "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the " +
           "Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth " +
           "named as the block's bounding streets",
@@ -571,10 +553,7 @@ const NAME_ENTITIES = {
     namedAfter: "{{Ceres}}, the Roman goddess of agriculture and the harvest",
     namedAfterLink: "https://en.wikipedia.org/wiki/Ceres_(mythology)",
     categories: ["unknown"],
-    sources: [
-      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }
-    ],
+    sources: [],
     disputed: false,
     note: "This street was laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
     internalNote: "Carried over from streets-data.js, whose note said the same thing. Re-searched 2026-08-31 (web + Kines): still nothing. Treat as settled-unknown rather than an open lead — the note is the answer the project can give.",
@@ -587,11 +566,7 @@ const NAME_ENTITIES = {
     namedAfter: null,
     namedAfterLink: null,
     categories: ["unknown"],
-    sources: [
-      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. " +
-          "Dockweiler, July–Aug. 1887) — shows “Omar Ave” at 312 Omar St's location",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }
-    ],
+    sources: [],
     disputed: false,
     note: "Platted with the rest of the Wolfskill Orchard Tract in 1887 and apparently never " +
       "renamed — only the generic drifted, from the plat's “Omar Ave” to today's " +
@@ -636,9 +611,7 @@ const NAME_ENTITIES = {
       { title: "Recorded map: F.P. Howard & Co.'s Subdivision of the Bliss Tract, M.R. 12-42 " +
           "(subdivided Aug. 1886 by Geo. E. Knox) — shows “Poplar Street” at " +
           "1100 E 5th St's location",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf" },
-      { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" }
+        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf" }
     ],
     disputed: false,
     note: "Named on Dr. Frederick Preston Howard's Bliss Tract in 1886, one block south of the " +
@@ -663,8 +636,6 @@ const NAME_ENTITIES = {
     namedAfterLink: "https://lastreetnames.com/street/witmer-street/",
     categories: ["person", "alive"],
     sources: [
-      { title: "L.A. Street Names: Witmer Street (\u201cWitmer Street itself was named in January 1886\u201d)",
-        url: "https://lastreetnames.com/street/witmer-street/" },
       { title: "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
         url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
     ],
@@ -685,8 +656,6 @@ const NAME_ENTITIES = {
     namedAfterLink: "https://lastreetnames.com/street/lucas-avenue/",
     categories: ["person", "alive"],
     sources: [
-      { title: "L.A. Street Names: Lucas Avenue (\u201cnamed in 1884 on a tract he was selling with Edward Bentley and Moye Wicks\u201d)",
-        url: "https://lastreetnames.com/street/lucas-avenue/" },
       { title: "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
         url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
     ],
@@ -707,9 +676,7 @@ const NAME_ENTITIES = {
     categories: ["place"],
     sources: [
       { title: "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
-        url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" },
-      { title: "L.A. Street Names: Witmer Street (on the Witmers’ 650 acres at Crown Hill)",
-        url: "https://lastreetnames.com/street/witmer-street/" }
+        url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
     ],
     disputed: false,
     note: null,
@@ -752,9 +719,7 @@ const NAME_ENTITIES = {
     categories: ["number"],
     sources: [
       { title: "L.A. Street Names: 1st Street (on the numbering system)",
-        url: "https://lastreetnames.com/street/0001st-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" }
+        url: "https://lastreetnames.com/street/0001st-street/" }
     ],
     disputed: false,
     note: null,
@@ -769,9 +734,7 @@ const NAME_ENTITIES = {
     categories: ["number"],
     sources: [
       { title: "L.A. Street Names: 1st Street (on the numbering system)",
-        url: "https://lastreetnames.com/street/0001st-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" }
+        url: "https://lastreetnames.com/street/0001st-street/" }
     ],
     disputed: false,
     note: null,
@@ -787,10 +750,6 @@ const NAME_ENTITIES = {
     sources: [
       { title: "L.A. Street Names: Main Street",
         url: "https://lastreetnames.com/street/main-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
       { title: "Wikipedia: Main Street (Los Angeles)",
         url: "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)" }
     ],
@@ -808,13 +767,7 @@ const NAME_ENTITIES = {
     categories: ["place"],
     sources: [
       { title: "L.A. Street Names: Hill Street",
-        url: "https://lastreetnames.com/street/hill-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
-      { title: "Wikipedia: Bunker Hill (Los Angeles)",
-        url: "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)" }
+        url: "https://lastreetnames.com/street/hill-street/" }
     ],
     disputed: false,
     note: null,
@@ -831,8 +784,6 @@ const NAME_ENTITIES = {
     sources: [
       { title: "L.A. Street Names: Hill Street (on Calle del Toro / Castelar / N. Hill)",
         url: "https://lastreetnames.com/street/hill-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
       { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
       { title: "Los Angeles Herald, “Common Council”, Feb. 14, 1874 (the petition renaming Bull St. to Castelar)",
@@ -851,9 +802,7 @@ const NAME_ENTITIES = {
     categories: ["place"],
     sources: [
       { title: "L.A. Street Names: Broadway (on Fort Street)",
-        url: "https://lastreetnames.com/street/broadway/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" }
+        url: "https://lastreetnames.com/street/broadway/" }
     ],
     disputed: false,
     note: "Lettered “Calle Fortin” on the 1849 survey. Renamed Broadway in February 1890, after New York’s, on a petition by the printer Fred Lind Alles.",
@@ -870,10 +819,6 @@ const NAME_ENTITIES = {
     sources: [
       { title: "L.A. Street Names: Broadway (on Calle Eternidad)",
         url: "https://lastreetnames.com/street/broadway/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" },
       { title: "Homestead Museum: Calle Eternidad in the 1880s",
         url: "https://homesteadmuseum.blog/2016/07/18/museum-director-musings-through-the-viewfinder-on-calle-eternidad-1880s/" }
     ],
@@ -891,11 +836,7 @@ const NAME_ENTITIES = {
     categories: ["unknown"],
     sources: [
       { title: "L.A. Street Names: Ord Street (on Calle Alta / Walters / Ord)",
-        url: "https://lastreetnames.com/street/ord-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
+        url: "https://lastreetnames.com/street/ord-street/" }
     ],
     disputed: false,
     note: "It became Walters Street in 1886, for a resident named George Walters, and Ord Street in 1890 — for the surveyor who had declined to name anything after himself in 1849.",
@@ -911,11 +852,7 @@ const NAME_ENTITIES = {
     categories: ["nature"],
     sources: [
       { title: "L.A. Street Names: Yale Street",
-        url: "https://lastreetnames.com/street/yale-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
+        url: "https://lastreetnames.com/street/yale-street/" }
     ],
     disputed: false,
     note: "Lettered “Calle de las Avispas” on the 1849 survey — literally Wasp Street, though the English half of the label says Hornet. Renamed Yale in February 1874, by the same petition that turned Bull Street into Castelar.",
@@ -931,11 +868,7 @@ const NAME_ENTITIES = {
     categories: ["unknown"],
     sources: [
       { title: "L.A. Street Names: Alpine Street",
-        url: "https://lastreetnames.com/street/alpine-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
+        url: "https://lastreetnames.com/street/alpine-street/" }
     ],
     disputed: false,
     note: "Lettered “Calle de las Vírgenes” on the 1849 survey, which gives no explanation — bachelorettes, nuns and the Virgin Mary have all been suggested and none is documented. Renamed Alpine Street in August 1887 by petition of the real-estate agent William P. McIntosh, who had run a Sierra lumber company near Alpine County and gave no reason.",
@@ -951,10 +884,6 @@ const NAME_ENTITIES = {
     sources: [
       { title: "L.A. Street Names: Grand Avenue",
         url: "https://lastreetnames.com/street/grand-avenue/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
       { title: "Wikipedia: Grand Avenue (Los Angeles)",
         url: "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)" }
     ],
@@ -972,10 +901,6 @@ const NAME_ENTITIES = {
     sources: [
       { title: "L.A. Street Names: Spring Street",
         url: "https://lastreetnames.com/street/spring-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" },
       { title: "Wikipedia: Spring Street (Los Angeles)",
         url: "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)" }
     ],
@@ -993,11 +918,7 @@ const NAME_ENTITIES = {
     categories: ["descriptive"],
     sources: [
       { title: "L.A. Street Names: College Street",
-        url: "https://lastreetnames.com/street/college-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
+        url: "https://lastreetnames.com/street/college-street/" }
     ],
     disputed: false,
     note: "A church request in June 1849 for a colegio — a secondary school — on this ground prompted Ord and Hutton to letter it “Calle del Colegio” a month later. The school was never built; the street kept the name.",
@@ -1012,11 +933,7 @@ const NAME_ENTITIES = {
     categories: ["nature"],
     sources: [
       { title: "L.A. Street Names: Flower Street",
-        url: "https://lastreetnames.com/street/flower-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" }
+        url: "https://lastreetnames.com/street/flower-street/" }
     ],
     disputed: false,
     note: null,
@@ -1032,11 +949,7 @@ const NAME_ENTITIES = {
     categories: ["nature"],
     sources: [
       { title: "L.A. Street Names: Olive Street",
-        url: "https://lastreetnames.com/street/olive-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" }
+        url: "https://lastreetnames.com/street/olive-street/" }
     ],
     disputed: false,
     note: null,
@@ -1051,11 +964,7 @@ const NAME_ENTITIES = {
     categories: ["aspiration","person","unknown"],
     sources: [
       { title: "L.A. Street Names: Hope Street",
-        url: "https://lastreetnames.com/street/hope-street/" },
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf" }
+        url: "https://lastreetnames.com/street/hope-street/" }
     ],
     disputed: true,
     note: "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
@@ -1069,12 +978,7 @@ const NAME_ENTITIES = {
     namedAfter: null,
     namedAfterLink: null,
     categories: ["unknown"],
-    sources: [
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
-    ],
+    sources: [],
     disputed: false,
     note: "Lettered “Calle de las Adobes” on the 1849 survey and still Adobe Street today. The obvious reading is the adobe houses along it, but no source says so.",
     internalNote: "NOT in streets-data.js at all — the old file has no Adobe Street entry, so there was nothing to carry over and nothing found since. Kines has no page (checked 2026-08-31).",
@@ -1086,12 +990,7 @@ const NAME_ENTITIES = {
     namedAfter: null,
     namedAfterLink: null,
     categories: ["unknown"],
-    sources: [
-      { title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
-        url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" },
-      { title: "Recorded map: Ord’s Survey, county-recorder’s copy, M.R. 53-66/73 (recorded Dec. 2, 1893)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf" }
-    ],
+    sources: [],
     disputed: false,
     note: "Lettered on the 1849 survey along ground that roughly follows one block of what is now Cesar E. Chavez Avenue. Descriptive, presumably, but nothing documents it.",
     internalNote: "The Chavez entry starts at Macy Street. Disambiguated at minting because Short Street is a name that recurs.",
@@ -1112,11 +1011,7 @@ const NAME_ENTITIES = {
     categories: ["person", "alive"],
     sources: [
       { title: "Los Angeles Revisited: The Antebellum Past at Cameron Lane in DTLA",
-        url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" },
-      { title: "Wikipedia: Cameron E. Thom",
-        url: "https://en.wikipedia.org/wiki/Cameron_E._Thom" },
-      { title: "Recorded map: Cameron Tract, M.R. 7-21 (surveyed by H.J. Stevenson, Oct. 1885)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" }
+        url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" }
     ],
     disputed: false,
     note: "Thom bought the ground near today's Convention Center in 1855 for $153 and subdivided it as the land boom got going thirty years later, lettering his own family across it: Cameron for himself, Alexander for his grandfather, Catesby and Pembroke for names his brothers and children carried. He had left Los Angeles in 1862 to fight for the Confederacy, was wounded at Gettysburg, came back to serve as district attorney and then as mayor. His family had held slaves in Virginia.",
@@ -1129,12 +1024,7 @@ const NAME_ENTITIES = {
     namedAfter: "{{Alexander Thom}} (c. 1698–1784), Cameron Thom's paternal grandfather, a Clan Cameron Highlander who fled to the American colonies in 1746",
     namedAfterLink: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html",
     categories: ["person"],
-    sources: [
-      { title: "Los Angeles Revisited: The Antebellum Past at Cameron Lane in DTLA",
-        url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" },
-      { title: "Recorded map: Cameron Tract, M.R. 7-21 (surveyed by H.J. Stevenson, Oct. 1885)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" }
-    ],
+    sources: [],
     disputed: false,
     note: "The oldest name on the tract, and the one that explains the rest: it is Clan Cameron of Lochiel that Cameron Thom's own given name comes from. The lane was absorbed into the Lebanon Street continuation in 1917.",
     internalNote: "Dates and the 1746 flight are the blog's; nothing else corroborates them here.",
@@ -1148,11 +1038,7 @@ const NAME_ENTITIES = {
     categories: ["person"],
     sources: [
       { title: "Los Angeles Revisited: The Antebellum Past at Cameron Lane in DTLA",
-        url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" },
-      { title: "Wikipedia: Cameron E. Thom",
-        url: "https://en.wikipedia.org/wiki/Cameron_E._Thom" },
-      { title: "Recorded map: Cameron Tract, M.R. 7-21 (surveyed by H.J. Stevenson, Oct. 1885)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" }
+        url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" }
     ],
     disputed: false,
     note: "Named from the family rather than for one person in particular.",
@@ -1167,8 +1053,6 @@ const NAME_ENTITIES = {
     namedAfterLink: null,
     categories: ["unknown"],
     sources: [
-      { title: "Recorded map: Cameron Tract, M.R. 7-21 (surveyed by H.J. Stevenson, Oct. 1885)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" },
       { title: "Los Angeles Revisited: The Antebellum Past at Cameron Lane in DTLA",
         url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" }
     ],
@@ -1184,8 +1068,6 @@ const NAME_ENTITIES = {
     namedAfterLink: null,
     categories: ["nature","unknown"],
     sources: [
-      { title: "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
       { title: "Wikipedia: Arts District, Los Angeles",
         url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
     ],
@@ -1202,8 +1084,6 @@ const NAME_ENTITIES = {
     namedAfterLink: null,
     categories: ["nature", "unknown"],
     sources: [
-      { title: "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
       { title: "Wikipedia: Arts District, Los Angeles",
         url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
     ],
@@ -1219,8 +1099,6 @@ const NAME_ENTITIES = {
     namedAfterLink: null,
     categories: ["nature", "unknown"],
     sources: [
-      { title: "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
       { title: "Wikipedia: Arts District, Los Angeles",
         url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
     ],
@@ -1236,8 +1114,6 @@ const NAME_ENTITIES = {
     namedAfterLink: null,
     categories: ["nature", "unknown"],
     sources: [
-      { title: "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
       { title: "Wikipedia: Arts District, Los Angeles",
         url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
     ],
@@ -1253,8 +1129,6 @@ const NAME_ENTITIES = {
     namedAfterLink: "https://en.wikipedia.org/wiki/Mesquite",
     categories: ["nature"],
     sources: [
-      { title: "Recorded map: Plan of the Goodwin Tract, M.R. 11-42 (recorded Oct. 6, 1886)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf" },
       { title: "Wikipedia: Arts District, Los Angeles",
         url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
     ],
@@ -1272,9 +1146,7 @@ const NAME_ENTITIES = {
     categories: ["person", "alive"],
     sources: [
       { title: "L.A. Street Names: Santee Street",
-        url: "https://lastreetnames.com/street/santee-street/" },
-      { title: "Wikipedia: Milton Santee",
-        url: "https://en.wikipedia.org/wiki/Milton_Santee" }
+        url: "https://lastreetnames.com/street/santee-street/" }
     ],
     disputed: false,
     note: "Santee later moved to San Diego County, where in 1893 his second wife had the town of Cowleston renamed Santee in his honour — a name it still keeps.",
@@ -1307,11 +1179,7 @@ const NAME_ENTITIES = {
     categories: ["person","governor"],
     sources: [
       { title: "L.A. Street Names: Pico Boulevard",
-        url: "https://lastreetnames.com/street/pico-boulevard/" },
-      { title: "Wikipedia: Pío Pico",
-        url: "https://en.wikipedia.org/wiki/Pio_Pico" },
-      { title: "Recorded map: Cameron Tract, M.R. 7-21 (surveyed by H.J. Stevenson, Oct. 1885)",
-        url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" }
+        url: "https://lastreetnames.com/street/pico-boulevard/" }
     ],
     disputed: false,
     note: "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid.",

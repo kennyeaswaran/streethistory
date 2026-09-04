@@ -205,17 +205,19 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("an entity citing a sheet that does not letter it is flagged", flagged.includes("bull"),
        "expected bull among: " + flagged.join(", "));
     await page.click(`#rows tr.ent[data-id="bull"]`);
-    ok("the warning names the sheet and where it IS attested",
-       /wrong sheet of the same map/.test(await page.innerText("#problems")) &&
+    ok("the warning says so and names where it IS lettered",
+       /does NOT letter this name/.test(await page.innerText("#problems")) &&
        (await page.innerText("#problems")).includes("mr053-073"));
     ok("it is a warning, not an error — it must not block a save",
        (await page.$$("#problems .wrn")).length > 0 && (await page.$$("#problems .err")).length === 0);
     ok("the row is not marked as broken", !(await page.$('#rows tr.ent[data-id="bull"].bad')));
-    // The county serves all five Wolfskill sheets as one PDF, so citing that
-    // url is answered by a row on any of them — flagging those would be three
-    // false alarms on good citations.
-    ok("entities citing a scan shared by several sheets are not flagged",
-       !flagged.includes("gladys-ave") && !flagged.includes("ceres-ave") && !flagged.includes("poplar-st"));
+    // prune-sources.js has already taken the redundant citations out, so the
+    // two redundancy rules should have nothing left to say about the corpus.
+    const all = await page.$$eval("#rows tr.ent", ts => ts.map(t => t.dataset.id));
+    ok("nothing still repeats its namedAfterLink",
+       !(await page.evaluate(() => document.body.innerText).then(t => /repeats namedAfterLink/.test(t))));
+    ok("the tessa2 Ord scan is no longer carried by entities it letters",
+       !flagged.includes("hill-street-downtown") && !flagged.includes("main-street-dtla"));
     await page.click('#stateChips button[data-s="any"]');
   }
 

@@ -217,33 +217,42 @@ console.log("\nvalidation");
   ok("a working note in `note` warns",
      wrns({ a: { ...base(), note: "Kenny: worth a look" } }).some(m => /shown to readers/.test(m)));
 
-  // Citing a sheet that does not letter the name — only checkable against the
-  // corpus, so it is silent until the documents/ scan has run.
-  const cited = { ...base(), sources: [{ title: "t", url: "https://x/sheet5.pdf" }] };
-  const corpus = { docsByUrl: { "https://x/sheet5.pdf": ["mr030-009-p5"] },
-                   attesting: { a: ["mr030-009-p2"] } };
-  const cwrns = o => (validateAll(o, corpus).a || []).filter(x => x.kind === "wrn").map(x => x.msg);
-  ok("citing a corpus sheet with no row for the entity warns",
-     cwrns({ a: cited }).some(m => /wrong sheet of the same map/.test(m)));
-  ok("…and says where it IS attested", cwrns({ a: cited }).some(m => /mr030-009-p2/.test(m)));
-  ok("citing a sheet that does letter it is quiet",
-     !(validateAll({ a: cited }, { docsByUrl: corpus.docsByUrl, attesting: { a: ["mr030-009-p5"] } }).a || [])
-        .some(x => /wrong sheet/.test(x.msg)));
-  // The county serves all five Wolfskill sheets as one PDF, so a citation of
-  // that url is answered by a row on any of them.
-  ok("a url shared by several sheets is answered by a row on any of them",
-     !(validateAll({ a: cited }, { docsByUrl: { "https://x/sheet5.pdf": ["mr030-009-p1", "mr030-009-p2"] },
-                                   attesting: { a: ["mr030-009-p2"] } }).a || [])
-        .some(x => /wrong sheet/.test(x.msg)));
-  ok("…and says so when it flags one",
-     (validateAll({ a: cited }, { docsByUrl: { "https://x/sheet5.pdf": ["mr030-009-p1", "mr030-009-p2"] },
+  // --- redundancy in `sources` -------------------------------------------
+  const url = "https://x/sheet5.pdf";
+  const corpus = { docsByUrl: { [url]: ["mr030-009-p5"] }, attesting: { a: ["mr030-009-p2"] } };
+  const cwrns = (e, c) => (validateAll({ a: e }, c === undefined ? corpus : c).a || [])
+    .filter(x => x.kind === "wrn").map(x => x.msg);
+
+  ok("a source repeating namedAfterLink warns",
+     cwrns({ ...base(), namedAfterLink: "https://w/x", sources: [{ title: "t", url: "https://w/x" }] })
+       .some(m => /repeats namedAfterLink/.test(m)));
+  ok("…and does so with no corpus loaded, since it needs none",
+     cwrns({ ...base(), namedAfterLink: "https://w/x", sources: [{ title: "t", url: "https://w/x" }] }, null)
+       .some(m => /repeats namedAfterLink/.test(m)));
+
+  const cited = { ...base(), sources: [{ title: "t", url }] };
+  ok("citing a corpus document that letters the name warns as redundant",
+     (validateAll({ a: cited }, { docsByUrl: { [url]: ["mr030-009-p2"] }, attesting: { a: ["mr030-009-p2"] } }).a || [])
+       .some(x => /which letters this name/.test(x.msg)));
+  ok("citing one that does NOT letter it is flagged differently",
+     cwrns(cited).some(m => /does NOT letter this name/.test(m)));
+  ok("…and says where the name IS lettered", cwrns(cited).some(m => /mr030-009-p2/.test(m)));
+  // The county serves all five Wolfskill sheets as one PDF, and the LAPL scan
+  // of the Ord survey is a copy of all five Ord sheets: a citation of either
+  // url is answered by a row on any of the documents behind it.
+  ok("a url shared by several documents is answered by a row on any of them",
+     (validateAll({ a: cited }, { docsByUrl: { [url]: ["mr030-009-p1", "mr030-009-p2"] },
+                                  attesting: { a: ["mr030-009-p2"] } }).a || [])
+       .some(x => /which letters this name/.test(x.msg)));
+  ok("…and the flag names how many share the scan",
+     (validateAll({ a: cited }, { docsByUrl: { [url]: ["mr030-009-p1", "mr030-009-p2"] },
                                   attesting: { a: ["mr053-073"] } }).a || [])
-        .some(x => /sharing that scan/.test(x.msg)));
-  ok("with no corpus loaded the rule is silent",
-     !wrns({ a: cited }).some(m => /wrong sheet/.test(m)));
+       .some(x => /sharing that scan/.test(x.msg)));
+  ok("with no corpus loaded the document rules are silent",
+     !cwrns(cited, null).some(m => /letter this name/.test(m)));
   ok("a source that is not a corpus document is never flagged",
-     !(validateAll({ a: { ...base(), sources: [{ title: "t", url: "https://lastreetnames.com/x/" }] } }, corpus).a || [])
-        .some(x => /wrong sheet/.test(x.msg)));
+     !cwrns({ ...base(), sources: [{ title: "t", url: "https://lastreetnames.com/x/" }] })
+        .some(m => /letter this name/.test(m)));
 
   // And the real corpus should be clean, because check-model.js says it is.
   const live = { ...require("./names.js").NAME_ENTITIES };

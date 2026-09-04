@@ -427,30 +427,40 @@ function validateAll(all, corpus) {
     if (e.disputed === true && !(e.categories || []).includes("disputed"))
       push(id, "wrn", "disputed is set but the 'disputed' category is not");
 
-    // CITING A SHEET THAT DOES NOT LETTER THE NAME. An entity may cite a
-    // recorded map that is also a document in the corpus — on a stretch no
-    // sheet covers, that citation is the only link to the evidence, and the
-    // generator keeps it. But citing a sheet with no row for this entity means
-    // either a missing row or, far more often, the wrong sheet of a multi-sheet
-    // plat. Only checkable against the corpus, so it is skipped until the
-    // documents/ scan has run.
-    // One url can be several documents — the county serves all five sheets of
-    // the Wolfskill Orchard Tract as one PDF — so a citation of that url is
-    // answered by a row on ANY of them. Sheets that are separate files are
-    // still separate, and that is where the real errors are.
-    if (corpus) for (const s of e.sources || []) {
+    // REDUNDANCY IN `sources`, and the one case that is not redundant.
+    //
+    // `sources` justifies the naming claim. It is not the place to repeat what
+    // the reader already has, and the generator will not print a duplicate —
+    // so both of the first two shapes are dead weight that goes stale. The
+    // third is legitimate and flagged only so a wrong sheet cannot hide in it.
+    //
+    // One url can be several documents — the county serves all five Wolfskill
+    // sheets as one PDF, and the LAPL scan of the Ord survey is a declared
+    // copy of all five Ord sheets — so a citation is answered by a row on any
+    // of them. Only checkable against the corpus, so it waits for the scan.
+    for (const s of e.sources || []) {
+      if (s.url && s.url === e.namedAfterLink) {
+        push(id, "wrn", "sources repeats namedAfterLink — the namedAfter line already links it, " +
+                        "and the generator prints it once; drop it from sources");
+        continue;
+      }
+      if (!corpus) continue;
       const cited = corpus.docsByUrl[s.url];
       if (!cited) continue;
       const on = corpus.attesting[id] || [];
-      if (cited.some(d => on.includes(d))) continue;
+      const match = cited.find(d => on.includes(d));
+      if (match) {
+        push(id, "wrn", `sources cites documents/${match}/, which letters this name — the ` +
+          `generator cites the earliest such document itself, dated and from the registry, ` +
+          `so this hand copy only freezes one sheet; drop it`);
+        continue;
+      }
       const what = cited.length === 1 ? `documents/${cited[0]}/`
         : `documents/${cited[0]}/ (and ${cited.length - 1} more sharing that scan)`;
-      push(id, "wrn", `sources cites ${what}, but no row there names this entity — ` +
-        (on.length
-          ? `it IS attested on ${on.join(", ")}, so the citation probably names the ` +
-            `wrong sheet of the same map`
-          : `and it is not attested anywhere in the corpus, so either a row is missing or ` +
-            `the citation is wrong`));
+      push(id, "wrn", `sources cites ${what}, which does NOT letter this name — fine if it is ` +
+        `cited for something else (a related name, an adjoining tract, a date the sheet fixes), ` +
+        `but check it is not simply the wrong sheet` +
+        (on.length ? `; the name IS lettered on ${on.join(", ")}` : ""));
     }
   }
   return out;
