@@ -58,6 +58,69 @@ Periodically sweep the whole file. Keep entries dated.
   Ordinance No. 4093 (N.S.) — and cite a manuscript record. Not yet applied
   as of 2026-08.
 
+## Castelar and Yale: requested Feb. 1874, enacted where? (2026-09-04)
+
+`documents/lah-1874-02-13/` is the Herald's report of a property owners'
+petition asking that **Grasshopper → Union Avenue, Bull → Castelar, and Wasp →
+Yale**, referred to a special committee to draft an ordinance.
+
+**One of the three did not happen.** Two weeks later
+(`documents/lah-1874-02-27/`) a rival petition wins and Grasshopper becomes
+**Pearl**, not Union Avenue — so this petition is a request, not an outcome,
+and the corpus now has proof of that in the same pair of documents.
+
+Which leaves Castelar and Yale **unattested by any instrument we have read**.
+The Feb. 27 item records one ordinance carrying, for one street: "An ordinance
+changing Grasshopper street to Pearl street was carried." Castelar Street and
+Yale Street plainly exist, so an instrument exists; nothing in hand names it.
+
+Where to look:
+- the rest of the Feb. 27 column, and the council reports between Feb. 13 and
+  Feb. 27 — the committee was told to draft *an* ordinance for all three, so
+  it may have carried in parts;
+- the 1874 council minutes themselves (Record Series R05.557, the series that
+  produced the 1897 transcription), which would give the ordinance a number.
+
+⚠ **`names.js` currently overclaims this.** `bull` says "Renamed Castelar
+Street by petition in February 1874" and `hornet` "Renamed Yale in February
+1874, by the same petition", both citing the Feb. 14 article — which is the
+petition, and the petition is exactly what we now know does not settle the
+outcome. Both notes are PUBLIC. They want softening to "petitioned in February
+1874; the enacting ordinance has not been found" until it is. Left for Kenny
+rather than rewritten here, since the prose is his and he may know more.
+
+(Both entities also cite that article as a `source`, which `check-model.js`
+now flags — "cites documents/lah-1874-02-13/, which does NOT letter this
+name". That flag is correct and is the same finding arriving by machine.)
+
+## Bunker Hill Avenue, 1874 — an unplaced name (2026-09-04)
+
+The same Herald column that reports the Grasshopper → Pearl renaming
+(`documents/lah-1874-02-27/`, CDNC `LAH18740227.2.10`) carries three other
+council items, read off the scan by Kenny:
+
+- "the grade of **Fort street** from Temple street to Second street"
+- "the grade of **Temple** from Fort to **Bunker Hill Avenue**"
+- "defining the lines of **Bunker Hill Avenue** and declaring it a public avenue"
+
+Fort Street is modern Broadway (renamed Feb. 1890), so the second item puts
+Bunker Hill Avenue somewhere west of Broadway along Temple — which in modern
+terms is Hill, Olive, Grand or Hope. **That is as far as the text goes.**
+Hill Street is the tempting reading and is not the only one, and settling it by
+which name sounds right is the failure mode rule 2 exists to stop.
+
+Deliberately NOT entered as an attestation from that document: the document is
+`sweptFully` for the one renaming it reports, and a row here would claim a name
+on ground the text does not identify. What would settle it: a pre-1890 map or
+survey of the Temple/Fort block naming the avenue, or the 1874 council minutes
+themselves (Record Series R05.557 — the same series that produced the 1897
+transcription), which would give the "defining the lines" item its metes and
+bounds.
+
+Also worth noting for whoever picks this up: "declaring it a public avenue" in
+1874 dates the pavement, so whichever modern street it is gains an existence
+claim as well as a name one.
+
 ## Serial-source leads (Sanborn atlases & city directories, 2026-08)
 
 Two source families new to the project, brought in by Kenny 2026-08 and

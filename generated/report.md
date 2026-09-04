@@ -2,12 +2,16 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 273; entries: 557
+- Streets: 273; entries: 558
 - Stub entities minted from OSM (unresearched): 227
 - Curated entities: 83
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
+## Ambiguous OSM binds (NOT bound — fix by adding extents or disambiguation)
+- OSM "Georgia Street" matches entities georgia-east, georgia-bell — not bound
+
 ## Partially swept documents (no negative inference contributed)
+- lah-1874-02-13: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)

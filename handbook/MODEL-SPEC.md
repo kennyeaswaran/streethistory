@@ -297,6 +297,8 @@ beside the .js in the same folder; the two cross-reference by id.
 
   date: { on: "1875-05-19" },        // or { after: "1906", before: "1950-06" }
                                      // for a Sanborn sheet with an undated paste-on
+  recorded: null,                    // optional: when the ARTIFACT was filed or
+                                     // copied, where that differs from `date`
   form: "drawn",                     // drawn | textual | derived — see §4.1a
   type: "tract-map",                 // tract-map | survey | sanborn | directory
                                      // | ordinance | news-report | osm
@@ -344,6 +346,31 @@ gives spellings, not ids, so the generator resolves them:
 Stubs must be distinguishable from curated entities so a human can see what
 has actually been researched — no sources and no `namedAfter` is sufficient,
 and the generated report should count them.
+
+#### `date` is when the content was made, not when the paper was filed
+
+**`date` is the date the document's statements are evidence about** — the day
+the survey was made, the meeting held, the ordinance adopted. It is not the
+date on the artifact in front of you, and the two come apart more often than is
+comfortable:
+
+- **M.R. 66-35** was surveyed March 1894 and *recorded May 1, 1897* — months
+  after the February 1897 renaming, which is why it still letters the old
+  names. `date` is 1894-03. Dating it 1897 would make its rows post-date a
+  renaming they precede.
+- **The Ord/Hutton survey** was made August 29, 1849; every sheet the project
+  holds is the county recorder's certified copy, *recorded December 2, 1893*.
+  `date` is 1849-08-29.
+
+This is load-bearing rather than tidy: everything that reasons about order —
+the interval logic (§6.2), `planned`/`built` (§6.4), and the derivation of
+unqualified change extents — asks `date`, and a document dated by its filing
+would silently sort into the wrong century of the argument.
+
+The artifact's own date has a home of its own, **`recorded`**, an optional plain
+date string. Nothing derives from it. It exists so the fact stops living in
+header comments — where the Ord copy's 1893 had drifted until it survived only
+in a parked folder — and so nobody "corrects" a date that is right.
 
 ### 4.1a `form` — is the evidence drawn or written
 
@@ -1155,11 +1182,27 @@ Color schemes, one active at a time, with the legend reflecting the active one:
    heard of this street" rather than "here is a document about this ground".
 
    **Amended 2026-08-31: `attested` counts POSITIVE rows only** (`state`,
-   `unnamed`, `change`, `annotation`). An `absent` row is testimony of the
+   `unnamed`, `annotation`). An `absent` row is testimony of the
    opposite sign — "attested as existing" and "attested as not-yet-existing"
    must not look alike — so an absent-only segment stays grey, its finding
    surfaces in the popup via the generated `absentAsOf` field ("No street
    yet as of 1849"), and the rows wait for scheme 4.
+
+   **Amended 2026-09-04: and not `change`,** which that list wrongly included
+   and §6.2's table had always excluded. A renaming is a fact about NAMES: it
+   says this name became that one, not that any particular pavement was there
+   to carry it. The ground it truly applies to is ground some other document
+   already put the name on — so where another row attests, a change row adds
+   nothing, and where none does, it is not testimony about that ground at all.
+   Counting it gave Boylston Street `attested: true` and `knownFraction: 0.98`
+   along its whole modern length on the strength of one ordinance row, over
+   pavement nothing says was ever built.
+
+   This is conservative rather than final: a **qualified** change — one naming
+   the stretch it applies to — does assert that stretch existed to be renamed,
+   and should attest again once rows declare which kind they are.
+   handbook/change-rows-amendment.md is the proposal; until it lands, no row
+   carries the marker and the safe reading is that none of them attests.
 
    **Blue is a saturation ramp, not one color.** The generator emits
    `knownFraction` per attested segment: the fraction of [1850,

@@ -25,6 +25,8 @@ JavaScript-only archives, and committing to git.
 | chasing one subdivision's platted names | **handbook/TRACT-RESEARCH.md** (NavigateLA → Map-Ref → DPW scan → transcription) |
 | after name-change dates across a neighborhood | **handbook/SERIAL-SOURCES.md** (Sanborn atlases, city directories) |
 | wanting the shape of the whole thing | **handbook/PIPELINE.md** (four stages, and which two need a human) |
+| working on renamings / change rows | **handbook/change-rows-amendment.md** (the three scopes a change row declares, `excerpts`, and the derivation — §§1-9 now BUILT) |
+| wondering what document to hunt for next | **handbook/WANTED.md** (a standing shopping list: what each missing document unblocks, worst damage first) |
 | holding an unverified hunch | **handbook/research-leads.md** (dated parking lot; sweep it before a street pass) |
 | publishing / git | **handbook/PUBLISHING.md** |
 | looking at the proposed names/documents/generator model | **handbook/MODEL-SPEC.md** (the contract) + **handbook/MODEL-IMPLEMENTATION.md** (built 2026-08-24; 3rd St acceptance diff clean; NOT live) |

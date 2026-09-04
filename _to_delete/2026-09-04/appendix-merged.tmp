@@ -1,0 +1,152 @@
+
+## 10. Specimens: the grammar of a renaming statement
+
+Written from the material already on disk — the Feb. 1897 council minutes
+(`omnibus-1897-renaming-council-minutes.md`, the manuscript) and the Herald's
+print of the same committee report (`omnibus-1897-renaming.md`). Roughly sixty
+statements, and they fall into six forms, not two. **Two of the six are not
+change rows at all**, which is the finding that matters most here.
+
+### The ordinance's own formula
+
+Floor motions quote the instrument's wording, so we know the canonical shape:
+
+> That the name of that certain street known as and called **Stanley Avenue**,
+> is hereby changed to **Tropico Avenue**
+
+> That the name of that certain street known as and called **Wood Avenue from
+> Morrison Road to Soto Street**, is hereby changed to **Griffin Avenue**
+
+One formula, with the extent optional inside the subject. That is the split
+this amendment proposes, and the ordinance draws it in the same place.
+
+### Form 1 — bare pair → **unqualified**
+
+> Hawkins Street | Manitou Street
+> Wolfskill Avenue | Central Avenue
+> Larkin Street | Fourth Street
+> Chestnut Street | Avenue 21
+
+By far the commonest. Roughly forty of the sixty.
+
+### Form 2 — two anchors → **qualified**
+
+> Vine Street **from Second to First** changed to Central Avenue
+> Short Street **from Fourth to Santa Fe Grounds** | Fourth Street
+> Ash Street **from Main to Date** to Queirolo
+> Wood Avenue **from Morrison Road to Soto Street** → Griffin Avenue
+
+Note "Santa Fe Grounds": an anchor need not be a cross street. The extent
+vocabulary has to admit a landmark, and resolving one is research, not
+arithmetic.
+
+### Form 3 — one anchor plus a direction → **qualified**
+
+> Walnut Street, **from Main North** | Avenue 20
+> Jackson Street, **from Pasadena Avenue North** | Avenue 30
+
+This is the shape I earlier mistook for "one end stated, one end open". It is
+not: the open end is *bounded by the direction word*, and the statement is
+completely qualified. It is also the form a resolver would find hardest — "from
+Main north" is only as good as our knowledge of where that street ran in 1897.
+
+### Form 4 — restoration → **not a change row**
+
+> The name **Moore Street reinstated**.
+> The name **Marion Avenue restored**.
+> The name **Ruth Avenue restored**.
+> The name **Yolande Street restored**.
+
+This withdraws a change the draft would have made. Nothing on the ground
+changes name; the street keeps the name it had. It is a fact about the
+instrument, and it produces **no change row** — but it is not worthless, because
+it dates a *negative*: Ruth Avenue was still Ruth in February 1897, which is
+exactly what the corpus uses today to prove the Ruth→Stanford swap postdates
+the ordinance.
+
+Somewhere to put that is an open question. It is not a `change`, not a `state`
+(no sheet letters anything), and not an `absent`. The nearest existing kind is
+`annotation`, which §5 says is "a place fact tied to an extent" — this is a
+name fact tied to an entity. It may want its own kind, or it may be prose on
+the entity with the document cited.
+
+### Form 5 — amendment to the draft's text → **not a change row either**
+
+> the name "**De La Guerra Street**" as mentioned in the draft of said ordinance
+> be changed to "**Boylston Street**"
+
+This edits the instrument, not the city. De La Guerra was never law — the Feb. 2
+version was returned unsigned and its vote reconsidered — so a change row
+`figueroa-gov → de-la-guerra → boylston` would put a phase on the map that never
+existed. The Boylston entity's `note` already says this; nothing enforces it.
+
+**This is the trap in the 1897 material.** A committee report is a list of
+amendments to a draft, and its left-hand column mixes street names that existed
+on the ground with names that existed only in the commission's proposal —
+Alcantara, Escalon, Chicote, Negrete, Zaragoza and Primero are all names the
+commission *coined*, and "Alcantara Street | Taylor Street" therefore means "the
+draft would have said Alcantara; make it Taylor", not "Alcantara Street was
+renamed Taylor Street". The repo currently reads `Larkin Street | Fourth Street`
+from the same table as a real renaming (`omnibus-1897-renaming.md` marks it
+✔ applied). Both readings cannot be right, and **which one holds for which line
+cannot be settled from the committee report alone** — it needs the ordinance
+text, or a pre-1897 map showing a Larkin Street.
+
+Until then, every line drawn from a committee report is at best
+*qualified, unresolved* (§3), and possibly not a renaming at all.
+
+### Form 6 — a duplicate assignment
+
+> Canada Street | Avenue 33   … and …   Lacy Street | Avenue 33
+
+Both in the same set of amendments. One of them must have been corrected later.
+Not a modelling problem, but a reason the model should never silently merge two
+entities because they end up spelling alike.
+
+### What this suggests for the row shape
+
+- The unqualified/qualified split is the document's own, and marking it is
+  transcription rather than interpretation. Good sign.
+- Forms 4 and 5 need somewhere to go that is *not* a change row, or they will
+  be forced into one — and form 5 in particular would fabricate a name phase.
+- An extent's anchors are not always cross streets, and a direction word is a
+  bounding term, not an absent one.
+- The verbatim wording has to travel with the row. Every distinction above is
+  visible in the words and invisible in the resolved extent.
+
+## 11. Documents to pull, in priority order
+
+CDNC now sits behind a bot-verification interstitial — the built-in browser
+reaches it and stops there, and working around bot detection is out of scope
+for an instance. These need Kenny, or Chrome with his own session.
+
+| what | url | why first |
+|---|---|---|
+| Herald, Feb. 27, 1874, "City and Suburbs" | `cdnc.ucr.edu/?a=d&d=LAH18740227.2.10` | already a document (`lah-1874-02-27`) with a change row and **no transcription**. Its wording decides whether `chapules → pearl` is really unqualified |
+| Herald, Feb. 14, 1874, "Common Council" | `cdnc.ucr.edu/?a=d&d=LAH18740214.2.12` | the same council's petition renaming **Bull → Castelar and Hornet → Yale**; url is already in `names.js` under `bull`. Two more renamings, one document, and a *petition* rather than an ordinance — a different document type to design against |
+| Herald, Feb. 19, 1897, "A Storm of Words" | `cdnc.ucr.edu/?a=d&d=LAH18970219.2.24` | cited by `georgia-bell`, `nevada-1886` and `pearl`; carries Forman's dated history and Toberman's claim, and is the source for a **prose-dated spelling period** |
+| Herald, Feb. 21, 1897, "Talking Retrenchment" | `cdnc.ucr.edu/?a=d&d=LAH18970221.2.28` | already transcribed in part; wanted to check the committee table's left column against the manuscript |
+
+**Renamings the corpus asserts with a date and no document at all** — each one
+a candidate once a source is found, and a reason to look at 1874 and 1886–90
+council coverage rather than only 1897:
+
+| renaming | date | mechanism as recorded |
+|---|---|---|
+| Bull → Castelar | Feb. 1874 | petition |
+| Hornet → Yale | Feb. 1874 | the same petition |
+| Charity → Grand | 1886–87 | petition by residents |
+| High → Walters | 1886 | — |
+| Virgin → Alpine | Aug. 1887 | petition (W. P. …) |
+| Eternity → Buena Vista | 1888 | — |
+| Georgia → Georgia Bell | 1889 | — |
+| Fort → Broadway | Feb. 1890 | petition (Fred Lind Alles) |
+| High/Walters → Ord | 1890 | — |
+| Buena Vista → North Broadway | Nov. 1909 | — |
+| Ruth ↔ Stanford / Crocker | after Feb. 1897 | unresearched |
+| 10th → Olympic | 1935 (asked 1929) | — |
+
+Eleven of the twelve predate 1900 and most name a petition, which suggests the
+council-minutes series that produced the 1897 manuscript would answer several
+of them at once — and would give the model specimens of a **petition** and a
+**single-street ordinance**, neither of which the corpus has yet.

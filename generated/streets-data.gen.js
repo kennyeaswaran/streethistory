@@ -6450,58 +6450,23 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "north of Colton (Figueroa St) (discontinuous)",
+        "label": "north of Colton (discontinuous)",
         "name": "Boylston Street",
         "entityId": "boylston",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "1853",
-            "until": "Feb. 1897",
-            "name": "Figueroa Street",
-            "entityId": "figueroa-gov",
-            "formInForce": "Figueroa Street",
-            "origin": "this spelling attested from 1853 {{(source)}} — José Figueroa (1792–1835), governor of Alta California 1833–1835",
-            "originLink": "https://lastreetnames.com/street/figueroa-street/"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Boylston Street",
-            "entityId": "boylston",
-            "formInForce": "Boylston Street",
-            "how": "renaming",
-            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
         "note": "The Feb. 2, 1897 draft ordinance would have made this street “De La Guerra”; the council's Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text.",
-        "attested": true,
-        "knownFraction": 0.98,
+        "attested": false,
         "categories": [
-          "unknown",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person",
-          "governor"
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          },
-          {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
-          },
-          {
-            "title": "L.A. Street Names: Figueroa Street",
-            "url": "https://lastreetnames.com/street/figueroa-street/"
           }
         ],
         "minLat": 34.0568,
@@ -6510,58 +6475,23 @@ const STREET_DATA = {
         "gapAfter": true
       },
       {
-        "label": "south of 3rd (Figueroa St)",
+        "label": "south of 3rd",
         "name": "Boylston Street",
         "entityId": "boylston",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "1853",
-            "until": "Feb. 1897",
-            "name": "Figueroa Street",
-            "entityId": "figueroa-gov",
-            "formInForce": "Figueroa Street",
-            "origin": "this spelling attested from 1853 {{(source)}} — José Figueroa (1792–1835), governor of Alta California 1833–1835",
-            "originLink": "https://lastreetnames.com/street/figueroa-street/"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Boylston Street",
-            "entityId": "boylston",
-            "formInForce": "Boylston Street",
-            "how": "renaming",
-            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
         "note": "The Feb. 2, 1897 draft ordinance would have made this street “De La Guerra”; the council's Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text.",
-        "attested": true,
-        "knownFraction": 0.98,
+        "attested": false,
         "categories": [
-          "unknown",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person",
-          "governor"
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          },
-          {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
-          },
-          {
-            "title": "L.A. Street Names: Figueroa Street",
-            "url": "https://lastreetnames.com/street/figueroa-street/"
           }
         ],
         "maxLat": 34.0568,
@@ -7219,12 +7149,11 @@ const STREET_DATA = {
           }
         ],
         "note": null,
-        "attested": true,
+        "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.73,
         "categories": [
           "descriptive",
           "renamed"
@@ -7254,47 +7183,21 @@ const STREET_DATA = {
         "to": "2nd Street"
       },
       {
-        "label": "2nd to 3rd (Wolfskill Ave)",
+        "label": "2nd to 3rd",
         "name": "Central Avenue",
         "entityId": "central-ave",
-        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted — how and when this stretch joined Central Avenue is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "?",
-            "until": "Feb. 1897",
-            "name": "Wolfskill Avenue",
-            "entityId": "wolfskill-ave",
-            "formInForce": "Wolfskill Avenue",
-            "origin": "arrival on this stretch not directly documented — {{William Wolfskill}}'s old citrus ranch, which the street ran through",
-            "originLink": "https://en.wikipedia.org/wiki/William_Wolfskill"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Central Avenue",
-            "entityId": "central-ave",
-            "formInForce": "Central Avenue",
-            "how": "renaming",
-            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
         "note": null,
-        "attested": true,
+        "attested": false,
         "absentAsOf": {
           "text": "1888 (Wolfskill Orchard Tract, sheet 5 (M.R. 30-13))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
-        "knownFraction": 0.95,
         "categories": [
-          "descriptive",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person"
+          "descriptive"
         ],
         "disputed": false,
         "sources": [
@@ -7305,10 +7208,6 @@ const STREET_DATA = {
           {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "minLat": 34.0461,
@@ -7384,47 +7283,21 @@ const STREET_DATA = {
         "to": "6th Street"
       },
       {
-        "label": "south of 6th (Wolfskill Ave)",
+        "label": "beyond 6th",
         "name": "Central Avenue",
         "entityId": "central-ave",
-        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted — how and when this stretch joined Central Avenue is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "?",
-            "until": "Feb. 1897",
-            "name": "Wolfskill Avenue",
-            "entityId": "wolfskill-ave",
-            "formInForce": "Wolfskill Avenue",
-            "origin": "arrival on this stretch not directly documented — {{William Wolfskill}}'s old citrus ranch, which the street ran through",
-            "originLink": "https://en.wikipedia.org/wiki/William_Wolfskill"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Central Avenue",
-            "entityId": "central-ave",
-            "formInForce": "Central Avenue",
-            "how": "renaming",
-            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
         "note": null,
-        "attested": true,
+        "attested": false,
         "absentAsOf": {
           "text": "1888 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
-        "knownFraction": 0.95,
         "categories": [
-          "descriptive",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person"
+          "descriptive"
         ],
         "disputed": false,
         "sources": [
@@ -7435,14 +7308,49 @@ const STREET_DATA = {
           {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
+        "minLat": 34.0356,
         "maxLat": 34.039,
         "from": "6th Street",
+        "to": {
+          "px": [
+            11,
+            943
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Central Avenue",
+        "entityId": "central-ave",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted — how and when this stretch joined Central Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Central Avenue",
+            "url": "https://lastreetnames.com/street/central-avenue/"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "maxLat": 34.0356,
+        "from": {
+          "px": [
+            11,
+            943
+          ]
+        },
         "to": null
       }
     ]
@@ -9748,44 +9656,18 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "north of 3rd (Pearl St)",
+        "label": "part of",
         "name": "Figueroa Street",
         "entityId": "figueroa-gov",
-        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
+        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835 — how and when this stretch joined Figueroa Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "?",
-            "until": "Feb. 1897",
-            "name": "Pearl Street",
-            "entityId": "pearl",
-            "formInForce": "Pearl Street",
-            "origin": "arrival on this stretch not directly documented — No namesake documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own",
-            "originLink": null
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Figueroa Street",
-            "entityId": "figueroa-gov",
-            "formInForce": "Figueroa Street",
-            "how": "transfer",
-            "origin": "the name arrived from another roadway, renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
         "note": null,
-        "attested": true,
-        "knownFraction": 0.73,
+        "attested": false,
         "categories": [
           "person",
-          "governor",
-          "renamed"
-        ],
-        "formerCategories": [
-          "unknown"
+          "governor"
         ],
         "disputed": false,
         "sources": [
@@ -9794,80 +9676,36 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/figueroa-street/"
           },
           {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          },
-          {
-            "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874 (council renames Grasshopper St → Pearl St)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
-          },
-          {
             "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
-          },
-          {
-            "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
           }
         ],
-        "minLat": 34.0549,
+        "minLat": 34.054,
         "from": null,
-        "to": "3rd Street"
+        "to": {
+          "px": [
+            869,
+            843
+          ]
+        }
       },
       {
-        "label": "beyond 3rd (Pearl St)",
+        "label": "part of",
         "name": "Figueroa Street",
         "entityId": "figueroa-gov",
-        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
+        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835 — how and when this stretch joined Figueroa Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "1849",
-            "until": "Feb. 1874",
-            "name": "Grasshopper Street",
-            "entityId": "chapules",
-            "formInForce": "Grasshopper Street",
-            "origin": "this spelling attested from 1849 {{(source)}} — The insect: grasshoppers crossing this line from the western plains doomed the grape harvest",
-            "originLink": "https://lastreetnames.com/street/figueroa-street/"
-          },
-          {
-            "from": "Feb. 1874",
-            "until": "Feb. 1897",
-            "name": "Pearl Street",
-            "entityId": "pearl",
-            "formInForce": "Pearl Street",
-            "how": "renaming",
-            "origin": "renamed per the Feb. 1874 council action (Herald report) {{(source)}} — No namesake documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Figueroa Street",
-            "entityId": "figueroa-gov",
-            "formInForce": "Figueroa Street",
-            "how": "transfer",
-            "origin": "the name arrived from another roadway, renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
         "note": null,
-        "attested": true,
+        "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
-        "knownFraction": 1,
         "categories": [
           "person",
-          "governor",
-          "renamed"
-        ],
-        "formerCategories": [
-          "nature",
-          "unknown"
+          "governor"
         ],
         "disputed": false,
         "sources": [
@@ -9876,29 +9714,18 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/figueroa-street/"
           },
           {
-            "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874 (council renames Grasshopper St → Pearl St)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
-          },
-          {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
-          },
-          {
             "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
-          },
-          {
-            "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
           }
         ],
         "minLat": 34.049,
-        "maxLat": 34.0549,
-        "from": "3rd Street",
+        "maxLat": 34.054,
+        "from": {
+          "px": [
+            869,
+            843
+          ]
+        },
         "to": {
           "px": [
             455,
@@ -10012,58 +9839,22 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Pico (Pearl St)",
+        "label": "beyond Pico",
         "name": "Figueroa Street",
         "entityId": "figueroa-gov",
-        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
+        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835 — how and when this stretch joined Figueroa Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
         "planned": {
           "text": "by 1885",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
         },
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "1849",
-            "until": "Feb. 1874",
-            "name": "Grasshopper Street",
-            "entityId": "chapules",
-            "formInForce": "Grasshopper Street",
-            "origin": "this spelling attested from 1849 {{(source)}} — The insect: grasshoppers crossing this line from the western plains doomed the grape harvest",
-            "originLink": "https://lastreetnames.com/street/figueroa-street/"
-          },
-          {
-            "from": "Feb. 1874",
-            "until": "Feb. 1897",
-            "name": "Pearl Street",
-            "entityId": "pearl",
-            "formInForce": "Pearl Street",
-            "how": "renaming",
-            "origin": "renamed per the Feb. 1874 council action (Herald report) {{(source)}} — No namesake documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Figueroa Street",
-            "entityId": "figueroa-gov",
-            "formInForce": "Figueroa Street",
-            "how": "transfer",
-            "origin": "the name arrived from another roadway, renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
         "note": null,
         "attested": true,
-        "knownFraction": 1,
+        "knownFraction": 0.98,
         "categories": [
           "person",
-          "governor",
-          "renamed"
-        ],
-        "formerCategories": [
-          "nature",
-          "unknown"
+          "governor"
         ],
         "disputed": false,
         "sources": [
@@ -10072,24 +9863,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/figueroa-street/"
           },
           {
-            "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874 (council renames Grasshopper St → Pearl St)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
-          },
-          {
             "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
-          },
-          {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
-          },
-          {
-            "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
           }
         ],
         "minLat": 34.0406,
@@ -10806,62 +10581,21 @@ const STREET_DATA = {
       {
         "label": "north of Chick Hearn Court (discontinuous)",
         "name": "Georgia Street",
-        "entityId": "georgia-bell",
-        "namedAfter": "Georgia Herrick Bell (1845–1899), wife of {{Major Horace Bell}}, on whose land the street was laid out — how and when this stretch joined Georgia Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Horace_Bell",
+        "entityId": null,
+        "namedAfter": null,
+        "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "1874",
-            "until": "1889",
-            "name": "Georgia Street",
-            "entityId": "georgia-bell",
-            "formInForce": "Georgia Street",
-            "origin": "this spelling attested from 1874 {{(source)}} — Georgia Herrick Bell (1845–1899), wife of Major Horace Bell, on whose land the street was laid out",
-            "originLink": "https://lastreetnames.com/street/georgia-street/"
-          },
-          {
-            "from": "1889",
-            "until": "Feb. 1897",
-            "name": "Georgia Bell Street",
-            "entityId": "georgia-bell",
-            "formInForce": "Georgia Bell Street",
-            "origin": "this spelling attested from 1889 {{(source)}} — Georgia Herrick Bell (1845–1899), wife of Major Horace Bell, on whose land the street was laid out",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Georgia Street",
-            "entityId": "georgia-bell",
-            "formInForce": "Georgia Street",
-            "how": "renaming",
-            "origin": "renamed — reviving a spelling the street had carried before — per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
         "note": null,
-        "attested": true,
-        "knownFraction": 0.86,
+        "attested": false,
         "categories": [
-          "person",
-          "alive",
-          "renamed"
+          "unresearched"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "L.A. Street Names: Georgia Street",
-            "url": "https://lastreetnames.com/street/georgia-street/"
-          },
-          {
-            "title": "Los Angeles Herald, “A Storm of Words” (Forman's dated history), Feb. 19, 1897",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
-          },
-          {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
           }
         ],
         "minLat": 34.0388,
@@ -10872,62 +10606,21 @@ const STREET_DATA = {
       {
         "label": "south of 15th Drive",
         "name": "Georgia Street",
-        "entityId": "georgia-bell",
-        "namedAfter": "Georgia Herrick Bell (1845–1899), wife of {{Major Horace Bell}}, on whose land the street was laid out — how and when this stretch joined Georgia Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Horace_Bell",
+        "entityId": null,
+        "namedAfter": null,
+        "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "1874",
-            "until": "1889",
-            "name": "Georgia Street",
-            "entityId": "georgia-bell",
-            "formInForce": "Georgia Street",
-            "origin": "this spelling attested from 1874 {{(source)}} — Georgia Herrick Bell (1845–1899), wife of Major Horace Bell, on whose land the street was laid out",
-            "originLink": "https://lastreetnames.com/street/georgia-street/"
-          },
-          {
-            "from": "1889",
-            "until": "Feb. 1897",
-            "name": "Georgia Bell Street",
-            "entityId": "georgia-bell",
-            "formInForce": "Georgia Bell Street",
-            "origin": "this spelling attested from 1889 {{(source)}} — Georgia Herrick Bell (1845–1899), wife of Major Horace Bell, on whose land the street was laid out",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Georgia Street",
-            "entityId": "georgia-bell",
-            "formInForce": "Georgia Street",
-            "how": "renaming",
-            "origin": "renamed — reviving a spelling the street had carried before — per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
         "note": null,
-        "attested": true,
-        "knownFraction": 0.86,
+        "attested": false,
         "categories": [
-          "person",
-          "alive",
-          "renamed"
+          "unresearched"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "L.A. Street Names: Georgia Street",
-            "url": "https://lastreetnames.com/street/georgia-street/"
-          },
-          {
-            "title": "Los Angeles Herald, “A Storm of Words” (Forman's dated history), Feb. 19, 1897",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
-          },
-          {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
           }
         ],
         "maxLat": 34.0388,

@@ -16,7 +16,10 @@ module.exports = {
       url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" }
   ],
 
-  date: { on: "1849-08-29" },   
+  date: { on: "1849-08-29" },       // the survey itself — what the ink reflects
+  // Every sheet the project holds is the county recorder's certified copy,
+  // "a full true and correct copy of original", filed forty-four years later.
+  recorded: "1893-12-02",   
   form: "drawn",
   type: "tract-map",
   attests: "planned-by",

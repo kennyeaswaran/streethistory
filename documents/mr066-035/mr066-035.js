@@ -28,7 +28,9 @@ module.exports = {
   scan: "documents/mr066-035/mr066-035.pdf",
   transcription: null,
 
-  date: { on: "1894-03" },   
+  date: { on: "1894-03" },
+  recorded: "1897-05-01",           // months AFTER the Feb. 1897 renaming, which
+                                    // is why this plat still letters the old names   
   form: "drawn",
   type: "tract-map",
   attests: "planned-by",

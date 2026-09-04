@@ -109,7 +109,10 @@ const ATTESTS = ["planned-on", "planned-by", "built-on", "built-by"];
 const FORMS = ["drawn", "textual", "derived"];
 // §5: change rows only on documents that attest the transition itself.
 const TRANSITION_TYPES = ["ordinance", "news-report"];
+// §§2-3 of handbook/change-rows-amendment.md.
+const CHANGE_SCOPES = ["whole-name", "extent", "extent-unresolved"];
 
+const docDateOf = doc => (doc.date && (doc.date.on || doc.date.after || doc.date.before)) || null;
 const seenDocIds = new Set();
 for (const doc of DOCUMENTS) {
   const d = doc.id || "?";
@@ -130,6 +133,18 @@ for (const doc of DOCUMENTS) {
     need("date", "missing/empty date");
   else for (const k of ["on", "after", "before"])
     if (doc.date[k] && !DATE_RE.test(doc.date[k]) && doc.date[k] !== "unknown") err(d, `date.${k} malformed:`, doc.date[k]);
+  // §4: `date` is when the CONTENT was made; `recorded` is when the artifact was
+  // filed or copied, and only appears where the two differ. Nothing derives
+  // from it, so the only thing to check is that it is a date and that it is
+  // not earlier than the content it carries — a copy cannot predate its
+  // original, and if it looks like it does, one of the two is wrong.
+  if (doc.recorded !== undefined && doc.recorded !== null) {
+    if (typeof doc.recorded !== "string" || !DATE_RE.test(doc.recorded))
+      err(d, "recorded malformed (want YYYY, YYYY-MM or YYYY-MM-DD):", doc.recorded);
+    else if (docDateOf(doc) && doc.recorded < docDateOf(doc).slice(0, doc.recorded.length))
+      err(d, `recorded ${doc.recorded} is earlier than date ${docDateOf(doc)} — ` +
+             `a filing cannot predate the content it files`);
+  }
   if (!TYPES.includes(doc.type)) err(d, "unknown type:", doc.type);
   if (doc.form && !FORMS.includes(doc.form)) err(d, "unknown form:", doc.form);
   // A DECLARATION IS ONLY WORTH ANYTHING IF SOMETHING ENFORCES IT. Everything
@@ -142,6 +157,38 @@ for (const doc of DOCUMENTS) {
         doc.coverage.some(pt => Array.isArray(pt) && pt.length === 2 &&
                                 (Math.abs(pt[0]) > 90 || Math.abs(pt[1]) > 180)))
       err(d, "textual document's coverage looks like scan pixels — a declared scope is lat/lng (§4.1a)");
+    // §12 — THE EVIDENCE IN A TEXTUAL DOCUMENT IS A SENTENCE.
+    //
+    // On a plat a row quotes the ink in `asWritten`; here there is no ink, and
+    // until `excerpts` there was nothing at all holding a row down. That
+    // matters more here than on a sheet: a plat's coverage polygon stops a
+    // claim outrunning the document, and a textual document has no polygon, so
+    // the quoted sentence is the only thing bounding what it may be read to
+    // say. A row with no sentence behind it is a claim with no source.
+    const exIds = new Set();
+    for (const [i, ex] of (doc.excerpts || []).entries()) {
+      const e = `${d}.excerpts[${i}]`;
+      if (!ex || typeof ex.id !== "string" || !ex.id.trim()) err(e, "excerpt needs an id");
+      else if (exIds.has(ex.id)) err(e, "duplicate excerpt id:", ex.id);
+      else exIds.add(ex.id);
+      if (!ex || typeof ex.text !== "string" || !ex.text.trim()) err(e, "excerpt needs text");
+    }
+    if ((doc.rows || []).length && !exIds.size)
+      err(d, "textual document has rows but no `excerpts` — every row must quote the " +
+             "sentence it was read from (§12)");
+    for (const [i, row] of (doc.rows || []).entries()) {
+      const says = row.says == null ? [] : (Array.isArray(row.says) ? row.says : [row.says]);
+      if (!says.length)
+        err(`${d}.rows[${i}]`, "textual document: row needs `says` naming the excerpt(s) " +
+                               "it was read from (§12)");
+      for (const id of says)
+        if (!exIds.has(id)) err(`${d}.rows[${i}]`, "says names an unknown excerpt:", id);
+      // A placeholder is honest, but it should not go unnoticed.
+      for (const id of says)
+        if (/^PLACEHOLDER/i.test(id))
+          warn(`${d}.rows[${i}]`, `cites the placeholder excerpt "${id}" — the warrant for ` +
+                                  `this row has not been quoted yet`);
+    }
     for (const [i, row] of (doc.rows || []).entries()) {
       if (row.trace)
         err(`${d}.rows[${i}]`, "trace on a textual document — a trace is drawn pavement (§5.3)");
@@ -278,7 +325,12 @@ for (const doc of DOCUMENTS) {
         err(r, "vanished row missing asWritten (verbatim ink — §5.1)");
       continue;
     }
-    if (doc.type !== "osm" && !streets.has(row.street)) err(r, "street not in geometry:", row.street);
+    // A change row with no extent of its own names no street, on purpose
+    // (amendment §§3-4): its ground is derived, or not established at all.
+    const noExtent = row.kind === "change" &&
+                     (row.scope === "whole-name" || row.scope === "extent-unresolved");
+    if (doc.type !== "osm" && !noExtent && !streets.has(row.street))
+      err(r, "street not in geometry:", row.street);
     // §5.2 silence is stated, not inferred, so it can be reviewed and ticked off.
     if (row.kind === "absent") {
       if (row.name) err(r, "absent row must not carry a name — it records that the map shows NO STREET here");
@@ -322,13 +374,36 @@ for (const doc of DOCUMENTS) {
       if (!resolve(row.to)) err(r, "to id does not resolve:", row.to);
       if (row.from === row.to && !row.toForm)
         err(r, "respelling row (from === to) needs toForm to say which spelling took effect");
+      // SCOPE IS DECLARED, NEVER INFERRED (amendment §2). A row with no extent
+      // is ambiguous between "the document did not qualify the change" and
+      // "the qualifier has not been transcribed", and the corpus has one of
+      // each: chapules→pearl carried a cross and is unqualified, while
+      // figueroa-gov→boylston carried none and is qualified. Guessing from the
+      // fields present gets both of them wrong.
+      if (!CHANGE_SCOPES.includes(row.scope))
+        err(r, `change row needs scope: one of ${CHANGE_SCOPES.map(x => `"${x}"`).join(", ")} ` +
+               `— what the DOCUMENT says, not what we have worked out (§2)`);
+      // An extent on a row that does not use one is how a derived fact gets
+      // written where the source's own words belong. Three rows had exactly
+      // that, all naming a boundary no document states.
+      if (row.scope === "whole-name" || row.scope === "extent-unresolved") {
+        for (const f of ["street", "fromCross", "toCross"])
+          if (row[f] !== undefined && row[f] !== null)
+            err(r, `scope "${row.scope}" but the row carries \`${f}\` — an unqualified ` +
+                   `change has no extent of its own, and an unresolved one has none yet`);
+      } else if (row.scope === "extent" && !row.street) {
+        err(r, 'scope "extent" needs a street — it is the stretch the document names');
+      }
     }
     if (row.kind === "annotation") {
       if (!row.url) err(r, "annotation must carry its own source url (§5)");
       if (!row.text) err(r, "annotation missing text");
     }
-    // extents parse and lie on the named street
-    if (doc.type !== "osm") {
+    // extents parse and lie on the named street. A change row with no extent of
+    // its own has nothing here to check — its ground is derived, or not
+    // established at all — but the kind-specific checks above still apply to
+    // it, which is why this is guarded rather than skipped with a `continue`.
+    if (doc.type !== "osm" && !noExtent) {
       const crosses = row.kind === "change" ? [row.fromCross, row.toCross] : [row.from, row.to];
       for (const c of crosses) {
         if (c === null || c === undefined) continue;
@@ -415,6 +490,33 @@ for (const doc of DOCUMENTS) {
            (elsewhere.length ? `; the name IS lettered on ${elsewhere.join(", ")}` : ""));
     }
   }
+}
+
+// ---- an unqualified change with nowhere to land ---------------------------
+//
+// An unqualified change applies wherever its `from` entity is attested, so an
+// entity with no `state` row anywhere gives it no ground and it draws nothing.
+// That is correct — the corpus does not know where the name was — but it is
+// invisible in the data, and it used to be papered over: a `street` field on
+// the change row put the entity on that pavement with no evidence behind it,
+// which is how `georgia-bell` sat on modern Georgia Street. Say so, so the
+// missing document is a to-do rather than a silence. handbook/WANTED.md keeps
+// the list.
+{
+  const hasStateRow = new Set();
+  for (const doc of DOCUMENTS) {
+    if (doc.type === "osm") continue;
+    for (const r of doc.rows || []) if (r.kind === "state" && r.name) hasStateRow.add(resolve(r.name));
+  }
+  for (const doc of DOCUMENTS)
+    for (const [i, row] of (doc.rows || []).entries()) {
+      if (row.kind !== "change" || row.scope !== "whole-name") continue;
+      const from = resolve(row.from);
+      if (from && !hasStateRow.has(from))
+        warn(`${doc.id}.rows[${i}]`, `unqualified change from "${row.from}", which no document ` +
+             `letters — so it lands on no ground and draws nothing. The renaming is recorded; ` +
+             `the name's extent is not. A sheet lettering it is what unblocks this (WANTED.md).`);
+    }
 }
 
 // ---- generator-facing ambiguity check (§9): two entities sharing a form

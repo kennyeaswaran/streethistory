@@ -119,14 +119,8 @@ const SEARCH_INDEX = [
   {
     "form": "Georgia Street",
     "entity": "georgia-east",
-    "label": "Georgia Street (east of Alameda)",
+    "label": "Georgia Street",
     "street": "3rd Street"
-  },
-  {
-    "form": "Georgia Street",
-    "entity": "georgia-bell",
-    "label": "Georgia Street (west downtown)",
-    "street": "Georgia Street"
   },
   {
     "form": "4th Place",
@@ -429,12 +423,6 @@ const SEARCH_INDEX = [
     "street": "Boyd Street"
   },
   {
-    "form": "Figueroa Street",
-    "entity": "figueroa-gov",
-    "label": "Figueroa Street",
-    "street": "Boylston Street"
-  },
-  {
     "form": "Boylston Street",
     "entity": "boylston",
     "label": "Boylston Street",
@@ -519,15 +507,15 @@ const SEARCH_INDEX = [
     "street": "Center Street"
   },
   {
-    "form": "Wolfskill Avenue",
-    "entity": "wolfskill-ave",
-    "label": "Wolfskill Avenue",
-    "street": "Central Avenue"
-  },
-  {
     "form": "Central Avenue",
     "entity": "central-ave",
     "label": "Central Avenue",
+    "street": "Central Avenue"
+  },
+  {
+    "form": "Wolfskill Avenue",
+    "entity": "wolfskill-ave",
+    "label": "Wolfskill Avenue",
     "street": "Central Avenue"
   },
   {
@@ -795,6 +783,12 @@ const SEARCH_INDEX = [
     "street": "Factory Place"
   },
   {
+    "form": "Figueroa Street",
+    "entity": "figueroa-gov",
+    "label": "Figueroa Street",
+    "street": "Figueroa Street"
+  },
+  {
     "form": "Grasshopper Street",
     "entity": "chapules",
     "label": "Grasshopper Street",
@@ -871,12 +865,6 @@ const SEARCH_INDEX = [
     "entity": "general-thaddeus-kosciuszko-way",
     "label": "General Thaddeus Kosciuszko Way",
     "street": "General Thaddeus Kosciuszko Way"
-  },
-  {
-    "form": "Georgia Bell Street",
-    "entity": "georgia-bell",
-    "label": "Georgia Bell Street",
-    "street": "Georgia Street"
   },
   {
     "form": "Gin Ling Way",
