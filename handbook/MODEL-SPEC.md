@@ -10,7 +10,7 @@ hand-authored data sits in `legacy/streets-data-2026-08.js` for diffing.
 **Amended 2026-08-25 (§5.2–§5.4, §4.6):** row kinds for vanished streets and
 for documented silence, extents that can end mid-block, alignment stored on
 the document, and pixel-space storage for anything traced on a scan. These
-came out of designing the document tool (TOOL-SPEC.md) and are contract, not
+came out of designing the map tool (MAP-TOOL-SPEC.md) and are contract, not
 UI: `check-model.js` and `generate.js` must honour them.
 
 This spec is written to be handed to an implementer cold. Where a rule exists
@@ -50,7 +50,7 @@ then apply it to every street it touches — because one 1886 tract map names si
 streets at once, and re-reading it later is expensive.
 
 Background, if useful: `CLAUDE.md` (orientation and the rules that have been
-broken), `ADDING-STREETS.md` (the current hand-authoring guide this model would
+broken), `NAME-RESEARCH.md` (where evidence comes from, and what an entity may
 replace), `README.md` (what the site is).
 
 ---
@@ -82,7 +82,7 @@ record what documents say, and derive segments from that.
 | layer | file(s) | authored by | holds |
 |---|---|---|---|
 | **Names** | `names.js` | human | one entry per name *entity*: spellings, namesake, categories |
-| **Documents** | `documents/<doc-id>.js` | human/instance, one file per document | what a document attests: which name covered which extent, when |
+| **Documents** | `documents/<doc-id>/<doc-id>.js` | human/instance, one file per document | what a document attests: which name covered which extent, when |
 | **Generated** | `streets-data.js`, `generated/*` | the generator | segments, timelines, search index, reports |
 
 Rule of thumb for where something belongs: if it's a fact about *a name*, it's
@@ -193,7 +193,7 @@ paragraph comparing two Hobart Streets both reached the public site through
 
 ### Entities minted during review: `names-new.js`
 
-Review (TOOL-SPEC §4) has to mint an entity the moment a plat shows a label
+Review (MAP-TOOL-SPEC §4) has to mint an entity the moment a plat shows a label
 nobody has entered, and a browser tool should not write into the file holding
 the project's namesake research. So new entities land in **`names-new.js`**,
 exported as `NEW_NAME_ENTITIES` and merged by `check-model.js` and
@@ -290,15 +290,17 @@ beside the .js in the same folder; the two cross-reference by id.
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf",
   scan: "documents/mr003-060-p1/mr003-060-p1.pdf",
                                      // optional: the local source file, so the
-                                     // document tool can open it without a
+                                     // map tool can open it without a
                                      // picker and a future map could offer the
                                      // sheet as an overlay. Project-relative.
   transcription: "documents/mr003-060-p1/mr003-060-p1-partA.md",
 
   date: { on: "1875-05-19" },        // or { after: "1906", before: "1950-06" }
                                      // for a Sanborn sheet with an undated paste-on
+  form: "drawn",                     // drawn | textual | derived — see §4.1a
   type: "tract-map",                 // tract-map | survey | sanborn | directory
-                                     // | ordinance | osm | annotation
+                                     // | ordinance | news-report | osm
+                                     // | annotation   — genre; see §4.1a
   attests: "planned-on",             // planned-on | planned-by
                                      // built-on   | built-by     — see §4.2
   completeness: "incidental",        // incidental | exhaustive-in-scope — see §4.3
@@ -343,6 +345,34 @@ Stubs must be distinguishable from curated entities so a human can see what
 has actually been researched — no sources and no `namedAfter` is sufficient,
 and the generated report should count them.
 
+### 4.1a `form` — is the evidence drawn or written
+
+`type` says what kind of publication a document is; `form` says what kind of
+evidence it holds, and it is the field the tools dispatch on:
+
+| `form` | the evidence is | so it may carry |
+|---|---|---|
+| `drawn` | where things sit on a sheet | `alignment`, a traced coverage ring in scan pixels, `{px}` extents, `vanished` traces |
+| `textual` | what the document says | a coverage ring in lat/lng only, extents in cross streets or `null` |
+| `derived` | neither — it is computed from another file | the OSM pseudo-document (§4.1), and nothing else so far |
+
+**Why not read it off `type`.** A single publication can be both: a city
+directory has a street section *and*, often, a folding map. That is already
+expressible — §4.4a makes the SHEET the unit, so the two are two documents
+sharing `title` and `url` — but it means drawn-ness belongs to the document,
+not to the genre.
+
+**Why not sniff it from the folder.** "Is there a render in there?" is the
+tempting derivation and it breaks on the first scanned ordinance: ord-4093's
+full text is a scan request outstanding with the City Archivist, and the day it
+arrives that folder gets a PDF and a PNG without becoming a map. A newspaper
+page is the same. So the document declares it, and `check-model.js` enforces
+what the declaration implies rather than trusting it.
+
+`derived` exists so the OSM pseudo-document is not a fourth special case: it
+has no sheet and no text, its rows are built from `streets-geometry.js` at load
+time, and saying so is better than exempting it from the field.
+
 ### 4.2 `attests` — what kind of existence, and how tightly dated
 
 Four values, crossing *what* is attested with *how* the date binds:
@@ -383,7 +413,7 @@ or unopened streets.
 tracts are irregular, and a bbox would silently claim testimony over ground
 the document never showed. A rectangle is just a four-point polygon.
 
-Where it comes from: a human draws it in the document tool, tracing the area
+Where it comes from: a human draws it in the map tool, tracing the area
 the document actually informs about — for a tract map that is the *tract
 boundary*, not the sheet edge, since a plat is mostly blank paper around the
 tract and claiming the paper would license negative inference over blocks the
@@ -458,7 +488,7 @@ the generator will read the gap as *negative evidence* — "no street here in
 1894" — and quietly publish a false claim.
 
 So: **leave `coverage` as the sheet's true footprint** (it's a fact about the
-document, and georef emits it once), and **gate all negative inference on
+document, and it is traced once), and **gate all negative inference on
 `sweptFully: true`.** A partly-entered document contributes its positive rows
 normally and contributes no silence at all. Record what has been done with
 `sweptFor: ["3rd Street", "Willow Street", …]` so partial work is visible and
@@ -470,9 +500,11 @@ A document produced from a scan carries its own alignment:
 
 ```js
 alignment: {
-  image: "tracts/renders/MR066-035.png",   // the render these pixels refer to
+  image: "documents/mr066-035/mr066-035-100dpi.png",   // the render these pixels refer to
   dpi: 100,                                 // meaningless without it (PIPELINE.md)
-  points: [ { px: [x, y], ll: [lat, lng], note: "…" }, … ]   // ≥3
+  points: [ { px: [x, y], ll: [lat, lng], note: "…" }, … ]   // ≥2 — two give
+                                   // an exact similarity fit, three or more a
+                                   // least-squares affine
 }
 ```
 
@@ -486,12 +518,12 @@ that used the ring quietly became a no-op on those documents. `ringIsPixels`
 in `doc-geometry.js` is the one answer, so the tool and the checker cannot
 drift apart on it.
 
-This is the same control-point schema `georef.py` already consumes, so the
-document becomes the single home for what used to live in
-`tracts/renders/<name>-alignment.json`. **Keep emitting that sidecar too**:
-`georef.py` reads it, and the four committed alignment files are the stage-2
-benchmark (PIPELINE.md §2) — orphaning them would delete the only ground truth
-the project has for scoring an automatic aligner.
+The document is the single home for what used to live in
+`tracts/renders/<name>-alignment.json`. **Keep emitting the sidecar too** —
+`<id>-alignment.json`, beside the document: a hand fit is the one artefact in
+the folder that nobody and nothing can reproduce, `TASK.md` points the
+assistant at it, and the committed set is the only ground truth the project
+would have for scoring an automatic aligner.
 
 **Everything traced on the scan is stored in scan pixels, never in lat/lng.**
 Coverage polygons (§4.4), vanished-street traces (§5.3) and any mid-block
@@ -506,8 +538,10 @@ Documents with no scan — ordinances, newspaper reports, `osm` — have no
 
 ## 5. Rows
 
-Five kinds: `state`, `change` and `annotation` below, plus `absent` (§5.2) and
-`vanished` (§5.3), added 2026-08-25. Extents are stated in **modern**
+Seven kinds: `state`, `change` and `annotation` below; `absent` (§5.2) and
+`unnamed` (§5.2a) for ground the sheet covers but does not name; `vanished`
+(§5.3) and `vanished-unnamed` (§5.3a) for drawn pavement no modern street
+follows. Extents are stated in **modern**
 cross-street names wherever a cross-street is available — identification has
 already happened, and the plat's own wording lives in Part A — with points
 allowed where a document's extent ends mid-block (§5.4). The document's own
@@ -525,6 +559,14 @@ text for the name goes in `asWritten`.
 { kind: "change", from: "vine-central", to: "central-ave",
   street: "Central Avenue", fromCross: "1st Street", toCross: "2nd Street",
   mechanism: "renaming" },       // optional; only when the document SAYS so
+
+// A RESPELLING is a change row with from === to: one lineage taking up a new
+// written form, on a stated date. It MUST carry `toForm` — the form taken up
+// — and check-model.js rejects it without one, because a change from an
+// entity to itself with nothing else said is not a claim.
+{ kind: "change", from: "georgia-bell", to: "georgia-bell",
+  toForm: "Georgia Street",
+  street: "Georgia Street", fromCross: null, toCross: null },
 
 // ANNOTATION — a place fact tied to an extent, not to a name.
 { kind: "annotation", street: "Wall Street", from: "7th Street", to: "8th Street",
@@ -596,7 +638,7 @@ because an inference can't be reviewed or ticked off: "I looked here and the
 map shows nothing" and "nobody has looked here yet" are the same absence.
 
 So silence becomes statable at segment granularity. It is what licenses the
-"no counterpart" verdict in the document tool, it is what makes the
+"no counterpart" verdict in the map tool, it is what makes the
 every-segment-accounted gate on `sweptFully` (§4.5) checkable, and it is
 weak evidence in its own right — on an `exhaustive-in-scope` document (§4.3)
 a `absent` row over a stretch means the street did not exist under any name
@@ -761,7 +803,7 @@ generator's scalar projection can see the difference.
 ### 5.5 `confirmed` and `note` on every row
 
 `confirmed: false` marks a **proposal** — generated by the AI pass
-(TOOL-SPEC.md §3) and not yet vouched for by a human. A person promotes it to
+(MAP-TOOL-SPEC.md §3) and not yet vouched for by a human. A person promotes it to
 `true` in review, so the file itself records who stands behind each claim
 instead of that living in a tool's memory. **An absent flag means the row was
 authored directly rather than proposed**, which is why rows written before
@@ -791,7 +833,7 @@ that no stretch of any in-coverage street is left un-spoken-for, above the
 same 25 m floor as §4.4's sliver rule.
 
 Every row may also carry `note` — free text about *this row*. It exists so
-the document tool can round-trip a file without eating anything: a caveat
+the map tool can round-trip a file without eating anything: a caveat
 that matters belongs in data the tool preserves, not in a JS comment it would
 regenerate away.
 
@@ -924,7 +966,7 @@ sighting itself — nothing to fill; a rectangle still needs two corners.
 | `state` for another entity | attests | contradicts `E` |
 | `unnamed` | attests | says nothing — does not block |
 | `absent` | denies; cuts the run for hull purposes | nothing to say |
-| `change` A→B at `t` | — | pins a transition. Settled 2026-08-31: it implies the ground WAS A before `t` and B after — so for a third entity `E ∉ {A, B}` it contradicts at **all** dates, for `E = A` it contradicts after `t`, for `E = B` before `t`. A respelling row (`from === to`, §5.5) contradicts nothing for its own entity — it pins a form boundary inside one lineage |
+| `change` A→B at `t` | — | pins a transition. Settled 2026-08-31: it implies the ground WAS A before `t` and B after — so for a third entity `E ∉ {A, B}` it contradicts at **all** dates, for `E = A` it contradicts after `t`, for `E = B` before `t`. A respelling row (`from === to`, §5) contradicts nothing for its own entity — it pins a form boundary inside one lineage |
 | `annotation` | only if the row asserts existence | only if it asserts a name |
 | `vanished` | not on a modern run at all | — |
 
@@ -1015,8 +1057,15 @@ Computed independently from the four `attests` values (§4.2):
 - **planned** — the earliest `planned-on` if any exists (an exact date), else
   the earliest `planned-by` (rendered "by 1875").
 - **built** — the earliest `built-on` if any, else the earliest `built-by`.
-- **Inference:** if a street was planned *on* a date and is already attested
-  built *by* that same date, it was built on it — collapse to an exact date.
+- **Inference:** if a street was planned *on* a date and is attested built
+  *by* that same date, it was built on it — collapse to the exact date. Only on
+  an exact match. A `built-by` EARLIER than the planning date says the street
+  existed before it was dedicated, which is paper catching up with pavement and
+  not a date to sharpen.
+- **OSM does not feed `built`.** It attests `built-by` the extraction date for
+  every living street, so counting it would render every unresearched segment
+  "built by 2026" — true, and worth nothing. Where OSM is the only `built-by`,
+  `built` stays "not yet researched" (§4.1's tertiary rule, applied here too).
 
 Hope Street's two decades between paper and pavement stop being a hand-written
 caveat and become the visible distance between two derived dates.
@@ -1026,7 +1075,10 @@ caveat and become the visible distance between two derived dates.
 The generator emits a prebuilt index — one row per (form, name entity) with
 the label **already resolved** — so the browser holds no rule logic.
 
-**Expand renderings when building the index**, per §3: numerals both ways
+**Expand renderings when building the index**, per §3 — *specified, not yet
+implemented (§12): the index currently stores one canonical key per form, which
+folds ordinals and type abbreviations but does nothing for middle initials.*
+Numerals both ways
 ("Third"/"3rd", "Avenue Twenty"/"Avenue 20"), street-type abbreviations, and
 optional middle initials ("Cesar Chavez"/"Cesar E Chavez"). Most type
 abbreviations are literal prefixes of the full word, so "Santee St" already
@@ -1040,11 +1092,10 @@ nothing and is more robust.
 
 Labels: a form unique to one entity displays alone. A form shared by several
 displays with a disambiguator — the authored one if present, otherwise
-derived: locality (neighborhood, or bounding cross-streets within one), plus,
-for a form no longer current, the date range and successor.
-
-- `Georgia Street (west downtown)`
-- `Georgia Street (by 1875–1897; now 3rd Street, Alameda to Santa Fe)`
+derived. **The derived one is currently the modern street name** —
+`Georgia Street (3rd Street)` — which is enough while no two entities share a
+form on the same street, and `check-model.js` errors the day two do (§9). A
+richer derivation is deferred (§12).
 
 **Derive locality, don't author it, in the normal case.** The namesake is the
 *worst* discriminator for the collisions that actually occur — where entities
@@ -1165,17 +1216,32 @@ generated segment id, which is not stable across builds.
 The checker gains: every row's name id exists (or resolves through an alias);
 every street and cross-street exists in geometry; extents parse and lie on the
 named street; `change` rows only on documents that attest transitions;
-annotations carry a source; and **an ambiguity the generator cannot resolve
-into distinct labels is an error** — which will fire retroactively on an old
-entry the day new coverage introduces a collision. That is intended.
+respellings carry a `toForm`; a `textual` document carries no alignment, no
+pixel ring, no pixel extent and no trace (§4.1a); annotations carry a source;
+and **an ambiguity the generator cannot resolve into distinct labels is an
+error** — which will fire retroactively on an old entry the day new coverage
+introduces a collision. That is intended, and the check models the label the
+generator actually derives (the street name) rather than a stand-in, so it can
+fire at all.
 
-Added with the 2026-08-25 amendments: pixel-space extents and traces require
-the document to have an `alignment` (§4.6), and their pixels must lie within
-the alignment image's bounds; `vanished` traces need at least two points;
-`sweptFully: true` requires every row `confirmed` and — per the tool's gate
-(TOOL-SPEC.md) — every in-bounds segment accounted by some row; and a `absent`
-row overlapping a `state` row for the same document is a contradiction, not a
-judgement call.
+Also: pixel-space extents and traces require the document to have an
+`alignment` (§4.6), and `vanished` traces need at least two points.
+
+**Three checks were specified here and are deliberately not implemented:**
+
+- *Pixel extents within the image's bounds.* The checker would have to read the
+  render's dimensions, which means decoding a PNG in the checker for a class of
+  error the map tool cannot produce — it only writes pixels you clicked on.
+- *An `absent` row overlapping a `state` row is a contradiction.* Overlap is
+  not the right test. Two rows meeting at a single point, or overlapping by a
+  metre where a cross-street snapped slightly differently, are not
+  contradictions, and the threshold that separates those from a real conflict
+  is a judgement the checker cannot make. The real defence is the sweep gate,
+  which accounts for ground rather than comparing rows.
+- *`sweptFully: true` requires every in-bounds segment accounted by some row.*
+  This one is real, but it lives in the map tool, which is the only thing that
+  holds the coverage geometry — see MAP-TOOL-SPEC.md. The checker enforces the
+  half it can: every row `confirmed`.
 
 ## 10. Build
 
@@ -1230,6 +1296,28 @@ First documents to encode, in order:
 - The **rectangle rule** (§6.2a) is specified and not implemented. §6.1's
   document-identity merge — the prerequisite, and pure bookkeeping where
   §6.2a changes what the map claims — is done (2026-08-31).
+
+- **Richer derived disambiguation** (§6.5) is specified and not implemented.
+  The derived label is the modern street name; the spec once described
+  locality plus, for a dead form, a date range and successor
+  (`Georgia Street (by 1875–1897; now 3rd Street, Alameda to Santa Fe)`). Worth
+  keeping as a description because the *problem* is real: two entities sharing
+  a form on one street render identically. `check-model.js` now catches that
+  case rather than letting it through, so this is a display improvement, not a
+  correctness hole.
+
+- **Rendering expansion in the search index** (§6.5) is specified and not
+  implemented. Middle initials ("Cesar Chavez" / "Cesar E Chavez") are handled
+  nowhere; ordinals and type abbreviations are folded by canonicalisation
+  instead, which is equivalent as long as the browser canonicalises the query
+  the same way.
+
+- **`coverageExcept`'s stretch form** (§4.4) narrows the map tool's sweep gate
+  but does not narrow the generator's hull: a stretch excluded there is still
+  clipped to the polygon and still contributes. Fixing it means the coverage
+  hull becoming a set of intervals rather than one, which reaches every caller,
+  so it waits for a reason to do it properly. The whole-street form works as
+  specified. Nine documents use the stretch form today.
 
 - Restructuring nameHistory dates from strings into `{ earliest, latest }`.
   The derived model wants it; it is a migration across every entry and should

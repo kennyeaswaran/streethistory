@@ -20,6 +20,7 @@ module.exports = {
   transcription: "omnibus-1897-renaming-council-minutes.md",
 
   date: { on: "1897-02-23" },
+  form: "textual",
   type: "ordinance",
   attests: "built-by",              // a renamed street existed to be renamed
   completeness: "exhaustive-in-scope",

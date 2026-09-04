@@ -11,6 +11,7 @@ module.exports = {
   transcription: null,
 
   date: { on: "1874-02-26" },
+  form: "textual",
   type: "news-report",
   attests: "built-by",
   completeness: "incidental",

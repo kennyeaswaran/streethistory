@@ -17,8 +17,8 @@ inbox/
 
 # One folder per document (documents/<id>/) holds everything about it. The
 # heavy, re-derivable parts stay out of git; the reasoning does not.
-#   ignored: the source scan (re-downloadable) and renders (regenerate with
-#            pdftoppm / georef.py)
+#   ignored: the source scan (re-downloadable) and renders (regenerate by
+#            running utilities/new-map.command over the scan again)
 #   tracked: the document file, the alignment (a HAND fit — not reproducible
 #            by anyone but Kenny at the tool), the Part A transcription, and
 #            any notes
@@ -28,10 +28,6 @@ documents/*/*.pdf
 documents/*/*-100dpi.png
 documents/*/*-overlay.png
 documents/*/*-only-*.png
-
-# overlay-trial: the benchmark's PROSE and ANSWERS are tracked; its renders
-# are derived from the scans plus the alignments via georef.py.
-overlay-trial/**/*.png
 
 # Written by start-tools.command each time it serves the folder, so the tool
 # can name the folder you have to connect. It records THIS machine's path.

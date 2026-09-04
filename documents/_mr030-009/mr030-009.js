@@ -11,6 +11,7 @@ module.exports = {
   transcription: null,
 
   date: { on: "1887-08" },          // survey completion; recording in the title
+  form: "drawn",
   type: "tract-map",
   attests: "planned-by",
   completeness: "incidental",

@@ -1,19 +1,27 @@
-# TEMPLATE — map transcription + application record
+# TEMPLATE — map transcription (Part A)
 
-One file per recorded map, living beside it as `documents/<id>/<id>-partA.md`.
-Two halves, filled in by different parties at different times:
+One file per recorded map, living beside it as `documents/<id>/<id>-partA.md`
+and named in the document's `transcription` field.
 
-- **Part A (transcription)** — filled in by whoever READS the scan (a human,
-  ChatGPT, or a Claude instance). Verbatim only: what is drawn and written on
-  the map. NO modern-street identifications — matching old streets to modern
-  ones is the error-prone step, and it's done separately with geometry tools
-  (document-tool.html / georef.py), never by eyeballing a transcription.
-- **Part B (application)** — filled in by a Claude instance applying the
-  document to streets-data.js per ADDING-STREETS.md's core loop. Records the
-  modern identifications, their basis, and what was applied where.
+Filled in by whoever READS the scan — a human, ChatGPT, or a Claude instance.
+**Verbatim only**: what is drawn and written on the map, with no modern-street
+identifications. Matching old streets to modern ones is the error-prone step,
+and it is done separately against geometry (`map-tool.html`), never by
+eyeballing a transcription.
 
-Spot-check rule: whoever fills Part B verifies at least one Part A claim
-against the scan before trusting the rest.
+Transcription is optional. Most documents in the corpus have none: the AI pass
+reads the render directly, guided by the `TASK.md` the map tool writes into
+each folder, and produces rows rather than prose. A Part A file earns its place
+where the sheet carries text worth having verbatim and separately searchable —
+a title block, a dedication, an ordinance annotation, a long street table — or
+where the reading and the row-writing are done by different parties at
+different times.
+
+> **Part B is gone.** This file used to carry a second half recording modern
+> identifications and what was applied where. That is now the document itself:
+> each row names its modern `street`, carries its `basis` (MODEL-SPEC §5), and
+> is confirmed in review. A separate application record would be the same fact
+> in two places.
 
 ---
 
@@ -53,26 +61,6 @@ evidence). List every street, even ones that look unimportant.
 
 Annotations, adjoining-tract names in margins ("O.H. Bliss"), ordinance
 notes ("Name establ. … Ord. …"), certifications — verbatim, with sheet + location.
-
----
-
-## Part B — Application (filled in by a Claude instance; geometry-based)
-
-| # (from Part A) | Modern identity | Basis (label match / lot-level match / alignment / position) | Applied to |
-|---|---|---|---|
-| 1 | 3rd Street, Alameda–Santa Fe segment | alignment + grid position | ✔ segment's nameHistory + sources |
-| 2 | unresolved | — | ⏸ research-leads.md bullet |
-
-- Basis vocabulary, strongest to weakest: **lot-level match** (NavigateLA
-  Lot/Tract fields match the plat), **label match** (unchanged name),
-  **alignment** (document-tool.html / georef.py fit), **position** (grid reasoning
-  only — always flag in the entry). Anything below lot-level gets a short
-  parenthetical in the source title, e.g. "(identified by map alignment)".
-- Every street from Part A gets a row, even if the outcome is "out of
-  coverage" or "unresolved" — that's what makes the file reusable when
-  coverage grows.
-- Note here anything Part A got wrong on spot-check, and correct Part A in
-  place with a dated note.
 
 ---
 

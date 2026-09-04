@@ -1,4 +1,4 @@
-// names-new.js — name entities created in the document tool's review mode.
+// names-new.js — name entities created in the map tool's review mode.
 //
 // SEPARATE FROM names.js ON PURPOSE. names.js is hand-authored: every entity
 // there has had its namesake looked into and its lineage decided. Review needs

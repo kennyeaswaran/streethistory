@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-03
+// Built: 2026-09-04
 const NEIGHBORHOODS = [
   {
     "id": "dtla",
@@ -6962,7 +6962,7 @@ const STREET_DATA = {
         "to": "2nd Street"
       },
       {
-        "label": "beyond 2nd (Wolfskill Ave)",
+        "label": "2nd to 3rd (Wolfskill Ave)",
         "name": "Central Avenue",
         "entityId": "central-ave",
         "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
@@ -6993,10 +6993,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          "text": "1888 (Wolfskill Orchard Tract, sheet 5 (M.R. 30-13))",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
-        "knownFraction": 0.73,
+        "knownFraction": 0.95,
         "categories": [
           "descriptive",
           "renamed"
@@ -7015,18 +7015,13 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           }
         ],
-        "minLat": 34.0466,
+        "minLat": 34.0461,
         "maxLat": 34.0477,
         "from": "2nd Street",
-        "to": {
-          "px": [
-            824,
-            995
-          ]
-        }
+        "to": "3rd Street"
       },
       {
-        "label": "beyond 6th (Wolfskill Ave)",
+        "label": "3rd to 6th (Wolfskill Ave)",
         "name": "Central Avenue",
         "entityId": "central-ave",
         "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
@@ -7088,13 +7083,8 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.039,
-        "maxLat": 34.0466,
-        "from": {
-          "px": [
-            824,
-            995
-          ]
-        },
+        "maxLat": 34.0461,
+        "from": "3rd Street",
         "to": "6th Street"
       },
       {
@@ -7162,7 +7152,7 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "part of (original Ceres Ave)",
+        "label": "part of",
         "name": "Ceres Avenue",
         "entityId": "ceres-ave",
         "namedAfter": null,
@@ -7172,18 +7162,6 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "1888",
-            "until": null,
-            "name": "Ceres Avenue",
-            "entityId": "ceres-ave",
-            "formInForce": "Ceres Avenue",
-            "how": "origin",
-            "origin": "labeled “Ceres Ave” on the 1888 Wolfskill Orchard Tract (sheets 1–3) {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
         "note": "Ceres was the Roman goddess of agriculture and the harvest, which would be a fitting name for a street laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source says that is what was meant, and none names anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
         "attested": true,
         "absentAsOf": {
@@ -7205,8 +7183,67 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "minLat": 34.038,
+        "minLat": 34.04,
         "from": null,
+        "to": {
+          "px": [
+            1077,
+            907
+          ]
+        }
+      },
+      {
+        "label": "part of (original Ceres Ave)",
+        "name": "Ceres Avenue",
+        "entityId": "ceres-ave",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "Ceres Avenue",
+            "entityId": "ceres-ave",
+            "formInForce": "Ceres Avenue",
+            "how": "origin",
+            "origin": "labeled “Ceres Ave” on the 1888 Wolfskill Orchard Tract (sheets 1, 2) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "note": "Ceres was the Roman goddess of agriculture and the harvest, which would be a fitting name for a street laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source says that is what was meant, and none names anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.78,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Wikipedia: Ceres (mythology)",
+            "url": "https://en.wikipedia.org/wiki/Ceres_(mythology)"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.038,
+        "maxLat": 34.04,
+        "from": {
+          "px": [
+            1077,
+            907
+          ]
+        },
         "to": {
           "px": [
             668,
@@ -8580,6 +8617,81 @@ const STREET_DATA = {
         "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
         "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": "?",
+            "name": "Stanford Avenue",
+            "entityId": "stanford-ave",
+            "formInForce": "Stanford Avenue",
+            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Crocker Street",
+            "entityId": "crocker-street",
+            "formInForce": "Crocker Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
+        "categories": [
+          "person",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person",
+          "governor"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Wikipedia: Charles Crocker",
+            "url": "https://en.wikipedia.org/wiki/Charles_Crocker"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Wikipedia: Leland Stanford",
+            "url": "https://en.wikipedia.org/wiki/Leland_Stanford"
+          }
+        ],
+        "minLat": 34.0454,
+        "from": null,
+        "to": {
+          "px": [
+            863,
+            947
+          ]
+        }
+      },
+      {
+        "label": "part of (Stanford Ave)",
+        "name": "Crocker Street",
+        "entityId": "crocker-street",
+        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
+        "planned": {
           "text": "1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
@@ -8641,7 +8753,13 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0401,
-        "from": null,
+        "maxLat": 34.0454,
+        "from": {
+          "px": [
+            863,
+            947
+          ]
+        },
         "to": {
           "px": [
             527,
@@ -16434,13 +16552,13 @@ const STREET_DATA = {
     "namedAfter": null,
     "namedAfterLink": null,
     "planned": {
-      "text": "1888",
+      "text": "by 1888",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
     },
     "built": "not yet researched",
     "nameHistory": [
       {
-        "from": "1888",
+        "from": "by 1888",
         "until": null,
         "name": "Omar Street",
         "entityId": "omar-ave",
@@ -16456,7 +16574,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
-    "knownFraction": 1,
+    "knownFraction": 0.78,
     "categories": [
       "unknown"
     ],
@@ -19103,6 +19221,48 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
+        "label": "part of",
+        "name": "Towne Avenue",
+        "entityId": "towne-ave",
+        "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad — how and when this stretch joined Towne Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+        },
+        "built": "not yet researched",
+        "note": "Named when the subdividers of Joseph Wolfskill's downtown orchard gave 13 acres at 4th and Alameda for a new Southern Pacific station — the Arcade Depot, opened 1888 — and lettered the railroad's officers onto the surrounding streets. Stanford Avenue and Crocker Street come from the same deal.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.78,
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Recorded map: Wolfskill Orchard Tract, M.R. 30-9/13 (surveyed by J.H. Dockweiler, July–Aug. 1887; recorded Jan. 11, 1888)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.045,
+        "from": null,
+        "to": {
+          "px": [
+            796,
+            1091
+          ]
+        }
+      },
+      {
         "label": "part of (original Towne Ave)",
         "name": "Towne Avenue",
         "entityId": "towne-ave",
@@ -19148,7 +19308,13 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0395,
-        "from": null,
+        "maxLat": 34.045,
+        "from": {
+          "px": [
+            796,
+            1091
+          ]
+        },
         "to": {
           "px": [
             411,

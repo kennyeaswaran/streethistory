@@ -16,7 +16,7 @@ street geometry live from the Overpass API). For a local server:
   prefixes) are grouped into one clickable street.
 - Click target: each street segment carries an invisible ~18px-wide stroke, so the
   street's drawn area is clickable without hunting for a hairline.
-- Data: `streets-data.js` — one entry per street, subdivided into **segments**
+- Data, today: `streets-data.js` — one entry per street, subdivided into **segments**
   wherever stretches have distinct name lineages (see the schema comment at the top
   of that file). Segments are bounded by cross-streets (`from`/`to`), and each
   carries its own chronological `nameHistory` whose items can be tagged with `how`
@@ -24,19 +24,32 @@ street geometry live from the Overpass API). For a local server:
   reached by extension, renaming, or transfer (rendered as popup badges).
   3rd Street is the exemplar. Streets without an entry render grey; entries render
   blue; filter checkboxes highlight matches in amber.
+- Data, next: this hand-authored file is being replaced by a **generated** one.
+  `names.js` + `documents/` + `node generate.js` → `generated/streets-data.gen.js`,
+  rendered by `preview.html`. Built and passing its acceptance test, not yet
+  live — the switchover waits on the full corpus being encoded
+  (handbook/MODEL-SPEC.md, handbook/MODEL-IMPLEMENTATION.md).
 
 ## Adding history
 
-Research is **document-first**: find a primary document (recorded tract map,
-renaming ordinance, newspaper report of a council action), transcribe it once,
-then apply it to every street segment it touches — adding it as a source to
-existing segments, splitting segments where its extents demand, and creating
-new (even partial) entries for streets it names. Entries are keyed by the
-street's OSM name without directional prefix (e.g. "Main Street", not "South
-Main Street"). Orientation for AI instances (and a quick map of every doc
-below): CLAUDE.md. Full guide: handbook/ADDING-STREETS.md; map pipeline: handbook/TRACT-RESEARCH.md;
-Sanborn atlases and city directories: handbook/SERIAL-SOURCES.md; end-to-end stage
-specs (and what's still unsolved): handbook/PIPELINE.md.
+Research is **document-first**, and nobody edits a street's history directly.
+Find a primary document — a recorded tract map, a renaming ordinance, a
+newspaper report of a council action — and read it into `documents/<id>/`. Each
+row it produces says one thing about one stretch of one modern street, and
+`generate.js` computes the map from the corpus of rows. A stretch is blue
+because some document speaks about that ground and grey because none does.
+
+For a map that means: `utilities/new-map.command` to make the folder, then the
+map tool — align the scan over the modern grid, trace the ground the sheet
+actually informs about, hand the folder to an AI pass, then confirm each row
+and sweep the sheet. Marking a document swept is what licenses arguing from its
+silence, so it is a gate rather than a checkbox.
+
+Orientation for AI instances (and a map of every doc below): **CLAUDE.md**. How
+the whole thing fits together: **handbook/PIPELINE.md**. Reading a map in:
+handbook/MAP-TOOL-GUIDE.md; finding one: handbook/TRACT-RESEARCH.md; Sanborn
+atlases and city directories: handbook/SERIAL-SOURCES.md; researching who a
+street was named after: handbook/NAME-RESEARCH.md.
 
 ## Known limitations / next steps
 
@@ -50,24 +63,26 @@ specs (and what's still unsolved): handbook/PIPELINE.md.
   street itself".
 - Name normalization is simple prefix-stripping; watch for collisions (e.g. two
   distinct streets sharing a base name).
-- Seed data (7 streets) is summarized from lastreetnames.com — before going public,
-  confirm permissions/attribution with Mark Tapio Kines, and diversify sources
-  (newspapers.com, LAPL, county tract maps).
+- Some of the earliest entries are summarized from lastreetnames.com — before
+  going public, confirm permissions/attribution with Mark Tapio Kines. The
+  document model is the diversification: every row cites the sheet it was read
+  from.
 
 ## Expanding coverage
 
 Coverage is neighborhood-based: `NEIGHBORHOODS` in `streets-data.js` drives the
 Overpass query, the dashed coverage outlines, and the geometry-file staleness
-check. `node coverage-report.js` prints the per-neighborhood research to-do list.
-Full workflow in handbook/ADDING-STREETS.md.
+check. `node generate.js` writes `generated/report.md`, which lists every street
+no document speaks about yet — the research queue. Step by step:
+handbook/ADDING-A-NEIGHBORHOOD.md.
 
 ## Research process
 
-Batched by document (see handbook/ADDING-STREETS.md, "Scaling research"): a batch is a
-set of primary documents — e.g. the tract maps harvested for a neighborhood —
-transcribed into `documents/<id>/` and applied one by
-one. Unverified hunches and open questions live in `handbook/research-leads.md`;
-sourced claims go straight into the data even when found incidentally.
+Batched by document (see handbook/NAME-RESEARCH.md, "Working at scale"): a batch
+is a set of primary documents — e.g. the tract maps harvested for a
+neighborhood — read into `documents/<id>/` one at a time. Unverified hunches and
+open questions live in `handbook/research-leads.md`; sourced claims go straight
+into the data even when found incidentally.
 
 ## Research resources
 
@@ -81,7 +96,8 @@ sourced claims go straight into the data even when found incidentally.
 - L.A. City Archives & Records Center (Council minutes/ordinances to 1850): https://clerk.lacity.gov/records
   — scanned 19th-century council minutes are served by the City Clerk's older
   document app (Record Series R05.557, e.g. `M02231897_01.pdf`); the February
-  1897 renaming sessions are transcribed in omnibus-1897-renaming-council-minutes.md
+  1897 renaming sessions are transcribed in
+  `documents/ord-4093/omnibus-1897-renaming-council-minutes.md`
 - NavigateLA (recorded tract boundaries): https://navigatela.lacity.org/
 - L.A. County tract map search (recorded subdivision maps, scanned): https://pw.lacounty.gov/smpm/landrecords/TractMaps.aspx
   — full street→tract→map workflow in handbook/TRACT-RESEARCH.md
@@ -90,6 +106,8 @@ sourced claims go straight into the data even when found incidentally.
   (Hollywood, Highland Park, San Pedro …) appear under their own city names.
   LAPL's guide to the set: https://www.lapl.org/collections-resources/research-guides/sanborn-atlases
 - L.A. city directories 1873–1907, digitized by LAPL: https://rescarta.lapl.org/ResCarta-Web/jsp/RcWebBrowse.jsp
-  — annual street guides with extents in cross-streets; no maps
+  — annual street guides with extents in cross-streets. Several editions were
+  issued with a folding city map (usually Maxwell's), scattered across other
+  collections — see handbook/SERIAL-SOURCES.md
   — both of the above: handbook/SERIAL-SOURCES.md
 - Bernice Kimball, "Street Names of Los Angeles" (BOE, 1988) — at LAPL; the city's own renaming compendium

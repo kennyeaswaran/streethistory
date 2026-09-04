@@ -1,6 +1,6 @@
-// doc-geometry.js — the geometry shared by document-tool.html, generate.js
+// doc-geometry.js — the geometry shared by map-tool.html, generate.js
 // and the tests. Pure functions, no DOM, no fs: loadable in the browser with
-// a <script> tag and requirable in Node (TOOL-SPEC.md §6).
+// a <script> tag and requirable in Node (MAP-TOOL-SPEC.md §6).
 //
 // Everything here exists because MODEL-SPEC.md §4.6 stores anything traced on
 // a scan in PIXEL coordinates: the world coordinates are derived through the
@@ -15,8 +15,16 @@
   "use strict";
 
   // --- local planar projection (metres) around a reference point -----------
-  // Same constants as georef.py, so pixel↔world agrees across the toolchain.
-  const KY = 110540;
+  //
+  // THESE TWO NUMBERS ARE DEFINED HERE, and every stored pixel coordinate in
+  // the project is measured against them: change one and every alignment,
+  // coverage ring and trace in documents/ silently means somewhere else. They
+  // used to be stated here and again in georef.py, with a comment in each
+  // saying it matched the other — a definition kept in two places, in two
+  // languages, one of which nobody ran. georef.py was retired 2026-09; this is
+  // now the only copy, and anything else that needs the projection should call
+  // into this module rather than restate it.
+  const KY = 110540;                       // metres per degree of latitude
   function makeProj(lat0, lon0) {
     const kx = 111320 * Math.cos(lat0 * Math.PI / 180);
     return {
@@ -26,8 +34,8 @@
   }
 
   // --- alignment: control points -> affine, and back -----------------------
-  // Pixel y is negated first so both systems are right-handed (georef.py does
-  // the same). 2 points give a similarity; 3+ give a least-squares affine.
+  // Pixel y is negated first so both systems are right-handed. 2 points give a
+  // similarity; 3+ give a least-squares affine.
   function fitAlignment(points) {
     if (!points || points.length < 2) throw new Error("need at least 2 control points");
     const lat0 = points.reduce((s, p) => s + p.ll[0], 0) / points.length;
@@ -233,7 +241,7 @@
   }
 
   // --- scan placement ------------------------------------------------------
-  // The document tool holds a scan's placement as a ground point under its
+  // The map tool holds a scan's placement as a ground point under its
   // centre, a rotation from north, and metres per scan pixel — never as a
   // screen position, which would need correcting on every pan and zoom and
   // would drift as those corrections accumulated.

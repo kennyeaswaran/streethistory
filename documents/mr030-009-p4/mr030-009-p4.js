@@ -7,6 +7,7 @@ module.exports = {
   transcription: "documents/mr003-060-p1/mr003-060-p1-partA.md",
 
   date: { on: "1888-01-11" },   
+  form: "drawn",
   type: "tract-map",
   attests: "planned-by",
   completeness: "incidental",

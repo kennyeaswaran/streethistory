@@ -19,32 +19,37 @@ JavaScript-only archives, and committing to git.
 
 | You are… | Read |
 |---|---|
-| adding or editing street data | **handbook/ADDING-STREETS.md** (the authoring guide; schema, segments, field conventions) |
+| reading a map into the corpus | **handbook/MAP-TOOL-GUIDE.md** (the tool, end to end) |
+| researching who a street was named after | **handbook/NAME-RESEARCH.md** (sources, and what may be claimed) |
+| extending coverage to a new area | handbook/ADDING-A-NEIGHBORHOOD.md |
 | chasing one subdivision's platted names | **handbook/TRACT-RESEARCH.md** (NavigateLA → Map-Ref → DPW scan → transcription) |
 | after name-change dates across a neighborhood | **handbook/SERIAL-SOURCES.md** (Sanborn atlases, city directories) |
-| wondering what's automatable and what isn't | **handbook/PIPELINE.md** (three stages; stage 2 is the open problem) |
+| wanting the shape of the whole thing | **handbook/PIPELINE.md** (four stages, and which two need a human) |
 | holding an unverified hunch | **handbook/research-leads.md** (dated parking lot; sweep it before a street pass) |
 | publishing / git | **handbook/PUBLISHING.md** |
 | looking at the proposed names/documents/generator model | **handbook/MODEL-SPEC.md** (the contract) + **handbook/MODEL-IMPLEMENTATION.md** (built 2026-08-24; 3rd St acceptance diff clean; NOT live) |
 | executing the switchover to generated data | **MODEL-IMPLEMENTATION.md → "Switchover checklist"** (every known required change, incl. two code traps marked ⚠ in generate.js) |
-| **using** the document tool (Kenny) | **handbook/DOCUMENT-TOOL-GUIDE.md** — serve the folder, open via localhost, align, draw coverage, save |
-| building the document tool | **handbook/TOOL-SPEC.md** (align → AI proposals → review). Phase 1 built 2026-08-25 in `document-tool.html`; phase 2 not yet |
-| curious how the data got this shape | handbook/migration-2026-07.md (historical; that pass is done) |
+| **using** the map tool (Kenny) | **handbook/MAP-TOOL-GUIDE.md** — serve the folder, open via localhost, align, draw coverage, save |
+| building the map tool | **handbook/MAP-TOOL-SPEC.md** (align → AI proposals → review). Built end to end in `map-tool.html`; run `node browser-test.js` after any change |
+| curious how the data got this shape | the git history — the 2026-07 segment migration and the 2026-08 move to documents are both in it |
 
-Documents already transcribed live in `tracts/transcriptions/` (one recorded
-map each, Part A/Part B per TEMPLATE.md) and `omnibus-*.md` (one council action
-or newspaper report each, many streets at once).
+Everything about one document lives in its own folder under `documents/` —
+including any verbatim transcription, which is now optional and kept only where
+a sheet's *text* is worth having separately (handbook/TRANSCRIPTION-TEMPLATE.md).
+The 1897 council minutes and the omnibus renaming files are in
+`documents/ord-4093/`.
 
 ## Folder layout (reorganised 2026-08-26)
 
 ```
   README.md  CLAUDE.md          the two files tools look for by name
-  start-tools.command           double-click: serves the folder, opens the tool
-  new-document.command          double-click: inbox/ scan -> documents/<id>/
+  utilities/                    double-click these; more will arrive as other
+    start-map-tools.command     kinds of document get tools of their own
+    new-map.command             inbox/ scan -> documents/<id>/
   *.html                        index (live map), preview (its successor),
-                                document-tool (align + bound a scan)
-  *.js *.py                     the runnable pieces: generate, the checkers,
-                                doc-geometry, intersect, georef
+                                map-tool (align + bound a scan)
+  *.js                          the runnable pieces: generate, the checkers,
+                                doc-geometry, intersect
   names.js  streets-data.js     the authored name layer; the live map data
   names-new.js                  entities minted in the tool, awaiting research
                                 and a move into names.js (rewritten by the tool)
@@ -54,7 +59,6 @@ or newspaper report each, many streets at once).
                                 This is the unit you hand to another AI system.
   inbox/                        raw downloads not yet made into documents
   generated/  legacy/           generator output; the frozen pre-model data
-  overlay-trial/                the stage-2 benchmark and its answer key
   attic/                        superseded but kept (align.html)
 ```
 
@@ -69,27 +73,34 @@ inside the file must match; the checker says so if they drift.
 
 1. **Never estimate pixel coordinates on a scan.** Every georeferencing error
    in this project's history came from an instance eyeballing pixels. Humans
-   do it in seconds in `align.html`; instances run `georef.py` on the human's
-   alignment. (handbook/TRACT-RESEARCH.md, "Alignment.")
+   do it in seconds in `map-tool.html`; instances read the pixel coordinates
+   the tool has already written into `<id>-streets.json`.
+   (handbook/TRACT-RESEARCH.md, "Alignment.")
 2. **Match drawn streets to modern ones by geometry, never by name.** The
    benchmark case: on M.R. 66-35 the plat's "Third St" is modern Miramar and
    its "Arnold St" is modern 3rd. Name continuity is a trap, not evidence.
 3. **Never let a claim outrun the document's extent.** A name on a tract map
    proves that name on *those blocks* by that date — not along the whole
-   street, and not that the tract coined it. When the evidence covers less
-   than the segment, flag it in handbook/research-leads.md rather than quietly
-   widening the claim.
+   street, and not that the tract coined it. The model now enforces this: a row
+   carries its own extent and the generator segments the street from the rows,
+   so the failure mode is no longer over-claiming but a *wrong extent*. Get the
+   two ends right and the rest follows.
 4. **Every dated claim carries a linked source, and unknowns stay unknown.**
    "not yet researched", "no namesake documented", `namedAfter: null` + the
    `unknown` category are all legitimate, preferred values. A partial entry
    beats a confident guess.
-5. **Spot-check before trusting a transcription you didn't make.** Whoever
-   applies a Part A file verifies at least one of its claims against the scan
-   first — including transcriptions made by other AI systems.
-6. **Never hand-write a band boundary.** Every `minLat`/`maxLng` comes from
-   `node intersect.js "A Street" "B Street"`; report the value you used.
-7. **Run `node check-data.js` after every street**, not at the end of a batch.
-   It gates the deploy, so a red checker means a stale public site.
+5. **Confirming a row means you checked it against the sheet.** The AI pass
+   writes rows `confirmed: false`; a human clears that, and clearing it without
+   looking is the one way to get a false claim onto the map through the front
+   door. The same goes for a transcription somebody else made.
+6. **Never hand-write a coordinate.** Cross-street extents come from the
+   street's own `crossings` in `<id>-streets.json`; a mid-block extent is a
+   pixel you clicked in the tool. `node intersect.js "A Street" "B Street"`
+   answers "where do these two meet" when you need it in prose.
+7. **Run the checker for the layer you touched, as you go.** `node
+   check-model.js` for `documents/` and the name files; `node check-data.js`
+   for the hand-authored `streets-data.js`, which still gates the deploy, so a
+   red checker there means a stale public site.
 8. **Popups state facts, not process.** No methodology narration in the data;
    the one exception is "(identified by map alignment)" in a source title.
 
@@ -104,9 +115,9 @@ inside the file must match; the checker says so if they drift.
     JSON API and IIIF manifests return 403 to automated fetching.
   - NavigateLA, CDNC, ResCarta (LAPL directories) — JavaScript apps; fetch
     tools see nothing. Browser (Claude in Chrome) or human only.
-  - **Downloads first:** if a map is already in `tracts/`, read it locally
-    (`pdftoppm -png -r 150`, then Read the PNGs). Never squint at a PDF in a
-    browser viewer when a local copy exists.
+  - **Downloads first:** if a map is already in `inbox/` or `documents/<id>/`,
+    read it locally (`pdftoppm -png -r 150`, then Read the PNGs). Never squint
+    at a PDF in a browser viewer when a local copy exists.
 - **Git through the bridge — use `git --no-optional-locks`.** The bridge shell
   cannot delete files, so an ordinary `git status` or `git diff` creates
   `.git/index.lock` and then fails to remove it. The stale lock blocks Kenny's
@@ -117,12 +128,10 @@ inside the file must match; the checker says so if they drift.
   cause.) **Don't run `git add`/`git commit` here at all** — committing is
   Kenny's step in GitHub Desktop; instances leave the working tree ready and
   list what changed.
-- **What isn't committed:** downloaded scans (`tracts/*`, re-downloadable) and
-  derived overlay renders (`overlay-trial/**/*.png`, regenerable via
-  `georef.py`). Carved back in because they are *not* reproducible: the
-  transcriptions, the hand-made `tracts/renders/*-alignment.json`, and the
-  overlay-trial instructions/answer key/results. Check `.gitignore` before
-  adding a new class of file.
+- **What isn't committed:** the source scans and the 100 dpi renders, both
+  re-derivable from the recorder's PDF with `utilities/new-map.command`. Carved
+  back in because they are *not* reproducible: the transcriptions and the
+  hand-made alignments. Check `.gitignore` before adding a new class of file.
 
 ## Division of labor
 
@@ -130,23 +139,29 @@ inside the file must match; the checker says so if they drift.
 |---|---|
 | harvest Map-Refs (NavigateLA), browse CDNC/ResCarta | browser instance or Kenny |
 | download scans | Kenny |
-| transcribe a scan (Part A) | any instance or AI system |
-| align a scan to the modern grid | **Kenny** (align.html) — the bottleneck |
-| trace/verdict from an alignment | instance running georef.py |
-| apply a document to streets-data.js (Part B) | instance, then Kenny reviews |
+| align a scan to the modern grid, trace its coverage | **Kenny** (map-tool.html) — the bottleneck |
+| read rows off the sheet | instance or another AI system, from `<id>-streets.json` + `TASK.md` |
+| confirm the rows and sweep the document | **Kenny**, in review mode — the other bottleneck |
+| research a namesake | any instance (handbook/NAME-RESEARCH.md) |
 | commit and push | Kenny |
 
-End a data batch by listing every new or substantially changed entry, so Kenny
-can type each into the map's search box and eyeball the popup.
+End a batch by listing what changed, so Kenny can spot-check the boldest claim
+in it against its source.
 
-## State as of 2026-08
+## State as of 2026-09
 
-- 107 streets / 140 entries, all checks passing; 72/140 carry a primary-record
-  anchor. Coverage is one neighborhood (`dtla`).
-- **The live problem** is PIPELINE.md's stage 2 — visual grounding on scans.
-  The current attack is verification-instead-of-generation: `overlay-trial/`
-  holds the benchmark, and the v2 single-street images have been generated but
-  **not yet run**.
+**Two data paths, and only one of them is live.** The public site still renders
+the hand-authored `streets-data.js`: 107 streets / 140 entries, 72 of them with
+a primary-record anchor, one neighbourhood (`dtla`). All the actual work now
+goes into the document corpus, which generates a much larger map that is not
+switched on yet: **26 documents, 2937 rows, 82 curated name entities → 273
+streets and 557 entries**, plus 228 stub entities minted from OSM that nobody
+has researched. Those stubs are the queue; `generated/report.md` lists them.
+
+- **Reading a sheet is routine now.** A human aligns and traces coverage, an AI
+  pass reads rows off the render plus `<id>-streets.json`, a human confirms and
+  sweeps. MR066-035 is the sheet to test a new assistant on: its "Third St" is
+  modern Miramar, so name-matching fails visibly.
 - **The 1897 citywide renaming** (the single richest document for this data) is
   identified at last: Ordinance No. 4093 (New Series), Ordinance Book IV
   p. 337. Council minutes are transcribed; the ordinance text itself is
@@ -159,15 +174,15 @@ can type each into the map's search box and eyeball the popup.
   test** (2026-08-24): `names.js` + `documents/` + `generate.js` →
   `generated/streets-data.gen.js`; every 3rd St difference vs `legacy/` is
   accounted in MODEL-IMPLEMENTATION.md. **Not live**: `streets-data.js` stays
-  hand-authored per handbook/ADDING-STREETS.md until the full corpus is encoded, the
+  hand-authored until the full corpus is encoded, the
   street-by-street diff is clean, and Kenny approves the §10 switchover
   (checklist: MODEL-IMPLEMENTATION.md). Validate authored layers with
   `node check-model.js`; diff a street with `node diff-street.js "3rd Street"`.
   `preview.html` renders the generated data and is the future index.html —
   a standing file, edited directly, NOT regenerated from index.html.
-- **The document tool is built end to end** (2026-08-30): align → coverage →
+- **The map tool is built end to end** (2026-08-30): align → coverage →
   drag `documents/<id>/` into an assistant → review, name, confirm, sweep.
-  handbook/DOCUMENT-TOOL-GUIDE.md is the how-to, handbook/TOOL-SPEC.md the
+  handbook/MAP-TOOL-GUIDE.md is the how-to, handbook/MAP-TOOL-SPEC.md the
   design. Four test suites, and they see different things: `node
   test-doc-geometry.js` (pure geometry), `node test-review.js` (the review
   model, extracted from the page rather than copied so it cannot drift), and
@@ -185,10 +200,10 @@ can type each into the map's search box and eyeball the popup.
   the model gains a way to say something. It is the brief the AI pass reads and
   the only thing standing between a new row kind and a hundred rows in the old
   shape. If you add a kind or a field, update `taskMarkdown()` in
-  `document-tool.html` in the same change — `browser-test.js` asserts it names
+  `map-tool.html` in the same change — `browser-test.js` asserts it names
   every kind.
 - **Sweep state is read, never stored twice.** It lives in each document's
-  `sweptFully`; the tool's Open → "What's left to do" reads the folder. Do not
+  `sweptFully`; the tool's Open box reads the folder every time it is shown. Do not
   encode it in folder names, and do not move folders between an inbox /
   in-progress / done tree — the paths inside each file are project-relative
   and every move breaks them.

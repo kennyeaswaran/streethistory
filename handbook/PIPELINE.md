@@ -1,186 +1,93 @@
-# The tract-map pipeline: three stages, and what's actually unsolved
+# The pipeline: how a document becomes map data
 
-The end-to-end job: from "this street segment needs its record" to "its
-entry in streets-data.js cites the recorded map that documents it." Three
-stages. Stages 1 and 3 are solved and specified below so they can be run by
-any instance at scale; stage 2 contains the one genuinely unsolved primitive,
-and its required inputs/outputs are pinned down here so candidate solutions
-can be tested against a benchmark we already have.
+Orientation. Every stage below has its own document; this one exists so that a
+reader who has just arrived — or come back after a month — can see the shape
+before opening any of them.
 
-Resolution convention: every pixel coordinate in this pipeline is
-meaningless without the render it was measured on. Renders are produced with
-`pdftoppm -png -r <dpi>`; every file that carries pixel coords MUST state the
-render filename and dpi. Default: 100 dpi for alignment work.
+The claim the whole thing rests on: **the unit of evidence is the document, and
+the unit of data is the segment.** Nobody edits a street's history directly.
+Documents are read into `documents/`, and `generate.js` computes what the map
+says from them. A stretch of street is blue because some document speaks about
+that ground and grey because none does — which is a fact about the corpus, not
+a gap somebody forgot to fill.
 
----
+## The four stages
 
-## Stage 1 — HARVEST (solved; browser instance or human)
+**1. Find it.** A street needs answering, or a neighbourhood needs coverage;
+you work out which recorded map, ordinance, atlas sheet or directory would say
+something, and get hold of it. → **TRACT-RESEARCH.md** for tract maps
+(NavigateLA → tract name and Map-Ref → the recorder's scan),
+**SERIAL-SOURCES.md** for Sanborn atlases and city directories,
+**NAME-RESEARCH.md** for the trails a namesake question runs down.
 
-**Input:** a research target — a segment with `planned/built: "not yet
-researched"`, a segment-review flag, or a neighborhood batch from
-coverage-report.js.
+Most of this stage needs a browser: NavigateLA, the Assessor portal, CDNC and
+ResCarta are JavaScript apps that fetch tools see nothing of. Downloading is a
+human click.
 
-**Process** (details in TRACT-RESEARCH.md): pick 1–3 addresses on the target
-stretch → NavigateLA Parcel Description Report → read Tract name, Map-Ref,
-Lot → construct the scan URL (M.R. refs: direct pattern; M.B. refs: via
-`List.aspx?type=Tract&book=NNNN`, never guessed) → existence-check with the
-fetch tool (`Content-Type: application/pdf` = real).
+**2. Read it in.** `utilities/new-map.command` turns a scan in `inbox/` into
+`documents/<id>/`. A human aligns it against the modern street grid, traces the
+coverage polygon, and saves — which writes the document, its alignment, the
+modern street geometry in the scan's own pixel space, and a `TASK.md` brief. An
+AI pass reads the render against that brief and writes rows. A human confirms
+each row and sweeps the document. → **MAP-TOOL-GUIDE.md** to use the tool,
+**MAP-TOOL-SPEC.md** for why it is built the way it is.
 
-**Output contract — one shopping-list row per lookup**, appended to the
-shopping-list section of research-leads.md:
+Alignment is the human bottleneck, and deliberately so: every georeferencing
+error in this project's history came from something estimating pixel
+coordinates instead of a person fitting a scan by eye.
 
-| field | example |
-|---|---|
-| target | 3rd Street, "Main to Alameda" segment |
-| address used | 250 E 3rd St |
-| tract (as reported) | JOHNSTON |
-| map-ref | M.R. 2-92/93 |
-| lot | LT 4 |
-| verified URL(s) | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf (+ -093) |
-| caveat | modern ref may postdate the founding plat (resubdivision) — see TRACT-RESEARCH gotchas |
+**3. Name it.** A plat letters ink; a *name entity* is a naming lineage.
+Deciding which lineage a label belongs to is review's job, and can only be done
+against the whole corpus. Finding out who or what the name honoured is separate
+work, done later, from a different set of sources. → **NAME-RESEARCH.md**;
+`names-new.js` is the queue, and each entry's `sightings` lists every sheet
+that letters it.
 
-A human downloads the batch into `tracts/` (sandbox can't reach the domain).
+**4. Generate.** `node check-model.js && node generate.js` validates the corpus
+and computes segments, timelines, planned/built dates, sources and the search
+index into `generated/`. → **MODEL-SPEC.md** is the contract;
+**MODEL-IMPLEMENTATION.md** records what was built and what remains before the
+switchover.
 
-**Serial-source variant (2026-08, not yet exercised).** For Sanborn atlases
-and city directories (SERIAL-SOURCES.md) stage 1 is cheaper and skips
-NavigateLA entirely: the volume's own street index and key map say which
-sheet covers a street, so the harvest is index → sheet number → LOC item
-page, and the shopping list is a list of sheets rather than Map-Refs. The
-download-by-human step is the same (LOC returns 403 to automated fetching of
-its search, JSON API and IIIF manifests; item pages read fine). What changes
-downstream: one sheet yields many Part B rows instead of a handful, and the
-evidence it produces is a *bracket* between editions rather than a single
-recording date.
+Textual documents — an ordinance, a newspaper column, a directory's street
+section — go through stages 1, 3 and 4 but not 2: they have no sheet to align
+(MODEL-SPEC §4.1a). Reading them in is by hand for now, and a tool for written
+evidence is the obvious next one to build.
 
-**Also solved, part of stage 1's tail:** Part A transcription of the
-downloaded scan — verbatim labels, title block, recording block — per
-`tracts/transcriptions/TEMPLATE.md`. Every model tested is reliable at this.
-Output: `tracts/transcriptions/<MAPREF>.md`, Part A filled.
+## Conventions that cross every stage
 
----
+**Resolution.** A pixel coordinate is meaningless without the render it was
+measured on. Renders are `pdftoppm -png -r <dpi>`, and **100 dpi is the
+project's alignment convention** — every stored pixel in `documents/` is
+against a `<id>-100dpi.png`. Re-render at 300 dpi when you need to *read* fine
+label text, but align against the 100 dpi copy.
 
-## Stage 2 — IDENTIFY (the unsolved middle)
+**Downloads first.** Before opening a map PDF in a browser viewer, check
+`inbox/` and `documents/*/` — if it is already here, read it locally. Local
+reading is faster, the resolution is yours to choose, and comparing sheets side
+by side is possible. Browser time is for collecting Map-Refs, not for squinting
+at plats.
 
-**Job:** for each street drawn on the plat, decide which modern street (and
-which stretch of it) it corresponds to — or that it has no modern
-counterpart.
+**A document opened for one street gets read for all of them.** One subdivision
+map routinely names four to six streets; the sweep gate exists to make
+finishing the sheet the default rather than an act of virtue. Re-opening a scan
+later is far more expensive than reading it through the first time.
 
-**What's already solved inside stage 2:**
-- The math: `georef.py fit` (control points → similarity/affine transform),
-  `trace` (pixel endpoints → nearest-modern-street votes + median distances),
-  `overlay` (project every modern street onto the scan), `locate`.
-- The interpretation protocol: verdict bands (median <15 m with clear vote
-  margin = match; 20–50 m = corresponds but realigned, flag it; >60 m or
-  split votes = no counterpart), junction contamination, diagonal-cut traps —
-  all in TRACT-RESEARCH.md's precision protocol.
-- The human path: align.html (human drags/rotates the scan onto the modern
-  grid in seconds; exports `<name>-alignment.json` = three virtual control
-  points in the same schema georef.py consumes).
+**Nothing is committed that can be re-derived.** Scans and renders regenerate
+from the recorder's PDF and stay out of git. Alignments, transcriptions and
+documents are hand work, and are committed.
 
-**The unsolved primitive — visual grounding.** Two instances of the same task:
-
-(a) *Control points:* given the render and a description ("intersection
-    center of the drawn streets labeled Bixel and Third"), return `[x, y]`.
-    Needed: 2–3 ironclad points per sheet, accuracy within ~±20 px @ 100 dpi
-    (≈ half a street width).
-(b) *Street polylines:* given the render and a label ("the drawn street
-    labeled ARNOLD ST"), return endpoint (or polyline) pixels ON THE INK.
-    Feeds `trace`. Same accuracy bar; off-the-ink points flip verdicts
-    (documented failure).
-
-All current models (Claude, ChatGPT, Gemini) are unreliable at generating
-these coordinates; humans are reliable but don't scale.
-
-**Required I/O for any candidate solver** (so it plugs into georef.py as-is):
-
-```json
-{
-  "render": "tracts/renders/MR066-035-1.png",
-  "dpi": 100,
-  "controls": [
-    {"px": [1310, 2270], "ll": [34.05731, -118.26343], "note": "Bixel x 3rd"}
-  ],
-  "streets": [
-    {"label": "ARNOLD ST", "endpoints": [[585, 1810], [1310, 2270]]}
-  ]
-}
-```
-(`controls` is exactly georef.py's control-file schema; `streets` rows feed
-`trace`.)
-
-**Two reductions worth testing before treating this as unsolved at full
-strength:**
-
-1. **Verification instead of generation.** Once an alignment exists (human
-   for now), `georef.py overlay` draws every modern street, labeled, onto
-   the scan. The model task becomes yes/no: "does the red MIRAMAR line run
-   along the drawn corridor labeled THIRD ST?" Models are far more reliable
-   at verifying a drawn overlay than at emitting coordinates. If this holds,
-   the human's role shrinks to one align.html drag per sheet, and everything
-   downstream automates.
-2. **Classical CV auto-alignment.** The modern street graph is known
-   (streets-geometry.js); plats are high-contrast line drawings. Extracting
-   the drawn line network (skeletonize/Hough) and fitting the
-   similarity/affine transform that best matches it to the OSM graph is a
-   well-posed optimization needing no vision-model pixel-picking at all. If
-   auto-alignment works, reduction 1 covers the rest. Label→corridor
-   association can then use the label's position from Part A plus the
-   detected lines.
-   **Sanborn sheets are the friendliest target for this** (2026-08): north-up,
-   consistent scale, contiguous coverage, and a street network far closer to
-   the modern graph than a rotated 1890s plat — so if auto-alignment is going
-   to work anywhere it works there first, and one fit covers many streets.
-   Conversely, a serial-source pass makes the bottleneck bite harder in
-   aggregate, since there are many more sheets than tract maps.
-
-**Benchmark (already in the repo).** Human ground truth exists for scoring
-any candidate: `tracts/renders/*-alignment.json` (MR011-042, MR059-060,
-MR066-035, TR0015-166a, plus the MR006-138 session records) and the resolved
-identifications in streets-data.js. Acceptance for a candidate solver:
-- reproduces each human alignment (agreement <15 m across the whole sheet,
-  not just at control points);
-- reproduces the known verdicts, INCLUDING the adversarial case MR066-035,
-  where naive label-continuity is geometrically wrong (its "Third St" =
-  modern Miramar; its "Arnold St" = modern 3rd) — any solver that matches by
-  name instead of geometry fails this on purpose.
-
-**Output contract of stage 2** (whatever solves it): Part B rows in the
-transcription file — per Part A street: modern identity (normalized OSM
-name + which stretch), basis (lot-level / label / alignment / position),
-and the trace stats (votes, median m) when the basis is alignment.
-
----
-
-## Stage 3 — APPLY (solved; any Claude instance)
-
-**Input:** a transcription file with Part A + Part B filled.
-
-**Process:** ADDING-STREETS.md's core loop — for every Part B row: add the
-map as a source on the matching segment(s) (unless an earlier-dated source
-covers the same claim); split segments where the documented extent demands
-(from/to cross-streets, intersect.js bands, `how` tags, 3rd Street as
-exemplar); create partial entries for streets with none; bank unresolved
-rows in research-leads.md; `node check-data.js` after every street.
-
-**Spot-check obligation:** stage 3 verifies at least one Part A claim
-against the scan, and treats any alignment-based Part B row as flaggable —
-"(identified by map alignment)" goes in the source title.
-
-**Output:** edits to streets-data.js + research-leads.md, the transcription
-file's Part B marked applied, and a change list for human review (map search
-box spot-checks).
-
----
-
-## Division of labor, today
+## Where the work actually is
 
 | stage | who | scale |
 |---|---|---|
-| 1 harvest | browser instance (NavigateLA) + human download click | batch |
-| 1 transcribe | any model (TEMPLATE.md prompt) | batch |
-| 2 align | **human** (align.html, seconds per sheet) | bottleneck |
-| 2 trace/verdict | instance running georef.py on human alignment, or human | bottleneck |
-| 3 apply | Claude instance (agent batches, reviewed) | batch |
+| find and download | browser instance for the lookup, human for the click | batch |
+| align + trace coverage | **human**, seconds to minutes per sheet | the bottleneck |
+| read rows off the sheet | an AI pass, from `TASK.md` and `<id>-streets.json` | batch |
+| confirm and sweep | **human**, in review mode | the other bottleneck |
+| research a namesake | any instance, from NAME-RESEARCH.md's trails | batch |
+| generate | `node generate.js` | instant |
 
-The bottleneck row is the research target: reductions 1 and 2 above are the
-two candidate attacks, and the benchmark section defines "solved."
+The two human steps are the two that carry judgement: where a scan sits on the
+earth, and whether a row's claim is true. Everything on either side of them is
+mechanical, and has been automated in proportion.

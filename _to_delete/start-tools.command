@@ -1,5 +1,5 @@
 #!/bin/bash
-# Double-click me. Serves this folder and opens the document tool in a browser.
+# Double-click me. Serves this folder and opens the map tool in a browser.
 #
 # The tools have to be SERVED rather than opened as file:// — the File System
 # Access API (the Save dialog) needs a secure context, and loading a document
@@ -10,7 +10,7 @@
 
 cd "$(dirname "$0")" || { echo "Could not find the project folder."; exit 1; }
 
-PAGE="document-tool.html"
+PAGE="map-tool.html"
 PORT=8000
 MAXPORT=8010
 
@@ -58,7 +58,7 @@ BASE="http://localhost:$PORT"
 echo
 echo "  Streetymology tools — serving $(pwd)"
 echo
-echo "    document tool   $BASE/document-tool.html"
+echo "    map tool   $BASE/map-tool.html"
 echo "    map preview     $BASE/preview.html"
 echo "    live map        $BASE/index.html"
 echo "    old aligner     $BASE/attic/align.html"

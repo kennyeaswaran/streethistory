@@ -1,6 +1,10 @@
 #!/bin/bash
 # Double-click me. Turns a scan sitting in inbox/ into a document folder that
-# the document tool can open: documents/<id>/<id>.pdf + <id>-100dpi.png.
+# the map tool can open: documents/<id>/<id>.pdf + <id>-100dpi.png.
+#
+# MAPS ONLY. A textual document — an ordinance, a newspaper column, a
+# directory's street section — has no sheet to align (MODEL-SPEC §4.1a) and
+# nothing here applies to it.
 #
 # Everything about one document lives in one folder (see CLAUDE.md, "Folder
 # layout") — that folder is the unit you hand to another AI system later.
@@ -14,7 +18,9 @@
 # first. The two sheets share a title and a url; that is what makes them one
 # recorded map bibliographically, and it is enough.
 
-cd "$(dirname "$0")" || { echo "Could not find the project folder."; exit 1; }
+# It lives in utilities/, so everything below runs from the PROJECT
+# FOLDER one level up — that is where documents/, inbox/ and the tools are.
+cd "$(dirname "$0")/.." || { echo "Could not find the project folder."; exit 1; }
 
 echo
 echo "  New document from a scan in inbox/"
@@ -134,11 +140,13 @@ if [ "$pages" -gt 1 ]; then
 fi
 echo
 echo
-echo "  Next: start-tools.command, then in the tool's Open box paste"
+echo "  Next: double-click utilities/start-map-tools.command. The new folder"
 if [ "${#renders[@]}" -gt 1 ]; then
-  echo "  ONE of these, align it, and come back for the next:"
+  echo "  shows up in the tool's Open box under \"needs aligning and coverage\" —"
+  echo "  take ONE of these, align it, and come back for the next:"
 else
-  echo "  this path:"
+  echo "  shows up in the tool's Open box under \"needs aligning and coverage\"."
+  echo "  Its render is here:"
 fi
 echo
 for r in "${renders[@]}"; do echo "      $r"; done

@@ -14,6 +14,7 @@ module.exports = {
 
   date: { on: "1894-03" },          // the survey date — when the ink was true;
                                     // recording (1897) is in the title
+  form: "drawn",
   type: "tract-map",
   attests: "planned-by",            // doc default: it shows existing streets
   completeness: "incidental",

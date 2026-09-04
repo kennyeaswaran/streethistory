@@ -1,7 +1,7 @@
-// test-review.js — headless tests for the phase 2 review model (TOOL-SPEC §4).
+// test-review.js — headless tests for the phase 2 review model (MAP-TOOL-SPEC §4).
 // Run: node test-review.js
 //
-// The functions under test live inside document-tool.html, because they are
+// The functions under test live inside map-tool.html, because they are
 // only meaningful next to the canvas. Rather than keep a second copy here that
 // could drift, this file EXTRACTS the review block out of the page and runs it
 // against the real street geometry and a frozen copy of MR066-035's alignment
@@ -10,10 +10,10 @@
 const fs = require("fs"), path = require("path"), vm = require("vm");
 const G = require("./doc-geometry.js");
 
-const html = fs.readFileSync(path.join(__dirname, "document-tool.html"), "utf8");
+const html = fs.readFileSync(path.join(__dirname, "map-tool.html"), "utf8");
 const i = html.indexOf("const REVC = {"), j = html.indexOf("function drawReview()");
 if (i < 0 || j < 0) {
-  console.error("Could not find the review block in document-tool.html — if it was " +
+  console.error("Could not find the review block in map-tool.html — if it was " +
                 "renamed, update the markers in this file.");
   process.exit(1);
 }
@@ -22,19 +22,19 @@ const source = html.slice(i, j);
 // documentStreets() lives beside the serialiser, not in the review block, but
 // it is the same kind of thing: geometry the tool asserts about a real sheet.
 const di = html.indexOf("function documentStreets()"), dj = html.indexOf("function streetsJsonText");
-if (di < 0 || dj < 0) { console.error("Could not find documentStreets in document-tool.html"); process.exit(1); }
+if (di < 0 || dj < 0) { console.error("Could not find documentStreets in map-tool.html"); process.exit(1); }
 const bundleSource = html.slice(di, dj);
 
 // zoomView sits with the projections, not the review block.
 const zi = html.indexOf("function zoomView("), zj = html.indexOf("\n// The three control points");
-if (zi < 0 || zj < 0) { console.error("Could not find zoomView in document-tool.html"); process.exit(1); }
+if (zi < 0 || zj < 0) { console.error("Could not find zoomView in map-tool.html"); process.exit(1); }
 const zoomSource = html.slice(zi, zj);
 
 // The two gates review mode enforces: what stops a row being confirmed, and
 // what stops a document being called fully swept.
 const slice = (a, b) => {
   const i = html.indexOf(a), j = html.indexOf(b);
-  if (i < 0 || j < 0) { console.error("Could not find " + a + " in document-tool.html"); process.exit(1); }
+  if (i < 0 || j < 0) { console.error("Could not find " + a + " in map-tool.html"); process.exit(1); }
   return html.slice(i, j);
 };
 const gateSource = slice("function confirmBlocker(", "function mintEntityFor(") +
@@ -42,7 +42,7 @@ const gateSource = slice("function confirmBlocker(", "function mintEntityFor(") 
 
 // --- fixtures --------------------------------------------------------------
 // Frozen, not read from documents/mr066-035/: the document is live data and
-// these tests must keep meaning something after it is swept (fixtures/README).
+// these tests must keep meaning something after it is swept.
 const ALIGN_POINTS = [
   { px: [0, 0],       ll: [34.059385, -118.260251] },
   { px: [1038, 0],    ll: [34.059506, -118.257396] },

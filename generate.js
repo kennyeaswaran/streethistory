@@ -264,7 +264,7 @@ function rowAttests(row, doc) { return row.attests || doc.attests; }
 // A row still marked `confirmed: false` is a proposal from the AI pass that no
 // human has checked. It is not evidence yet, so it does not reach the map: a
 // proposal that generated a public claim would make review optional in
-// practice. Review (document-tool.html) is where it becomes evidence, by
+// practice. Review (map-tool.html) is where it becomes evidence, by
 // having the flag removed.
 const isProposal = row => row.confirmed === false;
 
@@ -391,15 +391,21 @@ for (const doc of nonOsmDocs) {
     // used to produce NO segment and NO complaint — the street simply came out
     // with no history and the build said "0 row problems". The usual cause is
     // ends given the wrong way round: `from` is the WEST end of an EW street
-    // and the SOUTH end of an NS one, so `from: null, to: X` where X sits at
-    // that same end is empty, while `from: X, to: null` is the whole street.
-    // (MR006-138's Colton Street row was exactly this.)
+    // and the NORTH end of an NS one (§5.4), so `from: null, to: X` where X
+    // sits at that same end is empty, while `from: X, to: null` is the whole
+    // street. (MR006-138's Colton Street row was exactly this.)
+    //
+    // This message used to say SOUTH for a north-south street — the opposite of
+    // §5.4 and of the arithmetic ten lines above, which takes `from` from
+    // `street.max` on the latitude axis. It also offered the same "try this"
+    // either way, so it read as advice while saying nothing. Both fixed.
     if (b - a < 4e-5) {
-      const other = isNS ? "from: <cross>, to: null" : "from: <cross>, to: null";
+      const near = row.from === null ? "from" : "to";
       problems.push(`${doc.id}: row on ${row.street} (${asWrittenLead(row.asWritten) || row.kind}) spans ` +
         `nothing — its two ends resolve to the same point. ${row.from === null || row.to === null
-          ? `\`from\` is the ${isNS ? "SOUTH" : "WEST"} end and \`to\` the ` +
-            `${isNS ? "NORTH" : "EAST"} end; try ${other}.`
+          ? `\`from\` is the ${isNS ? "NORTH" : "WEST"} end and \`to\` the ` +
+            `${isNS ? "SOUTH" : "EAST"} end, so \`${near}: null\` here means the end ` +
+            `the other extent is already at; try swapping them.`
           : "the two cross streets meet this one at the same place."}`);
       continue;
     }
@@ -943,7 +949,15 @@ function plannedBuiltFor(seg) {
   let planned = null, built = null;
   if (po) planned = { text: dyear(docDate(po.doc)), url: po.doc.url };
   else if (pb) planned = { text: "by " + dyear(docDate(pb.doc)), url: pb.doc.url };
-  if (bo) built = { text: dfmtFull(docDate(bo.doc)), url: bo.doc.url };
+  // §6.4's collapse: planned ON an exact date, and already attested built BY
+  // that same date, means it was built on it — the plat that dedicates the
+  // street is also drawing it. Only on an exact match: a `built-by` EARLIER
+  // than the planning date says the street existed before it was dedicated,
+  // which is a fact about paper catching up with pavement, not a date to
+  // sharpen.
+  if (!bo && po && bb && dkey(docDate(bb.doc)) === dkey(docDate(po.doc)))
+    built = { text: dfmtFull(docDate(po.doc)), url: bb.doc.url };
+  else if (bo) built = { text: dfmtFull(docDate(bo.doc)), url: bo.doc.url };
   else if (bb) built = { text: asWrittenForms(bb.asWritten).length
       ? `already ${asWrittenQuoted(bb.asWritten)} by ${dfmtFull(docDate(bb.doc))} (${docShort(bb.doc)})`
       : `drawn, unlabelled, by ${dfmtFull(docDate(bb.doc))} (${docShort(bb.doc)})`,
@@ -1261,7 +1275,7 @@ fs.writeFileSync(path.join(OUT_DIR, "report.md"), rep.join("\n") + "\n");
 
 if (proposalCount)
   console.log(`Held back ${proposalCount} unconfirmed proposal row(s) — confirm them ` +
-              `in the document tool's Review mode to let them reach the map.`);
+              `in the map tool's Review mode to let them reach the map.`);
 console.log(`Generated ${Object.keys(STREET_DATA).length} streets, ` +
   `${Object.values(STREET_DATA).flatMap(v => v.segments || [v]).length} entries; ` +
   `${report.stubs.length} stubs; ${problems.length} row problems` +

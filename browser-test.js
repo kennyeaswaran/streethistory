@@ -1,4 +1,4 @@
-// browser-test.js — drives document-tool.html in a real browser.
+// browser-test.js — drives map-tool.html in a real browser.
 // Unit tests cannot see a CSS rule that hides a panel; this can.
 const { chromium } = require("playwright");
 const http = require("http"), fs = require("fs"), path = require("path");
@@ -67,7 +67,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     else d.dismiss();
   });
 
-  await page.goto("http://localhost:8123/document-tool.html");
+  await page.goto("http://localhost:8123/map-tool.html");
   await page.addInitScript(() => {});
   await page.evaluate(() => {
     // Pick the point on a feature that is furthest from every OTHER feature,
@@ -240,7 +240,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     const said = dialogs[0];
     ok("it says what a PDF needs instead of failing", said && /pdftoppm/.test(said),
        String(said).slice(0, 100));
-    ok("…and names the script that does it", said && /new-document\.command/.test(said));
+    ok("…and names the script that does it", said && /new-map\.command/.test(said));
     ok("…and works out the document id", said && /mr006-138/.test(said),
        String(said).slice(0, 160));
     ok("the picker no longer hides PDFs from you",
@@ -1131,6 +1131,23 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     // expect it open, as the block that set it up left it.
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
     await page.waitForTimeout(100);
+  }
+
+  console.log("the map tool leaves textual documents alone");
+  {
+    // §4.1a. Ordinance 4093 and the Herald report have no sheet, so every list
+    // in this tool asks them a question they cannot answer — they sat under
+    // "needs aligning" permanently, which is what started this.
+    const shown = await page.evaluate(() =>
+      ["drawn", "textual", "derived", null, "sanborn-ish-typo"].map(f => [f, MAP_TOOL_SHOWS(f)]));
+    const by = Object.fromEntries(shown.map(([f, v]) => [String(f), v]));
+    ok("a drawn document is this tool's business", by["drawn"] === true);
+    ok("a textual one is not", by["textual"] === false);
+    ok("…nor is the derived OSM pseudo-document", by["derived"] === false);
+    // Hiding on anything BUT an explicit declaration would mean a typo makes a
+    // document vanish from the only list that would have shown you the typo.
+    ok("a document with no form at all still shows", by["null"] === true);
+    ok("…and so does one whose form nobody recognises", by["sanborn-ish-typo"] === true);
   }
 
   console.log("a new name records which sheets letter it");

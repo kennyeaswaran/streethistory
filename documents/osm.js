@@ -38,6 +38,10 @@ function load() {
     url: "https://www.openstreetmap.org/",
     transcription: null,
     date: { on: date },
+    // Neither drawn nor written: the rows below are computed from
+    // streets-geometry.js at load time (§4.1a). Saying so beats exempting the
+    // pseudo-document from the field.
+    form: "derived",
     type: "osm",
     attests: "built-by",
     completeness: "exhaustive-in-scope",  // within the coverage bboxes, OSM

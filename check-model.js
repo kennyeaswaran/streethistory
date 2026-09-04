@@ -103,6 +103,10 @@ function asWrittenForms(v) {
 const DATE_RE = /^\d{4}(-\d{2}(-\d{2})?)?$/;
 const TYPES = ["tract-map", "survey", "sanborn", "directory", "ordinance", "osm", "annotation", "news-report"];
 const ATTESTS = ["planned-on", "planned-by", "built-on", "built-by"];
+// §4.1a: what KIND of evidence, as opposed to what kind of publication. It is
+// what the tools dispatch on, and it is declared rather than sniffed — "is
+// there a render in the folder?" breaks the day a scanned ordinance arrives.
+const FORMS = ["drawn", "textual", "derived"];
 // §5: change rows only on documents that attest the transition itself.
 const TRANSITION_TYPES = ["ordinance", "news-report"];
 
@@ -118,7 +122,7 @@ for (const doc of DOCUMENTS) {
   // blocking would have meant discarding an alignment only a human can make.
   const stub = !(doc.rows || []).length && doc.type !== "osm";
   const need = (f, msg) => stub ? warn(d, "stub:", msg) : err(d, msg);
-  for (const f of ["id", "type", "attests", "completeness"])
+  for (const f of ["id", "type", "attests", "completeness", "form"])
     if (!doc[f]) err(d, "missing", f);
   for (const f of ["title", "url"])
     if (!doc[f]) need(f, "missing " + f);
@@ -127,6 +131,25 @@ for (const doc of DOCUMENTS) {
   else for (const k of ["on", "after", "before"])
     if (doc.date[k] && !DATE_RE.test(doc.date[k]) && doc.date[k] !== "unknown") err(d, `date.${k} malformed:`, doc.date[k]);
   if (!TYPES.includes(doc.type)) err(d, "unknown type:", doc.type);
+  if (doc.form && !FORMS.includes(doc.form)) err(d, "unknown form:", doc.form);
+  // A DECLARATION IS ONLY WORTH ANYTHING IF SOMETHING ENFORCES IT. Everything
+  // below is what "the evidence is what this document says, not where things
+  // sit on a sheet" rules out; without these the field would be a comment.
+  if (doc.form === "textual") {
+    if (doc.alignment)
+      err(d, "textual document carries an alignment — there is no sheet to align (§4.1a)");
+    if (Array.isArray(doc.coverage) &&
+        doc.coverage.some(pt => Array.isArray(pt) && pt.length === 2 &&
+                                (Math.abs(pt[0]) > 90 || Math.abs(pt[1]) > 180)))
+      err(d, "textual document's coverage looks like scan pixels — a declared scope is lat/lng (§4.1a)");
+    for (const [i, row] of (doc.rows || []).entries()) {
+      if (row.trace)
+        err(`${d}.rows[${i}]`, "trace on a textual document — a trace is drawn pavement (§5.3)");
+      for (const k of ["from", "to", "fromCross", "toCross"])
+        if (row[k] && typeof row[k] === "object" && row[k].px)
+          err(`${d}.rows[${i}]`, `${k} is a scan pixel on a textual document — extents here are cross streets or null (§4.1a)`);
+    }
+  }
   if (!ATTESTS.includes(doc.attests)) err(d, "unknown attests:", doc.attests);
   if (!["incidental", "exhaustive-in-scope"].includes(doc.completeness)) err(d, "unknown completeness:", doc.completeness);
   if (doc.type !== "osm") {
@@ -339,15 +362,45 @@ for (const [id, e] of Object.entries(NAME_ENTITIES)) {
     formOwners.get(k).push({ id, disambiguation: sp.disambiguation || null });
   }
 }
+// THE CHECKER HAS TO MODEL WHAT THE GENERATOR ACTUALLY EMITS.
+//
+// This stood in for an unauthored disambiguation with `(derived for <id>)`,
+// which is unique per entity — so two entities sharing a form could never
+// collide and this check could never fire. What generate.js really derives is
+// the modern street name (`label += ` (${x.street})``), so two entities that
+// share a form AND appear on the same street produce the same label, silently.
+// Nothing in the corpus does today; the point is to hear about it when
+// something does.
+const streetsOfEntity = new Map();       // entity id -> Set of modern streets
+for (const doc of DOCUMENTS)
+  for (const row of doc.rows || []) {
+    if (!row.name || !row.street) continue;
+    const id = resolve(row.name);
+    if (!id) continue;
+    if (!streetsOfEntity.has(id)) streetsOfEntity.set(id, new Set());
+    streetsOfEntity.get(id).add(row.street);
+  }
 for (const [form, owners] of formOwners) {
   const uniqIds = [...new Set(owners.map(o => o.id))];
   if (uniqIds.length < 2) continue;
-  const labels = uniqIds.map(id => {
+  const labelsFor = id => {
     const o = owners.find(x => x.id === id && x.disambiguation);
-    return o ? o.disambiguation : `(derived for ${id})`;
-  });
-  if (new Set(labels).size < labels.length)
-    err(`form "${form}"`, "shared by", uniqIds.join(", "), "— disambiguations do not produce distinct labels");
+    if (o) return [o.disambiguation];               // authored: one label
+    const streets = [...(streetsOfEntity.get(id) || [])];
+    // No rows yet means no derived label yet, and nothing to collide.
+    return streets.length ? streets : [`(no rows for ${id})`];
+  };
+  const seen = new Map();
+  for (const id of uniqIds)
+    for (const label of labelsFor(id)) {
+      if (!seen.has(label)) seen.set(label, []);
+      seen.get(label).push(id);
+    }
+  for (const [label, ids] of seen)
+    if (ids.length > 1)
+      err(`form "${form}"`, "on", label, "— shared by", ids.join(", "),
+          "and the derived label is the street name, so both render identically. " +
+          "Give at least one an authored `disambiguation` (§6.5).");
 }
 
 // Entities minted in review mode are usable but un-researched. Named here so

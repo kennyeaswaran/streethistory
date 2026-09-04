@@ -1,8 +1,8 @@
-// test-doc-geometry.js — headless tests for the geometry core (TOOL-SPEC §6).
+// test-doc-geometry.js — headless tests for the geometry core (MAP-TOOL-SPEC §6).
 // Run: node test-doc-geometry.js
-// Fixtures are real project data (fixtures/, frozen copies) plus the live
-// street geometry, so a regression here means the tool would put something
-// in the wrong place on a real sheet.
+// Fixtures are real project data — the live MR066-035 alignment and the live
+// street geometry — so a regression here means the map tool would put
+// something in the wrong place on a real sheet.
 
 const fs = require("fs");
 const path = require("path");
@@ -16,10 +16,35 @@ function ok(name, cond, detail) {
 function near(a, b, tol) { return Math.abs(a - b) <= tol; }
 
 // --- fixtures --------------------------------------------------------------
-// A frozen copy, not the live document: see fixtures/README.md.
-const alignPath = path.join(__dirname, "fixtures/mr066-035-alignment.json");
-const align = JSON.parse(fs.readFileSync(alignPath, "utf8"));
+// THE LIVE DOCUMENT, not a frozen copy of it.
+//
+// There used to be a copy in fixtures/, because this suite once broke when
+// MR066-035 was parked for a dry run — a test should fail because the code is
+// wrong, not because someone reorganised a folder. But the copy went stale in
+// the way copies do: it held an alignment made by the retired align.html,
+// against a 747x1276 render under tracts/, a path that no longer exists. So
+// the suite was checking the geometry core against a sheet placement the
+// project had stopped using.
+//
+// Reading the live document instead fixes that, and the staleness risk it was
+// guarding against is handled by deriving everything from the alignment rather
+// than hardcoding it: the render's size comes from the control points, and the
+// sample pixels are fractions of that. Re-align the sheet at any resolution
+// and this suite follows it.
+const DOC = "documents/mr066-035/mr066-035.js";
+let align;
+try { align = require("./" + DOC).alignment; }
+catch (e) {
+  console.error(`Could not read ${DOC} — this suite checks the geometry core against\n` +
+                `that sheet's real alignment. If the document was parked or renamed,\n` +
+                `point DOC at whichever sheet is now the benchmark.\n\n` + e.message);
+  process.exit(1);
+}
 const fit = G.fitAlignment(align.points);
+// The control points ARE the render's corners (0,0), (W,0), (0,H).
+const W = Math.max(...align.points.map(p => p.px[0]));
+const H = Math.max(...align.points.map(p => p.px[1]));
+const SHEET = [[0, 0], [W, 0], [W, H], [0, H]];
 
 const g = new Function(fs.readFileSync(path.join(__dirname, "streets-geometry.js"), "utf8") +
                        "; return STREET_GEOMETRY;")();
@@ -48,7 +73,8 @@ console.log("alignment fit + round trip");
 
   // pixel -> world -> pixel is the property that matters for stored traces.
   let worstPx = 0;
-  for (const [x, y] of [[0, 0], [400, 700], [747, 1276], [123, 999]]) {
+  for (const [fx, fy] of [[0, 0], [0.4, 0.4], [1, 1], [0.12, 0.56]]) {
+    const x = Math.round(fx * W), y = Math.round(fy * H);
     const [lat, lng] = G.scanToWorld(fit, x, y);
     const [bx, by] = G.worldToScan(fit, lat, lng);
     worstPx = Math.max(worstPx, Math.hypot(bx - x, by - y));
@@ -63,8 +89,8 @@ console.log("alignment fit + round trip");
   ok("scale is plausible (0.2-2 m/px)", mPerPx > 0.2 && mPerPx < 2, `${mPerPx.toFixed(3)} m/px`);
 
   // y grows downward in pixels, so a larger py must be further SOUTH.
-  const [latTop] = G.scanToWorld(fit, 300, 0);
-  const [latBottom] = G.scanToWorld(fit, 300, 1200);
+  const [latTop] = G.scanToWorld(fit, W / 2, 0);
+  const [latBottom] = G.scanToWorld(fit, W / 2, H);
   ok("pixel y increases southward", latBottom < latTop);
 }
 
@@ -76,20 +102,21 @@ console.log("polygons");
   ok("outside (shared edge line, beyond)", !G.pointInPolygon([-1, 5], square));
 
   // A coverage ring in scan pixels becomes a ring on the earth.
-  const ringPx = [[0, 0], [747, 0], [747, 1276], [0, 1276]];
-  const ringLL = G.coverageToWorld(fit, ringPx);
+  const ringLL = G.coverageToWorld(fit, SHEET);
   ok("coverage ring has 4 corners", ringLL.length === 4);
-  const mid = G.scanToWorld(fit, 373, 638);
+  const mid = G.scanToWorld(fit, W / 2, H / 2);
   ok("sheet centre is inside its own coverage", G.pointInPolygon(mid, ringLL));
   ok("a point well outside is outside", !G.pointInPolygon([34.05, -118.30], ringLL));
 }
 
 console.log("segmentsInBounds");
 {
-  const ringLL = G.coverageToWorld(fit, [[0, 0], [747, 0], [747, 1276], [0, 1276]]);
+  const ringLL = G.coverageToWorld(fit, SHEET);
   const found = G.segmentsInBounds(ways, ringLL);
   const names = new Set(found.map(f => f.name));
-  // ANSWER-KEY.md: this sheet's block is Bixel / Miramar / Boylston / 3rd.
+  // The four streets MR066-035's own rows speak about — the Compromise
+  // Subdivision's block. Its "Third St" is modern Miramar and its "Arnold St"
+  // is modern 3rd, which is why this sheet is the benchmark.
   for (const expected of ["Bixel Street", "Miramar Street", "Boylston Street", "3rd Street"])
     ok(`finds ${expected}`, names.has(expected));
   ok("does not drag in far-away streets", !names.has("Alameda Street"),
@@ -174,12 +201,11 @@ console.log("cross-street snapping");
   ok("nothing near returns null", none === null);
 }
 
-console.log("scan placement (what the document tool stores)");
+console.log("scan placement (what the map tool stores)");
 {
   // The tool holds a placement, not a screen position. Restoring one from a
   // saved alignment and re-deriving the corners must reproduce the alignment —
   // otherwise resuming a document silently moves the scan.
-  const W = 747, H = 1276;                        // MR066-035 render size
   const pl = G.placementFromAlignment(align.points, W, H);
   let worst = 0;
   for (const p of align.points) {

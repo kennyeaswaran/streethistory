@@ -11,6 +11,7 @@ module.exports = {
                                     // prior hand-authored entries
 
   date: { on: "1849-08-29" },
+  form: "drawn",
   type: "survey",
   attests: "planned-on",            // the survey IS the planning act for the
                                     // grid it lays out (row-level default here;

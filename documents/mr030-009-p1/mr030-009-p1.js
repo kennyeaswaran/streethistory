@@ -4,9 +4,10 @@ module.exports = {
   shortTitle: "Wolfskill Orchard Tract, sheet 1 (M.R. 30-9)",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf",
   scan: "documents/mr030-009-p1/mr030-009-p1.pdf",
-  transcription: "documents/mr003-060-p1/mr003-060-p1-partA.md",
+  transcription: null,
 
   date: { on: "1888-01-11" },   
+  form: "drawn",
   type: "tract-map",
   attests: "planned-by",
   completeness: "incidental",
@@ -31,10 +32,10 @@ module.exports = {
   // The polygon strays onto these; the document does not inform about them.
   // NOT the same as a absent row, which says the sheet covers the ground and
   // draws nothing there (MODEL-SPEC §4.4, §5.2).
-  coverageExcept: [{"street":"6th Street","from":null,"to":"Alameda Street"}],
+  coverageExcept: [{"street":"6th Street","from":null,"to":"Alameda Street"},{"street":"6th Street","from":"Alameda Street","to":null}],
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["6th Street","7th Street","Alameda Street","Central Avenue","Ceres Avenue","Industrial Street","Kohler Street","Wilde Street"],
 
   rows: [
     {
@@ -129,8 +130,7 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "Ceres is lettered on this page and Ave on page 2; the aligned trace remains inside that corridor.",
-      "name": "ceres-ave",
-      "attests": "planned-on"
+      "name": "ceres-ave"
     },
     {
       "kind": "absent",

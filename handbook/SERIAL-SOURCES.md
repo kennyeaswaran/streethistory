@@ -25,8 +25,9 @@ biography does. Sweep with the serial sources; explain with the origin ones.
 - **Recorded tract map** — the platted name, the recording date, the
   subdivider and the surveyor, on one subdivision's blocks (TRACT-RESEARCH.md).
 
-All three feed the same core loop in ADDING-STREETS.md: transcribe once,
-fully, then apply to every street the document touches.
+All three feed the same loop: read a document once, fully, and apply it to
+every street it touches — MAP-TOOL-GUIDE.md for the sheets, NAME-RESEARCH.md
+for the namesakes.
 
 ## Sanborn fire insurance atlases
 
@@ -83,7 +84,7 @@ squinting through a browser viewer.
 Access, verified 2026-08: LOC **item pages** read fine through a fetch tool,
 but the collection search, the JSON API (`?fo=json`) and the IIIF manifest
 all return 403 to automated fetching. So acquisition is a browser or human
-step — the same division of labor `tracts/` already uses.
+step — the same division of labour every recorded map already uses.
 
 For georeferencing, Sanborn is friendlier than an 1890s plat: north-up,
 consistent scale, and a street network much closer to the modern graph, so
@@ -134,15 +135,44 @@ edition, or print both names during a transition. Strong for brackets, weak
 as a date for the change itself — pair it with the ordinance trail rather
 than substituting for it.
 
+### The directory maps
+
+A directory is not only a text source. Several editions were issued with a
+folding **city map** bound in or sold alongside — for Los Angeles these are
+usually *Maxwell's*, published with "Maxwell's Los Angeles City Directory and
+Gazetteer of Southern California". They are ordinary drawn evidence: a dated
+citywide street map, from the same year as a street list that gives extents in
+cross-streets, which is an unusually good pairing.
+
+Two consequences for this project:
+
+- **A directory edition can become two documents**, not one — the street
+  section (`form: "textual"`) and the map plate (`form: "drawn"`), sharing
+  `title` and `url` and differing in `shortTitle`, per MODEL-SPEC §4.4a. The
+  map tool handles the plate exactly like any other sheet; the street section
+  waits on a tool for written evidence.
+- **There is no single repository.** Copies are scattered across university
+  and library digital collections, one edition at a time, and finding a given
+  year is a search rather than a lookup. Known copies:
+  - Penn State's map collection has a Maxwell's directory map of Los Angeles:
+    https://digital.libraries.psu.edu/digital/collection/maps1/id/30379/
+  - Calisphere/OAC has the 1897 map accompanying Maxwell's directory:
+    https://calisphere.org/item/ark:/13030/hb7c60119v/
+  - LAPL's map research guides are the best index of what exists:
+    https://www.lapl.org/collections-resources/research-guides/maps-los-angeles
+
+  Add copies here as they are found; the list is the closest thing to an
+  index this project will have.
+
 ## Conventions (proposed; not yet exercised)
 
 - One folder per sheet, as for every document: `documents/sanborn-1894-v1-s12/`
-  and `documents/directory-1897/`, each holding its own Part A transcription
-  (`<id>-partA.md`) beside the document file, per
-  `handbook/TRANSCRIPTION-TEMPLATE.md`'s Part A / Part B split — Part A
-  verbatim (labels as lettered, correction-slip dates, index rows), Part B
-  the modern identifications with their basis. The split matters more here,
-  not less: one Sanborn sheet can produce dozens of Part B rows.
+  and `documents/directory-1897/`. A Sanborn sheet is `form: "drawn"` and goes
+  through the map tool like a plat. A directory's street section is
+  `form: "textual"` and has no tool yet. Where a sheet carries text worth
+  having verbatim — an index page, a long street table, correction-slip dates
+  — it gets a Part A transcription beside the document file
+  (`handbook/TRANSCRIPTION-TEMPLATE.md`).
 - `check-data.js`'s `PRIMARY` regex doesn't yet recognize `loc.gov` or
   `rescarta.lapl.org`; add them when the first such source lands, so the
   primary-anchor count stays honest.

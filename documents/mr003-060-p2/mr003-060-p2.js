@@ -20,6 +20,7 @@ module.exports = {
   transcription: "documents/mr003-060-p2/mr003-060-p2-partA.md",
 
   date: { on: "1875-05-19" },   
+  form: "drawn",
   type: "tract-map",
   attests: "planned-by",
   completeness: "incidental",

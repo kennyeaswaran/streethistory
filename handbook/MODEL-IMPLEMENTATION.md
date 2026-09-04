@@ -150,7 +150,7 @@ All small; flagging them so they get ratified or reversed consciously:
    do-not-edit header, CI regeneration check.
 
 Known soft spots worth eyes: coverage polygons for the tract documents are
-hand-estimated rectangles pending georef-derived footprints (harmless while
+hand-estimated rectangles pending measured footprints (harmless while
 `sweptFully: false` gates negative inference, load-bearing after); the
 `extension`-derivation rule above is the one place the generator is *more*
 conservative than the hand data chose to be.
@@ -212,33 +212,25 @@ diff --exit-code streets-data.js`) before deploy, so a stale committed
 artifact or invalid authored layer blocks the site, as `check-data.js` does
 today.
 
-**F. Rewrite the authoring docs.**
-- **ADDING-STREETS.md** — describes hand-authoring segments; replace with
-  the new loop: entities into `names.js`, one Part B file per document into
-  `documents/`, `node check-model.js`, `node generate.js`, review the diff.
-  Keep the field conventions that survive (namedAfter phrasing, {{}} links,
-  category definitions).
-- **CLAUDE.md** — rules 6 and 7 change: band boundaries are generated (rule 6
-  and `intersect.js` become internal detail; keep intersect.js as a
-  debugging tool), and "run check-data.js after every street" becomes "run
-  check-model.js + generate.js after every document, check-data.js on the
-  output". Update the Where-to-look table and the State section.
-- **PIPELINE.md** — stage 3 (APPLY) becomes "write the document's Part B
-  file + any new entities, regenerate" instead of "edit streets-data.js";
-  its output contract and the spot-check obligation carry over unchanged.
-- **tracts/transcriptions/TEMPLATE.md** — Part B's home is now
-  `documents/<doc-id>.js`; the template should say so and link the schema
-  (MODEL-SPEC §4–§5).
+**F. Rewrite the authoring docs.** ✔ **Done ahead of the switchover, 2026-09.**
+The handbook was reorganised around the document model rather than waiting for
+it: `ADDING-STREETS.md` was retired into **NAME-RESEARCH.md** and
+**ADDING-A-NEIGHBORHOOD.md**, **PIPELINE.md** was rewritten as a four-stage
+orientation, **TRANSCRIPTION-TEMPLATE.md** lost Part B, and CLAUDE.md's rules
+6 and 7 now say what they should (extents come from `<id>-streets.json` or a
+pixel you clicked; run the checker for the layer you touched). Two items are
+still genuinely pending, because they depend on the flip itself:
+
 - **PUBLISHING.md** — note the extra CI gates from item E.
-- **MODEL-SPEC.md** — status line (§0) and the §12 items resolved along the
-  way (revived-name decision is already recorded here and in names.js).
+- **MODEL-SPEC.md** — the status line (§0), and the §12 items resolved along
+  the way.
 
 **G. Aftercare.**
 - Refreshing OSM coverage now has one more step: after replacing
   `streets-geometry.js` (map's "Save geometry file" button), re-run
   `node generate.js` — the osm document derives from that file at load time.
 - Coverage polygons: replace the hand-estimated rectangles in `documents/`
-  with georef-derived footprints before flipping any big document to
+  with measured footprints before flipping any big document to
   `sweptFully: true` — negative inference makes them load-bearing (§4.4).
 - The Wolfskill south-extent caveat in `documents/mr030-009.js` and the
   other ⚠ row comments are the first candidates for the post-switch sweep.

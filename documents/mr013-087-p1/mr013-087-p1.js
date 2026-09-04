@@ -36,6 +36,7 @@ module.exports = {
   transcription: null,
 
   date: { on: "1887-01" },   
+  form: "drawn",
   type: "tract-map",
   attests: "planned-by",
   completeness: "incidental",
