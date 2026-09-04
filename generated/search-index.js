@@ -484,7 +484,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Castelar Street",
-    "entity": "castelar-street",
+    "entity": "castelar",
     "label": "Castelar Street",
     "street": "Castelar Street"
   },
@@ -1804,7 +1804,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Yale Street",
-    "entity": "yale-street",
+    "entity": "yale",
     "label": "Yale Street",
     "street": "Yale Street"
   },

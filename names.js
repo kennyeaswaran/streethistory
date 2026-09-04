@@ -788,7 +788,7 @@ const NAME_ENTITIES = {
         url: "http://cdnc.ucr.edu/cgi-bin/cdnc?a=d&d=LAH18740214.2.12" }
     ],
     disputed: false,
-    note: "No namesake is documented; bullfights were reportedly held in the area until 1872. Renamed Castelar Street by petition in February 1874, apparently for Emilio Castelar, president of Spain’s First Republic — the same petition that changed Hornet Street to Yale.",
+    note: "No namesake is documented; bullfights were reportedly held in the area until 1872.",
     internalNote: "NOT the same entity as hill-street-downtown, though modern N. Hill Street carries that name today: the downtown Hill name was extended north over this street in 1960. Castelar wants its own entity when a document attests it.",
     possiblySameAs: null,
     aliases: []
@@ -854,7 +854,7 @@ const NAME_ENTITIES = {
         url: "https://lastreetnames.com/street/yale-street/" }
     ],
     disputed: false,
-    note: "Lettered “Calle de las Avispas” on the 1849 survey — literally Wasp Street, though the English half of the label says Hornet. Renamed Yale in February 1874, by the same petition that turned Bull Street into Castelar.",
+    note: "Lettered “Calle de las Avispas” on the 1849 survey — literally Wasp Street, though the English half of the label says Hornet.",
     internalNote: "The English and Spanish halves of this label do not translate each other: avispa is a wasp, not a hornet. That is on the sheet, not a transcription slip, and both forms belong in the row’s asWritten.",
     possiblySameAs: null,
     aliases: []
@@ -1240,6 +1240,44 @@ const NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "One entity per number across the downtown grid, as with 1st–11th. NB the 1849 survey's numbered streets ran only as far as 8th, so when Twelfth was laid out is not researched — the numbering propagated south later. The Ord survey draws the corridor unlabelled (documents/mr053-067 carries the `unnamed` row, and the sheet is swept for 12th Street), so it is cited here for the numbering rather than for the name: check-model.js will say the sheet does not letter this name, which is correct and intended. Minted 2026-09-04 at Kenny's request, before the 12th Street pass, so the point would not be lost.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- minted by the Feb. 1874 renaming ordinance -------------------------
+  // Both begin as lineages on Feb. 26, 1874: the ordinance names them, and no
+  // document has been found lettering either before that. Their namesakes are
+  // where the old entities' prose already pointed, and neither is documented —
+  // so the claims live as leads in internalNote rather than as assertions.
+
+  "castelar": {
+    spellings: [{ forms: ["Castelar Street"] }],
+    namedAfter: "{{Emilio Castelar}} (1832–1899), president of the First Spanish Republic in 1873–74",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Emilio_Castelar",
+    categories: ["person"],
+    sources: [
+      { title: "L.A. Street Names: Hill Street (on Calle del Toro / Castelar / N. Hill)",
+        url: "https://lastreetnames.com/street/hill-street/" },
+      { title: "Wikipedia: Emilio Castelar",
+        url: "https://en.wikipedia.org/wiki/Emilio_Castelar" }
+    ],
+    disputed: false,
+    note: "Castelar had left office a few weeks before the Los Angeles council renamed the street in February 1874 — the First Republic fell that January.",
+    internalNote: "Minted 2026-09-04 from documents/ord-1874-02-26, which renames Bull Street to Castelar Street. The namesake is Kines's claim (lastreetnames.com's Hill Street page), carried over from the `bull` entity's note, where it read “apparently”; nothing contemporary has been found saying so. The dates fit the way a topical naming would: Castelar was the Republic's last president and had just fallen, which is exactly when a city council reaches for a name. Not proof.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "yale": {
+    spellings: [{ forms: ["Yale Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unresearched"],
+    disputed: false,
+    note: null,
+    sources: [
+      { title: "L.A. Street Names: Yale Street",
+        url: "https://lastreetnames.com/street/yale-street/" }
+    ],
+    internalNote: "Minted 2026-09-04 from documents/ord-1874-02-26, which renames Wasp Street to Yale Street. Nothing in the corpus says why Yale — the university is the obvious guess and is only a guess; the same ordinance's Pearl and Castelar share no theme to hang it on. Kines's Yale Street page is cited but has not been read for a namesake.",
     possiblySameAs: null, aliases: []
   },
 

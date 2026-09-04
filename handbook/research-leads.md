@@ -58,40 +58,29 @@ Periodically sweep the whole file. Keep entries dated.
   Ordinance No. 4093 (N.S.) — and cite a manuscript record. Not yet applied
   as of 2026-08.
 
-## Castelar and Yale: requested Feb. 1874, enacted where? (2026-09-04)
+## ✔ SOLVED — Castelar and Yale, enacted Feb. 26, 1874 (2026-09-04)
 
-`documents/lah-1874-02-13/` is the Herald's report of a property owners'
-petition asking that **Grasshopper → Union Avenue, Bull → Castelar, and Wasp →
-Yale**, referred to a special committee to draft an ordinance.
+The instrument is found: **"An Ordinance Changing the names of Certain Streets
+in the City of Los Angeles"**, adopted by the Common Council Feb. 26, 1874,
+council minutes ledger p. 621. Transcribed at `documents/ord-1874-02-26/`.
 
-**One of the three did not happen.** Two weeks later
-(`documents/lah-1874-02-27/`) a rival petition wins and Grasshopper becomes
-**Pearl**, not Union Avenue — so this petition is a request, not an outcome,
-and the corpus now has proof of that in the same pair of documents.
+One ordinance renamed all three streets — Grasshopper → Pearl, Bull → Castelar,
+Wasp → Yale — and states no extent for any of them, so all three are
+unqualified changes. Two things worth keeping from the hunt:
 
-Which leaves Castelar and Yale **unattested by any instrument we have read**.
-The Feb. 27 item records one ordinance carrying, for one street: "An ordinance
-changing Grasshopper street to Pearl street was carried." Castelar Street and
-Yale Street plainly exist, so an instrument exists; nothing in hand names it.
+- **The Herald under-reported it.** Its Feb. 27 account says "An ordinance
+  changing Grasshopper street to Pearl street was carried" — one street of
+  three, the morning after. A newspaper report is a lead about what an
+  instrument did, never a census of it.
+- **The petition asked for something else.** Feb. 13 asked that Grasshopper
+  become Union Avenue; the ordinance says Pearl. Stage 1 and stage 3 disagree
+  in the record (handbook/RENAMING-SOURCES.md).
 
-Where to look:
-- the rest of the Feb. 27 column, and the council reports between Feb. 13 and
-  Feb. 27 — the committee was told to draft *an* ordinance for all three, so
-  it may have carried in parts;
-- the 1874 council minutes themselves (Record Series R05.557, the series that
-  produced the 1897 transcription), which would give the ordinance a number.
-
-⚠ **`names.js` currently overclaims this.** `bull` says "Renamed Castelar
-Street by petition in February 1874" and `hornet` "Renamed Yale in February
-1874, by the same petition", both citing the Feb. 14 article — which is the
-petition, and the petition is exactly what we now know does not settle the
-outcome. Both notes are PUBLIC. They want softening to "petitioned in February
-1874; the enacting ordinance has not been found" until it is. Left for Kenny
-rather than rewritten here, since the prose is his and he may know more.
-
-(Both entities also cite that article as a `source`, which `check-model.js`
-now flags — "cites documents/lah-1874-02-13/, which does NOT letter this
-name". That flag is correct and is the same finding arriving by machine.)
+⚠ **`names.js` still says "by petition".** `bull`'s note reads "Renamed
+Castelar Street by petition in February 1874" and `hornet`'s the same for Yale.
+The outcome was right; the mechanism was not — a petition asked, an ordinance
+did it, and the ordinance is now citable. Both notes are PUBLIC prose and are
+Kenny's to reword.
 
 ## Bunker Hill Avenue, 1874 — an unplaced name (2026-09-04)
 

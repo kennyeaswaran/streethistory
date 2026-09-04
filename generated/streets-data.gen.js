@@ -6957,25 +6957,29 @@ const STREET_DATA = {
   },
   "Castelar Street": {
     "name": "Castelar Street",
-    "entityId": "castelar-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
+    "entityId": "castelar",
+    "namedAfter": "{{Emilio Castelar}} (1832–1899), president of the First Spanish Republic in 1873–74 — how and when this stretch joined Castelar Street is not yet researched",
+    "namedAfterLink": "https://en.wikipedia.org/wiki/Emilio_Castelar",
     "planned": "not yet researched",
     "built": "not yet researched",
-    "note": null,
+    "note": "Castelar had left office a few weeks before the Los Angeles council renamed the street in February 1874 — the First Republic fell that January.",
     "attested": false,
     "absentAsOf": {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "person"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "L.A. Street Names: Hill Street (on Calle del Toro / Castelar / N. Hill)",
+        "url": "https://lastreetnames.com/street/hill-street/"
+      },
+      {
+        "title": "“An Ordinance Changing the names of Certain Streets in the City of Los Angeles” — Los Angeles Common Council, adopted Feb. 26, 1874 (council minutes, ledger p. 621)",
+        "url": "https://clerkapps.lacity.org/oldcfidocs/"
       }
     ]
   },
@@ -9807,6 +9811,10 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
           },
           {
+            "title": "“An Ordinance Changing the names of Certain Streets in the City of Los Angeles” — Los Angeles Common Council, adopted Feb. 26, 1874 (council minutes, ledger p. 621)",
+            "url": "https://clerkapps.lacity.org/oldcfidocs/"
+          },
+          {
             "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           },
@@ -11607,7 +11615,7 @@ const STREET_DATA = {
         "to": "Bamboo Lane"
       },
       {
-        "label": "beyond Bamboo Lane (Bull St)",
+        "label": "beyond Bamboo Lane (Castelar St)",
         "name": "Hill Street",
         "entityId": "hill-street-downtown",
         "namedAfter": "{{Bunker Hill}}, once this stretch was folded into Hill Street",
@@ -11620,13 +11628,23 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1849",
-            "until": "?",
+            "until": "Feb. 1874",
             "name": "Bull Street",
             "entityId": "bull",
             "formInForce": "Bull Street",
             "how": "origin",
-            "origin": "labeled “BULL ST.” and “CALLE DEL TORO” on the 1849 Hutton / Ord Survey {{(source)}} — no namesake is documented; bullfights were reportedly held in the area until 1872. Renamed Castelar Street by petition in February 1874, apparently for Emilio Castelar, president of Spain’s First Republic — the same petition that changed Hornet Street to Yale",
+            "origin": "labeled “BULL ST.” and “CALLE DEL TORO” on the 1849 Hutton / Ord Survey {{(source)}} — no namesake is documented; bullfights were reportedly held in the area until 1872",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "from": "Feb. 1874",
+            "until": "?",
+            "name": "Castelar Street",
+            "entityId": "castelar",
+            "formInForce": "Castelar Street",
+            "how": "renaming",
+            "origin": "renamed per the Feb. 1874 renaming ordinance {{(source)}} — Emilio Castelar (1832–1899), president of the First Spanish Republic in 1873–74",
+            "originLink": "https://clerkapps.lacity.org/oldcfidocs/"
           },
           {
             "from": "?",
@@ -11645,13 +11663,14 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
-        "knownFraction": 0,
+        "knownFraction": 0.14,
         "categories": [
           "place",
           "renamed"
         ],
         "formerCategories": [
-          "unknown"
+          "unknown",
+          "person"
         ],
         "disputed": false,
         "sources": [
@@ -11662,6 +11681,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "“An Ordinance Changing the names of Certain Streets in the City of Los Angeles” — Los Angeles Common Council, adopted Feb. 26, 1874 (council minutes, ledger p. 621)",
+            "url": "https://clerkapps.lacity.org/oldcfidocs/"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
@@ -20175,7 +20198,7 @@ const STREET_DATA = {
       {
         "label": "part of (Hornet St)",
         "name": "Yale Street",
-        "entityId": "yale-street",
+        "entityId": "yale",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
@@ -20186,7 +20209,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1849",
-            "until": "?",
+            "until": "Feb. 1874",
             "name": "Hornet Street",
             "entityId": "hornet",
             "formInForce": "Hornet Street",
@@ -20195,19 +20218,19 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
-            "from": "?",
+            "from": "Feb. 1874",
             "until": null,
             "name": "Yale Street",
-            "entityId": "yale-street",
+            "entityId": "yale",
             "formInForce": "Yale Street",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per the Feb. 1874 renaming ordinance {{(source)}}",
+            "originLink": "https://clerkapps.lacity.org/oldcfidocs/"
           }
         ],
         "note": null,
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 1,
         "categories": [
           "unresearched",
           "renamed"
@@ -20218,12 +20241,16 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "L.A. Street Names: Yale Street",
+            "url": "https://lastreetnames.com/street/yale-street/"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
-            "title": "L.A. Street Names: Yale Street",
-            "url": "https://lastreetnames.com/street/yale-street/"
+            "title": "“An Ordinance Changing the names of Certain Streets in the City of Los Angeles” — Los Angeles Common Council, adopted Feb. 26, 1874 (council minutes, ledger p. 621)",
+            "url": "https://clerkapps.lacity.org/oldcfidocs/"
           }
         ],
         "minLat": 34.0625,
@@ -20238,7 +20265,7 @@ const STREET_DATA = {
       {
         "label": "part of",
         "name": "Yale Street",
-        "entityId": "yale-street",
+        "entityId": "yale",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": "not yet researched",
@@ -20255,8 +20282,12 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: Yale Street",
+            "url": "https://lastreetnames.com/street/yale-street/"
+          },
+          {
+            "title": "“An Ordinance Changing the names of Certain Streets in the City of Los Angeles” — Los Angeles Common Council, adopted Feb. 26, 1874 (council minutes, ledger p. 621)",
+            "url": "https://clerkapps.lacity.org/oldcfidocs/"
           }
         ],
         "maxLat": 34.0625,

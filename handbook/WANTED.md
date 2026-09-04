@@ -54,21 +54,6 @@ The standing ⭐ target; request with the City Archivist since 2026-08.
   commission only *proposed*. Both readings cannot hold; only the ordinance
   settles which line is which (amendment §10, form 5).
 
-## P2 — the instrument enacting Bull → Castelar and Wasp → Yale
-
-**What it unblocks:** two renamings the data currently asserts on the strength
-of a petition that is proven unreliable — the same petition asked for
-Grasshopper → Union Avenue, and Grasshopper became Pearl.
-
-**Where to look.** The rest of the Feb. 27, 1874 Herald column; the council
-reports between Feb. 13 and Feb. 27 (the committee was told to draft *one*
-ordinance for all three, so it may have carried in parts); and the 1874 council
-minutes, Record Series R05.557 — the same series that produced the 1897
-transcription.
-
-See `research-leads.md`, "Castelar and Yale", for the full note. `names.js`
-overclaims this today and wants softening either way.
-
 ## P2 — a sheet lettering Vine Street (1st–2nd, Central Avenue)
 
 `vine-central` has no `state` row either, and survives only because its 1897 row

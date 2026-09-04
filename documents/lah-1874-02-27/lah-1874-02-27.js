@@ -1,5 +1,17 @@
 // Herald report of the Feb. 26, 1874 council action renaming Calle de los
-// Chapules ("Grasshopper Street") to Pearl Street — property owners'
+// Chapules ("Grasshopper Street") to Pearl Street
+//
+// ⚠ THE INSTRUMENT ITSELF IS NOW IN THE CORPUS: documents/ord-1874-02-26/,
+// the ordinance as recorded in the council minutes. This report is kept, and
+// keeps its row, for two reasons. It is an independent witness that the
+// ordinance carried — which is a claim about the transition, exactly what a
+// change row records — and it is the ONLY record of something the minutes do
+// not contain: that the name was contested, that a rival petition asked for
+// Union Avenue, and that "a heavy discussion ensued". The minutes give the
+// outcome; the paper gives the argument.
+//
+// It is also the proof that a newspaper account is not a census: it names ONE
+// of the three streets the ordinance renames — property owners'
 // petition, over a rival "Union Avenue" proposal. A dated newspaper report
 // of the transition itself, so it may carry a change row (§5).
 //

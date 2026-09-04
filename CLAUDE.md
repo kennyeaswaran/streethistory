@@ -21,6 +21,7 @@ JavaScript-only archives, and committing to git.
 |---|---|
 | reading a map into the corpus | **handbook/MAP-TOOL-GUIDE.md** (the tool, end to end) |
 | researching who a street was named after | **handbook/NAME-RESEARCH.md** (sources, and what may be claimed) |
+| chasing the ordinance behind a renaming | **handbook/RENAMING-SOURCES.md** (petition → referral → ordinance, and the council-minutes URL that reaches any date) |
 | extending coverage to a new area | handbook/ADDING-A-NEIGHBORHOOD.md |
 | chasing one subdivision's platted names | **handbook/TRACT-RESEARCH.md** (NavigateLA → Map-Ref → DPW scan → transcription) |
 | after name-change dates across a neighborhood | **handbook/SERIAL-SOURCES.md** (Sanborn atlases, city directories) |

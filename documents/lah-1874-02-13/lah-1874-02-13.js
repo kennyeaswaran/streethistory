@@ -14,12 +14,12 @@
 // this corpus is demonstrably not an outcome, and reading one as a renaming
 // would have put Union Avenue on the map.
 //
-// What follows for the other two: nothing yet. Bull → Castelar and Wasp → Yale
-// are REQUESTED here and enacted nowhere we have read — the Feb. 27 item
-// records only "An ordinance changing Grasshopper street to Pearl street was
-// carried", one street, not three. Castelar and Yale certainly exist today, so
-// the instrument exists; it has not been found. handbook/research-leads.md
-// (2026-09-04) carries the hunt.
+// ✔ RESOLVED 2026-09-04: the other two were enacted. Bull → Castelar and
+// Wasp → Yale carried in the same ordinance as Grasshopper → Pearl on Feb. 26,
+// 1874 — documents/ord-1874-02-26/, found in the council minutes after the
+// Herald's report of that meeting named only one of the three. This document
+// keeps no rows all the same: it records the ASKING, and what was asked for is
+// not what was enacted.
 //
 // The model has no kind for "a change was requested" — that is the same gap
 // as the restoration and draft-amendment forms in
