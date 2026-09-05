@@ -101,7 +101,11 @@ function asWrittenForms(v) {
 
 // ---- documents ------------------------------------------------------------
 const DATE_RE = /^\d{4}(-\d{2}(-\d{2})?)?$/;
-const TYPES = ["tract-map", "survey", "sanborn", "directory", "ordinance", "osm", "annotation", "news-report"];
+// "minutes" added 2026-09-04: council proceedings are their own genre. A
+// volume that quotes an ordinance in full is type "ordinance" (the 1874 and
+// 1887 renamings are), but one that records a petition being received and
+// referred enacts nothing and should not claim to.
+const TYPES = ["tract-map", "survey", "sanborn", "directory", "ordinance", "minutes", "osm", "annotation", "news-report"];
 const ATTESTS = ["planned-on", "planned-by", "built-on", "built-by"];
 // §4.1a: what KIND of evidence, as opposed to what kind of publication. It is
 // what the tools dispatch on, and it is declared rather than sniffed — "is

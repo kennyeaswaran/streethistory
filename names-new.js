@@ -29,7 +29,7 @@ const NEW_NAME_ENTITIES = {
     sightings: [
       {"doc":"mr053-065","sheet":"Clark and Bryan Tract","asWritten":["Clark Ave."]}
     ],
-    spellings: [{ forms: ["Clark Avenue"] }],
+    spellings: [{"forms":["Clark Avenue"]}],
     namedAfter: null,
     namedAfterLink: null,
     categories: ["unknown"],
@@ -131,7 +131,7 @@ const NEW_NAME_ENTITIES = {
     sightings: [
       {"doc":"mr006-138","sheet":"Glassell's Subdivision map","asWritten":["Lake Avenue"]}
     ],
-    spellings: [{ forms: ["Lake Avenue"] }],
+    spellings: [{"forms":["Lake Avenue"]}],
     namedAfter: null,
     namedAfterLink: null,
     categories: ["unknown"],

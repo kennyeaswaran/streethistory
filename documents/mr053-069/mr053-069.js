@@ -6,23 +6,13 @@ module.exports = {
   scan: "documents/mr053-069/mr053-069.pdf",
   transcription: null,
 
-  // ANOTHER SCAN OF THE SAME MAP. The LAPL holds its own copy of the Ord/Hutton
-  // survey — a slightly different version of the same 1849 sheet, not a second
-  // document. Declaring it here means the generator knows the two urls are one
-  // piece of evidence, so a name entity citing the LAPL scan is not printed
-  // beside this sheet as though they were two sources.
-  copies: [
-    { title: "Ord/Hutton survey, \u201cPlan de la Ciudad de Los Angeles\u201d (LAPL\u2019s copy)",
-      url: "https://tessa2.lapl.org/digital/collection/maps/id/42/" }
-  ],
-
-  date: { on: "1849-08-29" },       // the survey itself — what the ink reflects
-  // Every sheet the project holds is the county recorder's certified copy,
-  // "a full true and correct copy of original", filed forty-four years later.
-  recorded: "1893-12-02",   
+  date: { on: "1849-08-29" },   
+  // §4.1a. Whatever this tool saves has a sheet under it — that is what the
+  // tool is for — but a loaded document's own declaration wins, so re-saving
+  // one this tool should not have opened cannot quietly reclassify it.
   form: "drawn",
   type: "tract-map",
-  attests: "planned-by",
+  attests: "planned-on",
   completeness: "incidental",
   readBy: "human",
 
@@ -281,7 +271,8 @@ module.exports = {
           1469
         ]
       },
-      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment."
+      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment.",
+      "attests": "built-by"
     },
     {
       "kind": "absent",
@@ -315,7 +306,8 @@ module.exports = {
           1481
         ]
       },
-      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment."
+      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment.",
+      "attests": "built-by"
     },
     {
       "kind": "unnamed",
@@ -332,7 +324,8 @@ module.exports = {
           1470
         ]
       },
-      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment."
+      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment.",
+      "attests": "built-by"
     },
     {
       "kind": "state",
@@ -434,7 +427,8 @@ module.exports = {
           1436
         ]
       },
-      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment."
+      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment.",
+      "attests": "built-by"
     },
     {
       "kind": "unnamed",
@@ -451,7 +445,8 @@ module.exports = {
           1441
         ]
       },
-      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment."
+      "note": "The modern run crosses mapped lots, cultivated ground, hillside, or structures; no two-edge roadway is shown on this alignment.",
+      "attests": "built-by"
     },
     {
       "kind": "absent",

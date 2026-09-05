@@ -84,9 +84,10 @@ passing, which corroborates the bracket.
 Dated `{ before: "1890-02-20" }`: the ordinance was already in force when the
 paper described it, so Feb. 20 is a ceiling, not the day.
 
-## Broadway south of Tenth — a prediction from 1890 (2026-09-04)
+## ✘ Broadway south of Tenth — the 1890 prediction did NOT happen (2026-09-04)
 
-The same Herald item goes on:
+The Herald item that reports the Fort Street renaming
+(`documents/lah-1890-02-20/`) goes on to predict a second one:
 
 > "It is hinted that in a short time a part of Main street, from Tenth street
 > south, will be called Broadway … as soon as Broadway is extended. An
@@ -94,17 +95,50 @@ The same Herald item goes on:
 > Seventh street, and that when Broadway is cut through that portion south of
 > Tenth street will be nearly in a straight line with Broadway."
 
-This is the earliest account of **why modern Broadway runs where it does south
-of downtown**, and it is a prediction — "it is hinted", "it is said" — so it
-carries no row. What is wanted is whatever act carried it out: a later
-ordinance renaming Main Street south of Tenth, presumably after Broadway was
-cut through. That one would be **qualified** (a stretch, from Tenth south),
-which would make it the corpus's first qualified-and-resolved renaming from a
-primary instrument.
+**It did not happen** (Kenny, from the modern map), and the geometry says why.
+Measured off `streets-geometry.js`, as dLon per dLat — how hard a street angles
+west as it runs south:
 
-Note also that the 1897 committee separately renames a "Broadway Street" to
-Canal Street. That is not this Broadway, which had been plain "Broadway" for
-seven years by then.
+```
+Main Street   7th → Olympic      1.53      the "bend at Seventh"
+Broadway      1st → 9th          0.93
+Broadway      9th → Olympic      0.96
+Broadway      Olympic → Pico     0.99
+```
+
+**The paper's reasoning was sound.** Project Main's post-7th-Street bearing
+south and it arrives within **59 m** of where Broadway actually runs at Pico —
+"nearly in a straight line", exactly as claimed.
+
+**What defeated it is that neither street did what the projection assumed.**
+Main does not hold that bearing south of Olympic; it straightens, and ends up
+95 m *east* of Broadway at Pico. Broadway, meanwhile, was cut through on an
+alignment of its own, turning gradually west (0.93 → 0.96 → 0.99) rather than
+meeting Main's line. Two streets, both still there, ~95 m apart.
+
+So: no renaming to look for, and the entry that used to sit here asking for one
+is withdrawn. What remains true and worth keeping is the *reason* Broadway runs
+where it does south of downtown — it was cut through, not inherited from Main —
+and that the 1890 press expected otherwise.
+
+⚠ Do not read this as "Main Street south of Tenth was never renamed". It says
+only that it was not renamed **Broadway**, which is what the article predicted.
+
+## ✔ SOLVED — the Fort Street petitioner, Feb. 3, 1890 (2026-09-04)
+
+`documents/min-1890-02-03/` — council minutes, ledger p. 240: "126. From Fred
+L. Alles et al, asking that the name of Fort street be changed to Broadway.
+Referred to the Board of Public Works."
+
+Sources a claim `names.js` had carried on nothing. Two corrections it brings:
+the clerk writes **Fred L. Alles**, not Fred Lind Alles, and says nothing about
+his being a printer. It also brackets the renaming to **seventeen days** —
+petition Feb. 3, in force by Feb. 20 — and the minutes for that window are the
+ones that are missing.
+
+Note the referral went to the **Board of Public Works**, where the 1874
+petition went to a special committee with the City Attorney. Two routes to the
+same kind of act, sixteen years apart.
 
 ## ✔ SOLVED — Virgin → Alpine, Aug. 22, 1887 (2026-09-04)
 
