@@ -2,9 +2,9 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 273; entries: 558
-- Stub entities minted from OSM (unresearched): 225
-- Curated entities: 85
+- Streets: 273; entries: 559
+- Stub entities minted from OSM (unresearched): 223
+- Curated entities: 87
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
 ## Ambiguous OSM binds (NOT bound — fix by adding extents or disambiguation)

@@ -33,6 +33,13 @@ Periodically sweep the whole file. Keep entries dated.
   the images — the first application of any line from it owes that check). The
   ⭐ target is no longer "find the ordinance" but "get two known ledger
   pages": **request with the City Archivist is in flight (Kenny, 2026-08).**
+- **The two Herald items — NEGATIVE (2026-09-04):** Kenny read
+  `LAH18970219.2.24` ("A Storm of Words") and `LAH18970221.2.28` ("Talking
+  Retrenchment"); neither helps the renaming data. They stay cited in names.js
+  for what they do carry — the Feb. 19 piece is the source for `georgia-bell`'s
+  prose-dated spelling period. Full note in
+  `documents/ord-4093/omnibus-1897-renaming-full.md`. Don't re-run this;
+  CDNC now costs a person's time.
 - **Directory route — NEGATIVE (2026-08):** the 1898 city directory carries no
   list of changes; the 1897 directory says it already incorporates the 326
   council changes but doesn't print them as a table. Don't re-run this.
@@ -57,6 +64,68 @@ Periodically sweep the whole file. Keep entries dated.
   Herald; what the manuscript adds is that each can now name the instrument —
   Ordinance No. 4093 (N.S.) — and cite a manuscript record. Not yet applied
   as of 2026-08.
+
+## ✔ SOLVED — Fort Street → Broadway, by Feb. 20, 1890 (2026-09-04)
+
+`documents/lah-1890-02-20/` — the Herald, under the headline "BROADWAY. Fort
+Street Is No Longer in Existence": *"The ordinance changing its name to
+Broadway has gone into effect, having been signed by Mayor Hazard and published
+as required by law."* Unqualified, and the enactment is reported rather than
+asked for.
+
+**The ordinance itself is missing and may not survive.** The council minutes
+for the relevant dates are not in the City Clerk's holdings — the first gap
+this project has hit in that series, and the reason a newspaper is the only
+record of this change. handbook/RENAMING-SOURCES.md §2a records the gap and
+what to do about it. The Mar. 10, 1890 volume was also checked page by page
+(not there either), but its clerk writes "Fort street (now Broadway)" in
+passing, which corroborates the bracket.
+
+Dated `{ before: "1890-02-20" }`: the ordinance was already in force when the
+paper described it, so Feb. 20 is a ceiling, not the day.
+
+## Broadway south of Tenth — a prediction from 1890 (2026-09-04)
+
+The same Herald item goes on:
+
+> "It is hinted that in a short time a part of Main street, from Tenth street
+> south, will be called Broadway … as soon as Broadway is extended. An
+> examination of the city map will show that Main street makes a bend at
+> Seventh street, and that when Broadway is cut through that portion south of
+> Tenth street will be nearly in a straight line with Broadway."
+
+This is the earliest account of **why modern Broadway runs where it does south
+of downtown**, and it is a prediction — "it is hinted", "it is said" — so it
+carries no row. What is wanted is whatever act carried it out: a later
+ordinance renaming Main Street south of Tenth, presumably after Broadway was
+cut through. That one would be **qualified** (a stretch, from Tenth south),
+which would make it the corpus's first qualified-and-resolved renaming from a
+primary instrument.
+
+Note also that the 1897 committee separately renames a "Broadway Street" to
+Canal Street. That is not this Broadway, which had been plain "Broadway" for
+seven years by then.
+
+## ✔ SOLVED — Virgin → Alpine, Aug. 22, 1887 (2026-09-04)
+
+`documents/ord-1887-08-22/`, found in the council minutes on the first look —
+the method in handbook/RENAMING-SOURCES.md, run from a month in a `note`
+sentence. Three things worth carrying forward:
+
+- **The ordinance number is blank.** The clerk wrote "Ordinance No." and left
+  it empty, as in Feb. 1874. A renaming before the 1890s may have no number at
+  all, so the ledger page is the citation and "find the ordinance number" is
+  the wrong instinct for this period.
+- **The same session gave the street an EXTENT.** A grading resolution on the
+  facing page describes "said Virgin street, from its intersection with Yale
+  street to the intersection with Beaudry street" — the only statement of where
+  Virgin ran outside the 1849 survey, and it resolves cleanly (modern Alpine
+  meets both Yale Street and Beaudry Avenue). **Look at the whole session, not
+  just the renaming item**: grading, sewer and lighting resolutions describe
+  streets by their intersections, which is exactly the extent evidence the
+  model is short of.
+- **It corroborates 1874.** A street called Yale exists here in 1887, thirteen
+  years after Wasp Street was renamed to it.
 
 ## ✔ SOLVED — Castelar and Yale, enacted Feb. 26, 1874 (2026-09-04)
 

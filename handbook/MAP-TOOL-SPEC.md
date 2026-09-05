@@ -410,3 +410,47 @@ flipping it to `sweptFully: true`.
 The first run therefore tests the tool as much as the sheet: if it leads to
 Third = Miramar and Arnold = 3rd, the gesture works. If it nudges toward name
 continuity, the interface has a bug and the sheet has told us so.
+
+## 9. WANTED — the same thing for textual documents (2026-09-04)
+
+Everything above assumes a **sheet**: align it, bound it, draw the rows on it,
+and confirm each one by looking at the ink. Textual documents have no sheet, and
+by 2026-09 there are five of them — two Herald reports, two council ordinances
+and Ord 4093 — carrying rows that nothing can review.
+
+The gap showed itself the day the 1874 and 1887 ordinances were transcribed:
+`check-model.js` correctly refused `sweptFully: true` on rows still marked
+`confirmed: false`, and there was no way to clear the flag except editing the
+file by hand. A gate nobody can pass is a gate that gets walked around.
+
+**What it would need.** Much less than the map tool, because there is no
+geometry:
+
+- **The excerpt beside the clip.** A textual document already carries `excerpts`
+  (verbatim quotes) and usually a `scan` (a crop of the page). Put them
+  side by side, one excerpt at a time, and confirming a row is: does the quote
+  match the image, and does the row follow from the quote?
+- **Row-to-excerpt navigation.** Rows carry `says: [excerpt ids]` (§12 of
+  handbook/change-rows-amendment.md), so selecting a row can highlight the
+  sentences that license it — the one thing this tool can do that the map tool
+  cannot.
+- **The scope declaration, made visible.** A change row's `scope` is the
+  judgement most likely to be wrong, and it is checkable straight from the
+  quote: does the document name a stretch or not? Show `whole-name` /
+  `extent` / `extent-unresolved` as a three-way choice with the quote next to
+  it.
+- **Confirm, and the sweep gate.** Same semantics as review mode: clear
+  `confirmed`, and `sweptFully` when every excerpt has been read through — which
+  for a textual document means "the whole item was read", not "every street on
+  the sheet was entered".
+- **Minting entities.** The 1874 ordinance minted `castelar` and `yale`; the
+  1887 one minted `alpine`. That is the same job review mode does with
+  `names-new.js`, and it should work the same way.
+
+**What it must not do.** No extents from geometry, no alignment, no coverage
+polygon — a textual document's scope is its own words, and inventing a spatial
+extent for it is the failure the change-rows amendment exists to stop.
+
+**Where it probably lives.** Closer to `names-tool.html` than to
+`map-tool.html`: the same surgical file editing, the same list-plus-editor
+shape, no canvas at all.

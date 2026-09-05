@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-04
+// Built: 2026-09-05
 const NEIGHBORHOODS = [
   {
     "id": "dtla",
@@ -5099,9 +5099,9 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "part of",
+        "label": "west of Beaudry",
         "name": "Alpine Street",
-        "entityId": "alpine-street",
+        "entityId": "alpine",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": "not yet researched",
@@ -5114,89 +5114,120 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "“An Ordinance changing the name of Virgin Street” — Los Angeles Council, adopted Aug. 22, 1887 (council minutes, ledger pp. 700-701; ordinance number left blank in the ledger)",
+            "url": "https://clerkapps.lacity.org/oldcfidocs/"
           }
         ],
-        "maxLng": -118.2427,
+        "maxLng": -118.2476,
         "from": null,
-        "to": {
-          "px": [
-            420,
-            418
-          ]
-        }
+        "to": "Beaudry Avenue"
       },
       {
-        "label": "beyond Cleveland",
+        "label": "Beaudry to Cleveland (Virgin St)",
         "name": "Alpine Street",
-        "entityId": "alpine-street",
+        "entityId": "alpine",
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": "not yet researched",
-        "built": "not yet researched",
+        "planned": null,
+        "built": {
+          "text": "already “Virgin street” by Aug. 22, 1887 (the Aug. 1887 Virgin Street ordinance)",
+          "url": "https://clerkapps.lacity.org/oldcfidocs/"
+        },
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": "Aug. 1887",
+            "name": "Virgin Street",
+            "entityId": "virgin",
+            "formInForce": "Virgin Street",
+            "how": "extension",
+            "origin": "labeled “Virgin street” on the 1887 the Aug. 1887 Virgin Street ordinance {{(source)}} — lettered “Calle de las Vírgenes” on the 1849 survey, which gives no explanation — bachelorettes, nuns and the Virgin Mary have all been suggested and none is documented",
+            "originLink": "https://clerkapps.lacity.org/oldcfidocs/"
+          },
+          {
+            "from": "Aug. 1887",
+            "until": null,
+            "name": "Alpine Street",
+            "entityId": "alpine",
+            "formInForce": "Alpine Street",
+            "how": "renaming",
+            "origin": "renamed per the Aug. 1887 Virgin Street ordinance {{(source)}}",
+            "originLink": "https://clerkapps.lacity.org/oldcfidocs/"
+          }
+        ],
         "note": null,
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "knownFraction": 0.79,
         "categories": [
-          "unresearched"
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "“An Ordinance changing the name of Virgin Street” — Los Angeles Council, adopted Aug. 22, 1887 (council minutes, ledger pp. 700-701; ordinance number left blank in the ledger)",
+            "url": "https://clerkapps.lacity.org/oldcfidocs/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Alpine Street",
+            "url": "https://lastreetnames.com/street/alpine-street/"
           }
         ],
-        "minLng": -118.2427,
+        "minLng": -118.2476,
         "maxLng": -118.2416,
-        "from": {
-          "px": [
-            420,
-            418
-          ]
-        },
+        "from": "Beaudry Avenue",
         "to": "Cleveland Street"
       },
       {
-        "label": "Cleveland to Spring (Virgin St)",
+        "label": "Cleveland to Yale (Virgin St)",
         "name": "Alpine Street",
-        "entityId": "alpine-street",
+        "entityId": "alpine",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
           "text": "by 1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
-        "built": "not yet researched",
+        "built": {
+          "text": "already “Virgin street” by Aug. 22, 1887 (the Aug. 1887 Virgin Street ordinance)",
+          "url": "https://clerkapps.lacity.org/oldcfidocs/"
+        },
         "nameHistory": [
           {
             "from": "by 1849",
-            "until": "?",
+            "until": "Aug. 1887",
             "name": "Virgin Street",
             "entityId": "virgin",
             "formInForce": "Virgin Street",
             "how": "origin",
-            "origin": "labeled “CALLE DE LAS VIRGENES” and “VIRGIN ST” on the 1849 Hutton / Ord Survey {{(source)}} — lettered “Calle de las Vírgenes” on the 1849 survey, which gives no explanation — bachelorettes, nuns and the Virgin Mary have all been suggested and none is documented. Renamed Alpine Street in August 1887 by petition of the real-estate agent William P. McIntosh, who had run a Sierra lumber company near Alpine County and gave no reason",
+            "origin": "labeled “CALLE DE LAS VIRGENES”, “VIRGIN ST” and “Virgin street” on the 1849 Hutton / Ord Survey and the 1887 the Aug. 1887 Virgin Street ordinance {{(source)}} — lettered “Calle de las Vírgenes” on the 1849 survey, which gives no explanation — bachelorettes, nuns and the Virgin Mary have all been suggested and none is documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
-            "from": "?",
+            "from": "Aug. 1887",
             "until": null,
             "name": "Alpine Street",
-            "entityId": "alpine-street",
+            "entityId": "alpine",
             "formInForce": "Alpine Street",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per the Aug. 1887 Virgin Street ordinance {{(source)}}",
+            "originLink": "https://clerkapps.lacity.org/oldcfidocs/"
           }
         ],
         "note": null,
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 1,
         "categories": [
           "unresearched",
           "renamed"
@@ -5211,19 +5242,86 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
+            "title": "“An Ordinance changing the name of Virgin Street” — Los Angeles Council, adopted Aug. 22, 1887 (council minutes, ledger pp. 700-701; ordinance number left blank in the ledger)",
+            "url": "https://clerkapps.lacity.org/oldcfidocs/"
+          },
+          {
             "title": "L.A. Street Names: Alpine Street",
             "url": "https://lastreetnames.com/street/alpine-street/"
           }
         ],
         "minLng": -118.2416,
-        "maxLng": -118.2369,
+        "maxLng": -118.2408,
         "from": "Cleveland Street",
+        "to": "Yale Street"
+      },
+      {
+        "label": "Yale to Spring (Virgin St)",
+        "name": "Alpine Street",
+        "entityId": "alpine",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1849",
+            "until": "Aug. 1887",
+            "name": "Virgin Street",
+            "entityId": "virgin",
+            "formInForce": "Virgin Street",
+            "how": "origin",
+            "origin": "labeled “CALLE DE LAS VIRGENES” and “VIRGIN ST” on the 1849 Hutton / Ord Survey {{(source)}} — lettered “Calle de las Vírgenes” on the 1849 survey, which gives no explanation — bachelorettes, nuns and the Virgin Mary have all been suggested and none is documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "from": "Aug. 1887",
+            "until": null,
+            "name": "Alpine Street",
+            "entityId": "alpine",
+            "formInForce": "Alpine Street",
+            "how": "renaming",
+            "origin": "renamed per the Aug. 1887 Virgin Street ordinance {{(source)}}",
+            "originLink": "https://clerkapps.lacity.org/oldcfidocs/"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 1,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "“An Ordinance changing the name of Virgin Street” — Los Angeles Council, adopted Aug. 22, 1887 (council minutes, ledger pp. 700-701; ordinance number left blank in the ledger)",
+            "url": "https://clerkapps.lacity.org/oldcfidocs/"
+          },
+          {
+            "title": "L.A. Street Names: Alpine Street",
+            "url": "https://lastreetnames.com/street/alpine-street/"
+          }
+        ],
+        "minLng": -118.2408,
+        "maxLng": -118.2369,
+        "from": "Yale Street",
         "to": "Spring Street"
       },
       {
         "label": "beyond Spring",
         "name": "Alpine Street",
-        "entityId": "alpine-street",
+        "entityId": "alpine",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": "not yet researched",
@@ -5240,8 +5338,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "“An Ordinance changing the name of Virgin Street” — Los Angeles Council, adopted Aug. 22, 1887 (council minutes, ledger pp. 700-701; ordinance number left blank in the ledger)",
+            "url": "https://clerkapps.lacity.org/oldcfidocs/"
           }
         ],
         "minLng": -118.2369,
@@ -6536,7 +6634,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "The name has no “Street”: the 1890 papers and the street signs both say simply Broadway.",
         "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -6548,8 +6646,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Los Angeles Herald, “Broadway — Fort Street Is No Longer in Existence,” Feb. 20, 1890 (the renaming ordinance signed by Mayor Hazard and in effect)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18900220.1.2"
           }
         ],
         "minLat": 34.0673,
@@ -6589,7 +6687,7 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "The name has no “Street”: the 1890 papers and the street signs both say simply Broadway.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
@@ -6608,6 +6706,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, “Broadway — Fort Street Is No Longer in Existence,” Feb. 20, 1890 (the renaming ordinance signed by Mayor Hazard and in effect)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18900220.1.2"
           },
           {
             "title": "L.A. Street Names: Broadway (on Calle Eternidad)",
@@ -6631,7 +6733,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "The name has no “Street”: the 1890 papers and the street signs both say simply Broadway.",
         "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -6643,8 +6745,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Los Angeles Herald, “Broadway — Fort Street Is No Longer in Existence,” Feb. 20, 1890 (the renaming ordinance signed by Mayor Hazard and in effect)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18900220.1.2"
           }
         ],
         "minLat": 34.0536,
@@ -6666,7 +6768,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1849",
-            "until": "?",
+            "until": "Feb. 1890",
             "name": "Fort Street",
             "entityId": "fort-street",
             "formInForce": "Fort Street",
@@ -6675,19 +6777,19 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "from": "?",
+            "from": "Feb. 1890",
             "until": null,
             "name": "Broadway",
             "entityId": "broadway",
             "formInForce": "Broadway",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per the 1890 Fort Street renaming (Herald report) {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18900220.1.2"
           }
         ],
-        "note": null,
+        "note": "The name has no “Street”: the 1890 papers and the street signs both say simply Broadway.",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 1,
         "categories": [
           "unresearched",
           "renamed"
@@ -6708,6 +6810,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, “Broadway — Fort Street Is No Longer in Existence,” Feb. 20, 1890 (the renaming ordinance signed by Mayor Hazard and in effect)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18900220.1.2"
           },
           {
             "title": "L.A. Street Names: Broadway (on Fort Street)",
@@ -6732,7 +6838,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "The name has no “Street”: the 1890 papers and the street signs both say simply Broadway.",
         "attested": false,
         "categories": [
           "unresearched"
@@ -6740,8 +6846,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Los Angeles Herald, “Broadway — Fort Street Is No Longer in Existence,” Feb. 20, 1890 (the renaming ordinance signed by Mayor Hazard and in effect)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18900220.1.2"
           }
         ],
         "maxLat": 34.0377,

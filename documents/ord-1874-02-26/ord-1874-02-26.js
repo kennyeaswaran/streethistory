@@ -65,7 +65,15 @@ module.exports = {
   completeness: "exhaustive-in-scope",
   coverage: [[34.075, -118.280], [34.075, -118.230],
              [34.030, -118.230], [34.030, -118.280]],
-  sweptFully: true,                 // three streets named, three rows entered
+  // CONFIRMED by Kenny, 2026-09-04. He located the volume, identified the
+  // relevant page(s) and read them independently (Gemini in a browser, page by
+  // page) before handing them over — so the CONTENT of these rows has had a
+  // second reader, which is what rule 5 asks for. What has had one pass only is
+  // the verbatim wording of the excerpts, transcribed here from the clips that
+  // sit beside this file; anyone doubting a quote can check it without leaving
+  // the repo. Confirmed by hand for want of a review tool for textual documents
+  // (handbook/MAP-TOOL-SPEC.md §9).
+  sweptFully: true,
   sweptFor: ["Figueroa Street", "Castelar Street", "Yale Street"],
   readBy: "human",
 

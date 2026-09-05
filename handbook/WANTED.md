@@ -62,17 +62,6 @@ Second to First"). It is one re-reading away from Georgia's situation. A sheet
 lettering Vine on that block would put it on evidence rather than on a quoted
 extent.
 
-## P3 — CDNC articles already cited but not transcribed
-
-CDNC now answers automated requests with a bot-verification wall, so these need
-a person. The `?a=d&d=…` permalink is the whole address; a trailing
-`&e=-------en--20--1--txt-txIN--------` is search context.
-
-| what | id | why |
-|---|---|---|
-| Herald, Feb. 19, 1897, "A Storm of Words" | `LAH18970219.2.24` | cited by `georgia-bell`, `nevada-1886`, `pearl`; source of a prose-dated spelling period |
-| Herald, Feb. 21, 1897, "Talking Retrenchment" | `LAH18970221.2.28` | transcribed in part; wanted to check the committee table's left column |
-
 ## P3 — a pre-1890 map naming Bunker Hill Avenue
 
 The Feb. 1874 council column mentions "the grade of Temple from Fort to Bunker
@@ -81,22 +70,37 @@ is modern Broadway, so it is west of Broadway along Temple — Hill, Olive, Gran
 or Hope, and the text goes no further. "Declaring it a public avenue" would date
 the pavement as well as the name. See `research-leads.md`.
 
-## P3 — instruments for the undated renamings
+## P2 — three renaming ordinances with a month to search on
 
-Eleven renamings the corpus asserts with a date and no document, ten of them
-before 1900 and most naming a petition — so the 1874–1890 council minutes would
-likely answer several at once, and would give the model its first **petition**
-and first **single-street ordinance** to design against.
+The Feb. 1874 hunt showed the method works (handbook/RENAMING-SOURCES.md): a
+month plus the City Clerk's date-filtered browser at
+<https://clerkapps.lacity.org/oldcfidocs/> finds the ordinance, and the ordinance
+settles mechanism, wording and scope at once. ✔ **Virgin → Alpine** (Aug. 22, 1887) and ✔ **Fort → Broadway** (by Feb. 20,
+1890) both **FOUND 2026-09-04** — the first in the minutes at the first try, the
+second in the Herald after the minutes for those dates turned out to be missing
+(handbook/RENAMING-SOURCES.md §2a). One left.
+
+**None of the incoming entities exists yet.** `alpine`, `broadway`,
+`buena-vista` and `north-broadway` are all unminted, so each found ordinance
+mints one — as `castelar` and `yale` were on 2026-09-04. Expect the same shape:
+`scope: "whole-name"` unless the ordinance names a stretch, and the old entity's
+public note losing its renaming sentence once a document carries it.
+
+| renaming | month | what the data says now |
+|---|---|---|
+| **`eternity` → Buena Vista → North Broadway** | 1888, then Nov. 1909 | "Renamed Buena Vista in 1888, and folded into North Broadway in November 1909." Two changes, and only the second has a month. The 1909 one is late enough that the minutes may be typed rather than handwritten. |
+
+Each of these currently rests on a public `note` sentence with no document
+behind it — the same footing `bull` and `hornet` were on until the Feb. 1874
+ordinance turned up and the sentences came out.
+
+## P3 — instruments for the remaining undated renamings
 
 | renaming | date | as recorded |
 |---|---|---|
 | Charity → Grand | 1886–87 | petition by residents |
 | High → Walters | 1886 | — |
-| Virgin → Alpine | Aug. 1887 | petition (W. P. …) |
-| Eternity → Buena Vista | 1888 | — |
 | Georgia → Georgia Bell | 1889 | — |
-| Fort → Broadway | Feb. 1890 | petition (Fred Lind Alles) |
 | Walters → Ord | 1890 | — |
-| Buena Vista → North Broadway | Nov. 1909 | — |
 | Ruth ↔ Stanford / Crocker | after Feb. 1897 | unresearched |
 | 10th → Olympic | 1935 (asked 1929) | — |

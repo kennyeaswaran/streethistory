@@ -804,7 +804,7 @@ const NAME_ENTITIES = {
         url: "https://lastreetnames.com/street/broadway/" }
     ],
     disputed: false,
-    note: "Lettered “Calle Fortin” on the 1849 survey. Renamed Broadway in February 1890, after New York’s, on a petition by the printer Fred Lind Alles.",
+    note: "Lettered “Calle Fortin” on the 1849 survey.",
     internalNote: "Carried over from streets-data.js when the Ord survey was encoded, 2026-08-31. The survey letters this street in both languages, so the row’s asWritten holds both forms and this entity holds the English one.",
     possiblySameAs: null,
     aliases: []
@@ -870,7 +870,7 @@ const NAME_ENTITIES = {
         url: "https://lastreetnames.com/street/alpine-street/" }
     ],
     disputed: false,
-    note: "Lettered “Calle de las Vírgenes” on the 1849 survey, which gives no explanation — bachelorettes, nuns and the Virgin Mary have all been suggested and none is documented. Renamed Alpine Street in August 1887 by petition of the real-estate agent William P. McIntosh, who had run a Sierra lumber company near Alpine County and gave no reason.",
+    note: "Lettered “Calle de las Vírgenes” on the 1849 survey, which gives no explanation — bachelorettes, nuns and the Virgin Mary have all been suggested and none is documented.",
     internalNote: "Carried over from streets-data.js when the Ord survey was encoded, 2026-08-31. The survey letters this street in both languages, so the row’s asWritten holds both forms and this entity holds the English one.",
     possiblySameAs: null, aliases: []
   },
@@ -1248,6 +1248,30 @@ const NAME_ENTITIES = {
   // document has been found lettering either before that. Their namesakes are
   // where the old entities' prose already pointed, and neither is documented —
   // so the claims live as leads in internalNote rather than as assertions.
+
+  "alpine": {
+    spellings: [{ forms: ["Alpine Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unresearched"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted 2026-09-04 from documents/ord-1887-08-22, which declares Virgin Street \u201cchanged to Alpine Street\u201d. The lead, carried over from the `virgin` entity's public note and unsourced there: the petitioner was the real-estate agent William P. McIntosh, who had run a Sierra lumber company near Alpine County \u2014 which would make this a transplanted California place name rather than the Alps. The ordinance gives no reason, as ordinances do not. Worth checking Kines and the Aug. 1887 papers before asserting anything.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "broadway": {
+    spellings: [{ forms: ["Broadway"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unresearched"],
+    sources: [],
+    disputed: false,
+    note: "The name has no \u201cStreet\u201d: the 1890 papers and the street signs both say simply Broadway.",
+    internalNote: "Minted 2026-09-04 from documents/lah-1890-02-20, the Herald reporting that the ordinance renaming Fort Street had been signed by Mayor Hazard and taken effect. The leads, carried over from the `fort-street` entity's public note and unsourced there: named after New York's Broadway, on a petition by the printer Fred Lind Alles. The Herald item says neither of those things \u2014 it names only Mayor Hazard \u2014 so both stay leads. The same item predicts that Main Street south of Tenth would be renamed Broadway once Broadway was cut through, which is how modern Broadway came to run south of downtown; whatever act carried THAT out is not found (handbook/research-leads.md). NB the 1897 committee report separately renames a \u201cBroadway Street\u201d to Canal Street \u2014 not this one, which had been plain \u201cBroadway\u201d for seven years by then.",
+    possiblySameAs: null, aliases: []
+  },
 
   "castelar": {
     spellings: [{ forms: ["Castelar Street"] }],

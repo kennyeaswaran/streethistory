@@ -68,6 +68,35 @@ Cite what you find the way the 1897 transcription does — Record Series R05.557
 the PDF name, PDF page, and the manuscript **ledger page** written on the leaf,
 which is the stable reference.
 
+## Step 2a — when the minutes are not there
+
+**The series has gaps, and one of them swallowed a renaming.** Hunting Fort
+Street → Broadway in Feb. 1890, Kenny found the council minutes for the
+relevant dates **missing** from the City Clerk's holdings. The instrument
+itself has never been located; what carries that change in this corpus is a
+newspaper report (`documents/lah-1890-02-20/`), and that is the only surviving
+record of it.
+
+So the ordering in this file is a preference, not a rule. When the minutes are
+absent, an unambiguous press report of an *enacted* ordinance is the source —
+and the words that make it unambiguous are worth learning, because they are
+what separates it from the petition items in Step 1:
+
+> "The ordinance changing its name to Broadway **has gone into effect**, having
+> been **signed by Mayor Hazard** and **published as required by law**."
+
+Signed, published, in force. That is stage 3 reported, not stage 1 asked, and
+it is enough to carry a change row.
+
+Two habits it argues for:
+
+- **Check the papers even when you expect to find minutes**, because a dated
+  press notice also brackets the change when the minutes give no clean date.
+  On Mar. 10, 1890 the clerk writes "Fort street (now Broadway)" in passing —
+  useless as an instrument, perfect as corroboration.
+- **Record the gap.** A missing volume looks exactly like a search you did
+  badly, until somebody writes down which it was.
+
 ## Step 3 — if the minutes name an ordinance number, that is the document
 
 The 1897 hunt ended at "Ordinance No. 4093 (New Series), Ordinance Book IV

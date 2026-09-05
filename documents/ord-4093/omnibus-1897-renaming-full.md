@@ -236,3 +236,32 @@ independent readings of the Feb. 23 document now agree.)
   Oct. 26). Not printed in the Herald either. Same archives trail.
 - The Feb. 3 article headline says the Feb. 2 adoption was "by a Unanimous
   Vote" while the body says Nickell voted no — cite the body, not the head.
+
+---
+
+## Negative result: the two Herald items, read 2026-09-04
+
+Kenny read both and judged neither useful for the renaming data. Recorded here
+so nobody runs the search again — a checked-and-empty source is worth as much
+as a productive one, and CDNC now sits behind a bot-verification wall, so
+re-checking costs a person's time rather than a fetch.
+
+| item | url | verdict |
+|---|---|---|
+| Herald, Feb. 19, 1897, "A Storm of Words" | https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24 | not helpful |
+| Herald, Feb. 21, 1897, "Talking Retrenchment" | https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28 | not helpful |
+
+They stay **cited** in `names.js` — the Feb. 19 piece carries Forman's dated
+history and Toberman's claim, and is the source for `georgia-bell`'s
+prose-dated spelling period (§3's prose exception), which is a different job
+from supplying rows. The Feb. 21 item is the Herald's OCR of the committee
+report whose manuscript is transcribed in
+`omnibus-1897-renaming-council-minutes.md`; where the two disagree the
+manuscript wins, so the print adds nothing the manuscript does not already say
+better.
+
+**What this leaves.** Every route to the 1897 changes short of the ordinance
+itself has now been tried: the Herald's session coverage, the committee report
+in both print and manuscript, and the 1897/1898 city directories (negative,
+recorded above and in SERIAL-SOURCES.md). The ⭐ target is unchanged and now
+unaccompanied — **Ordinance Book IV p. 337**, with the City Archivist.
