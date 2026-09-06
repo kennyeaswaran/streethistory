@@ -120,6 +120,84 @@ for it precisely, which is the difference between a request and a search.
 - **Directory and Sanborn routes** are covered in SERIAL-SOURCES.md and are
   better for *bracketing* a change than for naming its instrument.
 
+## Is it worth reading the minutes straight through? — measured, 2026-09-05
+
+Kenny pulled **every July 1850 meeting** — 8 meetings, 50 pages, 21 MB — as a
+sample, and an instance read all 50. The result is the argument against doing
+this at scale, and it is worth having in numbers rather than as a hunch.
+
+**Yield: zero street names. Zero rows.** Not one street is named in the month.
+
+What the 50 pages actually contain:
+
+| | pages | |
+|---|---|---|
+| oaths of office and certifications | ~11 | the first council after statehood swearing itself in |
+| the Council's own Rules and Regulations | ~10 | ten chapters of procedure |
+| water / zanja / irrigation regulation | ~6 | the zanjero, ditch fees, water rights |
+| salaries, jail, courthouse, school petitions | ~10 | |
+| lot auctions, treasurer's statements, sundry | rest | |
+
+**Two items touch streets at all, and neither is a row** (§ below records both).
+So: a month of the earliest council, read in full, produced one citable
+sentence of context and nothing enterable.
+
+### What that projects to
+
+At this sample's rates — 6.25 pages and 2.6 MB per meeting — and a council
+meeting roughly weekly plus specials:
+
+```
+~90 meetings/year × 60 years (1850-1910)  ≈  5,400 meetings
+                                          ≈  34,000 pages
+                                          ≈  14 GB of scans
+```
+
+Handwritten throughout, so **no text layer and no search**: every one of those
+pages is a human or a vision pass. Against that, the whole corpus today needs
+perhaps a dozen more renaming instruments.
+
+### The asymmetry that decides it
+
+The minutes are **unsearchable**; the newspapers are **OCR'd and searchable**.
+And the papers reported council meetings the next morning. So the newspaper is
+not a worse source than the minutes — it is a far better *index* to them.
+
+That inverts the order this file used to recommend, and the three finds of
+2026-09-04 all support the inversion:
+
+- **Fort → Broadway** was found in the Herald after the minutes for those dates
+  turned out to be missing. Newspaper-first would have gone straight to it.
+- **Virgin → Alpine** was found in the minutes at the first try — because a
+  month was already known. The month came from prose in `names.js`, which came
+  from Kines, who got it from somewhere.
+- **Bull → Castelar** was found only because the Feb. 1874 petition gave a
+  fortnight to search.
+
+In every case the expensive step was cheap *because something else had already
+narrowed it to a date*. Reading forward through the minutes is that narrowing
+done the most expensive way available.
+
+### The recommendation
+
+1. **Search CDNC** for the phrasings a renaming report uses — "changing the
+   name of", "is no longer", "hereafter be known as" — over a year range. This
+   is a human step (robots.txt; see "What does not work"), but it is minutes
+   rather than months.
+2. **Take each hit's date to the minutes**, which is the workflow above, and
+   which works.
+3. **Do not read forward.** The one exception worth considering is the
+   **ordinance ledger indexes** — Ordinance Book IV p. 337 was found that way
+   for 1897 — since an index lists ordinances by title, and "An Ordinance
+   changing the name of…" is a title. That is a few hundred index pages against
+   34,000 minute pages, and it is the only exhaustive pass with a plausible
+   ratio.
+
+**Where an exhaustive read WOULD pay:** a single year already known to be
+dense. The 1897 renaming ordinance touched 350 streets in one instrument; if a
+second such omnibus exists, it is worth a year of minutes to find. Nothing
+suggests one does.
+
 ## The worked example, now closed
 
 **Bull → Castelar and Wasp → Yale, Feb. 1874 — found 2026-09-04.** The method

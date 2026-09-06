@@ -534,14 +534,25 @@ edge case — so anything no row speaks for is drawn red over the part that is
 missing, and the panel counts it in metres. A street in that state reads
 *partial*.
 
-Clicking a red stretch offers exactly two answers, and they are different
-claims:
+Every red stretch is also listed under **Sweep**, next to the rows still
+waiting, as *street · metres*; clicking one brings it to the middle of the
+view and opens its card, so you can work down the list instead of hunting red
+on the canvas.
+
+Clicking a red stretch offers three answers, and they are different claims:
 
 - **Sheet shows nothing here** — the document covers this ground and draws no
   street on it. This is *evidence*: it becomes a `absent` row and it is what
   later licenses arguing that no street was there. The extents are worked out
   for you, snapping to a cross street where one is close and falling back to a
   scan pixel mid-block.
+- **Sheet draws a street here — the pass missed it** — the opposite claim: the
+  corridor is there on the sheet and the AI pass simply wrote no row for it.
+  You are asked for the label exactly as lettered; it becomes a `state` row
+  (or `unnamed`, if you leave the label empty because no name is lettered)
+  with the same worked-out extents, and the popup moves onto the new row so
+  you can give it a name entity and confirm it. Before this existed, the only
+  in-tool button for such a stretch said the opposite.
 - **Outside coverage — this stretch**, or **all of this street** — the document
   never spoke about that ground; the traced boundary just strayed onto it. Both
   record it in `coverageExcept`. The stretch form is usually what you want: a
@@ -552,6 +563,56 @@ Guessing between them by hand is how a traced boundary's slop turns into a
 false historical claim, which is why the tool will not choose for you. The
 panel lists what has been dropped, with an undo, and `check-model.js` refuses a
 document that both excludes a street and carries rows for it.
+
+### If the tool looks stale
+
+`utilities/start-map-tools.command` now serves everything with `Cache-Control:
+no-store`, because the stock Python server let Chrome keep an old copy of the
+tool — or of a document's rows — on its own judgement. A server started before
+that change is still the old server: close its window and double-click the
+command again (it reuses a running server rather than replacing it).
+
+### Opening another document in the same session
+
+Everything that belongs to a document — header fields, coverage ring, swept
+flag, exclusions, and the id — is cleared before the next one loads, whether
+you click a folder in the lists, type an id, or load a bare render for
+aligning. (It used to linger: a second render opened for aligning kept the
+first document's id, so Save wrote into the *first* folder, and the only
+symptom was a confirm about replacing an alignment "for a different image".)
+If there are unsaved review edits, the tool asks before dropping them.
+
+### Branches, parallel runs and rings
+
+A street in coverage is often several runs, not one: OSM branches (Hope
+Street on MR001-489 is a long spine with two spurs), a slip road alongside the
+main carriageway, the two levels of Grand Avenue. A row's ends are snapped
+only onto the runs they actually lie on (within 25 m of the line):
+
+- both ends `null` — the whole street, every run;
+- a row whose given ends are both on the spine says nothing about the spur,
+  and one written on the spur says nothing about the spine, even with
+  `to: null`;
+- a row from a point on the spine to a point up the spur covers the spine to
+  the junction and the spur from it — the far end snaps to the junction.
+
+Before this, every row was snapped onto every run of its street, so a spur
+row with `to: null` claimed half the spine and a spine row left a stub of
+colour on each spur; rows multiplied trying to close gaps the model invented.
+A row whose ends are on none of the runs now covers nothing and is listed as
+*spans nothing*.
+
+**Rings** — a plaza, a court, a terrace that returns to itself — have no north
+or west end, so on a ring `from`/`to` are read differently: a `null` end means
+*the whole ring*, and two given ends cover the arc **forward from `from` to
+`to`** in the run's own order, wrapping past the seam if it must. The other
+arc is the same two ends the other way round, and the row popup offers
+**Other way round the loop** to do exactly that. Answering a red stretch on a
+ring writes the ends in that order, so the row it makes covers the gap.
+
+(The generator still cuts each street along one axis, which cannot tell
+parallel runs apart or follow a ring; the tool's accounting is ahead of it
+there, and rows on such streets should be read with that in mind.)
 
 ### The other carriageway
 
@@ -591,7 +652,7 @@ big for that rule to catch.
 
 The button for this sits at the foot of the **Sweep** section's list of rows
 still waiting, with no heading of its own: "this ground has ink the modern map
-has no street for" is one of the two answers to an unaccounted stretch, so it
+has no street for" is one of the answers to an unaccounted stretch, so it
 belongs at the end of the list that asks the question.
 
 **Trace a vanished street** puts the canvas into tracing: click along the

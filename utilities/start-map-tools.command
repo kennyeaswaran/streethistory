@@ -87,4 +87,17 @@ fi
 
 echo "  Leave this window open while you work. Ctrl-C (or closing it) stops the server."
 echo
-python3 -m http.server "$PORT"
+# Not the stock `python3 -m http.server`: that sends no Cache-Control, and
+# Chrome then keeps map-tool.html and the document files for a while on its
+# own judgement — so an edit to the tool, or to a document's rows, can fail to
+# show up until a hard reload. Every response here says "do not cache".
+python3 - "$PORT" <<'PY'
+import sys
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+class H(SimpleHTTPRequestHandler):
+    def end_headers(self):
+        self.send_header("Cache-Control", "no-store, must-revalidate")
+        self.send_header("Expires", "0")
+        super().end_headers()
+ThreadingHTTPServer(("", int(sys.argv[1])), H).serve_forever()
+PY

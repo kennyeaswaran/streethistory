@@ -109,4 +109,15 @@ fi
 
 echo "  Leave this window open while you work. Ctrl-C (or closing it) stops the server."
 echo
-python3 -m http.server "$PORT"
+# See start-map-tools.command: the stock server lets Chrome cache the tool and
+# the data files, so edits can fail to show until a hard reload.
+python3 - "$PORT" <<'PY'
+import sys
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+class H(SimpleHTTPRequestHandler):
+    def end_headers(self):
+        self.send_header("Cache-Control", "no-store, must-revalidate")
+        self.send_header("Expires", "0")
+        super().end_headers()
+ThreadingHTTPServer(("", int(sys.argv[1])), H).serve_forever()
+PY

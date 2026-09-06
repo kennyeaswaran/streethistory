@@ -213,6 +213,85 @@ Also worth noting for whoever picks this up: "declaring it a public avenue" in
 1874 dates the pavement, so whichever modern street it is gains an existence
 claim as well as a name one.
 
+## Names moved out of names-new.js — what the move left open (2026-09-06)
+
+All twenty-one entities in `names-new.js` were researched and moved into
+`names.js`; the file is now empty. Five came back with a namesake (Temple,
+Clark Avenue, Botiller Street, 15th, 16th) and the rest carry a null
+`namedAfter` with the checks recorded in `internalNote`. Four things surfaced
+in the pass that are leads rather than entries:
+
+- **Laura Street and Pine Street, predecessors of 15th and 16th.** The Miguel
+  Subdivision (`documents/mr053-016`, Mar. 1893) letters each numbered street
+  beside a parenthetical former name — "(formerly Laura St)", "(formerly Pine
+  St)". Both are naming lineages with no entity and no change row: the ink sits
+  in the rows' `asWritten` and nothing else in the corpus mentions either. What
+  would settle them: an earlier sheet of this ground, or the tract that laid
+  them out. NB neither name is related to the Arts District's 1886 tree-and-plant
+  run (Palm, Spruce, Tulip, Willow) — different ground, and Pine is not in it.
+
+- **The "Maple Ave Tract".** The 1888 Widow Botiller resubdivision
+  (`documents/mr029-026`) letters the adjoining land with that name — a tract
+  named after the street, which means its own recorded sheet may date Maple
+  Avenue. Maple is one of the four names on the O. W. Childs Tract with no
+  documented origin, and this is the cheapest lead among them.
+
+- **Six undated absorptions, all in the same few blocks.** Every one of these
+  is a name that our sheets letter and the modern map has replaced, with no
+  document anywhere in the corpus recording the change: Botiller → Santee,
+  William → Santee, Myrtle → Wall, Ida → Cecelia, Clark → Crocker, Court House
+  → Community Terrace. Five of the six are between 8th and 12th east of Main,
+  in tracts recorded 1885-1893, so one city action may well have taken several
+  at once — the same shape as the 1874 and 1897 ordinances. Worth a look in the
+  ordinance-ledger indexes (handbook/RENAMING-SOURCES.md) before hunting them
+  one at a time. NB Kines dates Santee Street's *naming* to 1886, two years
+  before the Botiller sheet letters Botiller Street on ground that is Santee
+  today, so on that one the two names demonstrably ran in parallel for a while.
+
+- **Wesley Clark's dates.** The Clark and Bryan Tract sheet gives his address
+  (127 West 3rd Street, Nov. 1893) but nothing else places him; no Wikipedia
+  article, no Kines page. His partner Elden P. Bryan (1852-1925) is documented
+  by the Homestead Museum. A city directory of the early 1890s would probably
+  settle Clark in one line — SERIAL-SOURCES.md.
+
+## July 1850 council minutes — read in full, checked and cleared (2026-09-05)
+
+Kenny downloaded all eight July 1850 meetings (M07031850, M07051850, M07061850,
+M07101850, M07171850, M07201850, M07271850, M07311850 — 50 ledger pages) to test
+whether reading the council minutes straight through is worth doing. **It is
+not**, and the measurement is written up in RENAMING-SOURCES.md § "Is it worth
+reading the minutes straight through?". This entry records what the month
+actually yielded so that nobody reads it again.
+
+**Not one street is named anywhere in the month** — no row is enterable from any
+of the 50 pages. Two items touch streets obliquely and are recorded here rather
+than as document rows, because neither says where anything is:
+
+- **July 17, 1850** (ledger 30–31): *"The President proposed the appointment of
+  a provisional Committee for the purpose of fixing the property lines of
+  parties wishing to build, which should be done in conformity with the
+  alignment and division into streets and blocks as shown by the maps of this
+  City. Proposition admitted and approved, Messrs Temple and Aguilar being
+  placed on that Committee."* — the council binding new construction to the
+  surveyed grid less than a year after Ord finished it. This is context for
+  when the Ord survey became *operative* rather than merely drawn, and it is
+  the only dated statement of that in the corpus so far. It names no street, so
+  it attests nothing about any particular pavement.
+- **July 20, 1850** (ledger 31): *"A petition of Dª Concepción Navarro, asking
+  for the vacant space which exists between her house and the streetline, was
+  referred to a special Committee…"* — a streetline encroachment request. The
+  street is not named and the house is not located; it would only become useful
+  if the committee's report survives and names either.
+
+The rest of the month, by page count: ~11 pages of oaths of office, ~10 of the
+Council's own Rules and Regulations, ~6 of zanja and water regulation, ~10 of
+salaries, jail, courthouse and school petitions, the remainder lot auctions and
+treasurer's statements.
+
+**Consequence for method:** the minutes are a good place to *land* once a date
+is already known (three renaming instruments were found that way on 2026-09-04)
+and a bad place to *look*. Take the date from the searchable newspapers first.
+
 ## Serial-source leads (Sanborn atlases & city directories, 2026-08)
 
 Two source families new to the project, brought in by Kenny 2026-08 and

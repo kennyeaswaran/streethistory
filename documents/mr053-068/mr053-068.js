@@ -35,10 +35,10 @@ module.exports = {
   // The polygon strays onto these; the document does not inform about them.
   // NOT the same as a absent row, which says the sheet covers the ground and
   // draws nothing there (MODEL-SPEC §4.4, §5.2).
-  coverageExcept: [{"street":"8th Place","from":null,"to":null},{"street":"8th Street","from":"Figueroa Street","to":null}],
+  coverageExcept: [{"street":"8th Place","from":null,"to":null},{"street":"8th Street","from":"Figueroa Street","to":null},{"street":"8th Street","from":null,"to":"Figueroa Street"}],
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["4th Street","5th Street","6th Street","7th Street","8th Place","8th Street","9th Street","Broadway","Figueroa Street","Flower Street","Grand Avenue","Grand Avenue Lower Level","Hill Street","Hope Place","Hope Street","Los Angeles Street","Main Street","Olive Street","Spring Street","Wilshire Boulevard","Winston Street"],
 
   rows: [
     {

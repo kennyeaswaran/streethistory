@@ -88,6 +88,96 @@ four to six streets at once (the Bliss Tract alone gives Seaton, Colyton,
 Carolina/Hewitt, Huber, Poplar and Palmetto), and re-opening a scan months
 later to catch the ones you skipped costs far more than reading it through now.
 
+## Direct report URLs — skip most of the UI (2026-09-06)
+
+Found by reading the app's own DOM. NavigateLA is an ArcGIS JS 4.28 SPA, but its
+reports are still plain ColdFusion pages under
+`https://navigatela.lacity.org/navigatela/reports/`, keyed by **PIN** (the BOE
+parcel key, e.g. `124-5A205-29`), not by APN:
+
+- **Parcel Description Report** — the Tract/Map-Ref/Lot/Block sheet, the one
+  step 2 of the pipeline is really after:
+  `reports/nlaby_pin.cfm?pin=124-5A205-29`
+- The menu of every report for a parcel: `reports/dc_parcel_reports.cfm?PK=<PIN>`
+  (also gives the Cadastral Map PDF, the Assessor Map link, and the APN)
+- Others on the same key: `parcel_isin.cfm`, `fema_s_report.cfm`,
+  `lupams_report.cfm` (County Assessor Report)
+
+These are same-origin fetches, so `javascript_tool` can pull and parse them
+without any screenshot round-trips — much faster than clicking through the
+Report Window.
+
+**Getting the PIN.** Only the map app knows it, so one search has to go through
+the app. Searching an APN (plain 10 digits, no hyphens) or a street address
+resolves to one parcel and loads its report:
+
+    window.qType = ''; window.qBlank = 0;      // REQUIRED, see below
+    const i = document.getElementById('searchbox');
+    i.value = '800 MAPLE AVE'; i.dispatchEvent(new Event('input',{bubbles:true}));
+    doSearch();                                 // app's own global
+    // then poll document.getElementById('report_frame').src for PK=<PIN>
+
+`qType` is a global the search UI sets, and it is undefined until a person has
+actually used the search controls — calling `doSearch()` before that throws
+`ReferenceError: qType is not defined`. Setting it to `''` yourself makes
+`doSearch` fall through to its own type-sniffing, which is what you want.
+
+The geocoder underneath is callable on its own, which is the cheap way to test
+whether a query resolves at all before spending a search on it:
+
+    POST https://navigatela.lacity.org/cfc/geocode_services/boe_universal_locator.cfc
+         ?method=boeGeocodingService
+    body: qType=any&qSearch=800+MAPLE+AVE
+
+It answers `singleMatch` / `noMatch` and echoes the matched address, but it
+returns only coordinates — no PIN — so it screens queries rather than replacing
+the step above.
+
+Two more caveats. The report frame stops responding after roughly half a dozen
+searches in one page session (`report_frame.src` goes null and stays there);
+reload and carry on. And the app's viewport matters: in a narrow pane it lays
+out at phone width and the search never fires, so emulate ~1400x900 first.
+
+**A `noMatch` usually means the parcel is dead, not that you mistyped.** The
+assessor's `api/search/legal` returns parcels struck off the roll decades ago
+right alongside live ones, with nothing marking the difference. Feed one of
+those to NavigateLA and it answers `noMatch`, because a Map-Ref lookup resolves
+a *live* parcel. Check first:
+
+    https://portal.assessor.lacounty.gov/api/parceldetail?ain=5134004003
+    -> ParcelStatus "DELETED", DeleteDate 09/24/1987
+
+When every parcel in a tract is deleted, the tract has been erased from the
+ground (redevelopment, a freeway, a civic project) and NO Map-Ref is obtainable
+this way at all — Carleton and Summerfield's Sub of the Dunigan Tract, wiped by
+the Convention Center expansion in 1987-88, is the worked example. That is a
+finding about the street, not a dead end: it means the stretch can never be
+confirmed by a modern parcel and has to be carried by plats and directories.
+The deleted records are still worth reading, since they preserve the tract name
+and lot numbers for ground that no longer exists.
+
+**The disclaimer splash.** NavigateLA opens on a "Welcome / Accept" modal in any
+browser profile that hasn't dismissed it. Tick "Do not show this message in the
+future" before accepting. An AI instance should ask before clicking through
+terms; a profile where a person has already dismissed it never shows the modal,
+which is why earlier sessions in Kenny's own Chrome never hit this.
+
+## Tract name -> footprint without a browser (2026-09-06)
+
+The Assessor Portal's LEGAL SEARCH (below, "Reverse direction") has an
+undocumented JSON endpoint that needs no browser, no login and no splash:
+
+    https://portal.assessor.lacounty.gov/api/search/legal?legaldesc=MOTT
+    https://portal.assessor.lacounty.gov/api/parceldetail?ain=5126001005
+
+The first returns AIN, situs address and the full legal description for every
+matching parcel — enough to place a tract named in a source ("Mott Tract",
+"Bell's Addition") on the ground, and to pick the AIN to run through NavigateLA
+for its Map-Ref. Note it matches loosely: `legaldesc=BELL` returns Bell Canyon
+subdivisions too, so read the descriptions rather than trusting the count.
+
+It does NOT carry the Map-Ref. NavigateLA is still the step for that.
+
 ## Network access notes (2026-07)
 
 - **The sandbox shell's `bash`/`curl` cannot reach `pw.lacounty.gov` at all** —

@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-05
+// Built: 2026-09-06
 const SEARCH_INDEX = [
   {
     "form": "11th Street",
@@ -46,13 +46,13 @@ const SEARCH_INDEX = [
   },
   {
     "form": "15th Street",
-    "entity": "15th-street",
+    "entity": "fifteenth-street",
     "label": "15th Street",
     "street": "15th Street"
   },
   {
     "form": "16th Street",
-    "entity": "16th-street",
+    "entity": "sixteenth-street",
     "label": "16th Street",
     "street": "16th Street"
   },
@@ -495,6 +495,12 @@ const SEARCH_INDEX = [
     "street": "Cecelia Street"
   },
   {
+    "form": "Ida Street",
+    "entity": "ida-street",
+    "label": "Ida Street",
+    "street": "Cecelia Street"
+  },
+  {
     "form": "Centennial Street",
     "entity": "centennial-street",
     "label": "Centennial Street",
@@ -613,6 +619,12 @@ const SEARCH_INDEX = [
     "entity": "commercial-street",
     "label": "Commercial Street",
     "street": "Commercial Street"
+  },
+  {
+    "form": "Court House Street",
+    "entity": "court-house-street",
+    "label": "Court House Street",
+    "street": "Community Terrace"
   },
   {
     "form": "Community Terrace",
@@ -1192,7 +1204,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Maple Avenue",
-    "entity": "maple-avenue",
+    "entity": "maple-dtla",
     "label": "Maple Avenue",
     "street": "Maple Avenue"
   },
@@ -1339,12 +1351,6 @@ const SEARCH_INDEX = [
     "entity": "new-high-street",
     "label": "New High Street",
     "street": "New High Street"
-  },
-  {
-    "form": "Olive Court",
-    "entity": "olive-court",
-    "label": "Olive Court",
-    "street": "Olive Court"
   },
   {
     "form": "Olive Street",
@@ -1516,7 +1522,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "San Julian Street",
-    "entity": "san-julian-street",
+    "entity": "san-julian-st",
     "label": "San Julian Street",
     "street": "San Julian Street"
   },
@@ -1572,6 +1578,18 @@ const SEARCH_INDEX = [
     "form": "Santee Street",
     "entity": "santee-street",
     "label": "Santee Street",
+    "street": "Santee Street"
+  },
+  {
+    "form": "William Street",
+    "entity": "william",
+    "label": "William Street",
+    "street": "Santee Street"
+  },
+  {
+    "form": "Botiller Street",
+    "entity": "botiller-street",
+    "label": "Botiller Street",
     "street": "Santee Street"
   },
   {
@@ -1636,7 +1654,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Temple Street",
-    "entity": "temple-street",
+    "entity": "temple",
     "label": "Temple Street",
     "street": "Temple Street"
   },
@@ -1722,6 +1740,12 @@ const SEARCH_INDEX = [
     "form": "Wall Street",
     "entity": "wall-street",
     "label": "Wall Street",
+    "street": "Wall Street"
+  },
+  {
+    "form": "Myrtle Avenue",
+    "entity": "myrtle",
+    "label": "Myrtle Avenue",
     "street": "Wall Street"
   },
   {

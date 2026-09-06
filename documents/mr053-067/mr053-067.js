@@ -37,8 +37,8 @@ module.exports = {
   // draws nothing there (MODEL-SPEC §4.4, §5.2).
   coverageExcept: ["Santee Street",{"street":"8th Place","from":null,"to":null},{"street":"James M Wood Boulevard","from":null,"to":null},{"street":"Chick Hearn Court","from":null,"to":null}],
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["11th Street","12th Street","8th Place","9th Street","Broadway","Chick Hearn Court","Figueroa Street","Flower Street","Grand Avenue","Hill Street","Hope Street","James M Wood Boulevard","Los Angeles Street","Main Street","Olive Street","Olympic Boulevard","Spring Street"],
 
   rows: [
     {
@@ -352,6 +352,20 @@ module.exports = {
       ],
       "basis": "alignment",
       "name": "spring"
+    },
+    {
+      "kind": "unnamed",
+      "street": "12th Street",
+      "from": "Main Street",
+      "to": null,
+      "note": "Added in review: the sheet covers this 222 m and draws no street along it."
+    },
+    {
+      "kind": "unnamed",
+      "street": "11th Street",
+      "from": "Main Street",
+      "to": null,
+      "note": "Added in review: the sheet covers this 236 m and draws no street along it."
     }
   ]
 };

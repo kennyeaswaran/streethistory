@@ -2,16 +2,22 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 273; entries: 559
-- Stub entities minted from OSM (unresearched): 223
-- Curated entities: 87
+- Streets: 272; entries: 589
+- Stub entities minted from OSM (unresearched): 217
+- Curated entities: 98
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
 ## Ambiguous OSM binds (NOT bound — fix by adding extents or disambiguation)
 - OSM "Georgia Street" matches entities georgia-east, georgia-bell — not bound
 
+## Row problems
+- mr001-489: street not in geometry: West Bank Plaza at The Broad
+- mr001-489: street not in geometry: West Bank Plaza at The Broad
+- mr001-489: cross-street not on Grand Avenue: West Bank Plaza at The Broad
+
 ## Partially swept documents (no negative inference contributed)
 - lah-1874-02-13: sweptFor = []
+- mr001-489: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
@@ -23,6 +29,14 @@
 - hewitt: "HEWITT ST" ×1
 - san-pedro: "San Pedro Ave" ×4
 - omar-ave: "Omar Ave" ×1
+- fifteenth-street: "15th ST." ×1
+- fifteenth-street: "(formerly Laura St)" ×1
+- sixteenth-street: "16th ST." ×2
+- sixteenth-street: "(formerly Pine St)" ×2
+- los-angeles-street: "LOS ANGELES ST." ×1
+- main-street-dtla: "MAIN ST." ×1
+- maple-dtla: "MAPLE AVE." ×1
+- santee-street: "SANTEE ST." ×1
 - ninth-street: "CALLE 9a" ×2
 - charity: "CHARITY ST." ×2
 - hope: "HOPE ST." ×2
@@ -94,6 +108,8 @@ Traced through a document alignment; approximate to roughly a street width.
 - **Willow St** (willow) — 2 points, from mr011-042
 - **Mesquit St** (mesquit) — 2 points, from mr011-042
 - **Fourth St** (fourth-street) — 2 points, from mr030-009-p4
+- **Santee St** (santee-street) — 2 points, from mr053-016
+- **Maple Ave** (maple-dtla) — 2 points, from mr053-016
 - **(unlettered)** — 2 points, from mr053-063
 - **(unlettered)** — 2 points, from mr053-063
 - **CALLE PRINCIPAL** (main-street-dtla) — 2 points, from mr053-067

@@ -245,11 +245,10 @@
     <h3>Sweep</h3>
     <div class="hint" id="sweepState"></div>
     <div id="sweepBlockers"></div>
-    <div id="sweepGaps"></div>
 
     <!-- AT THE END OF WHAT THE SWEEP IS WAITING ON, and with no heading of its
          own: "this ground has ink the modern map has no street for" is one of
-         the answers to an unaccounted stretch, so it belongs at the foot of
+         the two answers to an unaccounted stretch, so it belongs at the foot of
          the list that asks the question rather than in a section three headings
          away. (MODEL-SPEC §5.3.) -->
     <div class="row">
@@ -766,7 +765,6 @@ const looksLikePdf = s => /\.pdf$/i.test(s.trim());
 $("file").addEventListener("change", e => {
   const f = e.target.files[0]; if (!f) return;
   if (looksLikePdf(f.name) || f.type === "application/pdf") return alert(pdfAdvice(f.name));
-  if (!startingRender(f.name)) { e.target.value = ""; return; }
   loadRender(URL.createObjectURL(f), f.name).catch(err => alert(err.message));
 });
 // `alignment.image` is fetched relative to the page, i.e. the project root.
@@ -794,7 +792,6 @@ $("loadRenderBtn").onclick = async () => {
   const pth = $("renderPath").value.trim();
   if (!pth) return;
   if (looksLikePdf(pth)) return alert(pdfAdvice(pth));
-  if (!startingRender(pth)) return;
   try { await loadRender(pth, pth.split("/").pop(), pth); }
   catch (e) {
     alert(`${e.message}\n\nThe path is relative to the project folder, e.g.\n` +
@@ -976,48 +973,6 @@ $("openBox").addEventListener("toggle", () => {
 });
 $("docSort").onchange = () => { docSort = $("docSort").value; if ($("docList").innerHTML) refreshDocList(); };
 
-// ONE DOCUMENT AT A TIME. Opening a second document in one session used to
-// leave the first one's state behind wherever the second had nothing to say:
-// its header fields, its coverage ring, its swept flag, its exclusions — and,
-// when the second was a bare render opened for aligning, its ID. That last was
-// the bad one: Save then wrote the new alignment into the FIRST document's
-// folder, and the only sign was a confirm asking whether to replace an
-// alignment "for a different image". Everything that belongs to a document is
-// cleared here, in one place, before anything of the next one is loaded.
-function resetDocumentState(id) {
-  for (const k of ["title", "shortTitle", "url", "scan", "transcription", "date"])
-    $("f_" + k).value = "";
-  for (const k of ["dateKind", "type", "attests", "completeness", "readBy"])
-    $("f_" + k).selectedIndex = 0;
-  $("f_id").value = id || "";
-  coverage = []; coverageExcept = [];
-  loadedDoc = null; pendingAlignment = null;
-  docSwept = { fully: false, for: [] };
-  sweptWasRetracted = false;
-  hidePop(); tracing = null; retracing = null; splitting = null;
-  updateTraceUI(); updateSplitUI();
-  lastModel = null; reviewSig = null; reviewDirty = false;
-  setVisible($("nextSteps"), false);
-}
-// Review edits live only in memory until Save review. Every way of opening
-// something else passes through here, so none of them can drop those edits
-// without asking.
-function okToLeave() {
-  return !reviewDirty || confirm("You have unsaved review edits — names assigned, rows " +
-    "confirmed. Opening another document throws them away.\n\nContinue?");
-}
-// A render picked or typed while a document is already open is either the
-// open document's own render again (same id — a re-load, or a second page of
-// the same scan, which Save's own guard catches) or a NEW document, in which
-// case the old one has to go first. With nothing open, a typed id is respected.
-function startingRender(pathOrName) {
-  const derived = idFromRender(pathOrName), cur = $("f_id").value.trim();
-  if (!(img || loadedDoc) || !cur || derived === cur) return true;
-  if (!okToLeave()) return false;
-  resetDocumentState(derived);
-  return true;
-}
-
 // A CLICK IN THE LIST LANDS IN THE MODE THAT DOES THE NEXT PIECE OF WORK.
 //
 // A folder that still needs aligning opens in align mode even if a half-saved
@@ -1032,8 +987,6 @@ async function openDocument(id, mode) {
   if (mode === "align" && d && d.missing.includes(`${id}.js`)) {
     if (!d.render) return alert(`documents/${id}/ has no render to align. ` +
       `Double-click utilities/new-map.command to make one.`);
-    if (!okToLeave()) return;
-    resetDocumentState(id);
     $("renderPath").value = `documents/${id}/${d.render}`;
     await $("loadRenderBtn").onclick();
     setMode("align");
@@ -1046,14 +999,12 @@ async function openDocument(id, mode) {
 $("loadDoc").onclick = async () => {
   const id = $("loadId").value.trim().replace(/\.js$/, "");
   if (!id) return;
-  if (!okToLeave()) return;
   let doc;
   try {
-    const src = await (await fetch(`documents/${id}/${id}.js?t=${Date.now()}`)).text();
+    const src = await (await fetch(`documents/${id}/${id}.js`)).text();
     const body = src.slice(src.indexOf("module.exports") ).replace(/^module\.exports\s*=\s*/, "");
     doc = new Function("return " + body.replace(/;\s*$/, ""))();
   } catch (err) { alert(`Could not load documents/${id}/${id}.js — ${err.message}`); return; }
-  resetDocumentState(doc.id || id);
 
   for (const k of ["id", "title", "shortTitle", "url", "scan", "transcription"])
     if (doc[k]) $("f_" + k).value = doc[k];
@@ -1263,74 +1214,25 @@ function runEnds(run, isNS) {
   return { fromIdx, toIdx: fromIdx === 0 ? last : 0 };
 }
 
-// WHICH RUN IS A ROW ABOUT?
-//
-// A street in coverage is often several runs, not one: OSM branches (Hope
-// Street on MR001-489 is a 1 km spine with two spurs off it), a slip road
-// alongside the main carriageway (4th Street, 31 m apart), the two levels of
-// Grand Avenue. A row's ends used to be snapped to EVERY run of its street,
-// however far away — so a row written for the spur snapped both ends onto the
-// spine at the junction and, with `to: null`, claimed the spine from there to
-// its end; and a row on the spine put a stub of colour on each spur. Neither
-// could be seen for what it was, and the sheet's rows multiplied trying to
-// close gaps the model was inventing. So:
-//
-//   - both ends null: the whole street, every run (unchanged);
-//   - otherwise a run is covered only if at least one GIVEN end lies ON it,
-//     within ON_RUN_M of the line. An end that is given but off this run
-//     snaps to its nearest vertex as before — on a branch that is the
-//     junction, which is what a row crossing from spine to spur means;
-//   - a run with no given end on it is not this row's business.
-//
-// A LOOP — a plaza ring, a court, a terrace that comes back to itself — has no
-// north or west end, so `from`/`to` mean nothing there as directions. On a
-// loop a null end reads as "the whole ring", and two points cover the arc
-// FORWARD from `from` to `to` in the run's own order, wrapping past the seam
-// if it must — so the other arc is the row with the ends the other way round,
-// rather than being unreachable. (The ends are deliberately NOT sorted into
-// canonical order on a loop; on an open run they still are.)
-const ON_RUN_M = 25;             // a point further from the line than this is on another run
-const LOOP_CLOSE_M = 15;
-const runIsLoop = run => run.length > 2 && G.metres(run[0], run[run.length - 1]) < LOOP_CLOSE_M;
-// Nearest vertex, and the distance to the LINE (a straight block is two
-// vertices hundreds of metres apart, so vertex distance says nothing).
-function nearestOnRun(run, pt) {
-  const KY = 110540, KX = 111320 * Math.cos(pt.lat * Math.PI / 180);
-  const X = p => (p.lon - pt.lon) * KX, Y = p => (p.lat - pt.lat) * KY;
-  let bi = 0, bv = Infinity, bd = Infinity;
-  run.forEach((p, i) => { const d = Math.hypot(X(p), Y(p)); if (d < bv) { bv = d; bi = i; } });
-  for (let i = 1; i < run.length; i++) {
-    const x1 = X(run[i - 1]), y1 = Y(run[i - 1]), x2 = X(run[i]), y2 = Y(run[i]);
-    const dx = x2 - x1, dy = y2 - y1, L = dx * dx + dy * dy;
-    let t = L ? -(x1 * dx + y1 * dy) / L : 0;
-    t = Math.max(0, Math.min(1, t));
-    bd = Math.min(bd, Math.hypot(x1 + t * dx, y1 + t * dy));
-  }
-  return { i: bi, d: Math.min(bd, bv) };
-}
-// The index ranges of one run that a row with these ends covers: none, one,
-// or (an arc wrapping a loop's seam) two.
-function clipRanges(run, pA, pB, isNS) {
-  const last = run.length - 1;
-  if (!pA && !pB) return [[0, last]];
-  const A = pA ? nearestOnRun(run, pA) : null, B = pB ? nearestOnRun(run, pB) : null;
-  const onA = !!A && A.d <= ON_RUN_M, onB = !!B && B.d <= ON_RUN_M;
-  if (!onA && !onB) return [];
-  if (runIsLoop(run)) {
-    if (!onA || !onB) return [[0, last]];        // one end on the ring, the other "its end"
-    if (A.i === B.i) return [[0, last]];         // from X round to X: the whole ring
-    return A.i < B.i ? [[A.i, B.i]] : [[A.i, last], [0, B.i]];
-  }
+// The portion of one in-bounds run between two ground points. Ends that fall
+// outside the run clamp to it, which is right: the run is already clipped to
+// coverage, and a row may legitimately run past the polygon's edge.
+function clipRange(run, pA, pB, isNS) {
   const ends = runEnds(run, isNS === undefined ? streetIsNS({ runs: [run] }) : isNS);
-  let a = A ? A.i : ends.fromIdx, b = B ? B.i : ends.toIdx;
+  if (!pA && !pB) return [0, run.length - 1];
+  const idx = pt => {
+    let bi = 0, bd = Infinity;
+    run.forEach((p, i) => { const d = G.metres(p, pt); if (d < bd) { bd = d; bi = i; } });
+    return bi;
+  };
+  let a = pA ? idx(pA) : ends.fromIdx, b = pB ? idx(pB) : ends.toIdx;
   if (a > b) { const t = a; a = b; b = t; }
-  if (a === b) { a = Math.max(0, a - 1); b = Math.min(last, b + 1); }
-  return [[a, b]];
+  if (a === b) { a = Math.max(0, a - 1); b = Math.min(run.length - 1, b + 1); }
+  return [a, b];
 }
-// The same, as point runs. Kept as `clipRuns` (plural): a row may cover a run
-// in two pieces, or not at all.
-function clipRuns(run, pA, pB, isNS) {
-  return clipRanges(run, pA, pB, isNS).map(([a, b]) => run.slice(a, b + 1));
+function clipRun(run, pA, pB, isNS) {
+  const [a, b] = clipRange(run, pA, pB, isNS);
+  return run.slice(a, b + 1);
 }
 
 // How much ground a row actually speaks for: its stretch summed over every
@@ -1350,8 +1252,7 @@ function rowMetres(r) {
   const pA = extentPoint(rec.name, r.kind === "change" ? r.fromCross : r.from, junk);
   const pB = extentPoint(rec.name, r.kind === "change" ? r.toCross : r.to, junk);
   const ns = streetIsNS(rec);
-  return Math.round(rec.runs.reduce((m, run) =>
-    m + clipRuns(run, pA, pB, ns).reduce((t, part) => t + runMetres(part), 0), 0));
+  return Math.round(rec.runs.reduce((m, run) => m + runMetres(clipRun(run, pA, pB, ns)), 0));
 }
 
 // The arithmetic of a split, apart from the clicking. One row in, two out,
@@ -1402,7 +1303,7 @@ function runGaps(run, ranges) {
 // South Hill Street between 1st and 2nd is a divided pair: two one-way ways
 // over one corridor, meeting each other at BOTH ends. stitchRuns joins them
 // into a run that walks out along one carriageway and walks back along the
-// other, and `from`/`to` clip an INDEX RANGE (clipRanges) — so the returning
+// other, and `from`/`to` clip an INDEX RANGE (clipRange) — so the returning
 // leg lies past the run's own canonical end and NO row can reach it. MR053-069
 // could not be marked swept for exactly this: 47 m that no row was able to
 // account for, and no row could have been written that would.
@@ -1561,9 +1462,7 @@ function reviewModel() {
     if (!rec) { problems.push(`coverageExcept names “${esc(x.street)}”, which is not in coverage`); continue; }
     const pA = extentPoint(x.street, x.from, problems), pB = extentPoint(x.street, x.to, problems);
     const ns = streetIsNS(rec);
-    rec.runs.forEach((run, i) => {
-      for (const range of clipRanges(run, pA, pB, ns)) rec.excepted.push({ i, range });
-    });
+    rec.runs.forEach((run, i) => rec.excepted.push({ i, range: clipRange(run, pA, pB, ns) }));
   }
 
   for (const rec of streets.values()) {
@@ -1575,7 +1474,7 @@ function reviewModel() {
       const extB = row.kind === "change" ? row.toCross : row.to;
       const pA = extentPoint(rec.name, extA, gapProblems);
       const pB = extentPoint(rec.name, extB, gapProblems);
-      rec.runs.forEach((run, i) => rec.covered[i].push(...clipRanges(run, pA, pB, nsRec)));
+      rec.runs.forEach((run, i) => rec.covered[i].push(clipRange(run, pA, pB, nsRec)));
     }
     // An excepted stretch counts as accounted for: it is not ground this
     // document was ever speaking about.
@@ -1648,10 +1547,11 @@ function drawReview() {
       const pA = extentPoint(s.name, extA, problems), pB = extentPoint(s.name, extB, problems);
       const colour = REVC[row.kind] || REVC.state;
       const dashed = row.confirmed === false;
-      for (const run of s.runs) for (const world of clipRuns(run, pA, pB, streetIsNS(s))) {
+      for (const run of s.runs) {
         // The ground points, kept alongside the screen ones: splitting a row
         // needs a real position on the street, and re-deriving it from screen
         // pixels would put the boundary wherever the view happened to be.
+        const world = clipRun(run, pA, pB, streetIsNS(s));
         const pts = toScr(world);
         stroke(pts, colour, selected ? 9 : 6, dashed);
         reviewFeatures.push({ street: s.name, row, kind: row.kind, pts, world });
@@ -1838,19 +1738,6 @@ function rowControlsHtml(r, i) {
   // A row is one claim about one stretch. When the claim holds for part of it
   // and not the rest, the repair is two rows — one for each claim — not a
   // narrowed extent that silently drops the other half from the sweep.
-  // On a ring there are two arcs between any two ends, and the row covers the
-  // one running forward from `from` to `to`. If it is drawn on the wrong one,
-  // the fix is the same two ends the other way round.
-  if (r.street && r.kind !== "vanished" && r.kind !== "annotation" && (() => {
-        const rec = (lastModel ? lastModel.streets : []).find(s => s.name === r.street);
-        const eA = r.kind === "change" ? r.fromCross : r.from, eB = r.kind === "change" ? r.toCross : r.to;
-        return rec && eA != null && eB != null && rec.runs.some(runIsLoop);
-      })())
-    html += `<div class="ctlrow"><button class="swaparc" data-ri="${i}">` +
-      `Other way round the loop</button></div>` +
-      `<div class="hint">This street is a ring. The row covers the arc from ` +
-      `<code>from</code> forward to <code>to</code>; this swaps them, so it covers ` +
-      `the other arc instead.</div>`;
   if (r.street && r.kind !== "vanished" && r.kind !== "annotation")
     html += `<div class="ctlrow"><button class="splitrow" data-ri="${i}">` +
       `Split this stretch in two…</button></div>` +
@@ -1941,37 +1828,6 @@ function bindPopControls() {
     popGap = null;
     touch();
   };
-  // THE THIRD ANSWER: THE SHEET DRAWS THE STREET AND THE PASS MISSED IT. The
-  // gap card used to offer only the reasons there might be nothing here, so a
-  // missed street could only be recorded by leaving the tool and typing a row
-  // — or, worse, by clicking the one button that says the opposite.
-  for (const el of p.querySelectorAll("button.mkstate")) el.onclick = () => {
-    const gap = findGap(el.dataset.gk);
-    if (!gap) return alert("That stretch is no longer in the model — reopen it and try again.");
-    const rec = lastModel.streets.find(s => s.name === gap.street);
-    const ends = gapExtents(rec, gap);
-    const typed = prompt(
-      `The label the sheet letters along this ${Math.round(gap.metres)} m of ` +
-      `${gap.street}, exactly as written — typos, abbreviations and all. One form ` +
-      `per line if it is lettered more than once.\n\n` +
-      `LEAVE EMPTY if the corridor is drawn with no name on it at all.`, "");
-    if (typed === null) return;
-    const asWritten = asWrittenParse(typed);
-    const row = asWritten
-      ? { kind: "state", asWritten, street: gap.street, from: ends.from, to: ends.to,
-          basis: "alignment", confirmed: false,
-          note: `Added in review: the sheet draws and letters this stretch and the ` +
-                `AI pass had no row for it.` }
-      : { kind: "unnamed", street: gap.street, from: ends.from, to: ends.to,
-          basis: "alignment", confirmed: false,
-          note: `Added in review: the sheet draws this corridor with no name lettered on it.` };
-    loadedDoc.rows = loadedDoc.rows || [];
-    loadedDoc.rows.push(row);
-    // Straight into the row: a state row still needs a name entity before it
-    // can be confirmed, and a popup left on the gap would hide that.
-    popGap = null; popRow = row;
-    touch();
-  };
   const dropFromCoverage = (entry, blurb) => {
     if (!confirm(`${blurb}\n\nUse this when the polygon strays onto ground the ` +
         `document does not actually inform about — NOT when the sheet covers it ` +
@@ -2052,14 +1908,6 @@ function bindPopControls() {
     reviewDirty = true; lastModel = null; reviewSig = null;
     draw(); updateReviewActions();
   };
-  for (const el of p.querySelectorAll("button.swaparc")) el.onclick = () => {
-    const r = reviewRows()[+el.dataset.ri];
-    if (!r) return;
-    const kA = r.kind === "change" ? "fromCross" : "from", kB = r.kind === "change" ? "toCross" : "to";
-    const t = r[kA]; r[kA] = r[kB]; r[kB] = t;
-    if (r.confirmed !== false) r.confirmed = false;   // it claims different ground now
-    touch();
-  };
   for (const el of p.querySelectorAll("button.splitrow")) el.onclick = () => {
     const r = reviewRows()[+el.dataset.ri];
     if (!r) return;
@@ -2101,19 +1949,8 @@ function confirmBlocker(r) {
 }
 
 function mintEntityFor(r) {
-  // THE PROMPT ALWAYS OPENS. The suggestions are conveniences made from the
-  // ink, and the ink is whatever the sheet has on it — two forms (an array),
-  // a number, a stray mark, nothing. None of that may stop the button: if a
-  // suggestion cannot be made, the box opens empty and the id is typed. (The
-  // array case used to throw before the prompt, and the button looked dead.)
-  let forms = [], first = "", suggestion = "", formGuess = "";
-  try {
-    forms = asWrittenForms(r.asWritten);
-    first = forms[0] || "";
-    suggestion = first.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
-    if (!/^[a-z0-9][a-z0-9-]*$/.test(suggestion)) suggestion = "";
-    formGuess = titleCaseForm(first);
-  } catch (e) { console.warn("no suggestion from asWritten", r.asWritten, e); }
+  const suggestion = (r.asWritten || "")
+    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   const id = (prompt(
     "New name entity.\n\n" +
     "An id, lowercase and hyphenated. It names a naming LINEAGE, not a string — " +
@@ -2130,7 +1967,7 @@ function mintEntityFor(r) {
     "Display name — how this street's name is written today, or in its latest " +
     "spelling. This is what the map will show.\n\n" +
     "Not the abbreviated ink: “ARNOLD ST.” on the plat is “Arnold Street” here.",
-    formGuess) || "").trim();
+    titleCaseForm(r.asWritten || "")) || "").trim();
   if (!form) return false;
   mintedEntities[id] = {
     spellings: [{ forms: [form] }],
@@ -2141,7 +1978,7 @@ function mintEntityFor(r) {
     // Provenance, not something a reader of the map wants: `note` is printed
     // publicly as a former name's origin line when there is no namedAfter.
     internalNote: `Minted in review from ${loadedDoc && loadedDoc.id ? loadedDoc.id : "a document"}` +
-          (forms.length ? `, where the ink reads ${forms.map(f => `“${f}”`).join(" / ")}` : "") +
+          (r.asWritten ? `, where the ink reads “${r.asWritten}”` : "") +
           ". Namesake not researched.",
     possiblySameAs: null, aliases: []
   };
@@ -2318,17 +2155,13 @@ function gapHtml(rec, gap) {
     `no row says what this sheet shows along here.</div>` +
     `<div class="ctlrow"><button class="mkabsent" data-gk="${esc(key)}">` +
     `Sheet shows nothing here</button></div>` +
-    `<div class="ctlrow"><button class="mkstate" data-gk="${esc(key)}">` +
-    `Sheet draws a street here — the pass missed it</button></div>` +
     `<div class="ctlrow"><button class="mkexcept" data-gk="${esc(key)}">` +
     `Outside coverage — this stretch</button></div>` +
     `<div class="ctlrow"><button class="mkexceptall" data-gk="${esc(key)}">` +
     `Outside coverage — all of ${esc(rec.name)}</button></div>` +
-    `<div class="hint">The first two are claims about the map: an ` +
-    `<code>absent</code> row, or a <code>state</code> row (<code>unnamed</code> if ` +
-    `no label is lettered) for you to name and confirm. The last two are claims ` +
-    `about the polygon, and the very last drops <b>${esc(rec.name)}</b> from this ` +
-    `document's coverage entirely.</div></div>`;
+    `<div class="hint">The first is a claim about the map and becomes a ` +
+    `<code>absent</code> row. The second is a claim about the polygon and drops ` +
+    `<b>${esc(rec.name)}</b> from this document's coverage entirely.</div></div>`;
 }
 
 // A gap's ends in the vocabulary rows use: a cross street when one is close,
@@ -2345,14 +2178,6 @@ function gapExtents(rec, gap) {
   // "Sheet shows nothing here" click on such a street produced one.
   const isNS = streetIsNS(rec);
   const sc = p => isNS ? p.lat : p.lon;
-  // On a LOOP the ends stay in run order and are never "the street's end":
-  // the row covers the arc forward from `from` to `to`, and that is the gap.
-  // Points, not cross-street names: a name resolves to wherever the two
-  // streets' vertices come nearest, which on a ring can be off the ring.
-  if (runIsLoop(run)) {
-    const pt = p => G.snapOrPoint(streetPoints, rec.name, p, toPx, { maxM: -1 }).value;
-    return { from: pt(run[gap.a]), to: pt(run[gap.b]) };
-  }
   let A = { p: run[gap.a], atEnd: gap.a === 0 },
       B = { p: run[gap.b], atEnd: gap.b === run.length - 1 };
   if (isNS ? sc(A.p) < sc(B.p) : sc(A.p) > sc(B.p)) { const t = A; A = B; B = t; }
@@ -2535,13 +2360,13 @@ function rowSpansNothing(r) {
   // which clips at run vertices rather than along the axis. Two ends closer
   // together than the modern geometry's own resolution cover nothing here even
   // when the axis says otherwise.
-  // A row whose given ends are on none of the street's runs — clicked on the
-  // wrong street, or the alignment moved — covers nothing at all now.
-  if (rec.runs.every(run => !clipRanges(run, pA, pB, isNS).length)) return true;
   if (!pA || !pB) return false;
-  const idx = (run, pt) => nearestOnRun(run, pt).i;
-  return rec.runs.filter(run => clipRanges(run, pA, pB, isNS).length)
-    .every(run => idx(run, pA) === idx(run, pB) && !runIsLoop(run));
+  const idx = (run, pt) => {
+    let bi = 0, bd = Infinity;
+    run.forEach((p, i) => { const d = G.metres(p, pt); if (d < bd) { bd = d; bi = i; } });
+    return bi;
+  };
+  return rec.runs.every(run => idx(run, pA) === idx(run, pB));
 }
 const emptyRows = () => reviewRows().filter(rowSpansNothing);
 
@@ -2604,27 +2429,13 @@ function updateReviewActions() {
           (rowSpansNothing(r) ? ` <span class="badge prop">spans nothing</span>` : "");
         return `<li data-br="${i}"><span class="swatch" style="border-top-color:` +
           `${REVC[r.kind] || REVC.state}"></span>${esc(r.kind)}` +
-          (asWrittenForms(r.asWritten).length
-            ? ` “${esc(asWrittenForms(r.asWritten).join(" / "))}”` : "") +
+          (r.asWritten ? ` “${esc(r.asWritten)}”` : "") +
           (r.street ? ` on ${esc(r.street)}` : "") +
           (len != null ? ` <span class="aw">${len} m</span>` : "") + flags + `</li>`;
       }).join("") + `</ul>`
     : "";
   for (const li of $("sweepBlockers").querySelectorAll("li[data-br]"))
     li.onclick = () => focusRow(reviewRows()[+li.dataset.br]);
-  // THE STRETCHES NO ROW SPEAKS FOR ARE WAITING TOO. They used to be findable
-  // only by hunting the red on the canvas or picking the street out of the
-  // long list below; here they sit with the rows, and a click opens the gap
-  // card that asks the question.
-  const gaps = (lastModel || reviewModel()).gaps || [];
-  $("sweepGaps").innerHTML = gaps.length
-    ? `<div class="hint">Unaccounted stretches — click one to answer it:</div><ul class="stlist">` +
-      gaps.map(g => `<li data-gk="${esc(gapKey(g))}"><span class="swatch" style="border-top-color:` +
-        `${REVC.unaccounted}"></span>${esc(g.street)}` +
-        ` <span class="aw">${Math.round(g.metres)} m</span></li>`).join("") + `</ul>`
-    : "";
-  for (const li of $("sweepGaps").querySelectorAll("li[data-gk]"))
-    li.onclick = () => focusGap(li.dataset.gk);
   $("saveReview").disabled = !reviewDirty;
   $("reviewSaveState").innerHTML = reviewDirty
     ? `<span class="warn">Unsaved review edits.</span> Writes ` +
@@ -2844,7 +2655,7 @@ function doSplit(x, y) {
     splitting = null; updateSplitUI(); draw(); return;
   }
   // The boundary can only land on a vertex of the modern geometry. An extent
-  // is resolved by snapping to the nearest run vertex (clipRanges), so a point
+  // is resolved by snapping to the nearest run vertex (clipRange), so a point
   // chosen between two of them would be drawn at one of them anyway — better
   // to say so than to store a boundary the model cannot honour. The two ends
   // are excluded: splitting at an end makes a zero-length row.
@@ -2926,32 +2737,6 @@ function setStatusNote(text) {
 // drawn on top of it. drawReview haloes whatever the popup is about, so a
 // stretch buried under a longer row on the same street becomes visible the
 // moment it becomes the subject.
-// The gap-list twin of focusRow: bring the stretch to the middle of the view
-// and open its card. Gaps are addressed by key, since the model — and with it
-// every gap object — is rebuilt on each draw.
-function focusGap(key) {
-  let gap = findGap(key);
-  if (!gap) return;
-  selStreet = gap.street; popRow = null; popGap = gap;
-  draw();
-  const find = () => reviewFeatures.find(x => x.gap && gapKey(x.gap) === key && x.pts.length);
-  let f = find();
-  if (f) {
-    const mid = f.pts[Math.floor(f.pts.length / 2)];
-    const [lat, lng] = screenToLL(mid[0], mid[1]);
-    view.lat = lat; view.lng = lng;
-    $("view").value = `${view.lat.toFixed(4)}, ${view.lng.toFixed(4)}, ${view.mpp.toFixed(3)}`;
-    draw();
-    f = find();
-  }
-  gap = findGap(key) || gap;
-  popGap = gap;
-  const rec = (lastModel ? lastModel.streets : []).find(s => s.name === gap.street);
-  if (!rec) return;
-  const at = f ? f.pts[Math.floor(f.pts.length / 2)] : [cv.width / 2, cv.height / 2];
-  showPop(at[0], at[1], popHtml(rec, null, gap));
-}
-
 function focusRow(r) {
   if (!r) return;
   selStreet = r.street || null;

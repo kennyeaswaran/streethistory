@@ -268,9 +268,29 @@ console.log("\nvalidation");
 // both files right or leave an entity in neither.
 console.log("\nwhat a save writes");
 {
+  //
+  // names-new.js is a QUEUE and empties: on 2026-09-06 the last of its entities
+  // was researched and moved into names.js, and this section — which promotes
+  // one of them — had nothing to promote. So it falls back to a fixture when
+  // the real file is empty. The round-trip tests above still run on the real
+  // file either way; it is only the promotion that needs an entity to exist.
+  const FIXTURE_NEW =
+    'const NEW_NAME_ENTITIES = {\n\n' +
+    '  "fixture-street": {\n' +
+    '    sightings: [\n      {"doc":"mr000-000","sheet":"fixture","asWritten":["Fixture Street"]}\n    ],\n' +
+    '    spellings: [{ forms: ["Fixture Street"] }],\n' +
+    '    namedAfter: null,\n    namedAfterLink: null,\n' +
+    '    categories: ["unknown"],\n    sources: [],\n' +
+    '    disputed: false,\n    note: null,\n    internalNote: null,\n' +
+    '    possiblySameAs: null, aliases: []\n  }\n\n};\n';
+  const newNamesText = () => {
+    const real = read("names-new.js");
+    const live = SRC.evaluate(SRC.parse(real, "NEW_NAME_ENTITIES"));
+    return live && Object.keys(live).length ? real : FIXTURE_NEW;
+  };
   const parsedFresh = () => ({
     names: SRC.parse(read("names.js"), "NAME_ENTITIES"),
-    newNames: SRC.parse(read("names-new.js"), "NEW_NAME_ENTITIES")
+    newNames: SRC.parse(newNamesText(), "NEW_NAME_ENTITIES")
   });
   const P = parsedFresh();
   const before = { names: SRC.evaluate(P.names), newNames: SRC.evaluate(P.newNames) };

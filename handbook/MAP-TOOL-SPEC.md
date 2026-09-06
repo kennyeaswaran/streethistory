@@ -204,12 +204,25 @@ popup offers:
   storing a boundary it cannot honour. This is the alternative to narrowing an
   extent, which would silently drop the other half out of the accounting.
 - **Mark as absent** — flip a `state` row to a `absent` one.
-- **On an unaccounted stretch, three offers and no default**: *sheet shows
+- **On an unaccounted stretch, four offers and no default**: *sheet shows
   nothing here*, which writes an `absent` row with the extents worked out by
-  snapping; *outside coverage — this stretch*; or *outside coverage — all of
-  this street*. The first is a claim about the map, the other two about the
-  polygon. They are different claims and only the first is evidence
-  (MODEL-SPEC §4.4).
+  snapping; *sheet draws a street here — the pass missed it*, which prompts
+  for the label as lettered and writes a `state` row (`unnamed` when the label
+  is left empty) with the same extents, then opens the popup on it for a name;
+  *outside coverage — this stretch*; or *outside coverage — all of this
+  street*. The first two are claims about the map, the other two about the
+  polygon. Only the first two are evidence (MODEL-SPEC §4.4).
+- **Which run a row is about** (`clipRanges`): a run is covered only if at
+  least one given end lies on it (`ON_RUN_M` = 25 m to the line); a given end
+  off the run snaps to its nearest vertex (the junction, on a branch); both
+  ends null is every run. On a ring (`runIsLoop`, ends within 15 m) a null
+  end is the whole ring and two ends cover the arc forward from `from` to
+  `to`, wrapping the seam as two index ranges; gap answers on a ring keep run
+  order, and the popup offers *Other way round the loop* (swaps the ends).
+- **Opening a document resets the tool** — every per-document variable and
+  header field, in one function (`resetDocumentState`), on every open path;
+  a render opened while a different document is loaded is a new document. A
+  guard asks before dropping unsaved review edits.
 - **Set the `attests` override** (§4.2) — whether this map *dedicates* the
   street (`planned-on`) or merely draws one already there (`planned-by`, or
   `built-by` for pavement it shows) is a judgement best made looking at the

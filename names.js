@@ -254,7 +254,8 @@ const NAME_ENTITIES = {
   // ---- the 1884 Glassell tract (M.R. 6-138) -------------------------------
   // Andrew Glassell subdivided Lot 7 etc. of Block 39, Hancock Survey No. 1,
   // and put his nephew and law partner's name on a street through it. The rest
-  // of that plat's names are in names-new.js, still unresearched.
+  // of that plat's names follow the two below: each was checked against Kines
+  // and against the web, and not one has a documented namesake.
 
   "aztec-avenue": {
     spellings: [{ forms: ["Aztec Avenue"] }],
@@ -287,6 +288,115 @@ const NAME_ENTITIES = {
     internalNote: "Kines dates the naming to 1883, a year before M.R. 6-138 was recorded, so the plat draws a street that already had the name — consistent with the document's planned-by default. Not to be confused with Patton Avenue/Place elsewhere in the county.",
     possiblySameAs: null,
     aliases: []
+  },
+
+
+  "council-street": {
+    spellings: [{ forms: ["Council Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Namesake untraced. Not covered by Kines (checked 2026-08-30). Part of it survives as modern Council Street; the stretch inside this tract does not. Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "court-street": {
+    spellings: [{ forms: ["Court Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Namesake untraced. Kines has a Court Street page but it is Monrovia’s (renamed from Bonita Court in 1966 to stop postal confusion) and has nothing to do with this one. Not covered for Los Angeles (checked 2026-08-30). Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "diamond-street": {
+    spellings: [{ forms: ["Diamond Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Namesake untraced. IDENTITY DECIDED (Kenny, 2026-08-30): one entity covering both the plat’s Diamond Street — modern Beverly Boulevard through this tract — and the modern Diamond Street that survives 869 m east. The two lie on roughly the same east-west line, about 30 m apart, so this reads as one naming that lost its middle rather than two that spell alike. NB handbook/research-leads.md records an earlier pass calling Diamond “unchanged since 1884”; that was name-matching, and the surviving stretch is outside MR006-138’s coverage. Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "hobart-street": {
+    spellings: [{ forms: ["Hobart Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Namesake untraced. NOT the same entity as Hobart Boulevard in Koreatown: Kines dates that one to 1887 and names it for Hobart Addison Stewart (1868-1915), a Flint, Michigan dairy farmer, on a subdivision by different people. This Hobart Street is three years earlier and a different roadway (modern Lake Shore Terrace). Do not merge on the strength of the spelling. Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "home-street": {
+    spellings: [{ forms: ["Home Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Namesake untraced. Not covered by Kines (checked 2026-08-30). Modern Rockwood Street, which handbook/research-leads.md records as renamed AND realigned by about 43 m — the date of the realignment is a separate open question. Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "lake-avenue": {
+    spellings: [{ forms: ["Lake Avenue"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "Namesake untraced. Two candidates: Echo Park Lake, the city reservoir this street runs toward, which was already there in 1884; or Lake Vineyard, the ranch of Benjamin D. Wilson, whose daughter Ruth married George S. Patton — whose own street is on this same plat — in the year it was recorded",
+    internalNote: "Neither candidate is sourced. Kines’s Lake Avenue page is Pasadena/Altadena’s, named for Lake Vineyard, and is a different street; the coincidence is suggestive but no more. Wanted: a contemporary source. The reservoir reading is the simpler one and should be preferred until something says otherwise. `disputed` flipped from true to false in the move: by the rule stated on `hope`, that flag is for a claim the project takes a side against, not for an open question with two live readings. Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "state-colton": {
+    spellings: [{ forms: ["State Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Namesake untraced. RENAMED FROM state-street, 2026-08-30: there is another State Street in Boyle Heights, and a bare “state-street” id was a collision waiting to happen. This entity is ONLY the 1884 Glassell-tract State Street that is modern Colton Street. When Boyle Heights is encoded, its State Street must get its own disambiguated entity and must NOT be merged into this one — Kenny is confident they are unrelated namings. Kines has no page for either State Street (checked 2026-09-06). Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "waters-street": {
+    spellings: [{ forms: ["Waters Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Namesake untraced. Not covered by Kines (checked 2026-08-30). Modern Douglas Street north of Colton; the stretch south of it is gone. Note the nearby “Walters St” (Ord Street, 1886-1890) in research-leads — a different street, and a spelling trap. Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "welcome-street": {
+    spellings: [{ forms: ["Welcome Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Namesake untraced. Not covered by Kines (checked 2026-08-30). Survives under the same name. Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer.",
+    possiblySameAs: null, aliases: []
   },
 
   // ---- the Thomas Tract's other names -------------------------------------
@@ -1243,6 +1353,44 @@ const NAME_ENTITIES = {
     possiblySameAs: null, aliases: []
   },
 
+
+  // Fifteenth and Sixteenth join the grid from a later sheet. The Miguel
+  // Subdivision (documents/mr053-016, Mar. 1893) letters both, and letters each
+  // beside a parenthetical former name — "(formerly Laura St)" and "(formerly
+  // Pine St)". Those two predecessors are lineages of their own with no entity
+  // yet: the ink is in the rows' asWritten until somebody enters the changes
+  // (handbook/research-leads.md, 2026-09-06).
+
+  "fifteenth-street": {
+    spellings: [{ forms: ["15th Street"] }],
+    namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+    namedAfterLink: null,
+    categories: ["number"],
+    sources: [
+      { title: "L.A. Street Names: 1st Street (on the numbering system)",
+        url: "https://lastreetnames.com/street/0001st-street/" }
+    ],
+    disputed: false,
+    note: null,
+    internalNote: "One entity per number across the downtown grid, as with 1st–12th. The Ord survey is NOT cited here as it is for 10th–12th: its numbered streets ran only as far as 8th and the sheet does not reach this far south, so nothing in the corpus dates the number. The only sheet that letters it is the 1893 Miguel Subdivision, which also records that this had been Laura Street; when the number replaced that name is not researched. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "sixteenth-street": {
+    spellings: [{ forms: ["16th Street"] }],
+    namedAfter: "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+    namedAfterLink: null,
+    categories: ["number"],
+    sources: [
+      { title: "L.A. Street Names: 1st Street (on the numbering system)",
+        url: "https://lastreetnames.com/street/0001st-street/" }
+    ],
+    disputed: false,
+    note: null,
+    internalNote: "One entity per number across the downtown grid, as with 1st–12th. As with 15th, the Ord survey is not cited: it does not reach this ground. The 1893 Miguel Subdivision letters it and records that this had been Pine Street; that predecessor has no entity yet. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
   // ---- minted by the Feb. 1874 renaming ordinance -------------------------
   // Both begin as lineages on Feb. 26, 1874: the ordinance names them, and no
   // document has been found lettering either before that. Their namesakes are
@@ -1280,9 +1428,7 @@ const NAME_ENTITIES = {
     categories: ["person"],
     sources: [
       { title: "L.A. Street Names: Hill Street (on Calle del Toro / Castelar / N. Hill)",
-        url: "https://lastreetnames.com/street/hill-street/" },
-      { title: "Wikipedia: Emilio Castelar",
-        url: "https://en.wikipedia.org/wiki/Emilio_Castelar" }
+        url: "https://lastreetnames.com/street/hill-street/" }
     ],
     disputed: false,
     note: "Castelar had left office a few weeks before the Los Angeles council renamed the street in February 1874 — the First Republic fell that January.",
@@ -1318,7 +1464,160 @@ const NAME_ENTITIES = {
     note: "Lettered on the 1909 Crownwood sheet along ground that is now Emerald Drive. Nothing found says who or what Farmer was.",
     internalNote: "Searched without result (Kines has no page; no web result for a Farmer Street here) — checked 2026-08-31 and again 2026-09-01.",
     possiblySameAs: null, aliases: []
-  }
+  },
+
+  // ---- the Mott Tract, Mar. 1869 (M.R. 1-489) -----------------------------
+  // T. O. Mott's building lots on Bunker Hill, recorded Mar. 2, 1869 — the
+  // oldest recorded subdivision in the corpus. Hope, Charity, Olive, Hill and
+  // Fort already have entities; these two are the sheet's own.
+
+  "temple": {
+    spellings: [{ forms: ["Temple Street"] }],
+    namedAfter: "{{Jonathan Temple}} (1796–1866), the Massachusetts trader who reached the pueblo about 1828, opened its first general store and took Mexican citizenship as Juan Temple",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Jonathan_Temple",
+    categories: ["person"],
+    sources: [
+      { title: "L.A. Street Names: Temple Street (“christened in 1859”)",
+        url: "https://lastreetnames.com/street/temple-street/" },
+      { title: "Wikipedia: Temple Street (Los Angeles)",
+        url: "https://en.wikipedia.org/wiki/Temple_Street_(Los_Angeles)" }
+    ],
+    disputed: false,
+    note: "Christened in 1859, along the one-block lane Temple had laid out himself beside his own downtown property.",
+    internalNote: "Kines writes “John Temple” and Wikipedia “Jonathan Temple”; he went by Juan in the pueblo after taking Mexican citizenship. One man. NOT to be confused with his younger half-brother F. P. F. Temple, who is the Temple of Temple City and Temple Avenue — the families' streets are a standing trap. Minted in review from documents/mr001-489, where the 1869 ink reads “Temple Street”; moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "court-house-street": {
+    spellings: [{ forms: ["Court House Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["descriptive", "unknown"],
+    sources: [],
+    disputed: false,
+    note: "Lettered on the Mott Tract sheet of March 1869, running the block between First and Temple. The name plainly points at a court house, and nothing found says which one or who chose it. The stretch survives as Community Terrace.",
+    internalNote: "The obvious reading — that it pointed downhill at the county court — is left unconfirmed because the pre-1891 courthouse locations were not established: the California Supreme Court Historical Society's Los Angeles County page covers only the red sandstone courthouse of 1891 (checked 2026-09-06). Kines has no Community Terrace page, and his Court Street page is Monrovia's, already recorded on the separate `court-street` entity. A different street from that one, which is the 1884 Glassell tract's. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- the O. W. Childs Tract, July 1885 (M.R. 6-378) ---------------------
+  // Ozro W. Childs — nurseryman, hardware merchant, and a founding benefactor
+  // of USC — recorded 200 lots between Eleventh and Twelfth on July 11, 1885.
+  // Four of the streets he letters between Los Angeles Street and San Pedro are
+  // entities of their own, and not one has a documented namesake. Two are
+  // plants, which on a nurseryman's own tract is worth noticing and is not
+  // evidence. NB Maple Avenue and San Julian Street both run well north of this
+  // tract: the sheet is our earliest sighting of those names, not their origin.
+
+  "william": {
+    spellings: [{ forms: ["William Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "A given name, lettered on the O. W. Childs Tract of July 1885 between Los Angeles Street and Maple Avenue. No William is documented. The stretch is now part of Santee Street.",
+    internalNote: "Kines has no William Street page (checked 2026-09-06). The obvious guess is somebody in Childs's family; the sources checked — Wikipedia and the Homestead Museum's posts on Childs — name his wife Emeline Huber and a brother Marcus, and no William. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "maple-dtla": {
+    spellings: [{ forms: ["Maple Avenue"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["nature", "unknown"],
+    sources: [],
+    disputed: false,
+    note: "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, but Maple Avenue runs well north of that tract and the name is probably older.",
+    internalNote: "Not covered by Kines: no page for a Los Angeles Maple Avenue, and it is absent from his DTLA list (checked 2026-09-06). Wikipedia's Los Angeles County place-name etymology page has no entry either. LEAD: the 1888 Widow Botiller resubdivision (documents/mr029-026) letters the adjoining land “Maple Ave Tract” — a tract named after the street, so its own sheet may date the name. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "myrtle": {
+    spellings: [{ forms: ["Myrtle Avenue"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["nature", "unknown"],
+    sources: [],
+    disputed: false,
+    note: "A plant name, and the company it keeps is the whole of the argument: the O. W. Childs Tract lays Myrtle one block from Maple, and Childs was the city's leading nurseryman. Nothing documents it. This one ran along modern Wall Street.",
+    internalNote: "Kines's Myrtle Avenue page is Monrovia's — laid out 1886 and named both for the plant and for Myrtle Mignonette Monroe, the founder's daughter — and is a different street: do not carry that namesake across (checked 2026-09-06). Not covered for Los Angeles. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "san-julian-st": {
+    spellings: [{ forms: ["San Julian Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented.",
+    internalNote: "Kines has no page (checked 2026-09-06). A 2009 U.S. Catholic survey of the county's saint-named streets dates San Julian to the 1880s and observes that such names were generally chosen by developers with little interest in their origins — context, not an identification. Rancho San Julián, in Santa Barbara County, is a different place and no connection to it is documented. Our earliest sheet, the O. W. Childs Tract (1885), letters only the Eleventh–Twelfth block, and the street runs far north of it. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- the Widow Botiller Tract resubdivision, Mar. 1888 (M.R. 29-26) ------
+  // The sheet subdivides the estate of Juana María Reyes de Botiller, surveyed
+  // in March 1888 by J. O. Bernal at the request of Felipe Botiller, Tadeo
+  // Botiller and Vicenta B. de Ybarrondo, and letters the adjoining land
+  // “Dionicio Botiller”. Three of its street names are entities of their own.
+
+  "botiller-street": {
+    spellings: [{ forms: ["Botiller Street"] }],
+    namedAfter: "The Botiller family, whose ground it crossed: the sheet subdivides the estate of Juana María Reyes de Botiller, distributed to Tadeo Felipe Botiller and Vicenta B. de Ybarrondo by a decree entered Feb. 27, 1888",
+    namedAfterLink: null,
+    categories: ["person"],
+    sources: [
+      { title: "Wikipedia: Dionisio Botiller (1842–1915), councilman and city auditor, whose land adjoins this tract on the sheet",
+        url: "https://en.wikipedia.org/wiki/Dionisio_Botiller" }
+    ],
+    disputed: false,
+    note: "The street ran through the family's own ground, and the sheet letters the land next to it for Dionisio Botiller. It is now part of Santee Street.",
+    internalNote: "Identified from the sheet's own dedication (documents/mr029-026), which names the estate, the 1873 partition, the referee Cristóbal Aguilar and the three parties who asked for the survey. No single Botiller is singled out, so the entity names the family rather than a person: Dionisio is cited because the sheet letters his adjoining land, NOT because the street is his. Kines has no Botiller Street page (checked 2026-09-06). NB Kines dates Santee Street's naming to 1886, two years before this sheet letters Botiller Street on ground that is Santee today — so the two names ran in parallel on different stretches and Santee absorbed this one at some later, unresearched date. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "ida-street": {
+    spellings: [{ forms: ["Ida Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "A given name on the Widow Botiller Tract resubdivision of March 1888 — presumably someone in the family, though the sheet does not say so. It is now Cecelia Street.",
+    internalNote: "The dedication names Juana María Reyes de Botiller, Felipe and Tadeo Botiller, Vicenta B. de Ybarrondo and the adjoining owner Dionisio Botiller; no Ida. Kines's Cecelia Street page is the Cudahy/Bell Gardens street named for Cecelia Cudahy Casserly and has nothing to do with this ground (checked 2026-09-06). Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "wall-street": {
+    spellings: [{ forms: ["Wall Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "Nothing found says what it was named for. New York's financial street is the obvious guess and no source supports it.",
+    internalNote: "Kines does not cover it: no page, and it is absent from his alphabetical W list between Walgrove Avenue and Wallace Avenue (checked 2026-09-06). A search for a Los Angeles-specific origin returned only New York. Our earliest sheet is the 1888 Widow Botiller resubdivision, at Eighth, and the street is certainly older than that. NB the Eleventh-to-Twelfth block that the neighbouring O. W. Childs Tract lettered Myrtle Avenue in 1885 is Wall Street today; when it changed is not researched. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- the Clark and Bryan Tract, Nov. 1893 (M.R. 53-65) ------------------
+
+  "clark-ave": {
+    spellings: [{ forms: ["Clark Avenue"] }],
+    namedAfter: "Wesley Clark, senior partner in the Los Angeles real-estate firm of Clark & Bryan, who owned this tract with Elden P. Bryan",
+    namedAfterLink: null,
+    categories: ["person"],
+    sources: [
+      { title: "Homestead Museum: “No Place Like Home: The Elden P. Bryan Residence” (on the firm of Clark & Bryan)",
+        url: "https://homesteadmuseum.blog/2016/12/06/no-place-like-home-the-elden-p-bryan-residence-los-angeles-ca-1907/" }
+    ],
+    disputed: false,
+    note: "Clark and Bryan signed the map as owners on Nov. 14, 1893, giving their addresses as 127 West 3rd Street and 202 South Spring Street; the avenue ran through their own subdivision. It is now part of Crocker Street.",
+    internalNote: "Identified from the sheet itself (documents/mr053-065), which letters both owners' names and street addresses beside the title and carries their notarised acknowledgment of ownership. The partnership is corroborated by the Homestead Museum's post on Bryan's house, which names Wesley Clark as his partner in Clark & Bryan and dates Bryan's arrival in Los Angeles to the end of 1886. Wesley Clark's own dates were NOT found — no Wikipedia article, no Kines page, nothing in the sources checked 2026-09-06 — so the entity claims the man and not his lifespan. The guess recorded when this was minted (“likely the owner of the tract”) turns out to be right. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
 };
 
 if (typeof module !== "undefined") module.exports = { NAME_ENTITIES };
