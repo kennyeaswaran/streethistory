@@ -254,6 +254,60 @@ in the pass that are leads rather than entries:
   by the Homestead Museum. A city directory of the early 1890s would probably
   settle Clark in one line — SERIAL-SOURCES.md.
 
+### Addendum, same day: four more names, and one clobbered file
+
+Four more entities were minted in review while the above was being written —
+`earl-st` and `regent-street` from the Moran and Moreno Vineyard tracts, then
+`morgan-lane` and `boyd-street` from the Orchard Tract — and all four were
+researched and moved the same way. One has a namesake: **Morgan Lane** is
+G. W. Morgan's, from the Orchard Tract's own title block. What the second pass
+added:
+
+- **⚠ names-new.js was overwritten at 18:33 on 2026-09-06**, three minutes after
+  the map tool saved `morgan-lane` and `boyd-street` into it, by an assistant
+  that had read the file before that save. Both entities were rebuilt from
+  `documents/mr005-005`'s rows in the tool's own minting format and lose nothing
+  the rows carry — but a display form or note typed by hand at minting would not
+  have survived, so both want a glance. The lesson is mechanical: the map tool
+  owns names-new.js, and anything that rewrites the file must re-read it
+  immediately before writing, not before doing the work.
+
+- **The undated absorptions are now nine, not six.** Add Regent → Maple Avenue
+  (5th to 6th), Earl → San Julian Street (north of Ninth), and Morgan Lane →
+  3rd Street to Botiller → Santee, William → Santee, Myrtle → Wall, Ida →
+  Cecelia, Clark → Crocker and Court House → Community Terrace. All nine are in
+  the same few blocks east of Main between 3rd and 12th, from tracts recorded
+  1876-1893. The Moran Tract shows one of them mid-seam: in April 1887 it
+  letters Earl Street north of Ninth and San Julian Street south of it, on one
+  page, so the corridor genuinely carried two names at once and San Julian later
+  took the whole thing.
+
+- **Wall Street is twelve years older in the corpus than it was this morning.**
+  The Moreno Vineyard sheet (recorded Mar. 1876) letters it, and letters Regent
+  Street two blocks away — New York's and London's best-known commercial streets
+  on one page of building lots sold on their nearness to the new railway depot.
+  That is the only argument either name has, and it is worth more than either
+  would be alone.
+
+- **Three tracts named as predecessors on the Orchard Tract sheet**: the
+  "Chapman Tract", the "Hunter Tract" and the "Damisch Tract", all absorbed by
+  July 1882. None is in the corpus. Any of them would date this ground earlier
+  than 1882 and might account for Boyd Street, which nothing on the Orchard
+  sheet does.
+
+- **H. W. Mills, third owner of the Orchard Tract.** This file already carries a
+  "Mills and Wicks Subdn." lead from the Bliss Tract's margin (M.R. 13-87/88,
+  1886-87). Whether that Mills is this one is unchecked and would be worth five
+  minutes: a shared owner would tie two widely separated pockets of the corpus
+  together.
+
+- **A document question for the Moreno Vineyard sheets.** `date` is recorded as
+  1875-05-01, but the sheet's own recorder's note reads "Recorded Mar 1 1876 at
+  11:00 AM at request of J. S. Cranford", and the title advertises lots near a
+  depot whose land the Council only procured in September 1875. Worth checking
+  where the May 1875 date came from, and whether this is a case for the optional
+  `recorded` field (MODEL-SPEC §4).
+
 ## July 1850 council minutes — read in full, checked and cleared (2026-09-05)
 
 Kenny downloaded all eight July 1850 meetings (M07031850, M07051850, M07061850,

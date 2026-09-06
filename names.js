@@ -1528,7 +1528,7 @@ const NAME_ENTITIES = {
     categories: ["nature", "unknown"],
     sources: [],
     disputed: false,
-    note: "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, but Maple Avenue runs well north of that tract and the name is probably older.",
+    note: "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
     internalNote: "Not covered by Kines: no page for a Los Angeles Maple Avenue, and it is absent from his DTLA list (checked 2026-09-06). Wikipedia's Los Angeles County place-name etymology page has no entry either. LEAD: the 1888 Widow Botiller resubdivision (documents/mr029-026) letters the adjoining land “Maple Ave Tract” — a tract named after the street, so its own sheet may date the name. Moved out of names-new.js 2026-09-06.",
     possiblySameAs: null, aliases: []
   },
@@ -1541,7 +1541,7 @@ const NAME_ENTITIES = {
     sources: [],
     disputed: false,
     note: "A plant name, and the company it keeps is the whole of the argument: the O. W. Childs Tract lays Myrtle one block from Maple, and Childs was the city's leading nurseryman. Nothing documents it. This one ran along modern Wall Street.",
-    internalNote: "Kines's Myrtle Avenue page is Monrovia's — laid out 1886 and named both for the plant and for Myrtle Mignonette Monroe, the founder's daughter — and is a different street: do not carry that namesake across (checked 2026-09-06). Not covered for Los Angeles. Moved out of names-new.js 2026-09-06.",
+    internalNote: "Kines's Myrtle Avenue page is Monrovia's — laid out 1886 and named both for the plant and for Myrtle Mignonette Monroe, the founder's daughter — and is a different street: do not carry that namesake across (checked 2026-09-06). Not covered for Los Angeles. A second sighting since: the Moran Tract of Apr. 1887 (documents/mr016-027) letters Myrtle Avenue too, so the name was still in use two years after the Childs sheet. Moved out of names-new.js 2026-09-06.",
     possiblySameAs: null, aliases: []
   },
 
@@ -1552,7 +1552,7 @@ const NAME_ENTITIES = {
     categories: ["unknown"],
     sources: [],
     disputed: false,
-    note: "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented.",
+    note: "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
     internalNote: "Kines has no page (checked 2026-09-06). A 2009 U.S. Catholic survey of the county's saint-named streets dates San Julian to the 1880s and observes that such names were generally chosen by developers with little interest in their origins — context, not an identification. Rancho San Julián, in Santa Barbara County, is a different place and no connection to it is documented. Our earliest sheet, the O. W. Childs Tract (1885), letters only the Eleventh–Twelfth block, and the street runs far north of it. Moved out of names-new.js 2026-09-06.",
     possiblySameAs: null, aliases: []
   },
@@ -1597,8 +1597,8 @@ const NAME_ENTITIES = {
     categories: ["unknown"],
     sources: [],
     disputed: false,
-    note: "Nothing found says what it was named for. New York's financial street is the obvious guess and no source supports it.",
-    internalNote: "Kines does not cover it: no page, and it is absent from his alphabetical W list between Walgrove Avenue and Wallace Avenue (checked 2026-09-06). A search for a Los Angeles-specific origin returned only New York. Our earliest sheet is the 1888 Widow Botiller resubdivision, at Eighth, and the street is certainly older than that. NB the Eleventh-to-Twelfth block that the neighbouring O. W. Childs Tract lettered Myrtle Avenue in 1885 is Wall Street today; when it changed is not researched. Moved out of names-new.js 2026-09-06.",
+    note: "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
+    internalNote: "Kines does not cover it: no page, and it is absent from his alphabetical W list between Walgrove Avenue and Wallace Avenue (checked 2026-09-06). A search for a Los Angeles-specific origin returned only New York. Our earliest sheet is now the Moreno Vineyard Tract, recorded Mar. 1876 (documents/mr003-166-p1 and -p2), twelve years before the Widow Botiller resubdivision — and the street is older still, since that sheet letters it as an existing street rather than laying it out. NB the Eleventh-to-Twelfth block that the neighbouring O. W. Childs Tract lettered Myrtle Avenue in 1885 is Wall Street today; when it changed is not researched. Moved out of names-new.js 2026-09-06.",
     possiblySameAs: null, aliases: []
   },
 
@@ -1616,6 +1616,79 @@ const NAME_ENTITIES = {
     disputed: false,
     note: "Clark and Bryan signed the map as owners on Nov. 14, 1893, giving their addresses as 127 West 3rd Street and 202 South Spring Street; the avenue ran through their own subdivision. It is now part of Crocker Street.",
     internalNote: "Identified from the sheet itself (documents/mr053-065), which letters both owners' names and street addresses beside the title and carries their notarised acknowledgment of ownership. The partnership is corroborated by the Homestead Museum's post on Bryan's house, which names Wesley Clark as his partner in Clark & Bryan and dates Bryan's arrival in Los Angeles to the end of 1886. Wesley Clark's own dates were NOT found — no Wikipedia article, no Kines page, nothing in the sources checked 2026-09-06 — so the entity claims the man and not his lifespan. The guess recorded when this was minted (“likely the owner of the tract”) turns out to be right. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- the Moreno Vineyard Tract, recorded Mar. 1876 (M.R. 3-166) ---------
+  // “Building Lots near L.A. & I. R.R. Depot on San Pedro Street known as the
+  // Moreno Vineyard Tract” — lots sold on their nearness to the Los Angeles and
+  // Independence Railroad's depot at San Pedro and Wolfskill (4th), which
+  // opened Dec. 1, 1875. Recorded Mar. 1, 1876 at the request of J. S.
+  // Cranford. Its two named streets are Regent and Wall, two blocks apart.
+
+  "regent-street": {
+    spellings: [{ forms: ["Regent Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "Lettered between Los Angeles Street and Wall Street on the Moreno Vineyard Tract, the building lots laid out beside the new railroad depot and recorded in March 1876. Nothing says what it was named for; London's Regent Street, two blocks from a Wall Street, is the obvious guess and no source supports it. The corridor is Maple Avenue today, between 5th and 6th.",
+    internalNote: "Kines does not cover it: no page, and it is absent from his alphabetical R list, which runs Reese → Reeves → Reevesbury → Reklaw with no Regent (checked 2026-09-06). The pairing with Wall Street is the only argument available, and it is worth something in both directions — see `wall-street`, for which this sheet is now the earliest sighting in the corpus, twelve years before the Botiller resubdivision. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- the Moran Tract, Apr. 1887 (M.R. 16-27) ----------------------------
+  // “Subdivided at the request of Mr J. P. Moran by Fred Eaton C.E. in April
+  // 1887”, recorded Apr. 22 at the request of John P. Moran. The surveyor is
+  // the Fred Eaton (1856–1934) who became mayor in 1898 and assembled the Owens
+  // Valley water rights behind the aqueduct. The sheet is also where the San
+  // Julian corridor shows a seam: Earl Street north of Ninth, San Julian Street
+  // south of it, both lettered on the same page.
+
+  "earl-st": {
+    spellings: [{ forms: ["Earl Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "Lettered north of Ninth Street on the Moran Tract of April 1887, along the corridor that is San Julian Street today — and the same sheet letters San Julian south of Ninth. No Earl is documented.",
+    internalNote: "Kines does not cover it: no page, and it is absent from his alphabetical E list, which runs Earhart Avenue → Earlham Drive with no Earl (checked 2026-09-06). The tract was subdivided for J. P. Moran, and a John P. Moran (1857–1916) sat on the Common Council from 1879 and was its president 1881–83 — the right name in the right city at the right time, but a name match and nothing more, so it is not claimed here and would not identify the street even if it held. Whether Earl was a Moran relation, an owner further north, or neither is unknown. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- the Orchard Tract, Aug. 1882 (M.R. 5-5) ----------------------------
+  // “Comprising what was formerly known as the ‘Chapman Tract’, ‘Hunter Tract’
+  // and ‘Damisch Tract’ as subdivided for G. W. Morgan, A. H. Judson, and H. W.
+  // Mills, July 1882, by H. J. Stevenson, Surveyor” — recorded at the request
+  // of Morgan & Judson on Aug. 2, 1882. Of its two street names one is an
+  // owner's and the other is not accounted for by anything on the sheet.
+
+  "morgan-lane": {
+    spellings: [{ forms: ["Morgan Lane"] }],
+    namedAfter: "George W. Morgan, one of the three men the tract was subdivided for and, with A. H. Judson, one of the two at whose request it was recorded",
+    namedAfterLink: null,
+    categories: ["person"],
+    sources: [
+      { title: "Wikipedia: Highland Park, Los Angeles (George Morgan and Albert Judson created the Highland Park tract in 1886)",
+        url: "https://en.wikipedia.org/wiki/Highland_Park,_Los_Angeles" }
+    ],
+    disputed: false,
+    note: "The lane ran through its owners' own subdivision: the sheet says the tract was subdivided for G. W. Morgan, A. H. Judson and H. W. Mills in July 1882, and it was recorded at the request of Morgan & Judson. The corridor is 3rd Street today.",
+    internalNote: "Identified from the sheet itself (documents/mr005-005), whose title block names the three owners and whose recorder's note reads “Recorded at request of Morgan & Judson Aug 2. 1882” — the same evidence that identifies Clark Avenue. Kines has no Morgan Lane page. A George Morgan and an Albert Judson created the Highland Park tract four years later, in 1886, and the surnames, initials, partnership and period all fit this pair — Wikipedia is cited for that, but identifying the two Morgans with each other is an inference this project has not proved, and the street is claimed for the man on THIS sheet either way. His dates were not found: no biography, no Kines page (the Wikipedia “George W. Morgan” is an Ohio Civil War general, a different man — do not link him). Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "boyd-street": {
+    spellings: [{ forms: ["Boyd Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "Lettered on the Orchard Tract of July 1882 between Wall Street and San Pedro Street, and still Boyd Street today. No Boyd is documented: the sheet names its three owners, its surveyor and the three earlier tracts it absorbed, and there is no Boyd among them.",
+    internalNote: "Kines does not cover it: no page, and it is absent from his alphabetical B list, which runs Bouton → Boyar → Boyce → Boyle → Boylston with no Boyd (checked 2026-09-06). A web search turns up only the 2020 Boyd Street fire. The sheet's other proper names are the owners G. W. Morgan, A. H. Judson and H. W. Mills, the surveyor H. J. Stevenson, the absorbed Chapman, Hunter and Damisch tracts, and the adjoining-owner lines Thom, Baker, Starr and Gohenix — Boyd is none of them, so whoever he was, he was not on this page. ⚠ RESTORED BY HAND 2026-09-06: this entity and morgan-lane were minted in review at 18:30 and an assistant overwrote names-new.js three minutes later, before either had been read; both were rebuilt from the document's rows in the tool's own minting format. If either carried a display form or a note that was typed by hand at minting, it was lost there and wants a second look. Moved into names.js the same day.",
     possiblySameAs: null, aliases: []
   },
 };

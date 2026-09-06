@@ -2305,7 +2305,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of",
+        "label": "beyond Los Angeles",
         "name": "3rd Street",
         "entityId": "third-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
@@ -2333,13 +2333,117 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2456,
-        "maxLng": -118.2427,
+        "maxLng": -118.2447,
         "from": {
           "px": [
             229,
             1435
           ]
         },
+        "to": "Los Angeles Street"
+      },
+      {
+        "label": "Los Angeles to Wall (Morgan Lane)",
+        "name": "3rd Street",
+        "entityId": "third-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1882",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1882",
+            "until": "?",
+            "name": "Morgan Lane",
+            "entityId": "morgan-lane",
+            "formInForce": "Morgan Lane",
+            "how": "origin",
+            "origin": "labeled “Morgan Lane” on the 1882 Orchard Tract {{(source)}} — George W. Morgan, one of the three men the tract was subdivided for and, with A. H. Judson, one of the two at whose request it was recorded",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "3rd Street",
+            "entityId": "third-street",
+            "formInForce": "3rd Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Wikipedia: Highland Park, Los Angeles (George Morgan and Albert Judson created the Highland Park tract in 1886)",
+            "url": "https://en.wikipedia.org/wiki/Highland_Park,_Los_Angeles"
+          }
+        ],
+        "minLng": -118.2447,
+        "maxLng": -118.2438,
+        "from": "Los Angeles Street",
+        "to": "Wall Street"
+      },
+      {
+        "label": "beyond Wall",
+        "name": "3rd Street",
+        "entityId": "third-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          }
+        ],
+        "minLng": -118.2438,
+        "maxLng": -118.2427,
+        "from": "Wall Street",
         "to": {
           "px": [
             954,
@@ -2798,7 +2902,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of",
+        "label": "beyond Flower",
         "name": "4th Street",
         "entityId": "fourth-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 4th Street is not yet researched",
@@ -2826,22 +2930,17 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2563,
-        "maxLng": -118.2538,
+        "maxLng": -118.2543,
         "from": {
           "px": [
             835,
             818
           ]
         },
-        "to": {
-          "px": [
-            571,
-            405
-          ]
-        }
+        "to": "Flower Street"
       },
       {
-        "label": "beyond Olive",
+        "label": "Flower to Olive",
         "name": "4th Street",
         "entityId": "fourth-street",
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
@@ -2888,14 +2987,9 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.2538,
+        "minLng": -118.2543,
         "maxLng": -118.2515,
-        "from": {
-          "px": [
-            571,
-            405
-          ]
-        },
+        "from": "Flower Street",
         "to": "Olive Street"
       },
       {
@@ -2993,7 +3087,7 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2468,
-        "maxLng": -118.2434,
+        "maxLng": -118.2445,
         "from": {
           "px": [
             850,
@@ -3002,8 +3096,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            967,
-            567
+            385,
+            1126
           ]
         }
       },
@@ -3014,10 +3108,77 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 4th Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
+          "text": "by 1882",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.82,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2445,
+        "maxLng": -118.2429,
+        "from": {
+          "px": [
+            385,
+            1126
+          ]
+        },
+        "to": {
+          "px": [
+            392,
+            1668
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "4th Street",
+        "entityId": "fourth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
+        "namedAfterLink": null,
+        "planned": {
           "text": "by 1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "4th Street",
+            "entityId": "fourth-street",
+            "formInForce": "4th Street",
+            "how": "extension",
+            "origin": "labeled “Fourth St” on the 1888 Wolfskill Orchard Tract (sheets 4, 5) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
         "note": null,
         "attested": true,
         "absentAsOf": {
@@ -3043,12 +3204,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.2434,
+        "minLng": -118.2429,
         "maxLng": -118.2391,
         "from": {
           "px": [
-            967,
-            567
+            392,
+            1668
           ]
         },
         "to": {
@@ -3541,11 +3702,105 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2481,
-        "maxLng": -118.2443,
+        "maxLng": -118.2469,
         "from": {
           "px": [
             734,
             1477
+          ]
+        },
+        "to": {
+          "px": [
+            393,
+            609
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "5th Street",
+        "entityId": "fifth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 5th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.86,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2469,
+        "maxLng": -118.2455,
+        "from": {
+          "px": [
+            393,
+            609
+          ]
+        },
+        "to": {
+          "px": [
+            1397,
+            584
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "5th Street",
+        "entityId": "fifth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 5th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2455,
+        "maxLng": -118.2443,
+        "from": {
+          "px": [
+            1397,
+            584
           ]
         },
         "to": {
@@ -3884,11 +4139,109 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2494,
-        "maxLng": -118.2454,
+        "maxLng": -118.2486,
         "from": {
           "px": [
             612,
             1478
+          ]
+        },
+        "to": {
+          "px": [
+            143,
+            1064
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "6th Street",
+        "entityId": "sixth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.86,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+          },
+          {
+            "title": "Map of the Nordholdt Tract (M.R. 6-33, Aug. 19, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-033.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2486,
+        "maxLng": -118.2466,
+        "from": {
+          "px": [
+            143,
+            1064
+          ]
+        },
+        "to": {
+          "px": [
+            1679,
+            1037
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "6th Street",
+        "entityId": "sixth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2466,
+        "maxLng": -118.2454,
+        "from": {
+          "px": [
+            1679,
+            1037
           ]
         },
         "to": {
@@ -4286,7 +4639,7 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2593,
-        "maxLng": -118.2508,
+        "maxLng": -118.2506,
         "from": {
           "px": [
             487,
@@ -4295,8 +4648,126 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            493,
-            1480
+            458,
+            528
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "7th Street",
+        "entityId": "seventh-street",
+        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": null,
+            "name": "7th Street",
+            "entityId": "seventh-street",
+            "formInForce": "7th Street",
+            "how": "extension",
+            "origin": "labeled “Seventh Street” on the 1886 Maple Avenue Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.8,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of Maple Avenue Tract in City of Los Angeles (M.R. 11-63, Oct. 21, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2506,
+        "maxLng": -118.2487,
+        "from": {
+          "px": [
+            458,
+            528
+          ]
+        },
+        "to": {
+          "px": [
+            471,
+            1207
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "7th Street",
+        "entityId": "seventh-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 7th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-033.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.81,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Nordholdt Tract (M.R. 6-33, Aug. 19, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-033.pdf"
+          },
+          {
+            "title": "Map of Maple Avenue Tract in City of Los Angeles (M.R. 11-63, Oct. 21, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2487,
+        "maxLng": -118.2477,
+        "from": {
+          "px": [
+            471,
+            1207
+          ]
+        },
+        "to": {
+          "px": [
+            866,
+            1209
           ]
         }
       },
@@ -4328,12 +4799,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.2508,
+        "minLng": -118.2477,
         "maxLng": -118.2469,
         "from": {
           "px": [
-            493,
-            1480
+            866,
+            1209
           ]
         },
         "to": {
@@ -4950,7 +5421,7 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2537,
-        "maxLng": -118.2529,
+        "maxLng": -118.2531,
         "from": {
           "px": [
             855,
@@ -4959,8 +5430,55 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            1045,
-            412
+            119,
+            599
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "9th Street",
+        "entityId": "ninth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 9th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.79,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Moran Tract (M.R. 16-27, Apr. 22, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLng": -118.2531,
+        "maxLng": -118.251,
+        "from": {
+          "px": [
+            119,
+            599
+          ]
+        },
+        "to": {
+          "px": [
+            914,
+            589
           ]
         }
       },
@@ -4988,12 +5506,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLng": -118.2529,
+        "minLng": -118.251,
         "maxLng": -118.2505,
         "from": {
           "px": [
-            1045,
-            412
+            914,
+            589
           ]
         },
         "to": {
@@ -7070,6 +7588,55 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
+        "label": "part of (original Boyd St)",
+        "name": "Boyd Street",
+        "entityId": "boyd-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1882",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1882",
+            "until": null,
+            "name": "Boyd Street",
+            "entityId": "boyd-street",
+            "formInForce": "Boyd Street",
+            "how": "origin",
+            "origin": "labeled “Boyd Street” on the 1882 Orchard Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          }
+        ],
+        "note": "Lettered on the Orchard Tract of July 1882 between Wall Street and San Pedro Street, and still Boyd Street today. No Boyd is documented: the sheet names its three owners, its surveyor and the three earlier tracts it absorbed, and there is no Boyd among them.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.82,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          }
+        ],
+        "maxLng": -118.2427,
+        "from": null,
+        "to": {
+          "px": [
+            693,
+            1613
+          ]
+        }
+      },
+      {
         "label": "part of",
         "name": "Boyd Street",
         "entityId": "boyd-street",
@@ -7077,24 +7644,30 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on the Orchard Tract of July 1882 between Wall Street and San Pedro Street, and still Boyd Street today. No Boyd is documented: the sheet names its three owners, its surveyor and the three earlier tracts it absorbed, and there is no Boyd among them.",
         "attested": false,
         "absentAsOf": {
           "text": "1888 (Wolfskill Orchard Tract, sheet 5 (M.R. 30-13))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "categories": [
-          "unresearched"
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
+        "minLng": -118.2427,
         "maxLng": -118.2417,
-        "from": null,
+        "from": {
+          "px": [
+            693,
+            1613
+          ]
+        },
         "to": {
           "px": [
             686,
@@ -7111,16 +7684,16 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on the Orchard Tract of July 1882 between Wall Street and San Pedro Street, and still Boyd Street today. No Boyd is documented: the sheet names its three owners, its surveyor and the three earlier tracts it absorbed, and there is no Boyd among them.",
         "attested": false,
         "categories": [
-          "unresearched"
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLng": -118.2417,
@@ -10912,6 +11485,43 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": false,
+        "absentAsOf": {
+          "text": "1869 (Mott Tract building lots)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+        },
+        "categories": [
+          "nature"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Flower Street",
+            "url": "https://lastreetnames.com/street/flower-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0549,
+        "from": null,
+        "to": {
+          "px": [
+            1000,
+            395
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Flower Street",
+        "entityId": "flower",
+        "namedAfter": "Supposedly the blossom-covered hills behind it — how and when this stretch joined Flower Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
         "categories": [
           "nature"
         ],
@@ -10927,7 +11537,13 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0533,
-        "from": null,
+        "maxLat": 34.0549,
+        "from": {
+          "px": [
+            1000,
+            395
+          ]
+        },
         "to": {
           "px": [
             873,
@@ -14262,8 +14878,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0548,
@@ -14310,8 +14926,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0541,
@@ -14361,8 +14977,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0531,
@@ -14404,8 +15020,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0521,
@@ -14459,8 +15075,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0512,
@@ -14506,11 +15122,11 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
-        "minLat": 34.0429,
+        "minLat": 34.0487,
         "maxLat": 34.0512,
         "from": {
           "px": [
@@ -14520,21 +15136,41 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            77,
-            260
+            1124,
+            759
           ]
         }
       },
       {
-        "label": "part of",
+        "label": "part of (original Los Angeles St)",
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
-        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfter": "The city itself — ultimately Nuestra Señora de los Ángeles de Porciúncula, the 1769 Spanish naming of {{the river}}",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1882",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1882",
+            "until": null,
+            "name": "Los Angeles Street",
+            "entityId": "los-angeles-street",
+            "formInForce": "Los Angeles Street",
+            "how": "origin",
+            "origin": "labeled “Los Angeles Street” on the 1882 Orchard Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          }
+        ],
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
-        "attested": false,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.82,
         "categories": [
           "place"
         ],
@@ -14549,22 +15185,69 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
-        "minLat": 34.0422,
-        "maxLat": 34.0429,
+        "minLat": 34.0477,
+        "maxLat": 34.0487,
         "from": {
           "px": [
-            77,
-            260
+            1124,
+            759
           ]
         },
         "to": {
           "px": [
-            536,
-            556
+            704,
+            654
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Los Angeles Street",
+        "entityId": "los-angeles-street",
+        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "categories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Los Angeles Street",
+            "url": "https://lastreetnames.com/street/los-angeles-street/"
+          },
+          {
+            "title": "Wikipedia: Los Angeles Street",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          }
+        ],
+        "minLat": 34.0435,
+        "maxLat": 34.0477,
+        "from": {
+          "px": [
+            704,
+            654
+          ]
+        },
+        "to": {
+          "px": [
+            547,
+            511
           ]
         }
       },
@@ -14575,10 +15258,77 @@ const STREET_DATA = {
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
         "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+        },
+        "built": "not yet researched",
+        "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.8,
+        "categories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Los Angeles Street",
+            "url": "https://lastreetnames.com/street/los-angeles-street/"
+          },
+          {
+            "title": "Wikipedia: Los Angeles Street",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Map of Maple Avenue Tract in City of Los Angeles (M.R. 11-63, Oct. 21, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+          },
+          {
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          }
+        ],
+        "minLat": 34.0422,
+        "maxLat": 34.0435,
+        "from": {
+          "px": [
+            547,
+            511
+          ]
+        },
+        "to": {
+          "px": [
+            217,
+            811
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Los Angeles Street",
+        "entityId": "los-angeles-street",
+        "namedAfter": "The city itself, extended onto this stretch",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "planned": {
           "text": "by 1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
         },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "Los Angeles Street",
+            "entityId": "los-angeles-street",
+            "formInForce": "Los Angeles Street",
+            "how": "extension",
+            "origin": "labeled “Los Angeles Street” on the 1888 Widow Botiller Tract resubdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
+          }
+        ],
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "absentAsOf": {
@@ -14604,16 +15354,16 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0415,
         "maxLat": 34.0422,
         "from": {
           "px": [
-            536,
-            556
+            217,
+            811
           ]
         },
         "to": {
@@ -14651,8 +15401,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.041,
@@ -14718,8 +15468,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0389,
@@ -14738,28 +15488,16 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (original Los Angeles St)",
+        "label": "part of",
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
-        "namedAfter": "The city itself — ultimately Nuestra Señora de los Ángeles de Porciúncula, the 1769 Spanish naming of {{the river}}",
+        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
         "planned": {
           "text": "by 1885",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
         },
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1885",
-            "until": null,
-            "name": "Los Angeles Street",
-            "entityId": "los-angeles-street",
-            "formInForce": "Los Angeles Street",
-            "how": "origin",
-            "origin": "labeled “Los Angeles St.” on the 1885 O. W. Childs Tract {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
-          }
-        ],
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "absentAsOf": {
@@ -14783,6 +15521,10 @@ const STREET_DATA = {
           {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          },
+          {
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0362,
@@ -14824,8 +15566,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0341,
@@ -14875,8 +15617,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0327,
@@ -14918,8 +15660,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "maxLat": 34.0327,
@@ -15935,6 +16677,74 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
+        "label": "part of (Regent St)",
+        "name": "Maple Avenue",
+        "entityId": "maple-dtla",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1875",
+            "until": "?",
+            "name": "Regent Street",
+            "entityId": "regent-street",
+            "formInForce": "Regent Street",
+            "how": "origin",
+            "origin": "labeled “Regent Street” on the 1875 Moreno Vineyard Tract {{(source)}} — lettered between Los Angeles Street and Wall Street on the Moreno Vineyard Tract, the building lots laid out beside the new railroad depot and recorded in March 1876. Nothing says what it was named for; London's Regent Street, two blocks from a Wall Street, is the obvious guess and no source supports it. The corridor is Maple Avenue today, between 5th and 6th",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Maple Avenue",
+            "entityId": "maple-dtla",
+            "formInForce": "Maple Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0,
+        "categories": [
+          "nature",
+          "unknown",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+          },
+          {
+            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          }
+        ],
+        "minLat": 34.0439,
+        "from": null,
+        "to": {
+          "px": [
+            633,
+            1117
+          ]
+        }
+      },
+      {
         "label": "part of",
         "name": "Maple Avenue",
         "entityId": "maple-dtla",
@@ -15942,7 +16752,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, but Maple Avenue runs well north of that tract and the name is probably older.",
+        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -15959,12 +16769,18 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           }
         ],
-        "minLat": 34.0421,
-        "from": null,
+        "minLat": 34.0427,
+        "maxLat": 34.0439,
+        "from": {
+          "px": [
+            633,
+            1117
+          ]
+        },
         "to": {
           "px": [
-            74,
-            344
+            778,
+            706
           ]
         }
       },
@@ -15974,10 +16790,18 @@ const STREET_DATA = {
         "entityId": "maple-dtla",
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+        },
         "built": "not yet researched",
-        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, but Maple Avenue runs well north of that tract and the name is probably older.",
-        "attested": false,
+        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.8,
         "categories": [
           "nature",
           "unknown"
@@ -15985,22 +16809,26 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "Map of Maple Avenue Tract in City of Los Angeles (M.R. 11-63, Oct. 21, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+          },
+          {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           }
         ],
         "minLat": 34.0412,
-        "maxLat": 34.0421,
+        "maxLat": 34.0427,
         "from": {
           "px": [
-            74,
-            344
+            778,
+            706
           ]
         },
         "to": {
           "px": [
-            942,
-            559
+            445,
+            1045
           ]
         }
       },
@@ -16015,7 +16843,19 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
         },
         "built": "not yet researched",
-        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, but Maple Avenue runs well north of that tract and the name is probably older.",
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "Maple Avenue",
+            "entityId": "maple-dtla",
+            "formInForce": "Maple Avenue",
+            "how": "extension",
+            "origin": "labeled “Maple Avenue” on the 1888 Widow Botiller Tract resubdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
+          }
+        ],
+        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": true,
         "knownFraction": 0.78,
         "categories": [
@@ -16037,8 +16877,8 @@ const STREET_DATA = {
         "maxLat": 34.0412,
         "from": {
           "px": [
-            942,
-            559
+            445,
+            1045
           ]
         },
         "to": {
@@ -16056,7 +16896,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, but Maple Avenue runs well north of that tract and the name is probably older.",
+        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": false,
         "categories": [
           "nature",
@@ -16069,12 +16909,68 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           }
         ],
-        "minLat": 34.0376,
+        "minLat": 34.0397,
         "maxLat": 34.0404,
         "from": {
           "px": [
             968,
             885
+          ]
+        },
+        "to": {
+          "px": [
+            258,
+            527
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Maple Avenue",
+        "entityId": "maple-dtla",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": null,
+            "name": "Maple Avenue",
+            "entityId": "maple-dtla",
+            "formInForce": "Maple Avenue",
+            "how": "extension",
+            "origin": "labeled “Maple Avenue” on the 1887 Moran Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+          }
+        ],
+        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
+        "attested": true,
+        "knownFraction": 0.79,
+        "categories": [
+          "nature",
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Moran Tract (M.R. 16-27, Apr. 22, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+          },
+          {
+            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          }
+        ],
+        "minLat": 34.0376,
+        "maxLat": 34.0397,
+        "from": {
+          "px": [
+            258,
+            527
           ]
         },
         "to": {
@@ -16107,7 +17003,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           }
         ],
-        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, but Maple Avenue runs well north of that tract and the name is probably older.",
+        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
@@ -16144,7 +17040,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, but Maple Avenue runs well north of that tract and the name is probably older.",
+        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": false,
         "categories": [
           "nature",
@@ -16183,7 +17079,7 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
         },
         "built": "not yet researched",
-        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, but Maple Avenue runs well north of that tract and the name is probably older.",
+        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": true,
         "knownFraction": 0.76,
         "categories": [
@@ -17819,6 +18715,7 @@ const STREET_DATA = {
             "name": "10th Street",
             "entityId": "tenth-street",
             "formInForce": "10th Street",
+            "how": "extension",
             "origin": "labeled “TENTH STREET” on the 1893 Hammel and Denker Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           },
@@ -17867,7 +18764,7 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.257,
-        "maxLng": -118.2551,
+        "maxLng": -118.2547,
         "from": {
           "px": [
             -8,
@@ -17876,8 +18773,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            734,
-            1517
+            107,
+            1118
           ]
         }
       },
@@ -17888,19 +18785,19 @@ const STREET_DATA = {
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1893",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1893",
+            "from": "by 1887",
             "until": "?",
             "name": "10th Street",
             "entityId": "tenth-street",
             "formInForce": "10th Street",
-            "origin": "labeled “TENTH STREET” on the 1893 Hammel and Denker Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+            "origin": "labeled “Tenth Street” on the 1887 Moran Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
           },
           {
             "from": "?",
@@ -17926,8 +18823,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+            "title": "Map of the Moran Tract (M.R. 16-27, Apr. 22, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
           },
           {
             "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875)",
@@ -17942,50 +18839,20 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           }
         ],
-        "minLng": -118.2551,
-        "maxLng": -118.2543,
+        "minLng": -118.2547,
+        "maxLng": -118.2522,
         "from": {
           "px": [
-            734,
-            1517
+            107,
+            1118
           ]
         },
         "to": {
           "px": [
-            1077,
-            997
-          ]
-        }
-      },
-      {
-        "label": "beyond San Julian",
-        "name": "Olympic Boulevard",
-        "entityId": "olympic-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": "not yet researched",
-        "built": "not yet researched",
-        "note": null,
-        "attested": false,
-        "categories": [
-          "unresearched"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
-          }
-        ],
-        "minLng": -118.2543,
-        "maxLng": -118.2522,
-        "from": {
-          "px": [
-            1077,
-            997
+            922,
+            1022
           ]
         },
-        "to": "San Julian Street",
         "gapAfter": true
       },
       {
@@ -18875,7 +19742,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented.",
+        "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
         "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -18901,14 +19768,14 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of",
+        "label": "beyond 9th",
         "name": "San Julian Street",
         "entityId": "san-julian-st",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented.",
+        "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
         "attested": false,
         "categories": [
           "unknown"
@@ -18920,7 +19787,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           }
         ],
-        "minLat": 34.0363,
+        "minLat": 34.0381,
         "maxLat": 34.0408,
         "from": {
           "px": [
@@ -18928,6 +19795,51 @@ const STREET_DATA = {
             473
           ]
         },
+        "to": "9th Street"
+      },
+      {
+        "label": "beyond 9th",
+        "name": "San Julian Street",
+        "entityId": "san-julian-st",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": null,
+            "name": "San Julian Street",
+            "entityId": "san-julian-st",
+            "formInForce": "San Julian Street",
+            "how": "extension",
+            "origin": "labeled “San Julian Street” on the 1887 Moran Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+          }
+        ],
+        "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
+        "attested": true,
+        "knownFraction": 0.79,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Moran Tract (M.R. 16-27, Apr. 22, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+          },
+          {
+            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          }
+        ],
+        "minLat": 34.0363,
+        "maxLat": 34.0381,
+        "from": "9th Street",
         "to": {
           "px": [
             1242,
@@ -18958,7 +19870,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           }
         ],
-        "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented.",
+        "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
@@ -18994,7 +19906,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented.",
+        "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
         "attested": false,
         "categories": [
           "unknown"
@@ -19050,8 +19962,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0494,
@@ -19091,17 +20003,88 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
-        "minLat": 34.0475,
+        "minLat": 34.0472,
         "maxLat": 34.0494,
         "from": "Astronaut Ellison S Onizuka Street",
         "to": {
           "px": [
-            981,
-            508
+            894,
+            1545
+          ]
+        }
+      },
+      {
+        "label": "part of (original San Pedro St)",
+        "name": "San Pedro Street",
+        "entityId": "san-pedro",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
+        "planned": {
+          "text": "by 1882",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+        },
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "nameHistory": [
+          {
+            "from": "by 1882",
+            "until": null,
+            "name": "San Pedro Street",
+            "entityId": "san-pedro",
+            "formInForce": "San Pedro Street",
+            "how": "origin",
+            "origin": "labeled “San Pedro Street” and “San Pedro Ave” on the 1882 Orchard Tract and the 1888 Wolfskill Orchard Tract (sheets 4, 5) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          }
+        ],
+        "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
+        "attested": true,
+        "knownFraction": 0.82,
+        "categories": [
+          "place",
+          "destination"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: San Pedro Street",
+            "url": "https://lastreetnames.com/street/san-pedro-street/"
+          },
+          {
+            "title": "Wikipedia: San Pedro Street",
+            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          },
+          {
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "minLat": 34.0455,
+        "maxLat": 34.0472,
+        "from": {
+          "px": [
+            894,
+            1545
+          ]
+        },
+        "to": {
+          "px": [
+            283,
+            1632
           ]
         }
       },
@@ -19109,7 +20092,7 @@ const STREET_DATA = {
         "label": "part of",
         "name": "San Pedro Street",
         "entityId": "san-pedro",
-        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward, extended onto this stretch",
         "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
         "planned": {
           "text": "by 1888",
@@ -19119,6 +20102,18 @@ const STREET_DATA = {
           "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "nameHistory": [
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "San Pedro Street",
+            "entityId": "san-pedro",
+            "formInForce": "San Pedro Street",
+            "how": "extension",
+            "origin": "labeled “San Pedro Ave” on the 1888 Wolfskill Orchard Tract (sheets 2–4) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.78,
@@ -19145,16 +20140,16 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0406,
-        "maxLat": 34.0475,
+        "maxLat": 34.0455,
         "from": {
           "px": [
-            981,
-            508
+            283,
+            1632
           ]
         },
         "to": {
@@ -19189,8 +20184,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0387,
@@ -19253,8 +20248,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "minLat": 34.0357,
@@ -19273,28 +20268,16 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (original San Pedro St)",
+        "label": "part of",
         "name": "San Pedro Street",
         "entityId": "san-pedro",
-        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
         "planned": {
           "text": "by 1885",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
         },
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1885",
-            "until": null,
-            "name": "San Pedro Street",
-            "entityId": "san-pedro",
-            "formInForce": "San Pedro Street",
-            "how": "origin",
-            "origin": "labeled “San Pedro St.” on the 1885 O. W. Childs Tract {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
-          }
-        ],
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.8,
@@ -19315,6 +20298,10 @@ const STREET_DATA = {
           {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          },
+          {
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
         "maxLat": 34.0357,
@@ -19661,14 +20648,14 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "beyond Olympic",
+        "label": "part of",
         "name": "Santee Alley",
         "entityId": "santee-alley",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1893",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
         },
         "built": "not yet researched",
         "note": null,
@@ -19679,6 +20666,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Map of the Moran Tract (M.R. 16-27, Apr. 22, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+          },
           {
             "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
@@ -19737,6 +20728,10 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": false,
+    "absentAsOf": {
+      "text": "1886 (Maple Avenue Tract)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+    },
     "categories": [
       "unresearched"
     ],
@@ -21694,9 +22689,50 @@ const STREET_DATA = {
         "entityId": "wall-street",
         "namedAfter": null,
         "namedAfterLink": null,
+        "planned": {
+          "text": "by 1882",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+        },
+        "built": "not yet researched",
+        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.82,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          },
+          {
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+          }
+        ],
+        "minLat": 34.0466,
+        "from": null,
+        "to": {
+          "px": [
+            448,
+            1075
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Wall Street",
+        "entityId": "wall-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess and no source supports it.",
+        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
         "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -21708,16 +22744,209 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the Resubdivision of the Widow Botiller Tract (M.R. 29-26, Mar. 15, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           }
         ],
-        "minLat": 34.0415,
-        "from": null,
+        "minLat": 34.0454,
+        "maxLat": 34.0466,
+        "from": {
+          "px": [
+            448,
+            1075
+          ]
+        },
         "to": {
           "px": [
-            72,
-            401
+            1203,
+            156
+          ]
+        }
+      },
+      {
+        "label": "part of (original Wall St)",
+        "name": "Wall Street",
+        "entityId": "wall-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1875",
+            "until": null,
+            "name": "Wall Street",
+            "entityId": "wall-street",
+            "formInForce": "Wall Street",
+            "how": "origin",
+            "origin": "labeled “Wall Street” on the 1875 Moreno Vineyard Tract (sheets 1, 2) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+          }
+        ],
+        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.86,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+          }
+        ],
+        "minLat": 34.0434,
+        "maxLat": 34.0454,
+        "from": {
+          "px": [
+            1203,
+            156
+          ]
+        },
+        "to": {
+          "px": [
+            1218,
+            1103
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Wall Street",
+        "entityId": "wall-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-033.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": null,
+            "name": "Wall Street",
+            "entityId": "wall-street",
+            "formInForce": "Wall Street",
+            "how": "extension",
+            "origin": "labeled “WALL STREET” on the 1884 Nordholdt Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-033.pdf"
+          }
+        ],
+        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.81,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Nordholdt Tract (M.R. 6-33, Aug. 19, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-033.pdf"
+          },
+          {
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+          }
+        ],
+        "minLat": 34.0418,
+        "maxLat": 34.0434,
+        "from": {
+          "px": [
+            1218,
+            1103
+          ]
+        },
+        "to": {
+          "px": [
+            533,
+            1265
+          ]
+        }
+      },
+      {
+        "label": "part of (Myrtle Ave)",
+        "name": "Wall Street",
+        "entityId": "wall-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": "?",
+            "name": "Myrtle Avenue",
+            "entityId": "myrtle",
+            "formInForce": "Myrtle Avenue",
+            "origin": "labeled “Myrtle Avenue” on the 1886 Maple Avenue Tract {{(source)}} — A plant name, and the company it keeps is the whole of the argument: the O. W. Childs Tract lays Myrtle one block from Maple, and Childs was the city's leading nurseryman. Nothing documents it. This one ran along modern Wall Street",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Wall Street",
+            "entityId": "wall-street",
+            "formInForce": "Wall Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "unknown",
+          "renamed"
+        ],
+        "formerCategories": [
+          "nature",
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of Maple Avenue Tract in City of Los Angeles (M.R. 11-63, Oct. 21, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+          },
+          {
+            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          },
+          {
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+          }
+        ],
+        "minLat": 34.0406,
+        "maxLat": 34.0418,
+        "from": {
+          "px": [
+            533,
+            1265
+          ]
+        },
+        "to": {
+          "px": [
+            598,
+            1201
           ]
         }
       },
@@ -21727,26 +22956,34 @@ const STREET_DATA = {
         "entityId": "wall-street",
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1888",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
+        },
         "built": "not yet researched",
-        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess and no source supports it.",
-        "attested": false,
+        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
+        "attested": true,
+        "knownFraction": 0.78,
         "categories": [
           "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the Resubdivision of the Widow Botiller Tract (M.R. 29-26, Mar. 15, 1888)",
+            "title": "Map of the Resubdivision of the Widow Botiller Tract (M.R. 29-26, Mar. 15, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
+          },
+          {
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           }
         ],
         "minLat": 34.0401,
-        "maxLat": 34.0415,
+        "maxLat": 34.0406,
         "from": {
           "px": [
-            72,
-            401
+            598,
+            1201
           ]
         },
         "to": "8th Street"
@@ -21759,7 +22996,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess and no source supports it.",
+        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
         "attested": false,
         "absentAsOf": {
           "text": "1888 (Widow Botiller Tract resubdivision)",
@@ -21771,8 +23008,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the Resubdivision of the Widow Botiller Tract (M.R. 29-26, Mar. 15, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           }
         ],
         "minLat": 34.0396,
@@ -21793,7 +23030,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess and no source supports it.",
+        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
         "attested": false,
         "categories": [
           "unknown"
@@ -21801,16 +23038,90 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the Resubdivision of the Widow Botiller Tract (M.R. 29-26, Mar. 15, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           }
         ],
-        "minLat": 34.0369,
+        "minLat": 34.039,
         "maxLat": 34.0396,
         "from": {
           "px": [
             1254,
             893
+          ]
+        },
+        "to": {
+          "px": [
+            557,
+            505
+          ]
+        }
+      },
+      {
+        "label": "part of (Myrtle Ave)",
+        "name": "Wall Street",
+        "entityId": "wall-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": "?",
+            "name": "Myrtle Avenue",
+            "entityId": "myrtle",
+            "formInForce": "Myrtle Avenue",
+            "how": "extension",
+            "origin": "labeled “Myrtle Avenue” on the 1887 Moran Tract {{(source)}} — A plant name, and the company it keeps is the whole of the argument: the O. W. Childs Tract lays Myrtle one block from Maple, and Childs was the city's leading nurseryman. Nothing documents it. This one ran along modern Wall Street",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Wall Street",
+            "entityId": "wall-street",
+            "formInForce": "Wall Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "unknown",
+          "renamed"
+        ],
+        "formerCategories": [
+          "nature",
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Moran Tract (M.R. 16-27, Apr. 22, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+          },
+          {
+            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          },
+          {
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
+          }
+        ],
+        "minLat": 34.0369,
+        "maxLat": 34.039,
+        "from": {
+          "px": [
+            557,
+            505
           ]
         },
         "to": {
@@ -21853,7 +23164,7 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess and no source supports it.",
+        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
@@ -21871,8 +23182,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           },
           {
-            "title": "Map of the Resubdivision of the Widow Botiller Tract (M.R. 29-26, Mar. 15, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           }
         ],
         "minLat": 34.0344,
@@ -21898,7 +23209,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess and no source supports it.",
+        "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
         "attested": false,
         "categories": [
           "unknown"
@@ -21906,8 +23217,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the Resubdivision of the Widow Botiller Tract (M.R. 29-26, Mar. 15, 1888)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
+            "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, May 1, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           }
         ],
         "maxLat": 34.0344,

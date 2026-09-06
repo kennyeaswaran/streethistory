@@ -789,6 +789,18 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
         loopWrapped: R(loop, P(1000, 100), P(1100, 0), false),           // idx 3 → 1, past the seam
         loopOneEnd: R(loop, P(1100, 0), null, false),
         loopSame: R(loop, P(1100, 0), P(1100, 0), false),
+        loopSeam: R(loop, P(1100, 0), P(1000, 0), false),               // idx 1 → the seam (4 ≡ 0)
+        // a divided pair: out along one side, hairpin, back along the other —
+        // closed, but one corridor, so NOT a ring
+        pairIs: runIsLoop([P(0, 200), P(100, 200), P(200, 200), P(100, 212), P(0, 212), P(0, 200)]),
+        // a lollipop: a spine that loops at x=300 and comes back to it
+        lolli: (() => {
+          const run = [P(0, 300), P(100, 300), P(200, 300), P(300, 300), P(400, 300), P(400, 330),
+                       P(300, 330), P(300, 300), P(300, 200)];
+          return { atJunctionToEnd: R(run, P(300, 300), null, false),      // both visits: the long reading
+                   insetToEnd: R(run, P(300, 327), P(300, 200), true),     // 3 m into the return leg: that visit
+                   spineOnly: R(run, P(100, 300), P(300, 300), false) };
+        })(),
       };
     });
     const eq = (a, b) => JSON.stringify(a) === JSON.stringify(b);
@@ -806,6 +818,15 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("…so the two orders cover the two arcs, not the same one", !eq(res.loopForward, res.loopWrapped));
     ok("a null end on a ring means the whole ring", eq(res.loopOneEnd, [[0, 4]]), JSON.stringify(res.loopOneEnd));
     ok("…and so does from X round to X", eq(res.loopSame, [[0, 4]]), JSON.stringify(res.loopSame));
+    ok("an end at the ring's seam is the seam, whichever index it snapped to",
+       eq(res.loopSeam, [[1, 4], [0, 0]]), JSON.stringify(res.loopSeam));
+    ok("a divided pair — closed, but with a hairpin — is not a ring", res.pairIs === false);
+    ok("on a lollipop, a row from the junction to the end takes the longer reading",
+       eq(res.lolli.atJunctionToEnd, [[3, 8]]), JSON.stringify(res.lolli.atJunctionToEnd));
+    ok("…a point a few metres into the return leg names that visit",
+       eq(res.lolli.insetToEnd, [[6, 8]]), JSON.stringify(res.lolli.insetToEnd));
+    ok("…and a row along the spine stops at the first visit",
+       eq(res.lolli.spineOnly, [[1, 3]]) || eq(res.lolli.spineOnly, [[1, 7]]), JSON.stringify(res.lolli.spineOnly));
   }
 
   console.log("MR001-489: the branches and rings of Bunker Hill");
@@ -847,6 +868,22 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
       return { gap: [gap.a, gap.b], ends, ranges };
     });
     ok("2nd Street has a gap on the short leg of a folded run", !!g2, "none found");
+    // Hill Street's run passes its junction with the divided pair twice
+    // (index 15 and 24); the gap ends at the second visit. Its answer must
+    // cover the gap, not the stretch between the first visit and the gap.
+    const g3 = await page.evaluate(() => {
+      const m = lastModel || reviewModel();
+      const rec = m.streets.find(s => s.name === "Hill Street");
+      const gap = rec.gaps.find(g => revisited(rec.runs[g.runIndex], g.b) || revisited(rec.runs[g.runIndex], g.a));
+      if (!gap) return null;
+      const ends = gapExtents(rec, gap);
+      const pA = extentPoint(rec.name, ends.from, []), pB = extentPoint(rec.name, ends.to, []);
+      return { gap: [gap.a, gap.b], ends,
+               ranges: clipRanges(rec.runs[gap.runIndex], pA, pB, streetIsNS(rec)) };
+    });
+    ok("Hill Street has a gap ending at a vertex the run visits twice", !!g3, "none found");
+    if (g3) ok("…and its answer covers exactly the gap, not the other visit's stretch",
+               JSON.stringify(g3.ranges) === JSON.stringify([g3.gap]), JSON.stringify(g3));
     if (g2) {
       ok("…whose answer names both ends explicitly, not 'the street's end'",
          g2.ends.from !== null && g2.ends.to !== null, JSON.stringify(g2.ends));

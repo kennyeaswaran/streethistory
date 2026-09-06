@@ -161,6 +161,39 @@ and `api/search/legal` returns them alongside live parcels without flagging
 which is which. Check `ParcelStatus` via `api/parceldetail?ain=` before
 concluding a tract is still on the ground.
 
+
+## Wall Street, downtown — six tracts, two already on the list
+
+Sampled 3rd St to Olympic. All PDFs existence-checked (real scans, no OCR layer).
+
+| Near | Tract | Map-Ref | Sampled at | PDF |
+|---|---|---|---|---|
+| 3rd | **Orchard Tract** | **M R 5-5** | 330 S Wall St, Lot 1 (APN 5148005001) | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf |
+| 5th-6th | **Moreno Vineyard Tract** | **M R 3-166/167** | 520 S Wall St, Lot 5 Blk D (APN 5148015008) | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf |
+| 6th-7th | **Nordholdt Tract** | **M R 6-33** | 612 S Wall St, Lot 3 (APN 5148024002) | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-033.pdf |
+| 7th | **Maple Avenue Tract** | **M R 11-63** | 740 S Wall St, Lot 7 (APN 5145005005) | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf |
+| Olympic | Moran Tract | M R 16-27 | 1000 S Wall St, Lot 2 Blk F (APN 5145019026) | *already listed under Maple Ave* |
+| 11th | O. W. Childs Tract | M R 6-378 | 1100 S Wall St, Lot 1 Blk 14 (APN 5145024026) | *already listed under Maple Ave* |
+
+- **Two sheets serve both streets.** The Moran Tract and the O. W. Childs Tract
+  each front Maple Ave and Wall St — Moran at Blk E on Maple and Blk F on Wall,
+  Childs at Blk 11 on Maple and Blk 14 on Wall. One download each covers both,
+  and reading either sheet in full will produce rows for both streets at once.
+- **The Maple Avenue Tract is on Wall Street, not Maple.** A tract named for a
+  street it does not front is worth a note when the sheet is read: it dates the
+  name "Maple Avenue" to at or before M R 11-63's recording, independently of
+  anything the Maple Ave plats themselves say.
+- **Moreno Vineyard** joins Celis Vineyard (Maple Ave, M R 53-16) as a second
+  Californio vineyard tract in these blocks. Two vineyard plats a few streets
+  apart is a pattern the namesake research should probably treat together.
+- **M R 3-166/167 is a two-page filing and only `MR003-166.pdf` exists** —
+  `MR003-167.pdf` returns the DPW 404 page. Almost certainly the same situation
+  as M.R. 3-60/61, where the single `MR003-060.pdf` carries both sheets (see
+  `documents/mr003-060-p1` / `-p2`). Confirm on opening; if page 167 is missing,
+  it needs another route.
+- 420, 650 and 900 S Wall did not resolve to a parcel, so the gaps between these
+  samples are unsampled rather than known-empty.
+
 ## How the Map-Refs were obtained
 
 Two shortcuts, now written up in TRACT-RESEARCH.md:

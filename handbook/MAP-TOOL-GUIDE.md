@@ -610,6 +610,17 @@ arc is the same two ends the other way round, and the row popup offers
 **Other way round the loop** to do exactly that. Answering a red stretch on a
 ring writes the ends in that order, so the row it makes covers the gap.
 
+A **divided pair** — two one-way carriageways stitched out along one side and
+back along the other — is closed too, but it turns through a hairpin and it is
+one corridor, so it is *not* read as a ring; its rows keep the ordinary
+reading. Where such a pair hangs off a street, the run passes the junction
+twice, and a point *at* that vertex could mean either visit: the tool takes
+the reading that covers more (a row from the junction to the street's end
+includes the pair). Answering a red stretch that ends at such a junction
+writes its end a few metres *into* the stretch instead, which is unambiguous
+— so the row covers the stretch you clicked, not the one between the two
+visits. (Hill Street on MR001-489 was the case.)
+
 (The generator still cuts each street along one axis, which cannot tell
 parallel runs apart or follow a ring; the tool's accounting is ahead of it
 there, and rows on such streets should be read with that in mind.)

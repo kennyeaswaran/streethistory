@@ -117,6 +117,12 @@ const SEARCH_INDEX = [
     "street": "3rd Street"
   },
   {
+    "form": "Morgan Lane",
+    "entity": "morgan-lane",
+    "label": "Morgan Lane",
+    "street": "3rd Street"
+  },
+  {
     "form": "Georgia Street",
     "entity": "georgia-east",
     "label": "Georgia Street",
@@ -1206,6 +1212,12 @@ const SEARCH_INDEX = [
     "form": "Maple Avenue",
     "entity": "maple-dtla",
     "label": "Maple Avenue",
+    "street": "Maple Avenue"
+  },
+  {
+    "form": "Regent Street",
+    "entity": "regent-street",
+    "label": "Regent Street",
     "street": "Maple Avenue"
   },
   {

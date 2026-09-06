@@ -1,0 +1,143 @@
+{
+  "document": "mr003-166-p2",
+  "image": "mr003-166-p2-100dpi.png",
+  "imageSize": [1669, 1119],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr003-166-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [456, 291],
+    [327, 945],
+    [1475, 955],
+    [1304, 138]
+  ],
+  "coverageLl": [
+    [34.045859, -118.246469],
+    [34.045261, -118.247284],
+    [34.044302, -118.245812],
+    [34.045323, -118.245223]
+  ],
+  "streets": [
+    {
+      "name": "5th Street",
+      "runs": [
+        {
+          "px": [
+            [1397, 584],
+            [1364, 593],
+            [1298, 606],
+            [1256, 611],
+            [1195, 618],
+            [1130, 621],
+            [889, 615],
+            [664, 613],
+            [590, 613],
+            [393, 609]
+          ],
+          "ll": [
+            [34.044766, -118.245544],
+            [34.044784, -118.245597],
+            [34.044824, -118.245694],
+            [34.044854, -118.245754],
+            [34.044897, -118.24584],
+            [34.044947, -118.245926],
+            [34.045152, -118.246231],
+            [34.045341, -118.24652],
+            [34.045402, -118.246615],
+            [34.045569, -118.246865]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Maple Avenue",
+          "px": [590, 613],
+          "ll": [34.045402, -118.246615],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Julian Street",
+          "px": [1737, 492],
+          "ll": [34.044584, -118.245014],
+          "insideCoverage": false
+        },
+        {
+          "name": "Wall Street",
+          "px": [1195, 618],
+          "ll": [34.044897, -118.24584],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Maple Avenue",
+      "runs": [
+        {
+          "px": [
+            [590, 613],
+            [590, 640],
+            [590, 670],
+            [589, 882],
+            [589, 947]
+          ],
+          "ll": [
+            [34.045402, -118.246615],
+            [34.045373, -118.246641],
+            [34.04534, -118.246671],
+            [34.045112, -118.246883],
+            [34.045042, -118.246948]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [590, 613],
+          "ll": [34.045402, -118.246615],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Wall Street",
+      "runs": [
+        {
+          "px": [
+            [1203, 156],
+            [1202, 329],
+            [1202, 547],
+            [1195, 618],
+            [1195, 653],
+            [1194, 674],
+            [1193, 953]
+          ],
+          "ll": [
+            [34.045387, -118.245371],
+            [34.045201, -118.245543],
+            [34.044967, -118.245761],
+            [34.044897, -118.24584],
+            [34.044859, -118.245874],
+            [34.044837, -118.245895],
+            [34.044537, -118.246173]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [1195, 618],
+          "ll": [34.044897, -118.24584],
+          "insideCoverage": true
+        },
+        {
+          "name": "Winston Street",
+          "px": [1204, 4],
+          "ll": [34.045551, -118.245219],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

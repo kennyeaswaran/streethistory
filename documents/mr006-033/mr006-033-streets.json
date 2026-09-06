@@ -1,0 +1,167 @@
+{
+  "document": "mr006-033",
+  "image": "mr006-033-100dpi.png",
+  "imageSize": [1132, 1675],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr006-033-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [439, 441],
+    [473, 1265],
+    [873, 1263],
+    [764, 445]
+  ],
+  "coverageLl": [
+    [34.043744, -118.247174],
+    [34.041914, -118.248829],
+    [34.041213, -118.247795],
+    [34.043162, -118.246346]
+  ],
+  "streets": [
+    {
+      "name": "6th Street",
+      "runs": [
+        {
+          "px": [
+            [442, 516],
+            [478, 514],
+            [509, 510],
+            [537, 510],
+            [772, 508]
+          ],
+          "ll": [
+            [34.043577, -118.247325],
+            [34.04352, -118.247229],
+            [34.043472, -118.247142],
+            [34.043423, -118.247068],
+            [34.043012, -118.246458]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Maple Avenue",
+          "px": [216, 532],
+          "ll": [34.043942, -118.247942],
+          "insideCoverage": false
+        },
+        {
+          "name": "San Julian Street",
+          "px": [874, 507],
+          "ll": [34.042834, -118.246193],
+          "insideCoverage": false
+        },
+        {
+          "name": "Wall Street",
+          "px": [509, 510],
+          "ll": [34.043472, -118.247142],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [866, 1209],
+            [810, 1209],
+            [637, 1208],
+            [592, 1207],
+            [568, 1207],
+            [559, 1207],
+            [530, 1208],
+            [499, 1208],
+            [471, 1207]
+          ],
+          "ll": [
+            [34.041342, -118.2477],
+            [34.04144, -118.247842],
+            [34.041748, -118.248286],
+            [34.041827, -118.248401],
+            [34.041871, -118.248464],
+            [34.041886, -118.248486],
+            [34.041936, -118.24856],
+            [34.04199, -118.248641],
+            [34.042042, -118.248714]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Maple Avenue",
+          "px": [247, 1204],
+          "ll": [34.042443, -118.249283],
+          "insideCoverage": false
+        },
+        {
+          "name": "San Julian Street",
+          "px": [956, 1211],
+          "ll": [34.04118, -118.247472],
+          "insideCoverage": false
+        },
+        {
+          "name": "Wall Street",
+          "px": [530, 1208],
+          "ll": [34.041936, -118.24856],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Wall Street",
+      "runs": [
+        {
+          "px": [
+            [504, 442],
+            [505, 474],
+            [507, 488],
+            [509, 510],
+            [512, 549],
+            [512, 563],
+            [516, 713],
+            [517, 761],
+            [520, 873],
+            [524, 973],
+            [529, 1166],
+            [530, 1208],
+            [532, 1239],
+            [533, 1265]
+          ],
+          "ll": [
+            [34.043628, -118.247009],
+            [34.043556, -118.247074],
+            [34.043523, -118.2471],
+            [34.043472, -118.247142],
+            [34.043384, -118.247214],
+            [34.043353, -118.247243],
+            [34.043026, -118.247551],
+            [34.042919, -118.24765],
+            [34.042673, -118.247878],
+            [34.042452, -118.248081],
+            [34.042028, -118.248476],
+            [34.041936, -118.24856],
+            [34.041865, -118.248623],
+            [34.041808, -118.248673]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [509, 510],
+          "ll": [34.043472, -118.247142],
+          "insideCoverage": true
+        },
+        {
+          "name": "7th Street",
+          "px": [530, 1208],
+          "ll": [34.041936, -118.24856],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

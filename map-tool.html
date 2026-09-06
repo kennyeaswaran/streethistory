@@ -1291,23 +1291,42 @@ function runEnds(run, isNS) {
 // canonical order on a loop; on an open run they still are.)
 const ON_RUN_M = 25;             // a point further from the line than this is on another run
 const LOOP_CLOSE_M = 15;
-const runIsLoop = run => run.length > 2 && G.metres(run[0], run[run.length - 1]) < LOOP_CLOSE_M;
-// Nearest vertex, and the distance to the LINE (a straight block is two
-// vertices hundreds of metres apart, so vertex distance says nothing).
+// A ring is a closed run with no fold in it. A divided carriageway stitched
+// out along one side and back along the other is ALSO closed — it meets
+// itself at both ends — but it turns through a hairpin at the far end, and it
+// is one corridor, not a ring: its rows keep the ordinary reading, and the
+// returning leg is exempted by sameCorridor below as it always was. (1st
+// Street on MR003-060 is the case: read as a ring, 340 m of it went red.)
+const runIsLoop = run => run.length > 2 && G.metres(run[0], run[run.length - 1]) < LOOP_CLOSE_M &&
+                         !foldIndices(run).length;
+// Where a point sits on a run: the distance to the LINE (a straight block is
+// two vertices hundreds of metres apart, so vertex distance says nothing),
+// and a vertex index to clip at — the nearer end of the nearest SEGMENT, not
+// the nearest vertex outright. The two differ exactly where it matters: a run
+// that visits one vertex twice (a divided pair hanging off a street, Hill
+// Street on MR001-489, is a spine that loops at index 15 and comes back to it
+// at 24). A point at that vertex is ambiguous and always snapped to the first
+// visit, so nothing could ever address the stretch ending at the second; a
+// point a few metres INTO a stretch names its segment, and the segment says
+// which visit is meant. gapExtents writes such points.
 function nearestOnRun(run, pt) {
   const KY = 110540, KX = 111320 * Math.cos(pt.lat * Math.PI / 180);
   const X = p => (p.lon - pt.lon) * KX, Y = p => (p.lat - pt.lat) * KY;
-  let bi = 0, bv = Infinity, bd = Infinity;
-  run.forEach((p, i) => { const d = Math.hypot(X(p), Y(p)); if (d < bv) { bv = d; bi = i; } });
+  if (run.length === 1) return { i: 0, d: Math.hypot(X(run[0]), Y(run[0])) };
+  let bi = 0, bd = Infinity;
   for (let i = 1; i < run.length; i++) {
     const x1 = X(run[i - 1]), y1 = Y(run[i - 1]), x2 = X(run[i]), y2 = Y(run[i]);
     const dx = x2 - x1, dy = y2 - y1, L = dx * dx + dy * dy;
     let t = L ? -(x1 * dx + y1 * dy) / L : 0;
     t = Math.max(0, Math.min(1, t));
-    bd = Math.min(bd, Math.hypot(x1 + t * dx, y1 + t * dy));
+    const d = Math.hypot(x1 + t * dx, y1 + t * dy);
+    if (d < bd) { bd = d; bi = t < 0.5 ? i - 1 : i; }
   }
-  return { i: bi, d: Math.min(bd, bv) };
+  return { i: bi, d: bd };
 }
+// Does this run pass through this vertex more than once?
+const revisited = (run, i) => run.some((p, j) => j !== i &&
+  Math.abs(p.lat - run[i].lat) < 1e-7 && Math.abs(p.lon - run[i].lon) < 1e-7);
 // The index ranges of one run that a row with these ends covers: none, one,
 // or (an arc wrapping a loop's seam) two.
 function clipRanges(run, pA, pB, isNS) {
@@ -1318,12 +1337,34 @@ function clipRanges(run, pA, pB, isNS) {
   if (!onA && !onB) return [];
   if (runIsLoop(run)) {
     if (!onA || !onB) return [[0, last]];        // one end on the ring, the other "its end"
-    if (A.i === B.i) return [[0, last]];         // from X round to X: the whole ring
-    return A.i < B.i ? [[A.i, B.i]] : [[A.i, last], [0, B.i]];
+    // The seam: the last vertex IS the first, so an end there is index 0.
+    const ai = A.i === last ? 0 : A.i, bi = B.i === last ? 0 : B.i;
+    if (ai === bi) return [[0, last]];           // from X round to X: the whole ring
+    return ai < bi ? [[ai, bi]] : [[ai, last], [0, bi]];
   }
   const ends = runEnds(run, isNS === undefined ? streetIsNS({ runs: [run] }) : isNS);
-  let a = A ? A.i : ends.fromIdx, b = B ? B.i : ends.toIdx;
-  if (a > b) { const t = a; a = b; b = t; }
+  // An end AT a vertex the run visits twice — the junction where a divided
+  // pair leaves the street and comes back — could mean either visit. Between
+  // the readings, take the one that covers more: the pair is one corridor,
+  // and a row from its junction to the street's end was always meant to
+  // include it (Los Angeles Street on MR053-069 was confirmed and swept on
+  // that reading). A point a few metres INTO a stretch is not at the vertex
+  // and is not ambiguous; that is how gapExtents addresses one visit alone.
+  const AT_VERTEX_M = 8;          // a clicked or aligned point is rarely closer than this
+  const visits = (N, pt, fallback) => {
+    if (!N) return [fallback];
+    const v = run[N.i];
+    if (G.metres(v, pt) > AT_VERTEX_M || !revisited(run, N.i)) return [N.i];
+    return run.map((p, j) => Math.abs(p.lat - v.lat) < 1e-7 && Math.abs(p.lon - v.lon) < 1e-7 ? j : -1)
+      .filter(j => j >= 0);
+  };
+  let best = null;
+  for (const ai of visits(A, pA, ends.fromIdx))
+    for (const bi of visits(B, pB, ends.toIdx)) {
+      const lo = Math.min(ai, bi), hi = Math.max(ai, bi);
+      if (!best || hi - lo > best[1] - best[0]) best = [lo, hi];
+    }
+  let [a, b] = best;
   if (a === b) { a = Math.max(0, a - 1); b = Math.min(last, b + 1); }
   return [[a, b]];
 }
@@ -2338,6 +2379,23 @@ function gapExtents(rec, gap) {
   const toPx = img ? (lat, lon) => G.worldToScan(G.fitAlignment(controlPoints()), lat, lon) : null;
   const end = (p, atRunEnd) => atRunEnd ? null
     : G.snapOrPoint(streetPoints, rec.name, p, toPx, { maxM: 40 }).value;
+  // An end at a vertex the run visits twice cannot say which visit it means
+  // (see nearestOnRun), and a cross-street name resolves to that same vertex.
+  // So write it as a point a few metres INTO the gap along the gap's own
+  // segment, which names the segment, which names the visit.
+  const INSET_M = 5;
+  const inset = (i, towards) => {
+    const p = run[i], q = run[towards];
+    const d = G.metres(p, q);
+    if (!d) return p;
+    const f = Math.min(0.45, INSET_M / d);
+    return { lat: p.lat + (q.lat - p.lat) * f, lon: p.lon + (q.lon - p.lon) * f };
+  };
+  const endAt = (i, towards, atRunEnd) => {
+    if (atRunEnd) return null;
+    if (!revisited(run, i)) return end(run[i], false);
+    return G.snapOrPoint(streetPoints, rec.name, inset(i, towards), toPx, { maxM: -1 }).value;
+  };
   // IN CANONICAL ORDER, not in run order (§5.4). `gap.a` and `gap.b` are
   // indices into a run whose direction came from OSM, so on a run drawn east
   // to west this wrote `from` at the east end — a row reversed at birth, which
@@ -2360,9 +2418,11 @@ function gapExtents(rec, gap) {
   // for a gap there covered the long leg past the fold instead of the 56 m it
   // was answering. So null only where the end really is that end.
   const ends = runEnds(run, isNS);
-  let A = { p: run[gap.a], i: gap.a }, B = { p: run[gap.b], i: gap.b };
+  let A = { p: run[gap.a], i: gap.a, towards: gap.a + 1 },
+      B = { p: run[gap.b], i: gap.b, towards: gap.b - 1 };
   if (isNS ? sc(A.p) < sc(B.p) : sc(A.p) > sc(B.p)) { const t = A; A = B; B = t; }
-  return { from: end(A.p, A.i === ends.fromIdx), to: end(B.p, B.i === ends.toIdx) };
+  return { from: endAt(A.i, A.towards, A.i === ends.fromIdx),
+           to: endAt(B.i, B.towards, B.i === ends.toIdx) };
 }
 const describeEnd = v => v == null ? "the street's end in coverage"
   : typeof v === "object" ? (v.px ? `px ${v.px[0]},${v.px[1]}` : `${v.ll[0]}, ${v.ll[1]}`)

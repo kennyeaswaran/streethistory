@@ -1,0 +1,151 @@
+{
+  "document": "mr003-166-p1",
+  "image": "mr003-166-p1-100dpi.png",
+  "imageSize": [1742, 1109],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr003-166-p1-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [199, 13],
+    [140, 1129],
+    [1689, 1091],
+    [1486, -13]
+  ],
+  "coverageLl": [
+    [34.045402, -118.247448],
+    [34.044249, -118.24863],
+    [34.043009, -118.246593],
+    [34.044367, -118.245761]
+  ],
+  "streets": [
+    {
+      "name": "6th Street",
+      "runs": [
+        {
+          "px": [
+            [143, 1064],
+            [561, 1052],
+            [613, 1051],
+            [696, 1048],
+            [1150, 1031],
+            [1213, 1026],
+            [1272, 1027],
+            [1679, 1037]
+          ],
+          "ll": [
+            [34.044316, -118.248561],
+            [34.043984, -118.248011],
+            [34.043942, -118.247942],
+            [34.043877, -118.247832],
+            [34.04352, -118.247229],
+            [34.043472, -118.247142],
+            [34.043423, -118.247068],
+            [34.043076, -118.246552]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Los Angeles Street",
+          "px": [-206, 1071],
+          "ll": [34.044598, -118.249019],
+          "insideCoverage": false
+        },
+        {
+          "name": "Maple Avenue",
+          "px": [613, 1051],
+          "ll": [34.043942, -118.247942],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Julian Street",
+          "px": [1962, 1044],
+          "ll": [34.042834, -118.246193],
+          "insideCoverage": false
+        },
+        {
+          "name": "Wall Street",
+          "px": [1213, 1026],
+          "ll": [34.043472, -118.247142],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Maple Avenue",
+      "runs": [
+        {
+          "px": [
+            [605, 5],
+            [601, 965],
+            [606, 999],
+            [613, 1051],
+            [633, 1116],
+            [633, 1117]
+          ],
+          "ll": [
+            [34.045076, -118.246916],
+            [34.044044, -118.247872],
+            [34.044003, -118.2479],
+            [34.043942, -118.247942],
+            [34.043855, -118.247981],
+            [34.043854, -118.247981]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [606, -298],
+          "ll": [34.045402, -118.246615],
+          "insideCoverage": false
+        },
+        {
+          "name": "6th Street",
+          "px": [613, 1051],
+          "ll": [34.043942, -118.247942],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Wall Street",
+      "runs": [
+        {
+          "px": [
+            [1218, 1103],
+            [1213, 1026],
+            [1211, 981],
+            [1209, 952],
+            [1206, 612],
+            [1209, -7]
+          ],
+          "ll": [
+            [34.043386, -118.247212],
+            [34.043472, -118.247142],
+            [34.043523, -118.2471],
+            [34.043556, -118.247074],
+            [34.043925, -118.246742],
+            [34.04459, -118.246124]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [1210, -293],
+          "ll": [34.044897, -118.24584],
+          "insideCoverage": false
+        },
+        {
+          "name": "6th Street",
+          "px": [1213, 1026],
+          "ll": [34.043472, -118.247142],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

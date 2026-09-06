@@ -12,12 +12,6 @@
 // sources, move the entity into names.js, delete it from here. Anything still
 // sitting in this file is a to-do list.
 //
-// EMPTY as of 2026-09-06: the twenty-one entities that had accumulated here
-// were researched and moved into names.js. Five came back with a namesake
-// (Temple, Clark Avenue, Botiller Street, 15th and 16th); the rest carry a
-// null namedAfter and a record of what was checked, which is an answer and
-// not a to-do. The next review that mints a name will refill the file.
-//
 // `sightings` is where to start on one: every sheet in the corpus that letters
 // the name, with the ink each one uses. A name on three documents twenty years
 // apart is a different research problem from one that appears once, and that is

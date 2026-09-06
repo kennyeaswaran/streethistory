@@ -2,9 +2,9 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 272; entries: 589
-- Stub entities minted from OSM (unresearched): 217
-- Curated entities: 98
+- Streets: 272; entries: 611
+- Stub entities minted from OSM (unresearched): 216
+- Curated entities: 102
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
 ## Ambiguous OSM binds (NOT bound — fix by adding extents or disambiguation)
@@ -14,19 +14,23 @@
 - mr001-489: street not in geometry: West Bank Plaza at The Broad
 - mr001-489: street not in geometry: West Bank Plaza at The Broad
 - mr001-489: cross-street not on Grand Avenue: West Bank Plaza at The Broad
+- mr001-489: cross-street not on Grand Avenue: West Bank Plaza at The Broad
 
 ## Partially swept documents (no negative inference contributed)
 - lah-1874-02-13: sweptFor = []
-- mr001-489: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
 - first-street: "FIRST ST" ×2
 - guadalupe: "GUADALUPE ST" ×2
 - georgia-east: "GEORGIA ST" ×2
+- sixth-street: "Sixth St Extension." ×1
+- fifth-street: "Fifth St. (Extension)" ×1
+- sixth-street: "proposed line of Sixth Street." ×1
 - huber-st: "HUBER ST." ×1
 - alameda-st: "ALAMEDA ST" ×1
 - hewitt: "HEWITT ST" ×1
+- ninth-street: "Ninth Street Extension" ×1
 - san-pedro: "San Pedro Ave" ×4
 - omar-ave: "Omar Ave" ×1
 - fifteenth-street: "15th ST." ×1

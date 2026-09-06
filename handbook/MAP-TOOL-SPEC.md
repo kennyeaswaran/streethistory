@@ -219,6 +219,11 @@ popup offers:
   end is the whole ring and two ends cover the arc forward from `from` to
   `to`, wrapping the seam as two index ranges; gap answers on a ring keep run
   order, and the popup offers *Other way round the loop* (swaps the ends).
+  A closed run with a fold (`foldIndices`) is a divided pair, not a ring.
+  `nearestOnRun` indexes by nearest SEGMENT; an end within 8 m of a vertex
+  the run visits twice takes whichever visit covers more, and `gapExtents`
+  writes such an end 5 m into the gap so it names one visit (verified on
+  every document in the corpus: only MR001-489's accounting changes).
 - **Opening a document resets the tool** — every per-document variable and
   header field, in one function (`resetDocumentState`), on every open path;
   a render opened while a different document is loaded is a new document. A

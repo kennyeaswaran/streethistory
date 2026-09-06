@@ -33,8 +33,8 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["1st Street","2nd Place","2nd Street","2nd Street Tunnel","3rd Street","4th Street","5th Street","Broadway","Community Terrace","Flower Street","General Thaddeus Kosciuszko Way","Grand Avenue","Grand Avenue Lower Level","Hill Street","Hope Place","Hope Street","Jerry Moss Plaza","Marketplace","Metro Red/Purple Lines Entrance","Olive Court","Olive Street","Temple Street","West Bank Plaza at The Broad"],
 
   rows: [
     {
@@ -191,18 +191,6 @@ module.exports = {
       "basis": "alignment",
       "note": "This modern mid-block segment occupies the historical Court House Street corridor between Hill and Fort/Broadway.",
       "name": "court-house-street"
-    },
-    {
-      "kind": "absent",
-      "street": "Flower Street",
-      "from": "Hope Street",
-      "to": {
-        "px": [
-          999,
-          395
-        ]
-      },
-      "note": "The short modern Flower approach curves away from Hope across ground where the sheet draws no corresponding roadway."
     },
     {
       "kind": "absent",
