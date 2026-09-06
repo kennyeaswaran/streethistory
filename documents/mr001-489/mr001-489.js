@@ -499,6 +499,145 @@ module.exports = {
       "basis": "alignment",
       "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
       "name": "hill-street-downtown"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Second Street",
+      "street": "2nd Street",
+      "from": {
+        "px": [
+          1042,
+          815
+        ]
+      },
+      "to": "Hill Street",
+      "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
+      "name": "second-street"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Third Street",
+      "street": "3rd Street",
+      "from": null,
+      "to": null,
+      "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
+      "name": "third-street"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Fourth Street",
+      "street": "4th Street",
+      "from": null,
+      "to": null,
+      "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
+      "name": "fourth-street"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Charity Street",
+      "street": "Grand Avenue",
+      "from": "West Bank Plaza at The Broad",
+      "to": "4th Street",
+      "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
+      "name": "charity"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Hill Street",
+      "street": "Hill Street",
+      "from": {
+        "px": [
+          735,
+          888
+        ]
+      },
+      "to": {
+        "px": [
+          676,
+          890
+        ]
+      },
+      "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
+      "name": "hill-street-downtown"
+    },
+    {
+      "kind": "absent",
+      "street": "Jerry Moss Plaza",
+      "from": {
+        "px": [
+          1437,
+          527
+        ]
+      },
+      "to": {
+        "px": [
+          1445,
+          457
+        ]
+      },
+      "note": "Added in review: the sheet covers this 137 m and draws no street along it."
+    },
+    {
+      "kind": "absent",
+      "street": "Metro Red/Purple Lines Entrance",
+      "from": {
+        "px": [
+          1196,
+          866
+        ]
+      },
+      "to": {
+        "px": [
+          1233,
+          845
+        ]
+      },
+      "note": "Added in review: the sheet covers this 47 m and draws no street along it."
+    },
+    {
+      "kind": "state",
+      "asWritten": "Olive Street",
+      "street": "Olive Court",
+      "from": {
+        "px": [
+          1461,
+          721
+        ]
+      },
+      "to": {
+        "px": [
+          1404,
+          721
+        ]
+      },
+      "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
+      "name": "olive"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Hill Street",
+      "street": "Hill Street",
+      "from": {
+        "px": [
+          735,
+          888
+        ]
+      },
+      "to": {
+        "px": [
+          676,
+          890
+        ]
+      },
+      "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
+      "name": "hill-street-downtown"
     }
   ]
 };

@@ -833,6 +833,26 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("no Hope Street row claims more than the whole street",
        m.hopeRows.every(x => x <= m.hopeLen), JSON.stringify([m.hopeRows, m.hopeLen]));
     ok("Community Terrace is a ring", m.ctLoop === true);
+    // 2nd Street's run folds at the Hill Street tunnel split; the 56 m gap
+    // on the short leg starts at run index 0, which is an end of the run but
+    // NOT its west end. Answering it must cover the gap, not the long leg.
+    const g2 = await page.evaluate(() => {
+      const m = lastModel || reviewModel();
+      const rec = m.streets.find(s => s.name === "2nd Street");
+      const gap = rec.gaps.find(g => g.a === 0 && foldIndices(rec.runs[g.runIndex]).length);
+      if (!gap) return null;
+      const ends = gapExtents(rec, gap);
+      const pA = extentPoint(rec.name, ends.from, []), pB = extentPoint(rec.name, ends.to, []);
+      const ranges = clipRanges(rec.runs[gap.runIndex], pA, pB, streetIsNS(rec));
+      return { gap: [gap.a, gap.b], ends, ranges };
+    });
+    ok("2nd Street has a gap on the short leg of a folded run", !!g2, "none found");
+    if (g2) {
+      ok("…whose answer names both ends explicitly, not 'the street's end'",
+         g2.ends.from !== null && g2.ends.to !== null, JSON.stringify(g2.ends));
+      ok("…and the row it would make covers exactly the gap",
+         JSON.stringify(g2.ranges) === JSON.stringify([g2.gap]), JSON.stringify(g2));
+    }
     ok("…and a row to its 'end' closes it, rather than leaving an unreachable arc",
        m.ctGaps === 0 && m.ctStatus === "named", JSON.stringify(m));
     // the swap button sits on rows of a ring, and turns the arc round

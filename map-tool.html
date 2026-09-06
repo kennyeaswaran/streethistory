@@ -2353,10 +2353,16 @@ function gapExtents(rec, gap) {
     const pt = p => G.snapOrPoint(streetPoints, rec.name, p, toPx, { maxM: -1 }).value;
     return { from: pt(run[gap.a]), to: pt(run[gap.b]) };
   }
-  let A = { p: run[gap.a], atEnd: gap.a === 0 },
-      B = { p: run[gap.b], atEnd: gap.b === run.length - 1 };
+  // "The street's end" (null) is the CANONICAL end — west, or north — not
+  // whichever extremity of the run the gap happens to touch. On a run that
+  // folds back on itself (2nd Street at the Hill Street tunnel split) index 0
+  // is an end of the run but not the west end, and a row written `from: null`
+  // for a gap there covered the long leg past the fold instead of the 56 m it
+  // was answering. So null only where the end really is that end.
+  const ends = runEnds(run, isNS);
+  let A = { p: run[gap.a], i: gap.a }, B = { p: run[gap.b], i: gap.b };
   if (isNS ? sc(A.p) < sc(B.p) : sc(A.p) > sc(B.p)) { const t = A; A = B; B = t; }
-  return { from: end(A.p, A.atEnd), to: end(B.p, B.atEnd) };
+  return { from: end(A.p, A.i === ends.fromIdx), to: end(B.p, B.i === ends.toIdx) };
 }
 const describeEnd = v => v == null ? "the street's end in coverage"
   : typeof v === "object" ? (v.px ? `px ${v.px[0]},${v.px[1]}` : `${v.ll[0]}, ${v.ll[1]}`)
