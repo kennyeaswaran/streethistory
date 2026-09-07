@@ -1,0 +1,155 @@
+{
+  "document": "mr039-069",
+  "image": "mr039-069-100dpi.png",
+  "imageSize": [1117, 1699],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr039-069-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [245, 330],
+    [150, 1380],
+    [954, 1418],
+    [995, 571]
+  ],
+  "coverageLl": [
+    [34.047948, -118.247718],
+    [34.046763, -118.24905],
+    [34.045954, -118.247923],
+    [34.046943, -118.2469]
+  ],
+  "streets": [
+    {
+      "name": "5th Street",
+      "runs": [
+        {
+          "px": [
+            [962, 1251],
+            [729, 1256],
+            [445, 1256],
+            [394, 1255],
+            [347, 1252],
+            [327, 1251],
+            [222, 1255],
+            [161, 1255]
+          ],
+          "ll": [
+            [34.046149, -118.247721],
+            [34.046364, -118.248066],
+            [34.046634, -118.24848],
+            [34.046682, -118.248552],
+            [34.046731, -118.248618],
+            [34.046751, -118.248645],
+            [34.046846, -118.248803],
+            [34.046904, -118.248892]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Los Angeles Street",
+          "px": [1051, 1255],
+          "ll": [34.04606, -118.247596],
+          "insideCoverage": false
+        },
+        {
+          "name": "Main Street",
+          "px": [394, 1255],
+          "ll": [34.046682, -118.248552],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Main Street",
+      "runs": [
+        {
+          "px": [
+            [395, 1392],
+            [393, 1294],
+            [393, 1283],
+            [394, 1255],
+            [393, 1205],
+            [400, 933],
+            [399, 840],
+            [396, 593],
+            [395, 534],
+            [396, 443],
+            [397, 402],
+            [396, 378]
+          ],
+          "ll": [
+            [34.046517, -118.248707],
+            [34.046637, -118.248599],
+            [34.04665, -118.248586],
+            [34.046682, -118.248552],
+            [34.046744, -118.248497],
+            [34.047069, -118.248178],
+            [34.047183, -118.248074],
+            [34.047485, -118.247797],
+            [34.047558, -118.247731],
+            [34.047668, -118.247627],
+            [34.047716, -118.247579],
+            [34.047746, -118.247553]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Street",
+          "px": [389, 69],
+          "ll": [34.048128, -118.247212],
+          "insideCoverage": false
+        },
+        {
+          "name": "5th Street",
+          "px": [394, 1255],
+          "ll": [34.046682, -118.248552],
+          "insideCoverage": true
+        },
+        {
+          "name": "Winston Street",
+          "px": [395, 534],
+          "ll": [34.047558, -118.247731],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Winston Street",
+      "runs": [
+        {
+          "px": [
+            [395, 534],
+            [446, 543],
+            [655, 607],
+            [726, 627],
+            [988, 708]
+          ],
+          "ll": [
+            [34.047558, -118.247731],
+            [34.047499, -118.247667],
+            [34.047223, -118.247436],
+            [34.047131, -118.247355],
+            [34.046783, -118.247066]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Los Angeles Street",
+          "px": [1055, 734],
+          "ll": [34.046689, -118.246998],
+          "insideCoverage": false
+        },
+        {
+          "name": "Main Street",
+          "px": [395, 534],
+          "ll": [34.047558, -118.247731],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

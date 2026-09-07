@@ -39,6 +39,41 @@ const NEW_NAME_ENTITIES = {
     internalNote: "Minted in review from 11824, where the ink reads “Moran's Lane”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
+  },
+
+  "ozier-lane": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr005-110","sheet":"Rivara and Vignolo Tract","asWritten":["Ozier Lane"]}
+    ],
+    spellings: [{"forms":["Ozier Lane"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr005-110, where the ink reads “Ozier Lane”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "winston-st": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr012-026","sheet":"Mills' Tract","asWritten":["Winston Street"]},
+      {"doc":"mr039-069","sheet":"Jones and Ponet Block","asWritten":["WINSTON ST","Winston St"]}
+    ],
+    spellings: [{"forms":["Winston Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr039-069, where the ink reads “Winston St”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
   }
 
 };

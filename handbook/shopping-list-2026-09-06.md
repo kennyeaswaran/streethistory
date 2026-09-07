@@ -1,6 +1,72 @@
-# Download shopping list — closed, with one gap
+# Download shopping list
 
-Opened 2026-09-06 for Georgia/Mott/Maple/Wall/San Julian; closed the same day.
+Opened 2026-09-06 for Georgia/Mott/Maple/Wall/San Julian, closed the same day,
+reopened for Los Angeles Street. The Los Angeles Street batch is at the top;
+the closed batch and its outcomes follow.
+
+## Los Angeles Street, 7th up to the Plaza
+
+Sampled 2026-09-06 at 700, 600, 540, 500, 430, 400, 300, 200 and 103 S and
+100 N / 300 N. **The street changes character halfway up**: 19th-century
+Miscellaneous Records filings from 7th to about 2nd, then nothing at all.
+
+### The three worth having — new, 19th century, M.R.
+
+| Near | Tract | Map-Ref | Sampled at | PDF |
+|---|---|---|---|---|
+| 5th | **Rivara and Vignolo Tract** | **M R 5-110** | 500 S Los Angeles St, Lot 8 (APN 5148018026) | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf |
+| 4th-5th | **Jones and Ponet Block** | **M R 39-69** | 430 S Los Angeles St, Lot 2 (APN 5148010027) | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR039/MR039-069.pdf |
+| 4th | **Mills' Tract** | **M R 12-26** | 400 S Los Angeles St, Lot 15 (APN 5148007001) | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf |
+
+All three existence-checked: real scans, no OCR layer. Rivara and Vignolo is a
+fourth Californio/immigrant landholding name in this district, alongside
+Urquidez, Moreno and Celis.
+
+**Mills' Tract is a live lead, not just coverage.** `research-leads.md` carries
+an open question about H. W. Mills, third owner of the Orchard Tract, and
+whether he is the Mills of the "Mills and Wicks Subdn." at M.R. 13-87/88. This
+sheet is a *third* Mills datapoint: M.R. 12-26 sits one block from the Orchard
+Tract's own frontage (M R 5-5, at 3rd), and it is in the same book as the
+Bliss Tract sheet M.R. 12-42 where the Mills and Wicks margin note was found.
+Reading its title block may settle the question outright.
+
+### The four 20th-century Map Book sheets, if wanted
+
+These letter Los Angeles Street but late, so they are worth less for naming.
+Filenames taken from each book's own `List.aspx` listing rather than guessed.
+
+| Near | Tract | Map-Ref | PDF |
+|---|---|---|---|
+| 7th | TR 1489 | M B 20-3 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0020/TR0020-003.pdf |
+| 6th | 6th St. Terminal Tract | M B 9-100 | `TR0009-100.pdf` **or** `TR0009-100a.pdf` |
+| 5th-6th | Sumner and Garibaldi Tract | M B 12-129 | `TR0012-129.pdf` **or** `TR0012-129a.pdf` |
+| 2nd | Perry-Hellman Property | M B 5-49 | `TR0005-049a.pdf` **or** `TR0005-049b.pdf` |
+
+Three of the four hit the suffix gotcha: the page number holds more than one
+filing and the listing gives two files with no way to tell them apart from
+outside. Note book 5 page 49 has **no** plain `TR0005-049.pdf` at all — only
+`a` and `b`. Open and check the title block before keeping either; the pair may
+be unrelated subdivisions in another city entirely.
+Base: `https://pw.lacounty.gov/sur/nas/landrecords/tract/MB{book}/`
+
+### North of 2nd Street there is no tract map — NEGATIVE
+
+103 S, 100 N and 300 N Los Angeles Street all report the same thing: **City
+Lands of Los Angeles**, M R 2-504/505 with Patent 3-64/65, an *unnumbered* lot.
+That is the identical unsubdivided sheet already ruled unusable for San Julian
+below Ninth. So the whole Plaza end of Los Angeles Street — the oldest ground
+on the street — is not reachable by tract map at all. It was never platted by a
+private subdivider, and its naming has to come from Ord's 1849 survey
+(`documents/_ord-1849`, currently parked), council minutes and directories.
+Don't re-run the NavigateLA pass on that stretch.
+
+### Already covered
+
+300 S Los Angeles St is the **Orchard Tract**, M R 5-5 — already a swept
+document. Twelve documents already carry rows on Los Angeles Street, so this
+batch is filling gaps rather than opening the street.
+
+
 Every county sheet it listed is now a swept `documents/<id>/`, and Kenny has
 worked through the Huntington URLs. **One item is still outstanding — the
 wrong file was downloaded for it (see below).** Everything else here is a
