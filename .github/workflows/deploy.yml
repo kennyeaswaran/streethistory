@@ -34,6 +34,31 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # The preview page reads generated/streets-data.gen.js, which is built
+      # from documents/ by generate.js. Rebuilding it here means a pushed
+      # document reaches the site whether or not anyone remembered to run the
+      # generator and commit its output (the committed copy is still useful:
+      # it is what a checkout shows, and the fallback if this step is skipped).
+      #
+      # generate.js exits 1 whenever a row cannot be placed on the geometry
+      # (see generated/report.md). Such rows are DROPPED from the output and
+      # the files are still written whole, so that is not a reason to hold the
+      # site back — a few are expected at any time. What would be is a
+      # generator that crashed mid-write, so the outputs are parsed afterwards
+      # and only a file that does not parse fails the deploy.
+      - name: Rebuild generated/ from documents/
+        run: |
+          node check-model.js || echo "::warning::check-model.js reported problems (not blocking the deploy)"
+          node generate.js || echo "::warning::generate.js reported row problems — see generated/report.md (not blocking the deploy)"
+          node -e "
+            const fs = require('fs');
+            for (const f of ['generated/streets-data.gen.js', 'generated/search-index.js'])
+              new Function(fs.readFileSync(f, 'utf8'));
+            console.log('generated/ parses');
+          "
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

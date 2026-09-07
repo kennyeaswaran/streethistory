@@ -38,6 +38,14 @@ Commit to main → Push origin. The checker runs automatically; if it fails,
 the previous version of the site stays up (see the red X in the Actions tab
 for what went wrong).
 
+The deploy also **rebuilds `generated/` itself** (`node generate.js`) before
+uploading, so a pushed document reaches `preview.html` even if the generator
+was not run locally. Row problems (a street the geometry file lacks, a cross
+street that does not meet it) do not block it — those rows are dropped and
+listed in the Actions log; only a generator crash that leaves an unparseable
+file does. Still run the generator and commit its output when you can: the
+committed copy is what a checkout and the local preview show.
+
 ## Custom domain (later)
 
 Don't redirect — point the domain at GitHub so it stays in the address bar:
