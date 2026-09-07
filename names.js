@@ -137,7 +137,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Georgia Street"], disambiguation: "east of Alameda" }],
     namedAfter: "Likely {{the state}}",
     namedAfterLink: "https://en.wikipedia.org/wiki/Georgia_(U.S._state)",
-    categories: ["unknown"],
+    categories: ["place"],
     sources: [],
     disputed: false,
     note: "Very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street.",
@@ -240,17 +240,18 @@ const NAME_ENTITIES = {
 
   "huber-st": {
     spellings: [{ forms: ["Huber Street"] }],
-    namedAfter: "Not documented; most likely {{Caroline Howard (n\u00e9e Huber)}}, wife of the tract developer Dr. Frederick Preston Howard \u2014 the same inference that explains Carolina Street, one block east, now Hewitt Street",
+    namedAfter: "Not documented; most likely {{Caroline Howard (née Huber)}}, wife of the tract developer Dr. Frederick Preston Howard — the same inference that explains Carolina Street, one block east, now Hewitt Street.",
     namedAfterLink: "https://lastreetnames.com/street/colyton-street/",
-    categories: ["person", "unknown"],
+    categories: ["person","unknown"],
     sources: [
-      { title: "Recorded map: F.P. Howard & Co.\u2019s Subdivision of the Bliss Tract, M.R. 12-42 (Aug. 1886) \u2014 shows \u201cHuber Street\u201d at 828 E 4th St\u2019s location",
+      { title: "Recorded map: F.P. Howard & Co.’s Subdivision of the Bliss Tract, M.R. 12-42 (Aug. 1886) — shows “Huber Street” at 828 E 4th St’s location",
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf" }
     ],
     disputed: false,
     note: "Named on the 1886 subdivisions between Alameda and the Santa Fe grounds; the namesake is an inference from the neighbouring Carolina Street, not a record.",
-    internalNote: "The reasoning is already worked out in streets-data.js (4th Street, \u201cAlameda to Hewitt (Huber St)\u201d) and handbook/research-leads.md. STILL UNPROVEN: nothing documents Huber -> 4th/Larkin/Short by name; research-leads asks for a CDNC or 1890s city-directory search. NB the Bliss Tract sheet is M.R. 12-42 \u2014 inbox/MR011-042.pdf is the Goodwin Tract, a different sheet, so 12-42 still needs downloading.",
-    possiblySameAs: null, aliases: []
+    internalNote: "The reasoning is already worked out in streets-data.js (4th Street, “Alameda to Hewitt (Huber St)”) and handbook/research-leads.md. STILL UNPROVEN: nothing documents Huber -> 4th/Larkin/Short by name; research-leads asks for a CDNC or 1890s city-directory search. NB the Bliss Tract sheet is M.R. 12-42 — inbox/MR011-042.pdf is the Goodwin Tract, a different sheet, so 12-42 still needs downloading.",
+    possiblySameAs: null,
+    aliases: []
   },
 
   // ---- the 1884 Glassell tract (M.R. 6-138) -------------------------------
@@ -261,24 +262,25 @@ const NAME_ENTITIES = {
 
   "aztec-avenue": {
     spellings: [{ forms: ["Aztec Avenue"] }],
-    namedAfter: "The {{Aztec}} empire — one of a conquest theme Andrew Glassell ran through his 1884 subdivision, alongside Cortez Street for Hern\u00e1n Cort\u00e9s and Montezuma Avenue (now Dawson Street) for Moctezuma II",
+    namedAfter: "The {{Aztec}} empire — one of a conquest theme Andrew Glassell ran through his 1884 subdivision, alongside Cortez Street for Hernán Cortés and Montezuma Avenue (now Dawson Street) for Moctezuma II",
     namedAfterLink: "https://en.wikipedia.org/wiki/Aztecs",
-    categories: ["place", "history"],
+    categories: ["history"],
     sources: [
-      { title: "L.A. Street Names: Cortez Street (\u201cwhat is now Belmont Avenue was called Aztec Avenue and what is now Dawson Street was called Montezuma Avenue\u2026 Glassell was clearly going for a theme here\u201d)",
+      { title: "L.A. Street Names: Cortez Street (“what is now Belmont Avenue was called Aztec Avenue and what is now Dawson Street was called Montezuma Avenue… Glassell was clearly going for a theme here”)",
         url: "https://lastreetnames.com/street/cortez-street/" }
     ],
     disputed: false,
     note: null,
-    internalNote: "Kines\u2019s Cortez Street page names the theme and confirms Aztec Avenue = modern Belmont Avenue independently of our alignment, which is a clean check on the AI pass. It attributes Cortez/Aztec/Montezuma to \u201cGlassell\u2019s Subdivision No. 2\u201d, 1884; M.R. 6-138 is Glassell\u2019s subdivision of Lot 7 etc. and draws Aztec, so the two are the same tract family \u2014 worth pinning down which sheet is which. Montezuma Avenue = Dawson Street is NOT yet an entity; Dawson was dropped from MR006-138 as polygon overshoot, so it needs its own document. Pizarro Street sits 206 m away and has no Kines page.",
-    possiblySameAs: null, aliases: []
+    internalNote: "Kines’s Cortez Street page names the theme and confirms Aztec Avenue = modern Belmont Avenue independently of our alignment, which is a clean check on the AI pass. It attributes Cortez/Aztec/Montezuma to “Glassell’s Subdivision No. 2”, 1884; M.R. 6-138 is Glassell’s subdivision of Lot 7 etc. and draws Aztec, so the two are the same tract family — worth pinning down which sheet is which. Montezuma Avenue = Dawson Street is NOT yet an entity; Dawson was dropped from MR006-138 as polygon overshoot, so it needs its own document. Pizarro Street sits 206 m away and has no Kines page.",
+    possiblySameAs: null,
+    aliases: []
   },
 
   "patton-street": {
     spellings: [{ forms: ["Patton Street"] }],
     namedAfter: "{{George Smith Patton (1856–1927)}}, the attorney who developed the street — nephew and law partner of Andrew Glassell, who subdivided the adjoining tract the following year, and father of the WWII general",
     namedAfterLink: "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)",
-    categories: ["person"],
+    categories: ["person","alive"],
     sources: [
       { title: "L.A. Street Names: Patton Street (“This 1883 street was named for its developer, attorney George Smith Patton (1856-1927)”)",
         url: "https://lastreetnames.com/street/patton-street/" },
@@ -576,7 +578,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Stanford Avenue"] }],
     namedAfter: "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
     namedAfterLink: "https://en.wikipedia.org/wiki/Leland_Stanford",
-    categories: ["person","governor"],
+    categories: ["person","governor","alive"],
     sources: [
       { title: "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
         url: "https://lastreetnames.com/street/towne-avenue-dtla/" }
@@ -596,7 +598,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Crocker Street"] }],
     namedAfter: "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific",
     namedAfterLink: "https://en.wikipedia.org/wiki/Charles_Crocker",
-    categories: ["person"],
+    categories: ["person","alive"],
     sources: [
       { title: "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
         url: "https://lastreetnames.com/street/towne-avenue-dtla/" }
@@ -612,59 +614,45 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Ruth Avenue"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: ["unknown","person"],
     sources: [
       { title: "Los Angeles Herald, “Talking Retrenchment” (the renaming committee restores Ruth Avenue), Feb. 21, 1897",
         url: "https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28" },
-      { title: "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the " +
-          "Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — names Ruth as one " +
-          "of the block's bounding streets",
+      { title: "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — names Ruth as one of the block's bounding streets",
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf" }
     ],
     disputed: false,
-    note: "Presumably a daughter of the landowner Joseph Wolfskill, whose orchard was being " +
-      "subdivided — the plat sets Ruth beside Gladys, and the Sabichi tract to the south " +
-      "continues the run of women's names with Agatha. No source names her. The street was " +
-      "still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing " +
-      "it and the council committee put the name back; it took the Stanford name later.",
-    internalNote: "Carried over from streets-data.js (Stanford Avenue's nameHistory). The " +
-      "daughter reading is an inference from the naming pattern, not a record.",
-    possiblySameAs: null, aliases: []
+    note: "Presumably a daughter of the landowner Joseph Wolfskill, whose orchard was being subdivided — the plat sets Ruth beside Gladys, and the Sabichi tract to the south continues the run of women's names with Agatha. No source names her. The street was still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing it and the council committee put the name back; it took the Stanford name later.",
+    internalNote: "Carried over from streets-data.js (Stanford Avenue's nameHistory). The daughter reading is an inference from the naming pattern, not a record.",
+    possiblySameAs: null,
+    aliases: []
   },
 
   "gladys-ave": {
     spellings: [{ forms: ["Gladys Avenue"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: ["person"],
     sources: [
-      { title: "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the " +
-          "Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth " +
-          "named as the block's bounding streets",
+      { title: "Recorded map: H.C. Halfpenny's Resubdivision of a part of Block 24 of the Wolfskill Orchard Tract, M.R. 54-84 (recorded Feb. 28, 1895) — Gladys and Ruth named as the block's bounding streets",
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-084.pdf" },
-      { title: "Recorded map: Wilde and Strong's Subdivision of the Frank Sabichi Tract, " +
-          "M.R. 66-64 (recorded Sept. 21, 1897) — Gladys continuing south alongside Ruth, " +
-          "Towne and Crocker",
+      { title: "Recorded map: Wilde and Strong's Subdivision of the Frank Sabichi Tract, M.R. 66-64 (recorded Sept. 21, 1897) — Gladys continuing south alongside Ruth, Towne and Crocker",
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf" },
       { title: "LA Parks: Gladys Park (6th and Gladys)",
         url: "https://recreation.parks.lacity.gov/park/6th-gladys-street" }
     ],
     disputed: false,
-    note: "The next street over from Ruth Avenue, and part of the same run of women's names " +
-      "that continues south across the Sabichi family's land as Agatha Street — Agatha " +
-      "Sabichi's mother was a daughter of the pioneer settler William Wolfskill. No source " +
-      "names a Gladys in the family or among the subdividers. The street runs through the " +
-      "heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
-    internalNote: "Carried over from streets-data.js. Searched without result (Kines has no " +
-      "page). The women's-name pattern is the whole of the argument.",
-    possiblySameAs: null, aliases: []
+    note: "The next street over from Ruth Avenue, and part of the same run of women's names that continues south across the Sabichi family's land as Agatha Street — Agatha Sabichi's mother was a daughter of the pioneer settler William Wolfskill. No source names a Gladys in the family or among the subdividers. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
+    internalNote: "Carried over from streets-data.js. Searched without result (Kines has no page). The women's-name pattern is the whole of the argument.",
+    possiblySameAs: null,
+    aliases: []
   },
 
   "ceres-ave": {
     spellings: [{ forms: ["Ceres Avenue"] }],
     namedAfter: "{{Ceres}}, the Roman goddess of agriculture and the harvest",
     namedAfterLink: "https://en.wikipedia.org/wiki/Ceres_(mythology)",
-    categories: ["unknown"],
+    categories: ["mythological"],
     sources: [],
     disputed: false,
     note: "This street was laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
@@ -718,22 +706,16 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Poplar Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: ["unknown","nature"],
     sources: [
-      { title: "Recorded map: F.P. Howard & Co.'s Subdivision of the Bliss Tract, M.R. 12-42 " +
-          "(subdivided Aug. 1886 by Geo. E. Knox) — shows “Poplar Street” at " +
-          "1100 E 5th St's location",
+      { title: "Recorded map: F.P. Howard & Co.'s Subdivision of the Bliss Tract, M.R. 12-42 (subdivided Aug. 1886 by Geo. E. Knox) — shows “Poplar Street” at 1100 E 5th St's location",
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf" }
     ],
     disputed: false,
-    note: "Named on Dr. Frederick Preston Howard's Bliss Tract in 1886, one block south of the " +
-      "Huber Street that runs through the same subdivision. No namesake is documented; a poplar " +
-      "would be in keeping with the orchard ground it was cut through, but nothing says so.",
-    internalNote: "Carried over from streets-data.js (5th Street, “Alameda to Hewitt " +
-      "(Poplar St)”). Same open question as Huber: nothing documents Poplar → Lugo " +
-      "→ 5th by name, and research-leads.md asks for a CDNC or directory search. The " +
-      "tree reading is mine, offered as a guess and labelled as one.",
-    possiblySameAs: null, aliases: []
+    note: "Named on Dr. Frederick Preston Howard's Bliss Tract in 1886, one block south of the Huber Street that runs through the same subdivision. No namesake is documented; a poplar would be in keeping with the orchard ground it was cut through, but nothing says so.",
+    internalNote: "Carried over from streets-data.js (5th Street, “Alameda to Hewitt (Poplar St)”). Same open question as Huber: nothing documents Poplar → Lugo → 5th by name, and research-leads.md asks for a CDNC or directory search. The tree reading is mine, offered as a guess and labelled as one.",
+    possiblySameAs: null,
+    aliases: []
   },
 
   // ---- Crown Hill, and the 1909 "Crownwood" sheet (M.B. 15-166) -----------
@@ -892,7 +874,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Bull Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: ["nature"],
     sources: [
       { title: "L.A. Street Names: Hill Street (on Calle del Toro / Castelar / N. Hill)",
         url: "https://lastreetnames.com/street/hill-street/" },
@@ -926,7 +908,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Eternity Street","Calle de la Eternidad"] }],
     namedAfter: "The concept of the eternity after death — it led to Calvary Cemetery, established in 1844. Though an 1895 account claims instead that it was so named because it had neither beginning nor end.",
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: ["aspiration","mythological"],
     sources: [
       { title: "L.A. Street Names: Broadway (on Calle Eternidad)",
         url: "https://lastreetnames.com/street/broadway/" },
@@ -1008,7 +990,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Spring Street"] }],
     namedAfter: "Possibly {{Trinidad Ortega}} (1832–1903), who was nicknamed “Primavera”",
     namedAfterLink: null,
-    categories: ["person","unknown"],
+    categories: ["person","unknown","alive"],
     sources: [
       { title: "L.A. Street Names: Spring Street",
         url: "https://lastreetnames.com/street/spring-street/" },
@@ -1100,7 +1082,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Short Street","Calle Alta"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: ["unknown","descriptive"],
     sources: [],
     disputed: false,
     note: "Lettered on the 1849 survey along ground that roughly follows one block of what is now Cesar E. Chavez Avenue. Descriptive, presumably, but nothing documents it.",
@@ -1146,7 +1128,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Catesby Lane"] }],
     namedAfter: "The Thom family name — Cameron Thom's son was Charles Catesby Thom, and a brother carried it too",
     namedAfterLink: "https://en.wikipedia.org/wiki/Cameron_E._Thom",
-    categories: ["person"],
+    categories: ["person","alive"],
     sources: [
       { title: "Los Angeles Revisited: The Antebellum Past at Cameron Lane in DTLA",
         url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" }
@@ -1287,7 +1269,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Pico Street"] }],
     namedAfter: "{{Pío de Jesús Pico}} (1801–1894), the last Mexican governor of Alta California and a major landowner",
     namedAfterLink: "https://en.wikipedia.org/wiki/Pio_Pico",
-    categories: ["person","governor"],
+    categories: ["person","governor","alive"],
     sources: [
       { title: "L.A. Street Names: Pico Boulevard",
         url: "https://lastreetnames.com/street/pico-boulevard/" }
@@ -1427,7 +1409,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Castelar Street"] }],
     namedAfter: "{{Emilio Castelar}} (1832–1899), president of the First Spanish Republic in 1873–74",
     namedAfterLink: "https://en.wikipedia.org/wiki/Emilio_Castelar",
-    categories: ["person"],
+    categories: ["person","alive","foreign"],
     sources: [
       { title: "L.A. Street Names: Hill Street (on Calle del Toro / Castelar / N. Hill)",
         url: "https://lastreetnames.com/street/hill-street/" }
@@ -1435,7 +1417,8 @@ const NAME_ENTITIES = {
     disputed: false,
     note: "Castelar had left office a few weeks before the Los Angeles council renamed the street in February 1874 — the First Republic fell that January.",
     internalNote: "Minted 2026-09-04 from documents/ord-1874-02-26, which renames Bull Street to Castelar Street. The namesake is Kines's claim (lastreetnames.com's Hill Street page), carried over from the `bull` entity's note, where it read “apparently”; nothing contemporary has been found saying so. The dates fit the way a topical naming would: Castelar was the Republic's last president and had just fallen, which is exactly when a city council reaches for a name. Not proof.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "yale": {
@@ -1584,12 +1567,13 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Ida Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: ["unknown","person"],
     sources: [],
     disputed: false,
     note: "A given name on the Widow Botiller Tract resubdivision of March 1888 — presumably someone in the family, though the sheet does not say so. It is now Cecelia Street.",
     internalNote: "The dedication names Juana María Reyes de Botiller, Felipe and Tadeo Botiller, Vicenta B. de Ybarrondo and the adjoining owner Dionisio Botiller; no Ida. Kines's Cecelia Street page is the Cudahy/Bell Gardens street named for Cecelia Cudahy Casserly and has nothing to do with this ground (checked 2026-09-06). Moved out of names-new.js 2026-09-06.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "wall-street": {
@@ -1610,7 +1594,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Clark Avenue"] }],
     namedAfter: "Wesley Clark, senior partner in the Los Angeles real-estate firm of Clark & Bryan, who owned this tract with Elden P. Bryan",
     namedAfterLink: null,
-    categories: ["person"],
+    categories: ["person","alive"],
     sources: [
       { title: "Homestead Museum: “No Place Like Home: The Elden P. Bryan Residence” (on the firm of Clark & Bryan)",
         url: "https://homesteadmuseum.blog/2016/12/06/no-place-like-home-the-elden-p-bryan-residence-los-angeles-ca-1907/" }
@@ -1618,7 +1602,8 @@ const NAME_ENTITIES = {
     disputed: false,
     note: "Clark and Bryan signed the map as owners on Nov. 14, 1893, giving their addresses as 127 West 3rd Street and 202 South Spring Street; the avenue ran through their own subdivision. It is now part of Crocker Street.",
     internalNote: "Identified from the sheet itself (documents/mr053-065), which letters both owners' names and street addresses beside the title and carries their notarised acknowledgment of ownership. The partnership is corroborated by the Homestead Museum's post on Bryan's house, which names Wesley Clark as his partner in Clark & Bryan and dates Bryan's arrival in Los Angeles to the end of 1886. Wesley Clark's own dates were NOT found — no Wikipedia article, no Kines page, nothing in the sources checked 2026-09-06 — so the entity claims the man and not his lifespan. The guess recorded when this was minted (“likely the owner of the tract”) turns out to be right. Moved out of names-new.js 2026-09-06.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   // ---- the Moreno Vineyard Tract, recorded Mar. 1876 (M.R. 3-166) ---------
@@ -1671,7 +1656,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Morgan Lane"] }],
     namedAfter: "George W. Morgan, one of the three men the tract was subdivided for and, with A. H. Judson, one of the two at whose request it was recorded",
     namedAfterLink: null,
-    categories: ["person"],
+    categories: ["person","alive"],
     sources: [
       { title: "Wikipedia: Highland Park, Los Angeles (George Morgan and Albert Judson created the Highland Park tract in 1886)",
         url: "https://en.wikipedia.org/wiki/Highland_Park,_Los_Angeles" }
@@ -1679,7 +1664,8 @@ const NAME_ENTITIES = {
     disputed: false,
     note: "The lane ran through its owners' own subdivision: the sheet says the tract was subdivided for G. W. Morgan, A. H. Judson and H. W. Mills in July 1882, and it was recorded at the request of Morgan & Judson. It did not stay a lane long — in October 1883 the city agreed to accept it as a public street, widen it to sixty feet and rename it Mayo Street. The corridor is 3rd Street today.",
     internalNote: "Identified from the sheet itself (documents/mr005-005), whose title block names the three owners and whose recorder's note reads “Recorded at request of Morgan & Judson Aug 2. 1882” — the same evidence that identifies Clark Avenue. Kines has no Morgan Lane page. A George Morgan and an Albert Judson created the Highland Park tract four years later, in 1886, and the surnames, initials, partnership and period all fit this pair — Wikipedia is cited for that, but identifying the two Morgans with each other is an inference this project has not proved, and the street is claimed for the man on THIS sheet either way. His dates were not found: no biography, no Kines page (the Wikipedia “George W. Morgan” is an Ohio Civil War general, a different man — do not link him). Moved out of names-new.js 2026-09-06. SEQUEL FOUND THE SAME DAY: documents/lah-1883-10-21 has the Council ordering an ordinance drafted to rename the lane Mayo Street on acceptance. That is an instruction to draft, so `mayo` is what was ORDERED and not yet known to have been enacted — no entity minted for it, and the corridor's chain reads Morgan Lane (1882) → Mayo Street (ordered 1883) → … → 3rd Street with the middle step unconfirmed.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "boyd-street": {
@@ -1745,12 +1731,13 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Whisler Street"] }],
     namedAfter: "Mrs. Lourena Whisler, the owner at whose request the subdivision was made and recorded",
     namedAfterLink: null,
-    categories: ["person"],
+    categories: ["person","alive"],
     sources: [],
     disputed: false,
     note: "The sheet is “subdivided at request of Mrs. Lourena Whisler, Nov. 25th 1886” and was recorded three weeks later at her request; the street runs through her own ground. It is part of San Julian Street today.",
     internalNote: "Identified from the sheet itself (documents/mr012-064), whose title block and recorder's note both name her — the same evidence that identifies Clark Avenue and Morgan Lane, and the first of the three where the owner is a woman. Her dates and her husband's name were not looked for. Kines has no Whisler Street page (checked 2026-09-06). The surveyor is John Goldsworthy, County Surveyor-elect, who also surveyed the Goldsworthy 8th St. Tract (documents/mr011-008) and whose name is on the land adjoining the Widow Botiller tract — a recurring figure in this corner of the corpus. Moved out of names-new.js 2026-09-06.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   // ---- extended over Tulip Street by Ordinance No. 3829, Aug. 1896 ---------
