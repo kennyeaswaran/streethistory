@@ -23,6 +23,24 @@
 // an entity into names.js to make your edits stick.
 
 const NEW_NAME_ENTITIES = {
+
+  "moran-s-lane": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"11824","sheet":"Botiller and Reyes lots","asWritten":["Moran's Lane"]}
+    ],
+    spellings: [{"forms":["Moran's Lane"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from 11824, where the ink reads “Moran's Lane”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  }
+
 };
 
 if (typeof module !== "undefined") module.exports = { NEW_NAME_ENTITIES };

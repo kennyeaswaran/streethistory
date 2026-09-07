@@ -1171,6 +1171,25 @@ street (40 ft wide, ~3,000 ft) — context for Broadway/Hill-area entries.
   fabric and any old M.R./tract reference for this block have been erased by
   that development — this street can't be dated via NavigateLA. The "Mills
   and Wicks" lead above is the next avenue, not another NavigateLA pass.
+- **Dunigan Tract lookup — blocked by modern redevelopment** (2026-09-06): the
+  same species as Molino above, one step worse. Carleton and Summerfield's Sub
+  of the Dunigan Tract carries the `nevada-1886` stretch of Georgia Street, and
+  it has no Map-Ref obtainable from NavigateLA at all. **Every** parcel the
+  assessor holds in the tract is DELETED — 1317 Georgia St struck 09/24/1987,
+  1355 Georgia 11/17/1987, 1358 and 1407 Georgia 03/28/1988 — the Convention
+  Center expansion eating the block. A Map-Ref lookup resolves a *live* parcel,
+  so with none left there is nothing to answer with; 1317 and 1355 Georgia both
+  geocode back to 1099 Georgia, the last addressed parcel on the street. So
+  that stretch of Georgia Street is pavement that no longer exists: it can
+  never be confirmed by a modern parcel, and its extent has to come from plats
+  and directories alone. The Huntington has no Dunigan, Carleton or Summerfield
+  sheet either (checked 2026-09-06). Don't re-run the NavigateLA pass.
+- **San Julian below Ninth — NEGATIVE, no tract map exists** (2026-09-06): the
+  parcel there reports the City Lands of Los Angeles (M R 2-504/505, Patent
+  3-64/65) with an *unnumbered* lot and 167 addresses on it — unsubdivided
+  remnant of the original city survey, never platted by a private subdivider.
+  Kenny read the sheet: nothing usable for this project. So San Julian's name
+  on that stretch cannot have come from a tract map. Don't look it up again.
 
 ---
 
