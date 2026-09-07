@@ -1,0 +1,380 @@
+{
+  "document": "mr010-008",
+  "image": "mr010-008-100dpi.png",
+  "imageSize": [1138, 1636],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr010-008-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [66, 567],
+    [281, 1183],
+    [1071, 1286],
+    [1043, 827]
+  ],
+  "coverageLl": [
+    [34.051491, -118.242185],
+    [34.049603, -118.242148],
+    [34.048602, -118.239657],
+    [34.049889, -118.23925]
+  ],
+  "streets": [
+    {
+      "name": "1st Street",
+      "runs": [
+        {
+          "px": [
+            [1055, 1019],
+            [1040, 1014],
+            [921, 964],
+            [908, 959],
+            [887, 952],
+            [850, 938],
+            [721, 887],
+            [577, 829],
+            [539, 812],
+            [502, 794],
+            [302, 708],
+            [269, 694],
+            [222, 672],
+            [185, 656],
+            [155, 643],
+            [82, 612]
+          ],
+          "ll": [
+            [34.049351, -118.23942],
+            [34.049378, -118.239463],
+            [34.049622, -118.239801],
+            [34.049647, -118.239837],
+            [34.049688, -118.2399],
+            [34.049759, -118.240007],
+            [34.050016, -118.240375],
+            [34.050306, -118.240788],
+            [34.050389, -118.240894],
+            [34.050471, -118.240996],
+            [34.050889, -118.241561],
+            [34.050958, -118.241653],
+            [34.051061, -118.241787],
+            [34.051138, -118.241889],
+            [34.051201, -118.241975],
+            [34.051352, -118.242182]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Astronaut Ellison S Onizuka Street",
+          "px": [185, 656],
+          "ll": [34.051138, -118.241889],
+          "insideCoverage": true
+        },
+        {
+          "name": "Central Avenue",
+          "px": [1148, 1040],
+          "ll": [34.049207, -118.239138],
+          "insideCoverage": false
+        },
+        {
+          "name": "Japanese Village Plaza Mall",
+          "px": [1024, 1025],
+          "ll": [34.049363, -118.239527],
+          "insideCoverage": true
+        },
+        {
+          "name": "Judge John Aiso Street",
+          "px": [539, 812],
+          "ll": [34.050389, -118.240894],
+          "insideCoverage": true
+        },
+        {
+          "name": "Los Angeles Street",
+          "px": [1, 579],
+          "ll": [34.051518, -118.242411],
+          "insideCoverage": false
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [539, 812],
+          "ll": [34.050389, -118.240894],
+          "insideCoverage": true
+        },
+        {
+          "name": "Toriumi Plaza",
+          "px": [509, 761],
+          "ll": [34.050555, -118.240937],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Astronaut Ellison S Onizuka Street",
+      "runs": [
+        {
+          "px": [
+            [185, 656],
+            [166, 696],
+            [161, 712],
+            [160, 726],
+            [160, 743],
+            [163, 756],
+            [170, 772],
+            [216, 849],
+            [217, 853],
+            [236, 889],
+            [255, 925],
+            [284, 984],
+            [316, 1047],
+            [350, 1117],
+            [358, 1147],
+            [359, 1163],
+            [369, 1190],
+            [370, 1193]
+          ],
+          "ll": [
+            [34.051138, -118.241889],
+            [34.051044, -118.241996],
+            [34.051007, -118.242029],
+            [34.050969, -118.242049],
+            [34.05092, -118.242067],
+            [34.050883, -118.242071],
+            [34.050832, -118.242065],
+            [34.05058, -118.241997],
+            [34.050568, -118.241998],
+            [34.050452, -118.241975],
+            [34.050334, -118.241953],
+            [34.050147, -118.24192],
+            [34.049945, -118.241883],
+            [34.04972, -118.24185],
+            [34.049631, -118.241854],
+            [34.049587, -118.24187],
+            [34.049503, -118.241867],
+            [34.049495, -118.241867]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [185, 656],
+          "ll": [34.051138, -118.241889],
+          "insideCoverage": true
+        },
+        {
+          "name": "2nd Street",
+          "px": [371, 1211],
+          "ll": [34.049443, -118.241882],
+          "insideCoverage": false
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [399, 1202],
+          "ll": [34.049442, -118.24178],
+          "insideCoverage": false
+        },
+        {
+          "name": "Toriumi Plaza",
+          "px": [276, 663],
+          "ll": [34.051036, -118.241599],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Japanese Village Plaza Mall",
+      "runs": [
+        {
+          "px": [
+            [838, 1256],
+            [904, 1241],
+            [911, 1227],
+            [930, 1225],
+            [1003, 1049],
+            [1008, 1035]
+          ],
+          "ll": [
+            [34.048898, -118.240394],
+            [34.048879, -118.240159],
+            [34.04891, -118.240119],
+            [34.048899, -118.240056],
+            [34.049316, -118.239624],
+            [34.049348, -118.239592]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1024, 1025],
+          "ll": [34.049363, -118.239527],
+          "insideCoverage": true
+        },
+        {
+          "name": "2nd Street",
+          "px": [758, 1350],
+          "ll": [34.048711, -118.240759],
+          "insideCoverage": false
+        },
+        {
+          "name": "Central Avenue",
+          "px": [1078, 1038],
+          "ll": [34.049277, -118.239365],
+          "insideCoverage": false
+        },
+        {
+          "name": "Frances K. Hashimoto Plaza",
+          "px": [760, 1365],
+          "ll": [34.048666, -118.240768],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Judge John Aiso Street",
+      "runs": [
+        {
+          "px": [
+            [539, 812],
+            [554, 766],
+            [573, 702]
+          ],
+          "ll": [
+            [34.050389, -118.240894],
+            [34.0505, -118.240796],
+            [34.050659, -118.240662]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [539, 812],
+          "ll": [34.050389, -118.240894],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [539, 812],
+          "ll": [34.050389, -118.240894],
+          "insideCoverage": true
+        },
+        {
+          "name": "Toriumi Plaza",
+          "px": [595, 547],
+          "ll": [34.051066, -118.240421],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "San Pedro Street",
+      "runs": [
+        {
+          "px": [
+            [429, 1202],
+            [432, 1172],
+            [441, 1127],
+            [464, 1051],
+            [472, 1025],
+            [523, 853],
+            [539, 812]
+          ],
+          "ll": [
+            [34.049415, -118.24168],
+            [34.049497, -118.241637],
+            [34.049611, -118.241558],
+            [34.049799, -118.2414],
+            [34.049863, -118.241347],
+            [34.050289, -118.24099],
+            [34.050389, -118.240894]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [539, 812],
+          "ll": [34.050389, -118.240894],
+          "insideCoverage": true
+        },
+        {
+          "name": "2nd Street",
+          "px": [424, 1247],
+          "ll": [34.049296, -118.241746],
+          "insideCoverage": false
+        },
+        {
+          "name": "Astronaut Ellison S Onizuka Street",
+          "px": [399, 1202],
+          "ll": [34.049442, -118.24178],
+          "insideCoverage": false
+        },
+        {
+          "name": "Judge John Aiso Street",
+          "px": [539, 812],
+          "ll": [34.050389, -118.240894],
+          "insideCoverage": true
+        },
+        {
+          "name": "Toriumi Plaza",
+          "px": [527, 770],
+          "ll": [34.050514, -118.240886],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Toriumi Plaza",
+      "runs": [
+        {
+          "px": [
+            [529, 690],
+            [516, 728],
+            [487, 718],
+            [435, 700],
+            [366, 670],
+            [373, 650],
+            [444, 672],
+            [445, 668]
+          ],
+          "ll": [
+            [34.050732, -118.240795],
+            [34.050639, -118.240878],
+            [34.050694, -118.240963],
+            [34.050791, -118.241115],
+            [34.050934, -118.241309],
+            [34.050984, -118.241264],
+            [34.050859, -118.241055],
+            [34.050869, -118.241046]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [509, 761],
+          "ll": [34.050555, -118.240937],
+          "insideCoverage": true
+        },
+        {
+          "name": "Astronaut Ellison S Onizuka Street",
+          "px": [276, 663],
+          "ll": [34.051036, -118.241599],
+          "insideCoverage": true
+        },
+        {
+          "name": "Judge John Aiso Street",
+          "px": [595, 547],
+          "ll": [34.051066, -118.240421],
+          "insideCoverage": false
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [527, 770],
+          "ll": [34.050514, -118.240886],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

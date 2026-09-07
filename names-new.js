@@ -24,6 +24,75 @@
 
 const NEW_NAME_ENTITIES = {
 
+  "banning-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"tr0145-062","sheet":"Tract No. 9771","asWritten":["Banning Street"]}
+    ],
+    spellings: [{"forms":["Banning Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from tr0145-062, where the ink reads “Banning Street”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "commercial-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-146-p2","sheet":"Requena Subdivision","asWritten":["Commercial Street"]}
+    ],
+    spellings: [{"forms":["Commercial Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-146-p2, where the ink reads “Commercial Street”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "japanese-village-plaza-mall": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"tr0885-030-p2","sheet":"Tract No. 30211","asWritten":["JAPANESE VILLAGE PLAZA MALL"]}
+    ],
+    spellings: [{"forms":["Japanese Village Plaza Mall"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from tr0885-030-p2, where the ink reads “JAPANESE VILLAGE PLAZA MALL”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "messer-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr002-092-p1","sheet":"Johnston Tract","asWritten":["Messer STREET."]},
+      {"doc":"mr002-092-p2","sheet":"Johnston Tract","asWritten":["Messer STREET."]}
+    ],
+    spellings: [{"forms":["Messer Street."]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr002-092-p1, where the ink reads “Messer STREET.”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "moran-s-lane": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -54,6 +123,112 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Minted in review from mr005-110, where the ink reads “Ozier Lane”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "requena-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-146-p2","sheet":"Requena Subdivision","asWritten":["REQUENA STREET"]}
+    ],
+    spellings: [{"forms":["Requena Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-146-p2, where the ink reads “REQUENA STREET”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "rose-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr002-092-p1","sheet":"Johnston Tract","asWritten":["Rose STREET."]},
+      {"doc":"mr002-092-p2","sheet":"Johnston Tract","asWritten":["Rose STREET."]},
+      {"doc":"tr1339-069-p3","sheet":"Tract No. 62057","asWritten":["ROSE STREET"]}
+    ],
+    spellings: [{"forms":["Rose Street."]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr002-092-p1, where the ink reads “Rose STREET.”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "traction-avenue": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"tr0926-086-p2","sheet":"Tract No. 35332","asWritten":["TRACTION AVENUE"]}
+    ],
+    spellings: [{"forms":["Traction Avenue"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from tr0926-086-p2, where the ink reads “TRACTION AVENUE”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "turner-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"tr0145-062","sheet":"Tract No. 9771","asWritten":["Turner Street"]}
+    ],
+    spellings: [{"forms":["Turner Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from tr0145-062, where the ink reads “Turner Street”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "vignes-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"tr0145-062","sheet":"Tract No. 9771","asWritten":["VIGNES STREET"]}
+    ],
+    spellings: [{"forms":["Vignes Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from tr0145-062, where the ink reads “VIGNES STREET”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "wilmington-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-146-p1","sheet":"Requena Subdivision","asWritten":["WILMINGTON"]},
+      {"doc":"mr003-146-p2","sheet":"Requena Subdivision","asWritten":["WILMINGTON","Wilmington Street"]},
+      {"doc":"mr010-008","sheet":"Garden of J. Murat","asWritten":["Wilmington Street"]}
+    ],
+    spellings: [{"forms":["Wilmington Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr010-008, where the ink reads “Wilmington Street”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   },

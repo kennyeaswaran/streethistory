@@ -74,6 +74,24 @@ below. Browser time is for collecting Map-Refs, not for squinting at plats.
      individual page) gets you to the same List.aspx URL two clicks slower;
      going straight to `List.aspx?type=Tract&book=XXXX` is faster once you
      know the book number.
+   - **If the tract has a NUMBER, skip all of that.** `TractMaps.aspx` has a
+     "Search by Tract Map Number" box (`ctl00_main_bookTextBox` +
+     `ctl00_main_tractMapSearchButton`) that redirects straight to the correct
+     PDF, suffix and all — typing `1101` lands on
+     `.../MB0020/TR0020-196B.pdf`. It resolves the suffix ambiguity outright,
+     so use it whenever NavigateLA gave you a `TR nnnnn` rather than a tract
+     name. Named tracts (the early Map Book filings, e.g. "Perry-Hellman
+     Property") carry no number and still need the listing plus a look.
+   - **Reading a Map Book sheet to settle which suffix is yours.** The
+     browser pane's own PDF viewer renders these as a blank grey page. The
+     Google-viewer workaround below does work and is the cheap way to check a
+     title block:
+     `https://docs.google.com/viewer?url={URL-encoded PDF URL}&embedded=true`,
+     wait ~8s, screenshot. Three of four suffix ambiguities in the 2026-09-06
+     batch were settled this way in about a minute each, and in two of them the
+     guessable filename was the WRONG map (`TR0005-049a` = Formosa Tract,
+     Hollywood; `TR0009-100` = Dunning Tract, Hollywood) while in the third the
+     plain filename was right — the rule genuinely cannot be guessed.
    - Note the site's warning: scans may be hand-drawn copies of the originals;
      the originals are at the Registrar-Recorder.
 
@@ -84,6 +102,18 @@ below. Browser time is for collecting Map-Refs, not for squinting at plats.
 5. **Read it in.** MAP-TOOL-GUIDE.md, end to end — align, trace the coverage,
    save, hand the folder to an AI pass, confirm the rows, sweep. What this file
    gives you is the map; everything after it belongs to the tool.
+
+## A late plat is a later stage of the name, not a worse source
+
+Kenny's call, 2026-09-06: a 20th-century Map Book sheet is worth having even
+when a 19th-century M.R. sheet covers the same ground, because it letters the
+street at ITS date and so marks a different stage in the name's history. The
+batch that prompted this bore it out — those sheets carried a street-renaming
+ordinance note in the margin ("Jackson Way changed to St Andrews Place, Ord.
+25382"), an explicit citation of the earlier plat they resubdivide ("a portion
+of Block B, Rivara and Vignolo Tract, as per map recorded in Book 5 Page 110
+Misc. Rec."), and a preamble chaining back through four earlier filings by book
+and page. So don't filter a batch down to the oldest sheet per block.
 
 ## Read the whole sheet
 

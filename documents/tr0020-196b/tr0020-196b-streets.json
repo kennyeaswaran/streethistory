@@ -1,0 +1,69 @@
+{
+  "document": "tr0020-196b",
+  "image": "tr0020-196b-100dpi.png",
+  "imageSize": [1117, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0020-196b-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [960, 923],
+    [444, 855],
+    [394, 1420],
+    [808, 1637]
+  ],
+  "coverageLl": [
+    [34.053029, -118.239848],
+    [34.052793, -118.238371],
+    [34.054146, -118.238133],
+    [34.054726, -118.239291]
+  ],
+  "streets": [
+    {
+      "name": "Aliso Street",
+      "runs": [
+        {
+          "px": [
+            [819, 1584],
+            [617, 1458],
+            [561, 1423],
+            [548, 1416],
+            [503, 1388],
+            [436, 1347],
+            [403, 1323]
+          ],
+          "ll": [
+            [34.0546, -118.239332],
+            [34.054269, -118.238771],
+            [34.054177, -118.238613],
+            [34.054158, -118.238579],
+            [34.054084, -118.238453],
+            [34.053976, -118.238266],
+            [34.053915, -118.238173]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [322, 1277],
+          "ll": [34.053791, -118.237947],
+          "insideCoverage": false
+        },
+        {
+          "name": "Commercial Street",
+          "px": [322, 1277],
+          "ll": [34.053791, -118.237947],
+          "insideCoverage": false
+        },
+        {
+          "name": "Los Angeles Street",
+          "px": [913, 1675],
+          "ll": [34.054832, -118.239589],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}
