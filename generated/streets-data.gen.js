@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-06
+// Built: 2026-09-07
 const NEIGHBORHOODS = [
   {
     "id": "dtla",
@@ -391,7 +391,7 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.263,
-        "maxLng": -118.2585,
+        "maxLng": -118.2584,
         "from": {
           "px": [
             1006,
@@ -400,8 +400,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            251,
-            412
+            402,
+            2581
           ]
         }
       },
@@ -418,7 +418,7 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
-        "knownFraction": 0.8,
+        "knownFraction": 0.81,
         "categories": [
           "number"
         ],
@@ -437,6 +437,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          },
+          {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           },
@@ -445,12 +449,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           }
         ],
-        "minLng": -118.2585,
+        "minLng": -118.2584,
         "maxLng": -118.2558,
         "from": {
           "px": [
-            251,
-            412
+            402,
+            2581
           ]
         },
         "to": "Santee Alley"
@@ -462,13 +466,13 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 11th Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1885",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          "text": "by 1883",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "built": "not yet researched",
         "note": null,
         "attested": true,
-        "knownFraction": 0.8,
+        "knownFraction": 0.81,
         "categories": [
           "number"
         ],
@@ -481,6 +485,10 @@ const STREET_DATA = {
           {
             "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           },
           {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
@@ -525,8 +533,8 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "maxLng": -118.2709,
@@ -566,12 +574,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLng": -118.2709,
-        "maxLng": -118.2596,
+        "maxLng": -118.2597,
         "from": {
           "px": [
             482,
@@ -580,8 +588,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            284,
-            733
+            428,
+            4719
           ]
         }
       },
@@ -598,19 +606,19 @@ const STREET_DATA = {
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1885",
+            "from": "by 1883",
             "until": null,
             "name": "12th Street",
             "entityId": "twelfth-street",
             "formInForce": "12th Street",
             "how": "origin",
-            "origin": "labeled “Twelfth Street” on the 1885 O. W. Childs Tract {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "origin": "labeled “Twelfth Street” on the 1883 O. W. Childs Tract (Hansen & Solano survey) and the 1885 O. W. Childs Tract {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "note": null,
         "attested": true,
-        "knownFraction": 0.8,
+        "knownFraction": 0.81,
         "categories": [
           "number"
         ],
@@ -629,16 +637,20 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          },
+          {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           }
         ],
-        "minLng": -118.2596,
+        "minLng": -118.2597,
         "maxLng": -118.2572,
         "from": {
           "px": [
-            284,
-            733
+            428,
+            4719
           ]
         },
         "to": "Santee Street"
@@ -650,25 +662,25 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1885",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          "text": "by 1883",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1885",
+            "from": "by 1883",
             "until": null,
             "name": "12th Street",
             "entityId": "twelfth-street",
             "formInForce": "12th Street",
             "how": "origin",
-            "origin": "labeled “Twelfth Street” on the 1885 O. W. Childs Tract {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "origin": "labeled “Twelfth Street” on the 1883 O. W. Childs Tract (Hansen & Solano survey) and the 1885 O. W. Childs Tract {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "note": null,
         "attested": true,
-        "knownFraction": 0.8,
+        "knownFraction": 0.81,
         "categories": [
           "number"
         ],
@@ -683,17 +695,21 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          },
+          {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           }
         ],
         "minLng": -118.2572,
-        "maxLng": -118.253,
+        "maxLng": -118.2529,
         "from": "Santee Street",
         "to": {
           "px": [
-            1525,
-            708
+            8770,
+            4637
           ]
         }
       },
@@ -721,15 +737,15 @@ const STREET_DATA = {
             "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
-        "minLng": -118.253,
+        "minLng": -118.2529,
         "from": {
           "px": [
-            1525,
-            708
+            8770,
+            4637
           ]
         },
         "to": null
@@ -1066,110 +1082,24 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
-        "maxLng": -118.2521,
+        "maxLng": -118.2524,
         "from": null,
         "to": {
           "px": [
-            231,
-            814
+            3631,
+            589
           ]
         }
       },
       {
         "label": "part of",
-        "name": "1st Street",
-        "entityId": "first-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 1st Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1883",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
-        },
-        "built": "not yet researched",
-        "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
-        "attested": true,
-        "knownFraction": 0.81,
-        "categories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Map of Block W Mott Tract as subdivided by E. T. Wright at request of M. L. Wicks in Los Angeles City (M.R. 5-307, June 25, 1883; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
-          }
-        ],
-        "minLng": -118.2521,
-        "maxLng": -118.2508,
-        "from": {
-          "px": [
-            231,
-            814
-          ]
-        },
-        "to": {
-          "px": [
-            246,
-            69
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "1st Street",
-        "entityId": "first-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 1st Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": "not yet researched",
-        "built": "not yet researched",
-        "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
-        "attested": false,
-        "categories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
-          }
-        ],
-        "minLng": -118.2508,
-        "maxLng": -118.2502,
-        "from": {
-          "px": [
-            246,
-            69
-          ]
-        },
-        "to": {
-          "px": [
-            1239,
-            389
-          ]
-        }
-      },
-      {
-        "label": "beyond Broadway",
         "name": "1st Street",
         "entityId": "first-street",
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1869",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -1180,8 +1110,8 @@ const STREET_DATA = {
             "entityId": "first-street",
             "formInForce": "1st Street",
             "how": "extension",
-            "origin": "labeled “First Street” on the 1869 Mott Tract building lots {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+            "origin": "labeled “FIRST STREET” and “First Street” on the 1869 Mott Tract (Pickel survey), the 1869 Mott Tract building lots and the 1883 Block W, Mott Tract {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           }
         ],
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
@@ -1201,26 +1131,39 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          },
+          {
+            "title": "Map of Block W Mott Tract as subdivided by E. T. Wright at request of M. L. Wicks in Los Angeles City (M.R. 5-307, June 25, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
-        "minLng": -118.2502,
-        "maxLng": -118.2455,
+        "minLng": -118.2524,
+        "maxLng": -118.2452,
         "from": {
           "px": [
-            1239,
-            389
+            3631,
+            589
           ]
         },
-        "to": "Broadway"
+        "to": {
+          "px": [
+            3694,
+            3801
+          ]
+        }
       },
       {
-        "label": "beyond Broadway (original 1st St)",
+        "label": "part of (original 1st St)",
         "name": "1st Street",
         "entityId": "first-street",
         "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
@@ -1238,12 +1181,16 @@ const STREET_DATA = {
             "entityId": "first-street",
             "formInForce": "1st Street",
             "how": "origin",
-            "origin": "labeled “CALLE 1a”, “1ST ST”, “1st ST” and “First Street” on the 1849 Hutton / Ord Survey and the 1869 Mott Tract building lots {{(source)}}",
+            "origin": "labeled “CALLE 1a”, “1ST ST”, “1st ST” and “First Street” on the 1849 Hutton / Ord Survey and the 1868 Garden of J. Murat {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
         "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
         "knownFraction": 1,
         "categories": [
           "number"
@@ -1263,34 +1210,55 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
-        "minLng": -118.2455,
-        "maxLng": -118.2419,
-        "from": "Broadway",
+        "minLng": -118.2452,
+        "maxLng": -118.2414,
+        "from": {
+          "px": [
+            3694,
+            3801
+          ]
+        },
         "to": {
           "px": [
-            455,
-            1519
+            332,
+            695
           ]
         }
       },
       {
-        "label": "beyond Alameda",
+        "label": "part of",
         "name": "1st Street",
         "entityId": "first-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 1st Street is not yet researched",
+        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1868",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1868",
+            "until": null,
+            "name": "1st Street",
+            "entityId": "first-street",
+            "formInForce": "1st Street",
+            "how": "extension",
+            "origin": "labeled “First Street”, “FIRST STREET.” and “1ST STREET” on the 1868 Garden of J. Murat, the 1876 Requena Subdivision and the 1977 Tract No. 30211 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
+          }
+        ],
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "knownFraction": 0.9,
         "categories": [
           "number"
         ],
@@ -1301,34 +1269,67 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
+          },
+          {
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+          },
+          {
+            "title": "Tract No. 30211 in the City of Los Angeles, State of California, for Redevelopment Purposes (Oct. 26, 1977; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0885/TR0885-030.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
-        "minLng": -118.2419,
-        "maxLng": -118.2381,
+        "minLng": -118.2414,
+        "maxLng": -118.2394,
         "from": {
           "px": [
-            455,
-            1519
+            332,
+            695
           ]
         },
-        "to": "Alameda Street"
+        "to": {
+          "px": [
+            1055,
+            1019
+          ]
+        }
       },
       {
-        "label": "beyond Alameda",
+        "label": "part of",
         "name": "1st Street",
         "entityId": "first-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 1st Street is not yet researched",
+        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1875",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          "text": "by 1977",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0885/TR0885-030.pdf"
         },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1977",
+            "until": null,
+            "name": "1st Street",
+            "entityId": "first-street",
+            "formInForce": "1st Street",
+            "how": "extension",
+            "origin": "labeled “1ST STREET” on the 1977 Tract No. 30211 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0885/TR0885-030.pdf"
+          }
+        ],
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
         "attested": true,
-        "knownFraction": 0.86,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.28,
         "categories": [
           "number"
         ],
@@ -1337,23 +1338,87 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Tract No. 30211 in the City of Los Angeles, State of California, for Redevelopment Purposes (Oct. 26, 1977; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0885/TR0885-030.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          }
+        ],
+        "minLng": -118.2394,
+        "maxLng": -118.2386,
+        "from": {
+          "px": [
+            1055,
+            1019
+          ]
+        },
+        "to": {
+          "px": [
+            207,
+            1587
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "1st Street",
+        "entityId": "first-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 1st Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1871",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+        },
+        "built": "not yet researched",
+        "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.88,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           },
           {
             "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
           {
+            "title": "Tract No. 62057 in the City of Los Angeles, State of California (Oct. 9, 2007; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1339/TR1339-069.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
-        "minLng": -118.2381,
+        "minLng": -118.2386,
         "maxLng": -118.2345,
-        "from": "Alameda Street",
+        "from": {
+          "px": [
+            207,
+            1587
+          ]
+        },
         "to": {
           "px": [
-            349,
-            100
+            376,
+            398
           ]
         }
       },
@@ -1384,8 +1449,8 @@ const STREET_DATA = {
         "minLng": -118.2345,
         "from": {
           "px": [
-            349,
-            100
+            376,
+            398
           ]
         },
         "to": null
@@ -1610,12 +1675,12 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.26,
-        "maxLng": -118.2533,
+        "maxLng": -118.2535,
         "from": "Lucas Avenue",
         "to": {
           "px": [
-            1082,
-            851
+            2963,
+            599
           ]
         }
       },
@@ -1626,13 +1691,13 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 2nd Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1883",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
+          "text": "by 1869",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "built": "not yet researched",
         "note": null,
         "attested": true,
-        "knownFraction": 0.81,
+        "knownFraction": 0.89,
         "categories": [
           "number"
         ],
@@ -1643,6 +1708,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
             "title": "Map of Block W Mott Tract as subdivided by E. T. Wright at request of M. L. Wicks in Los Angeles City (M.R. 5-307, June 25, 1883; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
           },
@@ -1651,12 +1720,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
-        "minLng": -118.2533,
+        "minLng": -118.2535,
         "maxLng": -118.2528,
         "from": {
           "px": [
-            1082,
-            851
+            2963,
+            599
           ]
         },
         "to": {
@@ -1668,14 +1737,14 @@ const STREET_DATA = {
         "gapAfter": true
       },
       {
-        "label": "Hope to Broadway (discontinuous)",
+        "label": "beyond Hope (discontinuous)",
         "name": "2nd Street",
         "entityId": "second-street",
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1869",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -1686,8 +1755,8 @@ const STREET_DATA = {
             "entityId": "second-street",
             "formInForce": "2nd Street",
             "how": "extension",
-            "origin": "labeled “Second Street” on the 1869 Mott Tract building lots {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+            "origin": "labeled “SECOND STREET” and “Second Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           }
         ],
         "note": null,
@@ -1707,6 +1776,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           },
@@ -1716,12 +1789,17 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2528,
-        "maxLng": -118.2467,
+        "maxLng": -118.2464,
         "from": "Hope Street",
-        "to": "Broadway"
+        "to": {
+          "px": [
+            3023,
+            3791
+          ]
+        }
       },
       {
-        "label": "beyond Broadway (original 2nd St)",
+        "label": "part of (original 2nd St)",
         "name": "2nd Street",
         "entityId": "second-street",
         "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
@@ -1739,7 +1817,7 @@ const STREET_DATA = {
             "entityId": "second-street",
             "formInForce": "2nd Street",
             "how": "origin",
-            "origin": "labeled “CALLE 2a”, “2D ST”, “2ND ST.” and “Second Street” on the 1849 Hutton / Ord Survey and the 1869 Mott Tract building lots {{(source)}}",
+            "origin": "labeled “CALLE 2a”, “2D ST” and “2ND ST.” on the 1849 Hutton / Ord Survey {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
@@ -1766,15 +1844,16 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
-          },
-          {
-            "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           }
         ],
-        "minLng": -118.2467,
+        "minLng": -118.2464,
         "maxLng": -118.2442,
-        "from": "Broadway",
+        "from": {
+          "px": [
+            3023,
+            3791
+          ]
+        },
         "to": {
           "px": [
             362,
@@ -1811,7 +1890,7 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2442,
-        "maxLng": -118.2382,
+        "maxLng": -118.2414,
         "from": {
           "px": [
             362,
@@ -1820,8 +1899,126 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            987,
-            1521
+            52,
+            1155
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "2nd Street",
+        "entityId": "second-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 2nd Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1977",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0885/TR0885-030.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.28,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Tract No. 30211 in the City of Los Angeles, State of California, for Redevelopment Purposes (Oct. 26, 1977; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0885/TR0885-030.pdf"
+          },
+          {
+            "title": "Tract No. 35332 in the City of Los Angeles, State of California, for Redevelopment Purposes (Sept. 18, 1979; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          }
+        ],
+        "minLng": -118.2414,
+        "maxLng": -118.2391,
+        "from": {
+          "px": [
+            52,
+            1155
+          ]
+        },
+        "to": {
+          "px": [
+            1527,
+            2291
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "2nd Street",
+        "entityId": "second-street",
+        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1979",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1979",
+            "until": null,
+            "name": "2nd Street",
+            "entityId": "second-street",
+            "formInForce": "2nd Street",
+            "how": "extension",
+            "origin": "labeled “2ND STREET” on the 1979 Tract No. 35332 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.27,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Tract No. 35332 in the City of Los Angeles, State of California, for Redevelopment Purposes (Sept. 18, 1979; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          }
+        ],
+        "minLng": -118.2391,
+        "maxLng": -118.2386,
+        "from": {
+          "px": [
+            1527,
+            2291
+          ]
+        },
+        "to": {
+          "px": [
+            840,
+            1577
           ]
         }
       },
@@ -1832,20 +2029,105 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 2nd Street",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1875",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          "text": "by 1871",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1875",
+            "from": "by 1871",
             "until": "?",
             "name": "Guadalupe Street",
             "entityId": "guadalupe",
             "formInForce": "Guadalupe Street",
             "how": "origin",
-            "origin": "labeled “GUADALUPE ST” on the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known only from the 1875 Thomas Tract map, in 2nd Street's position east of Alameda",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known only from the 1875 Thomas Tract map, in 2nd Street's position east of Alameda",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
+          {
+            "from": "by 1979",
+            "until": null,
+            "name": "2nd Street",
+            "entityId": "second-street",
+            "formInForce": "2nd Street",
+            "how": "renaming",
+            "origin": "labeled “2ND STREET” on the 1979 Tract No. 35332 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.29,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          },
+          {
+            "title": "Tract No. 35332 in the City of Los Angeles, State of California, for Redevelopment Purposes (Sept. 18, 1979; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          }
+        ],
+        "minLng": -118.2386,
+        "maxLng": -118.2378,
+        "from": {
+          "px": [
+            840,
+            1577
+          ]
+        },
+        "to": {
+          "px": [
+            1458,
+            994
+          ]
+        }
+      },
+      {
+        "label": "part of (Guadalupe St)",
+        "name": "2nd Street",
+        "entityId": "second-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 2nd Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1871",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1871",
+            "until": "?",
+            "name": "Guadalupe Street",
+            "entityId": "guadalupe",
+            "formInForce": "Guadalupe Street",
+            "how": "origin",
+            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known only from the 1875 Thomas Tract map, in 2nd Street's position east of Alameda",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           },
           {
             "from": "?",
@@ -1864,7 +2146,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0,
+        "knownFraction": 0.02,
         "categories": [
           "number",
           "renamed"
@@ -1879,6 +2161,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
+          {
             "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           },
@@ -1887,18 +2173,184 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
-        "minLng": -118.2382,
-        "maxLng": -118.2344,
+        "minLng": -118.2378,
+        "maxLng": -118.2372,
         "from": {
           "px": [
-            987,
-            1521
+            1458,
+            994
           ]
         },
         "to": {
           "px": [
-            997,
-            67
+            398,
+            1987
+          ]
+        }
+      },
+      {
+        "label": "part of (Guadalupe St)",
+        "name": "2nd Street",
+        "entityId": "second-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 2nd Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1871",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1871",
+            "until": "?",
+            "name": "Guadalupe Street",
+            "entityId": "guadalupe",
+            "formInForce": "Guadalupe Street",
+            "how": "origin",
+            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known only from the 1875 Thomas Tract map, in 2nd Street's position east of Alameda",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
+          {
+            "from": "by 2007",
+            "until": null,
+            "name": "2nd Street",
+            "entityId": "second-street",
+            "formInForce": "2nd Street",
+            "how": "renaming",
+            "origin": "labeled “2ND STREET” on the 2007 Tract No. 62057 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1339/TR1339-069.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.13,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          },
+          {
+            "title": "Tract No. 62057 in the City of Los Angeles, State of California (Oct. 9, 2007; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1339/TR1339-069.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          }
+        ],
+        "minLng": -118.2372,
+        "maxLng": -118.236,
+        "from": {
+          "px": [
+            398,
+            1987
+          ]
+        },
+        "to": {
+          "px": [
+            1318,
+            1978
+          ]
+        }
+      },
+      {
+        "label": "part of (Guadalupe St)",
+        "name": "2nd Street",
+        "entityId": "second-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 2nd Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1871",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1871",
+            "until": "?",
+            "name": "Guadalupe Street",
+            "entityId": "guadalupe",
+            "formInForce": "Guadalupe Street",
+            "how": "origin",
+            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known only from the 1875 Thomas Tract map, in 2nd Street's position east of Alameda",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "2nd Street",
+            "entityId": "second-street",
+            "formInForce": "2nd Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.02,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          }
+        ],
+        "minLng": -118.236,
+        "maxLng": -118.2344,
+        "from": {
+          "px": [
+            1318,
+            1978
+          ]
+        },
+        "to": {
+          "px": [
+            866,
+            370
           ]
         }
       },
@@ -1934,8 +2386,8 @@ const STREET_DATA = {
         "maxLng": -118.2327,
         "from": {
           "px": [
-            997,
-            67
+            866,
+            370
           ]
         },
         "to": {
@@ -1978,174 +2430,66 @@ const STREET_DATA = {
   },
   "2nd Street Tunnel": {
     "name": "2nd Street Tunnel",
-    "orientation": "EW",
-    "segments": [
+    "entityId": "2nd-street-tunnel",
+    "namedAfter": null,
+    "namedAfterLink": null,
+    "planned": {
+      "text": "by 1869",
+      "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+    },
+    "built": "not yet researched",
+    "nameHistory": [
       {
-        "label": "part of (2nd St)",
-        "name": "2nd Street Tunnel",
-        "entityId": "2nd-street-tunnel",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1883",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1883",
-            "until": "?",
-            "name": "2nd Street",
-            "entityId": "second-street",
-            "formInForce": "2nd Street",
-            "origin": "labeled “SECOND STREET” on the 1883 Block W, Mott Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "2nd Street Tunnel",
-            "entityId": "2nd-street-tunnel",
-            "formInForce": "2nd Street Tunnel",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "attested": true,
-        "knownFraction": 0,
-        "categories": [
-          "unresearched",
-          "renamed"
-        ],
-        "formerCategories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "Map of Block W Mott Tract as subdivided by E. T. Wright at request of M. L. Wicks in Los Angeles City (M.R. 5-307, June 25, 1883; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
-          },
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          }
-        ],
-        "maxLng": -118.2519,
-        "from": null,
-        "to": {
-          "px": [
-            1097,
-            63
-          ]
-        }
+        "from": "by 1869",
+        "until": "?",
+        "name": "2nd Street",
+        "entityId": "second-street",
+        "formInForce": "2nd Street",
+        "origin": "labeled “SECOND STREET” and “Second Street” on the 1869 Mott Tract (Pickel survey), the 1869 Mott Tract building lots and the 1883 Block W, Mott Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
       },
       {
-        "label": "part of",
+        "from": "?",
+        "until": null,
         "name": "2nd Street Tunnel",
         "entityId": "2nd-street-tunnel",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": "not yet researched",
-        "built": "not yet researched",
-        "note": null,
-        "attested": false,
-        "categories": [
-          "unresearched"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
-          }
-        ],
-        "minLng": -118.2519,
-        "maxLng": -118.2513,
-        "from": {
-          "px": [
-            1097,
-            63
-          ]
-        },
-        "to": {
-          "px": [
-            1033,
-            394
-          ]
-        }
+        "formInForce": "2nd Street Tunnel",
+        "how": "renaming",
+        "origin": "arrival on this stretch not directly documented",
+        "originLink": null
+      }
+    ],
+    "note": null,
+    "attested": true,
+    "knownFraction": 0.08,
+    "categories": [
+      "unresearched",
+      "renamed"
+    ],
+    "formerCategories": [
+      "number"
+    ],
+    "disputed": false,
+    "sources": [
+      {
+        "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+        "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
       },
       {
-        "label": "part of (2nd St)",
-        "name": "2nd Street Tunnel",
-        "entityId": "2nd-street-tunnel",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1869",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1869",
-            "until": "?",
-            "name": "2nd Street",
-            "entityId": "second-street",
-            "formInForce": "2nd Street",
-            "origin": "labeled “Second Street” on the 1869 Mott Tract building lots {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "2nd Street Tunnel",
-            "entityId": "2nd-street-tunnel",
-            "formInForce": "2nd Street Tunnel",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "attested": true,
-        "knownFraction": 0,
-        "categories": [
-          "unresearched",
-          "renamed"
-        ],
-        "formerCategories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
-          },
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          }
-        ],
-        "minLng": -118.2513,
-        "from": {
-          "px": [
-            1033,
-            394
-          ]
-        },
-        "to": null
+        "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+      },
+      {
+        "title": "Map of Block W Mott Tract as subdivided by E. T. Wright at request of M. L. Wicks in Los Angeles City (M.R. 5-307, June 25, 1883; identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
+      },
+      {
+        "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+      },
+      {
+        "title": "L.A. Street Names: 1st Street (on the numbering system)",
+        "url": "https://lastreetnames.com/street/0001st-street/"
       }
     ]
   },
@@ -2389,12 +2733,12 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2578,
-        "maxLng": -118.2526,
+        "maxLng": -118.2548,
         "from": "Boylston Street",
         "to": {
           "px": [
-            796,
-            400
+            2190,
+            611
           ]
         }
       },
@@ -2406,7 +2750,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": {
           "text": "by 1869",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -2417,8 +2761,8 @@ const STREET_DATA = {
             "entityId": "third-street",
             "formInForce": "3rd Street",
             "how": "extension",
-            "origin": "labeled “Third Street” on the 1869 Mott Tract building lots {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+            "origin": "labeled “THIRD STREET” and “Third Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           }
         ],
         "note": null,
@@ -2438,6 +2782,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           },
@@ -2446,12 +2794,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
-        "minLng": -118.2526,
+        "minLng": -118.2548,
         "maxLng": -118.2491,
         "from": {
           "px": [
-            796,
-            400
+            2190,
+            611
           ]
         },
         "to": "Hill Street"
@@ -2475,7 +2823,7 @@ const STREET_DATA = {
             "entityId": "third-street",
             "formInForce": "3rd Street",
             "how": "origin",
-            "origin": "labeled “CALLE 3a”, “3RD ST”, “3RD ST.” and “Third Street” on the 1849 Hutton / Ord Survey and the 1869 Mott Tract building lots {{(source)}}",
+            "origin": "labeled “CALLE 3a”, “3RD ST”, “3RD ST.”, “THIRD STREET” and “Third Street” on the 1849 Hutton / Ord Survey, the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
@@ -2498,6 +2846,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          },
+          {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           },
           {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
@@ -2597,7 +2949,8 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "person"
+          "person",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -2693,12 +3046,16 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
+            "title": "Tract No. 35332 in the City of Los Angeles, State of California, for Redevelopment Purposes (Sept. 18, 1979; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
         "minLng": -118.2427,
-        "maxLng": -118.2382,
+        "maxLng": -118.2384,
         "from": {
           "px": [
             954,
@@ -2707,8 +3064,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            898,
-            1509
+            673,
+            1475
           ]
         }
       },
@@ -2719,20 +3076,113 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1875",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          "text": "by 1871",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1875",
+            "from": "by 1871",
             "until": "?",
             "name": "Georgia Street",
             "entityId": "georgia-east",
             "formInForce": "Georgia Street",
             "how": "origin",
-            "origin": "labeled “GEORGIA ST” and “Georgia St” on the 1875 Thomas Tract, the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — Likely the state",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "origin": "labeled “Georgie Street.”, “GEORGIA ST” and “Georgia St” on the 1871 Johnston Tract, the 1875 Thomas Tract, the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — Likely the state",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
+          {
+            "from": "by 1888",
+            "until": null,
+            "name": "3rd Street",
+            "entityId": "third-street",
+            "formInForce": "3rd Street",
+            "how": "renaming",
+            "origin": "labeled “Third St” and “3RD STREET” on the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) and the 1979 Tract No. 35332 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.88,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          },
+          {
+            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Tract No. 35332 in the City of Los Angeles, State of California, for Redevelopment Purposes (Sept. 18, 1979; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          }
+        ],
+        "minLng": -118.2384,
+        "maxLng": -118.2376,
+        "from": {
+          "px": [
+            673,
+            1475
+          ]
+        },
+        "to": {
+          "px": [
+            633,
+            1311
+          ]
+        }
+      },
+      {
+        "label": "part of (Georgia St)",
+        "name": "3rd Street",
+        "entityId": "third-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1871",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1871",
+            "until": "?",
+            "name": "Georgia Street",
+            "entityId": "georgia-east",
+            "formInForce": "Georgia Street",
+            "how": "origin",
+            "origin": "labeled “Georgie Street.” and “GEORGIA ST” on the 1871 Johnston Tract, the 1875 Thomas Tract and the 1887 Mills and Wicks Extension map, sheet 1 {{(source)}} — Likely the state",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           },
           {
             "from": "?",
@@ -2751,19 +3201,23 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.07,
+        "knownFraction": 0.09,
         "categories": [
           "number",
           "renamed"
         ],
         "formerCategories": [
-          "unknown"
+          "place"
         ],
         "disputed": false,
         "sources": [
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           },
           {
             "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
@@ -2774,26 +3228,22 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
-        "minLng": -118.2382,
-        "maxLng": -118.2344,
+        "minLng": -118.2376,
+        "maxLng": -118.2345,
         "from": {
           "px": [
-            898,
-            1509
+            633,
+            1311
           ]
         },
         "to": {
           "px": [
-            737,
-            61
+            502,
+            353
           ]
         }
       },
@@ -2825,12 +3275,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
-        "minLng": -118.2344,
+        "minLng": -118.2345,
         "maxLng": -118.2326,
         "from": {
           "px": [
-            737,
-            61
+            502,
+            353
           ]
         },
         "to": {
@@ -2876,7 +3326,7 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "3rd to Hewitt",
+        "label": "beyond Hewitt",
         "name": "4th Place",
         "entityId": "4th-place",
         "namedAfter": null,
@@ -3106,58 +3556,20 @@ const STREET_DATA = {
         "from": "Lucas Avenue",
         "to": {
           "px": [
-            835,
-            818
+            1330,
+            624
           ]
         }
       },
       {
-        "label": "beyond Flower",
-        "name": "4th Street",
-        "entityId": "fourth-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 4th Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": "not yet researched",
-        "built": "not yet researched",
-        "note": null,
-        "attested": false,
-        "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-        },
-        "categories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          }
-        ],
-        "minLng": -118.2563,
-        "maxLng": -118.2543,
-        "from": {
-          "px": [
-            835,
-            818
-          ]
-        },
-        "to": "Flower Street"
-      },
-      {
-        "label": "Flower to Olive",
+        "label": "beyond Olive",
         "name": "4th Street",
         "entityId": "fourth-street",
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1869",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -3168,8 +3580,8 @@ const STREET_DATA = {
             "entityId": "fourth-street",
             "formInForce": "4th Street",
             "how": "extension",
-            "origin": "labeled “Fourth Street” on the 1869 Mott Tract building lots {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+            "origin": "labeled “FOURTH STREET” and “Fourth Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           }
         ],
         "note": null,
@@ -3189,6 +3601,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           },
@@ -3197,9 +3613,14 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.2543,
+        "minLng": -118.2563,
         "maxLng": -118.2515,
-        "from": "Flower Street",
+        "from": {
+          "px": [
+            1330,
+            624
+          ]
+        },
         "to": "Olive Street"
       },
       {
@@ -3221,7 +3642,7 @@ const STREET_DATA = {
             "entityId": "fourth-street",
             "formInForce": "4th Street",
             "how": "origin",
-            "origin": "labeled “CALLE 4a”, “4TH ST”, “4TH ST.” and “Fourth Street” on the 1849 Hutton / Ord Survey and the 1869 Mott Tract building lots {{(source)}}",
+            "origin": "labeled “CALLE 4a”, “4TH ST”, “4TH ST.”, “FOURTH STREET” and “Fourth Street” on the 1849 Hutton / Ord Survey, the 1869 Mott Tract (Pickel survey), the 1869 Mott Tract building lots and the 1886 Mills' Tract {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
@@ -3254,8 +3675,16 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          },
+          {
+            "title": "Map of the Mills' Tract in the City of Los Angeles (M.R. 12-26, Nov. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
           }
         ],
         "minLng": -118.2515,
@@ -3272,16 +3701,32 @@ const STREET_DATA = {
         "label": "part of",
         "name": "4th Street",
         "entityId": "fourth-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 4th Street is not yet researched",
+        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": null,
+            "name": "4th Street",
+            "entityId": "fourth-street",
+            "formInForce": "4th Street",
+            "how": "extension",
+            "origin": "labeled “Fourth Street” on the 1886 Mills' Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          }
+        ],
         "note": null,
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "knownFraction": 0.8,
         "categories": [
           "number"
         ],
@@ -3290,6 +3735,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Mills' Tract in the City of Los Angeles (M.R. 12-26, Nov. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
@@ -3486,7 +3935,7 @@ const STREET_DATA = {
             "entityId": "huber-st",
             "formInForce": "Huber Street",
             "how": "origin",
-            "origin": "labeled “HUBER ST.” and “Huber St” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — Not documented; most likely Caroline Howard (née Huber), wife of the tract developer Dr. Frederick Preston Howard — the same inference that explains Carolina Street, one block east, now Hewitt Street",
+            "origin": "labeled “HUBER ST.” and “Huber St” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — Not documented; most likely Caroline Howard (née Huber), wife of the tract developer Dr. Frederick Preston Howard — the same inference that explains Carolina Street, one block east, now Hewitt Street.",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
@@ -3835,7 +4284,7 @@ const STREET_DATA = {
             "entityId": "fifth-street",
             "formInForce": "5th Street",
             "how": "origin",
-            "origin": "labeled “CALLE 5a”, “5TH ST” and “5TH ST.” on the 1849 Hutton / Ord Survey {{(source)}}",
+            "origin": "labeled “CALLE 5a”, “5TH ST”, “5TH ST.” and “Fifth St” on the 1849 Hutton / Ord Survey and the 1889 Jones and Ponet Block {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
@@ -3866,10 +4315,18 @@ const STREET_DATA = {
           {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          },
+          {
+            "title": "Map of the Rivara and Vignolo Tract, situated in the City of Los Angeles (M.R. 5-110, 1881; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf"
+          },
+          {
+            "title": "Plat of the Jones and Ponet Block in the City of Los Angeles, Cal. (M.R. 39-69, Mar. 1889; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR039/MR039-069.pdf"
           }
         ],
         "minLng": -118.2531,
-        "maxLng": -118.2481,
+        "maxLng": -118.2477,
         "from": {
           "px": [
             319,
@@ -3878,8 +4335,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            734,
-            1477
+            962,
+            1251
           ]
         }
       },
@@ -3889,14 +4346,18 @@ const STREET_DATA = {
         "entityId": "fifth-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 5th Street is not yet researched",
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1881",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf"
+        },
         "built": "not yet researched",
         "note": null,
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "knownFraction": 0,
         "categories": [
           "number"
         ],
@@ -3907,16 +4368,20 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
+            "title": "Map of the Rivara and Vignolo Tract, situated in the City of Los Angeles (M.R. 5-110, 1881; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.2481,
+        "minLng": -118.2477,
         "maxLng": -118.2469,
         "from": {
           "px": [
-            734,
-            1477
+            962,
+            1251
           ]
         },
         "to": {
@@ -4174,7 +4639,8 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "unknown"
+          "unknown",
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -4381,16 +4847,32 @@ const STREET_DATA = {
         "label": "part of",
         "name": "6th Street",
         "entityId": "sixth-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
+        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1906",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1906",
+            "until": null,
+            "name": "6th Street",
+            "entityId": "sixth-street",
+            "formInForce": "6th Street",
+            "how": "extension",
+            "origin": "labeled “SIXTH ST.” on the 1906 6th St. Terminal Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
+          }
+        ],
         "note": null,
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "knownFraction": 0.68,
         "categories": [
           "number"
         ],
@@ -4399,6 +4881,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "6th St. Terminal Tract (Mar. 2, 1906; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
@@ -4454,6 +4940,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Nordholdt Tract (M.R. 6-33, Aug. 19, 1884; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-033.pdf"
+          },
+          {
+            "title": "6th St. Terminal Tract (Mar. 2, 1906; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
@@ -4876,7 +5366,7 @@ const STREET_DATA = {
             "entityId": "seventh-street",
             "formInForce": "7th Street",
             "how": "origin",
-            "origin": "labeled “CALLE 7a”, “7th ST” and “7TH ST.” on the 1849 Hutton / Ord Survey {{(source)}}",
+            "origin": "labeled “CALLE 7a”, “7th ST”, “7TH ST.” and “7th Street” on the 1849 Hutton / Ord Survey and the 1873 Botiller and Reyes lots {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
@@ -4903,10 +5393,14 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          },
+          {
+            "title": "Los Angeles : Botiller and Reyes lots east side of Main Street (1873; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
           }
         ],
         "minLng": -118.2593,
-        "maxLng": -118.2506,
+        "maxLng": -118.251,
         "from": {
           "px": [
             487,
@@ -4915,8 +5409,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            458,
-            528
+            3390,
+            477
           ]
         }
       },
@@ -4939,7 +5433,7 @@ const STREET_DATA = {
             "entityId": "seventh-street",
             "formInForce": "7th Street",
             "how": "extension",
-            "origin": "labeled “Seventh Street” on the 1886 Maple Avenue Tract {{(source)}}",
+            "origin": "labeled “Seventh Street” and “SEVENTH ST.” on the 1886 Maple Avenue Tract and the 1906 6th St. Terminal Tract {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
           }
         ],
@@ -4964,16 +5458,20 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
           },
           {
+            "title": "6th St. Terminal Tract (Mar. 2, 1906; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.2506,
+        "minLng": -118.251,
         "maxLng": -118.2487,
         "from": {
           "px": [
-            458,
-            528
+            3390,
+            477
           ]
         },
         "to": {
@@ -5342,12 +5840,16 @@ const STREET_DATA = {
             "entityId": "eighth-street",
             "formInForce": "8th Street",
             "how": "origin",
-            "origin": "labeled “CALLE 8a”, “8TH ST” and “8th Street” on the 1849 Hutton / Ord Survey and the 1888 Widow Botiller Tract resubdivision {{(source)}}",
+            "origin": "labeled “CALLE 8a”, “8TH ST” and “8th Street” on the 1849 Hutton / Ord Survey, the 1873 Botiller and Reyes lots and the 1888 Widow Botiller Tract resubdivision {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "note": null,
         "attested": true,
+        "absentAsOf": {
+          "text": "1873 (Botiller and Reyes lots)",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
+        },
         "knownFraction": 1,
         "categories": [
           "number"
@@ -5361,6 +5863,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Los Angeles : Botiller and Reyes lots east side of Main Street (1873; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
           },
           {
             "title": "Map of the Resubdivision of the Widow Botiller Tract (M.R. 29-26, Mar. 15, 1888; identified by map alignment, not a lot-level record)",
@@ -5633,6 +6139,138 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
+        "label": "beyond Main (original 9th St)",
+        "name": "9th Street",
+        "entityId": "ninth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "1849",
+            "until": null,
+            "name": "9th Street",
+            "entityId": "ninth-street",
+            "formInForce": "9th Street",
+            "how": "origin",
+            "origin": "labeled “CALLE 9a”, “9th Street” and “NINTH STREET” on the 1849 Hutton / Ord Survey, the 1873 Botiller and Reyes lots and the 1893 Hammel and Denker Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 1,
+        "categories": [
+          "number"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Los Angeles : Botiller and Reyes lots east side of Main Street (1873; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          }
+        ],
+        "maxLng": -118.255,
+        "from": null,
+        "to": "Main Street"
+      },
+      {
+        "label": "beyond Main (Moran's Lane)",
+        "name": "9th Street",
+        "entityId": "ninth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "1849",
+            "until": null,
+            "name": "9th Street",
+            "entityId": "ninth-street",
+            "formInForce": "9th Street",
+            "how": "origin",
+            "origin": "labeled “CALLE 9a” and “NINTH STREET” on the 1849 Hutton / Ord Survey and the 1893 Hammel and Denker Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "from": "by 1873",
+            "until": "?",
+            "name": "Moran's Lane",
+            "entityId": "moran-s-lane",
+            "formInForce": "Moran's Lane",
+            "how": "origin",
+            "origin": "labeled “Moran's Lane” on the 1873 Botiller and Reyes lots {{(source)}} — no namesake documented",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 1,
+        "categories": [
+          "number",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Los Angeles : Botiller and Reyes lots east side of Main Street (1873; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          }
+        ],
+        "minLng": -118.255,
+        "maxLng": -118.2546,
+        "from": "Main Street",
+        "to": {
+          "px": [
+            2300,
+            5401
+          ]
+        }
+      },
+      {
         "label": "part of (original 9th St)",
         "name": "9th Street",
         "entityId": "ninth-street",
@@ -5672,16 +6310,18 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
             "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
+        "minLng": -118.2546,
         "maxLng": -118.2537,
-        "from": null,
+        "from": {
+          "px": [
+            2300,
+            5401
+          ]
+        },
         "to": {
           "px": [
             855,
@@ -6035,8 +6675,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
         "minLat": 34.0533,
@@ -6069,16 +6709,64 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/alameda-street/"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
-        "minLat": 34.0499,
+        "minLat": 34.0519,
         "maxLat": 34.0533,
         "from": {
           "px": [
             46,
             1034
+          ]
+        },
+        "to": {
+          "px": [
+            133,
+            584
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Alameda Street",
+        "entityId": "alameda-st",
+        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
+        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
+        "planned": {
+          "text": "by 1928",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+        },
+        "built": "not yet researched",
+        "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
+        "attested": true,
+        "knownFraction": 0.56,
+        "categories": [
+          "nature",
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
+            "url": "https://lastreetnames.com/street/alameda-street/"
+          },
+          {
+            "title": "Tract No. 9771 in the City of Los Angeles (Jan. 4, 1928; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+          },
+          {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          }
+        ],
+        "minLat": 34.0499,
+        "maxLat": 34.0519,
+        "from": {
+          "px": [
+            133,
+            584
           ]
         },
         "to": {
@@ -6092,16 +6780,31 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
+        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
-        "planned": null,
+        "planned": {
+          "text": "by 1928",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+        },
         "built": {
           "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "nameHistory": [
+          {
+            "from": "by 1928",
+            "until": null,
+            "name": "Alameda Street",
+            "entityId": "alameda-st",
+            "formInForce": "Alameda Street",
+            "how": "extension",
+            "origin": "labeled “ALAMEDA STREET” on the 1928 Tract No. 9771 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+          }
+        ],
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.56,
         "categories": [
           "nature",
           "descriptive"
@@ -6117,11 +6820,15 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "title": "Tract No. 9771 in the City of Los Angeles (Jan. 4, 1928; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+          },
+          {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
-        "minLat": 34.0491,
+        "minLat": 34.0493,
         "maxLat": 34.0499,
         "from": {
           "px": [
@@ -6131,8 +6838,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            97,
-            1472
+            134,
+            1439
           ]
         }
       },
@@ -6143,8 +6850,8 @@ const STREET_DATA = {
         "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”)",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": {
-          "text": "by 1875",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          "text": "by 1871",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
         },
         "built": {
           "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
@@ -6152,19 +6859,19 @@ const STREET_DATA = {
         },
         "nameHistory": [
           {
-            "from": "by 1875",
+            "from": "by 1871",
             "until": null,
             "name": "Alameda Street",
             "entityId": "alameda-st",
             "formInForce": "Alameda Street",
             "how": "origin",
-            "origin": "labeled “ALAMEDA STREET”, “ALAMEDA ST” and “Alameda St” on the 1875 Thomas Tract (sheets 1, 2), the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "origin": "labeled “Alameda STREET.”, “ALAMEDA STREET”, “ALAMEDA ST” and “Alameda St” on the 1871 Johnston Tract (sheets 1, 2), the 1875 Thomas Tract (sheets 1, 2), the 1887 Mills and Wicks Extension map, sheet 1, the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) and the 1979 Tract No. 35332 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
-        "knownFraction": 0.86,
+        "knownFraction": 0.88,
         "categories": [
           "nature",
           "descriptive"
@@ -6178,6 +6885,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          },
+          {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           },
           {
             "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
@@ -6190,20 +6901,24 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Tract No. 35332 in the City of Los Angeles, State of California, for Redevelopment Purposes (Sept. 18, 1979; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
           }
         ],
-        "minLat": 34.0452,
-        "maxLat": 34.0491,
+        "minLat": 34.045,
+        "maxLat": 34.0493,
         "from": {
           "px": [
-            97,
-            1472
+            134,
+            1439
           ]
         },
         "to": {
           "px": [
-            1072,
-            1443
+            883,
+            1376
           ]
         }
       },
@@ -6259,16 +6974,16 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
         "minLat": 34.0432,
-        "maxLat": 34.0452,
+        "maxLat": 34.045,
         "from": {
           "px": [
-            1072,
-            1443
+            883,
+            1376
           ]
         },
         "to": {
@@ -6326,8 +7041,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
         "minLat": 34.0348,
@@ -6374,8 +7089,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
         "minLat": 34.0332,
@@ -6414,8 +7129,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/alameda-street/"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
         "maxLat": 34.0332,
@@ -7062,22 +7777,64 @@ const STREET_DATA = {
     "entityId": "astronaut-ellison-s-onizuka-street",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": null,
+    "planned": {
+      "text": "by 1868",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
+    },
     "built": {
       "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
+    "nameHistory": [
+      {
+        "from": "by 1868",
+        "until": "?",
+        "name": "San Pedro Street",
+        "entityId": "san-pedro",
+        "formInForce": "San Pedro Street",
+        "how": "origin",
+        "origin": "labeled “San Pedro St.” on the 1868 Garden of J. Murat {{(source)}} — The port town of San Pedro, which the street ran toward",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
+      },
+      {
+        "from": "?",
+        "until": null,
+        "name": "Astronaut Ellison S Onizuka Street",
+        "entityId": "astronaut-ellison-s-onizuka-street",
+        "formInForce": "Astronaut Ellison S Onizuka Street",
+        "how": "renaming",
+        "origin": "arrival on this stretch not directly documented",
+        "originLink": null
+      }
+    ],
     "note": null,
     "attested": true,
     "knownFraction": 0,
     "categories": [
-      "unresearched"
+      "unresearched",
+      "renamed"
+    ],
+    "formerCategories": [
+      "place",
+      "destination"
     ],
     "disputed": false,
     "sources": [
       {
         "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+      },
+      {
+        "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868; identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
+      },
+      {
+        "title": "L.A. Street Names: San Pedro Street",
+        "url": "https://lastreetnames.com/street/san-pedro-street/"
+      },
+      {
+        "title": "Wikipedia: San Pedro Street",
+        "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
       }
     ]
   },
@@ -7187,13 +7944,13 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "unknown"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Tract No. 9771 in the City of Los Angeles (Jan. 4, 1928)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
       }
     ]
   },
@@ -7434,7 +8191,6 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "place",
           "history"
         ],
         "disputed": false,
@@ -7945,7 +8701,7 @@ const STREET_DATA = {
             "entityId": "boyd-street",
             "formInForce": "Boyd Street",
             "how": "origin",
-            "origin": "labeled “Boyd Street” on the 1882 Orchard Tract {{(source)}}",
+            "origin": "labeled “Boyd Street” on the 1882 Orchard Tract and the 1886 Mills' Tract {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           }
         ],
@@ -7964,6 +8720,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          },
+          {
+            "title": "Map of the Mills' Tract in the City of Los Angeles (M.R. 12-26, Nov. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
           }
         ],
         "maxLng": -118.2427,
@@ -8193,7 +8953,8 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "unknown"
+          "aspiration",
+          "mythological"
         ],
         "disputed": false,
         "sources": [
@@ -8247,13 +9008,13 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18900220.1.2"
           }
         ],
-        "minLat": 34.0561,
+        "minLat": 34.056,
         "maxLat": 34.0586,
         "from": "Cesar E Chavez Avenue",
         "to": {
           "px": [
-            1660,
-            1025
+            4981,
+            3650
           ]
         }
       },
@@ -8265,7 +9026,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": {
           "text": "by 1869",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -8276,8 +9037,8 @@ const STREET_DATA = {
             "entityId": "fort-street",
             "formInForce": "Fort Street",
             "how": "extension",
-            "origin": "labeled “Fort Street” on the 1869 Mott Tract building lots {{(source)}} — Fort Moore, built on the hill above it after the Mexican–American War",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+            "origin": "labeled “FORT STREET” and “Fort Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}} — Fort Moore, built on the hill above it after the Mexican–American War",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           },
           {
             "from": "Feb. 1890",
@@ -8307,6 +9068,10 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           },
@@ -8324,11 +9089,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0536,
-        "maxLat": 34.0561,
+        "maxLat": 34.056,
         "from": {
           "px": [
-            1660,
-            1025
+            4981,
+            3650
           ]
         },
         "to": "1st Street"
@@ -8352,7 +9117,7 @@ const STREET_DATA = {
             "entityId": "fort-street",
             "formInForce": "Fort Street",
             "how": "origin",
-            "origin": "labeled “CALLE FORTIN”, “FORT STREET” and “Fort Street” on the 1849 Hutton / Ord Survey and the 1869 Mott Tract building lots {{(source)}} — Fort Moore, built on the hill above it after the Mexican–American War",
+            "origin": "labeled “CALLE FORTIN”, “FORT STREET” and “Fort Street” on the 1849 Hutton / Ord Survey, the 1869 Mott Tract building lots and the 1869 Mott Tract (Pickel survey) {{(source)}} — Fort Moore, built on the hill above it after the Mexican–American War",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
@@ -8393,6 +9158,10 @@ const STREET_DATA = {
           {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          },
+          {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           },
           {
             "title": "Los Angeles Herald, “Broadway — Fort Street Is No Longer in Existence,” Feb. 20, 1890 (the renaming ordinance signed by Mayor Hazard and in effect)",
@@ -8658,7 +9427,9 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "person"
+      "person",
+      "alive",
+      "foreign"
     ],
     "disputed": false,
     "sources": [
@@ -8746,7 +9517,8 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "unknown"
+          "unknown",
+          "person"
         ],
         "disputed": false,
         "sources": [
@@ -8890,9 +9662,12 @@ const STREET_DATA = {
         "label": "beyond 2nd (Vine St)",
         "name": "Central Avenue",
         "entityId": "central-ave",
-        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1977",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0885/TR0885-030.pdf"
+        },
         "built": "not yet researched",
         "nameHistory": [
           {
@@ -8910,17 +9685,18 @@ const STREET_DATA = {
             "name": "Central Avenue",
             "entityId": "central-ave",
             "formInForce": "Central Avenue",
-            "how": "renaming",
+            "how": "origin",
             "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
             "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           }
         ],
         "note": null,
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "knownFraction": 0.73,
         "categories": [
           "descriptive",
           "renamed"
@@ -8937,6 +9713,10 @@ const STREET_DATA = {
           {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          },
+          {
+            "title": "Tract No. 30211 in the City of Los Angeles, State of California, for Redevelopment Purposes (Oct. 26, 1977; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0885/TR0885-030.pdf"
           }
         ],
         "minLat": 34.0477,
@@ -8953,16 +9733,32 @@ const STREET_DATA = {
         "label": "2nd to 3rd",
         "name": "Central Avenue",
         "entityId": "central-ave",
-        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted — how and when this stretch joined Central Avenue is not yet researched",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, extended onto this stretch",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1979",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1979",
+            "until": null,
+            "name": "Central Avenue",
+            "entityId": "central-ave",
+            "formInForce": "Central Avenue",
+            "how": "extension",
+            "origin": "labeled “CENTRAL AVENUE” on the 1979 Tract No. 35332 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
+          }
+        ],
         "note": null,
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1888 (Wolfskill Orchard Tract, sheet 5 (M.R. 30-13))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
+        "knownFraction": 0.48,
         "categories": [
           "descriptive"
         ],
@@ -8971,6 +9767,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Central Avenue",
             "url": "https://lastreetnames.com/street/central-avenue/"
+          },
+          {
+            "title": "Tract No. 35332 in the City of Los Angeles, State of California, for Redevelopment Purposes (Sept. 18, 1979; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
           },
           {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
@@ -9145,7 +9945,7 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "unknown"
+          "mythological"
         ],
         "disputed": false,
         "sources": [
@@ -9194,7 +9994,7 @@ const STREET_DATA = {
         },
         "knownFraction": 0.78,
         "categories": [
-          "unknown"
+          "mythological"
         ],
         "disputed": false,
         "sources": [
@@ -9233,7 +10033,7 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "unknown"
+          "mythological"
         ],
         "disputed": false,
         "sources": [
@@ -9268,7 +10068,7 @@ const STREET_DATA = {
         "note": "This street was laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
         "attested": false,
         "categories": [
-          "unknown"
+          "mythological"
         ],
         "disputed": false,
         "sources": [
@@ -9400,7 +10200,8 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "unknown"
+          "unknown",
+          "descriptive"
         ],
         "disputed": false,
         "sources": [
@@ -10100,13 +10901,13 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "maxLng": -118.2364,
@@ -10129,13 +10930,13 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "minLng": -118.2364,
@@ -10156,7 +10957,7 @@ const STREET_DATA = {
     "namedAfterLink": null,
     "planned": {
       "text": "by 1869",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+      "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
     },
     "built": "not yet researched",
     "nameHistory": [
@@ -10167,8 +10968,8 @@ const STREET_DATA = {
         "entityId": "court-house-street",
         "formInForce": "Court House Street",
         "how": "origin",
-        "origin": "labeled “Court House Street” on the 1869 Mott Tract building lots {{(source)}} — lettered on the Mott Tract sheet of March 1869, running the block between First and Temple. The name plainly points at a court house, and nothing found says which one or who chose it. The stretch survives as Community Terrace",
-        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+        "origin": "labeled “COURT HOUSE STREET” and “Court House Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}} — lettered on the Mott Tract sheet of March 1869, running the block between First and Temple. The name plainly points at a court house, and nothing found says which one or who chose it. The stretch survives as Community Terrace",
+        "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
       },
       {
         "from": "?",
@@ -10198,6 +10999,10 @@ const STREET_DATA = {
     ],
     "disputed": false,
     "sources": [
+      {
+        "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+        "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+      },
       {
         "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
@@ -10625,11 +11430,13 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "person",
+          "alive",
           "renamed"
         ],
         "formerCategories": [
           "person",
-          "governor"
+          "governor",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -10693,11 +11500,13 @@ const STREET_DATA = {
         "knownFraction": 0.22,
         "categories": [
           "person",
+          "alive",
           "renamed"
         ],
         "formerCategories": [
           "person",
-          "governor"
+          "governor",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -10740,7 +11549,8 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "person"
+          "person",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -10775,7 +11585,8 @@ const STREET_DATA = {
         "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
         "attested": false,
         "categories": [
-          "person"
+          "person",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -10832,10 +11643,12 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "person",
+          "alive",
           "renamed"
         ],
         "formerCategories": [
-          "person"
+          "person",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -10873,7 +11686,8 @@ const STREET_DATA = {
         "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
         "attested": false,
         "categories": [
-          "person"
+          "person",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -11058,6 +11872,10 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": false,
+    "absentAsOf": {
+      "text": "1869 (Mott Tract (Pickel survey))",
+      "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+    },
     "categories": [
       "unresearched"
     ],
@@ -11482,102 +12300,17 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           }
         ],
-        "minLat": 34.0578,
+        "minLat": 34.06,
         "from": null,
         "to": {
           "px": [
-            185,
-            745
+            5201,
+            1215
           ]
         }
       },
       {
-        "label": "part of (Pearl St)",
-        "name": "Figueroa Street",
-        "entityId": "figueroa-gov",
-        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
-        "planned": {
-          "text": "by 1883",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1883",
-            "until": "Feb. 1897",
-            "name": "Pearl Street",
-            "entityId": "pearl",
-            "formInForce": "Pearl Street",
-            "origin": "labeled “PEARL STREET” on the 1883 Block W, Mott Tract {{(source)}} — No namesake documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Figueroa Street",
-            "entityId": "figueroa-gov",
-            "formInForce": "Figueroa Street",
-            "how": "transfer",
-            "origin": "the name arrived from another roadway, renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
-        "note": null,
-        "attested": true,
-        "knownFraction": 0.81,
-        "categories": [
-          "person",
-          "governor",
-          "renamed"
-        ],
-        "formerCategories": [
-          "unknown"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Figueroa Street",
-            "url": "https://lastreetnames.com/street/figueroa-street/"
-          },
-          {
-            "title": "Map of Block W Mott Tract as subdivided by E. T. Wright at request of M. L. Wicks in Los Angeles City (M.R. 5-307, June 25, 1883; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
-          },
-          {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          },
-          {
-            "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874 (council renames Grasshopper St → Pearl St)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
-          },
-          {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
-          },
-          {
-            "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
-          }
-        ],
-        "minLat": 34.0564,
-        "maxLat": 34.0578,
-        "from": {
-          "px": [
-            185,
-            745
-          ]
-        },
-        "to": {
-          "px": [
-            1158,
-            777
-          ]
-        }
-      },
-      {
-        "label": "part of",
+        "label": "beyond Diamond",
         "name": "Figueroa Street",
         "entityId": "figueroa-gov",
         "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835 — how and when this stretch joined Figueroa Street is not yet researched",
@@ -11586,6 +12319,10 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": false,
+        "absentAsOf": {
+          "text": "1869 (Mott Tract (Pickel survey))",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+        },
         "categories": [
           "person",
           "governor"
@@ -11601,18 +12338,120 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           }
         ],
-        "minLat": 34.054,
-        "maxLat": 34.0564,
+        "minLat": 34.0584,
+        "maxLat": 34.06,
         "from": {
           "px": [
-            1158,
-            777
+            5201,
+            1215
           ]
         },
+        "to": "Diamond Street"
+      },
+      {
+        "label": "beyond Diamond (Pearl St)",
+        "name": "Figueroa Street",
+        "entityId": "figueroa-gov",
+        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
+        "planned": {
+          "text": "by 1869",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1869",
+            "until": "Feb. 1874",
+            "name": "Grasshopper Street",
+            "entityId": "chapules",
+            "formInForce": "Grasshopper Street",
+            "origin": "labeled “GRASSHOPPER STREET” on the 1869 Mott Tract (Pickel survey) {{(source)}} — The insect: grasshoppers crossing this line from the western plains doomed the grape harvest",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
+            "from": "Feb. 1874",
+            "until": "Feb. 1897",
+            "name": "Pearl Street",
+            "entityId": "pearl",
+            "formInForce": "Pearl Street",
+            "how": "renaming",
+            "origin": "renamed per the Feb. 1874 council action (Herald report) {{(source)}} — No namesake documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
+          },
+          {
+            "from": "Feb. 1897",
+            "until": null,
+            "name": "Figueroa Street",
+            "entityId": "figueroa-gov",
+            "formInForce": "Figueroa Street",
+            "how": "transfer",
+            "origin": "the name arrived from another roadway, renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
+        "knownFraction": 0.89,
+        "categories": [
+          "person",
+          "governor",
+          "renamed"
+        ],
+        "formerCategories": [
+          "nature",
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Figueroa Street",
+            "url": "https://lastreetnames.com/street/figueroa-street/"
+          },
+          {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
+            "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874 (council renames Grasshopper St → Pearl St)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
+          },
+          {
+            "title": "“An Ordinance Changing the names of Certain Streets in the City of Los Angeles” — Los Angeles Common Council, adopted Feb. 26, 1874 (council minutes, ledger p. 621)",
+            "url": "https://clerkapps.lacity.org/oldcfidocs/"
+          },
+          {
+            "title": "Map of Block W Mott Tract as subdivided by E. T. Wright at request of M. L. Wicks in Los Angeles City (M.R. 5-307, June 25, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          }
+        ],
+        "minLat": 34.0521,
+        "maxLat": 34.0584,
+        "from": "Diamond Street",
         "to": {
           "px": [
-            869,
-            843
+            553,
+            796
           ]
         }
       },
@@ -11646,11 +12485,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.049,
-        "maxLat": 34.054,
+        "maxLat": 34.0521,
         "from": {
           "px": [
-            869,
-            843
+            553,
+            796
           ]
         },
         "to": {
@@ -11967,12 +12806,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0549,
+        "minLat": 34.0545,
         "from": null,
         "to": {
           "px": [
-            1000,
-            395
+            2230,
+            1241
           ]
         }
       },
@@ -11982,10 +12821,18 @@ const STREET_DATA = {
         "entityId": "flower",
         "namedAfter": "Supposedly the blossom-covered hills behind it — how and when this stretch joined Flower Street is not yet researched",
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1869",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+        },
         "built": "not yet researched",
         "note": null,
-        "attested": false,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
+        "knownFraction": 0.89,
         "categories": [
           "nature"
         ],
@@ -11996,22 +12843,26 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/flower-street/"
           },
           {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0533,
-        "maxLat": 34.0549,
+        "minLat": 34.0517,
+        "maxLat": 34.0545,
         "from": {
           "px": [
-            1000,
-            395
+            2230,
+            1241
           ]
         },
         "to": {
           "px": [
-            873,
-            918
+            685,
+            1275
           ]
         }
       },
@@ -12044,11 +12895,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0501,
-        "maxLat": 34.0533,
+        "maxLat": 34.0517,
         "from": {
           "px": [
-            873,
-            918
+            685,
+            1275
           ]
         },
         "to": "6th Street"
@@ -12428,7 +13279,7 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "north of Temple (discontinuous)",
+        "label": "part of",
         "name": "Garey Street",
         "entityId": "garey",
         "namedAfter": "Almost certainly {{Thomas Andrew Garey (1830–1909)}}, citrus nurseryman and co-founder of Pomona — how and when this stretch joined Garey Street is not yet researched",
@@ -12452,23 +13303,82 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
-        "minLat": 34.0472,
+        "minLat": 34.0515,
         "from": null,
-        "to": "Temple Street",
+        "to": {
+          "px": [
+            1210,
+            676
+          ]
+        }
+      },
+      {
+        "label": "part of (discontinuous)",
+        "name": "Garey Street",
+        "entityId": "garey",
+        "namedAfter": "Almost certainly {{Thomas Andrew Garey (1830–1909)}}, citrus nurseryman and co-founder of Pomona — how and when this stretch joined Garey Street is not yet researched",
+        "namedAfterLink": "https://www.findagrave.com/memorial/87759308/thomas-andrew-garey",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1928 (Tract No. 9771)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+        },
+        "categories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Garey Street",
+            "url": "https://lastreetnames.com/street/garey-street/"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          }
+        ],
+        "minLat": 34.0472,
+        "maxLat": 34.0515,
+        "from": {
+          "px": [
+            1210,
+            676
+          ]
+        },
+        "to": {
+          "px": [
+            1162,
+            1080
+          ]
+        },
         "gapAfter": true
       },
       {
-        "label": "2nd to 3rd (original Garey St)",
+        "label": "part of (Messer Street.)",
         "name": "Garey Street",
         "entityId": "garey",
         "namedAfter": "Almost certainly {{Thomas Andrew Garey (1830–1909)}}, citrus nurseryman and co-founder of Pomona — his was the only Garey family in town when the street was named",
         "namedAfterLink": "https://www.findagrave.com/memorial/87759308/thomas-andrew-garey",
         "planned": {
-          "text": "by 1875",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          "text": "by 1871",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
+          {
+            "from": "by 1871",
+            "until": "?",
+            "name": "Messer Street.",
+            "entityId": "messer-street",
+            "formInForce": "Messer Street.",
+            "how": "origin",
+            "origin": "labeled “Messer STREET.” on the 1871 Johnston Tract {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
           {
             "from": "by 1875",
             "until": null,
@@ -12489,7 +13399,11 @@ const STREET_DATA = {
         "knownFraction": 0.86,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
         ],
         "disputed": false,
         "sources": [
@@ -12498,12 +13412,21 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/garey-street/"
           },
           {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
+          {
             "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
           }
         ],
         "maxLat": 34.0472,
-        "from": "2nd Street",
+        "from": {
+          "px": [
+            105,
+            571
+          ]
+        },
         "to": null
       }
     ]
@@ -12666,7 +13589,7 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "unknown"
+          "person"
         ],
         "disputed": false,
         "sources": [
@@ -12711,7 +13634,7 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "unknown"
+          "person"
         ],
         "disputed": false,
         "sources": [
@@ -12758,7 +13681,7 @@ const STREET_DATA = {
         "note": "The next street over from Ruth Avenue, and part of the same run of women's names that continues south across the Sabichi family's land as Agatha Street — Agatha Sabichi's mother was a daughter of the pioneer settler William Wolfskill. No source names a Gladys in the family or among the subdividers. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
         "attested": false,
         "categories": [
-          "unknown"
+          "person"
         ],
         "disputed": false,
         "sources": [
@@ -12926,8 +13849,8 @@ const STREET_DATA = {
         "from": null,
         "to": {
           "px": [
-            1704,
-            579
+            5112,
+            2201
           ]
         }
       },
@@ -12939,7 +13862,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": {
           "text": "by 1869",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -12949,8 +13872,8 @@ const STREET_DATA = {
             "name": "Charity Street",
             "entityId": "charity",
             "formInForce": "Charity Street",
-            "origin": "labeled “Charity Street” on the 1869 Mott Tract building lots {{(source)}} — The virtue",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+            "origin": "labeled “CHARITY STREET” and “Charity Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}} — The virtue",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           },
           {
             "from": "?",
@@ -12980,6 +13903,10 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           },
@@ -13000,14 +13927,14 @@ const STREET_DATA = {
         "maxLat": 34.0584,
         "from": {
           "px": [
-            1704,
-            579
+            5112,
+            2201
           ]
         },
         "to": {
           "px": [
-            410,
-            595
+            954,
+            2248
           ]
         }
       },
@@ -13039,8 +13966,8 @@ const STREET_DATA = {
         "maxLat": 34.0507,
         "from": {
           "px": [
-            410,
-            595
+            954,
+            2248
           ]
         },
         "to": "6th Street"
@@ -13232,7 +14159,7 @@ const STREET_DATA = {
     "namedAfterLink": null,
     "planned": {
       "text": "by 1869",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+      "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
     },
     "built": "not yet researched",
     "nameHistory": [
@@ -13242,8 +14169,8 @@ const STREET_DATA = {
         "name": "Charity Street",
         "entityId": "charity",
         "formInForce": "Charity Street",
-        "origin": "labeled “Charity Street” on the 1869 Mott Tract building lots {{(source)}} — The virtue",
-        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+        "origin": "labeled “CHARITY STREET” and “Charity Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}} — The virtue",
+        "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
       },
       {
         "from": "?",
@@ -13268,6 +14195,10 @@ const STREET_DATA = {
     ],
     "disputed": false,
     "sources": [
+      {
+        "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+        "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+      },
       {
         "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
@@ -13386,26 +14317,26 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "beyond 3rd (original Hewitt St)",
+        "label": "part of (original Hewitt St)",
         "name": "Hewitt Street",
         "entityId": "hewitt",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1875",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          "text": "by 1871",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1875",
+            "from": "by 1871",
             "until": null,
             "name": "Hewitt Street",
             "entityId": "hewitt",
             "formInForce": "Hewitt Street",
             "how": "origin",
-            "origin": "labeled “HEWITT STREET” on the 1875 Thomas Tract (sheets 1, 2) {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "origin": "labeled “Hewitt STREET.” and “HEWITT STREET” on the 1871 Johnston Tract (sheets 1, 2), the 1875 Thomas Tract (sheets 1, 2) and the 2007 Tract No. 62057 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
         "note": null,
@@ -13414,12 +14345,16 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.86,
+        "knownFraction": 0.88,
         "categories": [
           "unknown"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
           {
             "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
@@ -13427,14 +14362,23 @@ const STREET_DATA = {
           {
             "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Tract No. 62057 in the City of Los Angeles, State of California (Oct. 9, 2007; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1339/TR1339-069.pdf"
           }
         ],
         "minLat": 34.0458,
         "from": null,
-        "to": "3rd Street"
+        "to": {
+          "px": [
+            597,
+            828
+          ]
+        }
       },
       {
-        "label": "3rd to Traction",
+        "label": "beyond Traction",
         "name": "Hewitt Street",
         "entityId": null,
         "namedAfter": null,
@@ -13455,7 +14399,12 @@ const STREET_DATA = {
         ],
         "minLat": 34.0453,
         "maxLat": 34.0458,
-        "from": "3rd Street",
+        "from": {
+          "px": [
+            597,
+            828
+          ]
+        },
         "to": "Traction Avenue"
       },
       {
@@ -13486,8 +14435,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
         "minLat": 34.0445,
@@ -13548,8 +14497,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
         "minLat": 34.0431,
@@ -13582,8 +14531,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
         "maxLat": 34.0431,
@@ -13712,8 +14661,10 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "unknown",
-          "person"
+          "nature",
+          "person",
+          "alive",
+          "foreign"
         ],
         "disputed": false,
         "sources": [
@@ -13786,8 +14737,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            1673,
-            895
+            5020,
+            3218
           ]
         }
       },
@@ -13799,7 +14750,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
         "planned": {
           "text": "by 1869",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -13810,8 +14761,8 @@ const STREET_DATA = {
             "entityId": "hill-street-downtown",
             "formInForce": "Hill Street",
             "how": "extension",
-            "origin": "labeled “Hill Street” on the 1869 Mott Tract building lots {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+            "origin": "labeled “HILL STREET” and “Hill Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           }
         ],
         "note": null,
@@ -13831,6 +14782,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hill-street/"
           },
           {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           },
@@ -13843,8 +14798,8 @@ const STREET_DATA = {
         "maxLat": 34.0567,
         "from": {
           "px": [
-            1673,
-            895
+            5020,
+            3218
           ]
         },
         "to": {
@@ -13873,7 +14828,7 @@ const STREET_DATA = {
             "entityId": "hill-street-downtown",
             "formInForce": "Hill Street",
             "how": "origin",
-            "origin": "labeled “HILL STREET”, “CALLE LOMA”, “HILL ST” and “Hill Street” on the 1849 Hutton / Ord Survey and the 1869 Mott Tract building lots {{(source)}}",
+            "origin": "labeled “HILL STREET”, “CALLE LOMA”, “HILL ST” and “Hill Street” on the 1849 Hutton / Ord Survey, the 1869 Mott Tract building lots and the 1869 Mott Tract (Pickel survey) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -13904,6 +14859,10 @@ const STREET_DATA = {
           {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          },
+          {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           }
         ],
         "minLat": 34.0383,
@@ -14012,7 +14971,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
         "planned": {
           "text": "by 1869",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "built": "not yet researched",
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
@@ -14034,6 +14993,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/hope-street/"
           },
           {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           },
@@ -14046,8 +15009,8 @@ const STREET_DATA = {
         "from": null,
         "to": {
           "px": [
-            435,
-            444
+            1042,
+            1760
           ]
         },
         "gapAfter": true
@@ -14595,21 +15558,95 @@ const STREET_DATA = {
   },
   "Jackson Street": {
     "name": "Jackson Street",
-    "entityId": "jackson-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "EW",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of (Turner St)",
+        "name": "Jackson Street",
+        "entityId": "jackson-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1928",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1928",
+            "until": "?",
+            "name": "Turner Street",
+            "entityId": "turner-street",
+            "formInForce": "Turner Street",
+            "how": "origin",
+            "origin": "labeled “Turner Street” on the 1928 Tract No. 9771 {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Jackson Street",
+            "entityId": "jackson-street",
+            "formInForce": "Jackson Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "unresearched",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Tract No. 9771 in the City of Los Angeles (Jan. 4, 1928; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+          }
+        ],
+        "maxLng": -118.2331,
+        "from": null,
+        "to": {
+          "px": [
+            1578,
+            820
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Jackson Street",
+        "entityId": "jackson-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLng": -118.2331,
+        "from": {
+          "px": [
+            1578,
+            820
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -14638,22 +15675,38 @@ const STREET_DATA = {
     "entityId": "japanese-village-plaza-mall",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "absentAsOf": {
-      "text": "1849 (Hutton / Ord Survey)",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+    "planned": {
+      "text": "by 1977",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0885/TR0885-030.pdf"
     },
+    "built": "not yet researched",
+    "nameHistory": [
+      {
+        "from": "by 1977",
+        "until": null,
+        "name": "Japanese Village Plaza Mall",
+        "entityId": "japanese-village-plaza-mall",
+        "formInForce": "Japanese Village Plaza Mall",
+        "how": "origin",
+        "origin": "labeled “JAPANESE VILLAGE PLAZA MALL” on the 1977 Tract No. 30211 {{(source)}}",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0885/TR0885-030.pdf"
+      }
+    ],
+    "note": null,
+    "attested": true,
+    "absentAsOf": {
+      "text": "1868 (Garden of J. Murat)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
+    },
+    "knownFraction": 0.38,
     "categories": [
-      "unresearched"
+      "unknown"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Tract No. 30211 in the City of Los Angeles, State of California, for Redevelopment Purposes (Oct. 26, 1977; identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0885/TR0885-030.pdf"
       }
     ]
   },
@@ -14738,69 +15791,59 @@ const STREET_DATA = {
   },
   "Judge John Aiso Street": {
     "name": "Judge John Aiso Street",
-    "orientation": "NS",
-    "segments": [
+    "entityId": "judge-john-aiso-street",
+    "namedAfter": null,
+    "namedAfterLink": null,
+    "planned": {
+      "text": "by 1876",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+    },
+    "built": "not yet researched",
+    "nameHistory": [
       {
-        "label": "part of",
-        "name": "Judge John Aiso Street",
-        "entityId": "judge-john-aiso-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": "not yet researched",
-        "built": "not yet researched",
-        "note": null,
-        "attested": false,
-        "categories": [
-          "unresearched"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
-          }
-        ],
-        "minLat": 34.0511,
-        "from": null,
-        "to": {
-          "px": [
-            864,
-            367
-          ]
-        }
+        "from": "by 1876",
+        "until": "?",
+        "name": "Wilmington Street",
+        "entityId": "wilmington-street",
+        "formInForce": "Wilmington Street",
+        "how": "origin",
+        "origin": "labeled “WILMINGTON” on the 1876 Requena Subdivision (sheets 1, 2) {{(source)}} — no namesake documented",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
       },
       {
-        "label": "part of",
+        "from": "?",
+        "until": null,
         "name": "Judge John Aiso Street",
         "entityId": "judge-john-aiso-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": "not yet researched",
-        "built": "not yet researched",
-        "note": null,
-        "attested": false,
-        "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
-        },
-        "categories": [
-          "unresearched"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
-          }
-        ],
-        "maxLat": 34.0511,
-        "from": {
-          "px": [
-            864,
-            367
-          ]
-        },
-        "to": null
+        "formInForce": "Judge John Aiso Street",
+        "how": "renaming",
+        "origin": "arrival on this stretch not directly documented",
+        "originLink": null
+      }
+    ],
+    "note": null,
+    "attested": true,
+    "absentAsOf": {
+      "text": "1868 (Garden of J. Murat)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
+    },
+    "knownFraction": 0.1,
+    "categories": [
+      "unresearched",
+      "renamed"
+    ],
+    "formerCategories": [
+      "unknown"
+    ],
+    "disputed": false,
+    "sources": [
+      {
+        "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876; identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+      },
+      {
+        "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
       }
     ]
   },
@@ -15342,8 +16385,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "minLat": 34.0548,
@@ -15390,11 +16433,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
-        "minLat": 34.0541,
+        "minLat": 34.0544,
         "maxLat": 34.0548,
         "from": {
           "px": [
@@ -15404,25 +16447,40 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            656,
-            1469
+            1085,
+            731
           ]
         }
       },
       {
-        "label": "part of",
+        "label": "part of (original Los Angeles St)",
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
-        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfter": "The city itself — ultimately Nuestra Señora de los Ángeles de Porciúncula, the 1769 Spanish naming of {{the river}}",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
-        "planned": null,
+        "planned": {
+          "text": "by 1876",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+        },
         "built": {
           "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
+        "nameHistory": [
+          {
+            "from": "by 1876",
+            "until": null,
+            "name": "Los Angeles Street",
+            "entityId": "los-angeles-street",
+            "formInForce": "Los Angeles Street",
+            "how": "origin",
+            "origin": "labeled “LOS ANGELES STREET” on the 1876 Requena Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+          }
+        ],
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.85,
         "categories": [
           "place"
         ],
@@ -15441,22 +16499,22 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "minLat": 34.0531,
-        "maxLat": 34.0541,
+        "maxLat": 34.0544,
         "from": {
           "px": [
-            656,
-            1469
+            1085,
+            731
           ]
         },
         "to": {
           "px": [
-            575,
-            1470
+            428,
+            531
           ]
         }
       },
@@ -15484,16 +16542,16 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "minLat": 34.0521,
         "maxLat": 34.0531,
         "from": {
           "px": [
-            575,
-            1470
+            428,
+            531
           ]
         },
         "to": {
@@ -15539,8 +16597,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "minLat": 34.0512,
@@ -15586,8 +16644,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "minLat": 34.0487,
@@ -15606,28 +16664,16 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (original Los Angeles St)",
+        "label": "part of",
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
-        "namedAfter": "The city itself — ultimately Nuestra Señora de los Ángeles de Porciúncula, the 1769 Spanish naming of {{the river}}",
+        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
         "planned": {
           "text": "by 1882",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
         },
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1882",
-            "until": null,
-            "name": "Los Angeles Street",
-            "entityId": "los-angeles-street",
-            "formInForce": "Los Angeles Street",
-            "how": "origin",
-            "origin": "labeled “Los Angeles Street” on the 1882 Orchard Tract {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
-          }
-        ],
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "absentAsOf": {
@@ -15651,6 +16697,14 @@ const STREET_DATA = {
           {
             "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+          },
+          {
+            "title": "Map of the Mills' Tract in the City of Los Angeles (M.R. 12-26, Nov. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          },
+          {
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "minLat": 34.0477,
@@ -15672,16 +16726,32 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
-        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfter": "The city itself, extended onto this stretch",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": null,
+            "name": "Los Angeles Street",
+            "entityId": "los-angeles-street",
+            "formInForce": "Los Angeles Street",
+            "how": "extension",
+            "origin": "labeled “Los Angeles Street” on the 1886 Mills' Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          }
+        ],
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "knownFraction": 0.8,
         "categories": [
           "place"
         ],
@@ -15696,16 +16766,142 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Map of the Mills' Tract in the City of Los Angeles (M.R. 12-26, Nov. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          },
+          {
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
-        "minLat": 34.0435,
+        "minLat": 34.0468,
         "maxLat": 34.0477,
         "from": {
           "px": [
             704,
             654
+          ]
+        },
+        "to": {
+          "px": [
+            190,
+            436
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Los Angeles Street",
+        "entityId": "los-angeles-street",
+        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "planned": {
+          "text": "by 1881",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf"
+        },
+        "built": "not yet researched",
+        "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.82,
+        "categories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Los Angeles Street",
+            "url": "https://lastreetnames.com/street/los-angeles-street/"
+          },
+          {
+            "title": "Wikipedia: Los Angeles Street",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Map of the Rivara and Vignolo Tract, situated in the City of Los Angeles (M.R. 5-110, 1881; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf"
+          },
+          {
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+          }
+        ],
+        "minLat": 34.045,
+        "maxLat": 34.0468,
+        "from": {
+          "px": [
+            190,
+            436
+          ]
+        },
+        "to": {
+          "px": [
+            1024,
+            423
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Los Angeles Street",
+        "entityId": "los-angeles-street",
+        "namedAfter": "The city itself, extended onto this stretch",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "planned": {
+          "text": "by 1906",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1906",
+            "until": null,
+            "name": "Los Angeles Street",
+            "entityId": "los-angeles-street",
+            "formInForce": "Los Angeles Street",
+            "how": "extension",
+            "origin": "labeled “LOS ANGELES ST.” on the 1906 6th St. Terminal Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
+          }
+        ],
+        "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.68,
+        "categories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Los Angeles Street",
+            "url": "https://lastreetnames.com/street/los-angeles-street/"
+          },
+          {
+            "title": "Wikipedia: Los Angeles Street",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "6th St. Terminal Tract (Mar. 2, 1906; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
+          },
+          {
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+          }
+        ],
+        "minLat": 34.0435,
+        "maxLat": 34.045,
+        "from": {
+          "px": [
+            1024,
+            423
           ]
         },
         "to": {
@@ -15751,8 +16947,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "6th St. Terminal Tract (Mar. 2, 1906; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
+          },
+          {
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "minLat": 34.0422,
@@ -15818,8 +17018,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "minLat": 34.0415,
@@ -15865,8 +17065,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "minLat": 34.041,
@@ -15932,11 +17132,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
-        "minLat": 34.0389,
+        "minLat": 34.0393,
         "maxLat": 34.041,
         "from": {
           "px": [
@@ -15946,8 +17146,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            497,
-            307
+            1934,
+            1326
           ]
         }
       },
@@ -15958,8 +17158,8 @@ const STREET_DATA = {
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
         "planned": {
-          "text": "by 1885",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          "text": "by 1883",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "built": "not yet researched",
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
@@ -15968,7 +17168,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
         },
-        "knownFraction": 0.8,
+        "knownFraction": 0.81,
         "categories": [
           "place"
         ],
@@ -15983,26 +17183,30 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          },
+          {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
-        "minLat": 34.0362,
-        "maxLat": 34.0389,
+        "minLat": 34.0361,
+        "maxLat": 34.0393,
         "from": {
           "px": [
-            497,
-            307
+            1934,
+            1326
           ]
         },
         "to": {
           "px": [
-            538,
-            887
+            2134,
+            5936
           ]
         }
       },
@@ -16030,16 +17234,16 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "minLat": 34.0341,
-        "maxLat": 34.0362,
+        "maxLat": 34.0361,
         "from": {
           "px": [
-            538,
-            887
+            2134,
+            5936
           ]
         },
         "to": {
@@ -16081,8 +17285,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "minLat": 34.0327,
@@ -16124,8 +17328,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
         "maxLat": 34.0327,
@@ -16710,7 +17914,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": {
           "text": "1849",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -16721,8 +17925,184 @@ const STREET_DATA = {
             "entityId": "main-street-dtla",
             "formInForce": "Main Street",
             "how": "origin",
-            "origin": "labeled “MAIN STREET” and “CALLE PRINCIPAL” on the 1849 Hutton / Ord Survey {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+            "origin": "labeled “CALLE PRINCIPAL”, “MAIN STREET” and “Main Street” on the 1849 Hutton / Ord Survey and the 1886 Mills' Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
+        "attested": true,
+        "knownFraction": 1,
+        "categories": [
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Main Street",
+            "url": "https://lastreetnames.com/street/main-street/"
+          },
+          {
+            "title": "Wikipedia: Main Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          },
+          {
+            "title": "Map of the Mills' Tract in the City of Los Angeles (M.R. 12-26, Nov. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0477,
+        "maxLat": 34.0548,
+        "from": {
+          "px": [
+            22,
+            842
+          ]
+        },
+        "to": {
+          "px": [
+            89,
+            807
+          ]
+        }
+      },
+      {
+        "label": "part of (Los Angeles St)",
+        "name": "Main Street",
+        "entityId": "main-street-dtla",
+        "namedAfter": "Its standing as the pueblo’s principal street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "1849",
+            "until": null,
+            "name": "Main Street",
+            "entityId": "main-street-dtla",
+            "formInForce": "Main Street",
+            "how": "origin",
+            "origin": "labeled “CALLE PRINCIPAL”, “MAIN STREET” and “Main Street” on the 1849 Hutton / Ord Survey and the 1881 Rivara and Vignolo Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "from": "by 1889",
+            "until": "?",
+            "name": "Los Angeles Street",
+            "entityId": "los-angeles-street",
+            "formInForce": "Los Angeles Street",
+            "how": "renaming",
+            "origin": "labeled “Los Angeles St.” on the 1889 Jones and Ponet Block {{(source)}} — The city itself — ultimately Nuestra Señora de los Ángeles de Porciúncula, the 1769 Spanish naming of the river",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR039/MR039-069.pdf"
+          }
+        ],
+        "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
+        "attested": true,
+        "knownFraction": 1,
+        "categories": [
+          "descriptive",
+          "renamed"
+        ],
+        "formerCategories": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Main Street",
+            "url": "https://lastreetnames.com/street/main-street/"
+          },
+          {
+            "title": "Wikipedia: Main Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          },
+          {
+            "title": "Map of the Rivara and Vignolo Tract, situated in the City of Los Angeles (M.R. 5-110, 1881; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf"
+          },
+          {
+            "title": "Plat of the Jones and Ponet Block in the City of Los Angeles, Cal. (M.R. 39-69, Mar. 1889; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR039/MR039-069.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Los Angeles Street",
+            "url": "https://lastreetnames.com/street/los-angeles-street/"
+          },
+          {
+            "title": "Wikipedia: Los Angeles Street",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          }
+        ],
+        "minLat": 34.0465,
+        "maxLat": 34.0477,
+        "from": {
+          "px": [
+            89,
+            807
+          ]
+        },
+        "to": {
+          "px": [
+            395,
+            1392
+          ]
+        }
+      },
+      {
+        "label": "part of (original Main St)",
+        "name": "Main Street",
+        "entityId": "main-street-dtla",
+        "namedAfter": "Its standing as the pueblo’s principal street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "1849",
+            "until": null,
+            "name": "Main Street",
+            "entityId": "main-street-dtla",
+            "formInForce": "Main Street",
+            "how": "origin",
+            "origin": "labeled “CALLE PRINCIPAL”, “MAIN STREET” and “Main Street” on the 1849 Hutton / Ord Survey, the 1873 Botiller and Reyes lots and the 1881 Rivara and Vignolo Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
@@ -16746,34 +18126,38 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
-          },
-          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          },
+          {
+            "title": "Los Angeles : Botiller and Reyes lots east side of Main Street (1873; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
+          },
+          {
+            "title": "Map of the Rivara and Vignolo Tract, situated in the City of Los Angeles (M.R. 5-110, 1881; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0431,
-        "maxLat": 34.0548,
+        "minLat": 34.0436,
+        "maxLat": 34.0465,
         "from": {
           "px": [
-            22,
-            842
+            395,
+            1392
           ]
         },
         "to": {
           "px": [
-            217,
-            552
+            79,
+            190
           ]
         }
       },
@@ -16784,20 +18168,20 @@ const STREET_DATA = {
         "namedAfter": "Its standing as the pueblo’s principal street, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
+          "text": "by 1873",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "by 1873",
             "until": null,
             "name": "Main Street",
             "entityId": "main-street-dtla",
             "formInForce": "Main Street",
             "how": "extension",
-            "origin": "labeled “Main Street” on the 1888 Widow Botiller Tract resubdivision {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
+            "origin": "labeled “Main Street” and “MAIN STREET” on the 1873 Botiller and Reyes lots, the 1888 Widow Botiller Tract resubdivision and the 1893 Hammel and Denker Tract {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
           }
         ],
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
@@ -16806,7 +18190,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
-        "knownFraction": 0.78,
+        "knownFraction": 0.87,
         "categories": [
           "descriptive"
         ],
@@ -16819,75 +18203,41 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Los Angeles : Botiller and Reyes lots east side of Main Street (1873; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
           },
           {
             "title": "Map of the Resubdivision of the Widow Botiller Tract (M.R. 29-26, Mar. 15, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
           },
           {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0424,
-        "maxLat": 34.0431,
+        "minLat": 34.0413,
+        "maxLat": 34.0436,
         "from": {
           "px": [
-            217,
-            552
+            79,
+            190
           ]
         },
         "to": {
           "px": [
-            194,
-            865
+            1438,
+            5941
           ]
         }
       },
       {
-        "label": "beyond 9th",
-        "name": "Main Street",
-        "entityId": "main-street-dtla",
-        "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": "not yet researched",
-        "built": "not yet researched",
-        "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
-        "attested": false,
-        "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-        },
-        "categories": [
-          "descriptive"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Main Street",
-            "url": "https://lastreetnames.com/street/main-street/"
-          },
-          {
-            "title": "Wikipedia: Main Street (Los Angeles)",
-            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
-          }
-        ],
-        "minLat": 34.0416,
-        "maxLat": 34.0424,
-        "from": {
-          "px": [
-            194,
-            865
-          ]
-        },
-        "to": "9th Street"
-      },
-      {
-        "label": "beyond 9th",
+        "label": "part of",
         "name": "Main Street",
         "entityId": "main-street-dtla",
         "namedAfter": "Its standing as the pueblo’s principal street, extended onto this stretch",
@@ -16938,13 +18288,18 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0396,
-        "maxLat": 34.0416,
-        "from": "9th Street",
+        "minLat": 34.0401,
+        "maxLat": 34.0413,
+        "from": {
+          "px": [
+            1438,
+            5941
+          ]
+        },
         "to": {
           "px": [
-            304,
-            307
+            592,
+            1193
           ]
         }
       },
@@ -16955,8 +18310,8 @@ const STREET_DATA = {
         "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1885",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          "text": "by 1883",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "built": "not yet researched",
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
@@ -16965,7 +18320,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
         },
-        "knownFraction": 0.8,
+        "knownFraction": 0.81,
         "categories": [
           "descriptive"
         ],
@@ -16980,26 +18335,34 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          },
+          {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          },
+          {
+            "title": "Map of Hammel and Denker Tract, Los Angeles City, California (M.R. 53-63, Oct. 1893; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0368,
-        "maxLat": 34.0396,
+        "minLat": 34.0367,
+        "maxLat": 34.0401,
         "from": {
           "px": [
-            304,
-            307
+            592,
+            1193
           ]
         },
         "to": {
           "px": [
-            351,
-            896
+            893,
+            5904
           ]
         }
       },
@@ -17032,11 +18395,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0347,
-        "maxLat": 34.0368,
+        "maxLat": 34.0367,
         "from": {
           "px": [
-            351,
-            896
+            893,
+            5904
           ]
         },
         "to": {
@@ -17195,8 +18558,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLat": 34.0439,
@@ -17214,14 +18577,30 @@ const STREET_DATA = {
         "entityId": "maple-dtla",
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1906",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1906",
+            "until": null,
+            "name": "Maple Avenue",
+            "entityId": "maple-dtla",
+            "formInForce": "Maple Avenue",
+            "how": "extension",
+            "origin": "labeled “MAPLE AVE.” on the 1906 6th St. Terminal Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
+          }
+        ],
         "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "knownFraction": 0.68,
         "categories": [
           "nature",
           "unknown"
@@ -17229,8 +18608,12 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "6th St. Terminal Tract (Mar. 2, 1906; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
+          },
+          {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLat": 34.0427,
@@ -17277,8 +18660,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "6th St. Terminal Tract (Mar. 2, 1906; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
+          },
+          {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLat": 34.0412,
@@ -17333,8 +18720,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLat": 34.0404,
@@ -17369,8 +18756,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLat": 34.0397,
@@ -17425,11 +18812,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
-        "minLat": 34.0376,
+        "minLat": 34.0378,
         "maxLat": 34.0397,
         "from": {
           "px": [
@@ -17439,8 +18826,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            868,
-            306
+            4358,
+            1566
           ]
         }
       },
@@ -17451,25 +18838,25 @@ const STREET_DATA = {
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1885",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          "text": "by 1883",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1885",
+            "from": "by 1883",
             "until": null,
             "name": "Maple Avenue",
             "entityId": "maple-dtla",
             "formInForce": "Maple Avenue",
             "how": "origin",
-            "origin": "labeled “Maple Ave.” on the 1885 O. W. Childs Tract {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "origin": "labeled “Maple Avenue” and “Maple Ave.” on the 1883 O. W. Childs Tract (Hansen & Solano survey) and the 1885 O. W. Childs Tract {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": true,
-        "knownFraction": 0.8,
+        "knownFraction": 0.81,
         "categories": [
           "nature",
           "unknown"
@@ -17477,22 +18864,26 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          },
+          {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           }
         ],
-        "minLat": 34.035,
-        "maxLat": 34.0376,
+        "minLat": 34.0347,
+        "maxLat": 34.0378,
         "from": {
           "px": [
-            868,
-            306
+            4358,
+            1566
           ]
         },
         "to": {
           "px": [
-            913,
-            868
+            4634,
+            5999
           ]
         }
       },
@@ -17513,16 +18904,16 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLat": 34.0329,
-        "maxLat": 34.035,
+        "maxLat": 34.0347,
         "from": {
           "px": [
-            913,
-            868
+            4634,
+            5999
           ]
         },
         "to": {
@@ -17557,8 +18948,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "maxLat": 34.0329,
@@ -18830,7 +20221,7 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "beyond 1st",
+        "label": "part of",
         "name": "Olive Street",
         "entityId": "olive",
         "namedAfter": "{{The olive}}, extended onto this stretch",
@@ -18848,7 +20239,7 @@ const STREET_DATA = {
             "entityId": "olive",
             "formInForce": "Olive Street",
             "how": "extension",
-            "origin": "labeled “Olive Street” on the 1869 Mott Tract building lots {{(source)}}",
+            "origin": "labeled “Olive Street” and “OLIVE STREET” on the 1869 Mott Tract building lots and the 1869 Mott Tract (Pickel survey) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           }
         ],
@@ -18871,6 +20262,10 @@ const STREET_DATA = {
           {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          },
+          {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
@@ -19615,7 +21010,8 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "person"
+          "person",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -19668,7 +21064,8 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "person"
+          "person",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -19791,7 +21188,8 @@ const STREET_DATA = {
         ],
         "formerCategories": [
           "person",
-          "governor"
+          "governor",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -20088,22 +21486,38 @@ const STREET_DATA = {
     "namedAfter": null,
     "namedAfterLink": null,
     "planned": {
-      "text": "by 1875",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+      "text": "by 1871",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
     },
     "built": "not yet researched",
+    "nameHistory": [
+      {
+        "from": "by 1871",
+        "until": null,
+        "name": "Rose Street.",
+        "entityId": "rose-street",
+        "formInForce": "Rose Street.",
+        "how": "origin",
+        "origin": "labeled “Rose STREET.” and “ROSE STREET” on the 1871 Johnston Tract (sheets 1, 2) and the 2007 Tract No. 62057 {{(source)}}",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+      }
+    ],
     "note": null,
     "attested": true,
     "absentAsOf": {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
-    "knownFraction": 0,
+    "knownFraction": 0.88,
     "categories": [
-      "unresearched"
+      "unknown"
     ],
     "disputed": false,
     "sources": [
+      {
+        "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871; identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+      },
       {
         "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
@@ -20111,6 +21525,10 @@ const STREET_DATA = {
       {
         "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+      },
+      {
+        "title": "Tract No. 62057 in the City of Los Angeles, State of California (Oct. 9, 2007; identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1339/TR1339-069.pdf"
       }
     ]
   },
@@ -20226,8 +21644,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLat": 34.0442,
@@ -20284,7 +21702,8 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "person"
+          "person",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -20293,8 +21712,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-064.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLat": 34.0434,
@@ -20332,8 +21751,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLat": 34.0426,
@@ -20409,8 +21828,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-039.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLat": 34.0414,
@@ -20486,8 +21905,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR014/MR014-034.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLat": 34.0406,
@@ -20559,8 +21978,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-039.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "minLat": 34.038,
@@ -20614,11 +22033,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
-        "minLat": 34.0363,
+        "minLat": 34.0364,
         "maxLat": 34.038,
         "from": {
           "px": [
@@ -20628,8 +22047,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            1242,
-            305
+            6842,
+            1812
           ]
         }
       },
@@ -20640,47 +22059,51 @@ const STREET_DATA = {
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1885",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          "text": "by 1883",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1885",
+            "from": "by 1883",
             "until": null,
             "name": "San Julian Street",
             "entityId": "san-julian-st",
             "formInForce": "San Julian Street",
             "how": "origin",
-            "origin": "labeled “San Julian St.” on the 1885 O. W. Childs Tract {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "origin": "labeled “San Julian Street” and “San Julian St.” on the 1883 O. W. Childs Tract (Hansen & Solano survey) and the 1885 O. W. Childs Tract {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
         "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
         "attested": true,
-        "knownFraction": 0.8,
+        "knownFraction": 0.81,
         "categories": [
           "unknown"
         ],
         "disputed": false,
         "sources": [
           {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          },
+          {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           }
         ],
-        "minLat": 34.0337,
-        "maxLat": 34.0363,
+        "minLat": 34.0334,
+        "maxLat": 34.0364,
         "from": {
           "px": [
-            1242,
-            305
+            6842,
+            1812
           ]
         },
         "to": {
           "px": [
-            1285,
-            850
+            7124,
+            6062
           ]
         }
       },
@@ -20700,15 +22123,15 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
-        "maxLat": 34.0337,
+        "maxLat": 34.0334,
         "from": {
           "px": [
-            1285,
-            850
+            7124,
+            6062
           ]
         },
         "to": null
@@ -20720,7 +22143,7 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "beyond Astronaut Ellison S Onizuka",
+        "label": "beyond 1st",
         "name": "San Pedro Street",
         "entityId": "san-pedro",
         "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
@@ -20730,8 +22153,8 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": false,
         "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          "text": "1868 (Garden of J. Murat)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
         },
         "categories": [
           "place",
@@ -20748,16 +22171,21 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "minLat": 34.0494,
         "from": null,
-        "to": "Astronaut Ellison S Onizuka Street"
+        "to": {
+          "px": [
+            429,
+            1202
+          ]
+        }
       },
       {
-        "label": "beyond Astronaut Ellison S Onizuka",
+        "label": "part of",
         "name": "San Pedro Street",
         "entityId": "san-pedro",
         "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
@@ -20789,13 +22217,18 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "minLat": 34.0472,
         "maxLat": 34.0494,
-        "from": "Astronaut Ellison S Onizuka Street",
+        "from": {
+          "px": [
+            429,
+            1202
+          ]
+        },
         "to": {
           "px": [
             894,
@@ -20804,10 +22237,10 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (original San Pedro St)",
+        "label": "part of",
         "name": "San Pedro Street",
         "entityId": "san-pedro",
-        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward",
+        "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
         "planned": {
           "text": "by 1882",
@@ -20817,18 +22250,6 @@ const STREET_DATA = {
           "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "nameHistory": [
-          {
-            "from": "by 1882",
-            "until": null,
-            "name": "San Pedro Street",
-            "entityId": "san-pedro",
-            "formInForce": "San Pedro Street",
-            "how": "origin",
-            "origin": "labeled “San Pedro Street” and “San Pedro Ave” on the 1882 Orchard Tract and the 1888 Wolfskill Orchard Tract (sheets 4, 5) {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
-          }
-        ],
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.82,
@@ -20857,6 +22278,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "minLat": 34.0455,
@@ -20926,8 +22351,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "minLat": 34.0443,
@@ -20989,8 +22414,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "minLat": 34.0438,
@@ -21064,8 +22489,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "minLat": 34.043,
@@ -21135,8 +22560,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "minLat": 34.0419,
@@ -21210,8 +22635,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "minLat": 34.041,
@@ -21273,8 +22698,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "minLat": 34.0401,
@@ -21341,8 +22766,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "minLat": 34.0372,
@@ -21405,8 +22830,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "minLat": 34.0357,
@@ -21419,8 +22844,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            1417,
-            305
+            8008,
+            1927
           ]
         }
       },
@@ -21431,13 +22856,13 @@ const STREET_DATA = {
         "namedAfter": "The port town of {{San Pedro}}, which the street ran toward — how and when this stretch joined San Pedro Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
         "planned": {
-          "text": "by 1885",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          "text": "by 1883",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "built": "not yet researched",
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
-        "knownFraction": 0.8,
+        "knownFraction": 0.81,
         "categories": [
           "place",
           "destination"
@@ -21453,19 +22878,23 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
           },
           {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          },
+          {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           },
           {
-            "title": "Map of the Orchard Tract in the City of Los Angeles (M.R. 5-5, Aug. 2, 1882)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "maxLat": 34.0357,
         "from": {
           "px": [
-            1417,
-            305
+            8008,
+            1927
           ]
         },
         "to": null
@@ -21852,24 +23281,24 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           }
         ],
-        "minLat": 34.0379,
+        "minLat": 34.0382,
         "from": null,
         "to": {
           "px": [
-            775,
-            306
+            3758,
+            1507
           ]
         }
       },
       {
-        "label": "part of",
+        "label": "beyond 12th",
         "name": "Santee Alley",
         "entityId": "santee-alley",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1885",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          "text": "by 1883",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "built": "not yet researched",
         "note": null,
@@ -21881,17 +23310,54 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          },
+          {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           }
         ],
-        "maxLat": 34.0379,
+        "minLat": 34.036,
+        "maxLat": 34.0382,
         "from": {
           "px": [
-            775,
-            306
+            3758,
+            1507
           ]
         },
+        "to": "12th Street"
+      },
+      {
+        "label": "beyond 12th",
+        "name": "Santee Alley",
+        "entityId": "santee-alley",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1883 (O. W. Childs Tract (Hansen & Solano survey))",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+        },
+        "knownFraction": 0.19,
+        "categories": [
+          "unresearched"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          }
+        ],
+        "maxLat": 34.036,
+        "from": "12th Street",
         "to": null
       }
     ]
@@ -22069,7 +23535,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           }
         ],
-        "minLat": 34.0383,
+        "minLat": 34.0386,
         "maxLat": 34.0403,
         "from": {
           "px": [
@@ -22079,8 +23545,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            681,
-            306
+            3143,
+            1446
           ]
         }
       },
@@ -22091,20 +23557,20 @@ const STREET_DATA = {
         "namedAfter": "{{Milton Santee}} (1835–1901), city councilman 1884–1886, later a mining and railroad investor, once this stretch was folded into Santee Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Milton_Santee",
         "planned": {
-          "text": "by 1885",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          "text": "by 1883",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1885",
+            "from": "by 1883",
             "until": "?",
             "name": "William Street",
             "entityId": "william",
             "formInForce": "William Street",
             "how": "origin",
-            "origin": "labeled “William St.” on the 1885 O. W. Childs Tract {{(source)}} — A given name, lettered on the O. W. Childs Tract of July 1885 between Los Angeles Street and Maple Avenue. No William is documented. The stretch is now part of Santee Street",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "origin": "labeled “William Street” and “William St.” on the 1883 O. W. Childs Tract (Hansen & Solano survey) and the 1885 O. W. Childs Tract {{(source)}} — A given name, lettered on the O. W. Childs Tract of July 1885 between Los Angeles Street and Maple Avenue. No William is documented. The stretch is now part of Santee Street",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           },
           {
             "from": "?",
@@ -22119,7 +23585,7 @@ const STREET_DATA = {
         ],
         "note": "Santee later moved to San Diego County, where in 1893 his second wife had the town of Cowleston renamed Santee in his honour — a name it still keeps.",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.01,
         "categories": [
           "person",
           "alive",
@@ -22135,6 +23601,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/santee-street/"
           },
           {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          },
+          {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           },
@@ -22143,18 +23613,18 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           }
         ],
-        "minLat": 34.0356,
-        "maxLat": 34.0383,
+        "minLat": 34.0354,
+        "maxLat": 34.0386,
         "from": {
           "px": [
-            681,
-            306
+            3143,
+            1446
           ]
         },
         "to": {
           "px": [
-            727,
-            878
+            3402,
+            5968
           ]
         }
       },
@@ -22184,11 +23654,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0335,
-        "maxLat": 34.0356,
+        "maxLat": 34.0354,
         "from": {
           "px": [
-            727,
-            878
+            3402,
+            5968
           ]
         },
         "to": {
@@ -22378,7 +23848,8 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "unknown"
+          "unknown",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -22420,7 +23891,8 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "person",
-          "unknown"
+          "unknown",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -22472,7 +23944,8 @@ const STREET_DATA = {
         },
         "categories": [
           "person",
-          "unknown"
+          "unknown",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -22537,6 +24010,7 @@ const STREET_DATA = {
         "categories": [
           "person",
           "unknown",
+          "alive",
           "renamed"
         ],
         "formerCategories": [
@@ -22594,7 +24068,8 @@ const STREET_DATA = {
         },
         "categories": [
           "person",
-          "unknown"
+          "unknown",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -22617,7 +24092,7 @@ const STREET_DATA = {
         "to": "1st Street"
       },
       {
-        "label": "1st to 9th (original Spring St)",
+        "label": "beyond 1st (original Spring St)",
         "name": "Spring Street",
         "entityId": "spring",
         "namedAfter": "Possibly {{Trinidad Ortega}} (1832–1903), who was nicknamed “Primavera”",
@@ -22635,7 +24110,7 @@ const STREET_DATA = {
             "entityId": "spring",
             "formInForce": "Spring Street",
             "how": "origin",
-            "origin": "labeled “CALLE PRIMAVERA” and “SPRING STREET” on the 1849 Hutton / Ord Survey {{(source)}}",
+            "origin": "labeled “CALLE PRIMAVERA”, “SPRING STREET” and “Spring Street” on the 1849 Hutton / Ord Survey and the 1873 Botiller and Reyes lots {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -22644,7 +24119,8 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "person",
-          "unknown"
+          "unknown",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -22667,6 +24143,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Los Angeles : Botiller and Reyes lots east side of Main Street (1873; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
           }
         ],
         "maxLat": 34.053,
@@ -22790,10 +24270,12 @@ const STREET_DATA = {
         "categories": [
           "person",
           "governor",
+          "alive",
           "renamed"
         ],
         "formerCategories": [
-          "unknown"
+          "unknown",
+          "person"
         ],
         "disputed": false,
         "sources": [
@@ -22839,7 +24321,8 @@ const STREET_DATA = {
         },
         "categories": [
           "person",
-          "governor"
+          "governor",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -22879,7 +24362,8 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "governor"
+          "governor",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -23015,16 +24499,16 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Temple_Street_(Los_Angeles)"
           },
           {
-            "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           }
         ],
-        "maxLng": -118.2477,
+        "maxLng": -118.2496,
         "from": null,
         "to": {
           "px": [
-            1677,
-            379
+            5229,
+            565
           ]
         }
       },
@@ -23036,7 +24520,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Jonathan_Temple",
         "planned": {
           "text": "by 1869",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -23047,8 +24531,8 @@ const STREET_DATA = {
             "entityId": "temple",
             "formInForce": "Temple Street",
             "how": "origin",
-            "origin": "labeled “Temple Street” on the 1869 Mott Tract building lots {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+            "origin": "labeled “TEMPLE STREET” and “Temple Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           }
         ],
         "note": "Christened in 1859, along the one-block lane Temple had laid out himself beside his own downtown property.",
@@ -23072,22 +24556,26 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Temple_Street_(Los_Angeles)"
           },
           {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
             "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           }
         ],
-        "minLng": -118.2477,
-        "maxLng": -118.2431,
+        "minLng": -118.2496,
+        "maxLng": -118.2433,
         "from": {
           "px": [
-            1677,
-            379
+            5229,
+            565
           ]
         },
         "to": {
           "px": [
-            1593,
-            1101
+            4801,
+            3816
           ]
         }
       },
@@ -23119,22 +24607,103 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Temple_Street_(Los_Angeles)"
           },
           {
-            "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           }
         ],
-        "minLng": -118.2431,
-        "maxLng": -118.2402,
+        "minLng": -118.2433,
+        "maxLng": -118.2411,
         "from": {
           "px": [
-            1593,
-            1101
+            4801,
+            3816
           ]
         },
         "to": {
           "px": [
-            598,
-            1521
+            626,
+            507
+          ]
+        }
+      },
+      {
+        "label": "part of (Requena St)",
+        "name": "Temple Street",
+        "entityId": "temple",
+        "namedAfter": "{{Jonathan Temple}} (1796–1866), the Massachusetts trader who reached the pueblo about 1828, opened its first general store and took Mexican citizenship as Juan Temple, once this stretch was folded into Temple Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Jonathan_Temple",
+        "planned": {
+          "text": "by 1876",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1876",
+            "until": "?",
+            "name": "Requena Street",
+            "entityId": "requena-street",
+            "formInForce": "Requena Street",
+            "how": "origin",
+            "origin": "labeled “REQUENA STREET” on the 1876 Requena Subdivision {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Temple Street",
+            "entityId": "temple",
+            "formInForce": "Temple Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Christened in 1859, along the one-block lane Temple had laid out himself beside his own downtown property.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
+        "knownFraction": 0,
+        "categories": [
+          "person",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Temple Street (“christened in 1859”)",
+            "url": "https://lastreetnames.com/street/temple-street/"
+          },
+          {
+            "title": "Wikipedia: Temple Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Temple_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+          },
+          {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          }
+        ],
+        "minLng": -118.2411,
+        "maxLng": -118.2391,
+        "from": {
+          "px": [
+            626,
+            507
+          ]
+        },
+        "to": {
+          "px": [
+            221,
+            1361
           ]
         }
       },
@@ -23162,15 +24731,105 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Temple_Street_(Los_Angeles)"
           },
           {
-            "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           }
         ],
-        "minLng": -118.2402,
+        "minLng": -118.2391,
+        "maxLng": -118.2383,
         "from": {
           "px": [
-            598,
-            1521
+            221,
+            1361
+          ]
+        },
+        "to": {
+          "px": [
+            62,
+            799
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Temple Street",
+        "entityId": "temple",
+        "namedAfter": "{{Jonathan Temple}} (1796–1866), the Massachusetts trader who reached the pueblo about 1828, opened its first general store and took Mexican citizenship as Juan Temple — how and when this stretch joined Temple Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Jonathan_Temple",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Christened in 1859, along the one-block lane Temple had laid out himself beside his own downtown property.",
+        "attested": false,
+        "absentAsOf": {
+          "text": "1928 (Tract No. 9771)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+        },
+        "categories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Temple Street (“christened in 1859”)",
+            "url": "https://lastreetnames.com/street/temple-street/"
+          },
+          {
+            "title": "Wikipedia: Temple Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Temple_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          }
+        ],
+        "minLng": -118.2383,
+        "maxLng": -118.2333,
+        "from": {
+          "px": [
+            62,
+            799
+          ]
+        },
+        "to": {
+          "px": [
+            1543,
+            1131
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Temple Street",
+        "entityId": "temple",
+        "namedAfter": "{{Jonathan Temple}} (1796–1866), the Massachusetts trader who reached the pueblo about 1828, opened its first general store and took Mexican citizenship as Juan Temple — how and when this stretch joined Temple Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Jonathan_Temple",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Christened in 1859, along the one-block lane Temple had laid out himself beside his own downtown property.",
+        "attested": false,
+        "categories": [
+          "person"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Temple Street (“christened in 1859”)",
+            "url": "https://lastreetnames.com/street/temple-street/"
+          },
+          {
+            "title": "Wikipedia: Temple Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Temple_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          }
+        ],
+        "minLng": -118.2333,
+        "from": {
+          "px": [
+            1543,
+            1131
           ]
         },
         "to": null
@@ -23207,8 +24866,8 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "absentAsOf": {
-      "text": "1849 (Hutton / Ord Survey)",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+      "text": "1876 (Requena Subdivision)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
     },
     "categories": [
       "unresearched"
@@ -23412,7 +25071,7 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "beyond Alameda",
+        "label": "part of",
         "name": "Traction Avenue",
         "entityId": "traction-avenue",
         "namedAfter": null,
@@ -23426,13 +25085,13 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
         },
         "categories": [
-          "unresearched"
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Tract No. 35332 in the City of Los Angeles, State of California, for Redevelopment Purposes (Sept. 18, 1979)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
           }
         ],
         "maxLng": -118.2371,
@@ -23484,7 +25143,7 @@ const STREET_DATA = {
         },
         "knownFraction": 0.14,
         "categories": [
-          "unresearched",
+          "unknown",
           "renamed"
         ],
         "formerCategories": [
@@ -23499,6 +25158,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Tract No. 35332 in the City of Los Angeles, State of California, for Redevelopment Purposes (Sept. 18, 1979)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
           },
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
@@ -23772,13 +25435,13 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Tract No. 9771 in the City of Los Angeles (Jan. 4, 1928)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
           }
         ],
         "minLat": 34.0529,
@@ -23802,18 +25465,69 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Tract No. 9771 in the City of Los Angeles (Jan. 4, 1928)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+          }
+        ],
+        "minLat": 34.0514,
+        "maxLat": 34.0529,
+        "from": "Commercial Street",
+        "to": {
+          "px": [
+            1500,
+            701
+          ]
+        }
+      },
+      {
+        "label": "part of (original Vignes St)",
+        "name": "Vignes Street",
+        "entityId": "vignes-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1928",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1928",
+            "until": null,
+            "name": "Vignes Street",
+            "entityId": "vignes-street",
+            "formInForce": "Vignes Street",
+            "how": "origin",
+            "origin": "labeled “VIGNES STREET” on the 1928 Tract No. 9771 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.56,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Tract No. 9771 in the City of Los Angeles (Jan. 4, 1928; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
           }
         ],
         "minLat": 34.0491,
-        "maxLat": 34.0529,
-        "from": "Commercial Street",
+        "maxLat": 34.0514,
+        "from": {
+          "px": [
+            1500,
+            701
+          ]
+        },
         "to": {
           "px": [
             989,
@@ -23836,13 +25550,13 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "unresearched"
+          "unknown"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Tract No. 9771 in the City of Los Angeles (Jan. 4, 1928)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
           }
         ],
         "maxLat": 34.0491,
@@ -23888,6 +25602,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           },
           {
+            "title": "Map of the Mills' Tract in the City of Los Angeles (M.R. 12-26, Nov. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          },
+          {
             "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, Mar. 1, 1876)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           }
@@ -23907,19 +25625,39 @@ const STREET_DATA = {
         "entityId": "wall-street",
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": null,
+            "name": "Wall Street",
+            "entityId": "wall-street",
+            "formInForce": "Wall Street",
+            "how": "extension",
+            "origin": "labeled “Wall Street” on the 1886 Mills' Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          }
+        ],
         "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "knownFraction": 0.8,
         "categories": [
           "unknown"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Map of the Mills' Tract in the City of Los Angeles (M.R. 12-26, Nov. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          },
           {
             "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, Mar. 1, 1876)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
@@ -24104,8 +25842,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           },
           {
             "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, Mar. 1, 1876)",
@@ -24285,15 +26023,15 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
           },
           {
-            "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           },
           {
             "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, Mar. 1, 1876)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           }
         ],
-        "minLat": 34.0369,
+        "minLat": 34.0371,
         "maxLat": 34.039,
         "from": {
           "px": [
@@ -24303,8 +26041,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            1058,
-            306
+            5618,
+            1691
           ]
         }
       },
@@ -24315,20 +26053,20 @@ const STREET_DATA = {
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1885",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          "text": "by 1883",
+          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1885",
+            "from": "by 1883",
             "until": "?",
             "name": "Myrtle Avenue",
             "entityId": "myrtle",
             "formInForce": "Myrtle Avenue",
             "how": "origin",
-            "origin": "labeled “Myrtle Ave.” on the 1885 O. W. Childs Tract {{(source)}} — A plant name, and the company it keeps is the whole of the argument: the O. W. Childs Tract lays Myrtle one block from Maple, and Childs was the city's leading nurseryman. Nothing documents it. This one ran along modern Wall Street",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+            "origin": "labeled “Wall Street” and “Myrtle Ave.” on the 1883 O. W. Childs Tract (Hansen & Solano survey) and the 1885 O. W. Childs Tract {{(source)}} — A plant name, and the company it keeps is the whole of the argument: the O. W. Childs Tract lays Myrtle one block from Maple, and Childs was the city's leading nurseryman. Nothing documents it. This one ran along modern Wall Street",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           },
           {
             "from": "?",
@@ -24343,7 +26081,7 @@ const STREET_DATA = {
         ],
         "note": "Nothing found says what it was named for. New York's financial street is the obvious guess, and the only thing supporting it is company: the 1876 Moreno Vineyard sheet letters Wall Street and Regent Street two blocks apart, which is New York's and London's most famous commercial streets on one page of building lots.",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.01,
         "categories": [
           "unknown",
           "renamed"
@@ -24355,6 +26093,10 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          },
+          {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           },
@@ -24363,18 +26105,18 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           }
         ],
-        "minLat": 34.0344,
-        "maxLat": 34.0369,
+        "minLat": 34.0341,
+        "maxLat": 34.0371,
         "from": {
           "px": [
-            1058,
-            306
+            5618,
+            1691
           ]
         },
         "to": {
           "px": [
-            1097,
-            859
+            5877,
+            6031
           ]
         }
       },
@@ -24398,11 +26140,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           }
         ],
-        "maxLat": 34.0344,
+        "maxLat": 34.0341,
         "from": {
           "px": [
-            1097,
-            859
+            5877,
+            6031
           ]
         },
         "to": null
@@ -24768,25 +26510,166 @@ const STREET_DATA = {
   },
   "Winston Street": {
     "name": "Winston Street",
-    "entityId": "winston-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "absentAsOf": {
-      "text": "1849 (Hutton / Ord Survey)",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
-    },
-    "categories": [
-      "unresearched"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "EW",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "beyond Main (Ozier Lane)",
+        "name": "Winston Street",
+        "entityId": "winston-st",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1881",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1881",
+            "until": "?",
+            "name": "Ozier Lane",
+            "entityId": "ozier-lane",
+            "formInForce": "Ozier Lane",
+            "how": "origin",
+            "origin": "labeled “Ozier Lane” on the 1881 Rivara and Vignolo Tract {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf"
+          },
+          {
+            "from": "by 1886",
+            "until": null,
+            "name": "Winston Street",
+            "entityId": "winston-st",
+            "formInForce": "Winston Street",
+            "how": "origin",
+            "origin": "labeled “Winston Street” and “WINSTON ST” on the 1886 Mills' Tract and the 1889 Jones and Ponet Block {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.8,
+        "categories": [
+          "unknown",
+          "renamed"
+        ],
+        "formerCategories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Rivara and Vignolo Tract, situated in the City of Los Angeles (M.R. 5-110, 1881; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf"
+          },
+          {
+            "title": "Map of the Mills' Tract in the City of Los Angeles (M.R. 12-26, Nov. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          },
+          {
+            "title": "Plat of the Jones and Ponet Block in the City of Los Angeles, Cal. (M.R. 39-69, Mar. 1889; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR039/MR039-069.pdf"
+          }
+        ],
+        "maxLng": -118.2462,
+        "from": null,
+        "to": {
+          "px": [
+            303,
+            94
+          ]
+        }
+      },
+      {
+        "label": "part of (original Winston St)",
+        "name": "Winston Street",
+        "entityId": "winston-st",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": null,
+            "name": "Winston Street",
+            "entityId": "winston-st",
+            "formInForce": "Winston Street",
+            "how": "origin",
+            "origin": "labeled “Winston Street” on the 1886 Mills' Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.8,
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Mills' Tract in the City of Los Angeles (M.R. 12-26, Nov. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          }
+        ],
+        "minLng": -118.2462,
+        "maxLng": -118.2449,
+        "from": {
+          "px": [
+            303,
+            94
+          ]
+        },
+        "to": {
+          "px": [
+            259,
+            1471
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Winston Street",
+        "entityId": "winston-st",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "categories": [
+          "unknown"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Mills' Tract in the City of Los Angeles (M.R. 12-26, Nov. 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          }
+        ],
+        "minLng": -118.2449,
+        "from": {
+          "px": [
+            259,
+            1471
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -25034,6 +26917,74 @@ const STREET_DATA = {
 
 const VANISHED_STREETS = [
   {
+    "entity": "chapules",
+    "asWritten": "Grasshopper Street",
+    "doc": "12685",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.058353,
+        -118.251429
+      ],
+      [
+        34.060634,
+        -118.249356
+      ]
+    ]
+  },
+  {
+    "entity": "flower",
+    "asWritten": "Flower Street",
+    "doc": "12685",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.054568,
+        -118.25336
+      ],
+      [
+        34.060033,
+        -118.248242
+      ]
+    ]
+  },
+  {
+    "entity": "court-house-street",
+    "asWritten": "Court House Street",
+    "doc": "12685",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.058872,
+        -118.250983
+      ],
+      [
+        34.054793,
+        -118.244482
+      ]
+    ]
+  },
+  {
+    "entity": "messer-street",
+    "asWritten": "Messer STREET.",
+    "doc": "mr002-092-p1",
+    "basis": "alignment",
+    "note": "Messer appears on this sheet and STREET. on page 2; this western continuation lies beyond the modern Garey Street endpoint and has no supplied modern counterpart.",
+    "path": [
+      [
+        34.046931,
+        -118.235158
+      ],
+      [
+        34.048566,
+        -118.235148
+      ]
+    ]
+  },
+  {
     "entity": "garey",
     "asWritten": "GAREY STREET",
     "doc": "mr003-060-p1",
@@ -25047,6 +26998,44 @@ const VANISHED_STREETS = [
       [
         34.047166,
         -118.235156
+      ]
+    ]
+  },
+  {
+    "entity": "commercial-street",
+    "asWritten": "Commercial Street",
+    "doc": "mr003-146-p2",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.054304,
+        -118.240052
+      ],
+      [
+        34.053581,
+        -118.238817
+      ],
+      [
+        34.05352,
+        -118.238413
+      ]
+    ]
+  },
+  {
+    "entity": "wilmington-street",
+    "asWritten": "Wilmington Street",
+    "doc": "mr003-146-p2",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.053792,
+        -118.239165
+      ],
+      [
+        34.052468,
+        -118.239721
       ]
     ]
   },
@@ -25170,6 +27159,23 @@ const VANISHED_STREETS = [
     ]
   },
   {
+    "entity": "wilmington-street",
+    "asWritten": "Wilmington Street",
+    "doc": "mr010-008",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.050106,
+        -118.240523
+      ],
+      [
+        34.050717,
+        -118.239853
+      ]
+    ]
+  },
+  {
     "entity": "willow",
     "asWritten": "Willow St",
     "doc": "mr011-042",
@@ -25217,6 +27223,23 @@ const VANISHED_STREETS = [
       [
         34.043696,
         -118.238109
+      ]
+    ]
+  },
+  {
+    "entity": "winston-st",
+    "asWritten": "Winston St",
+    "doc": "mr039-069",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.047557,
+        -118.247727
+      ],
+      [
+        34.047851,
+        -118.247909
       ]
     ]
   },
@@ -25517,6 +27540,65 @@ const VANISHED_STREETS = [
       [
         34.058878,
         -118.260883
+      ]
+    ]
+  },
+  {
+    "entity": "banning-street",
+    "asWritten": "Banning Street",
+    "doc": "tr0145-062",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.049594,
+        -118.238137
+      ],
+      [
+        34.049573,
+        -118.235769
+      ],
+      [
+        34.049318,
+        -118.233721
+      ]
+    ]
+  },
+  {
+    "entity": "turner-street",
+    "asWritten": "Turner Street",
+    "doc": "tr0145-062",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.051439,
+        -118.238039
+      ],
+      [
+        34.051393,
+        -118.234947
+      ],
+      [
+        34.051263,
+        -118.23436
+      ]
+    ]
+  },
+  {
+    "entity": "hewitt",
+    "asWritten": "Hewitt St",
+    "doc": "tr0145-062",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.051407,
+        -118.234929
+      ],
+      [
+        34.051899,
+        -118.234928
       ]
     ]
   }
