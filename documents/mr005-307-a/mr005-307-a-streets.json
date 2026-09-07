@@ -1,0 +1,185 @@
+{
+  "document": "mr005-307-a",
+  "image": "mr005-307-a-100dpi.png",
+  "imageSize": [1142, 1020],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr005-307-a-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [187, 812],
+    [1159, 854],
+    [1145, 63],
+    [169, 69]
+  ],
+  "coverageLl": [
+    [34.057907, -118.252033],
+    [34.056526, -118.253381],
+    [34.055682, -118.251972],
+    [34.05712, -118.250703]
+  ],
+  "streets": [
+    {
+      "name": "1st Street",
+      "runs": [
+        {
+          "px": [
+            [231, 814],
+            [237, 635],
+            [236, 625],
+            [238, 569],
+            [242, 273],
+            [244, 161],
+            [246, 69]
+          ],
+          "ll": [
+            [34.057844, -118.252095],
+            [34.05764, -118.251787],
+            [34.05763, -118.251768],
+            [34.057566, -118.251672],
+            [34.057236, -118.251158],
+            [34.057111, -118.250963],
+            [34.057007, -118.250803]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Dewap Road",
+          "px": [238, 569],
+          "ll": [34.057566, -118.251672],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [165, 799],
+          "ll": [34.057925, -118.251981],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "2nd Street",
+      "runs": [
+        {
+          "px": [
+            [1089, 579],
+            [1087, 695],
+            [1082, 773],
+            [1082, 851]
+          ],
+          "ll": [
+            [34.056328, -118.252805],
+            [34.056459, -118.253007],
+            [34.05655, -118.253137],
+            [34.056636, -118.253274]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street Tunnel",
+          "px": [1089, 579],
+          "ll": [34.056328, -118.252805],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [1082, 773],
+          "ll": [34.05655, -118.253137],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "2nd Street Tunnel",
+      "runs": [
+        {
+          "px": [
+            [1089, 579],
+            [1097, 63]
+          ],
+          "ll": [
+            [34.056328, -118.252805],
+            [34.055752, -118.251909]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [1089, 579],
+          "ll": [34.056328, -118.252805],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [1085, 676],
+          "ll": [34.056439, -118.252971],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Figueroa Street",
+      "runs": [
+        {
+          "px": [
+            [1158, 777],
+            [1082, 773],
+            [1007, 769],
+            [993, 769],
+            [792, 765],
+            [678, 764],
+            [591, 760],
+            [489, 758],
+            [185, 745]
+          ],
+          "ll": [
+            [34.056444, -118.253244],
+            [34.05655, -118.253137],
+            [34.056657, -118.253034],
+            [34.056677, -118.253014],
+            [34.056967, -118.252745],
+            [34.057134, -118.252591],
+            [34.057257, -118.252472],
+            [34.057404, -118.252335],
+            [34.057836, -118.251913]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [165, 799],
+          "ll": [34.057925, -118.251981],
+          "insideCoverage": false
+        },
+        {
+          "name": "2nd Street",
+          "px": [1082, 773],
+          "ll": [34.05655, -118.253137],
+          "insideCoverage": true
+        },
+        {
+          "name": "2nd Street Tunnel",
+          "px": [1085, 676],
+          "ll": [34.056439, -118.252971],
+          "insideCoverage": true
+        },
+        {
+          "name": "Diamond Street",
+          "px": [-196, 725],
+          "ll": [34.058375, -118.251378],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Dewap Road",
+      "metres": 11.5
+    }
+  ],
+  "excludedAsOvershoot": []
+}

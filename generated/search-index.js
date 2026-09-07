@@ -1054,7 +1054,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Jesse Street",
-    "entity": "jesse-street",
+    "entity": "jesse",
     "label": "Jesse Street",
     "street": "Jesse Street"
   },
@@ -1539,6 +1539,18 @@ const SEARCH_INDEX = [
     "street": "San Julian Street"
   },
   {
+    "form": "Earl Street",
+    "entity": "earl-st",
+    "label": "Earl Street",
+    "street": "San Julian Street"
+  },
+  {
+    "form": "Whisler Street",
+    "entity": "whisler-st",
+    "label": "Whisler Street",
+    "street": "San Julian Street"
+  },
+  {
     "form": "San Pedro Street",
     "entity": "san-pedro",
     "label": "San Pedro Street",
@@ -1558,7 +1570,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Santa Fe Avenue",
-    "entity": "santa-fe-avenue",
+    "entity": "santa-fe-ave",
     "label": "Santa Fe Avenue",
     "street": "Santa Fe Avenue"
   },

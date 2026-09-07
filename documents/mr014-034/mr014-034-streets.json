@@ -1,0 +1,153 @@
+{
+  "document": "mr014-034",
+  "image": "mr014-034-100dpi.png",
+  "imageSize": [1644, 1093],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr014-034-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [-21, 250],
+    [47, 991],
+    [971, 1020],
+    [1024, 93]
+  ],
+  "coverageLl": [
+    [34.041367, -118.247993],
+    [34.040625, -118.246743],
+    [34.041797, -118.245455],
+    [34.042906, -118.246833]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [73, 992],
+            [72, 948],
+            [75, 892],
+            [64, 584],
+            [61, 513],
+            [62, 445],
+            [59, 278],
+            [58, 238]
+          ],
+          "ll": [
+            [34.040657, -118.246707],
+            [34.040706, -118.246776],
+            [34.040771, -118.246861],
+            [34.041104, -118.247357],
+            [34.04118, -118.247472],
+            [34.041257, -118.247578],
+            [34.04144, -118.247842],
+            [34.041484, -118.247905]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "San Julian Street",
+          "px": [61, 513],
+          "ll": [34.04118, -118.247472],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [72, 948],
+          "ll": [34.040706, -118.246776],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wall Street",
+          "px": [50, -174],
+          "ll": [34.041936, -118.24856],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "San Julian Street",
+      "runs": [
+        {
+          "px": [
+            [1, 492],
+            [4, 493],
+            [33, 501],
+            [61, 513],
+            [94, 525],
+            [127, 535],
+            [158, 536],
+            [959, 369],
+            [1008, 366]
+          ],
+          "ll": [
+            [34.041125, -118.247585],
+            [34.041128, -118.24758],
+            [34.041157, -118.247528],
+            [34.04118, -118.247472],
+            [34.041208, -118.247409],
+            [34.04124, -118.247349],
+            [34.041279, -118.247306],
+            [34.042512, -118.246489],
+            [34.042579, -118.246427]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [1195, 356],
+          "ll": [34.042834, -118.246193],
+          "insideCoverage": false
+        },
+        {
+          "name": "7th Street",
+          "px": [61, 513],
+          "ll": [34.04118, -118.247472],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "San Pedro Street",
+      "runs": [
+        {
+          "px": [
+            [43, 946],
+            [72, 948],
+            [126, 950],
+            [246, 950],
+            [682, 951],
+            [947, 947],
+            [975, 945]
+          ],
+          "ll": [
+            [34.04067, -118.246819],
+            [34.040706, -118.246776],
+            [34.040774, -118.246702],
+            [34.04093, -118.246538],
+            [34.041497, -118.245953],
+            [34.041848, -118.245602],
+            [34.041887, -118.245567]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [1234, 916],
+          "ll": [34.042257, -118.245263],
+          "insideCoverage": false
+        },
+        {
+          "name": "7th Street",
+          "px": [72, 948],
+          "ll": [34.040706, -118.246776],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

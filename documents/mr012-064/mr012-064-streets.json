@@ -1,0 +1,80 @@
+{
+  "document": "mr012-064",
+  "image": "mr012-064-100dpi.png",
+  "imageSize": [1117, 1705],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr012-064-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [26, 864],
+    [106, 1319],
+    [1101, 1279],
+    [1082, 679]
+  ],
+  "coverageLl": [
+    [34.044469, -118.246015],
+    [34.043726, -118.246355],
+    [34.042906, -118.244552],
+    [34.043809, -118.243951]
+  ],
+  "streets": [
+    {
+      "name": "San Julian Street",
+      "runs": [
+        {
+          "px": [
+            [452, 1305],
+            [450, 1244],
+            [422, 795]
+          ],
+          "ll": [
+            [34.043441, -118.245729],
+            [34.043534, -118.245667],
+            [34.044221, -118.24524]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [408, 557],
+          "ll": [34.044584, -118.245014],
+          "insideCoverage": false
+        },
+        {
+          "name": "6th Street",
+          "px": [439, 1724],
+          "ll": [34.042834, -118.246193],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "San Pedro Street",
+      "runs": [
+        {
+          "px": [
+            [996, 1283],
+            [993, 733],
+            [991, 695]
+          ],
+          "ll": [
+            [34.042992, -118.244742],
+            [34.043808, -118.244165],
+            [34.043866, -118.244129]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [979, 474],
+          "ll": [34.044202, -118.243915],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

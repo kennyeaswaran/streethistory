@@ -2,9 +2,9 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 272; entries: 611
-- Stub entities minted from OSM (unresearched): 216
-- Curated entities: 102
+- Streets: 272; entries: 627
+- Stub entities minted from OSM (unresearched): 214
+- Curated entities: 109
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
 ## Ambiguous OSM binds (NOT bound — fix by adding extents or disambiguation)
@@ -18,6 +18,104 @@
 
 ## Partially swept documents (no negative inference contributed)
 - lah-1874-02-13: sweptFor = []
+- lah-1883-05-13: sweptFor = []
+- lah-1883-06-17: sweptFor = []
+- lah-1883-08-19: sweptFor = []
+- lah-1883-08-26: sweptFor = []
+- lah-1883-09-02: sweptFor = []
+- lah-1883-10-21: sweptFor = []
+- lah-1886-01-06: sweptFor = []
+- lah-1886-01-15: sweptFor = []
+- lah-1886-07-20: sweptFor = []
+- lah-1886-07-23: sweptFor = []
+- lah-1886-09-21: sweptFor = []
+- lah-1887-01-04: sweptFor = []
+- lah-1887-06-07: sweptFor = []
+- lah-1887-06-14: sweptFor = []
+- lah-1888-01-04: sweptFor = []
+- lah-1888-01-24: sweptFor = []
+- lah-1888-10-11: sweptFor = []
+- lah-1889-02-06: sweptFor = []
+- lah-1889-02-19: sweptFor = []
+- lah-1889-02-26: sweptFor = []
+- lah-1889-04-22: sweptFor = []
+- lah-1889-04-23: sweptFor = []
+- lah-1889-05-10: sweptFor = []
+- lah-1889-07-23: sweptFor = []
+- lah-1889-07-27: sweptFor = []
+- lah-1889-09-19: sweptFor = []
+- lah-1889-11-06: sweptFor = []
+- lah-1889-11-13: sweptFor = []
+- lah-1889-12-10: sweptFor = []
+- lah-1889-12-14: sweptFor = []
+- lah-1890-02-18: sweptFor = []
+- lah-1890-02-21: sweptFor = []
+- lah-1890-03-04: sweptFor = []
+- lah-1890-06-07: sweptFor = []
+- lah-1890-10-07: sweptFor = []
+- lah-1890-10-14: sweptFor = []
+- lah-1890-10-28: sweptFor = []
+- lah-1890-11-09: sweptFor = []
+- lah-1890-11-11: sweptFor = []
+- lah-1890-12-20: sweptFor = []
+- lah-1891-08-25: sweptFor = []
+- lah-1891-09-29: sweptFor = []
+- lah-1891-10-06: sweptFor = []
+- lah-1892-01-19: sweptFor = []
+- lah-1892-01-23: sweptFor = []
+- lah-1892-02-13: sweptFor = []
+- lah-1892-11-29: sweptFor = []
+- lah-1892-12-07: sweptFor = []
+- lah-1893-02-21: sweptFor = []
+- lah-1893-03-07: sweptFor = []
+- lah-1893-04-04: sweptFor = []
+- lah-1893-04-25: sweptFor = []
+- lah-1893-05-04: sweptFor = []
+- lah-1893-08-08: sweptFor = []
+- lah-1893-09-12: sweptFor = []
+- lah-1893-09-17: sweptFor = []
+- lah-1893-10-17: sweptFor = []
+- lah-1893-10-22: sweptFor = []
+- lah-1893-10-24: sweptFor = []
+- lah-1893-10-29: sweptFor = []
+- lah-1893-11-14: sweptFor = []
+- lah-1893-11-21: sweptFor = []
+- lah-1894-01-26: sweptFor = []
+- lah-1894-01-30: sweptFor = []
+- lah-1894-02-06: sweptFor = []
+- lah-1894-02-13: sweptFor = []
+- lah-1894-03-27: sweptFor = []
+- lah-1894-04-21: sweptFor = []
+- lah-1894-06-26: sweptFor = []
+- lah-1894-07-24: sweptFor = []
+- lah-1894-08-15: sweptFor = []
+- lah-1894-08-19: sweptFor = []
+- lah-1894-10-03: sweptFor = []
+- lah-1895-02-12: sweptFor = []
+- lah-1895-02-19: sweptFor = []
+- lah-1895-06-22: sweptFor = []
+- lah-1895-07-02: sweptFor = []
+- lah-1895-08-20: sweptFor = []
+- lah-1895-11-05: sweptFor = []
+- lah-1896-03-31: sweptFor = []
+- lah-1896-05-05: sweptFor = []
+- lah-1896-05-12: sweptFor = []
+- lah-1896-05-16: sweptFor = []
+- lah-1896-06-16: sweptFor = []
+- lah-1896-08-11: sweptFor = []
+- lah-1896-09-01: sweptFor = []
+- lah-1896-09-03: sweptFor = []
+- lah-1896-09-09: sweptFor = []
+- lah-1896-10-07: sweptFor = []
+- lah-1896-12-15: sweptFor = []
+- lah-1896-12-29: sweptFor = []
+- lah-1897-02-02: sweptFor = []
+- lah-1897-02-03: sweptFor = []
+- min-1893-04-10: sweptFor = []
+- min-1896-08-31: sweptFor = []
+- min-1896-09-08: sweptFor = []
+- min-1896-09-14: sweptFor = []
+- min-1896-09-21: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
@@ -103,6 +201,7 @@
 Traced through a document alignment; approximate to roughly a street width.
 
 - **GAREY STREET** (garey) — 2 points, from mr003-060-p1
+- **FLOWER STREET** (flower) — 2 points, from mr005-307-a
 - **Council Street** (council-street) — 2 points, from mr006-138
 - **Waters Street** (waters-street) — 2 points, from mr006-138
 - **CAMERON LANE** (cameron-lane) — 2 points, from mr007-021

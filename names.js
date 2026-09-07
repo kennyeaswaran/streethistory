@@ -141,6 +141,7 @@ const NAME_ENTITIES = {
     sources: [],
     disputed: false,
     note: "Very likely the “other, now-defunct Georgia Street” whose existence forced the 1889 renaming of the unrelated west-downtown Georgia Street to Georgia Bell Street.",
+    internalNote: "⚠ THE 1889 IN THE NOTE ABOVE IS NOW IN DOUBT (2026-09-06): documents/lah-1883-09-02 reports the Georgia → Georgia Bell ordinance adopted in Sept. 1883. See `georgia-bell`'s internalNote for the conflict and for why nothing has been changed yet. The DISAMBIGUATION reading this note rests on is untouched and is if anything strengthened — the 1883 Board had proposed Alabama, and what passed appended the addition's name to Georgia instead.",
     possiblySameAs: null,
     aliases: []
   },
@@ -172,6 +173,7 @@ const NAME_ENTITIES = {
     ],
     disputed: false,
     note: null,
+    internalNote: "⚠ THE 1889 DATE IS IN CONFLICT WITH A CONTEMPORARY REPORT, 2026-09-06. The Los Angeles Herald of Sept. 2, 1883 (documents/lah-1883-09-02) reports an ordinance adopted “changing the names of certain streets: … Georgia to Georgia Bell street”, and the Board of Public Works had recommended a fortnight earlier that Georgia Street “in same addition” — Bell's addition — be changed to ALABAMA (documents/lah-1883-08-19). The spelling periods above date the Georgia Bell period from 1889, on Gen. Forman's Feb. 1897 recollection that the street was renamed Georgia Bell on May 10, 1889. NOTHING HAS BEEN CHANGED HERE: a contemporary report normally beats a recollection, but the two may be about different events — the comment above describes the 1889 act as FOLDING IN the stretches platted Nevada in 1886, which a name coined in 1883 could well have absorbed. Both dates would then be right about different things. LARGELY RESOLVED THE SAME EVENING, in favour of 1889: the Herald of May 10, 1889 prints ORDINANCE NO. 48 (New Series) in full — “changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved by Mayor Hazard May 8, published and therefore in force May 10. That is Forman's date exactly, and it is an instrument rather than a recollection. The committee's Oct. 1888 draft list (Herald, Oct. 11, 1888) has the line “Nevada St., Nevada St. and Nevada St., between Ninth and Tenth Sts., changed to Georgia Bell St.”, which is precisely the folding-in this entity's comment describes. So the 1889 structure above stands. What is now unexplained is the 1883 item, which is a contemporary report of an adopted ordinance using the same new name six years earlier — either it did not take effect, or it was later undone, or it is a different Georgia. handbook/MINUTES-TO-CHECK.md lists Sept. 1, 1883 as the meeting to pull. Also unestablished: that the Georgia Street in “Bell's addition” is this street. It is the obvious reading — this entity says the street was laid out on Bell land — but the addition is not located in this corpus and matching a tract to an entity by the owner's surname is a rule-2 step.",
     possiblySameAs: null,
     aliases: []
   },
@@ -1212,8 +1214,8 @@ const NAME_ENTITIES = {
         url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
     ],
     disputed: false,
-    note: "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Santa Fe Avenue. It lasted a matter of months: the Atchison, Topeka and Santa Fe reached Los Angeles in May 1887 and the street took the railway's name.",
-    internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01.",
+    note: "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Santa Fe Avenue, and it lasted ten years: on Aug. 31, 1896 Ordinance No. 3829 changed “Tulip street, from Willow to Seventh” to Santa Fe avenue, extending south over it a name the railway had already given the street further north.",
+    internalNote: "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. ⚠ THE PUBLIC NOTE WAS WRONG UNTIL 2026-09-06 and is corrected above: it said the street “lasted a matter of months” and took the railway's name when the Atchison, Topeka and Santa Fe reached Los Angeles in May 1887. That May 1887 date is Kines's, and it belongs to SANTA FE AVENUE's own naming at the depot by 1st Street, not to this street's end. Tulip Street survived nine years longer: documents/lah-1896-09-03 prints the Aug. 31, 1896 ordinance that renamed it. A tidy inference had quietly become a claim.",
     possiblySameAs: null, aliases: []
   },
 
@@ -1653,7 +1655,7 @@ const NAME_ENTITIES = {
     categories: ["unknown"],
     sources: [],
     disputed: false,
-    note: "Lettered north of Ninth Street on the Moran Tract of April 1887, along the corridor that is San Julian Street today — and the same sheet letters San Julian south of Ninth. No Earl is documented.",
+    note: "Lettered on four sheets between 1884 and 1887 — the Rowan, Goldsworthy 8th Street, Beck and Moran tracts — along the corridor that is San Julian Street today. The Moran sheet letters Earl north of Ninth Street and San Julian south of it, so for a while the corridor carried both names at once. No Earl is documented.",
     internalNote: "Kines does not cover it: no page, and it is absent from his alphabetical E list, which runs Earhart Avenue → Earlham Drive with no Earl (checked 2026-09-06). The tract was subdivided for J. P. Moran, and a John P. Moran (1857–1916) sat on the Common Council from 1879 and was its president 1881–83 — the right name in the right city at the right time, but a name match and nothing more, so it is not claimed here and would not identify the street even if it held. Whether Earl was a Moran relation, an owner further north, or neither is unknown. Moved out of names-new.js 2026-09-06.",
     possiblySameAs: null, aliases: []
   },
@@ -1675,8 +1677,8 @@ const NAME_ENTITIES = {
         url: "https://en.wikipedia.org/wiki/Highland_Park,_Los_Angeles" }
     ],
     disputed: false,
-    note: "The lane ran through its owners' own subdivision: the sheet says the tract was subdivided for G. W. Morgan, A. H. Judson and H. W. Mills in July 1882, and it was recorded at the request of Morgan & Judson. The corridor is 3rd Street today.",
-    internalNote: "Identified from the sheet itself (documents/mr005-005), whose title block names the three owners and whose recorder's note reads “Recorded at request of Morgan & Judson Aug 2. 1882” — the same evidence that identifies Clark Avenue. Kines has no Morgan Lane page. A George Morgan and an Albert Judson created the Highland Park tract four years later, in 1886, and the surnames, initials, partnership and period all fit this pair — Wikipedia is cited for that, but identifying the two Morgans with each other is an inference this project has not proved, and the street is claimed for the man on THIS sheet either way. His dates were not found: no biography, no Kines page (the Wikipedia “George W. Morgan” is an Ohio Civil War general, a different man — do not link him). Moved out of names-new.js 2026-09-06.",
+    note: "The lane ran through its owners' own subdivision: the sheet says the tract was subdivided for G. W. Morgan, A. H. Judson and H. W. Mills in July 1882, and it was recorded at the request of Morgan & Judson. It did not stay a lane long — in October 1883 the city agreed to accept it as a public street, widen it to sixty feet and rename it Mayo Street. The corridor is 3rd Street today.",
+    internalNote: "Identified from the sheet itself (documents/mr005-005), whose title block names the three owners and whose recorder's note reads “Recorded at request of Morgan & Judson Aug 2. 1882” — the same evidence that identifies Clark Avenue. Kines has no Morgan Lane page. A George Morgan and an Albert Judson created the Highland Park tract four years later, in 1886, and the surnames, initials, partnership and period all fit this pair — Wikipedia is cited for that, but identifying the two Morgans with each other is an inference this project has not proved, and the street is claimed for the man on THIS sheet either way. His dates were not found: no biography, no Kines page (the Wikipedia “George W. Morgan” is an Ohio Civil War general, a different man — do not link him). Moved out of names-new.js 2026-09-06. SEQUEL FOUND THE SAME DAY: documents/lah-1883-10-21 has the Council ordering an ordinance drafted to rename the lane Mayo Street on acceptance. That is an instruction to draft, so `mayo` is what was ORDERED and not yet known to have been enacted — no entity minted for it, and the corridor's chain reads Morgan Lane (1882) → Mayo Street (ordered 1883) → … → 3rd Street with the middle step unconfirmed.",
     possiblySameAs: null, aliases: []
   },
 
@@ -1689,6 +1691,108 @@ const NAME_ENTITIES = {
     disputed: false,
     note: "Lettered on the Orchard Tract of July 1882 between Wall Street and San Pedro Street, and still Boyd Street today. No Boyd is documented: the sheet names its three owners, its surveyor and the three earlier tracts it absorbed, and there is no Boyd among them.",
     internalNote: "Kines does not cover it: no page, and it is absent from his alphabetical B list, which runs Bouton → Boyar → Boyce → Boyle → Boylston with no Boyd (checked 2026-09-06). A web search turns up only the 2020 Boyd Street fire. The sheet's other proper names are the owners G. W. Morgan, A. H. Judson and H. W. Mills, the surveyor H. J. Stevenson, the absorbed Chapman, Hunter and Damisch tracts, and the adjoining-owner lines Thom, Baker, Starr and Gohenix — Boyd is none of them, so whoever he was, he was not on this page. ⚠ RESTORED BY HAND 2026-09-06: this entity and morgan-lane were minted in review at 18:30 and an assistant overwrote names-new.js three minutes later, before either had been read; both were rebuilt from the document's rows in the tool's own minting format. If either carried a display form or a note that was typed by hand at minting, it was lost there and wants a second look. Moved into names.js the same day.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- minted by Ordinance No. 1613, Apr. 3, 1893 --------------------------
+  // A merger, not a renaming: "said streets shall hereafter be known as one
+  // street, the name of which shall be Scott avenue" (documents/ord-1613). Two
+  // lineages end and one begins, on ground north of the project's OSM extract,
+  // so none of the three is on any sheet in the corpus and nothing here draws.
+
+  "scott-avenue": {
+    spellings: [{ forms: ["Scott Avenue"] }],
+    namedAfter: "Parmer Milton “P. M.” Scott (1822–1900) and Elizabeth Morton Scott (1840–1913), real-estate investors who lived on the street",
+    namedAfterLink: null,
+    categories: ["person"],
+    sources: [
+      { title: "L.A. Street Names: Scott Avenue (“originally two streets called Wyoming Avenue and Cooper Street; it adopted the Scotts’ name in 1893”)",
+        url: "https://lastreetnames.com/street/scott-avenue/" }
+    ],
+    disputed: false,
+    note: "Two streets until April 1893: Ordinance No. 1613 (New Series) abolished the names Wyoming Avenue and Cooper Street and made them one street under this one. The Scotts lived on it.",
+    internalNote: "Minted 2026-09-06 from documents/ord-1613. The namesake is Kines's and is not otherwise corroborated; what this project adds is the instrument behind the date he gives — number, adoption day (Apr. 3, 1893), mayor's approval (Apr. 6) and publication (Apr. 9). The street is in Echo Park and Silver Lake, north of the OSM extract, so it has no geometry here and the change rows land on no ground.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "wyoming-avenue": {
+    spellings: [{ forms: ["Wyoming Avenue"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "Abolished by Ordinance No. 1613 (New Series) on April 3, 1893, when it and Cooper Street were made one street called Scott Avenue.",
+    internalNote: "Minted 2026-09-06 from documents/ord-1613, which is the only thing in the corpus that mentions it: no sheet letters it and its extent is unknown. Kines's Wyoming Avenue page is Burbank's — a 1925 street named for Pennsylvania's Wyoming Valley by developers from Wilkes-Barre — and is a different street; do not carry that namesake across (checked 2026-09-06).",
+    possiblySameAs: null, aliases: []
+  },
+
+  "cooper-street": {
+    spellings: [{ forms: ["Cooper Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "Abolished by Ordinance No. 1613 (New Series) on April 3, 1893, when it and Wyoming Avenue were made one street called Scott Avenue.",
+    internalNote: "Minted 2026-09-06 from documents/ord-1613, the only thing in the corpus that mentions it; no sheet letters it and its extent is unknown. Kines has no page (checked 2026-09-06).",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- the Whisler Subdivision, Dec. 1886 (M.R. 12-64) --------------------
+
+  "whisler-st": {
+    spellings: [{ forms: ["Whisler Street"] }],
+    namedAfter: "Mrs. Lourena Whisler, the owner at whose request the subdivision was made and recorded",
+    namedAfterLink: null,
+    categories: ["person"],
+    sources: [],
+    disputed: false,
+    note: "The sheet is “subdivided at request of Mrs. Lourena Whisler, Nov. 25th 1886” and was recorded three weeks later at her request; the street runs through her own ground. It is part of San Julian Street today.",
+    internalNote: "Identified from the sheet itself (documents/mr012-064), whose title block and recorder's note both name her — the same evidence that identifies Clark Avenue and Morgan Lane, and the first of the three where the owner is a woman. Her dates and her husband's name were not looked for. Kines has no Whisler Street page (checked 2026-09-06). The surveyor is John Goldsworthy, County Surveyor-elect, who also surveyed the Goldsworthy 8th St. Tract (documents/mr011-008) and whose name is on the land adjoining the Widow Botiller tract — a recurring figure in this corner of the corpus. Moved out of names-new.js 2026-09-06.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- extended over Tulip Street by Ordinance No. 3829, Aug. 1896 ---------
+
+  "santa-fe-ave": {
+    spellings: [{ forms: ["Santa Fe Avenue"] }],
+    namedAfter: "The {{Atchison, Topeka and Santa Fe Railway}}, whose passenger depot opened by the street's junction with 1st Street in May 1887",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Atchison,_Topeka_and_Santa_Fe_Railway",
+    categories: ["company"],
+    sources: [
+      { title: "L.A. Street Names: Santa Fe Avenue (“Named for the Atchison, Topeka & Santa Fe Railway”; May 1887, at the depot by 1st Street)",
+        url: "https://lastreetnames.com/street/santa-fe-avenue/" }
+    ],
+    disputed: false,
+    note: "Named for the railway in May 1887, when its passenger depot opened near 1st Street. The name spread south later: on Aug. 31, 1896 Ordinance No. 3829 changed Tulip Street, from Willow to Seventh, to Santa Fe Avenue (documents/lah-1896-09-03).",
+    internalNote: "Minted 2026-09-06 to be the `to` of the Tulip change row. The 1887 naming is Kines's and is not otherwise sourced here; what this project has is the 1896 extension, in print. `categories: [\"company\"]` is a NEW category value in this file — no entity here had been named after a business before — and is Kenny's to rename if he would rather fold it into something existing.",
+    possiblySameAs: null, aliases: []
+  },
+
+  // ---- renamed by Ordinance No. 3829, Aug. 1896 ---------------------------
+
+  "cincinnati": {
+    spellings: [{ forms: ["Cincinnati Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "Renamed Jessie Street on Aug. 31, 1896 by Ordinance No. 3829, along the block between Mateo and Mesquit streets. The ordinance places it “in the Wingerter tract”, which is the only thing said about it anywhere in this corpus.",
+    internalNote: "Minted 2026-09-06 from documents/lah-1896-09-03. No sheet here letters it and no Wingerter tract is in the corpus; the ordinance's own extent is what places it. Kines has no Cincinnati Street page (not checked as of minting — the name is a US city and the search would need care). Whether it was named for the city, for somebody, or for a tract feature is unknown.",
+    possiblySameAs: null, aliases: []
+  },
+
+  "jesse": {
+    spellings: [{ forms: ["Jesse Street", "Jessie Street"] }],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: "Arrived on Aug. 31, 1896, when Ordinance No. 3829 changed Cincinnati Street, between Mateo and Mesquit, to this name. The ordinance spells it “Jessie”; the modern street is Jesse.",
+    internalNote: "Minted 2026-09-06 from documents/lah-1896-09-03 as the `to` of that change. Both spellings sit in one period rather than two: the 1896 ink and the modern sign are the same name and nothing dates the loss of the i. A given name with no person attached — the obvious guess is somebody's daughter or wife, and nothing supports it.",
     possiblySameAs: null, aliases: []
   },
 };

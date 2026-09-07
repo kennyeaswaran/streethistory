@@ -1,0 +1,143 @@
+{
+  "document": "mr005-307-b",
+  "image": "mr005-307-b-100dpi.png",
+  "imageSize": [1142, 739],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr005-307-b-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [441, 423],
+    [444, 722],
+    [1119, 716],
+    [1112, 365]
+  ],
+  "coverageLl": [
+    [34.044716, -118.245068],
+    [34.044216, -118.245351],
+    [34.043683, -118.243999],
+    [34.044273, -118.243674]
+  ],
+  "streets": [
+    {
+      "name": "5th Street",
+      "runs": [
+        {
+          "px": [
+            [1114, 452],
+            [1100, 449],
+            [1081, 447],
+            [1031, 447],
+            [967, 450],
+            [578, 472],
+            [533, 475],
+            [494, 477],
+            [442, 480]
+          ],
+          "ll": [
+            [34.044127, -118.243754],
+            [34.044142, -118.243779],
+            [34.044161, -118.243815],
+            [34.044202, -118.243915],
+            [34.044248, -118.244045],
+            [34.044525, -118.244843],
+            [34.044556, -118.244935],
+            [34.044584, -118.245014],
+            [34.044621, -118.245122]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "San Julian Street",
+          "px": [494, 477],
+          "ll": [34.044584, -118.245014],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [1031, 447],
+          "ll": [34.044202, -118.243915],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wall Street",
+          "px": [85, 487],
+          "ll": [34.044897, -118.24584],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "San Julian Street",
+      "runs": [
+        {
+          "px": [
+            [487, 722],
+            [492, 535],
+            [493, 517],
+            [494, 499],
+            [494, 477]
+          ],
+          "ll": [
+            [34.044182, -118.245264],
+            [34.044488, -118.245074],
+            [34.044517, -118.245056],
+            [34.044547, -118.245037],
+            [34.044584, -118.245014]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [494, 477],
+          "ll": [34.044584, -118.245014],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "San Pedro Street",
+      "runs": [
+        {
+          "px": [
+            [1019, 717],
+            [1022, 688],
+            [1026, 572],
+            [1029, 498],
+            [1030, 474],
+            [1031, 447],
+            [1031, 403],
+            [1032, 372]
+          ],
+          "ll": [
+            [34.043761, -118.244198],
+            [34.043808, -118.244165],
+            [34.043998, -118.244045],
+            [34.044118, -118.243968],
+            [34.044157, -118.243944],
+            [34.044202, -118.243915],
+            [34.044274, -118.243871],
+            [34.044326, -118.24384]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [1031, 447],
+          "ll": [34.044202, -118.243915],
+          "insideCoverage": true
+        },
+        {
+          "name": "Winston Street",
+          "px": [1033, -8],
+          "ll": [34.044957, -118.243472],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

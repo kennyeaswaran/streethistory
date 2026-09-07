@@ -97,6 +97,90 @@ Two habits it argues for:
 - **Record the gap.** A missing volume looks exactly like a search you did
   badly, until somebody writes down which it was.
 
+## Step 2b — the ordinances were PRINTED, and that is the best index there is
+
+Found 2026-09-06, and it changes the order of this whole file.
+
+Ordinance No. 1613 (documents/ord-1613/), which merged Wyoming Avenue and
+Cooper Street into Scott Avenue, survives **only** as a newspaper notice: the
+council adopted it on Apr. 3, 1893 and the City Clerk's holdings have no volume
+for that date. That is the second renaming lost to the minutes gap after Fort
+Street in 1890. But this one was recoverable, and its own Section 2 says why:
+
+> "The city clerk shall certify to the passage of this ordinance and shall
+> cause the same to be **published once in the Los Angeles Daily HERALD**, and
+> **thereupon and thereafter the same shall take effect and be in force**."
+
+**Publication was not publicity. It was a condition of the law taking effect.**
+Every renaming instrument in this corpus says so in its own words:
+
+| instrument | what its closing section requires |
+|---|---|
+| Feb. 26, 1874 (ord-1874-02-26) | "take effect and be in force from and after its passage approval and **publication**" |
+| Aug. 22, 1887 (ord-1887-08-22) | "cause the same to be **published once in the Los Angeles Daily Tribune** and thereupon and thereafter it shall take effect" |
+| Apr. 3, 1893 (ord-1613) | "**published once in the Los Angeles Daily HERALD**, and thereupon and thereafter the same shall take effect" |
+
+So for this whole period the following holds: **an ordinance that took effect
+was printed in a newspaper, in full, over the clerk's certification** — number,
+adoption date, mayor's approval, the operative sentence, all of it. A renaming
+whose minutes are lost is still in print somewhere, and unlike the minutes, the
+print is OCR'd and searchable.
+
+That inverts the method this file was built on. The minutes are unsearchable
+and are a place to *land*; CDNC is searchable and is now a place to *look* —
+not for the news report of a council meeting, which is a lead, but for the
+**instrument itself**, which is an answer.
+
+**What to search for.** The formula is stable across twenty years, so search
+the ordinance's own words rather than the street's:
+
+- `"AN ORDINANCE CHANGING THE NAME"` — the headline form, singular and plural
+- `"changing the names of"` with a street name
+- `"are hereby abolished"` — the merger form, as in 1613
+- `"shall hereafter be known as"`
+- a street name plus `"ordinance"` and `"hereby"`
+
+**Caveats, so nobody over-trusts this.**
+
+- The ordinance names the paper it must appear in, and it is not always the
+  Herald: 1887 required the *Los Angeles Daily Tribune*. CDNC's holdings decide
+  what is reachable, so a miss is not proof an ordinance does not exist.
+- These notices are dense small type in the legal-advertisement columns, which
+  is where newspaper OCR is worst. Expect to search several spellings.
+- A published ordinance gives the instrument and its date, and usually no
+  extent. It settles *what* and *when*, not *where*.
+- CDNC sits behind a bot wall for instances (see §"What does not work"), so the
+  searching is Kenny's or a browser's; an instance can still read a clip.
+
+## Step 2c — a minutes copy of an ordinance can be an ABRIDGEMENT
+
+Found 2026-09-06, the hard way, an hour after the opposite was written down.
+
+The Sept. 8, 1896 minutes copy Ordinance No. 3847 into the ledger as nine bare
+lines — "Freeman Street to Twentieth Street" — with no extents. The Herald of
+the next morning prints the same ordinance with a stretch on every one of the
+nine: "Freeman street, **from Hoover street to Budlong avenue**, change to
+Twentieth street." Same instrument, same day; the clerk dropped the extents.
+
+**So "the minutes give the text" is not the same as "the minutes give the text
+in full."** An instrument read only from a minute book may be missing exactly
+the part a change row needs. Three habits follow:
+
+- **Look for the printed version even when the minutes seem complete.** By
+  Step 2b it exists, because publication was a condition of the ordinance taking
+  effect. Here it cost one clipping and changed the reading of the instrument.
+- **Never conclude "unqualified" from a minutes copy alone.** Absence of an
+  extent in the ledger is not evidence the ordinance had none — and an
+  unqualified change is the more dangerous reading, because it claims the whole
+  name rather than a stretch (change-rows-amendment.md §2).
+- **Mark which copy a row was read from.** `documents/ord-1874-02-26` is a
+  minutes copy too and reads as complete. It may be. Nothing disproves it, and
+  nothing supports it either.
+
+The two versions disagreeing is also why the ordinance book stays on WANTED even
+once a newspaper text is in hand: two secondary copies that differ do not settle
+what the instrument said.
+
 ## Step 3 — if the minutes name an ordinance number, that is the document
 
 The 1897 hunt ended at "Ordinance No. 4093 (New Series), Ordinance Book IV
@@ -249,3 +333,54 @@ the Los Angeles Herald; drop it to search every paper.
 - Feb. 19, 1897, “A Storm of Words” — https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24
 - Feb. 21, 1897, “Talking Retrenchment” — https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28
 - Feb. 24, 1897, council hearing — https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20
+
+## Step 2d — search the SUCCESSOR name, not the old one
+
+Added 2026-09-07, after a coverage audit reported that six of our oldest renamings had
+left "no trace" in 176 newspaper documents. One of the six was wrong, and the error is
+general enough to be worth a step of its own.
+
+**The searchable newspaper record begins, in practice, around 1883.** A street renamed
+before that appears in it only under its *new* name. Searching for the old one returns
+nothing, and nothing is easy to mistake for evidence of absence.
+
+The case: `eternity` is lettered `ETERNITY ST.` / `CALLE DE LA ETERNIDAD` on the 1849
+survey, and Kines has it renamed Buena Vista in 1888. The string "Eternity" occurs in
+**zero** of 176 newspaper documents — and the renaming is nevertheless attested twice,
+under the successor name:
+
+> "an ordinance changing the names of **Buena Vista street from Bellevue avenue north
+> to the river**…" (`documents/lah-1896-05-16`)
+
+> "**Buena Vista, from Bellevue to the river**" → Broadway (`documents/lah-1908-09-22`)
+
+Bellevue-north-to-the-river on the Broadway corridor is exactly where our alignment of
+the Ord survey puts Eternity. The chain holds; only the search was wrong.
+
+**So the order is:**
+
+1. Search the **successor** name first, with an extent if you have one. That is the
+   name the papers will be using.
+2. Search the **old** name second. A hit there dates the *end* of the old name and may
+   catch the renaming itself; a miss means very little.
+3. Only when both fail, and the successor name is genuinely absent, is "not in this
+   corpus" a finding.
+
+And the confirmation is always **geometric**, not lexical: the reason `lah-1896-05-16`
+counts as attesting Eternity is that the extent it gives lands on the corridor our
+survey alignment assigns to `eternity` — not that any word matched. Rule 2 does the
+work; the search only finds the candidate.
+
+### The mirror-image trap
+
+The same asymmetry runs the other way. A name that *spread* will be found under the
+successor name on ground that was never the street you are tracing:
+
+- **Castelar** was minted from Bull Street in 1874 and then took **Cemetery Avenue** in
+  1886 (`documents/lah-1886-07-23`) — a second, different street.
+- **Grand Avenue** took **Philadelphia street** in 1895 (`documents/lah-1895-07-02`).
+- **Broadway** took Fort street, Buena Vista and Downey avenue in 1908
+  (`documents/lah-1908-09-22`), and Moneta avenue in 1926 (`documents/dnla-1926-09-30`).
+
+So a successor-name hit is a *candidate*, never a confirmation. Check the extent
+against the corridor before believing it.

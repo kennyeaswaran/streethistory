@@ -47,8 +47,14 @@ below. Browser time is for collecting Map-Refs, not for squinting at plats.
    - **M R (Misc Records) refs** — URL pattern is reliable, construct it directly:
      `https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf`
      (book folder `MR030`, book+page both 3-digit zero-padded). Multi-page refs
-     like 9/13 = pages 009 through 013 — get them all; the title/recording
-     block is usually on the first page. You can sanity-check a guessed URL
+     like 9/13 = pages 009 through 013 — try them all; the title/recording
+     block is usually on the first page. **But a two-page filing is often ONE
+     PDF filed under the first page**, and the second page's filename 404s:
+     M.R. 3-166/167 and M.R. 2-504/505 both behave this way, as M.R. 3-60/61
+     already did (`MR003-060.pdf` carries both sheets, which is why
+     `documents/mr003-060-p1` and `-p2` came out of a single download). A 404
+     on the continuation page is therefore normal and not a sign you have the
+     reference wrong — open the first page and count the sheets inside. You can sanity-check a guessed URL
      with the fetch tool (`mcp__workspace__web_fetch`) before opening a
      browser: a real file reports `Content-Type: application/pdf`, a wrong
      guess reports the DPW "Page Not Found" HTML page. The fetch tool reaches
@@ -296,6 +302,18 @@ follows is only what neither of those says.
   or same-numbered pages are NOT guaranteed to continue or relate to the
   tract you want** — always check the title block of whatever you actually
   load.
+- **A single PAGE can carry two unrelated filings too, printed one above the
+  other on one sheet.** M.R. 5-307 is one scan holding both *Block W of the
+  Mott Tract* (recorded June 25, 1883, for M. I. Wicks) and *Hamilton's
+  Subdivision of part of the Urquidez Garden* (recorded Sept. 12, 1883, for
+  A. N. Hamilton) — different ground, different clients, a mile apart. A
+  parcel lookup names only the one its block sits in, so the other map arrives
+  unannounced and is easy to miss if you stop reading at the tract you came
+  for. Split the render in two and make two document folders, for the same
+  reason a multi-page scan becomes one document per page: one alignment and one
+  coverage polygon per document. Worked example, including how to place the cut
+  without eyeballing it (row ink profile, cut at the midpoint of the widest
+  blank band): `documents/mr005-307-a/SPLIT-NOTE.md`.
 - **ASP.NET postback links** (`href="javascript:__doPostBack(...)"`, seen on
   `TractMaps.aspx`'s book-range table) usually do NOT respond to normal
   clicks (coordinate-based or `ref`-based) — many attempts produced no visible
