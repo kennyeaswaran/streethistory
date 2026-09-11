@@ -41,6 +41,23 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+  "beaudry-st": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr001-462","sheet":"Beaudry Tract","asWritten":["Beaudry St"]}
+    ],
+    spellings: [{"forms":["Beaudry Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr001-462, where the ink reads “Beaudry St”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "commercial-street": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -58,6 +75,40 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+  "florida-st": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-569","sheet":"Nichols Addition","asWritten":["FLORIDA ST"]}
+    ],
+    spellings: [{"forms":["Florida Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-569, where the ink reads “FLORIDA ST”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "grand-ave": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr084-053","sheet":"Grace C. Longley Property","asWritten":["GRAND AV."]}
+    ],
+    spellings: [{"forms":["Grand Av."]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr084-053, where the ink reads “GRAND AV.”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "japanese-village-plaza-mall": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -71,6 +122,23 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Minted in review from tr0885-030-p2, where the ink reads “JAPANESE VILLAGE PLAZA MALL”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "loomis-st": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-569","sheet":"Nichols Addition","asWritten":["LOOMIS ST"]}
+    ],
+    spellings: [{"forms":["Loomis Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-569, where the ink reads “LOOMIS ST”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   },
@@ -93,6 +161,23 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+  "moore-st": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-569","sheet":"Nichols Addition","asWritten":["MOORE ST"]}
+    ],
+    spellings: [{"forms":["Moore Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-569, where the ink reads “MOORE ST”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "moran-s-lane": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -110,6 +195,23 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+  "orange-st-wilshire": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-569","sheet":"Nichols Addition","asWritten":["ORANGE ST"]}
+    ],
+    spellings: [{"forms":["Orange Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-569, where the ink reads “ORANGE ST”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "ozier-lane": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -123,6 +225,23 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Minted in review from mr005-110, where the ink reads “Ozier Lane”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "park-lane": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-016","sheet":"Block 22 1/2, Hancock's Survey","asWritten":["PARK LANE"]}
+    ],
+    spellings: [{"forms":["Park Lane"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-016, where the ink reads “PARK LANE”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   },
@@ -159,6 +278,23 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Minted in review from mr002-092-p1, where the ink reads “Rose STREET.”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "ruby-st": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-569","sheet":"Nichols Addition","asWritten":["RUBY ST"]}
+    ],
+    spellings: [{"forms":["Ruby Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-569, where the ink reads “RUBY ST”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   },
@@ -210,6 +346,23 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Minted in review from tr0145-062, where the ink reads “VIGNES STREET”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "ward-st": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-569","sheet":"Nichols Addition","asWritten":["WARD ST"]}
+    ],
+    spellings: [{"forms":["Ward Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-569, where the ink reads “WARD ST”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   },

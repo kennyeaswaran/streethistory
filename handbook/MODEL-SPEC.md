@@ -1370,3 +1370,38 @@ First documents to encode, in order:
 - Whether a revived name resumes its old entity or begins a new one — Georgia
   in 1897 revives a pre-1889 name on the same street. The model can express
   either; the call hasn't been made.
+
+## 13. Roadmap — wanted, not yet specified (2026-09-10)
+
+§12 is what the spec describes and the code does not yet do. This section is
+the other list: changes we want that the spec does not yet *describe*. Each is
+sized and argued in **handbook/ROADMAP.md**; an item moves from there into the
+body of this spec when its design is settled, and out of both when it ships.
+
+1. **Fewer segments on the map, nothing lost.** Measured 2026-09-10: of 371
+   segment boundaries, 23 mark a change of name; the rest mark where a
+   document's coverage ends. Three steps — split the display unit from the
+   evidence unit (a segment carries *stretches*), then §6.2a and its existence
+   hull, then a `continues` mark for streets drawn off the sheet's edge.
+2. **Proceedings.** A renaming is a sequence of petition, referral, adoption,
+   veto, approval, repeal, reported by many documents proposing different
+   things; 179 of 186 textual documents carry no rows because nothing in the
+   model connects them. A first-class `proceedings/<id>.js` carrying the steps
+   and the rows that took effect, hand-written first, tool (MAP-TOOL-SPEC §9)
+   after.
+3. **Historic sheets on the public site**, drawn through their §4.6
+   alignments and masked to their coverage; first step, a coverage-ring layer
+   from a generated `documents.js`.
+4. **The paper trail in the popup**, once 2 exists.
+5. **Display modes:** the grid as of a year (three states — known present,
+   known absent, unknown — plus vanished lines within their attested window);
+   colour by earliest attestation (§8 schemes 3 and 4, specified, unbuilt).
+6. **Search folds renderings** — "eleventh" finds "11th". A browser-side
+   matcher on canonical tokens; the `<datalist>` cannot do it.
+7. **Categories as a checked vocabulary and a tree** (referent /
+   circumstance / status; nature split into plant, animal, landform, water),
+   living in `site-config.js` with `NEIGHBORHOODS` (MODEL-IMPLEMENTATION
+   checklist A). Four ids in `names.js` are undeclared today.
+8. **A second neighbourhood, and the large serial sheets** — ADDING-A-
+   NEIGHBORHOOD.md and SERIAL-SOURCES.md, plus what a one-affine tool does
+   with a sheet that needs several.

@@ -29,6 +29,7 @@ JavaScript-only archives, and committing to git.
 | working on renamings / change rows | **handbook/change-rows-amendment.md** (the three scopes a change row declares, `excerpts`, and the derivation — §§1-9 now BUILT) |
 | wondering what document to hunt for next | **handbook/WANTED.md** (a standing shopping list: what each missing document unblocks, worst damage first) |
 | holding an unverified hunch | **handbook/research-leads.md** (dated parking lot; sweep it before a street pass) |
+| wondering what to build next, or whether a wanted change is quick or a project | **handbook/ROADMAP.md** (every wanted change, sized and ordered; MODEL-SPEC §13 is its index) |
 | publishing / git | **handbook/PUBLISHING.md** |
 | looking at the proposed names/documents/generator model | **handbook/MODEL-SPEC.md** (the contract) + **handbook/MODEL-IMPLEMENTATION.md** (built 2026-08-24; 3rd St acceptance diff clean; NOT live) |
 | executing the switchover to generated data | **MODEL-IMPLEMENTATION.md → "Switchover checklist"** (every known required change, incl. two code traps marked ⚠ in generate.js) |
@@ -246,6 +247,12 @@ has researched. Those stubs are the queue; `generated/report.md` lists them.
   county serves all five Wolfskill sheets as one PDF, and the LAPL scan is a
   copy of all five Ord sheets), so a citation is answered by a row on any of
   them; getting that wrong is three false alarms.
+- **The roadmap exists** (2026-09-10): handbook/ROADMAP.md sizes every change
+  Kenny wants — fewer map segments (measured: 23 of 371 segment boundaries are
+  name changes, the rest are coverage edges), *proceedings* for the paper trail
+  of a renaming (179 of 186 textual documents carry no rows), historic sheets
+  on the site, a year slider, search that folds "eleventh"/"11th", a category
+  tree. Read it before starting anything that is not a document or a namesake.
 - **WANTED: a review tool for TEXTUAL documents** (handbook/MAP-TOOL-SPEC.md
   §9). Review mode confirms rows against a sheet; the five textual documents —
   two Herald reports, the 1874 and 1887 ordinances, Ord 4093 — have excerpts and

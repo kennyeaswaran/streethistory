@@ -1,8 +1,116 @@
 # Download shopping list
 
 Opened 2026-09-06 for Georgia/Mott/Maple/Wall/San Julian, closed the same day,
-reopened for Los Angeles Street and then for Temple/First/Second. Newest batch
-first; the closed batch and its outcomes follow.
+reopened for Los Angeles Street, then for Temple/First/Second, and on
+2026-09-11 for 5th and Wilshire between Grand and the Harbor Freeway. Newest
+batch first; the closed batch and its outcomes follow.
+
+## Fifth Street and Wilshire Boulevard, Grand Avenue to the Harbor Freeway
+
+Sampled 2026-09-11. Every filename below was existence-checked (real
+`application/pdf`, not the DPW "Page Not Found" page). Note Hope Street does
+not cross 5th — the Central Library superblock runs Grand to Flower.
+
+**Collected without the NavigateLA UI.** The Parcel Description Report's own
+fields (`TRACT`, `MAP_REF`, `BLOCK`, `LOT`, `PIN`) are a queryable layer:
+`https://maps.lacity.org/arcgis/rest/services/Core/Master_landbase/MapServer/2`
+— reachable from a NavigateLA page through its own CORS proxy
+(`https://navigatela.lacity.org/esriproxysvc/proxy.ashx?<url>`). A polygon
+query over a half-block strip returns every parcel fronting it at once, so a
+whole corridor costs one script instead of one search per address, and no
+splash screen is involved. The County's tract-map footprints are the companion
+layer, `https://dpw.gis.lacounty.gov/dpw/rest/services/landrecords_mapviewer/MapServer/8`,
+whose `REFERENCE` field **carries the page-letter suffix** — which settles the
+`056a`/`056b` problem outright, without the book listing or the Google viewer.
+Both are blocked from the sandbox shell and from the fetch tool; both answer
+fine from the browser pane.
+
+### The prize: M.R. sheets, all new to the corpus
+
+| Tract | Map-Ref | Where it fronts | PDF |
+|---|---|---|---|
+| **Bellevue Terrace Tract** | **M R 2-585** | 5th, BOTH sides, Grand to the freeway — 47 parcels, the whole stretch | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf |
+| **"The Beaudry Tract" known as Bellevue Terrace Tract** | **M R 1-462** | 5th, N side Grand–Flower; S side Figueroa–freeway | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf |
+| **Subdivision of land known as Block 22 1/2, being a part of Hancock's Survey** | **M R 3-16** | Wilshire, BOTH sides Flower–Figueroa — 24 parcels | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-016.pdf |
+| **Nichols Addition to West Los Angeles** | **M R 3-569** | Wilshire, N side Figueroa to the freeway; S side Francisco–freeway | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf |
+| **Property of Mrs. Grace C. Longley** | **M R 84-53** | Wilshire, N side Grand–Hope | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf |
+
+Two M.R. refs on these blocks are **already in the corpus**: the Mott Tract,
+M R 1-489 (`documents/mr001-489`, 5th N side Grand–Flower) and Ord's Survey,
+M R 53-66/73 (Wilshire both sides Grand–Hope) — of which 067, 068, 069, 071 and
+073 are live documents and 066, 070, 072 are parked as `_mr053-*`.
+
+The two to open first are **M R 2-585** and **M R 3-16**: between them they
+carry almost every lot on the two stretches, and they are the sheets that would
+letter 5th Street and — if the name reaches this far east — Orange Street.
+
+### Map Book sheets — filenames resolved, suffixes included
+
+5th Street:
+
+| Tract | Map-Ref | Where | PDF |
+|---|---|---|---|
+| Dan Morris Tract | M B 3-72 | S side Grand–Flower | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0003/TR0003-072B.pdf |
+| Normal Tract | M B 3-44 | N side Grand–Flower | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0003/TR0003-044A.pdf |
+| Rohde Tract | M B 12-21 | N side Grand–Flower | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-021A.pdf |
+| TR 7675 | M B 187-4 | N side Grand–Flower | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0187/TR0187-004.pdf |
+| TR 21438 | M B 793-92/93 | N side Grand–Flower | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0793/TR0793-092.pdf |
+| P M 1896 | Bk 24-21 | N side Grand–Flower | https://pw.lacounty.gov/sur/nas/landrecords/parcel/PM024/PM024-021.pdf |
+| TR 65986-C | M B 1391-1/39 | N side Flower–Figueroa | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1391/TR1391-001.pdf |
+| TR 28794 | M B 738-82/83 | N side Figueroa–freeway | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0738/TR0738-082.pdf |
+
+Wilshire Boulevard:
+
+| Tract | Map-Ref | Where | PDF |
+|---|---|---|---|
+| Lot 3 and N 1/2 of Lot 2, Block 21 Ord's Survey | M B 6-152 | both sides Grand–Hope | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0006/TR0006-152B.pdf |
+| Brill Property | M B 11-52 | S side Grand–Hope | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0011/TR0011-052A.pdf |
+| Cooney's Hope Street Property | M B 14-27 | N side Grand–Hope | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-027B.pdf |
+| TR 3816 | M B 43-9 | N side Grand–Hope | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0043/TR0043-009.pdf |
+| TR 62036-C | M B 1323-92/96 | N side Grand–Hope | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1323/TR1323-092.pdf |
+| TR 62955-C | M B 1357-45/46 | N side Grand–Hope | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1357/TR1357-045.pdf |
+| TR 1546 | M B 21-62 | both sides Hope–Flower | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0021/TR0021-062A.pdf |
+| TR 67656-C | M B 1344-16/21 | S side Hope–Flower | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1344/TR1344-016.pdf |
+| TR 63153-C | M B 1354-3/4 | S side Hope–Flower | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1354/TR1354-003.pdf |
+| TR 69387-C | M B 1344-64/65 | N side Hope–Flower | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1344/TR1344-064.pdf |
+| TR 905 | M B 18-5 | N side Flower–Figueroa | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0018/TR0018-005A.pdf |
+| TR 1294 | M B 18-9 | N side Flower–Figueroa | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0018/TR0018-009B.pdf |
+| TR 1286 | M B 18-61 | S side Flower–Figueroa | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0018/TR0018-061B.pdf |
+| TR 1289 | M B 18-67 | S side Flower–Figueroa | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0018/TR0018-067A.pdf |
+| TR 71141 | M B 1397-17/42 | S side Figueroa–Francisco | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1397/TR1397-017.pdf |
+| TR 25510 | M B 718-7/8 | S side Francisco–freeway | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0718/TR0718-007.pdf |
+| TR 1966 | M B 21-57 | S side Francisco–freeway | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0021/TR0021-057.pdf |
+
+Six of these page numbers are shared with an unrelated filing, and in every
+case the suffix is the only thing separating them — M B 3-44 is Normal Tract
+(`A`) or Peck's Addition (`B`), M B 3-72 is Tichenor (`A`) or Dan Morris (`B`),
+M B 6-152 is Alamitos Park (`A`) or Block 21 Ord's Survey (`B`), M B 11-52 is
+Manchester Place (no suffix) or Brill Property (`A`), M B 12-21 is Hoisington
+and Royer's No. 1 (no suffix) or Rohde (`A`), M B 14-27 is TR 46 (`A`) or
+Cooney's (`B`). The suffixes above come from the County layer's own
+`REFERENCE`, not from guessing.
+
+### Footprints over the same blocks that no current parcel cites
+
+Superseded filings, but they letter the streets at their own dates:
+
+| Tract | Recorded | Where | PDF |
+|---|---|---|---|
+| Malinow Tract | 1901-10-16 | 5th, N side Figueroa–freeway | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-031A.pdf |
+| TR 10408 | 1928-09-30 | 5th, N side Flower–Figueroa | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0154/TR0154-027.pdf |
+| TR 20881 | 1969-09-03 | 5th, N side Flower–Figueroa | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0790/TR0790-046.pdf |
+| TR 881 | 1910-05-07 | Wilshire, Grand–Hope | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0016/TR0016-100B.pdf |
+| TR 4281 | 1921-07-12 | Wilshire, S side Francisco–freeway | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0046/TR0046-074.pdf |
+| TR 5417 | 1923-06-04 | Wilshire, S side Francisco–freeway | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0070/TR0070-013.pdf |
+| TR 71141-01 | 2015-09-17 | Wilshire, S side Figueroa–Francisco | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1385/TR1385-086.pdf |
+
+### What is NOT obtainable this way
+
+Two runs of parcels report no tract at all: four on the south side and fourteen
+on the north side of 5th between Figueroa and the freeway, and fourteen on
+Wilshire west of Francisco. That is freeway right-of-way and vacated street —
+the same pattern as Carleton and Summerfield's, and it means those particular
+lots can only ever be carried by plats and directories.
 
 ## Temple, First and Second Streets, Main to Alameda
 

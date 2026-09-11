@@ -130,6 +130,20 @@ module.exports = {
         ]
       },
       "note": "Added in review: the sheet covers this 47 m and draws no street along it."
+    },
+    {
+      "kind": "vanished-unnamed",
+      "trace": [
+        [
+          711,
+          1060
+        ],
+        [
+          719,
+          1344
+        ]
+      ],
+      "basis": "alignment"
     }
   ]
 };

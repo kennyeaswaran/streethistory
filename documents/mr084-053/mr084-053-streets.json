@@ -1,0 +1,94 @@
+{
+  "document": "mr084-053",
+  "image": "mr084-053-100dpi.png",
+  "imageSize": [1119, 1757],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr084-053-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [280, 345],
+    [260, 933],
+    [887, 872],
+    [877, 316]
+  ],
+  "coverageLl": [
+    [34.050895, -118.254645],
+    [34.050024, -118.255529],
+    [34.049363, -118.254297],
+    [34.050221, -118.253515]
+  ],
+  "streets": [
+    {
+      "name": "5th Street",
+      "runs": [
+        {
+          "px": [
+            [879, 437],
+            [800, 435],
+            [742, 439],
+            [684, 439],
+            [277, 442]
+          ],
+          "ll": [
+            [34.050034, -118.253685],
+            [34.050131, -118.253827],
+            [34.050196, -118.253938],
+            [34.050266, -118.254045],
+            [34.050751, -118.254791]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Grand Avenue",
+          "px": [742, 439],
+          "ll": [34.050196, -118.253938],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Grand Avenue",
+      "runs": [
+        {
+          "px": [
+            [745, 322],
+            [744, 378],
+            [742, 439],
+            [743, 503],
+            [744, 606],
+            [745, 659],
+            [748, 875],
+            [749, 885]
+          ],
+          "ll": [
+            [34.05037, -118.253764],
+            [34.050286, -118.253846],
+            [34.050196, -118.253938],
+            [34.050098, -118.254028],
+            [34.04994, -118.254174],
+            [34.049858, -118.254249],
+            [34.049525, -118.254555],
+            [34.049509, -118.254569]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [742, 439],
+          "ll": [34.050196, -118.253938],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hope Place",
+          "px": [745, -16],
+          "ll": [34.050884, -118.253277],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

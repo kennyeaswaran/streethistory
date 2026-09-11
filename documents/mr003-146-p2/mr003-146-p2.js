@@ -76,12 +76,7 @@ module.exports = {
       "kind": "state",
       "asWritten": "REQUENA STREET",
       "street": "Temple Street",
-      "from": {
-        "px": [
-          626,
-          507
-        ]
-      },
+      "from": "Los Angeles Street",
       "to": {
         "px": [
           221,

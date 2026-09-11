@@ -472,3 +472,9 @@ extent for it is the failure the change-rows amendment exists to stop.
 **Where it probably lives.** Closer to `names-tool.html` than to
 `map-tool.html`: the same surgical file editing, the same list-plus-editor
 shape, no canvas at all.
+
+**Amended 2026-09-10.** The list item should be a *proceeding*, not a document
+— one renaming's whole paper trail (petition, referral, adoption, veto,
+approval, repeal), every step's excerpt in one column and the rows that took
+effect in the other. The shape is proposed in handbook/ROADMAP.md §2; two
+proceedings are to be written by hand before the tool is built to them.
