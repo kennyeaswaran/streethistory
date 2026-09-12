@@ -2,8 +2,99 @@
 
 Opened 2026-09-06 for Georgia/Mott/Maple/Wall/San Julian, closed the same day,
 reopened for Los Angeles Street, then for Temple/First/Second, and on
-2026-09-11 for 5th and Wilshire between Grand and the Harbor Freeway. Newest
+2026-09-11 for 5th and Wilshire between Grand and the Harbor Freeway and for
+San Pedro-to-Central between 7th and 9th. Newest
 batch first; the closed batch and its outcomes follow.
+
+## San Pedro to Central, 7th to 9th
+
+Swept 2026-09-11 by the method in TRACT-RESEARCH.md, "Skip the UI entirely" —
+fourteen block polygons, two layer queries each, no NavigateLA searching. All
+32 filenames existence-checked. **Stanford is not next to Central**: Gladys
+Avenue, Ceres Avenue and Kohler Street run between them, so the area is 7×2
+blocks, not 4×2.
+
+Only one of these is already in the corpus: **Clark and Bryan Tract, M R 53-65**
+(`documents/mr053-065`). Everything else is new.
+
+### The 7th–8th tier
+
+| Block | Tract | Map-Ref | PDF |
+|---|---|---|---|
+| San Pedro→Gladys (four blocks) | **Wilde and Strong's Subdivision of the Frank Sabichi Tract** | **M R 66-64** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf |
+| San Pedro–Crocker, Crocker–Towne | Ulm Tract | M B 13-48 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0013/TR0013-048.pdf |
+| Towne–Stanford | Johnson and Keeney's Resub. of Lots 22–35, Block 3, Wilde and Strong | M R 70-84 | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR070/MR070-084.pdf |
+| Towne–Stanford | Culver's Addition to the Frank Sabichi Tract | M B 5-156 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-156A.pdf |
+| Towne–Stanford, Stanford–Gladys | The Niosi Tract | M B 7-85 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0007/TR0007-085.pdf |
+| Stanford–Gladys, Gladys–Ceres | **E. M. Funk's Subdivision of the Valenzuela Tract** | **M R 18-92** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-092.pdf |
+| Stanford–Gladys | Calkins and Clapp's Eighth Street Tract | M R 59-69 | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR059/MR059-069.pdf |
+| Stanford–Gladys, Gladys–Ceres | TR 406 | M B 14-129 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-129B.pdf |
+| Stanford–Gladys | P M 1136 | Bk 17-45 | https://pw.lacounty.gov/sur/nas/landrecords/parcel/PM017/PM017-045.pdf |
+| Stanford→Central | City Lands of Los Angeles | M R 2-504/505 (also Pat. 3-64/65) | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-504.pdf |
+| Ceres–Kohler, Kohler–Central | **Kohler Tract** | **M R 54-51** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-051.pdf |
+| Ceres–Kohler, Kohler–Central | **W. J. Fisher's Subdivision of the Kohler and Frohling Tract** | **M R 21-46** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf |
+| Kohler–Central | Subdivision of the Home Place of Mariana W. de Coronel | M B 1-46 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-046.pdf |
+| Kohler–Central | Slauson Property | M B 11-196 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0011/TR0011-196.pdf |
+| Kohler–Central | TR 2632 | M B 33-15 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0033/TR0033-015.pdf |
+| Kohler–Central | TR 3235 | M B 36-12 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0036/TR0036-012.pdf |
+| Kohler–Central | TR 9399 | M B 206-30/31 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0206/TR0206-030.pdf |
+
+M R 2-505 404s; the filing is one PDF under 504, the pattern already confirmed
+at 3-166 and 3-60.
+
+### The 8th–9th tier
+
+| Block | Tract | Map-Ref | PDF |
+|---|---|---|---|
+| San Pedro–Crocker, Crocker–Towne | Clark and Bryan Tract | M R 53-65 | **already `documents/mr053-065`** |
+| Crocker–Towne, Towne–Stanford | **Denison Tract** | **M R 29-85** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-085.pdf |
+| Stanford–Gladys | **Stanford Ave. Tract** | **M R 55-86** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-086.pdf |
+| Stanford–Gladys, Gladys–Ceres | Pedgrift Tract | M R 26-60 | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR026/MR026-060.pdf |
+| Stanford–Gladys, Gladys–Ceres | **Goldsworthy 9th St. Tract** | **M R 26-59** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR026/MR026-059.pdf |
+| Gladys–Ceres, Ceres–Kohler | **Subdivision of the Reyes Tract** | **M R 10-80** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-080.pdf |
+| Gladys–Ceres, Ceres–Kohler | John H. Jacob's Sub. of Lots 9 and 13 and part of 10 and 12, Reyes Tract | M R 42-88 | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR042/MR042-088.pdf |
+| Ceres–Kohler | John H. Jacobs' Sub. of Lots 3–4 and the part of Lot 5 west of Kohler Street, Reyes Tract | M R 43-88 | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR043/MR043-088.pdf |
+| Ceres–Kohler | Contreras and Reyes Subdivision | M R 37-87 | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR037/MR037-087.pdf |
+| Gladys–Ceres, Ceres–Kohler | TR 8657 | M B 105-1/2 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0105/TR0105-001.pdf |
+| Kohler–Central | **J. B. Parker Subdivision** | **M R 70-51** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR070/MR070-051.pdf |
+| Kohler–Central | **Corbin's Subdivision of the Santa Cruz Tract** | **M R 55-11** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-011.pdf |
+| Kohler–Central | **F. T. Bicknell's Subdivision of a part of the Vineyard of Isidro Reyes** | **M R 55-71** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-071.pdf |
+| Kohler–Central | Cribb and Sinclair's Re-Subdivision of a part of the Reyes Tract | M B 1-53/54 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-053.pdf |
+| Kohler–Central | TR 9918 | M B 141-11 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0141/TR0141-011.pdf |
+
+### What to read first
+
+**M R 66-64, Wilde and Strong's Subdivision of the Frank Sabichi Tract**, carries
+the whole 7th–8th tier from San Pedro to Gladys — 275 parcels, more than any
+other sheet in any batch so far. **M R 18-92 (Valenzuela)**, **M R 54-51
+(Kohler)** and **M R 21-46 (Kohler and Frohling)** carry most of the rest of
+that tier, and **M R 10-80 (Reyes)** with its three Jacobs/Contreras
+resubdivisions carries the east half of the 8th–9th one.
+
+Two of these name their own street in the title — **Goldsworthy 9th St. Tract**
+(M R 26-59) and **Calkins and Clapp's Eighth Street Tract** (M R 59-69) — and
+**Stanford Ave. Tract** (M R 55-86) names Stanford. Those three should be
+opened alongside the Reyes and Sabichi sheets, since a tract named for the
+street it fronts usually letters it on the plat.
+
+The Californio and viticulture layer this project has been accumulating —
+Urquidez Garden, Moreno Vineyard, Celis Vineyard, Rivara and Vignolo, the
+Garden of J. Murat — gains four here: **the Vineyard of Isidro Reyes** and the
+Reyes Tract over it, the **Valenzuela Tract**, the **home place of Mariana W.
+de Coronel**, and the **Kohler and Frohling** ground, which is the Los Angeles
+winery of that name.
+
+### Two things the sweep turned up about the data
+
+- A Denison Tract parcel at Towne and 9th reports its Map-Ref as **M R 29-851**.
+  The tract is M R 29-85; the trailing digit is a typo in the city layer.
+- Eleven of the Map Book pages across both of today's batches hold two
+  unrelated filings, and in six the un-suffixed filename is the wrong map. Here:
+  M B 1-46 is Coronel (no suffix) not Tutt (`A`); M B 1-53 is Cribb and Sinclair
+  (no suffix) not the W. G. Nevin Tract (`A`); M B 5-156 is Culver's (`A`) not
+  the L.A. Canal and Reservoir Co. resub (`B`); M B 7-85 is Niosi (no suffix)
+  not Valley Vista (`A`); M B 11-196 is Slauson (no suffix) not Idlewild No. 1
+  (`A`); and **M B 14-129 is TR 406 as `B`, while `A` is TR 157**.
 
 ## Fifth Street and Wilshire Boulevard, Grand Avenue to the Harbor Freeway
 

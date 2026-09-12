@@ -189,11 +189,6 @@
       <input type="range" id="sc" min="0.05" max="2" value="0.55" step="0.002">
       <button id="scUp" title="1% larger">+</button>
     </div>
-    <label><input type="checkbox" id="rulerOn"> Scale bar — 50 · 100 · 150 · 200 ft of <i>ground</i></label>
-    <div class="hint" id="rulerHint">Lay it along a lot line or the plat's own scale bar:
-      drag its body to move it, its square end to turn it. It measures the modern
-      ground under it, so if the sheet's "100 ft" does not span the bar's 100, the
-      scale is off by that ratio.</div>
     <h3>Drag moves</h3>
     <div class="modes">
       <button id="dScan" class="on">the scan</button>
@@ -504,7 +499,6 @@ function draw() {
     });
   }
   if (mode === "review") drawReview();
-  drawRuler();
   refreshCoverageUI();
 }
 
@@ -521,80 +515,10 @@ function refreshCoverageUI() {
 
 const inBoundsNames = () => coverageStreets().streets.map(s => s.name);
 
-// --- scale bar -------------------------------------------------------------
-// A 200 ft bar, ticked every 50 ft, that the human lays over the sheet's own
-// dimensions while aligning. It lives in WORLD terms (ground point at its zero
-// end, bearing in screen radians) so it stays put on the ground under pans,
-// zooms and scan nudges: it is measuring the modern ground, and the question
-// it answers is whether the scan's printed 100 ft spans its 100. `ang` is a
-// screen-space angle, which is the same thing as a ground bearing here because
-// the view is never rotated.
-const FT = 0.3048, RULER_FT = 200, RULER_TICK_FT = 50;
-let ruler = null;                         // null when off, else {lat, lng, ang}
-function rulerScreen() {
-  const [x0, y0] = llToScreen(ruler.lat, ruler.lng);
-  const L = RULER_FT * FT / view.mpp, c = Math.cos(ruler.ang), sn = Math.sin(ruler.ang);
-  return { x0, y0, x1: x0 + L * c, y1: y0 + L * sn, L, c, sn };
-}
-// "move" when the point is on the bar, "rotate" when it is on the square end
-// handle, null when it is on neither.
-function rulerHit(x, y) {
-  if (!ruler || !img) return null;
-  const r = rulerScreen();
-  if (Math.hypot(x - r.x1, y - r.y1) <= 10) return "rotate";
-  const t = Math.max(0, Math.min(1, ((x - r.x0) * r.c + (y - r.y0) * r.sn) / r.L));
-  const px = r.x0 + t * r.L * r.c, py = r.y0 + t * r.L * r.sn;
-  return Math.hypot(x - px, y - py) <= 9 ? "move" : null;
-}
-function drawRuler() {
-  if (!ruler || !img) return;
-  const r = rulerScreen();
-  const tick = RULER_TICK_FT * FT / view.mpp, n = RULER_FT / RULER_TICK_FT, h = 7;
-  ctx.save();
-  ctx.translate(r.x0, r.y0); ctx.rotate(ruler.ang);
-  // alternating blocks, white-haloed so they read on any scan
-  ctx.lineWidth = 3; ctx.strokeStyle = "rgba(255,255,255,0.9)";
-  ctx.strokeRect(0, -h / 2, r.L, h);
-  for (let i = 0; i < n; i++) {
-    ctx.fillStyle = i % 2 ? "#fffef7" : "#1b1b1b";
-    ctx.fillRect(i * tick, -h / 2, tick, h);
-  }
-  ctx.lineWidth = 1; ctx.strokeStyle = "#1b1b1b"; ctx.strokeRect(0, -h / 2, r.L, h);
-  // ticks and labels; labels are kept upright when the bar points leftwards
-  ctx.font = "bold 11px Georgia"; ctx.textAlign = "center"; ctx.textBaseline = "bottom";
-  const flip = Math.cos(ruler.ang) < 0;
-  for (let i = 0; i <= n; i++) {
-    const x = i * tick, ft = i * RULER_TICK_FT;
-    ctx.beginPath(); ctx.moveTo(x, -h / 2 - 4); ctx.lineTo(x, h / 2 + 4); ctx.stroke();
-    const label = ft === 0 ? "0" : ft === RULER_FT ? `${ft} ft` : String(ft);
-    ctx.save(); ctx.translate(x, flip ? h / 2 + 4 : -h / 2 - 5);
-    if (flip) { ctx.rotate(Math.PI); ctx.textBaseline = "bottom"; }
-    ctx.lineWidth = 3; ctx.strokeStyle = "rgba(255,255,255,0.9)"; ctx.strokeText(label, 0, 0);
-    ctx.fillStyle = "#1b1b1b"; ctx.fillText(label, 0, 0);
-    ctx.restore();
-  }
-  // the rotate handle: a square at the far end
-  ctx.fillStyle = "#c8401a"; ctx.strokeStyle = "rgba(255,255,255,0.9)"; ctx.lineWidth = 2;
-  ctx.fillRect(r.L - 6, -6, 12, 12); ctx.strokeRect(r.L - 6, -6, 12, 12);
-  ctx.restore();
-}
-function setRuler(on) {
-  if (on && !ruler) {
-    const [lat, lng] = screenToLL(cv.width / 2, cv.height / 2);
-    ruler = { lat, lng, ang: 0 };
-  } else if (!on) ruler = null;
-  $("rulerOn").checked = !!ruler;
-  draw();
-}
-
 // --- interaction -----------------------------------------------------------
 let drag = null;   // {kind:"scan"|"view", last:[x,y]}
 cv.addEventListener("mousedown", e => {
   if (!img) return;
-  // The scale bar, when it is under the cursor, takes the drag — and counts as
-  // moved from the start, so letting go of it never drops a coverage vertex.
-  const rh = e.button === 0 ? rulerHit(e.clientX, e.clientY) : null;
-  if (rh) { drag = { kind: "ruler-" + rh, last: [e.clientX, e.clientY], moved: true }; return; }
   // Outside align mode the scan is locked, so a drag always pans.
   const panning = mode !== "align" ? true
                 : e.button === 1 || e.button === 2 ? true
@@ -620,13 +544,7 @@ addEventListener("mousemove", e => {
   if (drag && img) {
     const dx = e.clientX - drag.last[0], dy = e.clientY - drag.last[1];
     if (Math.abs(dx) + Math.abs(dy) > 2) drag.moved = true;
-    if (drag.kind === "ruler-move") {
-      ruler.lng += dx * view.mpp / kx();
-      ruler.lat -= dy * view.mpp / KY;
-    } else if (drag.kind === "ruler-rotate") {
-      const r = rulerScreen();
-      ruler.ang = Math.atan2(e.clientY - r.y0, e.clientX - r.x0);
-    } else if (drag.kind === "scan") {
+    if (drag.kind === "scan") {
       scan.lng += dx * view.mpp / kx();
       scan.lat -= dy * view.mpp / KY;
       alignmentTouched = true;
@@ -737,12 +655,6 @@ $("mCoverage").onclick = () => setMode("coverage");
 $("mReview").onclick = () => setMode("review");
 
 $("op").oninput = draw;
-$("rulerOn").onchange = e => setRuler(e.target.checked);
-cv.addEventListener("mousemove", e => {
-  if (drag) return;
-  const rh = rulerHit(e.clientX, e.clientY);
-  cv.style.cursor = rh === "rotate" ? "grab" : rh === "move" ? "move" : "";
-});
 $("rot").oninput = e => { alignmentTouched = true; scan.rot = e.target.value * Math.PI / 180; $("rotV").textContent = (+e.target.value).toFixed(1); draw(); };
 $("sc").oninput = e => { alignmentTouched = true; scan.mppx = +e.target.value; $("scV").textContent = scan.mppx.toFixed(3); draw(); };
 const nudge = d => { alignmentTouched = true; scan.rot += d * Math.PI / 180;

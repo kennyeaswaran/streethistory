@@ -15,7 +15,7 @@ const { chromium } = require("playwright");
 const http = require("http"), fs = require("fs"), path = require("path"), os = require("os");
 
 const ROOT = fs.mkdtempSync(path.join(os.tmpdir(), "names-tool-test-"));
-for (const f of ["names-tool.html", "names.js", "names-new.js", "project-info.json"])
+for (const f of ["names-tool.html", "names.js", "names-new.js", "streets-data.js", "project-info.json"])
   if (fs.existsSync(path.join(__dirname, f))) fs.cpSync(path.join(__dirname, f), path.join(ROOT, f));
 if (fs.existsSync(path.join(__dirname, "documents")))
   fs.cpSync(path.join(__dirname, "documents"), path.join(ROOT, "documents"), { recursive: true });
@@ -47,7 +47,10 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
 
 (async () => {
   await new Promise(r => server.listen(8124, r));
-  const browser = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium" });
+  // Playwright's bundled Chromium by default; CHROMIUM_PATH overrides it
+  // (see browser-test.js for why the old hard-coded path stopped working).
+  const exe = process.env.CHROMIUM_PATH;
+  const browser = await chromium.launch(exe ? { executablePath: exe } : {});
   const page = await browser.newPage({ viewport: { width: 1500, height: 950 } });
   const errors = [], missing = [], dialogs = [], answers = [];
   page.on("pageerror", e => errors.push(String(e)));

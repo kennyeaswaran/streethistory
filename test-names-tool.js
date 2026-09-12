@@ -210,6 +210,12 @@ console.log("\nvalidation");
      errs({ a: { ...base(), possiblySameAs: "nope" } }).some(m => /unknown id/.test(m)));
   ok("an alias colliding with a live id is an error",
      errs({ a: { ...base(), aliases: ["b"] }, b: base() }).some(m => /collides/.test(m)));
+  ok("an undeclared category warns once the vocabulary is known",
+     (validateAll({ a: { ...base(), categories: ["person", "mythological"] } },
+                  { docsByUrl: {}, attesting: {}, categoryIds: new Set(["person", "unresearched"]) }).a || [])
+       .some(p => p.kind === "wrn" && /"mythological" is not declared/.test(p.msg)));
+  ok("…and is quiet when no vocabulary was loaded",
+     !wrns({ a: { ...base(), categories: ["person", "mythological"] } }).some(m => /not declared/.test(m)));
   ok("null namedAfter without unknown/unresearched warns",
      wrns({ a: { ...base(), namedAfter: null } }).some(m => /namedAfter is null/.test(m)));
   ok("null namedAfter with unknown is quiet",

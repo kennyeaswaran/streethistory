@@ -339,11 +339,11 @@ requirement). Apply to both `index.html` (live; street-keyed) and
 
 ### Two things wrong today
 
-- **Four category ids are in use and not declared.** `names.js` uses
-  `mythological`, `history`, `foreign` and `company`; none is in `CATEGORIES`.
-  Those tags render with no label and cannot be selected in the Highlight
-  list. `check-model.js` checks only that the list is non-empty; it should
-  check every id against the vocabulary. *Quick fix, do it this week.*
+- ~~**Four category ids are in use and not declared.**~~ *Fixed 2026-09-12:*
+  `mythological`, `history`, `foreign` and `company` are declared in
+  `CATEGORIES`; `check-model.js` now errors on an undeclared id, and the names
+  tool warns on one as it is coined (the "new category" row is how the four
+  came about). What remains here is the tree below.
 - **The list is flat and mixes three different kinds of thing.** "Named after
   a person" is a referent; "Namesake alive when named" is a circumstance of a
   person-naming; "Has former names" is derived by the generator; "Origin
@@ -447,9 +447,9 @@ MODEL-SPEC §§4–5 and CLAUDE.md's broken-rules list stay as they are.
 
 ## 10. Suggested order
 
-1. **Quick fixes, this week:** declare the four missing categories and make
-   `check-model.js` validate ids (7); the search matcher (6); scheme 3/4
-   colours (5b); permalinks and the segmentation report (9).
+1. **Quick fixes, this week:** ~~declare the four missing categories and make
+   `check-model.js` validate ids (7)~~ done 2026-09-12; the search matcher (6);
+   scheme 3/4 colours (5b); permalinks and the segmentation report (9).
 2. **The Orange → Wilshire proceeding, written by hand** (2) — a day, and it
    settles the shape before anything is built to it.
 3. **§1 Step A**, display unit vs evidence unit — the largest single

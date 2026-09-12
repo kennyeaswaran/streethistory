@@ -22,6 +22,17 @@ for (const [id, e] of Object.entries(NEW_NAME_ENTITIES)) {
 
 const DocGeom = require("./doc-geometry.js");
 const { DOCUMENTS } = require("./documents/index.js");
+// The category vocabulary still lives in the hand-authored streets-data.js
+// (MODEL-IMPLEMENTATION checklist A moves it to site-config.js). Read it the
+// way generate.js does, so a tag the map cannot label is caught here and not
+// on the site: four ids were in use and undeclared before this check existed.
+const CATEGORY_IDS = (() => {
+  try {
+    const src = fs.readFileSync(path.join(__dirname, "streets-data.js"), "utf8");
+    const { CATEGORIES } = new Function(src + "; return { CATEGORIES };")();
+    return new Set(CATEGORIES.map(c => c.id).concat(["unresearched"]));
+  } catch (e) { return null; }
+})();
 
 let errors = 0;
 const err = (...m) => { errors++; console.error("ERROR:", ...m); };
@@ -69,6 +80,9 @@ for (const [id, e] of Object.entries(NAME_ENTITIES)) {
     warn(id, "note reads like a working note and `note` is shown to readers — " +
              "move it to internalNote");
   if (!Array.isArray(e.categories) || !e.categories.length) err(id, "no categories");
+  else if (CATEGORY_IDS)
+    for (const c of e.categories) if (!CATEGORY_IDS.has(c))
+      err(id, `category "${c}" is not in CATEGORIES (streets-data.js) — the map cannot label or highlight it`);
   if (e.namedAfter) {
     const open = (e.namedAfter.match(/\{\{/g) || []).length, close = (e.namedAfter.match(/\}\}/g) || []).length;
     if (open !== close || open > 1) err(id, "namedAfter has unbalanced or multiple {{}} markers");

@@ -13,8 +13,13 @@ mark the document swept.
 
 ## Before you start: make the document's folder
 
-**Double-click `utilities/new-map.command`.** Pick a scan from `inbox/`, give it an
-id, and it creates `documents/<id>/` holding the scan and a 100 dpi PNG render.
+**Double-click `utilities/new-map.command`.** Pick a scan from `inbox/` — or
+several at once ("1 3 4", or "all") — give each an id, and it creates
+`documents/<id>/` holding the scan and a 100 dpi PNG render. It comes back to
+the shortened list after each one, so a batch of downloads is one sitting;
+return on an empty answer finishes. For a multi-page PDF it opens a contact
+sheet of every page in your browser before asking which pages you want, since
+the map sheet, the certificate page and the index sheet look alike as numbers.
 Use 100 dpi: it is the project's alignment convention, and every stored pixel
 coordinate is meaningless against a render at another resolution. Re-render at
 300 dpi if you need to *read* fine label text, but align against the 100 dpi
@@ -178,6 +183,15 @@ the one that saves the work:
 Coordinates can still be typed under *Jump to coordinates*, but you will rarely
 know them; the readout along the bottom gives the cursor's lat/lng, the scan
 pixel under it, the current scale in metres per pixel and the rotation.
+
+**Checking the scale: the scale bar.** Tick *Scale bar* in the Align panel and a
+200 ft bar, marked every 50 ft, appears on the map. Drag its body to move it,
+its red square end to turn it. It measures the modern **ground**, not the scan,
+so lay it along something the sheet dimensions itself — a lot frontage marked
+"50", a block marked "300", the plat's own printed scale — and read the ratio:
+if the sheet's 100 ft spans the bar's 150, the scan is drawn 1.5× too large,
+and the scale slider wants to come down by that much. It stays where you put
+it on the ground through pans, zooms and scan nudges.
 
 ### Sheet metadata
 

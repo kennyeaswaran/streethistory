@@ -51,7 +51,13 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
 (async () => {
   const haveFixture = makeFixture();
   await new Promise(r => server.listen(8123, r));
-  const browser = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium" });
+  // Playwright's bundled Chromium by default; CHROMIUM_PATH overrides it for a
+  // sandbox whose browser lives elsewhere (the old hard-coded
+  // /opt/pw-browsers/chromium stopped launching once "old headless" was
+  // removed from the Chrome binary — match the installed playwright to the
+  // browsers under /opt/pw-browsers instead, e.g. playwright@1.56 ↔ 1194).
+  const exe = process.env.CHROMIUM_PATH;
+  const browser = await chromium.launch(exe ? { executablePath: exe } : {});
   const page = await browser.newPage({ viewport: { width: 1500, height: 950 } });
   const errors = [];
   page.on("pageerror", e => errors.push(String(e)));
@@ -1011,6 +1017,59 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
                                view.lat = p.view[0]; view.lng = p.view[1]; draw(); }, p0);
   }
   ok("the popup hides with it", (await vis("#pop")).display === "none");
+
+  console.log("a scale bar to lay over the sheet's own dimensions");
+  {
+    ok("the switch lives in the Align panel",
+       await page.evaluate(() => !!document.querySelector('.modebody[data-mode="align"] #rulerOn')));
+    ok("…and starts off", await page.evaluate(() => ruler === null && !$("rulerOn").checked));
+    await page.check("#rulerOn");
+    await page.waitForTimeout(80);
+    const r0 = await page.evaluate(() => ({ r: rulerScreen(), mpp: view.mpp, cov: coverage.length,
+                                            scan: [scan.lat, scan.lng] }));
+    ok("switching it on puts a bar on the ground", r0.r && isFinite(r0.r.x0));
+    ok("…200 ft long at the view's scale",
+       Math.abs(r0.r.L - 200 * 0.3048 / r0.mpp) < 1e-6, JSON.stringify(r0.r));
+    const px = await page.evaluate(() => {
+      const r = rulerScreen(), t = 50 * 0.3048 / view.mpp;
+      const at = x => [...ctx.getImageData(Math.round(r.x0 + x), Math.round(r.y0), 1, 1).data];
+      return { first: at(t / 2), second: at(t * 1.5) };
+    });
+    ok("…drawn as alternating blocks", px.first[0] < 60 && px.second[0] > 200, JSON.stringify(px));
+    // drag the body: the bar moves, the scan and the coverage do not
+    const mid = { x: r0.r.x0 + r0.r.L / 2, y: r0.r.y0 };
+    await page.mouse.move(mid.x, mid.y);
+    ok("the cursor says it can be moved", await page.evaluate(() => cv.style.cursor === "move"));
+    await page.mouse.down(); await page.mouse.move(mid.x + 40, mid.y + 30, { steps: 4 }); await page.mouse.up();
+    const r1 = await page.evaluate(() => ({ r: rulerScreen(), scan: [scan.lat, scan.lng],
+                                            touched: alignmentTouched }));
+    ok("dragging its body moves it with the mouse",
+       Math.abs(r1.r.x0 - r0.r.x0 - 40) < 1 && Math.abs(r1.r.y0 - r0.r.y0 - 30) < 1,
+       JSON.stringify([r0.r.x0, r0.r.y0, r1.r.x0, r1.r.y0]));
+    ok("…and not the scan", r1.scan[0] === r0.scan[0] && r1.scan[1] === r0.scan[1]);
+    // drag the square end: it turns about its zero end
+    await page.mouse.move(r1.r.x1, r1.r.y1);
+    ok("the cursor says the end turns it", await page.evaluate(() => cv.style.cursor === "grab"));
+    await page.mouse.down(); await page.mouse.move(r1.r.x0, r1.r.y0 + 100, { steps: 4 }); await page.mouse.up();
+    const r2 = await page.evaluate(() => ({ ang: ruler.ang, r: rulerScreen() }));
+    ok("dragging the end turns it", Math.abs(r2.ang - Math.PI / 2) < 0.05, String(r2.ang));
+    ok("…about its zero end", Math.abs(r2.r.x0 - r1.r.x0) < 1e-6 && Math.abs(r2.r.y0 - r1.r.y0) < 1e-6);
+    // it stays on the ground when the view pans
+    await page.evaluate(() => { view.lng += 0.001; draw(); });
+    const r3 = await page.evaluate(() => rulerScreen());
+    ok("panning the map carries it along", Math.abs(r3.x0 - r2.r.x0) > 50, String(r3.x0 - r2.r.x0));
+    await page.evaluate(() => { view.lng -= 0.001; draw(); });
+    // a click on it in coverage mode is not a coverage vertex
+    await page.click("#mCoverage"); await page.waitForTimeout(100);
+    const c0 = await page.evaluate(() => coverage.length);
+    const rc = await page.evaluate(() => rulerScreen());
+    await page.mouse.click(rc.x0 + rc.L / 2 * rc.c, rc.y0 + rc.L / 2 * rc.sn);
+    ok("clicking it in coverage mode drops no vertex", await page.evaluate(() => coverage.length) === c0);
+    ok("…and it is still drawn there", await page.evaluate(() => ruler !== null));
+    await page.click("#mAlign"); await page.waitForTimeout(100);
+    await page.uncheck("#rulerOn");
+    ok("switching it off takes it away", await page.evaluate(() => ruler === null));
+  }
   await page.click("#mCoverage");
   await page.waitForTimeout(150);
   ok("coverage mode shows only the coverage body",

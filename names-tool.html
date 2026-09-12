@@ -426,6 +426,14 @@ function validateAll(all, corpus) {
       push(id, "wrn", "note reads like a working note, and note is shown to readers — move it to internalNote");
     if (e.disputed === true && !(e.categories || []).includes("disputed"))
       push(id, "wrn", "disputed is set but the 'disputed' category is not");
+    // A category the map has never heard of renders as a bare tag with no
+    // label and cannot be picked in the Highlight list. Coining one here is
+    // allowed — that is what the "new" row is for — but it has to be declared
+    // in CATEGORIES (streets-data.js) before check-model.js will pass.
+    if (corpus && corpus.categoryIds)
+      for (const c of e.categories || []) if (!corpus.categoryIds.has(c))
+        push(id, "wrn", `category "${c}" is not declared in CATEGORIES (streets-data.js) — ` +
+                        `declare it there, with a label, or the map cannot show it`);
 
     // REDUNDANCY IN `sources`, and the one case that is not redundant.
     //
@@ -629,7 +637,15 @@ async function scanDocuments() {
   }
   for (const l of Object.values(out)) l.sort((a, b) => a.doc.localeCompare(b.doc));
   docCounts = out;
-  corpus = { docsByUrl, attesting: Object.fromEntries(
+  // The category vocabulary, from where it still lives (MODEL-IMPLEMENTATION
+  // checklist A moves it to site-config.js). Unreadable → the check stays off.
+  let categoryIds = null;
+  try {
+    const src = await (await fetch(`streets-data.js?t=${Date.now()}`)).text();
+    const { CATEGORIES } = new Function(src + "; return { CATEGORIES };")();
+    categoryIds = new Set(CATEGORIES.map(c => c.id).concat(["unresearched"]));
+  } catch (e) { /* no vocabulary, no check */ }
+  corpus = { docsByUrl, categoryIds, attesting: Object.fromEntries(
     Object.entries(out).map(([id, l]) => [id, l.map(x => x.doc)])) };
   rebuild();
   render();

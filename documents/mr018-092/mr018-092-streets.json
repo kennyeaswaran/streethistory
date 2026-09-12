@@ -1,0 +1,279 @@
+{
+  "document": "mr018-092",
+  "image": "mr018-092-100dpi.png",
+  "imageSize": [1716, 1136],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr018-092-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [1582, 299],
+    [185, 304],
+    [133, 824],
+    [1493, 841]
+  ],
+  "coverageLl": [
+    [34.039076, -118.243858],
+    [34.035929, -118.246568],
+    [34.034966, -118.245269],
+    [34.037994, -118.242572]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [1422, 840],
+            [1424, 815],
+            [1430, 733],
+            [1437, 647],
+            [1448, 453],
+            [1453, 369],
+            [1460, 299]
+          ],
+          "ll": [
+            [34.037837, -118.242712],
+            [34.037881, -118.242775],
+            [34.038028, -118.242984],
+            [34.038183, -118.243204],
+            [34.038524, -118.243706],
+            [34.038672, -118.24392],
+            [34.0388, -118.244095]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Ceres Avenue",
+          "px": [1437, 647],
+          "ll": [34.038183, -118.243204],
+          "insideCoverage": true
+        },
+        {
+          "name": "Gladys Avenue",
+          "px": [1453, 369],
+          "ll": [34.038672, -118.24392],
+          "insideCoverage": true
+        },
+        {
+          "name": "Kohler Street",
+          "px": [1412, 987],
+          "ll": [34.037574, -118.242339],
+          "insideCoverage": false
+        },
+        {
+          "name": "Stanford Avenue",
+          "px": [1472, 172],
+          "ll": [34.039034, -118.244413],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [210, 825],
+            [231, 706],
+            [237, 668],
+            [241, 618],
+            [254, 537],
+            [266, 451],
+            [275, 400],
+            [288, 304]
+          ],
+          "ll": [
+            [34.035138, -118.245116],
+            [34.035378, -118.245397],
+            [34.035453, -118.245485],
+            [34.035545, -118.245614],
+            [34.035704, -118.245805],
+            [34.035873, -118.246014],
+            [34.035975, -118.246134],
+            [34.036162, -118.246367]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Ceres Avenue",
+          "px": [237, 668],
+          "ll": [34.035453, -118.245485],
+          "insideCoverage": true
+        },
+        {
+          "name": "Gladys Avenue",
+          "px": [266, 451],
+          "ll": [34.035873, -118.246014],
+          "insideCoverage": true
+        },
+        {
+          "name": "Kohler Street",
+          "px": [189, 948],
+          "ll": [34.03489, -118.244826],
+          "insideCoverage": false
+        },
+        {
+          "name": "Stanford Avenue",
+          "px": [324, 73],
+          "ll": [34.036618, -118.246918],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Agatha Street",
+      "runs": [
+        {
+          "px": [
+            [898, 301],
+            [893, 373],
+            [892, 387]
+          ],
+          "ll": [
+            [34.037535, -118.245185],
+            [34.037409, -118.245002],
+            [34.037384, -118.244967]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Gladys Avenue",
+          "px": [892, 387],
+          "ll": [34.037384, -118.244967],
+          "insideCoverage": true
+        },
+        {
+          "name": "Stanford Avenue",
+          "px": [910, 124],
+          "ll": [34.037851, -118.245639],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Ceres Avenue",
+      "runs": [
+        {
+          "px": [
+            [1437, 647],
+            [1410, 648],
+            [1139, 654],
+            [834, 659],
+            [266, 669],
+            [237, 668]
+          ],
+          "ll": [
+            [34.038183, -118.243204],
+            [34.038122, -118.243253],
+            [34.037503, -118.243765],
+            [34.036811, -118.244346],
+            [34.035516, -118.245427],
+            [34.035453, -118.245485]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [1430, 733],
+          "ll": [34.038028, -118.242984],
+          "insideCoverage": true
+        },
+        {
+          "name": "8th Street",
+          "px": [237, 668],
+          "ll": [34.035453, -118.245485],
+          "insideCoverage": true
+        },
+        {
+          "name": "Gladys Avenue",
+          "px": [1442, 550],
+          "ll": [34.038353, -118.243455],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Gladys Avenue",
+      "runs": [
+        {
+          "px": [
+            [266, 451],
+            [232, 455],
+            [169, 461]
+          ],
+          "ll": [
+            [34.035873, -118.246014],
+            [34.03579, -118.246071],
+            [34.035638, -118.246175]
+          ]
+        },
+        {
+          "px": [
+            [1453, 369],
+            [1428, 370],
+            [1276, 377],
+            [916, 386],
+            [892, 387],
+            [473, 398],
+            [309, 400],
+            [275, 400]
+          ],
+          "ll": [
+            [34.038672, -118.24392],
+            [34.038613, -118.243966],
+            [34.038261, -118.244243],
+            [34.037438, -118.244922],
+            [34.037384, -118.244967],
+            [34.036422, -118.245754],
+            [34.036053, -118.246068],
+            [34.035975, -118.246134]
+          ]
+        },
+        {
+          "px": [
+            [1556, 457],
+            [1487, 454],
+            [1448, 453]
+          ],
+          "ll": [
+            [34.038761, -118.243484],
+            [34.03861, -118.243625],
+            [34.038524, -118.243706]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [1448, 453],
+          "ll": [34.038524, -118.243706],
+          "insideCoverage": true
+        },
+        {
+          "name": "8th Street",
+          "px": [266, 451],
+          "ll": [34.035873, -118.246014],
+          "insideCoverage": true
+        },
+        {
+          "name": "Agatha Street",
+          "px": [892, 387],
+          "ll": [34.037384, -118.244967],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ceres Avenue",
+          "px": [1442, 550],
+          "ll": [34.038353, -118.243455],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

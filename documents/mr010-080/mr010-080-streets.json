@@ -1,0 +1,98 @@
+{
+  "document": "mr010-080",
+  "image": "mr010-080-100dpi.png",
+  "imageSize": [1737, 1108],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr010-080-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [223, 507],
+    [417, 1092],
+    [1177, 1088],
+    [998, 457]
+  ],
+  "coverageLl": [
+    [34.035322, -118.24257],
+    [34.033625, -118.243587],
+    [34.031982, -118.24159],
+    [34.033747, -118.240415]
+  ],
+  "streets": [
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [400, 1042],
+            [443, 1042],
+            [482, 1042],
+            [520, 1042],
+            [662, 1042],
+            [678, 1041],
+            [1062, 1038],
+            [1116, 1038],
+            [1163, 1038]
+          ],
+          "ll": [
+            [34.03377, -118.2435],
+            [34.033677, -118.243388],
+            [34.033592, -118.243286],
+            [34.03351, -118.243186],
+            [34.033199, -118.242816],
+            [34.033169, -118.242771],
+            [34.032339, -118.24176],
+            [34.032222, -118.241619],
+            [34.032121, -118.241497]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [482, 1042],
+          "ll": [34.033592, -118.243286],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Central Avenue",
+      "runs": [
+        {
+          "px": [
+            [500, 1092],
+            [482, 1042],
+            [471, 1012],
+            [412, 845],
+            [366, 717],
+            [363, 707],
+            [353, 675],
+            [313, 544],
+            [303, 502]
+          ],
+          "ll": [
+            [34.033445, -118.243368],
+            [34.033592, -118.243286],
+            [34.033681, -118.243237],
+            [34.034173, -118.242957],
+            [34.034553, -118.242741],
+            [34.034581, -118.242726],
+            [34.034672, -118.242667],
+            [34.035045, -118.242431],
+            [34.03516, -118.242349]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [482, 1042],
+          "ll": [34.033592, -118.243286],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

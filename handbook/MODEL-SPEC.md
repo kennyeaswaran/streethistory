@@ -1401,7 +1401,7 @@ body of this spec when its design is settled, and out of both when it ships.
 7. **Categories as a checked vocabulary and a tree** (referent /
    circumstance / status; nature split into plant, animal, landform, water),
    living in `site-config.js` with `NEIGHBORHOODS` (MODEL-IMPLEMENTATION
-   checklist A). Four ids in `names.js` are undeclared today.
+   checklist A). The vocabulary is checked since 2026-09-12; the tree is not.
 8. **A second neighbourhood, and the large serial sheets** — ADDING-A-
    NEIGHBORHOOD.md and SERIAL-SOURCES.md, plus what a one-affine tool does
    with a sheet that needs several.
