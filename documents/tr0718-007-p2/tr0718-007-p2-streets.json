@@ -1,0 +1,263 @@
+{
+  "document": "tr0718-007-p2",
+  "image": "tr0718-007-p2-100dpi.png",
+  "imageSize": [1691, 2372],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0718-007-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [190, 43],
+    [-44, 2171],
+    [1229, 2200],
+    [1577, 425]
+  ],
+  "coverageLl": [
+    [34.051709, -118.261529],
+    [34.050069, -118.262499],
+    [34.049674, -118.261284],
+    [34.050997, -118.260328]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [1260, 2044],
+            [1131, 2046],
+            [1005, 2048],
+            [829, 2048],
+            [583, 2043],
+            [400, 2037],
+            [273, 2034],
+            [-27, 2012]
+          ],
+          "ll": [
+            [34.049791, -118.2612],
+            [34.049827, -118.261325],
+            [34.049862, -118.261446],
+            [34.049913, -118.261616],
+            [34.049989, -118.261851],
+            [34.050047, -118.262025],
+            [34.050087, -118.262146],
+            [34.050192, -118.262427]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Francisco Street",
+          "px": [1005, 2048],
+          "ll": [34.049862, -118.261446],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [-563, 2027],
+          "ll": [34.050337, -118.262948],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Beaudry Avenue",
+      "runs": [
+        {
+          "px": [
+            [423, 107],
+            [374, 180],
+            [304, 272],
+            [222, 387],
+            [169, 463],
+            [140, 500]
+          ],
+          "ll": [
+            [34.051589, -118.261327],
+            [34.051545, -118.2614],
+            [34.051492, -118.261499],
+            [34.051424, -118.261618],
+            [34.051378, -118.261696],
+            [34.051357, -118.261737]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Harbor Freeway",
+          "px": [1032, -469],
+          "ll": [34.051874, -118.26054],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ingraham Street",
+          "px": [-127, 827],
+          "ll": [34.051172, -118.262108],
+          "insideCoverage": false
+        },
+        {
+          "name": "Saint Paul Avenue",
+          "px": [-52, 322],
+          "ll": [34.051556, -118.26186],
+          "insideCoverage": false
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [304, 272],
+          "ll": [34.051492, -118.261499],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Francisco Street",
+      "runs": [
+        {
+          "px": [
+            [1450, 639],
+            [1418, 739],
+            [1172, 1521],
+            [1058, 1882],
+            [1005, 2048]
+          ],
+          "ll": [
+            [34.050863, -118.260525],
+            [34.050791, -118.260591],
+            [34.050236, -118.261101],
+            [34.049979, -118.261337],
+            [34.049862, -118.261446]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [1005, 2048],
+          "ll": [34.049862, -118.261446],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [1450, 639],
+          "ll": [34.050863, -118.260525],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Harbor Freeway",
+      "runs": [
+        {
+          "px": [
+            [787, 207],
+            [750, 262],
+            [51, 1310]
+          ],
+          "ll": [
+            [34.051402, -118.261012],
+            [34.051369, -118.261067],
+            [34.050733, -118.262107]
+          ]
+        },
+        {
+          "px": [
+            [5, 1726],
+            [761, 574],
+            [965, 256]
+          ],
+          "ll": [
+            [34.050412, -118.262296],
+            [34.051116, -118.261165],
+            [34.051311, -118.260859]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [-563, 2027],
+          "ll": [34.050337, -118.262948],
+          "insideCoverage": false
+        },
+        {
+          "name": "Beaudry Avenue",
+          "px": [1032, -469],
+          "ll": [34.051874, -118.26054],
+          "insideCoverage": false
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [645, 295],
+          "ll": [34.051374, -118.26118],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Wilshire Boulevard",
+      "runs": [
+        {
+          "px": [
+            [167, 251],
+            [214, 259],
+            [304, 272],
+            [393, 290],
+            [435, 296],
+            [483, 311],
+            [539, 328],
+            [1182, 547],
+            [1329, 600],
+            [1450, 639],
+            [1530, 662]
+          ],
+          "ll": [
+            [34.051549, -118.261624],
+            [34.051529, -118.261582],
+            [34.051492, -118.261499],
+            [34.051451, -118.26142],
+            [34.051434, -118.261382],
+            [34.051409, -118.261341],
+            [34.051378, -118.261293],
+            [34.051015, -118.260751],
+            [34.050929, -118.260628],
+            [34.050863, -118.260525],
+            [34.05082, -118.260456]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beaudry Avenue",
+          "px": [304, 272],
+          "ll": [34.051492, -118.261499],
+          "insideCoverage": true
+        },
+        {
+          "name": "Francisco Street",
+          "px": [1450, 639],
+          "ll": [34.050863, -118.260525],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [645, 295],
+          "ll": [34.051374, -118.26118],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ingraham Street",
+          "px": [-75, 524],
+          "ll": [34.0514, -118.261952],
+          "insideCoverage": false
+        },
+        {
+          "name": "Saint Paul Avenue",
+          "px": [-273, 181],
+          "ll": [34.051733, -118.262023],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

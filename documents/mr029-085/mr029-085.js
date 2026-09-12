@@ -1,12 +1,12 @@
 module.exports = {
-  id: "mr054-051",
-  title: "Kohler Tract, Being W. J. Fisher's Re-Subdivision of a Portion of the Kohler and Frohling Tract",
-  shortTitle: "Kohler Tract",
-  url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-051.pdf",
-  scan: "documents/mr054-051/mr054-051.pdf",
+  id: "mr029-085",
+  title: "Map of the Denison Tract",
+  shortTitle: "Denison Tract",
+  url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-085.pdf",
+  scan: "documents/mr029-085/mr029-085.pdf",
   transcription: null,
 
-  date: { on: "1894-08-09" },   
+  date: { on: "1888-05-03" },   
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.
@@ -20,55 +20,56 @@ module.exports = {
   // not the sheet edge (MODEL-SPEC §4.4). SCAN PIXELS against alignment.image,
   // so a better alignment carries it along (§4.6).
   coverage: [
-    [274, 259], [231, 1133], [817, 1246], [749, 307]
+    [550, 366], [999, 465], [998, 1473], [536, 1493]
   ],
   alignment: {
-    image: "documents/mr054-051/mr054-051-100dpi.png",
+    image: "documents/mr029-085/mr029-085-100dpi.png",
     dpi: 100,
     points: [
-      { px: [0, 0], ll: [34.039714, -118.243149], note: "map-tool corner (0,0)" },
-      { px: [1059, 0], ll: [34.037179, -118.238578], note: "map-tool corner (1059,0)" },
-      { px: [0, 1688], ll: [34.033634, -118.247989], note: "map-tool corner (0,1688)" }
+      { px: [0, 0], ll: [34.039761, -118.248989], note: "map-tool corner (0,0)" },
+      { px: [1150, 0], ll: [34.037633, -118.244895], note: "map-tool corner (1150,0)" },
+      { px: [0, 1721], ll: [34.034648, -118.252804], note: "map-tool corner (0,1721)" }
     ]
   },
 
   sweptFully: true,
-  sweptFor: ["7th Street","8th Street","Central Avenue","Kohler Street","Merchant Street"],
+  sweptFor: ["10th Street","8th Street","9th Street","Stanford Avenue","Towne Avenue"],
 
   rows: [
     {
       "kind": "state",
-      "asWritten": "Seventh St",
-      "street": "7th Street",
+      "asWritten": "Eleventh St.",
+      "street": "10th Street",
       "from": {
         "px": [
-          271,
-          310
+          537,
+          1437
         ]
       },
       "to": {
         "px": [
-          753,
-          366
+          998,
+          1427
         ]
       },
       "basis": "alignment",
-      "name": "seventh-street"
+      "note": "Modern 10th Street follows the roadway lettered Eleventh St.",
+      "name": "eleventh-street"
     },
     {
       "kind": "state",
-      "asWritten": "Eighth St",
+      "asWritten": "Eighth St.",
       "street": "8th Street",
       "from": {
         "px": [
-          233,
-          1084
+          549,
+          420
         ]
       },
       "to": {
         "px": [
-          814,
-          1204
+          999,
+          526
         ]
       },
       "basis": "alignment",
@@ -76,60 +77,60 @@ module.exports = {
     },
     {
       "kind": "state",
-      "asWritten": "Central Ave",
-      "street": "Central Avenue",
+      "asWritten": "Ninth St.",
+      "street": "9th Street",
       "from": {
         "px": [
-          698,
-          302
+          543,
+          891
         ]
       },
       "to": {
         "px": [
-          768,
-          1237
+          998,
+          1018
         ]
       },
       "basis": "alignment",
-      "name": "central-ave"
+      "name": "ninth-street"
     },
     {
       "kind": "state",
-      "asWritten": "Kohler St",
-      "street": "Kohler Street",
+      "asWritten": "Stanford Ave.",
+      "street": "Stanford Avenue",
       "from": {
         "px": [
-          367,
-          322
+          936,
+          512
         ]
       },
       "to": {
         "px": [
-          346,
-          1155
+          959,
+          1475
         ]
       },
       "basis": "alignment",
-      "name": "kohler"
+      "name": "stanford-ave"
     },
     {
       "kind": "state",
-      "asWritten": "Merchant St",
-      "street": "Merchant Street",
+      "asWritten": "Towne Ave.",
+      "street": "Towne Avenue",
       "from": {
         "px": [
-          540,
-          340
+          694,
+          454
         ]
       },
       "to": {
         "px": [
-          514,
-          1145
+          710,
+          1485
         ]
       },
       "basis": "alignment",
-      "name": "merchant-st"
+      "name": "towne-ave"
     }
   ]
 };

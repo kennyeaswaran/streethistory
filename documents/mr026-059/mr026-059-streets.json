@@ -1,0 +1,133 @@
+{
+  "document": "mr026-059",
+  "image": "mr026-059-100dpi.png",
+  "imageSize": [954, 1702],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr026-059-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [321, 537],
+    [300, 1102],
+    [758, 1163],
+    [773, 656]
+  ],
+  "coverageLl": [
+    [34.03534, -118.247094],
+    [34.034223, -118.247924],
+    [34.033572, -118.2469],
+    [34.034579, -118.246164]
+  ],
+  "streets": [
+    {
+      "name": "9th Street",
+      "runs": [
+        {
+          "px": [
+            [310, 837],
+            [311, 837],
+            [338, 846],
+            [508, 888],
+            [535, 894]
+          ],
+          "ll": [
+            [34.034747, -118.247534],
+            [34.034745, -118.247531],
+            [34.034695, -118.247478],
+            [34.034415, -118.247127],
+            [34.034373, -118.247068]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Gladys Avenue",
+          "px": [535, 894],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olympic Boulevard",
+          "px": [535, 894],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": true
+        },
+        {
+          "name": "Stanford Avenue",
+          "px": [154, 786],
+          "ll": [34.03503, -118.247842],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Gladys Avenue",
+      "runs": [
+        {
+          "px": [
+            [542, 595],
+            [536, 853],
+            [535, 894]
+          ],
+          "ll": [
+            [34.034967, -118.246639],
+            [34.034455, -118.247009],
+            [34.034373, -118.247068]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "9th Street",
+          "px": [535, 894],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olympic Boulevard",
+          "px": [535, 894],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Olympic Boulevard",
+      "runs": [
+        {
+          "px": [
+            [765, 942],
+            [732, 935],
+            [535, 894]
+          ],
+          "ll": [
+            [34.034011, -118.246579],
+            [34.034064, -118.246649],
+            [34.034373, -118.247068]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "9th Street",
+          "px": [535, 894],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": true
+        },
+        {
+          "name": "Gladys Avenue",
+          "px": [535, 894],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": true
+        },
+        {
+          "name": "Kohler Street",
+          "px": [1058, 1008],
+          "ll": [34.03354, -118.24596],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

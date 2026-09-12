@@ -1,0 +1,145 @@
+{
+  "document": "tr0001-046",
+  "image": "tr0001-046-100dpi.png",
+  "imageSize": [1163, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0001-046-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [315, 401],
+    [290, 1353],
+    [972, 1322],
+    [962, 464]
+  ],
+  "coverageLl": [
+    [34.037435, -118.241862],
+    [34.036165, -118.242971],
+    [34.035569, -118.241826],
+    [34.036743, -118.24088]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [963, 556],
+            [880, 547],
+            [823, 541],
+            [771, 536],
+            [677, 528],
+            [567, 515],
+            [425, 501],
+            [371, 496],
+            [313, 491]
+          ],
+          "ll": [
+            [34.036618, -118.240981],
+            [34.036708, -118.241107],
+            [34.036769, -118.241192],
+            [34.036824, -118.241272],
+            [34.036923, -118.241415],
+            [34.037044, -118.241581],
+            [34.037196, -118.241796],
+            [34.037253, -118.241877],
+            [34.037315, -118.241967]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [823, 541],
+          "ll": [34.036769, -118.241192],
+          "insideCoverage": true
+        },
+        {
+          "name": "Kohler Street",
+          "px": [69, 468],
+          "ll": [34.037574, -118.242339],
+          "insideCoverage": false
+        },
+        {
+          "name": "Merchant Street",
+          "px": [425, 501],
+          "ll": [34.037196, -118.241796],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Central Avenue",
+      "runs": [
+        {
+          "px": [
+            [873, 1326],
+            [872, 1309],
+            [864, 1178],
+            [844, 873],
+            [826, 585],
+            [823, 541],
+            [829, 482],
+            [832, 451]
+          ],
+          "ll": [
+            [34.035655, -118.241992],
+            [34.03568, -118.241974],
+            [34.035866, -118.241842],
+            [34.036299, -118.24153],
+            [34.036706, -118.241237],
+            [34.036769, -118.241192],
+            [34.036843, -118.241117],
+            [34.036882, -118.241078]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [823, 541],
+          "ll": [34.036769, -118.241192],
+          "insideCoverage": true
+        },
+        {
+          "name": "Industrial Street",
+          "px": [869, 64],
+          "ll": [34.037374, -118.240583],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Merchant Street",
+      "runs": [
+        {
+          "px": [
+            [425, 501],
+            [424, 554],
+            [421, 758],
+            [415, 1194],
+            [414, 1285],
+            [413, 1347]
+          ],
+          "ll": [
+            [34.037196, -118.241796],
+            [34.037124, -118.241857],
+            [34.03685, -118.242091],
+            [34.036264, -118.24259],
+            [34.036142, -118.242693],
+            [34.036058, -118.242765]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [425, 501],
+          "ll": [34.037196, -118.241796],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

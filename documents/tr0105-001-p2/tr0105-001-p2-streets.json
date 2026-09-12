@@ -1,0 +1,192 @@
+{
+  "document": "tr0105-001-p2",
+  "image": "tr0105-001-p2-100dpi.png",
+  "imageSize": [2370, 1746],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0105-001-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [384, 498],
+    [235, 1555],
+    [2048, 1484],
+    [2211, 476]
+  ],
+  "coverageLl": [
+    [34.034097, -118.24693],
+    [34.033262, -118.245849],
+    [34.035023, -118.244502],
+    [34.035839, -118.245516]
+  ],
+  "streets": [
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [1791, 1494],
+            [1807, 1416],
+            [1819, 1356],
+            [1830, 1300],
+            [1931, 775],
+            [1948, 686],
+            [1961, 563],
+            [1976, 479]
+          ],
+          "ll": [
+            [34.034773, -118.244692],
+            [34.034839, -118.244768],
+            [34.03489, -118.244826],
+            [34.034938, -118.244882],
+            [34.035378, -118.245397],
+            [34.035453, -118.245485],
+            [34.035545, -118.245614],
+            [34.035615, -118.245698]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Ceres Avenue",
+          "px": [1948, 686],
+          "ll": [34.035453, -118.245485],
+          "insideCoverage": true
+        },
+        {
+          "name": "Gladys Avenue",
+          "px": [2029, 163],
+          "ll": [34.035873, -118.246014],
+          "insideCoverage": false
+        },
+        {
+          "name": "Kohler Street",
+          "px": [1819, 1356],
+          "ll": [34.03489, -118.244826],
+          "insideCoverage": true
+        },
+        {
+          "name": "Merchant Street",
+          "px": [1696, 1986],
+          "ll": [34.03436, -118.24421],
+          "insideCoverage": false
+        },
+        {
+          "name": "Produce Court",
+          "px": [1713, 1877],
+          "ll": [34.034448, -118.24432],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Ceres Avenue",
+      "runs": [
+        {
+          "px": [
+            [2177, 689],
+            [2017, 689],
+            [1948, 686]
+          ],
+          "ll": [
+            [34.035666, -118.245301],
+            [34.035516, -118.245427],
+            [34.035453, -118.245485]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [1948, 686],
+          "ll": [34.035453, -118.245485],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Kohler Street",
+      "runs": [
+        {
+          "px": [
+            [2068, 1357],
+            [1890, 1357],
+            [1819, 1356],
+            [1739, 1356],
+            [1342, 1355],
+            [1308, 1355],
+            [848, 1353],
+            [470, 1352],
+            [387, 1351]
+          ],
+          "ll": [
+            [34.035125, -118.244629],
+            [34.034957, -118.24477],
+            [34.03489, -118.244826],
+            [34.034814, -118.24489],
+            [34.03444, -118.245204],
+            [34.034408, -118.245231],
+            [34.033974, -118.245595],
+            [34.033617, -118.245895],
+            [34.03354, -118.24596]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [1819, 1356],
+          "ll": [34.03489, -118.244826],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olympic Boulevard",
+          "px": [387, 1351],
+          "ll": [34.03354, -118.24596],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Olympic Boulevard",
+      "runs": [
+        {
+          "px": [
+            [351, 1550],
+            [387, 1351],
+            [417, 1151],
+            [477, 682],
+            [498, 497]
+          ],
+          "ll": [
+            [34.033374, -118.245763],
+            [34.03354, -118.24596],
+            [34.033699, -118.246164],
+            [34.034064, -118.246649],
+            [34.034206, -118.246841]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "9th Street",
+          "px": [524, 279],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": false
+        },
+        {
+          "name": "Gladys Avenue",
+          "px": [524, 279],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": false
+        },
+        {
+          "name": "Kohler Street",
+          "px": [387, 1351],
+          "ll": [34.03354, -118.24596],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

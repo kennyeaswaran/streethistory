@@ -1,0 +1,108 @@
+{
+  "document": "mr026-060",
+  "image": "mr026-060-100dpi.png",
+  "imageSize": [1019, 1590],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr026-060-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [302, 490],
+    [272, 1268],
+    [866, 1348],
+    [855, 600]
+  ],
+  "coverageLl": [
+    [34.03631, -118.24627],
+    [34.035201, -118.24717],
+    [34.034544, -118.246218],
+    [34.035646, -118.245422]
+  ],
+  "streets": [
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [857, 706],
+            [807, 699],
+            [679, 670],
+            [542, 640],
+            [461, 621],
+            [298, 586]
+          ],
+          "ll": [
+            [34.035489, -118.245535],
+            [34.035545, -118.245614],
+            [34.035704, -118.245805],
+            [34.035873, -118.246014],
+            [34.035975, -118.246134],
+            [34.036173, -118.246381]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Ceres Avenue",
+          "px": [888, 711],
+          "ll": [34.035453, -118.245485],
+          "insideCoverage": false
+        },
+        {
+          "name": "Gladys Avenue",
+          "px": [542, 640],
+          "ll": [34.035873, -118.246014],
+          "insideCoverage": true
+        },
+        {
+          "name": "Stanford Avenue",
+          "px": [-60, 504],
+          "ll": [34.036618, -118.246918],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Gladys Avenue",
+      "runs": [
+        {
+          "px": [
+            [542, 640],
+            [544, 695],
+            [548, 822],
+            [562, 1237],
+            [563, 1307]
+          ],
+          "ll": [
+            [34.035873, -118.246014],
+            [34.03579, -118.246071],
+            [34.035601, -118.2462],
+            [34.034983, -118.246628],
+            [34.034878, -118.246703]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [542, 640],
+          "ll": [34.035873, -118.246014],
+          "insideCoverage": true
+        },
+        {
+          "name": "9th Street",
+          "px": [568, 1650],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": false
+        },
+        {
+          "name": "Olympic Boulevard",
+          "px": [568, 1650],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

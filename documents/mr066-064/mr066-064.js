@@ -1,12 +1,12 @@
 module.exports = {
   id: "mr066-064",
-  title: "",
-  shortTitle: "",
-  url: "",
-  scan: null,
+  title: "Map of Wilde and Strong's Subdivision of the Frank Sabichi Tract",
+  shortTitle: "Wilde and Strong Subdivision",
+  url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf",
+  scan: "documents/mr066-064/mr066-064.pdf",
   transcription: null,
 
-  date: { on: null },   // TODO: read from the sheet's title block
+  date: { on: "1897-09-21" },   
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.
@@ -32,9 +32,144 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["7th Street","Agatha Street","Crocker Street","Gladys Avenue","San Pedro Street","Stanford Avenue","Towne Avenue"],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
-  rows: []
+  rows: [
+    {
+      "kind": "state",
+      "asWritten": "SEVENTH STREET",
+      "street": "7th Street",
+      "from": {
+        "px": [
+          984,
+          162
+        ]
+      },
+      "to": {
+        "px": [
+          973,
+          1451
+        ]
+      },
+      "basis": "alignment",
+      "name": "seventh-street"
+    },
+    {
+      "kind": "state",
+      "asWritten": "AGATHA STREET",
+      "street": "Agatha Street",
+      "from": {
+        "px": [
+          436,
+          287
+        ]
+      },
+      "to": {
+        "px": [
+          422,
+          1463
+        ]
+      },
+      "basis": "alignment",
+      "name": "agatha"
+    },
+    {
+      "kind": "state",
+      "asWritten": "CROCKER STREET",
+      "street": "Crocker Street",
+      "from": {
+        "px": [
+          200,
+          604
+        ]
+      },
+      "to": {
+        "px": [
+          983,
+          620
+        ]
+      },
+      "basis": "alignment",
+      "note": "The western modern Crocker run follows the roadway lettered Crocker Street.",
+      "name": "crocker-street"
+    },
+    {
+      "kind": "state",
+      "asWritten": "GLADYS AVENUE",
+      "street": "Gladys Avenue",
+      "from": {
+        "px": [
+          146,
+          1490
+        ]
+      },
+      "to": {
+        "px": [
+          972,
+          1408
+        ]
+      },
+      "basis": "alignment",
+      "name": "gladys-ave"
+    },
+    {
+      "kind": "state",
+      "asWritten": "SAN PEDRO STREET",
+      "street": "San Pedro Street",
+      "from": {
+        "px": [
+          221,
+          280
+        ]
+      },
+      "to": {
+        "px": [
+          1075,
+          296
+        ]
+      },
+      "basis": "alignment",
+      "name": "san-pedro"
+    },
+    {
+      "kind": "state",
+      "asWritten": "RUTH AVENUE",
+      "street": "Stanford Avenue",
+      "from": {
+        "px": [
+          164,
+          1199
+        ]
+      },
+      "to": {
+        "px": [
+          1084,
+          1211
+        ]
+      },
+      "basis": "alignment",
+      "note": "The modern Stanford Avenue corridor is lettered Ruth Avenue on the plat.",
+      "name": "ruth-ave"
+    },
+    {
+      "kind": "state",
+      "asWritten": "TOWNE AVENUE",
+      "street": "Towne Avenue",
+      "from": {
+        "px": [
+          182,
+          896
+        ]
+      },
+      "to": {
+        "px": [
+          1081,
+          922
+        ]
+      },
+      "basis": "alignment",
+      "name": "towne-ave"
+    }
+  ]
 };

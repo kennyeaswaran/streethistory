@@ -36,7 +36,7 @@ module.exports = {
   // The polygon strays onto these; the document does not inform about them.
   // NOT the same as a absent row, which says the sheet covers the ground and
   // draws nothing there (MODEL-SPEC §4.4, §5.2).
-  coverageExcept: [{"street":"8th Street","from":null,"to":"Francisco Street"},{"street":"Fremont Avenue","from":"6th Street","to":"6th Street"},{"street":"Fremont Avenue","from":null,"to":"6th Street"},{"street":"Harbor Freeway","from":null,"to":"7th Street"},{"street":"Harbor Freeway","from":null,"to":"7th Street"}],
+  coverageExcept: [{"street":"8th Street","from":null,"to":"Francisco Street"},{"street":"Fremont Avenue","from":"6th Street","to":"6th Street"},{"street":"Fremont Avenue","from":null,"to":"6th Street"},{"street":"Harbor Freeway","from":null,"to":"7th Street"},{"street":"Harbor Freeway","from":null,"to":"7th Street"},{"street":"Harbor Freeway","from":null,"to":"7th Street"},{"street":"Harbor Freeway","from":null,"to":"7th Street"}],
 
   sweptFully: false,
   sweptFor: [],

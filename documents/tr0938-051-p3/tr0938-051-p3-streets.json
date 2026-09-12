@@ -1,0 +1,190 @@
+{
+  "document": "tr0938-051-p3",
+  "image": "tr0938-051-p3-100dpi.png",
+  "imageSize": [1746, 2492],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0938-051-p3-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [159, 1897],
+    [1057, 2435],
+    [1799, 1340],
+    [970, 381],
+    [85, 1028]
+  ],
+  "coverageLl": [
+    [34.048865, -118.242109],
+    [34.048006, -118.242409],
+    [34.047631, -118.241131],
+    [34.048523, -118.240397],
+    [34.049114, -118.241268]
+  ],
+  "streets": [
+    {
+      "name": "2nd Street",
+      "runs": [
+        {
+          "px": [
+            [96, 1162],
+            [679, 719],
+            [1032, 452]
+          ],
+          "ll": [
+            [34.049076, -118.241397],
+            [34.04869, -118.240808],
+            [34.048457, -118.240452]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Astronaut Ellison S Onizuka Street",
+          "px": [-440, 1510],
+          "ll": [34.049443, -118.241882],
+          "insideCoverage": false
+        },
+        {
+          "name": "Frances K. Hashimoto Plaza",
+          "px": [706, 757],
+          "ll": [34.04866, -118.240838],
+          "insideCoverage": true
+        },
+        {
+          "name": "Japanese Village Plaza Mall",
+          "px": [668, 667],
+          "ll": [34.048711, -118.240759],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [-239, 1425],
+          "ll": [34.049296, -118.241746],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Frances K. Hashimoto Plaza",
+      "runs": [
+        {
+          "px": [
+            [1579, 1665],
+            [1540, 1503],
+            [1423, 1479],
+            [1317, 1417],
+            [1211, 1319],
+            [1148, 1286],
+            [775, 762],
+            [733, 795],
+            [682, 832],
+            [930, 1146],
+            [971, 1198],
+            [1002, 1245],
+            [693, 1871],
+            [1137, 2155],
+            [1451, 1640],
+            [1553, 1702]
+          ],
+          "ll": [
+            [34.047742, -118.24151],
+            [34.047809, -118.24136],
+            [34.047912, -118.241367],
+            [34.048012, -118.241333],
+            [34.048121, -118.241263],
+            [34.04818, -118.241247],
+            [34.048601, -118.240825],
+            [34.04863, -118.240868],
+            [34.048663, -118.240919],
+            [34.048391, -118.241165],
+            [34.048345, -118.241206],
+            [34.04831, -118.241245],
+            [34.048429, -118.241945],
+            [34.048001, -118.24211],
+            [34.047854, -118.241519],
+            [34.047755, -118.241554]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [706, 757],
+          "ll": [34.04866, -118.240838],
+          "insideCoverage": true
+        },
+        {
+          "name": "Japanese Village Plaza Mall",
+          "px": [716, 689],
+          "ll": [34.048666, -118.240768],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [651, 1932],
+          "ll": [34.048451, -118.242017],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "San Pedro Street",
+      "runs": [
+        {
+          "px": [
+            [1131, 2325],
+            [775, 2098],
+            [653, 2023],
+            [610, 1994],
+            [573, 1970],
+            [345, 1829],
+            [161, 1707],
+            [142, 1694]
+          ],
+          "ll": [
+            [34.047969, -118.242281],
+            [34.048312, -118.242149],
+            [34.048429, -118.242106],
+            [34.048472, -118.242088],
+            [34.048507, -118.242074],
+            [34.048726, -118.241994],
+            [34.048904, -118.24192],
+            [34.048923, -118.241913]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [-239, 1425],
+          "ll": [34.049296, -118.241746],
+          "insideCoverage": false
+        },
+        {
+          "name": "3rd Street",
+          "px": [1810, 2751],
+          "ll": [34.047316, -118.242525],
+          "insideCoverage": false
+        },
+        {
+          "name": "Astronaut Ellison S Onizuka Street",
+          "px": [-414, 1414],
+          "ll": [34.049442, -118.24178],
+          "insideCoverage": false
+        },
+        {
+          "name": "Frances K. Hashimoto Plaza",
+          "px": [651, 1932],
+          "ll": [34.048451, -118.242017],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Japanese Village Plaza Mall",
+      "metres": 0.4
+    }
+  ],
+  "excludedAsOvershoot": []
+}

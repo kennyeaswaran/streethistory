@@ -1,0 +1,192 @@
+{
+  "document": "tr0013-048",
+  "image": "tr0013-048-100dpi.png",
+  "imageSize": [1157, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0013-048-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [267, 595],
+    [221, 1042],
+    [1005, 1097],
+    [1052, 618]
+  ],
+  "coverageLl": [
+    [34.039466, -118.248515],
+    [34.038591, -118.249603],
+    [34.037054, -118.247709],
+    [34.037995, -118.246549]
+  ],
+  "streets": [
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [1011, 1040],
+            [985, 1037],
+            [952, 1035],
+            [726, 1016],
+            [685, 1013],
+            [546, 1005],
+            [527, 1004],
+            [518, 1004],
+            [444, 998],
+            [400, 987],
+            [395, 984],
+            [358, 967],
+            [315, 941],
+            [236, 895]
+          ],
+          "ll": [
+            [34.037166, -118.247571],
+            [34.037219, -118.247632],
+            [34.037284, -118.24771],
+            [34.037733, -118.24825],
+            [34.037813, -118.248349],
+            [34.038081, -118.248689],
+            [34.038118, -118.248735],
+            [34.038136, -118.248757],
+            [34.038281, -118.248935],
+            [34.038385, -118.249023],
+            [34.0384, -118.249031],
+            [34.038503, -118.249088],
+            [34.038636, -118.249144],
+            [34.038879, -118.249245]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Crocker Street",
+          "px": [685, 1013],
+          "ll": [34.037813, -118.248349],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Julian Street",
+          "px": [17, 828],
+          "ll": [34.039417, -118.249663],
+          "insideCoverage": false
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [358, 967],
+          "ll": [34.038503, -118.249088],
+          "insideCoverage": true
+        },
+        {
+          "name": "Towne Avenue",
+          "px": [1030, 1042],
+          "ll": [34.037126, -118.247524],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Crocker Street",
+      "runs": [
+        {
+          "px": [
+            [694, 608],
+            [686, 981],
+            [685, 1013]
+          ],
+          "ll": [
+            [34.038666, -118.247446],
+            [34.03788, -118.248278],
+            [34.037813, -118.248349]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [726, 1016],
+          "ll": [34.037733, -118.24825],
+          "insideCoverage": true
+        },
+        {
+          "name": "Agatha Street",
+          "px": [697, 486],
+          "ll": [34.03892, -118.247176],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "San Pedro Street",
+      "runs": [
+        {
+          "px": [
+            [358, 1052],
+            [358, 1016],
+            [358, 967],
+            [359, 925],
+            [362, 848],
+            [363, 812],
+            [367, 710],
+            [370, 598]
+          ],
+          "ll": [
+            [34.038322, -118.249272],
+            [34.038399, -118.249193],
+            [34.038503, -118.249088],
+            [34.038593, -118.248994],
+            [34.038753, -118.24882],
+            [34.038826, -118.24874],
+            [34.039038, -118.24851],
+            [34.039273, -118.248258]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [358, 967],
+          "ll": [34.038503, -118.249088],
+          "insideCoverage": true
+        },
+        {
+          "name": "Agatha Street",
+          "px": [373, 473],
+          "ll": [34.039535, -118.247979],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Towne Avenue",
+      "runs": [
+        {
+          "px": [
+            [985, 616],
+            [985, 1005],
+            [985, 1037]
+          ],
+          "ll": [
+            [34.03812, -118.246716],
+            [34.037288, -118.247562],
+            [34.037219, -118.247632]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [1030, 1042],
+          "ll": [34.037126, -118.247524],
+          "insideCoverage": false
+        },
+        {
+          "name": "Agatha Street",
+          "px": [986, 481],
+          "ll": [34.038408, -118.246423],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

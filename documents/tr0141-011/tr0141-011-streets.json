@@ -1,0 +1,227 @@
+{
+  "document": "tr0141-011",
+  "image": "tr0141-011-100dpi.png",
+  "imageSize": [1675, 2447],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0141-011-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [681, 432],
+    [618, 1654],
+    [1584, 1804],
+    [1545, 560]
+  ],
+  "coverageLl": [
+    [34.035198, -118.244837],
+    [34.033521, -118.246273],
+    [34.032431, -118.244794],
+    [34.034232, -118.243507]
+  ],
+  "streets": [
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [675, 557],
+            [746, 574],
+            [784, 583],
+            [825, 593],
+            [1137, 669],
+            [1211, 684],
+            [1378, 723],
+            [1481, 742],
+            [1551, 757]
+          ],
+          "ll": [
+            [34.035026, -118.244985],
+            [34.034938, -118.244882],
+            [34.03489, -118.244826],
+            [34.034839, -118.244768],
+            [34.034448, -118.24432],
+            [34.03436, -118.24421],
+            [34.034152, -118.243968],
+            [34.034032, -118.243814],
+            [34.033946, -118.243711]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [1842, 821],
+          "ll": [34.033592, -118.243286],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ceres Avenue",
+          "px": [329, 477],
+          "ll": [34.035453, -118.245485],
+          "insideCoverage": false
+        },
+        {
+          "name": "Kohler Street",
+          "px": [784, 583],
+          "ll": [34.03489, -118.244826],
+          "insideCoverage": true
+        },
+        {
+          "name": "Merchant Street",
+          "px": [1211, 684],
+          "ll": [34.03436, -118.24421],
+          "insideCoverage": true
+        },
+        {
+          "name": "Produce Court",
+          "px": [1137, 669],
+          "ll": [34.034448, -118.24432],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Kohler Street",
+      "runs": [
+        {
+          "px": [
+            [790, 448],
+            [786, 534],
+            [784, 583],
+            [782, 638],
+            [770, 909],
+            [769, 932],
+            [756, 1246],
+            [745, 1505],
+            [743, 1561]
+          ],
+          "ll": [
+            [34.035076, -118.24467],
+            [34.034957, -118.24477],
+            [34.03489, -118.244826],
+            [34.034814, -118.24489],
+            [34.03444, -118.245204],
+            [34.034408, -118.245231],
+            [34.033974, -118.245595],
+            [34.033617, -118.245895],
+            [34.03354, -118.24596]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [784, 583],
+          "ll": [34.03489, -118.244826],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olympic Boulevard",
+          "px": [743, 1561],
+          "ll": [34.03354, -118.24596],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Merchant Street",
+      "runs": [
+        {
+          "px": [
+            [1219, 512],
+            [1214, 623],
+            [1211, 684]
+          ],
+          "ll": [
+            [34.034596, -118.244009],
+            [34.034443, -118.244139],
+            [34.03436, -118.24421]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [1211, 684],
+          "ll": [34.03436, -118.24421],
+          "insideCoverage": true
+        },
+        {
+          "name": "Produce Court",
+          "px": [1174, 676],
+          "ll": [34.034404, -118.244265],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Olympic Boulevard",
+      "runs": [
+        {
+          "px": [
+            [1582, 1748],
+            [1562, 1744],
+            [1456, 1720],
+            [1203, 1664],
+            [743, 1561],
+            [624, 1539]
+          ],
+          "ll": [
+            [34.032512, -118.244736],
+            [34.032536, -118.244765],
+            [34.032666, -118.24492],
+            [34.032976, -118.245289],
+            [34.03354, -118.24596],
+            [34.033679, -118.246138]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [1831, 1670],
+          "ll": [34.032397, -118.244227],
+          "insideCoverage": false
+        },
+        {
+          "name": "Kohler Street",
+          "px": [743, 1561],
+          "ll": [34.03354, -118.24596],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Produce Court",
+      "runs": [
+        {
+          "px": [
+            [1137, 669],
+            [1135, 716],
+            [1127, 1048]
+          ],
+          "ll": [
+            [34.034448, -118.24432],
+            [34.034382, -118.244374],
+            [34.033919, -118.244749]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [1137, 669],
+          "ll": [34.034448, -118.24432],
+          "insideCoverage": true
+        },
+        {
+          "name": "Merchant Street",
+          "px": [1174, 676],
+          "ll": [34.034404, -118.244265],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

@@ -1,0 +1,149 @@
+{
+  "document": "mr055-086",
+  "image": "mr055-086-100dpi.png",
+  "imageSize": [1138, 1752],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr055-086-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [180, 42],
+    [112, 1517],
+    [690, 1659],
+    [664, 106]
+  ],
+  "coverageLl": [
+    [34.036664, -118.246806],
+    [34.034966, -118.248154],
+    [34.034388, -118.247455],
+    [34.036245, -118.246174]
+  ],
+  "streets": [
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [666, 234],
+            [510, 198],
+            [306, 149],
+            [245, 135],
+            [177, 116]
+          ],
+          "ll": [
+            [34.036092, -118.24628],
+            [34.036245, -118.246471],
+            [34.036447, -118.246717],
+            [34.036508, -118.246792],
+            [34.036579, -118.246873]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Gladys Avenue",
+          "px": [886, 288],
+          "ll": [34.035873, -118.246014],
+          "insideCoverage": false
+        },
+        {
+          "name": "Stanford Avenue",
+          "px": [139, 105],
+          "ll": [34.036618, -118.246918],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "9th Street",
+      "runs": [
+        {
+          "px": [
+            [120, 1343],
+            [209, 1368],
+            [250, 1380],
+            [316, 1400],
+            [518, 1461],
+            [563, 1475],
+            [687, 1503]
+          ],
+          "ll": [
+            [34.035167, -118.247994],
+            [34.035073, -118.24789],
+            [34.03503, -118.247842],
+            [34.03496, -118.247766],
+            [34.034745, -118.247531],
+            [34.034695, -118.247478],
+            [34.034574, -118.247327]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Gladys Avenue",
+          "px": [897, 1548],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": false
+        },
+        {
+          "name": "Olympic Boulevard",
+          "px": [897, 1548],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": false
+        },
+        {
+          "name": "Stanford Avenue",
+          "px": [250, 1380],
+          "ll": [34.03503, -118.247842],
+          "insideCoverage": true
+        },
+        {
+          "name": "Towne Avenue",
+          "px": [-369, 1201],
+          "ll": [34.035681, -118.248567],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Stanford Avenue",
+      "runs": [
+        {
+          "px": [
+            [260, 1553],
+            [254, 1451],
+            [250, 1380],
+            [250, 1323],
+            [253, 755],
+            [246, 204],
+            [245, 135]
+          ],
+          "ll": [
+            [34.034818, -118.247975],
+            [34.034944, -118.247896],
+            [34.03503, -118.247842],
+            [34.035098, -118.247793],
+            [34.035767, -118.247308],
+            [34.036425, -118.246849],
+            [34.036508, -118.246792]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [245, 135],
+          "ll": [34.036508, -118.246792],
+          "insideCoverage": true
+        },
+        {
+          "name": "9th Street",
+          "px": [250, 1380],
+          "ll": [34.03503, -118.247842],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

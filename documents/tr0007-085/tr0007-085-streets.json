@@ -1,0 +1,100 @@
+{
+  "document": "tr0007-085",
+  "image": "tr0007-085-100dpi.png",
+  "imageSize": [1842, 1180],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0007-085-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [1637, 123],
+    [175, 156],
+    [113, 1151],
+    [1664, 992]
+  ],
+  "coverageLl": [
+    [34.037477, -118.246256],
+    [34.036612, -118.247189],
+    [34.036033, -118.246539],
+    [34.037018, -118.245635]
+  ],
+  "streets": [
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [355, 1126],
+            [356, 1020],
+            [363, 658],
+            [366, 549],
+            [375, 358],
+            [377, 266],
+            [379, 151]
+          ],
+          "ll": [
+            [34.036187, -118.246398],
+            [34.036245, -118.246471],
+            [34.036447, -118.246717],
+            [34.036508, -118.246792],
+            [34.036618, -118.246918],
+            [34.036669, -118.246981],
+            [34.036733, -118.247059]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Gladys Avenue",
+          "px": [344, 1690],
+          "ll": [34.035873, -118.246014],
+          "insideCoverage": false
+        },
+        {
+          "name": "Stanford Avenue",
+          "px": [375, 358],
+          "ll": [34.036618, -118.246918],
+          "insideCoverage": true
+        },
+        {
+          "name": "Towne Avenue",
+          "px": [404, -542],
+          "ll": [34.037126, -118.247524],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Stanford Avenue",
+      "runs": [
+        {
+          "px": [
+            [1643, 305],
+            [500, 353],
+            [375, 358]
+          ],
+          "ll": [
+            [34.037381, -118.246126],
+            [34.036693, -118.24684],
+            [34.036618, -118.246918]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [366, 549],
+          "ll": [34.036508, -118.246792],
+          "insideCoverage": true
+        },
+        {
+          "name": "Agatha Street",
+          "px": [2422, 271],
+          "ll": [34.037851, -118.245639],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

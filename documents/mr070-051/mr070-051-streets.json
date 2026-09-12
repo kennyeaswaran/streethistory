@@ -1,0 +1,112 @@
+{
+  "document": "mr070-051",
+  "image": "mr070-051-100dpi.png",
+  "imageSize": [1044, 1749],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr070-051-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [51, 381],
+    [178, 1084],
+    [988, 908],
+    [750, 320]
+  ],
+  "coverageLl": [
+    [34.03443, -118.243965],
+    [34.033497, -118.244828],
+    [34.0327, -118.243496],
+    [34.033642, -118.242949]
+  ],
+  "streets": [
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [72, 499],
+            [175, 495],
+            [281, 486],
+            [461, 477],
+            [487, 476],
+            [585, 470],
+            [658, 467],
+            [729, 462],
+            [806, 459]
+          ],
+          "ll": [
+            [34.034274, -118.24411],
+            [34.034152, -118.243968],
+            [34.034032, -118.243814],
+            [34.033822, -118.243562],
+            [34.033791, -118.243525],
+            [34.033677, -118.243388],
+            [34.033592, -118.243286],
+            [34.03351, -118.243186],
+            [34.03342, -118.243078]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [658, 467],
+          "ll": [34.033592, -118.243286],
+          "insideCoverage": true
+        },
+        {
+          "name": "Merchant Street",
+          "px": [-1, 502],
+          "ll": [34.03436, -118.24421],
+          "insideCoverage": false
+        },
+        {
+          "name": "Produce Court",
+          "px": [-78, 507],
+          "ll": [34.034448, -118.24432],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Central Avenue",
+      "runs": [
+        {
+          "px": [
+            [857, 937],
+            [811, 827],
+            [774, 740],
+            [725, 625],
+            [658, 467],
+            [635, 412],
+            [602, 333]
+          ],
+          "ll": [
+            [34.032829, -118.243712],
+            [34.033007, -118.243611],
+            [34.033148, -118.243533],
+            [34.033334, -118.24343],
+            [34.033592, -118.243286],
+            [34.033681, -118.243237],
+            [34.033809, -118.243164]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [658, 467],
+          "ll": [34.033592, -118.243286],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olympic Boulevard",
+          "px": [876, 1306],
+          "ll": [34.032397, -118.244227],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

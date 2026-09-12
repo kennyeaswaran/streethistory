@@ -1,0 +1,216 @@
+{
+  "document": "mr070-084",
+  "image": "mr070-084-100dpi.png",
+  "imageSize": [1084, 1740],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr070-084-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [299, 311],
+    [277, 1167],
+    [794, 1145],
+    [804, 328]
+  ],
+  "coverageLl": [
+    [34.039908, -118.245132],
+    [34.038414, -118.246736],
+    [34.037669, -118.245591],
+    [34.039111, -118.244083]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [803, 430],
+            [769, 430],
+            [736, 429],
+            [717, 429],
+            [428, 431],
+            [386, 431],
+            [357, 431],
+            [296, 430]
+          ],
+          "ll": [
+            [34.038931, -118.244272],
+            [34.038984, -118.244344],
+            [34.039034, -118.244413],
+            [34.039062, -118.244452],
+            [34.039498, -118.245074],
+            [34.039561, -118.245164],
+            [34.039606, -118.245226],
+            [34.039699, -118.245355]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Crocker Street",
+          "px": [57, 428],
+          "ll": [34.040066, -118.245863],
+          "insideCoverage": false
+        },
+        {
+          "name": "Gladys Avenue",
+          "px": [970, 433],
+          "ll": [34.038672, -118.24392],
+          "insideCoverage": false
+        },
+        {
+          "name": "Stanford Avenue",
+          "px": [736, 429],
+          "ll": [34.039034, -118.244413],
+          "insideCoverage": true
+        },
+        {
+          "name": "Towne Avenue",
+          "px": [386, 431],
+          "ll": [34.039561, -118.245164],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Agatha Street",
+      "runs": [
+        {
+          "px": [
+            [279, 1099],
+            [340, 1098],
+            [364, 1097],
+            [414, 1097],
+            [558, 1097],
+            [709, 1095],
+            [731, 1097],
+            [761, 1097],
+            [795, 1097]
+          ],
+          "ll": [
+            [34.038533, -118.246608],
+            [34.038443, -118.246475],
+            [34.038408, -118.246423],
+            [34.038332, -118.246316],
+            [34.038114, -118.246008],
+            [34.037887, -118.245681],
+            [34.037851, -118.245639],
+            [34.037805, -118.245573],
+            [34.037755, -118.245501]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Crocker Street",
+          "px": [18, 1104],
+          "ll": [34.03892, -118.247176],
+          "insideCoverage": false
+        },
+        {
+          "name": "Gladys Avenue",
+          "px": [1042, 1094],
+          "ll": [34.037384, -118.244967],
+          "insideCoverage": false
+        },
+        {
+          "name": "Stanford Avenue",
+          "px": [731, 1097],
+          "ll": [34.037851, -118.245639],
+          "insideCoverage": true
+        },
+        {
+          "name": "Towne Avenue",
+          "px": [364, 1097],
+          "ll": [34.038408, -118.246423],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Stanford Avenue",
+      "runs": [
+        {
+          "px": [
+            [733, 326],
+            [735, 391],
+            [736, 429],
+            [735, 462],
+            [731, 1070],
+            [731, 1097],
+            [730, 1124],
+            [730, 1148]
+          ],
+          "ll": [
+            [34.039222, -118.24423],
+            [34.039104, -118.244345],
+            [34.039034, -118.244413],
+            [34.038976, -118.244474],
+            [34.037899, -118.245589],
+            [34.037851, -118.245639],
+            [34.037804, -118.245688],
+            [34.037761, -118.245732]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [736, 429],
+          "ll": [34.039034, -118.244413],
+          "insideCoverage": true
+        },
+        {
+          "name": "Agatha Street",
+          "px": [731, 1097],
+          "ll": [34.037851, -118.245639],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Towne Avenue",
+      "runs": [
+        {
+          "px": [
+            [386, 314],
+            [388, 390],
+            [386, 431],
+            [385, 468],
+            [372, 816],
+            [365, 1070],
+            [364, 1097],
+            [364, 1126],
+            [364, 1163]
+          ],
+          "ll": [
+            [34.03977, -118.244951],
+            [34.039632, -118.245083],
+            [34.039561, -118.245164],
+            [34.039497, -118.245231],
+            [34.038897, -118.245894],
+            [34.038455, -118.246372],
+            [34.038408, -118.246423],
+            [34.038356, -118.246476],
+            [34.038289, -118.246543]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [386, 431],
+          "ll": [34.039561, -118.245164],
+          "insideCoverage": true
+        },
+        {
+          "name": "Agatha Street",
+          "px": [364, 1097],
+          "ll": [34.038408, -118.246423],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

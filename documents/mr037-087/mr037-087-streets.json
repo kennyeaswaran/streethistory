@@ -1,0 +1,119 @@
+{
+  "document": "mr037-087",
+  "image": "mr037-087-100dpi.png",
+  "imageSize": [1113, 1649],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr037-087-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [224, 463],
+    [193, 828],
+    [1016, 1079],
+    [1026, 696]
+  ],
+  "coverageLl": [
+    [34.034355, -118.245475],
+    [34.033479, -118.246119],
+    [34.031813, -118.244027],
+    [34.032761, -118.243419]
+  ],
+  "streets": [
+    {
+      "name": "Central Avenue",
+      "runs": [
+        {
+          "px": [
+            [941, 861],
+            [938, 757],
+            [936, 670]
+          ],
+          "ll": [
+            [34.032454, -118.243923],
+            [34.03272, -118.243774],
+            [34.032939, -118.243649]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [928, 413],
+          "ll": [34.033592, -118.243286],
+          "insideCoverage": false
+        },
+        {
+          "name": "Olympic Boulevard",
+          "px": [869, 920],
+          "ll": [34.032397, -118.244227],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Kohler Street",
+      "runs": [
+        {
+          "px": [
+            [271, 477],
+            [253, 600],
+            [231, 754],
+            [226, 787]
+          ],
+          "ll": [
+            [34.034261, -118.245354],
+            [34.033974, -118.245595],
+            [34.033617, -118.245895],
+            [34.03354, -118.24596]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Olympic Boulevard",
+          "px": [226, 787],
+          "ll": [34.03354, -118.24596],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Olympic Boulevard",
+      "runs": [
+        {
+          "px": [
+            [798, 979],
+            [704, 947],
+            [642, 927],
+            [495, 877],
+            [226, 787],
+            [197, 779]
+          ],
+          "ll": [
+            [34.03234, -118.244531],
+            [34.032536, -118.244765],
+            [34.032666, -118.24492],
+            [34.032976, -118.245289],
+            [34.03354, -118.24596],
+            [34.033596, -118.246033]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [869, 920],
+          "ll": [34.032397, -118.244227],
+          "insideCoverage": true
+        },
+        {
+          "name": "Kohler Street",
+          "px": [226, 787],
+          "ll": [34.03354, -118.24596],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": []
+}

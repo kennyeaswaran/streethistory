@@ -24,6 +24,25 @@
 
 const NEW_NAME_ENTITIES = {
 
+  "agatha": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr066-064","sheet":"Wilde and Strong Subdivision","asWritten":["AGATHA STREET"]},
+      {"doc":"mr070-084","sheet":"Johnson and Keeney Resubdivision","asWritten":["Agatha Street"]},
+      {"doc":"pm017-045","sheet":"Parcel Map 1136","asWritten":["AGATHA STREET"]}
+    ],
+    spellings: [{"forms":["Agatha Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr070-084, where the ink reads “agatha Street”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "banning-street": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -75,6 +94,23 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+  "elmore-ave": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr018-092","sheet":"Valenzuela Tract","asWritten":["Elmore Ave."]}
+    ],
+    spellings: [{"forms":["Elmore Avenue"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr018-092, where the ink reads “Elmore Ave.”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "florida-st": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -88,6 +124,24 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Minted in review from mr003-569, where the ink reads “FLORIDA ST”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "francisco": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"tr0718-007-p2","sheet":"Tract No. 25510","asWritten":["FRANCISCO STREET"]},
+      {"doc":"tr1397-017-p5","sheet":"Tract No. 71141","asWritten":["FRANCISCO STREET"]}
+    ],
+    spellings: [{"forms":["Francisco Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from tr0718-007-p2, where the ink reads “FRANCISCO STREET”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   },
@@ -109,6 +163,40 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+  "helena-ave": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr018-092","sheet":"Valenzuela Tract","asWritten":["Helena Ave."]}
+    ],
+    spellings: [{"forms":["Helena Avenue"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr018-092, where the ink reads “Helena Ave.”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "ingraham": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"tr0718-007-p2","sheet":"Tract No. 25510","asWritten":["INGRAHAM STREET"]}
+    ],
+    spellings: [{"forms":["Ingraham Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from tr0718-007-p2, where the ink reads “INGRAHAM STREET”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "japanese-village-plaza-mall": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -126,6 +214,43 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+  "kip-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"tr0718-007-p2","sheet":"Tract No. 25510","asWritten":["KIP STREET"]}
+    ],
+    spellings: [{"forms":["Kip Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from tr0718-007-p2, where the ink reads “KIP STREET”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "kohler": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr021-046","sheet":"W. J. Fisher's Subdivision","asWritten":["Kohler Street"]},
+      {"doc":"mr054-051","sheet":"Kohler Tract","asWritten":["Kohler St"]},
+      {"doc":"tr0105-001-p2","sheet":"Tract No. 8657","asWritten":["KOHLER STREET"]},
+      {"doc":"tr0141-011","sheet":"Tract No. 9918","asWritten":["KOHLER STREET"]}
+    ],
+    spellings: [{"forms":["Kohler Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr054-051, where the ink reads “Kohler St”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "loomis-st": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -139,6 +264,44 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Minted in review from mr003-569, where the ink reads “LOOMIS ST”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "melendrez-st": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr026-059","sheet":"Goldsworthy 9th St. Tract","asWritten":["Melendrez St"]},
+      {"doc":"mr026-060","sheet":"Pederift Tract","asWritten":["Melendrez Street"]}
+    ],
+    spellings: [{"forms":["Melendrez Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr026-059, where the ink reads “Melendrez St”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "merchant-st": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr021-046","sheet":"W. J. Fisher's Subdivision","asWritten":["Merchant Street"]},
+      {"doc":"mr054-051","sheet":"Kohler Tract","asWritten":["Merchant St"]},
+      {"doc":"tr0001-046","sheet":"Mariana W. de Coronel Home Place","asWritten":["MERCHANT STREET"]},
+      {"doc":"tr0141-011","sheet":"Tract No. 9918","asWritten":["MERCHANT STREET"]}
+    ],
+    spellings: [{"forms":["Merchant Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr054-051, where the ink reads “Merchant St”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   },
@@ -242,6 +405,23 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Minted in review from mr003-016, where the ink reads “PARK LANE”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "parker-drive": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr070-051","sheet":"J. B. Parker Subdivision","asWritten":["PARKER DRIVE"]}
+    ],
+    spellings: [{"forms":["Parker Drive"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr070-051, where the ink reads “PARKER DRIVE”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   },
@@ -386,6 +566,24 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+  "wilshire": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"tr0718-007-p2","sheet":"Tract No. 25510","asWritten":["WILSHIRE BOULEVARD"]},
+      {"doc":"tr1397-017-p5","sheet":"Tract No. 71141","asWritten":["WILSHIRE BOULEVARD"]}
+    ],
+    spellings: [{"forms":["Wilshire Boulevard"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from tr0718-007-p2, where the ink reads “WILSHIRE BOULEVARD”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "winston-st": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -400,6 +598,23 @@ const NEW_NAME_ENTITIES = {
     disputed: false,
     note: null,
     internalNote: "Minted in review from mr039-069, where the ink reads “Winston St”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "woodworth-court": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"tr0938-051-p3","sheet":"Tract No. 36511","asWritten":["WOODWORTH COURT"]}
+    ],
+    spellings: [{"forms":["Woodworth Court"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: ["unknown"],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from tr0938-051-p3, where the ink reads “WOODWORTH COURT”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   }
