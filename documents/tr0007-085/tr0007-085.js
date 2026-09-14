@@ -20,7 +20,7 @@ module.exports = {
   // not the sheet edge (MODEL-SPEC §4.4). SCAN PIXELS against alignment.image,
   // so a better alignment carries it along (§4.6).
   coverage: [
-    [1637, 123], [175, 156], [113, 1151], [1664, 992]
+    [1666, -28], [-77, -38], [-26, 1168], [1702, 1017]
   ],
   alignment: {
     image: "documents/tr0007-085/tr0007-085-100dpi.png",
@@ -32,8 +32,8 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["8th Street","Stanford Avenue"],
 
   rows: [
     {
@@ -75,6 +75,26 @@ module.exports = {
       "basis": "alignment",
       "note": "The modern Stanford Avenue trace follows the roadway lettered RUTH AVE.",
       "name": "ruth-ave"
+    },
+    {
+      "kind": "state",
+      "asWritten": "8th St",
+      "street": "8th Street",
+      "from": null,
+      "to": "Stanford Avenue",
+      "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
+      "name": "eighth-street"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Stanford Ave",
+      "street": "Stanford Avenue",
+      "from": "8th Street",
+      "to": null,
+      "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
+      "name": "stanford-ave"
     }
   ]
 };

@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-07
+// Built: 2026-09-14
 const SEARCH_INDEX = [
   {
     "form": "11th Street",
@@ -153,16 +153,16 @@ const SEARCH_INDEX = [
     "street": "5th Street"
   },
   {
+    "form": "6th Street",
+    "entity": "sixth-street",
+    "label": "6th Street",
+    "street": "5th Street"
+  },
+  {
     "form": "Poplar Street",
     "entity": "poplar-st",
     "label": "Poplar Street",
     "street": "5th Street"
-  },
-  {
-    "form": "6th Street",
-    "entity": "sixth-street",
-    "label": "6th Street",
-    "street": "6th Street"
   },
   {
     "form": "7th Place",
@@ -180,6 +180,12 @@ const SEARCH_INDEX = [
     "form": "8th Place",
     "entity": "8th-place",
     "label": "8th Place",
+    "street": "8th Place"
+  },
+  {
+    "form": "Ruby Street",
+    "entity": "ruby-st",
+    "label": "Ruby Street",
     "street": "8th Place"
   },
   {
@@ -214,7 +220,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Agatha Street",
-    "entity": "agatha-street",
+    "entity": "agatha",
     "label": "Agatha Street",
     "street": "Agatha Street"
   },
@@ -297,15 +303,15 @@ const SEARCH_INDEX = [
     "street": "Artemus Street"
   },
   {
-    "form": "San Pedro Street",
-    "entity": "san-pedro",
-    "label": "San Pedro Street",
-    "street": "Astronaut Ellison S Onizuka Street"
-  },
-  {
     "form": "Astronaut Ellison S Onizuka Street",
     "entity": "astronaut-ellison-s-onizuka-street",
     "label": "Astronaut Ellison S Onizuka Street",
+    "street": "Astronaut Ellison S Onizuka Street"
+  },
+  {
+    "form": "San Pedro Street",
+    "entity": "san-pedro",
+    "label": "San Pedro Street",
     "street": "Astronaut Ellison S Onizuka Street"
   },
   {
@@ -547,6 +553,12 @@ const SEARCH_INDEX = [
     "entity": "vine-central",
     "label": "Vine Street",
     "street": "Central Avenue"
+  },
+  {
+    "form": "Elmore Avenue",
+    "entity": "elmore-ave",
+    "label": "Elmore Avenue",
+    "street": "Ceres Avenue"
   },
   {
     "form": "Ceres Avenue",
@@ -862,8 +874,14 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Francisco Street",
-    "entity": "francisco-street",
+    "entity": "francisco",
     "label": "Francisco Street",
+    "street": "Francisco Street"
+  },
+  {
+    "form": "Moore Street",
+    "entity": "moore-st",
+    "label": "Moore Street",
     "street": "Francisco Street"
   },
   {
@@ -879,9 +897,9 @@ const SEARCH_INDEX = [
     "street": "Gabriel Garcia Marquez Street"
   },
   {
-    "form": "Messer Street.",
+    "form": "Messer Street",
     "entity": "messer-street",
-    "label": "Messer Street.",
+    "label": "Messer Street",
     "street": "Garey Street"
   },
   {
@@ -909,9 +927,21 @@ const SEARCH_INDEX = [
     "street": "Gin Ling Way"
   },
   {
+    "form": "Melendrez Street",
+    "entity": "melendrez-st",
+    "label": "Melendrez Street",
+    "street": "Gladys Avenue"
+  },
+  {
     "form": "Gladys Avenue",
     "entity": "gladys-ave",
     "label": "Gladys Avenue",
+    "street": "Gladys Avenue"
+  },
+  {
+    "form": "Helena Avenue",
+    "entity": "helena-ave",
+    "label": "Helena Avenue",
     "street": "Gladys Avenue"
   },
   {
@@ -934,7 +964,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Grand Avenue",
-    "entity": "grand-avenue",
+    "entity": "grand-ave",
     "label": "Grand Avenue",
     "street": "Grand Avenue"
   },
@@ -1042,7 +1072,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Ingraham Street",
-    "entity": "ingraham-street",
+    "entity": "ingraham",
     "label": "Ingraham Street",
     "street": "Ingraham Street"
   },
@@ -1120,7 +1150,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Kohler Street",
-    "entity": "kohler-street",
+    "entity": "kohler",
     "label": "Kohler Street",
     "street": "Kohler Street"
   },
@@ -1300,7 +1330,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Merchant Street",
-    "entity": "merchant-street",
+    "entity": "merchant-st",
     "label": "Merchant Street",
     "street": "Merchant Street"
   },
@@ -1533,9 +1563,9 @@ const SEARCH_INDEX = [
     "street": "Rosabell Street"
   },
   {
-    "form": "Rose Street.",
+    "form": "Rose Street",
     "entity": "rose-street",
-    "label": "Rose Street.",
+    "label": "Rose Street",
     "street": "Rose Street"
   },
   {
@@ -1858,8 +1888,14 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Wilshire Boulevard",
-    "entity": "wilshire-boulevard",
+    "entity": "wilshire",
     "label": "Wilshire Boulevard",
+    "street": "Wilshire Boulevard"
+  },
+  {
+    "form": "Orange Street",
+    "entity": "orange-st-wilshire",
+    "label": "Orange Street",
     "street": "Wilshire Boulevard"
   },
   {

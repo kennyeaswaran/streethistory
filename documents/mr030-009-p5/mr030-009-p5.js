@@ -1,3 +1,30 @@
+// ★★ THE RECORDER'S CERTIFICATE, transcribed 2026-09-14 from the 100 dpi render.
+// Nobody had read it before, and it changes who is thought to have named the
+// streets on this tract:
+//
+//     "A full true and correct copy of the original (reduced to two thirds size)
+//      recorded Jany. 11th 1888 at 22 min past 9 a.m. AT REQUEST OF LOS ANGELES
+//      LAND BUREAU.
+//          Frank A. Gibson, Co. Recorder
+//          by Wm. E. Johnston, Deputy"
+//
+// The filing party is a COMPANY, not the Wolfskills. The Los Angeles Land Bureau
+// styled itself "a Corporation" at No. 20 West First Street; its president was
+// George W. Frink; its auctioneers were Easton, Eldridge & Co. It advertised this
+// tract at private sale in the Los Angeles Daily Herald from July 31 to Aug. 8,
+// 1887 ("THE WOLFSKILL ORCHARD TRACT, NOW OFFERED AT PRIVATE SALE … Wolfskill
+// Avenue is 100 Ft. Wide, and Four of its Other Principal Avenues are 80 Ft.
+// Wide"), and it also handled the Governor Stoneman Tract in Alhambra and a
+// 168-lot Vernon District auction the same year.
+//
+// ⚠ WHO NAMED THE STREETS IS THEREFORE OPEN. The Bureau's own advertising calls
+// the orchard "in the actual occupancy and Possession of one family for over
+// Fifty Years" — present tense — and its Vernon ad says "by Order of the Owners",
+// so it reads as promoter and selling agent with the Wolfskills retaining title.
+// Ruth Avenue is very likely the owner's daughter (names.js `ruth-ave`); Gladys
+// Avenue is not a Wolfskill at all (`gladys-ave`), and the Bureau's own families
+// are where that search goes next. The deed record would settle it.
+//
 module.exports = {
   id: "mr030-009-p5",
   title: "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal.",

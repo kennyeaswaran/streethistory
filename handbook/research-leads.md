@@ -1728,3 +1728,386 @@ Spanish/English divergence surviving into live civic use twenty-five years after
 survey, and it is the best evidence we have that Kenny's underlying instinct — that
 one street could go by two unrelated English names — is sound. It just does not happen
 to be what Cemetery Avenue is.
+
+---
+
+## 34 names out of the review queue (2026-09-13)
+
+The map tool minted 34 entities; all 34 are researched and moved into `names.js`,
+which is now **143 entities**. `names-new.js` is empty. `check-model.js` and
+`check-data.js` pass, `generate.js` runs, and the 72 names-tool tests pass.
+
+**Kines covers 7 of the 34.** Every other name was checked against
+lastreetnames.com's own `?s=` search endpoint (the alpha indexes are paginated and
+give false negatives) and the result is recorded in each entity's `internalNote`, so
+the same searches do not get run twice. **12 entities carry a namesake; 22 have a null
+`namedAfter`** — and most of those nulls are findings rather than gaps, with the
+searched-and-empty sources named.
+
+### The two pairs that turned out to be two ends of one street
+
+**★ Ozier Lane → Winston Street.** Both were minted separately, and they are the same
+lineage. The geometry ties them: the 1881 Rivara and Vignolo Tract letters "Ozier
+Lane" on exactly the ground the 1886 Mills' Tract and 1889 Jones and Ponet Block
+letter "Winston Street" (`mr005-110`, `mr012-026`, `mr039-069`). Our own Herald
+clipping has the council postponing the change in June 1887 (`lah-1887-06-14`), and
+Wikipedia supplies the namesake and the outcome: **James Brown Winston (1820–1884)**,
+the city's first health officer, honoured in 1887 by renaming the street he had
+lived on.
+
+Two things worth keeping. First, Wikipedia spells the predecessor **"Ogier"** where
+our ordinance and our 1881 sheet both say **"Ozier"**. Second — and this is the
+interesting one — **Mills' Tract letters "Winston Street" in Nov. 1886, seven months
+before the ordinance was even postponed.** Another name in use before it was
+official, like Fort Street/Broadway in 1908 and Sunset Place/Orange Street. Worth
+checking whether that tract's recording date is later than its survey date before
+leaning on it.
+
+**★ Moore Street → Francisco Street.** Also both in this batch. Our row on the 1878
+Nichols Addition aligns Moore Street to modern **Francisco Street**, and Kines
+independently names Moore as one of Francisco's two predecessors: "The former Moore
+Street and Okey Street (named for a son-in-law) were rechristened Francisco Street in
+1903." Named for the family of **Andrew Wiggins "Andy" Francisco (1825–1898)** at 9th
+and Figueroa — explicitly *not* for San Francisco. Okey Street is not in this corpus.
+
+**And a third, already half-known: Orange Street → Wilshire Boulevard.** The tool
+minted `orange-st-wilshire` and `wilshire` separately; our row puts the 1878 Nichols
+Addition's Orange Street on modern Wilshire Boulevard, and the ordinance extent
+(Figueroa to Alvarado) matches. Kines dates it to April 1924 independently of our
+documents. **No change row written** — the documents are all in hand and confirming is
+Kenny's step.
+
+### What this batch adds to names already in the file
+
+- **`charity`** — the dates are now sharp: council vote **May 10, 1886**, official
+  renaming **Feb. 15, 1887**. And a detail worth having: the residents first asked for
+  **"Pacific Avenue"** and were refused because a Pacific Street already existed. Grand
+  was a second choice. No source gives a reason for the word "Grand" beyond its being
+  more pleasing than Charity.
+- **`alexander-lane`** — it was the *second* downtown alley folded into Lebanon Street.
+  **Park Lane**, between Figueroa and Flower from 6th to 7th, went the same way in
+  **1897**; Alexander Lane followed in 1917. No Lebanon Street entity exists yet.
+- **`gladys`** already carried the Sabichi/Wolfskill link and cited the same sheet
+  before `agatha` existed. What the new entity adds is Kines's page for Agatha herself
+  — though note his wording is "**surely** honors", an inference from the land
+  ownership with no naming record behind it, so the entity hedges where he does not.
+
+### Traps recorded so nobody walks into them
+
+- **Two Turner Streets in 1883.** Ours aligns to modern Jackson Street and matches the
+  May 1883 "First to Alameda" change (`lah-1883-05-13`). The *other* — "Turner street,
+  west of Main street" — became Sonora Street in the Aug./Sept. 1883 omnibus. ⚠ And our
+  sheet is dated **1928** and still letters Turner, forty-five years after the Jackson
+  change. Unresolved.
+- **Three Rose Streets.** Ours is the Arts District one that survived. Not the East Los
+  Angeles Rose that became Kuhrts Street in 1883; not the Highland Park Rose that Kines
+  says became Thorne Street.
+- **Two Kohler Streets.** Kines says the *original* Kohler Street ran where 9th Street
+  now runs between San Pedro and Alameda. All four of our sightings look like the
+  current street; none has been checked against the older one.
+- **Two Ruby Streets**, two probable **Ward Streets**, and a **Beaudry** that may be two
+  pieces of ground — our row on the 1868 tract is `vanished` while modern Beaudry
+  Avenue survives elsewhere. Kines treats Beaudry as one street; this file has not
+  tested that by geometry.
+- **Messer Street is not Mesmer Avenue** (Westchester). **Helena Avenue is not** 1st
+  Helena Drive or the Modjeska streets.
+- **John P. Moran is not the Moran of Moran's Lane** — he was sixteen when the 1873
+  lane was lettered.
+- **Traction Avenue is not, per Kines, the Traction Company.** He names the electric
+  traction motor; the company appears on his page only in a photo caption. The
+  chronology also cuts against the company: it was bought by the Southern Pacific in
+  1903 and folded into the Los Angeles Railway by 1911, years before the 1915 renaming.
+
+### Names checked and genuinely unattributed
+
+**Ingraham, Kip, Turner, Banning, Melendrez, Elmore, Helena, Florida, Ruby, Ward,
+Loomis, Messer, Rose, Merchant, Moran's Lane, Parker Drive, Wilmington** — all
+searched across Kines, Los Angeles Revisited (including its street-origins index),
+the Wikipedia LA County etymology list, LAPL's street-name posts and Garrigues, with
+nothing found. Two of these are worth singling out:
+
+- **Parker Drive** is the cleanest case in the file of a name whose *origin* is obvious
+  and whose *namesake* is unknown: the sheet is the "J. B. Parker Subdivision", so the
+  street is plainly named from the subdivider — but who J. B. Parker was is
+  undocumented everywhere checked.
+- **Banning Street**, by Union Station, is left null although Phineas Banning is the
+  obvious candidate for any Banning street in this county. Kines attaches him only to
+  Banning Boulevard in Carson. Nothing connects him to this street, so nothing is
+  claimed.
+
+Likewise **Wilmington Street**: the chain "Banning named the town of Wilmington for
+his Delaware birthplace, so the street is named for the town" is completed by no
+source, and the town was not annexed until 1909, long after this street was lettered
+in 1868.
+
+### Open questions this batch leaves
+
+1. **When did Wilmington Street become North San Pedro Street?** Undocumented. Its
+   ground is today Judge John Aiso Street. (Kines dates the San Pedro → Aiso change to
+   1997; Wikipedia says 1999 — a small conflict worth resolving, since `san-pedro`'s
+   note currently says 1997.)
+2. **Was Loomis Street one street or three?** The 1893 Sixth Street ordinance
+   (withdrawn), the 1894 Echo Park Road proposal, and our Nichols Addition sheet may
+   not be the same ground. Our row is `vanished` and not aligned to 6th Street.
+3. **Is the 1868 Beaudry Street the same entity as modern Beaudry Avenue?**
+4. **Who was J. Murat?** The 1868 "Garden of J. Murat" is in the corpus, and he is
+   absent from both the Homestead Museum's survey of 1865 winemakers and Los Angeles
+   Revisited's survey of the city's French community — the two places that would list
+   him. That silence is itself evidence: he looks like an otherwise-unrecorded property
+   owner. City directories and the *Los Angeles Star* next.
+
+---
+
+## Working the unknowns: four threads, one answered outright (2026-09-13)
+
+Kenny went through the 78 unknown-namesake entities and set several lines going at
+once. Four research agents ran in parallel plus geometry checks here. `names.js` is
+still 143 entities; nothing was minted, twenty entities were revised.
+
+### ★★ O. W. Childs was Ozro WILLIAM Childs
+
+Kenny's hunch — "have you found O.W. Childs's full name? I wonder if the W is William
+by any chance" — is right, and it dissolves a problem this file had recorded as
+settled-negative. `william`'s note previously said the sources "name his wife Emeline
+Huber and a brother Marcus, and no William." That was wrong, because **the search
+never expanded the initial.** Four sources give *Ozro William Childs*, the best being a
+1954 *Historical Society of Southern California Quarterly* article of that title
+written by his own daughter, Hortense Childs Reynolds.
+
+So there are now two Williams on the O. W. Childs Tract of 1885: **Childs himself**,
+and his eldest surviving son **Ozro William Childs Jr. (1865–1933)**, who was twenty
+when it was recorded. Still hedged — nothing says the street honours either — but it
+has moved from "no such person" to "which one."
+
+**The general lesson, worth carrying: expand the initials before concluding a name is
+absent from a family.**
+
+### ★ Huber Street is now sourced, and it came in sideways
+
+`huber-st` carried Caroline Huber as an inference from the neighbouring Carolina
+Street. Kines states it outright — but in his **Colyton Street** entry, not under
+Huber: Dr. Frederick Preston Howard's 1886 tract "also included Huber Street (now part
+of 4th Street) and Carolina Street (now Hewitt Street): his wife was born Caroline
+Huber." Found by searching Kines for *Hewitt*.
+
+Two things follow. **Carolina Street became Hewitt Street** — Garrigues corroborates,
+adding Carmona Street to the same absorption. And a second Huber is now in the record:
+Ozro William Childs's wife was **Emeline Huber**. Whether the two Huber families
+connect is unexamined and worth an hour.
+
+### The four with no search on record — three now have one
+
+- **Boylston.** Kenny's recollection of a Boston derivation is *in* Kines — but as his
+  own flagged guess: "The why behind all this is obscure… I presume Johnson objected to
+  the street adopting another Spanish *nombre*." He then undercuts it himself, since
+  Johnson was Ohio-born with no Boston tie. What **is** documented is who named it:
+  **Orson Thomas "O. T." Johnson (1839–1916)**, a financier who proposed "Boylston"
+  against the commission's "De La Guerra" in 1897 and got it approved — corroborating
+  our Feb. 2 / Feb. 23 ordinance dates. ★ And he lived on **Orange Street**, which is
+  `orange-st-wilshire`: the man who named Boylston lived on the street that became
+  Wilshire Boulevard.
+- **Vine.** Kenny's recollection is right about Olvera and it settles our entity by
+  *exclusion*. The lane by the Plaza was *Calle de las Viñas*, rendered as both Wine
+  and Vine Street, renamed Olvera for Judge Agustín Olvera — Kines says 1873, three
+  other sources say 1877 by ordinance. Either way it had been Olvera Street for twenty
+  years by 1897, so it **cannot** be the Vine Street our 1897 record leaves alone. Ours
+  is the Central Avenue one. That independently confirms the two-Vine-Streets warning
+  already in `WANTED.md`.
+- **Hewitt.** Searched hard; the namesake is still **not found**, and that is now on
+  the record rather than a gap. Kenny's memory of being stumped here was right. The
+  1871 Johnston Tract is the origin point, and its owner and surveyor are the best
+  unexplored lead — the same sheet also carries `messer-street` and `rose-street`,
+  both equally blank.
+- **Guadalupe.** Nothing, anywhere. Notably absent from Kines's Latino and Hispanic
+  heritage category, which is thorough — so a real gap, not a search miss. ⚠ Do not
+  guess: in 1870s Los Angeles "Guadalupe" is equally plausible as a Marian dedication
+  or as a given name, common for men and women alike among Californios.
+
+### ✓ Two placements checked, and the "three names on one line" puzzle resolves
+
+Kenny asked whether the Valenzuela and Melendrez tracts might be misplaced. **They are
+not.** Projecting the rows through each sheet's own alignment:
+
+| | projected | modern |
+|---|---|---|
+| Elmore → Ceres Ave at 8th | 34.03545, −118.24549 | 34.03545, −118.24548 |
+| Elmore → Ceres Ave at 7th | 34.03818, −118.24320 | 34.03818, −118.24320 |
+| Helena → Gladys Ave at 7th | 34.03867, −118.24392 | 34.03867, −118.24392 |
+| Melendrez → Gladys Ave at 8th | 34.03587, −118.24601 | 34.03587, −118.24601 |
+
+Metre-level agreement. And the puzzle from last week — Helena, Melendrez and Gladys all
+landing on one modern line — turns out to be **adjacent segments**, not an error:
+Helena is Gladys from 7th to 8th, Melendrez is Gladys from 8th to 9th. **Modern Gladys
+Avenue was assembled from differently-named segments on adjoining 1887 tracts**, the
+same operation the boulevards performed at larger scale.
+
+The follow-up search of Helena + Elmore + Valenzuela *together*, as Kenny suggested,
+returned nothing historical — no LA Valenzuela family with either name, and no evidence
+Elmore was even a surname here. The observation that survives: both are distinctly
+Anglo names on a Spanish-surname tract, which fits the boom-year pattern where the
+**tract** name honours the prior owner and the **street** names come from whoever
+bought or optioned it. The June 1887 book of maps would name the recording party.
+
+### ★★ Wilmington and San Pedro: two harbour towns, two adjacent streets
+
+Kenny's observation, and the sheets bear it out better than expected. The **Garden of
+J. Murat sheet of 1868 letters both names, one block apart** — San Pedro Street on what
+is now Onizuka Street, Wilmington Street on what is now Judge John Aiso Street.
+`san-pedro` is securely named for the port town it ran toward; a companion street
+named for **the town next door**, on the same sheet, is the destination principle
+applied twice. That is a far better argument than the chain we had rejected (Banning
+named Wilmington for his Delaware birthplace), because it does not depend on Banning at
+all — and it disposes of the annexation objection, since naming a street for a
+neighbouring town in 1868 needs no annexation and Wilmington was founded in 1863.
+
+⚠ And it exposes something new: **the San Pedro name moved.** The 1868 sheet's San
+Pedro Street is today Onizuka; what became *North* San Pedro Street, then Judge John
+Aiso Street, is the **Wilmington** line. San Pedro appears to have absorbed Wilmington
+rather than merely neighboured it. When is undocumented anywhere found.
+
+### Court House Street: there was one, and it had already moved
+
+Kenny asked whether there was a court house in 1869 or plans for one on the Mott tract.
+The chronology, now established: rented adobes 1850–53; **the Rocha Adobe 1853–61, on
+the west side of Spring between First and Temple** — the exact block; the Market House
+/ Clocktower on the Temple Block 1861–91; the red sandstone courthouse from 1891. So a
+court house stood on that ground, but stopped being one **eight years before** this
+1869 sheet, though the building remained the seat of city government until 1886.
+
+No 1860s courthouse *proposal* for First/Temple was found, and nothing connects the
+Motts to a courthouse project. ★ The one real link: **Stephen Hathaway Mott, who
+platted this tract, was a deputy county clerk** — an officer of the court. An agent
+proposed that the street was named for its sightline downhill to the civic block and
+that Court House Street is today's Court Street; ⚠ **not adopted** — our rows put this
+alignment on Community Terrace and `court-street` is a separate entity.
+
+### Made explicit at Kenny's request
+
+- **Regent and Wall.** The load-bearing fact is now stated in both entities: the Moreno
+  Vineyard Tract sheet of March 1876 is the **earliest source in this corpus for both
+  names**, lettered two blocks apart on one new commercial subdivision beside the
+  depot. London's and New York's most famous trading addresses, named together, in one
+  act. `namedAfter` stays null on both — the evidence is the pair, not either name —
+  and the entities are now explicitly keyed to each other, so an argument that weakens
+  one weakens the other.
+- **Palm, Spruce, Tulip, Willow.** All four now carry the plant in `namedAfter` and
+  `nature` in categories, with `unknown` retained: the warrant is the **set** platted
+  together on the Goodwin Tract in Oct. 1886, not any one street. Same footing as
+  `ceres-ave`.
+- **Short Street.** The second spelling form read "Calle Alta", which is High Street's
+  Spanish name — picked up from `high-street-chinatown` on the same 1849 sheet.
+  Replaced with what this street is actually lettered, **C Corta**, left as the
+  survey's own abbreviation rather than expanded to "Calle Corta", which is not on the
+  sheet.
+
+### A method file for the daughter-names
+
+`handbook/FAMILY-NAMES.md` is new: a playbook for the "named for somebody's daughter"
+cases (Ruth, Gladys, Agatha, Ida, William, Helena, Elmore), from a Fable sub-agent, at
+Kenny's suggestion. Its headline point is that the naive move — search a genealogy site
+for the name — is the *last* step. First read the plat's **owners' certificate**,
+because the tract name honours the prior owner while the streets were named by the
+signatories, and nobody has read the June 1887 Valenzuela signatures. It also sets an
+evidence standard (A/B/C/D) and notes that **name rarity shifts the weight**: a
+pre-1887 Gladys near the Wolfskills would be strong evidence, a Ruth or a William on
+the same footing would not.
+
+### Los Angeles Revisited, swept against all 78
+
+Thin: the site covers about 46 City of Los Angeles streets and most of our names are
+not among them. Hits that matter, beyond those above: **Pearl** (Chapules → Pearl in
+the 1870s → Figueroa 1897), **Moore → Francisco 1903** with the extents, **Park Lane →
+Lebanon 1897** confirming our date exactly, **Requena → Market Street** on the July
+1904 petition again, **High → Walters → Ord** with "Ord Street was named for him in
+1890", and **Spring** for Trinidad Serafina Ortega, *La Primavera*, with the author's
+own hedge that it is unknown whether Ord picked the name up locally or bestowed it.
+
+---
+
+## The playbook, run for real: the Wolfskill Orchard Tract (2026-09-14)
+
+Kenny asked whether anyone had actually tried `handbook/FAMILY-NAMES.md`. Nobody had —
+it was written the day before and only recorded. Run now on the family with the most at
+stake: the **Wolfskill Orchard Tract** carries six unknown names on five sheets (Ruth,
+Gladys, Omar, Poplar, Ceres, Huber), with Agatha next door as a control. The worked
+example is appended to the playbook; the findings are here.
+
+### ★★ Phase 0 paid off before any genealogy was done
+
+Nobody had read the sheets' own text blocks. Two crops gave the survey line — **J. H.
+Dockweiler, July–August 1887**, so survey 1887 and recording January 1888, a distinction
+several entities had been blurring — and, on sheet 5, the recorder's certificate:
+
+> "A full true and correct copy of the original (reduced to two thirds size) recorded
+> Jany. 11th 1888 at 22 min past 9 a.m. **at request of Los Angeles Land Bureau.**"
+
+**The filing party is a company, not the Wolfskills** — precisely the trap the playbook
+warns about. The Los Angeles Land Bureau styled itself "a Corporation" at No. 20 West
+First Street; president **George W. Frink**; auctioneers **Easton, Eldridge & Co.**; and
+it advertised this tract at private sale in the *Herald*, 31 July – 8 August 1887:
+*"THE WOLFSKILL ORCHARD TRACT, NOW OFFERED AT PRIVATE SALE… Wolfskill Avenue is 100 Ft.
+Wide, and Four of its Other Principal Avenues are 80 Ft. Wide."* It also handled the
+Governor Stoneman Tract in Alhambra and a 168-lot Vernon District auction that year.
+
+Who actually chose the street names is now an open question rather than an assumption.
+The Bureau's own copy calls the orchard *"in the actual occupancy and Possession of one
+family for over Fifty Years"* — present tense — and its Vernon advertisement says *"by
+Order of the Owners"*, so it reads as promoter and selling agent with the Wolfskills
+retaining title. The deed record would settle it and is not online.
+
+### ★★ Ruth is a real person; Gladys is not
+
+**Ruth R. Wolfskill, born 23 November 1881**, seventh of eleven or more children of
+Joseph William Wolfskill (1843–1928) and Elena de Pedrorena, buried in the Wolfskill
+plot at Calvary Cemetery. **Five years old when Dockweiler surveyed.** `ruth-ave` now
+carries her, hedged: grade B on the playbook's scale — right name, right family, alive
+before the plat, on her father's land, with the Agatha precedent nine years later.
+
+**No Gladys exists in the family.** Eleven recorded children and no Gladys among them,
+nor anywhere on the open web as a Wolfskill. The family reading is retired.
+
+**And the rarity argument reopens it rather than closing it.** About **forty girls in
+the entire United States** were named Gladys in 1881 (SSA; decade rank #151, against
+Ruth at #66). In 1887 Gladys was an exotic Welsh literary import, not a generic pretty
+name — so Gladys Avenue is *more* likely to honour a specific real person. She is
+simply not a Wolfskill, and the next search is **George W. Frink's household**, which is
+completely untraced.
+
+**Omar is not in the family either.** An agent suggested Omar Khayyám — the *Rubáiyát*
+was a defining fashion of exactly these decades — and that is recorded as an unsourced
+lead, not adopted.
+
+### The tract's names are mixed, and that is the general lesson
+
+Ruth (the owner's daughter), Ceres (a harvest goddess over an orchard), Poplar (a tree),
+Gladys (nobody in the family), Omar (untraced). **Do not expect one plat's street names
+to come from one source** — testing each against the family and stopping at the first
+failure would have lost Ruth.
+
+### ⚠ Three things this run did not settle
+
+1. **The census check was not completed** — FamilySearch wanted a login. Ruth currently
+   rests on Find a Grave, which is contributor-submitted: cross-consistent across four
+   memorials in one physical plot, but possibly one upstream compiler. Phase 1 is not
+   finished until the **1900 census** household is read, where Elena's "children born /
+   children living" counts would also test for a child who died young in the 1885–88
+   window — the only place a Gladys could hide.
+2. **George W. Frink is untraced.** No biography, no Find a Grave, no census reached.
+   The 1887–88 Los Angeles city directories list company officers and are the next step;
+   HathiTrust has 18 full-view volumes containing the exact phrase "Los Angeles Land
+   Bureau", of which *The Industries of Los Angeles, California* (1888) is most likely to
+   carry a firm sketch with its full slate of officers.
+3. **The Agatha control wobbled.** Kines gives 1871–1963, Find a Grave's Sabichi plot
+   gives 1881–1963 — death year agreeing, birth year ten apart. Flagged on the entity,
+   unresolved. It matters: on the 1881 reading Agatha and Ruth are **first cousins both
+   born in 1881**, each with a street named on her own father's land nine years apart,
+   which would be a pattern rather than two coincidences.
+
+### A method note worth keeping
+
+Chronicling America's page viewer and OCR endpoints return 403, but **the underlying
+ALTO XML is openly fetchable** — `https://www.loc.gov/item/<lccn>/<date>/ed-1/?fo=json`
+for the file list, then the page's `storage-services/…/NNNN.xml` directly. That is how
+the Land Bureau advertisements were recovered. The *Herald* on Chronicling America
+(`sn85042460`, 1884–1890) is the same UCR digitisation as CDNC, so it is a second door
+in when CDNC is unreachable. Added to `handbook/FAMILY-NAMES.md`.

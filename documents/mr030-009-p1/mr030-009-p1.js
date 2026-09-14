@@ -1,3 +1,17 @@
+// ★ THE TITLE BLOCK, transcribed 2026-09-14 from a 300 dpi render of this sheet:
+//
+//     "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal.
+//      Surveyed by J. H. Dockweiler in July & August 1887.
+//      Scale one hundred and twenty feet to one inch"
+//
+// So the SURVEY is July–August 1887 and the RECORDING is Jan. 11, 1888 — the
+// `date` below is the recording. Several entities in names.js had said the tract
+// was platted "in 1887", which is right about the survey and wrong about the
+// filing; both dates are now stated where it matters.
+//
+// The recorder's certificate is on sheet 5 (documents/mr030-009-p5), and it is
+// the single most consequential thing on these five sheets — see that file.
+//
 module.exports = {
   id: "mr030-009-p1",
   title: "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal.",

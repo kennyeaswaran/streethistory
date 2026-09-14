@@ -26,26 +26,25 @@ module.exports = {
     image: "documents/tr0020-196b/tr0020-196b-100dpi.png",
     dpi: 100,
     points: [
-      { px: [0, 0], ll: [34.050674, -118.237232], note: "map-tool corner (0,0)" },
-      { px: [1117, 0], ll: [34.050829, -118.240454], note: "map-tool corner (1117,0)" },
-      { px: [0, 1842], ll: [34.055107, -118.236926], note: "map-tool corner (0,1842)" }
+      { px: [0, 0], ll: [34.054807, -118.240496], note: "map-tool corner (0,0)" },
+      { px: [1117, 0], ll: [34.054528, -118.23864], note: "map-tool corner (1117,0)" },
+      { px: [0, 1842], ll: [34.052252, -118.241047], note: "map-tool corner (0,1842)" }
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["Temple Street"],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
   rows: [
     {
-      kind: "state",
-      asWritten: "MARKET ST",
-      street: "Aliso Street",
-      from: { px: [819, 1584] },
-      to: { px: [403, 1323] },
-      basis: "alignment",
-      confirmed: false,
-      note: "The supplied modern Aliso Street centerline follows the southern boundary roadway lettered MARKET ST."
+      "kind": "state",
+      "asWritten": "Market St",
+      "street": "Temple Street",
+      "from": null,
+      "to": null,
+      "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
+      "name": "market-st"
     }
   ]
 };

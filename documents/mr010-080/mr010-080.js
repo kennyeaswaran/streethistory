@@ -26,9 +26,9 @@ module.exports = {
     image: "documents/mr010-080/mr010-080-100dpi.png",
     dpi: 100,
     points: [
-      { px: [0, 0], ll: [34.036912, -118.241833], note: "map-tool corner (0,0)" },
-      { px: [1737, 0], ll: [34.033137, -118.237294], note: "map-tool corner (1737,0)" },
-      { px: [0, 1108], ll: [34.034496, -118.244718], note: "map-tool corner (0,1108)" }
+      { px: [0, 0], ll: [34.038289, -118.241183], note: "map-tool corner (0,0)" },
+      { px: [1737, 0], ll: [34.032903, -118.234707], note: "map-tool corner (1737,0)" },
+      { px: [0, 1108], ll: [34.034841, -118.2453], note: "map-tool corner (0,1108)" }
     ]
   },
 

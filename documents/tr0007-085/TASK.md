@@ -1,8 +1,8 @@
 # Identify the streets on tr0007-085
 
+Plat of the Niosi Tract
 
-
-- **Date:** on 
+- **Date:** on 1903-06-09
 - **Sheet:** `tr0007-085-100dpi.png` (100 dpi; every pixel coordinate below is
   measured against this render)
 - **Alignment:** `tr0007-085-alignment.json` — control points mapping scan pixels
@@ -156,12 +156,48 @@ crossing inside, or give a point: `to: { px: [x, y] }`.
 off the sheet, give it as `date: { on: "1886-05" }` — or `after` / `before`
 for a range. Never write the string `"undefined"`.
 
-**Do not write a `name` field.** You are reading one sheet; `name` is a
-claim about which naming *lineage* a label belongs to, and that can only be
-decided against the whole corpus — whether this "Figueroa" is the same Figueroa
-as the one three blocks east, or a different street that spells alike. Put the
-ink in `asWritten` and leave identity to the human review step, which has the
-project's name list in front of it.
+**`name` comes last, and only from the candidate list** in the section
+"Assigning `name`" below — never from your own knowledge of Los Angeles, and
+never as an id you made up. Put the ink in `asWritten` first; when in any doubt
+about identity, leave `name` out and review will assign it.
+
+## Assigning `name` — LAST, and only from the list below
+
+Do this only after every row is written and its `kind`, `street`, extents
+and `asWritten` are settled. `name` is a claim about which naming *lineage* a
+label belongs to — whether this "Figueroa" is the same Figueroa as the one three
+blocks east, or a different street that spells alike — and one sheet cannot
+settle that. What CAN settle the easy cases is the rest of the corpus, and the
+part of it that bears on these streets is below: for each modern street, the
+entities that confirmed rows on other sheets have already placed on that
+street, or on a street it runs straight into, with the ink those sheets used.
+(The same list is in `tr0007-085-streets.json` under `nameCandidates`.)
+
+For a `state` row, set `name` to a candidate's id when **all** of these hold:
+
+1. the candidate is listed for that row's `street` (not for some other street);
+2. the row's `asWritten`, read as a name, is the same name as the candidate's
+   display form or one of its recorded ink forms — ignoring case, punctuation,
+   "St."/"Street"/"Ave."/"Avenue" and the like, and ordinal spellings
+   ("FIRST" = "1st"); a different word is a different name, however similar;
+3. no other candidate for that street also satisfies 2.
+
+Otherwise **leave `name` out** — including when two candidates both fit,
+when the ink is partly illegible, when the only match is on a street listed as
+a continuation rather than this one and the stretch does not actually reach
+that street, or when you are weighing it at all. A blank is cheap to fill in
+review; a wrong lineage is a false claim on the map. **Never invent an id**
+and never use one that is not in the list for that street: those fail the
+checker. Rows stay `confirmed: false` either way — a human still checks.
+
+### 8th Street
+
+- `eighth-street` — 8th Street: attested on 8th Street by another sheet; carries the street's present name; ink seen: “8TH ST”, “8TH STREET”, “8th St.”, “8th Street”, “CALLE 8a”, “EAST EIGHTH STREET”, “EIGHTH ST”, “EIGHTH ST.”, “EIGHTH STREET”, “Eighth St”, “Eighth St.”, “Eighth Street”, “new 8th Street” [11824, mr003-569, mr011-008, mr018-092, mr021-046, mr026-060, mr029-026, mr029-085, mr053-065, mr053-068, mr054-051, mr055-086, mr070-051, pm017-045, tr0005-156a, tr0007-085, tr0013-048, tr0105-001-p2, tr0141-011]
+
+### Stanford Avenue
+
+- `ruth-ave` — Ruth Avenue: attested on Stanford Avenue by another sheet; ink seen: “RUTH AVE.”, “RUTH AVENUE”, “Ruth Ave” [mr030-009-p2, mr030-009-p3, mr030-009-p4, mr030-009-p5, mr066-064, mr070-084, tr0005-156a, tr0007-085]
+- `stanford-ave` — Stanford Avenue: attested on Stanford Avenue by another sheet; carries the street's present name; ink seen: “STANFORD AVE.”, “STANFORD AVENUE”, “Stanford Ave.” [mr029-085, mr055-086, pm017-045, tr0005-156a]
 
 `asWritten` is verbatim ink, typos and abbreviations included — a string, or
 an array of them where the sheet letters the stretch more than once. `trace`

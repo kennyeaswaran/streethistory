@@ -12,58 +12,88 @@
     [808, 1637]
   ],
   "coverageLl": [
-    [34.053029, -118.239848],
-    [34.052793, -118.238371],
-    [34.054146, -118.238133],
-    [34.054726, -118.239291]
+    [34.053287, -118.239177],
+    [34.05351, -118.240014],
+    [34.052739, -118.240266],
+    [34.052335, -118.239643]
   ],
   "streets": [
     {
-      "name": "Aliso Street",
+      "name": "Temple Street",
       "runs": [
         {
           "px": [
-            [819, 1584],
-            [617, 1458],
-            [561, 1423],
-            [548, 1416],
-            [503, 1388],
-            [436, 1347],
-            [403, 1323]
+            [817, 1595],
+            [751, 1556],
+            [643, 1482],
+            [575, 1436],
+            [415, 1326],
+            [403, 1318]
           ],
           "ll": [
-            [34.0546, -118.239332],
-            [34.054269, -118.238771],
-            [34.054177, -118.238613],
-            [34.054158, -118.238579],
-            [34.054084, -118.238453],
-            [34.053976, -118.238266],
-            [34.053915, -118.238173]
+            [34.05239, -118.239616],
+            [34.052461, -118.239714],
+            [34.05259, -118.239871],
+            [34.052672, -118.23997],
+            [34.052864, -118.240203],
+            [34.052879, -118.24022]
           ]
         }
       ],
       "crossings": [
         {
-          "name": "Alameda Street",
-          "px": [322, 1277],
-          "ll": [34.053791, -118.237947],
-          "insideCoverage": false
-        },
-        {
-          "name": "Commercial Street",
-          "px": [322, 1277],
-          "ll": [34.053791, -118.237947],
-          "insideCoverage": false
-        },
-        {
-          "name": "Los Angeles Street",
-          "px": [913, 1675],
-          "ll": [34.054832, -118.239589],
-          "insideCoverage": false
+          "name": "Judge John Aiso Street",
+          "px": [751, 1556],
+          "ll": [34.052461, -118.239714],
+          "insideCoverage": true
         }
       ]
     }
   ],
-  "excludedAsSlivers": [],
-  "excludedAsOvershoot": []
+  "excludedAsSlivers": [
+    {
+      "name": "Judge John Aiso Street",
+      "metres": 7.3
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Temple Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "requena-street",
+          "display": "Requena Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet"
+          ],
+          "ink": [
+            "REQUENA STREET"
+          ],
+          "docs": [
+            "mr003-146-p2"
+          ]
+        },
+        {
+          "id": "temple",
+          "display": "Temple Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "TEMPLE STREET",
+            "Temple Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489"
+          ]
+        }
+      ]
+    }
+  ]
 }

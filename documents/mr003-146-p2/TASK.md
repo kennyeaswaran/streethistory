@@ -1,8 +1,8 @@
 # Identify the streets on mr003-146-p2
 
+Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher
 
-
-- **Date:** on 
+- **Date:** on 1876-02-11
 - **Sheet:** `mr003-146-p2-100dpi.png` (100 dpi; every pixel coordinate below is
   measured against this render)
 - **Alignment:** `mr003-146-p2-alignment.json` — control points mapping scan pixels
@@ -157,12 +157,52 @@ crossing inside, or give a point: `to: { px: [x, y] }`.
 off the sheet, give it as `date: { on: "1886-05" }` — or `after` / `before`
 for a range. Never write the string `"undefined"`.
 
-**Do not write a `name` field.** You are reading one sheet; `name` is a
-claim about which naming *lineage* a label belongs to, and that can only be
-decided against the whole corpus — whether this "Figueroa" is the same Figueroa
-as the one three blocks east, or a different street that spells alike. Put the
-ink in `asWritten` and leave identity to the human review step, which has the
-project's name list in front of it.
+**`name` comes last, and only from the candidate list** in the section
+"Assigning `name`" below — never from your own knowledge of Los Angeles, and
+never as an id you made up. Put the ink in `asWritten` first; when in any doubt
+about identity, leave `name` out and review will assign it.
+
+## Assigning `name` — LAST, and only from the list below
+
+Do this only after every row is written and its `kind`, `street`, extents
+and `asWritten` are settled. `name` is a claim about which naming *lineage* a
+label belongs to — whether this "Figueroa" is the same Figueroa as the one three
+blocks east, or a different street that spells alike — and one sheet cannot
+settle that. What CAN settle the easy cases is the rest of the corpus, and the
+part of it that bears on these streets is below: for each modern street, the
+entities that confirmed rows on other sheets have already placed on that
+street, or on a street it runs straight into, with the ink those sheets used.
+(The same list is in `mr003-146-p2-streets.json` under `nameCandidates`.)
+
+For a `state` row, set `name` to a candidate's id when **all** of these hold:
+
+1. the candidate is listed for that row's `street` (not for some other street);
+2. the row's `asWritten`, read as a name, is the same name as the candidate's
+   display form or one of its recorded ink forms — ignoring case, punctuation,
+   "St."/"Street"/"Ave."/"Avenue" and the like, and ordinal spellings
+   ("FIRST" = "1st"); a different word is a different name, however similar;
+3. no other candidate for that street also satisfies 2.
+
+Otherwise **leave `name` out** — including when two candidates both fit,
+when the ink is partly illegible, when the only match is on a street listed as
+a continuation rather than this one and the stretch does not actually reach
+that street, or when you are weighing it at all. A blank is cheap to fill in
+review; a wrong lineage is a false claim on the map. **Never invent an id**
+and never use one that is not in the list for that street: those fail the
+checker. Rows stay `confirmed: false` either way — a human still checks.
+
+### Judge John Aiso Street
+
+- `wilmington-street` — Wilmington Street: attested on Judge John Aiso Street by another sheet; ink seen: “WILMINGTON”, “Wilmington” [mr003-146-p1, mr003-146-p2, mr010-008]
+
+### Los Angeles Street
+
+- `los-angeles-street` — Los Angeles Street: attested on Los Angeles Street by another sheet; carries the street's present name; ink seen: “LOS ANGELES ST.”, “LOS ANGELES STREET”, “Los Angeles St.”, “Los Angeles Street” [12017, mr003-146-p2, mr005-005, mr005-110, mr006-378, mr011-063, mr012-026, mr029-026, mr053-016, mr053-063, tr0009-100a]
+
+### Temple Street
+
+- `requena-street` — Requena Street: attested on Temple Street by another sheet; ink seen: “REQUENA STREET” [mr003-146-p2]
+- `temple` — Temple Street: attested on Temple Street by another sheet; carries the street's present name; ink seen: “TEMPLE STREET”, “Temple Street” [12685, mr001-489]
 
 `asWritten` is verbatim ink, typos and abbreviations included — a string, or
 an array of them where the sheet letters the stretch more than once. `trace`

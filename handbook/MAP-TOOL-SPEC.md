@@ -224,6 +224,12 @@ popup offers:
   the run visits twice takes whichever visit covers more, and `gapExtents`
   writes such an end 5 m into the gap so it names one visit (verified on
   every document in the corpus: only MR001-489's accounting changes).
+- **Name candidates in the bundle** (`scanStreetAttestations` →
+  `nameCandidateTable`): per in-bounds street, entities from confirmed rows
+  on that street or on a `continuousStreets` neighbour (junction within
+  `NEAR_M` of the sheet), plus the unique entity carrying its present name;
+  written to `nameCandidates` in `<id>-streets.json` and as the "Assigning
+  `name`" section of TASK.md, which permits `name` only from that list.
 - **Opening a document resets the tool** — every per-document variable and
   header field, in one function (`resetDocumentState`), on every open path;
   a render opened while a different document is loaded is a new document. A

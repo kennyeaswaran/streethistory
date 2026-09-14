@@ -20,15 +20,15 @@ module.exports = {
   // not the sheet edge (MODEL-SPEC §4.4). SCAN PIXELS against alignment.image,
   // so a better alignment carries it along (§4.6).
   coverage: [
-    [66, 567], [281, 1183], [1071, 1286], [1043, 827]
+    [46, 518], [179, 1240], [1091, 1321], [1198, 698]
   ],
   alignment: {
     image: "documents/mr010-008/mr010-008-100dpi.png",
     dpi: 100,
     points: [
-      { px: [0, 0], ll: [34.053109, -118.241785], note: "map-tool corner (0,0)" },
-      { px: [1138, 0], ll: [34.052075, -118.238036], note: "map-tool corner (1138,0)" },
-      { px: [0, 1636], ll: [34.048613, -118.243567], note: "map-tool corner (0,1636)" }
+      { px: [0, 0], ll: [34.052419, -118.241791], note: "map-tool corner (0,0)" },
+      { px: [1138, 0], ll: [34.051731, -118.239295], note: "map-tool corner (1138,0)" },
+      { px: [0, 1636], ll: [34.049426, -118.242976], note: "map-tool corner (0,1636)" }
     ]
   },
 
@@ -37,8 +37,8 @@ module.exports = {
   // draws nothing there (MODEL-SPEC §4.4, §5.2).
   coverageExcept: [{"street":"Toriumi Plaza","from":"Astronaut Ellison S Onizuka Street","to":"1st Street"},{"street":"Toriumi Plaza","from":"Astronaut Ellison S Onizuka Street","to":"1st Street"},{"street":"Toriumi Plaza","from":"Astronaut Ellison S Onizuka Street","to":"1st Street"}],
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["1st Street","Astronaut Ellison S Onizuka Street","Judge John Aiso Street","San Pedro Street","Toriumi Plaza"],
 
   rows: [
     {
@@ -164,20 +164,48 @@ module.exports = {
       "note": "Added in review: the sheet covers this 32 m and draws no street along it."
     },
     {
-      "kind": "vanished",
-      "asWritten": "Wilmington Street",
-      "trace": [
-        [
-          671,
-          871
-        ],
-        [
-          788,
-          610
-        ]
-      ],
+      "kind": "state",
+      "asWritten": "Wilmington",
+      "street": "Judge John Aiso Street",
+      "from": null,
+      "to": "1st Street",
       "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
       "name": "wilmington-street"
+    },
+    {
+      "kind": "absent",
+      "street": "Toriumi Plaza",
+      "from": "1st Street",
+      "to": null,
+      "note": "Added in review: the sheet covers this 30 m and draws no street along it."
+    },
+    {
+      "kind": "absent",
+      "street": "Toriumi Plaza",
+      "from": "Astronaut Ellison S Onizuka Street",
+      "to": {
+        "px": [
+          579,
+          601
+        ]
+      },
+      "note": "Added in review: the sheet covers this 46 m and draws no street along it."
+    },
+    {
+      "kind": "state",
+      "asWritten": "First Street",
+      "street": "1st Street",
+      "from": {
+        "px": [
+          973,
+          992
+        ]
+      },
+      "to": null,
+      "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
+      "name": "first-street"
     }
   ]
 };

@@ -1,8 +1,8 @@
 # Identify the streets on mr010-008
 
+Subdivision of the Garden of J. Murat
 
-
-- **Date:** on 
+- **Date:** on 1868-06
 - **Sheet:** `mr010-008-100dpi.png` (100 dpi; every pixel coordinate below is
   measured against this render)
 - **Alignment:** `mr010-008-alignment.json` — control points mapping scan pixels
@@ -21,11 +21,10 @@ For each modern street listed below, decide what this sheet shows along it:
 the plat's own label for that corridor, or that the sheet shows nothing there.
 Then list any street DRAWN on the plat that matches none of them.
 
-Modern streets inside the coverage polygon (6):
+Modern streets inside the coverage polygon (5):
 
 - 1st Street
 - Astronaut Ellison S Onizuka Street
-- Japanese Village Plaza Mall
 - Judge John Aiso Street
 - San Pedro Street
 - Toriumi Plaza
@@ -160,12 +159,61 @@ crossing inside, or give a point: `to: { px: [x, y] }`.
 off the sheet, give it as `date: { on: "1886-05" }` — or `after` / `before`
 for a range. Never write the string `"undefined"`.
 
-**Do not write a `name` field.** You are reading one sheet; `name` is a
-claim about which naming *lineage* a label belongs to, and that can only be
-decided against the whole corpus — whether this "Figueroa" is the same Figueroa
-as the one three blocks east, or a different street that spells alike. Put the
-ink in `asWritten` and leave identity to the human review step, which has the
-project's name list in front of it.
+**`name` comes last, and only from the candidate list** in the section
+"Assigning `name`" below — never from your own knowledge of Los Angeles, and
+never as an id you made up. Put the ink in `asWritten` first; when in any doubt
+about identity, leave `name` out and review will assign it.
+
+## Assigning `name` — LAST, and only from the list below
+
+Do this only after every row is written and its `kind`, `street`, extents
+and `asWritten` are settled. `name` is a claim about which naming *lineage* a
+label belongs to — whether this "Figueroa" is the same Figueroa as the one three
+blocks east, or a different street that spells alike — and one sheet cannot
+settle that. What CAN settle the easy cases is the rest of the corpus, and the
+part of it that bears on these streets is below: for each modern street, the
+entities that confirmed rows on other sheets have already placed on that
+street, or on a street it runs straight into, with the ink those sheets used.
+(The same list is in `mr010-008-streets.json` under `nameCandidates`.)
+
+For a `state` row, set `name` to a candidate's id when **all** of these hold:
+
+1. the candidate is listed for that row's `street` (not for some other street);
+2. the row's `asWritten`, read as a name, is the same name as the candidate's
+   display form or one of its recorded ink forms — ignoring case, punctuation,
+   "St."/"Street"/"Ave."/"Avenue" and the like, and ordinal spellings
+   ("FIRST" = "1st"); a different word is a different name, however similar;
+3. no other candidate for that street also satisfies 2.
+
+Otherwise **leave `name` out** — including when two candidates both fit,
+when the ink is partly illegible, when the only match is on a street listed as
+a continuation rather than this one and the stretch does not actually reach
+that street, or when you are weighing it at all. A blank is cheap to fill in
+review; a wrong lineage is a false claim on the map. **Never invent an id**
+and never use one that is not in the list for that street: those fail the
+checker. Rows stay `confirmed: false` either way — a human still checks.
+
+### 1st Street
+
+- `first-street` — 1st Street: attested on 1st Street by another sheet; carries the street's present name; ink seen: “1ST ST”, “1ST STREET”, “1st ST”, “CALLE 1a”, “FIRST ST”, “FIRST STREET”, “FIRST STREET.”, “First Street” [12685, mr001-489, mr002-092-p1, mr003-060-p1, mr003-146-p1, mr005-307-a, mr010-008, mr053-069, mr053-071, tr0885-030-p2, tr1339-069-p3]
+
+### Astronaut Ellison S Onizuka Street
+
+- `san-pedro` — San Pedro Street: attested on Astronaut Ellison S Onizuka Street by another sheet; ink seen: “San Pedro St.” [mr010-008]
+
+### Judge John Aiso Street (runs straight into San Pedro Street)
+
+- `wilmington-street` — Wilmington Street: attested on Judge John Aiso Street by another sheet; ink seen: “WILMINGTON” [mr003-146-p2]
+- `san-pedro` — San Pedro Street: attested on San Pedro Street, which Judge John Aiso Street runs straight into; ink seen: “SAN PEDRO ST”, “SAN PEDRO STREET”, “San Pedro Ave”, “San Pedro St.”, “San Pedro Street” [12017, mr005-005, mr005-307-b, mr006-039, mr006-378, mr011-008, mr012-064, mr014-034, mr030-009-p2, mr030-009-p3, mr030-009-p4, mr030-009-p5, mr053-065, mr066-064, tr0013-048, tr0938-051-p3]
+
+### San Pedro Street (runs straight into Judge John Aiso Street)
+
+- `san-pedro` — San Pedro Street: attested on San Pedro Street by another sheet; carries the street's present name; ink seen: “SAN PEDRO ST”, “SAN PEDRO STREET”, “San Pedro Ave”, “San Pedro St.”, “San Pedro Street” [12017, mr005-005, mr005-307-b, mr006-039, mr006-378, mr011-008, mr012-064, mr014-034, mr030-009-p2, mr030-009-p3, mr030-009-p4, mr030-009-p5, mr053-065, mr066-064, tr0013-048, tr0938-051-p3]
+- `wilmington-street` — Wilmington Street: attested on Judge John Aiso Street, which San Pedro Street runs straight into; ink seen: “WILMINGTON” [mr003-146-p2]
+
+### Toriumi Plaza
+
+- no entity attested here yet — leave `name` out
 
 `asWritten` is verbatim ink, typos and abbreviations included — a string, or
 an array of them where the sheet letters the stretch more than once. `trace`

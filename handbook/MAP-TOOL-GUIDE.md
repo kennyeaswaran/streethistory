@@ -578,6 +578,26 @@ false historical claim, which is why the tool will not choose for you. The
 panel lists what has been dropped, with an undo, and `check-model.js` refuses a
 document that both excludes a street and carries rows for it.
 
+### The AI pass and `name`
+
+The brief used to forbid the pass from writing `name` at all. Now Save reads
+every other document in the folder and puts into the bundle — as a section of
+`TASK.md` and as `nameCandidates` in `<id>-streets.json` — the entities that
+*confirmed* rows elsewhere have placed on each modern street in coverage, on a
+street it runs straight into (end to end, same bearing, at a junction within
+150 m of the sheet), or that carry the street's present name (when exactly
+one entity does). The pass may set `name` only to an id from that street's
+list, only after every row is otherwise finished, and only when the ink reads
+as the same name as that candidate's display form or recorded ink and no other
+candidate fits; otherwise it leaves `name` out. Nothing off the list is ever
+allowed, so a wrong guess can only be a wrong pick among nearby lineages,
+which review sees as a named row like any other. Rows still come back
+`confirmed: false`. Unconfirmed rows never seed the list, so one guess cannot
+propagate into the next sheet's list until a human has confirmed it.
+
+If the project folder is not connected at save time there is no list, and
+the brief forbids `name` as before.
+
 ### If the tool looks stale
 
 `utilities/start-map-tools.command` now serves everything with `Cache-Control:

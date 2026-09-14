@@ -27,14 +27,14 @@ module.exports = {
     image: "documents/mr003-146-p2/mr003-146-p2-100dpi.png",
     dpi: 100,
     points: [
-      { px: [0, 0], ll: [34.052542, -118.243029], note: "map-tool corner (0,0)" },
-      { px: [1115, 0], ll: [34.055071, -118.241973], note: "map-tool corner (1115,0)" },
-      { px: [0, 1771], ll: [34.051142, -118.238213], note: "map-tool corner (0,1771)" }
+      { px: [0, 0], ll: [34.052546, -118.242881], note: "map-tool corner (0,0)" },
+      { px: [1115, 0], ll: [34.054937, -118.241882], note: "map-tool corner (1115,0)" },
+      { px: [0, 1771], ll: [34.051223, -118.238329], note: "map-tool corner (0,1771)" }
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["Judge John Aiso Street","Los Angeles Street","Temple Street"],
 
   rows: [
     {

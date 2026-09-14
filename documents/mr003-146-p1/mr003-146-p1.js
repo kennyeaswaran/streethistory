@@ -27,14 +27,14 @@ module.exports = {
     image: "documents/mr003-146-p1/mr003-146-p1-100dpi.png",
     dpi: 100,
     points: [
-      { px: [0, 0], ll: [34.050452, -118.243382], note: "map-tool corner (0,0)" },
-      { px: [1123, 0], ll: [34.052843, -118.242593], note: "map-tool corner (1123,0)" },
-      { px: [0, 1736], ll: [34.049434, -118.238952], note: "map-tool corner (0,1736)" }
+      { px: [0, 0], ll: [34.050427, -118.243447], note: "map-tool corner (0,0)" },
+      { px: [1123, 0], ll: [34.052899, -118.242631], note: "map-tool corner (1123,0)" },
+      { px: [0, 1736], ll: [34.049374, -118.238865], note: "map-tool corner (0,1736)" }
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["1st Street","Judge John Aiso Street","Toriumi Plaza"],
 
   rows: [
     {
@@ -70,8 +70,7 @@ module.exports = {
       "to": "1st Street",
       "basis": "alignment",
       "note": "Modern Judge John Aiso Street follows the roadway lettered WILMINGTON from the page edge south to FIRST STREET.",
-      "name": "wilmington-street",
-      "confirmed": false
+      "name": "wilmington-street"
     },
     {
       "kind": "absent",

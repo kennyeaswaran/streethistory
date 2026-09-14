@@ -36,10 +36,10 @@ module.exports = {
   // The polygon strays onto these; the document does not inform about them.
   // NOT the same as a absent row, which says the sheet covers the ground and
   // draws nothing there (MODEL-SPEC §4.4, §5.2).
-  coverageExcept: [{"street":"8th Street","from":null,"to":"Francisco Street"},{"street":"Fremont Avenue","from":"6th Street","to":"6th Street"},{"street":"Fremont Avenue","from":null,"to":"6th Street"},{"street":"Harbor Freeway","from":null,"to":"7th Street"},{"street":"Harbor Freeway","from":null,"to":"7th Street"},{"street":"Harbor Freeway","from":null,"to":"7th Street"},{"street":"Harbor Freeway","from":null,"to":"7th Street"}],
+  coverageExcept: [{"street":"8th Street","from":null,"to":"Francisco Street"},{"street":"Fremont Avenue","from":null,"to":"6th Street"}],
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["5th Street","6th Street","7th Street","8th Place","8th Street","9th Street","Beaudry Avenue","Figueroa Street","Francisco Street","Fremont Avenue","Harbor Freeway","James M Wood Boulevard","Saint Paul Avenue","Wilshire Boulevard"],
 
   rows: [
     {
@@ -256,7 +256,7 @@ module.exports = {
           529
         ]
       },
-      "note": "Both freeway traces cut diagonally through the mapped parcels and orchards; no historical corridor tracks them."
+      "note": "One of the freeway's two carriageways; both cut diagonally through the mapped parcels and orchards, and no historical corridor tracks either."
     },
     {
       "kind": "state",
@@ -385,23 +385,19 @@ module.exports = {
     {
       "kind": "absent",
       "street": "Harbor Freeway",
-      "from": null,
-      "to": "7th Street",
-      "note": "Added in review: the sheet covers this 39 m and draws no street along it."
-    },
-    {
-      "kind": "absent",
-      "street": "Harbor Freeway",
-      "from": null,
-      "to": "7th Street",
-      "note": "Added in review: the sheet covers this 39 m and draws no street along it."
-    },
-    {
-      "kind": "absent",
-      "street": "Harbor Freeway",
-      "from": null,
-      "to": "7th Street",
-      "note": "Added in review: the sheet covers this 39 m and draws no street along it."
+      "from": {
+        "px": [
+          881,
+          542
+        ]
+      },
+      "to": {
+        "px": [
+          1545,
+          708
+        ]
+      },
+      "note": "The freeway's other carriageway; the sheet covers this ground and draws no roadway along it."
     }
   ]
 };

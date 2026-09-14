@@ -1310,6 +1310,58 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("it explains a stretch lettered twice", /ONE row/.test(task) &&
        /CALLE DE LAS CHAPULES/.test(task));
     ok("…as an array, not a slash", /asWritten: \["/.test(task));
+
+    // With no corpus in view the brief forbids `name` outright.
+    ok("without a candidate table it forbids `name`",
+       /Leave `name` out of every row/.test(task) && !/## Assigning `name` — LAST/.test(task));
+    ok("…and the bundle carries no candidates",
+       !JSON.parse(await page.evaluate(() => streetsJsonText("mr066-035", null))).nameCandidates);
+
+    console.log("name candidates from the rest of the corpus")
+    {
+      // mr066-035 is the benchmark: its "Third St" is modern Miramar. Build
+      // the attestation table by hand — the browser cannot read the folder
+      // here — and check what the bundle makes of it.
+      const r = await page.evaluate(() => {
+        const rec = (docs, forms) => ({ docs: new Set(docs), forms: new Set(forms) });
+        const att = new Map([
+          ["3rd Street", new Map([["third-street", rec(["mr053-069"], ["3RD ST."])],
+                                  ["arnold", rec(["mr066-035"], ["ARNOLD ST."])]])],
+          ["Beverly Boulevard", new Map([["diamond-street", rec(["mr006-138"], ["Diamond Street"])]])],
+        ]);
+        const t = nameCandidateTable(att);
+        const by = Object.fromEntries(t.map(x => [x.street, x]));
+        const task = taskMarkdown("mr066-035", t);
+        const json = JSON.parse(streetsJsonText("mr066-035", t));
+        return { streets: t.map(x => x.street),
+                 third: by["3rd Street"], miramar: by["Miramar Street"],
+                 first: t.find(x => /1st Street/.test(x.street)),
+                 anyCont: t.some(x => x.continuesInto.length),
+                 task, json: json.nameCandidates && json.nameCandidates.length };
+      });
+      ok("one entry per in-bounds street", r.streets.length >= 3 && r.json === r.streets.length,
+         `${r.streets.length} vs ${r.json}`);
+      const ids = c => (c ? c.candidates : []).map(x => x.id);
+      ok("a street lists the entities attested on it",
+         ids(r.third).includes("third-street") && ids(r.third).includes("arnold"), JSON.stringify(ids(r.third)));
+      ok("…and the entity carrying its present name",
+         r.third.candidates.find(x => x.id === "third-street").why.some(w => /present name/.test(w)));
+      ok("…with the ink each sheet used",
+         r.third.candidates.find(x => x.id === "arnold").ink.includes("ARNOLD ST."));
+      ok("Miramar runs straight into 3rd", r.miramar && r.miramar.continuesInto.includes("3rd Street"),
+         JSON.stringify(r.miramar && r.miramar.continuesInto));
+      ok("…so 3rd's entities are offered on Miramar, saying why",
+         ids(r.miramar).includes("third-street") &&
+         r.miramar.candidates.find(x => x.id === "third-street").why.some(w => /runs straight into/.test(w)));
+      ok("a junction far from the sheet does not count",
+         !ids(r.first).includes("diamond-street") && !(r.first && r.first.continuesInto.includes("Beverly Boulevard")),
+         JSON.stringify(r.first && r.first.continuesInto));
+      ok("the brief tells the pass to assign `name` last, from the list only",
+         /## Assigning `name` — LAST/.test(r.task) && /Never invent an id/.test(r.task) &&
+         /### Miramar Street/.test(r.task) && /`arnold`/.test(r.task));
+      ok("…and to leave it blank when two candidates fit", /two candidates both fit/.test(r.task));
+      ok("…and no longer forbids it outright", !/Do not write a `name` field/.test(r.task));
+    }
     ok("it still fixes which end is `from`", /`from` is the \*\*west\*\* end/.test(task));
     ok("…and still warns about null", /`null` is almost never what you want/.test(task));
     // The sweep is the strongest claim in the model — that this document's

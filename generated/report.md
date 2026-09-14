@@ -2,9 +2,9 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 272; entries: 643
-- Stub entities minted from OSM (unresearched): 207
-- Curated entities: 122
+- Streets: 272; entries: 690
+- Stub entities minted from OSM (unresearched): 200
+- Curated entities: 143
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
 ## Ambiguous OSM binds (NOT bound — fix by adding extents or disambiguation)
@@ -18,6 +18,7 @@
 - mr001-489: street not in geometry: West Bank Plaza at The Broad
 - mr001-489: cross-street not on Grand Avenue: West Bank Plaza at The Broad
 - mr001-489: cross-street not on Grand Avenue: West Bank Plaza at The Broad
+- mr010-008: row on Japanese Village Plaza Mall — the street does not enter this document's coverage at all
 
 ## Partially swept documents (no negative inference contributed)
 - dnla-1924-01-04: sweptFor = []
@@ -201,23 +202,41 @@
 - min-1896-09-21: sweptFor = []
 - mr003-146-p1: sweptFor = []
 - mr003-146-p2: sweptFor = []
+- mr003-569: sweptFor = []
 - mr010-008: sweptFor = []
+- mr010-080: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
+- tr0007-085: sweptFor = []
+- tr0013-048: sweptFor = []
 - tr0020-196b: sweptFor = []
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
 - myrtle: "Wall Street" ×1
 - georgia-east: "Georgie Street." ×1
+- sixth-street: "SIXTH STR." ×1
+- seventh-street: "SEVENTH STR." ×1
+- pearl: "PEARL STR." ×1
+- flower: "FLOWER STR." ×1
 - first-street: "FIRST ST" ×2
 - guadalupe: "GUADALUPE ST" ×2
 - georgia-east: "GEORGIA ST" ×2
 - sixth-street: "Sixth St Extension." ×1
 - fifth-street: "Fifth St. (Extension)" ×1
+- sixth-street: "6TH ST" ×2
+- seventh-street: "SEVENTH ST" ×1
+- ruby-st: "RUBY ST" ×1
+- eighth-street: "EIGHTH ST" ×2
+- pearl: "PEARL ST" ×1
+- moore-st: "MOORE ST" ×1
+- ninth-street: "NINTH ST" ×1
+- orange-st-wilshire: "ORANGE ST" ×1
 - sixth-street: "proposed line of Sixth Street." ×1
+- wolfskill-ave: "Wolfskill St." ×1
 - huber-st: "HUBER ST." ×1
 - alameda-st: "ALAMEDA ST" ×1
 - hewitt: "HEWITT ST" ×1
 - ninth-street: "Ninth Street Extension" ×1
+- eighth-street: "new 8th Street" ×1
 - san-pedro: "San Pedro Ave" ×4
 - omar-ave: "Omar Ave" ×1
 - winston-st: "WINSTON ST" ×1
@@ -242,7 +261,6 @@
 - fifth-street: "CALLE 5a" ×1
 - fifth-street: "5TH ST" ×1
 - sixth-street: "CALLE 6a" ×1
-- sixth-street: "6TH ST" ×1
 - seventh-street: "CALLE 7a" ×1
 - seventh-street: "7th ST" ×1
 - eighth-street: "CALLE 8a" ×1
@@ -273,16 +291,23 @@
 - bull: "CALLE DEL TORO" ×1
 - high-street-chinatown: "HIGH ST" ×1
 - hornet: "HORNET ST." ×2
-- short-street-chavez: "C CORTA" ×1
 - short-street-chavez: "SHORT ST" ×1
 - college: "CALLE DEL COLEGIO" ×1
 - college: "COLLEGE ST" ×1
+- stanford-ave: "STANFORD AVE." ×1
 - arnold: "ARNOLD ST." ×1
 - third-street: "THIRD ST." ×1
 - bixel: "BIXEL ST" ×1
 - figueroa-gov: "FIGUEROA ST." ×1
-- sixth-street: "SIXTH ST." ×1
+- towne-ave: "TOWNE AVE" ×2
+- sixth-street: "SIXTH ST." ×2
+- grand-ave: "GRAND AV." ×1
+- eighth-street: "EIGHTH ST." ×1
+- ruth-ave: "RUTH AVE." ×2
+- towne-ave: "TOWNE AVE." ×2
 - seventh-street: "SEVENTH ST." ×1
+- crocker-street: "CROCKER ST" ×1
+- san-pedro: "SAN PEDRO ST" ×1
 - second-street: "W. 2ND ST." ×1
 - crown-hill-ave: "CROWN HILL AVE." ×3
 - farmer: "FARMER ST." ×1
@@ -295,10 +320,20 @@ Traced through a document alignment; approximate to roughly a street width.
 - **Grasshopper Street** (chapules) — 2 points, from 12685
 - **Flower Street** (flower) — 2 points, from 12685
 - **Court House Street** (court-house-street) — 2 points, from 12685
+- **Sixth St** (sixth-street) — 2 points, from mr001-462
+- **Hope St** (hope) — 2 points, from mr001-462
+- **Beaudry St** (beaudry-st) — 2 points, from mr001-462
 - **Messer STREET.** (messer-street) — 2 points, from mr002-092-p1
+- **PARK LANE** (park-lane) — 2 points, from mr003-016
 - **GAREY STREET** (garey) — 2 points, from mr003-060-p1
+- **(unlettered)** — 2 points, from mr003-146-p1
 - **Commercial Street** (commercial-street) — 3 points, from mr003-146-p2
 - **Wilmington Street** (wilmington-street) — 2 points, from mr003-146-p2
+- **MOORE ST** (moore-st) — 2 points, from mr003-569
+- **FLORIDA ST** (florida-st) — 2 points, from mr003-569
+- **LOOMIS ST** (loomis-st) — 2 points, from mr003-569
+- **WARD ST** (ward-st) — 2 points, from mr003-569
+- **(unlettered)** — 2 points, from mr003-569
 - **FLOWER STREET** (flower) — 2 points, from mr005-307-a
 - **Council Street** (council-street) — 2 points, from mr006-138
 - **Waters Street** (waters-street) — 2 points, from mr006-138
@@ -306,7 +341,6 @@ Traced through a document alignment; approximate to roughly a street width.
 - **ALEXANDER LANE** (alexander-lane) — 2 points, from mr007-021
 - **CENTERBROOK LANE** (centerbrook-lane) — 2 points, from mr007-021
 - **CATSBY LANE** (catesby-lane) — 2 points, from mr007-021
-- **Wilmington Street** (wilmington-street) — 2 points, from mr010-008
 - **Willow St** (willow) — 2 points, from mr011-042
 - **Mesquit St** (mesquit) — 2 points, from mr011-042
 - **Fourth St** (fourth-street) — 2 points, from mr030-009-p4
@@ -326,7 +360,13 @@ Traced through a document alignment; approximate to roughly a street width.
 - **(unlettered)** — 2 points, from mr053-073
 - **(unlettered)** — 2 points, from mr053-073
 - **(unlettered)** — 2 points, from mr053-073
+- **PARKER DRIVE** (parker-drive) — 2 points, from mr070-051
 - **W. 3RD ST.** (third-street) — 2 points, from tr0015-166a-p2
+- **CERES AVENUE** (ceres-ave) — 2 points, from tr0105-001-p2
+- **MERCHANT STREET** (merchant-st) — 2 points, from tr0141-011
 - **Banning Street** (banning-street) — 3 points, from tr0145-062
 - **Turner Street** (turner-street) — 3 points, from tr0145-062
 - **Hewitt St** (hewitt) — 2 points, from tr0145-062
+- **KIP STREET** (kip-street) — 2 points, from tr0718-007-p2
+- **INGRAHAM STREET** (ingraham) — 2 points, from tr0718-007-p2
+- **WOODWORTH COURT** (woodworth-court) — 2 points, from tr0938-051-p3

@@ -6,16 +6,16 @@
   "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0013-048-alignment.json; px is the useful one for comparing against the scan.",
   "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
   "coveragePx": [
-    [267, 595],
-    [221, 1042],
-    [1005, 1097],
-    [1052, 618]
+    [215, 581],
+    [233, 1098],
+    [982, 1210],
+    [1057, 590]
   ],
   "coverageLl": [
-    [34.039466, -118.248515],
-    [34.038591, -118.249603],
-    [34.037054, -118.247709],
-    [34.037995, -118.246549]
+    [34.039591, -118.248618],
+    [34.03845, -118.249695],
+    [34.036852, -118.248013],
+    [34.038046, -118.246474]
   ],
   "streets": [
     {
@@ -23,9 +23,9 @@
       "runs": [
         {
           "px": [
-            [1011, 1040],
-            [985, 1037],
-            [952, 1035],
+            [1003, 1039],
+            [984, 1037],
+            [952, 1034],
             [726, 1016],
             [685, 1013],
             [546, 1005],
@@ -36,10 +36,10 @@
             [395, 984],
             [358, 967],
             [315, 941],
-            [236, 895]
+            [226, 888]
           ],
           "ll": [
-            [34.037166, -118.247571],
+            [34.037181, -118.247588],
             [34.037219, -118.247632],
             [34.037284, -118.24771],
             [34.037733, -118.24825],
@@ -52,7 +52,7 @@
             [34.0384, -118.249031],
             [34.038503, -118.249088],
             [34.038636, -118.249144],
-            [34.038879, -118.249245]
+            [34.038913, -118.249258]
           ]
         }
       ],
@@ -65,7 +65,7 @@
         },
         {
           "name": "San Julian Street",
-          "px": [17, 828],
+          "px": [18, 829],
           "ll": [34.039417, -118.249663],
           "insideCoverage": false
         },
@@ -88,14 +88,26 @@
       "runs": [
         {
           "px": [
-            [694, 608],
-            [686, 981],
+            [694, 586],
+            [685, 981],
             [685, 1013]
           ],
           "ll": [
-            [34.038666, -118.247446],
+            [34.038711, -118.247397],
             [34.03788, -118.248278],
             [34.037813, -118.248349]
+          ]
+        },
+        {
+          "px": [
+            [726, 1016],
+            [731, 1053],
+            [751, 1175]
+          ],
+          "ll": [
+            [34.037733, -118.24825],
+            [34.037644, -118.248315],
+            [34.037345, -118.248532]
           ]
         }
       ],
@@ -108,7 +120,7 @@
         },
         {
           "name": "Agatha Street",
-          "px": [697, 486],
+          "px": [697, 487],
           "ll": [34.03892, -118.247176],
           "insideCoverage": false
         }
@@ -119,24 +131,26 @@
       "runs": [
         {
           "px": [
-            [358, 1052],
-            [358, 1016],
+            [357, 1117],
+            [358, 1073],
+            [359, 1016],
             [358, 967],
             [359, 925],
             [362, 848],
             [363, 812],
-            [367, 710],
-            [370, 598]
+            [367, 711],
+            [370, 583]
           ],
           "ll": [
-            [34.038322, -118.249272],
+            [34.038185, -118.249416],
+            [34.038276, -118.24932],
             [34.038399, -118.249193],
             [34.038503, -118.249088],
             [34.038593, -118.248994],
             [34.038753, -118.24882],
             [34.038826, -118.24874],
             [34.039038, -118.24851],
-            [34.039273, -118.248258]
+            [34.039306, -118.248223]
           ]
         }
       ],
@@ -149,7 +163,7 @@
         },
         {
           "name": "Agatha Street",
-          "px": [373, 473],
+          "px": [373, 474],
           "ll": [34.039535, -118.247979],
           "insideCoverage": false
         }
@@ -160,12 +174,12 @@
       "runs": [
         {
           "px": [
-            [985, 616],
-            [985, 1005],
-            [985, 1037]
+            [985, 589],
+            [984, 1005],
+            [984, 1037]
           ],
           "ll": [
-            [34.03812, -118.246716],
+            [34.038178, -118.246657],
             [34.037288, -118.247562],
             [34.037219, -118.247632]
           ]
@@ -180,7 +194,7 @@
         },
         {
           "name": "Agatha Street",
-          "px": [986, 481],
+          "px": [985, 482],
           "ll": [34.038408, -118.246423],
           "insideCoverage": false
         }
@@ -188,5 +202,185 @@
     }
   ],
   "excludedAsSlivers": [],
-  "excludedAsOvershoot": []
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "8th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "eighth-street",
+          "display": "8th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "8TH ST",
+            "8TH STREET",
+            "8th St.",
+            "8th Street",
+            "CALLE 8a",
+            "EAST EIGHTH STREET",
+            "EIGHTH ST",
+            "EIGHTH ST.",
+            "EIGHTH STREET",
+            "Eighth St",
+            "Eighth St.",
+            "Eighth Street",
+            "new 8th Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-569",
+            "mr011-008",
+            "mr018-092",
+            "mr021-046",
+            "mr026-060",
+            "mr029-026",
+            "mr029-085",
+            "mr053-065",
+            "mr053-068",
+            "mr054-051",
+            "mr055-086",
+            "mr070-051",
+            "pm017-045",
+            "tr0005-156a",
+            "tr0007-085",
+            "tr0013-048",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Crocker Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "crocker-street",
+          "display": "Crocker Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Crocker Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CROCKER ST",
+            "CROCKER STREET"
+          ],
+          "docs": [
+            "mr066-064",
+            "tr0013-048"
+          ]
+        },
+        {
+          "id": "stanford-ave",
+          "display": "Stanford Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Crocker Street by another sheet"
+          ],
+          "ink": [
+            "Stanford Ave"
+          ],
+          "docs": [
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr030-009-p5"
+          ]
+        },
+        {
+          "id": "clark-ave",
+          "display": "Clark Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Crocker Street by another sheet"
+          ],
+          "ink": [
+            "Clark Ave."
+          ],
+          "docs": [
+            "mr053-065"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "San Pedro Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "san-pedro",
+          "display": "San Pedro Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on San Pedro Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "SAN PEDRO ST",
+            "SAN PEDRO STREET",
+            "San Pedro Ave",
+            "San Pedro St.",
+            "San Pedro Street"
+          ],
+          "docs": [
+            "12017",
+            "mr005-005",
+            "mr005-307-b",
+            "mr006-039",
+            "mr006-378",
+            "mr011-008",
+            "mr012-064",
+            "mr014-034",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-065",
+            "mr066-064",
+            "tr0013-048",
+            "tr0938-051-p3"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Towne Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "towne-ave",
+          "display": "Towne Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Towne Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "TOWNE AVE",
+            "TOWNE AVE.",
+            "TOWNE AVENUE",
+            "Towne Ave",
+            "Towne Ave."
+          ],
+          "docs": [
+            "mr029-085",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr066-064",
+            "mr070-084",
+            "tr0005-156a",
+            "tr0013-048"
+          ]
+        }
+      ]
+    }
+  ]
 }

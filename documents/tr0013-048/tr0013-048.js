@@ -20,7 +20,7 @@ module.exports = {
   // not the sheet edge (MODEL-SPEC §4.4). SCAN PIXELS against alignment.image,
   // so a better alignment carries it along (§4.6).
   coverage: [
-    [267, 595], [221, 1042], [1005, 1097], [1052, 618]
+    [215, 581], [233, 1098], [982, 1210], [1057, 590]
   ],
   alignment: {
     image: "documents/tr0013-048/tr0013-048-100dpi.png",
@@ -32,8 +32,8 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["8th Street","Crocker Street","San Pedro Street","Towne Avenue"],
 
   rows: [
     {
@@ -111,6 +111,16 @@ module.exports = {
       },
       "basis": "alignment",
       "name": "towne-ave"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Crocker St",
+      "street": "Crocker Street",
+      "from": "8th Street",
+      "to": null,
+      "basis": "alignment",
+      "note": "Added in review: the sheet draws and letters this stretch and the AI pass had no row for it.",
+      "name": "crocker-street"
     }
   ]
 };

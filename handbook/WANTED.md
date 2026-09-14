@@ -246,3 +246,36 @@ the next line starts a new paragraph; which of the two San Pasqual streets kept 
 name is simply not in the clipped column. Note corrected in the document.
 
 **LAH18990726 is faded ink, not a bad crop** (Kenny). Corrected in the document.
+
+## P2 — instruments for eight renamings dated only by secondary sources (added 2026-09-13)
+
+The 34-name batch of 2026-09-13 turned up eight renamings that this corpus can now
+*name* but cannot *source*. Each rests on Kines, Wikipedia or Los Angeles Revisited
+with no instrument behind it, and each has a month or a year to search on — which is
+exactly the shape Step 2b handles best (`handbook/RENAMING-SOURCES.md`). Remember
+Step 2d: **search the successor name first.**
+
+| renaming | date given | by whom | note |
+|---|---|---|---|
+| **Charity → Grand Avenue** | council vote **May 10, 1886**; official **Feb. 15, 1887** | Kines; Wikipedia | The best-dated of the eight and the oldest outstanding claim in this file. Kines quotes the *Los Angeles Daily Times* of May 11, 1886 — so the Herald of the same week should carry it too. |
+| **Ozier Lane → Winston Street** | 1887 | Wikipedia | We have the June 1887 ordinance being **postponed** (`documents/lah-1887-06-14`). The act that carried it is later in 1887. |
+| **Moore + Okey Streets → Francisco Street** | 1903 | Kines | Two streets in one act; Okey Street has no entity here. |
+| **Requena Street → Market Street** | July 1904 petition | Los Angeles Revisited | Petition from the North Main Street merchants, approved by the council. |
+| **Stephenson Avenue → Traction Avenue** | 1915 | Kines | No Stephenson Avenue entity yet. The *other* Stephenson Ave became Whittier Boulevard five years later. |
+| **Park Lane → Lebanon Street** | 1897 | Los Angeles Revisited | Pairs with Alexander Lane → Lebanon in 1917, already in `names.js`. No Lebanon Street entity yet. |
+| **Turner Street (First to Alameda) → Jackson Street** | May 1883 | **we have it** — `documents/lah-1883-05-13` | Listed only because our 1928 sheet still letters Turner; the conflict needs settling before a row. |
+| **Orange Street → Wilshire Boulevard** | Apr. 1924 | **we have it** — `documents/laevex-1924-04-01`, `lae-1924-04-12` | Fully documented; awaiting Kenny's confirmation, not more evidence. |
+
+## P3 — three identity questions from the same batch (added 2026-09-13)
+
+1. **Is the 1868 Beaudry Street the same street as modern Beaudry Avenue?** Our row on
+   the Beaudry Tract (`documents/mr001-462`) is `vanished`; modern Beaudry Avenue
+   survives to the west and north and is the cross street in
+   `documents/ord-1887-08-22`. Kines treats them as one; the geometry has not been
+   tested. A sheet covering both would settle it.
+2. **Which Kohler Street is on our sheets?** Kines says the original ran where 9th
+   Street now runs between San Pedro and Alameda; our four sightings (1887–1927) all
+   look like the current street.
+3. **When was Wilmington Street absorbed into North San Pedro Street?** Undocumented
+   anywhere checked. Also resolve the Judge John Aiso date: Kines says 1997,
+   Wikipedia 1999, and `names.js` currently says 1997 at `san-pedro`.

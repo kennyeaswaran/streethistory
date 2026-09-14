@@ -3508,7 +3508,109 @@ function documentStreets() {
   return { ring, streets, slivers: cov.slivers };
 }
 
-function streetsJsonText(id) {
+// WHICH NAME ENTITIES MIGHT A LABEL ON THIS STREET BELONG TO?
+//
+// TASK.md used to forbid the AI pass from writing `name` at all: identity is a
+// claim about a naming LINEAGE and needs the whole corpus in view, which one
+// sheet does not give. But the corpus IS in view at save time — every other
+// document is on disk — so the bundle can carry the part of it that matters:
+// for each modern street in coverage, the entities that confirmed rows on
+// OTHER sheets have already placed on that street, or on a street it runs
+// straight into, with the ink each used. Against that short list the
+// straightforward cases ("FIRST STREET" on 1st Street, where first-street is
+// attested on 1st Street by four other sheets) can be closed by the pass,
+// and everything else is still left blank for review. Two-block-apart
+// namesakes that merely spell alike never reach the list, because the list
+// is built from geometry, not from the name index.
+async function scanStreetAttestations() {
+  if (await useProjectDir(true) !== "ok") return null;
+  let docsDir;
+  try { docsDir = await projectDir.getDirectoryHandle("documents"); } catch (e) { return null; }
+  const out = new Map();                       // modern street -> id -> {docs:Set, forms:Set}
+  for await (const [name, h] of docsDir.entries()) {
+    if (h.kind !== "directory" || name.startsWith("_") || name.startsWith(".")) continue;
+    let doc = null;
+    try {
+      const text = await (await (await h.getFileHandle(`${name}.js`)).getFile()).text();
+      const body = text.slice(text.indexOf("module.exports")).replace(/^module\.exports\s*=\s*/, "");
+      doc = new Function("return " + body.replace(/;\s*$/, ""))();
+    } catch (e) { continue; }
+    if (loadedDoc && doc && doc.id === loadedDoc.id) doc = loadedDoc;
+    if (!doc || !Array.isArray(doc.rows)) continue;
+    for (const r of doc.rows) {
+      // Confirmed rows only: an unconfirmed name is somebody's guess, and a
+      // guess that seeds the next guess is how a wrong lineage spreads.
+      if (!r || !r.name || !r.street || r.confirmed === false) continue;
+      if (!out.has(r.street)) out.set(r.street, new Map());
+      const m = out.get(r.street);
+      if (!m.has(r.name)) m.set(r.name, { docs: new Set(), forms: new Set() });
+      m.get(r.name).docs.add(doc.id || name);
+      for (const f of asWrittenForms(r.asWritten)) m.get(r.name).forms.add(f);
+    }
+  }
+  return out;
+}
+// Streets that run straight into this one, end to end: a way of one ends
+// within CONTINUE_M of a way of the other ending, and the two point the same
+// way there. That is 3rd Street continuing as Miramar, not 3rd meeting Hill.
+// Only junctions NEAR THIS SHEET count: 1st Street also runs straight into
+// Beverly Boulevard, two miles west of a downtown plat, and what is attested
+// there says nothing about the ink here. `near` is the street's in-bounds
+// geometry; a junction further than NEAR_M from all of it is ignored.
+const CONTINUE_M = 20, CONTINUE_DEG = 35, NEAR_M = 150;
+function continuousStreets(name, near) {
+  const bearing = (a, b) => Math.atan2((b.lon - a.lon) * Math.cos(a.lat * Math.PI / 180), b.lat - a.lat);
+  const endsOf = w => [{ p: w.geometry[0], q: w.geometry[1] },
+                       { p: w.geometry[w.geometry.length - 1], q: w.geometry[w.geometry.length - 2] }];
+  const mine = ways.filter(w => w.name === name && w.geometry.length >= 2).flatMap(endsOf);
+  const found = new Set();
+  for (const w of ways) {
+    if (w.name === name || found.has(w.name) || w.geometry.length < 2) continue;
+    for (const e of endsOf(w)) for (const m of mine) {
+      if (G.metres(e.p, m.p) > CONTINUE_M) continue;
+      if (near && !near.some(p => G.metres(p, m.p) <= NEAR_M)) continue;
+      // both bearings taken INTO the junction, so a continuation is ~180° apart
+      let d = Math.abs(bearing(e.q, e.p) - bearing(m.p, m.q)) * 180 / Math.PI;
+      d = Math.abs(((d + 180) % 360) - 180);
+      if (d <= CONTINUE_DEG) { found.add(w.name); break; }
+    }
+  }
+  return [...found].sort();
+}
+// One entry per in-bounds street; null when the corpus could not be read.
+function nameCandidateTable(att) {
+  if (!att) return null;
+  const E = entities() || {};
+  const forms = e => (e.spellings || []).flatMap(sp => sp.forms || []);
+  const byCurrentName = {};                    // modern name -> [ids] whose display form is that name
+  for (const [id, e] of Object.entries(E))
+    for (const f of forms(e)) (byCurrentName[f] = byCurrentName[f] || []).push(id);
+  const cov = coverageStreets();
+  return cov.streets.map(({ name: street, runs }) => {
+    const cands = new Map();
+    const add = (id, why, rec) => {
+      if (!E[id]) return;
+      if (!cands.has(id)) cands.set(id, { id, display: displayForm(E[id]) || id,
+        pendingResearch: !!(E[id].pendingResearch || mintedEntities[id]), why: [], ink: new Set(), docs: new Set() });
+      const c = cands.get(id);
+      if (!c.why.includes(why)) c.why.push(why);
+      if (rec) { for (const f of rec.forms) c.ink.add(f); for (const d of rec.docs) c.docs.add(d); }
+    };
+    for (const [id, rec] of att.get(street) || []) add(id, `attested on ${street} by another sheet`, rec);
+    const cont = continuousStreets(street, runs.flat());
+    for (const other of cont)
+      for (const [id, rec] of att.get(other) || []) add(id, `attested on ${other}, which ${street} runs straight into`, rec);
+    // The street's present name, when exactly one entity carries it. Two
+    // (georgia-east / georgia-bell) is the ambiguity the generator refuses
+    // too, and it is not for the pass to break.
+    const cur = (byCurrentName[street] || []).filter((x, i, a) => a.indexOf(x) === i);
+    if (cur.length === 1) add(cur[0], `carries the street's present name`);
+    return { street, continuesInto: cont,
+             candidates: [...cands.values()].map(c => ({ ...c, ink: [...c.ink].sort(), docs: [...c.docs].sort() })) };
+  });
+}
+
+function streetsJsonText(id, candidates) {
   const d = documentStreets();
   if (!d) return "{}";
   const obj = {
@@ -3533,7 +3635,12 @@ function streetsJsonText(id) {
     excludedAsSlivers: d.slivers.map(s => ({ name: s.name, metres: +s.metres.toFixed(1) })),
     // Ground the polygon strays onto that the document does not inform about.
     // Do not write rows for these either — not even absent ones.
-    excludedAsOvershoot: coverageExcept.slice().sort()
+    excludedAsOvershoot: coverageExcept.slice().sort(),
+    // For each street above: the name entities the rest of the corpus has
+    // already placed on it, or on a street it runs straight into. The ONLY
+    // ids a row's `name` may be set to — see TASK.md, "Assigning name".
+    // Absent when the project folder was not connected at save time.
+    ...(candidates ? { nameCandidates: candidates } : {})
   };
   // Coordinate pairs on one line each; the default pretty-printer puts every
   // number on its own line and the file becomes unreadable.
@@ -3541,8 +3648,55 @@ function streetsJsonText(id) {
     .replace(/\[\s*(-?[\d.]+),\s*(-?[\d.]+)\s*\]/g, "[$1, $2]");
 }
 
-function taskMarkdown(id) {
+function taskMarkdown(id, candidates) {
   const streets = inBoundsNames();
+  const candBlock = !candidates ? `
+## Assigning \`name\`
+
+**Leave \`name\` out of every row.** This bundle was saved without the project
+folder connected, so it carries no list of the name entities already attested
+nearby, and identity cannot be judged from one sheet. Review assigns it.
+` : `
+## Assigning \`name\` — LAST, and only from the list below
+
+Do this only after every row is written and its \`kind\`, \`street\`, extents
+and \`asWritten\` are settled. \`name\` is a claim about which naming *lineage* a
+label belongs to — whether this "Figueroa" is the same Figueroa as the one three
+blocks east, or a different street that spells alike — and one sheet cannot
+settle that. What CAN settle the easy cases is the rest of the corpus, and the
+part of it that bears on these streets is below: for each modern street, the
+entities that confirmed rows on other sheets have already placed on that
+street, or on a street it runs straight into, with the ink those sheets used.
+(The same list is in \`${id}-streets.json\` under \`nameCandidates\`.)
+
+For a \`state\` row, set \`name\` to a candidate's id when **all** of these hold:
+
+1. the candidate is listed for that row's \`street\` (not for some other street);
+2. the row's \`asWritten\`, read as a name, is the same name as the candidate's
+   display form or one of its recorded ink forms — ignoring case, punctuation,
+   "St."/"Street"/"Ave."/"Avenue" and the like, and ordinal spellings
+   ("FIRST" = "1st"); a different word is a different name, however similar;
+3. no other candidate for that street also satisfies 2.
+
+Otherwise **leave \`name\` out** — including when two candidates both fit,
+when the ink is partly illegible, when the only match is on a street listed as
+a continuation rather than this one and the stretch does not actually reach
+that street, or when you are weighing it at all. A blank is cheap to fill in
+review; a wrong lineage is a false claim on the map. **Never invent an id**
+and never use one that is not in the list for that street: those fail the
+checker. Rows stay \`confirmed: false\` either way — a human still checks.
+
+${candidates.map(c => {
+  const head = `### ${c.street}` + (c.continuesInto.length
+    ? ` (runs straight into ${c.continuesInto.join(", ")})` : "");
+  if (!c.candidates.length) return head + "\n\n- no entity attested here yet — leave `name` out";
+  return head + "\n\n" + c.candidates.map(x =>
+    `- \`${x.id}\` — ${x.display}` + (x.pendingResearch ? " (unresearched)" : "") +
+    `: ${x.why.join("; ")}` +
+    (x.ink.length ? `; ink seen: ${x.ink.map(f => `“${f}”`).join(", ")}` : "") +
+    (x.docs.length ? ` [${x.docs.join(", ")}]` : "")).join("\n");
+}).join("\n\n")}
+`;
   const dk = $("f_dateKind").value, dv = $("f_date").value.trim();
   const missing = [];
   if (!$("f_title").value.trim()) missing.push("**title** — the sheet's full title, verbatim from its title block");
@@ -3708,13 +3862,11 @@ crossing inside, or give a point: \`to: { px: [x, y] }\`.
 off the sheet, give it as \`date: { on: "1886-05" }\` — or \`after\` / \`before\`
 for a range. Never write the string \`"undefined"\`.
 
-**Do not write a \`name\` field.** You are reading one sheet; \`name\` is a
-claim about which naming *lineage* a label belongs to, and that can only be
-decided against the whole corpus — whether this "Figueroa" is the same Figueroa
-as the one three blocks east, or a different street that spells alike. Put the
-ink in \`asWritten\` and leave identity to the human review step, which has the
-project's name list in front of it.
-
+**\`name\` comes last, and only from the candidate list** in the section
+"Assigning \`name\`" below — never from your own knowledge of Los Angeles, and
+never as an id you made up. Put the ink in \`asWritten\` first; when in any doubt
+about identity, leave \`name\` out and review will assign it.
+${candBlock}
 \`asWritten\` is verbatim ink, typos and abbreviations included — a string, or
 an array of them where the sheet letters the stretch more than once. \`trace\`
 is scan pixels against the render above.
@@ -3820,9 +3972,11 @@ $("save").onclick = async () => {
     } catch (e) { if (e.name !== "AbortError") setDirState(e.message, true); }
   }
 
-  const streetsText = streetsJsonText(id);
   let where;
   const dirState = await useProjectDir(true);
+  // Needs the folder: the candidates are read off every other document.
+  const candidates = dirState === "ok" ? nameCandidateTable(await scanStreetAttestations()) : null;
+  const streetsText = streetsJsonText(id, candidates);
   if (dirState === "bad") {
     alert(`Nothing was written.\n\nThe folder this tool had remembered is not the ` +
           `project root, so writing into it would have made a nested ` +
@@ -3835,7 +3989,7 @@ $("save").onclick = async () => {
       await writeInto(projectDir, ["documents", id], `${id}.js`, docText);
       await writeInto(projectDir, ["documents", id], `${id}-alignment.json`, alignText);
       await writeInto(projectDir, ["documents", id], `${id}-streets.json`, streetsText);
-      await writeInto(projectDir, ["documents", id], "TASK.md", taskMarkdown(id));
+      await writeInto(projectDir, ["documents", id], "TASK.md", taskMarkdown(id, candidates));
       where = `documents/${id}/ (${id}.js, ${id}-alignment.json, ${id}-streets.json, TASK.md)`;
       setDirState(`connected: <b>${projectDir.name}</b> — Save writes into documents/&lt;id&gt;/`);
     } catch (e) { alert("Could not write into the project folder: " + e.message); return; }
@@ -3843,7 +3997,7 @@ $("save").onclick = async () => {
     if (!await writeFile(`${id}.js`, docText)) return;
     await writeFile(alignName, alignText);
     await writeFile(`${id}-streets.json`, streetsText);
-    await writeFile("TASK.md", taskMarkdown(id));
+    await writeFile("TASK.md", taskMarkdown(id, candidates));
     where = `four files — move them all into documents/${id}/`;
   }
 
