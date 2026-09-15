@@ -172,12 +172,23 @@ the open web as a Wolfskill.
 
 ## The two things worth generalising
 
-**1. Rarity can argue *for* a person, not just against one.** About **forty girls in the
-entire United States** were named Gladys in 1881 (SSA; decade rank #151, against Ruth
-at #66). The playbook's rule said a rare name near the family would be strong evidence.
-The inverse turned out to be just as useful: in 1887 Gladys was an exotic Welsh literary
-import, not a generic pretty name — so Gladys Avenue is **more** likely to honour a real
-specific person, and the search moves to the developer's side rather than closing.
+**1. Rarity can argue *for* a person — but use ratios, never raw counts.** ⚠ This
+lesson was first written here in a form that was wrong, and the correction is the more
+useful lesson. It said *"about forty girls in the entire United States were named Gladys
+in 1881"*, from SSA baby-name data. **SSA counts Social Security card applicants, not
+births.** Anyone born in 1881 who died before about 1937 never appears — which is most
+of that cohort. The figure is a floor, not a population: Find a Grave alone indexes over
+two thousand Gladyses born 1862–1882, and 362 born 1874–1886 buried in California.
+
+What survives is the **ratio**, which is what SSA data is actually good for: Gladys
+ranks about #151 for the 1880s against Ruth at #66, then jumps to #43 in the 1890s. So
+Gladys was genuinely much less usual than Ruth in 1887 and became fashionable just
+afterwards. That is a real signal and still points the search at the developer's side —
+but it is far weaker than "forty in the country", and **not enough on its own to argue
+that a street must honour a specific person.**
+
+**Rule for this file: never quote an absolute SSA count for a pre-1900 birth year.
+Quote the rank, or the ratio between two names in the same year.**
 
 **2. A mixed tract is normal.** These five sheets carry Ruth (the owner's daughter),
 Ceres (a harvest goddess over an orchard), Poplar (a tree), Omar (untraced) and Gladys
@@ -206,3 +217,44 @@ ALTO XML is openly fetchable**: get the issue's file list from
 and it is how the Land Bureau advertisements were recovered. The *Herald* on
 Chronicling America (`sn85042460`, 1884–1890) is the same UCR digitisation as CDNC, so
 this is a second door into the corpus when CDNC is unreachable.
+
+
+## Can you enumerate a rare name across a whole census?
+
+Asked 2026-09-14, because if Gladys really had been a forty-person name the whole US
+list would have been checkable by hand. Tested rather than assumed:
+
+- **IPUMS USA full-count 1880** — names are **stripped** from the public files. The
+  restricted version does carry names and sub-county geography, but needs an
+  institutional affiliation, an Authorized Institutional Representative, a signed
+  agreement **and a fee**. Not a free path.
+  <https://usa.ipums.org/usa/full_count/restricted_full_count.shtml>
+- **FamilySearch** — the 1880 index is complete and searchable by given name with no
+  surname, and a **free** account opens it. This is the one workable route.
+- **Ancestry / Findmypast / MyHeritage** — paywalled. **Steve Morse's One-Step pages**
+  are query builders that post to those same sites, so they add no access. And
+  `1880census.com`, which advertises itself as FREE, is an affiliate link farm that
+  routes to Ancestry.
+- **Find a Grave** is fully open with no login and gives usable name-and-year counts —
+  but a burial place is not a residence, so a Gladys buried in Los Angeles in 1950 says
+  nothing about where she lived in 1880.
+
+**Verdict: technically doable with a free FamilySearch account, and probably not worth
+it.** Once the SSA correction above is applied the national pool is hundreds to low
+thousands, not dozens, so enumeration stops being a shortcut. The cheap version of the
+same question — *was there any Gladys in Los Angeles County in the 1880 census, or in
+1880s Los Angeles at all* — is the one to run, and it needs the same free account.
+
+### And the newspaper note from yesterday, corrected
+
+An agent reported that Chronicling America's *Los Angeles Herald* holdings skip
+1877–1889, leaving CDNC as the only source for the 1887 window. **That is wrong, and
+the correction matters because the earlier Land Bureau advertisements were recovered
+from Chronicling America.** The relevant LCCN is **`sn85042460`, the *Los Angeles Daily
+Herald*, digitised 1884-10-07 to 1890-03-22** (verified 2026-09-14). The agent had
+looked at `sn84038806`, `sn84025968` and `sn85042462` and concluded from their gaps
+that the run was absent.
+
+So: **check every LCCN a title has before concluding Chronicling America lacks a year.**
+A newspaper's runs are split across several LCCNs as the masthead changes, and the gap
+in one is usually covered by another.

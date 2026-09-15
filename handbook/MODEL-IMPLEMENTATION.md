@@ -163,14 +163,20 @@ are done (full corpus encoded; street-by-street diff accounted) and Kenny has
 approved. Work through this in order; most items have a ⚠ comment at the code
 site too.
 
-**A. Break the config bootstrap first (circularity trap).**
-`generate.js` currently reads `NEIGHBORHOODS`, `CATEGORIES` and
-`SIMILAR_PROJECTS` *out of the hand-authored `streets-data.js`* (top of the
-file, marked ⚠). Once `streets-data.js` is generated, that read becomes
-self-referential and breaks on any clean build. Move the three constants into
-an authored `site-config.js` (add the `unresearched` category there — the
-generator currently injects it), make `generate.js` read that, and have the
-generated file re-emit them unchanged for the map and checker.
+**~~A. Break the config bootstrap first (circularity trap).~~ Done 2026-09-15.**
+`NEIGHBORHOODS`, `CATEGORIES` and `SIMILAR_PROJECTS` now live in an authored
+**`site-config.js`** with a `module.exports` guard, so it loads three ways: a
+`<script src>` in `index.html` and `names-tool.html`, a `require` in
+`generate.js` / `check-model.js` / `check-data.js`, and re-emitted verbatim into
+`generated/streets-data.gen.js` for `preview.html`. `unresearched` is declared
+there, so nothing injects it any more, and the `new Function(src + "; return
+{...}")` trick is gone from every Node consumer.
+
+One thing worth keeping in mind for the rest of this checklist: `check-model.js`
+and `names-tool.html` both used to wrap that read in a `try/catch` that returned
+`null` on failure — which SILENTLY DISABLED the category check. For a migration
+that is the worst possible failure, because everything passes. Both now say so
+out loud instead. Copy that shape, not the old one.
 
 **B. Unify name aliasing (the 2nd Street Tunnel).**
 The map's `NAME_ALIASES` ("2nd Street Tunnel" → "2nd Street") exists only in

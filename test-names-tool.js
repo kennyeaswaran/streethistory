@@ -162,6 +162,8 @@ console.log("\nthe entity serialiser");
     namedAfterLink: "https://en.wikipedia.org/wiki/x",
     categories: ["person", "alive"],
     sources: [{ title: "S", url: "https://y/" }],
+    basis: "eponymous", rival: true, sharesWarrantWith: ["georgia-east"],
+    refuted: [{ candidate: "the state", killedBy: "the plat letters the family", kind: "namesake" }],
     disputed: false, note: "public", internalNote: "private",
     possiblySameAs: null, aliases: ["georgia"]
   };
@@ -170,11 +172,27 @@ console.log("\nthe entity serialiser");
   ok("a full entity survives the serialiser", JSON.stringify(back) === JSON.stringify(e));
   ok("it is indented for the file, not flattened", /\n    namedAfter:/.test(text));
 
+  // ★ This serializer shipped with a fixed field list that did not include
+  // `basis`, so every save silently stripped it from the entity being edited —
+  // and the tests above did not catch it, because the round-trip fixture had no
+  // basis and the whole-file tests only compare the entities they did NOT edit.
+  // These name the fields explicitly so a future omission fails loudly.
+  for (const f of ["basis", "rival", "sharesWarrantWith", "refuted"])
+    ok(`\`${f}\` survives the serialiser`, new RegExp(`\\n    ${f}:`).test(text));
+  ok("basis is written between sources and disputed",
+     text.indexOf("\n    basis:") > text.indexOf("\n    sources:") &&
+     text.indexOf("\n    basis:") < text.indexOf("\n    disputed:"));
+  ok("a refuted lead keeps its candidate, killedBy and kind",
+     JSON.stringify(back.refuted) === JSON.stringify(e.refuted));
+
   const bare = { spellings: [{ forms: ["X Street"] }], namedAfter: null, namedAfterLink: null,
-                 categories: ["unknown"], sources: [], disputed: false, note: null,
-                 possiblySameAs: null, aliases: [] };
+                 categories: ["unknown"], sources: [], basis: "none", searched: "partial",
+                 disputed: false, note: null, possiblySameAs: null, aliases: [] };
   const bt = renderEntity(bare);
   ok("internalNote is omitted rather than written as null", !/internalNote/.test(bt));
+  ok("searched is written when present", /\n    searched: "partial",/.test(bt));
+  ok("the absent companions are omitted rather than written as null",
+     !/rival|refuted|sharesWarrantWith/.test(bt));
   ok("a single simple spelling stays on one line", /spellings: \[\{ forms: \["X Street"\] \}\],/.test(bt));
   ok("an empty entity round-trips", JSON.stringify(new Function("return (" + bt + ")")()) === JSON.stringify(bare));
 
@@ -189,8 +207,8 @@ console.log("\nthe entity serialiser");
 console.log("\nvalidation");
 {
   const base = () => ({ spellings: [{ forms: ["A Street"] }], namedAfter: "x", namedAfterLink: null,
-                        categories: ["person"], sources: [], disputed: false, note: null,
-                        possiblySameAs: null, aliases: [] });
+                        categories: ["person"], sources: [], basis: "attested", disputed: false,
+                        note: null, possiblySameAs: null, aliases: [] });
   const errs = o => (validateAll(o).a || []).filter(x => x.kind === "err").map(x => x.msg);
   const wrns = o => (validateAll(o).a || []).filter(x => x.kind === "wrn").map(x => x.msg);
 
@@ -303,9 +321,11 @@ console.log("\nwhat a save writes");
   const promoteId = Object.keys(before.newNames)[0];
   const editId = "farmer", oldId = "third-street", newId = "third-street-downtown";
 
+  // Promotion is the moment an entity acquires a basis: the to-do has been
+  // researched, so the grade stops being optional and `searched` stops applying.
   const promoted = { ...before.newNames[promoteId], __file: "names",
-                     namedAfter: "somebody", categories: ["person"] };
-  delete promoted.sightings;
+                     namedAfter: "somebody", categories: ["person"], basis: "attested" };
+  delete promoted.sightings; delete promoted.searched;
   const renamed = { ...before.names[oldId], __file: "names",
                     aliases: [...(before.names[oldId].aliases || []), oldId] };
   const edit = { ...before.names[editId], __file: "names", note: "rewritten by the tool" };
@@ -329,6 +349,14 @@ console.log("\nwhat a save writes");
   ok("…and survives as an alias, so existing document rows still resolve",
      (after.names[newId].aliases || []).includes(oldId));
   ok("the ordinary edit landed", after.names[editId].note === "rewritten by the tool");
+  // ★ The regression that got through: the assertion below excludes the edited
+  // entity, so a serializer that dropped a field on exactly the entity you were
+  // editing passed every test in this file. Check the edited one too — in full,
+  // not just the field that was edited.
+  ok("…and the edited entity kept every other field it had",
+     JSON.stringify({ ...before.names[editId], note: "rewritten by the tool" }) ===
+     JSON.stringify(after.names[editId]));
+  ok("…including its basis", after.names[editId].basis === before.names[editId].basis);
   ok("every other entity is untouched",
      Object.keys(before.names).filter(k => ![editId, oldId].includes(k))
        .every(k => JSON.stringify(before.names[k]) === JSON.stringify(after.names[k])));

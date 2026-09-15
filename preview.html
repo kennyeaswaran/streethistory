@@ -121,6 +121,13 @@
 <div id="panel">
   <input id="searchBox" list="streetList" placeholder="Find a name, past or present…" autocomplete="off">
   <datalist id="streetList"></datalist>
+  <style>
+    #filters .facet { font-weight:600; margin:8px 0 2px; opacity:.75; font-size:11px;
+                      text-transform:uppercase; letter-spacing:.04em; }
+    #filters .facet:first-child { margin-top:2px; }
+    #filters .fcount { float:right; opacity:.55; font-variant-numeric:tabular-nums; }
+    #filters label.empty { opacity:.45; }
+  </style>
   <details id="filterBox" style="margin:6px 0">
     <summary style="cursor:pointer;font-weight:600">Highlight streets…</summary>
     <div id="filters"></div>
@@ -239,22 +246,58 @@ function resolveEntry(norm, lat, lng) {
 // ---------------------------------------------------------------
 // §8 scheme 2: single-select (radio, not checkboxes), folded under a caret
 // (the <details> wrapper in the panel). Clicking the active one clears it.
+//
+// ROADMAP §7: the vocabulary is a TREE, and picking a parent matches every
+// descendant — "Something living, or the land" finds the trees, the plants and
+// the animals without anyone tagging a street twice. The descendants come from
+// `ancestors`, baked into each entry by the generator, so this stays a lookup.
+//
+// Facet rows are HEADINGS, not choices: there is no useful answer to "show me
+// everything with a referent". Counts sit beside each label and the children of
+// a node are ordered by count, because a reader wants to know that "a tree" has
+// eight before deciding whether it is worth clicking.
 const filtersDiv = document.getElementById("filters");
-CATEGORIES.forEach(cat => {
-  const label = document.createElement("label");
-  const rb = document.createElement("input");
-  rb.type = "radio";
-  rb.name = "catFilter";
-  rb.value = cat.id;
-  rb.addEventListener("click", () => {
-    if (activeFilters.has(cat.id)) { rb.checked = false; activeFilters.clear(); }
-    else { activeFilters.clear(); activeFilters.add(cat.id); }
-    restyleAll();
-  });
-  label.appendChild(rb);
-  label.appendChild(document.createTextNode(" " + cat.label));
-  filtersDiv.appendChild(label);
-});
+(function buildFilters() {
+  const n = {};                                   // matches per category id
+  for (const [, v] of Object.entries(STREET_DATA))
+    for (const e of (v.entries || v.segments || []))
+      for (const c of new Set([...(e.categories || []), ...(e.ancestors || [])]))
+        n[c] = (n[c] || 0) + 1;
+
+  const kids = id => CATEGORIES.filter(c => c.parent === id)
+    .sort((a, b) => (n[b.id] || 0) - (n[a.id] || 0) || a.label.localeCompare(b.label));
+
+  const row = (cat, depth) => {
+    if (cat.facet) {
+      const h = document.createElement("div");
+      h.className = "facet";
+      h.textContent = cat.label;
+      filtersDiv.appendChild(h);
+    } else {
+      const label = document.createElement("label");
+      label.style.paddingLeft = (depth * 14) + "px";
+      const rb = document.createElement("input");
+      rb.type = "radio";
+      rb.name = "catFilter";
+      rb.value = cat.id;
+      rb.addEventListener("click", () => {
+        if (activeFilters.has(cat.id)) { rb.checked = false; activeFilters.clear(); }
+        else { activeFilters.clear(); activeFilters.add(cat.id); }
+        restyleAll();
+      });
+      label.appendChild(rb);
+      label.appendChild(document.createTextNode(" " + cat.label));
+      const c = document.createElement("span");
+      c.className = "fcount";
+      c.textContent = n[cat.id] || 0;
+      label.appendChild(c);
+      if (!n[cat.id]) label.classList.add("empty");
+      filtersDiv.appendChild(label);
+    }
+    kids(cat.id).forEach(k => row(k, cat.facet ? 0 : depth + 1));
+  };
+  CATEGORIES.filter(c => c.facet).forEach(f => row(f, 0));
+})();
 
 // ---------------------------------------------------------------
 // Similar-projects modal
@@ -296,9 +339,11 @@ function styleFor(street) {
   // Category filter: current match gold, former match violet, rest dimmed —
   // former categories come from the generated formerCategories field.
   if (activeFilters.size > 0) {
-    if (data && data.categories.some(c => activeFilters.has(c)))
+    // `ancestors` is what makes a parent match its descendants (ROADMAP §7).
+    if (data && [...(data.categories || []), ...(data.ancestors || [])].some(c => activeFilters.has(c)))
       return { color: COLOR_HIGHLIGHT, opacity: 1 };
-    if (data && (data.formerCategories || []).some(c => activeFilters.has(c)))
+    if (data && [...(data.formerCategories || []), ...(data.formerAncestors || [])]
+          .some(c => activeFilters.has(c)))
       return { color: COLOR_UNKNOWN, opacity: 1 };
     return { color: COLOR_DIMMED, opacity: 0.8 };
   }

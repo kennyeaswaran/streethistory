@@ -30,17 +30,14 @@ const { DOCUMENTS } = require("./documents/index.js");
 const OUT_DIR = path.join(__dirname, "generated");
 
 // ---------------------------------------------------------------------------
-// Config carried into the generated file.
-// ⚠ SWITCHOVER TRAP (see MODEL-IMPLEMENTATION.md, checklist item A): these
-// constants are read out of the HAND-AUTHORED streets-data.js. The moment
-// streets-data.js becomes generated output, this read is self-referential and
-// breaks on a clean build. Move NEIGHBORHOODS / CATEGORIES / SIMILAR_PROJECTS
-// into an authored site-config.js BEFORE flipping the output target.
-const srcData = fs.readFileSync(path.join(__dirname, "streets-data.js"), "utf8");
-const { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS } =
-  new Function(srcData + "; return { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS };")();
-const GEN_CATEGORIES = CATEGORIES.some(c => c.id === "unresearched") ? CATEGORIES
-  : CATEGORIES.concat([{ id: "unresearched", label: "Not yet researched" }]);
+// Config carried into the generated file. Authored in site-config.js, never
+// generated — the switchover trap this used to warn about is closed: reading
+// the vocabulary out of streets-data.js was self-referential the moment that
+// file became generated output (MODEL-IMPLEMENTATION checklist A, done
+// 2026-09-15). `unresearched` is declared there now too, so nothing is injected.
+const { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS, categoryAncestors } =
+  require(path.join(__dirname, "site-config.js"));
+const GEN_CATEGORIES = CATEGORIES;
 
 // ---------------------------------------------------------------------------
 // Dates. Partial ISO strings: "1875", "1894-03", "1875-05-19".
@@ -1335,6 +1332,15 @@ for (const streetName of [...streets.keys()].sort()) {
     // OR a documented respelling of the same one (Georgia Bell → Georgia).
     if (tl.length >= 2 && !cats.includes("renamed")) cats.push("renamed");
     entry.categories = cats;
+    // ANCESTORS (ROADMAP §7). Selecting "Something living, or the land" in the
+    // Highlight list has to find the trees, and nobody is going to tag a street
+    // `tree` AND `nature`. Bake the chain in here rather than shipping the tree
+    // walk to the map: it is computed once, it cannot drift from the vocabulary
+    // the rest of this file was generated against, and `preview.html` gets to
+    // stay a lookup. Facet rows are excluded — they are headings, not matches.
+    const anc = [...new Set(cats.flatMap(c => categoryAncestors(c)))]
+      .filter(c => !cats.includes(c));
+    if (anc.length) entry.ancestors = anc;
     // Categories of FORMER name entities on this ground, so the map can show
     // "formerly in this category" (violet) alongside current matches (§8) —
     // e.g. Miramar's ex-"3rd St" stretches under the numbered-streets filter.
@@ -1343,6 +1349,11 @@ for (const streetName of [...streets.keys()].sort()) {
       .flatMap(p => entities[p.entity].categories || [])
       .filter(c => c !== "unresearched"))];
     if (formerCats.length) entry.formerCategories = formerCats;
+    if (formerCats.length) {
+      const fanc = [...new Set(formerCats.flatMap(c => categoryAncestors(c)))]
+        .filter(c => !formerCats.includes(c));
+      if (fanc.length) entry.formerAncestors = fanc;
+    }
     entry.disputed = e ? !!e.disputed : false;
     entry.sources = sourcesFor(seg, cur ? cur.entity : null);
 

@@ -319,3 +319,19 @@ and Linda drives → Davies drive) · 1934-02-02 (Beverly blvd west → Sunset b
   should be sibling Broadway-extension ordinances.
 - **Sherman Way** — `dnla-1926-05-06` would have abolished all three Sherman Ways; some
   Sherman Way survives in the Valley today, so the ordinance was changed or undone.
+
+## Council minutes, May 10, 1886 — the Charity → Grand vote
+
+**Why:** the sources record that Charity Street's residents petitioned to be rid
+of the name, that the council voted on May 10, 1886, that they had first asked
+for "Pacific Avenue" and were refused because a Pacific Street already existed,
+and that the change took effect Feb. 15, 1887. **Nothing anywhere says why
+"Grand" was the substitute.** lastreetnames.com's Grand Avenue page explains the
+abandonment of Charity and is silent on the choice of Grand (checked 2026-09-15).
+
+Since the minutes evidently record the petition AND the refusal of Pacific, they
+may also record who proposed Grand and on what grounds. If they do, this would
+be one of the very few naming REASONS — as opposed to naming acts — attested
+anywhere in the corpus, and `grand-ave` would move from the weakest grade to the
+strongest available. See `handbook/BASIS-DRAFT.md` on why that distinction
+matters.

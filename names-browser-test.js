@@ -15,7 +15,7 @@ const { chromium } = require("playwright");
 const http = require("http"), fs = require("fs"), path = require("path"), os = require("os");
 
 const ROOT = fs.mkdtempSync(path.join(os.tmpdir(), "names-tool-test-"));
-for (const f of ["names-tool.html", "names.js", "names-new.js", "streets-data.js", "project-info.json"])
+for (const f of ["names-tool.html", "names.js", "names-new.js", "site-config.js", "streets-data.js", "project-info.json"])
   if (fs.existsSync(path.join(__dirname, f))) fs.cpSync(path.join(__dirname, f), path.join(ROOT, f));
 if (fs.existsSync(path.join(__dirname, "documents")))
   fs.cpSync(path.join(__dirname, "documents"), path.join(ROOT, "documents"), { recursive: true });

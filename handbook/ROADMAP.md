@@ -335,16 +335,22 @@ requirement). Apply to both `index.html` (live; street-keyed) and
 
 ---
 
-## 7. Categories: a vocabulary, a tree, and a review pass — *quick fix now; medium overall*
+## 7. Categories: a vocabulary, a tree, and a review pass — *mostly done 2026-09-15*
 
-### Two things wrong today
+**Status.** The move to `site-config.js`, the tree, the `object` branch, the
+`nature` split and descendant matching on both maps are **done**. What is left
+is listed at the end of this section under *Still open*.
+
+### Two things wrong — both fixed
 
 - ~~**Four category ids are in use and not declared.**~~ *Fixed 2026-09-12:*
   `mythological`, `history`, `foreign` and `company` are declared in
   `CATEGORIES`; `check-model.js` now errors on an undeclared id, and the names
   tool warns on one as it is coined (the "new category" row is how the four
   came about). What remains here is the tree below.
-- **The list is flat and mixes three different kinds of thing.** "Named after
+- ~~**The list is flat and mixes three different kinds of thing.**~~ *Fixed
+  2026-09-15: the three facets below are built, and facet rows are headings
+  rather than choices — `check-model.js` errors if an entity tags one.* "Named after
   a person" is a referent; "Namesake alive when named" is a circumstance of a
   person-naming; "Has former names" is derived by the generator; "Origin
   disputed" is a status of the research. Sorted flat, they read as peers.
@@ -361,7 +367,8 @@ Referent — what the name points to
                      foreign figure / other
   place            → destination (where it goes) / local landmark / another city
                      (borrowed) / state, region or nation
-  nature           → plant / animal / landform / water          ← "nature" split
+  nature           → tree / plant / animal / landform / water    ← "nature" split
+  object           → material / tool / artefact                  ← NEW, see below
   myth & religion
   history & events
   company & institution
@@ -378,17 +385,90 @@ Each entry carries `parent`; the Highlight list shows group headings with
 sub-items indented, still single-select radio (§8), and **selecting a parent
 matches every child** (the generator emits `ancestors` per entity, or the map
 walks the tree). Counts beside each label, and within a group sort by count
-descending — a reader wants to know that "plant" has eleven and "animal"
+descending — a reader wants to know that "tree" has eight and "animal"
 three before choosing.
 
-The migration is mechanical for the 109 curated entities and half a day:
-`chapules`, `hornet`, `bull` → animal; `alameda-st`, `poplar-st`, `olive`,
-`flower`, `spruce`, `tulip`, `willow`, `mesquit`, `maple-dtla`, `myrtle`,
-`palm-st-arts-district` → plant; `crown-hill-ave`, `hill-street-downtown` →
-landform; `person` entities get a subtype or `other`. Kenny's review pass then
-is the tree itself, not the tags: whether `alive` stays a circumstance or
+The migration is mechanical and half a day. Revised 2026-09-15 at Kenny's
+direction, now that all 143 entities are graded: **`tree` is a sibling of
+`plant`, not a synonym for it**, and the split is lopsided — `alameda-st`
+(álamo, the cottonwood), `poplar-st`, `olive`, `spruce`, `willow`, `mesquit`,
+`maple-dtla`, `palm-st-arts-district` → **tree** (8); `flower`, `tulip`,
+`myrtle` → **plant** (3); `chapules`, `hornet`, `bull` → **animal** (3);
+`crown-hill-ave`, `hill-street-downtown` → **landform** (2); `water` has no
+member yet. `person` entities get a subtype or `other`.
+
+Watch the tree/plant boundary: myrtle is a shrub, mesquite is a shrub or a small
+tree, and a tulip is a flower on a bulb but a tulip *tree* is not. The fuzziness
+is real and the rule should be written down before the pass, not discovered
+during it — suggestion: **what the namer would have pointed at.**
+
+Kenny's review pass then is the tree itself, not the tags: whether `alive` stays a circumstance or
 becomes a subtype, whether `governor` widens to "politician or official", and
 what else the person subtypes should be once the stubs are researched.
+
+### Added 2026-09-15, out of the `basis` design (MODEL-SPEC §3.1)
+
+**A new `object` branch.** Nothing in the vocabulary fits a street named for a
+thing — an object, a tool, a material. `adobe` is the case that surfaced it:
+once its `namedAfter` is populated with the linked concept, `nature` is wrong
+(adobe is a building material, not an organism or a landform) and `descriptive`
+is wrong by that category's own definition (the street is not *made of* adobe,
+it ran among adobes). Expect few members; `traction-avenue` (the electric
+traction motor) is probably the second. Kenny's word was `object` or
+`inanimate`; `artefact` is tighter for the made-thing sense but reads oddly
+beside `nature`, so `object` is the working name.
+
+**The Status facet is largely superseded.** Once `basis` lands, "origin not yet
+found" is `basis: "none"` and "not yet researched" is `searched: "none"` — both
+better defined than the tags they replace, and both already known to be stale in
+`categories` (`yale` carries `unresearched` beside two completed checks;
+`unknown` and `unresearched` disagree about which records are unworked). Retire
+the two tags rather than migrate them, and let the map's Highlight list read
+them off `basis`/`searched`. `disputed` likewise overlaps the new `rival` flag,
+though not exactly: the project's convention is that `disputed` marks a claim
+the project takes a side *against*, while `rival` marks an open question.
+
+**`descriptive` and `number` under `abstract`, reviewed.** The collision that
+prompted this note is resolved by renaming the basis value to `lexical`, so the
+category keeps its name. But the family is still redundant: `number` (position
+in a grid), `destination` (where it goes) and `descriptive` (role or position
+otherwise) all say *the name describes the street*, and `descriptive` is the
+residual — some older `streets-data.js` rows already carry
+`["number","descriptive"]`, which is that showing through. Under the tree,
+`descriptive` should be documented as the residual of that group rather than as
+a peer of it. All 8 current members describe the roadway itself: Main, Central,
+Short, Commercial, College, Court House, Alameda, Traction.
+
+**A finding worth keeping.** Carrying `descriptive` as a CATEGORY predicts a
+*strong* `basis` — of the 8, three grade `intrinsic` and four `attested` —
+because a name that describes the street can be checked against the street. The
+`lexical` basis means the opposite. Two facets that sound alike and point
+opposite ways is exactly the kind of thing the tree should make visible.
+
+
+### Still open
+
+- **Person subtypes.** `governor` and `foreign` hang off `person`; the rest of
+  the subtypes in the sketch above (landowner or subdivider, family of the
+  subdivider, religious figure, other) are not built, because that is a review
+  pass over 39 entities rather than a vocabulary change. `basis: "eponymous"`
+  now marks the subdivider-and-family cases, so the tagging could be derived
+  rather than typed.
+- **Retiring `unknown` and `unresearched`.** Superseded by `basis: "none"` and
+  `searched` (MODEL-SPEC §3.1), but load-bearing in five places that paint or
+  count with them: `index.html` (violet base colour), `preview.html` (grey base
+  colour and the "N researched" line), `check-data.js`, `check-model.js` and
+  `names-tool.html`. Wider blast radius than the tree itself — its own pass.
+- **The mint disagreement.** `map-tool.html` mints new entities with
+  `["unknown"]` while `names-tool.html` and `generate.js` mint `["unresearched"]`
+  — semantically opposite ("searched, not found" vs "nobody has looked"). The
+  retirement above settles it; until then they disagree. Note that `map-tool.html`
+  does not load `site-config.js` at all and so cannot validate what it mints.
+- **`traction-avenue` under `object`.** It is tagged `descriptive`, but its
+  namesake is the electric traction motor — a machine, so `tool`. Left alone
+  because moving a published category on my own judgment is not my call;
+  `adobe` moved because it had no valid category at all.
+- **`water` has no member.** Declared for completeness; nothing carries it.
 
 ---
 

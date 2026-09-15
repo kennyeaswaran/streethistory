@@ -22,17 +22,24 @@ for (const [id, e] of Object.entries(NEW_NAME_ENTITIES)) {
 
 const DocGeom = require("./doc-geometry.js");
 const { DOCUMENTS } = require("./documents/index.js");
-// The category vocabulary still lives in the hand-authored streets-data.js
-// (MODEL-IMPLEMENTATION checklist A moves it to site-config.js). Read it the
-// way generate.js does, so a tag the map cannot label is caught here and not
-// on the site: four ids were in use and undeclared before this check existed.
-const CATEGORY_IDS = (() => {
-  try {
-    const src = fs.readFileSync(path.join(__dirname, "streets-data.js"), "utf8");
-    const { CATEGORIES } = new Function(src + "; return { CATEGORIES };")();
-    return new Set(CATEGORIES.map(c => c.id).concat(["unresearched"]));
-  } catch (e) { return null; }
-})();
+// The category vocabulary is authored in site-config.js (moved there
+// 2026-09-15, MODEL-IMPLEMENTATION checklist A), so a tag the map cannot label
+// is caught here and not on the site: four ids were in use and undeclared
+// before this check existed.
+// §3.1. Ordered strongest to weakest, but NOMINAL: nothing computes with the
+// rank, because `eponymous` routinely outranks `attested`.
+const BASIS_VALUES = new Set([
+  "intrinsic", "attested", "eponymous", "pattern",
+  "inferred", "lexical", "guess", "none"
+]);
+const SEARCHED_VALUES = new Set(["none", "partial", "extensive"]);
+
+// ★ NOT wrapped in a try/catch that returns null. It used to be, and that
+// turned a bad read into a SILENT DISABLING of the whole category check — the
+// worst possible failure for a migration, because everything passes. If the
+// vocabulary cannot be read, that is a broken checkout and should say so.
+const { CATEGORIES, CATEGORY_BY_ID } = require(path.join(__dirname, "site-config.js"));
+const CATEGORY_IDS = new Set(CATEGORIES.map(c => c.id));
 
 let errors = 0;
 const err = (...m) => { errors++; console.error("ERROR:", ...m); };
@@ -80,9 +87,12 @@ for (const [id, e] of Object.entries(NAME_ENTITIES)) {
     warn(id, "note reads like a working note and `note` is shown to readers — " +
              "move it to internalNote");
   if (!Array.isArray(e.categories) || !e.categories.length) err(id, "no categories");
-  else if (CATEGORY_IDS)
-    for (const c of e.categories) if (!CATEGORY_IDS.has(c))
-      err(id, `category "${c}" is not in CATEGORIES (streets-data.js) — the map cannot label or highlight it`);
+  else for (const c of e.categories) {
+    if (!CATEGORY_IDS.has(c))
+      err(id, `category "${c}" is not in CATEGORIES (site-config.js) — the map cannot label or highlight it`);
+    else if (CATEGORY_BY_ID[c].facet)
+      err(id, `category "${c}" is a facet heading, not a category — tag a node under it`);
+  }
   if (e.namedAfter) {
     const open = (e.namedAfter.match(/\{\{/g) || []).length, close = (e.namedAfter.match(/\}\}/g) || []).length;
     if (open !== close || open > 1) err(id, "namedAfter has unbalanced or multiple {{}} markers");
@@ -96,6 +106,57 @@ for (const [id, e] of Object.entries(NAME_ENTITIES)) {
   }
   if (e.namedAfter === null && !e.categories.some(c => ["unknown", "unresearched"].includes(c)))
     warn(id, "namedAfter is null — expected 'unknown' (researched, not found) or 'unresearched'");
+
+  // BASIS — how strongly the identification is grounded (§3.1).
+  //
+  // Entities minted by the map tool into names-new.js cannot carry it: the tool
+  // does not know the vocabulary and rewrites that file whole. They are warned,
+  // not failed, and acquire a basis when they are moved into names.js by hand.
+  if (e.basis === undefined) {
+    (e.pendingResearch ? warn : err)(id, "no basis — every curated entity must grade its " +
+      "identification (§3.1); use \"none\" when there is no candidate at all");
+  } else if (!BASIS_VALUES.has(e.basis)) {
+    err(id, `basis "${e.basis}" is not one of: ${[...BASIS_VALUES].join(", ")}`);
+  } else {
+    // `none` means no candidate. Anything in namedAfter contradicts it.
+    if (e.basis === "none" && e.namedAfter !== null)
+      err(id, "basis is \"none\" but namedAfter is populated — one of the two is wrong");
+    // `lexical` IS the concept link; without one the value says nothing.
+    if (e.basis === "lexical" && e.namedAfter === null)
+      warn(id, "basis is \"lexical\" but namedAfter is null — the whole content of this " +
+        "grade is the concept the word names, so write and link it");
+  }
+
+  // `searched` is effort, not warrant, and only means anything where the
+  // search came back empty. Elsewhere it would imply a claim it cannot make.
+  if (e.searched !== undefined) {
+    if (!SEARCHED_VALUES.has(e.searched))
+      err(id, `searched "${e.searched}" is not one of: ${[...SEARCHED_VALUES].join(", ")}`);
+    if (e.basis !== "none")
+      err(id, `searched is only meaningful with basis "none" (this one is "${e.basis}")`);
+  }
+
+  if (e.rival !== undefined && e.rival !== true)
+    err(id, "rival is a flag: set it to true or leave it off");
+
+  // A warrant that leans on another entity's, so the corpus does not count one
+  // piece of evidence twice. Directed: A lists B when A's case rests on B's.
+  for (const t of e.sharesWarrantWith || []) {
+    if (t === id) err(id, "sharesWarrantWith points at itself");
+    else if (!ids.has(t)) err(id, "sharesWarrantWith references unknown id:", t);
+  }
+
+  // The most expensive knowledge in the file: a candidate pursued and killed.
+  for (const [i, r] of (e.refuted || []).entries()) {
+    const at = `refuted[${i}]`;
+    if (!r || typeof r !== "object") { err(id, at, "is not an object"); continue; }
+    if (!r.candidate || typeof r.candidate !== "string") err(id, at, "needs a candidate");
+    if (!r.killedBy || typeof r.killedBy !== "string") err(id, at, "needs killedBy — " +
+      "a refutation nobody can check is not a refutation");
+    if (!["namesake", "identity"].includes(r.kind))
+      err(id, at, `kind must be "namesake" (not who it is named for) or "identity" ` +
+        `(not that street), got: ${r.kind}`);
+  }
 }
 const resolve = id => ids.has(id) ? id : aliasOwner[id];
 

@@ -2,9 +2,9 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 272; entries: 690
+- Streets: 272; entries: 689
 - Stub entities minted from OSM (unresearched): 200
-- Curated entities: 143
+- Curated entities: 144
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
 ## Ambiguous OSM binds (NOT bound — fix by adding extents or disambiguation)
@@ -200,15 +200,7 @@
 - min-1896-09-08: sweptFor = []
 - min-1896-09-14: sweptFor = []
 - min-1896-09-21: sweptFor = []
-- mr003-146-p1: sweptFor = []
-- mr003-146-p2: sweptFor = []
-- mr003-569: sweptFor = []
-- mr010-008: sweptFor = []
-- mr010-080: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
-- tr0007-085: sweptFor = []
-- tr0013-048: sweptFor = []
-- tr0020-196b: sweptFor = []
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
 - myrtle: "Wall Street" ×1
@@ -231,7 +223,6 @@
 - ninth-street: "NINTH ST" ×1
 - orange-st-wilshire: "ORANGE ST" ×1
 - sixth-street: "proposed line of Sixth Street." ×1
-- wolfskill-ave: "Wolfskill St." ×1
 - huber-st: "HUBER ST." ×1
 - alameda-st: "ALAMEDA ST" ×1
 - hewitt: "HEWITT ST" ×1

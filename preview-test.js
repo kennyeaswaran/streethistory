@@ -139,6 +139,65 @@ const isGrey = c => String(c) === GREY;
      (crocker.match(/Wolfskill Orchard Tract/g) || []).length <= 2,
      String((crocker.match(/Wolfskill Orchard Tract/g) || []).length));
 
+  // -------------------------------------------------------------------------
+  // The Highlight tree (ROADMAP §7). Nothing tested this control before it
+  // grew a tree, which is precisely when it needed a test: "selecting a parent
+  // matches every descendant" is a claim about paint, and the generator cannot
+  // check it either.
+  // -------------------------------------------------------------------------
+  const tree = await page.evaluate(() => {
+    const d = document.getElementById("filters");
+    const facets = [...d.querySelectorAll(".facet")].map(x => x.textContent);
+    const rows = [...d.querySelectorAll("label")].map(l => ({
+      id: l.querySelector("input").value,
+      indent: parseInt(l.style.paddingLeft || "0", 10),
+      count: parseInt(l.querySelector(".fcount").textContent, 10)
+    }));
+    return { facets, rows };
+  });
+  ok("the Highlight list is grouped into the three facets",
+     tree.facets.length === 3, JSON.stringify(tree.facets));
+  ok("…and no facet row is itself selectable",
+     !tree.rows.some(r => ["referent", "circumstance", "status"].includes(r.id)));
+  ok("children are indented under their parent",
+     tree.rows.some(r => r.id === "tree" && r.indent > 0) &&
+     tree.rows.some(r => r.id === "nature" && r.indent === 0));
+  ok("a parent's count includes its descendants",
+     (tree.rows.find(r => r.id === "nature") || {}).count >=
+     (tree.rows.find(r => r.id === "tree") || {}).count);
+
+  // Take a real entry tagged with a CHILD node, and check the three cases that
+  // matter: it matches itself, it matches its parent, it does not match a
+  // sibling. Done against generated data rather than a fixture, so a migration
+  // that forgets to emit `ancestors` fails here.
+  const descend = await page.evaluate(() => {
+    const all = [];
+    for (const [name, v] of Object.entries(STREET_DATA))
+      for (const e of (v.entries || v.segments || [])) all.push({ name, e });
+    const probe = (leaf, parent, sibling) => {
+      const hit = all.find(x => (x.e.categories || []).includes(leaf));
+      if (!hit) return { leaf, missing: true };
+      const paint = id => {
+        activeFilters.clear(); activeFilters.add(id);
+        return styleFor({ entry: hit.e, ways: [], key: "k" }).color;
+      };
+      const self = paint(leaf), par = paint(parent), sib = paint(sibling);
+      activeFilters.clear();
+      return { leaf, on: hit.name, self: self === COLOR_HIGHLIGHT,
+               parent: par === COLOR_HIGHLIGHT, sibling: sib === COLOR_HIGHLIGHT };
+    };
+    return [probe("tree", "nature", "animal"),
+            probe("number", "abstract", "aspiration"),
+            probe("governor", "person", "place")];
+  });
+  for (const r of descend) {
+    ok(`"${r.leaf}" is carried by at least one entry`, !r.missing);
+    if (r.missing) continue;
+    ok(`selecting "${r.leaf}" lights ${r.on}`, r.self);
+    ok(`…and so does selecting its parent`, r.parent, JSON.stringify(r));
+    ok(`…while a sibling does not`, !r.sibling, JSON.stringify(r));
+  }
+
   ok("still no page errors", errors.length === 0, errors.slice(0, 2).join(" | "));
 
   await page.screenshot({ path: "preview-colours.png" });

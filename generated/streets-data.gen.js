@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-14
+// Built: 2026-09-15
 const NEIGHBORHOODS = [
   {
     "id": "dtla",
@@ -16,84 +16,165 @@ const NEIGHBORHOODS = [
 
 const CATEGORIES = [
   {
-    "id": "person",
-    "label": "Named after a person"
+    "id": "referent",
+    "label": "What the name points to",
+    "facet": true
   },
   {
-    "id": "alive",
-    "label": "Namesake alive when named"
+    "id": "person",
+    "label": "A person",
+    "parent": "referent"
   },
   {
     "id": "governor",
-    "label": "Governors & politicians"
-  },
-  {
-    "id": "destination",
-    "label": "Named for where it goes"
-  },
-  {
-    "id": "aspiration",
-    "label": "Virtues & aspirations"
-  },
-  {
-    "id": "renamed",
-    "label": "Has former names"
-  },
-  {
-    "id": "borrowed",
-    "label": "Borrowed from another city"
-  },
-  {
-    "id": "disputed",
-    "label": "Origin disputed"
-  },
-  {
-    "id": "nature",
-    "label": "Named for a plant, tree, or landform"
-  },
-  {
-    "id": "mythological",
-    "label": "Gods, myths & religion"
-  },
-  {
-    "id": "history",
-    "label": "Named for a historical people or event"
-  },
-  {
-    "id": "company",
-    "label": "Companies & institutions"
+    "label": "…a politician or official",
+    "parent": "person"
   },
   {
     "id": "foreign",
-    "label": "Namesake from abroad"
-  },
-  {
-    "id": "descriptive",
-    "label": "Descriptive of role or position"
+    "label": "…someone from abroad",
+    "parent": "person"
   },
   {
     "id": "place",
-    "label": "Named for a place"
+    "label": "A place",
+    "parent": "referent"
   },
   {
-    "id": "number",
-    "label": "Numbered streets"
+    "id": "destination",
+    "label": "…where the street goes",
+    "parent": "place"
+  },
+  {
+    "id": "borrowed",
+    "label": "…a street in another city",
+    "parent": "place"
+  },
+  {
+    "id": "nature",
+    "label": "Something living, or the land",
+    "parent": "referent"
+  },
+  {
+    "id": "tree",
+    "label": "…a tree",
+    "parent": "nature"
+  },
+  {
+    "id": "plant",
+    "label": "…a plant or flower",
+    "parent": "nature"
+  },
+  {
+    "id": "animal",
+    "label": "…an animal",
+    "parent": "nature"
+  },
+  {
+    "id": "landform",
+    "label": "…a landform",
+    "parent": "nature"
+  },
+  {
+    "id": "water",
+    "label": "…water",
+    "parent": "nature"
+  },
+  {
+    "id": "object",
+    "label": "A made thing",
+    "parent": "referent"
+  },
+  {
+    "id": "material",
+    "label": "…a material",
+    "parent": "object"
+  },
+  {
+    "id": "tool",
+    "label": "…a tool or machine",
+    "parent": "object"
+  },
+  {
+    "id": "mythological",
+    "label": "A god, a myth, a religion",
+    "parent": "referent"
+  },
+  {
+    "id": "history",
+    "label": "A historical people or event",
+    "parent": "referent"
   },
   {
     "id": "event",
-    "label": "Named for an event"
+    "label": "…an event",
+    "parent": "history"
+  },
+  {
+    "id": "company",
+    "label": "A company or institution",
+    "parent": "referent"
   },
   {
     "id": "system",
-    "label": "Freeways & route systems"
+    "label": "A route system",
+    "parent": "referent"
+  },
+  {
+    "id": "abstract",
+    "label": "An idea, not a thing",
+    "parent": "referent"
+  },
+  {
+    "id": "aspiration",
+    "label": "…a virtue or an aspiration",
+    "parent": "abstract"
+  },
+  {
+    "id": "descriptive",
+    "label": "…the street's own role or position",
+    "parent": "abstract"
+  },
+  {
+    "id": "number",
+    "label": "…its number in the grid",
+    "parent": "abstract"
+  },
+  {
+    "id": "circumstance",
+    "label": "Circumstances of the naming",
+    "facet": true
+  },
+  {
+    "id": "alive",
+    "label": "Namesake alive when named",
+    "parent": "circumstance"
+  },
+  {
+    "id": "status",
+    "label": "Status of the record",
+    "facet": true
+  },
+  {
+    "id": "renamed",
+    "label": "Has former names",
+    "parent": "status",
+    "derived": true
+  },
+  {
+    "id": "disputed",
+    "label": "Origin disputed",
+    "parent": "status"
   },
   {
     "id": "unknown",
-    "label": "Researched — origin not yet found"
+    "label": "Researched — origin not yet found",
+    "parent": "status"
   },
   {
     "id": "unresearched",
-    "label": "Not yet researched"
+    "label": "Not yet researched",
+    "parent": "status"
   }
 ];
 
@@ -192,8 +273,14 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "number"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -262,8 +349,14 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "number"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -311,6 +404,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -375,6 +471,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -423,6 +522,9 @@ const STREET_DATA = {
         "knownFraction": 0.86,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -474,6 +576,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -524,6 +629,9 @@ const STREET_DATA = {
         "knownFraction": 0.81,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -579,6 +687,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -625,6 +736,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -661,6 +775,9 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -725,6 +842,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -787,6 +907,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -828,6 +951,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -932,6 +1058,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -981,6 +1110,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -1019,6 +1151,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -1069,6 +1204,9 @@ const STREET_DATA = {
     "knownFraction": 0.76,
     "categories": [
       "number"
+    ],
+    "ancestors": [
+      "abstract"
     ],
     "disputed": false,
     "sources": [
@@ -1174,6 +1312,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -1226,6 +1367,9 @@ const STREET_DATA = {
         "knownFraction": 0.89,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -1294,6 +1438,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -1356,6 +1503,9 @@ const STREET_DATA = {
         "knownFraction": 0.9,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -1423,6 +1573,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -1468,6 +1621,9 @@ const STREET_DATA = {
         "knownFraction": 0.88,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -1519,6 +1675,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -1583,6 +1742,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -1611,6 +1773,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -1642,6 +1807,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -1671,6 +1839,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -1710,6 +1881,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -1748,6 +1922,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -1785,6 +1962,9 @@ const STREET_DATA = {
         "knownFraction": 0.89,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -1854,6 +2034,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -1916,6 +2099,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -1963,6 +2149,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -2009,6 +2198,9 @@ const STREET_DATA = {
         "knownFraction": 0.28,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -2080,6 +2272,9 @@ const STREET_DATA = {
         "knownFraction": 0.27,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -2154,6 +2349,9 @@ const STREET_DATA = {
         "categories": [
           "number",
           "renamed"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "formerCategories": [
           "unknown"
@@ -2240,6 +2438,9 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "unknown"
         ],
@@ -2320,6 +2521,9 @@ const STREET_DATA = {
         "categories": [
           "number",
           "renamed"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "formerCategories": [
           "unknown"
@@ -2406,6 +2610,9 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "unknown"
         ],
@@ -2460,6 +2667,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -2499,6 +2709,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -2558,6 +2771,9 @@ const STREET_DATA = {
     "formerCategories": [
       "number"
     ],
+    "formerAncestors": [
+      "abstract"
+    ],
     "disputed": false,
     "sources": [
       {
@@ -2598,6 +2814,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -2663,8 +2882,14 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
-          "place"
+          "landform"
+        ],
+        "formerAncestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -2712,6 +2937,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -2774,6 +3002,9 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "unknown"
         ],
@@ -2809,6 +3040,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -2863,6 +3097,9 @@ const STREET_DATA = {
         "knownFraction": 0.89,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -2922,6 +3159,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -2971,6 +3211,9 @@ const STREET_DATA = {
         },
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -3037,6 +3280,9 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "person",
           "alive"
@@ -3082,6 +3328,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -3110,7 +3359,7 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 3rd Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
@@ -3120,9 +3369,12 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.78,
+        "knownFraction": 0.79,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -3131,7 +3383,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -3177,17 +3429,17 @@ const STREET_DATA = {
             "entityId": "georgia-east",
             "formInForce": "Georgia Street",
             "how": "origin",
-            "origin": "labeled “Georgie Street.”, “GEORGIA ST” and “Georgia St” on the 1871 Johnston Tract, the 1875 Thomas Tract, the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — Likely the state",
+            "origin": "labeled “Georgie Street.”, “GEORGIA ST” and “Georgia St” on the 1871 Johnston Tract, the 1875 Thomas Tract, the 1887 Mills and Wicks Extension map, sheet 1 and the 1887 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — Likely the state",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           },
           {
-            "from": "by 1888",
+            "from": "by 1887",
             "until": null,
             "name": "3rd Street",
             "entityId": "third-street",
             "formInForce": "3rd Street",
             "how": "renaming",
-            "origin": "labeled “Third St” and “3RD STREET” on the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) and the 1979 Tract No. 35332 {{(source)}}",
+            "origin": "labeled “Third St” and “3RD STREET” on the 1887 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) and the 1979 Tract No. 35332 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -3201,6 +3453,9 @@ const STREET_DATA = {
         "categories": [
           "number",
           "renamed"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "formerCategories": [
           "place"
@@ -3224,7 +3479,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -3295,6 +3550,9 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "place"
         ],
@@ -3353,6 +3611,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -3392,6 +3653,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -3487,6 +3751,9 @@ const STREET_DATA = {
         ],
         "formerCategories": [
           "number"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -3600,6 +3867,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -3628,6 +3898,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -3682,6 +3955,9 @@ const STREET_DATA = {
         "knownFraction": 0.89,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -3744,6 +4020,9 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -3819,6 +4098,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -3870,6 +4152,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -3881,7 +4166,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -3911,31 +4196,34 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "by 1887",
             "until": null,
             "name": "4th Street",
             "entityId": "fourth-street",
             "formInForce": "4th Street",
             "how": "extension",
-            "origin": "labeled “Fourth St” on the 1888 Wolfskill Orchard Tract (sheets 4, 5) {{(source)}}",
+            "origin": "labeled “Fourth St” on the 1887 Wolfskill Orchard Tract (sheets 4, 5) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "note": null,
         "attested": true,
         "absentAsOf": {
-          "text": "1888 (Wolfskill Orchard Tract, sheet 4 (M.R. 30-12))",
+          "text": "1887 (Wolfskill Orchard Tract, sheet 4 (M.R. 30-12))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "knownFraction": 1,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -3944,7 +4232,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -3978,11 +4266,14 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "absentAsOf": {
-          "text": "1888 (Wolfskill Orchard Tract, sheet 4 (M.R. 30-12))",
+          "text": "1887 (Wolfskill Orchard Tract, sheet 4 (M.R. 30-12))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -4024,7 +4315,7 @@ const STREET_DATA = {
             "entityId": "huber-st",
             "formInForce": "Huber Street",
             "how": "origin",
-            "origin": "labeled “HUBER ST.” and “Huber St” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — Not documented; most likely Caroline Howard (née Huber), wife of the tract developer Dr. Frederick Preston Howard — the same inference that explains Carolina Street, one block east, now Hewitt Street.",
+            "origin": "labeled “HUBER ST.” and “Huber St” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1887 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — Not documented; most likely Caroline Howard (née Huber), wife of the tract developer Dr. Frederick Preston Howard — the same inference that explains Carolina Street, one block east, now Hewitt Street.",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
@@ -4044,10 +4335,13 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.01,
+        "knownFraction": 0,
         "categories": [
           "number",
           "renamed"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "formerCategories": [
           "person",
@@ -4064,7 +4358,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -4125,8 +4419,14 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "number"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -4179,6 +4479,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -4217,6 +4520,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -4257,6 +4563,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -4285,6 +4594,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -4319,6 +4631,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -4352,6 +4667,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -4396,6 +4714,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -4434,6 +4755,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -4477,6 +4801,9 @@ const STREET_DATA = {
         },
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -4524,6 +4851,9 @@ const STREET_DATA = {
         "knownFraction": 0.9,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -4598,8 +4928,14 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "number"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -4668,6 +5004,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -4735,6 +5074,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -4798,6 +5140,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -4849,6 +5194,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -4895,6 +5243,9 @@ const STREET_DATA = {
         },
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -4943,6 +5294,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -4954,7 +5308,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 3, M.R. 30-11, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 3, M.R. 30-11, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -4979,19 +5333,19 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "by 1887",
             "until": null,
             "name": "5th Street",
             "entityId": "fifth-street",
             "formInForce": "5th Street",
             "how": "extension",
-            "origin": "labeled “Fifth St” on the 1888 Wolfskill Orchard Tract (sheets 3, 4) {{(source)}}",
+            "origin": "labeled “Fifth St” on the 1887 Wolfskill Orchard Tract (sheets 3, 4) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -5001,9 +5355,12 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.78,
+        "knownFraction": 0.79,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5012,7 +5369,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 3, M.R. 30-11, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 3, M.R. 30-11, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -5038,19 +5395,19 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 5th Street",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "by 1887",
             "until": "?",
             "name": "Poplar Street",
             "entityId": "poplar-st",
             "formInForce": "Poplar Street",
             "how": "origin",
-            "origin": "labeled “Poplar St” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}} — named on Dr. Frederick Preston Howard's Bliss Tract in 1886, one block south of the Huber Street that runs through the same subdivision. No namesake is documented; a poplar would be in keeping with the orchard ground it was cut through, but nothing says so",
+            "origin": "labeled “Poplar St” on the 1887 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}} — The poplar — though no tree here is documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -5075,8 +5432,13 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
-          "unknown",
+          "tree"
+        ],
+        "formerAncestors": [
           "nature"
         ],
         "disputed": false,
@@ -5086,7 +5448,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -5124,6 +5486,9 @@ const STREET_DATA = {
         },
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5164,6 +5529,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -5200,6 +5568,9 @@ const STREET_DATA = {
         },
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5239,6 +5610,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5282,6 +5656,9 @@ const STREET_DATA = {
         },
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5336,6 +5713,9 @@ const STREET_DATA = {
         "knownFraction": 0.9,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5398,6 +5778,9 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5466,6 +5849,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -5516,6 +5902,9 @@ const STREET_DATA = {
         "knownFraction": 0.85,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5572,6 +5961,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -5605,7 +5997,7 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
@@ -5615,9 +6007,12 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.78,
+        "knownFraction": 0.79,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5626,7 +6021,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -5660,6 +6055,9 @@ const STREET_DATA = {
         },
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5702,6 +6100,9 @@ const STREET_DATA = {
         "knownFraction": 0.8,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5750,6 +6151,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -5784,6 +6188,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5874,6 +6281,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -5922,6 +6332,9 @@ const STREET_DATA = {
         "knownFraction": 0.84,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -5994,6 +6407,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -6064,6 +6480,9 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -6136,6 +6555,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -6191,6 +6613,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -6244,7 +6669,7 @@ const STREET_DATA = {
             "entityId": "seventh-street",
             "formInForce": "7th Street",
             "how": "extension",
-            "origin": "labeled “Seventh St.”, “Seventh Street”, “Seventh St” and “SEVENTH STREET” on the 1884 Rowan Tract, the 1886 Beck Tract, the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) and the 1897 Wilde and Strong Subdivision {{(source)}}",
+            "origin": "labeled “Seventh St.”, “Seventh Street”, “Seventh St” and “SEVENTH STREET” on the 1884 Rowan Tract, the 1886 Beck Tract, the 1887 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) and the 1897 Wilde and Strong Subdivision {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-039.pdf"
           }
         ],
@@ -6257,6 +6682,9 @@ const STREET_DATA = {
         "knownFraction": 0.81,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -6273,7 +6701,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR014/MR014-034.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -6307,19 +6735,19 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "by 1887",
             "until": null,
             "name": "7th Street",
             "entityId": "seventh-street",
             "formInForce": "7th Street",
             "how": "extension",
-            "origin": "labeled “Seventh St” and “SEVENTH STREET” on the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10), the 1897 Wilde and Strong Subdivision and the 1898 Johnson and Keeney Resubdivision {{(source)}}",
+            "origin": "labeled “Seventh St” and “SEVENTH STREET” on the 1887 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10), the 1897 Wilde and Strong Subdivision and the 1898 Johnson and Keeney Resubdivision {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -6329,9 +6757,12 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.78,
+        "knownFraction": 0.79,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -6340,7 +6771,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -6392,6 +6823,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -6403,12 +6837,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-092.pdf"
           },
           {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
           },
           {
             "title": "Kohler Tract, Being W. J. Fisher's Re-Subdivision of a Portion of the Kohler and Frohling Tract (M.R. 54-51, Aug. 9, 1894; identified by map alignment, not a lot-level record)",
@@ -6435,14 +6869,14 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of",
+        "label": "beyond Alameda",
         "name": "7th Street",
         "entityId": "seventh-street",
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1887",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -6453,8 +6887,8 @@ const STREET_DATA = {
             "entityId": "seventh-street",
             "formInForce": "7th Street",
             "how": "extension",
-            "origin": "labeled “Seventh Street”, “Seventh St” and “SEVENTH STREET” on the 1887 W. J. Fisher's Subdivision, the 1888 Wolfskill Orchard Tract, sheet 1 (M.R. 30-9), the 1894 Kohler Tract and the 1900 Mariana W. de Coronel Home Place {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "origin": "labeled “Seventh St”, “Seventh Street” and “SEVENTH STREET” on the 1887 Wolfskill Orchard Tract, sheet 1 (M.R. 30-9), the 1887 W. J. Fisher's Subdivision, the 1894 Kohler Tract and the 1900 Mariana W. de Coronel Home Place {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "note": null,
@@ -6467,6 +6901,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -6474,12 +6911,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Aug. 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
           },
           {
             "title": "Kohler Tract, Being W. J. Fisher's Re-Subdivision of a Portion of the Kohler and Frohling Tract (M.R. 54-51, Aug. 9, 1894; identified by map alignment, not a lot-level record)",
@@ -6495,74 +6932,11 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2427,
-        "maxLng": -118.2409,
+        "maxLng": -118.2386,
         "from": {
           "px": [
             1422,
             840
-          ]
-        },
-        "to": {
-          "px": [
-            863,
-            472
-          ]
-        }
-      },
-      {
-        "label": "beyond Alameda",
-        "name": "7th Street",
-        "entityId": "seventh-street",
-        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": null,
-            "name": "7th Street",
-            "entityId": "seventh-street",
-            "formInForce": "7th Street",
-            "how": "extension",
-            "origin": "labeled “Seventh St” on the 1888 Wolfskill Orchard Tract, sheet 1 (M.R. 30-9) {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          }
-        ],
-        "note": null,
-        "attested": true,
-        "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
-        },
-        "knownFraction": 0.78,
-        "categories": [
-          "number"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          }
-        ],
-        "minLng": -118.2409,
-        "maxLng": -118.2386,
-        "from": {
-          "px": [
-            863,
-            472
           ]
         },
         "to": "Alameda Street"
@@ -6583,6 +6957,9 @@ const STREET_DATA = {
         },
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -6617,6 +6994,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -6747,6 +7127,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -6790,6 +7173,9 @@ const STREET_DATA = {
         "knownFraction": 0.84,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -6848,6 +7234,9 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -6912,6 +7301,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -6958,6 +7350,9 @@ const STREET_DATA = {
         "knownFraction": 0.8,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -7013,6 +7408,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -7061,7 +7459,7 @@ const STREET_DATA = {
             "entityId": "eighth-street",
             "formInForce": "8th Street",
             "how": "extension",
-            "origin": "labeled “Eighth St.”, “8TH STREET”, “Eighth St”, “EIGHTH ST.”, “EIGHTH ST” and “EIGHTH STREET” on the 1888 Denison Tract, the 1895 Stanford Ave Tract, the 1903 Niosi Tract, the 1904 Culvers Addition, the 1907 Ulm Tract and the 1969 Parcel Map 1136 {{(source)}}",
+            "origin": "labeled “Eighth St.”, “8TH STREET”, “8th St”, “Eighth St”, “EIGHTH ST.”, “EIGHTH ST” and “EIGHTH STREET” on the 1888 Denison Tract, the 1895 Stanford Ave Tract, the 1903 Niosi Tract, the 1904 Culvers Addition, the 1907 Ulm Tract and the 1969 Parcel Map 1136 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-085.pdf"
           }
         ],
@@ -7070,6 +7468,9 @@ const STREET_DATA = {
         "knownFraction": 0.78,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -7137,6 +7538,9 @@ const STREET_DATA = {
         "knownFraction": 0.79,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -7209,6 +7613,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -7267,6 +7674,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -7331,6 +7741,9 @@ const STREET_DATA = {
     "formerCategories": [
       "number"
     ],
+    "formerAncestors": [
+      "abstract"
+    ],
     "disputed": false,
     "sources": [
       {
@@ -7387,6 +7800,9 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -7455,6 +7871,9 @@ const STREET_DATA = {
           "number",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "unknown"
         ],
@@ -7520,6 +7939,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -7578,6 +8000,9 @@ const STREET_DATA = {
         "knownFraction": 0.76,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -7638,6 +8063,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -7684,6 +8112,9 @@ const STREET_DATA = {
         "knownFraction": 0.8,
         "categories": [
           "number"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -7743,6 +8174,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -7797,6 +8231,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -7848,6 +8285,9 @@ const STREET_DATA = {
         "categories": [
           "number"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -7881,8 +8321,8 @@ const STREET_DATA = {
   "Adobe Street": {
     "name": "Adobe Street",
     "entityId": "adobe",
-    "namedAfter": null,
-    "namedAfterLink": null,
+    "namedAfter": "{{Adobe}} — the sun-dried earth the houses along it were built of; no particular building is documented",
+    "namedAfterLink": "https://en.wikipedia.org/wiki/Adobe",
     "planned": {
       "text": "1849",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
@@ -7904,7 +8344,10 @@ const STREET_DATA = {
     "attested": true,
     "knownFraction": 1,
     "categories": [
-      "unknown"
+      "material"
+    ],
+    "ancestors": [
+      "object"
     ],
     "disputed": false,
     "sources": [
@@ -7987,8 +8430,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "nature",
-          "descriptive"
+          "descriptive",
+          "tree"
+        ],
+        "ancestors": [
+          "abstract",
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -8025,8 +8472,12 @@ const STREET_DATA = {
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": false,
         "categories": [
-          "nature",
-          "descriptive"
+          "descriptive",
+          "tree"
+        ],
+        "ancestors": [
+          "abstract",
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -8069,8 +8520,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.56,
         "categories": [
-          "nature",
-          "descriptive"
+          "descriptive",
+          "tree"
+        ],
+        "ancestors": [
+          "abstract",
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -8132,8 +8587,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.56,
         "categories": [
-          "nature",
-          "descriptive"
+          "descriptive",
+          "tree"
+        ],
+        "ancestors": [
+          "abstract",
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -8191,7 +8650,7 @@ const STREET_DATA = {
             "entityId": "alameda-st",
             "formInForce": "Alameda Street",
             "how": "origin",
-            "origin": "labeled “Alameda STREET.”, “ALAMEDA STREET”, “ALAMEDA ST” and “Alameda St” on the 1871 Johnston Tract (sheets 1, 2), the 1875 Thomas Tract (sheets 1, 2), the 1887 Mills and Wicks Extension map, sheet 1, the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) and the 1979 Tract No. 35332 {{(source)}}",
+            "origin": "labeled “Alameda STREET.”, “ALAMEDA STREET”, “ALAMEDA ST” and “Alameda St” on the 1871 Johnston Tract (sheets 1, 2), the 1875 Thomas Tract (sheets 1, 2), the 1887 Mills and Wicks Extension map, sheet 1, the 1887 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) and the 1979 Tract No. 35332 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
@@ -8199,8 +8658,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.88,
         "categories": [
-          "nature",
-          "descriptive"
+          "descriptive",
+          "tree"
+        ],
+        "ancestors": [
+          "abstract",
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -8225,7 +8688,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -8270,7 +8733,7 @@ const STREET_DATA = {
             "entityId": "alameda-st",
             "formInForce": "Alameda Street",
             "how": "extension",
-            "origin": "labeled “ALAMEDA ST” and “Alameda St” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1888 Wolfskill Orchard Tract (sheets 4, 5) {{(source)}}",
+            "origin": "labeled “ALAMEDA ST” and “Alameda St” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1887 Wolfskill Orchard Tract (sheets 4, 5) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           }
         ],
@@ -8278,8 +8741,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.79,
         "categories": [
-          "nature",
-          "descriptive"
+          "descriptive",
+          "tree"
+        ],
+        "ancestors": [
+          "abstract",
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -8296,7 +8763,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -8326,7 +8793,7 @@ const STREET_DATA = {
         "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": {
@@ -8335,22 +8802,26 @@ const STREET_DATA = {
         },
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "by 1887",
             "until": null,
             "name": "Alameda Street",
             "entityId": "alameda-st",
             "formInForce": "Alameda Street",
             "how": "extension",
-            "origin": "labeled “Alameda St” on the 1888 Wolfskill Orchard Tract (sheets 1, 2, 4) {{(source)}}",
+            "origin": "labeled “Alameda St” on the 1887 Wolfskill Orchard Tract (sheets 1, 2, 4) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
-        "knownFraction": 0.78,
+        "knownFraction": 0.79,
         "categories": [
-          "nature",
-          "descriptive"
+          "descriptive",
+          "tree"
+        ],
+        "ancestors": [
+          "abstract",
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -8363,7 +8834,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -8401,8 +8872,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "nature",
-          "descriptive"
+          "descriptive",
+          "tree"
+        ],
+        "ancestors": [
+          "abstract",
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -8445,8 +8920,12 @@ const STREET_DATA = {
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": false,
         "categories": [
-          "nature",
-          "descriptive"
+          "descriptive",
+          "tree"
+        ],
+        "ancestors": [
+          "abstract",
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -10168,7 +10647,7 @@ const STREET_DATA = {
         "note": "Lettered on the Orchard Tract of July 1882 between Wall Street and San Pedro Street, and still Boyd Street today. No Boyd is documented: the sheet names its three owners, its surveyor and the three earlier tracts it absorbed, and there is no Boyd among them.",
         "attested": false,
         "absentAsOf": {
-          "text": "1888 (Wolfskill Orchard Tract, sheet 5 (M.R. 30-13))",
+          "text": "1887 (Wolfskill Orchard Tract, sheet 5 (M.R. 30-13))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "categories": [
@@ -10393,6 +10872,9 @@ const STREET_DATA = {
         "formerCategories": [
           "aspiration",
           "mythological"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -11033,6 +11515,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -11069,6 +11554,9 @@ const STREET_DATA = {
         },
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -11139,6 +11627,9 @@ const STREET_DATA = {
           "descriptive",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "unknown"
         ],
@@ -11197,12 +11688,15 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "absentAsOf": {
-          "text": "1888 (Wolfskill Orchard Tract, sheet 5 (M.R. 30-13))",
+          "text": "1887 (Wolfskill Orchard Tract, sheet 5 (M.R. 30-13))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "knownFraction": 0.48,
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -11231,18 +11725,19 @@ const STREET_DATA = {
         "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted, once this stretch was folded into Central Avenue",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "by 1887",
             "until": "Feb. 1897",
             "name": "Wolfskill Avenue",
             "entityId": "wolfskill-ave",
             "formInForce": "Wolfskill Avenue",
-            "origin": "labeled “Wolfskill Ave” on the 1888 Wolfskill Orchard Tract (sheets 2–5) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
+            "how": "origin",
+            "origin": "labeled “Wolfskill Ave” on the 1887 Wolfskill Orchard Tract (sheets 2–5) {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -11262,10 +11757,13 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.78,
+        "knownFraction": 0.79,
         "categories": [
           "descriptive",
           "renamed"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "formerCategories": [
           "person"
@@ -11277,16 +11775,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/central-avenue/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          },
-          {
-            "title": "Map of Subdivision of the Reyes Tract (M.R. 10-80, Mar. 1885)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-080.pdf"
           },
           {
             "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887)",
@@ -11309,11 +11803,14 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "absentAsOf": {
-          "text": "1888 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
+          "text": "1887 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -11369,6 +11866,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -11388,7 +11888,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-046.pdf"
           }
         ],
-        "minLat": 34.0358,
+        "minLat": 34.0334,
         "maxLat": 34.037,
         "from": {
           "px": [
@@ -11398,93 +11898,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            303,
-            502
-          ]
-        }
-      },
-      {
-        "label": "part of (Wolfskill Ave)",
-        "name": "Central Avenue",
-        "entityId": "central-ave",
-        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
-        "planned": {
-          "text": "by 1885",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-080.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1885",
-            "until": "Feb. 1897",
-            "name": "Wolfskill Avenue",
-            "entityId": "wolfskill-ave",
-            "formInForce": "Wolfskill Avenue",
-            "how": "origin",
-            "origin": "labeled “Wolfskill St.” on the 1885 Reyes Tract {{(source)}} — William Wolfskill's old citrus ranch, which the street ran through",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-080.pdf"
-          },
-          {
-            "from": "Feb. 1897",
-            "until": null,
-            "name": "Central Avenue",
-            "entityId": "central-ave",
-            "formInForce": "Central Avenue",
-            "how": "origin",
-            "origin": "renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
-            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          }
-        ],
-        "note": null,
-        "attested": true,
-        "knownFraction": 0.8,
-        "categories": [
-          "descriptive",
-          "renamed"
-        ],
-        "formerCategories": [
-          "person"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Central Avenue",
-            "url": "https://lastreetnames.com/street/central-avenue/"
-          },
-          {
-            "title": "Map of Subdivision of the Reyes Tract (M.R. 10-80, Mar. 1885; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-080.pdf"
-          },
-          {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
-          },
-          {
-            "title": "Kohler Tract, Being W. J. Fisher's Re-Subdivision of a Portion of the Kohler and Frohling Tract (M.R. 54-51, Aug. 9, 1894; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR054/MR054-051.pdf"
-          },
-          {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
-          },
-          {
-            "title": "Map of the J. B. Parker Subdivision, Being a Portion of the Reyes Tract (M.R. 70-51, Apr. 1898; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR070/MR070-051.pdf"
-          }
-        ],
-        "minLat": 34.0333,
-        "maxLat": 34.0358,
-        "from": {
-          "px": [
-            303,
-            502
-          ]
-        },
-        "to": {
-          "px": [
-            500,
-            1092
+            923,
+            1565
           ]
         }
       },
@@ -11517,6 +11932,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -11533,11 +11951,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0329,
-        "maxLat": 34.0333,
+        "maxLat": 34.0334,
         "from": {
           "px": [
-            500,
-            1092
+            923,
+            1565
           ]
         },
         "to": {
@@ -11563,6 +11981,9 @@ const STREET_DATA = {
         "knownFraction": 0.78,
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -11601,11 +12022,11 @@ const STREET_DATA = {
         "namedAfter": "{{Ceres}}, the Roman goddess of agriculture and the harvest — how and when this stretch joined Ceres Avenue is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Ceres_(mythology)",
         "planned": {
-          "text": "1888",
+          "text": "1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
-        "note": "This street was laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
+        "note": "This street was laid through Joseph Wolfskill’s orchard as it was being cut into building lots, surveyed July–August 1887 and recorded Jan. 11, 1888. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -11618,7 +12039,7 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -11638,36 +12059,36 @@ const STREET_DATA = {
         "namedAfter": "{{Ceres}}, the Roman goddess of agriculture and the harvest",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Ceres_(mythology)",
         "planned": {
-          "text": "1888",
+          "text": "1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "by 1887",
             "until": null,
             "name": "Ceres Avenue",
             "entityId": "ceres-ave",
             "formInForce": "Ceres Avenue",
             "how": "origin",
-            "origin": "labeled “Ceres Ave” on the 1888 Wolfskill Orchard Tract (sheets 1, 2) {{(source)}}",
+            "origin": "labeled “Ceres Ave” on the 1887 Wolfskill Orchard Tract (sheets 1, 2) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "note": "This street was laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
+        "note": "This street was laid through Joseph Wolfskill’s orchard as it was being cut into building lots, surveyed July–August 1887 and recorded Jan. 11, 1888. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.78,
+        "knownFraction": 0.79,
         "categories": [
           "mythological"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -11719,7 +12140,7 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": "This street was laid through Joseph Wolfskill's orchard as it was being cut into building lots in 1887. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
+        "note": "This street was laid through Joseph Wolfskill’s orchard as it was being cut into building lots, surveyed July–August 1887 and recorded Jan. 11, 1888. No source names the goddess or anyone called Ceres — but a harvest goddess on a subdivided orchard reads as a choice rather than a coincidence.",
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -11740,7 +12161,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-092.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 1, M.R. 30-9, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -11869,6 +12290,9 @@ const STREET_DATA = {
         "formerCategories": [
           "unknown",
           "descriptive"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -12143,6 +12567,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -12179,6 +12606,9 @@ const STREET_DATA = {
         },
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -12230,6 +12660,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -12268,6 +12701,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -12305,6 +12741,9 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -12570,6 +13009,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -12602,6 +13044,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -12643,7 +13088,7 @@ const STREET_DATA = {
         "entityId": "court-house-street",
         "formInForce": "Court House Street",
         "how": "origin",
-        "origin": "labeled “COURT HOUSE STREET” and “Court House Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}} — lettered on the Mott Tract sheet of March 1869, running the block between First and Temple; the stretch survives as Community Terrace. There had been a court house on that ground: the Rocha Adobe, on the west side of Spring Street between First and Temple, was bought by the city and county in 1853 and served as the county court house until 1861, after which it remained the seat of city government until it was demolished in 1886. By 1869 the courts themselves sat further south, in the Market House on the Temple Block. Nothing found says which building the street was named for, or who chose the name",
+        "origin": "labeled “COURT HOUSE STREET” and “Court House Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}} — A court house — which one, and whether one stood on this ground at all, is what the search could not settle",
         "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
       },
       {
@@ -12671,6 +13116,9 @@ const STREET_DATA = {
     "formerCategories": [
       "descriptive",
       "unknown"
+    ],
+    "formerAncestors": [
+      "abstract"
     ],
     "disputed": false,
     "sources": [
@@ -13083,18 +13531,18 @@ const STREET_DATA = {
         "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "by 1887",
             "until": "?",
             "name": "Stanford Avenue",
             "entityId": "stanford-ave",
             "formInForce": "Stanford Avenue",
-            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
+            "origin": "labeled “Stanford Ave” on the 1887 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -13132,7 +13580,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -13156,19 +13604,19 @@ const STREET_DATA = {
         "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
         "planned": {
-          "text": "1888",
+          "text": "1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "1888",
+            "from": "1887",
             "until": "?",
             "name": "Stanford Avenue",
             "entityId": "stanford-ave",
             "formInForce": "Stanford Avenue",
             "how": "origin",
-            "origin": "labeled “Stanford Ave” on the 1888 Wolfskill Orchard Tract (sheets 2–5) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
+            "origin": "labeled “Stanford Ave” on the 1887 Wolfskill Orchard Tract (sheets 2–5) {{(source)}} — Leland Stanford (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -13188,7 +13636,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.22,
+        "knownFraction": 0.21,
         "categories": [
           "person",
           "alive",
@@ -13206,7 +13654,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -13345,7 +13793,80 @@ const STREET_DATA = {
         "to": "8th Street"
       },
       {
-        "label": "beyond 8th (Clark Ave)",
+        "label": "8th to 9th (Clark Ave)",
+        "name": "Crocker Street",
+        "entityId": "crocker-street",
+        "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Crocker",
+        "planned": {
+          "text": "by 1893",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1893",
+            "until": "?",
+            "name": "Clark Avenue",
+            "entityId": "clark-ave",
+            "formInForce": "Clark Avenue",
+            "how": "origin",
+            "origin": "labeled “Clark Ave.” on the 1893 Clark and Bryan Tract {{(source)}} — Wesley Clark, senior partner in the Los Angeles real-estate firm of Clark & Bryan, who owned this tract with Elden P. Bryan",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          },
+          {
+            "from": "by 1907",
+            "until": null,
+            "name": "Crocker Street",
+            "entityId": "crocker-street",
+            "formInForce": "Crocker Street",
+            "how": "renaming",
+            "origin": "labeled “Crocker St” on the 1907 Ulm Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0013/TR0013-048.pdf"
+          }
+        ],
+        "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
+        "attested": true,
+        "knownFraction": 0.68,
+        "categories": [
+          "person",
+          "alive",
+          "renamed"
+        ],
+        "formerCategories": [
+          "person",
+          "alive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
+            "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
+          },
+          {
+            "title": "Map of the Clark and Bryan Tract, Los Angeles City, Calif. (M.R. 53-65, Nov. 1893; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
+          },
+          {
+            "title": "Map of the Ulm Tract (Oct. 4, 1907; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0013/TR0013-048.pdf"
+          },
+          {
+            "title": "Map of Wilde and Strong's Subdivision of the Frank Sabichi Tract (M.R. 66-64, Sept. 21, 1897)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
+          },
+          {
+            "title": "Homestead Museum: “No Place Like Home: The Elden P. Bryan Residence” (on the firm of Clark & Bryan)",
+            "url": "https://homesteadmuseum.blog/2016/12/06/no-place-like-home-the-elden-p-bryan-residence-los-angeles-ca-1907/"
+          }
+        ],
+        "minLat": 34.037,
+        "maxLat": 34.0378,
+        "from": "8th Street",
+        "to": "9th Street"
+      },
+      {
+        "label": "beyond 9th (Clark Ave)",
         "name": "Crocker Street",
         "entityId": "crocker-street",
         "namedAfter": "{{Charles Crocker}} (1822–1888), Southern Pacific executive and one of the “Big Four” financiers of the Central Pacific, once this stretch was folded into Crocker Street",
@@ -13409,8 +13930,8 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0345,
-        "maxLat": 34.0378,
-        "from": "8th Street",
+        "maxLat": 34.037,
+        "from": "9th Street",
         "to": {
           "px": [
             778,
@@ -13469,7 +13990,10 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "place"
+          "landform"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -13506,7 +14030,10 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.66,
         "categories": [
-          "place"
+          "landform"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -14124,7 +14651,7 @@ const STREET_DATA = {
             "entityId": "pearl",
             "formInForce": "Pearl Street",
             "how": "renaming",
-            "origin": "renamed per the Feb. 1874 council action (Herald report) {{(source)}} — No namesake documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own",
+            "origin": "renamed per the Feb. 1874 council action (Herald report) {{(source)}} — no namesake is documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own — a claim about who did the naming, not about what the name was for",
             "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
           },
           {
@@ -14151,8 +14678,11 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "nature",
+          "animal",
           "unknown"
+        ],
+        "formerAncestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -14231,7 +14761,7 @@ const STREET_DATA = {
             "entityId": "pearl",
             "formInForce": "Pearl Street",
             "how": "origin",
-            "origin": "renamed per the Feb. 1874 council action (Herald report) {{(source)}} — No namesake documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own",
+            "origin": "renamed per the Feb. 1874 council action (Herald report) {{(source)}} — no namesake is documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own — a claim about who did the naming, not about what the name was for",
             "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
           },
           {
@@ -14258,8 +14788,11 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "nature",
+          "animal",
           "unknown"
+        ],
+        "formerAncestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -14338,7 +14871,7 @@ const STREET_DATA = {
             "entityId": "pearl",
             "formInForce": "Pearl Street",
             "how": "origin",
-            "origin": "labeled “PEARL STR.” and “PEARL ST” on the 1875 Block 22 1/2, Hancock's Survey and the 1878 Nichols Addition {{(source)}} — No namesake documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own",
+            "origin": "labeled “PEARL STR.” and “PEARL ST” on the 1875 Block 22 1/2, Hancock's Survey and the 1878 Nichols Addition {{(source)}} — no namesake is documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own — a claim about who did the naming, not about what the name was for",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-016.pdf"
           },
           {
@@ -14446,7 +14979,7 @@ const STREET_DATA = {
             "entityId": "pearl",
             "formInForce": "Pearl Street",
             "how": "renaming",
-            "origin": "renamed per the Feb. 1874 council action (Herald report) {{(source)}} — No namesake documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own",
+            "origin": "renamed per the Feb. 1874 council action (Herald report) {{(source)}} — no namesake is documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own — a claim about who did the naming, not about what the name was for",
             "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
           },
           {
@@ -14469,8 +15002,11 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "nature",
+          "animal",
           "unknown"
+        ],
+        "formerAncestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -14715,6 +15251,9 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
         },
         "categories": [
+          "plant"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -14768,6 +15307,9 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
+          "plant"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -14831,6 +15373,9 @@ const STREET_DATA = {
         },
         "knownFraction": 0.9,
         "categories": [
+          "plant"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -14890,6 +15435,9 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
+          "plant"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -14945,6 +15493,9 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
+          "plant"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -14988,6 +15539,9 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
+          "plant"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -15031,6 +15585,9 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
+          "plant"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -15509,7 +16066,7 @@ const STREET_DATA = {
             "entityId": "messer-street",
             "formInForce": "Messer Street",
             "how": "origin",
-            "origin": "labeled “Messer STREET.” on the 1871 Johnston Tract {{(source)}} — lettered with Rose Street on the Johnston Tract of March 1871, between 1st and 2nd Streets east of Alameda (documents/mr002-092)",
+            "origin": "labeled “Messer STREET.” on the 1871 Johnston Tract {{(source)}} — Almost certainly K. Messer, the adjoining landowner — the plat that letters this street writes “K. Messer” across the holding along the tract’s northern edge",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           },
           {
@@ -15536,7 +16093,8 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "unknown"
+          "person",
+          "alive"
         ],
         "disputed": false,
         "sources": [
@@ -15698,23 +16256,23 @@ const STREET_DATA = {
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "1888",
+          "text": "1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "1888",
+            "from": "1887",
             "until": null,
             "name": "Gladys Avenue",
             "entityId": "gladys-ave",
             "formInForce": "Gladys Avenue",
             "how": "origin",
-            "origin": "labeled “Gladys Ave” on the 1888 Wolfskill Orchard Tract (sheets 2–4) {{(source)}}",
+            "origin": "labeled “Gladys Ave” on the 1887 Wolfskill Orchard Tract (sheets 2–4) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
-        "note": "Laid out with Ruth Avenue through Joseph Wolfskill’s orchard in 1887. The two were long read together as Wolfskill daughters, and Ruth turns out to be one — but no Gladys has ever been documented in the family. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
+        "note": "Laid out with Ruth Avenue through Joseph Wolfskill’s orchard, surveyed July–August 1887 and recorded Jan. 11, 1888. The two were long read together as Wolfskill daughters, and Ruth turns out to be one — but no Gladys has ever been documented in the family. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -15731,11 +16289,7 @@ const STREET_DATA = {
             "url": "https://www.loc.gov/resource/sn85042460/1887-07-31/ed-1/?sp=3"
           },
           {
-            "title": "Social Security Administration, popular names of the 1880s — Gladys, decade rank #151",
-            "url": "https://www.ssa.gov/oact/babynames/decades/names1880s.html"
-          },
-          {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -15781,7 +16335,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
           }
         ],
-        "note": "Laid out with Ruth Avenue through Joseph Wolfskill’s orchard in 1887. The two were long read together as Wolfskill daughters, and Ruth turns out to be one — but no Gladys has ever been documented in the family. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
+        "note": "Laid out with Ruth Avenue through Joseph Wolfskill’s orchard, surveyed July–August 1887 and recorded Jan. 11, 1888. The two were long read together as Wolfskill daughters, and Ruth turns out to be one — but no Gladys has ever been documented in the family. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -15802,10 +16356,6 @@ const STREET_DATA = {
             "url": "https://www.loc.gov/resource/sn85042460/1887-07-31/ed-1/?sp=3"
           },
           {
-            "title": "Social Security Administration, popular names of the 1880s — Gladys, decade rank #151",
-            "url": "https://www.ssa.gov/oact/babynames/decades/names1880s.html"
-          },
-          {
             "title": "Map of E. M. Funk's Subdivision of the Valenzuela Tract (M.R. 18-92, June 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-092.pdf"
           },
@@ -15818,7 +16368,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/parcel/PM017/PM017-045.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -15870,7 +16420,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/parcel/PM017/PM017-045.pdf"
           }
         ],
-        "note": "Laid out with Ruth Avenue through Joseph Wolfskill’s orchard in 1887. The two were long read together as Wolfskill daughters, and Ruth turns out to be one — but no Gladys has ever been documented in the family. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
+        "note": "Laid out with Ruth Avenue through Joseph Wolfskill’s orchard, surveyed July–August 1887 and recorded Jan. 11, 1888. The two were long read together as Wolfskill daughters, and Ruth turns out to be one — but no Gladys has ever been documented in the family. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
         "attested": true,
         "knownFraction": 0.32,
         "categories": [
@@ -15887,10 +16437,6 @@ const STREET_DATA = {
             "url": "https://www.loc.gov/resource/sn85042460/1887-07-31/ed-1/?sp=3"
           },
           {
-            "title": "Social Security Administration, popular names of the 1880s — Gladys, decade rank #151",
-            "url": "https://www.ssa.gov/oact/babynames/decades/names1880s.html"
-          },
-          {
             "title": "Map of E. M. Funk's Subdivision of the Valenzuela Tract (M.R. 18-92, June 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-092.pdf"
           },
@@ -15899,7 +16445,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/parcel/PM017/PM017-045.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -15951,7 +16497,7 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": "Laid out with Ruth Avenue through Joseph Wolfskill’s orchard in 1887. The two were long read together as Wolfskill daughters, and Ruth turns out to be one — but no Gladys has ever been documented in the family. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
+        "note": "Laid out with Ruth Avenue through Joseph Wolfskill’s orchard, surveyed July–August 1887 and recorded Jan. 11, 1888. The two were long read together as Wolfskill daughters, and Ruth turns out to be one — but no Gladys has ever been documented in the family. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
@@ -15968,10 +16514,6 @@ const STREET_DATA = {
             "url": "https://www.loc.gov/resource/sn85042460/1887-07-31/ed-1/?sp=3"
           },
           {
-            "title": "Social Security Administration, popular names of the 1880s — Gladys, decade rank #151",
-            "url": "https://www.ssa.gov/oact/babynames/decades/names1880s.html"
-          },
-          {
             "title": "Map of the Goldsworthy 9th St. Tract (M.R. 26-59, Nov. 29, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR026/MR026-059.pdf"
           },
@@ -15980,7 +16522,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR026/MR026-060.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -16121,6 +16663,9 @@ const STREET_DATA = {
           "unknown",
           "aspiration"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -16164,7 +16709,7 @@ const STREET_DATA = {
             "entityId": "charity",
             "formInForce": "Charity Street",
             "how": "extension",
-            "origin": "labeled “CHARITY STREET” and “Charity Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}} — The virtue",
+            "origin": "labeled “CHARITY STREET” and “Charity Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
             "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           },
           {
@@ -16190,8 +16735,14 @@ const STREET_DATA = {
           "aspiration",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "aspiration"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -16253,7 +16804,7 @@ const STREET_DATA = {
             "name": "Charity Street",
             "entityId": "charity",
             "formInForce": "Charity Street",
-            "origin": "labeled “Charity St.” on the 1868 Beaudry Tract {{(source)}} — The virtue",
+            "origin": "labeled “Charity St.” on the 1868 Beaudry Tract {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
           },
           {
@@ -16279,8 +16830,14 @@ const STREET_DATA = {
           "aspiration",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "aspiration"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -16339,7 +16896,7 @@ const STREET_DATA = {
             "entityId": "charity",
             "formInForce": "Charity Street",
             "how": "extension",
-            "origin": "labeled “Charity St.” on the 1868 Beaudry Tract {{(source)}} — The virtue",
+            "origin": "labeled “Charity St.” on the 1868 Beaudry Tract {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
           },
           {
@@ -16365,8 +16922,14 @@ const STREET_DATA = {
           "aspiration",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "aspiration"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -16425,7 +16988,7 @@ const STREET_DATA = {
             "entityId": "charity",
             "formInForce": "Charity Street",
             "how": "origin",
-            "origin": "labeled “CHARITY ST.” and “CALLE DE CARIDAD” on the 1849 Hutton / Ord Survey {{(source)}} — The virtue",
+            "origin": "labeled “CHARITY ST.” and “CALLE DE CARIDAD” on the 1849 Hutton / Ord Survey {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
@@ -16447,8 +17010,14 @@ const STREET_DATA = {
           "aspiration",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "aspiration"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -16507,7 +17076,7 @@ const STREET_DATA = {
             "entityId": "charity",
             "formInForce": "Charity Street",
             "how": "extension",
-            "origin": "labeled “Charity St” on the 1885 Cameron Tract {{(source)}} — The virtue",
+            "origin": "labeled “Charity St” on the 1885 Cameron Tract {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           },
           {
@@ -16529,8 +17098,14 @@ const STREET_DATA = {
           "aspiration",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "aspiration"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -16584,6 +17159,9 @@ const STREET_DATA = {
           "unknown",
           "aspiration"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -16627,7 +17205,7 @@ const STREET_DATA = {
         "name": "Charity Street",
         "entityId": "charity",
         "formInForce": "Charity Street",
-        "origin": "labeled “CHARITY STREET” and “Charity Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}} — The virtue",
+        "origin": "labeled “CHARITY STREET” and “Charity Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
         "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
       },
       {
@@ -16650,6 +17228,9 @@ const STREET_DATA = {
     ],
     "formerCategories": [
       "aspiration"
+    ],
+    "formerAncestors": [
+      "abstract"
     ],
     "disputed": false,
     "sources": [
@@ -16719,9 +17300,14 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "maxLng": -118.2633,
+        "maxLng": -118.2629,
         "from": null,
-        "to": null
+        "to": {
+          "px": [
+            937,
+            529
+          ]
+        }
       },
       {
         "label": "part of",
@@ -16747,9 +17333,14 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "minLng": -118.2633,
+        "minLng": -118.2629,
         "maxLng": -118.2588,
-        "from": null,
+        "from": {
+          "px": [
+            937,
+            529
+          ]
+        },
         "to": {
           "px": [
             441,
@@ -17152,7 +17743,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "place"
+          "landform"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -17188,7 +17782,7 @@ const STREET_DATA = {
             "entityId": "bull",
             "formInForce": "Bull Street",
             "how": "origin",
-            "origin": "labeled “BULL ST.” and “CALLE DEL TORO” on the 1849 Hutton / Ord Survey {{(source)}} — no namesake is documented; bullfights were reportedly held in the area until 1872",
+            "origin": "labeled “BULL ST.” and “CALLE DEL TORO” on the 1849 Hutton / Ord Survey {{(source)}} — The bull — no particular animal, bullring or incident is documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -17220,14 +17814,20 @@ const STREET_DATA = {
         },
         "knownFraction": 0.14,
         "categories": [
-          "place",
+          "landform",
           "renamed"
         ],
+        "ancestors": [
+          "nature"
+        ],
         "formerCategories": [
-          "nature",
+          "animal",
           "person",
           "alive",
           "foreign"
+        ],
+        "formerAncestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -17277,7 +17877,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "categories": [
-          "place"
+          "landform"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -17336,7 +17939,10 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
-          "place"
+          "landform"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -17399,7 +18005,10 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "place"
+          "landform"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -17454,7 +18063,10 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "place"
+          "landform"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -17549,6 +18161,9 @@ const STREET_DATA = {
           "person",
           "unknown"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": true,
         "sources": [
           {
@@ -17613,6 +18228,9 @@ const STREET_DATA = {
           "person",
           "unknown"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": true,
         "sources": [
           {
@@ -17674,6 +18292,9 @@ const STREET_DATA = {
           "person",
           "unknown"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": true,
         "sources": [
           {
@@ -17723,6 +18344,9 @@ const STREET_DATA = {
           "person",
           "unknown"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": true,
         "sources": [
           {
@@ -17768,6 +18392,9 @@ const STREET_DATA = {
           "person",
           "unknown"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": true,
         "sources": [
           {
@@ -17812,6 +18439,9 @@ const STREET_DATA = {
           "aspiration",
           "person",
           "unknown"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": true,
         "sources": [
@@ -17972,8 +18602,11 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "tree"
+        ],
+        "formerAncestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -18041,7 +18674,7 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "absentAsOf": {
-          "text": "1888 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
+          "text": "1887 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "categories": [
@@ -18317,6 +18950,9 @@ const STREET_DATA = {
         ],
         "formerCategories": [
           "number"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -18698,7 +19334,7 @@ const STREET_DATA = {
         "note": "Named in 1887, months after Kohler was felled by a stroke in San Francisco.",
         "attested": false,
         "absentAsOf": {
-          "text": "1888 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
+          "text": "1887 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "categories": [
@@ -20397,6 +21033,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -20437,6 +21076,9 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -20489,6 +21131,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -20540,6 +21185,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -20590,6 +21238,9 @@ const STREET_DATA = {
         },
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -20673,6 +21324,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -20726,6 +21380,9 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -20793,6 +21450,9 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -20879,6 +21539,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive",
           "renamed"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "formerCategories": [
           "place"
@@ -20974,6 +21637,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -21053,6 +21719,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -21128,6 +21797,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -21182,6 +21854,9 @@ const STREET_DATA = {
         "knownFraction": 0.81,
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -21238,6 +21913,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -21285,6 +21963,9 @@ const STREET_DATA = {
         "categories": [
           "descriptive"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -21331,6 +22012,9 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -21403,9 +22087,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "nature",
           "unknown",
+          "tree",
           "renamed"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "formerCategories": [
           "unknown"
@@ -21461,8 +22148,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.68,
         "categories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "tree"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -21509,8 +22199,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.8,
         "categories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "tree"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -21569,8 +22262,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.78,
         "categories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "tree"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -21609,8 +22305,11 @@ const STREET_DATA = {
         "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": false,
         "categories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "tree"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -21661,8 +22360,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.79,
         "categories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "tree"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -21717,8 +22419,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "tree"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -21757,8 +22462,11 @@ const STREET_DATA = {
         "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": false,
         "categories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "tree"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -21797,8 +22505,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.76,
         "categories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "tree"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -22043,8 +22754,11 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "tree"
+        ],
+        "formerAncestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -22293,6 +23007,9 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
+          "tree"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -22326,6 +23043,9 @@ const STREET_DATA = {
         "note": "The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
         "attested": false,
         "categories": [
+          "tree"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -22533,6 +23253,9 @@ const STREET_DATA = {
         "formerCategories": [
           "number"
         ],
+        "formerAncestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -22595,6 +23318,9 @@ const STREET_DATA = {
         ],
         "formerCategories": [
           "number"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -23090,6 +23816,9 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
+          "tree"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -23151,6 +23880,9 @@ const STREET_DATA = {
         },
         "knownFraction": 0.9,
         "categories": [
+          "tree"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -23218,6 +23950,9 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
+          "tree"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -23265,6 +24000,9 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
+          "tree"
+        ],
+        "ancestors": [
           "nature"
         ],
         "disputed": false,
@@ -23393,6 +24131,9 @@ const STREET_DATA = {
         "formerCategories": [
           "number"
         ],
+        "formerAncestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -23513,6 +24254,9 @@ const STREET_DATA = {
         "formerCategories": [
           "number"
         ],
+        "formerAncestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -23593,6 +24337,9 @@ const STREET_DATA = {
         "formerCategories": [
           "number"
         ],
+        "formerAncestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -23670,6 +24417,9 @@ const STREET_DATA = {
         "formerCategories": [
           "number"
         ],
+        "formerAncestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -23741,6 +24491,9 @@ const STREET_DATA = {
         ],
         "formerCategories": [
           "number"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -23814,6 +24567,9 @@ const STREET_DATA = {
         "formerCategories": [
           "number"
         ],
+        "formerAncestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -23850,36 +24606,36 @@ const STREET_DATA = {
     "namedAfter": null,
     "namedAfterLink": null,
     "planned": {
-      "text": "by 1888",
+      "text": "by 1887",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
     },
     "built": "not yet researched",
     "nameHistory": [
       {
-        "from": "by 1888",
+        "from": "by 1887",
         "until": null,
         "name": "Omar Street",
         "entityId": "omar-ave",
         "formInForce": "Omar Street",
         "how": "origin",
-        "origin": "labeled “Omar Ave” on the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
+        "origin": "labeled “Omar Ave” on the 1887 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
         "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
       }
     ],
-    "note": "Platted with the rest of the Wolfskill Orchard Tract in 1887 and apparently never renamed — only the generic drifted, from the plat's “Omar Ave” to today's Omar Street. No source names an Omar.",
+    "note": "Platted with the rest of the Wolfskill Orchard Tract, surveyed July–August 1887 and recorded Jan. 11, 1888, and apparently never renamed — only the generic drifted, from the plat’s “Omar Ave” to today’s Omar Street. No source names an Omar, and there is none among Joseph Wolfskill’s children.",
     "attested": true,
     "absentAsOf": {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
-    "knownFraction": 0.78,
+    "knownFraction": 0.79,
     "categories": [
       "unknown"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+        "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Aug. 1887; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
       }
     ]
@@ -25416,7 +26172,7 @@ const STREET_DATA = {
         "namedAfter": "The port town of {{San Pedro}}, which the street ran toward, extended onto this stretch",
         "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": {
@@ -25425,19 +26181,19 @@ const STREET_DATA = {
         },
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "by 1887",
             "until": null,
             "name": "San Pedro Street",
             "entityId": "san-pedro",
             "formInForce": "San Pedro Street",
             "how": "extension",
-            "origin": "labeled “San Pedro Ave” on the 1888 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
+            "origin": "labeled “San Pedro Ave” on the 1887 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
-        "knownFraction": 0.78,
+        "knownFraction": 0.79,
         "categories": [
           "place",
           "destination"
@@ -25457,7 +26213,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -25520,7 +26276,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -25550,7 +26306,7 @@ const STREET_DATA = {
         "namedAfter": "The port town of {{San Pedro}}, which the street ran toward, extended onto this stretch",
         "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": {
@@ -25559,19 +26315,19 @@ const STREET_DATA = {
         },
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "by 1887",
             "until": null,
             "name": "San Pedro Street",
             "entityId": "san-pedro",
             "formInForce": "San Pedro Street",
             "how": "extension",
-            "origin": "labeled “San Pedro Ave” on the 1888 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}}",
+            "origin": "labeled “San Pedro Ave” on the 1887 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
-        "knownFraction": 0.78,
+        "knownFraction": 0.79,
         "categories": [
           "place",
           "destination"
@@ -25591,7 +26347,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -25654,7 +26410,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 3, M.R. 30-11, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 3, M.R. 30-11, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -25699,7 +26455,7 @@ const STREET_DATA = {
             "entityId": "san-pedro",
             "formInForce": "San Pedro Street",
             "how": "extension",
-            "origin": "labeled “San Pedro Street” and “San Pedro Ave” on the 1886 Whisler Subdivision and the 1888 Wolfskill Orchard Tract, sheet 3 (M.R. 30-11) {{(source)}}",
+            "origin": "labeled “San Pedro Street” and “San Pedro Ave” on the 1886 Whisler Subdivision and the 1887 Wolfskill Orchard Tract, sheet 3 (M.R. 30-11) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-064.pdf"
           }
         ],
@@ -25729,7 +26485,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-064.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 3, M.R. 30-11, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 3, M.R. 30-11, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -25759,7 +26515,7 @@ const STREET_DATA = {
         "namedAfter": "The port town of {{San Pedro}}, which the street ran toward, extended onto this stretch",
         "namedAfterLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles",
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": {
@@ -25768,19 +26524,19 @@ const STREET_DATA = {
         },
         "nameHistory": [
           {
-            "from": "by 1888",
+            "from": "by 1887",
             "until": null,
             "name": "San Pedro Street",
             "entityId": "san-pedro",
             "formInForce": "San Pedro Street",
             "how": "extension",
-            "origin": "labeled “San Pedro Ave” on the 1888 Wolfskill Orchard Tract (sheets 2, 3) {{(source)}}",
+            "origin": "labeled “San Pedro Ave” on the 1887 Wolfskill Orchard Tract (sheets 2, 3) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
-        "knownFraction": 0.78,
+        "knownFraction": 0.79,
         "categories": [
           "place",
           "destination"
@@ -25800,7 +26556,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -25845,7 +26601,7 @@ const STREET_DATA = {
             "entityId": "san-pedro",
             "formInForce": "San Pedro Street",
             "how": "extension",
-            "origin": "labeled “San Pedro Street” and “San Pedro Ave” on the 1886 Beck Tract and the 1888 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}}",
+            "origin": "labeled “San Pedro Street” and “San Pedro Ave” on the 1886 Beck Tract and the 1887 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR014/MR014-034.pdf"
           }
         ],
@@ -25875,7 +26631,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR014/MR014-034.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -25938,7 +26694,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-039.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -26413,8 +27169,11 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "plant"
+        ],
+        "formerAncestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -27278,6 +28037,9 @@ const STREET_DATA = {
         "formerCategories": [
           "descriptive"
         ],
+        "formerAncestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -27496,19 +28258,19 @@ const STREET_DATA = {
         "namedAfter": "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863, once this stretch was folded into Stanford Avenue",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Leland_Stanford",
         "planned": {
-          "text": "1888",
+          "text": "1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "1888",
+            "from": "1887",
             "until": "?",
             "name": "Ruth Avenue",
             "entityId": "ruth-ave",
             "formInForce": "Ruth Avenue",
             "how": "origin",
-            "origin": "labeled “Ruth Ave” on the 1888 Wolfskill Orchard Tract (sheets 2–5) {{(source)}} — Probably Ruth R. Wolfskill (1881–1968), daughter of Joseph William Wolfskill, on whose orchard the street was laid out — she was five when it was surveyed",
+            "origin": "labeled “Ruth Ave” on the 1887 Wolfskill Orchard Tract (sheets 2–5) {{(source)}} — Probably Ruth R. Wolfskill (1881–1968), daughter of Joseph William Wolfskill, on whose orchard the street was laid out — she was five when it was surveyed",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -27528,7 +28290,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.22,
+        "knownFraction": 0.21,
         "categories": [
           "person",
           "governor",
@@ -27547,7 +28309,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -27630,7 +28392,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR070/MR070-084.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -27722,7 +28484,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/parcel/PM017/PM017-045.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -27811,7 +28573,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/parcel/PM017/PM017-045.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
@@ -27868,7 +28630,19 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-086.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "title": "Plat of the Niosi Tract (June 9, 1903; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0007/TR0007-085.pdf"
+          },
+          {
+            "title": "Map of Culvers Addition to the Frank Sabichi Tract (July 26, 1904; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-156a.pdf"
+          },
+          {
+            "title": "Parcel Map - L.A. No. 1136 (Feb. 18, 1969; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/parcel/PM017/PM017-045.pdf"
+          },
+          {
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -27909,7 +28683,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -28159,7 +28933,7 @@ const STREET_DATA = {
         "to": "Los Angeles Street"
       },
       {
-        "label": "beyond Los Angeles (Requena St)",
+        "label": "beyond Los Angeles (Market St)",
         "name": "Temple Street",
         "entityId": "temple",
         "namedAfter": "{{Jonathan Temple}} (1796–1866), the Massachusetts trader who reached the pueblo about 1828, opened its first general store and took Mexican citizenship as Juan Temple, once this stretch was folded into Temple Street",
@@ -28179,6 +28953,16 @@ const STREET_DATA = {
             "how": "origin",
             "origin": "labeled “REQUENA STREET” on the 1876 Requena Subdivision {{(source)}} — Almost certainly Manuel Requena (c. 1802–1876), Campeche-born merchant who settled in Los Angeles in 1834, alcalde under Mexican rule 1844–45, county supervisor, long-serving councilman and briefly acting mayor in 1856, whose own property the street ran through",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+          },
+          {
+            "from": "by 1912",
+            "until": "?",
+            "name": "Market Street",
+            "entityId": "market-st",
+            "formInForce": "Market Street",
+            "how": "origin",
+            "origin": "labeled “Market St” on the 1912 Tract No. 1101 {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0020/TR0020-196b.pdf"
           },
           {
             "from": "?",
@@ -28220,6 +29004,10 @@ const STREET_DATA = {
           {
             "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+          },
+          {
+            "title": "Tract No. 1101, Being a Resubdivision of Lots 62, 63, 64, 65, 66, 71, 72 and 73, Property of Don Manuel Requena (July 24, 1912; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0020/TR0020-196b.pdf"
           },
           {
             "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel",
@@ -28428,7 +29216,7 @@ const STREET_DATA = {
         "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad — how and when this stretch joined Towne Avenue is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
         "planned": {
-          "text": "by 1888",
+          "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
@@ -28438,7 +29226,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.78,
+        "knownFraction": 0.79,
         "categories": [
           "person",
           "alive"
@@ -28450,7 +29238,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -28470,19 +29258,19 @@ const STREET_DATA = {
         "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Alban_N._Towne",
         "planned": {
-          "text": "1888",
+          "text": "1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "1888",
+            "from": "1887",
             "until": null,
             "name": "Towne Avenue",
             "entityId": "towne-ave",
             "formInForce": "Towne Avenue",
             "how": "origin",
-            "origin": "labeled “Towne Ave” on the 1888 Wolfskill Orchard Tract (sheets 2–5) {{(source)}}",
+            "origin": "labeled “Towne Ave” on the 1887 Wolfskill Orchard Tract (sheets 2–5) {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -28504,7 +29292,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888; identified by map alignment, not a lot-level record)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -28580,7 +29368,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0013/TR0013-048.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -28644,7 +29432,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0013/TR0013-048.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -28692,7 +29480,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-085.pdf"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -28732,7 +29520,7 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Jan. 11, 1888)",
+            "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -28767,6 +29555,9 @@ const STREET_DATA = {
         },
         "categories": [
           "descriptive"
+        ],
+        "ancestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -28831,8 +29622,14 @@ const STREET_DATA = {
           "descriptive",
           "renamed"
         ],
+        "ancestors": [
+          "abstract"
+        ],
         "formerCategories": [
           "number"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -29062,6 +29859,9 @@ const STREET_DATA = {
         ],
         "formerCategories": [
           "number"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -29537,8 +30337,11 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "plant"
+        ],
+        "formerAncestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -29718,8 +30521,11 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "plant"
+        ],
+        "formerAncestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -29792,8 +30598,11 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "plant"
+        ],
+        "formerAncestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -30006,7 +30815,7 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "absentAsOf": {
-      "text": "1888 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
+      "text": "1887 (Wolfskill Orchard Tract, sheet 1 (M.R. 30-9))",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
     },
     "categories": [
@@ -30075,8 +30884,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.8,
         "categories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "tree"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -30105,8 +30917,11 @@ const STREET_DATA = {
         "note": "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along Willow Street, which keeps the name.",
         "attested": false,
         "categories": [
-          "nature",
-          "unknown"
+          "unknown",
+          "tree"
+        ],
+        "ancestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -30837,6 +31652,9 @@ const STREET_DATA = {
           "renamed"
         ],
         "formerCategories": [
+          "animal"
+        ],
+        "formerAncestors": [
           "nature"
         ],
         "disputed": false,

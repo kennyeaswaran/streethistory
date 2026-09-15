@@ -2111,3 +2111,168 @@ for the file list, then the page's `storage-services/…/NNNN.xml` directly. Tha
 the Land Bureau advertisements were recovered. The *Herald* on Chronicling America
 (`sn85042460`, 1884–1890) is the same UCR digitisation as CDNC, so it is a second door
 in when CDNC is unreachable. Added to `handbook/FAMILY-NAMES.md`.
+
+---
+
+## Corrections and new leads on the Wolfskill run (2026-09-14, later)
+
+Kenny asked two things: whether the tract dates had actually been updated, and whether
+the rarity of "Gladys" made a whole-census enumeration worth trying. Both were good
+questions and both turned up something I had got wrong.
+
+### ⚠ The tract sheets were mis-dated, and I had not fixed it
+
+All five Wolfskill Orchard Tract sheets carried `date: { on: "1888-01-11" }` — **the
+recording date, not the survey**. Yesterday I put the survey/recording distinction in
+the document headers and in `ruth-ave`'s prose, and never touched the field the model
+actually reasons from. MODEL-SPEC §4.1 is explicit, with the Ord survey as the
+precedent: *"`date` is the date the document's statements are evidence about"*, and
+*"everything that reasons about order … asks `date`, and a document dated by its filing
+would silently sort into the wrong century of the argument."*
+
+Fixed: `date: { on: "1887-08" }` (Dockweiler surveyed July–August 1887) and
+`recorded: "1888-01-11"` on all five sheets, with the reason in a comment beside the
+field. Every row on that tract had been sorting four months late. `gladys-ave`,
+`ceres-ave` and `omar-ave` now say "surveyed July–August 1887 and recorded Jan. 11,
+1888" rather than a bare "1887".
+
+Also restored: `poplar-st`'s working note, which I overwrote yesterday instead of
+appending to. The original text is back above the new paragraph, with a marker.
+
+### ⚠ The "forty Gladyses in the country" claim was wrong — retracted
+
+I wrote it into `gladys-ave`, the playbook and my own summary. **SSA baby-name data
+counts Social Security card applicants, not births.** Anyone born in 1881 who died
+before about 1937 never appears — most of that cohort. The figure is a floor, not a
+population: Find a Grave alone indexes over two thousand Gladyses born 1862–1882, and
+362 born 1874–1886 buried in California.
+
+The first agent had actually flagged this ("use the ratios, not the raw numbers") and I
+quoted the raw number anyway. **What survives is the ratio**: Gladys ranks about #151
+for the 1880s against Ruth at #66, then jumps to #43 in the 1890s. Genuinely less usual
+than Ruth in 1887, fashionable just after — a real signal, far weaker than stated, and
+not enough on its own to argue the street must honour a specific person. The playbook
+now carries the rule: **never quote an absolute SSA count for a pre-1900 birth year.**
+
+### The enumeration question, answered
+
+Kenny's instinct was right that 1880 is the tractable census — it has a complete 100%
+transcription — but the route is narrower than hoped and the prize is smaller:
+
+- **IPUMS public full-count 1880 has the names stripped.** The restricted file carries
+  them but needs institutional affiliation, a signed agreement and a fee.
+- **FamilySearch's 1880 index is complete, searchable by given name with no surname,
+  and free with an account.** That is the workable route.
+- Steve Morse's One-Step pages post to Ancestry and FamilySearch, so they inherit those
+  logins; `1880census.com`, which advertises FREE, is an affiliate funnel to Ancestry.
+- Find a Grave is fully open and gives name-and-year counts, but burial place is not
+  1880 residence.
+
+**Verdict: doable with a free account, probably not worth it** once the pool is hundreds
+rather than dozens. The cheap version — *any Gladys in Los Angeles County in 1880, or in
+1880s Los Angeles at all* — is the one to run.
+
+### ★ Three new leads, one of them better than the census
+
+**San Francisco has a Gladys Street too.** Easton, Eldridge & Co. — the auctioneers on
+this tract — were a **San Francisco** firm, under Wendell Easton, one of the largest
+real-estate houses in the world in the 1880s, with Los Angeles and San Diego offices by
+1888. If the auctioneers named both streets, the name travelled with the firm rather
+than originating with the landowner. That is a sharper question than any census search
+and nobody has tested it.
+
+**George W. Frink is no longer wholly untraced.** The Huntington holds *"Central Pacific
+Railroad Company to George W. Frink,"* 19 March 1888, in the **James De Barth Shorb
+Papers** — a collection centred on Los Angeles and San Gabriel land and railroads. Right
+name, right place, right year. Identity not established, and one agent deliberately
+declined to assume it.
+<https://www.huntington.org/collections/lib-mssshorb-papers-aspace-edf117c4710f91bb9b07aa5ef5665054>
+
+**The four CDNC searches to run by hand** (CDNC is open to a browser and blocked to
+automated fetchers): `"Gladys"` in the Herald 1886–1890; `"Los Angeles Land Bureau"`
+1886–1890; `Frink` in the Herald 1886–1890; and `"Wolfskill Orchard Tract"` in 1887 for
+the auction advertising itself.
+
+### ⚠ And a correction to yesterday's method note
+
+An agent reported that Chronicling America's *Los Angeles Herald* holdings skip
+1877–1889. **Wrong** — and it matters, because the Land Bureau advertisements were
+recovered from Chronicling America. The run is under **`sn85042460`, the *Los Angeles
+Daily Herald*, digitised 1884-10-07 to 1890-03-22** (verified 2026-09-14). The agent had
+checked three other LCCNs and reasoned from their gaps.
+
+**General rule now in the playbook: check every LCCN a title has before concluding
+Chronicling America lacks a year.** A paper's runs are split across several LCCNs as the
+masthead changes, and a gap in one is usually covered by another.
+
+## 2026-09-14 — Data problems surfaced by the `basis` grading pass
+
+Three graders classified all 143 entities for evidentiary strength (draft at
+`tmp/basis-v3.json`). Grading exposed flaws in the data itself, independent of
+whether the `basis` field is adopted. Unfixed as of this writing.
+
+**Unhedged `namedAfter` that the record's own prose undercuts.** `ceres-ave`
+states the goddess flatly while the note says "No source names the goddess."
+`hill-street-downtown` asserts Bunker Hill flatly, then notes the hill was not
+formally named until 1873, *after* the street — so the street more likely names
+the landform and the landform later took the Bunker name. `pico` is a bare Kines
+citation, unhedged, and its note is about a different subject entirely (the
+absent 13th Street). `witmer-street` names Henry Clayton Witmer specifically
+where the plat reads only "Witmer's Subdivision" — the sheet attests the family,
+not the man; compare `vignes-street`, which handles the same ambiguity correctly.
+`alexander-lane` and `catesby-lane` state dates and relationships flatly that
+their own internal notes concede come entirely from the LA Revisited blog.
+
+**`namedAfter` holding something that is not an identification.** `pearl`'s field
+records a negative check of the 1874 council report plus Toberman's 1897 claim to
+have done the naming — prose about the *act*, sitting in an identification field,
+where it reads at a glance like a source. Should be null with that material in
+`note`. Note also that `pearl` is the only record whose evidence of research is
+stored somewhere nobody would think to grade.
+
+**Stale fields.** `huber-st` still opens "Not documented; most likely…" and still
+carries `unknown` in categories, while the internal note records its 2026-09-13
+upgrade to a flat Kines source. `yale` carries `unresearched` beside two completed
+checks. `gladys-ave` is tagged `person` with `namedAfter: null` — a leftover from
+the retired Wolfskill-daughter reading.
+
+**Missing source citation.** `alexander-lane` has an empty `sources` array while
+its internal note cites the blog for everything in it. `cameron-lane`,
+`catesby-lane` and `centerbrook-lane` all cite the article; the one record whose
+dates come wholly from it does not. Invisible to any query over `sources`.
+
+**Inconsistent treatment of like names.** `georgia-east` gets "Likely the state,"
+`nevada-1886` gets null, on identical (absent) evidence — and `georgia-bell`, two
+records away, is proof that "Georgia" in this city was also a woman's name.
+`olive` gets a stated referent, `orange-st-wilshire` gets "namesake NOT FOUND."
+`palm-st-arts-district` names the plant, `maple-dtla` is null on the same footing.
+
+**Warrant living in a sibling entity (16 records).** Regent and Wall rest on one
+sheet; Spruce, Tulip and Willow rest on a set argument written up under Palm;
+Maple's set argument lives in Myrtle; Agatha's land-ownership anchor is Gladys's;
+Castelar's namesake was carried over from Bull's note; Ceres depends on Ruth and
+Gladys; the five numbered streets all cite one Kines page. `crocker-street` has
+no document row of its own at all — its entire warrant is being the third
+Southern Pacific name after Towne and Stanford, which live elsewhere. A count of
+"names we have evidence for" currently overstates by roughly a dozen.
+
+**Entities that may not be one entity.** `beaudry-st` carries a "⚠ TWO PIECES OF
+GROUND" warning; the 1868 tract warrant does not transfer to a modern Beaudry
+Avenue if that is separate ground. `georgia-bell` and `georgia-east` carry an
+unresolved 1883-vs-1889 conflict, and `georgia-east`'s existence claim rests
+entirely on the renaming story in its sibling's Herald document.
+
+**Cross-references that should exist.** `stanford-ave` and `ruth-ave` describe the
+same name-transfer event from opposite ends and neither links to the other — a
+reader of either cannot see that Ruth Avenue *became* Stanford Avenue.
+`hewitt`'s most useful content is a finding about a different street (Carolina /
+Caroline Huber, written up under `huber-st`).
+
+**Damaged prose.** `poplar-st`'s note carries the "⚠ RESTORED 2026-09-14" marker
+plus a truncated paragraph on the Wolfskill Orchard Tract's mixed-kind names. Both
+the restored and the replacing text are present, and the second materially weakens
+the first (a mixed tract cannot support a theme argument). Needs reconciling.
+
+**A leftover lead.** `court-house-street`'s internal note ends mid-sentence on
+"★ THE ONE REAL LINK: Step…" — almost certainly Stephen H. Mott as deputy county
+clerk, which would be a live lead. Worth finishing the sentence.

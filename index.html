@@ -114,6 +114,13 @@
   <input id="searchBox" list="streetList" placeholder="Find a street with history…" autocomplete="off">
   <datalist id="streetList"></datalist>
   <h2>Highlight streets…</h2>
+  <style>
+    #filters .facet { font-weight:600; margin:8px 0 2px; opacity:.75; font-size:11px;
+                      text-transform:uppercase; letter-spacing:.04em; }
+    #filters .facet:first-child { margin-top:2px; }
+    #filters .fcount { float:right; opacity:.55; font-variant-numeric:tabular-nums; }
+    #filters label.empty { opacity:.45; }
+  </style>
   <div id="filters"></div>
   <button class="clear" onclick="clearFilters()">Clear highlights</button>
   <button class="clear" id="saveGeom" style="display:none" title="Saves streets-geometry.js — put it next to index.html and the map will load instantly without Overpass">Save geometry file</button>
@@ -131,6 +138,7 @@
 <div id="map"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="site-config.js"></script> <!-- authored vocabulary; must come first -->
 <script src="streets-data.js"></script>
 <script src="streets-geometry.js"></script> <!-- optional pre-downloaded geometry; 404 is harmless -->
 <script>
@@ -226,20 +234,76 @@ function resolveEntry(norm, lat, lng) {
 // ---------------------------------------------------------------
 // Filters UI
 // ---------------------------------------------------------------
+// ROADMAP §7: the vocabulary is a TREE, and ticking a parent matches every
+// descendant — so "Something living, or the land" finds the trees, the plants
+// and the animals without anyone tagging a street twice.
+//
+// This file reads the HAND-AUTHORED streets-data.js, which has no `ancestors`
+// (the generator bakes those into generated/streets-data.gen.js, which
+// preview.html reads). So walk the tree here instead. Same answer, computed
+// rather than looked up.
+const CATS_BY_ID = Object.fromEntries(CATEGORIES.map(c => [c.id, c]));
+const catDescendants = id => {
+  const out = new Set([id]);
+  let grew = true;
+  while (grew) {
+    grew = false;
+    for (const c of CATEGORIES)
+      if (c.parent && out.has(c.parent) && !out.has(c.id)) { out.add(c.id); grew = true; }
+  }
+  return out;
+};
+// Facet rows are HEADINGS, not choices: there is no useful answer to "show me
+// everything with a referent".
 const filtersDiv = document.getElementById("filters");
-CATEGORIES.forEach(cat => {
-  const label = document.createElement("label");
-  const cb = document.createElement("input");
-  cb.type = "checkbox";
-  cb.value = cat.id;
-  cb.addEventListener("change", () => {
-    cb.checked ? activeFilters.add(cat.id) : activeFilters.delete(cat.id);
-    restyleAll();
-  });
-  label.appendChild(cb);
-  label.appendChild(document.createTextNode(" " + cat.label));
-  filtersDiv.appendChild(label);
-});
+(function buildFilters() {
+  const n = {};
+  for (const [, v] of Object.entries(STREET_DATA))
+    for (const e of (v.entries || v.segments || []))
+      for (const c of (e.categories || []))
+        for (const a of [c, ...ancestorsOf(c)]) n[a] = (n[a] || 0) + 1;
+
+  const kids = id => CATEGORIES.filter(c => c.parent === id)
+    .sort((a, b) => (n[b.id] || 0) - (n[a.id] || 0) || a.label.localeCompare(b.label));
+
+  const row = (cat, depth) => {
+    if (cat.facet) {
+      const h = document.createElement("div");
+      h.className = "facet";
+      h.textContent = cat.label;
+      filtersDiv.appendChild(h);
+    } else {
+      const label = document.createElement("label");
+      label.style.paddingLeft = (depth * 14) + "px";
+      const cb = document.createElement("input");
+      cb.type = "checkbox";
+      cb.value = cat.id;
+      cb.addEventListener("change", () => {
+        cb.checked ? activeFilters.add(cat.id) : activeFilters.delete(cat.id);
+        restyleAll();
+      });
+      label.appendChild(cb);
+      label.appendChild(document.createTextNode(" " + cat.label));
+      const c = document.createElement("span");
+      c.className = "fcount";
+      c.textContent = n[cat.id] || 0;
+      label.appendChild(c);
+      if (!n[cat.id]) label.classList.add("empty");
+      filtersDiv.appendChild(label);
+    }
+    kids(cat.id).forEach(k => row(k, cat.facet ? 0 : depth + 1));
+  };
+  CATEGORIES.filter(c => c.facet).forEach(f => row(f, 0));
+})();
+function ancestorsOf(id) {
+  const out = [];
+  for (let c = CATS_BY_ID[id]; c && c.parent; c = CATS_BY_ID[c.parent]) {
+    const p = CATS_BY_ID[c.parent];
+    if (!p || p.facet) break;
+    out.push(p.id);
+  }
+  return out;
+}
 
 // ---------------------------------------------------------------
 // Similar-projects modal
@@ -274,7 +338,10 @@ function styleFor(street) {
       ? { color: COLOR_UNKNOWN, opacity: 0.9 }
       : { color: COLOR_DATA, opacity: 0.9 };
   }
-  const matches = data.categories.some(c => activeFilters.has(c));
+  // A ticked parent matches its descendants (ROADMAP §7).
+  const wanted = new Set();
+  for (const f of activeFilters) for (const d of catDescendants(f)) wanted.add(d);
+  const matches = data.categories.some(c => wanted.has(c));
   return matches ? { color: COLOR_HIGHLIGHT, opacity: 1 }
                  : { color: COLOR_DIMMED, opacity: 0.8 };
 }

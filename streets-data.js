@@ -73,13 +73,10 @@
 // pavement, not names. See ADDING-STREETS.md for the full authoring guide;
 // run `node check-data.js` after editing.
 
-// Coverage areas. Adding a neighborhood here expands the map query and redraws
-// the dashed coverage outlines; see ADDING-STREETS.md ("Adding a neighborhood").
-// Bboxes are rough rectangles; for what counts as each neighborhood, use the
-// L.A. Times Mapping L.A. boundaries as the reference.
-const NEIGHBORHOODS = [
-  { id: "dtla", name: "Downtown", bbox: { s: 34.033, w: -118.272, n: 34.068, e: -118.225 } }
-];
+
+// NEIGHBORHOODS, CATEGORIES and SIMILAR_PROJECTS moved to site-config.js
+// on 2026-09-15 (ROADMAP §7 / MODEL-IMPLEMENTATION checklist A). This file is
+// on its way to being generated; the authored vocabulary must not live in it.
 
 const ORD_SURVEY = {
   title: "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
@@ -2850,57 +2847,5 @@ Object.assign(STREET_DATA, {
   }
 });
 
-const CATEGORIES = [
-  { id: "person",      label: "Named after a person" },
-  { id: "alive",       label: "Namesake alive when named" },
-  { id: "governor",    label: "Governors & politicians" },
-  { id: "destination", label: "Named for where it goes" },
-  { id: "aspiration",  label: "Virtues & aspirations" },
-  { id: "renamed",     label: "Has former names" },
-  { id: "borrowed",    label: "Borrowed from another city" },
-  { id: "disputed",    label: "Origin disputed" },
-  { id: "nature",      label: "Named for a plant, tree, or landform" },
-  { id: "mythological", label: "Gods, myths & religion" },
-  { id: "history",     label: "Named for a historical people or event" },
-  { id: "company",     label: "Companies & institutions" },
-  { id: "foreign",     label: "Namesake from abroad" },
-  { id: "descriptive", label: "Descriptive of role or position" },
-  { id: "place",       label: "Named for a place" },
-  { id: "number",      label: "Numbered streets" },
-  { id: "event",       label: "Named for an event" },
-  { id: "system",      label: "Freeways & route systems" },
-  { id: "unknown",     label: "Researched — origin not yet found" }
-];
 
 // Similar / related projects, shown from the title-bar button.
-const SIMILAR_PROJECTS = [
-  { title: "L.A. Street Names (Mark Tapio Kines)",
-    url: "https://lastreetnames.com/",
-    desc: "Researched prose histories of 2,200+ L.A. County street names — the primary narrative complement to this map." },
-  { title: "History of San Francisco Place Names (Noah Veltman)",
-    url: "http://sfstreets.noahveltman.com/",
-    desc: "Clickable SF street-etymology map with theme filters; the closest predecessor to this project.",
-    sub: [
-      { title: "“Mapping the History of Street Names” (Veltman's write-up)",
-        url: "https://source.opennews.org/articles/mapping-history-street-names/",
-        desc: "How the SF map was built, and pitfalls for anyone building one." }
-    ] },
-  { title: "Open Etymology Map",
-    url: "https://etymology.dsantini.it/",
-    desc: "Worldwide map generated from OpenStreetMap's name:etymology:wikidata tags." },
-  { title: "EqualStreetNames",
-    url: "https://equalstreetnames.eu/",
-    desc: "Open-source maps of street names by gender, 60+ cities — mostly in Belgium and Germany — built on OSM + Wikidata." },
-  { title: "Paristique",
-    url: "https://www.paristique.fr/",
-    desc: "Interactive map of the history of Paris street names." },
-  { title: "NYC honorary street names map",
-    url: "https://streetnamesmap-nyc.hub.arcgis.com/",
-    desc: "NYC Dept. of Records map of ~2,500 honorary street co-namings." },
-  { title: "STNAMES LAB",
-    url: "https://en.stnameslab.com/the-project/",
-    desc: "Academic research project analyzing street names as cultural markers; focuses on Spain but has searchable maps of North America." },
-  { title: "Streetpédia",
-    url: "https://streetpedia.fr/",
-    desc: "French mobile app with audio street-name histories." }
-];

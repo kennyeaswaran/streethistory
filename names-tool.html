@@ -76,6 +76,18 @@
   .cat { display:inline-block; font-size:10px; background:#f3ecd8;
          border:1px solid #ddd2b4; border-radius:8px; padding:0 6px; margin:0 3px 2px 0; }
   .cat.unknown, .cat.unresearched { background:#fdf4e2; border-color:#e0c99a; color:#8a5c00; }
+  /* §3.1 basis — green for "nothing left to find", warming toward red as the
+     warrant thins, grey where there is none. Nominal, so read it as a hue, not
+     a rank. */
+  .cat.basis-intrinsic { background:#e8f3ec; border-color:#a9cdb6; color:#1f5c3c; }
+  .cat.basis-attested  { background:#e8f0f7; border-color:#a8c4dd; color:#1f4c6b; }
+  .cat.basis-eponymous { background:#efeaf8; border-color:#c0b0e2; color:#4b357d; }
+  .cat.basis-pattern   { background:#f7eee2; border-color:#ddbf95; color:#7a4a12; }
+  .cat.basis-inferred  { background:#fbf2dd; border-color:#e0c78e; color:#7a5a08; }
+  .cat.basis-lexical   { background:#f5f2dc; border-color:#d6cd8e; color:#5f5810; }
+  .cat.basis-guess     { background:#fbeade; border-color:#e6bb98; color:#8a4416; }
+  .cat.basis-none      { background:#f0eeea; border-color:#d3ccc0; color:#5c554a; }
+  .cat.searched { background:#fff; border-style:dashed; color:#6b5f4a; }
   .na { color:#6b5f4a; font-style:italic; }
   .na.none { color:#8a3c1e; }
   #empty { padding:20px 14px; color:#6b5f4a; font-size:13px; }
@@ -171,6 +183,7 @@
           <th data-k="id">Entity</th>
           <th data-k="display">Latest spelling</th>
           <th data-k="cats">Categories</th>
+          <th data-k="basis">Basis</th>
           <th data-k="named">Namesake</th>
           <th data-k="docs" class="docs">Docs</th>
         </tr></thead>
@@ -353,6 +366,25 @@ function renderSpelling(sp) {
   return s + " }";
 }
 
+// §3.1. Closed vocabularies — unlike `categories`, you cannot coin a basis.
+// Ordered strongest to weakest for the picker, but NOMINAL: nothing computes
+// with the rank, because `eponymous` routinely outranks `attested`.
+const BASIS = [
+  ["intrinsic",  "verifiable from the ground itself; nothing left to find"],
+  ["attested",   "a source says so"],
+  ["eponymous",  "the first map carrying the name carries the person, or close family"],
+  ["pattern",    "a member of a set the same document establishes — three or more"],
+  ["inferred",   "a reading anchored by something sourced beyond the name"],
+  ["lexical",    "the word names one thing; why that thing is unknown"],
+  ["guess",      "a candidate with nothing anchoring it to this street"],
+  ["none",       "no candidate at all"]
+];
+const SEARCHED = [
+  ["none",      "nobody has looked"],
+  ["partial",   "some checking, obvious avenues open"],
+  ["extensive", "searched hard — not 'exhausted', which would claim more than we can"]
+];
+
 function renderEntity(e, opts) {
   const o = opts || {};
   const L = [];
@@ -374,6 +406,22 @@ function renderEntity(e, opts) {
     ? `    sources: [\n` + src.map(s =>
         `      { title: ${J(s.title || "")},\n        url: ${J(s.url || "")} }`).join(",\n") + `\n    ],`
     : `    sources: [],`);
+  // §3.1. `basis` is required on every curated entity and the four
+  // companions are optional, so each is written only when present — but every
+  // one of them MUST be written when it is, or a save silently destroys it.
+  // That is not hypothetical: this serializer shipped without them and stripped
+  // `basis` from any entity that passed through it (fixed 2026-09-15). If you
+  // add a field to the name schema, add it here in the same commit.
+  if (e.basis !== undefined) L.push(`    basis: ${J(e.basis)},`);
+  if (e.searched !== undefined) L.push(`    searched: ${J(e.searched)},`);
+  if (e.rival) L.push(`    rival: true,`);
+  if (e.sharesWarrantWith && e.sharesWarrantWith.length)
+    L.push(`    sharesWarrantWith: ${J(e.sharesWarrantWith)},`);
+  if (e.refuted && e.refuted.length)
+    L.push(`    refuted: [\n` + e.refuted.map(r =>
+      `      { candidate: ${J(r.candidate || "")},\n` +
+      `        killedBy: ${J(r.killedBy || "")},\n` +
+      `        kind: ${J(r.kind || "namesake")} }`).join(",\n") + `\n    ],`);
   L.push(`    disputed: ${e.disputed === true},`);
   // `note` is PUBLIC — generate.js prints it as a former name's origin line.
   // `internalNote` is not rendered anywhere. Both have to survive a save, and
@@ -391,8 +439,15 @@ function renderEntity(e, opts) {
 // it. Kept deliberately close to check-model.js's wording so the two read as
 // one voice; anything this misses, the checker still catches.
 // ===========================================================================
-function validateAll(all, corpus) {
+function validateAll(all, corpus, where) {
   const ids = new Set(Object.keys(all));
+  // An entity minted by the map tool into names-new.js is a to-do, not a
+  // finished record: it cannot carry a basis, because the tool that mints it
+  // does not know the vocabulary and rewrites that file whole. check-model.js
+  // draws the same line. `sightings` is the fallback marker when the caller
+  // has no file map — only names-new.js entities carry them.
+  const pending = (id, e) => (where && where[id] === "newNames") ||
+    e.pendingResearch === true || !!(e.sightings && e.sightings.length);
   const aliasOwner = {};
   const out = {};
   const push = (id, kind, msg) => { (out[id] = out[id] || []).push({ kind, msg }); };
@@ -422,6 +477,41 @@ function validateAll(all, corpus) {
     }
     if (e.namedAfter === null && !(e.categories || []).some(c => ["unknown", "unresearched"].includes(c)))
       push(id, "wrn", "namedAfter is null — expected the 'unknown' category (researched, not found) or 'unresearched'");
+
+    // BASIS (§3.1) — the same four gates check-model.js applies.
+    if (e.basis === undefined)
+      push(id, pending(id, e) ? "wrn" : "err",
+           "no basis — grade the identification (§3.1); use \"none\" when " +
+           "there is no candidate at all" +
+           (pending(id, e) ? " (not required until it moves into names.js)" : ""));
+    else if (!BASIS.some(([v]) => v === e.basis))
+      push(id, "err", `basis "${e.basis}" is not one of: ` + BASIS.map(([v]) => v).join(", "));
+    else {
+      if (e.basis === "none" && e.namedAfter !== null && e.namedAfter !== undefined)
+        push(id, "err", "basis is \"none\" but namedAfter is populated — one of the two is wrong");
+      if (e.basis === "lexical" && !e.namedAfter)
+        push(id, "wrn", "basis is \"lexical\" but namedAfter is empty — the whole content of " +
+                        "this grade is the concept the word names, so write and link it");
+    }
+    if (e.searched !== undefined) {
+      if (!SEARCHED.some(([v]) => v === e.searched))
+        push(id, "err", `searched "${e.searched}" is not one of: ` + SEARCHED.map(([v]) => v).join(", "));
+      if (e.basis !== "none")
+        push(id, "err", `searched is only meaningful with basis "none" (this one is "${e.basis}")`);
+    }
+    for (const t of e.sharesWarrantWith || []) {
+      if (t === id) push(id, "err", "sharesWarrantWith points at itself");
+      else if (!ids.has(t)) push(id, "err", "sharesWarrantWith references unknown id: " + t);
+    }
+    (e.refuted || []).forEach((r, i) => {
+      if (!r || typeof r !== "object") return push(id, "err", `refuted[${i}] is not an object`);
+      if (!r.candidate) push(id, "err", `refuted[${i}] needs a candidate`);
+      if (!r.killedBy) push(id, "err", `refuted[${i}] needs killedBy — a refutation nobody ` +
+                                       `can check is not a refutation`);
+      if (!["namesake", "identity"].includes(r.kind))
+        push(id, "err", `refuted[${i}] kind must be "namesake" (not who it is named for) ` +
+                        `or "identity" (not that street)`);
+    });
     if (typeof e.note === "string" && /\b(Kenny|TODO|check this|research-leads|2026-\d\d-\d\d)\b/.test(e.note))
       push(id, "wrn", "note reads like a working note, and note is shown to readers — move it to internalNote");
     if (e.disputed === true && !(e.categories || []).includes("disputed"))
@@ -429,10 +519,10 @@ function validateAll(all, corpus) {
     // A category the map has never heard of renders as a bare tag with no
     // label and cannot be picked in the Highlight list. Coining one here is
     // allowed — that is what the "new" row is for — but it has to be declared
-    // in CATEGORIES (streets-data.js) before check-model.js will pass.
+    // in CATEGORIES (site-config.js) before check-model.js will pass.
     if (corpus && corpus.categoryIds)
       for (const c of e.categories || []) if (!corpus.categoryIds.has(c))
-        push(id, "wrn", `category "${c}" is not declared in CATEGORIES (streets-data.js) — ` +
+        push(id, "wrn", `category "${c}" is not declared in CATEGORIES (site-config.js) — ` +
                         `declare it there, with a label, or the map cannot show it`);
 
     // REDUNDANCY IN `sources`, and the one case that is not redundant.
@@ -490,7 +580,7 @@ let docCounts = {};               // id -> [{doc, sheet, asWritten}]
 let corpus = null;                // { docByUrl, attesting } — filled by the documents/ scan
 let selected = null;
 let sortKey = "id", sortDir = 1;
-let filterFile = "all", filterState = "any", query = "";
+let filterFile = "all", filterState = "any", filterBasis = "any", query = "";
 
 const entityOf = id => edited[id] || all[id];
 const displayName = e => {
@@ -547,7 +637,7 @@ function rebuild() {
     if (removed.has(id) && !edited[id]) continue;   // renamed away, or promoted out
     merged[id] = entityOf(id);
   }
-  problems = validateAll(merged, corpus);
+  problems = validateAll(merged, corpus, where);
   // check-model.js errors on an id present in both files — it means the entity
   // has been researched and moved but not deleted from the to-do list.
   for (const id of Object.keys(files.newNames.entities))
@@ -637,15 +727,22 @@ async function scanDocuments() {
   }
   for (const l of Object.values(out)) l.sort((a, b) => a.doc.localeCompare(b.doc));
   docCounts = out;
-  // The category vocabulary, from where it still lives (MODEL-IMPLEMENTATION
-  // checklist A moves it to site-config.js). Unreadable → the check stays off.
-  let categoryIds = null;
+  // The category vocabulary, authored in site-config.js (ROADMAP §7). A failure
+  // to read it is SAID OUT LOUD rather than silently turning the check off —
+  // the old catch swallowed it, which is exactly how a bad migration passes.
+  let categoryIds = null, categoryTree = null;
   try {
-    const src = await (await fetch(`streets-data.js?t=${Date.now()}`)).text();
+    const src = await (await fetch(`site-config.js?t=${Date.now()}`)).text();
     const { CATEGORIES } = new Function(src + "; return { CATEGORIES };")();
-    categoryIds = new Set(CATEGORIES.map(c => c.id).concat(["unresearched"]));
-  } catch (e) { /* no vocabulary, no check */ }
-  corpus = { docsByUrl, categoryIds, attesting: Object.fromEntries(
+    categoryTree = CATEGORIES;
+    categoryIds = new Set(CATEGORIES.filter(c => !c.facet).map(c => c.id));
+  } catch (e) {
+    console.warn("site-config.js could not be read — the category check is OFF", e);
+    $("stateChips").insertAdjacentHTML("afterend",
+      '<span class="warn" id="vocabWarn" style="margin-left:8px">site-config.js unreadable — ' +
+      'category checking is off</span>');
+  }
+  corpus = { docsByUrl, categoryIds, categoryTree, attesting: Object.fromEntries(
     Object.entries(out).map(([id, l]) => [id, l.map(x => x.doc)])) };
   rebuild();
   render();
@@ -667,6 +764,7 @@ function visibleRows() {
       file: where[id],
       display: displayName(e),
       cats: (e.categories || []).join(", "),
+      basis: e.basis || "",
       named: e.namedAfter ? e.namedAfter.replace(/[{}]/g, "") : "",
       docs: (docCounts[id] || []).length,
       err: p.some(x => x.kind === "err"),
@@ -679,8 +777,9 @@ function visibleRows() {
     if (filterState === "todo" && r.e.namedAfter) return false;
     if (filterState === "problems" && !r.err && !r.wrn) return false;
     if (filterState === "edited" && !r.dirty) return false;
+    if (filterBasis !== "any" && (r.e.basis || "") !== filterBasis) return false;
     if (!q) return true;
-    const hay = [r.id, r.display, r.cats, r.named, r.e.note, r.e.internalNote,
+    const hay = [r.id, r.display, r.cats, r.basis, r.e.searched, r.named, r.e.note, r.e.internalNote,
                  ...(r.e.aliases || []), ...(r.e.spellings || []).flatMap(s => s.forms || [])]
       .join(" ").toLowerCase();
     return hay.includes(q);
@@ -698,6 +797,7 @@ function visibleRows() {
 }
 
 function render() {
+  renderBasisFilter();
   const rows = visibleRows();
   $("rows").innerHTML = rows.map(r => `
     <tr class="ent${r.id === selected ? " on" : ""}${r.err ? " bad" : ""}" data-id="${esc(r.id)}">
@@ -707,6 +807,11 @@ function render() {
       <td class="disp">${esc(r.display) || '<span class="na none">no spelling</span>'}</td>
       <td>${(r.e.categories || []).map(c =>
         `<span class="cat ${esc(c)}">${esc(c)}</span>`).join("") || '<span class="na none">none</span>'}</td>
+      <td>${r.basis ? `<span class="cat basis-${esc(r.basis)}">${esc(r.basis)}</span>` +
+             (r.e.searched ? `<span class="cat searched">${esc(r.e.searched)}</span>` : "") +
+             (r.e.rival ? '<span class="badge">rival</span>' : "") +
+             (r.e.refuted ? '<span class="badge">refuted</span>' : "")
+           : '<span class="na none">not graded</span>'}</td>
       <td>${r.named ? esc(r.named.length > 90 ? r.named.slice(0, 88) + "…" : r.named)
                     : '<span class="na">not researched</span>'}${
         r.e.disputed ? '<span class="badge">disputed</span>' : ""}</td>
@@ -771,6 +876,19 @@ $("fileChips").onclick = ev => {
   [...$("fileChips").children].forEach(x => x.classList.toggle("on", x === b));
   render();
 };
+// Eight values is too many for a chip row, and the interesting query is
+// usually "show me everything resting on X" — so a select, with counts, and a
+// "not graded" entry that surfaces anything the vocabulary has not reached.
+function renderBasisFilter() {
+  const n = {}; for (const id of Object.keys(all)) n[entityOf(id).basis || ""] = (n[entityOf(id).basis || ""] || 0) + 1;
+  const sel = $("basisFilter");
+  sel.innerHTML = '<option value="any">basis: any</option>' +
+    BASIS.map(([v]) => `<option value="${v}">${v} (${n[v] || 0})</option>`).join("") +
+    (n[""] ? `<option value="">not graded (${n[""]})</option>` : "");
+  sel.value = filterBasis;
+}
+$("basisFilter").onchange = ev => { filterBasis = ev.target.value; render(); };
+
 $("stateChips").onclick = ev => {
   const b = ev.target.closest("button"); if (!b) return;
   filterState = b.dataset.s;
@@ -847,6 +965,30 @@ function openEditor(id) {
     <label style="margin-top:8px"><input type="checkbox" id="f_disputed" style="width:auto"
       ${e.disputed ? "checked" : ""}> disputed</label>
 
+    <h3>Basis <span class="hint" style="text-transform:none">— how strongly the
+      identification is grounded (§3.1). Grades the warrant, not the plausibility.</span></h3>
+    <select id="f_basis">
+      ${BASIS.map(([v, gloss]) => `<option value="${v}"${e.basis === v ? " selected" : ""}>${
+        v} — ${esc(gloss)}</option>`).join("")}
+      ${e.basis === undefined ? '<option value="" selected>— not graded —</option>' : ""}
+    </select>
+    <div id="searchedRow" ${e.basis === "none" ? "" : "hidden"}>
+      <label for="f_searched">searched — effort, not warrant. The only thing separating a
+        closed question from an untouched one.</label>
+      <select id="f_searched">
+        ${SEARCHED.map(([v, gloss]) => `<option value="${v}"${
+          (e.searched || "none") === v ? " selected" : ""}>${v} — ${esc(gloss)}</option>`).join("")}
+      </select>
+    </div>
+    <label style="margin-top:8px"><input type="checkbox" id="f_rival" style="width:auto"
+      ${e.rival ? "checked" : ""}> rival — more than one candidate is live</label>
+    ${(e.sharesWarrantWith || []).length ? `<div class="hint" style="margin-top:6px">shares its
+      warrant with ${e.sharesWarrantWith.map(x => `<code>${esc(x)}</code>`).join(", ")} — so a
+      count of what we know does not add it twice. Edit in <code>names.js</code>.</div>` : ""}
+    ${(e.refuted || []).length ? `<div class="hint" style="margin-top:6px">refuted: ${
+      e.refuted.map(r => `<b>${esc(r.candidate || "")}</b> (${esc(r.kind || "")}) — ${
+        esc(r.killedBy || "")}`).join("<br>")}<br>Edit in <code>names.js</code>.</div>` : ""}
+
     <h3>Notes</h3>
     <label for="f_note" class="public">note — PUBLIC. Printed on the site as a former
       name's origin line when there is no namedAfter.</label>
@@ -900,6 +1042,23 @@ function openEditor(id) {
   $("f_note").oninput = ev => { beginEdit(id).note = ev.target.value.trim() ? ev.target.value : null; touch(); };
   $("f_internal").oninput = ev => { beginEdit(id).internalNote = ev.target.value.trim() ? ev.target.value : null; touch(); };
   $("f_disputed").onchange = ev => { beginEdit(id).disputed = ev.target.checked; touch(); };
+  // `searched` is only meaningful where the search came back empty, so moving
+  // off "none" drops it rather than leaving a claim the grade cannot make.
+  $("f_basis").onchange = ev => {
+    const e2 = beginEdit(id);
+    e2.basis = ev.target.value || undefined;
+    if (e2.basis === "none") { if (e2.searched === undefined) e2.searched = "none"; }
+    else delete e2.searched;
+    $("searchedRow").hidden = e2.basis !== "none";
+    if ($("f_searched")) $("f_searched").value = e2.searched || "none";
+    touch();
+  };
+  $("f_searched").onchange = ev => { beginEdit(id).searched = ev.target.value; touch(); };
+  $("f_rival").onchange = ev => {
+    const e2 = beginEdit(id);
+    if (ev.target.checked) e2.rival = true; else delete e2.rival;
+    touch();
+  };
   $("f_same").onchange = ev => { beginEdit(id).possiblySameAs = ev.target.value || null; touch(); };
   $("wrapBtn").onclick = () => {
     const t = $("f_named"), a = t.selectionStart, b = t.selectionEnd;
@@ -1113,8 +1272,12 @@ $("newEntity").onclick = () => {
   const id = prompt("Id for the new entity — lowercase, hyphenated, e.g. banning-general.");
   if (!id) return;
   if (all[id] || edited[id]) return alert(`"${id}" already exists.`);
+  // A new entity starts ungraded in the honest sense: no candidate, and nobody
+  // has looked. Both are real states and both are wrong to leave — the point of
+  // the fields is that they have to be changed on purpose.
   edited[id] = { __file: "names", spellings: [{ forms: [""] }], namedAfter: null,
                  namedAfterLink: null, categories: ["unresearched"], sources: [],
+                 basis: "none", searched: "none",
                  disputed: false, note: null, possiblySameAs: null, aliases: [] };
   where[id] = "names";
   rebuild(); render(); openEditor(id);
@@ -1130,12 +1293,17 @@ function promote(id) {
   if (!e.namedAfter) missing.push("namedAfter");
   if (!(e.sources || []).length) missing.push("sources");
   if ((e.categories || []).every(c => c === "unresearched")) missing.push("a category other than 'unresearched'");
+  // Promotion is the moment a basis stops being optional: names-new.js is a
+  // to-do list the map tool writes, names.js is the researched record.
+  if (e.basis === undefined) missing.push("a basis (§3.1)");
   if (missing.length && !confirm(
       `This entity still has no ${missing.join(", no ")}.\n\n` +
       `names-new.js is the to-do list; names.js is where an entity goes once its ` +
       `namesake has been looked into. "unknown" — searched and not found — is a ` +
       `legitimate answer and belongs in names.js.\n\nMove it anyway?`)) return;
   delete e.sightings;                 // derived, and only names-new.js carries it
+  if (e.basis === undefined) { e.basis = "none"; e.searched = "partial"; }
+  if (e.basis !== "none") delete e.searched;
   e.__file = "names";
   e.__promotedFrom = "newNames";
   delete edited[id];

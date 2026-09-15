@@ -3,7 +3,10 @@
 
 const fs = require("fs");
 const src = fs.readFileSync(__dirname + "/streets-data.js", "utf8");
-const { STREET_DATA, CATEGORIES, NEIGHBORHOODS } = new Function(src + "; return {STREET_DATA, CATEGORIES, NEIGHBORHOODS};")();
+const { STREET_DATA } = new Function(src + "; return {STREET_DATA};")();
+// The vocabulary and the coverage boxes are authored in site-config.js, not in
+// the data file they describe (ROADMAP §7).
+const { CATEGORIES, NEIGHBORHOODS } = require(__dirname + "/site-config.js");
 
 // coverage = union of neighborhood bboxes (same as the map)
 const BBOX = {

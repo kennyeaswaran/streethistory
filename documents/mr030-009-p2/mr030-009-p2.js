@@ -6,7 +6,12 @@ module.exports = {
   scan: "documents/mr030-009-p2/mr030-009-p2.pdf",
   transcription: "documents/mr003-060-p1/mr003-060-p1-partA.md",
 
-  date: { on: "1888-01-11" },   
+  // §4.1 — `date` is when the CONTENT was made: this sheet was surveyed by
+  // J. H. Dockweiler in July and August 1887. The Jan. 11, 1888 filing lives in
+  // `recorded`, where nothing derives from it. Corrected 2026-09-14; it had been
+  // dated by its filing, which put every row on this tract four months late.
+  date: { on: "1887-08" },
+  recorded: "1888-01-11",   
   form: "drawn",
   type: "tract-map",
   attests: "planned-by",

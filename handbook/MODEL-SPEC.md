@@ -134,6 +134,19 @@ Record a suspicion with `possiblySameAs` rather than acting on it.
     { title: "L.A. Street Names: Figueroa Street",
       url: "https://lastreetnames.com/street/figueroa-street/" }
   ],
+  basis: "attested",                // REQUIRED. How strongly the identification
+                                    // is grounded — §3.1
+  searched: undefined,              // "none"|"partial"|"extensive"; only with
+                                    // basis "none", where it is the only thing
+                                    // separating a closed question from an
+                                    // untouched one
+  rival: undefined,                 // true when more than one candidate is live
+  refuted: undefined,               // [{ candidate, killedBy, kind }] — leads
+                                    // pursued and killed; kind is "namesake" or
+                                    // "identity"
+  sharesWarrantWith: undefined,     // [id] — this entity's case rests on that
+                                    // entity's evidence, so a count of what we
+                                    // know does not add it twice. Directed.
   disputed: false,                  // with the "disputed" category, as today
   note: null,                       // PUBLIC. About the NAMING CLAIM only —
                                     // historiography, contested attributions,
@@ -173,6 +186,161 @@ spelling period and this whole mechanism sits idle.
 whether Georgia reverting in 1897 resumes the old entity or starts a new one.
 Written this way it assumes resumption. It is a good illustration of where
 that decision bites, and should not be read as the decision having been made.
+
+### 3.1 `basis` — how strongly the identification is grounded
+
+**`namedAfter` says who or what we think a street is named for. `basis` says how much
+that belief is worth.** Without it, certainty lives in adverbs — "probably",
+"almost certainly", "possibly" — which cannot be sorted, counted, or checked,
+and which a reader of `namedAfter` cannot distinguish from a documented fact.
+When the file was first graded, three readers working disjoint thirds found the
+same three adverbs sitting at four different strengths.
+
+The field grades the **warrant, not the plausibility**. A very likely guess is
+still a guess; a dull but documented fact is still documented. And it grades
+**what we came back with, not what we pursued**: a genealogical hunt that found
+nobody scores the same as no hunt at all, and the difference between them is
+recorded in `searched`.
+
+
+#### The eight values
+
+**Treat these as a nominal vocabulary with a rough ordering, not a number.** Do
+not compute with the rank: `eponymous` routinely beats `attested`, because a
+subdivider's signature on the sheet that first shows his street beats a
+blogger's say-so most days. Three of the values grade *someone else's* claim,
+four grade *our own* inference, and `intrinsic` says no warrant is needed;
+laying them on one line forces false comparisons.
+
+**`intrinsic`** — the name's occasion is verifiable from the ground itself, and
+nothing external is left to find. *Test: can you check the occasion by looking
+at the street, and is there nothing left over?* Ordinals; Los Angeles Street;
+San Pedro Street (it goes to San Pedro); Alameda (it ran along the alameda);
+Short Street (it is short); High Street (it is on high ground). If some
+particular grove, nest or institution might yet be found, the value is
+`lexical`, not `intrinsic`.
+
+**`attested`** — a source says so. Whether that source is a primary record, a
+secondary work quoting one, or a bare assertion is a property of the SOURCE and
+belongs in `sources`; putting it on the name too lets the two drift. *Note: an
+ordinance or plat that ASSIGNS a name documents the act, not the reason.
+Act-documentation is not attestation of a namesake.*
+
+**`eponymous`** — the street first appears on a map (or other name-producing
+document — Wilshire's anchor is council minutes) carrying the person's name, or
+a close family member's, **and we can say which person that was**. Owner,
+subdivider, surveyor, signatory, or the wife, daughter, son or grandparent of
+one. Where the family is on the document but no individual has been found —
+Ida, Gladys, Omar, Centerbrook — the value is `none`, and `searched` carries
+the difference.
+
+**`pattern`** — the name is a member of a set the same document establishes,
+**and the set has at least three members**. A two-member set is a pairing with
+a story attached; grade it `inferred`.
+
+**`inferred`** — a specific reading anchored by something real and
+INDEPENDENTLY SOURCED beyond the name itself: a date, a location, a documented
+association, or a two-member pairing. If the anchor is itself unsourced, the
+value is `guess`.
+
+**`lexical`** — the word names ONE thing, determinately enough to write into
+`namedAfter` and link, but nothing says why that thing was chosen for this
+street. **The word's meaning is the entire identification.** Adobe, Bull,
+Charity, Court House, Hornet, Olive, Poplar. *The test is linkability, not
+vagueness:* Welcome names no thing at all, and Park, Orange and Virgin name too
+many — Park is also a surname, Virgin has three readings the file lists and
+cannot choose between. Those are `none`. *This value is prescriptive as well as
+descriptive:* `adobe`, `bull` and `poplar-st` are currently `null` and should be
+populated with the linked concept.
+
+**`guess`** — a specific candidate chosen over the alternatives on some reason,
+however thin, with nothing anchoring it to THIS street. Broadway, Alpine, Yale,
+Banning; Ceres, a goddess who would suit an orchard tract; Nevada and Wyoming,
+the states. *Against `lexical`: `guess` makes a choice among candidates;
+`lexical` makes none, because the word simply means the thing.* Note that a
+single plausible reading is enough — Nevada and Wyoming sit here on the same
+footing as the eastern Georgia, and the bar is not that no alternative is
+imaginable. Florida stays at `none` because it has three live readings (state,
+person, plant) and the Nichols Addition's other names settle none of them.
+
+**`none`** — no specific candidate, and no single concept worth linking. The
+largest value in the file, so its `searched` split carries a third of the corpus.
+
+#### `searched` — effort, not warrant
+
+`none` | `partial` | `extensive`. Only meaningful where `basis` is `none`.
+
+Deliberately NOT "exhausted": that would claim something about the world.
+"Extensive" claims only something about the work, which is all we can certify —
+more leads may surface if the name turns up on an earlier map.
+
+The load-bearing boundary is **partial/extensive**, not none/partial: most
+`partial` records are the same single batch move ("not covered by Kines,
+checked 2026-08-30"), while `extensive` marks a closed question where someone
+picking it up would waste a day re-running searches already recorded as empty.
+
+This replaces `unresearched` in `categories`, which is stale (`yale` carries it
+beside two completed checks) and disagrees with `unknown` about which records
+are unworked.
+
+#### The three flags
+
+- **`refuted`** — the dead candidate and what killed it. Must NOT be a value on
+  the scale: `omar-ave` has a dead candidate and a live unadopted one, and
+  `traction-avenue`'s killed lead sits beside a surviving answer, so a rung
+  cannot reach it. Two kinds are worth distinguishing — a refuted NAMESAKE
+  (this person is not who it is named for) and a refuted IDENTITY (this is not
+  that street; Kines's Wyoming Avenue is Burbank's).
+- **`rival`** — more than one live candidate.
+- **`sharesWarrantWith`** — ids. Sixteen records rest on another record's
+  evidence: Regent and Wall are one sheet; Spruce, Tulip and Willow rest on a
+  set argument written up under Palm; Maple's warrant lives in Myrtle; the five
+  numbered streets cite one Kines page. Uncorrected, a count of "names we have
+  evidence for" overstates by roughly a dozen.
+
+#### Legal combinations worth stating
+
+**`basis: "eponymous"` with `namedAfter: null` is correct, not a bug.** Parker
+Drive is lettered on a plat titled "J. B. Parker Subdivision": the name's origin
+is airtight and the man unidentified.
+
+#### Open questions
+
+- ~~**Naming collision with the `descriptive` category.**~~ *Settled 2026-09-15:*
+  the value was renamed `descriptive` → `lexical`; the category keeps its name.
+  The two named near-opposite sets — eight entities in the category, seven at the
+  value, overlapping only at `court-house-street` — and the sense was inverted.
+  The CATEGORY means *the name describes the street*, which can usually be checked
+  against the street, so its members grade `intrinsic` (3) or `attested` (4); the
+  VALUE means *the word's meaning is all we have*, which is near the bottom of the
+  scale. Remaining category work is ROADMAP §7.
+- **Basis may belong to the CANDIDATE, not the name.** `hope` has two candidates
+  with different warrants: the virtue (a pairing with Charity) and Dr. Alexander
+  W. Hope (Kines). A single value plus `rival` records that there is a dispute
+  and destroys the fact that the sides are not equally grounded — likewise
+  `merchant-st`, `spring`, `william`, `virgin`, `wyoming-avenue`. If basis
+  attached to candidates, `rival` would become "the list has more than one
+  entry" and `refuted` "this entry is marked dead." Deferred: a flat field plus
+  flags handles 134 of 143. Recorded as a known limitation, not a finding.
+- **Where a `stated` level went.** The original design had a top value for a
+  source that states WHY a name was given. It is empty: this corpus documents
+  naming ACTS and never REASONS — Ord. 3829, Ord. 242, both council acts on
+  Orange → Wilshire are all primary, all detailed, all silent on why. Two
+  graders applying the same rule to comparable slices returned 7 and 0. If it is
+  ever revived, the test is not "does the source give a reason" but **"does the
+  source point at the record it read."**
+
+#### Method note
+
+Graded by three independent passes over disjoint thirds of the file, plus a
+fourth for search depth; where a grader could defend two values, the weaker was
+taken. Kenny's corrections came in three rounds: (1) `pattern` needs three
+members, `intrinsic` cannot absorb common nouns, and family given names belong
+together; (2) `household` dissolves into `eponymous` and `none`, the
+linkable-concept value narrows to its test, Ceres moves to `guess`, `exhausted`
+becomes `extensive`; (3) Nevada and Wyoming join Georgia at `guess`, and the
+linkable-concept value is renamed `lexical` to clear the collision with the
+category of that name.
 
 ### `note` is published; `internalNote` is not
 

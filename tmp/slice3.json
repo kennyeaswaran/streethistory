@@ -1,0 +1,618 @@
+[
+ {
+  "id": "pico",
+  "name": "Pico Street",
+  "namedAfter": "{{Pío de Jesús Pico}} (1801–1894), the last Mexican governor of Alta California and a major landowner",
+  "categories": [
+   "person",
+   "governor",
+   "alive"
+  ],
+  "sources": [
+   "L.A. Street Names: Pico Boulevard"
+  ],
+  "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid.",
+  "work": "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. The entity is the PICO naming, which the Cameron Tract letters as “Pico Street”; the modern street is a boulevard, and the generic changed without the name doing so."
+ },
+ {
+  "id": "poplar-st",
+  "name": "Poplar Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown",
+   "nature"
+  ],
+  "sources": [
+   "Recorded map: F.P. Howard & Co.'s Subdivision of the Bliss Tract, M.R. 12-42 (subdivided Aug. 1886 by Geo. E. …"
+  ],
+  "note": "Named on Dr. Frederick Preston Howard's Bliss Tract in 1886, one block south of the Huber Street that runs through the same subdivision. No namesake is documented; a poplar would be in keeping with the orchard ground it was cut through, but nothing says so.",
+  "work": "Carried over from streets-data.js (5th Street, “Alameda to Hewitt (Poplar St)”). Same open question as Huber: nothing documents Poplar → Lugo → 5th by name, and research-leads.md asks for a CDNC or directory search. The tree reading is mine, offered as a guess and labelled as one. ⚠ RESTORED 2026-09-14 — this note was accidentally overwritten earlier the same day and is reinstated above; the paragraph below is what replaced it. ★ The name is also lettered on the Wolfskill Orchard Tract (surveyed July–Aug. 1887, recorded Jan. 11, 1888), whose street names are now known to be MIXED in kind — Ruth is the owner’s daughter (`ruth-ave`), Ceres a harvest goddess over an orchard, Gladys nobody in th…"
+ },
+ {
+  "id": "regent-street",
+  "name": "Regent Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "Lettered between Los Angeles Street and Wall Street on the Moreno Vineyard Tract — the building lots laid out beside the new railroad depot and recorded in March 1876. Nothing says what it was named for. The strongest argument available is the company it keeps: this one sheet is the earliest source in this corpus for BOTH Regent Street and Wall Street, lettered two blocks apart on a new commercial subdivision, which is London’s and New York’s most famous commercial streets named together on one page. Taken as a pair they read as a deliberate borrowing of two great trading addresses; taken singly neither can be shown. The corridor is Maple Avenue today, between 5th and 6th.",
+  "work": "Kines does not cover it: no page, and it is absent from his alphabetical R list, which runs Reese → Reeves → Reevesbury → Reklaw with no Regent (checked 2026-09-06). ★ THE PAIRING ARGUMENT MADE EXPLICIT 2026-09-13 at Kenny’s request, and it turns on a fact worth stating plainly: documents/mr003-166, the Moreno Vineyard Tract of March 1876, is the FIRST source in this corpus for both names — twelve years earlier than the Botiller resubdivision that had been `wall-street`’s earliest sighting. Two streets, one sheet, one moment of naming. That is why the London/New York reading is worth recording even though namedAfter stays null on both: the evidence is the pair, not either name. It also cuts …"
+ },
+ {
+  "id": "requena-street",
+  "name": "Requena Street",
+  "namedAfter": "Almost certainly {{Manuel Requena}} (c. 1802–1876), Campeche-born merchant who settled in Los Angeles in 1834, alcalde under Mexican rule 1844–45, county supervisor, long-serving councilman and briefly acting mayor in 1856, whose own property the street ran through",
+  "categories": [
+   "person",
+   "alive",
+   "unknown"
+  ],
+  "sources": [
+   "Los Angeles Revisited: “Beneath Parker Center” (Requena Street, its earlier name Libertad, and its 1904 change…",
+   "LMU Digital Collections: “Subdivision of the property of Don Manuel Requena, February 1875”"
+  ],
+  "note": "The street bounded Requena's own subdivision, and it is still alive in Sept. 1896, when a fire-district boundary is described as running to it (documents/min-1896-09-14). It was changed to Market Street on a July 1904 petition from North Main Street merchants, and the ground is now under Temple Street and the Civic Center. Los Angeles Revisited records that the original length of the street had earlier been called Libertad.",
+  "work": "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES — checked via lastreetnames.com/?s=Requena, which returns “nothing matched”. ⚠ THE NAMESAKE IS INFERRED, NOT STATED. Neither cited source says the street was named FOR Requena: Los Angeles Revisited only places his property on it (“Requena Street was also where the zanja madre … flowed, making Manuel Requena’s property a prime location”), and the LMU sheet only titles the subdivision as his. The inference — his own subdivision, his own boundary street, his name — is about as safe as an inference gets, hence “Almost certainly”, but `unknown` stays in the categories until something says it outright. Two things to reconcile: the LMU sheet…"
+ },
+ {
+  "id": "rose-street",
+  "name": "Rose Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "Lettered on the Johnston Tract of March 1871 east of Alameda (documents/mr002-092) and still running through the Arts District today.",
+  "work": "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES; no namesake documented. ⚠ THREE ROSE STREETS, and this is the one that survived. NOT the Rose Street of East Los Angeles that became Kuhrts Street in the Aug./Sept. 1883 omnibus (documents/lah-1883-08-19, lah-1883-09-02); and NOT the Highland Park Rose Street that Kines says became Thorne Street. The tool's spelling period carries the plat's terminal full stop; normalised here."
+ },
+ {
+  "id": "ruby-st",
+  "name": "Ruby Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "A lost street of the 1878 Nichols Addition (documents/mr003-569), on ground now covered by 8th Place.",
+  "work": "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES; no namesake documented. ⚠ NOT the Ruby Street of documents/lah-1889-11-06, where “Ruby and Ames” become Thirty-ninth Street — that is far to the south. Two Ruby Streets."
+ },
+ {
+  "id": "ruth-ave",
+  "name": "Ruth Avenue",
+  "namedAfter": "Probably {{Ruth R. Wolfskill}} (1881–1968), daughter of Joseph William Wolfskill, on whose orchard the street was laid out — she was five when it was surveyed",
+  "categories": [
+   "person",
+   "alive",
+   "unknown"
+  ],
+  "sources": [
+   "Find a Grave: Ruth R. Wolfskill Magee (1881–1968), Calvary Cemetery, Wolfskill plot — b. 23 Nov. 1881, m. Loui…",
+   "Find a Grave: Joseph William Wolfskill (1843–1928) — the family plot and the children"
+  ],
+  "note": "Laid out through Joseph Wolfskill’s orchard as it was cut into building lots, surveyed July–August 1887 and recorded Jan. 11, 1888. Joseph Wolfskill had a daughter Ruth, born Nov. 23, 1881, who was five when the survey was made — the plat sets Ruth beside Gladys, and the Sabichi tract to the south carries Agatha Street for a first cousin. No source states the naming. The street was still Ruth Avenue in Feb. 1897, when the citywide renaming commission proposed changing it and the council committee put the name back; it took the Stanford name later.",
+  "work": "★★ A PERSON AT LAST, 2026-09-13/14 — the first run of handbook/FAMILY-NAMES.md. Ruth R. Wolfskill (23 Nov. 1881 – 23 Mar. 1968), seventh of eleven or more children of Joseph William Wolfskill (1843–1928) and Elena de Pedrorena, buried in the Wolfskill plot, Section F, Calvary Cemetery. Age five at the survey, six at recording. GRADE B on the file’s own scale: right name, right family, alive before the plat, on her father’s own land, with a cousin-precedent nine years later (Agatha). Hence “Probably” and `unknown` retained. ⚠ TWO REAL WEAKNESSES, both worth carrying: (1) THE EVIDENCE IS FIND A GRAVE, contributor-submitted rather than a record — internally cross-consistent across four memorial…"
+ },
+ {
+  "id": "san-julian-st",
+  "name": "San Julian Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
+  "work": "Kines has no page (checked 2026-09-06). A 2009 U.S. Catholic survey of the county's saint-named streets dates San Julian to the 1880s and observes that such names were generally chosen by developers with little interest in their origins — context, not an identification. Rancho San Julián, in Santa Barbara County, is a different place and no connection to it is documented. Our earliest sheet, the O. W. Childs Tract (1885), letters only the Eleventh–Twelfth block, and the street runs far north of it. Moved out of names-new.js 2026-09-06."
+ },
+ {
+  "id": "san-pedro",
+  "name": "San Pedro Street",
+  "namedAfter": "The port town of {{San Pedro}}, which the street ran toward",
+  "categories": [
+   "place",
+   "destination"
+  ],
+  "sources": [
+   "L.A. Street Names: San Pedro Street",
+   "Wikipedia: San Pedro Street"
+  ],
+  "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
+  "work": "Carried over from streets-data.js. The Wolfskill plat letters it “San Pedro Ave”; that is the plat's generic, not a spelling period of the name — hence one period, and the ink lives in the row's asWritten (§5.1). Id renamed from san-pedro-ave, 2026-08-31, for the same reason."
+ },
+ {
+  "id": "santa-fe-ave",
+  "name": "Santa Fe Avenue",
+  "namedAfter": "The {{Atchison, Topeka and Santa Fe Railway}}, whose passenger depot opened by the street's junction with 1st Street in May 1887",
+  "categories": [
+   "company"
+  ],
+  "sources": [
+   "L.A. Street Names: Santa Fe Avenue (“Named for the Atchison, Topeka & Santa Fe Railway”; May 1887, at the depo…"
+  ],
+  "note": "Named for the railway in May 1887, when its passenger depot opened near 1st Street. The name spread south later: on Aug. 31, 1896 Ordinance No. 3829 changed Tulip Street, from Willow to Seventh, to Santa Fe Avenue (documents/lah-1896-09-03).",
+  "work": "Minted 2026-09-06 to be the `to` of the Tulip change row. The 1887 naming is Kines's and is not otherwise sourced here; what this project has is the 1896 extension, in print. `categories: [\"company\"]` is a NEW category value in this file — no entity here had been named after a business before — and is Kenny's to rename if he would rather fold it into something existing."
+ },
+ {
+  "id": "santee-street",
+  "name": "Santee Street",
+  "namedAfter": "{{Milton Santee}} (1835–1901), city councilman 1884–1886, later a mining and railroad investor",
+  "categories": [
+   "person",
+   "alive"
+  ],
+  "sources": [
+   "L.A. Street Names: Santee Street"
+  ],
+  "note": "Santee later moved to San Diego County, where in 1893 his second wife had the town of Cowleston renamed Santee in his honour — a name it still keeps.",
+  "work": "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01."
+ },
+ {
+  "id": "scott-avenue",
+  "name": "Scott Avenue",
+  "namedAfter": "Parmer Milton “P. M.” Scott (1822–1900) and Elizabeth Morton Scott (1840–1913), real-estate investors who lived on the street",
+  "categories": [
+   "person"
+  ],
+  "sources": [
+   "L.A. Street Names: Scott Avenue (“originally two streets called Wyoming Avenue and Cooper Street; it adopted t…"
+  ],
+  "note": "Two streets until April 1893: Ordinance No. 1613 (New Series) abolished the names Wyoming Avenue and Cooper Street and made them one street under this one. The Scotts lived on it.",
+  "work": "Minted 2026-09-06 from documents/ord-1613. The namesake is Kines's and is not otherwise corroborated; what this project adds is the instrument behind the date he gives — number, adoption day (Apr. 3, 1893), mayor's approval (Apr. 6) and publication (Apr. 9). The street is in Echo Park and Silver Lake, north of the OSM extract, so it has no geometry here and the change rows land on no ground."
+ },
+ {
+  "id": "second-street",
+  "name": "2nd Street",
+  "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+  "categories": [
+   "number"
+  ],
+  "sources": [
+   "L.A. Street Names: 1st Street (on the numbering system)"
+  ],
+  "note": "",
+  "work": ""
+ },
+ {
+  "id": "seventh-street",
+  "name": "7th Street",
+  "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+  "categories": [
+   "number"
+  ],
+  "sources": [
+   "L.A. Street Names: 1st Street (on the numbering system)"
+  ],
+  "note": "",
+  "work": "As sixth-street: Calle 7ª on the 1849 Ord/Hutton survey west of Main, the same numbering east of Alameda on the Wolfskill Orchard Tract. The date the eastward stretch joined the grid is unresearched."
+ },
+ {
+  "id": "short-street-chavez",
+  "name": "Short Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown",
+   "descriptive"
+  ],
+  "sources": [],
+  "note": "Lettered on the 1849 survey along ground that roughly follows one block of what is now Cesar E. Chavez Avenue. Descriptive, presumably, but nothing documents it.",
+  "work": "✓ SECOND FORM CORRECTED 2026-09-13 (Kenny). It read “Calle Alta”, which is High Street’s Spanish name — almost certainly picked up from `high-street-chinatown`, lettered on the same 1849 sheet. Replaced with what this street is actually lettered: C CORTA. Left as the abbreviation the survey uses rather than expanded to “Calle Corta”, since the expansion is not on the sheet. The Chavez entry starts at Macy Street. Disambiguated at minting because Short Street is a name that recurs."
+ },
+ {
+  "id": "sixteenth-street",
+  "name": "16th Street",
+  "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+  "categories": [
+   "number"
+  ],
+  "sources": [
+   "L.A. Street Names: 1st Street (on the numbering system)"
+  ],
+  "note": "",
+  "work": "One entity per number across the downtown grid, as with 1st–12th. As with 15th, the Ord survey is not cited: it does not reach this ground. The 1893 Miguel Subdivision letters it and records that this had been Pine Street; that predecessor has no entity yet. Moved out of names-new.js 2026-09-06."
+ },
+ {
+  "id": "sixth-street",
+  "name": "6th Street",
+  "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+  "categories": [
+   "number"
+  ],
+  "sources": [
+   "L.A. Street Names: 1st Street (on the numbering system)"
+  ],
+  "note": "",
+  "work": "One entity for the whole downtown grid, as with 2nd–5th. The 1849 Ord/Hutton survey laid out Calle 6ª between Pearl (now Figueroa) and Main; the Wolfskill Orchard Tract's “Sixth St” east of Alameda is the same numbering propagating east. WHEN that eastward stretch was cut through, and whether it first carried another name, is not researched — streets-data.js hedges it as “presumably an eastward extension” and this entity inherits the hedge."
+ },
+ {
+  "id": "spring",
+  "name": "Spring Street",
+  "namedAfter": "Possibly {{Trinidad Ortega}} (1832–1903), who was nicknamed “Primavera”",
+  "categories": [
+   "person",
+   "unknown",
+   "alive"
+  ],
+  "sources": [
+   "L.A. Street Names: Spring Street",
+   "Wikipedia: Spring Street (Los Angeles)"
+  ],
+  "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
+  "work": "namedAfter is hedged on purpose: Kines gives the Ortega story without a record. Category keeps `unknown` alongside `person` so the map does not present a guess as an answer."
+ },
+ {
+  "id": "spruce",
+  "name": "Spruce Street",
+  "namedAfter": "{{The spruce}}, one of four tree and plant names platted together on the Goodwin Tract in Oct. 1886 — Palm, Spruce, Tulip and Willow",
+  "categories": [
+   "nature",
+   "unknown"
+  ],
+  "sources": [
+   "Wikipedia: Arts District, Los Angeles"
+  ],
+  "note": "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Mateo Street.",
+  "work": "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. ★ THE GUESS MADE EXPLICIT 2026-09-13 at Kenny’s request — see `palm-st-arts-district` for the reasoning that covers all four. namedAfter names the plant and `nature` joins the categories; `unknown` stays, because the warrant is the SET (Palm, Spruce, Tulip and Willow platted together) and not this street on its own."
+ },
+ {
+  "id": "stanford-ave",
+  "name": "Stanford Avenue",
+  "namedAfter": "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
+  "categories": [
+   "person",
+   "governor",
+   "alive"
+  ],
+  "sources": [
+   "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)"
+  ],
+  "note": "Part of the same 1887 Southern Pacific package as Towne Avenue. The name did not stay put: the street platted “Stanford” in 1887 is modern Crocker Street, and the Stanford name moved a block east onto the former Ruth Avenue — modern Stanford Avenue — some time after Feb. 1897.",
+  "work": "ROWS ON THIS ENTITY SIT ON MODERN CROCKER STREET, and that is correct: mr030-009 letters “Stanford Ave” there. The transfer onto modern Stanford Avenue is not yet a document row; when the swap ordinance is found it wants a `change` row. The exact year is unresearched — streets-data.js only establishes that Ruth was still Ruth in Feb. 1897."
+ },
+ {
+  "id": "state-colton",
+  "name": "State Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "",
+  "work": "Namesake untraced. RENAMED FROM state-street, 2026-08-30: there is another State Street in Boyle Heights, and a bare “state-street” id was a collision waiting to happen. This entity is ONLY the 1884 Glassell-tract State Street that is modern Colton Street. When Boyle Heights is encoded, its State Street must get its own disambiguated entity and must NOT be merged into this one — Kenny is confident they are unrelated namings. Kines has no page for either State Street (checked 2026-09-06). Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer."
+ },
+ {
+  "id": "temple",
+  "name": "Temple Street",
+  "namedAfter": "{{Jonathan Temple}} (1796–1866), the Massachusetts trader who reached the pueblo about 1828, opened its first general store and took Mexican citizenship as Juan Temple",
+  "categories": [
+   "person"
+  ],
+  "sources": [
+   "L.A. Street Names: Temple Street (“christened in 1859”)",
+   "Wikipedia: Temple Street (Los Angeles)"
+  ],
+  "note": "Christened in 1859, along the one-block lane Temple had laid out himself beside his own downtown property.",
+  "work": "Kines writes “John Temple” and Wikipedia “Jonathan Temple”; he went by Juan in the pueblo after taking Mexican citizenship. One man. NOT to be confused with his younger half-brother F. P. F. Temple, who is the Temple of Temple City and Temple Avenue — the families' streets are a standing trap. Minted in review from documents/mr001-489, where the 1869 ink reads “Temple Street”; moved out of names-new.js 2026-09-06."
+ },
+ {
+  "id": "tenth-street",
+  "name": "10th Street",
+  "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+  "categories": [
+   "number"
+  ],
+  "sources": [
+   "L.A. Street Names: 1st Street (on the numbering system)",
+   "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)"
+  ],
+  "note": "Renamed Olympic Boulevard in 1935, for the 1932 Games — the request went in in July 1929, and that they had been the tenth Olympiad seems to have gone unremarked.",
+  "work": "One entity per number across the downtown grid, as with 1st–9th. NB the 1849 survey's numbered streets ran only as far as 8th, so when Tenth was laid out is not researched — the numbering propagated south later."
+ },
+ {
+  "id": "third-street",
+  "name": "3rd Street",
+  "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+  "categories": [
+   "number"
+  ],
+  "sources": [
+   "L.A. Street Names: 1st Street (on the numbering system)"
+  ],
+  "note": "",
+  "work": ""
+ },
+ {
+  "id": "towne-ave",
+  "name": "Towne Avenue",
+  "namedAfter": "{{Alban Nelson Towne}} (1829–1895), general manager of the Southern Pacific Railroad",
+  "categories": [
+   "person",
+   "alive"
+  ],
+  "sources": [
+   "L.A. Street Names: Towne Avenue"
+  ],
+  "note": "Named when the subdividers of Joseph Wolfskill's downtown orchard gave 13 acres at 4th and Alameda for a new Southern Pacific station — the Arcade Depot, opened 1888 — and lettered the railroad's officers onto the surrounding streets. Stanford Avenue and Crocker Street come from the same deal.",
+  "work": "Carried over from streets-data.js. The plat letters this street “Towne” outright, so the identification needs no inference."
+ },
+ {
+  "id": "traction-avenue",
+  "name": "Traction Avenue",
+  "namedAfter": "The {{electric traction motor}} that powered the streetcars running along it",
+  "categories": [
+   "descriptive"
+  ],
+  "sources": [
+   "L.A. Street Names: Traction Avenue (the former Stephenson Ave. renamed in 1915; “the word referred to the elec…"
+  ],
+  "note": "Stephenson Avenue until 1915, when it was renamed to avoid confusion with the larger Stephenson Avenue on the East Side — which itself became Whittier Boulevard five years later. Traction-powered trolleys ran along it to the nearby Santa Fe depot.",
+  "work": "Moved from names-new.js 2026-09-13. ⚠ KINES DOES NOT name the Los Angeles Traction Company — he names the TECHNOLOGY, and the company appears on his page only in a photo caption (“Los Angeles Traction Company car c. 1900”). That is a statement about Kines, not about every source: the company did operate here in the right period and no wider survey has been done; and the chronology cuts against the company reading anyway — the company was bought by the Southern Pacific in 1903 and folded into the Los Angeles Railway by 1911, four to twelve years before the 1915 renaming. Do not assert the company link. No Stephenson Avenue entity exists yet; the 1915 change wants an instrument (WANTED)."
+ },
+ {
+  "id": "tulip",
+  "name": "Tulip Street",
+  "namedAfter": "{{The tulip}}, one of four tree and plant names platted together on the Goodwin Tract in Oct. 1886 — Palm, Spruce, Tulip and Willow",
+  "categories": [
+   "nature",
+   "unknown"
+  ],
+  "sources": [
+   "Wikipedia: Arts District, Los Angeles"
+  ],
+  "note": "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along modern Santa Fe Avenue, and it lasted ten years: on Aug. 31, 1896 Ordinance No. 3829 changed “Tulip street, from Willow to Seventh” to Santa Fe avenue, extending south over it a name the railway had already given the street further north.",
+  "work": "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. ★ THE GUESS MADE EXPLICIT 2026-09-13 at Kenny’s request — see `palm-st-arts-district` for the reasoning that covers all four. namedAfter names the plant and `nature` joins the categories; `unknown` stays, because the warrant is the SET (Palm, Spruce, Tulip and Willow platted together) and not this street on its own. ⚠ THE PUBLIC NOTE WAS WRONG UNTIL 2026-09-06: it said the street “lasted a matter of months” and took the railway’s name when the Atchison, Topeka and Santa Fe reached Los Angeles in May 1887. The real end is Ordinance No. 3829 of Aug. 31, 1896 (documents/lah-1896-09-03), ten years on."
+ },
+ {
+  "id": "turner-street",
+  "name": "Turner Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "Lettered near Alameda Street on Tract No. 9771 (documents/tr0145-062). In May 1883 the council passed an ordinance changing Turner Street, from First to Alameda, to Jackson Street (documents/lah-1883-05-13).",
+  "work": "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES; no namesake documented — and two candidates are worth warning off: Joel Turner, a mayor of a different city, and the Los Angeles Turnverein, whose hall was not on this street. ⚠ TWO TURNER STREETS IN 1883. Ours aligns by geometry to modern Jackson Street, matching the May 1883 First-to-Alameda change; the OTHER, “Turner street, west of Main street”, became Sonora Street in the Aug./Sept. 1883 omnibus (documents/lah-1883-08-19, lah-1883-09-02). Do not merge them. ⚠ Also unresolved: our sheet is dated 1928 and still letters Turner, forty-five years after the Jackson change — either the sheet uses a historic name, or Turner survived alon…"
+ },
+ {
+  "id": "twelfth-street",
+  "name": "12th Street",
+  "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+  "categories": [
+   "number"
+  ],
+  "sources": [
+   "L.A. Street Names: 1st Street (on the numbering system)",
+   "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)"
+  ],
+  "note": "",
+  "work": "One entity per number across the downtown grid, as with 1st–11th. NB the 1849 survey's numbered streets ran only as far as 8th, so when Twelfth was laid out is not researched — the numbering propagated south later. The Ord survey draws the corridor unlabelled (documents/mr053-067 carries the `unnamed` row, and the sheet is swept for 12th Street), so it is cited here for the numbering rather than for the name: check-model.js will say the sheet does not letter this name, which is correct and intended. Minted 2026-09-04 at Kenny's request, before the 12th Street pass, so the point would not be lost."
+ },
+ {
+  "id": "vignes-street",
+  "name": "Vignes Street",
+  "namedAfter": "The {{Vignes family}}, principally Jean-Louis Vignes (1780–1862), the Bordeaux-born cooper who bought 104 acres beside the El Aliso sycamore and founded California's first commercial winery",
+  "categories": [
+   "person"
+  ],
+  "sources": [
+   "L.A. Street Names: Vignes Street (named 1874; “the street is named for the family”)"
+  ],
+  "note": "Named in 1874, twelve years after Jean-Louis Vignes's death, on the ground of his El Aliso vineyard. His nephews Jean-Marie (1826–1906) and Vital (1827–1902) worked the winery from about 1850 and became prominent Angelenos, and their obituaries claimed them as the namesakes — which is why Kines settles on the family rather than the uncle alone.",
+  "work": "Moved from names-new.js 2026-09-13. Recorded as a FAMILY naming on Kines's explicit reasoning, not as an unambiguous dedication to Jean-Louis. Our only sighting is a 1928 tract (documents/tr0145-062), fifty-four years after the naming."
+ },
+ {
+  "id": "vine-central",
+  "name": "Vine Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "A downtown Vine Street between 1st and 2nd near Central Avenue. Vine north of 1st kept its name in the 1897 renaming; that stretch no longer exists.",
+  "work": "SEARCHED 2026-09-13 on Kenny’s recollection that modern Olvera Street was once part of Vine Street. ★ THE RECOLLECTION IS RIGHT ABOUT OLVERA, AND OLVERA IS A DIFFERENT STREET FROM THIS ONE. The lane beside the Plaza was Calle de las Viñas, rendered in English as both Wine Street and Vine Street, and the council renamed it Olvera Street for Judge Agustín Olvera — Kines says 1873, while Wikipedia, the City of Los Angeles’s own El Pueblo page and LocalWiki all say 1877 by ordinance, three to one for 1877. That street had therefore been Olvera Street for twenty years by 1897 and CANNOT be the Vine Street our 1897 record leaves alone. Ours is the Central Avenue one, which is why the id carries th…"
+ },
+ {
+  "id": "virgin",
+  "name": "Virgin Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [
+   "L.A. Street Names: Alpine Street"
+  ],
+  "note": "Lettered “Calle de las Vírgenes” on the 1849 survey, which gives no explanation — bachelorettes, nuns and the Virgin Mary have all been suggested and none is documented.",
+  "work": "Carried over from streets-data.js when the Ord survey was encoded, 2026-08-31. The survey letters this street in both languages, so the row’s asWritten holds both forms and this entity holds the English one."
+ },
+ {
+  "id": "wall-street",
+  "name": "Wall Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "Nothing found says what it was named for. New York’s financial street is the obvious guess, and what supports it is the company it keeps: the Moreno Vineyard Tract sheet of March 1876 letters Wall Street and Regent Street two blocks apart on one new commercial subdivision beside the railroad depot — New York’s and London’s most famous trading addresses named together. As a pair they read as deliberate; singly neither can be shown. The name later spread north, taking Myrtle Avenue on Nov. 13, 1893 by Ordinance No. 1915.",
+  "work": "Kines does not cover it: no page, and it is absent from his alphabetical W list between Walgrove Avenue and Wallace Avenue (checked 2026-09-06). A search for a Los Angeles-specific origin returned only New York. ★ THE PAIRING ARGUMENT MADE EXPLICIT 2026-09-13 at Kenny’s request — see `regent-street`, which holds the fuller statement. The load-bearing fact is that documents/mr003-166 (Moreno Vineyard Tract, March 1876) is the earliest sighting in this corpus for BOTH names, so they enter the record together. Keep the two entities in step: an argument that weakens one weakens the other."
+ },
+ {
+  "id": "ward-st",
+  "name": "Ward Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "A lost street of the 1878 Nichols Addition, west of downtown (documents/mr003-569).",
+  "work": "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES; no namesake documented. ⚠ Probably NOT the Ward Street of documents/lah-1897-12-07, which runs “from Hoover to Bautista” and was to become Sixth Street — that is well west of this one. Check geometry before merging."
+ },
+ {
+  "id": "waters-street",
+  "name": "Waters Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "",
+  "work": "Namesake untraced. Not covered by Kines (checked 2026-08-30). Modern Douglas Street north of Colton; the stretch south of it is gone. Note the nearby “Walters St” (Ord Street, 1886-1890) in research-leads — a different street, and a spelling trap. Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer."
+ },
+ {
+  "id": "welcome-street",
+  "name": "Welcome Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "",
+  "work": "Namesake untraced. Not covered by Kines (checked 2026-08-30). Survives under the same name. Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer."
+ },
+ {
+  "id": "whisler-st",
+  "name": "Whisler Street",
+  "namedAfter": "Mrs. Lourena Whisler, the owner at whose request the subdivision was made and recorded",
+  "categories": [
+   "person",
+   "alive"
+  ],
+  "sources": [],
+  "note": "The sheet is “subdivided at request of Mrs. Lourena Whisler, Nov. 25th 1886” and was recorded three weeks later at her request; the street runs through her own ground. It is part of San Julian Street today.",
+  "work": "Identified from the sheet itself (documents/mr012-064), whose title block and recorder's note both name her — the same evidence that identifies Clark Avenue and Morgan Lane, and the first of the three where the owner is a woman. Her dates and her husband's name were not looked for. Kines has no Whisler Street page (checked 2026-09-06). The surveyor is John Goldsworthy, County Surveyor-elect, who also surveyed the Goldsworthy 8th St. Tract (documents/mr011-008) and whose name is on the land adjoining the Widow Botiller tract — a recurring figure in this corner of the corpus. Moved out of names-new.js 2026-09-06."
+ },
+ {
+  "id": "william",
+  "name": "William Street",
+  "namedAfter": "Probably {{Ozro William Childs}} (1824–1890) himself — the W of “O. W. Childs” is William — or his eldest surviving son, Ozro William Childs Jr. (1865–1933), who was twenty when the tract was recorded",
+  "categories": [
+   "person",
+   "alive",
+   "unknown"
+  ],
+  "sources": [
+   "Wikipedia: Ozro W. Childs — the article opens “Ozro William Childs”",
+   "Find a Grave: Ozro William Childs (1824–1890), memorial 8297711 — full name, and the ten children including Oz…"
+  ],
+  "note": "A given name, lettered on the O. W. Childs Tract of July 1885 between Los Angeles Street and Maple Avenue; the stretch is now part of Santee Street. The W in Childs’s own name is William — he was Ozro William Childs — and his eldest surviving son carried the same name.",
+  "work": "★ ANSWERED 2026-09-13, on Kenny’s hunch that the W might stand for William. It does: four sources give “Ozro William Childs”, and the strongest is a 1954 Historical Society of Southern California Quarterly article of that title written by his own daughter, Hortense Childs Reynolds. The earlier pass had found only his wife Emeline Huber and a brother Marcus and concluded no William existed in the family; that was wrong because it never checked what the initial stood for. A good lesson: expand the initials before concluding a name is absent. STILL HEDGED — there are now two Williams in frame (Childs himself, and Ozro William Childs Jr., aged twenty in 1885) and NO document says the street hono…"
+ },
+ {
+  "id": "willow",
+  "name": "Willow Street",
+  "namedAfter": "{{The willow}}, one of four tree and plant names platted together on the Goodwin Tract in Oct. 1886 — Palm, Spruce, Tulip and Willow",
+  "categories": [
+   "nature",
+   "unknown"
+  ],
+  "sources": [
+   "Wikipedia: Arts District, Los Angeles"
+  ],
+  "note": "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along Willow Street, which keeps the name.",
+  "work": "Carried over from streets-data.js when the Goodwin Tract was encoded, 2026-09-01. ★ THE GUESS MADE EXPLICIT 2026-09-13 at Kenny’s request — see `palm-st-arts-district` for the reasoning that covers all four. namedAfter names the plant and `nature` joins the categories; `unknown` stays, because the warrant is the SET (Palm, Spruce, Tulip and Willow platted together) and not this street on its own."
+ },
+ {
+  "id": "wilmington-street",
+  "name": "Wilmington Street",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "A lost downtown street, lettered on the Garden of J. Murat in 1868 (documents/mr010-008) and on the Requena Subdivision in 1876 (documents/mr003-146), and still alive in Sept. 1896, when a fire-district boundary runs along its centre line between First and Requena Streets (documents/min-1896-09-14). Its ground is today Judge John Aiso Street.",
+  "work": "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES as a downtown street. ★★ KENNY’S OBSERVATION, 2026-09-13, and the sheets bear it out: WILMINGTON AND SAN PEDRO ARE ADJACENT HARBOUR TOWNS, AND THESE WERE ADJACENT PARALLEL STREETS. The Garden of J. Murat sheet of 1868 (documents/mr010-008) letters BOTH — San Pedro Street on the line that is now Astronaut Ellison S. Onizuka Street, and Wilmington Street one block over on the line that is now Judge John Aiso Street. `san-pedro` is securely named for the port town it ran toward, so a companion street named for the town next door, on the same sheet, is the destination principle applied twice. That is a much better argument than the chain p…"
+ },
+ {
+  "id": "wilshire",
+  "name": "Wilshire Boulevard",
+  "namedAfter": "{{H. Gaylord Wilshire}} (1861–1927), developer, publisher and socialist candidate, who subdivided the tract the first stretch ran through",
+  "categories": [
+   "person",
+   "alive"
+  ],
+  "sources": [
+   "Council minutes, Sept. 21, 1896 — H. G. Wilshire's petition about Sixth Street (documents/min-1896-09-21)",
+   "Los Angeles Herald, Dec. 7, 1897 — “Sixth street, Hoover street to west city boundary, changed to Wilshire bou…"
+  ],
+  "note": "Named in Dec. 1897, when Sixth Street from Hoover Street to the west city boundary was changed to Wilshire Boulevard — fifteen months after H. G. Wilshire petitioned the council about that street. The name then travelled east in stages: Orange Street, between Figueroa and Alvarado, was folded into it in April 1924 after a first attempt in 1908 had been repealed (documents/laevex-1924-04-01, documents/lae-1924-04-12). The council's stated aim in 1924 was “a continuous thoroughfare from the heart of the business district of the city to the ocean”.",
+  "work": "Moved from names-new.js 2026-09-13. Unusually well anchored for a name in this batch: both the petition and the naming are primary records already in this corpus, so no secondary citation is needed. `alive` — Wilshire was 36 at the naming. Our two sightings are 1964 and 2017 tract maps."
+ },
+ {
+  "id": "winston-st",
+  "name": "Winston Street",
+  "namedAfter": "{{James Brown Winston}} (1820–1884), the city's first health officer, Common Council member, county supervisor and who with his wife operated the Bella Union Hotel, and who had lived on the street",
+  "categories": [
+   "person"
+  ],
+  "sources": [
+   "Wikipedia: James Brown Winston (“In 1887, the City Council honored Winston by changing the name of Ogier Stree…",
+   "Los Angeles Herald, June 14, 1887 — “An ordinance changing the name of Ozier Lane to Winston street. Action po…"
+  ],
+  "note": "Given to Ozier Lane in 1887, three years after Winston's death, for a man who had lived on it. The council's first attempt was postponed in June (documents/lah-1887-06-14).",
+  "work": "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES — the namesake is Wikipedia's, citing a county biography. ★ A NAME IN USE BEFORE IT WAS OFFICIAL: Mills' Tract letters “Winston Street” in Nov. 1886 (documents/mr012-026), seven months before the June 1887 ordinance was postponed. That is the same gap between used and official names seen at Fort Street/Broadway in 1908 and at Orange Street/Sunset Place — worth checking whether the tract's recording date is later than its survey date before leaning on it. Wikipedia spells the predecessor “Ogier”; our ordinance and our 1881 sheet both say “Ozier”. No change row written: the June ordinance was postponed and the act that carried it has not…"
+ },
+ {
+  "id": "witmer-street",
+  "name": "Witmer Street",
+  "namedAfter": "{{Henry Clayton Witmer}} (1856–1909), banker and real-estate developer, whose family's land was Crown Hill",
+  "categories": [
+   "person",
+   "alive"
+  ],
+  "sources": [
+   "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed N…"
+  ],
+  "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
+  "work": "As strong as an identification gets: the plat itself is “Witmer’s Subdivision”, so the sheet and the namesake attest each other. The 1909 sheet also explains modern Witmer’s odd OSM geometry — the two disconnected ways are a real jog the plat draws (research-leads.md). Wicks is the Wicks of the Mills and Wicks Extension (M.R. 13-87) already in the corpus, and of Lucas Avenue’s tract: worth a cross-link when the map has one."
+ },
+ {
+  "id": "wolfskill-ave",
+  "name": "Wolfskill Avenue",
+  "namedAfter": "{{William Wolfskill}}'s old citrus ranch, which the street ran through",
+  "categories": [
+   "person"
+  ],
+  "sources": [
+   "L.A. Street Names: Central Avenue"
+  ],
+  "note": "",
+  "work": ""
+ },
+ {
+  "id": "woodworth-court",
+  "name": "Woodworth Court",
+  "namedAfter": "Probably {{Wallace Woodworth}} (1832–1882), an early settler whose adobe and later house stood at Second and San Pedro Streets, on the ground this court occupies",
+  "categories": [
+   "person",
+   "unknown"
+  ],
+  "sources": [
+   "Online Archive of California: Woodworth Collection finding aid (“the Woodworth adobe at Second and San Pedro S…",
+   "Calisphere: house of Wallace Woodworth (1832–1882) on San Pedro Street between 1st and 2nd"
+  ],
+  "note": "A short court in Little Tokyo, near 2nd and San Pedro Streets. Wallace Woodworth came to Los Angeles in the early 1850s and ran Perry-Woodworth and Company in furniture and woodworking supplies; his house stood on this corner, next to the Antonio Maria Lugo adobe — his widow Maria was Lugo's great-granddaughter.",
+  "work": "Moved from names-new.js 2026-09-13. HEDGED: the sources place the Woodworth home on exactly this corner, but NO source states that the court was named for him — the connection is this project's inference from the location, hence “Probably” and `unknown` alongside `person`. NOT COVERED BY KINES. Our only sighting is a 1980 tract (documents/tr0938-051-p3), a century after Woodworth's time, so the naming event is unlocated."
+ },
+ {
+  "id": "wyoming-avenue",
+  "name": "Wyoming Avenue",
+  "namedAfter": null,
+  "categories": [
+   "unknown"
+  ],
+  "sources": [],
+  "note": "Abolished by Ordinance No. 1613 (New Series) on April 3, 1893, when it and Cooper Street were made one street called Scott Avenue.",
+  "work": "Minted 2026-09-06 from documents/ord-1613, which is the only thing in the corpus that mentions it: no sheet letters it and its extent is unknown. Kines's Wyoming Avenue page is Burbank's — a 1925 street named for Pennsylvania's Wyoming Valley by developers from Wilkes-Barre — and is a different street; do not carry that namesake across (checked 2026-09-06)."
+ },
+ {
+  "id": "yale",
+  "name": "Yale Street",
+  "namedAfter": null,
+  "categories": [
+   "unresearched"
+  ],
+  "sources": [
+   "L.A. Street Names: Yale Street"
+  ],
+  "note": "",
+  "work": "Minted 2026-09-04 from documents/ord-1874-02-26, which renames Wasp Street to Yale Street. Nothing in the corpus says why Yale — the university is the obvious guess and is only a guess; the same ordinance's Pearl and Castelar share no theme to hang it on. Kines's Yale Street page is cited but has not been read for a namesake."
+ }
+]
