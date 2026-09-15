@@ -1,8 +1,8 @@
 # Identify the streets on 11824
 
+Los Angeles : Botiller and Reyes lots east side of Main Street
 
-
-- **Date:** on 
+- **Date:** on 1873
 - **Sheet:** `11824-100dpi.png` (100 dpi; every pixel coordinate below is
   measured against this render)
 - **Alignment:** `11824-alignment.json` — control points mapping scan pixels
@@ -21,13 +21,19 @@ For each modern street listed below, decide what this sheet shows along it:
 the plat's own label for that corridor, or that the sheet shows nothing there.
 Then list any street DRAWN on the plat that matches none of them.
 
-Modern streets inside the coverage polygon (5):
+Modern streets inside the coverage polygon (11):
 
 - 7th Street
 - 8th Street
 - 9th Street
+- Cecelia Street
+- Los Angeles Street
 - Main Street
+- Maple Avenue
+- Santee Court
+- Santee Street
 - Spring Street
+- Wall Street
 
 ## Rules that decide the answer
 
@@ -159,12 +165,94 @@ crossing inside, or give a point: `to: { px: [x, y] }`.
 off the sheet, give it as `date: { on: "1886-05" }` — or `after` / `before`
 for a range. Never write the string `"undefined"`.
 
-**Do not write a `name` field.** You are reading one sheet; `name` is a
-claim about which naming *lineage* a label belongs to, and that can only be
-decided against the whole corpus — whether this "Figueroa" is the same Figueroa
-as the one three blocks east, or a different street that spells alike. Put the
-ink in `asWritten` and leave identity to the human review step, which has the
-project's name list in front of it.
+**`name` comes last, and only from the candidate list** in the section
+"Assigning `name`" below — never from your own knowledge of Los Angeles, and
+never as an id you made up. Put the ink in `asWritten` first; when in any doubt
+about identity, leave `name` out and review will assign it.
+
+## Assigning `name` — LAST, and only from the list below
+
+Do this only after every row is written and its `kind`, `street`, extents
+and `asWritten` are settled. `name` is a claim about which naming *lineage* a
+label belongs to — whether this "Figueroa" is the same Figueroa as the one three
+blocks east, or a different street that spells alike — and one sheet cannot
+settle that. What CAN settle the easy cases is the rest of the corpus, and the
+part of it that bears on these streets is below: for each modern street, the
+entities that confirmed rows on other sheets have already placed on that
+street, or on a street it runs straight into, with the ink those sheets used.
+(The same list is in `11824-streets.json` under `nameCandidates`.)
+
+For a `state` row, set `name` to a candidate's id when **all** of these hold:
+
+1. the candidate is listed for that row's `street` (not for some other street);
+2. the row's `asWritten`, read as a name, is the same name as the candidate's
+   display form or one of its recorded ink forms — ignoring case, punctuation,
+   "St."/"Street"/"Ave."/"Avenue" and the like, and ordinal spellings
+   ("FIRST" = "1st"); a different word is a different name, however similar;
+3. no other candidate for that street also satisfies 2.
+
+Otherwise **leave `name` out** — including when two candidates both fit,
+when the ink is partly illegible, when the only match is on a street listed as
+a continuation rather than this one and the stretch does not actually reach
+that street, or when you are weighing it at all. A blank is cheap to fill in
+review; a wrong lineage is a false claim on the map. **Never invent an id**
+and never use one that is not in the list for that street: those fail the
+checker. Rows stay `confirmed: false` either way — a human still checks.
+
+### 7th Street
+
+- `seventh-street` — 7th Street: attested on 7th Street by another sheet; carries the street's present name; ink seen: “7TH ST.”, “7TH STREET”, “7th ST”, “7th Street”, “CALLE 7a”, “SEVENTH ST”, “SEVENTH ST.”, “SEVENTH STR.”, “SEVENTH STREET”, “Seventh St”, “Seventh St.”, “Seventh Street”, “Seventh Street.” [11824, mr003-016, mr003-569, mr006-033, mr006-039, mr011-063, mr013-091, mr014-034, mr015-052, mr018-025, mr018-092, mr021-046, mr030-009-p1, mr030-009-p2, mr053-068, mr053-071, mr054-051, mr055-081, mr066-064, mr070-084, tr0001-046, tr0005-056a, tr0009-100a, tr0011-196, tr0023-054c, tr0718-007-p2, tr1397-017-p5]
+
+### 8th Street
+
+- `eighth-street` — 8th Street: attested on 8th Street by another sheet; carries the street's present name; ink seen: “8TH ST”, “8TH STREET”, “8th St”, “8th St.”, “8th Street”, “CALLE 8a”, “EAST EIGHTH STREET”, “EIGHTH ST”, “EIGHTH ST.”, “EIGHTH STREET”, “Eighth St”, “Eighth St.”, “Eighth Street”, “new 8th Street” [11824, mr003-569, mr011-008, mr018-092, mr021-046, mr026-060, mr029-026, mr029-085, mr053-065, mr053-068, mr054-051, mr055-086, mr070-051, pm017-045, tr0005-156a, tr0007-085, tr0013-048, tr0105-001-p2, tr0141-011]
+
+### 9th Street
+
+- `ninth-street` — 9th Street: attested on 9th Street by another sheet; carries the street's present name; ink seen: “9TH STREET”, “9th St.”, “9th Street”, “CALLE 9a”, “East 9th Street”, “NINTH STREET”, “Ninth St.”, “Ninth Street”, “Ninth Street Extension” [11824, mr011-008, mr016-027, mr026-059, mr029-085, mr053-063, mr053-065, mr053-067, mr053-068, mr055-086]
+- `moran-s-lane` — Moran's Lane: attested on 9th Street by another sheet; ink seen: “Moran's Lane” [11824]
+
+### Cecelia Street
+
+- `ida-street` — Ida Street: attested on Cecelia Street by another sheet; ink seen: “Ida Street” [mr029-026]
+
+### Los Angeles Street
+
+- `los-angeles-street` — Los Angeles Street: attested on Los Angeles Street by another sheet; carries the street's present name; ink seen: “LOS ANGELES ST.”, “LOS ANGELES STREET”, “Los Angeles St.”, “Los Angeles Street” [12017, mr003-146-p2, mr005-005, mr005-110, mr006-378, mr011-063, mr011-094, mr012-026, mr029-026, mr053-016, mr053-063, tr0009-100a]
+
+### Main Street (runs straight into Spring Street)
+
+- `main-street-dtla` — Main Street: attested on Main Street by another sheet; attested on Spring Street, which Main Street runs straight into; carries the street's present name; ink seen: “CALLE PRINCIPAL”, “MAIN ST.”, “MAIN STREET”, “Main St.”, “Main Street” [11824, 12017, mr003-038-p2, mr005-105, mr005-110, mr006-378, mr011-094, mr012-026, mr029-026, mr053-016, mr053-063, mr053-068, mr053-069, mr053-071, mr053-073]
+- `los-angeles-street` — Los Angeles Street: attested on Main Street by another sheet; ink seen: “Los Angeles St.” [mr039-069]
+- `spring` — Spring Street: attested on Spring Street, which Main Street runs straight into; ink seen: “CALLE PRIMAVERA”, “SPRING STREET”, “Spring Street” [11824, mr053-067, mr053-068, mr053-069]
+
+### Maple Avenue
+
+- `maple-dtla` — Maple Avenue: attested on Maple Avenue by another sheet; carries the street's present name; ink seen: “MAPLE AVE.”, “Maple Ave.”, “Maple Avenue” [12017, mr006-378, mr011-063, mr011-094, mr016-027, mr029-026, mr053-016, tr0009-100a]
+- `regent-street` — Regent Street: attested on Maple Avenue by another sheet; ink seen: “Regent Street” [mr003-166-p1, mr003-166-p2]
+
+### Santee Court (runs straight into Santee Street)
+
+- `william` — William Street: attested on Santee Street, which Santee Court runs straight into; ink seen: “William St.”, “William Street” [12017, mr006-378]
+- `botiller-street` — Botiller Street: attested on Santee Street, which Santee Court runs straight into; ink seen: “Botiller Street” [mr029-026]
+- `santee-street` — Santee Street: attested on Santee Street, which Santee Court runs straight into; ink seen: “SANTEE ST.”, “SANTEE STREET”, “Santee Street” [mr011-094, mr053-016, mr053-063]
+
+### Santee Street (runs straight into Santee Court)
+
+- `william` — William Street: attested on Santee Street by another sheet; ink seen: “William St.”, “William Street” [12017, mr006-378]
+- `botiller-street` — Botiller Street: attested on Santee Street by another sheet; ink seen: “Botiller Street” [mr029-026]
+- `santee-street` — Santee Street: attested on Santee Street by another sheet; carries the street's present name; ink seen: “SANTEE ST.”, “SANTEE STREET”, “Santee Street” [mr011-094, mr053-016, mr053-063]
+
+### Spring Street (runs straight into Main Street)
+
+- `spring` — Spring Street: attested on Spring Street by another sheet; carries the street's present name; ink seen: “CALLE PRIMAVERA”, “SPRING STREET”, “Spring Street” [11824, mr053-067, mr053-068, mr053-069]
+- `main-street-dtla` — Main Street: attested on Spring Street by another sheet; attested on Main Street, which Spring Street runs straight into; ink seen: “CALLE PRINCIPAL”, “MAIN ST.”, “MAIN STREET”, “Main St.”, “Main Street” [11824, 12017, mr003-038-p2, mr005-105, mr005-110, mr006-378, mr011-094, mr012-026, mr029-026, mr053-016, mr053-063, mr053-068, mr053-069, mr053-071, mr053-073]
+- `los-angeles-street` — Los Angeles Street: attested on Main Street, which Spring Street runs straight into; ink seen: “Los Angeles St.” [mr039-069]
+
+### Wall Street
+
+- `wall-street` — Wall Street: attested on Wall Street by another sheet; carries the street's present name; ink seen: “WALL STREET”, “Wall Street” [mr003-166-p1, mr003-166-p2, mr005-005, mr006-033, mr012-026, mr029-026]
+- `myrtle` — Myrtle Avenue: attested on Wall Street by another sheet; ink seen: “Myrtle Ave.”, “Myrtle Avenue”, “Wall Street” [12017, mr006-378, mr011-063, mr016-027]
 
 `asWritten` is verbatim ink, typos and abbreviations included — a string, or
 an array of them where the sheet letters the stretch more than once. `trace`

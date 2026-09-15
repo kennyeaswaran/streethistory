@@ -26,35 +26,35 @@ module.exports = {
     image: "documents/mr084-053/mr084-053-100dpi.png",
     dpi: 100,
     points: [
-      { px: [0, 0], ll: [34.051756, -118.254659], note: "map-tool corner (0,0)" },
-      { px: [1119, 0], ll: [34.050411, -118.252618], note: "map-tool corner (1119,0)" },
-      { px: [0, 1757], ll: [34.049083, -118.25719], note: "map-tool corner (0,1757)" }
+      { px: [0, 0], ll: [34.049939, -118.25587], note: "map-tool corner (0,0)" },
+      { px: [1119, 0], ll: [34.048909, -118.254285], note: "map-tool corner (1119,0)" },
+      { px: [0, 1757], ll: [34.047862, -118.257809], note: "map-tool corner (0,1757)" }
     ]
   },
 
   sweptFully: true,
-  sweptFor: ["5th Street","Grand Avenue"],
+  sweptFor: ["6th Street","Grand Avenue"],
 
   rows: [
     {
       "kind": "state",
       "asWritten": "SIXTH ST.",
-      "street": "5th Street",
+      "street": "6th Street",
       "from": {
         "px": [
           277,
-          442
+          433
         ]
       },
       "to": {
         "px": [
           879,
-          437
+          433
         ]
       },
       "basis": "alignment",
-      "note": "The modern 5th Street trace follows the roadway lettered SIXTH ST. across the north edge of the property.",
-      "name": "sixth-street"
+      "name": "sixth-street",
+      "note": "The corrected modern 6th Street centerline stays in the roadway lettered SIXTH ST. across the property's north edge."
     },
     {
       "kind": "state",
@@ -62,19 +62,19 @@ module.exports = {
       "street": "Grand Avenue",
       "from": {
         "px": [
-          745,
+          751,
           322
         ]
       },
       "to": {
         "px": [
-          749,
+          751,
           885
         ]
       },
       "basis": "alignment",
-      "note": "The modern Grand Avenue trace follows the roadway lettered GRAND AV. along the east side of the property.",
-      "name": "grand-ave"
+      "name": "grand-ave",
+      "note": "The centerline follows the drawn GRAND AV. roadway east of the property."
     }
   ]
 };

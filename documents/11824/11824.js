@@ -20,7 +20,7 @@ module.exports = {
   // not the sheet edge (MODEL-SPEC §4.4). SCAN PIXELS against alignment.image,
   // so a better alignment carries it along (§4.6).
   coverage: [
-    [321, 5761], [2155, 6056], [3502, -28], [386, 50]
+    [285, 5744], [7103, 6548], [7860, 376], [207, 310]
   ],
   alignment: {
     image: "documents/11824/11824.jpg",
@@ -33,7 +33,7 @@ module.exports = {
   },
 
   sweptFully: true,
-  sweptFor: ["7th Street","8th Street","9th Street","Main Street","Spring Street"],
+  sweptFor: ["7th Street","8th Street","9th Street","Cecelia Street","Los Angeles Street","Main Street","Maple Avenue","Santee Court","Santee Street","Spring Street","Wall Street"],
 
   rows: [
     {
@@ -42,18 +42,18 @@ module.exports = {
       "street": "7th Street",
       "from": {
         "px": [
-          381,
-          475
+          209,
+          479
         ]
       },
       "to": {
         "px": [
-          3390,
-          477
+          7826,
+          653
         ]
       },
       "basis": "alignment",
-      "note": "The aligned modern trace follows the roadway lettered 7th Street; the lettering is mirror-reversed in the scan.",
+      "note": "The trace stays between the two edges of the top roadway across the mapped ground; the lettering is upside down in the scan.",
       "name": "seventh-street"
     },
     {
@@ -62,13 +62,13 @@ module.exports = {
       "street": "8th Street",
       "from": {
         "px": [
-          354,
-          2856
+          244,
+          2857
         ]
       },
       "to": "Main Street",
       "basis": "alignment",
-      "note": "The aligned modern trace follows the roadway lettered 8th Street; the lettering is mirror-reversed in the scan.",
+      "note": "West of Main, the trace follows the corridor lettered 8th Street; its text is upside down in the scan.",
       "name": "eighth-street"
     },
     {
@@ -77,12 +77,12 @@ module.exports = {
       "from": "Main Street",
       "to": {
         "px": [
-          2831,
-          3004
+          7433,
+          3857
         ]
       },
       "basis": "alignment",
-      "note": "The aligned modern trace follows the roadway lettered 8th Street; the lettering is mirror-reversed in the scan."
+      "note": "East of Main, the modern 8th Street line crosses the Reyes and Botiller parcels. A diagonal parcel boundary is drawn nearby, but no paired street edges continue the 8th Street corridor."
     },
     {
       "kind": "state",
@@ -90,13 +90,13 @@ module.exports = {
       "street": "9th Street",
       "from": {
         "px": [
-          327,
-          5244
+          278,
+          5242
         ]
       },
       "to": "Main Street",
       "basis": "alignment",
-      "note": "The aligned modern trace follows the roadway lettered 9th Street; the lettering is mirror-reversed in the scan.",
+      "note": "West of Main, the trace follows the 9th Street corridor; its lettering is upside down in the scan.",
       "name": "ninth-street"
     },
     {
@@ -106,12 +106,12 @@ module.exports = {
       "from": "Main Street",
       "to": {
         "px": [
-          2300,
-          5401
+          7139,
+          6251
         ]
       },
       "basis": "alignment",
-      "note": "The aligned modern trace follows the roadway lettered 9th Street; the lettering is mirror-reversed in the scan.",
+      "note": "East of Main, the roadway is lettered Moran's Lane; the label is upside down in the scan.",
       "name": "moran-s-lane"
     },
     {
@@ -120,18 +120,18 @@ module.exports = {
       "street": "Main Street",
       "from": {
         "px": [
-          2880,
-          -12
+          2860,
+          333
         ]
       },
       "to": {
         "px": [
-          1438,
-          5941
+          1455,
+          5882
         ]
       },
       "basis": "alignment",
-      "note": "The modern line stays within the roadway lettered Main Street; the lettering is mirror-reversed in the scan.",
+      "note": "The corrected centerline stays within the drawn Main Street corridor; the label is upside down in the scan.",
       "name": "main-street-dtla"
     },
     {
@@ -140,19 +140,111 @@ module.exports = {
       "street": "Spring Street",
       "from": {
         "px": [
-          1537,
-          21
+          1551,
+          322
         ]
       },
       "to": {
         "px": [
-          1600,
-          5268
+          1602,
+          5267
         ]
       },
       "basis": "alignment",
-      "note": "The modern line stays within the roadway lettered Spring Street; the lettering is mirror-reversed in the scan.",
+      "note": "The corrected centerline follows the drawn Spring Street corridor to its junction with Main and 9th; the label is upside down in the scan.",
       "name": "spring"
+    },
+    {
+      "kind": "absent",
+      "street": "Cecelia Street",
+      "from": "8th Street",
+      "to": "9th Street",
+      "note": "The modern centerline crosses the open Reyes/Botiller parcel ground; no two-edged street corridor is drawn along it."
+    },
+    {
+      "kind": "absent",
+      "street": "Los Angeles Street",
+      "from": {
+        "px": [
+          4207,
+          344
+        ]
+      },
+      "to": {
+        "px": [
+          2945,
+          6058
+        ]
+      },
+      "note": "The corrected modern line runs across large parcel interiors. It crosses the sheet's diagonal parcel division, but no Los Angeles Street roadway is drawn."
+    },
+    {
+      "kind": "absent",
+      "street": "Maple Avenue",
+      "from": {
+        "px": [
+          5869,
+          359
+        ]
+      },
+      "to": {
+        "px": [
+          5223,
+          6326
+        ]
+      },
+      "note": "The aligned line passes through undivided parcel interiors rather than a paired roadway."
+    },
+    {
+      "kind": "absent",
+      "street": "Santee Court",
+      "from": {
+        "px": [
+          4194,
+          1207
+        ]
+      },
+      "to": {
+        "px": [
+          4605,
+          2559
+        ]
+      },
+      "note": "This modern court lies within the open Reyes parcel; the sheet shows no corresponding road edges."
+    },
+    {
+      "kind": "absent",
+      "street": "Santee Street",
+      "from": {
+        "px": [
+          4781,
+          2707
+        ]
+      },
+      "to": {
+        "px": [
+          4167,
+          6202
+        ]
+      },
+      "note": "The line crosses the mapped parcels and the single division between them, without a drawn street corridor."
+    },
+    {
+      "kind": "absent",
+      "street": "Wall Street",
+      "from": {
+        "px": [
+          6864,
+          367
+        ]
+      },
+      "to": {
+        "px": [
+          6521,
+          6479
+        ]
+      },
+      "note": "The modern line runs near one parcel boundary on the east, but the sheet does not draw a two-edged roadway there."
     }
   ]
 };

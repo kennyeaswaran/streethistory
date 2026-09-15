@@ -1,8 +1,8 @@
 # Identify the streets on mr084-053
 
+Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey
 
-
-- **Date:** on 
+- **Date:** on 1902-11-06
 - **Sheet:** `mr084-053-100dpi.png` (100 dpi; every pixel coordinate below is
   measured against this render)
 - **Alignment:** `mr084-053-alignment.json` — control points mapping scan pixels
@@ -23,7 +23,7 @@ Then list any street DRAWN on the plat that matches none of them.
 
 Modern streets inside the coverage polygon (2):
 
-- 5th Street
+- 6th Street
 - Grand Avenue
 
 ## Rules that decide the answer
@@ -156,12 +156,48 @@ crossing inside, or give a point: `to: { px: [x, y] }`.
 off the sheet, give it as `date: { on: "1886-05" }` — or `after` / `before`
 for a range. Never write the string `"undefined"`.
 
-**Do not write a `name` field.** You are reading one sheet; `name` is a
-claim about which naming *lineage* a label belongs to, and that can only be
-decided against the whole corpus — whether this "Figueroa" is the same Figueroa
-as the one three blocks east, or a different street that spells alike. Put the
-ink in `asWritten` and leave identity to the human review step, which has the
-project's name list in front of it.
+**`name` comes last, and only from the candidate list** in the section
+"Assigning `name`" below — never from your own knowledge of Los Angeles, and
+never as an id you made up. Put the ink in `asWritten` first; when in any doubt
+about identity, leave `name` out and review will assign it.
+
+## Assigning `name` — LAST, and only from the list below
+
+Do this only after every row is written and its `kind`, `street`, extents
+and `asWritten` are settled. `name` is a claim about which naming *lineage* a
+label belongs to — whether this "Figueroa" is the same Figueroa as the one three
+blocks east, or a different street that spells alike — and one sheet cannot
+settle that. What CAN settle the easy cases is the rest of the corpus, and the
+part of it that bears on these streets is below: for each modern street, the
+entities that confirmed rows on other sheets have already placed on that
+street, or on a street it runs straight into, with the ink those sheets used.
+(The same list is in `mr084-053-streets.json` under `nameCandidates`.)
+
+For a `state` row, set `name` to a candidate's id when **all** of these hold:
+
+1. the candidate is listed for that row's `street` (not for some other street);
+2. the row's `asWritten`, read as a name, is the same name as the candidate's
+   display form or one of its recorded ink forms — ignoring case, punctuation,
+   "St."/"Street"/"Ave."/"Avenue" and the like, and ordinal spellings
+   ("FIRST" = "1st"); a different word is a different name, however similar;
+3. no other candidate for that street also satisfies 2.
+
+Otherwise **leave `name` out** — including when two candidates both fit,
+when the ink is partly illegible, when the only match is on a street listed as
+a continuation rather than this one and the stretch does not actually reach
+that street, or when you are weighing it at all. A blank is cheap to fill in
+review; a wrong lineage is a false claim on the map. **Never invent an id**
+and never use one that is not in the list for that street: those fail the
+checker. Rows stay `confirmed: false` either way — a human still checks.
+
+### 6th Street
+
+- `sixth-street` — 6th Street: attested on 6th Street by another sheet; carries the street's present name; ink seen: “6TH ST”, “6TH ST.”, “6TH STREET”, “6th St”, “CALLE 6a”, “SIXTH ST.”, “SIXTH STR.”, “SIXTH STREET”, “Sixth St”, “Sixth St Extension.”, “Sixth St.”, “proposed line of Sixth Street.” [mr001-462, mr003-016, mr003-166-p1, mr003-569, mr006-033, mr011-042, mr030-009-p1, mr030-009-p2, mr030-009-p3, mr053-068, mr053-071, tr0009-075, tr0009-100a, tr0012-101, tr0023-066, tr0159-032-p2, tr0273-017, tr0319-001-p1]
+
+### Grand Avenue
+
+- `charity` — Charity Street: attested on Grand Avenue by another sheet; ink seen: “CALLE DE CARIDAD”, “CHARITY”, “CHARITY ST.”, “CHARITY STREET”, “Charity St”, “Charity St.”, “Charity Street” [12685, mr001-462, mr001-489, mr003-038-p1, mr005-573, mr007-021, mr053-067, mr053-068]
+- `grand-ave` — Grand Avenue: attested on Grand Avenue by another sheet; carries the street's present name; ink seen: “GRAND AV.” [mr084-053]
 
 `asWritten` is verbatim ink, typos and abbreviations included — a string, or
 an array of them where the sheet letters the stretch more than once. `trace`
