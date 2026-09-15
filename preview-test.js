@@ -159,11 +159,17 @@ const isGrey = c => String(c) === GREY;
   const tree = await page.evaluate(() => {
     const d = document.getElementById("filters");
     const facets = [...d.querySelectorAll(".facet")].map(x => x.textContent);
-    const rows = [...d.querySelectorAll("label")].map(l => ({
-      id: l.querySelector("input").value,
-      indent: parseInt(l.style.paddingLeft || "0", 10),
-      count: parseInt(l.querySelector(".fcount").textContent, 10)
-    }));
+    const rows = [...d.querySelectorAll("label")].map(l => {
+      const t = l.querySelector(".fcount").textContent;      // "18 (24)" or "0"
+      const m = t.match(/^(\d+)(?:\s*\((\d+)\))?/) || [];
+      return {
+        id: l.querySelector("input").value,
+        indent: parseInt(l.style.paddingLeft || "0", 10),
+        count: +(m[1] || 0),
+        ever: m[2] === undefined ? +(m[1] || 0) : +m[2],
+        text: t
+      };
+    });
     return { facets, rows };
   });
   ok("the Highlight list is grouped into facets",
@@ -257,6 +263,20 @@ const isGrey = c => String(c) === GREY;
   });
   ok("the count beside a category is name entities, not segments",
      counted.shown === counted.entities, JSON.stringify(counted));
+
+  // The parenthetical: every name that has EVER been in this category, current
+  // plus former. In a project about renaming it is the more interesting number,
+  // and it must never be smaller than the current one.
+  const everRows = tree.rows.filter(r => r.ever > 0);
+  ok("each count carries the current-and-former total in parentheses",
+     everRows.length > 0 && everRows.every(r => /^\d+ \(\d+\)$/.test(r.text)),
+     JSON.stringify(everRows.slice(0, 3)));
+  ok("…which is never smaller than the current count",
+     everRows.every(r => r.ever >= r.count),
+     JSON.stringify(everRows.filter(r => r.ever < r.count)));
+  ok("…and is strictly bigger somewhere, or it is not counting formers at all",
+     everRows.some(r => r.ever > r.count),
+     JSON.stringify(everRows.map(r => r.id + ":" + r.text).slice(0, 6)));
   ok("…which is the smaller, more useful number here",
      counted.entities < counted.segments, JSON.stringify(counted));
 

@@ -301,6 +301,48 @@ plus 500 and 700-800 E 2nd. These are the Civic Center and Federal Courthouse
 superblocks and the Little Tokyo redevelopment: no parcel, so no lookup is
 possible. Don't retry these addresses.
 
+## 15th, Venice and 17th, Main to Georgia
+
+Sampled 2026-09-15. Every PDF fetched and confirmed `application/pdf` with a
+real byte count.
+
+| Where | Tract | Map-Ref | PDF |
+|---|---|---|---|
+| Venice at Figueroa (501 W Venice, 1540 S Figueroa) | **J. H. Bryan's Figueroa Street Subdivision** | **M R 21-32** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf |
+| Venice just west of Figueroa (610 W) | TR 2713 | M B 34-4 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0034/TR0034-004.pdf |
+| Venice at Georgia (901 W) | **Greenwell Tract** | **M R 12-70** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-070.pdf |
+| Venice west of Georgia (1000 W) | **Valentine's Subdivision of Lot 10, Block 10, Los Angeles Homestead Tract** | **M R 60-97** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-097.pdf |
+
+Already accounted for, nothing to fetch:
+
+- **15th Street** east of Figueroa is the **Morris Vineyard Subdivision**,
+  M R 3-38/39 — already `documents/mr003-038-p1` / `-p2`. 208 W 15th is Lot 1 of
+  it. That sheet answers the whole of 15th in this run.
+- **17th Street** at Figueroa is **Bell's Addition**, M R 2-467 — already
+  downloaded, sitting in `inbox/out of neighborhood/mr002-467.pdf`. Sampled at
+  1701 S Figueroa, Lot 1.
+
+Notes:
+
+- **17th Street has no addressed parcel anywhere between Main and Georgia.**
+  Every geocode on W 17th St returned the harbour town (90731) or 90047 instead;
+  the downtown corridor is unaddressed today. It is reachable only from its
+  flanking north-south streets, which is how Bell's Addition turned up. The same
+  is nearly true of 15th west of Figueroa, and of Main-to-Figueroa on Venice —
+  that band is Convention Center, L.A. Live and the freeway.
+- **This closes a loop on Bell's Addition.** The 17th Street request lands on
+  exactly the sheet that has been parked awaiting the neighbourhood decision. If
+  coverage ever expands to reach Georgia Street, it lights up 17th Street and
+  `georgia-bell` at the same time.
+- **A second tract named for a street.** J. H. Bryan's *Figueroa Street*
+  Subdivision joins the Maple Avenue Tract (which fronts Wall Street) — the same
+  pattern of a plat taking its name from a thoroughfare rather than an owner.
+- **Valentine's cites the Los Angeles Homestead Tract** by lot and block, so it
+  is a hook into that larger survey; the Huntington's map collection holds a
+  "Map of Los Angeles Homestead Tract" if the parent sheet is ever wanted.
+- 1801 S Georgia St reports **P M 2600 (BK 46-53)** — the Parcel Map series, a
+  modern filing, not worth pulling for naming.
+
 ## Pico Boulevard and 14th Street, San Julian to Grand
 
 Sampled 2026-09-15 at 801/600/400/200/104 W and 100/200/400/500/600 E Pico, and

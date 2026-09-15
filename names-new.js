@@ -150,7 +150,8 @@ const NEW_NAME_ENTITIES = {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
       {"doc":"mr003-038-p1","sheet":"Norris Plan","asWritten":["PINE STREET"]},
-      {"doc":"mr003-038-p2","sheet":"Vineyard Subdivision","asWritten":["PINE STREET"]}
+      {"doc":"mr003-038-p2","sheet":"Vineyard Subdivision","asWritten":["PINE STREET"]},
+      {"doc":"mr021-032","sheet":"Bryan's Figueroa Street Subdivision","asWritten":["Pine Street."]}
     ],
     spellings: [{"forms":["Pine Street"]}],
     namedAfter: null,

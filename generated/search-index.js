@@ -33,9 +33,21 @@ const SEARCH_INDEX = [
     "street": "14th Place"
   },
   {
+    "form": "California Street",
+    "entity": "california-street-14th",
+    "label": "California Street",
+    "street": "14th Street"
+  },
+  {
     "form": "14th Street",
     "entity": "14th-street",
     "label": "14th Street",
+    "street": "14th Street"
+  },
+  {
+    "form": "Consuelo Street",
+    "entity": "consuelo",
+    "label": "Consuelo Street",
     "street": "14th Street"
   },
   {
@@ -48,6 +60,12 @@ const SEARCH_INDEX = [
     "form": "15th Street",
     "entity": "fifteenth-street",
     "label": "15th Street",
+    "street": "15th Street"
+  },
+  {
+    "form": "Laurel Street",
+    "entity": "laurel-dtla",
+    "label": "Laurel Street",
     "street": "15th Street"
   },
   {
@@ -831,15 +849,15 @@ const SEARCH_INDEX = [
     "street": "Figueroa Street"
   },
   {
-    "form": "Grasshopper Street",
-    "entity": "chapules",
-    "label": "Grasshopper Street",
-    "street": "Figueroa Street"
-  },
-  {
     "form": "Pearl Street",
     "entity": "pearl",
     "label": "Pearl Street",
+    "street": "Figueroa Street"
+  },
+  {
+    "form": "Grasshopper Street",
+    "entity": "chapules",
+    "label": "Grasshopper Street",
     "street": "Figueroa Street"
   },
   {
@@ -1061,8 +1079,14 @@ const SEARCH_INDEX = [
   {
     "form": "Palm Street",
     "entity": "palm-st-arts-district",
-    "label": "Palm Street",
+    "label": "Palm Street (Imperial Street)",
     "street": "Imperial Street"
+  },
+  {
+    "form": "Palm Street",
+    "entity": "palm-street-margo",
+    "label": "Palm Street (Margo Street)",
+    "street": "Margo Street"
   },
   {
     "form": "Industrial Street",
@@ -1431,6 +1455,12 @@ const SEARCH_INDEX = [
     "street": "Olive Street"
   },
   {
+    "form": "Elm Street",
+    "entity": "elm-street",
+    "label": "Elm Street",
+    "street": "Olive Street"
+  },
+  {
     "form": "Olvera Street",
     "entity": "olvera-street",
     "label": "Olvera Street",
@@ -1489,12 +1519,6 @@ const SEARCH_INDEX = [
     "entity": "patton-street",
     "label": "Patton Street",
     "street": "Patton Street"
-  },
-  {
-    "form": "Peacock Place",
-    "entity": "peacock-place",
-    "label": "Peacock Place",
-    "street": "Peacock Place"
   },
   {
     "form": "Pico Boulevard",
@@ -1812,6 +1836,12 @@ const SEARCH_INDEX = [
     "form": "Venice Boulevard",
     "entity": "venice-boulevard",
     "label": "Venice Boulevard",
+    "street": "Venice Boulevard"
+  },
+  {
+    "form": "Pine Street",
+    "entity": "pine-street-venice",
+    "label": "Pine Street",
     "street": "Venice Boulevard"
   },
   {

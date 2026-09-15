@@ -1,0 +1,513 @@
+{
+  "document": "mr021-032",
+  "image": "mr021-032-100dpi.png",
+  "imageSize": [1171, 1750],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr021-032-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [98, 614],
+    [90, 1291],
+    [1140, 1285],
+    [1104, 557]
+  ],
+  "coverageLl": [
+    [34.039092, -118.269532],
+    [34.037399, -118.270628],
+    [34.036026, -118.267452],
+    [34.037906, -118.266408]
+  ],
+  "streets": [
+    {
+      "name": "15th Drive",
+      "runs": [
+        {
+          "px": [
+            [219, 977],
+            [175, 977],
+            [167, 977],
+            [146, 977],
+            [123, 976],
+            [94, 975]
+          ],
+          "ll": [
+            [34.038018, -118.269741],
+            [34.038077, -118.269874],
+            [34.038087, -118.269898],
+            [34.038116, -118.269963],
+            [34.038147, -118.270029],
+            [34.038188, -118.270117]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Figueroa Street",
+          "px": [219, 977],
+          "ll": [34.038018, -118.269741],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "15th Street",
+      "runs": [
+        {
+          "px": [
+            [1031, 940],
+            [1062, 939],
+            [1123, 940]
+          ],
+          "ll": [
+            [34.037039, -118.267234],
+            [34.036999, -118.267139],
+            [34.036918, -118.266957]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Hope Street",
+          "px": [1031, 940],
+          "ll": [34.037039, -118.267234],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Figueroa Street",
+      "runs": [
+        {
+          "px": [
+            [216, 1290],
+            [216, 1223],
+            [217, 1185],
+            [218, 1150],
+            [219, 1034],
+            [219, 977],
+            [220, 916],
+            [220, 818],
+            [221, 607]
+          ],
+          "ll": [
+            [34.037234, -118.270246],
+            [34.037405, -118.270141],
+            [34.037498, -118.270075],
+            [34.037584, -118.27002],
+            [34.037875, -118.269833],
+            [34.038018, -118.269741],
+            [34.038171, -118.269644],
+            [34.038416, -118.269487],
+            [34.038947, -118.269149]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "15th Drive",
+          "px": [219, 977],
+          "ll": [34.038018, -118.269741],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [211, 1462],
+          "ll": [34.036809, -118.270532],
+          "insideCoverage": false
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [217, 1185],
+          "ll": [34.037498, -118.270075],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Flower Street",
+      "runs": [
+        {
+          "px": [
+            [621, 584],
+            [620, 744],
+            [620, 785],
+            [618, 924],
+            [618, 992],
+            [618, 1037],
+            [616, 1145],
+            [615, 1171],
+            [616, 1205],
+            [617, 1288]
+          ],
+          "ll": [
+            [34.038475, -118.267906],
+            [34.038076, -118.268162],
+            [34.037971, -118.26823],
+            [34.037625, -118.268454],
+            [34.037453, -118.268563],
+            [34.03734, -118.268635],
+            [34.037072, -118.268811],
+            [34.037006, -118.268854],
+            [34.036921, -118.268905],
+            [34.03671, -118.269034]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Venice Boulevard",
+          "px": [615, 1171],
+          "ll": [34.037006, -118.268854],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hope Street",
+      "runs": [
+        {
+          "px": [
+            [1033, 561],
+            [1032, 624],
+            [1031, 906],
+            [1031, 940],
+            [1031, 1080],
+            [1032, 1175],
+            [1031, 1200],
+            [1031, 1229],
+            [1030, 1286]
+          ],
+          "ll": [
+            [34.03799, -118.26663],
+            [34.037833, -118.26673],
+            [34.037123, -118.267181],
+            [34.037039, -118.267234],
+            [34.036686, -118.267456],
+            [34.036447, -118.267605],
+            [34.036385, -118.267645],
+            [34.036311, -118.267692],
+            [34.03617, -118.267786]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "15th Street",
+          "px": [1031, 940],
+          "ll": [34.037039, -118.267234],
+          "insideCoverage": true
+        },
+        {
+          "name": "17th Street",
+          "px": [1027, 1464],
+          "ll": [34.035726, -118.268077],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [1005, 1531],
+          "ll": [34.035585, -118.26825],
+          "insideCoverage": false
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [1031, 1200],
+          "ll": [34.036385, -118.267645],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Venice Boulevard",
+      "runs": [
+        {
+          "px": [
+            [91, 1199],
+            [94, 1199],
+            [171, 1189],
+            [217, 1185],
+            [261, 1177],
+            [430, 1170],
+            [526, 1170],
+            [583, 1170],
+            [615, 1171],
+            [642, 1173],
+            [653, 1173],
+            [670, 1173],
+            [829, 1174],
+            [953, 1171],
+            [975, 1174],
+            [990, 1179],
+            [1003, 1184],
+            [1031, 1200],
+            [1057, 1217],
+            [1060, 1218],
+            [1083, 1223],
+            [1122, 1226],
+            [1137, 1225]
+          ],
+          "ll": [
+            [34.03763, -118.270479],
+            [34.037625, -118.270469],
+            [34.037548, -118.270223],
+            [34.037498, -118.270075],
+            [34.037461, -118.26993],
+            [34.037253, -118.269412],
+            [34.037128, -118.269121],
+            [34.037053, -118.268949],
+            [34.037006, -118.268854],
+            [34.036968, -118.268776],
+            [34.036952, -118.268743],
+            [34.036929, -118.268691],
+            [34.036716, -118.268215],
+            [34.036559, -118.267836],
+            [34.036522, -118.267775],
+            [34.03649, -118.267736],
+            [34.036463, -118.267705],
+            [34.036385, -118.267645],
+            [34.036306, -118.267594],
+            [34.0363, -118.267588],
+            [34.036257, -118.267525],
+            [34.0362, -118.267413],
+            [34.03618, -118.267367]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Figueroa Street",
+          "px": [217, 1185],
+          "ll": [34.037498, -118.270075],
+          "insideCoverage": true
+        },
+        {
+          "name": "Flower Street",
+          "px": [615, 1171],
+          "ll": [34.037006, -118.268854],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hope Street",
+          "px": [1031, 1200],
+          "ll": [34.036385, -118.267645],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "15th Drive",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "15th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "laurel-dtla",
+          "display": "Laurel Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 15th Street by another sheet"
+          ],
+          "ink": [
+            "LAUREL STREET",
+            "Laurel Street"
+          ],
+          "docs": [
+            "mr003-038-p1",
+            "mr003-038-p2",
+            "mr011-094"
+          ]
+        },
+        {
+          "id": "fifteenth-street",
+          "display": "15th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 15th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "(formerly Laura St)",
+            "15th ST."
+          ],
+          "docs": [
+            "mr053-016"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Figueroa Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "FIGUEROA STREET",
+            "Figueroa St"
+          ],
+          "docs": [
+            "mr007-021",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "pearl",
+          "display": "Pearl Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "PEARL ST",
+            "PEARL STR.",
+            "PEARL STREET",
+            "Pearl"
+          ],
+          "docs": [
+            "mr003-016",
+            "mr003-032",
+            "mr003-569",
+            "mr005-307-a",
+            "mr010-030"
+          ]
+        },
+        {
+          "id": "chapules",
+          "display": "Grasshopper Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS CHAPULAS",
+            "CALLE DE LAS CHAPULES",
+            "GRASSHOPPER ST",
+            "GRASSHOPPER ST.",
+            "GRASSHOPPER STREET",
+            "Grasshopper St."
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Flower Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "flower",
+          "display": "Flower Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Flower Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE DE LAS FLORES",
+            "FLOWER",
+            "FLOWER STR.",
+            "FLOWER STREET",
+            "Flower St",
+            "Flower St."
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr003-016",
+            "mr003-032",
+            "mr003-033",
+            "mr007-021",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Hope Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "hope",
+          "display": "Hope Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hope Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE DE LAS ESPERANZAS",
+            "HOPE ST.",
+            "HOPE STREET",
+            "Hope St",
+            "Hope St.",
+            "Hope Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr001-489",
+            "mr003-033",
+            "mr007-021",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Venice Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "pine-street-venice",
+          "display": "Pine Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Venice Boulevard by another sheet"
+          ],
+          "ink": [
+            "PINE STREET"
+          ],
+          "docs": [
+            "mr003-038-p1",
+            "mr003-038-p2"
+          ]
+        },
+        {
+          "id": "sixteenth-street",
+          "display": "16th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Venice Boulevard by another sheet"
+          ],
+          "ink": [
+            "(formerly Pine St)",
+            "16th ST."
+          ],
+          "docs": [
+            "mr053-016"
+          ]
+        }
+      ]
+    }
+  ]
+}

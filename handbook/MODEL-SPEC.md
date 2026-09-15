@@ -1111,6 +1111,24 @@ regenerate away.
 
 ## 6. Generation
 
+### 6.0a `NAME_CATEGORY_INDEX` — every entity's categories, by id
+
+`generate.js` emits a map from entity id to its categories with the tree's
+ancestors folded in, covering every entity that appears anywhere on the map,
+current or former.
+
+It exists for one job the segment fields cannot do. A segment carries
+`formerCategories` as a flat union of the categories of every former name on
+that stretch, with no ids attached — fine for painting a stretch violet, useless
+for counting, because a name that ran along three stretches would be counted
+three times. `nameHistory[].entityId` supplies the ids; this supplies their
+categories. The Highlight list uses the pair to show **current (current and
+former)** beside each node: `A person 18 (31)`, and `…family of the owner or
+subdivider 0 (2)`, where every such name has since been replaced.
+
+`index.html` shows one number instead, because the legacy `streets-data.js` has
+neither ids in its `nameHistory` nor an index to look them up in.
+
 ### 6.1 Segments
 
 Segments are the **maximal stretches of a street whose name-timeline is

@@ -282,6 +282,12 @@ const filtersDiv = document.getElementById("filters");
     }
   const n = {};
   for (const set of byName.values()) for (const c of set) n[c] = (n[c] || 0) + 1;
+  // ONE count here, where preview.html shows two. The generated model carries
+  // `nameHistory[].entityId` and a NAME_CATEGORY_INDEX, so it can count former
+  // names by entity; the legacy STREET_DATA this file reads has neither — its
+  // nameHistory entries are prose with no ids — so a current-and-former total
+  // cannot be computed here without double-counting. It arrives with the
+  // switchover (MODEL-IMPLEMENTATION §C–D), not before.
 
   // This file reads the LEGACY streets-data.js, which authors `unknown` and has
   // no `basis` to derive the evidence nodes from — so it shows the legacy rows

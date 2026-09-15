@@ -1,0 +1,210 @@
+{
+  "document": "tr0034-004",
+  "image": "tr0034-004-100dpi.png",
+  "imageSize": [1184, 1691],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0034-004-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [540, 168],
+    [512, 584],
+    [1218, 568],
+    [1179, 64]
+  ],
+  "coverageLl": [
+    [34.038065, -118.270849],
+    [34.037471, -118.271287],
+    [34.036945, -118.270019],
+    [34.037722, -118.269619]
+  ],
+  "streets": [
+    {
+      "name": "Figueroa Street",
+      "runs": [
+        {
+          "px": [
+            [1037, 572],
+            [1037, 540],
+            [1038, 495],
+            [1036, 353],
+            [1039, 288],
+            [1040, 230],
+            [1041, 86]
+          ],
+          "ll": [
+            [34.03708, -118.270344],
+            [34.037127, -118.270313],
+            [34.037194, -118.270271],
+            [34.037405, -118.270141],
+            [34.037498, -118.270075],
+            [34.037584, -118.27002],
+            [34.037796, -118.269884]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "15th Drive",
+          "px": [1043, -64],
+          "ll": [34.038018, -118.269741],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [1029, 759],
+          "ll": [34.036809, -118.270532],
+          "insideCoverage": false
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [1039, 288],
+          "ll": [34.037498, -118.270075],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Venice Boulevard",
+      "runs": [
+        {
+          "px": [
+            [1195, 272],
+            [1114, 275],
+            [1039, 288],
+            [961, 297],
+            [830, 312],
+            [788, 313],
+            [674, 316],
+            [544, 319],
+            [530, 319]
+          ],
+          "ll": [
+            [34.037402, -118.269784],
+            [34.037461, -118.26993],
+            [34.037498, -118.270075],
+            [34.037548, -118.270223],
+            [34.037625, -118.270469],
+            [34.037658, -118.270545],
+            [34.037742, -118.270749],
+            [34.037839, -118.270983],
+            [34.037849, -118.271008]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Figueroa Street",
+          "px": [1039, 288],
+          "ll": [34.037498, -118.270075],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Figueroa Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "FIGUEROA STREET",
+            "Figueroa St"
+          ],
+          "docs": [
+            "mr007-021",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "pearl",
+          "display": "Pearl Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "PEARL ST",
+            "PEARL STR.",
+            "PEARL STREET",
+            "Pearl"
+          ],
+          "docs": [
+            "mr003-016",
+            "mr003-032",
+            "mr003-569",
+            "mr005-307-a",
+            "mr010-030"
+          ]
+        },
+        {
+          "id": "chapules",
+          "display": "Grasshopper Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS CHAPULAS",
+            "CALLE DE LAS CHAPULES",
+            "GRASSHOPPER ST",
+            "GRASSHOPPER ST.",
+            "GRASSHOPPER STREET",
+            "Grasshopper St."
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Venice Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "pine-street-venice",
+          "display": "Pine Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Venice Boulevard by another sheet"
+          ],
+          "ink": [
+            "PINE STREET"
+          ],
+          "docs": [
+            "mr003-038-p1",
+            "mr003-038-p2"
+          ]
+        },
+        {
+          "id": "sixteenth-street",
+          "display": "16th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Venice Boulevard by another sheet"
+          ],
+          "ink": [
+            "(formerly Pine St)",
+            "16th ST."
+          ],
+          "docs": [
+            "mr053-016"
+          ]
+        }
+      ]
+    }
+  ]
+}

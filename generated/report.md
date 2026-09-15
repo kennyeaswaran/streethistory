@@ -2,9 +2,9 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 272; entries: 689
+- Streets: 271; entries: 708
 - Stub entities minted from OSM (unresearched): 200
-- Curated entities: 144
+- Curated entities: 151
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
 ## Ambiguous OSM binds (NOT bound — fix by adding extents or disambiguation)
@@ -200,9 +200,8 @@
 - min-1896-09-08: sweptFor = []
 - min-1896-09-14: sweptFor = []
 - min-1896-09-21: sweptFor = []
-- mr003-038-p1: sweptFor = []
-- mr003-038-p2: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
+- tr0755-073-p2: sweptFor = []
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
 - myrtle: "Wall Street" ×1
@@ -305,6 +304,10 @@
 - crown-hill-ave: "CROWN HILL AVE." ×3
 - farmer: "FARMER ST." ×1
 
+## Derived (unauthored) search disambiguations — consider authoring better ones
+- palm-st-arts-district: "Palm Street (Imperial Street)"
+- palm-street-margo: "Palm Street (Margo Street)"
+
 
 ## Vanished streets (§5.3)
 
@@ -334,6 +337,10 @@ Traced through a document alignment; approximate to roughly a street width.
 - **ALEXANDER LANE** (alexander-lane) — 2 points, from mr007-021
 - **CENTERBROOK LANE** (centerbrook-lane) — 2 points, from mr007-021
 - **CATSBY LANE** (catesby-lane) — 2 points, from mr007-021
+- **Eleventh St.** (eleventh-street) — 2 points, from mr010-030
+- **Nevada** (nevada-1886) — 2 points, from mr010-030
+- **Belmont Avenue** (belmont) — 2 points, from mr010-030
+- **Twelfth St.** (twelfth-street) — 2 points, from mr010-030
 - **Willow St** (willow) — 2 points, from mr011-042
 - **Mesquit St** (mesquit) — 2 points, from mr011-042
 - **Fourth St** (fourth-street) — 2 points, from mr030-009-p4

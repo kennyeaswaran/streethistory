@@ -1447,11 +1447,29 @@ const header = `// GENERATED FILE — DO NOT EDIT (built by generate.js from nam
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
 // Built: ${new Date().toISOString().slice(0, 10)}
 `;
+const NAME_CATEGORY_INDEX = {};
+for (const [id, e] of Object.entries(entities)) {
+  const cats = [...(e.categories || [])];
+  if (e.namedAfter === null && !cats.includes("unknown")) cats.push("unknown");
+  if (e.searched === "none" && !cats.includes("unresearched")) cats.push("unresearched");
+  if (e.basis) cats.push("basis-" + e.basis);
+  if (e.searched) cats.push("searched-" + e.searched);
+  if (e.stub) cats.push("stub");
+  const full = [...new Set(cats.flatMap(c => [c, ...categoryAncestors(c)]))];
+  if (full.length) NAME_CATEGORY_INDEX[id] = full;
+}
+
 fs.writeFileSync(path.join(OUT_DIR, "streets-data.gen.js"),
   header +
   `const NEIGHBORHOODS = ${stringify(NEIGHBORHOODS)};\n\n` +
   `const CATEGORIES = ${stringify(GEN_CATEGORIES)};\n\n` +
   `const SIMILAR_PROJECTS = ${stringify(SIMILAR_PROJECTS)};\n\n` +
+  // Every entity's categories, ancestors folded in, keyed by id. The Highlight
+  // list needs it to count FORMER names: a segment carries `formerCategories`
+  // as a flat union with no ids attached, so there is no way to count former
+  // entities without double-counting a name that ran along three stretches.
+  // `nameHistory[].entityId` gives the ids; this gives their categories.
+  `const NAME_CATEGORY_INDEX = ${stringify(NAME_CATEGORY_INDEX)};\n\n` +
   `const STREET_DATA = ${stringify(STREET_DATA)};\n\n` +
   // §5.3 — ghost streets: drawn pavement with no modern counterpart. Emitted
   // as their own collection so their name entities stay reachable by search

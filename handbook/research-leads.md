@@ -2314,3 +2314,223 @@ predecessor. If those are two streets, they are two entities.
 Cleveland Street is legacy-only: it lives in `streets-data.js`, which has no
 `basis` field, so none of this can be recorded until it is migrated into
 `names.js`. This note is what should be read when it is.
+
+## 2026-09-15 — Four Venice Boulevard sheets, and three names for one corridor
+
+Kenny downloaded four plats off the "15th, Venice and 17th" harvest and asked
+whether he had placed them right. Checking them turned up more about names than
+about alignment, so the name findings are here and the alignment verdicts are at
+the bottom.
+
+**Method, worth reusing.** Every one of these was settled by the assessor's
+legal-description search — `portal.assessor.lacounty.gov/api/search/legal?legaldesc=<TRACT NAME>`
+— which returns every parcel whose legal description names the tract, with its
+lot and block number and its modern situs address; `/api/parceldetail?ain=<AIN>`
+then gives lat/lon. Because the parcel *carries the plat's own lot and block
+numbers*, this identifies the ground **without assuming any street
+correspondence**, which is exactly the failure mode Kenny flagged on the Requena
+sheets. Two cautions learned here: parcels with `ParcelStatus: DELETED` often
+return null coordinates (freeway takings especially), and the long metes-and-
+bounds legal descriptions on assembled parcels name their bounding streets in
+prose — those descriptions are the single most useful thing the API returns.
+A third, sharper one: the endpoint caps at **501 results and the search is
+fuzzy**, so adding words ("GREENWELL TRACT BLK 6") drags in hundreds of
+unrelated parcels and silently truncates. Query the bare distinctive word
+("GREENWELL" → 131 hits, all of them the tract) and filter locally; only then is
+an *absence* — such as block 6 having no surviving parcels — evidence of
+anything.
+
+Full recipe in TRACT-RESEARCH.md.
+
+### ★ The corridor now called Venice Boulevard carried at least three names
+
+Downtown Venice Boulevard, from Toberman east to Hope, is one straight corridor
+(bearing ~117.7°, the local grid's cross-axis). Three of these four plats letter
+it, and they do not agree:
+
+- **Rouland Street** — Greenwell Tract, recorded **Dec. 15, 1886**, on the
+  stretch from Valencia to Bond. Confirmed: Greenwell block 5 lots 10–13 and
+  block 3 lots 10–13 are today 901–935 Venice Blvd, all flagged "EX OF ST".
+- **Pine Street** — J. H. Bryan's Figueroa Street Subdivision, recorded
+  **Aug. 6, 1887**, on the stretch from Figueroa to Hope. Confirmed two ways:
+  block B lot 1 is 1521 S Hope St (34.036740, −118.267863), and modern Venice
+  Blvd's centreline projects onto the drawn Pine Street within ~12 m, well
+  inside the boulevard's widening.
+- **16th Street** — both west of Figueroa: by **Mar. 11, 1897** (Valentine's
+  Subdivision, at Toberman:
+  Venice Blvd is 60 m north of Lot A and there is no modern 16th Street there)
+  and still in **Feb. 1917** (Tract 2713, at Figueroa).
+
+So two subdividers eight months apart each gave the corridor their own name on
+adjoining stretches — Rouland from Valencia to Bond, Pine from Figueroa to Hope.
+
+**And the split held for decades.** Checking against what the project already
+had turned the "three names in a row" story into something better — a
+**west/east division at about Figueroa**:
+
+- **West of Figueroa the name went Rouland → 16th Street.** Rouland is on the
+  Greenwell plat (1886) from Valencia to Bond, and the city was still using it
+  in 1889–90: Forman's Feb. 18, 1897 statement, transcribed in
+  `documents/ord-4093/omnibus-1897-renaming-full.md`, delimits the Georgia
+  corridor as "Nevada street **from Rouland street** to Eleventh street" and
+  "Georgia street from Washington street **to Rouland street**". By Valentine's
+  (1897, at Toberman) and Tract 2713 (1917, at Figueroa) it is 16th Street.
+- **East of Figueroa the name stayed Pine, and stayed it a long time.** Bryan's
+  plat letters PINE from Figueroa to Hope in 1887 — and `mr003-038-p1` (Norris
+  Plan) and `mr003-038-p2` (Vineyard Subdivision), both **1915**, still letter
+  PINE STREET on the same corridor from −118.2665 east to −118.2626, i.e. from
+  Hope eastward. Twenty-eight years later and still Pine.
+
+Bryan's tract runs Figueroa→Hope and Tract 2713 sits immediately *west* of
+Figueroa, so the two abut without overlapping, and Figueroa is where the
+evidence changes name. **⚠ That boundary is inferred from where each name's
+evidence stops, not from any document that states it** — the real changeover
+could be anywhere between Georgia Street and Hope, and nothing here dates when
+Pine finally gave way to Venice Boulevard.
+
+**What this fixes, and what it opens:**
+
+- **`pine-street-venice` already exists in names-new.js**, minted from the two
+  1915 sheets and awaiting a namesake. Bryan's `mr021-032` is a **third sighting
+  and pushes the name back 28 years, to 1887** — and unlike the Greenwell and
+  Valentine's sheets it is inside the neighbourhood and correctly aligned, so it
+  can carry rows now. Its `sightings` list should pick that up on the next
+  review save.
+- **Rouland has no entity anywhere** — it is in neither names.js nor
+  names-new.js, and the only prose mention in the project is the Forman
+  passage above. On the house convention for a vanished street it would be
+  `rouland-street-venice`. Worth minting, and the namesake is unresearched:
+  Rouland reads as a surname, and the party who filed the Greenwell plat —
+  recorded "at the request of F. Bouton" — is the kind of lead to start from,
+  as is whoever owned the ground before Greenwell bought it.
+- **⭐ The Rouland citations bear directly on `georgia-bell`**, which is still
+  lettered by no document. Both 1889–90 extents are bounded *by Rouland
+  Street*, so knowing Rouland = the Venice Boulevard corridor puts a real
+  latitude on those two segments for the first time. Tract 2713 independently
+  fixes the crossing: Georgia Street's centre line is 425.27 ft west of
+  Figueroa along this corridor. That is a foothold on the georgia-bell extent
+  problem that did not exist before.
+
+**⚠ Still not established.** That the *city* ever recognised Pine or Rouland as
+official names — the plats are subdividers' usage, and the Forman passage is a
+witness statement, not an ordinance. Neither name has been run through the
+directories or the Herald search.
+
+### Greenwell Tract (`inbox/out of neighborhood/mr012-070`) — every street identified
+
+"The subdivision of Lot 2, Block B, Hancock's Survey", E. G. Jones C.E., scale
+200 ft to one inch, recorded Dec. 15, 1886 at the request of F. Bouton. Eight
+blocks: 1 a west strip, 2/4/6 the north tier (Pico to Greenwell), 3/5/7 the
+south tier (Greenwell to Rouland), 8 an east strip. Blocks 2, 4 and 6 are 240 ft
+wide — four 60-ft lots on Pico — with 60-ft streets between.
+
+All seven correspondences come from assessor parcels carrying Greenwell lot and
+block numbers, so none of them is an eyeball match:
+
+| on the plat (1886) | today | evidence |
+|---|---|---|
+| Pico St | **Pico Blvd** | blk 2 lots 1, 2, 21, 22 = 1400–1416 W Pico Blvd |
+| Greenwell St | **14th Street** | blk 2 lot 12 = 1411 W 14th St; and the block-4 metes below |
+| Rouland St | **Venice Blvd** | blk 5 lots 10–13 = 901–921 Venice Blvd, "EX OF ST" |
+| Auburn St | **Valencia St** | blk 2 fronts Valencia and Albany; blk 1, west of it, fronts Valencia only |
+| Albany St | **Albany St** | blk 2/3/4/5 parcels addressed on Albany |
+| Rich St | **Oak St** | blk 5 (Albany–Rich) fronts Albany, Oak, Venice; blk 7 (Rich–Bond) fronts Oak and Venice |
+| Bond St | **Bond St** | blk 8 lots 3, 4 = 1312, 1320 Bond St |
+
+**Greenwell Street is the name that vanished** — the corridor is 14th Street
+today and has no entity in names.js. Auburn is the other loss: the plat's Auburn
+Street is now Valencia Street. Rich → Oak is a third. All three are unresearched.
+
+**The Harbor Freeway took the tract's east side.** One assembled parcel
+(1330 W Pico) is described as running "NE on SE line of Albany St and SE on SW
+line of Pico Blvd and **SW on NW line of Harbor Frwy** and NW on NE line of 14th
+St" — i.e. block 4's south-east boundary, which the plat draws as Rich Street,
+is now the freeway's edge, and the same parcel is only "POR OF" lots 13 through
+22. **Block 6 has no surviving parcels at all** (it was Rich to Bond, Pico to
+14th), and blocks 4 and 7 have only 4 and 6 left against 22–29 in each of the
+untouched blocks 1, 2, 3 and 5; block 8's Bond Street parcels were deleted in
+1988. So Rich Street
+survives as Oak Street only *south* of 14th; north of 14th the freeway is sitting
+on it. This is a clean case for `absent`/`vanished` rows once the sheet is
+placed.
+
+### J. H. Bryan's Figueroa Street Subdivision (documents/mr021-032)
+
+J. H. Stevenson, Surveyor, 1887; scale 50 ft to one inch, and the recorder's
+note says the copy is **"reduced to an exact one half size"** — so the sheet as
+scanned is 100 ft to the inch. Recorded Aug. 6, 1887 at the request of J. H.
+Bryan. Two blocks, A (Figueroa–Flower) and B (Flower–Hope), each 20 lots of
+50 ft frontage and 155 ft depth around a 20-ft alley; street widths lettered as
+Figueroa 99 ft, Flower 80 ft, Hope 60 ft, Pine 60 ft. Bearings given as
+N 62°08′ W along Pine and N 28° E along Figueroa.
+
+Figueroa, Flower and Hope all keep their names and their lines — each projects
+onto its drawn counterpart. Only **Pine Street** is lost, to Venice Boulevard.
+
+**Open, and mildly interesting:** the tract's *northern* edge is a boundary line,
+not a street — nothing is drawn beyond it — and there is no modern E–W street
+within 160 m of where that line lands. Modern **15th Street does not reach this
+tract**: it T's into Hope Street about 300 ft south of the tract's north
+line — six lots down, at the lot 4/lot 5 line of block B — and does not
+continue west. The numbered
+grid east of Hope is on a different offset from this tract's grid, which is worth
+remembering before matching any 1880s plat here to a numbered street by position.
+
+### Valentine's Subdivision (`inbox/out of neighborhood/mr060-097`)
+
+"Lot 10, Block 10, Los Angeles Homestead Tract", scale 1″=100′, surveyed
+Mch. 11, 1897 by Fremont Ackerman C.E., **"True courses given"** — N 28°44′ E on
+the west line and Toberman, S 61°16′ E on 16th St. Recorded Jun. 2, 1897 at the
+request of Easton, Eldridge & Co.; the owner's signature at the foot is faint but
+reads as a Valentine. Lots A–D of 44 ft, plus lot 5.
+
+Lot A is **1615 Toberman St** (34.040432, −118.277974). At that point Venice
+Blvd is 60 m north and West 17th Street 71 m south, so the sheet's **16th Street
+is Venice Boulevard** and its **17th Street is still 17th Street**. Toberman
+keeps its name. Nothing lost here — the value of the sheet is the 1897 date on
+"16th Street" for the Venice corridor.
+
+### Tract 2713 (documents/tr0034-004) — and a lead back to Bell's Addition
+
+Surveyed Feb. 1917 by V. J. Rowan; scale 1″=60′. A single lot, 190.11′ × 68.62′,
+at the south-west corner of 16th Street and Figueroa — **1601 S Figueroa St**
+today. It is 425.27′ west of the centre line of **Georgia Street** along 16th,
+and 305.65′ north of the centre line of 17th along Figueroa. Bearings
+"based upon the bearings shown on map of Tract No. 1148, M.B. 18:17".
+
+**⭐ The lead:** the sheet says it is "a subdivision of a portion of **Collins
+Subdivision of Block 1, Bell's Addition, as per Book 9 page 52 Miscellaneous
+Records**". That places Bell's Addition Block 1 at 16th and Figueroa — inside the
+neighbourhood, not outside it. The Bell's Addition sheets currently sit in
+`inbox/out of neighborhood/`, and the Huntington scans there were collected on the
+assumption that the addition was elsewhere. **Worth pulling MR 9-52** —
+`https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf` — and
+re-checking whether Bell's Addition belongs in the neighbourhood after all. This
+also bears on `georgia-bell`, which is still lettered by no document: Georgia
+Street's centre line is measured from on this very sheet.
+
+### Alignment verdicts (for the record)
+
+- **mr021-032** and **tr0034-004** — correct. Assessor parcels project onto their
+  drawn lots; scale and rotation agree with the sheets' printed figures.
+- **mr012-070** (Greenwell) — **wrong: ~1.45× too large and ~340 m too far ESE.**
+  Three independent scale measurements agree against the alignment's 0.921 m/px:
+  the printed 200 ft/inch gives 0.610, the drawn lot-line ruler (240-ft block =
+  344 px at 300 dpi, 60-ft streets = 87 px) gives 0.638, and the assessor pair
+  1416 ↔ 1400 W Pico (51.3 m over 81.2 px) gives 0.632.
+- **mr060-097** (Valentine's) — **wrong: scale fine, but ~594 m too far ESE**
+  (539 m east, 249 m north of where it should be). Lot A projects off the left
+  edge of its own scan.
+- Both wrong sheets fall west of the neighbourhood's `w = -118.272` edge — the
+  Greenwell Tract runs about -118.2726 to -118.2765, Valentine's sits at
+  -118.278 — so Kenny moved them to `inbox/out of neighborhood/` on 2026-09-15
+  rather than re-aligning them. The scale and offset figures above are recorded
+  so they don't have to be re-derived if either comes back. Note the Greenwell
+  Tract's eastern edge only just clears the bbox: if the neighbourhood is ever
+  widened westward, that sheet is the first one back in, and it carries seven
+  street identifications and three lost names.
+- Minor: all four alignments sat at 27.69–27.70° up-page, while the sheets' own
+  stated bearings run 28°00′ (Bryan), 28°02′45″ (TR 2713) and 28°44′ (Valentine's,
+  true courses). Nothing worth more than a degree over tracts this size, but the
+  identical value across four sheets suggests a carried-over default rather than
+  four independent fits.

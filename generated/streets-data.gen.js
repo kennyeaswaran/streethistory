@@ -352,6 +352,2508 @@ const SIMILAR_PROJECTS = [
   }
 ];
 
+const NAME_CATEGORY_INDEX = {
+  "first-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "second-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "third-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "fourth-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "fifth-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "sixth-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "seventh-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "georgia-east": [
+    "state",
+    "place",
+    "basis-guess",
+    "basis"
+  ],
+  "georgia-bell": [
+    "person",
+    "alive",
+    "family",
+    "basis-eponymous",
+    "basis"
+  ],
+  "nevada-1886": [
+    "state",
+    "place",
+    "basis-guess",
+    "basis"
+  ],
+  "arnold": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "bixel": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "alameda-st": [
+    "descriptive",
+    "abstract",
+    "tree",
+    "nature",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "huber-st": [
+    "person",
+    "family",
+    "basis-attested",
+    "basis"
+  ],
+  "aztec-avenue": [
+    "people",
+    "person",
+    "basis-pattern",
+    "basis"
+  ],
+  "patton-street": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-attested",
+    "basis"
+  ],
+  "council-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "court-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "diamond-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "hobart-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "home-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "lake-avenue": [
+    "water",
+    "nature",
+    "basis-inferred",
+    "basis"
+  ],
+  "state-colton": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "waters-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "welcome-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "guadalupe": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "garey": [
+    "person",
+    "alive",
+    "basis-inferred",
+    "basis"
+  ],
+  "hewitt": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "figueroa-gov": [
+    "person",
+    "politician",
+    "governor",
+    "basis-attested",
+    "basis"
+  ],
+  "pearl": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "chapules": [
+    "animal",
+    "nature",
+    "basis-attested",
+    "basis"
+  ],
+  "boylston": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "central-ave": [
+    "descriptive",
+    "abstract",
+    "basis-attested",
+    "basis"
+  ],
+  "vine-central": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "wolfskill-ave": [
+    "person",
+    "landowner",
+    "basis-attested",
+    "basis"
+  ],
+  "towne-ave": [
+    "person",
+    "alive",
+    "basis-attested",
+    "basis"
+  ],
+  "stanford-ave": [
+    "person",
+    "politician",
+    "alive",
+    "governor",
+    "basis-attested",
+    "basis"
+  ],
+  "crocker-street": [
+    "person",
+    "alive",
+    "basis-pattern",
+    "basis"
+  ],
+  "ruth-ave": [
+    "person",
+    "alive",
+    "family",
+    "basis-eponymous",
+    "basis"
+  ],
+  "gladys-ave": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "ceres-ave": [
+    "mythological",
+    "person",
+    "basis-guess",
+    "basis"
+  ],
+  "omar-ave": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "san-pedro": [
+    "place",
+    "destination",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "poplar-st": [
+    "tree",
+    "nature",
+    "basis-lexical",
+    "basis"
+  ],
+  "witmer-street": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "lucas-avenue": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "crown-hill-ave": [
+    "landform",
+    "nature",
+    "basis-inferred",
+    "basis"
+  ],
+  "columbia-avenue": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "eighth-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "ninth-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "main-street-dtla": [
+    "descriptive",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "hill-street-downtown": [
+    "landform",
+    "nature",
+    "basis-attested",
+    "basis"
+  ],
+  "bull": [
+    "animal",
+    "nature",
+    "basis-lexical",
+    "basis"
+  ],
+  "fort-street": [
+    "place",
+    "basis-attested",
+    "basis"
+  ],
+  "eternity": [
+    "idea",
+    "abstract",
+    "basis-attested",
+    "basis"
+  ],
+  "high-street-chinatown": [
+    "descriptive",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "hornet": [
+    "animal",
+    "nature",
+    "basis-lexical",
+    "basis"
+  ],
+  "virgin": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "charity": [
+    "idea",
+    "abstract",
+    "basis-lexical",
+    "basis"
+  ],
+  "spring": [
+    "person",
+    "alive",
+    "basis-attested",
+    "basis"
+  ],
+  "college": [
+    "company",
+    "basis-attested",
+    "basis"
+  ],
+  "flower": [
+    "plant",
+    "nature",
+    "basis-attested",
+    "basis"
+  ],
+  "olive": [
+    "tree",
+    "nature",
+    "basis-lexical",
+    "basis"
+  ],
+  "hope": [
+    "idea",
+    "abstract",
+    "person",
+    "basis-inferred",
+    "basis"
+  ],
+  "adobe": [
+    "material",
+    "object",
+    "basis-lexical",
+    "basis"
+  ],
+  "short-street-chavez": [
+    "descriptive",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "cameron-lane": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "alexander-lane": [
+    "person",
+    "family",
+    "basis-eponymous",
+    "basis"
+  ],
+  "catesby-lane": [
+    "person",
+    "alive",
+    "family",
+    "basis-eponymous",
+    "basis"
+  ],
+  "centerbrook-lane": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "palm-st-arts-district": [
+    "tree",
+    "nature",
+    "basis-pattern",
+    "basis"
+  ],
+  "spruce": [
+    "tree",
+    "nature",
+    "basis-pattern",
+    "basis"
+  ],
+  "tulip": [
+    "plant",
+    "nature",
+    "basis-pattern",
+    "basis"
+  ],
+  "willow": [
+    "tree",
+    "nature",
+    "basis-pattern",
+    "basis"
+  ],
+  "mesquit": [
+    "tree",
+    "nature",
+    "basis-pattern",
+    "basis"
+  ],
+  "santee-street": [
+    "person",
+    "alive",
+    "basis-attested",
+    "basis"
+  ],
+  "los-angeles-street": [
+    "place",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "pico": [
+    "person",
+    "politician",
+    "alive",
+    "governor",
+    "basis-attested",
+    "basis"
+  ],
+  "tenth-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "eleventh-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "twelfth-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "fifteenth-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "sixteenth-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "alpine": [
+    "place",
+    "basis-inferred",
+    "basis"
+  ],
+  "broadway": [
+    "borrowed",
+    "place",
+    "basis-guess",
+    "basis"
+  ],
+  "castelar": [
+    "person",
+    "alive",
+    "foreign",
+    "politician",
+    "official",
+    "basis-attested",
+    "basis"
+  ],
+  "yale": [
+    "company",
+    "basis-guess",
+    "basis"
+  ],
+  "farmer": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "temple": [
+    "person",
+    "basis-attested",
+    "basis"
+  ],
+  "court-house-street": [
+    "descriptive",
+    "abstract",
+    "basis-lexical",
+    "basis"
+  ],
+  "william": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "maple-dtla": [
+    "tree",
+    "nature",
+    "basis-inferred",
+    "basis"
+  ],
+  "myrtle": [
+    "plant",
+    "nature",
+    "basis-inferred",
+    "basis"
+  ],
+  "san-julian-st": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "botiller-street": [
+    "person",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "ida-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "wall-street": [
+    "borrowed",
+    "place",
+    "basis-inferred",
+    "basis"
+  ],
+  "clark-ave": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "regent-street": [
+    "borrowed",
+    "place",
+    "basis-inferred",
+    "basis"
+  ],
+  "earl-st": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "morgan-lane": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "boyd-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "scott-avenue": [
+    "person",
+    "basis-attested",
+    "basis"
+  ],
+  "wyoming-avenue": [
+    "state",
+    "place",
+    "basis-guess",
+    "basis"
+  ],
+  "cooper-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "whisler-st": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "santa-fe-ave": [
+    "company",
+    "basis-attested",
+    "basis"
+  ],
+  "cincinnati": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "jesse": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "requena-street": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "commercial-street": [
+    "descriptive",
+    "abstract",
+    "basis-attested",
+    "basis"
+  ],
+  "wilmington-street": [
+    "place",
+    "basis-inferred",
+    "basis"
+  ],
+  "beaudry-st": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "grand-ave": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "orange-st-wilshire": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "moore-st": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "florida-st": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "loomis-st": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "ruby-st": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "ward-st": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "francisco": [
+    "person",
+    "basis-attested",
+    "basis"
+  ],
+  "ingraham": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "kip-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "wilshire": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "park-lane": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "ozier-lane": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "winston-st": [
+    "person",
+    "basis-attested",
+    "basis"
+  ],
+  "vignes-street": [
+    "person",
+    "landowner",
+    "basis-attested",
+    "basis"
+  ],
+  "banning-street": [
+    "person",
+    "basis-guess",
+    "basis"
+  ],
+  "turner-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "kohler": [
+    "person",
+    "landowner",
+    "basis-attested",
+    "basis"
+  ],
+  "merchant-st": [
+    "descriptive",
+    "abstract",
+    "basis-inferred",
+    "basis"
+  ],
+  "melendrez-st": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "elmore-ave": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "helena-ave": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "parker-drive": [
+    "landowner",
+    "person",
+    "basis-eponymous",
+    "basis"
+  ],
+  "agatha": [
+    "person",
+    "alive",
+    "family",
+    "basis-eponymous",
+    "basis"
+  ],
+  "messer-street": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "rose-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "traction-avenue": [
+    "tool",
+    "object",
+    "basis-attested",
+    "basis"
+  ],
+  "japanese-village-plaza-mall": [
+    "place",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "woodworth-court": [
+    "person",
+    "basis-inferred",
+    "basis"
+  ],
+  "moran-s-lane": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "belmont": [
+    "unknown"
+  ],
+  "california-street-14th": [
+    "unknown"
+  ],
+  "consuelo": [
+    "unknown"
+  ],
+  "elm-street": [
+    "unknown"
+  ],
+  "laurel-dtla": [
+    "unknown"
+  ],
+  "market-st": [
+    "unknown"
+  ],
+  "palm-street-margo": [
+    "unknown"
+  ],
+  "pine-street-venice": [
+    "unknown"
+  ],
+  "stadium-way": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "chavez-ravine-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "beaudry-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "colton-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "coronel-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "artemus-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "bamboo-lane": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "emerald-drive": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "hartford-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "ord-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "roselake-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "14th-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "azusa-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "rockwood-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "marion-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "lake-shore-terrace": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "wilhardt-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "union-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "union-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "jackson-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "bonnie-brae-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "valley-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "clara-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "chick-hearn-court": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "factory-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "burlington-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "9th-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "gabriel-garcia-marquez-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "kearney-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "doyle-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "elmyra-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "park-paseo": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "keller-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "11th-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "huntley-drive": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "edgeware-road": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "aliso-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "myers-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "toluca-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "maryland-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "sotello-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "hope-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "lawrence-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "little-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "mei-ling-way": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "shatto-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "new-depot-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "pizarro-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "ann-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "union-drive": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "4th-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "channing-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "belmont-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "mesnager-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "lei-min-way": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "douglas-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "golden-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "westlake-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "mountain-view-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "gin-ling-way": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "palmetto-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "alhambra-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "bauchet-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "magdalena-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "cecelia-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "conway-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "cardinal-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "imperial-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "merrick-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "17th-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "kensington-road": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "emerald-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "victor-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "loma-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "7th-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "general-thaddeus-kosciuszko-way": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "lake-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "produce-court": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "bloom-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "15th-drive": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "bernard-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "cortez-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "bruno-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "ducommun-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "marview-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "myrtle-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "industrial-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "everett-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "bartlett-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "miramar-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "mignonette-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "green-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "utah-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "sunvue-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "angelina-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "laveta-terrace": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "colyton-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "hill-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "delong-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "avery-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "llewellyn-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "mateo-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "connecticut-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "saint-paul-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "18th-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "white-knoll-drive": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "loma-drive": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "wilde-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "seaton-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "cottage-home-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "naud-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "cleveland-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "decatur-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "cambria-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "mill-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "valencia-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "sun-mun-way": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "avila-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "mission-road": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "firmin-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "boston-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "bolero-lane": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "astronaut-ellison-s-onizuka-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "linwood-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "leroy-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "center-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "cesar-e-chavez-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "santa-ana-freeway": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "harbor-freeway": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "hollywood-freeway": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "custer-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "santa-monica-freeway": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "jung-jing-road": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "saint-paul-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "arcadia-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "olympic-boulevard": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "ramirez-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "metro-driveway": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "james-m-wood-boulevard": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "fremont-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "l-a-live-way": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "blaine-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "figueroa-terrace": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "anderson-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "alvarado-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "grand-avenue-lower-level": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "chung-king-court": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "chung-king-road": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "arroyo-seco-parkway": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "olvera-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "venice-boulevard": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "i-10-metro-expresslanes": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "judge-john-aiso-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "sunset-boulevard": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "washington-boulevard": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "2nd-street-tunnel": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "pico-boulevard": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "bellevue-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "bunker-hill-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "new-high-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "glendale-boulevard": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "14th-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "dewap-road": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "albany-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "8th-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "garland-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "sunbury-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "margo-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "wilson-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "convention-center-drive": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "plaza-del-sol": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "beverly-boulevard": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "broad-plaza": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "jerry-moss-plaza": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "sanchez-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "metro-red-purple-lines-entrance": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "santee-alley": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "rondout-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "fort-moore-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "dawson-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "molino-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "santee-court": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "toriumi-plaza": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "centennial-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "patsaouras-transit-plaza": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "lyon-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "paseo": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "road": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "rosabell-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "whittier-boulevard": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "san-bernardino-freeway": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "blossom-plaza": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "frances-k-hashimoto-plaza": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "2nd-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "peacock-place": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "community-terrace": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "olive-court": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "marketplace": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "weyse-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "lamar-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ]
+};
+
 const STREET_DATA = {
   "10th Street": {
     "name": "10th Street",
@@ -656,7 +3158,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
-        "knownFraction": 0.86,
+        "absentAsOf": {
+          "text": "1886 (Kincaid's Tract)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
+        },
+        "knownFraction": 1,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -919,7 +3425,11 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": true,
-        "knownFraction": 0,
+        "absentAsOf": {
+          "text": "1886 (Kincaid's Tract)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
+        },
+        "knownFraction": 0.2,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -948,11 +3458,127 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2709,
+        "maxLng": -118.2637,
+        "from": {
+          "px": [
+            880,
+            965
+          ]
+        },
+        "to": {
+          "px": [
+            71,
+            615
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "12th Street",
+        "entityId": "twelfth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 12th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.81,
+        "categories": [
+          "number",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          }
+        ],
+        "minLng": -118.2637,
+        "maxLng": -118.2609,
+        "from": {
+          "px": [
+            71,
+            615
+          ]
+        },
+        "to": {
+          "px": [
+            1119,
+            599
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "12th Street",
+        "entityId": "twelfth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 12th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "number",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          }
+        ],
+        "minLng": -118.2609,
         "maxLng": -118.2597,
         "from": {
           "px": [
-            482,
-            887
+            1119,
+            599
           ]
         },
         "to": {
@@ -1145,6 +3771,10 @@ const STREET_DATA = {
     "built": "not yet researched",
     "note": null,
     "attested": false,
+    "absentAsOf": {
+      "text": "1915 (Vineyard Subdivision)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+    },
     "categories": [
       "basis-none",
       "searched-none",
@@ -1163,26 +3793,199 @@ const STREET_DATA = {
   },
   "14th Street": {
     "name": "14th Street",
-    "entityId": "14th-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "categories": [
-      "basis-none",
-      "searched-none",
-      "stub"
-    ],
-    "ancestors": [
-      "basis"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "EW",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of (California St)",
+        "name": "14th Street",
+        "entityId": "14th-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1915",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1915",
+            "until": "?",
+            "name": "California Street",
+            "entityId": "california-street-14th",
+            "formInForce": "California Street",
+            "how": "origin",
+            "origin": "labeled “CALIFORNIA STREET” on the 1915 Norris Plan and the 1915 Vineyard Subdivision {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "14th Street",
+            "entityId": "14th-street",
+            "formInForce": "14th Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          }
+        ],
+        "maxLng": -118.262,
+        "from": null,
+        "to": {
+          "px": [
+            397,
+            390
+          ]
+        }
+      },
+      {
+        "label": "part of (California St)",
+        "name": "14th Street",
+        "entityId": "14th-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1915",
+            "until": "?",
+            "name": "California Street",
+            "entityId": "california-street-14th",
+            "formInForce": "California Street",
+            "origin": "labeled “CALIFORNIA STREET” on the 1915 Vineyard Subdivision {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "14th Street",
+            "entityId": "14th-street",
+            "formInForce": "14th Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          },
+          {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          }
+        ],
+        "minLng": -118.262,
+        "maxLng": -118.2615,
+        "from": {
+          "px": [
+            397,
+            390
+          ]
+        },
+        "to": {
+          "px": [
+            911,
+            898
+          ]
+        }
+      },
+      {
+        "label": "part of (Consuelo St)",
+        "name": "14th Street",
+        "entityId": "14th-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": "?",
+            "name": "Consuelo Street",
+            "entityId": "consuelo",
+            "formInForce": "Consuelo Street",
+            "how": "origin",
+            "origin": "labeled “Consuelo Street” on the 1886 Josefa Subdivision {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "14th Street",
+            "entityId": "14th-street",
+            "formInForce": "14th Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          }
+        ],
+        "minLng": -118.2615,
+        "from": {
+          "px": [
+            911,
+            898
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -1244,43 +4047,54 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           }
         ],
-        "maxLng": -118.2624,
+        "maxLng": -118.2661,
         "from": null,
         "to": {
           "px": [
-            212,
-            812
+            213,
+            1173
           ]
         }
       },
       {
-        "label": "part of (original 15th St)",
+        "label": "part of (Laurel St)",
         "name": "15th Street",
         "entityId": "fifteenth-street",
-        "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 15th Street",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1893",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          "text": "by 1915",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1893",
+            "from": "by 1915",
+            "until": "?",
+            "name": "Laurel Street",
+            "entityId": "laurel-dtla",
+            "formInForce": "Laurel Street",
+            "how": "extension",
+            "origin": "labeled “LAUREL STREET” on the 1915 Norris Plan and the 1915 Vineyard Subdivision {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "from": "?",
             "until": null,
             "name": "15th Street",
             "entityId": "fifteenth-street",
             "formInForce": "15th Street",
-            "how": "origin",
-            "origin": "labeled “15th ST.” and “(formerly Laura St)” on the 1893 Miguel Subdivision {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
           }
         ],
         "note": null,
         "attested": true,
-        "knownFraction": 0.76,
+        "knownFraction": 0,
         "categories": [
           "number",
+          "renamed",
           "basis-intrinsic"
         ],
         "ancestors": [
@@ -1294,22 +4108,109 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893; identified by map alignment, not a lot-level record)",
+            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          },
+          {
+            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           }
         ],
-        "minLng": -118.2624,
-        "maxLng": -118.2585,
+        "minLng": -118.2661,
+        "maxLng": -118.2625,
         "from": {
           "px": [
-            212,
-            812
+            213,
+            1173
           ]
         },
         "to": {
           "px": [
-            894,
-            781
+            202,
+            393
+          ]
+        }
+      },
+      {
+        "label": "part of (Laurel St)",
+        "name": "15th Street",
+        "entityId": "fifteenth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": "?",
+            "name": "Laurel Street",
+            "entityId": "laurel-dtla",
+            "formInForce": "Laurel Street",
+            "how": "origin",
+            "origin": "labeled “Laurel Street” and “LAUREL STREET” on the 1886 Josefa Subdivision and the 1915 Vineyard Subdivision {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          },
+          {
+            "from": "by 1893",
+            "until": null,
+            "name": "15th Street",
+            "entityId": "fifteenth-street",
+            "formInForce": "15th Street",
+            "how": "origin",
+            "origin": "labeled “15th ST.” and “(formerly Laura St)” on the 1893 Miguel Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.8,
+        "categories": [
+          "number",
+          "renamed",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          },
+          {
+            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          },
+          {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          }
+        ],
+        "minLng": -118.2625,
+        "maxLng": -118.2583,
+        "from": {
+          "px": [
+            202,
+            393
+          ]
+        },
+        "to": {
+          "px": [
+            215,
+            1393
           ]
         }
       },
@@ -1342,11 +4243,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           }
         ],
-        "minLng": -118.2585,
+        "minLng": -118.2583,
         "from": {
           "px": [
-            894,
-            781
+            215,
+            1393
           ]
         },
         "to": null
@@ -8880,7 +11781,7 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
+        "namedAfter": "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": null,
         "built": {
@@ -8932,7 +11833,7 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
+        "namedAfter": "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": "not yet researched",
         "built": "not yet researched",
@@ -8978,7 +11879,7 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
+        "namedAfter": "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": {
           "text": "by 1928",
@@ -9032,7 +11933,7 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
+        "namedAfter": "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": {
           "text": "by 1928",
@@ -9105,7 +12006,7 @@ const STREET_DATA = {
         "label": "part of (original Alameda St)",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”)",
+        "namedAfter": "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”)",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": {
           "text": "by 1871",
@@ -9190,7 +12091,7 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
+        "namedAfter": "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": {
           "text": "by 1887",
@@ -9267,7 +12168,7 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
+        "namedAfter": "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": {
           "text": "by 1887",
@@ -9340,7 +12241,7 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
+        "namedAfter": "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": null,
         "built": {
@@ -9394,7 +12295,7 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Alameda Street",
         "entityId": "alameda-st",
-        "namedAfter": "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
+        "namedAfter": "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”) — how and when this stretch joined Alameda Street is not yet researched",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": "not yet researched",
         "built": "not yet researched",
@@ -11859,13 +14760,57 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/broadway/"
           }
         ],
-        "minLat": 34.0377,
+        "minLat": 34.0373,
         "maxLat": 34.0536,
         "from": "1st Street",
         "to": {
           "px": [
-            479,
-            1326
+            558,
+            122
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Broadway",
+        "entityId": "broadway",
+        "namedAfter": "{{Broadway}} in New York — how and when this stretch joined Broadway is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Broadway_(Manhattan)",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "The name has no “Street”: the 1890 papers and the street signs both say simply Broadway.",
+        "attested": false,
+        "absentAsOf": {
+          "text": "1915 (Vineyard Subdivision)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+        },
+        "categories": [
+          "borrowed",
+          "basis-guess"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Los Angeles Herald, “Broadway — Fort Street Is No Longer in Existence,” Feb. 20, 1890 (the renaming ordinance signed by Mayor Hazard and in effect)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18900220.1.2"
+          }
+        ],
+        "minLat": 34.0339,
+        "maxLat": 34.0373,
+        "from": {
+          "px": [
+            558,
+            122
+          ]
+        },
+        "to": {
+          "px": [
+            555,
+            1591
           ]
         }
       },
@@ -11894,11 +14839,11 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18900220.1.2"
           }
         ],
-        "maxLat": 34.0377,
+        "maxLat": 34.0339,
         "from": {
           "px": [
-            479,
-            1326
+            555,
+            1591
           ]
         },
         "to": null
@@ -13356,26 +16301,79 @@ const STREET_DATA = {
   },
   "Chick Hearn Court": {
     "name": "Chick Hearn Court",
-    "entityId": "chick-hearn-court",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "categories": [
-      "basis-none",
-      "searched-none",
-      "stub"
-    ],
-    "ancestors": [
-      "basis"
-    ],
-    "disputed": false,
-    "sources": [
+    "orientation": "EW",
+    "segments": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "label": "part of",
+        "name": "Chick Hearn Court",
+        "entityId": "chick-hearn-court",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "maxLng": -118.2684,
+        "from": null,
+        "to": {
+          "px": [
+            167,
+            486
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Chick Hearn Court",
+        "entityId": "chick-hearn-court",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1886 (Kincaid's Tract)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
+        },
+        "categories": [
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLng": -118.2684,
+        "from": {
+          "px": [
+            167,
+            486
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -16195,6 +19193,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
           },
           {
+            "title": "Map of Kincaid's Tract, Los Angeles Cal. (M.R. 10-30, July 24, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
+          },
+          {
             "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           },
@@ -16223,23 +19225,46 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Pico",
+        "label": "beyond Pico (Pearl St)",
         "name": "Figueroa Street",
         "entityId": "figueroa-gov",
-        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835 — how and when this stretch joined Figueroa Street is not yet researched",
+        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
         "planned": {
           "text": "by 1885",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
         },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": "Feb. 1897",
+            "name": "Pearl Street",
+            "entityId": "pearl",
+            "formInForce": "Pearl Street",
+            "how": "extension",
+            "origin": "labeled “Pearl” on the 1886 Kincaid's Tract {{(source)}} — no namesake is documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own — a claim about who did the naming, not about what the name was for",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
+          },
+          {
+            "from": "Feb. 1897",
+            "until": null,
+            "name": "Figueroa Street",
+            "entityId": "figueroa-gov",
+            "formInForce": "Figueroa Street",
+            "how": "transfer",
+            "origin": "the name arrived from another roadway, renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
         "note": null,
         "attested": true,
-        "knownFraction": 0.98,
+        "knownFraction": 0.8,
         "categories": [
           "person",
           "politician",
           "governor",
+          "renamed",
           "basis-attested"
         ],
         "ancestors": [
@@ -16254,6 +19279,22 @@ const STREET_DATA = {
           {
             "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "title": "Map of Kincaid's Tract, Los Angeles Cal. (M.R. 10-30, July 24, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          },
+          {
+            "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874 (council renames Grasshopper St → Pearl St)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
+          },
+          {
+            "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
           }
         ],
         "minLat": 34.0406,
@@ -17428,7 +20469,7 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "north of Chick Hearn Court (discontinuous)",
+        "label": "part of (discontinuous)",
         "name": "Georgia Street",
         "entityId": null,
         "namedAfter": null,
@@ -17449,7 +20490,12 @@ const STREET_DATA = {
         ],
         "minLat": 34.0388,
         "from": null,
-        "to": "Chick Hearn Court",
+        "to": {
+          "px": [
+            265,
+            360
+          ]
+        },
         "gapAfter": true
       },
       {
@@ -18275,7 +21321,7 @@ const STREET_DATA = {
             "entityId": "charity",
             "formInForce": "Charity Street",
             "how": "origin",
-            "origin": "labeled “CHARITY ST.” and “CALLE DE CARIDAD” on the 1849 Hutton / Ord Survey {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
+            "origin": "labeled “CHARITY ST.”, “CALLE DE CARIDAD” and “Charity Street” on the 1849 Hutton / Ord Survey and the 1884 Feldhauser's Subdivision {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
@@ -18291,7 +21337,7 @@ const STREET_DATA = {
         ],
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.19,
         "categories": [
           "renamed",
           "basis-none",
@@ -18325,11 +21371,15 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
             "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
           }
         ],
-        "minLat": 34.0394,
+        "minLat": 34.0397,
         "maxLat": 34.0486,
         "from": {
           "px": [
@@ -18339,13 +21389,196 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            1141,
-            369
+            474,
+            1115
           ]
         }
       },
       {
         "label": "part of (Charity St)",
+        "name": "Grand Avenue",
+        "entityId": "grand-ave",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": "?",
+            "name": "Charity Street",
+            "entityId": "charity",
+            "formInForce": "Charity Street",
+            "how": "extension",
+            "origin": "labeled “Charity Street” and “Charity St” on the 1884 Feldhauser's Subdivision and the 1885 Cameron Tract {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Grand Avenue",
+            "entityId": "grand-ave",
+            "formInForce": "Grand Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
+        "attested": true,
+        "knownFraction": 0.01,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "idea"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Grand Avenue (Charity Street, designated 1849, opened 1869; council vote May 10, 1886)",
+            "url": "https://lastreetnames.com/street/grand-avenue/"
+          },
+          {
+            "title": "Wikipedia: Grand Avenue (Los Angeles) — renamed Feb. 15, 1887",
+            "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
+          },
+          {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+          }
+        ],
+        "minLat": 34.039,
+        "maxLat": 34.0397,
+        "from": {
+          "px": [
+            474,
+            1115
+          ]
+        },
+        "to": {
+          "px": [
+            156,
+            165
+          ]
+        }
+      },
+      {
+        "label": "beyond Pico (Charity St)",
+        "name": "Grand Avenue",
+        "entityId": "grand-ave",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "?",
+            "name": "Charity Street",
+            "entityId": "charity",
+            "formInForce": "Charity Street",
+            "how": "extension",
+            "origin": "labeled “Charity St” and “CHARITY” on the 1885 Cameron Tract and the 1915 Norris Plan {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Grand Avenue",
+            "entityId": "grand-ave",
+            "formInForce": "Grand Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
+        "attested": true,
+        "knownFraction": 0.17,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "idea"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Grand Avenue (Charity Street, designated 1849, opened 1869; council vote May 10, 1886)",
+            "url": "https://lastreetnames.com/street/grand-avenue/"
+          },
+          {
+            "title": "Wikipedia: Grand Avenue (Los Angeles) — renamed Feb. 15, 1887",
+            "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
+          },
+          {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+          }
+        ],
+        "minLat": 34.0382,
+        "maxLat": 34.039,
+        "from": {
+          "px": [
+            156,
+            165
+          ]
+        },
+        "to": "Pico Boulevard"
+      },
+      {
+        "label": "beyond Pico (Charity St)",
         "name": "Grand Avenue",
         "entityId": "grand-ave",
         "namedAfter": null,
@@ -18362,9 +21595,95 @@ const STREET_DATA = {
             "name": "Charity Street",
             "entityId": "charity",
             "formInForce": "Charity Street",
-            "how": "extension",
-            "origin": "labeled “Charity St” on the 1885 Cameron Tract {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
+            "origin": "labeled “Charity St” and “CHARITY” on the 1885 Cameron Tract and the 1915 Norris Plan {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Grand Avenue",
+            "entityId": "grand-ave",
+            "formInForce": "Grand Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
+        "attested": true,
+        "knownFraction": 0.17,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "idea"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Grand Avenue (Charity Street, designated 1849, opened 1869; council vote May 10, 1886)",
+            "url": "https://lastreetnames.com/street/grand-avenue/"
+          },
+          {
+            "title": "Wikipedia: Grand Avenue (Los Angeles) — renamed Feb. 15, 1887",
+            "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+          }
+        ],
+        "minLat": 34.0376,
+        "maxLat": 34.0382,
+        "from": "Pico Boulevard",
+        "to": {
+          "px": [
+            1150,
+            836
+          ]
+        }
+      },
+      {
+        "label": "part of (Charity St)",
+        "name": "Grand Avenue",
+        "entityId": "grand-ave",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1915",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1915",
+            "until": "?",
+            "name": "Charity Street",
+            "entityId": "charity",
+            "formInForce": "Charity Street",
+            "how": "extension",
+            "origin": "labeled “CHARITY” on the 1915 Norris Plan {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
             "from": "?",
@@ -18405,8 +21724,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
           },
           {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
@@ -18417,18 +21736,18 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
           }
         ],
-        "minLat": 34.0376,
-        "maxLat": 34.0394,
+        "minLat": 34.0356,
+        "maxLat": 34.0376,
         "from": {
           "px": [
-            1141,
-            369
+            1150,
+            836
           ]
         },
         "to": {
           "px": [
-            1150,
-            836
+            309,
+            1509
           ]
         }
       },
@@ -18464,11 +21783,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
           }
         ],
-        "maxLat": 34.0376,
+        "maxLat": 34.0356,
         "from": {
           "px": [
-            1150,
-            836
+            309,
+            1509
           ]
         },
         "to": null
@@ -19350,7 +22669,7 @@ const STREET_DATA = {
             "entityId": "hill-street-downtown",
             "formInForce": "Hill Street",
             "how": "origin",
-            "origin": "labeled “HILL STREET”, “CALLE LOMA”, “HILL ST” and “Hill Street” on the 1849 Hutton / Ord Survey, the 1869 Mott Tract building lots and the 1869 Mott Tract (Pickel survey) {{(source)}}",
+            "origin": "labeled “HILL STREET”, “CALLE LOMA”, “HILL ST” and “Hill Street” on the 1849 Hutton / Ord Survey, the 1869 Mott Tract building lots, the 1869 Mott Tract (Pickel survey) and the 1884 Feldhauser's Subdivision {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -19390,6 +22709,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
             "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
           }
         ],
         "minLat": 34.0383,
@@ -19404,6 +22727,194 @@ const STREET_DATA = {
           "px": [
             477,
             1265
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Hill Street",
+        "entityId": "hill-street-downtown",
+        "namedAfter": "{{Bunker Hill}}, extended onto this stretch",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": null,
+            "name": "Hill Street",
+            "entityId": "hill-street-downtown",
+            "formInForce": "Hill Street",
+            "how": "extension",
+            "origin": "labeled “Hill Street” on the 1884 Feldhauser's Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.81,
+        "categories": [
+          "landform",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "nature",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Hill Street",
+            "url": "https://lastreetnames.com/street/hill-street/"
+          },
+          {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0378,
+        "maxLat": 34.0383,
+        "from": {
+          "px": [
+            477,
+            1265
+          ]
+        },
+        "to": {
+          "px": [
+            946,
+            127
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Hill Street",
+        "entityId": "hill-street-downtown",
+        "namedAfter": "{{Bunker Hill}} — how and when this stretch joined Hill Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
+        "planned": {
+          "text": "by 1883",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.81,
+        "categories": [
+          "landform",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "nature",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Hill Street",
+            "url": "https://lastreetnames.com/street/hill-street/"
+          },
+          {
+            "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+          },
+          {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
+            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0371,
+        "maxLat": 34.0378,
+        "from": {
+          "px": [
+            946,
+            127
+          ]
+        },
+        "to": {
+          "px": [
+            155,
+            697
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Hill Street",
+        "entityId": "hill-street-downtown",
+        "namedAfter": "{{Bunker Hill}}, extended onto this stretch",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
+        "planned": {
+          "text": "by 1915",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1915",
+            "until": null,
+            "name": "Hill Street",
+            "entityId": "hill-street-downtown",
+            "formInForce": "Hill Street",
+            "how": "extension",
+            "origin": "labeled “HILL STREET” on the 1915 Norris Plan and the 1915 Vineyard Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.63,
+        "categories": [
+          "landform",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "nature",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Hill Street",
+            "url": "https://lastreetnames.com/street/hill-street/"
+          },
+          {
+            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0346,
+        "maxLat": 34.0371,
+        "from": {
+          "px": [
+            155,
+            697
+          ]
+        },
+        "to": {
+          "px": [
+            954,
+            1497
           ]
         }
       },
@@ -19436,11 +22947,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "maxLat": 34.0383,
+        "maxLat": 34.0346,
         "from": {
           "px": [
-            477,
-            1265
+            954,
+            1497
           ]
         },
         "to": null
@@ -22330,12 +25841,28 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
-        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfter": "The city itself, extended onto this stretch",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": null,
+            "name": "Los Angeles Street",
+            "entityId": "los-angeles-street",
+            "formInForce": "Los Angeles Street",
+            "how": "extension",
+            "origin": "labeled “Los Angeles Street” and “LOS ANGELES ST.” on the 1886 Josefa Subdivision and the 1893 Miguel Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          }
+        ],
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
-        "attested": false,
+        "attested": true,
+        "knownFraction": 0.8,
         "categories": [
           "place",
           "basis-intrinsic"
@@ -22354,11 +25881,19 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          },
+          {
+            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          },
+          {
             "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           }
         ],
-        "minLat": 34.0341,
+        "minLat": 34.0334,
         "maxLat": 34.0361,
         "from": {
           "px": [
@@ -22368,8 +25903,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            461,
-            723
+            112,
+            759
           ]
         }
       },
@@ -22377,13 +25912,25 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
-        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfter": "The city itself, extended onto this stretch",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
         "planned": {
           "text": "by 1893",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
         },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1893",
+            "until": null,
+            "name": "Los Angeles Street",
+            "entityId": "los-angeles-street",
+            "formInForce": "Los Angeles Street",
+            "how": "extension",
+            "origin": "labeled “LOS ANGELES ST.” on the 1893 Miguel Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          }
+        ],
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "knownFraction": 0.76,
@@ -22414,11 +25961,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0327,
-        "maxLat": 34.0341,
+        "maxLat": 34.0334,
         "from": {
           "px": [
-            461,
-            723
+            112,
+            759
           ]
         },
         "to": {
@@ -23520,13 +27067,25 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Main Street",
         "entityId": "main-street-dtla",
-        "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
+        "namedAfter": "Its standing as the pueblo’s principal street, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1883",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1883",
+            "until": null,
+            "name": "Main Street",
+            "entityId": "main-street-dtla",
+            "formInForce": "Main Street",
+            "how": "extension",
+            "origin": "labeled “Main Street”, “Main St.” and “MAIN STREET” on the 1883 O. W. Childs Tract (Hansen & Solano survey), the 1885 O. W. Childs Tract and the 1893 Hammel and Denker Tract {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
+          }
+        ],
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
         "absentAsOf": {
@@ -23590,10 +27149,14 @@ const STREET_DATA = {
         "entityId": "main-street-dtla",
         "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1883",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+        },
         "built": "not yet researched",
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
-        "attested": false,
+        "attested": true,
+        "knownFraction": 0.81,
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -23613,11 +27176,23 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
           },
           {
+            "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+          },
+          {
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          },
+          {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0347,
+        "minLat": 34.036,
         "maxLat": 34.0367,
         "from": {
           "px": [
@@ -23627,8 +27202,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            279,
-            732
+            1038,
+            684
           ]
         }
       },
@@ -23636,13 +27211,101 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Main Street",
         "entityId": "main-street-dtla",
-        "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
+        "namedAfter": "Its standing as the pueblo’s principal street, extended onto this stretch",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": null,
+            "name": "Main Street",
+            "entityId": "main-street-dtla",
+            "formInForce": "Main Street",
+            "how": "extension",
+            "origin": "labeled “Main Street”, “MAIN ST.” and “MAIN STREET” on the 1886 Josefa Subdivision, the 1893 Miguel Subdivision and the 1915 Vineyard Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          }
+        ],
+        "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
+        "attested": true,
+        "knownFraction": 0.8,
+        "categories": [
+          "descriptive",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Main Street",
+            "url": "https://lastreetnames.com/street/main-street/"
+          },
+          {
+            "title": "Wikipedia: Main Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          },
+          {
+            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          },
+          {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0339,
+        "maxLat": 34.036,
+        "from": {
+          "px": [
+            1038,
+            684
+          ]
+        },
+        "to": {
+          "px": [
+            106,
+            513
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Main Street",
+        "entityId": "main-street-dtla",
+        "namedAfter": "Its standing as the pueblo’s principal street, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1893",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
         },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1893",
+            "until": null,
+            "name": "Main Street",
+            "entityId": "main-street-dtla",
+            "formInForce": "Main Street",
+            "how": "extension",
+            "origin": "labeled “MAIN ST.” and “MAIN STREET” on the 1893 Miguel Subdivision and the 1915 Vineyard Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          }
+        ],
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
         "knownFraction": 0.76,
@@ -23669,22 +27332,26 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           },
           {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0333,
-        "maxLat": 34.0347,
+        "minLat": 34.0334,
+        "maxLat": 34.0339,
         "from": {
           "px": [
-            279,
-            732
+            106,
+            513
           ]
         },
         "to": {
           "px": [
-            291,
-            1009
+            909,
+            1580
           ]
         }
       },
@@ -23721,11 +27388,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "maxLat": 34.0333,
+        "maxLat": 34.0334,
         "from": {
           "px": [
-            291,
-            1009
+            909,
+            1580
           ]
         },
         "to": null
@@ -24155,12 +27822,28 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Maple Avenue",
         "entityId": "maple-dtla",
-        "namedAfter": "{{The maple}} — how and when this stretch joined Maple Avenue is not yet researched",
+        "namedAfter": "{{The maple}}, extended onto this stretch",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Maple",
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": null,
+            "name": "Maple Avenue",
+            "entityId": "maple-dtla",
+            "formInForce": "Maple Avenue",
+            "how": "extension",
+            "origin": "labeled “Maple Avenue” and “MAPLE AVE.” on the 1886 Josefa Subdivision and the 1893 Miguel Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          }
+        ],
         "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
-        "attested": false,
+        "attested": true,
+        "knownFraction": 0.8,
         "categories": [
           "tree",
           "basis-inferred"
@@ -24172,49 +27855,9 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
-            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
-          }
-        ],
-        "minLat": 34.0329,
-        "maxLat": 34.0347,
-        "from": {
-          "px": [
-            4634,
-            5999
-          ]
-        },
-        "to": {
-          "px": [
-            830,
-            703
-          ]
-        }
-      },
-      {
-        "label": "beyond 16th",
-        "name": "Maple Avenue",
-        "entityId": "maple-dtla",
-        "namedAfter": "{{The maple}} — how and when this stretch joined Maple Avenue is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Maple",
-        "planned": {
-          "text": "by 1893",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
-        },
-        "built": "not yet researched",
-        "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
-        "attested": true,
-        "knownFraction": 0.76,
-        "categories": [
-          "tree",
-          "basis-inferred"
-        ],
-        "ancestors": [
-          "nature",
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          },
           {
             "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
@@ -24224,11 +27867,11 @@ const STREET_DATA = {
             "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           }
         ],
-        "maxLat": 34.0329,
+        "maxLat": 34.0347,
         "from": {
           "px": [
-            830,
-            703
+            4634,
+            5999
           ]
         },
         "to": null
@@ -24240,11 +27883,38 @@ const STREET_DATA = {
     "entityId": "margo-street",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1915",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+    },
     "built": "not yet researched",
+    "nameHistory": [
+      {
+        "from": "by 1915",
+        "until": "?",
+        "name": "Palm Street",
+        "entityId": "palm-street-margo",
+        "formInForce": "Palm Street",
+        "how": "origin",
+        "origin": "labeled “PALM STREET” on the 1915 Norris Plan {{(source)}} — no namesake documented",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+      },
+      {
+        "from": "?",
+        "until": null,
+        "name": "Margo Street",
+        "entityId": "margo-street",
+        "formInForce": "Margo Street",
+        "how": "renaming",
+        "origin": "arrival on this stretch not directly documented",
+        "originLink": null
+      }
+    ],
     "note": null,
-    "attested": false,
+    "attested": true,
+    "knownFraction": 0,
     "categories": [
+      "renamed",
       "basis-none",
       "searched-none",
       "stub"
@@ -24255,8 +27925,8 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
       }
     ]
   },
@@ -25826,7 +29496,7 @@ const STREET_DATA = {
             "entityId": "olive",
             "formInForce": "Olive Street",
             "how": "origin",
-            "origin": "labeled “OLIVE ST.”, “CALLE ACEYTUNA” and “Olive St.” on the 1849 Hutton / Ord Survey and the 1868 Beaudry Tract {{(source)}}",
+            "origin": "labeled “OLIVE ST.”, “CALLE ACEYTUNA”, “Olive St.” and “Olive Street” on the 1849 Hutton / Ord Survey, the 1868 Beaudry Tract and the 1884 Feldhauser's Subdivision {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -25858,6 +29528,10 @@ const STREET_DATA = {
           {
             "title": "Plan of Lots and Fractional Lots of the 39 Acre Tract Known as The Beaudry Tract (M.R. 1-462, Dec. 28, 1868; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+          },
+          {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
           }
         ],
         "minLat": 34.039,
@@ -25872,6 +29546,270 @@ const STREET_DATA = {
           "px": [
             475,
             1190
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Olive Street",
+        "entityId": "olive",
+        "namedAfter": "{{The olive}}, extended onto this stretch",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Olive",
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": null,
+            "name": "Olive Street",
+            "entityId": "olive",
+            "formInForce": "Olive Street",
+            "how": "extension",
+            "origin": "labeled “Olive Street” on the 1884 Feldhauser's Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1915 (Norris Plan)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+        },
+        "knownFraction": 1,
+        "categories": [
+          "tree",
+          "basis-lexical"
+        ],
+        "ancestors": [
+          "nature",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Olive Street",
+            "url": "https://lastreetnames.com/street/olive-street/"
+          },
+          {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0381,
+        "maxLat": 34.039,
+        "from": {
+          "px": [
+            475,
+            1190
+          ]
+        },
+        "to": {
+          "px": [
+            648,
+            192
+          ]
+        }
+      },
+      {
+        "label": "part of (Elm St)",
+        "name": "Olive Street",
+        "entityId": "olive",
+        "namedAfter": "{{The olive}}, once this stretch was folded into Olive Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Olive",
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1915",
+            "until": "?",
+            "name": "Elm Street",
+            "entityId": "elm-street",
+            "formInForce": "Elm Street",
+            "how": "origin",
+            "origin": "labeled “ELM STREET” on the 1915 Norris Plan {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Olive Street",
+            "entityId": "olive",
+            "formInForce": "Olive Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1915 (Norris Plan)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+        },
+        "knownFraction": 0.37,
+        "categories": [
+          "tree",
+          "renamed",
+          "basis-lexical"
+        ],
+        "ancestors": [
+          "nature",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Olive Street",
+            "url": "https://lastreetnames.com/street/olive-street/"
+          },
+          {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
+            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0377,
+        "maxLat": 34.0381,
+        "from": {
+          "px": [
+            648,
+            192
+          ]
+        },
+        "to": {
+          "px": [
+            607,
+            407
+          ]
+        }
+      },
+      {
+        "label": "beyond 14th (Elm St)",
+        "name": "Olive Street",
+        "entityId": "olive",
+        "namedAfter": "{{The olive}}, once this stretch was folded into Olive Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Olive",
+        "planned": {
+          "text": "by 1915",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1915",
+            "until": "?",
+            "name": "Elm Street",
+            "entityId": "elm-street",
+            "formInForce": "Elm Street",
+            "how": "origin",
+            "origin": "labeled “ELM STREET” on the 1915 Norris Plan {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Olive Street",
+            "entityId": "olive",
+            "formInForce": "Olive Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "tree",
+          "renamed",
+          "basis-lexical"
+        ],
+        "ancestors": [
+          "nature",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Olive Street",
+            "url": "https://lastreetnames.com/street/olive-street/"
+          },
+          {
+            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0366,
+        "maxLat": 34.0377,
+        "from": {
+          "px": [
+            607,
+            407
+          ]
+        },
+        "to": "14th Street"
+      },
+      {
+        "label": "beyond 14th",
+        "name": "Olive Street",
+        "entityId": "olive",
+        "namedAfter": "{{The olive}} — how and when this stretch joined Olive Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Olive",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1915 (Norris Plan)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+        },
+        "categories": [
+          "tree",
+          "basis-lexical"
+        ],
+        "ancestors": [
+          "nature",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Olive Street",
+            "url": "https://lastreetnames.com/street/olive-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0351,
+        "maxLat": 34.0366,
+        "from": "14th Street",
+        "to": {
+          "px": [
+            643,
+            1503
           ]
         }
       },
@@ -25904,11 +29842,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "maxLat": 34.039,
+        "maxLat": 34.0351,
         "from": {
           "px": [
-            475,
-            1190
+            643,
+            1503
           ]
         },
         "to": null
@@ -26938,31 +30876,6 @@ const STREET_DATA = {
       }
     ]
   },
-  "Peacock Place": {
-    "name": "Peacock Place",
-    "entityId": "peacock-place",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "categories": [
-      "basis-none",
-      "searched-none",
-      "stub"
-    ],
-    "ancestors": [
-      "basis"
-    ],
-    "disputed": false,
-    "sources": [
-      {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
-      }
-    ]
-  },
   "Pico Boulevard": {
     "name": "Pico Boulevard",
     "orientation": "EW",
@@ -27019,9 +30932,272 @@ const STREET_DATA = {
             "name": "Pico Street",
             "entityId": "pico",
             "formInForce": "Pico Street",
-            "how": "origin",
-            "origin": "labeled “Pico Street” on the 1885 Cameron Tract {{(source)}} — Pío de Jesús Pico (1801–1894), the last Mexican governor of Alta California and a major landowner",
+            "how": "extension",
+            "origin": "labeled “Pico Street” and “Pico St.” on the 1885 Cameron Tract and the 1886 Kincaid's Tract {{(source)}} — Pío de Jesús Pico (1801–1894), the last Mexican governor of Alta California and a major landowner",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Pico Boulevard",
+            "entityId": "pico-boulevard",
+            "formInForce": "Pico Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.01,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "person",
+          "politician",
+          "alive",
+          "governor"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          },
+          {
+            "title": "Map of Kincaid's Tract, Los Angeles Cal. (M.R. 10-30, July 24, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
+          },
+          {
+            "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Pico Boulevard",
+            "url": "https://lastreetnames.com/street/pico-boulevard/"
+          }
+        ],
+        "minLng": -118.2685,
+        "maxLng": -118.2645,
+        "from": {
+          "px": [
+            211,
+            498
+          ]
+        },
+        "to": {
+          "px": [
+            116,
+            200
+          ]
+        }
+      },
+      {
+        "label": "part of (Pico St)",
+        "name": "Pico Boulevard",
+        "entityId": "pico-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": "?",
+            "name": "Pico Street",
+            "entityId": "pico",
+            "formInForce": "Pico Street",
+            "how": "extension",
+            "origin": "labeled “Pico Street” and “PICO STREET” on the 1884 Feldhauser's Subdivision and the 1915 Norris Plan {{(source)}} — Pío de Jesús Pico (1801–1894), the last Mexican governor of Alta California and a major landowner",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Pico Boulevard",
+            "entityId": "pico-boulevard",
+            "formInForce": "Pico Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.18,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "person",
+          "politician",
+          "alive",
+          "governor"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
+            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Pico Boulevard",
+            "url": "https://lastreetnames.com/street/pico-boulevard/"
+          }
+        ],
+        "minLng": -118.2645,
+        "maxLng": -118.2624,
+        "from": {
+          "px": [
+            116,
+            200
+          ]
+        },
+        "to": {
+          "px": [
+            124,
+            219
+          ]
+        }
+      },
+      {
+        "label": "part of (Pico St)",
+        "name": "Pico Boulevard",
+        "entityId": "pico-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1883",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1883",
+            "until": "?",
+            "name": "Pico Street",
+            "entityId": "pico",
+            "formInForce": "Pico Street",
+            "how": "origin",
+            "origin": "labeled “Pico Street” and “PICO STREET” on the 1883 North Carr Tract Subdivision, the 1884 Feldhauser's Subdivision, the 1886 Josefa Subdivision, the 1915 Norris Plan and the 1915 Vineyard Subdivision {{(source)}} — Pío de Jesús Pico (1801–1894), the last Mexican governor of Alta California and a major landowner",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Pico Boulevard",
+            "entityId": "pico-boulevard",
+            "formInForce": "Pico Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1915 (Vineyard Subdivision)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+        },
+        "knownFraction": 0.37,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "person",
+          "politician",
+          "alive",
+          "governor"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+          },
+          {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          },
+          {
+            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Pico Boulevard",
+            "url": "https://lastreetnames.com/street/pico-boulevard/"
+          }
+        ],
+        "minLng": -118.2624,
+        "maxLng": -118.2602,
+        "from": {
+          "px": [
+            124,
+            219
+          ]
+        },
+        "to": {
+          "px": [
+            915,
+            203
+          ]
+        }
+      },
+      {
+        "label": "part of (Pico St)",
+        "name": "Pico Boulevard",
+        "entityId": "pico-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": "?",
+            "name": "Pico Street",
+            "entityId": "pico",
+            "formInForce": "Pico Street",
+            "how": "extension",
+            "origin": "labeled “Pico Street” on the 1886 Josefa Subdivision {{(source)}} — Pío de Jesús Pico (1801–1894), the last Mexican governor of Alta California and a major landowner",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           },
           {
             "from": "?",
@@ -27055,26 +31231,30 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          },
+          {
+            "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
           },
           {
             "title": "L.A. Street Names: Pico Boulevard",
             "url": "https://lastreetnames.com/street/pico-boulevard/"
           }
         ],
-        "minLng": -118.2685,
-        "maxLng": -118.2641,
+        "minLng": -118.2602,
+        "maxLng": -118.2568,
         "from": {
           "px": [
-            211,
-            498
+            915,
+            203
           ]
         },
         "to": {
           "px": [
-            1198,
-            497
+            793,
+            1362
           ]
         }
       },
@@ -27103,11 +31283,11 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "minLng": -118.2641,
+        "minLng": -118.2568,
         "from": {
           "px": [
-            1198,
-            497
+            793,
+            1362
           ]
         },
         "to": null
@@ -29681,8 +33861,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
           },
           {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           },
           {
             "title": "Wikipedia: Dionisio Botiller (1842–1915), councilman and city auditor, whose land adjoins this tract on the sheet",
@@ -29723,8 +33903,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/santee-street/"
           },
           {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           }
         ],
         "minLat": 34.0403,
@@ -29775,8 +33955,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           },
           {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           }
         ],
         "minLat": 34.0386,
@@ -29859,8 +34039,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           },
           {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           },
           {
             "title": "Find a Grave: Ozro William Childs (1824–1890), memorial 8297711 — full name, and the ten children including Ozro William Childs Jr.",
@@ -29883,15 +34063,31 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of",
+        "label": "part of (original Santee St)",
         "name": "Santee Street",
         "entityId": "santee-street",
-        "namedAfter": "{{Milton Santee}} (1835–1901), city councilman 1884–1886, later a mining and railroad investor — how and when this stretch joined Santee Street is not yet researched",
+        "namedAfter": "{{Milton Santee}} (1835–1901), city councilman 1884–1886, later a mining and railroad investor",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Milton_Santee",
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": null,
+            "name": "Santee Street",
+            "entityId": "santee-street",
+            "formInForce": "Santee Street",
+            "how": "origin",
+            "origin": "labeled “Santee Street” and “SANTEE ST.” on the 1886 Josefa Subdivision and the 1893 Miguel Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          }
+        ],
         "note": "Santee later moved to San Diego County, where in 1893 his second wife had the town of Cowleston renamed Santee in his honour — a name it still keeps.",
-        "attested": false,
+        "attested": true,
+        "knownFraction": 0.8,
         "categories": [
           "person",
           "alive",
@@ -29907,75 +34103,19 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/santee-street/"
           },
           {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
-          }
-        ],
-        "minLat": 34.0335,
-        "maxLat": 34.0354,
-        "from": {
-          "px": [
-            3402,
-            5968
-          ]
-        },
-        "to": {
-          "px": [
-            647,
-            713
-          ]
-        }
-      },
-      {
-        "label": "beyond 16th (original Santee St)",
-        "name": "Santee Street",
-        "entityId": "santee-street",
-        "namedAfter": "{{Milton Santee}} (1835–1901), city councilman 1884–1886, later a mining and railroad investor",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Milton_Santee",
-        "planned": {
-          "text": "by 1893",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1893",
-            "until": null,
-            "name": "Santee Street",
-            "entityId": "santee-street",
-            "formInForce": "Santee Street",
-            "how": "origin",
-            "origin": "labeled “SANTEE ST.” on the 1893 Miguel Subdivision {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
-          }
-        ],
-        "note": "Santee later moved to San Diego County, where in 1893 his second wife had the town of Cowleston renamed Santee in his honour — a name it still keeps.",
-        "attested": true,
-        "knownFraction": 0.76,
-        "categories": [
-          "person",
-          "alive",
-          "basis-attested"
-        ],
-        "ancestors": [
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Santee Street",
-            "url": "https://lastreetnames.com/street/santee-street/"
+            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           },
           {
             "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           }
         ],
-        "maxLat": 34.0335,
+        "maxLat": 34.0354,
         "from": {
           "px": [
-            647,
-            713
+            3402,
+            5968
           ]
         },
         "to": null
@@ -32249,8 +36389,75 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "maxLng": -118.263,
+        "maxLng": -118.2665,
         "from": null,
+        "to": {
+          "px": [
+            241,
+            1461
+          ]
+        }
+      },
+      {
+        "label": "part of (Pine St)",
+        "name": "Venice Boulevard",
+        "entityId": "venice-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1915",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1915",
+            "until": "?",
+            "name": "Pine Street",
+            "entityId": "pine-street-venice",
+            "formInForce": "Pine Street",
+            "how": "origin",
+            "origin": "labeled “PINE STREET” on the 1915 Norris Plan and the 1915 Vineyard Subdivision {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Venice Boulevard",
+            "entityId": "venice-boulevard",
+            "formInForce": "Venice Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          }
+        ],
+        "minLng": -118.2665,
+        "maxLng": -118.263,
+        "from": {
+          "px": [
+            241,
+            1461
+          ]
+        },
         "to": {
           "px": [
             212,
@@ -32259,7 +36466,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Main (16th St)",
+        "label": "part of (Pine St)",
         "name": "Venice Boulevard",
         "entityId": "venice-boulevard",
         "namedAfter": null,
@@ -32278,6 +36485,16 @@ const STREET_DATA = {
             "formInForce": "16th Street",
             "origin": "labeled “16th ST.” and “(formerly Pine St)” on the 1893 Miguel Subdivision {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          },
+          {
+            "from": "by 1915",
+            "until": "?",
+            "name": "Pine Street",
+            "entityId": "pine-street-venice",
+            "formInForce": "Pine Street",
+            "how": "renaming",
+            "origin": "labeled “PINE STREET” on the 1915 Vineyard Subdivision {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
             "from": "?",
@@ -32313,6 +36530,10 @@ const STREET_DATA = {
           {
             "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          },
+          {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
@@ -34748,6 +38969,74 @@ const VANISHED_STREETS = [
       [
         34.037869,
         -118.265844
+      ]
+    ]
+  },
+  {
+    "entity": "eleventh-street",
+    "asWritten": "Eleventh St.",
+    "doc": "mr010-030",
+    "basis": "alignment",
+    "note": "Straight roadway across the northern frontage; the supplied modern Chick Hearn geometry crosses it diagonally rather than following it.",
+    "path": [
+      [
+        34.04467,
+        -118.267964
+      ],
+      [
+        34.04361,
+        -118.265568
+      ]
+    ]
+  },
+  {
+    "entity": "nevada-1886",
+    "asWritten": "Nevada",
+    "doc": "mr010-030",
+    "basis": "alignment",
+    "note": "The lower part of Nevada Street extends far beyond the short modern Georgia segment supplied for this coverage.",
+    "path": [
+      [
+        34.044104,
+        -118.26826
+      ],
+      [
+        34.041672,
+        -118.269801
+      ]
+    ]
+  },
+  {
+    "entity": "belmont",
+    "asWritten": "Belmont Avenue",
+    "doc": "mr010-030",
+    "basis": "alignment",
+    "note": "North-south corridor between the two blocks of numbered lots, without a modern match in the supplied street list.",
+    "path": [
+      [
+        34.043701,
+        -118.266962
+      ],
+      [
+        34.041115,
+        -118.268601
+      ]
+    ]
+  },
+  {
+    "entity": "twelfth-street",
+    "asWritten": "Twelfth St.",
+    "doc": "mr010-030",
+    "basis": "alignment",
+    "note": "Short two-edged roadway shown east of Pearl, well north of the modern 12th Street line.",
+    "path": [
+      [
+        34.042327,
+        -118.266054
+      ],
+      [
+        34.042199,
+        -118.265813
       ]
     ]
   },

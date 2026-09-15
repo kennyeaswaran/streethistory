@@ -281,16 +281,35 @@ const filtersDiv = document.getElementById("filters");
   // reader nothing they wanted to know. `entityId` is on every generated
   // segment that has a researched name; the handful without one are stubs, and
   // each is counted once under its own label so it is not silently dropped.
-  const byEntity = new Map();
+  //
+  // TWO counts per node: how many names CURRENTLY in this category are on the
+  // map, and in parentheses how many have EVER been — current plus every former
+  // name that ran along a stretch. The second is the honest size of a category
+  // in a project about naming history, and it is often much bigger: a name
+  // replaced in 1897 is exactly what someone filtering for "named after a
+  // person" wants to find.
+  //
+  // Former names are counted from `nameHistory[].entityId` against
+  // NAME_CATEGORY_INDEX, because `formerCategories` on a segment is a flat union
+  // with no ids attached — counting off it would double-count any name that ran
+  // along three stretches.
+  const curIds = {}, everIds = {};
+  const add = (bag, cat, id) => { (bag[cat] = bag[cat] || new Set()).add(id); };
+  const IDX = typeof NAME_CATEGORY_INDEX === "undefined" ? {} : NAME_CATEGORY_INDEX;
   for (const [name, v] of Object.entries(STREET_DATA))
     for (const e of (v.segments || v.entries || [])) {
       const key = e.entityId || ("~stub:" + (e.label || e.name || name));
-      if (!byEntity.has(key)) byEntity.set(key, new Set());
-      const set = byEntity.get(key);
-      for (const c of [...(e.categories || []), ...(e.ancestors || [])]) set.add(c);
+      for (const c of new Set([...(e.categories || []), ...(e.ancestors || [])])) {
+        add(curIds, c, key); add(everIds, c, key);
+      }
+      for (const h of (e.nameHistory || [])) {
+        if (!h.entityId || h.entityId === e.entityId) continue;
+        for (const c of (IDX[h.entityId] || [])) add(everIds, c, h.entityId);
+      }
     }
-  const n = {};
-  for (const set of byEntity.values()) for (const c of set) n[c] = (n[c] || 0) + 1;
+  const n = {}, nEver = {};
+  for (const c of Object.keys(curIds)) n[c] = curIds[c].size;
+  for (const c of Object.keys(everIds)) nEver[c] = everIds[c].size;
 
   // `only` marks a node that belongs to one of the two data models: the legacy
   // `streets-data.js` authors `unknown`/`unresearched` and has no `basis`, this
@@ -328,9 +347,12 @@ const filtersDiv = document.getElementById("filters");
     label.appendChild(document.createTextNode(" " + cat.label));
     const c = document.createElement("span");
     c.className = "fcount";
-    c.textContent = n[cat.id] || 0;
+    const now = n[cat.id] || 0, ever = nEver[cat.id] || 0;
+    c.textContent = ever ? `${now} (${ever})` : "0";
+    c.title = `${now} name${now === 1 ? "" : "s"} on the map now; ` +
+      `${ever} counting names since replaced`;
     label.appendChild(c);
-    if (!n[cat.id]) label.classList.add("empty");
+    if (!ever) label.classList.add("empty");
     into.appendChild(label);
 
     if (children.length) {

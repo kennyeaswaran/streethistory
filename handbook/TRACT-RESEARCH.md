@@ -286,6 +286,46 @@ subdivisions too, so read the descriptions rather than trusting the count.
 
 It does NOT carry the Map-Ref. NavigateLA is still the step for that.
 
+### The same endpoint as assumption-free ground truth for an ALIGNMENT (2026-09-15)
+
+This is the strongest check we have on whether a plat is placed right, because
+it never asks which historic street is which modern street — the failure mode
+that has bitten us repeatedly.
+
+The parcel's legal description carries **the plat's own lot and block numbers**.
+So: pull every parcel of the tract, keep the ones whose `Latitude`/`Longitude`
+are populated, invert the document's alignment (`ll` -> `px`) and draw each
+parcel's position on the scan. If the alignment is right, each marker lands on
+the lot the description names. Nothing about street identification enters the
+argument at any point. Four sheets were checked this way on 2026-09-15; two
+passed with markers sitting inside their named lots, two failed by hundreds of
+metres (notes in research-leads.md).
+
+Three traps, all met on that run:
+
+- **The endpoint caps at 501 results and matches loosely.** Adding words makes
+  it *worse*: `legaldesc=GREENWELL TRACT BLK 6` returns 501 mostly-unrelated
+  parcels, while the bare `legaldesc=GREENWELL` returns 131, all of them the
+  tract. Query the shortest distinctive word and filter locally. Until you have
+  done that, an **absence** (e.g. "block 6 has no surviving parcels") proves
+  nothing — with the cap in play it is probably truncation.
+- **`ParcelStatus: "DELETED"` parcels usually return null coordinates**, and
+  they cluster exactly where you most want them (freeway takings, street
+  widenings). Pull a dozen anchors, not one.
+- **Read the long metes-and-bounds descriptions.** Assembled parcels spell out
+  their bounding streets in prose — "SW on NW line of Harbor Frwy and NW on NE
+  line of 14th St" settled both a street identification and what the freeway
+  took, in one line. These are the most informative thing the API returns and
+  they are easy to skip past.
+
+A second, cheaper check to run alongside it: the scan's own **printed scale and
+lot dimensions**. Detect the drawn lot lines by column/row ink profile, take the
+modal spacing, and divide the labelled footage by it — that gives m/px directly
+from the sheet. On these four the scans ran 1–5% larger than their nominal
+"200 feet to one inch" etc. (the DPW copies are close to but not exactly 1:1),
+so treat the printed scale as a sanity band, not a target, and let the ruler and
+the parcels decide.
+
 ## Network access notes (2026-07)
 
 - **The sandbox shell's `bash`/`curl` cannot reach `pw.lacounty.gov` at all** —

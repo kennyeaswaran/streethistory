@@ -499,6 +499,10 @@ opposite ways is exactly the kind of thing the tree should make visible.
   children say what the old pair could not. A street the base map alone knows
   gets its own row, `stub`, because "researched and not found" and "never
   entered the corpus" are different answers.
+- **The current-and-former counts are preview-only.** `index.html` shows a
+  single number: the legacy data has no entity ids in its `nameHistory`, so
+  former names cannot be counted there without double-counting. Resolved by the
+  switchover, not before.
 - **Subtypes of `person` that are about the PERSON.** `landowner`, `family`,
   `governor` (with `mayor` / `governor-ca` / `president` / `official` under it),
   `foreign`, `mythological` and `people` are built. A religious figure or saint

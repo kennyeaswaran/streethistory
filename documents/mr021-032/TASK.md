@@ -1,15 +1,15 @@
-# Identify the streets on tr0755-073-p2
+# Identify the streets on mr021-032
 
 
 
 - **Date:** on 
-- **Sheet:** `tr0755-073-p2-100dpi.png` (100 dpi; every pixel coordinate below is
+- **Sheet:** `mr021-032-100dpi.png` (100 dpi; every pixel coordinate below is
   measured against this render)
-- **Alignment:** `tr0755-073-p2-alignment.json` — control points mapping scan pixels
+- **Alignment:** `mr021-032-alignment.json` — control points mapping scan pixels
   to lat/lng, already fitted by a human
-- **Coverage:** the polygon in `tr0755-073-p2.js`, in scan pixels — the ground this
+- **Coverage:** the polygon in `mr021-032.js`, in scan pixels — the ground this
   document testifies about
-- **Modern streets:** `tr0755-073-p2-streets.json` — where every modern street inside
+- **Modern streets:** `mr021-032-streets.json` — where every modern street inside
   the coverage polygon runs today, **in pixels on the render above** as well as
   in lat/lng, with the intersections along it. This is the file that lets you
   answer the question: overlay those pixel polylines on the image and see what
@@ -21,13 +21,14 @@ For each modern street listed below, decide what this sheet shows along it:
 the plat's own label for that corridor, or that the sheet shows nothing there.
 Then list any street DRAWN on the plat that matches none of them.
 
-Modern streets inside the coverage polygon (5):
+Modern streets inside the coverage polygon (6):
 
+- 15th Drive
 - 15th Street
-- Myrtle Street
-- Pico Boulevard
-- San Julian Street
-- San Pedro Street
+- Figueroa Street
+- Flower Street
+- Hope Street
+- Venice Boulevard
 
 ## Rules that decide the answer
 
@@ -36,7 +37,7 @@ Modern streets inside the coverage polygon (5):
    whole reason this project exists, and it is not rare. In particular, do
    **not** assume the plat's numbered streets are the modern numbered streets
    of the same number; renumbering and renaming have moved them. Decide every
-   match from where the lines are, using `tr0755-073-p2-streets.json`, and only then
+   match from where the lines are, using `mr021-032-streets.json`, and only then
    look at what the plat calls it.
 2. **Streets are drawn as corridors** — two parallel edge lines with the name
    lettered between them. A correct match runs down the MIDDLE, which on a
@@ -54,9 +55,9 @@ Modern streets inside the coverage polygon (5):
 
 ## Where to put the answer
 
-**Edit `tr0755-073-p2.js` directly.** Replace its empty `rows: []` with the rows
+**Edit `mr021-032.js` directly.** Replace its empty `rows: []` with the rows
 below. Do not put them in a new file: a separate file has to be merged in by
-hand, and the review tool only ever reads `tr0755-073-p2.js`. Leave the rest of that
+hand, and the review tool only ever reads `mr021-032.js`. Leave the rest of that
 file alone — the coverage polygon and the alignment are a human's work.
 
 **Leave `sweptFully: false` exactly as it is.** That flag is not a note that
@@ -174,7 +175,7 @@ settle that. What CAN settle the easy cases is the rest of the corpus, and the
 part of it that bears on these streets is below: for each modern street, the
 entities that confirmed rows on other sheets have already placed on that
 street, or on a street it runs straight into, with the ink those sheets used.
-(The same list is in `tr0755-073-p2-streets.json` under `nameCandidates`.)
+(The same list is in `mr021-032-streets.json` under `nameCandidates`.)
 
 For a `state` row, set `name` to a candidate's id when **all** of these hold:
 
@@ -193,34 +194,40 @@ review; a wrong lineage is a false claim on the map. **Never invent an id**
 and never use one that is not in the list for that street: those fail the
 checker. Rows stay `confirmed: false` either way — a human still checks.
 
-### 15th Street
-
-- `fifteenth-street` — 15th Street: attested on 15th Street by another sheet; carries the street's present name; ink seen: “(formerly Laura St)”, “15th ST.” [mr053-016]
-
-### Myrtle Street
+### 15th Drive
 
 - no entity attested here yet — leave `name` out
 
-### Pico Boulevard
+### 15th Street
 
-- `pico` — Pico Street: attested on Pico Boulevard by another sheet; ink seen: “Pico Street” [mr007-021]
+- `laurel-dtla` — Laurel Street: attested on 15th Street by another sheet; ink seen: “LAUREL STREET”, “Laurel Street” [mr003-038-p1, mr003-038-p2, mr011-094]
+- `fifteenth-street` — 15th Street: attested on 15th Street by another sheet; carries the street's present name; ink seen: “(formerly Laura St)”, “15th ST.” [mr053-016]
 
-### San Julian Street
+### Figueroa Street
 
-- `san-julian-st` — San Julian Street: attested on San Julian Street by another sheet; carries the street's present name; ink seen: “San Julian St.”, “San Julian Street” [12017, mr006-378, mr016-027]
-- `earl-st` — Earl Street: attested on San Julian Street by another sheet; ink seen: “Earl St”, “Earl St.”, “Earl Street” [mr006-039, mr011-008, mr014-034, mr016-027]
-- `whisler-st` — Whisler Street: attested on San Julian Street by another sheet; ink seen: “Whisler St.” [mr012-064]
+- `figueroa-gov` — Figueroa Street: attested on Figueroa Street by another sheet; carries the street's present name; ink seen: “FIGUEROA STREET”, “Figueroa St” [mr007-021, tr1397-017-p5]
+- `pearl` — Pearl Street: attested on Figueroa Street by another sheet; ink seen: “PEARL ST”, “PEARL STR.”, “PEARL STREET”, “Pearl” [mr003-016, mr003-032, mr003-569, mr005-307-a, mr010-030]
+- `chapules` — Grasshopper Street: attested on Figueroa Street by another sheet; ink seen: “CALLE DE LAS CHAPULAS”, “CALLE DE LAS CHAPULES”, “GRASSHOPPER ST”, “GRASSHOPPER ST.”, “GRASSHOPPER STREET”, “Grasshopper St.” [12685, mr001-462, mr053-067, mr053-068]
 
-### San Pedro Street
+### Flower Street
 
-- `san-pedro` — San Pedro Street: attested on San Pedro Street by another sheet; carries the street's present name; ink seen: “SAN PEDRO ST”, “SAN PEDRO STREET”, “San Pedro Ave”, “San Pedro St.”, “San Pedro Street” [12017, mr005-005, mr005-307-b, mr006-039, mr006-378, mr011-008, mr012-064, mr014-034, mr030-009-p2, mr030-009-p3, mr030-009-p4, mr030-009-p5, mr053-065, mr066-064, tr0013-048, tr0938-051-p3]
+- `flower` — Flower Street: attested on Flower Street by another sheet; carries the street's present name; ink seen: “CALLE DE LAS FLORES”, “FLOWER”, “FLOWER STR.”, “FLOWER STREET”, “Flower St”, “Flower St.” [12685, mr001-462, mr003-016, mr003-032, mr003-033, mr007-021, mr053-067, mr053-068]
+
+### Hope Street
+
+- `hope` — Hope Street: attested on Hope Street by another sheet; carries the street's present name; ink seen: “CALLE DE LAS ESPERANZAS”, “HOPE ST.”, “HOPE STREET”, “Hope St”, “Hope St.”, “Hope Street” [12685, mr001-462, mr001-489, mr003-033, mr007-021, mr053-067, mr053-068]
+
+### Venice Boulevard
+
+- `pine-street-venice` — Pine Street: attested on Venice Boulevard by another sheet; ink seen: “PINE STREET” [mr003-038-p1, mr003-038-p2]
+- `sixteenth-street` — 16th Street: attested on Venice Boulevard by another sheet; ink seen: “(formerly Pine St)”, “16th ST.” [mr053-016]
 
 `asWritten` is verbatim ink, typos and abbreviations included — a string, or
 an array of them where the sheet letters the stretch more than once. `trace`
 is scan pixels against the render above.
 
 `street` must be one of the names listed above, spelled exactly. `from` and
-`to` must be names from that street's `crossings` in `tr0755-073-p2-streets.json`,
+`to` must be names from that street's `crossings` in `mr021-032-streets.json`,
 or `null` for the street's own end within the coverage — anything else is
 rejected downstream. If the stretch ends mid-block, give a point instead:
 `from: { px: [x, y] }`.
