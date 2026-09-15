@@ -1,0 +1,431 @@
+{
+  "document": "mr055-081",
+  "image": "mr055-081-100dpi.png",
+  "imageSize": [1146, 1782],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr055-081-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [229, 414],
+    [228, 1108],
+    [1020, 1075],
+    [941, 435]
+  ],
+  "coverageLl": [
+    [34.03765, -118.242831],
+    [34.03636, -118.241045],
+    [34.038124, -118.239369],
+    [34.039142, -118.241193]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [309, 1105],
+            [309, 1014],
+            [309, 981],
+            [308, 951],
+            [307, 896],
+            [308, 832],
+            [307, 749],
+            [306, 718],
+            [303, 541],
+            [302, 484],
+            [303, 465],
+            [302, 416]
+          ],
+          "ll": [
+            [34.036541, -118.240873],
+            [34.036708, -118.241107],
+            [34.036769, -118.241192],
+            [34.036824, -118.241272],
+            [34.036923, -118.241415],
+            [34.037044, -118.241581],
+            [34.037196, -118.241796],
+            [34.037253, -118.241877],
+            [34.037574, -118.242339],
+            [34.037676, -118.242489],
+            [34.037713, -118.242535],
+            [34.037803, -118.242663]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [309, 981],
+          "ll": [34.036769, -118.241192],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ceres Avenue",
+          "px": [299, 209],
+          "ll": [34.038183, -118.243204],
+          "insideCoverage": false
+        },
+        {
+          "name": "Kohler Street",
+          "px": [303, 541],
+          "ll": [34.037574, -118.242339],
+          "insideCoverage": true
+        },
+        {
+          "name": "Merchant Street",
+          "px": [307, 749],
+          "ll": [34.037196, -118.241796],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Central Avenue",
+      "runs": [
+        {
+          "px": [
+            [228, 995],
+            [283, 986],
+            [309, 981],
+            [343, 981],
+            [573, 978],
+            [587, 978],
+            [619, 976],
+            [778, 970],
+            [803, 964],
+            [819, 959],
+            [833, 952],
+            [851, 941],
+            [871, 926],
+            [937, 878],
+            [972, 852],
+            [991, 838]
+          ],
+          "ll": [
+            [34.03657, -118.241335],
+            [34.036706, -118.241237],
+            [34.036769, -118.241192],
+            [34.036843, -118.241117],
+            [34.037342, -118.240613],
+            [34.037374, -118.240583],
+            [34.037445, -118.240515],
+            [34.037799, -118.240179],
+            [34.037864, -118.240136],
+            [34.037907, -118.240115],
+            [34.037952, -118.240101],
+            [34.03801, -118.24009],
+            [34.038081, -118.240083],
+            [34.038312, -118.240061],
+            [34.038434, -118.24005],
+            [34.0385, -118.240043]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [1141, 728],
+          "ll": [34.039027, -118.239993],
+          "insideCoverage": false
+        },
+        {
+          "name": "7th Street",
+          "px": [309, 981],
+          "ll": [34.036769, -118.241192],
+          "insideCoverage": true
+        },
+        {
+          "name": "Industrial Street",
+          "px": [587, 978],
+          "ll": [34.037374, -118.240583],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilde Street",
+          "px": [871, 926],
+          "ll": [34.038081, -118.240083],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Industrial Street",
+      "runs": [
+        {
+          "px": [
+            [586, 541],
+            [586, 562],
+            [586, 627],
+            [587, 847],
+            [587, 894],
+            [587, 904],
+            [587, 923],
+            [587, 947],
+            [587, 978],
+            [588, 1007],
+            [588, 1010],
+            [592, 1093]
+          ],
+          "ll": [
+            [34.038182, -118.241709],
+            [34.038144, -118.241656],
+            [34.038024, -118.241489],
+            [34.037616, -118.24092],
+            [34.037529, -118.240798],
+            [34.037511, -118.240773],
+            [34.037475, -118.240724],
+            [34.037431, -118.240662],
+            [34.037374, -118.240583],
+            [34.037323, -118.240505],
+            [34.037317, -118.240496],
+            [34.03717, -118.240276]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [587, 978],
+          "ll": [34.037374, -118.240583],
+          "insideCoverage": true
+        },
+        {
+          "name": "Kohler Street",
+          "px": [586, 541],
+          "ll": [34.038182, -118.241709],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Kohler Street",
+      "runs": [
+        {
+          "px": [
+            [953, 536],
+            [858, 539],
+            [586, 541],
+            [338, 542],
+            [303, 541]
+          ],
+          "ll": [
+            [34.038982, -118.240906],
+            [34.03877, -118.241109],
+            [34.038182, -118.241709],
+            [34.037647, -118.24226],
+            [34.037574, -118.242339]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [1121, 529],
+          "ll": [34.039354, -118.24055],
+          "insideCoverage": false
+        },
+        {
+          "name": "7th Street",
+          "px": [303, 541],
+          "ll": [34.037574, -118.242339],
+          "insideCoverage": true
+        },
+        {
+          "name": "Central Avenue",
+          "px": [1184, 587],
+          "ll": [34.039382, -118.24026],
+          "insideCoverage": false
+        },
+        {
+          "name": "Industrial Street",
+          "px": [586, 541],
+          "ll": [34.038182, -118.241709],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilde Street",
+          "px": [858, 539],
+          "ll": [34.03877, -118.241109],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Wilde Street",
+      "runs": [
+        {
+          "px": [
+            [858, 539],
+            [859, 558],
+            [860, 592],
+            [870, 884],
+            [871, 926]
+          ],
+          "ll": [
+            [34.03877, -118.241109],
+            [34.038737, -118.24106],
+            [34.038675, -118.240968],
+            [34.038156, -118.240195],
+            [34.038081, -118.240083]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [871, 926],
+          "ll": [34.038081, -118.240083],
+          "insideCoverage": true
+        },
+        {
+          "name": "Kohler Street",
+          "px": [858, 539],
+          "ll": [34.03877, -118.241109],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Merchant Street",
+      "metres": 24.7
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "7th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "seventh-street",
+          "display": "7th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 7th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "7TH ST.",
+            "7TH STREET",
+            "7th ST",
+            "7th Street",
+            "CALLE 7a",
+            "SEVENTH ST",
+            "SEVENTH ST.",
+            "SEVENTH STR.",
+            "SEVENTH STREET",
+            "Seventh St",
+            "Seventh St.",
+            "Seventh Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-016",
+            "mr003-569",
+            "mr006-033",
+            "mr006-039",
+            "mr011-063",
+            "mr014-034",
+            "mr018-092",
+            "mr021-046",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr053-068",
+            "mr053-071",
+            "mr054-051",
+            "mr066-064",
+            "mr070-084",
+            "tr0001-046",
+            "tr0009-100a",
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Central Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "central-ave",
+          "display": "Central Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Central Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CENTRAL AVENUE",
+            "Central Ave",
+            "Central Ave."
+          ],
+          "docs": [
+            "mr021-046",
+            "mr037-087",
+            "mr054-051",
+            "mr070-051",
+            "tr0001-046",
+            "tr0885-030-p2",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "wolfskill-ave",
+          "display": "Wolfskill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Central Avenue by another sheet"
+          ],
+          "ink": [
+            "Wolfskill Ave"
+          ],
+          "docs": [
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr030-009-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Industrial Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Kohler Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "kohler",
+          "display": "Kohler Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Kohler Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "KOHLER STREET",
+            "Kohler St",
+            "Kohler Street"
+          ],
+          "docs": [
+            "mr021-046",
+            "mr054-051",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Wilde Street",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

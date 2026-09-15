@@ -1,0 +1,435 @@
+{
+  "document": "tr0023-066",
+  "image": "tr0023-066-100dpi.png",
+  "imageSize": [1157, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0023-066-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [195, 426],
+    [213, 1680],
+    [1216, 1731],
+    [1113, 356]
+  ],
+  "coverageLl": [
+    [34.038414, -118.234844],
+    [34.035613, -118.23476],
+    [34.035522, -118.232073],
+    [34.038592, -118.232388]
+  ],
+  "streets": [
+    {
+      "name": "6th Street",
+      "runs": [
+        {
+          "px": [
+            [1123, 492],
+            [1032, 500],
+            [996, 503],
+            [953, 504],
+            [911, 506],
+            [784, 511],
+            [647, 512],
+            [582, 513],
+            [549, 513],
+            [412, 515],
+            [313, 516],
+            [196, 517]
+          ],
+          "ll": [
+            [34.038288, -118.232357],
+            [34.038268, -118.232602],
+            [34.038261, -118.232698],
+            [34.038257, -118.232812],
+            [34.038252, -118.232926],
+            [34.038238, -118.233264],
+            [34.038232, -118.233631],
+            [34.038229, -118.233804],
+            [34.038228, -118.233895],
+            [34.038221, -118.234259],
+            [34.038216, -118.234524],
+            [34.03821, -118.234838]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Mateo Street",
+          "px": [996, 503],
+          "ll": [34.038261, -118.232698],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mill Street",
+          "px": [313, 516],
+          "ll": [34.038216, -118.234524],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Conway Place",
+      "runs": [
+        {
+          "px": [
+            [356, 1188],
+            [388, 1190],
+            [606, 1211],
+            [832, 1233],
+            [843, 1234],
+            [990, 1248],
+            [1017, 1250],
+            [1052, 1254]
+          ],
+          "ll": [
+            [34.036716, -118.234391],
+            [34.03671, -118.234307],
+            [34.036669, -118.233722],
+            [34.036626, -118.233116],
+            [34.036624, -118.233087],
+            [34.036596, -118.232691],
+            [34.036591, -118.23262],
+            [34.036585, -118.232526]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Jesse Street",
+          "px": [1060, 1343],
+          "ll": [34.036385, -118.232502],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mateo Street",
+          "px": [1052, 1254],
+          "ll": [34.036585, -118.232526],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mill Street",
+          "px": [356, 1188],
+          "ll": [34.036716, -118.234391],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Industrial Street",
+      "runs": [
+        {
+          "px": [
+            [211, 1567],
+            [305, 1575],
+            [332, 1578],
+            [358, 1580],
+            [444, 1589],
+            [531, 1598],
+            [551, 1600],
+            [1051, 1641],
+            [1087, 1644]
+          ],
+          "ll": [
+            [34.035865, -118.234768],
+            [34.035851, -118.234518],
+            [34.035844, -118.234445],
+            [34.03584, -118.234375],
+            [34.035821, -118.234145],
+            [34.035803, -118.233912],
+            [34.0358, -118.233859],
+            [34.035719, -118.232517],
+            [34.035713, -118.232421]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Jesse Street",
+          "px": [1060, 1537],
+          "ll": [34.035952, -118.232497],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mateo Street",
+          "px": [1087, 1644],
+          "ll": [34.035713, -118.232421],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mill Street",
+          "px": [332, 1578],
+          "ll": [34.035844, -118.234445],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Jesse Street",
+      "runs": [
+        {
+          "px": [
+            [1068, 1432],
+            [1097, 1430],
+            [1106, 1429],
+            [1193, 1422]
+          ],
+          "ll": [
+            [34.036186, -118.232478],
+            [34.036192, -118.2324],
+            [34.036194, -118.232377],
+            [34.036213, -118.232144]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Conway Place",
+          "px": [1060, 1343],
+          "ll": [34.036385, -118.232502],
+          "insideCoverage": true
+        },
+        {
+          "name": "Imperial Street",
+          "px": [1479, 1397],
+          "ll": [34.036274, -118.231378],
+          "insideCoverage": false
+        },
+        {
+          "name": "Industrial Street",
+          "px": [1060, 1537],
+          "ll": [34.035952, -118.232497],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mateo Street",
+          "px": [1068, 1432],
+          "ll": [34.036186, -118.232478],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Mateo Street",
+      "runs": [
+        {
+          "px": [
+            [983, 366],
+            [991, 440],
+            [991, 446],
+            [996, 503],
+            [1001, 559],
+            [1002, 576],
+            [1042, 1115],
+            [1052, 1254],
+            [1068, 1432],
+            [1079, 1564],
+            [1083, 1603],
+            [1087, 1644],
+            [1094, 1725]
+          ],
+          "ll": [
+            [34.038567, -118.232734],
+            [34.038401, -118.232713],
+            [34.038389, -118.232712],
+            [34.038261, -118.232698],
+            [34.038134, -118.232682],
+            [34.038099, -118.232679],
+            [34.036894, -118.232557],
+            [34.036585, -118.232526],
+            [34.036186, -118.232478],
+            [34.035891, -118.232444],
+            [34.035806, -118.232432],
+            [34.035713, -118.232421],
+            [34.035533, -118.2324]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [996, 503],
+          "ll": [34.038261, -118.232698],
+          "insideCoverage": true
+        },
+        {
+          "name": "Conway Place",
+          "px": [1052, 1254],
+          "ll": [34.036585, -118.232526],
+          "insideCoverage": true
+        },
+        {
+          "name": "Industrial Street",
+          "px": [1087, 1644],
+          "ll": [34.035713, -118.232421],
+          "insideCoverage": true
+        },
+        {
+          "name": "Jesse Street",
+          "px": [1068, 1432],
+          "ll": [34.036186, -118.232478],
+          "insideCoverage": true
+        },
+        {
+          "name": "Willow Street",
+          "px": [957, 89],
+          "ll": [34.039186, -118.232814],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Mill Street",
+      "runs": [
+        {
+          "px": [
+            [313, 516],
+            [317, 548],
+            [321, 586],
+            [328, 662],
+            [336, 739],
+            [342, 816],
+            [348, 912],
+            [356, 1019],
+            [356, 1188],
+            [345, 1369],
+            [333, 1548],
+            [332, 1578],
+            [331, 1602],
+            [327, 1686]
+          ],
+          "ll": [
+            [34.038216, -118.234524],
+            [34.038144, -118.234513],
+            [34.038059, -118.234502],
+            [34.03789, -118.234481],
+            [34.037717, -118.234458],
+            [34.037546, -118.23444],
+            [34.037332, -118.23442],
+            [34.037093, -118.234396],
+            [34.036716, -118.234391],
+            [34.03631, -118.234416],
+            [34.03591, -118.234442],
+            [34.035844, -118.234445],
+            [34.035789, -118.234447],
+            [34.035603, -118.234454]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [313, 516],
+          "ll": [34.038216, -118.234524],
+          "insideCoverage": true
+        },
+        {
+          "name": "Conway Place",
+          "px": [356, 1188],
+          "ll": [34.036716, -118.234391],
+          "insideCoverage": true
+        },
+        {
+          "name": "Industrial Street",
+          "px": [332, 1578],
+          "ll": [34.035844, -118.234445],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "6th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "sixth-street",
+          "display": "6th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "6TH ST",
+            "6TH ST.",
+            "CALLE 6a",
+            "SIXTH ST.",
+            "SIXTH STR.",
+            "Sixth St",
+            "Sixth St Extension.",
+            "Sixth St.",
+            "proposed line of Sixth Street."
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-016",
+            "mr003-166-p1",
+            "mr003-569",
+            "mr006-033",
+            "mr011-042",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr053-068",
+            "mr053-071",
+            "tr0009-100a"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Conway Place",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Industrial Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Jesse Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "jesse",
+          "display": "Jesse Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Mateo Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "spruce",
+          "display": "Spruce Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mateo Street by another sheet"
+          ],
+          "ink": [
+            "Spruce St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Mill Street",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

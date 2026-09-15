@@ -1,0 +1,338 @@
+{
+  "document": "tr0319-001-p1",
+  "image": "tr0319-001-p1-100dpi.png",
+  "imageSize": [1796, 2484],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0319-001-p1-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [-115, 655],
+    [-75, 2448],
+    [1040, 2421],
+    [1150, 1980],
+    [328, 710]
+  ],
+  "coverageLl": [
+    [34.04053, -118.23132],
+    [34.038075, -118.230992],
+    [34.038249, -118.229163],
+    [34.038867, -118.229047],
+    [34.040508, -118.230584]
+  ],
+  "streets": [
+    {
+      "name": "6th Street",
+      "runs": [
+        {
+          "px": [
+            [1085, 2239],
+            [1073, 2238],
+            [980, 2231],
+            [771, 2222],
+            [435, 2212],
+            [13, 2212],
+            [-80, 2212]
+          ],
+          "ll": [
+            [34.038504, -118.229115],
+            [34.038504, -118.229136],
+            [34.038502, -118.229289],
+            [34.038488, -118.229633],
+            [34.038461, -118.230188],
+            [34.03841, -118.230882],
+            [34.038398, -118.231035]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Mesquit Street",
+          "px": [782, 2326],
+          "ll": [34.038348, -118.2296],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [333, 2226],
+          "ll": [34.038429, -118.230353],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Mesquit Street",
+      "runs": [
+        {
+          "px": [
+            [233, 2429],
+            [279, 2429],
+            [695, 2429]
+          ],
+          "ll": [
+            [34.03814, -118.230489],
+            [34.038145, -118.230413],
+            [34.038195, -118.229729]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [782, 2326],
+          "ll": [34.038348, -118.2296],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [233, 2429],
+          "ll": [34.03814, -118.230489],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Palmetto Street",
+      "runs": [
+        {
+          "px": [
+            [-111, 835],
+            [130, 834],
+            [212, 834]
+          ],
+          "ll": [
+            [34.040283, -118.231287],
+            [34.040314, -118.230892],
+            [34.040325, -118.230756]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Santa Fe Avenue",
+          "px": [212, 834],
+          "ll": [34.040325, -118.230756],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Santa Fe Avenue",
+      "runs": [
+        {
+          "px": [
+            [233, 2441],
+            [233, 2429],
+            [232, 2358],
+            [232, 2311],
+            [232, 2241],
+            [232, 2114],
+            [231, 1961],
+            [228, 1539],
+            [220, 1185],
+            [223, 1051],
+            [223, 998],
+            [223, 937],
+            [218, 887],
+            [212, 834],
+            [198, 768],
+            [179, 710],
+            [169, 690]
+          ],
+          "ll": [
+            [34.038123, -118.230487],
+            [34.03814, -118.230489],
+            [34.038236, -118.2305],
+            [34.0383, -118.230507],
+            [34.038397, -118.230517],
+            [34.038571, -118.230537],
+            [34.038781, -118.23056],
+            [34.039359, -118.230626],
+            [34.039843, -118.230692],
+            [34.040028, -118.230706],
+            [34.040101, -118.230714],
+            [34.040185, -118.230722],
+            [34.040252, -118.230738],
+            [34.040325, -118.230756],
+            [34.040412, -118.230789],
+            [34.04049, -118.230828],
+            [34.040516, -118.230847]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [333, 2226],
+          "ll": [34.038429, -118.230353],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mesquit Street",
+          "px": [233, 2429],
+          "ll": [34.03814, -118.230489],
+          "insideCoverage": true
+        },
+        {
+          "name": "Palmetto Street",
+          "px": [212, 834],
+          "ll": [34.040325, -118.230756],
+          "insideCoverage": true
+        },
+        {
+          "name": "Willow Street",
+          "px": [228, 1539],
+          "ll": [34.039359, -118.230626],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Willow Street",
+      "runs": [
+        {
+          "px": [
+            [-95, 1541],
+            [164, 1540],
+            [228, 1539]
+          ],
+          "ll": [
+            [34.039316, -118.231158],
+            [34.03935, -118.230732],
+            [34.039359, -118.230626]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Santa Fe Avenue",
+          "px": [228, 1539],
+          "ll": [34.039359, -118.230626],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "6th Street",
+      "continuesInto": [
+        "Whittier Boulevard"
+      ],
+      "candidates": [
+        {
+          "id": "sixth-street",
+          "display": "6th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "6TH ST",
+            "6TH ST.",
+            "CALLE 6a",
+            "SIXTH ST.",
+            "SIXTH STR.",
+            "Sixth St",
+            "Sixth St Extension.",
+            "Sixth St.",
+            "proposed line of Sixth Street."
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-016",
+            "mr003-166-p1",
+            "mr003-569",
+            "mr006-033",
+            "mr011-042",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr053-068",
+            "mr053-071",
+            "tr0009-100a"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Mesquit Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "mesquit",
+          "display": "Mesquit Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mesquit Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "Mesquit St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Palmetto Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Santa Fe Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "tulip",
+          "display": "Tulip Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santa Fe Avenue by another sheet"
+          ],
+          "ink": [
+            "Tulip St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        },
+        {
+          "id": "santa-fe-ave",
+          "display": "Santa Fe Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Willow Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "willow",
+          "display": "Willow Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Willow Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "Willow St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    }
+  ]
+}

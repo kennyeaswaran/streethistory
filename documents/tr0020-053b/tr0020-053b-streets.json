@@ -1,0 +1,220 @@
+{
+  "document": "tr0020-053b",
+  "image": "tr0020-053b-100dpi.png",
+  "imageSize": [1141, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0020-053b-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [25, 664],
+    [70, 1576],
+    [1238, 1588],
+    [1183, 775]
+  ],
+  "coverageLl": [
+    [34.037041, -118.232842],
+    [34.03604, -118.232669],
+    [34.036149, -118.231125],
+    [34.037039, -118.231299]
+  ],
+  "streets": [
+    {
+      "name": "Imperial Street",
+      "runs": [
+        {
+          "px": [
+            [1058, 763],
+            [1058, 819],
+            [1059, 1392],
+            [1059, 1404],
+            [1058, 1458],
+            [1059, 1498],
+            [1059, 1521],
+            [1059, 1586]
+          ],
+          "ll": [
+            [34.037039, -118.231465],
+            [34.036977, -118.231459],
+            [34.036346, -118.231385],
+            [34.036333, -118.231384],
+            [34.036274, -118.231378],
+            [34.036229, -118.231373],
+            [34.036204, -118.23137],
+            [34.036132, -118.231362]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Jesse Street",
+          "px": [1058, 1458],
+          "ll": [34.036274, -118.231378],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Jesse Street",
+      "runs": [
+        {
+          "px": [
+            [226, 1458],
+            [285, 1459],
+            [302, 1459],
+            [1003, 1458],
+            [1058, 1458],
+            [1097, 1458],
+            [1229, 1458]
+          ],
+          "ll": [
+            [34.036186, -118.232478],
+            [34.036192, -118.2324],
+            [34.036194, -118.232377],
+            [34.036268, -118.231452],
+            [34.036274, -118.231378],
+            [34.036278, -118.231327],
+            [34.036292, -118.231153]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Conway Place",
+          "px": [224, 1278],
+          "ll": [34.036385, -118.232502],
+          "insideCoverage": true
+        },
+        {
+          "name": "Imperial Street",
+          "px": [1058, 1458],
+          "ll": [34.036274, -118.231378],
+          "insideCoverage": true
+        },
+        {
+          "name": "Industrial Street",
+          "px": [191, 1667],
+          "ll": [34.035952, -118.232497],
+          "insideCoverage": false
+        },
+        {
+          "name": "Mateo Street",
+          "px": [226, 1458],
+          "ll": [34.036186, -118.232478],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [1880, 1457],
+          "ll": [34.03636, -118.230293],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Mateo Street",
+      "runs": [
+        {
+          "px": [
+            [228, 683],
+            [226, 817],
+            [223, 1097],
+            [226, 1458],
+            [226, 1578]
+          ],
+          "ll": [
+            [34.037041, -118.232572],
+            [34.036894, -118.232557],
+            [34.036585, -118.232526],
+            [34.036186, -118.232478],
+            [34.036055, -118.232462]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Conway Place",
+          "px": [223, 1097],
+          "ll": [34.036585, -118.232526],
+          "insideCoverage": true
+        },
+        {
+          "name": "Industrial Street",
+          "px": [228, 1888],
+          "ll": [34.035713, -118.232421],
+          "insideCoverage": false
+        },
+        {
+          "name": "Jesse Street",
+          "px": [226, 1458],
+          "ll": [34.036186, -118.232478],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Conway Place",
+      "metres": 22.2
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Imperial Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "palm-st-arts-district",
+          "display": "Palm Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Imperial Street by another sheet"
+          ],
+          "ink": [
+            "Palm St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Jesse Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "jesse",
+          "display": "Jesse Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Mateo Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "spruce",
+          "display": "Spruce Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mateo Street by another sheet"
+          ],
+          "ink": [
+            "Spruce St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    }
+  ]
+}

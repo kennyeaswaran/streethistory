@@ -1,6 +1,7 @@
 // generate.js — derives streets-data from names.js + documents/ (MODEL-SPEC §6).
 // Run: node generate.js
 // Writes: generated/streets-data.gen.js, generated/search-index.js, generated/report.md
+// (the data only — the vocabulary stays in site-config.js, which the map loads beside it)
 //
 // The authored layers hold what documents SAY (documents/) and facts about
 // names (names.js); everything here is computed and never authored:
@@ -35,7 +36,7 @@ const OUT_DIR = path.join(__dirname, "generated");
 // the vocabulary out of streets-data.js was self-referential the moment that
 // file became generated output (MODEL-IMPLEMENTATION checklist A, done
 // 2026-09-15). `unresearched` is declared there now too, so nothing is injected.
-const { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS, categoryAncestors } =
+const { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS, categoryAncestors, normalizeName } =
   require(path.join(__dirname, "site-config.js"));
 const GEN_CATEGORIES = CATEGORIES;
 
@@ -61,8 +62,10 @@ function docDate(doc) { // representative date for ordering/brackets
 }
 
 // ---------------------------------------------------------------------------
-// Geometry: group ways by normalized street name; scalar projection.
-const normalizeName = n => n.replace(/^(North|South|East|West|N\.?|S\.?|E\.?|W\.?)\s+/i, "");
+// Geometry: group ways by normalized street name (site-config.js's
+// normalizeName, which strips directionals AND applies NAME_ALIASES — so the
+// 2nd Street Tunnel's ways are 2nd Street's pavement here, as on the map);
+// scalar projection.
 const geomSrc = fs.readFileSync(path.join(__dirname, "streets-geometry.js"), "utf8");
 const GEOM = new Function(geomSrc + "; return STREET_GEOMETRY;")();
 const geom = GEOM.data || GEOM;
@@ -75,11 +78,8 @@ const geom = GEOM.data || GEOM;
 const EXCLUDE_NAMES = new Set([
   "East West Bank Plaza at The Broad"   // a plaza named for East West Bank
 ]);
-// ⚠ SWITCHOVER (checklist item B): the map's NAME_ALIASES ("2nd Street
-// Tunnel" → "2nd Street") is NOT applied here, so the tunnel is a separate
-// stub street and its pavement reads as a gap in 2nd Street (inflating its
-// segmentation). Move that alias table into this file at switchover so
-// aliased ways join the parent street's geometry, and export it for the map.
+// (Checklist item B, done 2026-09-15: NAME_ALIASES lives in site-config.js and
+// normalizeName above applies it, so aliased ways join their parent street.)
 
 const streets = new Map(); // name -> { ways:[], points:[], orientation, axis }
 for (const w of geom.elements) {
@@ -1071,18 +1071,23 @@ function namedAfterFor(streetName, seg) {
   const base = e.namedAfter;
   if (!base) return { namedAfter: null, namedAfterLink: e.namedAfterLink || null, entity: cur.entity };
   const head = base.split(" — ")[0];
+  // The link goes with its {{span}}. When the span sat in the tail this cut
+  // off, keeping the link would make the map wrap the WHOLE remaining text in
+  // it — "The virtue" pointing at Alexander W. Hope (found by check-data.js,
+  // 2026-09-15). No span in the head, no link on the head.
+  const headLink = /\{\{/.test(base) && !/\{\{/.test(head) ? null : e.namedAfterLink;
   const arrival = tl.filter(p => p.entity === cur.entity)
                     .find(p => (p.ctx.spellingIndex || 0) === 0);
   const how = arrival && arrival.how;
   const disp = displayForm(e);
   if (how === "origin") return { namedAfter: base, namedAfterLink: e.namedAfterLink, entity: cur.entity };
   if (how === "renaming" || how === "transfer")
-    return { namedAfter: `${head}, once this stretch was folded into ${disp}`, namedAfterLink: e.namedAfterLink, entity: cur.entity };
+    return { namedAfter: `${head}, once this stretch was folded into ${disp}`, namedAfterLink: headLink, entity: cur.entity };
   if (how === "extension")
-    return { namedAfter: `${head}, extended onto this stretch`, namedAfterLink: e.namedAfterLink, entity: cur.entity };
+    return { namedAfter: `${head}, extended onto this stretch`, namedAfterLink: headLink, entity: cur.entity };
   if (others)
-    return { namedAfter: `${head}, once this stretch was folded into ${disp}`, namedAfterLink: e.namedAfterLink, entity: cur.entity };
-  return { namedAfter: `${head} — how and when this stretch joined ${disp} is not yet researched`, namedAfterLink: e.namedAfterLink, entity: cur.entity };
+    return { namedAfter: `${head}, once this stretch was folded into ${disp}`, namedAfterLink: headLink, entity: cur.entity };
+  return { namedAfter: `${head} — how and when this stretch joined ${disp} is not yet researched`, namedAfterLink: headLink, entity: cur.entity };
 }
 
 function plannedBuiltFor(seg) {
@@ -1337,6 +1342,9 @@ for (const streetName of [...streets.keys()].sort()) {
     // "renamed" = the timeline has more than one period — a different entity
     // OR a documented respelling of the same one (Georgia Bell → Georgia).
     if (tl.length >= 2 && !cats.includes("renamed")) cats.push("renamed");
+    // "disputed" reads off the entity's flag the same way (the map's popup
+    // reads `disputed`, its Highlight list reads the category; they must agree).
+    if (e && e.disputed && !cats.includes("disputed")) cats.push("disputed");
     // DERIVED RESEARCH STATUS (ROADMAP §7, 2026-09-15). Hand-typed, these drifted
     // from the fields they restate — thirteen entities claimed `unknown` beside a
     // populated `namedAfter`. Read off the entity here, they cannot be wrong.
@@ -1459,11 +1467,12 @@ for (const [id, e] of Object.entries(entities)) {
   if (full.length) NAME_CATEGORY_INDEX[id] = full;
 }
 
+// The vocabulary (NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS) is NOT in this
+// file: the map loads site-config.js beside it, as index.html always has. It
+// was re-emitted here for preview.html until 2026-09-15; a page loading both
+// would hit a duplicate-`const` SyntaxError (checklist C).
 fs.writeFileSync(path.join(OUT_DIR, "streets-data.gen.js"),
   header +
-  `const NEIGHBORHOODS = ${stringify(NEIGHBORHOODS)};\n\n` +
-  `const CATEGORIES = ${stringify(GEN_CATEGORIES)};\n\n` +
-  `const SIMILAR_PROJECTS = ${stringify(SIMILAR_PROJECTS)};\n\n` +
   // Every entity's categories, ancestors folded in, keyed by id. The Highlight
   // list needs it to count FORMER names: a segment carries `formerCategories`
   // as a flat union with no ids attached, so there is no way to count former

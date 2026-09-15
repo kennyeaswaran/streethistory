@@ -111,12 +111,6 @@ const SEARCH_INDEX = [
     "street": "2nd Street"
   },
   {
-    "form": "2nd Street Tunnel",
-    "entity": "2nd-street-tunnel",
-    "label": "2nd Street Tunnel",
-    "street": "2nd Street Tunnel"
-  },
-  {
     "form": "3rd Street",
     "entity": "third-street",
     "label": "3rd Street",

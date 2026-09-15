@@ -2,8 +2,8 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 271; entries: 708
-- Stub entities minted from OSM (unresearched): 200
+- Streets: 270; entries: 713
+- Stub entities minted from OSM (unresearched): 199
 - Curated entities: 151
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
@@ -200,8 +200,26 @@
 - min-1896-09-08: sweptFor = []
 - min-1896-09-14: sweptFor = []
 - min-1896-09-21: sweptFor = []
+- mr012-042: sweptFor = []
+- mr013-091: sweptFor = []
+- mr015-052: sweptFor = []
+- mr018-025: sweptFor = []
+- mr053-083: sweptFor = []
+- mr055-081: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
-- tr0755-073-p2: sweptFor = []
+- tr0005-056a: sweptFor = []
+- tr0009-075: sweptFor = []
+- tr0011-196: sweptFor = []
+- tr0012-101: sweptFor = []
+- tr0012-186: sweptFor = []
+- tr0020-053b: sweptFor = []
+- tr0023-054c: sweptFor = []
+- tr0023-066: sweptFor = []
+- tr0159-021-p2: sweptFor = []
+- tr0159-032-p2: sweptFor = []
+- tr0273-017: sweptFor = []
+- tr0319-001-p1: sweptFor = []
+- tr0751-038: sweptFor = []
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
 - myrtle: "Wall Street" ×1
@@ -290,7 +308,7 @@
 - arnold: "ARNOLD ST." ×1
 - third-street: "THIRD ST." ×1
 - bixel: "BIXEL ST" ×1
-- figueroa-gov: "FIGUEROA ST." ×1
+- figueroa-gov: "FIGUEROA ST." ×2
 - towne-ave: "TOWNE AVE" ×2
 - sixth-street: "SIXTH ST." ×2
 - grand-ave: "GRAND AV." ×1

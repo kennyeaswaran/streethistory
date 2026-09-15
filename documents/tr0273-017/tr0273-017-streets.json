@@ -1,0 +1,341 @@
+{
+  "document": "tr0273-017",
+  "image": "tr0273-017-100dpi.png",
+  "imageSize": [1784, 2531],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0273-017-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [204, 1352],
+    [180, 2246],
+    [1456, 2275],
+    [1093, 998]
+  ],
+  "coverageLl": [
+    [34.03964, -118.240669],
+    [34.038708, -118.241624],
+    [34.037577, -118.240025],
+    [34.039251, -118.239168]
+  ],
+  "streets": [
+    {
+      "name": "6th Street",
+      "runs": [
+        {
+          "px": [
+            [1210, 1409],
+            [1205, 1409],
+            [924, 1432],
+            [805, 1441],
+            [682, 1452],
+            [651, 1453],
+            [615, 1455],
+            [392, 1469],
+            [292, 1473],
+            [201, 1477]
+          ],
+          "ll": [
+            [34.038712, -118.239443],
+            [34.038716, -118.23945],
+            [34.038933, -118.239832],
+            [34.039027, -118.239993],
+            [34.039122, -118.240163],
+            [34.039147, -118.240202],
+            [34.039176, -118.240251],
+            [34.039354, -118.24055],
+            [34.039435, -118.240682],
+            [34.03951, -118.240803]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [805, 1441],
+          "ll": [34.039027, -118.239993],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ceres Avenue",
+          "px": [-208, 1495],
+          "ll": [34.039843, -118.241343],
+          "insideCoverage": false
+        },
+        {
+          "name": "Kohler Street",
+          "px": [392, 1469],
+          "ll": [34.039354, -118.24055],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Central Avenue",
+      "runs": [
+        {
+          "px": [
+            [1282, 2271],
+            [1281, 2208],
+            [1272, 2155],
+            [1262, 2122],
+            [1248, 2092],
+            [1226, 2054],
+            [1197, 2011],
+            [1101, 1872],
+            [1051, 1798],
+            [985, 1702],
+            [874, 1533],
+            [805, 1441],
+            [754, 1375],
+            [641, 1215],
+            [620, 1187]
+          ],
+          "ll": [
+            [34.037731, -118.240244],
+            [34.037799, -118.240179],
+            [34.037864, -118.240136],
+            [34.037907, -118.240115],
+            [34.037952, -118.240101],
+            [34.03801, -118.24009],
+            [34.038081, -118.240083],
+            [34.038312, -118.240061],
+            [34.038434, -118.24005],
+            [34.038594, -118.240034],
+            [34.03887, -118.240001],
+            [34.039027, -118.239993],
+            [34.039141, -118.239991],
+            [34.039409, -118.23997],
+            [34.039458, -118.239967]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [805, 1441],
+          "ll": [34.039027, -118.239993],
+          "insideCoverage": true
+        },
+        {
+          "name": "Industrial Street",
+          "px": [1285, 2604],
+          "ll": [34.037374, -118.240583],
+          "insideCoverage": false
+        },
+        {
+          "name": "Kohler Street",
+          "px": [516, 1342],
+          "ll": [34.039382, -118.24026],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilde Street",
+          "px": [1197, 2011],
+          "ll": [34.038081, -118.240083],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Kohler Street",
+      "runs": [
+        {
+          "px": [
+            [392, 1469],
+            [393, 1544],
+            [395, 2014],
+            [390, 2251]
+          ],
+          "ll": [
+            [34.039354, -118.24055],
+            [34.039274, -118.240626],
+            [34.03877, -118.241109],
+            [34.038523, -118.241362]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [392, 1469],
+          "ll": [34.039354, -118.24055],
+          "insideCoverage": true
+        },
+        {
+          "name": "Central Avenue",
+          "px": [516, 1342],
+          "ll": [34.039382, -118.24026],
+          "insideCoverage": true
+        },
+        {
+          "name": "Industrial Street",
+          "px": [382, 2577],
+          "ll": [34.038182, -118.241709],
+          "insideCoverage": false
+        },
+        {
+          "name": "Wilde Street",
+          "px": [395, 2014],
+          "ll": [34.03877, -118.241109],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Wilde Street",
+      "runs": [
+        {
+          "px": [
+            [395, 2014],
+            [434, 2014],
+            [506, 2013],
+            [1110, 2012],
+            [1197, 2011]
+          ],
+          "ll": [
+            [34.03877, -118.241109],
+            [34.038737, -118.24106],
+            [34.038675, -118.240968],
+            [34.038156, -118.240195],
+            [34.038081, -118.240083]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [1197, 2011],
+          "ll": [34.038081, -118.240083],
+          "insideCoverage": true
+        },
+        {
+          "name": "Kohler Street",
+          "px": [395, 2014],
+          "ll": [34.03877, -118.241109],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "6th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "sixth-street",
+          "display": "6th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "6TH ST",
+            "6TH ST.",
+            "CALLE 6a",
+            "SIXTH ST.",
+            "SIXTH STR.",
+            "Sixth St",
+            "Sixth St Extension.",
+            "Sixth St.",
+            "proposed line of Sixth Street."
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-016",
+            "mr003-166-p1",
+            "mr003-569",
+            "mr006-033",
+            "mr011-042",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr053-068",
+            "mr053-071",
+            "tr0009-100a"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Central Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "central-ave",
+          "display": "Central Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Central Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CENTRAL AVENUE",
+            "Central Ave",
+            "Central Ave."
+          ],
+          "docs": [
+            "mr021-046",
+            "mr037-087",
+            "mr054-051",
+            "mr070-051",
+            "tr0001-046",
+            "tr0885-030-p2",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "wolfskill-ave",
+          "display": "Wolfskill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Central Avenue by another sheet"
+          ],
+          "ink": [
+            "Wolfskill Ave"
+          ],
+          "docs": [
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr030-009-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Kohler Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "kohler",
+          "display": "Kohler Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Kohler Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "KOHLER STREET",
+            "Kohler St",
+            "Kohler Street"
+          ],
+          "docs": [
+            "mr021-046",
+            "mr054-051",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Wilde Street",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

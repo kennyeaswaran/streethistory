@@ -5,8 +5,10 @@
 
 const fs = require("fs");
 const dataSrc = fs.readFileSync(__dirname + "/streets-data.js", "utf8");
-const { STREET_DATA, NEIGHBORHOODS } =
-  new Function(dataSrc + "; return {STREET_DATA, NEIGHBORHOODS};")();
+const { STREET_DATA } = new Function(dataSrc + "; return {STREET_DATA};")();
+// NEIGHBORHOODS moved out of the data file on 2026-09-15 (checklist A); this
+// script read it from there and had been crashing since.
+const { NEIGHBORHOODS } = require(__dirname + "/site-config.js");
 
 let geom;
 try {
@@ -18,12 +20,8 @@ try {
   process.exit(1);
 }
 
-// keep in sync with normalizeName in index.html (including NAME_ALIASES)
-const NAME_ALIASES = { "2nd Street Tunnel": "2nd Street" };
-const normalize = n => {
-  const stripped = n.replace(/^(North|South|East|West|N\.?|S\.?|E\.?|W\.?)\s+/i, "");
-  return NAME_ALIASES[stripped] || stripped;
-};
+// The one normalisation every consumer shares (directionals + NAME_ALIASES).
+const { normalizeName: normalize } = require(__dirname + "/site-config.js");
 
 const R = 6371000;
 function dist(a, b) { // meters between {lat,lon} points

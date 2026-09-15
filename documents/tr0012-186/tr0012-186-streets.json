@@ -1,0 +1,523 @@
+{
+  "document": "tr0012-186",
+  "image": "tr0012-186-100dpi.png",
+  "imageSize": [1185, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0012-186-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [117, 1407],
+    [1107, 1484],
+    [541, 593],
+    [172, 837]
+  ],
+  "coverageLl": [
+    [34.040202, -118.233285],
+    [34.04047, -118.230364],
+    [34.042372, -118.232499],
+    [34.04161, -118.233438]
+  ],
+  "streets": [
+    {
+      "name": "4th Place",
+      "runs": [
+        {
+          "px": [
+            [245, 789],
+            [249, 801],
+            [255, 833],
+            [258, 850],
+            [270, 928]
+          ],
+          "ll": [
+            [34.041761, -118.233252],
+            [34.041734, -118.233235],
+            [34.041657, -118.233199],
+            [34.041619, -118.233182],
+            [34.041435, -118.233102]
+          ]
+        },
+        {
+          "px": [
+            [256, 1029],
+            [280, 1029],
+            [288, 1029],
+            [302, 1029],
+            [795, 1019],
+            [809, 1015]
+          ],
+          "ll": [
+            [34.041184, -118.233088],
+            [34.041195, -118.233019],
+            [34.041198, -118.232995],
+            [34.041204, -118.232953],
+            [34.041454, -118.231527],
+            [34.041471, -118.231488]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Mateo Street",
+          "px": [270, 928],
+          "ll": [34.041435, -118.233102],
+          "insideCoverage": true
+        },
+        {
+          "name": "Molino Street",
+          "px": [25, 619],
+          "ll": [34.042072, -118.233987],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [762, 1064],
+          "ll": [34.04133, -118.231597],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "4th Street",
+      "runs": [
+        {
+          "px": [
+            [775, 961],
+            [767, 957],
+            [734, 938],
+            [691, 908],
+            [659, 883],
+            [618, 846],
+            [441, 659]
+          ],
+          "ll": [
+            [34.041586, -118.231617],
+            [34.041592, -118.231641],
+            [34.041624, -118.231747],
+            [34.041676, -118.231891],
+            [34.041722, -118.231998],
+            [34.041793, -118.232136],
+            [34.042165, -118.232754]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Place",
+          "px": [843, 993],
+          "ll": [34.04154, -118.231401],
+          "insideCoverage": false
+        },
+        {
+          "name": "Mateo Street",
+          "px": [544, 779],
+          "ll": [34.041923, -118.232388],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [596, 882],
+          "ll": [34.041697, -118.232181],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Mateo Street",
+      "runs": [
+        {
+          "px": [
+            [234, 1416],
+            [236, 1376],
+            [239, 1342],
+            [240, 1323],
+            [253, 1091],
+            [256, 1029],
+            [258, 998],
+            [260, 976],
+            [261, 959],
+            [266, 943],
+            [270, 928],
+            [277, 910],
+            [287, 896],
+            [299, 882],
+            [314, 866],
+            [401, 780],
+            [409, 772],
+            [470, 711]
+          ],
+          "ll": [
+            [34.040234, -118.232941],
+            [34.040332, -118.232955],
+            [34.040416, -118.232966],
+            [34.040461, -118.232972],
+            [34.041031, -118.233063],
+            [34.041184, -118.233088],
+            [34.041258, -118.233099],
+            [34.041312, -118.233106],
+            [34.041355, -118.233111],
+            [34.041397, -118.233108],
+            [34.041435, -118.233102],
+            [34.041482, -118.233091],
+            [34.04152, -118.233071],
+            [34.04156, -118.233044],
+            [34.041605, -118.23301],
+            [34.041854, -118.232804],
+            [34.041877, -118.232785],
+            [34.042053, -118.23264]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Place",
+          "px": [270, 928],
+          "ll": [34.041435, -118.233102],
+          "insideCoverage": true
+        },
+        {
+          "name": "4th Street",
+          "px": [544, 779],
+          "ll": [34.041923, -118.232388],
+          "insideCoverage": true
+        },
+        {
+          "name": "Palmetto Street",
+          "px": [231, 1449],
+          "ll": [34.040154, -118.232929],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [470, 711],
+          "ll": [34.042053, -118.23264],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Palmetto Street",
+      "runs": [
+        {
+          "px": [
+            [124, 1334],
+            [205, 1339],
+            [239, 1342]
+          ],
+          "ll": [
+            [34.040383, -118.233304],
+            [34.040408, -118.233067],
+            [34.040416, -118.232966]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Mateo Street",
+          "px": [231, 1449],
+          "ll": [34.040154, -118.232929],
+          "insideCoverage": false
+        },
+        {
+          "name": "Molino Street",
+          "px": [-6, 1326],
+          "ll": [34.040342, -118.233688],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Santa Fe Avenue",
+      "runs": [
+        {
+          "px": [
+            [960, 1473],
+            [954, 1447],
+            [943, 1417],
+            [927, 1389],
+            [911, 1363],
+            [904, 1353],
+            [869, 1301],
+            [769, 1159],
+            [764, 1152],
+            [744, 1128],
+            [729, 1109],
+            [590, 935],
+            [584, 928],
+            [574, 917],
+            [503, 840],
+            [482, 814],
+            [474, 802],
+            [467, 789],
+            [462, 764],
+            [464, 745],
+            [470, 711],
+            [478, 686],
+            [496, 650],
+            [501, 639],
+            [505, 617]
+          ],
+          "ll": [
+            [34.04043, -118.230798],
+            [34.04049, -118.230828],
+            [34.040556, -118.230877],
+            [34.040618, -118.23094],
+            [34.040674, -118.231],
+            [34.040695, -118.231026],
+            [34.040804, -118.231155],
+            [34.041102, -118.231525],
+            [34.041117, -118.231544],
+            [34.041167, -118.231614],
+            [34.041206, -118.231668],
+            [34.041564, -118.232169],
+            [34.041578, -118.232189],
+            [34.041601, -118.232225],
+            [34.041755, -118.232475],
+            [34.041808, -118.232548],
+            [34.041835, -118.232579],
+            [34.041861, -118.232608],
+            [34.04192, -118.232633],
+            [34.041969, -118.23264],
+            [34.042053, -118.23264],
+            [34.042116, -118.23263],
+            [34.042213, -118.2326],
+            [34.042243, -118.23259],
+            [34.042298, -118.23259]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Place",
+          "px": [762, 1064],
+          "ll": [34.04133, -118.231597],
+          "insideCoverage": true
+        },
+        {
+          "name": "4th Street",
+          "px": [596, 882],
+          "ll": [34.041697, -118.232181],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mateo Street",
+          "px": [470, 711],
+          "ll": [34.042053, -118.23264],
+          "insideCoverage": true
+        },
+        {
+          "name": "Palmetto Street",
+          "px": [966, 1517],
+          "ll": [34.040325, -118.230756],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "4th Place",
+      "continuesInto": [
+        "Mateo Street"
+      ],
+      "candidates": [
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Place by another sheet"
+          ],
+          "ink": [
+            "THIRD"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        },
+        {
+          "id": "spruce",
+          "display": "Spruce Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mateo Street, which 4th Place runs straight into"
+          ],
+          "ink": [
+            "Spruce St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "4th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "fourth-street",
+          "display": "4th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "4TH ST",
+            "4TH ST.",
+            "CALLE 4a",
+            "FOURTH STREET",
+            "Fourth St",
+            "Fourth Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-005",
+            "mr012-026",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071"
+          ]
+        },
+        {
+          "id": "huber-st",
+          "display": "Huber Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet"
+          ],
+          "ink": [
+            "HUBER ST.",
+            "Huber St"
+          ],
+          "docs": [
+            "mr013-087-p1",
+            "mr030-009-p4"
+          ]
+        },
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet"
+          ],
+          "ink": [
+            "THIRD"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Mateo Street",
+      "continuesInto": [
+        "4th Place",
+        "Santa Fe Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "spruce",
+          "display": "Spruce Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mateo Street by another sheet"
+          ],
+          "ink": [
+            "Spruce St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        },
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Place, which Mateo Street runs straight into"
+          ],
+          "ink": [
+            "THIRD"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        },
+        {
+          "id": "tulip",
+          "display": "Tulip Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santa Fe Avenue, which Mateo Street runs straight into"
+          ],
+          "ink": [
+            "Tulip St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Palmetto Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Santa Fe Avenue",
+      "continuesInto": [
+        "Mateo Street"
+      ],
+      "candidates": [
+        {
+          "id": "tulip",
+          "display": "Tulip Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santa Fe Avenue by another sheet"
+          ],
+          "ink": [
+            "Tulip St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        },
+        {
+          "id": "spruce",
+          "display": "Spruce Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mateo Street, which Santa Fe Avenue runs straight into"
+          ],
+          "ink": [
+            "Spruce St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        },
+        {
+          "id": "santa-fe-ave",
+          "display": "Santa Fe Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

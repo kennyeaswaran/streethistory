@@ -34,7 +34,7 @@ module.exports = {
   },
 
   sweptFully: true,
-  sweptFor: ["1st Street","2nd Place","2nd Street","2nd Street Tunnel","3rd Street","4th Street","5th Street","Broadway","Community Terrace","Flower Street","General Thaddeus Kosciuszko Way","Grand Avenue","Grand Avenue Lower Level","Hill Street","Hope Place","Hope Street","Jerry Moss Plaza","Marketplace","Metro Red/Purple Lines Entrance","Olive Court","Olive Street","Temple Street","West Bank Plaza at The Broad"],
+  sweptFor: ["1st Street","2nd Place","2nd Street","3rd Street","4th Street","5th Street","Broadway","Community Terrace","Flower Street","General Thaddeus Kosciuszko Way","Grand Avenue","Grand Avenue Lower Level","Hill Street","Hope Place","Hope Street","Jerry Moss Plaza","Marketplace","Metro Red/Purple Lines Entrance","Olive Court","Olive Street","Temple Street","West Bank Plaza at The Broad"],
 
   rows: [
     {
@@ -87,7 +87,7 @@ module.exports = {
     {
       "kind": "state",
       "asWritten": "Second Street",
-      "street": "2nd Street Tunnel",
+      "street": "2nd Street",
       "from": {
         "px": [
           1033,

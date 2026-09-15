@@ -5,7 +5,7 @@
 const fs = require("fs");
 const g = new Function(fs.readFileSync(__dirname + "/streets-geometry.js", "utf8") + "; return STREET_GEOMETRY;")();
 const geom = g.data || g;
-const normalize = n => n.replace(/^(North|South|East|West|N\.?|S\.?|E\.?|W\.?)\s+/i, "");
+const { normalizeName: normalize } = require(__dirname + "/site-config.js"); // directionals + NAME_ALIASES
 
 const [a, b] = process.argv.slice(2);
 if (!a || !b) { console.error('Usage: node intersect.js "Street A" "Street B"'); process.exit(1); }

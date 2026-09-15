@@ -39,7 +39,7 @@ module.exports = {
   coverageExcept: [{"street":"4th Street","from":"Main Street","to":null}],
 
   sweptFully: true,
-  sweptFor: ["1st Street","2nd Street","2nd Street Tunnel","3rd Street","4th Street","Alameda Street","Aliso Street","Arcadia Street","Broad Plaza","Broadway","Cesar E Chavez Avenue","Community Terrace","Fort Moore Place","Hill Street","Los Angeles Street","Main Street","Marketplace","Metro Red/Purple Lines Entrance","New High Street","Olive Street","Olvera Street","Sanchez Street","Santa Ana Freeway","Spring Street","Temple Street"],
+  sweptFor: ["1st Street","2nd Street","3rd Street","4th Street","Alameda Street","Aliso Street","Arcadia Street","Broad Plaza","Broadway","Cesar E Chavez Avenue","Community Terrace","Fort Moore Place","Hill Street","Los Angeles Street","Main Street","Marketplace","Metro Red/Purple Lines Entrance","New High Street","Olive Street","Olvera Street","Sanchez Street","Santa Ana Freeway","Spring Street","Temple Street"],
 
   rows: [
     {
@@ -75,7 +75,7 @@ module.exports = {
     },
     {
       "kind": "absent",
-      "street": "2nd Street Tunnel",
+      "street": "2nd Street",
       "from": {
         "px": [
           362,

@@ -1,0 +1,618 @@
+{
+  "document": "mr015-052",
+  "image": "mr015-052-100dpi.png",
+  "imageSize": [1136, 1619],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr015-052-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [-1, 529],
+    [37, 1269],
+    [1100, 1255],
+    [978, 552]
+  ],
+  "coverageLl": [
+    [34.037305, -118.233079],
+    [34.034186, -118.232959],
+    [34.034159, -118.227594],
+    [34.037129, -118.228142]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [1084, 1162],
+            [901, 1164],
+            [883, 1164],
+            [739, 1165],
+            [605, 1166],
+            [589, 1166],
+            [515, 1167],
+            [382, 1167],
+            [277, 1168],
+            [241, 1169],
+            [230, 1169],
+            [179, 1170],
+            [167, 1170],
+            [147, 1170],
+            [90, 1169],
+            [71, 1168],
+            [32, 1166]
+          ],
+          "ll": [
+            [34.034551, -118.227667],
+            [34.034557, -118.228588],
+            [34.034558, -118.228679],
+            [34.034566, -118.229405],
+            [34.034573, -118.230082],
+            [34.034574, -118.230166],
+            [34.034578, -118.230536],
+            [34.034587, -118.23121],
+            [34.03459, -118.23174],
+            [34.034591, -118.231918],
+            [34.034591, -118.231978],
+            [34.034591, -118.232234],
+            [34.034593, -118.232295],
+            [34.034593, -118.232396],
+            [34.034601, -118.23268],
+            [34.034607, -118.23278],
+            [34.034618, -118.232976]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Imperial Street",
+          "px": [382, 1167],
+          "ll": [34.034587, -118.23121],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mateo Street",
+          "px": [167, 1170],
+          "ll": [34.034593, -118.232295],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mesquit Street",
+          "px": [851, 1149],
+          "ll": [34.034626, -118.228841],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [605, 1166],
+          "ll": [34.034573, -118.230082],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Conway Place",
+      "runs": [
+        {
+          "px": [
+            [7, 691],
+            [79, 696],
+            [93, 697],
+            [112, 698]
+          ],
+          "ll": [
+            [34.036622, -118.233053],
+            [34.036596, -118.232691],
+            [34.036591, -118.23262],
+            [34.036585, -118.232526]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Jesse Street",
+          "px": [118, 745],
+          "ll": [34.036385, -118.232502],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mateo Street",
+          "px": [112, 698],
+          "ll": [34.036585, -118.232526],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Imperial Street",
+      "runs": [
+        {
+          "px": [
+            [314, 536],
+            [322, 601],
+            [339, 750],
+            [339, 753],
+            [341, 767],
+            [342, 778],
+            [343, 784],
+            [349, 838],
+            [359, 943],
+            [368, 1034],
+            [380, 1146],
+            [382, 1167]
+          ],
+          "ll": [
+            [34.037249, -118.231489],
+            [34.036977, -118.231459],
+            [34.036346, -118.231385],
+            [34.036333, -118.231384],
+            [34.036274, -118.231378],
+            [34.036229, -118.231373],
+            [34.036204, -118.23137],
+            [34.035978, -118.231345],
+            [34.035531, -118.231301],
+            [34.035151, -118.231264],
+            [34.034676, -118.231218],
+            [34.034587, -118.23121]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [382, 1167],
+          "ll": [34.034587, -118.23121],
+          "insideCoverage": true
+        },
+        {
+          "name": "Jesse Street",
+          "px": [341, 767],
+          "ll": [34.036274, -118.231378],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Industrial Street",
+      "runs": [
+        {
+          "px": [
+            [137, 904],
+            [118, 904],
+            [18, 898]
+          ],
+          "ll": [
+            [34.035713, -118.232421],
+            [34.035719, -118.232517],
+            [34.035749, -118.233019]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Jesse Street",
+          "px": [120, 848],
+          "ll": [34.035952, -118.232497],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mateo Street",
+          "px": [137, 904],
+          "ll": [34.035713, -118.232421],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Jesse Street",
+      "runs": [
+        {
+          "px": [
+            [123, 792],
+            [139, 791],
+            [143, 790],
+            [326, 769],
+            [341, 767],
+            [351, 766],
+            [502, 749],
+            [507, 748],
+            [534, 745],
+            [540, 745],
+            [555, 743],
+            [568, 741],
+            [572, 741],
+            [675, 729],
+            [753, 720],
+            [769, 718]
+          ],
+          "ll": [
+            [34.036186, -118.232478],
+            [34.036192, -118.2324],
+            [34.036194, -118.232377],
+            [34.036268, -118.231452],
+            [34.036274, -118.231378],
+            [34.036278, -118.231327],
+            [34.036339, -118.230564],
+            [34.036341, -118.230536],
+            [34.036352, -118.230402],
+            [34.036354, -118.230372],
+            [34.03636, -118.230293],
+            [34.036366, -118.230229],
+            [34.036367, -118.230208],
+            [34.036409, -118.229687],
+            [34.03644, -118.229293],
+            [34.036446, -118.229214]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Conway Place",
+          "px": [118, 745],
+          "ll": [34.036385, -118.232502],
+          "insideCoverage": true
+        },
+        {
+          "name": "Imperial Street",
+          "px": [341, 767],
+          "ll": [34.036274, -118.231378],
+          "insideCoverage": true
+        },
+        {
+          "name": "Industrial Street",
+          "px": [120, 848],
+          "ll": [34.035952, -118.232497],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mateo Street",
+          "px": [123, 792],
+          "ll": [34.036186, -118.232478],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mesquit Street",
+          "px": [769, 718],
+          "ll": [34.036446, -118.229214],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [555, 743],
+          "ll": [34.03636, -118.230293],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Mateo Street",
+      "runs": [
+        {
+          "px": [
+            [95, 531],
+            [104, 625],
+            [112, 698],
+            [123, 792],
+            [131, 862],
+            [134, 882],
+            [137, 904],
+            [144, 967],
+            [152, 1035],
+            [154, 1057],
+            [165, 1148],
+            [167, 1170],
+            [168, 1191],
+            [172, 1267]
+          ],
+          "ll": [
+            [34.037288, -118.232597],
+            [34.036894, -118.232557],
+            [34.036585, -118.232526],
+            [34.036186, -118.232478],
+            [34.035891, -118.232444],
+            [34.035806, -118.232432],
+            [34.035713, -118.232421],
+            [34.03545, -118.23239],
+            [34.035162, -118.232359],
+            [34.035071, -118.232349],
+            [34.034684, -118.232304],
+            [34.034593, -118.232295],
+            [34.034502, -118.232291],
+            [34.034183, -118.23228]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Place",
+          "px": [177, 1411],
+          "ll": [34.033575, -118.232265],
+          "insideCoverage": false
+        },
+        {
+          "name": "7th Street",
+          "px": [167, 1170],
+          "ll": [34.034593, -118.232295],
+          "insideCoverage": true
+        },
+        {
+          "name": "Conway Place",
+          "px": [112, 698],
+          "ll": [34.036585, -118.232526],
+          "insideCoverage": true
+        },
+        {
+          "name": "Industrial Street",
+          "px": [137, 904],
+          "ll": [34.035713, -118.232421],
+          "insideCoverage": true
+        },
+        {
+          "name": "Jesse Street",
+          "px": [123, 792],
+          "ll": [34.036186, -118.232478],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Mesquit Street",
+      "runs": [
+        {
+          "px": [
+            [748, 547],
+            [765, 687],
+            [769, 718],
+            [818, 1133]
+          ],
+          "ll": [
+            [34.03717, -118.229299],
+            [34.036579, -118.22923],
+            [34.036446, -118.229214],
+            [34.034694, -118.229004]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [851, 1149],
+          "ll": [34.034626, -118.228841],
+          "insideCoverage": true
+        },
+        {
+          "name": "Jesse Street",
+          "px": [769, 718],
+          "ll": [34.036446, -118.229214],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Santa Fe Avenue",
+      "runs": [
+        {
+          "px": [
+            [613, 1261],
+            [609, 1194],
+            [605, 1166],
+            [602, 1143],
+            [588, 1023],
+            [568, 850],
+            [557, 755],
+            [555, 743],
+            [553, 725],
+            [535, 549],
+            [534, 542]
+          ],
+          "ll": [
+            [34.034171, -118.230055],
+            [34.034455, -118.230067],
+            [34.034573, -118.230082],
+            [34.034671, -118.230094],
+            [34.035179, -118.230154],
+            [34.035909, -118.23024],
+            [34.036308, -118.230287],
+            [34.03636, -118.230293],
+            [34.036435, -118.230303],
+            [34.037176, -118.230378],
+            [34.037209, -118.230381]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Place",
+          "px": [618, 1408],
+          "ll": [34.033552, -118.230042],
+          "insideCoverage": false
+        },
+        {
+          "name": "7th Street",
+          "px": [605, 1166],
+          "ll": [34.034573, -118.230082],
+          "insideCoverage": true
+        },
+        {
+          "name": "Jesse Street",
+          "px": [555, 743],
+          "ll": [34.03636, -118.230293],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "7th Street",
+      "continuesInto": [
+        "7th Place"
+      ],
+      "candidates": [
+        {
+          "id": "seventh-street",
+          "display": "7th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 7th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "7TH ST.",
+            "7TH STREET",
+            "7th ST",
+            "7th Street",
+            "CALLE 7a",
+            "SEVENTH ST",
+            "SEVENTH ST.",
+            "SEVENTH STR.",
+            "SEVENTH STREET",
+            "Seventh St",
+            "Seventh St.",
+            "Seventh Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-016",
+            "mr003-569",
+            "mr006-033",
+            "mr006-039",
+            "mr011-063",
+            "mr014-034",
+            "mr018-092",
+            "mr021-046",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr053-068",
+            "mr053-071",
+            "mr054-051",
+            "mr066-064",
+            "mr070-084",
+            "tr0001-046",
+            "tr0009-100a",
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Conway Place",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Imperial Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "palm-st-arts-district",
+          "display": "Palm Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Imperial Street by another sheet"
+          ],
+          "ink": [
+            "Palm St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Industrial Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Jesse Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "jesse",
+          "display": "Jesse Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Mateo Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "spruce",
+          "display": "Spruce Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mateo Street by another sheet"
+          ],
+          "ink": [
+            "Spruce St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Mesquit Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "mesquit",
+          "display": "Mesquit Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mesquit Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "Mesquit St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Santa Fe Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "tulip",
+          "display": "Tulip Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santa Fe Avenue by another sheet"
+          ],
+          "ink": [
+            "Tulip St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        },
+        {
+          "id": "santa-fe-ave",
+          "display": "Santa Fe Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

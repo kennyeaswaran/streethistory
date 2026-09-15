@@ -9,6 +9,10 @@
 
 const fs = require("fs");
 const path = require("path");
+// The same normalisation the generator keys geometry by — directionals
+// stripped, NAME_ALIASES applied — so the tunnel's ways become rows of 2nd
+// Street rather than of a street nothing else knows.
+const { normalizeName } = require(path.join(__dirname, "..", "site-config.js"));
 
 function load() {
   const src = fs.readFileSync(path.join(__dirname, "..", "streets-geometry.js"), "utf8");
@@ -24,7 +28,7 @@ function load() {
       kind: "state",
       name: null,                  // bound by the generator (§4.1) — never by hand
       asWritten: w.tags.name,
-      street: w.tags.name.replace(/^(North|South|East|West|N\.?|S\.?|E\.?|W\.?)\s+/i, ""),
+      street: normalizeName(w.tags.name),
       wayId: w.id,
       geometry: w.geometry,        // extent = the way itself
       basis: "label"

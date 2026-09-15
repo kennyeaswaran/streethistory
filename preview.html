@@ -5,8 +5,9 @@
      after three edits — point the data <script src> at streets-data.js,
      delete the [PREVIEW] title prefix, and delete the purple banner at the
      bottom (with its back-link). Full checklist: MODEL-IMPLEMENTATION.md,
-     "Switchover checklist". Reads generated/streets-data.gen.js +
-     generated/search-index.js; regenerate data with `node generate.js`. -->
+     "Switchover checklist". Reads site-config.js (the vocabulary, like
+     index.html) + generated/streets-data.gen.js + generated/search-index.js;
+     regenerate data with `node generate.js`. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -166,6 +167,7 @@
 <div id="map"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="site-config.js"></script> <!-- authored vocabulary + normalizeName; must come first -->
 <script src="generated/streets-data.gen.js"></script>
 <script src="generated/search-index.js"></script>
 <script src="streets-geometry.js"></script> <!-- optional pre-downloaded geometry; 404 is harmless -->
@@ -225,13 +227,8 @@ NEIGHBORHOODS.forEach(nb => {
 // Bunker Hill tunnel segment of 2nd Street) but streets-data.js treats
 // it as just another band of the parent street's segments.
 // ---------------------------------------------------------------
-const NAME_ALIASES = {
-  "2nd Street Tunnel": "2nd Street"
-};
-function normalizeName(n) {
-  const stripped = n.replace(/^(North|South|East|West|N\.?|S\.?|E\.?|W\.?)\s+/i, "");
-  return NAME_ALIASES[stripped] || stripped;
-}
+// normalizeName + NAME_ALIASES come from site-config.js (loaded above): one
+// table for this map, the generator, the checkers and the tools (checklist B).
 
 // ---------------------------------------------------------------
 // State

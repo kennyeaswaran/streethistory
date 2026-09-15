@@ -38,7 +38,7 @@ const SEARCHED_VALUES = new Set(["none", "partial", "extensive"]);
 // turned a bad read into a SILENT DISABLING of the whole category check — the
 // worst possible failure for a migration, because everything passes. If the
 // vocabulary cannot be read, that is a broken checkout and should say so.
-const { CATEGORIES, CATEGORY_BY_ID } = require(path.join(__dirname, "site-config.js"));
+const { CATEGORIES, CATEGORY_BY_ID, normalizeName } = require(path.join(__dirname, "site-config.js"));
 const CATEGORY_IDS = new Set(CATEGORIES.map(c => c.id));
 
 const approvedCount = { note: 0, namedAfter: 0 };
@@ -49,7 +49,9 @@ const err = (...m) => { errors++; console.error("ERROR:", ...m); };
 const warn = (...m) => console.warn("warn: ", ...m);
 
 // ---- geometry (for street / cross-street existence and extent sanity) -----
-const normalizeName = n => n.replace(/^(North|South|East|West|N\.?|S\.?|E\.?|W\.?)\s+/i, "");
+// Keyed by site-config.js's normalizeName (directionals stripped, NAME_ALIASES
+// applied), the same as the generator — so a row must name the PARENT street
+// of an aliased way ("2nd Street", never "2nd Street Tunnel").
 const g = new Function(fs.readFileSync(path.join(__dirname, "streets-geometry.js"), "utf8") + "; return STREET_GEOMETRY;")();
 const geom = g.data || g;
 const streets = new Map();
@@ -103,7 +105,7 @@ for (const [id, e] of Object.entries(NAME_ENTITIES)) {
       err(id, `category "${c}" is a heading, not a category — tag a node under it`);
     else if (CATEGORY_BY_ID[c].derived)
       err(id, `category "${c}" is DERIVED by generate.js, not authored — it reads off ` +
-              `${c === "unknown" ? "namedAfter" : c === "unresearched" ? "searched" : "the timeline"}` +
+              `${c === "unknown" ? "namedAfter" : c === "unresearched" ? "searched" : c === "disputed" ? "the `disputed` flag" : "the timeline"}` +
               `, so writing it here can only ever disagree with the field it restates`);
   }
   if (e.namedAfter) {

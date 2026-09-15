@@ -1,9 +1,28 @@
-// Streetymology data validator. Run: node check-data.js
-// Checks streets-data.js against the conventions in ADDING-STREETS.md.
+// Streetymology data validator. Run: node check-data.js [--require-generated]
+// Checks streets-data.js — the file the map actually renders — against the
+// contract the map relies on. It gates the deploy (.github/workflows/deploy.yml).
+//
+// TWO SHAPES OF DATA FILE (MODEL-IMPLEMENTATION.md, switchover checklist E).
+// Until the §10 switchover, streets-data.js is hand-authored and this checker
+// is its only guard: extents are cross-street NAMES, and the research-status
+// conventions ('unknown' beside namedAfter: null) are authored here. After
+// it, streets-data.js is written by generate.js from names.js + documents/,
+// the authored layers have check-model.js, and this file's job narrows to
+// the output contract: every segment labelled, categories in the vocabulary,
+// sources with URLs, bands tiling. In that shape extents may be positions
+// (`{ px: [x, y] }`, MODEL-SPEC §5.4 — a pixel clicked on a document's
+// render) and research status is `basis-*` / `stub`, derived. The checker
+// tells the two apart by the generated header and by what an entry carries,
+// so it passes on BOTH shapes and can be flipped in CI with no edit here:
+// `--require-generated` makes a missing header an error (the hand-edit
+// tripwire §10 asks for), and is what deploy.yml passes once item C lands.
 
 const fs = require("fs");
 const src = fs.readFileSync(__dirname + "/streets-data.js", "utf8");
-const { STREET_DATA } = new Function(src + "; return {STREET_DATA};")();
+const GENERATED = /^\/\/ GENERATED FILE — DO NOT EDIT/.test(src);
+const REQUIRE_GENERATED = process.argv.includes("--require-generated");
+const { STREET_DATA, NAME_CATEGORY_INDEX } =
+  new Function(src + "; return { STREET_DATA, NAME_CATEGORY_INDEX: typeof NAME_CATEGORY_INDEX === 'undefined' ? null : NAME_CATEGORY_INDEX };")();
 // The vocabulary and the coverage boxes are authored in site-config.js, not in
 // the data file they describe (ROADMAP §7).
 const { CATEGORIES, NEIGHBORHOODS } = require(__dirname + "/site-config.js");
@@ -17,6 +36,24 @@ const catIds = new Set(CATEGORIES.map(c => c.id));
 let errors = 0;
 const err = (...m) => { errors++; console.error("ERROR:", ...m); };
 const warn = (...m) => console.warn("warn: ", ...m);
+
+if (REQUIRE_GENERATED && !GENERATED)
+  err("streets-data.js", "is not generated output (no GENERATED FILE header) — after the switchover this file is " +
+      "written by `node generate.js`; a hand edit here is lost on the next build and is the one way to desync the site from the corpus");
+
+// An entry in the generated model's shape: research status is derived onto it
+// as `basis-*` / `stub` (site-config.js, "Status of the record"); the legacy
+// conventions around 'unknown' do not apply, and it has nothing to do with
+// whether the FILE is generated — the test is per entry so a mixed file is
+// judged entry by entry.
+const modelShaped = v => (v.categories || []).some(c => c === "stub" || /^basis-/.test(c));
+// A position on the street: a cross-street NAME (hand-authored), null (the
+// street's end, or the coverage edge), or a pixel on a document's render
+// (`{ px: [x, y] }`, §5.4, only ever written by the map tool and carried
+// through by the generator).
+const isExtent = x => x === null || typeof x === "string" ||
+  (x && typeof x === "object" && Array.isArray(x.px) && x.px.length === 2 && x.px.every(Number.isFinite));
+const showExtent = x => typeof x === "string" ? `"${x}"` : x === null ? "null" : `px(${x.px.join(",")})`;
 
 function checkEntry(id, v) {
   if (!v.name) err(id, "missing name");
@@ -45,21 +82,33 @@ function checkEntry(id, v) {
   checkBraces(id, "namedAfter", v.namedAfter, v.namedAfterLink);
   (v.nameHistory || []).forEach((h, j) => checkBraces(id, `nameHistory[${j}].origin`, h.origin, h.originLink));
   // [[Street Key]] cross-links must point at existing entries
+  // Three forms (MODEL-SPEC §8): [[Street Key]] (legacy), [[street:<key>]],
+  // and [[name:<entity id>]] — the last checkable only when the generated file
+  // carries NAME_CATEGORY_INDEX, which lists every entity the build knew.
   const checkCross = (field, text) => {
     if (!text) return;
     for (const m of text.matchAll(/\[\[(.+?)\]\]/g)) {
-      const key = m[1].split("|")[0];
-      if (!STREET_DATA[key]) err(id, field, "cross-link target not in STREET_DATA:", key);
+      const ref = m[1].split("|")[0];
+      const [, kind, target] = ref.match(/^(name|street):(.*)$/) || [null, "street", ref];
+      if (kind === "street") { if (!STREET_DATA[target]) err(id, field, "cross-link target not in STREET_DATA:", target); }
+      else if (NAME_CATEGORY_INDEX && !NAME_CATEGORY_INDEX[target]) err(id, field, "cross-link target is not an entity this build knows:", target);
     }
   };
   checkCross("note", v.note);
   checkCross("namedAfter", v.namedAfter);
   (v.nameHistory || []).forEach((h, j) => checkCross(`nameHistory[${j}].origin`, h.origin));
-  // "unknown" = researched but origin not found: goes hand in hand with namedAfter: null
-  if (v.namedAfter === null && !v.categories.includes("unknown"))
-    warn(id, "namedAfter is null but 'unknown' category missing");
-  if (v.categories.includes("unknown") && v.namedAfter !== null)
-    warn(id, "'unknown' category but namedAfter is set — pick one");
+  // "unknown" = researched but origin not found: goes hand in hand with
+  // namedAfter: null. Hand-authored convention only — a model-shaped entry
+  // says the same thing with `basis-none` and `searched-*`, derived by
+  // generate.js from the entity, where check-model.js is the guard.
+  if (!modelShaped(v)) {
+    if (v.namedAfter === null && !v.categories.includes("unknown"))
+      warn(id, "namedAfter is null but 'unknown' category missing");
+    if (v.categories.includes("unknown") && v.namedAfter !== null)
+      warn(id, "'unknown' category but namedAfter is set — pick one");
+  } else if (v.categories.includes("unknown") || v.categories.includes("unresearched")) {
+    err(id, "carries a legacy-only status category beside a derived one — generate.js should never emit 'unknown' / 'unresearched'");
+  }
   // style budget (see ADDING-STREETS.md): popups are fact boxes, not essays
   if (v.note && v.note.length > 420) warn(id, `note is ${v.note.length} chars — trim toward one or two lines`);
   if (v.namedAfter && v.namedAfter.length > 190) warn(id, `namedAfter is ${v.namedAfter.length} chars — one line`);
@@ -102,19 +151,23 @@ for (const [key, v] of Object.entries(STREET_DATA)) {
     const id = key + "::" + i;
     if (!s.label) err(id, "segment missing label");
     else if (s.label.length > 40) warn(id, "label over 40 chars — chips should be a few words");
-    // from/to: bounding cross-streets by name (null = coverage edge / physical end)
+    // from/to: a cross-street name, null (coverage edge / physical end), or a
+    // pixel on a document's render (§5.4); see isExtent
     for (const f of ["from", "to"]) {
-      if (s[f] !== undefined && s[f] !== null && typeof s[f] !== "string")
-        err(id, `${f} must be a cross-street name string or null`);
+      if (s[f] !== undefined && !isExtent(s[f]))
+        err(id, `${f} must be a cross-street name string, null, or { px: [x, y] } — got ${JSON.stringify(s[f])}`);
     }
     checkEntry(id, s);
   });
   // Adjacent segments should meet at a shared cross-street, unless the street
   // is physically discontinuous there (gapAfter: true on the earlier segment).
+  // Only NAMES can be compared: two pixel extents are on two different
+  // renders, and their agreement is the band-tiling check below, which is
+  // what the generator guarantees by construction.
   for (let i = 1; i < v.segments.length; i++) {
     const a = v.segments[i - 1], b = v.segments[i];
-    if (a.to !== undefined && b.from !== undefined && a.to !== b.from && !a.gapAfter)
-      warn(key + "::" + i, `from "${b.from}" doesn't match previous segment's to "${a.to}" — shared boundary, or set gapAfter`);
+    if (typeof a.to === "string" && typeof b.from === "string" && a.to !== b.from && !a.gapAfter)
+      warn(key + "::" + i, `from ${showExtent(b.from)} doesn't match previous segment's to ${showExtent(a.to)} — shared boundary, or set gapAfter`);
   }
 
   // band coverage: every position along the street resolves to exactly one segment
@@ -150,5 +203,6 @@ if (errors) { console.error(`\n${errors} error(s).`); process.exit(1); }
 const PRIMARY = /tessa2?\.lapl\.org|cdnc\.ucr\.edu|clerk\.lacity\.org|navigatela\.lacity\.org|pqarchiver|newspapers\.com|pw\.lacounty\.gov\/sur\/nas\/landrecords/;
 const allEntries = Object.values(STREET_DATA).flatMap(v => v.segments || [v]);
 const anchored = allEntries.filter(v => (v.sources || []).some(s => PRIMARY.test(s.url))).length;
-console.log(`All checks pass: ${Object.keys(STREET_DATA).length} streets, ${allEntries.length} entries. ` +
+console.log(`All checks pass: ${Object.keys(STREET_DATA).length} streets, ${allEntries.length} entries` +
+  ` (${GENERATED ? "generated file" : "hand-authored file"}). ` +
   `Primary-record anchor: ${anchored}/${allEntries.length}.`);

@@ -1,0 +1,260 @@
+{
+  "document": "tr0023-054c",
+  "image": "tr0023-054c-100dpi.png",
+  "imageSize": [1126, 1767],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0023-054c-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [163, 452],
+    [319, 1567],
+    [988, 1555],
+    [1055, 403],
+    [723, 296]
+  ],
+  "coverageLl": [
+    [34.034914, -118.235437],
+    [34.033358, -118.235304],
+    [34.033312, -118.234195],
+    [34.034898, -118.233954],
+    [34.035077, -118.234492]
+  ],
+  "streets": [
+    {
+      "name": "7th Place",
+      "runs": [
+        {
+          "px": [
+            [300, 1430],
+            [432, 1434],
+            [785, 1445],
+            [994, 1449]
+          ],
+          "ll": [
+            [34.033549, -118.23532],
+            [34.033532, -118.235102],
+            [34.033484, -118.234519],
+            [34.033458, -118.234173]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Decatur Street",
+          "px": [432, 1434],
+          "ll": [34.033532, -118.235102],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilson Street",
+          "px": [1108, 1343],
+          "ll": [34.033594, -118.233971],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [1046, 562],
+            [938, 562],
+            [731, 560],
+            [656, 559],
+            [470, 555],
+            [408, 554],
+            [177, 551]
+          ],
+          "ll": [
+            [34.034679, -118.233987],
+            [34.034689, -118.234166],
+            [34.034711, -118.234509],
+            [34.03472, -118.234632],
+            [34.034742, -118.23494],
+            [34.034751, -118.235043],
+            [34.034775, -118.235425]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Decatur Street",
+          "px": [408, 554],
+          "ll": [34.034751, -118.235043],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lawrence Street",
+          "px": [-303, 547],
+          "ll": [34.034827, -118.236219],
+          "insideCoverage": false
+        },
+        {
+          "name": "Mill Street",
+          "px": [731, 560],
+          "ll": [34.034711, -118.234509],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilson Street",
+          "px": [1111, 562],
+          "ll": [34.034672, -118.233879],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Decatur Street",
+      "runs": [
+        {
+          "px": [
+            [408, 554],
+            [409, 623],
+            [413, 827],
+            [414, 877],
+            [417, 1096],
+            [421, 1313],
+            [432, 1434]
+          ],
+          "ll": [
+            [34.034751, -118.235043],
+            [34.034654, -118.235049],
+            [34.034372, -118.235066],
+            [34.034303, -118.23507],
+            [34.034, -118.235088],
+            [34.0337, -118.235106],
+            [34.033532, -118.235102]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Place",
+          "px": [432, 1434],
+          "ll": [34.033532, -118.235102],
+          "insideCoverage": true
+        },
+        {
+          "name": "7th Street",
+          "px": [408, 554],
+          "ll": [34.034751, -118.235043],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mill Street",
+          "px": [569, 557],
+          "ll": [34.034731, -118.234776],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Mill Street",
+      "runs": [
+        {
+          "px": [
+            [727, 297],
+            [730, 491],
+            [731, 560]
+          ],
+          "ll": [
+            [34.035074, -118.234485],
+            [34.034806, -118.234502],
+            [34.034711, -118.234509]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [731, 560],
+          "ll": [34.034711, -118.234509],
+          "insideCoverage": true
+        },
+        {
+          "name": "Decatur Street",
+          "px": [569, 557],
+          "ll": [34.034731, -118.234776],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilson Street",
+          "px": [921, 561],
+          "ll": [34.034692, -118.234194],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "7th Place",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "7th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "seventh-street",
+          "display": "7th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 7th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "7TH ST.",
+            "7TH STREET",
+            "7th ST",
+            "7th Street",
+            "CALLE 7a",
+            "SEVENTH ST",
+            "SEVENTH ST.",
+            "SEVENTH STR.",
+            "SEVENTH STREET",
+            "Seventh St",
+            "Seventh St.",
+            "Seventh Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-016",
+            "mr003-569",
+            "mr006-033",
+            "mr006-039",
+            "mr011-063",
+            "mr014-034",
+            "mr018-092",
+            "mr021-046",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr053-068",
+            "mr053-071",
+            "mr054-051",
+            "mr066-064",
+            "mr070-084",
+            "tr0001-046",
+            "tr0009-100a",
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Decatur Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Mill Street",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

@@ -32,7 +32,8 @@ JavaScript-only archives, and committing to git.
 | wondering what to build next, or whether a wanted change is quick or a project | **handbook/ROADMAP.md** (every wanted change, sized and ordered; MODEL-SPEC §13 is its index) |
 | publishing / git | **handbook/PUBLISHING.md** |
 | looking at the proposed names/documents/generator model | **handbook/MODEL-SPEC.md** (the contract) + **handbook/MODEL-IMPLEMENTATION.md** (built 2026-08-24; 3rd St acceptance diff clean; NOT live) |
-| executing the switchover to generated data | **MODEL-IMPLEMENTATION.md → "Switchover checklist"** (every known required change, incl. two code traps marked ⚠ in generate.js) |
+| what is left before the switchover, and whose it is | **handbook/SWITCHOVER.md** (Kenny's list: the rows, the maps, the entities, the accepts) |
+| executing the switchover to generated data | **MODEL-IMPLEMENTATION.md → "Switchover checklist"** (the instance mechanics, A–G; A, B, E done 2026-09-15) |
 | **using** the map tool (Kenny) | **handbook/MAP-TOOL-GUIDE.md** — serve the folder, open via localhost, align, draw coverage, save |
 | reviewing or editing a NAME entity | **names-tool.html** — every entity in names.js and names-new.js, sortable, with an editor for every field. Kenny: `utilities/start-names-tool.command` |
 | building the names tool | **names-tool.html** itself (its header explains the surgical save); run `node test-names-tool.js` after any change, and `node names-browser-test.js` in a sandbox |
@@ -182,12 +183,18 @@ has researched. Those stubs are the queue; `generated/report.md` lists them.
   test** (2026-08-24): `names.js` + `documents/` + `generate.js` →
   `generated/streets-data.gen.js`; every 3rd St difference vs `legacy/` is
   accounted in MODEL-IMPLEMENTATION.md. **Not live**: `streets-data.js` stays
-  hand-authored until the full corpus is encoded, the
-  street-by-street diff is clean, and Kenny approves the §10 switchover
+  hand-authored until the full corpus is encoded, every legacy segment is
+  subsumed by the generated output or accepted by a person (the structural
+  diff can no longer come clean — 77 of 107 streets segment differently,
+  by design), and Kenny approves the §10 switchover
   (checklist: MODEL-IMPLEMENTATION.md). Validate authored layers with
   `node check-model.js`; diff a street with `node diff-street.js "3rd Street"`.
   `preview.html` renders the generated data and is the future index.html —
   a standing file, edited directly, NOT regenerated from index.html.
+  `node check-legacy.js` (2026-09-15) is the pre-flip gate: every legacy
+  entry subsumed by the generated output or accepted by name in
+  `legacy/accepted-differences.js`. `site-config.js` owns `normalizeName`
+  and `NAME_ALIASES` now — one copy, every consumer.
 - **The map tool is built end to end** (2026-08-30): align → coverage →
   drag `documents/<id>/` into an assistant → review, name, confirm, sweep.
   handbook/MAP-TOOL-GUIDE.md is the how-to, handbook/MAP-TOOL-SPEC.md the

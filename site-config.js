@@ -7,10 +7,39 @@
 //
 // Loaded three ways, so it must stay plain `const` declarations with a
 // `module.exports` guard at the end:
-//   • `<script src="site-config.js">` — index.html, names-tool.html
-//   • `require("./site-config.js")` — generate.js, check-model.js, check-data.js
-//   • re-emitted verbatim into `generated/streets-data.gen.js` by generate.js,
-//     which is what preview.html reads.
+//   • `<script src="site-config.js">` — index.html, preview.html,
+//     map-tool.html, names-tool.html
+//   • `require("./site-config.js")` — generate.js, documents/osm.js,
+//     check-model.js, check-data.js, intersect.js, coverage-report.js
+//   (It was also re-emitted into `generated/streets-data.gen.js` for
+//   preview.html until 2026-09-15; that page loads this file now, like the
+//   others — MODEL-IMPLEMENTATION checklist C.)
+
+// ---------------------------------------------------------------------------
+// STREET NAMES: one normalisation, shared by everything that keys OSM ways.
+//
+// Two rules. Directional prefixes are stripped, so "South Spring Street" and
+// "North Spring Street" are one street. Then NAME_ALIASES folds the rare way
+// that OSM names on its own but the project treats as part of its parent —
+// the Bunker Hill tunnel is pavement of 2nd Street, not a street. Until
+// 2026-09-15 this function was copied into seven files and the alias table
+// into three of them (MODEL-IMPLEMENTATION checklist B): the generator did not
+// know the alias, so the tunnel was a separate stub street and its pavement a
+// gap in 2nd Street. Every consumer now calls this one — generate.js,
+// documents/osm.js, check-model.js, map-tool.html, intersect.js,
+// coverage-report.js and the map itself — so a name means the same thing in
+// each. Rows in documents/ carry the PARENT name (a row keyed to the tunnel
+// is a street the geometry index does not have).
+//
+// Not the place for a way whose leading token merely LOOKS directional ("East
+// West Bank Plaza at The Broad"): that is EXCLUDE_NAMES in generate.js.
+const NAME_ALIASES = {
+  "2nd Street Tunnel": "2nd Street"
+};
+function normalizeName(n) {
+  const stripped = n.replace(/^(North|South|East|West|N\.?|S\.?|E\.?|W\.?)\s+/i, "");
+  return NAME_ALIASES[stripped] || stripped;
+}
 
 // Coverage areas. Adding a neighborhood here expands the map query and redraws
 // the dashed coverage outlines; see ADDING-STREETS.md ("Adding a neighborhood").
@@ -119,12 +148,13 @@ const CATEGORIES = [
   // three tagged `unresearched` after the search had been done. A hand-kept tag
   // that restates a field will drift from it; derive it and it cannot.
   //   renamed       ⇐ the timeline has more than one period
+  //   disputed      ⇐ the entity's `disputed` flag
   //   unknown       ⇐ namedAfter === null      (searched, nothing found)
   //   unresearched  ⇐ searched === "none"      (nobody has looked)
   // See MODEL-SPEC §3.1 for `basis` and `searched`, the fields these read.
   { id: "status",       label: "Status of the record", facet: true },
   { id: "renamed",      label: "Has former names",                  parent: "status", derived: true },
-  { id: "disputed",     label: "Origin disputed",                   parent: "status" },
+  { id: "disputed",     label: "Origin disputed",                   parent: "status", derived: true },
 
   // HOW WELL WE KNOW IT (MODEL-SPEC §3.1). The whole point of grading the file
   // was that a reader should be able to tell a documented fact from our best
@@ -214,5 +244,6 @@ const SIMILAR_PROJECTS = [
 ];
 
 if (typeof module !== "undefined") module.exports = {
-  NEIGHBORHOODS, CATEGORIES, CATEGORY_BY_ID, categoryAncestors, SIMILAR_PROJECTS
+  NEIGHBORHOODS, CATEGORIES, CATEGORY_BY_ID, categoryAncestors, SIMILAR_PROJECTS,
+  NAME_ALIASES, normalizeName
 };

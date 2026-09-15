@@ -586,6 +586,7 @@ MODEL-SPEC §§4–5 and CLAUDE.md's broken-rules list stay as they are.
 1. **Quick fixes, this week:** ~~declare the four missing categories and make
    `check-model.js` validate ids (7)~~ done 2026-09-12; the search matcher (6);
    scheme 3/4 colours (5b); permalinks and the segmentation report (9).
+1.5 **Add two new similar projects: https://lax-skyline.parcelscope.net/ and https://maps.bristol.gov.uk/kyp/?
 2. **The Orange → Wilshire proceeding, written by hand** (2) — a day, and it
    settles the shape before anything is built to it.
 3. **§1 Step A**, display unit vs evidence unit — the largest single

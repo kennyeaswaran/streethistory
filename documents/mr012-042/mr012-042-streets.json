@@ -1,0 +1,778 @@
+{
+  "document": "mr012-042",
+  "image": "mr012-042-100dpi.png",
+  "imageSize": [1117, 1717],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr012-042-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [365, 550],
+    [213, 1289],
+    [943, 1304],
+    [898, 753],
+    [823, 614]
+  ],
+  "coverageLl": [
+    [34.043827, -118.238496],
+    [34.039523, -118.238876],
+    [34.039976, -118.233901],
+    [34.043068, -118.234694],
+    [34.043801, -118.235326]
+  ],
+  "streets": [
+    {
+      "name": "4th Place",
+      "runs": [
+        {
+          "px": [
+            [839, 643],
+            [802, 611]
+          ],
+          "ll": [
+            [34.043649, -118.235195],
+            [34.043802, -118.235471]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Street",
+          "px": [872, 678],
+          "ll": [34.043472, -118.234936],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "4th Street",
+      "runs": [
+        {
+          "px": [
+            [350, 625],
+            [378, 639],
+            [384, 642],
+            [408, 648],
+            [426, 650],
+            [467, 650],
+            [582, 651],
+            [617, 651],
+            [641, 651],
+            [710, 650],
+            [734, 650],
+            [751, 650],
+            [776, 650],
+            [792, 652],
+            [811, 656],
+            [832, 662],
+            [853, 669]
+          ],
+          "ll": [
+            [34.043391, -118.238534],
+            [34.04333, -118.238329],
+            [34.043317, -118.238286],
+            [34.043303, -118.238119],
+            [34.043304, -118.237993],
+            [34.043336, -118.237717],
+            [34.043417, -118.23693],
+            [34.043441, -118.236694],
+            [34.043458, -118.236531],
+            [34.043515, -118.236059],
+            [34.043534, -118.235896],
+            [34.043545, -118.235786],
+            [34.043562, -118.235611],
+            [34.043564, -118.235506],
+            [34.043552, -118.235369],
+            [34.043537, -118.235221],
+            [34.043509, -118.235074]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [408, 648],
+          "ll": [34.043303, -118.238119],
+          "insideCoverage": true
+        },
+        {
+          "name": "Colyton Street",
+          "px": [641, 651],
+          "ll": [34.043458, -118.236531],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hewitt Street",
+          "px": [811, 656],
+          "ll": [34.043552, -118.235369],
+          "insideCoverage": true
+        },
+        {
+          "name": "Merrick Street",
+          "px": [944, 747],
+          "ll": [34.043138, -118.234384],
+          "insideCoverage": false
+        },
+        {
+          "name": "Seaton Street",
+          "px": [467, 650],
+          "ll": [34.043336, -118.237717],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "5th Street",
+      "runs": [
+        {
+          "px": [
+            [349, 973],
+            [351, 973],
+            [365, 972],
+            [380, 972],
+            [475, 971],
+            [484, 971],
+            [551, 971],
+            [647, 970],
+            [800, 969],
+            [812, 969]
+          ],
+          "ll": [
+            [34.041418, -118.23823],
+            [34.041419, -118.238221],
+            [34.041431, -118.238125],
+            [34.041443, -118.238018],
+            [34.041518, -118.237373],
+            [34.041525, -118.237312],
+            [34.041577, -118.236863],
+            [34.041652, -118.236208],
+            [34.041772, -118.235172],
+            [34.041782, -118.235086]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [349, 973],
+          "ll": [34.041418, -118.23823],
+          "insideCoverage": true
+        },
+        {
+          "name": "Colyton Street",
+          "px": [647, 970],
+          "ll": [34.041652, -118.236208],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hewitt Street",
+          "px": [812, 969],
+          "ll": [34.041782, -118.235086],
+          "insideCoverage": true
+        },
+        {
+          "name": "Seaton Street",
+          "px": [475, 971],
+          "ll": [34.041518, -118.237373],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Alameda Street",
+      "runs": [
+        {
+          "px": [
+            [423, 558],
+            [422, 559],
+            [420, 574],
+            [419, 582],
+            [412, 627],
+            [411, 633],
+            [408, 648],
+            [405, 663],
+            [404, 669],
+            [381, 793],
+            [357, 931],
+            [349, 973],
+            [333, 1067],
+            [330, 1080],
+            [302, 1238],
+            [293, 1291]
+          ],
+          "ll": [
+            [34.043823, -118.238097],
+            [34.043819, -118.238097],
+            [34.043734, -118.238101],
+            [34.043686, -118.238103],
+            [34.043423, -118.238111],
+            [34.043391, -118.238112],
+            [34.043303, -118.238119],
+            [34.043216, -118.238126],
+            [34.043179, -118.238128],
+            [34.042459, -118.238172],
+            [34.04166, -118.238214],
+            [34.041418, -118.23823],
+            [34.040871, -118.23826],
+            [34.040797, -118.238263],
+            [34.039877, -118.238314],
+            [34.039573, -118.238332]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Street",
+          "px": [408, 648],
+          "ll": [34.043303, -118.238119],
+          "insideCoverage": true
+        },
+        {
+          "name": "5th Street",
+          "px": [349, 973],
+          "ll": [34.041418, -118.23823],
+          "insideCoverage": true
+        },
+        {
+          "name": "Factory Place",
+          "px": [279, 1367],
+          "ll": [34.039131, -118.238358],
+          "insideCoverage": false
+        },
+        {
+          "name": "Palmetto Street",
+          "px": [302, 1238],
+          "ll": [34.039877, -118.238314],
+          "insideCoverage": true
+        },
+        {
+          "name": "Seaton Street",
+          "px": [439, 641],
+          "ll": [34.043363, -118.237915],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Colyton Street",
+      "runs": [
+        {
+          "px": [
+            [641, 651],
+            [641, 661],
+            [642, 720],
+            [643, 740],
+            [645, 850],
+            [647, 970],
+            [648, 1043],
+            [652, 1229],
+            [652, 1241]
+          ],
+          "ll": [
+            [34.043458, -118.236531],
+            [34.043398, -118.23652],
+            [34.043066, -118.236461],
+            [34.042952, -118.236441],
+            [34.042331, -118.236329],
+            [34.041652, -118.236208],
+            [34.041242, -118.236134],
+            [34.040185, -118.235945],
+            [34.040118, -118.235933]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Street",
+          "px": [641, 651],
+          "ll": [34.043458, -118.236531],
+          "insideCoverage": true
+        },
+        {
+          "name": "5th Street",
+          "px": [647, 970],
+          "ll": [34.041652, -118.236208],
+          "insideCoverage": true
+        },
+        {
+          "name": "Palmetto Street",
+          "px": [652, 1241],
+          "ll": [34.040118, -118.235933],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hewitt Street",
+      "runs": [
+        {
+          "px": [
+            [811, 656],
+            [810, 669],
+            [810, 673],
+            [810, 696],
+            [811, 789],
+            [812, 815],
+            [812, 847],
+            [812, 865],
+            [812, 876],
+            [812, 883],
+            [812, 969],
+            [812, 980],
+            [812, 1053],
+            [813, 1171],
+            [813, 1181],
+            [813, 1232],
+            [813, 1239]
+          ],
+          "ll": [
+            [34.043552, -118.235369],
+            [34.043482, -118.235368],
+            [34.043458, -118.235366],
+            [34.043326, -118.235343],
+            [34.042802, -118.235251],
+            [34.042651, -118.235226],
+            [34.042473, -118.235198],
+            [34.04237, -118.235181],
+            [34.042304, -118.235171],
+            [34.042269, -118.235165],
+            [34.041782, -118.235086],
+            [34.041716, -118.235076],
+            [34.041303, -118.235011],
+            [34.040633, -118.234905],
+            [34.04058, -118.234897],
+            [34.040289, -118.234851],
+            [34.040249, -118.234845]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Street",
+          "px": [811, 656],
+          "ll": [34.043552, -118.235369],
+          "insideCoverage": true
+        },
+        {
+          "name": "5th Street",
+          "px": [812, 969],
+          "ll": [34.041782, -118.235086],
+          "insideCoverage": true
+        },
+        {
+          "name": "Palmetto Street",
+          "px": [813, 1239],
+          "ll": [34.040249, -118.234845],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Palmetto Street",
+      "runs": [
+        {
+          "px": [
+            [302, 1238],
+            [304, 1238],
+            [317, 1238],
+            [348, 1238],
+            [455, 1239],
+            [464, 1239],
+            [480, 1239],
+            [491, 1243],
+            [652, 1241],
+            [702, 1240],
+            [739, 1240],
+            [785, 1239],
+            [813, 1239],
+            [910, 1242],
+            [938, 1243]
+          ],
+          "ll": [
+            [34.039877, -118.238314],
+            [34.039878, -118.238304],
+            [34.039887, -118.238211],
+            [34.039909, -118.238006],
+            [34.039988, -118.237274],
+            [34.039994, -118.237218],
+            [34.040006, -118.237109],
+            [34.039991, -118.237029],
+            [34.040118, -118.235933],
+            [34.040159, -118.235596],
+            [34.040189, -118.235347],
+            [34.040227, -118.235033],
+            [34.040249, -118.234845],
+            [34.040302, -118.234183],
+            [34.040318, -118.233989]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [302, 1238],
+          "ll": [34.039877, -118.238314],
+          "insideCoverage": true
+        },
+        {
+          "name": "Colyton Street",
+          "px": [652, 1241],
+          "ll": [34.040118, -118.235933],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hewitt Street",
+          "px": [813, 1239],
+          "ll": [34.040249, -118.234845],
+          "insideCoverage": true
+        },
+        {
+          "name": "Molino Street",
+          "px": [982, 1245],
+          "ll": [34.040342, -118.233688],
+          "insideCoverage": false
+        },
+        {
+          "name": "Seaton Street",
+          "px": [480, 1239],
+          "ll": [34.040006, -118.237109],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Seaton Street",
+      "runs": [
+        {
+          "px": [
+            [467, 650],
+            [467, 663],
+            [467, 705],
+            [471, 762],
+            [474, 893],
+            [475, 965],
+            [475, 971],
+            [476, 985],
+            [477, 1084],
+            [480, 1229],
+            [480, 1239]
+          ],
+          "ll": [
+            [34.043336, -118.237717],
+            [34.043261, -118.237705],
+            [34.043022, -118.237663],
+            [34.042704, -118.237585],
+            [34.04196, -118.237452],
+            [34.041556, -118.23738],
+            [34.041518, -118.237373],
+            [34.041443, -118.237359],
+            [34.040879, -118.237261],
+            [34.040063, -118.237118],
+            [34.040006, -118.237109]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Street",
+          "px": [467, 650],
+          "ll": [34.043336, -118.237717],
+          "insideCoverage": true
+        },
+        {
+          "name": "5th Street",
+          "px": [475, 971],
+          "ll": [34.041518, -118.237373],
+          "insideCoverage": true
+        },
+        {
+          "name": "Alameda Street",
+          "px": [439, 641],
+          "ll": [34.043363, -118.237915],
+          "insideCoverage": true
+        },
+        {
+          "name": "Palmetto Street",
+          "px": [480, 1239],
+          "ll": [34.040006, -118.237109],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "4th Place",
+      "continuesInto": [
+        "4th Street"
+      ],
+      "candidates": [
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Place by another sheet",
+            "attested on 4th Street, which 4th Place runs straight into"
+          ],
+          "ink": [
+            "THIRD"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        },
+        {
+          "id": "fourth-street",
+          "display": "4th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which 4th Place runs straight into"
+          ],
+          "ink": [
+            "4TH ST",
+            "4TH ST.",
+            "CALLE 4a",
+            "FOURTH STREET",
+            "Fourth St",
+            "Fourth Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-005",
+            "mr012-026",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071"
+          ]
+        },
+        {
+          "id": "huber-st",
+          "display": "Huber Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which 4th Place runs straight into"
+          ],
+          "ink": [
+            "HUBER ST.",
+            "Huber St"
+          ],
+          "docs": [
+            "mr013-087-p1",
+            "mr030-009-p4"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "4th Street",
+      "continuesInto": [
+        "4th Place"
+      ],
+      "candidates": [
+        {
+          "id": "fourth-street",
+          "display": "4th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "4TH ST",
+            "4TH ST.",
+            "CALLE 4a",
+            "FOURTH STREET",
+            "Fourth St",
+            "Fourth Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-005",
+            "mr012-026",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071"
+          ]
+        },
+        {
+          "id": "huber-st",
+          "display": "Huber Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet"
+          ],
+          "ink": [
+            "HUBER ST.",
+            "Huber St"
+          ],
+          "docs": [
+            "mr013-087-p1",
+            "mr030-009-p4"
+          ]
+        },
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet",
+            "attested on 4th Place, which 4th Street runs straight into"
+          ],
+          "ink": [
+            "THIRD"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "5th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "fifth-street",
+          "display": "5th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 5th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "5TH ST",
+            "5TH ST.",
+            "CALLE 5a",
+            "FIFTH STREET",
+            "Fifth St",
+            "Fifth St.",
+            "Fifth St. (Extension)"
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-166-p2",
+            "mr005-307-b",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr039-069",
+            "mr053-068",
+            "mr053-071"
+          ]
+        },
+        {
+          "id": "poplar-st",
+          "display": "Poplar Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 5th Street by another sheet"
+          ],
+          "ink": [
+            "Poplar St"
+          ],
+          "docs": [
+            "mr030-009-p2"
+          ]
+        },
+        {
+          "id": "sixth-street",
+          "display": "6th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 5th Street by another sheet"
+          ],
+          "ink": [
+            "SIXTH ST."
+          ],
+          "docs": [
+            "mr084-053"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Alameda Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "alameda-st",
+          "display": "Alameda Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alameda Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "ALAMEDA ST",
+            "ALAMEDA STREET",
+            "Alameda STREET.",
+            "Alameda St"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "tr0145-062",
+            "tr0926-086-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Colyton Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Hewitt Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "hewitt",
+          "display": "Hewitt Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hewitt Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "HEWITT ST",
+            "HEWITT STREET",
+            "Hewitt STREET."
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "tr1339-069-p3"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Palmetto Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Seaton Street",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

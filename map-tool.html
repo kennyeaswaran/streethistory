@@ -329,6 +329,7 @@
 
 <div id="status">load a render to begin</div>
 
+<script src="site-config.js"></script> <!-- normalizeName + NAME_ALIASES: key ways the way the generator does -->
 <script src="streets-geometry.js"></script>
 <script src="doc-geometry.js"></script>
 <!-- The name entities, so review mode can offer them and flag ids that do not
@@ -340,7 +341,10 @@
 "use strict";
 const G = DocGeometry;
 const geomRaw = (STREET_GEOMETRY.data || STREET_GEOMETRY).elements;
-const normalize = n => n.replace(/^(North|South|East|West|N\.?|S\.?|E\.?|W\.?)\s+/i, "");
+// site-config.js's normalizeName: directionals stripped AND NAME_ALIASES
+// applied, so the 2nd Street Tunnel's ways are 2nd Street here too, and a row
+// the tool writes names the street the generator and checker will look for.
+const normalize = normalizeName;
 
 const ways = [], streetPoints = new Map();
 for (const w of geomRaw) {

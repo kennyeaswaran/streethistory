@@ -25,6 +25,11 @@ jobs:
           node-version: 20
       - name: Validate street data
         run: node check-data.js
+      # The authored layers behind the generated map (names.js, documents/).
+      # Gating since 2026-09-15 (switchover checklist E): an invalid entity or
+      # row blocks the site the way an invalid streets-data.js always has.
+      - name: Validate names and documents
+        run: node check-model.js
 
   deploy:
     needs: check

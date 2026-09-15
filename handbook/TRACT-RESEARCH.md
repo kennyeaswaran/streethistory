@@ -246,6 +246,26 @@ toward its centroid so the query doesn't reach across the street, and query
 layer 2 for `TRACT,MAP_REF` and layer 8 for `REFERENCE,SUB_NAME,RCRD_DATE`.
 Group by `MAP_REF`, then build and existence-check the PDF URLs.
 
+**Skip the proxy — POST instead (2026-09-15).** The `esriproxysvc` route above
+**404s on a long URL**: a 66-point polygon in the query string exceeds IIS's
+URL limit and the proxy answers with its own Page-Not-Found HTML, which looks
+like a dead endpoint but is not. Two fixes, and take both:
+
+- `maps.lacity.org` answers **CORS-open** from a `navigatela.lacity.org` page,
+  so the proxy is not needed at all — fetch the layer directly.
+- Send the query as a **POST** with the parameters as a form body. No URL-length
+  limit, and an arbitrarily detailed polygon goes through.
+
+With that, a whole neighbourhood is one query rather than one per block: the
+Alameda-to-the-river sweep (4th to 7th Place, ~1 km × 1 km) returned all 929
+parcels and 35 Map-Refs in a single call, with `exceededTransferLimit` false.
+Set `resultRecordCount` high (3000) and check that flag rather than assuming.
+
+`returnCentroid=true` is NOT supported on this service (10.71 reports the
+parameter but returns no centroid). To get a per-Map-Ref footprint, request
+geometry with `maxAllowableOffset=0.0004` and take the bounding box of each
+group — cheap, and enough to say which streets a sheet covers.
+
 **Where it runs.** Both layers are blocked from the sandbox shell AND from the
 fetch tool (`navigatela.lacity.org` refuses it by robots.txt; the ArcGIS query
 string does not survive it). They answer fine from the browser pane. Keep each

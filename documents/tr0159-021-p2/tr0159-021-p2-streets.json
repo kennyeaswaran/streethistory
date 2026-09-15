@@ -1,0 +1,204 @@
+{
+  "document": "tr0159-021-p2",
+  "image": "tr0159-021-p2-100dpi.png",
+  "imageSize": [1702, 2449],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0159-021-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [43, 427],
+    [36, 1742],
+    [1541, 1732],
+    [1565, 371]
+  ],
+  "coverageLl": [
+    [34.037157, -118.230635],
+    [34.036081, -118.230531],
+    [34.036195, -118.229058],
+    [34.037309, -118.229149]
+  ],
+  "streets": [
+    {
+      "name": "Jesse Street",
+      "runs": [
+        {
+          "px": [
+            [38, 1427],
+            [59, 1426],
+            [195, 1425],
+            [226, 1425],
+            [307, 1424],
+            [372, 1423],
+            [393, 1423],
+            [925, 1418],
+            [1328, 1414],
+            [1409, 1413]
+          ],
+          "ll": [
+            [34.036339, -118.230556],
+            [34.036341, -118.230536],
+            [34.036352, -118.230402],
+            [34.036354, -118.230372],
+            [34.03636, -118.230293],
+            [34.036366, -118.230229],
+            [34.036367, -118.230208],
+            [34.036409, -118.229687],
+            [34.03644, -118.229293],
+            [34.036446, -118.229214]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Imperial Street",
+          "px": [-802, 1435],
+          "ll": [34.036274, -118.231378],
+          "insideCoverage": false
+        },
+        {
+          "name": "Mesquit Street",
+          "px": [1409, 1413],
+          "ll": [34.036446, -118.229214],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [307, 1424],
+          "ll": [34.03636, -118.230293],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Mesquit Street",
+      "runs": [
+        {
+          "px": [
+            [1396, 377],
+            [1397, 423],
+            [1407, 1251],
+            [1409, 1413],
+            [1413, 1733]
+          ],
+          "ll": [
+            [34.037292, -118.229314],
+            [34.037255, -118.229309],
+            [34.036579, -118.22923],
+            [34.036446, -118.229214],
+            [34.036185, -118.229183]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Jesse Street",
+          "px": [1409, 1413],
+          "ll": [34.036446, -118.229214],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Santa Fe Avenue",
+      "runs": [
+        {
+          "px": [
+            [310, 1740],
+            [308, 1488],
+            [307, 1424],
+            [304, 1332],
+            [306, 426],
+            [306, 417]
+          ],
+          "ll": [
+            [34.036102, -118.230263],
+            [34.036308, -118.230287],
+            [34.03636, -118.230293],
+            [34.036435, -118.230303],
+            [34.037176, -118.230378],
+            [34.037183, -118.230379]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Jesse Street",
+          "px": [307, 1424],
+          "ll": [34.03636, -118.230293],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Jesse Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "jesse",
+          "display": "Jesse Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Mesquit Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "mesquit",
+          "display": "Mesquit Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mesquit Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "Mesquit St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Santa Fe Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "tulip",
+          "display": "Tulip Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santa Fe Avenue by another sheet"
+          ],
+          "ink": [
+            "Tulip St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        },
+        {
+          "id": "santa-fe-ave",
+          "display": "Santa Fe Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

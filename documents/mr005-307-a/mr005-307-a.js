@@ -33,7 +33,7 @@ module.exports = {
   },
 
   sweptFully: true,
-  sweptFor: ["1st Street","2nd Street","2nd Street Tunnel","Figueroa Street"],
+  sweptFor: ["1st Street","2nd Street","Figueroa Street"],
 
   rows: [
     {
@@ -79,7 +79,7 @@ module.exports = {
     {
       "kind": "state",
       "asWritten": "SECOND STREET",
-      "street": "2nd Street Tunnel",
+      "street": "2nd Street",
       "from": {
         "px": [
           1089,

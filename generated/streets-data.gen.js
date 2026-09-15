@@ -1,357 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
 // Built: 2026-09-15
-const NEIGHBORHOODS = [
-  {
-    "id": "dtla",
-    "name": "Downtown",
-    "bbox": {
-      "s": 34.033,
-      "w": -118.272,
-      "n": 34.068,
-      "e": -118.225
-    }
-  }
-];
-
-const CATEGORIES = [
-  {
-    "id": "referent",
-    "label": "What the name points to",
-    "facet": true
-  },
-  {
-    "id": "person",
-    "label": "A person",
-    "parent": "referent"
-  },
-  {
-    "id": "landowner",
-    "label": "…who owned or subdivided the ground",
-    "parent": "person"
-  },
-  {
-    "id": "family",
-    "label": "…family of the owner or subdivider",
-    "parent": "person"
-  },
-  {
-    "id": "politician",
-    "label": "…a politician or an official",
-    "parent": "person"
-  },
-  {
-    "id": "mayor",
-    "label": "……a mayor of Los Angeles",
-    "parent": "politician"
-  },
-  {
-    "id": "governor",
-    "label": "……a governor of California",
-    "parent": "politician"
-  },
-  {
-    "id": "president",
-    "label": "……a president",
-    "parent": "politician"
-  },
-  {
-    "id": "official",
-    "label": "……another politician or official",
-    "parent": "politician"
-  },
-  {
-    "id": "mythological",
-    "label": "…a god, or a figure from myth",
-    "parent": "person"
-  },
-  {
-    "id": "people",
-    "label": "…a people, rather than one person",
-    "parent": "person"
-  },
-  {
-    "id": "foreign",
-    "label": "…someone from abroad",
-    "parent": "person"
-  },
-  {
-    "id": "alive",
-    "label": "…alive when the street was named",
-    "parent": "person"
-  },
-  {
-    "id": "nature",
-    "label": "Something living, or the land",
-    "parent": "referent"
-  },
-  {
-    "id": "tree",
-    "label": "…a tree",
-    "parent": "nature"
-  },
-  {
-    "id": "plant",
-    "label": "…a plant or a flower",
-    "parent": "nature"
-  },
-  {
-    "id": "animal",
-    "label": "…an animal",
-    "parent": "nature"
-  },
-  {
-    "id": "landform",
-    "label": "…a landform",
-    "parent": "nature"
-  },
-  {
-    "id": "water",
-    "label": "…water",
-    "parent": "nature"
-  },
-  {
-    "id": "place",
-    "label": "A place",
-    "parent": "referent"
-  },
-  {
-    "id": "destination",
-    "label": "…where the street goes",
-    "parent": "place"
-  },
-  {
-    "id": "state",
-    "label": "…a state",
-    "parent": "place"
-  },
-  {
-    "id": "borrowed",
-    "label": "…a street in another city",
-    "parent": "place"
-  },
-  {
-    "id": "company",
-    "label": "An institution",
-    "parent": "referent"
-  },
-  {
-    "id": "object",
-    "label": "An inanimate object",
-    "parent": "referent"
-  },
-  {
-    "id": "material",
-    "label": "…a material",
-    "parent": "object"
-  },
-  {
-    "id": "tool",
-    "label": "…a tool or a machine",
-    "parent": "object"
-  },
-  {
-    "id": "abstract",
-    "label": "An abstract idea",
-    "parent": "referent"
-  },
-  {
-    "id": "idea",
-    "label": "…an idea, a virtue, an aspiration",
-    "parent": "abstract"
-  },
-  {
-    "id": "descriptive",
-    "label": "…the street's own role or position",
-    "parent": "abstract"
-  },
-  {
-    "id": "number",
-    "label": "…its number in the grid",
-    "parent": "abstract"
-  },
-  {
-    "id": "system",
-    "label": "…a route system",
-    "parent": "abstract"
-  },
-  {
-    "id": "event",
-    "label": "…an event",
-    "parent": "abstract"
-  },
-  {
-    "id": "status",
-    "label": "Status of the record",
-    "facet": true
-  },
-  {
-    "id": "renamed",
-    "label": "Has former names",
-    "parent": "status",
-    "derived": true
-  },
-  {
-    "id": "disputed",
-    "label": "Origin disputed",
-    "parent": "status"
-  },
-  {
-    "id": "basis",
-    "label": "How well we know it",
-    "parent": "status",
-    "only": "model",
-    "derived": true,
-    "heading": true
-  },
-  {
-    "id": "basis-intrinsic",
-    "label": "…it explains itself",
-    "parent": "basis",
-    "only": "model",
-    "derived": true
-  },
-  {
-    "id": "basis-attested",
-    "label": "…a source says so",
-    "parent": "basis",
-    "only": "model",
-    "derived": true
-  },
-  {
-    "id": "basis-eponymous",
-    "label": "…the first map carries the person",
-    "parent": "basis",
-    "only": "model",
-    "derived": true
-  },
-  {
-    "id": "basis-pattern",
-    "label": "…one of a set on one document",
-    "parent": "basis",
-    "only": "model",
-    "derived": true
-  },
-  {
-    "id": "basis-inferred",
-    "label": "…inferred from something sourced",
-    "parent": "basis",
-    "only": "model",
-    "derived": true
-  },
-  {
-    "id": "basis-lexical",
-    "label": "…the word's meaning is all we have",
-    "parent": "basis",
-    "only": "model",
-    "derived": true
-  },
-  {
-    "id": "basis-guess",
-    "label": "…a guess",
-    "parent": "basis",
-    "only": "model",
-    "derived": true
-  },
-  {
-    "id": "basis-none",
-    "label": "…no candidate at all",
-    "parent": "basis",
-    "only": "model",
-    "derived": true
-  },
-  {
-    "id": "searched-extensive",
-    "label": "……searched hard",
-    "parent": "basis-none",
-    "only": "model",
-    "derived": true
-  },
-  {
-    "id": "searched-partial",
-    "label": "……one cheap check",
-    "parent": "basis-none",
-    "only": "model",
-    "derived": true
-  },
-  {
-    "id": "searched-none",
-    "label": "……nobody has looked",
-    "parent": "basis-none",
-    "only": "model",
-    "derived": true
-  },
-  {
-    "id": "stub",
-    "label": "Only the base map has it",
-    "parent": "status",
-    "only": "model",
-    "derived": true
-  },
-  {
-    "id": "unknown",
-    "label": "Researched — origin not yet found",
-    "parent": "status",
-    "only": "legacy"
-  },
-  {
-    "id": "unresearched",
-    "label": "Not yet researched",
-    "parent": "status",
-    "only": "legacy"
-  }
-];
-
-const SIMILAR_PROJECTS = [
-  {
-    "title": "L.A. Street Names (Mark Tapio Kines)",
-    "url": "https://lastreetnames.com/",
-    "desc": "Researched prose histories of 2,200+ L.A. County street names — the primary narrative complement to this map."
-  },
-  {
-    "title": "History of San Francisco Place Names (Noah Veltman)",
-    "url": "http://sfstreets.noahveltman.com/",
-    "desc": "Clickable SF street-etymology map with theme filters; the closest predecessor to this project.",
-    "sub": [
-      {
-        "title": "“Mapping the History of Street Names” (Veltman's write-up)",
-        "url": "https://source.opennews.org/articles/mapping-history-street-names/",
-        "desc": "How the SF map was built, and pitfalls for anyone building one."
-      }
-    ]
-  },
-  {
-    "title": "Open Etymology Map",
-    "url": "https://etymology.dsantini.it/",
-    "desc": "Worldwide map generated from OpenStreetMap's name:etymology:wikidata tags."
-  },
-  {
-    "title": "EqualStreetNames",
-    "url": "https://equalstreetnames.eu/",
-    "desc": "Open-source maps of street names by gender, 60+ cities — mostly in Belgium and Germany — built on OSM + Wikidata."
-  },
-  {
-    "title": "Paristique",
-    "url": "https://www.paristique.fr/",
-    "desc": "Interactive map of the history of Paris street names."
-  },
-  {
-    "title": "NYC honorary street names map",
-    "url": "https://streetnamesmap-nyc.hub.arcgis.com/",
-    "desc": "NYC Dept. of Records map of ~2,500 honorary street co-namings."
-  },
-  {
-    "title": "STNAMES LAB",
-    "url": "https://en.stnameslab.com/the-project/",
-    "desc": "Academic research project analyzing street names as cultural markers; focuses on Spain but has searchable maps of North America."
-  },
-  {
-    "title": "Streetpédia",
-    "url": "https://streetpedia.fr/",
-    "desc": "French mobile app with audio street-name histories."
-  }
-];
-
 const NAME_CATEGORY_INDEX = {
   "first-street": [
     "number",
@@ -2485,14 +2134,6 @@ const NAME_CATEGORY_INDEX = {
     "stub"
   ],
   "washington-boulevard": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "2nd-street-tunnel": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -5075,63 +4716,6 @@ const STREET_DATA = {
         "label": "part of",
         "name": "2nd Street",
         "entityId": "second-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 2nd Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1869",
-          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "attested": true,
-        "knownFraction": 0.89,
-        "categories": [
-          "number",
-          "basis-intrinsic"
-        ],
-        "ancestors": [
-          "abstract",
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
-            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
-          },
-          {
-            "title": "Map of Block W Mott Tract as subdivided by E. T. Wright at request of M. L. Wicks in Los Angeles City (M.R. 5-307, June 25, 1883; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
-          }
-        ],
-        "minLng": -118.2535,
-        "maxLng": -118.2528,
-        "from": {
-          "px": [
-            2963,
-            599
-          ]
-        },
-        "to": {
-          "px": [
-            1089,
-            579
-          ]
-        },
-        "gapAfter": true
-      },
-      {
-        "label": "beyond Hope (discontinuous)",
-        "name": "2nd Street",
-        "entityId": "second-street",
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
@@ -5147,7 +4731,7 @@ const STREET_DATA = {
             "entityId": "second-street",
             "formInForce": "2nd Street",
             "how": "extension",
-            "origin": "labeled “SECOND STREET” and “Second Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}}",
+            "origin": "labeled “SECOND STREET” and “Second Street” on the 1869 Mott Tract (Pickel survey), the 1869 Mott Tract building lots and the 1883 Block W, Mott Tract {{(source)}}",
             "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           }
         ],
@@ -5181,13 +4765,22 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           },
           {
+            "title": "Map of Block W Mott Tract as subdivided by E. T. Wright at request of M. L. Wicks in Los Angeles City (M.R. 5-307, June 25, 1883; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
-        "minLng": -118.2528,
+        "minLng": -118.2535,
         "maxLng": -118.2464,
-        "from": "Hope Street",
+        "from": {
+          "px": [
+            2963,
+            599
+          ]
+        },
         "to": {
           "px": [
             3023,
@@ -5864,79 +5457,6 @@ const STREET_DATA = {
         "minLng": -118.2327,
         "from": "Anderson Street",
         "to": null
-      }
-    ]
-  },
-  "2nd Street Tunnel": {
-    "name": "2nd Street Tunnel",
-    "entityId": "2nd-street-tunnel",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": {
-      "text": "by 1869",
-      "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
-    },
-    "built": "not yet researched",
-    "nameHistory": [
-      {
-        "from": "by 1869",
-        "until": "?",
-        "name": "2nd Street",
-        "entityId": "second-street",
-        "formInForce": "2nd Street",
-        "origin": "labeled “SECOND STREET” and “Second Street” on the 1869 Mott Tract (Pickel survey), the 1869 Mott Tract building lots and the 1883 Block W, Mott Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
-        "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
-      },
-      {
-        "from": "?",
-        "until": null,
-        "name": "2nd Street Tunnel",
-        "entityId": "2nd-street-tunnel",
-        "formInForce": "2nd Street Tunnel",
-        "how": "renaming",
-        "origin": "arrival on this stretch not directly documented",
-        "originLink": null
-      }
-    ],
-    "note": null,
-    "attested": true,
-    "knownFraction": 0.08,
-    "categories": [
-      "renamed",
-      "basis-none",
-      "searched-none",
-      "stub"
-    ],
-    "ancestors": [
-      "basis"
-    ],
-    "formerCategories": [
-      "number"
-    ],
-    "formerAncestors": [
-      "abstract"
-    ],
-    "disputed": false,
-    "sources": [
-      {
-        "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
-        "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
-      },
-      {
-        "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
-        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
-      },
-      {
-        "title": "Map of Block W Mott Tract as subdivided by E. T. Wright at request of M. L. Wicks in Los Angeles City (M.R. 5-307, June 25, 1883; identified by map alignment, not a lot-level record)",
-        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
-      },
-      {
-        "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
-        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
-      },
-      {
-        "title": "L.A. Street Names: 1st Street (on the numbering system)",
-        "url": "https://lastreetnames.com/street/0001st-street/"
       }
     ]
   },
@@ -7521,7 +7041,6 @@ const STREET_DATA = {
             "name": "Huber Street",
             "entityId": "huber-st",
             "formInForce": "Huber Street",
-            "how": "origin",
             "origin": "labeled “HUBER ST.” and “Huber St” on the 1887 Mills and Wicks Extension map, sheet 1 and the 1887 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — Not documented; most likely Caroline Howard (née Huber), wife of the tract developer Dr. Frederick Preston Howard — the same inference that explains Carolina Street, one block east, now Hewitt Street.",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
           },
@@ -7569,6 +7088,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 4, M.R. 30-12, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "F. P. Howard & Co.'s Subdivision of the Bliss Tract (M.R. 12-42, Dec. 6, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
@@ -8653,7 +8176,6 @@ const STREET_DATA = {
             "name": "Poplar Street",
             "entityId": "poplar-st",
             "formInForce": "Poplar Street",
-            "how": "origin",
             "origin": "labeled “Poplar St” on the 1887 Wolfskill Orchard Tract, sheet 2 (M.R. 30-10) {{(source)}} — The poplar — though no tree here is documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
@@ -8701,12 +8223,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+            "title": "F. P. Howard & Co.'s Subdivision of the Bliss Tract (M.R. 12-42, Dec. 6, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
           },
           {
-            "title": "Recorded map: F.P. Howard & Co.'s Subdivision of the Bliss Tract, M.R. 12-42 (subdivided Aug. 1886 by Geo. E. Knox) — shows “Poplar Street” at 1100 E 5th St's location",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
         "minLng": -118.2398,
@@ -15301,8 +14823,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/central-avenue/"
           },
           {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
         "minLat": 34.0504,
@@ -15343,8 +14865,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/central-avenue/"
           },
           {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
         "minLat": 34.0493,
@@ -15425,8 +14947,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0885/TR0885-030.pdf"
           },
           {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
         "minLat": 34.0477,
@@ -15488,8 +15010,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
           },
           {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
         "minLat": 34.0461,
@@ -15565,8 +15087,8 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
           },
           {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
         "minLat": 34.039,
@@ -15603,8 +15125,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/central-avenue/"
           },
           {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
         "minLat": 34.037,
@@ -15618,28 +15140,16 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (original Central Ave)",
+        "label": "part of",
         "name": "Central Avenue",
         "entityId": "central-ave",
-        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted",
+        "namedAfter": "Central not to Los Angeles but to {{Vernon}}, just south of the city limits when it was platted — how and when this stretch joined Central Avenue is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Vernon,_California",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
         },
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1887",
-            "until": null,
-            "name": "Central Avenue",
-            "entityId": "central-ave",
-            "formInForce": "Central Avenue",
-            "how": "origin",
-            "origin": "labeled “Central Ave.”, “Central Ave” and “CENTRAL AVENUE” on the 1887 W. J. Fisher's Subdivision, the 1894 Kohler Tract and the 1900 Mariana W. de Coronel Home Place {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
-          }
-        ],
         "note": null,
         "attested": true,
         "absentAsOf": {
@@ -15672,6 +15182,10 @@ const STREET_DATA = {
           {
             "title": "Map of Subdivision of the Home Place of Mariana W. de Coronel (Apr. 3, 1900; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-046.pdf"
+          },
+          {
+            "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
         "minLat": 34.0334,
@@ -15734,8 +15248,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR070/MR070-051.pdf"
           },
           {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
         "minLat": 34.0329,
@@ -15786,8 +15300,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR037/MR037-087.pdf"
           },
           {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
         "maxLat": 34.0329,
@@ -19367,6 +18881,75 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Figueroa Street",
         "entityId": "figueroa-gov",
+        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, extended onto this stretch",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": null,
+            "name": "Figueroa Street",
+            "entityId": "figueroa-gov",
+            "formInForce": "Figueroa Street",
+            "how": "extension",
+            "origin": "labeled “Figueroa Street” and “FIGUEROA ST.” on the 1887 Bryan's Figueroa Street Subdivision and the 1917 Tract No. 2713 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.79,
+        "categories": [
+          "person",
+          "politician",
+          "governor",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Figueroa Street",
+            "url": "https://lastreetnames.com/street/figueroa-street/"
+          },
+          {
+            "title": "J. H. Bryan's Figueroa Street Subdivision (M.R. 21-32, Aug. 6, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+          },
+          {
+            "title": "Tract No. 2713 (Aug. 14, 1917; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0034/TR0034-004.pdf"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
+          }
+        ],
+        "minLat": 34.0372,
+        "maxLat": 34.0393,
+        "from": {
+          "px": [
+            311,
+            850
+          ]
+        },
+        "to": {
+          "px": [
+            216,
+            1290
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Figueroa Street",
+        "entityId": "figueroa-gov",
         "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835 — how and when this stretch joined Figueroa Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
         "planned": "not yet researched",
@@ -19393,11 +18976,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           }
         ],
-        "maxLat": 34.0393,
+        "maxLat": 34.0372,
         "from": {
           "px": [
-            311,
-            850
+            216,
+            1290
           ]
         },
         "to": null
@@ -19812,6 +19395,70 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Flower Street",
         "entityId": "flower",
+        "namedAfter": "Supposedly the blossom-covered hills behind it, extended onto this stretch",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": null,
+            "name": "Flower Street",
+            "entityId": "flower",
+            "formInForce": "Flower Street",
+            "how": "extension",
+            "origin": "labeled “Flower Street” on the 1887 Bryan's Figueroa Street Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.79,
+        "categories": [
+          "plant",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "nature",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Flower Street",
+            "url": "https://lastreetnames.com/street/flower-street/"
+          },
+          {
+            "title": "J. H. Bryan's Figueroa Street Subdivision (M.R. 21-32, Aug. 6, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0367,
+        "maxLat": 34.0387,
+        "from": {
+          "px": [
+            576,
+            845
+          ]
+        },
+        "to": {
+          "px": [
+            617,
+            1288
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Flower Street",
+        "entityId": "flower",
         "namedAfter": "Supposedly the blossom-covered hills behind it — how and when this stretch joined Flower Street is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
@@ -19837,11 +19484,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "maxLat": 34.0387,
+        "maxLat": 34.0367,
         "from": {
           "px": [
-            576,
-            845
+            617,
+            1288
           ]
         },
         "to": null
@@ -23021,7 +22668,7 @@ const STREET_DATA = {
         "name": "Hope Street",
         "entityId": "hope",
         "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1869",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
@@ -23037,6 +22684,7 @@ const STREET_DATA = {
         "categories": [
           "idea",
           "person",
+          "disputed",
           "basis-inferred"
         ],
         "ancestors": [
@@ -23077,7 +22725,7 @@ const STREET_DATA = {
         "name": "Hope Street",
         "entityId": "hope",
         "namedAfter": "The virtue, extended onto this stretch",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1868",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
@@ -23105,6 +22753,7 @@ const STREET_DATA = {
         "categories": [
           "idea",
           "person",
+          "disputed",
           "basis-inferred"
         ],
         "ancestors": [
@@ -23170,6 +22819,7 @@ const STREET_DATA = {
         "categories": [
           "idea",
           "person",
+          "disputed",
           "basis-inferred"
         ],
         "ancestors": [
@@ -23215,7 +22865,7 @@ const STREET_DATA = {
         "name": "Hope Street",
         "entityId": "hope",
         "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
+        "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
@@ -23223,6 +22873,7 @@ const STREET_DATA = {
         "categories": [
           "idea",
           "person",
+          "disputed",
           "basis-inferred"
         ],
         "ancestors": [
@@ -23260,7 +22911,7 @@ const STREET_DATA = {
         "name": "Hope Street",
         "entityId": "hope",
         "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1885",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
@@ -23272,6 +22923,7 @@ const STREET_DATA = {
         "categories": [
           "idea",
           "person",
+          "disputed",
           "basis-inferred"
         ],
         "ancestors": [
@@ -23312,8 +22964,74 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Hope Street",
         "entityId": "hope",
+        "namedAfter": "The virtue, extended onto this stretch",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": null,
+            "name": "Hope Street",
+            "entityId": "hope",
+            "formInForce": "Hope Street",
+            "how": "extension",
+            "origin": "labeled “Hope Street” on the 1887 Bryan's Figueroa Street Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+          }
+        ],
+        "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
+        "attested": true,
+        "knownFraction": 0.79,
+        "categories": [
+          "idea",
+          "person",
+          "disputed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": true,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Hope Street",
+            "url": "https://lastreetnames.com/street/hope-street/"
+          },
+          {
+            "title": "J. H. Bryan's Figueroa Street Subdivision (M.R. 21-32, Aug. 6, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0362,
+        "maxLat": 34.0382,
+        "from": {
+          "px": [
+            848,
+            841
+          ]
+        },
+        "to": {
+          "px": [
+            1030,
+            1286
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Hope Street",
+        "entityId": "hope",
         "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Alexander_W._Hope",
+        "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
@@ -23321,6 +23039,7 @@ const STREET_DATA = {
         "categories": [
           "idea",
           "person",
+          "disputed",
           "basis-inferred"
         ],
         "ancestors": [
@@ -23338,11 +23057,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "maxLat": 34.0382,
+        "maxLat": 34.0362,
         "from": {
           "px": [
-            848,
-            841
+            1030,
+            1286
           ]
         },
         "to": null
@@ -24342,8 +24061,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/kohler-street/"
           },
           {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
         "minLat": 34.0377,
@@ -24356,28 +24075,16 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (original Kohler St)",
+        "label": "part of",
         "name": "Kohler Street",
         "entityId": "kohler",
-        "namedAfter": "{{Charles Kohler}} (1830–1887), German-born musician turned wine merchant who with John Frohling built California's largest wine house from 1856 and co-founded Anaheim in 1857, and who worked the Los Angeles vineyards this street crosses",
+        "namedAfter": "{{Charles Kohler}} (1830–1887), German-born musician turned wine merchant who with John Frohling built California's largest wine house from 1856 and co-founded Anaheim in 1857, and who worked the Los Angeles vineyards this street crosses — how and when this stretch joined Kohler Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Charles_Kohler",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
         },
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1887",
-            "until": null,
-            "name": "Kohler Street",
-            "entityId": "kohler",
-            "formInForce": "Kohler Street",
-            "how": "origin",
-            "origin": "labeled “Kohler Street”, “Kohler St” and “KOHLER STREET” on the 1887 W. J. Fisher's Subdivision, the 1894 Kohler Tract, the 1924 Tract No. 8657 and the 1927 Tract No. 9918 {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
-          }
-        ],
         "note": "Named in 1887, months after Kohler was felled by a stroke in San Francisco.",
         "attested": true,
         "absentAsOf": {
@@ -24414,6 +24121,10 @@ const STREET_DATA = {
           {
             "title": "Tract No. 9918 in the City of Los Angeles (July 29, 1927; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0141/TR0141-011.pdf"
+          },
+          {
+            "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
         "minLat": 34.0347,
@@ -24484,8 +24195,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0141/TR0141-011.pdf"
           },
           {
-            "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+            "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
         "maxLat": 34.0347,
@@ -24921,7 +24632,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": null,
         "built": {
           "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
@@ -24974,7 +24685,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": {
           "text": "1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
@@ -25102,7 +24813,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
@@ -25149,7 +24860,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": null,
         "built": {
           "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
@@ -25208,7 +24919,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
@@ -25259,7 +24970,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1882",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
@@ -25322,7 +25033,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself, extended onto this stretch",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
@@ -25393,7 +25104,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1881",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf"
@@ -25452,7 +25163,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself, extended onto this stretch",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1906",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
@@ -25523,7 +25234,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
@@ -25586,7 +25297,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself, extended onto this stretch",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
@@ -25657,7 +25368,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
@@ -25708,7 +25419,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself, extended onto this stretch",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1893",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
@@ -25779,7 +25490,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1883",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
@@ -25842,7 +25553,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself, extended onto this stretch",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
@@ -25913,7 +25624,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself, extended onto this stretch",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1893",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
@@ -25980,7 +25691,7 @@ const STREET_DATA = {
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
         "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
@@ -33428,8 +33139,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/santa-fe-avenue/"
           },
           {
-            "title": "Los Angeles Herald, “Street Names Changed — The Last Lot Rechristened by the City Council,” Sept. 3, 1896 (the fourteen changes made by Ordinance No. 3829, adopted Aug. 31)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18960903.1.3"
+            "title": "M. L. Wicks Subdivision of Kiefer Tract (M.R. 18-25, June 11, 1887)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-025.pdf"
           }
         ],
         "minLat": 34.0489,
@@ -33469,8 +33180,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/santa-fe-avenue/"
           },
           {
-            "title": "Los Angeles Herald, “Street Names Changed — The Last Lot Rechristened by the City Council,” Sept. 3, 1896 (the fourteen changes made by Ordinance No. 3829, adopted Aug. 31)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18960903.1.3"
+            "title": "M. L. Wicks Subdivision of Kiefer Tract (M.R. 18-25, June 11, 1887)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-025.pdf"
           }
         ],
         "minLat": 34.0395,
@@ -33553,8 +33264,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
           },
           {
-            "title": "Los Angeles Herald, “Street Names Changed — The Last Lot Rechristened by the City Council,” Sept. 3, 1896 (the fourteen changes made by Ordinance No. 3829, adopted Aug. 31)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18960903.1.3"
+            "title": "M. L. Wicks Subdivision of Kiefer Tract (M.R. 18-25, June 11, 1887)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-025.pdf"
           },
           {
             "title": "Wikipedia: Arts District, Los Angeles",
@@ -33600,8 +33311,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/santa-fe-avenue/"
           },
           {
-            "title": "Los Angeles Herald, “Street Names Changed — The Last Lot Rechristened by the City Council,” Sept. 3, 1896 (the fourteen changes made by Ordinance No. 3829, adopted Aug. 31)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18960903.1.3"
+            "title": "M. L. Wicks Subdivision of Kiefer Tract (M.R. 18-25, June 11, 1887)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-025.pdf"
           }
         ],
         "maxLat": 34.0367,
@@ -36389,8 +36100,290 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "maxLng": -118.2665,
+        "maxLng": -118.271,
         "from": null,
+        "to": {
+          "px": [
+            530,
+            319
+          ]
+        }
+      },
+      {
+        "label": "part of (16th St)",
+        "name": "Venice Boulevard",
+        "entityId": "venice-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1917",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0034/TR0034-004.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1917",
+            "until": "?",
+            "name": "16th Street",
+            "entityId": "sixteenth-street",
+            "formInForce": "16th Street",
+            "origin": "labeled “16th STREET” on the 1917 Tract No. 2713 {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0034/TR0034-004.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Venice Boulevard",
+            "entityId": "venice-boulevard",
+            "formInForce": "Venice Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "number"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Tract No. 2713 (Aug. 14, 1917; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0034/TR0034-004.pdf"
+          },
+          {
+            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          },
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.271,
+        "maxLng": -118.2705,
+        "from": {
+          "px": [
+            530,
+            319
+          ]
+        },
+        "to": {
+          "px": [
+            91,
+            1199
+          ]
+        }
+      },
+      {
+        "label": "part of (16th St)",
+        "name": "Venice Boulevard",
+        "entityId": "venice-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": "?",
+            "name": "Pine Street",
+            "entityId": "pine-street-venice",
+            "formInForce": "Pine Street",
+            "how": "origin",
+            "origin": "labeled “Pine Street.” on the 1887 Bryan's Figueroa Street Subdivision {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+          },
+          {
+            "from": "by 1917",
+            "until": "?",
+            "name": "16th Street",
+            "entityId": "sixteenth-street",
+            "formInForce": "16th Street",
+            "how": "renaming",
+            "origin": "labeled “16th STREET” on the 1917 Tract No. 2713 {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0034/TR0034-004.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Venice Boulevard",
+            "entityId": "venice-boulevard",
+            "formInForce": "Venice Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "number"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "J. H. Bryan's Figueroa Street Subdivision (M.R. 21-32, Aug. 6, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+          },
+          {
+            "title": "Tract No. 2713 (Aug. 14, 1917; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0034/TR0034-004.pdf"
+          },
+          {
+            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          },
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.2705,
+        "maxLng": -118.2698,
+        "from": {
+          "px": [
+            91,
+            1199
+          ]
+        },
+        "to": {
+          "px": [
+            1175,
+            272
+          ]
+        }
+      },
+      {
+        "label": "part of (Pine St)",
+        "name": "Venice Boulevard",
+        "entityId": "venice-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": "?",
+            "name": "Pine Street",
+            "entityId": "pine-street-venice",
+            "formInForce": "Pine Street",
+            "how": "origin",
+            "origin": "labeled “Pine Street.” on the 1887 Bryan's Figueroa Street Subdivision {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Venice Boulevard",
+            "entityId": "venice-boulevard",
+            "formInForce": "Venice Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "J. H. Bryan's Figueroa Street Subdivision (M.R. 21-32, Aug. 6, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+          }
+        ],
+        "minLng": -118.2698,
+        "maxLng": -118.2677,
+        "from": {
+          "px": [
+            1175,
+            272
+          ]
+        },
+        "to": {
+          "px": [
+            1003,
+            1184
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Venice Boulevard",
+        "entityId": "venice-boulevard",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLng": -118.2677,
+        "maxLng": -118.2665,
+        "from": {
+          "px": [
+            1003,
+            1184
+          ]
+        },
         "to": {
           "px": [
             241,
@@ -36416,7 +36409,6 @@ const STREET_DATA = {
             "name": "Pine Street",
             "entityId": "pine-street-venice",
             "formInForce": "Pine Street",
-            "how": "origin",
             "origin": "labeled “PINE STREET” on the 1915 Norris Plan and the 1915 Vineyard Subdivision {{(source)}} — no namesake documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
@@ -36448,6 +36440,10 @@ const STREET_DATA = {
           {
             "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "J. H. Bryan's Figueroa Street Subdivision (M.R. 21-32, Aug. 6, 1887)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
           }
         ],
         "minLng": -118.2665,
@@ -36534,6 +36530,10 @@ const STREET_DATA = {
           {
             "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "J. H. Bryan's Figueroa Street Subdivision (M.R. 21-32, Aug. 6, 1887)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
           },
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",

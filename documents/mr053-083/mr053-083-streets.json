@@ -1,0 +1,320 @@
+{
+  "document": "mr053-083",
+  "image": "mr053-083-100dpi.png",
+  "imageSize": [1114, 1689],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr053-083-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [18, 364],
+    [57, 1000],
+    [1259, 968],
+    [784, 370]
+  ],
+  "coverageLl": [
+    [34.040654, -118.233468],
+    [34.038871, -118.233099],
+    [34.039336, -118.229044],
+    [34.040876, -118.230874]
+  ],
+  "streets": [
+    {
+      "name": "Mateo Street",
+      "runs": [
+        {
+          "px": [
+            [154, 365],
+            [156, 447],
+            [155, 464],
+            [155, 493],
+            [156, 556],
+            [156, 608],
+            [155, 681],
+            [152, 899],
+            [152, 997]
+          ],
+          "ll": [
+            [34.040693, -118.233009],
+            [34.040461, -118.232972],
+            [34.040416, -118.232966],
+            [34.040332, -118.232955],
+            [34.040154, -118.232929],
+            [34.040007, -118.232912],
+            [34.0398, -118.232887],
+            [34.039186, -118.232814],
+            [34.038908, -118.232778]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [151, 1226],
+          "ll": [34.038261, -118.232698],
+          "insideCoverage": false
+        },
+        {
+          "name": "Palmetto Street",
+          "px": [156, 556],
+          "ll": [34.040154, -118.232929],
+          "insideCoverage": true
+        },
+        {
+          "name": "Willow Street",
+          "px": [152, 899],
+          "ll": [34.039186, -118.232814],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Palmetto Street",
+      "runs": [
+        {
+          "px": [
+            [156, 556],
+            [176, 557],
+            [268, 558],
+            [328, 559],
+            [757, 566],
+            [797, 567]
+          ],
+          "ll": [
+            [34.040154, -118.232929],
+            [34.040159, -118.232863],
+            [34.040184, -118.232551],
+            [34.0402, -118.232347],
+            [34.040314, -118.230892],
+            [34.040325, -118.230756]
+          ]
+        },
+        {
+          "px": [
+            [24, 465],
+            [126, 463],
+            [155, 464]
+          ],
+          "ll": [
+            [34.040372, -118.23341],
+            [34.040408, -118.233067],
+            [34.040416, -118.232966]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Mateo Street",
+          "px": [156, 556],
+          "ll": [34.040154, -118.232929],
+          "insideCoverage": true
+        },
+        {
+          "name": "Molino Street",
+          "px": [-58, 466],
+          "ll": [34.040342, -118.233688],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [797, 567],
+          "ll": [34.040325, -118.230756],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Santa Fe Avenue",
+      "runs": [
+        {
+          "px": [
+            [797, 980],
+            [798, 909],
+            [797, 737],
+            [800, 672],
+            [801, 646],
+            [802, 617],
+            [800, 593],
+            [797, 567],
+            [791, 535],
+            [783, 506],
+            [771, 482],
+            [755, 458],
+            [739, 437],
+            [733, 428],
+            [699, 386],
+            [685, 369]
+          ],
+          "ll": [
+            [34.039157, -118.230603],
+            [34.039359, -118.230626],
+            [34.039843, -118.230692],
+            [34.040028, -118.230706],
+            [34.040101, -118.230714],
+            [34.040185, -118.230722],
+            [34.040252, -118.230738],
+            [34.040325, -118.230756],
+            [34.040412, -118.230789],
+            [34.04049, -118.230828],
+            [34.040556, -118.230877],
+            [34.040618, -118.23094],
+            [34.040674, -118.231],
+            [34.040695, -118.231026],
+            [34.040804, -118.231155],
+            [34.040847, -118.231209]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Place",
+          "px": [590, 188],
+          "ll": [34.04133, -118.231597],
+          "insideCoverage": false
+        },
+        {
+          "name": "Palmetto Street",
+          "px": [797, 567],
+          "ll": [34.040325, -118.230756],
+          "insideCoverage": true
+        },
+        {
+          "name": "Willow Street",
+          "px": [798, 909],
+          "ll": [34.039359, -118.230626],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Willow Street",
+      "runs": [
+        {
+          "px": [
+            [152, 899],
+            [173, 899],
+            [323, 902],
+            [766, 908],
+            [798, 909]
+          ],
+          "ll": [
+            [34.039186, -118.232814],
+            [34.039191, -118.232745],
+            [34.039231, -118.232234],
+            [34.03935, -118.230732],
+            [34.039359, -118.230626]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Mateo Street",
+          "px": [152, 899],
+          "ll": [34.039186, -118.232814],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [798, 909],
+          "ll": [34.039359, -118.230626],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Mateo Street",
+      "continuesInto": [
+        "4th Place"
+      ],
+      "candidates": [
+        {
+          "id": "spruce",
+          "display": "Spruce Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mateo Street by another sheet"
+          ],
+          "ink": [
+            "Spruce St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        },
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Place, which Mateo Street runs straight into"
+          ],
+          "ink": [
+            "THIRD"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Palmetto Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Santa Fe Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "tulip",
+          "display": "Tulip Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santa Fe Avenue by another sheet"
+          ],
+          "ink": [
+            "Tulip St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        },
+        {
+          "id": "santa-fe-ave",
+          "display": "Santa Fe Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Willow Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "willow",
+          "display": "Willow Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Willow Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "Willow St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    }
+  ]
+}
