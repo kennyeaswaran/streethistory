@@ -112,8 +112,19 @@ const isGrey = c => String(c) === GREY;
     }
     return { blue, grey };
   });
-  ok("most stretches are grey", tally.grey > tally.blue * 2, JSON.stringify(tally));
-  ok("…but a real number are blue", tally.blue > 20, JSON.stringify(tally));
+  // ★ REWRITTEN 2026-09-15. This used to assert `grey > blue * 2` — "most
+  // stretches are grey" — which was true when the corpus was thin and stopped
+  // being true as the documents went in: attestation passed half in 2026 and
+  // the assertion started failing on success. A test that fails because the
+  // project got better is measuring the wrong thing. What the scheme actually
+  // claims is that it DISCRIMINATES: a stretch is painted by whether a document
+  // speaks about it, so neither colour should swallow the map. That claim does
+  // not rot as the corpus grows.
+  const share = c => c / (tally.blue + tally.grey);
+  ok("the colour scheme discriminates rather than painting one colour",
+     share(tally.blue) > 0.15 && share(tally.grey) > 0.15, JSON.stringify(tally));
+  ok("…and both populations are large enough to read",
+     tally.blue > 20 && tally.grey > 20, JSON.stringify(tally));
 
   console.log("the entity's own note reaches the popup");
   const pop = await page.evaluate(() => {
@@ -155,16 +166,99 @@ const isGrey = c => String(c) === GREY;
     }));
     return { facets, rows };
   });
-  ok("the Highlight list is grouped into the three facets",
-     tree.facets.length === 3, JSON.stringify(tree.facets));
+  ok("the Highlight list is grouped into facets",
+     tree.facets.length === 2, JSON.stringify(tree.facets));
   ok("…and no facet row is itself selectable",
-     !tree.rows.some(r => ["referent", "circumstance", "status"].includes(r.id)));
+     !tree.rows.some(r => ["referent", "status"].includes(r.id)));
+  // Six top-level referents is the number a reader can hold at a glance. If it
+  // grows, it should grow on purpose.
+  const tops = await page.evaluate(() =>
+    CATEGORIES.filter(c => c.parent === "referent").map(c => c.id).sort());
+  ok("there are six top-level referents",
+     tops.length === 6 && tops.join() === "abstract,company,nature,object,person,place",
+     JSON.stringify(tops));
   ok("children are indented under their parent",
      tree.rows.some(r => r.id === "tree" && r.indent > 0) &&
      tree.rows.some(r => r.id === "nature" && r.indent === 0));
   ok("a parent's count includes its descendants",
      (tree.rows.find(r => r.id === "nature") || {}).count >=
      (tree.rows.find(r => r.id === "tree") || {}).count);
+
+  // Collapsed on arrival: thirty-two nodes is a scroll, the dozen top-level
+  // ones fit. A closed parent hides nothing, because its count already
+  // includes everything under it.
+  const collapse = await page.evaluate(() => {
+    const vis = id => {
+      const i = [...document.querySelectorAll("#filters input")].find(x => x.value === id);
+      return !!(i && i.offsetParent !== null);
+    };
+    const before = { nature: vis("nature"), tree: vis("tree") };
+    const lab = [...document.querySelectorAll("#filters label")]
+      .find(l => l.querySelector("input").value === "nature");
+    lab.querySelector(".twisty").click();
+    return { before, afterTree: vis("tree"),
+             twisty: lab.querySelector(".twisty").getAttribute("aria-expanded") };
+  });
+  ok("top-level nodes are visible on arrival", collapse.before.nature);
+  ok("…and their children are not", !collapse.before.tree);
+  ok("the twisty opens a node", collapse.afterTree && collapse.twisty === "true");
+
+  // §3.1 on the map. The reason the file writes candid guesses into
+  // `namedAfter` at all is that the grade travels with them, so both the
+  // filter node and the popup badge are load-bearing, not decoration.
+  const ev = await page.evaluate(() => {
+    const ids = [...document.querySelectorAll("#filters input")].map(i => i.value);
+    const kidsOf = p => CATEGORIES.filter(c => c.parent === p).map(c => c.id);
+    return { ids, basisKids: kidsOf("basis"), noneKids: kidsOf("basis-none"),
+             personOrder: CATEGORIES.filter(c => c.parent === "person" && c.only !== "legacy")
+                            .map(c => c.id) };
+  });
+  ok("the basis node is on the map with all eight values",
+     ev.basisKids.length === 8 && ev.ids.includes("basis-guess"), JSON.stringify(ev.basisKids));
+  ok("…and the group itself cannot be selected, since it would match everything",
+     !ev.ids.includes("basis"), JSON.stringify(ev.ids.filter(i => i.startsWith("basis"))));
+  ok("…and searched hangs under the one grade it means anything for",
+     ev.noneKids.length === 3 && ev.noneKids.every(k => k.startsWith("searched-")),
+     JSON.stringify(ev.noneKids));
+  ok("the legacy research tags are gone from the generated map",
+     !ev.ids.includes("unknown") && !ev.ids.includes("unresearched"), JSON.stringify(ev.ids));
+  ok("a street the base map alone knows has its own row", ev.ids.includes("stub"));
+  ok("the person subtypes are in their authored order, not sorted by count",
+     ev.personOrder.join() === "landowner,family,politician,mythological,people,foreign,alive",
+     JSON.stringify(ev.personOrder));
+
+  const badge = await page.evaluate(() => {
+    for (const [, st] of streets) {
+      if (!st.entry || !st.entry.namedAfter) continue;
+      if (!(st.entry.categories || []).some(c => c.startsWith("basis-"))) continue;
+      const h = popupHtml(st);
+      if (/class="basis /.test(h)) return { name: st.name, ok: true };
+    }
+    return { ok: false };
+  });
+  ok("the popup prints the grade beside the namesake", badge.ok, JSON.stringify(badge));
+
+  // Counts are NAME ENTITIES, not segments — a street drawn in eleven pieces is
+  // one name. Recompute independently and compare.
+  const counted = await page.evaluate(() => {
+    const ids = new Set();
+    for (const [name, v] of Object.entries(STREET_DATA))
+      for (const e of (v.segments || v.entries || []))
+        if ((e.categories || []).includes("number"))
+          ids.add(e.entityId || ("~stub:" + (e.label || e.name || name)));
+    let segs = 0;
+    for (const v of Object.values(STREET_DATA))
+      for (const e of (v.segments || v.entries || []))
+        if ((e.categories || []).includes("number")) segs++;
+    const shown = [...document.querySelectorAll("#filters label")]
+      .find(l => l.querySelector("input").value === "number")
+      .querySelector(".fcount").textContent;
+    return { entities: ids.size, segments: segs, shown: parseInt(shown, 10) };
+  });
+  ok("the count beside a category is name entities, not segments",
+     counted.shown === counted.entities, JSON.stringify(counted));
+  ok("…which is the smaller, more useful number here",
+     counted.entities < counted.segments, JSON.stringify(counted));
 
   // Take a real entry tagged with a CHILD node, and check the three cases that
   // matter: it matches itself, it matches its parent, it does not match a

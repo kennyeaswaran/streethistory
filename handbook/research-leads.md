@@ -2276,3 +2276,41 @@ the first (a mixed tract cannot support a theme argument). Needs reconciling.
 **A leftover lead.** `court-house-street`'s internal note ends mid-sentence on
 "★ THE ONE REAL LINK: Step…" — almost certainly Stephen H. Mott as deputy county
 clerk, which would be a live lead. Worth finishing the sentence.
+
+## 2026-09-15 — Cleveland Street: what Kines actually says
+
+Caught by Kenny while the category tree was being reorganized: I described
+Cleveland Street in ROADMAP §7 as named for a president, which the file does not
+say. Then I wrote a lead here claiming nobody had ever considered Cleveland,
+Ohio — which was also wrong. **I have now read the source** (checked 2026-09-15,
+lastreetnames.com/street/cleveland-street/), and it settles more than either of
+us assumed.
+
+Kines opens **"Most likely named for Grover Cleveland"** and closes by marking
+the attribution as his own: **"I think they chose to honor the sitting POTUS
+with this one."** No documentary evidence is offered. What he offers instead is
+circumstantial, and it is decent:
+
+- the Beaudrys owned the tract and named it January 1886, ten months after
+  Cleveland took office;
+- **they were not from Cleveland, Ohio** — so he DID consider the city and
+  dismissed it, which my earlier note here wrongly said nobody had;
+- they had used Americana themes on other streets in the same tract;
+- Prudent Beaudry was a Democrat, as Cleveland was.
+
+**So there is a source, and Kenny's conditional does not fire**: this is not a
+case for `basis: "none"` with no namesake. It is a case for `guess` — a specific
+candidate chosen over the alternatives on a reason, with nothing documentary
+anchoring it to this street — with the hedge kept in `namedAfter` and Kines
+cited. If the Americana names on that tract turn out to number three or more, it
+may be `pattern` instead, which is worth checking when the entity is built,
+since the theme is the strongest part of his argument.
+
+Still open: **which street?** The legacy note records a positional guess tying
+this to the Ord Survey's "Calle de las Adobes" — sheet 73's northernmost platted
+street — against Kines dating the name to a fresh 1886 tract with no 1849
+predecessor. If those are two streets, they are two entities.
+
+Cleveland Street is legacy-only: it lives in `streets-data.js`, which has no
+`basis` field, so none of this can be recorded until it is migrated into
+`names.js`. This note is what should be read when it is.

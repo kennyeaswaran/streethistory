@@ -41,6 +41,9 @@ const SEARCHED_VALUES = new Set(["none", "partial", "extensive"]);
 const { CATEGORIES, CATEGORY_BY_ID } = require(path.join(__dirname, "site-config.js"));
 const CATEGORY_IDS = new Set(CATEGORIES.map(c => c.id));
 
+const approvedCount = { note: 0, namedAfter: 0 };
+const driftCount = { note: 0, namedAfter: 0 };
+
 let errors = 0;
 const err = (...m) => { errors++; console.error("ERROR:", ...m); };
 const warn = (...m) => console.warn("warn: ", ...m);
@@ -86,12 +89,22 @@ for (const [id, e] of Object.entries(NAME_ENTITIES)) {
   if (typeof e.note === "string" && /\b(Kenny|TODO|check this|research-leads|2026-\d\d-\d\d)\b/.test(e.note))
     warn(id, "note reads like a working note and `note` is shown to readers — " +
              "move it to internalNote");
-  if (!Array.isArray(e.categories) || !e.categories.length) err(id, "no categories");
+  // CATEGORIES SAY WHAT THE NAME POINTS AT. When we do not know what it points
+  // at, the honest entry is nothing at all — tagging `place` on a street whose
+  // namesake is deliberately withheld would assert more than `namedAfter: null`
+  // does. So an empty list is legal exactly when there is no namesake.
+  if (!Array.isArray(e.categories)) err(id, "categories must be an array");
+  else if (!e.categories.length && e.namedAfter !== null)
+    err(id, "no categories — an empty list is only legal where namedAfter is null");
   else for (const c of e.categories) {
     if (!CATEGORY_IDS.has(c))
       err(id, `category "${c}" is not in CATEGORIES (site-config.js) — the map cannot label or highlight it`);
-    else if (CATEGORY_BY_ID[c].facet)
-      err(id, `category "${c}" is a facet heading, not a category — tag a node under it`);
+    else if (CATEGORY_BY_ID[c].facet || CATEGORY_BY_ID[c].heading)
+      err(id, `category "${c}" is a heading, not a category — tag a node under it`);
+    else if (CATEGORY_BY_ID[c].derived)
+      err(id, `category "${c}" is DERIVED by generate.js, not authored — it reads off ` +
+              `${c === "unknown" ? "namedAfter" : c === "unresearched" ? "searched" : "the timeline"}` +
+              `, so writing it here can only ever disagree with the field it restates`);
   }
   if (e.namedAfter) {
     const open = (e.namedAfter.match(/\{\{/g) || []).length, close = (e.namedAfter.match(/\}\}/g) || []).length;
@@ -104,8 +117,24 @@ for (const [id, e] of Object.entries(NAME_ENTITIES)) {
     if (aliasOwner[a]) err(id, `alias "${a}" already claimed by ${aliasOwner[a]}`);
     aliasOwner[a] = id;
   }
-  if (e.namedAfter === null && !e.categories.some(c => ["unknown", "unresearched"].includes(c)))
-    warn(id, "namedAfter is null — expected 'unknown' (researched, not found) or 'unresearched'");
+
+  // APPROVED TEXT (§3.2) — the last version of a public field a human wrote.
+  // Absent means never approved; an empty string means a human approved the
+  // absence of text, which is a different thing. Nothing is warned about a
+  // field that has never been approved: on the day this landed that was all
+  // 143 of them, and a check that always complains is a check nobody reads.
+  for (const f of ["note", "namedAfter"]) {
+    const ap = e[f + "Approved"], on = e[f + "ApprovedOn"];
+    if (ap !== undefined && typeof ap !== "string")
+      err(id, `${f}Approved must be a string (use "" for approved-as-empty)`);
+    if (on !== undefined && !/^\d{4}-\d{2}-\d{2}$/.test(on))
+      err(id, `${f}ApprovedOn must be YYYY-MM-DD, got: ${on}`);
+    if (on !== undefined && ap === undefined)
+      err(id, `${f}ApprovedOn without ${f}Approved — a date for an approval that is not recorded`);
+    if (ap !== undefined && on === undefined)
+      warn(id, `${f}Approved without ${f}ApprovedOn — the date is what makes drift legible`);
+    if (ap !== undefined) { approvedCount[f]++; if ((e[f] ?? "") !== ap) driftCount[f]++; }
+  }
 
   // BASIS — how strongly the identification is grounded (§3.1).
   //
@@ -121,6 +150,34 @@ for (const [id, e] of Object.entries(NAME_ENTITIES)) {
     // `none` means no candidate. Anything in namedAfter contradicts it.
     if (e.basis === "none" && e.namedAfter !== null)
       err(id, "basis is \"none\" but namedAfter is populated — one of the two is wrong");
+    // `eponymous` means the first document carrying the name carries the
+    // person — and that person is either the one who owned or subdivided the
+    // ground or a member of their household. If neither is tagged, the grade is
+    // claiming something the categories do not say, and a reader filtering for
+    // "streets named after the man who sold the lots" would miss it. The
+    // categories are NOT a restatement of the grade: both also occur under
+    // `attested`, where a secondary source tells us the same thing.
+    if (e.basis === "eponymous" &&
+        !["landowner", "family"].some(c => (e.categories || []).includes(c)))
+      err(id, 'basis is "eponymous" but neither "landowner" nor "family" is tagged — ' +
+              "say which, since that is what the plat attests");
+    // A GRADE OTHER THAN `none` MEANS WE HAVE AN ANSWER, so the answer should be
+    // written down. The grade is published beside it, so a candid guess in
+    // `namedAfter` is not overclaiming — withholding it only hides the reading
+    // from the map, where `basis-guess` would have qualified it for the reader.
+    if (e.basis !== "none") {
+      if (e.namedAfter === null)
+        warn(id, `basis is "${e.basis}" but namedAfter is null — the grade says we have a ` +
+                 "reading, so write it; the published grade is what qualifies it");
+      if (!(e.categories || []).length)
+        warn(id, `basis is "${e.basis}" but no category says what the name points at`);
+    } else if ((e.categories || []).length) {
+      // The other half of the rule: `none` means we have no answer, so nothing
+      // should be claiming what the name points at either. (`namedAfter` with
+      // `none` is already an error above.)
+      warn(id, 'basis is "none" but the categories claim what the name points at — ' +
+               "one of the two is wrong");
+    }
     // `lexical` IS the concept link; without one the value says nothing.
     if (e.basis === "lexical" && e.namedAfter === null)
       warn(id, "basis is \"lexical\" but namedAfter is null — the whole content of this " +
@@ -659,3 +716,11 @@ if (pending.length)
 if (errors) { console.error(`\n${errors} error(s).`); process.exit(1); }
 console.log(`Model checks pass: ${Object.keys(NAME_ENTITIES).length} entities, ` +
   `${DOCUMENTS.length} documents, ${DOCUMENTS.reduce((n, d) => n + (d.rows || []).length, 0)} rows.`);
+// A count rather than a warning (§3.2): this is a standing state of the corpus,
+// not a fault in it, and it only means anything as a trend.
+{
+  const n = Object.keys(NAME_ENTITIES).length;
+  const line = f => `${f}: ${approvedCount[f]}/${n} approved` +
+    (driftCount[f] ? `, ${driftCount[f]} changed since` : "");
+  console.log(`Public prose approved by a human — ${line("namedAfter")}; ${line("note")}.`);
+}

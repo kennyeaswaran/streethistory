@@ -74,12 +74,77 @@ standing work.
   identification resting on map *alignment* rather than a label or lot match,
   which earns a short "(identified by map alignment)" in the source title.
 - **Every year and name claim is justified by a linked source.** Uncertainty is
-  stated, never papered over: "unverified", "no namesake documented", "not yet
-  researched" are all legitimate values, and a null `namedAfter` with
-  `categories: ["unknown"]` is an honest answer.
+  stated, never papered over — but it is stated in the `basis` field now, not in
+  the prose and not by leaving the answer out. See below.
 - **`note` is public; `internalNote` is not** (MODEL-SPEC §3). Working notes,
   dead ends and "checked Kines on this date, nothing there" go in
-  `internalNote`, where they save the next person the same search.
+  `internalNote`, where they save the next person the same search. ⚠ `note` is
+  not the only public prose — **`namedAfter` is read far more often**, since the
+  map prints it as the street's origin line. Both are writing for a reader.
+- ⚠ **The " — " in `namedAfter` is a separator.** `generate.js` keeps only the
+  text before the first em-dash-with-spaces when a stretch did not originate
+  under the name, so a hedge written after the dash will not reach those
+  popups. Put the namesake first and the qualifier after; the `basis` badge is
+  what carries the hedge where the tail is dropped.
+
+## Grading what you found: `basis`, and the rule that goes with it
+
+Every entity carries a **`basis`** (MODEL-SPEC §3.1) saying how strongly the
+identification is grounded: `intrinsic`, `attested`, `eponymous`, `pattern`,
+`inferred`, `lexical`, `guess`, `none`. It grades the **warrant, not the
+plausibility** — a very likely guess is still a guess — and it grades **what you
+came back with, not what you pursued**: a genealogical hunt that found nobody
+scores `none`, and how hard you looked goes in `searched`.
+
+**The grade is published.** It rides beside the namesake in the map popup and it
+is a filter in the Highlight list. That changes what you should write down:
+
+> **A name should have a `basis` other than `"none"` if and only if it has a
+> `namedAfter` and at least one category** — barring rare, deliberate
+> exceptions. Both checkers enforce the "only if" half as an error and warn on
+> the rest.
+
+The reason is not tidiness. Before the grade was visible, withholding a reading
+from `namedAfter` looked like caution; now it just hides the reading from the
+map, where `a guess` would have qualified it for the reader in three words.
+Sixteen entities were filled in on that argument in September 2026 — Wall,
+Regent, Broadway, Yale, Banning, Nevada and the rest — every one of which had
+its reading sitting in the prose already. If you have a candidate, write it in
+`namedAfter`, hedge it in words, and let the grade carry the rest.
+
+The rare exception runs the other way: an entity whose namesake genuinely has no
+candidate and no kind (`arnold`, `bixel`) is `basis: "none"` with `namedAfter:
+null` and **no categories at all**. Tagging `place` on a street whose namesake is
+unknown would assert more than the file knows. Silence is the honest entry.
+
+`parker-drive` is the shape of a deliberate exception in the other direction:
+`basis: "eponymous"` and `categories: ["landowner"]`, because the plat is titled
+"J. B. Parker Subdivision" — the ROLE is attested even though the man is
+untraced. An `eponymous` entity must say `landowner` or `family`; that is what
+the plat attests, and check-model.js errors if neither is there.
+
+## Whose sentences are these: approved text
+
+`note` and `namedAfter` reach readers, and most of their prose now starts life
+as an agent's draft. `namedAfterApproved` / `noteApproved`, with their `…On`
+dates, record **the last version a person wrote** (MODEL-SPEC §3.2). They start
+absent, which means "never approved" — true of nearly everything.
+
+In `names-tool.html` each of the two fields carries a panel underneath: the
+approved text, an **Approve this text** button, and a word-level diff as soon as
+the live text drifts from it. Approving is a person's act and takes one click;
+the date comes along automatically.
+
+**If you are an agent: write `note` and `namedAfter` freely, and never write the
+approved fields.** They are the only record of which published sentences are
+Kenny's, and an agent that fills them in has destroyed that record while
+appearing to be helpful. Absent is the honest value. The same rule is at the top
+of `names.js`.
+
+A practical habit that follows: when you draft public prose, say so in
+`internalNote` — who drafted it, on what date, and on what argument. The
+approved fields tell a reader *that* a sentence is unreviewed; the internal note
+tells them what to check when they review it.
 
 ## Two conventions for particular classes of name
 

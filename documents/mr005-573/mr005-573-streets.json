@@ -1,0 +1,538 @@
+{
+  "document": "mr005-573",
+  "image": "mr005-573-100dpi.png",
+  "imageSize": [1115, 1677],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr005-573-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [73, 481],
+    [63, 1315],
+    [1126, 1218],
+    [1117, 397]
+  ],
+  "coverageLl": [
+    [34.040654, -118.263366],
+    [34.038847, -118.265144],
+    [34.037197, -118.262153],
+    [34.039008, -118.260453]
+  ],
+  "streets": [
+    {
+      "name": "12th Street",
+      "runs": [
+        {
+          "px": [
+            [71, 615],
+            [162, 613],
+            [206, 613],
+            [217, 612],
+            [235, 613],
+            [412, 609],
+            [534, 608],
+            [575, 607],
+            [612, 606],
+            [640, 606],
+            [813, 603],
+            [976, 601],
+            [1018, 600],
+            [1047, 600],
+            [1119, 599]
+          ],
+          "ll": [
+            [34.040365, -118.263651],
+            [34.040208, -118.263409],
+            [34.040134, -118.263294],
+            [34.040114, -118.263263],
+            [34.040081, -118.263217],
+            [34.03978, -118.262748],
+            [34.039569, -118.262423],
+            [34.039499, -118.262315],
+            [34.039436, -118.262217],
+            [34.039386, -118.262141],
+            [34.03909, -118.261683],
+            [34.038809, -118.261251],
+            [34.038737, -118.261139],
+            [34.038686, -118.261061],
+            [34.038563, -118.26087]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Broadway",
+          "px": [1345, 595],
+          "ll": [34.038175, -118.260272],
+          "insideCoverage": false
+        },
+        {
+          "name": "Grand Avenue",
+          "px": [206, 613],
+          "ll": [34.040134, -118.263294],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hill Street",
+          "px": [1018, 600],
+          "ll": [34.038737, -118.261139],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olive Street",
+          "px": [612, 606],
+          "ll": [34.039436, -118.262217],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Grand Avenue",
+      "runs": [
+        {
+          "px": [
+            [204, 470],
+            [204, 511],
+            [205, 587],
+            [205, 589],
+            [206, 613],
+            [206, 639],
+            [206, 645],
+            [208, 780],
+            [211, 963],
+            [220, 1063],
+            [234, 1113],
+            [243, 1148],
+            [253, 1185],
+            [277, 1295]
+          ],
+          "ll": [
+            [34.040448, -118.263001],
+            [34.040358, -118.263085],
+            [34.04019, -118.263242],
+            [34.040187, -118.263245],
+            [34.040134, -118.263294],
+            [34.040074, -118.263349],
+            [34.040062, -118.263361],
+            [34.039763, -118.263639],
+            [34.039358, -118.264016],
+            [34.039123, -118.264203],
+            [34.038989, -118.264272],
+            [34.038897, -118.264323],
+            [34.0388, -118.264372],
+            [34.038515, -118.264541]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "12th Street",
+          "px": [206, 613],
+          "ll": [34.040134, -118.263294],
+          "insideCoverage": true
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [243, 1148],
+          "ll": [34.038897, -118.264323],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hill Street",
+      "runs": [
+        {
+          "px": [
+            [1015, 405],
+            [1016, 465],
+            [1017, 512],
+            [1018, 578],
+            [1018, 600],
+            [1018, 625],
+            [1020, 776],
+            [1022, 898],
+            [1025, 1059],
+            [1025, 1090],
+            [1027, 1112],
+            [1034, 1209],
+            [1035, 1226]
+          ],
+          "ll": [
+            [34.039169, -118.260737],
+            [34.039037, -118.26086],
+            [34.038933, -118.260957],
+            [34.038787, -118.261093],
+            [34.038737, -118.261139],
+            [34.038681, -118.261191],
+            [34.038349, -118.261501],
+            [34.038079, -118.261753],
+            [34.037723, -118.262085],
+            [34.037654, -118.262149],
+            [34.037602, -118.262192],
+            [34.037378, -118.262377],
+            [34.037338, -118.262409]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "12th Street",
+          "px": [1018, 600],
+          "ll": [34.038737, -118.261139],
+          "insideCoverage": true
+        },
+        {
+          "name": "14th Place",
+          "px": [1052, 1461],
+          "ll": [34.036796, -118.262857],
+          "insideCoverage": false
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [1025, 1090],
+          "ll": [34.037654, -118.262149],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Margo Street",
+      "runs": [
+        {
+          "px": [
+            [424, 1136],
+            [428, 1168],
+            [437, 1281]
+          ],
+          "ll": [
+            [34.038607, -118.263821],
+            [34.03853, -118.263877],
+            [34.038267, -118.264093]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Pico Boulevard",
+          "px": [424, 1136],
+          "ll": [34.038607, -118.263821],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Olive Street",
+      "runs": [
+        {
+          "px": [
+            [741, 1253],
+            [732, 1161],
+            [731, 1151],
+            [730, 1114]
+          ],
+          "ll": [
+            [34.037795, -118.263237],
+            [34.038011, -118.263065],
+            [34.038036, -118.263047],
+            [34.038119, -118.262972]
+          ]
+        },
+        {
+          "px": [
+            [675, 1259],
+            [657, 1220],
+            [651, 1206],
+            [645, 1189],
+            [640, 1177],
+            [633, 1161],
+            [619, 1124],
+            [618, 1086],
+            [618, 1073],
+            [612, 664],
+            [612, 633],
+            [612, 606],
+            [612, 585],
+            [613, 496],
+            [611, 438]
+          ],
+          "ll": [
+            [34.037898, -118.263423],
+            [34.038013, -118.263386],
+            [34.038055, -118.263372],
+            [34.038103, -118.263355],
+            [34.038138, -118.263342],
+            [34.038185, -118.263325],
+            [34.038289, -118.263284],
+            [34.038374, -118.263207],
+            [34.038405, -118.263179],
+            [34.039308, -118.262336],
+            [34.039377, -118.262272],
+            [34.039436, -118.262217],
+            [34.039483, -118.262171],
+            [34.039675, -118.261983],
+            [34.039806, -118.261864]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "12th Street",
+          "px": [612, 606],
+          "ll": [34.039436, -118.262217],
+          "insideCoverage": true
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [619, 1124],
+          "ll": [34.038289, -118.263284],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Pico Boulevard",
+      "runs": [
+        {
+          "px": [
+            [65, 1181],
+            [202, 1157],
+            [243, 1148],
+            [282, 1145],
+            [424, 1136],
+            [564, 1127],
+            [581, 1127],
+            [619, 1124],
+            [664, 1119],
+            [679, 1118],
+            [730, 1114],
+            [815, 1107],
+            [984, 1093],
+            [1025, 1090],
+            [1054, 1087],
+            [1103, 1082],
+            [1124, 1080]
+          ],
+          "ll": [
+            [34.039137, -118.264859],
+            [34.038949, -118.264449],
+            [34.038897, -118.264323],
+            [34.038836, -118.264214],
+            [34.038607, -118.263821],
+            [34.038379, -118.263435],
+            [34.038352, -118.26339],
+            [34.038289, -118.263284],
+            [34.038223, -118.263158],
+            [34.038199, -118.263115],
+            [34.038119, -118.262972],
+            [34.037983, -118.262735],
+            [34.037718, -118.262263],
+            [34.037654, -118.262149],
+            [34.03761, -118.262068],
+            [34.037534, -118.261928],
+            [34.0375, -118.261868]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Broadway",
+          "px": [1366, 1061],
+          "ll": [34.037119, -118.261194],
+          "insideCoverage": false
+        },
+        {
+          "name": "Grand Avenue",
+          "px": [243, 1148],
+          "ll": [34.038897, -118.264323],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hill Street",
+          "px": [1025, 1090],
+          "ll": [34.037654, -118.262149],
+          "insideCoverage": true
+        },
+        {
+          "name": "Margo Street",
+          "px": [424, 1136],
+          "ll": [34.038607, -118.263821],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olive Street",
+          "px": [730, 1114],
+          "ll": [34.038119, -118.262972],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "12th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "twelfth-street",
+          "display": "12th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 12th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "Twelfth Street"
+          ],
+          "docs": [
+            "12017",
+            "mr006-378"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Grand Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "charity",
+          "display": "Charity Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Grand Avenue by another sheet"
+          ],
+          "ink": [
+            "CALLE DE CARIDAD",
+            "CHARITY ST.",
+            "CHARITY STREET",
+            "Charity St",
+            "Charity St.",
+            "Charity Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr001-489",
+            "mr007-021",
+            "mr053-067",
+            "mr053-068"
+          ]
+        },
+        {
+          "id": "grand-ave",
+          "display": "Grand Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Grand Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "GRAND AV."
+          ],
+          "docs": [
+            "mr084-053"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Hill Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "hill-street-downtown",
+          "display": "Hill Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hill Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE LOMA",
+            "HILL ST",
+            "HILL STREET",
+            "Hill Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr053-067",
+            "mr053-068",
+            "mr053-069"
+          ]
+        },
+        {
+          "id": "bull",
+          "display": "Bull Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hill Street by another sheet"
+          ],
+          "ink": [
+            "BULL ST.",
+            "CALLE DEL TORO"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Margo Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Olive Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "olive",
+          "display": "Olive Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Olive Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE ACEYTUNA",
+            "OLIVE ST.",
+            "OLIVE STREET",
+            "Olive St.",
+            "Olive Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr001-489",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Pico Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "pico",
+          "display": "Pico Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Pico Boulevard by another sheet"
+          ],
+          "ink": [
+            "Pico Street"
+          ],
+          "docs": [
+            "mr007-021"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -245,7 +245,10 @@ for (const streetName of streets.keys()) {
   entities[id] = {
     spellings: [{ forms: [streetName] }],
     namedAfter: null, namedAfterLink: null,
-    categories: ["unresearched"], sources: [],
+    // An OSM stub is the purest case of both derived tags: no namesake and
+    // nobody has looked. Set the FIELDS and let the same derivation that serves
+    // every other entity add `unknown` and `unresearched` — one rule, not two.
+    categories: [], basis: "none", searched: "none", sources: [],
     disputed: false, note: null, possiblySameAs: null, aliases: [],
     stub: true
   };
@@ -1327,10 +1330,28 @@ for (const streetName of [...streets.keys()].sort()) {
         +dyear(docDate(osmDoc))).toFixed(2);
 
     const e = cur ? entities[cur.entity] : null;
-    const cats = e ? [...e.categories] : ["unresearched"];
+    // No entity at all on this stretch — a gap in the model rather than an
+    // unresearched name. `stub` is the row a reader wants here; `unresearched`
+    // is legacy-only now (site-config.js).
+    const cats = e ? [...e.categories] : ["stub"];
     // "renamed" = the timeline has more than one period — a different entity
     // OR a documented respelling of the same one (Georgia Bell → Georgia).
     if (tl.length >= 2 && !cats.includes("renamed")) cats.push("renamed");
+    // DERIVED RESEARCH STATUS (ROADMAP §7, 2026-09-15). Hand-typed, these drifted
+    // from the fields they restate — thirteen entities claimed `unknown` beside a
+    // populated `namedAfter`. Read off the entity here, they cannot be wrong.
+    //
+    // `basis` and `searched` go out as categories so the map can filter on them
+    // and the reader can see the grade beside the guess, which is the whole
+    // reason the file grades itself. They REPLACE the old `unknown` /
+    // `unresearched` pair in the generated model: `basis-none` says the same
+    // thing about the namesake, and its `searched-*` children say how hard
+    // anyone looked, which the old pair could not.
+    if (e && e.basis) cats.push("basis-" + e.basis);
+    if (e && e.searched) cats.push("searched-" + e.searched);
+    // A street the base map mentions and nothing else does. Not the same as
+    // "researched and not found", which is `basis-none` + `searched-extensive`.
+    if (e && e.stub) cats.push("stub");
     entry.categories = cats;
     // ANCESTORS (ROADMAP §7). Selecting "Something living, or the land" in the
     // Highlight list has to find the trees, and nobody is going to tag a street
@@ -1347,7 +1368,7 @@ for (const streetName of [...streets.keys()].sort()) {
     const formerCats = [...new Set(tl
       .filter(p => !cur || p.entity !== cur.entity)
       .flatMap(p => entities[p.entity].categories || [])
-      .filter(c => c !== "unresearched"))];
+      .filter(c => c !== "unresearched" && c !== "stub"))];
     if (formerCats.length) entry.formerCategories = formerCats;
     if (formerCats.length) {
       const fanc = [...new Set(formerCats.flatMap(c => categoryAncestors(c)))]

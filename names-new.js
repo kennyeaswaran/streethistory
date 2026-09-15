@@ -24,6 +24,94 @@
 
 const NEW_NAME_ENTITIES = {
 
+  "belmont": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr010-030","sheet":"Kincaid's Tract","asWritten":["Belmont Avenue"]}
+    ],
+    spellings: [{"forms":["Belmont"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: [],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr010-030, where the ink reads “Belmont”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "california-street-14th": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-038-p1","sheet":"Norris Plan","asWritten":["CALIFORNIA STREET"]},
+      {"doc":"mr003-038-p2","sheet":"Vineyard Subdivision","asWritten":["CALIFORNIA STREET"]}
+    ],
+    spellings: [{"forms":["California Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: [],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-038-p1, where the ink reads “CALIFORNIA STREET”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "consuelo": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr011-094","sheet":"Josefa Subdivision","asWritten":["Consuelo Street"]}
+    ],
+    spellings: [{"forms":["Consuelo Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: [],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr011-094, where the ink reads “Consuelo Street”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "elm-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-038-p1","sheet":"Norris Plan","asWritten":["ELM STREET"]}
+    ],
+    spellings: [{"forms":["Elm Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: [],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-038-p1, where the ink reads “ELM STREET”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "laurel-dtla": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-038-p1","sheet":"Norris Plan","asWritten":["LAUREL STREET"]},
+      {"doc":"mr003-038-p2","sheet":"Vineyard Subdivision","asWritten":["LAUREL STREET"]},
+      {"doc":"mr011-094","sheet":"Josefa Subdivision","asWritten":["Laurel Street"]}
+    ],
+    spellings: [{"forms":["Laurel Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: [],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr011-094, where the ink reads “Laurel Street”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "market-st": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -32,11 +120,46 @@ const NEW_NAME_ENTITIES = {
     spellings: [{"forms":["Market Street"]}],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     disputed: false,
     note: null,
     internalNote: "Minted in review from tr0020-196b, where the ink reads “Market St”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "palm-street-margo": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-038-p1","sheet":"Norris Plan","asWritten":["PALM STREET"]}
+    ],
+    spellings: [{"forms":["Palm Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: [],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-038-p1, where the ink reads “PALM STREET”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "pine-street-venice": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr003-038-p1","sheet":"Norris Plan","asWritten":["PINE STREET"]},
+      {"doc":"mr003-038-p2","sheet":"Vineyard Subdivision","asWritten":["PINE STREET"]}
+    ],
+    spellings: [{"forms":["Pine Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: [],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr003-038-p1, where the ink reads “PINE STREET”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   }

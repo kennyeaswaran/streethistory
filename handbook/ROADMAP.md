@@ -350,36 +350,74 @@ is listed at the end of this section under *Still open*.
   came about). What remains here is the tree below.
 - ~~**The list is flat and mixes three different kinds of thing.**~~ *Fixed
   2026-09-15: the three facets below are built, and facet rows are headings
-  rather than choices — `check-model.js` errors if an entity tags one.* "Named after
+  rather than choices — `check-model.js` errors if an entity tags one.*
+- ~~**Research status was typed by hand.**~~ *Fixed 2026-09-15: `unknown` and
+  `unresearched` are DERIVED by `generate.js` from `namedAfter` and `searched`,
+  alongside `renamed`. They had drifted badly — twenty of the 143 entities
+  disagreed with their own fields, thirteen of them claiming `unknown` beside a
+  populated `namedAfter`. `check-model.js` and the names tool now error on
+  authoring one, and `map-tool.html` mints entities with no categories at all
+  rather than guessing `unknown`, which also settles the mint disagreement
+  between the two tools.* "Named after
   a person" is a referent; "Namesake alive when named" is a circumstance of a
   person-naming; "Has former names" is derived by the generator; "Origin
   disputed" is a status of the research. Sorted flat, they read as peers.
 
-### Proposal
+### The vocabulary, as built
 
-Move `CATEGORIES` to `site-config.js` (this is MODEL-IMPLEMENTATION checklist
-item A — do the two together) and make it a tree with three facets:
+`CATEGORIES` lives in `site-config.js` (MODEL-IMPLEMENTATION checklist item A,
+done together with this). The sketch below is what shipped 2026-09-15, after
+Kenny's review pass — **six top-level referents**, which is the number a reader
+can hold at a glance, and everything else a subtype of one of them.
 
 ```
-Referent — what the name points to
-  person           → governor / politician or official / landowner or subdivider /
-                     family of the subdivider / religious figure or saint /
-                     foreign figure / other
-  place            → destination (where it goes) / local landmark / another city
-                     (borrowed) / state, region or nation
-  nature           → tree / plant / animal / landform / water    ← "nature" split
-  object           → material / tool / artefact                  ← NEW, see below
-  myth & religion
-  history & events
-  company & institution
-  abstract         → virtue or aspiration / descriptive of role or position /
-                     number or ordinal / direction
-  route system     (freeways, highways)
-Circumstance — orthogonal to the referent
-  alive when named · named for themself (subdivider) · posthumous
-Status — mostly derived or editorial
-  renamed (derived) · disputed · origin not yet found · not yet researched
+What the name points to
+  person        → landowner (owned or subdivided the ground) / family (of the
+                  owner or subdivider) / politician → mayor, governor (of
+                  California), president, official / mythological / people
+                  (rather than one person) / foreign / alive when named
+  nature        → tree / plant / animal / landform / water
+  place         → destination (where it goes) / state / borrowed (a street
+                  elsewhere)
+  company       → "An institution" — a railway, a college
+  object        → material / tool
+  abstract      → idea (a virtue, a quality, an aspiration) / descriptive
+                  (the street's own role or position) / number / route system /
+                  event
+Status of the record — all derived, never authored
+  renamed · disputed · unknown · unresearched
 ```
+
+Three things in there are worth their own sentence.
+
+**`politician` is the generic and `governor` is a governor of California.** The
+parent used to be called `governor` and carry both senses, which was wrong for
+half its members — Santee was a city councilman, and Cleveland Street's legacy
+entry says only "possibly Grover Cleveland" and carries `disputed`. The six
+legacy uses were migrated to the generic id, a rename and nothing more: none of
+them was reclassified, because for two of them we do not know enough to.
+(Cleveland is a standing question in its own right, but not the one I first
+wrote here: Kines does attribute it to Grover Cleveland, explicitly as his own
+inference rather than from evidence, and he considered and dismissed the city.
+What stays open is whether the 1886 Beaudry tract name and an Ord-survey
+predecessor are the same street. See research-leads.md, 2026-09-15.)
+
+**`landowner` and `family` are what `basis: "eponymous"` is about**, and
+`check-model.js` requires one of them on every eponymous entity. They are not a
+restatement of the grade: both also occur under `basis: "attested"`, where a
+secondary source tells us the same thing — Patton, Wolfskill, Vignes, Kohler
+and Huber are all tagged and none of them is eponymous.
+
+**`alive` is displayed as a subtype of `person`** even though it is a
+circumstance of the naming rather than a kind of referent. It only ever applies
+to people, it excludes none of the other subtypes, and a reader looks for it
+there. Its old `Circumstance` facet had no other member and is gone.
+
+**`history` is retired.** A historical people goes under `person` (as `people`,
+so the map does not call the Aztec empire "a person"), and an event goes under
+`abstract`. Nothing in the new model used `history`; Olympic Boulevard in the
+legacy data is the only `event` there is. If a second one turns up and the
+grouping starts to read wrong, this is the decision to revisit.
 
 Each entry carries `parent`; the Highlight list shows group headings with
 sub-items indented, still single-select radio (§8), and **selecting a parent
@@ -402,9 +440,12 @@ tree, and a tulip is a flower on a bulb but a tulip *tree* is not. The fuzziness
 is real and the rule should be written down before the pass, not discovered
 during it — suggestion: **what the namer would have pointed at.**
 
-Kenny's review pass then is the tree itself, not the tags: whether `alive` stays a circumstance or
-becomes a subtype, whether `governor` widens to "politician or official", and
-what else the person subtypes should be once the stubs are researched.
+Kenny's review pass happened 2026-09-15 and settled all three of the questions
+this paragraph used to leave open: `alive` became a subtype of `person` rather
+than a facet of its own, the generic politician node is `politician` with
+`governor` reserved for a governor of California, and the person subtypes are
+the seven listed above. What the tree looks like now is at the top of this
+section.
 
 ### Added 2026-09-15, out of the `basis` design (MODEL-SPEC §3.1)
 
@@ -448,27 +489,38 @@ opposite ways is exactly the kind of thing the tree should make visible.
 
 ### Still open
 
-- **Person subtypes.** `governor` and `foreign` hang off `person`; the rest of
-  the subtypes in the sketch above (landowner or subdivider, family of the
-  subdivider, religious figure, other) are not built, because that is a review
-  pass over 39 entities rather than a vocabulary change. `basis: "eponymous"`
-  now marks the subdivider-and-family cases, so the tagging could be derived
-  rather than typed.
-- **Retiring `unknown` and `unresearched`.** Superseded by `basis: "none"` and
-  `searched` (MODEL-SPEC §3.1), but load-bearing in five places that paint or
-  count with them: `index.html` (violet base colour), `preview.html` (grey base
-  colour and the "N researched" line), `check-data.js`, `check-model.js` and
-  `names-tool.html`. Wider blast radius than the tree itself — its own pass.
-- **The mint disagreement.** `map-tool.html` mints new entities with
-  `["unknown"]` while `names-tool.html` and `generate.js` mint `["unresearched"]`
-  — semantically opposite ("searched, not found" vs "nobody has looked"). The
-  retirement above settles it; until then they disagree. Note that `map-tool.html`
-  does not load `site-config.js` at all and so cannot validate what it mints.
-- **`traction-avenue` under `object`.** It is tagged `descriptive`, but its
-  namesake is the electric traction motor — a machine, so `tool`. Left alone
-  because moving a published category on my own judgment is not my call;
-  `adobe` moved because it had no valid category at all.
-- **`water` has no member.** Declared for completeness; nothing carries it.
+- ~~**`basis` is not on the map at all.**~~ *Built 2026-09-15:* a **How well we
+  know it** node under *Status of the record*, with the eight grades under it
+  and the three `searched` levels under `basis-none`, where they are the only
+  thing that distinguishes a closed question from an untouched one. The popup
+  prints the grade beside the namesake. In the generated model these REPLACE
+  `unknown` and `unresearched`, which are now legacy-only (`only: "legacy"` in
+  site-config.js) — `basis-none` says the same thing about the namesake and its
+  children say what the old pair could not. A street the base map alone knows
+  gets its own row, `stub`, because "researched and not found" and "never
+  entered the corpus" are different answers.
+- **Subtypes of `person` that are about the PERSON.** `landowner`, `family`,
+  `governor` (with `mayor` / `governor-ca` / `president` / `official` under it),
+  `foreign`, `mythological` and `people` are built. A religious figure or saint
+  was in the original sketch and has no member yet; nor does `mayor`.
+- **`witmer-street` is tagged `landowner` on a judgment call.** The sheet reads
+  "Witmer's Subdivision", which makes Henry Clayton Witmer the subdivider, but
+  the `namedAfter` says the land was his *family's*. Either tag is arguable.
+- ~~**Empty nodes: `borrowed`.**~~ *Filled 2026-09-15* — Wall, Regent, Broadway
+  and Yale now carry a `namedAfter` and the category, on the argument that the
+  published grade is what qualifies a candid reading. `event`, `system`,
+  `mayor` and `people`-adjacent nodes are still empty in the new model, some of
+  them legitimately (the freeways are legacy-only ground).
+- **The " — " convention in `namedAfter` is load-bearing and undocumented
+  outside §3.1.** `generate.js` keeps only the head of the field for a stretch
+  that did not originate under the name, so a hedge written after the dash does
+  not reach those popups. The basis badge covers it now, but anyone writing a
+  `namedAfter` should know the tail is conditional.
+- **The legacy path still authors `unknown`.** `streets-data.js` and the
+  `check-data.js` rules over it are unchanged and correct: that file has no
+  `basis` or `searched` to derive from and never will, since it is being
+  replaced rather than migrated. Both go away with the big-bang switchover
+  (MODEL-IMPLEMENTATION §C–D), not before.
 
 ---
 

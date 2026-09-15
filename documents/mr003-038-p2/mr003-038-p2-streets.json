@@ -1,0 +1,860 @@
+{
+  "document": "mr003-038-p2",
+  "image": "mr003-038-p2-100dpi.png",
+  "imageSize": [1144, 1761],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr003-038-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [124, 129],
+    [959, 116],
+    [941, 1579],
+    [121, 1604]
+  ],
+  "coverageLl": [
+    [34.038001, -118.262225],
+    [34.036726, -118.259872],
+    [34.03335, -118.262662],
+    [34.034573, -118.264996]
+  ],
+  "streets": [
+    {
+      "name": "14th Place",
+      "runs": [
+        {
+          "px": [
+            [913, 595],
+            [872, 595],
+            [585, 593],
+            [558, 593],
+            [521, 592],
+            [240, 591],
+            [207, 591]
+          ],
+          "ll": [
+            [34.035683, -118.260897],
+            [34.035747, -118.261011],
+            [34.0362, -118.261808],
+            [34.036243, -118.261883],
+            [34.036302, -118.261985],
+            [34.036744, -118.262766],
+            [34.036796, -118.262857]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Street",
+          "px": [912, 676],
+          "ll": [34.035497, -118.261052],
+          "insideCoverage": true
+        },
+        {
+          "name": "Broadway",
+          "px": [558, 593],
+          "ll": [34.036243, -118.261883],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hill Street",
+          "px": [207, 591],
+          "ll": [34.036796, -118.262857],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [913, 595],
+          "ll": [34.035683, -118.260897],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "14th Street",
+      "runs": [
+        {
+          "px": [
+            [911, 898],
+            [876, 898],
+            [582, 900],
+            [554, 900],
+            [519, 901],
+            [358, 899],
+            [354, 899],
+            [234, 899],
+            [207, 899],
+            [173, 898],
+            [122, 898]
+          ],
+          "ll": [
+            [34.034982, -118.26147],
+            [34.035036, -118.261568],
+            [34.035491, -118.262391],
+            [34.035535, -118.262469],
+            [34.035586, -118.262568],
+            [34.035843, -118.263015],
+            [34.035849, -118.263027],
+            [34.036037, -118.26336],
+            [34.03608, -118.263436],
+            [34.036134, -118.263528],
+            [34.036215, -118.263669]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Place",
+          "px": [912, 676],
+          "ll": [34.035497, -118.261052],
+          "insideCoverage": true
+        },
+        {
+          "name": "Broadway",
+          "px": [554, 900],
+          "ll": [34.035535, -118.262469],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hill Street",
+          "px": [207, 899],
+          "ll": [34.03608, -118.263436],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [910, 756],
+          "ll": [34.035312, -118.261207],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olive Street",
+          "px": [-102, 895],
+          "ll": [34.036571, -118.264289],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "15th Street",
+      "runs": [
+        {
+          "px": [
+            [122, 1193],
+            [152, 1193],
+            [172, 1194],
+            [200, 1194],
+            [236, 1194],
+            [361, 1195],
+            [476, 1196],
+            [521, 1197],
+            [561, 1197],
+            [584, 1197],
+            [871, 1195],
+            [912, 1194],
+            [945, 1195],
+            [946, 1195]
+          ],
+          "ll": [
+            [34.035529, -118.264223],
+            [34.03548, -118.264139],
+            [34.035448, -118.264083],
+            [34.035403, -118.264007],
+            [34.035346, -118.263906],
+            [34.035149, -118.26356],
+            [34.034967, -118.263242],
+            [34.034897, -118.263118],
+            [34.034833, -118.263006],
+            [34.034798, -118.262943],
+            [34.034354, -118.262137],
+            [34.03429, -118.262022],
+            [34.034237, -118.261931],
+            [34.034237, -118.261929]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Broadway",
+          "px": [561, 1197],
+          "ll": [34.034833, -118.263006],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hill Street",
+          "px": [200, 1194],
+          "ll": [34.035403, -118.264007],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [912, 1194],
+          "ll": [34.03429, -118.262022],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olive Street",
+          "px": [-101, 1189],
+          "ll": [34.035886, -118.264839],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Broadway",
+      "runs": [
+        {
+          "px": [
+            [555, 1591],
+            [556, 1515],
+            [557, 1493],
+            [557, 1462],
+            [558, 1362],
+            [561, 1220],
+            [561, 1197],
+            [560, 1170],
+            [555, 922],
+            [554, 900],
+            [554, 876],
+            [558, 613],
+            [558, 593],
+            [558, 572],
+            [556, 408],
+            [556, 343],
+            [555, 249],
+            [554, 219],
+            [556, 188],
+            [558, 122]
+          ],
+          "ll": [
+            [34.033925, -118.26376],
+            [34.0341, -118.263614],
+            [34.034151, -118.263573],
+            [34.034222, -118.263515],
+            [34.034453, -118.263322],
+            [34.03478, -118.26305],
+            [34.034833, -118.263006],
+            [34.034897, -118.262957],
+            [34.035481, -118.262509],
+            [34.035535, -118.262469],
+            [34.03559, -118.262423],
+            [34.036196, -118.261922],
+            [34.036243, -118.261883],
+            [34.036291, -118.261845],
+            [34.036676, -118.261542],
+            [34.036828, -118.261423],
+            [34.037048, -118.261249],
+            [34.037119, -118.261194],
+            [34.037189, -118.261132],
+            [34.037338, -118.261002]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Place",
+          "px": [558, 593],
+          "ll": [34.036243, -118.261883],
+          "insideCoverage": true
+        },
+        {
+          "name": "14th Street",
+          "px": [554, 900],
+          "ll": [34.035535, -118.262469],
+          "insideCoverage": true
+        },
+        {
+          "name": "15th Street",
+          "px": [561, 1197],
+          "ll": [34.034833, -118.263006],
+          "insideCoverage": true
+        },
+        {
+          "name": "17th Street",
+          "px": [552, 1804],
+          "ll": [34.033435, -118.264168],
+          "insideCoverage": false
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [554, 219],
+          "ll": [34.037119, -118.261194],
+          "insideCoverage": true
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [557, 1493],
+          "ll": [34.034151, -118.263573],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hill Street",
+      "runs": [
+        {
+          "px": [
+            [218, 128],
+            [214, 188],
+            [212, 219],
+            [212, 242],
+            [210, 339],
+            [210, 408],
+            [207, 591],
+            [207, 719],
+            [207, 740],
+            [207, 811],
+            [207, 876],
+            [207, 899],
+            [206, 920],
+            [202, 1126],
+            [201, 1168],
+            [200, 1194],
+            [201, 1214],
+            [204, 1462],
+            [204, 1483],
+            [205, 1509],
+            [206, 1601]
+          ],
+          "ll": [
+            [34.037857, -118.261959],
+            [34.037723, -118.262085],
+            [34.037654, -118.262149],
+            [34.037602, -118.262192],
+            [34.037378, -118.262377],
+            [34.037218, -118.262509],
+            [34.036796, -118.262857],
+            [34.036499, -118.263097],
+            [34.036448, -118.263138],
+            [34.036283, -118.263271],
+            [34.036132, -118.263394],
+            [34.03608, -118.263436],
+            [34.036031, -118.263478],
+            [34.03556, -118.263874],
+            [34.035463, -118.263956],
+            [34.035403, -118.264007],
+            [34.035357, -118.264043],
+            [34.034773, -118.264499],
+            [34.034723, -118.264537],
+            [34.034664, -118.264583],
+            [34.034446, -118.264752]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Place",
+          "px": [207, 591],
+          "ll": [34.036796, -118.262857],
+          "insideCoverage": true
+        },
+        {
+          "name": "14th Street",
+          "px": [207, 899],
+          "ll": [34.03608, -118.263436],
+          "insideCoverage": true
+        },
+        {
+          "name": "15th Street",
+          "px": [200, 1194],
+          "ll": [34.035403, -118.264007],
+          "insideCoverage": true
+        },
+        {
+          "name": "17th Street",
+          "px": [210, 1795],
+          "ll": [34.03399, -118.265106],
+          "insideCoverage": false
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [212, 219],
+          "ll": [34.037654, -118.262149],
+          "insideCoverage": true
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [204, 1483],
+          "ll": [34.034723, -118.264537],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Main Street",
+      "runs": [
+        {
+          "px": [
+            [915, 117],
+            [915, 138],
+            [915, 203],
+            [914, 276],
+            [914, 308],
+            [914, 333],
+            [913, 472],
+            [913, 595],
+            [910, 756],
+            [911, 898],
+            [911, 1027],
+            [912, 1086],
+            [912, 1175],
+            [912, 1194],
+            [912, 1215],
+            [910, 1312],
+            [909, 1366],
+            [908, 1440],
+            [907, 1468],
+            [906, 1494],
+            [907, 1511],
+            [909, 1580]
+          ],
+          "ll": [
+            [34.036794, -118.259997],
+            [34.036744, -118.260037],
+            [34.036594, -118.260158],
+            [34.036424, -118.260297],
+            [34.036351, -118.260357],
+            [34.036291, -118.260405],
+            [34.035969, -118.260666],
+            [34.035683, -118.260897],
+            [34.035312, -118.261207],
+            [34.034982, -118.26147],
+            [34.03468, -118.261711],
+            [34.034544, -118.26182],
+            [34.034336, -118.261986],
+            [34.03429, -118.262022],
+            [34.034242, -118.262063],
+            [34.034019, -118.262249],
+            [34.033896, -118.262352],
+            [34.033726, -118.262495],
+            [34.033661, -118.26255],
+            [34.033602, -118.262599],
+            [34.033561, -118.26263],
+            [34.033397, -118.262752]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Place",
+          "px": [913, 595],
+          "ll": [34.035683, -118.260897],
+          "insideCoverage": true
+        },
+        {
+          "name": "14th Street",
+          "px": [910, 756],
+          "ll": [34.035312, -118.261207],
+          "insideCoverage": true
+        },
+        {
+          "name": "15th Street",
+          "px": [912, 1194],
+          "ll": [34.03429, -118.262022],
+          "insideCoverage": true
+        },
+        {
+          "name": "16th Street",
+          "px": [906, 1494],
+          "ll": [34.033602, -118.262599],
+          "insideCoverage": true
+        },
+        {
+          "name": "17th Street",
+          "px": [917, 1809],
+          "ll": [34.032852, -118.263161],
+          "insideCoverage": false
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [915, 203],
+          "ll": [34.036594, -118.260158],
+          "insideCoverage": true
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [906, 1494],
+          "ll": [34.033602, -118.262599],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Pico Boulevard",
+      "runs": [
+        {
+          "px": [
+            [915, 203],
+            [867, 210],
+            [794, 221],
+            [712, 223],
+            [747, 240],
+            [863, 287],
+            [914, 308],
+            [934, 315],
+            [945, 319],
+            [956, 323]
+          ],
+          "ll": [
+            [34.036594, -118.260158],
+            [34.036651, -118.260305],
+            [34.036741, -118.260528],
+            [34.036862, -118.260761],
+            [34.03677, -118.260695],
+            [34.036478, -118.260459],
+            [34.036351, -118.260357],
+            [34.036303, -118.260314],
+            [34.036277, -118.260291],
+            [34.036249, -118.260266]
+          ]
+        },
+        {
+          "px": [
+            [712, 223],
+            [691, 223],
+            [585, 220],
+            [554, 219],
+            [514, 219],
+            [427, 219],
+            [290, 218],
+            [241, 219],
+            [212, 219],
+            [171, 219],
+            [124, 219]
+          ],
+          "ll": [
+            [34.036862, -118.260761],
+            [34.036897, -118.26082],
+            [34.037069, -118.26111],
+            [34.037119, -118.261194],
+            [34.037183, -118.261306],
+            [34.03732, -118.261549],
+            [34.037534, -118.261928],
+            [34.03761, -118.262068],
+            [34.037654, -118.262149],
+            [34.037718, -118.262263],
+            [34.037791, -118.262394]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Broadway",
+          "px": [554, 219],
+          "ll": [34.037119, -118.261194],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hill Street",
+          "px": [212, 219],
+          "ll": [34.037654, -118.262149],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [915, 203],
+          "ll": [34.036594, -118.260158],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olive Street",
+          "px": [-84, 218],
+          "ll": [34.038119, -118.262972],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Venice Boulevard",
+      "runs": [
+        {
+          "px": [
+            [121, 1484],
+            [172, 1484],
+            [204, 1483],
+            [234, 1484],
+            [359, 1488],
+            [459, 1490],
+            [518, 1492],
+            [557, 1493],
+            [584, 1493],
+            [868, 1494],
+            [906, 1494]
+          ],
+          "ll": [
+            [34.034853, -118.26477],
+            [34.034774, -118.264627],
+            [34.034723, -118.264537],
+            [34.034676, -118.264457],
+            [34.034473, -118.264115],
+            [34.034309, -118.263839],
+            [34.034214, -118.263679],
+            [34.034151, -118.263573],
+            [34.034107, -118.263496],
+            [34.033662, -118.262705],
+            [34.033602, -118.262599]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "16th Street",
+          "px": [906, 1494],
+          "ll": [34.033602, -118.262599],
+          "insideCoverage": true
+        },
+        {
+          "name": "Broadway",
+          "px": [557, 1493],
+          "ll": [34.034151, -118.263573],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hill Street",
+          "px": [204, 1483],
+          "ll": [34.034723, -118.264537],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [906, 1494],
+          "ll": [34.033602, -118.262599],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olive Street",
+          "px": [-108, 1483],
+          "ll": [34.035212, -118.265407],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "16th Street",
+      "metres": 11
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "14th Place",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "14th Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "15th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "fifteenth-street",
+          "display": "15th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 15th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "(formerly Laura St)",
+            "15th ST."
+          ],
+          "docs": [
+            "mr053-016"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Broadway",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "fort-street",
+          "display": "Fort Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Broadway by another sheet"
+          ],
+          "ink": [
+            "CALLE FORTIN",
+            "FORT STREET",
+            "Fort Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr053-067",
+            "mr053-068",
+            "mr053-069"
+          ]
+        },
+        {
+          "id": "eternity",
+          "display": "Eternity Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Broadway by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LA ETERNIDAD",
+            "ETERNITY ST."
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "broadway",
+          "display": "Broadway",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Hill Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "hill-street-downtown",
+          "display": "Hill Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hill Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE LOMA",
+            "HILL ST",
+            "HILL STREET",
+            "Hill Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr053-067",
+            "mr053-068",
+            "mr053-069"
+          ]
+        },
+        {
+          "id": "bull",
+          "display": "Bull Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hill Street by another sheet"
+          ],
+          "ink": [
+            "BULL ST.",
+            "CALLE DEL TORO"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Main Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "main-street-dtla",
+          "display": "Main Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Main Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE PRINCIPAL",
+            "MAIN ST.",
+            "MAIN STREET",
+            "Main St.",
+            "Main Street"
+          ],
+          "docs": [
+            "11824",
+            "12017",
+            "mr005-110",
+            "mr006-378",
+            "mr012-026",
+            "mr029-026",
+            "mr053-016",
+            "mr053-063",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071"
+          ]
+        },
+        {
+          "id": "los-angeles-street",
+          "display": "Los Angeles Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Main Street by another sheet"
+          ],
+          "ink": [
+            "Los Angeles St."
+          ],
+          "docs": [
+            "mr039-069"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Pico Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "pico",
+          "display": "Pico Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Pico Boulevard by another sheet"
+          ],
+          "ink": [
+            "Pico Street"
+          ],
+          "docs": [
+            "mr007-021"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Venice Boulevard",
+      "continuesInto": [
+        "16th Street"
+      ],
+      "candidates": [
+        {
+          "id": "sixteenth-street",
+          "display": "16th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Venice Boulevard by another sheet",
+            "attested on 16th Street, which Venice Boulevard runs straight into"
+          ],
+          "ink": [
+            "(formerly Pine St)",
+            "16th ST."
+          ],
+          "docs": [
+            "mr053-016"
+          ]
+        }
+      ]
+    }
+  ]
+}

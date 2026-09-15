@@ -1,0 +1,608 @@
+{
+  "document": "mr010-030",
+  "image": "mr010-030-100dpi.png",
+  "imageSize": [1100, 1649],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr010-030-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [165, 261],
+    [179, 1556],
+    [987, 1604],
+    [1170, 112]
+  ],
+  "coverageLl": [
+    [34.044951, -118.268022],
+    [34.041302, -118.270287],
+    [34.039963, -118.267659],
+    [34.043871, -118.264381]
+  ],
+  "streets": [
+    {
+      "name": "11th Street",
+      "runs": [
+        {
+          "px": [
+            [1148, 290],
+            [1096, 278],
+            [1070, 274],
+            [1054, 272],
+            [996, 268]
+          ],
+          "ll": [
+            [34.043403, -118.264773],
+            [34.043515, -118.264926],
+            [34.043567, -118.265005],
+            [34.043595, -118.265058],
+            [34.043693, -118.265242]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Chick Hearn Court",
+          "px": [996, 268],
+          "ll": [34.043693, -118.265242],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [996, 268],
+          "ll": [34.043693, -118.265242],
+          "insideCoverage": true
+        },
+        {
+          "name": "Flower Street",
+          "px": [1356, 342],
+          "ll": [34.042949, -118.264168],
+          "insideCoverage": false
+        },
+        {
+          "name": "Peacock Place",
+          "px": [923, 253],
+          "ll": [34.043843, -118.265464],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "12th Street",
+      "runs": [
+        {
+          "px": [
+            [880, 965],
+            [928, 963],
+            [955, 962],
+            [997, 958],
+            [1033, 944],
+            [1060, 931],
+            [1070, 924]
+          ],
+          "ll": [
+            [34.041913, -118.266878],
+            [34.041847, -118.266712],
+            [34.04181, -118.266621],
+            [34.04176, -118.266473],
+            [34.041742, -118.266325],
+            [34.041741, -118.266213],
+            [34.041743, -118.266166]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Figueroa Street",
+          "px": [880, 965],
+          "ll": [34.041913, -118.266878],
+          "insideCoverage": true
+        },
+        {
+          "name": "Flower Street",
+          "px": [1255, 893],
+          "ll": [34.041555, -118.265488],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Chick Hearn Court",
+      "runs": [
+        {
+          "px": [
+            [996, 268],
+            [961, 270],
+            [950, 271],
+            [918, 275],
+            [878, 283],
+            [837, 297],
+            [801, 311],
+            [728, 344],
+            [689, 362],
+            [596, 407],
+            [505, 449],
+            [455, 467],
+            [421, 475],
+            [381, 482],
+            [330, 487],
+            [304, 488],
+            [265, 489],
+            [231, 488],
+            [167, 486]
+          ],
+          "ll": [
+            [34.043693, -118.265242],
+            [34.04374, -118.265366],
+            [34.043753, -118.265403],
+            [34.043791, -118.265519],
+            [34.043828, -118.265667],
+            [34.04385, -118.26583],
+            [34.043864, -118.265974],
+            [34.043879, -118.266281],
+            [34.043886, -118.266442],
+            [34.043898, -118.266834],
+            [34.043917, -118.267215],
+            [34.043942, -118.267416],
+            [34.043971, -118.267543],
+            [34.044009, -118.267691],
+            [34.04407, -118.267871],
+            [34.044107, -118.267961],
+            [34.044164, -118.268091],
+            [34.044217, -118.268205],
+            [34.044317, -118.268415]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "11th Street",
+          "px": [996, 268],
+          "ll": [34.043693, -118.265242],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [996, 268],
+          "ll": [34.043693, -118.265242],
+          "insideCoverage": true
+        },
+        {
+          "name": "Georgia Street",
+          "px": [265, 489],
+          "ll": [34.044164, -118.268091],
+          "insideCoverage": true
+        },
+        {
+          "name": "Peacock Place",
+          "px": [794, 289],
+          "ll": [34.043934, -118.265961],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Figueroa Street",
+      "runs": [
+        {
+          "px": [
+            [794, 1593],
+            [795, 1526],
+            [795, 1509],
+            [796, 1467],
+            [802, 1415],
+            [803, 1412],
+            [832, 1251],
+            [838, 1216],
+            [846, 1166],
+            [849, 1150],
+            [874, 1003],
+            [880, 965],
+            [886, 928],
+            [898, 856],
+            [911, 779],
+            [958, 500],
+            [988, 319],
+            [996, 268],
+            [1004, 230],
+            [1025, 134]
+          ],
+          "ll": [
+            [34.040284, -118.268288],
+            [34.040467, -118.268165],
+            [34.040516, -118.268133],
+            [34.040632, -118.268056],
+            [34.040768, -118.267941],
+            [34.040775, -118.267936],
+            [34.041183, -118.267549],
+            [34.041274, -118.267466],
+            [34.0414, -118.267349],
+            [34.04144, -118.267312],
+            [34.041815, -118.266968],
+            [34.041913, -118.266878],
+            [34.042007, -118.266792],
+            [34.042191, -118.266623],
+            [34.042387, -118.266442],
+            [34.043102, -118.265786],
+            [34.043562, -118.265363],
+            [34.043693, -118.265242],
+            [34.043788, -118.265147],
+            [34.044027, -118.264907]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "11th Street",
+          "px": [996, 268],
+          "ll": [34.043693, -118.265242],
+          "insideCoverage": true
+        },
+        {
+          "name": "12th Street",
+          "px": [880, 965],
+          "ll": [34.041913, -118.266878],
+          "insideCoverage": true
+        },
+        {
+          "name": "Chick Hearn Court",
+          "px": [996, 268],
+          "ll": [34.043693, -118.265242],
+          "insideCoverage": true
+        },
+        {
+          "name": "Paseo",
+          "px": [1024, 29],
+          "ll": [34.044322, -118.264723],
+          "insideCoverage": false
+        },
+        {
+          "name": "Peacock Place",
+          "px": [923, 253],
+          "ll": [34.043843, -118.265464],
+          "insideCoverage": true
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [796, 1467],
+          "ll": [34.040632, -118.268056],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Georgia Street",
+      "runs": [
+        {
+          "px": [
+            [271, 245],
+            [267, 423],
+            [266, 440],
+            [265, 489]
+          ],
+          "ll": [
+            [34.044837, -118.267638],
+            [34.044345, -118.267967],
+            [34.044297, -118.268002],
+            [34.044164, -118.268091]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Chick Hearn Court",
+          "px": [265, 489],
+          "ll": [34.044164, -118.268091],
+          "insideCoverage": true
+        },
+        {
+          "name": "Paseo",
+          "px": [272, 173],
+          "ll": [34.045038, -118.267503],
+          "insideCoverage": false
+        },
+        {
+          "name": "Road",
+          "px": [272, 173],
+          "ll": [34.045038, -118.267503],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Peacock Place",
+      "runs": [
+        {
+          "px": [
+            [678, 185],
+            [728, 295],
+            [786, 268],
+            [849, 239],
+            [815, 165]
+          ],
+          "ll": [
+            [34.0444, -118.266164],
+            [34.044016, -118.26619],
+            [34.044005, -118.265949],
+            [34.043993, -118.265685],
+            [34.044253, -118.265668]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "11th Street",
+          "px": [923, 253],
+          "ll": [34.043843, -118.265464],
+          "insideCoverage": true
+        },
+        {
+          "name": "Chick Hearn Court",
+          "px": [794, 289],
+          "ll": [34.043934, -118.265961],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [923, 253],
+          "ll": [34.043843, -118.265464],
+          "insideCoverage": true
+        },
+        {
+          "name": "Paseo",
+          "px": [672, 172],
+          "ll": [34.044444, -118.266161],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Pico Boulevard",
+      "runs": [
+        {
+          "px": [
+            [178, 1478],
+            [190, 1478],
+            [337, 1479],
+            [380, 1479],
+            [566, 1482],
+            [618, 1481],
+            [719, 1480],
+            [750, 1475],
+            [796, 1467],
+            [752, 1453],
+            [714, 1441],
+            [607, 1439],
+            [567, 1437],
+            [381, 1433],
+            [241, 1433],
+            [191, 1434],
+            [178, 1434]
+          ],
+          "ll": [
+            [34.041521, -118.270151],
+            [34.041503, -118.27011],
+            [34.041282, -118.269619],
+            [34.041218, -118.269473],
+            [34.040932, -118.268855],
+            [34.040858, -118.268678],
+            [34.040712, -118.268338],
+            [34.04068, -118.268224],
+            [34.040632, -118.268056],
+            [34.040737, -118.26818],
+            [34.040825, -118.268285],
+            [34.040991, -118.268639],
+            [34.041058, -118.268772],
+            [34.041346, -118.269388],
+            [34.041553, -118.269861],
+            [34.041627, -118.270029],
+            [34.041647, -118.270073]
+          ]
+        },
+        {
+          "px": [
+            [1003, 1476],
+            [982, 1475],
+            [924, 1473],
+            [847, 1469],
+            [796, 1467]
+          ],
+          "ll": [
+            [34.0403, -118.267377],
+            [34.040332, -118.267444],
+            [34.040424, -118.267639],
+            [34.04055, -118.267889],
+            [34.040632, -118.268056]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Figueroa Street",
+          "px": [796, 1467],
+          "ll": [34.040632, -118.268056],
+          "insideCoverage": true
+        },
+        {
+          "name": "Flower Street",
+          "px": [1151, 1480],
+          "ll": [34.040066, -118.266888],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "11th Street",
+      "continuesInto": [
+        "Chick Hearn Court"
+      ],
+      "candidates": [
+        {
+          "id": "eleventh-street",
+          "display": "11th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 11th Street by another sheet",
+            "attested on Chick Hearn Court, which 11th Street runs straight into",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "ELEVENTH STREET",
+            "Eleventh Street"
+          ],
+          "docs": [
+            "12017",
+            "mr003-032",
+            "mr003-033",
+            "mr006-378"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "12th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "twelfth-street",
+          "display": "12th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 12th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "Twelfth Street"
+          ],
+          "docs": [
+            "12017",
+            "mr006-378"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Chick Hearn Court",
+      "continuesInto": [
+        "11th Street"
+      ],
+      "candidates": [
+        {
+          "id": "eleventh-street",
+          "display": "11th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Chick Hearn Court by another sheet",
+            "attested on 11th Street, which Chick Hearn Court runs straight into"
+          ],
+          "ink": [
+            "ELEVENTH STREET",
+            "Eleventh Street"
+          ],
+          "docs": [
+            "12017",
+            "mr003-032",
+            "mr003-033",
+            "mr006-378"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Figueroa Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "FIGUEROA STREET",
+            "Figueroa St"
+          ],
+          "docs": [
+            "mr007-021",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "pearl",
+          "display": "Pearl Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "PEARL ST",
+            "PEARL STR.",
+            "PEARL STREET"
+          ],
+          "docs": [
+            "mr003-016",
+            "mr003-032",
+            "mr003-569",
+            "mr005-307-a"
+          ]
+        },
+        {
+          "id": "chapules",
+          "display": "Grasshopper Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS CHAPULAS",
+            "CALLE DE LAS CHAPULES",
+            "GRASSHOPPER ST",
+            "GRASSHOPPER ST.",
+            "GRASSHOPPER STREET",
+            "Grasshopper St."
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Georgia Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Peacock Place",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Pico Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "pico",
+          "display": "Pico Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Pico Boulevard by another sheet"
+          ],
+          "ink": [
+            "Pico Street"
+          ],
+          "docs": [
+            "mr007-021"
+          ]
+        }
+      ]
+    }
+  ]
+}

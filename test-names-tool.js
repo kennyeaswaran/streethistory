@@ -191,6 +191,25 @@ console.log("\nthe entity serialiser");
   const bt = renderEntity(bare);
   ok("internalNote is omitted rather than written as null", !/internalNote/.test(bt));
   ok("searched is written when present", /\n    searched: "partial",/.test(bt));
+
+  // §3.2. ABSENT means never approved; "" means a human approved the absence of
+  // text. The serializer has to keep those apart, or approving an empty note
+  // silently reverts to "nobody has looked at this".
+  const appr = { ...bare, namedAfter: "x", namedAfterApproved: "x",
+                 namedAfterApprovedOn: "2026-09-15", note: null, noteApproved: "",
+                 noteApprovedOn: "2026-09-15", basis: "guess" };
+  delete appr.searched;
+  const at = renderEntity(appr);
+  const aback = new Function("return (" + at + ")")();
+  // Compared key-sorted: the serialiser writes the schema's order, which is not
+  // the order a spread happens to produce, and only the content is under test.
+  const sorted = o => JSON.stringify(Object.fromEntries(
+    Object.keys(o).sort().map(k => [k, o[k]])));
+  ok("the approved-text fields survive the serialiser", sorted(aback) === sorted(appr), at);
+  ok("an approved-as-empty string is not written as absent",
+     aback.noteApproved === "" && "noteApproved" in aback);
+  ok("a never-approved field is omitted rather than written as null",
+     !/Approved/.test(bt));
   ok("the absent companions are omitted rather than written as null",
      !/rival|refuted|sharesWarrantWith/.test(bt));
   ok("a single simple spelling stays on one line", /spellings: \[\{ forms: \["X Street"\] \}\],/.test(bt));
@@ -234,10 +253,28 @@ console.log("\nvalidation");
        .some(p => p.kind === "wrn" && /"mythological" is not declared/.test(p.msg)));
   ok("…and is quiet when no vocabulary was loaded",
      !wrns({ a: { ...base(), categories: ["person", "mythological"] } }).some(m => /not declared/.test(m)));
-  ok("null namedAfter without unknown/unresearched warns",
-     wrns({ a: { ...base(), namedAfter: null } }).some(m => /namedAfter is null/.test(m)));
-  ok("null namedAfter with unknown is quiet",
-     wrns({ a: { ...base(), namedAfter: null, categories: ["unknown"] } }).length === 0);
+  // ★ REPLACED 2026-09-15. `unknown` and `unresearched` used to be hand-typed
+  // beside a null namedAfter, and this pair of checks policed that. They are
+  // now DERIVED by generate.js from `namedAfter` and `searched` (ROADMAP §7),
+  // because the hand-typed versions drifted: twenty of the 143 entities
+  // disagreed with their own fields. So the rules invert — authoring one is an
+  // error, and a null namedAfter with no categories at all is correct.
+  ok("authoring a derived category is an error",
+     errs({ a: { ...base(), namedAfter: null, categories: ["unknown"] } })
+       .some(m => /derived by generate\.js/.test(m)));
+  ok("…and so is authoring `unresearched`",
+     errs({ a: { ...base(), namedAfter: null, categories: ["unresearched"] } })
+       .some(m => /derived by generate\.js/.test(m)));
+  ok("an eponymous entity must say landowner or family",
+     errs({ a: { ...base(), basis: "eponymous", categories: ["person"] } })
+       .some(m => /neither "landowner" nor "family"/.test(m)));
+  ok("…and is clean once it does",
+     !errs({ a: { ...base(), basis: "eponymous", categories: ["person", "landowner"] } })
+       .some(m => /landowner/.test(m)));
+  ok("a null namedAfter may carry no categories at all",
+     errs({ a: { ...base(), namedAfter: null, categories: [] } }).length === 0);
+  ok("…but a populated namedAfter may not",
+     errs({ a: { ...base(), categories: [] } }).some(m => /only legal where namedAfter is null/.test(m)));
   ok("a working note in `note` warns",
      wrns({ a: { ...base(), note: "Kenny: worth a look" } }).some(m => /shown to readers/.test(m)));
 

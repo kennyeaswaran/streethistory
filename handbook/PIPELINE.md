@@ -91,3 +91,35 @@ documents are hand work, and are committed.
 The two human steps are the two that carry judgement: where a scan sits on the
 earth, and whether a row's claim is true. Everything on either side of them is
 mechanical, and has been automated in proportion.
+
+## What only a person at the browser can check (2026-09-15)
+
+Three test files need Playwright — `names-browser-test.js`, `preview-test.js`
+and `browser-test.js` — and it is not installed on Kenny's machine. They run in
+the assistant's sandbox instead, which has Chromium, but that sandbox has no
+`documents/` corpus and cannot exercise the File System Access API at all. So
+two kinds of thing fall through:
+
+**Needs the corpus** (these announce a skip rather than a red failure when
+`documents/` is missing, so they pass silently in the sandbox and really run
+only where the corpus exists):
+
+- the Docs column is populated from `documents/`, and sorting by it works;
+- the "cites a sheet that does not letter this name" warning reaches the editor
+  — the `bull` case — proving the document scan feeds validation and not just
+  the column;
+- no 404s while the tool loads.
+
+**Needs the real browser permission flow**, and is not automated anywhere:
+
+- **Connect project folder…, then Save, then look at `git diff`.** Nothing in
+  any test writes a file to disk. `names-browser-test.js` asserts only that Save
+  *refuses* when no folder is connected. Every time the serializer changes — and
+  it changed twice in September 2026, for `basis` and again for the approved-text
+  fields — one real save on one entity, followed by a diff, is the check that
+  the round trip is intact. A serializer that drops a field looks perfectly
+  healthy until you read the diff.
+
+The practical habit: after any change to `names-tool.html`, edit one entity,
+save, `git diff names.js`, and confirm the diff shows exactly the field you
+touched and nothing else.

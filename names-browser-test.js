@@ -20,6 +20,13 @@ for (const f of ["names-tool.html", "names.js", "names-new.js", "site-config.js"
 if (fs.existsSync(path.join(__dirname, "documents")))
   fs.cpSync(path.join(__dirname, "documents"), path.join(ROOT, "documents"), { recursive: true });
 
+// Whether this checkout HAS a document corpus. Three assertions below are about
+// what the documents/ scan feeds — the Docs column, the "cites a sheet that does
+// not letter it" warning, and the absence of 404s — and none of them can mean
+// anything without one. A copy without documents/ is a harness condition, not a
+// fault in the tool, so they announce a skip instead of reporting red.
+const HAVE_DOCS = fs.existsSync(path.join(ROOT, "documents"));
+
 const MIME = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json" };
 // Directory listings matter: with no folder connected the tool discovers
 // documents/ by reading the server's index, exactly as python3 -m http.server
@@ -101,10 +108,13 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
        (a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })).join());
   await page.click('#list th[data-k="docs"]');
   await page.click('#list th[data-k="docs"]');
-  const docs = await page.$$eval("#rows tr.ent td:nth-child(5)", ts => ts.map(t => +t.innerText.trim() || 0));
-  ok("the docs column is populated from documents/", docs.some(d => d > 0),
-     "no entity showed a document count — the documents/ scan found nothing");
-  ok("sorting by docs puts the most-attested first", docs[0] === Math.max(...docs));
+  const docs = await page.$$eval("#rows tr.ent td:nth-child(6)", ts => ts.map(t => +t.innerText.trim() || 0));
+  if (!HAVE_DOCS) console.log("  --  skipped: no documents/ corpus in this checkout");
+  else {
+    ok("the docs column is populated from documents/", docs.some(d => d > 0),
+       "no entity showed a document count — the documents/ scan found nothing");
+    ok("sorting by docs puts the most-attested first", docs[0] === Math.max(...docs));
+  }
 
   console.log("\nfiltering");
   await page.click('#fileChips button[data-f="new"]');
@@ -145,10 +155,27 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   ok("the row is marked edited",
      !!(await page.$('#rows tr.ent[data-id="farmer"] .badge')));
   ok("the counts line says so", /edited, unsaved/.test(await page.innerText("#counts")));
-  ok("Save is now enabled", !(await page.$eval("#saveBtn", b => b.disabled)));
+  // ★ UPDATED 2026-09-15. Writing a namesake onto an ungraded entity is no
+  // longer a harmless edit: `farmer` is `basis: "none"` with no categories, and
+  // §3.1 says a graded name has a namesake and a category and an ungraded one
+  // has neither. So the tool should now REFUSE this save and say why — that is
+  // the rule working, and the old "Save is now enabled" assertion was asserting
+  // the absence of a check that did not exist yet.
+  ok("a namesake on an ungraded entity is refused",
+     await page.$eval("#saveBtn", b => b.disabled));
+  ok("…and the reason names the basis rule",
+     /basis is "none" but namedAfter is populated/.test(await page.innerText("#problems")));
   ok("the namesake column followed the edit",
-     (await page.$eval('#rows tr.ent[data-id="farmer"] td:nth-child(4)', t => t.innerText))
+     (await page.$eval('#rows tr.ent[data-id="farmer"] td:nth-child(5)', t => t.innerText))
        .includes("Somebody"));
+  // Grade it and give it a category, and the save unblocks.
+  await page.selectOption("#f_basis", "guess");
+  await page.click("#catBtn");
+  await page.check('#catMenu input[value="person"]');
+  await page.click("#f_note");
+  ok("grading it and saying what it points at unblocks the save",
+     !(await page.$eval("#saveBtn", b => b.disabled)),
+     (await page.innerText("#problems")).slice(0, 160));
 
   console.log("\ncategories");
   await page.click("#catBtn");
@@ -178,7 +205,11 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   ok("the row is flagged in the list",
      !!(await page.$('#rows tr.ent[data-id="farmer"].bad')));
   ok("the menu stays open while you work through it", await visible("#catMenu"));
-  await page.check('#catMenu input[value="unknown"]');
+  // `unknown` used to be the repair here; it is DERIVED now (ROADMAP §7) and
+  // the picker no longer offers it, which is the point.
+  ok("the picker does not offer a derived category",
+     !(await page.$('#catMenu input[value="unknown"]')));
+  await page.check('#catMenu input[value="person"]');
   ok("fixing it clears the error", !(await page.$eval("#saveBtn", b => b.disabled)));
   await page.click("#f_note");
 
@@ -203,6 +234,13 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     // check-model.js's "cites a sheet that does not letter the name" rule runs
     // in the page too, but only once the documents/ scan has answered — so
     // this also proves the scan feeds validation, not just the Docs column.
+    // These assertions need a real documents/ tree to have been copied in. A
+    // checkout without one is a harness condition, not a failure of the tool —
+    // say so out loud rather than reporting a red test nobody can act on.
+    const haveDocs = await page.evaluate(() =>
+      Object.values(docCounts || {}).some(l => l && l.length));
+    if (!haveDocs) console.log("  --  skipped: no documents/ corpus in this checkout");
+    else {
     await page.click('#stateChips button[data-s="problems"]');
     const flagged = await rows();
     ok("an entity citing a sheet that does not letter it is flagged", flagged.includes("bull"),
@@ -222,6 +260,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("the tessa2 Ord scan is no longer carried by entities it letters",
        !flagged.includes("hill-street-downtown") && !flagged.includes("main-street-dtla"));
     await page.click('#stateChips button[data-s="any"]');
+    }
   }
 
   console.log("\nselection follows the click");
@@ -318,6 +357,86 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     await page.click('#fileChips button[data-f="all"]');
   }
 
+  // -------------------------------------------------------------------------
+  // APPROVED TEXT (§3.2). The panel under each public prose field, the Approve
+  // button, and the word diff. Only visible rendered — and the load-time crash
+  // this file caught on 2026-09-15 (a `<select>` referenced by the script and
+  // missing from the markup, which killed the whole tool) is the argument for
+  // running it after every change to this page, not only after big ones.
+  // -------------------------------------------------------------------------
+  console.log("\napproved text");
+  {
+    const target = await page.evaluate(() => {
+      for (const id of Object.keys(all)) if (all[id].namedAfter && all[id].note) return id;
+    });
+    await page.evaluate(id => openEditor(id), target);
+    await page.waitForTimeout(200);
+
+    const before = await page.evaluate(() =>
+      ({ na: $("ap_namedAfter").textContent, nt: $("ap_note").textContent }));
+    ok("a field nobody has approved says so",
+       /No human-approved version/.test(before.na) && /No human-approved version/.test(before.nt),
+       JSON.stringify(before));
+
+    await page.evaluate(() => $("ap_namedAfter").querySelector("button").click());
+    await page.waitForTimeout(150);
+    const after = await page.evaluate(() => ({
+      txt: $("ap_namedAfter").textContent,
+      disabled: $("ap_namedAfter").querySelector("button").disabled,
+      stored: (edited[selected] || {}).namedAfterApproved,
+      on: (edited[selected] || {}).namedAfterApprovedOn
+    }));
+    ok("Approve records the text and dates it",
+       /Matches the version approved \d{4}-\d{2}-\d{2}/.test(after.txt) &&
+       typeof after.stored === "string" && /^\d{4}-\d{2}-\d{2}$/.test(after.on || ""),
+       JSON.stringify(after).slice(0, 160));
+    ok("…and the button goes quiet once the two match", after.disabled);
+
+    await page.evaluate(() => $("ap_note").querySelector("button").click());
+    await page.waitForTimeout(120);
+    await page.evaluate(() => {
+      const t = $("f_note");
+      t.value = t.value.replace(/^(\S+)\s/, "$1 INTERPOLATED ");
+      t.dispatchEvent(new Event("input"));
+    });
+    await page.waitForTimeout(200);
+    const drift = await page.evaluate(() =>
+      ({ html: $("ap_note").innerHTML, txt: $("ap_note").textContent }));
+    ok("an edit after approval is reported as drift",
+       /Changed since the version approved/.test(drift.txt), drift.txt.slice(0, 80));
+    ok("…with the new word marked",
+       /<ins>[^<]*INTERPOLATED/.test(drift.html), (drift.html.match(/<ins>.{0,30}/) || [""])[0]);
+    ok("…and only the new word marked, not the whole field",
+       (drift.html.match(/<ins>[\s\S]*?<\/ins>/g) || []).join("").length < 40,
+       (drift.html.match(/<ins>[\s\S]*?<\/ins>/g) || []).join(""));
+
+    // ★ TWO WORDS IN A ROW. The first version tokenised whitespace separately,
+    // so the space between two edited words matched and the diff came out
+    // alternating — struck word, new word, space, struck word, new word —
+    // instead of one struck passage followed by its replacement. Kenny hit it
+    // on Alameda. The shape of the output is the thing under test, not the fact
+    // that a diff appeared at all.
+    const pair = await page.evaluate(() => diffHtml("the quick brown fox", "the slow red fox"));
+    ok("two edited words in a row read as one passage, not an alternation",
+       /<del>quick brown<\/del>\s*<ins>slow red<\/ins>/.test(pair), pair);
+    ok("…and the unchanged words stay outside the marks",
+       pair.startsWith("the ") && pair.endsWith(" fox"), pair);
+    const longer = await page.evaluate(() => diffHtml("a b c d e", "a X Y Z e"));
+    ok("a longer replaced run groups too", /<del>b c d<\/del>\s*<ins>X Y Z<\/ins>/.test(longer), longer);
+
+    const written = await page.evaluate(id => {
+      const out = composeFiles({ names: files.names.parsed, newNames: files.newNames.parsed },
+                               edited, removed);
+      const i = out.names.indexOf('"' + id + '": {');
+      return i < 0 ? "" : out.names.slice(i, out.names.indexOf("\n  },", i));
+    }, target);
+    ok("a save would carry the approved text and its date",
+       /namedAfterApproved:/.test(written) && /noteApproved:/.test(written) &&
+       /ApprovedOn: "\d{4}-\d{2}-\d{2}"/.test(written), written.slice(0, 200));
+
+    await page.evaluate(() => { edited = {}; removed.clear(); rebuild(); render(); });
+  }
+
   console.log("\nsaving without a connected folder");
   await page.click("#saveBtn");
   await page.waitForTimeout(200);
@@ -325,8 +444,11 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
      dialogs.some(d => /connected/i.test(d)));
 
   console.log("\nhygiene");
-  ok("no page errors", errors.length === 0, errors.slice(0, 3).join(" | "));
-  ok("nothing 404ed", missing.length === 0, missing.slice(0, 3).join(" | "));
+  const realErrors = errors.filter(e => HAVE_DOCS || !/Failed to load resource/.test(e));
+  ok("no page errors", realErrors.length === 0, realErrors.slice(0, 3).join(" | "));
+  // A checkout with no documents/ legitimately 404s the listing the scan asks for.
+  const real404 = missing.filter(u => HAVE_DOCS || !/\/documents\/?$/.test(u));
+  ok("nothing 404ed", real404.length === 0, real404.slice(0, 3).join(" | "));
 
   console.log(`\n${pass} passed, ${fail} failed\n`);
   await page.evaluate(() => window.onbeforeunload = null);

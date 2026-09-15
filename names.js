@@ -12,6 +12,30 @@
 //                 rows to derive from (each such period must carry `source`).
 //   namedAfter    who/what the name honors ({{...}} marks the link span), or null
 //   namedAfterLink, categories, sources, disputed, note, possiblySameAs, aliases
+//   basis         how strongly the identification is grounded (§3.1), plus
+//                 searched / rival / refuted / sharesWarrantWith
+//   *Approved     the last version of a public field a HUMAN wrote (§3.2)
+//
+// ─── FOR AI AGENTS EDITING THIS FILE ────────────────────────────────────
+//
+// `note` and `namedAfter` are PUBLIC PROSE — the site prints them to readers,
+// and `namedAfter` is the more read of the two, since it is a street's origin
+// line on the map. You may write and rewrite both freely; that is the job.
+//
+// You may NOT write `noteApproved`, `noteApprovedOn`, `namedAfterApproved` or
+// `namedAfterApprovedOn`. Those record the last version of that text that a
+// PERSON wrote and approved, and they are set by a human pressing Approve in
+// names-tool.html. Writing one yourself would erase the only evidence of which
+// sentences on the published site are Kenny's and which are a machine's — and
+// that evidence exists precisely so he can tell them apart without re-reading
+// everything. Leave a field absent rather than guessing at it; absent means
+// "never approved", which is the truth for most of this file.
+//
+// Two consequences worth holding on to. Editing `note` or `namedAfter` does not
+// invalidate its approved copy: the tool shows the two side by side with a word
+// diff, so drift is visible rather than destructive. And a rewrite you think is
+// an improvement still reads as unapproved until a person says otherwise, which
+// is the correct default.
 //
 // Decision log:
 //   2026-08-24 (Kenny): a revived name RESUMES its old entity — Georgia's 1897
@@ -144,7 +168,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Georgia Street"], disambiguation: "east of Alameda" }],
     namedAfter: "Likely {{the state}}",
     namedAfterLink: "https://en.wikipedia.org/wiki/Georgia_(U.S._state)",
-    categories: ["place"],
+    categories: ["state"],
     sources: [],
     basis: "guess",
     disputed: false,
@@ -172,7 +196,7 @@ const NAME_ENTITIES = {
     ],
     namedAfter: "Georgia Herrick Bell (1845–1899), wife of {{Major Horace Bell}}, on whose land the street was laid out",
     namedAfterLink: "https://en.wikipedia.org/wiki/Horace_Bell",
-    categories: ["person","alive"],
+    categories: ["person", "alive", "family"],
     sources: [
       { title: "L.A. Street Names: Georgia Street",
         url: "https://lastreetnames.com/street/georgia-street/" },
@@ -193,15 +217,17 @@ const NAME_ENTITIES = {
   // "Nevada"; that never became law.
   "nevada-1886": {
     spellings: [{ forms: ["Nevada Street"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown"],
+    namedAfter: "{{The state of Nevada}} — no source says so; the state is simply what the word names",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Nevada",
+    categories: ["state"],
     sources: [
       { title: "Los Angeles Herald, “A Storm of Words” (Forman: Nevada was the 1886 tract-map name), Feb. 19, 1897",
         url: "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24" }
     ],
     basis: "guess",
-    disputed: false, note: null, possiblySameAs: null, aliases: []
+    disputed: false, note: null,
+    internalNote: "★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
+    possiblySameAs: null, aliases: []
   },
 
   // ---- other predecessors on 3rd Street's ground --------------------------
@@ -210,7 +236,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Arnold Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "none",
@@ -225,7 +251,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Bixel Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "none",
@@ -239,25 +265,30 @@ const NAME_ENTITIES = {
 
   "alameda-st": {
     spellings: [{ forms: ["Alameda Street"] }],
-    namedAfter: "Spanish for a tree-lined avenue, from {{\u00e1lamo}} (\u201ccottonwood tree\u201d)",
+    namedAfter: "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”)",
     namedAfterLink: "https://en.wiktionary.org/wiki/alameda",
-    categories: ["descriptive", "tree"],
+    namedAfterApproved: "Spanish for a tree-lined avenue, from {{álamo}} (“cottonwood tree”)",
+    namedAfterApprovedOn: "2026-09-15",
+    categories: ["descriptive","tree"],
     sources: [
-      { title: "L.A. Street Names: Alameda Street (\u201cofficially named on February 2nd, 1855\u201d)",
+      { title: "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
         url: "https://lastreetnames.com/street/alameda-street/" }
     ],
     basis: "intrinsic",
     disputed: false,
-    note: "Officially named Feb. 2, 1855, though the road \u2014 or an earlier one nearby \u2014 may already have been informally called an alameda.",
+    note: "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
+    noteApproved: "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
+    noteApprovedOn: "2026-09-15",
     internalNote: "Carried over from the hand-authored streets-data.js entry for Alameda Street, which cites the same Kines page. M.R. 13-87 is the first DOCUMENT row attesting it in this model.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   "huber-st": {
     spellings: [{ forms: ["Huber Street"] }],
     namedAfter: "Not documented; most likely {{Caroline Howard (née Huber)}}, wife of the tract developer Dr. Frederick Preston Howard — the same inference that explains Carolina Street, one block east, now Hewitt Street.",
     namedAfterLink: "https://lastreetnames.com/street/colyton-street/",
-    categories: ["person","unknown"],
+    categories: ["person", "family"],
     sources: [
       { title: "L.A. Street Names: Colyton Street — Dr. Frederick Preston Howard’s 1886 tract “also included Huber Street (now part of 4th Street) and Carolina Street (now Hewitt Street): his wife was born Caroline Huber”",
         url: "https://lastreetnames.com/street/colyton-street/" }
@@ -280,7 +311,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Aztec Avenue"] }],
     namedAfter: "The {{Aztec}} empire — one of a conquest theme Andrew Glassell ran through his 1884 subdivision, alongside Cortez Street for Hernán Cortés and Montezuma Avenue (now Dawson Street) for Moctezuma II",
     namedAfterLink: "https://en.wikipedia.org/wiki/Aztecs",
-    categories: ["history"],
+    categories: ["people"],
     sources: [
       { title: "L.A. Street Names: Cortez Street (“what is now Belmont Avenue was called Aztec Avenue and what is now Dawson Street was called Montezuma Avenue… Glassell was clearly going for a theme here”)",
         url: "https://lastreetnames.com/street/cortez-street/" }
@@ -297,7 +328,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Patton Street"] }],
     namedAfter: "{{George Smith Patton (1856–1927)}}, the attorney who developed the street — nephew and law partner of Andrew Glassell, who subdivided the adjoining tract the following year, and father of the WWII general",
     namedAfterLink: "https://en.wikipedia.org/wiki/George_S._Patton_(attorney)",
-    categories: ["person","alive"],
+    categories: ["person", "alive", "landowner"],
     sources: [
       { title: "L.A. Street Names: Patton Street (“This 1883 street was named for its developer, attorney George Smith Patton (1856-1927)”)",
         url: "https://lastreetnames.com/street/patton-street/" },
@@ -317,7 +348,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Council Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -331,7 +362,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Court Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -345,7 +376,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Diamond Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -359,7 +390,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Hobart Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -378,7 +409,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Home Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -390,15 +421,16 @@ const NAME_ENTITIES = {
 
   "lake-avenue": {
     spellings: [{ forms: ["Lake Avenue"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown"],
+    namedAfter: "Probably {{Echo Park Lake}}, the city reservoir this street runs toward, which was already there when the tract was laid out — though Benjamin D. Wilson's Lake Vineyard ranch is a second candidate and neither is sourced",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Echo_Park_Lake",
+    categories: ["water"],
     sources: [],
     basis: "inferred",
     rival: true,
     disputed: false,
     note: "Namesake untraced. Two candidates: Echo Park Lake, the city reservoir this street runs toward, which was already there in 1884; or Lake Vineyard, the ranch of Benjamin D. Wilson, whose daughter Ruth married George S. Patton — whose own street is on this same plat — in the year it was recorded",
-    internalNote: "Neither candidate is sourced. Kines’s Lake Avenue page is Pasadena/Altadena’s, named for Lake Vineyard, and is a different street; the coincidence is suggestive but no more. Wanted: a contemporary source. The reservoir reading is the simpler one and should be preferred until something says otherwise. `disputed` flipped from true to false in the move: by the rule stated on `hope`, that flag is for a claim the project takes a side against, not for an open question with two live readings. Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer.",
+    internalNote: "Neither candidate is sourced. Kines’s Lake Avenue page is Pasadena/Altadena’s, named for Lake Vineyard, and is a different street; the coincidence is suggestive but no more. Wanted: a contemporary source. The reservoir reading is the simpler one and should be preferred until something says otherwise. `disputed` flipped from true to false in the move: by the rule stated on `hope`, that flag is for a claim the project takes a side against, not for an open question with two live readings. Moved out of names-new.js 2026-09-06: the Kines check recorded above IS the research on this name, and it came up empty, so the entity is no longer a to-do — it is an open question with a recorded answer." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
@@ -406,7 +438,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["State Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -420,7 +452,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Waters Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -434,7 +466,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Welcome Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -450,7 +482,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Guadalupe Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "extensive",
@@ -480,7 +512,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Hewitt Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [
       { title: "L.A. Street Names: Colyton Street — “Carolina Street (now Hewitt Street)” on Dr. F. P. Howard’s 1886 tract",
         url: "https://lastreetnames.com/street/colyton-street/" },
@@ -507,7 +539,7 @@ const NAME_ENTITIES = {
                             url: "https://lastreetnames.com/street/figueroa-street/" } }],
     namedAfter: "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835",
     namedAfterLink: "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
-    categories: ["person", "governor"],
+    categories: ["person", "politician", "governor"],
     sources: [
       { title: "L.A. Street Names: Figueroa Street",
         url: "https://lastreetnames.com/street/figueroa-street/" }
@@ -520,7 +552,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Pearl Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [
       { title: "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
         url: "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24" }
@@ -564,7 +596,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Boylston Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [
       { title: "L.A. Street Names: Boylston Street — O. T. Johnson (1839–1916) suggested the name in 1897 in place of “De La Guerra”",
         url: "https://lastreetnames.com/street/boylston-street/" },
@@ -603,7 +635,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Vine Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "extensive",
@@ -622,7 +654,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Wolfskill Avenue"] }],
     namedAfter: "{{William Wolfskill}}'s old citrus ranch, which the street ran through",
     namedAfterLink: "https://en.wikipedia.org/wiki/William_Wolfskill",
-    categories: ["person"],
+    categories: ["person", "landowner"],
     sources: [
       { title: "L.A. Street Names: Central Avenue",
         url: "https://lastreetnames.com/street/central-avenue/" }
@@ -668,7 +700,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Stanford Avenue"] }],
     namedAfter: "{{Leland Stanford}} (1824–1893), president of the Southern Pacific Railroad and governor of California 1862–1863",
     namedAfterLink: "https://en.wikipedia.org/wiki/Leland_Stanford",
-    categories: ["person","governor","alive"],
+    categories: ["person", "politician", "alive", "governor"],
     sources: [
       { title: "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)",
         url: "https://lastreetnames.com/street/towne-avenue-dtla/" }
@@ -706,7 +738,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Ruth Avenue"] }],
     namedAfter: "Probably {{Ruth R. Wolfskill}} (1881–1968), daughter of Joseph William Wolfskill, on whose orchard the street was laid out — she was five when it was surveyed",
     namedAfterLink: "https://www.findagrave.com/memorial/151360846/ruth_r-magee",
-    categories: ["person", "alive", "unknown"],
+    categories: ["person", "alive", "family"],
     sources: [
       { title: "Find a Grave: Ruth R. Wolfskill Magee (1881–1968), Calvary Cemetery, Wolfskill plot — b. 23 Nov. 1881, m. Louis Alfred Magee 1925",
         url: "https://www.findagrave.com/memorial/151360846/ruth_r-magee" },
@@ -725,7 +757,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Gladys Avenue"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["person"],
+    categories: [],
     sources: [
       { title: "Recorded map: Wolfskill Orchard Tract, M.R. 30-9 to 30-13, surveyed by J. H. Dockweiler July–August 1887, recorded Jan. 11, 1888 “at request of Los Angeles Land Bureau”",
         url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf" },
@@ -765,7 +797,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Omar Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -832,7 +864,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Witmer Street"] }],
     namedAfter: "{{Henry Clayton Witmer}} (1856\u20131909), banker and real-estate developer, whose family's land was Crown Hill",
     namedAfterLink: "https://lastreetnames.com/street/witmer-street/",
-    categories: ["person", "alive"],
+    categories: ["person", "alive", "landowner"],
     sources: [
       { title: "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
         url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
@@ -853,7 +885,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Lucas Avenue"] }],
     namedAfter: "{{John Henry \u201cJ.H.\u201d Lucas}} (1836\u20131924), attorney, who was selling the tract it was named on",
     namedAfterLink: "https://lastreetnames.com/street/lucas-avenue/",
-    categories: ["person", "alive"],
+    categories: ["person", "alive", "landowner"],
     sources: [
       { title: "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
         url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
@@ -890,7 +922,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Columbia Avenue"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [
       { title: "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
         url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
@@ -1023,7 +1055,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Eternity Street","Calle de la Eternidad"] }],
     namedAfter: "The concept of the eternity after death — it led to Calvary Cemetery, established in 1844. Though an 1895 account claims instead that it was so named because it had neither beginning nor end.",
     namedAfterLink: null,
-    categories: ["aspiration","mythological"],
+    categories: ["idea"],
     sources: [
       { title: "L.A. Street Names: Broadway (on Calle Eternidad)",
         url: "https://lastreetnames.com/street/broadway/" },
@@ -1041,9 +1073,9 @@ const NAME_ENTITIES = {
 
   "high-street-chinatown": {
     spellings: [{ forms: ["High Street","Calle Alta"] }],
-    namedAfter: null,
+    namedAfter: "The high ground it climbed — lettered “Calle Alta” on the 1849 survey, which says the same thing in Spanish",
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: ["descriptive"],
     sources: [
       { title: "L.A. Street Names: Ord Street (on Calle Alta / Walters / Ord)",
         url: "https://lastreetnames.com/street/ord-street/" }
@@ -1051,7 +1083,8 @@ const NAME_ENTITIES = {
     basis: "intrinsic",
     disputed: false,
     note: "It became Walters Street in 1886, for a resident named George Walters, and Ord Street in 1890 — for the surveyor who had declined to name anything after himself in 1849.",
-    internalNote: "Disambiguated at minting. Note the spelling trap next door: `waters-street` is a DIFFERENT street (modern Douglas Street, from M.R. 6-138), and Walters Street here is a third name again.",
+    internalNote: "Disambiguated at minting. Note the spelling trap next door: `waters-street` is a DIFFERENT street (modern Douglas Street, from M.R. 6-138), and Walters Street here is a third name again." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null,
     aliases: []
   },
@@ -1077,7 +1110,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Virgin Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [
       { title: "L.A. Street Names: Alpine Street",
         url: "https://lastreetnames.com/street/alpine-street/" }
@@ -1095,7 +1128,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Charity Street"] }],
     namedAfter: "{{The virtue}} — no institution, benefaction or occasion behind it is documented",
     namedAfterLink: "https://en.wikipedia.org/wiki/Charity_(virtue)",
-    categories: ["aspiration"],
+    categories: ["idea"],
     sources: [
       { title: "L.A. Street Names: Grand Avenue",
         url: "https://lastreetnames.com/street/grand-avenue/" },
@@ -1113,7 +1146,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Spring Street"] }],
     namedAfter: "Possibly {{Trinidad Ortega}} (1832–1903), who was nicknamed “Primavera”",
     namedAfterLink: null,
-    categories: ["person","unknown","alive"],
+    categories: ["person", "alive"],
     sources: [
       { title: "L.A. Street Names: Spring Street",
         url: "https://lastreetnames.com/street/spring-street/" },
@@ -1133,7 +1166,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["College Street"] }],
     namedAfter: "Descriptive — a colegio was to be built here",
     namedAfterLink: null,
-    categories: ["descriptive"],
+    categories: ["company"],
     sources: [
       { title: "L.A. Street Names: College Street",
         url: "https://lastreetnames.com/street/college-street/" }
@@ -1182,7 +1215,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Hope Street"] }],
     namedAfter: "The virtue — or possibly sheriff and state senator {{Dr. Alexander W. Hope}} (c. 1820–1856), which the sources do not settle",
     namedAfterLink: "https://en.wikipedia.org/wiki/Alexander_W._Hope",
-    categories: ["aspiration","person","unknown"],
+    categories: ["idea", "person"],
     sources: [
       { title: "L.A. Street Names: Hope Street",
         url: "https://lastreetnames.com/street/hope-street/" }
@@ -1213,14 +1246,15 @@ const NAME_ENTITIES = {
 
   "short-street-chavez": {
     spellings: [{ forms: ["Short Street", "C Corta"] }],
-    namedAfter: null,
+    namedAfter: "Its length — lettered “C CORTA” on the sheet, which says the same thing in Spanish",
     namedAfterLink: null,
-    categories: ["unknown","descriptive"],
+    categories: ["descriptive"],
     sources: [],
     basis: "intrinsic",
     disputed: false,
     note: "Lettered on the 1849 survey along ground that roughly follows one block of what is now Cesar E. Chavez Avenue. Descriptive, presumably, but nothing documents it.",
-    internalNote: "✓ SECOND FORM CORRECTED 2026-09-13 (Kenny). It read “Calle Alta”, which is High Street’s Spanish name — almost certainly picked up from `high-street-chinatown`, lettered on the same 1849 sheet. Replaced with what this street is actually lettered: C CORTA. Left as the abbreviation the survey uses rather than expanded to “Calle Corta”, since the expansion is not on the sheet. The Chavez entry starts at Macy Street. Disambiguated at minting because Short Street is a name that recurs.",
+    internalNote: "✓ SECOND FORM CORRECTED 2026-09-13 (Kenny). It read “Calle Alta”, which is High Street’s Spanish name — almost certainly picked up from `high-street-chinatown`, lettered on the same 1849 sheet. Replaced with what this street is actually lettered: C CORTA. Left as the abbreviation the survey uses rather than expanded to “Calle Corta”, since the expansion is not on the sheet. The Chavez entry starts at Macy Street. Disambiguated at minting because Short Street is a name that recurs." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null,
     aliases: []
   },
@@ -1235,7 +1269,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Cameron Lane"] }],
     namedAfter: "{{Cameron Erskine Thom}} (1825–1915), who owned and subdivided the tract — district attorney, state senator, Confederate captain, and mayor of Los Angeles 1882–1884",
     namedAfterLink: "https://en.wikipedia.org/wiki/Cameron_E._Thom",
-    categories: ["person", "alive"],
+    categories: ["person", "alive", "landowner"],
     sources: [
       { title: "Los Angeles Revisited: The Antebellum Past at Cameron Lane in DTLA",
         url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" }
@@ -1251,7 +1285,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Alexander Lane"] }],
     namedAfter: "{{Alexander Thom}} (c. 1698–1784), Cameron Thom's paternal grandfather, a Clan Cameron Highlander who fled to the American colonies in 1746",
     namedAfterLink: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html",
-    categories: ["person"],
+    categories: ["person", "family"],
     sources: [],
     basis: "eponymous",
     sharesWarrantWith: ["cameron-lane"],
@@ -1265,7 +1299,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Catesby Lane"] }],
     namedAfter: "The Thom family name — Cameron Thom's son was Charles Catesby Thom, and a brother carried it too",
     namedAfterLink: "https://en.wikipedia.org/wiki/Cameron_E._Thom",
-    categories: ["person","alive"],
+    categories: ["person", "alive", "family"],
     sources: [
       { title: "Los Angeles Revisited: The Antebellum Past at Cameron Lane in DTLA",
         url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" }
@@ -1283,7 +1317,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Centerbrook Lane"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [
       { title: "Los Angeles Revisited: The Antebellum Past at Cameron Lane in DTLA",
         url: "https://losangelesrevisited.blogspot.com/2020/07/the-antebellum-past-at-cameron-lane-in.html" }
@@ -1305,7 +1339,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Palm Street"] }],
     namedAfter: "{{The palm}}, one of four tree and plant names platted together on the Goodwin Tract in Oct. 1886 — Palm, Spruce, Tulip and Willow",
     namedAfterLink: "https://en.wikipedia.org/wiki/Arecaceae",
-    categories: ["unknown", "tree"],
+    categories: ["tree"],
     sources: [
       { title: "Wikipedia: Arts District, Los Angeles",
         url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
@@ -1323,7 +1357,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Spruce Street"] }],
     namedAfter: "{{The spruce}}, one of four tree and plant names platted together on the Goodwin Tract in Oct. 1886 — Palm, Spruce, Tulip and Willow",
     namedAfterLink: "https://en.wikipedia.org/wiki/Spruce",
-    categories: ["unknown", "tree"],
+    categories: ["tree"],
     sources: [
       { title: "Wikipedia: Arts District, Los Angeles",
         url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
@@ -1340,7 +1374,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Tulip Street"] }],
     namedAfter: "{{The tulip}}, one of four tree and plant names platted together on the Goodwin Tract in Oct. 1886 — Palm, Spruce, Tulip and Willow",
     namedAfterLink: "https://en.wikipedia.org/wiki/Tulip",
-    categories: ["unknown", "plant"],
+    categories: ["plant"],
     sources: [
       { title: "Wikipedia: Arts District, Los Angeles",
         url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
@@ -1357,7 +1391,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Willow Street"] }],
     namedAfter: "{{The willow}}, one of four tree and plant names platted together on the Goodwin Tract in Oct. 1886 — Palm, Spruce, Tulip and Willow",
     namedAfterLink: "https://en.wikipedia.org/wiki/Willow",
-    categories: ["unknown", "tree"],
+    categories: ["tree"],
     sources: [
       { title: "Wikipedia: Arts District, Los Angeles",
         url: "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles" }
@@ -1427,7 +1461,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Pico Street"] }],
     namedAfter: "{{Pío de Jesús Pico}} (1801–1894), the last Mexican governor of Alta California and a major landowner",
     namedAfterLink: "https://en.wikipedia.org/wiki/Pio_Pico",
-    categories: ["person","governor","alive"],
+    categories: ["person", "politician", "alive", "governor"],
     sources: [
       { title: "L.A. Street Names: Pico Boulevard",
         url: "https://lastreetnames.com/street/pico-boulevard/" }
@@ -1547,28 +1581,30 @@ const NAME_ENTITIES = {
 
   "alpine": {
     spellings: [{ forms: ["Alpine Street"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unresearched"],
+    namedAfter: "Possibly the Sierra country around {{Alpine County}} — the man who petitioned for the renaming had run a lumber company there, though nothing sourced connects him to the choice",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Alpine_County,_California",
+    categories: ["place"],
     sources: [],
     basis: "inferred",
     rival: true,
     disputed: false,
     note: null,
-    internalNote: "Minted 2026-09-04 from documents/ord-1887-08-22, which declares Virgin Street \u201cchanged to Alpine Street\u201d. The lead, carried over from the `virgin` entity's public note and unsourced there: the petitioner was the real-estate agent William P. McIntosh, who had run a Sierra lumber company near Alpine County \u2014 which would make this a transplanted California place name rather than the Alps. The ordinance gives no reason, as ordinances do not. Worth checking Kines and the Aug. 1887 papers before asserting anything.",
+    internalNote: "Minted 2026-09-04 from documents/ord-1887-08-22, which declares Virgin Street \u201cchanged to Alpine Street\u201d. The lead, carried over from the `virgin` entity's public note and unsourced there: the petitioner was the real-estate agent William P. McIntosh, who had run a Sierra lumber company near Alpine County \u2014 which would make this a transplanted California place name rather than the Alps. The ordinance gives no reason, as ordinances do not. Worth checking Kines and the Aug. 1887 papers before asserting anything." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
   "broadway": {
     spellings: [{ forms: ["Broadway"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unresearched"],
+    namedAfter: "{{Broadway}} in New York — the obvious borrowing, and nothing here says so",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Broadway_(Manhattan)",
+    categories: ["borrowed"],
     sources: [],
     basis: "guess",
     disputed: false,
     note: "The name has no \u201cStreet\u201d: the 1890 papers and the street signs both say simply Broadway.",
-    internalNote: "Minted 2026-09-04 from documents/lah-1890-02-20, the Herald reporting that the ordinance renaming Fort Street had been signed by Mayor Hazard and taken effect. The petitioner is SOURCED as of 2026-09-04: the council minutes of Feb. 3, 1890 record “126. From Fred L. Alles et al, asking that the name of Fort street be changed to Broadway” (documents/min-1890-02-03). The clerk writes Fred L. Alles, not Fred Lind Alles, and says nothing about his trade. Still unsourced is the other half of the old note — that the name honours New York's Broadway. Neither the petition nor the Herald says so; the Herald names only Mayor Hazard, who signed the ordinance. The same item predicts that Main Street south of Tenth would be renamed Broadway once Broadway was cut through, which is how modern Broadway came to run south of downtown; whatever act carried THAT out is not found (handbook/research-leads.md). NB the 1897 committee report separately renames a \u201cBroadway Street\u201d to Canal Street \u2014 not this one, which had been plain \u201cBroadway\u201d for seven years by then.",
+    internalNote: "Minted 2026-09-04 from documents/lah-1890-02-20, the Herald reporting that the ordinance renaming Fort Street had been signed by Mayor Hazard and taken effect. The petitioner is SOURCED as of 2026-09-04: the council minutes of Feb. 3, 1890 record “126. From Fred L. Alles et al, asking that the name of Fort street be changed to Broadway” (documents/min-1890-02-03). The clerk writes Fred L. Alles, not Fred Lind Alles, and says nothing about his trade. Still unsourced is the other half of the old note — that the name honours New York's Broadway. Neither the petition nor the Herald says so; the Herald names only Mayor Hazard, who signed the ordinance. The same item predicts that Main Street south of Tenth would be renamed Broadway once Broadway was cut through, which is how modern Broadway came to run south of downtown; whatever act carried THAT out is not found (handbook/research-leads.md). NB the 1897 committee report separately renames a \u201cBroadway Street\u201d to Canal Street \u2014 not this one, which had been plain \u201cBroadway\u201d for seven years by then." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
@@ -1576,7 +1612,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Castelar Street"] }],
     namedAfter: "{{Emilio Castelar}} (1832–1899), president of the First Spanish Republic in 1873–74",
     namedAfterLink: "https://en.wikipedia.org/wiki/Emilio_Castelar",
-    categories: ["person","alive","foreign"],
+    categories: ["person", "alive", "foreign", "politician", "official"],
     sources: [
       { title: "L.A. Street Names: Hill Street (on Calle del Toro / Castelar / N. Hill)",
         url: "https://lastreetnames.com/street/hill-street/" }
@@ -1592,9 +1628,9 @@ const NAME_ENTITIES = {
 
   "yale": {
     spellings: [{ forms: ["Yale Street"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unresearched"],
+    namedAfter: "{{Yale University}} — the obvious reading of the word, with nothing tying it to this street",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Yale_University",
+    categories: ["company"],
     basis: "guess",
     disputed: false,
     note: null,
@@ -1602,7 +1638,8 @@ const NAME_ENTITIES = {
       { title: "L.A. Street Names: Yale Street",
         url: "https://lastreetnames.com/street/yale-street/" }
     ],
-    internalNote: "Minted 2026-09-04 from documents/ord-1874-02-26, which renames Wasp Street to Yale Street. Nothing in the corpus says why Yale — the university is the obvious guess and is only a guess; the same ordinance's Pearl and Castelar share no theme to hang it on. Kines's Yale Street page is cited but has not been read for a namesake.",
+    internalNote: "Minted 2026-09-04 from documents/ord-1874-02-26, which renames Wasp Street to Yale Street. Nothing in the corpus says why Yale — the university is the obvious guess and is only a guess; the same ordinance's Pearl and Castelar share no theme to hang it on. Kines's Yale Street page is cited but has not been read for a namesake." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
@@ -1610,7 +1647,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Farmer Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [
       { title: "Recorded map: “Crownwood” (Witmer’s Subdivision), M.B. 15-166 (surveyed Nov. 1909)",
         url: "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf" }
@@ -1650,7 +1687,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Court House Street"] }],
     namedAfter: "{{A court house}} — which one, and whether one stood on this ground at all, is what the search could not settle",
     namedAfterLink: "https://en.wikipedia.org/wiki/Courthouse",
-    categories: ["descriptive", "unknown"],
+    categories: ["descriptive"],
     sources: [
       { title: "Homestead Museum: the Rocha Adobe / City Hall — the county court house on the west side of Spring between 1st and Temple, sold to the city and county in 1853; “the county court house moved out in 1861”",
         url: "https://homesteadmuseum.blog/2025/06/21/through-the-viewfinder-with-the-rocha-adobe-city-hall-los-angeles-april-may-1886/" },
@@ -1685,7 +1722,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["William Street"] }],
     namedAfter: "Probably {{Ozro William Childs}} (1824–1890) himself — the W of “O. W. Childs” is William — or his eldest surviving son, Ozro William Childs Jr. (1865–1933), who was twenty when the tract was recorded",
     namedAfterLink: "https://en.wikipedia.org/wiki/Ozro_W._Childs",
-    categories: ["person", "alive", "unknown"],
+    categories: ["person", "alive", "landowner"],
     sources: [
       { title: "Wikipedia: Ozro W. Childs — the article opens “Ozro William Childs”",
         url: "https://en.wikipedia.org/wiki/Ozro_W._Childs" },
@@ -1702,29 +1739,31 @@ const NAME_ENTITIES = {
 
   "maple-dtla": {
     spellings: [{ forms: ["Maple Avenue"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown", "tree"],
+    namedAfter: "{{The maple}} — a tree name one block from Myrtle on O. W. Childs's 1885 tract, and Childs was the city's leading nurseryman",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Maple",
+    categories: ["tree"],
     sources: [],
     basis: "inferred",
     sharesWarrantWith: ["myrtle"],
     disputed: false,
     note: "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
-    internalNote: "Not covered by Kines: no page for a Los Angeles Maple Avenue, and it is absent from his DTLA list (checked 2026-09-06). Wikipedia's Los Angeles County place-name etymology page has no entry either. LEAD: the 1888 Widow Botiller resubdivision (documents/mr029-026) letters the adjoining land “Maple Ave Tract” — a tract named after the street, so its own sheet may date the name. Moved out of names-new.js 2026-09-06.",
+    internalNote: "Not covered by Kines: no page for a Los Angeles Maple Avenue, and it is absent from his DTLA list (checked 2026-09-06). Wikipedia's Los Angeles County place-name etymology page has no entry either. LEAD: the 1888 Widow Botiller resubdivision (documents/mr029-026) letters the adjoining land “Maple Ave Tract” — a tract named after the street, so its own sheet may date the name. Moved out of names-new.js 2026-09-06." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
   "myrtle": {
     spellings: [{ forms: ["Myrtle Avenue"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown", "plant"],
+    namedAfter: "{{The myrtle}} — a plant name one block from Maple on O. W. Childs's 1885 tract, and Childs was the city's leading nurseryman",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Myrtus",
+    categories: ["plant"],
     sources: [],
     basis: "inferred",
     sharesWarrantWith: ["maple-dtla"],
     disputed: false,
     note: "A plant name, and the company it keeps is the whole of the argument: the O. W. Childs Tract lays Myrtle one block from Maple, and Childs was the city's leading nurseryman. Nothing documents it. This one ran along modern Wall Street.",
-    internalNote: "Kines's Myrtle Avenue page is Monrovia's — laid out 1886 and named both for the plant and for Myrtle Mignonette Monroe, the founder's daughter — and is a different street: do not carry that namesake across (checked 2026-09-06). Not covered for Los Angeles. A second sighting since: the Moran Tract of Apr. 1887 (documents/mr016-027) letters Myrtle Avenue too, so the name was still in use two years after the Childs sheet. Moved out of names-new.js 2026-09-06.",
+    internalNote: "Kines's Myrtle Avenue page is Monrovia's — laid out 1886 and named both for the plant and for Myrtle Mignonette Monroe, the founder's daughter — and is a different street: do not carry that namesake across (checked 2026-09-06). Not covered for Los Angeles. A second sighting since: the Moran Tract of Apr. 1887 (documents/mr016-027) letters Myrtle Avenue too, so the name was still in use two years after the Childs sheet. Moved out of names-new.js 2026-09-06." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
@@ -1732,7 +1771,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["San Julian Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "extensive",
@@ -1752,7 +1791,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Botiller Street"] }],
     namedAfter: "The Botiller family, whose ground it crossed: the sheet subdivides the estate of Juana María Reyes de Botiller, distributed to Tadeo Felipe Botiller and Vicenta B. de Ybarrondo by a decree entered Feb. 27, 1888",
     namedAfterLink: null,
-    categories: ["person"],
+    categories: ["person", "landowner"],
     sources: [
       { title: "Wikipedia: Dionisio Botiller (1842–1915), councilman and city auditor, whose land adjoins this tract on the sheet",
         url: "https://en.wikipedia.org/wiki/Dionisio_Botiller" }
@@ -1768,7 +1807,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Ida Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown","person"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "extensive",
@@ -1781,15 +1820,16 @@ const NAME_ENTITIES = {
 
   "wall-street": {
     spellings: [{ forms: ["Wall Street"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown"],
+    namedAfter: "{{Wall Street}} in New York — the pairing with Regent Street on the one 1876 sheet that first letters both is the whole of the argument",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Wall_Street",
+    categories: ["borrowed"],
     sources: [],
     basis: "inferred",
     sharesWarrantWith: ["regent-street"],
     disputed: false,
     note: "Nothing found says what it was named for. New York’s financial street is the obvious guess, and what supports it is the company it keeps: the Moreno Vineyard Tract sheet of March 1876 letters Wall Street and Regent Street two blocks apart on one new commercial subdivision beside the railroad depot — New York’s and London’s most famous trading addresses named together. As a pair they read as deliberate; singly neither can be shown. The name later spread north, taking Myrtle Avenue on Nov. 13, 1893 by Ordinance No. 1915.",
-    internalNote: "Kines does not cover it: no page, and it is absent from his alphabetical W list between Walgrove Avenue and Wallace Avenue (checked 2026-09-06). A search for a Los Angeles-specific origin returned only New York. ★ THE PAIRING ARGUMENT MADE EXPLICIT 2026-09-13 at Kenny’s request — see `regent-street`, which holds the fuller statement. The load-bearing fact is that documents/mr003-166 (Moreno Vineyard Tract, March 1876) is the earliest sighting in this corpus for BOTH names, so they enter the record together. Keep the two entities in step: an argument that weakens one weakens the other.",
+    internalNote: "Kines does not cover it: no page, and it is absent from his alphabetical W list between Walgrove Avenue and Wallace Avenue (checked 2026-09-06). A search for a Los Angeles-specific origin returned only New York. ★ THE PAIRING ARGUMENT MADE EXPLICIT 2026-09-13 at Kenny’s request — see `regent-street`, which holds the fuller statement. The load-bearing fact is that documents/mr003-166 (Moreno Vineyard Tract, March 1876) is the earliest sighting in this corpus for BOTH names, so they enter the record together. Keep the two entities in step: an argument that weakens one weakens the other." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
@@ -1799,7 +1839,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Clark Avenue"] }],
     namedAfter: "Wesley Clark, senior partner in the Los Angeles real-estate firm of Clark & Bryan, who owned this tract with Elden P. Bryan",
     namedAfterLink: null,
-    categories: ["person","alive"],
+    categories: ["person", "alive", "landowner"],
     sources: [
       { title: "Homestead Museum: “No Place Like Home: The Elden P. Bryan Residence” (on the firm of Clark & Bryan)",
         url: "https://homesteadmuseum.blog/2016/12/06/no-place-like-home-the-elden-p-bryan-residence-los-angeles-ca-1907/" }
@@ -1821,15 +1861,16 @@ const NAME_ENTITIES = {
 
   "regent-street": {
     spellings: [{ forms: ["Regent Street"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown"],
+    namedAfter: "{{Regent Street}} in London — the pairing with Wall Street on the one 1876 sheet that first letters both is the whole of the argument",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Regent_Street",
+    categories: ["borrowed"],
     sources: [],
     basis: "inferred",
     sharesWarrantWith: ["wall-street"],
     disputed: false,
     note: "Lettered between Los Angeles Street and Wall Street on the Moreno Vineyard Tract — the building lots laid out beside the new railroad depot and recorded in March 1876. Nothing says what it was named for. The strongest argument available is the company it keeps: this one sheet is the earliest source in this corpus for BOTH Regent Street and Wall Street, lettered two blocks apart on a new commercial subdivision, which is London’s and New York’s most famous commercial streets named together on one page. Taken as a pair they read as a deliberate borrowing of two great trading addresses; taken singly neither can be shown. The corridor is Maple Avenue today, between 5th and 6th.",
-    internalNote: "Kines does not cover it: no page, and it is absent from his alphabetical R list, which runs Reese → Reeves → Reevesbury → Reklaw with no Regent (checked 2026-09-06). ★ THE PAIRING ARGUMENT MADE EXPLICIT 2026-09-13 at Kenny’s request, and it turns on a fact worth stating plainly: documents/mr003-166, the Moreno Vineyard Tract of March 1876, is the FIRST source in this corpus for both names — twelve years earlier than the Botiller resubdivision that had been `wall-street`’s earliest sighting. Two streets, one sheet, one moment of naming. That is why the London/New York reading is worth recording even though namedAfter stays null on both: the evidence is the pair, not either name. It also cuts the other way — if either is ever shown NOT to be the foreign borrowing, the argument for the other weakens with it. Keep the two entities in step.",
+    internalNote: "Kines does not cover it: no page, and it is absent from his alphabetical R list, which runs Reese → Reeves → Reevesbury → Reklaw with no Regent (checked 2026-09-06). ★ THE PAIRING ARGUMENT MADE EXPLICIT 2026-09-13 at Kenny’s request, and it turns on a fact worth stating plainly: documents/mr003-166, the Moreno Vineyard Tract of March 1876, is the FIRST source in this corpus for both names — twelve years earlier than the Botiller resubdivision that had been `wall-street`’s earliest sighting. Two streets, one sheet, one moment of naming. That is why the London/New York reading is worth recording even though namedAfter stays null on both: the evidence is the pair, not either name. It also cuts the other way — if either is ever shown NOT to be the foreign borrowing, the argument for the other weakens with it. Keep the two entities in step." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
@@ -1845,7 +1886,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Earl Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "extensive",
@@ -1866,7 +1907,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Morgan Lane"] }],
     namedAfter: "George W. Morgan, one of the three men the tract was subdivided for and, with A. H. Judson, one of the two at whose request it was recorded",
     namedAfterLink: null,
-    categories: ["person","alive"],
+    categories: ["person", "alive", "landowner"],
     sources: [
       { title: "Wikipedia: Highland Park, Los Angeles (George Morgan and Albert Judson created the Highland Park tract in 1886)",
         url: "https://en.wikipedia.org/wiki/Highland_Park,_Los_Angeles" }
@@ -1884,7 +1925,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Boyd Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "extensive",
@@ -1918,9 +1959,9 @@ const NAME_ENTITIES = {
 
   "wyoming-avenue": {
     spellings: [{ forms: ["Wyoming Avenue"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown"],
+    namedAfter: "{{The state of Wyoming}} — or Pennsylvania's Wyoming Valley, which named Burbank's street of this name; nothing settles which",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Wyoming",
+    categories: ["state"],
     sources: [],
     basis: "guess",
     rival: true,
@@ -1931,7 +1972,8 @@ const NAME_ENTITIES = {
     ],
     disputed: false,
     note: "Abolished by Ordinance No. 1613 (New Series) on April 3, 1893, when it and Cooper Street were made one street called Scott Avenue.",
-    internalNote: "Minted 2026-09-06 from documents/ord-1613, which is the only thing in the corpus that mentions it: no sheet letters it and its extent is unknown. Kines's Wyoming Avenue page is Burbank's — a 1925 street named for Pennsylvania's Wyoming Valley by developers from Wilkes-Barre — and is a different street; do not carry that namesake across (checked 2026-09-06).",
+    internalNote: "Minted 2026-09-06 from documents/ord-1613, which is the only thing in the corpus that mentions it: no sheet letters it and its extent is unknown. Kines's Wyoming Avenue page is Burbank's — a 1925 street named for Pennsylvania's Wyoming Valley by developers from Wilkes-Barre — and is a different street; do not carry that namesake across (checked 2026-09-06)." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
@@ -1939,7 +1981,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Cooper Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -1955,7 +1997,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Whisler Street"] }],
     namedAfter: "Mrs. Lourena Whisler, the owner at whose request the subdivision was made and recorded",
     namedAfterLink: null,
-    categories: ["person","alive"],
+    categories: ["person", "alive", "landowner"],
     sources: [],
     basis: "eponymous",
     disputed: false,
@@ -1989,7 +2031,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Cincinnati Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "none",
@@ -2003,7 +2045,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Jesse Street", "Jessie Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "none",
@@ -2027,7 +2069,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Requena Street"] }],
     namedAfter: "Almost certainly {{Manuel Requena}} (c. 1802–1876), Campeche-born merchant who settled in Los Angeles in 1834, alcalde under Mexican rule 1844–45, county supervisor, long-serving councilman and briefly acting mayor in 1856, whose own property the street ran through",
     namedAfterLink: "https://en.wikipedia.org/wiki/Manuel_Requena",
-    categories: ["person", "alive", "unknown"],
+    categories: ["person", "alive", "landowner"],
     sources: [
       { title: "Los Angeles Revisited: “Beneath Parker Center” (Requena Street, its earlier name Libertad, and its 1904 change to Market Street)",
         url: "https://losangelesrevisited.blogspot.com/2016/06/beneath-parker-center-paris-inn-cafe.html" },
@@ -2059,15 +2101,16 @@ const NAME_ENTITIES = {
 
   "wilmington-street": {
     spellings: [{ forms: ["Wilmington Street"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown"],
+    namedAfter: "{{Wilmington}}, the harbour town — the 1868 sheet letters it beside San Pedro Street, two adjacent harbour towns as two adjacent streets",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Wilmington,_Los_Angeles",
+    categories: ["place"],
     sources: [],
     basis: "inferred",
     sharesWarrantWith: ["san-pedro"],
     disputed: false,
     note: "A lost downtown street, lettered on the Garden of J. Murat in 1868 (documents/mr010-008) and on the Requena Subdivision in 1876 (documents/mr003-146), and still alive in Sept. 1896, when a fire-district boundary runs along its centre line between First and Requena Streets (documents/min-1896-09-14). Its ground is today Judge John Aiso Street.",
-    internalNote: "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES as a downtown street. ★★ KENNY’S OBSERVATION, 2026-09-13, and the sheets bear it out: WILMINGTON AND SAN PEDRO ARE ADJACENT HARBOUR TOWNS, AND THESE WERE ADJACENT PARALLEL STREETS. The Garden of J. Murat sheet of 1868 (documents/mr010-008) letters BOTH — San Pedro Street on the line that is now Astronaut Ellison S. Onizuka Street, and Wilmington Street one block over on the line that is now Judge John Aiso Street. `san-pedro` is securely named for the port town it ran toward, so a companion street named for the town next door, on the same sheet, is the destination principle applied twice. That is a much better argument than the chain previously rejected here (Banning named Wilmington for his Delaware birthplace, therefore the street is named for the town), because it does not depend on Banning at all — but it is still an argument from company rather than a statement, so namedAfter stays null. It also disposes of the annexation objection: naming a street for a neighbouring town in 1868 needs no annexation, and Wilmington was founded in 1863. ⚠ AND THE SAN PEDRO NAME MOVED. The 1868 sheet’s San Pedro Street is today Onizuka; what became NORTH San Pedro Street, and then Judge John Aiso Street, is the WILMINGTON line. So San Pedro appears to have absorbed Wilmington rather than merely neighboured it, and when is undocumented anywhere found. Los Angeles Revisited describes the Aiso renaming as having replaced San Pedro Street and does not mention Wilmington at all. (Kines dates San Pedro → Judge John Aiso to 1997, Wikipedia to 1999.)",
+    internalNote: "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES as a downtown street. ★★ KENNY’S OBSERVATION, 2026-09-13, and the sheets bear it out: WILMINGTON AND SAN PEDRO ARE ADJACENT HARBOUR TOWNS, AND THESE WERE ADJACENT PARALLEL STREETS. The Garden of J. Murat sheet of 1868 (documents/mr010-008) letters BOTH — San Pedro Street on the line that is now Astronaut Ellison S. Onizuka Street, and Wilmington Street one block over on the line that is now Judge John Aiso Street. `san-pedro` is securely named for the port town it ran toward, so a companion street named for the town next door, on the same sheet, is the destination principle applied twice. That is a much better argument than the chain previously rejected here (Banning named Wilmington for his Delaware birthplace, therefore the street is named for the town), because it does not depend on Banning at all — but it is still an argument from company rather than a statement, so namedAfter stays null. It also disposes of the annexation objection: naming a street for a neighbouring town in 1868 needs no annexation, and Wilmington was founded in 1863. ⚠ AND THE SAN PEDRO NAME MOVED. The 1868 sheet’s San Pedro Street is today Onizuka; what became NORTH San Pedro Street, and then Judge John Aiso Street, is the WILMINGTON line. So San Pedro appears to have absorbed Wilmington rather than merely neighboured it, and when is undocumented anywhere found. Los Angeles Revisited describes the Aiso renaming as having replaced San Pedro Street and does not mention Wilmington at all. (Kines dates San Pedro → Judge John Aiso to 1997, Wikipedia to 1999.)" +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
@@ -2077,7 +2120,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Beaudry Street", "Beaudry Avenue"] }],
     namedAfter: "{{Prudent Beaudry}} (c. 1819–1893), Montreal-born merchant turned hillside subdivider who developed Bunker Hill, sat on the City Council from 1871 and was mayor from 1874",
     namedAfterLink: "https://en.wikipedia.org/wiki/Prudent_Beaudry",
-    categories: ["person", "alive"],
+    categories: ["person", "alive", "landowner"],
     sources: [
       { title: "L.A. Street Names: Beaudry Avenue (“Beaudry Avenue itself was born Beaudry Street, at the corner of 6th, on 1868's bluntly-titled Beaudry tract”)",
         url: "https://lastreetnames.com/street/beaudry-avenue/" }
@@ -2093,7 +2136,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Grand Avenue"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown", "aspiration"],
+    categories: [],
     sources: [
       { title: "L.A. Street Names: Grand Avenue (Charity Street, designated 1849, opened 1869; council vote May 10, 1886)",
         url: "https://lastreetnames.com/street/grand-avenue/" },
@@ -2112,7 +2155,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Orange Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [
       { title: "L.A. Street Names: Orange Street (the old Orange Street ran between Figueroa and Alvarado and “became part of Wilshire in April 1924”)",
         url: "https://lastreetnames.com/street/orange-street/" }
@@ -2129,7 +2172,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Moore Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [
       { title: "L.A. Street Names: Francisco Street (“the former Moore Street and Okey Street” were renamed Francisco Street in 1903)",
         url: "https://lastreetnames.com/street/francisco-street/" }
@@ -2146,7 +2189,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Florida Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -2160,7 +2203,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Loomis Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [
       { title: "George Garrigues, Los Angeles street changes (“Loomis St., south of 6th St., is under the 110”)",
         url: "https://stevemorse.org/census/changes/LosAngelesChanges2.htm" }
@@ -2177,7 +2220,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Ruby Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -2191,7 +2234,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Ward Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -2221,7 +2264,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Ingraham Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "extensive",
@@ -2235,7 +2278,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Kip Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [
       { title: "George Garrigues, Los Angeles street changes (“Kip St. — north of 7th St., now under the 110”)",
         url: "https://stevemorse.org/census/changes/LosAngelesChanges2.htm" }
@@ -2257,7 +2300,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Wilshire Boulevard"] }],
     namedAfter: "{{H. Gaylord Wilshire}} (1861–1927), developer, publisher and socialist candidate, who subdivided the tract the first stretch ran through",
     namedAfterLink: "https://en.wikipedia.org/wiki/H._Gaylord_Wilshire",
-    categories: ["person", "alive"],
+    categories: ["person", "alive", "landowner"],
     sources: [
       { title: "Council minutes, Sept. 21, 1896 — H. G. Wilshire's petition about Sixth Street (documents/min-1896-09-21)",
         url: "https://clerkapps.lacity.org/oldcfidocs/" },
@@ -2275,7 +2318,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Park Lane"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [
       { title: "Los Angeles Revisited: “The Alleys of Downtown L.A.” (Park Lane, 6th to 7th between Figueroa and Flower, renamed Lebanon Street in 1897)",
         url: "https://losangelesrevisited.blogspot.com/2018/05/the-alleys-of-downtown-la-infamous.html" }
@@ -2297,7 +2340,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Ozier Lane"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "extensive",
@@ -2336,7 +2379,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Vignes Street"] }],
     namedAfter: "The {{Vignes family}}, principally Jean-Louis Vignes (1780–1862), the Bordeaux-born cooper who bought 104 acres beside the El Aliso sycamore and founded California's first commercial winery",
     namedAfterLink: "https://en.wikipedia.org/wiki/Jean-Louis_Vignes",
-    categories: ["person"],
+    categories: ["person", "landowner"],
     sources: [
       { title: "L.A. Street Names: Vignes Street (named 1874; “the street is named for the family”)",
         url: "https://lastreetnames.com/street/vignes-street/" }
@@ -2350,14 +2393,15 @@ const NAME_ENTITIES = {
 
   "banning-street": {
     spellings: [{ forms: ["Banning Street"] }],
-    namedAfter: null,
-    namedAfterLink: null,
-    categories: ["unknown"],
+    namedAfter: "Probably {{Phineas Banning}} (1830–1885), the harbour builder — the obvious candidate for any Banning street in this county, and no source says so for this one",
+    namedAfterLink: "https://en.wikipedia.org/wiki/Phineas_Banning",
+    categories: ["person"],
     sources: [],
     basis: "guess",
     disputed: false,
     note: "A short street on the Union Station ground, near Alameda and Vignes Streets.",
-    internalNote: "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES — his only Banning street is Banning Boulevard in Carson/Wilmington, which he attributes to Phineas Banning (1830–1885). Phineas is the obvious candidate for any Banning street in this county and a rail-adjacent tract by the station fits him, but NO SOURCE says so for this street, so namedAfter stays null. Left deliberately, not overlooked.",
+    internalNote: "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES — his only Banning street is Banning Boulevard in Carson/Wilmington, which he attributes to Phineas Banning (1830–1885). Phineas is the obvious candidate for any Banning street in this county and a rail-adjacent tract by the station fits him, but NO SOURCE says so for this street, so namedAfter stays null. Left deliberately, not overlooked." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
@@ -2365,7 +2409,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Turner Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "extensive",
@@ -2386,7 +2430,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Kohler Street"] }],
     namedAfter: "{{Charles Kohler}} (1830–1887), German-born musician turned wine merchant who with John Frohling built California's largest wine house from 1856 and co-founded Anaheim in 1857, and who worked the Los Angeles vineyards this street crosses",
     namedAfterLink: "https://en.wikipedia.org/wiki/Charles_Kohler",
-    categories: ["person"],
+    categories: ["person", "landowner"],
     sources: [
       { title: "L.A. Street Names: Kohler Street (named 1887, months after Kohler's death; the original Kohler Street ran where 9th Street now runs between San Pedro and Alameda)",
         url: "https://lastreetnames.com/street/kohler-street/" }
@@ -2400,14 +2444,15 @@ const NAME_ENTITIES = {
 
   "merchant-st": {
     spellings: [{ forms: ["Merchant Street"] }],
-    namedAfter: null,
+    namedAfter: "The wholesale merchants of the district it crossed — or the Kohler and Frohling wine house, whose own street is lettered beside it on every sheet that shows either; nothing states which",
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: ["descriptive"],
     sources: [],
     basis: "inferred",
     disputed: false,
     note: "Runs beside Kohler Street through the old vineyard ground between 7th and 8th at Central Avenue, and is lettered with it on every sheet in this corpus that shows either (documents/mr021-046, mr054-051, tr0001-046, tr0141-011).",
-    internalNote: "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES; nothing states whether it is descriptive or commemorative. An unsupported lead, recorded so it is not mistaken for a finding: Kines calls the Kohler and Frohling firm California's largest wine MERCHANT house, and Merchant Street is lettered alongside Kohler Street on the Kohler Tract — which makes a commemorative reading imaginable. No source asserts it.",
+    internalNote: "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES; nothing states whether it is descriptive or commemorative. An unsupported lead, recorded so it is not mistaken for a finding: Kines calls the Kohler and Frohling firm California's largest wine MERCHANT house, and Merchant Street is lettered alongside Kohler Street on the Kohler Tract — which makes a commemorative reading imaginable. No source asserts it." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
@@ -2415,7 +2460,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Melendrez Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -2429,7 +2474,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Elmore Avenue"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -2443,7 +2488,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Helena Avenue"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "extensive",
@@ -2455,14 +2500,15 @@ const NAME_ENTITIES = {
 
   "parker-drive": {
     spellings: [{ forms: ["Parker Drive"] }],
-    namedAfter: null,
+    namedAfter: "{{J. B. Parker}}, for whose subdivision the plat that first letters this street is titled — the man himself is untraced",
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: ["landowner"],
     sources: [],
     basis: "eponymous",
     disputed: false,
     note: "Lettered on the J. B. Parker Subdivision of April 1898, near 8th Street and Central Avenue (documents/mr070-051).",
-    internalNote: "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES. The subdivision's own title is the evidence and it is self-documenting — the street is named from the subdivider — but WHO J. B. Parker was is undocumented in every source checked, so namedAfter stays null rather than asserting a person nobody has identified. This is the cleanest case in the batch of a name whose origin is obvious and whose namesake is unknown.",
+    internalNote: "Moved from names-new.js 2026-09-13. NOT COVERED BY KINES. The subdivision's own title is the evidence and it is self-documenting — the street is named from the subdivider — but WHO J. B. Parker was is undocumented in every source checked, so namedAfter stays null rather than asserting a person nobody has identified. This is the cleanest case in the batch of a name whose origin is obvious and whose namesake is unknown." +
+      " ★ namedAfter drafted 2026-09-15 to go with the visible `basis` grade: the reading was already in the prose and the grade now says how much it is worth, so withholding it from the field only hid it from the map. Kenny to reword.",
     possiblySameAs: null, aliases: []
   },
 
@@ -2472,7 +2518,9 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Agatha Street"] }],
     namedAfter: "Probably {{Agatha Sabichi}} (1871–1963), fourth of the thirteen children of the attorney and council president Frank Sabichi and Magdalena Wolfskill, on whose father's land the street was named",
     namedAfterLink: "https://en.wikipedia.org/wiki/Frank_Sabichi",
-    categories: ["person", "alive", "unknown"],
+    namedAfterApproved: "Probably {{Agatha Sabichi}} (1871–1963), fourth of the thirteen children of the attorney and council president Frank Sabichi and Magdalena Wolfskill, on whose father's land the street was named",
+    namedAfterApprovedOn: "2026-09-15",
+    categories: ["person","alive","family"],
     sources: [
       { title: "L.A. Street Names: Agatha Street (“This 1897 street surely honors Agatha Sabichi (1871-1963) as it was named on land owned by her father, a very prominent Angeleno in his day”)",
         url: "https://lastreetnames.com/street/agatha-street/" },
@@ -2484,7 +2532,8 @@ const NAME_ENTITIES = {
     disputed: false,
     note: "Named in 1897, on land owned by Frank Sabichi, who had married Magdalena Wolfskill and was credited with opening East 7th Street through the family properties. Agatha Sabichi worked as a bank clerk and in 1908 married John Joseph Fay Jr., later president of the water board.",
     internalNote: "Moved from names-new.js 2026-09-13. HEDGED ON PURPOSE: Kines’s own wording is “surely honors”, which is his inference from the land’s ownership, not a cited naming document — hence “Probably”, and `unknown` kept alongside `person`. Wikipedia independently confirms the daughter and the land, but does not mention Agatha Street at all and cannot be cited for the naming. Note that `gladys-ave` already carried the Sabichi/Wolfskill link and cited the same sheet (Wilde and Strong’s Subdivision of the Frank Sabichi Tract, M.R. 66-64) before this entity existed; what is new here is the Kines page for Agatha herself. ⚠ BIRTH YEAR IN DISPUTE, flagged 2026-09-14 and NOT resolved: Kines gives 1871–1963 and this entity follows him, but Find a Grave’s Sabichi plot gives Agatha Sabichi Fay as 1881–1963 — death year agreeing, birth year ten years apart. A sibling, Leopold Albert Sabichi, is also given as 1881. It matters: at the 1897 naming she is either 26 or 16, and on the 1881 reading she and Ruth Wolfskill (`ruth-ave`) are first cousins BOTH BORN IN 1881, each with a street named on her own father’s land nine years apart — which would be a real pattern rather than two coincidences. Resolve before leaning on Agatha as the methodological control in handbook/FAMILY-NAMES.md. The 1900 census, or the Calvary Cemetery interment book, decides it.",
-    possiblySameAs: null, aliases: []
+    possiblySameAs: null,
+    aliases: []
   },
 
   // ---- the Arts District --------------------------------------------------
@@ -2493,7 +2542,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Messer Street"] }],
     namedAfter: "Almost certainly {{K. Messer}}, the adjoining landowner — the plat that letters this street writes “K. Messer” across the holding along the tract’s northern edge",
     namedAfterLink: null,
-    categories: ["person","alive"],
+    categories: ["person", "alive", "landowner"],
     sources: [],
     basis: "eponymous",
     disputed: false,
@@ -2506,7 +2555,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Rose Street"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "partial",
@@ -2520,7 +2569,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Traction Avenue"] }],
     namedAfter: "The {{electric traction motor}} that powered the streetcars running along it",
     namedAfterLink: "https://en.wikipedia.org/wiki/Traction_motor",
-    categories: ["descriptive"],
+    categories: ["tool"],
     sources: [
       { title: "L.A. Street Names: Traction Avenue (the former Stephenson Ave. renamed in 1915; “the word referred to the electric traction motor that powered streetcars via a trolley pole”)",
         url: "https://lastreetnames.com/street/traction-avenue/" }
@@ -2554,7 +2603,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Woodworth Court"] }],
     namedAfter: "Probably {{Wallace Woodworth}} (1832–1882), an early settler whose adobe and later house stood at Second and San Pedro Streets, on the ground this court occupies",
     namedAfterLink: "https://oac.cdlib.org/findaid/ark:/13030/c8wd41ck/",
-    categories: ["person", "unknown"],
+    categories: ["person"],
     sources: [
       { title: "Online Archive of California: Woodworth Collection finding aid (“the Woodworth adobe at Second and San Pedro Streets was replaced with a house”)",
         url: "https://oac.cdlib.org/findaid/ark:/13030/c8wd41ck/" },
@@ -2574,7 +2623,7 @@ const NAME_ENTITIES = {
     spellings: [{ forms: ["Moran's Lane"] }],
     namedAfter: null,
     namedAfterLink: null,
-    categories: ["unknown"],
+    categories: [],
     sources: [],
     basis: "none",
     searched: "extensive",

@@ -1,0 +1,393 @@
+{
+  "document": "mr005-105",
+  "image": "mr005-105-100dpi.png",
+  "imageSize": [1775, 1149],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr005-105-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [45, 267],
+    [10, 699],
+    [1143, 682],
+    [1133, 214]
+  ],
+  "coverageLl": [
+    [34.037999, -118.262238],
+    [34.037241, -118.262961],
+    [34.03586, -118.260415],
+    [34.036741, -118.259738]
+  ],
+  "streets": [
+    {
+      "name": "Broadway",
+      "runs": [
+        {
+          "px": [
+            [591, 690],
+            [590, 614],
+            [589, 532],
+            [588, 415],
+            [588, 377],
+            [589, 338],
+            [593, 240]
+          ],
+          "ll": [
+            [34.036533, -118.261655],
+            [34.036676, -118.261542],
+            [34.036828, -118.261423],
+            [34.037048, -118.261249],
+            [34.037119, -118.261194],
+            [34.037189, -118.261132],
+            [34.037365, -118.260978]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Place",
+          "px": [593, 845],
+          "ll": [34.036243, -118.261883],
+          "insideCoverage": false
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [588, 377],
+          "ll": [34.037119, -118.261194],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hill Street",
+      "runs": [
+        {
+          "px": [
+            [167, 261],
+            [161, 338],
+            [159, 377],
+            [158, 405],
+            [157, 527],
+            [156, 614],
+            [155, 697]
+          ],
+          "ll": [
+            [34.037859, -118.261958],
+            [34.037723, -118.262085],
+            [34.037654, -118.262149],
+            [34.037602, -118.262192],
+            [34.037378, -118.262377],
+            [34.037218, -118.262509],
+            [34.037064, -118.262635]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Place",
+          "px": [153, 843],
+          "ll": [34.036796, -118.262857],
+          "insideCoverage": false
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [159, 377],
+          "ll": [34.037654, -118.262149],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Main Street",
+      "runs": [
+        {
+          "px": [
+            [1039, 219],
+            [1039, 275],
+            [1040, 356],
+            [1039, 448],
+            [1039, 488],
+            [1038, 520],
+            [1038, 684]
+          ],
+          "ll": [
+            [34.036849, -118.259953],
+            [34.036744, -118.260037],
+            [34.036594, -118.260158],
+            [34.036424, -118.260297],
+            [34.036351, -118.260357],
+            [34.036291, -118.260405],
+            [34.035988, -118.260651]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Place",
+          "px": [1038, 848],
+          "ll": [34.035683, -118.260897],
+          "insideCoverage": false
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [1040, 356],
+          "ll": [34.036594, -118.260158],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Pico Boulevard",
+      "runs": [
+        {
+          "px": [
+            [1040, 356],
+            [980, 366],
+            [888, 379],
+            [786, 382],
+            [829, 402],
+            [975, 462],
+            [1039, 488],
+            [1064, 497],
+            [1077, 501],
+            [1115, 515],
+            [1139, 515]
+          ],
+          "ll": [
+            [34.036594, -118.260158],
+            [34.036651, -118.260305],
+            [34.036741, -118.260528],
+            [34.036862, -118.260761],
+            [34.03677, -118.260695],
+            [34.036478, -118.260459],
+            [34.036351, -118.260357],
+            [34.036303, -118.260314],
+            [34.036277, -118.260291],
+            [34.036206, -118.260228],
+            [34.036175, -118.260173]
+          ]
+        },
+        {
+          "px": [
+            [786, 382],
+            [759, 381],
+            [626, 378],
+            [588, 377],
+            [537, 376],
+            [428, 376],
+            [257, 375],
+            [195, 376],
+            [159, 377],
+            [107, 377],
+            [36, 377]
+          ],
+          "ll": [
+            [34.036862, -118.260761],
+            [34.036897, -118.26082],
+            [34.037069, -118.26111],
+            [34.037119, -118.261194],
+            [34.037183, -118.261306],
+            [34.03732, -118.261549],
+            [34.037534, -118.261928],
+            [34.03761, -118.262068],
+            [34.037654, -118.262149],
+            [34.037718, -118.262263],
+            [34.037807, -118.262421]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Broadway",
+          "px": [588, 377],
+          "ll": [34.037119, -118.261194],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hill Street",
+          "px": [159, 377],
+          "ll": [34.037654, -118.262149],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [1040, 356],
+          "ll": [34.036594, -118.260158],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olive Street",
+          "px": [-212, 375],
+          "ll": [34.038119, -118.262972],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Broadway",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "fort-street",
+          "display": "Fort Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Broadway by another sheet"
+          ],
+          "ink": [
+            "CALLE FORTIN",
+            "FORT STREET",
+            "Fort Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr053-067",
+            "mr053-068",
+            "mr053-069"
+          ]
+        },
+        {
+          "id": "eternity",
+          "display": "Eternity Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Broadway by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LA ETERNIDAD",
+            "ETERNITY ST."
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "broadway",
+          "display": "Broadway",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Hill Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "hill-street-downtown",
+          "display": "Hill Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hill Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE LOMA",
+            "HILL ST",
+            "HILL STREET",
+            "Hill Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr053-067",
+            "mr053-068",
+            "mr053-069"
+          ]
+        },
+        {
+          "id": "bull",
+          "display": "Bull Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hill Street by another sheet"
+          ],
+          "ink": [
+            "BULL ST.",
+            "CALLE DEL TORO"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Main Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "main-street-dtla",
+          "display": "Main Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Main Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE PRINCIPAL",
+            "MAIN ST.",
+            "MAIN STREET",
+            "Main St.",
+            "Main Street"
+          ],
+          "docs": [
+            "11824",
+            "12017",
+            "mr005-110",
+            "mr006-378",
+            "mr012-026",
+            "mr029-026",
+            "mr053-016",
+            "mr053-063",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071"
+          ]
+        },
+        {
+          "id": "los-angeles-street",
+          "display": "Los Angeles Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Main Street by another sheet"
+          ],
+          "ink": [
+            "Los Angeles St."
+          ],
+          "docs": [
+            "mr039-069"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Pico Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "pico",
+          "display": "Pico Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Pico Boulevard by another sheet"
+          ],
+          "ink": [
+            "Pico Street"
+          ],
+          "docs": [
+            "mr007-021"
+          ]
+        }
+      ]
+    }
+  ]
+}

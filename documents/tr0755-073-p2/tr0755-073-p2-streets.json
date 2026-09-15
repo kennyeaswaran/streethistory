@@ -1,0 +1,407 @@
+{
+  "document": "tr0755-073-p2",
+  "image": "tr0755-073-p2-100dpi.png",
+  "imageSize": [1746, 2438],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0755-073-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [139, 714],
+    [1679, 631],
+    [1672, 2367],
+    [152, 2396]
+  ],
+  "coverageLl": [
+    [34.034082, -118.255955],
+    [34.032762, -118.253115],
+    [34.030184, -118.255077],
+    [34.031566, -118.257821]
+  ],
+  "streets": [
+    {
+      "name": "15th Street",
+      "runs": [
+        {
+          "px": [
+            [151, 2207],
+            [292, 2203],
+            [319, 2202],
+            [695, 2198],
+            [812, 2197],
+            [929, 2196],
+            [1071, 2194],
+            [1209, 2193],
+            [1317, 2192],
+            [1373, 2191]
+          ],
+          "ll": [
+            [34.031849, -118.257611],
+            [34.031722, -118.257354],
+            [34.031698, -118.257306],
+            [34.031351, -118.25663],
+            [34.031243, -118.256421],
+            [34.031135, -118.25621],
+            [34.031005, -118.255955],
+            [34.030878, -118.255708],
+            [34.030778, -118.255513],
+            [34.030727, -118.255413]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Myrtle Street",
+          "px": [319, 2202],
+          "ll": [34.031698, -118.257306],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Julian Street",
+          "px": [812, 2197],
+          "ll": [34.031243, -118.256421],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wall Street",
+          "px": [-95, 2214],
+          "ll": [34.032068, -118.258056],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Myrtle Street",
+      "runs": [
+        {
+          "px": [
+            [326, 832],
+            [323, 867],
+            [324, 1082],
+            [322, 1591],
+            [319, 2164],
+            [319, 2202]
+          ],
+          "ll": [
+            [34.033731, -118.255755],
+            [34.033682, -118.255799],
+            [34.03336, -118.256038],
+            [34.032605, -118.256614],
+            [34.031755, -118.257262],
+            [34.031698, -118.257306]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "15th Street",
+          "px": [319, 2202],
+          "ll": [34.031698, -118.257306],
+          "insideCoverage": true
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [326, 832],
+          "ll": [34.033731, -118.255755],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wall Street",
+          "px": [199, 827],
+          "ll": [34.033858, -118.255973],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Pico Boulevard",
+      "runs": [
+        {
+          "px": [
+            [1313, 857],
+            [1258, 854],
+            [1237, 853],
+            [976, 846],
+            [819, 845],
+            [707, 841],
+            [671, 840],
+            [342, 832],
+            [326, 832],
+            [140, 824]
+          ],
+          "ll": [
+            [34.032768, -118.254022],
+            [34.032824, -118.254116],
+            [34.032845, -118.254153],
+            [34.033101, -118.254611],
+            [34.03325, -118.254889],
+            [34.03336, -118.255084],
+            [34.033396, -118.255148],
+            [34.033716, -118.255727],
+            [34.033731, -118.255755],
+            [34.033918, -118.256077]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Myrtle Street",
+          "px": [326, 832],
+          "ll": [34.033731, -118.255755],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Julian Street",
+          "px": [819, 845],
+          "ll": [34.03325, -118.254889],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [1313, 857],
+          "ll": [34.032768, -118.254022],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wall Street",
+          "px": [-97, 816],
+          "ll": [34.034152, -118.25649],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "San Julian Street",
+      "runs": [
+        {
+          "px": [
+            [819, 845],
+            [819, 878],
+            [819, 886],
+            [817, 1098],
+            [817, 1158],
+            [816, 1302],
+            [814, 1829],
+            [810, 1971],
+            [812, 2124],
+            [812, 2163],
+            [812, 2197]
+          ],
+          "ll": [
+            [34.03325, -118.254889],
+            [34.033201, -118.254927],
+            [34.033189, -118.254936],
+            [34.032874, -118.255177],
+            [34.032785, -118.255244],
+            [34.032572, -118.255407],
+            [34.03179, -118.256004],
+            [34.031581, -118.25617],
+            [34.031352, -118.256338],
+            [34.031294, -118.256382],
+            [34.031243, -118.256421]
+          ]
+        },
+        {
+          "px": [
+            [678, 685],
+            [673, 800],
+            [671, 840]
+          ],
+          "ll": [
+            [34.03362, -118.254962],
+            [34.033454, -118.2551],
+            [34.033396, -118.255148]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "15th Street",
+          "px": [812, 2197],
+          "ll": [34.031243, -118.256421],
+          "insideCoverage": true
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [819, 845],
+          "ll": [34.03325, -118.254889],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "San Pedro Street",
+      "runs": [
+        {
+          "px": [
+            [1313, 857],
+            [1312, 815],
+            [1308, 703],
+            [1309, 651]
+          ],
+          "ll": [
+            [34.032768, -118.254022],
+            [34.032833, -118.253976],
+            [34.033001, -118.253857],
+            [34.033079, -118.253798]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Pico Boulevard",
+          "px": [1313, 857],
+          "ll": [34.032768, -118.254022],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "15th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "fifteenth-street",
+          "display": "15th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 15th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "(formerly Laura St)",
+            "15th ST."
+          ],
+          "docs": [
+            "mr053-016"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Myrtle Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Pico Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "pico",
+          "display": "Pico Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Pico Boulevard by another sheet"
+          ],
+          "ink": [
+            "Pico Street"
+          ],
+          "docs": [
+            "mr007-021"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "San Julian Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "san-julian-st",
+          "display": "San Julian Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on San Julian Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "San Julian St.",
+            "San Julian Street"
+          ],
+          "docs": [
+            "12017",
+            "mr006-378",
+            "mr016-027"
+          ]
+        },
+        {
+          "id": "earl-st",
+          "display": "Earl Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on San Julian Street by another sheet"
+          ],
+          "ink": [
+            "Earl St",
+            "Earl St.",
+            "Earl Street"
+          ],
+          "docs": [
+            "mr006-039",
+            "mr011-008",
+            "mr014-034",
+            "mr016-027"
+          ]
+        },
+        {
+          "id": "whisler-st",
+          "display": "Whisler Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on San Julian Street by another sheet"
+          ],
+          "ink": [
+            "Whisler St."
+          ],
+          "docs": [
+            "mr012-064"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "San Pedro Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "san-pedro",
+          "display": "San Pedro Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on San Pedro Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "SAN PEDRO ST",
+            "SAN PEDRO STREET",
+            "San Pedro Ave",
+            "San Pedro St.",
+            "San Pedro Street"
+          ],
+          "docs": [
+            "12017",
+            "mr005-005",
+            "mr005-307-b",
+            "mr006-039",
+            "mr006-378",
+            "mr011-008",
+            "mr012-064",
+            "mr014-034",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-065",
+            "mr066-064",
+            "tr0013-048",
+            "tr0938-051-p3"
+          ]
+        }
+      ]
+    }
+  ]
+}

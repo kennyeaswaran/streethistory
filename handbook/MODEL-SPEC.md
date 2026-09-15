@@ -228,7 +228,10 @@ Act-documentation is not attestation of a namesake.*
 
 **`eponymous`** — the street first appears on a map (or other name-producing
 document — Wilshire's anchor is council minutes) carrying the person's name, or
-a close family member's, **and we can say which person that was**. Owner,
+a close family member's, **and we can say which person that was**. The categories
+must say WHICH: `landowner` (owned or subdivided the ground) or `family` (of the
+owner or subdivider). `check-model.js` errors otherwise — the grade claims the
+plat attests a role, so the file should record which role. Owner,
 subdivider, surveyor, signatory, or the wife, daughter, son or grandparent of
 one. Where the family is on the document but no individual has been found —
 Ida, Gladys, Omar, Centerbrook — the value is `none`, and `searched` carries
@@ -266,6 +269,37 @@ person, plant) and the Nichols Addition's other names settle none of them.
 **`none`** — no specific candidate, and no single concept worth linking. The
 largest value in the file, so its `searched` split carries a third of the corpus.
 
+#### The grade is published
+
+`basis` and `searched` go out as categories in the generated model
+(`basis-guess`, `searched-extensive`, …) under a **How well we know it** node
+in the map's Highlight list, and the popup prints the grade as a badge beside
+the namesake. That is not decoration: several namesakes in this file are candid
+guesses, and they are written into `namedAfter` at all BECAUSE the grade travels
+with them. Printing one without the other would publish a guess as a finding.
+
+It also changes what the field is for:
+
+> **A name has a `basis` other than `"none"` if and only if it has a
+> `namedAfter` and at least one category**, barring rare deliberate exceptions.
+
+`basis: "none"` with a populated `namedAfter` is an error; the other three
+combinations warn. Withholding a reading from `namedAfter` does not protect the
+reader now that the grade is published — it only hides the reading from the map,
+where `a guess` would have qualified it in three words. Sixteen entities were
+filled in on that argument 2026-09-15 (Wall, Regent, Broadway, Yale among them).
+
+The exception in the strict direction: an entity with no candidate AND no kind
+carries no categories at all, because tagging `place` on an unknown namesake
+asserts more than the file knows. In the other direction, `parker-drive` is
+`eponymous` with `namedAfter: null` — the plat is titled "J. B. Parker
+Subdivision", so the role is attested though the man is not.
+
+⚠ The generator splits `namedAfter` at the first " — " and keeps only the head
+when a stretch did not originate under this name (`namedAfterFor`), so a
+qualifier written after the dash does not reach those popups. The badge is what
+carries the hedge there.
+
 #### `searched` — effort, not warrant
 
 `none` | `partial` | `extensive`. Only meaningful where `basis` is `none`.
@@ -279,9 +313,12 @@ The load-bearing boundary is **partial/extensive**, not none/partial: most
 checked 2026-08-30"), while `extensive` marks a closed question where someone
 picking it up would waste a day re-running searches already recorded as empty.
 
-This replaces `unresearched` in `categories`, which is stale (`yale` carries it
-beside two completed checks) and disagrees with `unknown` about which records
-are unworked.
+`unresearched` in `categories` is no longer authored: it is DERIVED from this
+field by `generate.js`, alongside `unknown` (derived from a null `namedAfter`)
+and `renamed` (derived from the timeline). Hand-typed, the two research-status
+tags had drifted from the fields they restate — twenty of 143 entities
+disagreed, thirteen of them claiming `unknown` beside a populated `namedAfter`.
+`check-model.js` errors if either is authored. See ROADMAP §7.
 
 #### The three flags
 
@@ -341,6 +378,44 @@ linkable-concept value narrows to its test, Ceres moves to `guess`, `exhausted`
 becomes `extensive`; (3) Nevada and Wyoming join Georgia at `guess`, and the
 linkable-concept value is renamed `lexical` to clear the collision with the
 category of that name.
+
+### 3.2 Approved text — which sentences a person wrote
+
+`note` and `namedAfter` are the two fields a reader sees. Most of the prose in
+them is now drafted by an agent and reviewed later, if at all, which makes one
+question hard to answer from the file: **which sentences on the published site
+did Kenny write?**
+
+Four optional fields answer it.
+
+```js
+namedAfter: "…",                     // the live text — anyone may edit it
+namedAfterApproved: "…",             // the last version a PERSON wrote
+namedAfterApprovedOn: "2026-09-15",   // and when they said so
+note: "…", noteApproved: "…", noteApprovedOn: "2026-09-15",
+```
+
+**Absent means never approved. An empty string means a person approved the
+absence of text** — a real state, and a different one. The serializer and the
+checker both turn on `!== undefined` rather than truthiness so the two survive a
+round trip.
+
+Nothing is derived from these and nothing warns on them. On the day they landed
+all 143 entities were unapproved, and a check that always complains is a check
+nobody reads; `check-model.js` prints a count instead, which is legible as a
+trend.
+
+**Only a person writes them.** `names-tool.html` shows the approved text under
+each field with an *Approve this text* button, and a word-level diff whenever
+the live text has drifted from it. An agent may rewrite `note` and `namedAfter`
+at will — that is the job — and must never write the approved fields, because
+doing so erases the only evidence of whose sentences are whose. The rule is
+stated at the top of `names.js`, where an agent editing the file will meet it
+without opening the handbook.
+
+The status is deliberately **internal**. The published site says nothing about
+whether a sentence has been approved: marking the reviewed ones would invite the
+reading that the rest are untrustworthy, which is not what the field means.
 
 ### `note` is published; `internalNote` is not
 
@@ -501,7 +576,9 @@ gives spellings, not ids, so the generator resolves them:
 1. **Unique match** — the normalized OSM name matches the latest form of
    exactly one entity: bind it.
 2. **No match** — mint a **stub entity**: the OSM name as its only spelling,
-   `namedAfter: null`, category `unresearched`, no sources. This is how new
+   `namedAfter: null`, `basis: "none"`, `searched: "none"`, no categories and no
+   sources — the generator derives `unknown` and `unresearched` onto it from
+   those two fields, by the same rule it applies to every other entity. This is how new
    coverage bootstraps. Add a neighborhood, and its couple of hundred street
    names arrive as stubs that render grey immediately and are ready to receive
    research, with no hand-entry step at all.

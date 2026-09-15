@@ -1,0 +1,830 @@
+{
+  "document": "mr011-094",
+  "image": "mr011-094-100dpi.png",
+  "imageSize": [1109, 1659],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr011-094-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [907, 381],
+    [103, 395],
+    [127, 1398],
+    [887, 1357]
+  ],
+  "coverageLl": [
+    [34.037073, -118.260543],
+    [34.034222, -118.262814],
+    [34.031881, -118.258532],
+    [34.034643, -118.256502]
+  ],
+  "streets": [
+    {
+      "name": "14th Place",
+      "runs": [
+        {
+          "px": [
+            [599, 509],
+            [599, 482],
+            [598, 386]
+          ],
+          "ll": [
+            [34.035683, -118.260897],
+            [34.035747, -118.261011],
+            [34.035977, -118.261416]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Street",
+          "px": [546, 509],
+          "ll": [34.035497, -118.261052],
+          "insideCoverage": true
+        },
+        {
+          "name": "Broadway",
+          "px": [597, 276],
+          "ll": [34.036243, -118.261883],
+          "insideCoverage": false
+        },
+        {
+          "name": "Main Street",
+          "px": [599, 509],
+          "ll": [34.035683, -118.260897],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "14th Street",
+      "runs": [
+        {
+          "px": [
+            [493, 509],
+            [493, 534],
+            [493, 636],
+            [494, 735],
+            [494, 755],
+            [494, 770],
+            [496, 881],
+            [499, 992],
+            [499, 1005],
+            [499, 1018],
+            [502, 1127],
+            [504, 1235],
+            [505, 1254]
+          ],
+          "ll": [
+            [34.035312, -118.261207],
+            [34.035252, -118.261102],
+            [34.035007, -118.260671],
+            [34.034769, -118.260253],
+            [34.034722, -118.26017],
+            [34.034685, -118.260104],
+            [34.034422, -118.259634],
+            [34.034165, -118.259159],
+            [34.034135, -118.259105],
+            [34.034104, -118.259047],
+            [34.033851, -118.258581],
+            [34.033597, -118.258123],
+            [34.033552, -118.258044]
+          ]
+        },
+        {
+          "px": [
+            [400, 510],
+            [399, 487],
+            [397, 390]
+          ],
+          "ll": [
+            [34.034982, -118.26147],
+            [34.035036, -118.261568],
+            [34.035265, -118.261983]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Place",
+          "px": [546, 509],
+          "ll": [34.035497, -118.261052],
+          "insideCoverage": true
+        },
+        {
+          "name": "Broadway",
+          "px": [395, 275],
+          "ll": [34.035535, -118.262469],
+          "insideCoverage": false
+        },
+        {
+          "name": "Los Angeles Street",
+          "px": [494, 755],
+          "ll": [34.034722, -118.26017],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [493, 509],
+          "ll": [34.035312, -118.261207],
+          "insideCoverage": true
+        },
+        {
+          "name": "Maple Avenue",
+          "px": [505, 1254],
+          "ll": [34.033552, -118.258044],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santee Street",
+          "px": [499, 1005],
+          "ll": [34.034135, -118.259105],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "15th Street",
+      "runs": [
+        {
+          "px": [
+            [202, 393],
+            [204, 487],
+            [204, 514],
+            [204, 535],
+            [204, 638],
+            [206, 736],
+            [206, 758],
+            [206, 772],
+            [205, 883],
+            [208, 995],
+            [208, 1009],
+            [208, 1024],
+            [210, 1133],
+            [212, 1238],
+            [213, 1255],
+            [213, 1272],
+            [215, 1393]
+          ],
+          "ll": [
+            [34.034573, -118.262534],
+            [34.034354, -118.262137],
+            [34.03429, -118.262022],
+            [34.034237, -118.261931],
+            [34.033988, -118.2615],
+            [34.033757, -118.261085],
+            [34.033704, -118.26099],
+            [34.03367, -118.260932],
+            [34.033399, -118.26047],
+            [34.03314, -118.259992],
+            [34.033107, -118.259931],
+            [34.033072, -118.259869],
+            [34.032812, -118.259407],
+            [34.032567, -118.258956],
+            [34.032526, -118.258882],
+            [34.032487, -118.258811],
+            [34.032201, -118.258297]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Broadway",
+          "px": [200, 282],
+          "ll": [34.034833, -118.263006],
+          "insideCoverage": false
+        },
+        {
+          "name": "Los Angeles Street",
+          "px": [206, 758],
+          "ll": [34.033704, -118.26099],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [204, 514],
+          "ll": [34.03429, -118.262022],
+          "insideCoverage": true
+        },
+        {
+          "name": "Maple Avenue",
+          "px": [213, 1255],
+          "ll": [34.032526, -118.258882],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santee Street",
+          "px": [208, 1009],
+          "ll": [34.033107, -118.259931],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wall Street",
+          "px": [216, 1450],
+          "ll": [34.032068, -118.258056],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Los Angeles Street",
+      "runs": [
+        {
+          "px": [
+            [899, 753],
+            [795, 751],
+            [778, 751],
+            [763, 751],
+            [511, 755],
+            [494, 755],
+            [481, 755],
+            [221, 758],
+            [206, 758],
+            [192, 758],
+            [112, 759]
+          ],
+          "ll": [
+            [34.036147, -118.259003],
+            [34.035787, -118.259312],
+            [34.035728, -118.259362],
+            [34.035672, -118.259407],
+            [34.03478, -118.260123],
+            [34.034722, -118.26017],
+            [34.034675, -118.260208],
+            [34.033757, -118.260948],
+            [34.033704, -118.26099],
+            [34.033656, -118.26103],
+            [34.033372, -118.26126]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Street",
+          "px": [494, 755],
+          "ll": [34.034722, -118.26017],
+          "insideCoverage": true
+        },
+        {
+          "name": "15th Street",
+          "px": [206, 758],
+          "ll": [34.033704, -118.26099],
+          "insideCoverage": true
+        },
+        {
+          "name": "16th Street",
+          "px": [12, 760],
+          "ll": [34.033021, -118.261545],
+          "insideCoverage": false
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [778, 751],
+          "ll": [34.035728, -118.259362],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Main Street",
+      "runs": [
+        {
+          "px": [
+            [904, 506],
+            [900, 506],
+            [857, 507],
+            [809, 507],
+            [788, 507],
+            [771, 508],
+            [680, 508],
+            [599, 509],
+            [493, 509],
+            [400, 510],
+            [314, 512],
+            [276, 512],
+            [217, 513],
+            [204, 514],
+            [190, 513],
+            [127, 513],
+            [106, 513]
+          ],
+          "ll": [
+            [34.036761, -118.260024],
+            [34.036744, -118.260037],
+            [34.036594, -118.260158],
+            [34.036424, -118.260297],
+            [34.036351, -118.260357],
+            [34.036291, -118.260405],
+            [34.035969, -118.260666],
+            [34.035683, -118.260897],
+            [34.035312, -118.261207],
+            [34.034982, -118.26147],
+            [34.03468, -118.261711],
+            [34.034544, -118.26182],
+            [34.034336, -118.261986],
+            [34.03429, -118.262022],
+            [34.034242, -118.262063],
+            [34.034019, -118.262249],
+            [34.033946, -118.26231]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Place",
+          "px": [599, 509],
+          "ll": [34.035683, -118.260897],
+          "insideCoverage": true
+        },
+        {
+          "name": "14th Street",
+          "px": [493, 509],
+          "ll": [34.035312, -118.261207],
+          "insideCoverage": true
+        },
+        {
+          "name": "15th Street",
+          "px": [204, 514],
+          "ll": [34.03429, -118.262022],
+          "insideCoverage": true
+        },
+        {
+          "name": "16th Street",
+          "px": [7, 512],
+          "ll": [34.033602, -118.262599],
+          "insideCoverage": false
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [857, 507],
+          "ll": [34.036594, -118.260158],
+          "insideCoverage": true
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [7, 512],
+          "ll": [34.033602, -118.262599],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Maple Avenue",
+      "runs": [
+        {
+          "px": [
+            [889, 1249],
+            [803, 1248],
+            [791, 1247],
+            [772, 1248],
+            [711, 1251],
+            [505, 1254],
+            [229, 1255],
+            [213, 1255],
+            [197, 1255],
+            [124, 1255]
+          ],
+          "ll": [
+            [34.034912, -118.256949],
+            [34.034614, -118.257205],
+            [34.034573, -118.25724],
+            [34.034504, -118.257292],
+            [34.034282, -118.257459],
+            [34.033552, -118.258044],
+            [34.032584, -118.258835],
+            [34.032526, -118.258882],
+            [34.032471, -118.258928],
+            [34.032214, -118.259141]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Street",
+          "px": [505, 1254],
+          "ll": [34.033552, -118.258044],
+          "insideCoverage": true
+        },
+        {
+          "name": "15th Street",
+          "px": [213, 1255],
+          "ll": [34.032526, -118.258882],
+          "insideCoverage": true
+        },
+        {
+          "name": "16th Street",
+          "px": [17, 1255],
+          "ll": [34.031841, -118.25945],
+          "insideCoverage": false
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [791, 1247],
+          "ll": [34.034573, -118.25724],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Pico Boulevard",
+      "runs": [
+        {
+          "px": [
+            [793, 1362],
+            [793, 1342],
+            [792, 1267],
+            [791, 1247],
+            [791, 1233],
+            [788, 1124],
+            [786, 1019],
+            [785, 1004],
+            [785, 985],
+            [782, 879],
+            [779, 770],
+            [778, 751],
+            [778, 730],
+            [775, 631],
+            [774, 548],
+            [781, 528],
+            [784, 521],
+            [788, 507],
+            [801, 474],
+            [832, 397],
+            [838, 382]
+          ],
+          "ll": [
+            [34.034301, -118.256754],
+            [34.034349, -118.256841],
+            [34.034528, -118.257159],
+            [34.034573, -118.25724],
+            [34.034606, -118.2573],
+            [34.034861, -118.257765],
+            [34.035105, -118.258214],
+            [34.035141, -118.258281],
+            [34.035185, -118.25836],
+            [34.035432, -118.258813],
+            [34.035683, -118.25928],
+            [34.035728, -118.259362],
+            [34.035777, -118.259453],
+            [34.036008, -118.259876],
+            [34.036206, -118.260228],
+            [34.036277, -118.260291],
+            [34.036303, -118.260314],
+            [34.036351, -118.260357],
+            [34.036478, -118.260459],
+            [34.03677, -118.260695],
+            [34.036829, -118.260737]
+          ]
+        },
+        {
+          "px": [
+            [857, 507],
+            [852, 476],
+            [844, 428],
+            [842, 382]
+          ],
+          "ll": [
+            [34.036594, -118.260158],
+            [34.036651, -118.260305],
+            [34.036741, -118.260528],
+            [34.036844, -118.260726]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Broadway",
+          "px": [843, 270],
+          "ll": [34.037119, -118.261194],
+          "insideCoverage": false
+        },
+        {
+          "name": "Los Angeles Street",
+          "px": [778, 751],
+          "ll": [34.035728, -118.259362],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [857, 507],
+          "ll": [34.036594, -118.260158],
+          "insideCoverage": true
+        },
+        {
+          "name": "Maple Avenue",
+          "px": [791, 1247],
+          "ll": [34.034573, -118.25724],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santee Street",
+          "px": [785, 1004],
+          "ll": [34.035141, -118.258281],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wall Street",
+          "px": [793, 1425],
+          "ll": [34.034152, -118.25649],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Santee Street",
+      "runs": [
+        {
+          "px": [
+            [894, 1004],
+            [802, 1004],
+            [785, 1004],
+            [767, 1004],
+            [514, 1005],
+            [499, 1005],
+            [485, 1005],
+            [468, 1005],
+            [224, 1009],
+            [208, 1009],
+            [195, 1009],
+            [118, 1010]
+          ],
+          "ll": [
+            [34.035522, -118.257963],
+            [34.0352, -118.258232],
+            [34.035141, -118.258281],
+            [34.035078, -118.258333],
+            [34.034188, -118.259061],
+            [34.034135, -118.259105],
+            [34.034085, -118.259145],
+            [34.034025, -118.259192],
+            [34.033164, -118.259885],
+            [34.033107, -118.259931],
+            [34.033059, -118.259969],
+            [34.032787, -118.260189]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "14th Street",
+          "px": [499, 1005],
+          "ll": [34.034135, -118.259105],
+          "insideCoverage": true
+        },
+        {
+          "name": "15th Street",
+          "px": [208, 1009],
+          "ll": [34.033107, -118.259931],
+          "insideCoverage": true
+        },
+        {
+          "name": "16th Street",
+          "px": [18, 1011],
+          "ll": [34.032435, -118.260474],
+          "insideCoverage": false
+        },
+        {
+          "name": "Pico Boulevard",
+          "px": [785, 1004],
+          "ll": [34.035141, -118.258281],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "14th Place",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "14th Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "15th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "fifteenth-street",
+          "display": "15th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 15th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "(formerly Laura St)",
+            "15th ST."
+          ],
+          "docs": [
+            "mr053-016"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Los Angeles Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "los-angeles-street",
+          "display": "Los Angeles Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Los Angeles Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "LOS ANGELES ST.",
+            "LOS ANGELES STREET",
+            "Los Angeles St.",
+            "Los Angeles Street"
+          ],
+          "docs": [
+            "12017",
+            "mr003-146-p2",
+            "mr005-005",
+            "mr005-110",
+            "mr006-378",
+            "mr011-063",
+            "mr012-026",
+            "mr029-026",
+            "mr053-016",
+            "mr053-063",
+            "tr0009-100a"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Main Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "main-street-dtla",
+          "display": "Main Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Main Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE PRINCIPAL",
+            "MAIN ST.",
+            "MAIN STREET",
+            "Main St.",
+            "Main Street"
+          ],
+          "docs": [
+            "11824",
+            "12017",
+            "mr005-110",
+            "mr006-378",
+            "mr012-026",
+            "mr029-026",
+            "mr053-016",
+            "mr053-063",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071"
+          ]
+        },
+        {
+          "id": "los-angeles-street",
+          "display": "Los Angeles Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Main Street by another sheet"
+          ],
+          "ink": [
+            "Los Angeles St."
+          ],
+          "docs": [
+            "mr039-069"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Maple Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "maple-dtla",
+          "display": "Maple Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Maple Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "MAPLE AVE.",
+            "Maple Ave.",
+            "Maple Avenue"
+          ],
+          "docs": [
+            "12017",
+            "mr006-378",
+            "mr011-063",
+            "mr016-027",
+            "mr029-026",
+            "mr053-016",
+            "tr0009-100a"
+          ]
+        },
+        {
+          "id": "regent-street",
+          "display": "Regent Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Maple Avenue by another sheet"
+          ],
+          "ink": [
+            "Regent Street"
+          ],
+          "docs": [
+            "mr003-166-p1",
+            "mr003-166-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Pico Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "pico",
+          "display": "Pico Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Pico Boulevard by another sheet"
+          ],
+          "ink": [
+            "Pico Street"
+          ],
+          "docs": [
+            "mr007-021"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Santee Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "william",
+          "display": "William Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santee Street by another sheet"
+          ],
+          "ink": [
+            "William St.",
+            "William Street"
+          ],
+          "docs": [
+            "12017",
+            "mr006-378"
+          ]
+        },
+        {
+          "id": "botiller-street",
+          "display": "Botiller Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santee Street by another sheet"
+          ],
+          "ink": [
+            "Botiller Street"
+          ],
+          "docs": [
+            "mr029-026"
+          ]
+        },
+        {
+          "id": "santee-street",
+          "display": "Santee Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santee Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "SANTEE ST.",
+            "SANTEE STREET"
+          ],
+          "docs": [
+            "mr053-016",
+            "mr053-063"
+          ]
+        }
+      ]
+    }
+  ]
+}

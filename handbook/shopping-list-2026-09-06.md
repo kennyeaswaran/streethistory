@@ -301,6 +301,53 @@ plus 500 and 700-800 E 2nd. These are the Civic Center and Federal Courthouse
 superblocks and the Little Tokyo redevelopment: no parcel, so no lookup is
 possible. Don't retry these addresses.
 
+## Pico Boulevard and 14th Street, San Julian to Grand
+
+Sampled 2026-09-15 at 801/600/400/200/104 W and 100/200/400/500/600 E Pico, and
+302 W / 110 E / 205 E 14th St. Every PDF fetched and confirmed
+`application/pdf` with a real byte count (not the DPW 404 page).
+
+| Where | Tract | Map-Ref | PDF |
+|---|---|---|---|
+| Grand @ Pico (1230 S Grand) | **Feldhauser's Subdivision, Blocks 85 and 86, Ord's Survey** | **M R 5-573** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf |
+| 14th at Broadway (302 W 14th) | **Morris Vineyard Subdivision** | **M R 3-38/39** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf |
+| Pico at Broadway (200 W) | TR 43 | M B 14-90 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-090A.pdf |
+| Pico at Main (104 W) | **Subdivision of North Part of Carr Tract** | **M R 5-105** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf |
+| Pico + 14th, Main to Wall (100/200/400 E Pico, 110/205 E 14th) | **Josefa Subdivision of the Celis Vineyard Tract** | **M R 11-94** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf |
+| Pico at Wall (500 E) | TR 19743 | M B 755-73/74 | https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0755/TR0755-073.pdf |
+| just west of Grand (801 W Pico) | **Kincaid's Tract** | **M R 10-30** | https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf |
+
+Already read in, no need to fetch: 600 W and 400 W Pico are both the **Cameron
+Tract, M R 7-21** (`documents/mr007-021`) — Cameron Thom's ground, already
+covered in `names.js`.
+
+Notes before reading these in:
+
+- **One sheet covers half the run.** The Josefa Subdivision (M R 11-94) answers
+  Pico at 100, 200 and 400 E *and* 14th St at 110 and 205 E — the whole eastern
+  half of the requested stretch. Read that one first.
+- **It pairs with a sheet already swept.** `documents/mr053-016` is the *Miguel*
+  Subdivision, part of the Celis Vineyard Tract (M R 53-16), picked up on the
+  Maple Avenue run. Josefa and Miguel are both given names carved out of the
+  same Celis vineyard — the family-partition pattern the Reyes Tract shows. The
+  two sheets should be read against each other.
+- **A third vineyard tract.** Morris Vineyard Subdivision joins Celis (Maple,
+  Pico), Moreno (Wall) and Hamilton's Sub of the Urquidez Garden (San Julian).
+  Four vineyard/garden holdings within a few blocks; worth treating as one
+  namesake cluster rather than four separate questions.
+- **M R 3-38/39 is a two-sheet filing in one PDF.** `MR003-039.pdf` returns the
+  404 page; `MR003-038.pdf` is 176 KB and carries both, the same shape as
+  M.R. 3-60/61 and 3-166/167.
+- **Feldhauser's is a subdivision of Ord's Survey blocks 85 and 86** — a direct
+  hook into `documents/_ord-1849`, currently parked, and a chance to tie Ord
+  block numbers to modern ground.
+- **TR 43's filename could not be guessed**: the tract-number search redirects
+  to `TR0014-090A.pdf`, with an A suffix, not the plain `TR0014-090.pdf`.
+
+Gaps in the sample, unsampled rather than known-empty: 600 E Pico (the San
+Julian end) and 208 W 14th returned no parcel report, and 650-700 W Pico has no
+addressed parcel at all — that is the Convention Center / L.A. Live block.
+
 ## Los Angeles Street, 7th up to the Plaza
 
 Sampled 2026-09-06 at 700, 600, 540, 500, 430, 400, 300, 200 and 103 S and

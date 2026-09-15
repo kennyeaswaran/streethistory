@@ -200,6 +200,8 @@
 - min-1896-09-08: sweptFor = []
 - min-1896-09-14: sweptFor = []
 - min-1896-09-21: sweptFor = []
+- mr003-038-p1: sweptFor = []
+- mr003-038-p2: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)

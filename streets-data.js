@@ -121,7 +121,7 @@ const STREET_DATA = {
             originLink: "https://cdnc.ucr.edu/?a=d&d=LAH18970202.2.34" }
         ],
         note: null,
-        categories: ["person", "governor", "renamed"],
+        categories: ["person", "politician", "renamed"],
         disputed: false,
         sources: [
           { title: "L.A. Street Names: Figueroa Street", url: "https://lastreetnames.com/street/figueroa-street/" },
@@ -146,7 +146,7 @@ const STREET_DATA = {
         planned: null,
         built: { text: "already \"Figueroa Street\" by Aug. 1895 (near 20th & Flower)", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR059/MR059-056.pdf" },
         note: "Pearl ended at Pico, so this stretch needed no 1897 rename. A recorded tract map (Edgar's Subdivision resubdivision, 1895) already labels it \"Figueroa Street\" a year before the citywide renaming — evidence it is the older southern continuation of the pre-1897 Figueroa Street whose downtown stretch became De La Guerra, then [[Boylston Street]], left untouched rather than renamed alongside Pearl.",
-        categories: ["person", "governor"],
+        categories: ["person", "politician"],
         disputed: false,
         sources: [
           { title: "L.A. Street Names: Figueroa Street", url: "https://lastreetnames.com/street/figueroa-street/" },
@@ -190,7 +190,7 @@ const STREET_DATA = {
     planned: { text: "by 1849 (as Calle de las Esperanzas)", url: ORD_SURVEY.url },
     built: "late 1860s",
     note: "The 1849 survey was aspirational here — the street existed only on paper for two decades. The “Faith, Hope, and Charity” trio theory is unproven (no Faith Street existed); the Alexander Hope attribution is also unproven.",
-    categories: ["aspiration", "disputed"],
+    categories: ["idea", "disputed"],
     disputed: true,
     sources: [
       { title: "L.A. Street Names: Hope Street", url: "https://lastreetnames.com/street/hope-street/" },
@@ -212,7 +212,7 @@ const STREET_DATA = {
       { from: "1886–1887", until: null, name: "Grand Avenue", how: "renaming", origin: null, originLink: null }
     ],
     note: null,
-    categories: ["aspiration", "renamed"],
+    categories: ["idea", "renamed"],
     disputed: false,
     sources: [
       { title: "L.A. Street Names: Grand Avenue", url: "https://lastreetnames.com/street/grand-avenue/" },
@@ -764,7 +764,7 @@ const STREET_DATA = {
         originLink: "https://en.wikipedia.org/wiki/Atchison,_Topeka_and_Santa_Fe_Railway" }
     ],
     note: "“Santa Fe” was aspirational even for the railroad itself — no AT&SF train reached the city of Santa Fe until 1880. The company's “La Grande” station (1893–1939) stood at Santa Fe & 3rd; the old freight depot near 2nd is now SCI-Arc. \"Tulip\" is documented only on the Goodwin Tract's own frontage (south of 6th, between Imperial and Mesquit) — no former name is documented north of 6th or south of Imperial.",
-    categories: ["place", "aspiration", "renamed"],
+    categories: ["place", "idea", "renamed"],
     disputed: false,
     sources: [
       { title: "L.A. Street Names: Santa Fe Avenue", url: "https://lastreetnames.com/street/santa-fe-avenue/" },
@@ -1385,7 +1385,7 @@ const STREET_DATA = {
         originLink: "https://lastreetnames.com/street/towne-avenue-dtla/" }
     ],
     note: "Sibling to [[Towne Avenue]] and [[Crocker Street]] — all three trace to the 1887 SPRR station land deal. Still Ruth Avenue in Feb. 1897; the exact swap year is not yet researched. The tract map confirms \"Ruth\" as its 1887 platted name, one block from the street platted \"Stanford\" (now [[Crocker Street]]) and one platted \"Gladys\" (see [[Gladys Avenue]]), the same women's-name pattern.",
-    categories: ["person", "renamed", "governor"],
+    categories: ["person", "renamed", "politician"],
     disputed: false,
     sources: [
       { title: "L.A. Street Names: Towne Avenue (recounts the Crocker/Stanford street swap)", url: "https://lastreetnames.com/street/towne-avenue-dtla/" },
@@ -1418,7 +1418,7 @@ const STREET_DATA = {
     planned: null,
     built: "1886",
     note: "Santee later moved to San Diego County, where his second wife had the town of Cowleston renamed Santee in his honor in 1893 — a name that town keeps today.",
-    categories: ["person", "alive", "governor"],
+    categories: ["person", "alive", "politician"],
     disputed: false,
     sources: [
       { title: "L.A. Street Names: Santee Street", url: "https://lastreetnames.com/street/santee-street/" },
@@ -2750,7 +2750,7 @@ Object.assign(STREET_DATA, {
     planned: "not yet researched",
     built: { text: "named Jan. 1886 on the Beaudry brothers' subdivision tract", url: "https://lastreetnames.com/street/cleveland-street/" },
     note: "An open positional guess ties this to the Ord Survey's “Calle de las Adobes” (sheet 73's northernmost platted street) — but Kines dates the name to a fresh 1886 Beaudry tract with no mention of an 1849 predecessor, so the two may be unrelated streets; unresolved.",
-    categories: ["person", "governor", "disputed"],
+    categories: ["person", "politician", "disputed"],
     disputed: true,
     sources: [
       { title: "L.A. Street Names: Cleveland Street", url: "https://lastreetnames.com/street/cleveland-street/" }
@@ -2812,7 +2812,7 @@ Object.assign(STREET_DATA, {
     planned: { text: "by 1855 (most likely 1853), as Pico Street", url: "https://lastreetnames.com/street/pico-boulevard/" },
     built: { text: "already \"Pico\" by Oct. 1885 (Cameron Tract survey), near the Figueroa Street intersection — not separately documented along the rest of the boulevard", url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf" },
     note: "Los Angeles never had an official 13th Street downtown — Pico Street picked up straight after 12th — though a 1903 item still locates a church at “Flower street, corner Pico (Thirteenth) street.” Became Pico Boulevard in 1914.",
-    categories: ["person", "governor"],
+    categories: ["person", "politician"],
     disputed: false,
     sources: [
       { title: "L.A. Street Names: Pico Boulevard", url: "https://lastreetnames.com/street/pico-boulevard/" },

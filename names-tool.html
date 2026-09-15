@@ -88,6 +88,13 @@
   .cat.basis-guess     { background:#fbeade; border-color:#e6bb98; color:#8a4416; }
   .cat.basis-none      { background:#f0eeea; border-color:#d3ccc0; color:#5c554a; }
   .cat.searched { background:#fff; border-style:dashed; color:#6b5f4a; }
+  .approve { margin:4px 0 2px; display:flex; align-items:flex-start; gap:8px; flex-wrap:wrap; }
+  .approve .hint.ok { color:#2f6b4f; }
+  .approve button { flex:none; }
+  .tdiff { flex-basis:100%; font-size:12px; line-height:1.5; background:#fbf8f0;
+           border:1px solid #e6dcc4; border-radius:4px; padding:5px 7px; margin:3px 0 0; }
+  .tdiff del { background:#f7ddd6; color:#8a2f14; text-decoration:line-through; }
+  .tdiff ins { background:#dcecdd; color:#1f5c3c; text-decoration:none; }
   .na { color:#6b5f4a; font-style:italic; }
   .na.none { color:#8a3c1e; }
   #empty { padding:20px 14px; color:#6b5f4a; font-size:13px; }
@@ -164,6 +171,7 @@
         <button data-f="names">names.js</button>
         <button data-f="new">names-new.js</button>
       </span>
+      <select id="basisFilter" title="Show only one basis (§3.1)"></select>
       <span class="chips" id="stateChips">
         <button data-s="any" class="on">any state</button>
         <button data-s="todo">no namesake</button>
@@ -400,6 +408,13 @@ function renderEntity(e, opts) {
     : `    spellings: [\n      ${sp.join(",\n      ")}\n    ],`);
   L.push(`    namedAfter: ${J(e.namedAfter ?? null)},`);
   L.push(`    namedAfterLink: ${J(e.namedAfterLink ?? null)},`);
+  // THE LAST HUMAN-AUTHORED TEXT (MODEL-SPEC §3.2). Absent means never approved,
+  // which is not the same as approved-as-empty — so the test is `!== undefined`,
+  // not truthiness, and an empty string survives a round trip.
+  if (e.namedAfterApproved !== undefined)
+    L.push(`    namedAfterApproved: ${J(e.namedAfterApproved)},`);
+  if (e.namedAfterApprovedOn !== undefined)
+    L.push(`    namedAfterApprovedOn: ${J(e.namedAfterApprovedOn)},`);
   L.push(`    categories: ${J(e.categories || [])},`);
   const src = (e.sources || []).filter(s => s.title || s.url);
   L.push(src.length
@@ -427,6 +442,8 @@ function renderEntity(e, opts) {
   // `internalNote` is not rendered anywhere. Both have to survive a save, and
   // they must not be confused for each other.
   L.push(`    note: ${J(e.note ?? null)},`);
+  if (e.noteApproved !== undefined) L.push(`    noteApproved: ${J(e.noteApproved)},`);
+  if (e.noteApprovedOn !== undefined) L.push(`    noteApprovedOn: ${J(e.noteApprovedOn)},`);
   if (e.internalNote) L.push(`    internalNote: ${J(e.internalNote)},`);
   L.push(`    possiblySameAs: ${J(e.possiblySameAs ?? null)},`);
   L.push(`    aliases: ${J(e.aliases || [])}`);
@@ -460,7 +477,12 @@ function validateAll(all, corpus, where) {
         push(id, "err", `spellings[${i}] carries prose dates but no source ` +
                         `(§3 allows explicit from/until only for a form attested in prose, and requires its source)`);
     });
-    if (!Array.isArray(e.categories) || !e.categories.length) push(id, "err", "no categories");
+    // Categories say what the name POINTS AT. Where that is unknown the honest
+    // entry is nothing at all — tagging a kind on a street whose namesake is
+    // deliberately withheld asserts more than `namedAfter: null` does.
+    if (!Array.isArray(e.categories)) push(id, "err", "categories must be an array");
+    else if (!e.categories.length && e.namedAfter !== null)
+      push(id, "err", "no categories — an empty list is only legal where namedAfter is null");
     if (e.namedAfter) {
       const open = (e.namedAfter.match(/\{\{/g) || []).length,
             close = (e.namedAfter.match(/\}\}/g) || []).length;
@@ -475,8 +497,14 @@ function validateAll(all, corpus, where) {
       if (aliasOwner[a]) push(id, "err", `alias "${a}" already claimed by ${aliasOwner[a]}`);
       aliasOwner[a] = id;
     }
-    if (e.namedAfter === null && !(e.categories || []).some(c => ["unknown", "unresearched"].includes(c)))
-      push(id, "wrn", "namedAfter is null — expected the 'unknown' category (researched, not found) or 'unresearched'");
+    // `unknown` and `unresearched` are DERIVED by generate.js from `namedAfter`
+    // and `searched` (ROADMAP §7). Authored, they drift: twenty of 143 entities
+    // disagreed with their own fields before the derivation landed.
+    for (const c of e.categories || [])
+      if (["unknown", "unresearched"].includes(c))
+        push(id, "err", `category "${c}" is derived by generate.js, not authored — it reads ` +
+                        `off ${c === "unknown" ? "namedAfter" : "searched"}, so writing it here ` +
+                        `can only ever disagree with the field it restates`);
 
     // BASIS (§3.1) — the same four gates check-model.js applies.
     if (e.basis === undefined)
@@ -489,6 +517,24 @@ function validateAll(all, corpus, where) {
     else {
       if (e.basis === "none" && e.namedAfter !== null && e.namedAfter !== undefined)
         push(id, "err", "basis is \"none\" but namedAfter is populated — one of the two is wrong");
+      // `eponymous` says the plat carries the person; the categories have to say
+      // WHICH role it attests — the owner/subdivider, or their household.
+      if (e.basis === "eponymous" &&
+          !["landowner", "family"].some(c => (e.categories || []).includes(c)))
+        push(id, "err", 'basis is "eponymous" but neither "landowner" nor "family" is ' +
+                        "tagged — say which, since that is what the plat attests");
+      // A grade other than `none` means we have an answer; write it down. The
+      // grade is published beside it, so a candid guess is not overclaiming.
+      if (e.basis !== "none") {
+        if (e.namedAfter === null)
+          push(id, "wrn", `basis is "${e.basis}" but namedAfter is null — the grade says we ` +
+                          "have a reading, so write it; the published grade is what qualifies it");
+        if (!(e.categories || []).length)
+          push(id, "wrn", `basis is "${e.basis}" but no category says what the name points at`);
+      } else if ((e.categories || []).length) {
+        push(id, "wrn", 'basis is "none" but the categories claim what the name points at — ' +
+                        "one of the two is wrong");
+      }
       if (e.basis === "lexical" && !e.namedAfter)
         push(id, "wrn", "basis is \"lexical\" but namedAfter is empty — the whole content of " +
                         "this grade is the concept the word names, so write and link it");
@@ -899,12 +945,138 @@ $("stateChips").onclick = ev => {
 // ===========================================================================
 // The editor
 // ===========================================================================
+// The picker offers the whole DECLARED vocabulary, not just what is already in
+// use — otherwise a node nobody has reached yet (`water`, `tool`, `material`)
+// is invisible in the one place you would go to reach it. Facet rows are
+// headings and derived tags are generate.js's to write, so neither is offered.
 const allCategories = () => {
   const c = {};
+  for (const cat of (corpus && corpus.categoryTree) || [])
+    if (!cat.facet && !cat.derived) c[cat.id] = 0;
   for (const id of Object.keys(all)) for (const x of entityOf(id).categories || []) c[x] = (c[x] || 0) + 1;
   for (const e of Object.values(edited)) for (const x of e.categories || []) c[x] = c[x] || 0;
   return c;
 };
+
+// ===========================================================================
+// APPROVED TEXT (§3.2) — the last version of a public field a HUMAN wrote.
+//
+// `note` and `namedAfter` both reach readers; `namedAfter` reaches far more of
+// them, since the map prints it as a street's origin line. An agent may rewrite
+// either at will, but only a person presses Approve, so the pair of fields
+// answers "is this my prose or the machine's" at a glance and, with the date,
+// "has it moved since I last read it".
+// ===========================================================================
+
+// Word-level diff, longest-common-subsequence. Character diffs are unreadable
+// in prose and whole-field diffs hide a changed clause in a long sentence —
+// which is the case that matters here, because a rewritten hedge is exactly
+// what a reviewer needs to catch.
+//
+// TWO THINGS THAT LOOK LIKE DETAILS AND ARE NOT.
+//
+// 1. A token is a word PLUS its trailing whitespace. Tokenising the spaces
+//    separately means the space BETWEEN two edited words still matches, so
+//    "quick brown" → "slow red" came out as struck-quick, slow, space,
+//    struck-brown, red — alternating word by word instead of showing one
+//    replaced passage. (Kenny hit this on Alameda, 2026-09-15.)
+// 2. The raw backtrack still interleaves del and ins inside a changed run, so
+//    a grouping pass gathers each run into all-deleted-then-all-inserted. The
+//    bigger the edit, the more this matters: it is the difference between one
+//    struck clause followed by its replacement, and a stutter of alternating
+//    fragments nobody can read.
+function wordDiff(oldText, newText) {
+  const tok = t => String(t || "").match(/\S+\s*/g) || [];
+  const A = tok(oldText), B = tok(newText);
+  const n = A.length, m = B.length;
+  // Guard: the table is O(n·m), and these fields are a sentence or two.
+  if (n * m > 400000) return null;
+  const L = Array.from({ length: n + 1 }, () => new Uint32Array(m + 1));
+  for (let i = n - 1; i >= 0; i--)
+    for (let j = m - 1; j >= 0; j--)
+      L[i][j] = A[i] === B[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const raw = [];
+  let i = 0, j = 0;
+  const push = (kind, text) => {
+    const last = raw[raw.length - 1];
+    if (last && last.kind === kind) last.text += text; else raw.push({ kind, text });
+  };
+  while (i < n && j < m) {
+    if (A[i] === B[j]) { push("same", A[i]); i++; j++; }
+    else if (L[i + 1][j] >= L[i][j + 1]) { push("del", A[i]); i++; }
+    else { push("ins", B[j]); j++; }
+  }
+  while (i < n) { push("del", A[i]); i++; }
+  while (j < m) { push("ins", B[j]); j++; }
+
+  // Group each changed run: everything removed, then everything put in its place.
+  const out = [];
+  for (let k = 0; k < raw.length;) {
+    if (raw[k].kind === "same") { out.push(raw[k]); k++; continue; }
+    let del = "", ins = "", e = k;
+    while (e < raw.length && raw[e].kind !== "same") {
+      if (raw[e].kind === "del") del += raw[e].text; else ins += raw[e].text;
+      e++;
+    }
+    if (del) out.push({ kind: "del", text: del });
+    if (ins) out.push({ kind: "ins", text: ins });
+    k = e;
+  }
+  return out;
+}
+
+function diffHtml(oldText, newText) {
+  const parts = wordDiff(oldText, newText);
+  if (!parts) return '<span class="hint">too long to diff</span>';
+  return parts.map(p => {
+    if (p.kind === "same") return esc(p.text);
+    // Trailing space rides outside the tag, so a strikethrough does not run on
+    // past the last word of the passage it is striking.
+    const [, body, trail] = p.text.match(/^([\s\S]*?)(\s*)$/);
+    const t = p.kind === "del" ? "del" : "ins";
+    return `<${t}>${esc(body)}</${t}>${esc(trail)}`;
+  }).join("");
+}
+
+const TODAY = () => new Date().toISOString().slice(0, 10);
+
+// One panel under each public prose field. `undefined` approved means nobody
+// has ever approved it; `""` means a person approved the absence of text.
+function approvalPanel(id, field) {
+  const e = entityOf(id);
+  const cur = e[field] ?? "";
+  const ap = e[field + "Approved"];
+  const on = e[field + "ApprovedOn"];
+  const label = field === "namedAfter" ? "namedAfter" : "note";
+  let body;
+  if (ap === undefined) {
+    body = `<span class="hint" style="margin:0">No human-approved version of ${label} yet.</span>`;
+  } else if (ap === cur) {
+    body = `<span class="hint ok" style="margin:0">Matches the version approved ${esc(on || "—")}.</span>`;
+  } else {
+    body = `<span class="hint" style="margin:0">Changed since the version approved ${
+      esc(on || "—")}:</span><div class="tdiff">${diffHtml(ap, cur)}</div>`;
+  }
+  return `<div class="approve" id="ap_${field}">${body}` +
+    `<button class="mini" data-approve="${field}"${ap === cur && ap !== undefined ? " disabled" : ""}>` +
+    `Approve this text</button></div>`;
+}
+
+// `touch` is a closure inside openEditor, not a global — it has to be handed in.
+function bindApproval(id, field, touch) {
+  const box = $("ap_" + field);
+  if (!box) return;
+  const btn = box.querySelector("button[data-approve]");
+  if (!btn) return;
+  btn.onclick = () => {
+    const e2 = beginEdit(id);
+    e2[field + "Approved"] = e2[field] ?? "";
+    e2[field + "ApprovedOn"] = TODAY();
+    box.outerHTML = approvalPanel(id, field);
+    bindApproval(id, field, touch);
+    if (touch) touch();
+  };
+}
 
 function beginEdit(id) {
   if (!edited[id]) { edited[id] = clone(all[id]); edited[id].__file = where[id]; }
@@ -950,6 +1122,7 @@ function openEditor(id) {
       <button class="mini" id="wrapBtn">Wrap selection in {{ }}</button>
       <span class="hint" style="margin:0">{{…}} marks the span that becomes the link.</span>
     </div>
+    ${approvalPanel(id, "namedAfter")}
     <label for="f_link">namedAfterLink</label>
     <input type="url" id="f_link" value="${esc(e.namedAfterLink || "")}" placeholder="https://…">
 
@@ -993,6 +1166,7 @@ function openEditor(id) {
     <label for="f_note" class="public">note — PUBLIC. Printed on the site as a former
       name's origin line when there is no namedAfter.</label>
     <textarea id="f_note" rows="4">${esc(e.note || "")}</textarea>
+    ${approvalPanel(id, "note")}
     <label for="f_internal">internalNote — not published. Identity decisions, what was
       searched and not found, provenance.</label>
     <textarea id="f_internal" rows="4">${esc(e.internalNote || "")}</textarea>
@@ -1034,12 +1208,24 @@ function openEditor(id) {
 
   const touch = () => { rebuild(); render(); showProblems(); };
 
+  // After `touch` exists — it is a `const`, so binding these above it would hit
+  // the temporal dead zone rather than the function.
+  bindApproval(id, "namedAfter", touch); bindApproval(id, "note", touch);
+
   $("f_named").oninput = ev => {
     const v = ev.target.value;
-    beginEdit(id).namedAfter = v.trim() ? v : null; touch();
+    beginEdit(id).namedAfter = v.trim() ? v : null;
+    // Live diff: the panel is the only place a reviewer sees what moved.
+    $("ap_namedAfter").outerHTML = approvalPanel(id, "namedAfter");
+    bindApproval(id, "namedAfter", touch);
+    touch();
   };
   $("f_link").oninput = ev => { beginEdit(id).namedAfterLink = ev.target.value.trim() || null; touch(); };
-  $("f_note").oninput = ev => { beginEdit(id).note = ev.target.value.trim() ? ev.target.value : null; touch(); };
+  $("f_note").oninput = ev => {
+    beginEdit(id).note = ev.target.value.trim() ? ev.target.value : null;
+    $("ap_note").outerHTML = approvalPanel(id, "note"); bindApproval(id, "note", touch);
+    touch();
+  };
   $("f_internal").oninput = ev => { beginEdit(id).internalNote = ev.target.value.trim() ? ev.target.value : null; touch(); };
   $("f_disputed").onchange = ev => { beginEdit(id).disputed = ev.target.checked; touch(); };
   // `searched` is only meaningful where the search came back empty, so moving
@@ -1276,7 +1462,7 @@ $("newEntity").onclick = () => {
   // has looked. Both are real states and both are wrong to leave — the point of
   // the fields is that they have to be changed on purpose.
   edited[id] = { __file: "names", spellings: [{ forms: [""] }], namedAfter: null,
-                 namedAfterLink: null, categories: ["unresearched"], sources: [],
+                 namedAfterLink: null, categories: [], sources: [],
                  basis: "none", searched: "none",
                  disputed: false, note: null, possiblySameAs: null, aliases: [] };
   where[id] = "names";
@@ -1292,7 +1478,7 @@ function promote(id) {
   const missing = [];
   if (!e.namedAfter) missing.push("namedAfter");
   if (!(e.sources || []).length) missing.push("sources");
-  if ((e.categories || []).every(c => c === "unresearched")) missing.push("a category other than 'unresearched'");
+  if (!(e.categories || []).length) missing.push("a category saying what the name points at");
   // Promotion is the moment a basis stops being optional: names-new.js is a
   // to-do list the map tool writes, names.js is the researched record.
   if (e.basis === undefined) missing.push("a basis (§3.1)");

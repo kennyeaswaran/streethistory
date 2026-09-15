@@ -26,8 +26,48 @@ const CATEGORIES = [
     "parent": "referent"
   },
   {
+    "id": "landowner",
+    "label": "…who owned or subdivided the ground",
+    "parent": "person"
+  },
+  {
+    "id": "family",
+    "label": "…family of the owner or subdivider",
+    "parent": "person"
+  },
+  {
+    "id": "politician",
+    "label": "…a politician or an official",
+    "parent": "person"
+  },
+  {
+    "id": "mayor",
+    "label": "……a mayor of Los Angeles",
+    "parent": "politician"
+  },
+  {
     "id": "governor",
-    "label": "…a politician or official",
+    "label": "……a governor of California",
+    "parent": "politician"
+  },
+  {
+    "id": "president",
+    "label": "……a president",
+    "parent": "politician"
+  },
+  {
+    "id": "official",
+    "label": "……another politician or official",
+    "parent": "politician"
+  },
+  {
+    "id": "mythological",
+    "label": "…a god, or a figure from myth",
+    "parent": "person"
+  },
+  {
+    "id": "people",
+    "label": "…a people, rather than one person",
     "parent": "person"
   },
   {
@@ -36,19 +76,9 @@ const CATEGORIES = [
     "parent": "person"
   },
   {
-    "id": "place",
-    "label": "A place",
-    "parent": "referent"
-  },
-  {
-    "id": "destination",
-    "label": "…where the street goes",
-    "parent": "place"
-  },
-  {
-    "id": "borrowed",
-    "label": "…a street in another city",
-    "parent": "place"
+    "id": "alive",
+    "label": "…alive when the street was named",
+    "parent": "person"
   },
   {
     "id": "nature",
@@ -62,7 +92,7 @@ const CATEGORIES = [
   },
   {
     "id": "plant",
-    "label": "…a plant or flower",
+    "label": "…a plant or a flower",
     "parent": "nature"
   },
   {
@@ -81,8 +111,33 @@ const CATEGORIES = [
     "parent": "nature"
   },
   {
+    "id": "place",
+    "label": "A place",
+    "parent": "referent"
+  },
+  {
+    "id": "destination",
+    "label": "…where the street goes",
+    "parent": "place"
+  },
+  {
+    "id": "state",
+    "label": "…a state",
+    "parent": "place"
+  },
+  {
+    "id": "borrowed",
+    "label": "…a street in another city",
+    "parent": "place"
+  },
+  {
+    "id": "company",
+    "label": "An institution",
+    "parent": "referent"
+  },
+  {
     "id": "object",
-    "label": "A made thing",
+    "label": "An inanimate object",
     "parent": "referent"
   },
   {
@@ -92,42 +147,17 @@ const CATEGORIES = [
   },
   {
     "id": "tool",
-    "label": "…a tool or machine",
+    "label": "…a tool or a machine",
     "parent": "object"
   },
   {
-    "id": "mythological",
-    "label": "A god, a myth, a religion",
-    "parent": "referent"
-  },
-  {
-    "id": "history",
-    "label": "A historical people or event",
-    "parent": "referent"
-  },
-  {
-    "id": "event",
-    "label": "…an event",
-    "parent": "history"
-  },
-  {
-    "id": "company",
-    "label": "A company or institution",
-    "parent": "referent"
-  },
-  {
-    "id": "system",
-    "label": "A route system",
-    "parent": "referent"
-  },
-  {
     "id": "abstract",
-    "label": "An idea, not a thing",
+    "label": "An abstract idea",
     "parent": "referent"
   },
   {
-    "id": "aspiration",
-    "label": "…a virtue or an aspiration",
+    "id": "idea",
+    "label": "…an idea, a virtue, an aspiration",
     "parent": "abstract"
   },
   {
@@ -141,14 +171,14 @@ const CATEGORIES = [
     "parent": "abstract"
   },
   {
-    "id": "circumstance",
-    "label": "Circumstances of the naming",
-    "facet": true
+    "id": "system",
+    "label": "…a route system",
+    "parent": "abstract"
   },
   {
-    "id": "alive",
-    "label": "Namesake alive when named",
-    "parent": "circumstance"
+    "id": "event",
+    "label": "…an event",
+    "parent": "abstract"
   },
   {
     "id": "status",
@@ -167,14 +197,108 @@ const CATEGORIES = [
     "parent": "status"
   },
   {
+    "id": "basis",
+    "label": "How well we know it",
+    "parent": "status",
+    "only": "model",
+    "derived": true,
+    "heading": true
+  },
+  {
+    "id": "basis-intrinsic",
+    "label": "…it explains itself",
+    "parent": "basis",
+    "only": "model",
+    "derived": true
+  },
+  {
+    "id": "basis-attested",
+    "label": "…a source says so",
+    "parent": "basis",
+    "only": "model",
+    "derived": true
+  },
+  {
+    "id": "basis-eponymous",
+    "label": "…the first map carries the person",
+    "parent": "basis",
+    "only": "model",
+    "derived": true
+  },
+  {
+    "id": "basis-pattern",
+    "label": "…one of a set on one document",
+    "parent": "basis",
+    "only": "model",
+    "derived": true
+  },
+  {
+    "id": "basis-inferred",
+    "label": "…inferred from something sourced",
+    "parent": "basis",
+    "only": "model",
+    "derived": true
+  },
+  {
+    "id": "basis-lexical",
+    "label": "…the word's meaning is all we have",
+    "parent": "basis",
+    "only": "model",
+    "derived": true
+  },
+  {
+    "id": "basis-guess",
+    "label": "…a guess",
+    "parent": "basis",
+    "only": "model",
+    "derived": true
+  },
+  {
+    "id": "basis-none",
+    "label": "…no candidate at all",
+    "parent": "basis",
+    "only": "model",
+    "derived": true
+  },
+  {
+    "id": "searched-extensive",
+    "label": "……searched hard",
+    "parent": "basis-none",
+    "only": "model",
+    "derived": true
+  },
+  {
+    "id": "searched-partial",
+    "label": "……one cheap check",
+    "parent": "basis-none",
+    "only": "model",
+    "derived": true
+  },
+  {
+    "id": "searched-none",
+    "label": "……nobody has looked",
+    "parent": "basis-none",
+    "only": "model",
+    "derived": true
+  },
+  {
+    "id": "stub",
+    "label": "Only the base map has it",
+    "parent": "status",
+    "only": "model",
+    "derived": true
+  },
+  {
     "id": "unknown",
     "label": "Researched — origin not yet found",
-    "parent": "status"
+    "parent": "status",
+    "only": "legacy"
   },
   {
     "id": "unresearched",
     "label": "Not yet researched",
-    "parent": "status"
+    "parent": "status",
+    "only": "legacy"
   }
 ];
 
@@ -271,10 +395,12 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -347,10 +473,12 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -403,10 +531,12 @@ const STREET_DATA = {
         "note": "Renamed Olympic Boulevard in 1935, for the 1932 Games — the request went in in July 1929, and that they had been the tenth Olympiad seems to have gone unremarked.",
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -444,7 +574,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -469,10 +604,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -521,10 +658,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.86,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -574,10 +713,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -628,10 +769,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -685,10 +828,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -734,10 +879,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -774,10 +921,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -840,10 +989,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -905,10 +1056,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -950,10 +1103,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -991,7 +1146,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -1011,7 +1171,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -1031,7 +1196,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -1056,10 +1226,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1108,10 +1280,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.76,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1150,10 +1324,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1203,10 +1379,12 @@ const STREET_DATA = {
     "attested": true,
     "knownFraction": 0.76,
     "categories": [
-      "number"
+      "number",
+      "basis-intrinsic"
     ],
     "ancestors": [
-      "abstract"
+      "abstract",
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -1235,7 +1413,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1260,7 +1443,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1285,7 +1473,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -1310,10 +1503,12 @@ const STREET_DATA = {
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1366,10 +1561,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1436,10 +1633,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1502,10 +1701,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.9,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1571,10 +1772,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.28,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1620,10 +1823,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.88,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1674,10 +1879,12 @@ const STREET_DATA = {
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1715,7 +1922,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -1740,10 +1952,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1772,10 +1986,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1805,10 +2021,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1838,10 +2056,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1879,10 +2099,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.66,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1920,10 +2142,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -1961,10 +2185,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.89,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2032,10 +2258,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2097,10 +2325,12 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2147,10 +2377,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2197,10 +2429,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.28,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2271,10 +2505,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.27,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2348,13 +2584,12 @@ const STREET_DATA = {
         "knownFraction": 0.29,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
-        ],
-        "formerCategories": [
-          "unknown"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2436,13 +2671,12 @@ const STREET_DATA = {
         "knownFraction": 0.02,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
-        ],
-        "formerCategories": [
-          "unknown"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2520,13 +2754,12 @@ const STREET_DATA = {
         "knownFraction": 0.13,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
-        ],
-        "formerCategories": [
-          "unknown"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2608,13 +2841,12 @@ const STREET_DATA = {
         "knownFraction": 0.02,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
-        ],
-        "formerCategories": [
-          "unknown"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2665,10 +2897,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2708,10 +2942,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2765,8 +3001,13 @@ const STREET_DATA = {
     "attested": true,
     "knownFraction": 0.08,
     "categories": [
-      "unresearched",
-      "renamed"
+      "renamed",
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "formerCategories": [
       "number"
@@ -2813,10 +3054,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -2880,10 +3123,12 @@ const STREET_DATA = {
         "knownFraction": 0.34,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "formerCategories": [
           "landform"
@@ -2936,10 +3181,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3000,13 +3247,12 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
-        ],
-        "formerCategories": [
-          "unknown"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3039,10 +3285,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3096,10 +3344,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3157,10 +3407,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3210,10 +3462,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3278,14 +3532,17 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "formerCategories": [
           "person",
-          "alive"
+          "alive",
+          "landowner"
         ],
         "disputed": false,
         "sources": [
@@ -3326,10 +3583,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3371,10 +3630,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.79,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3452,12 +3713,17 @@ const STREET_DATA = {
         "knownFraction": 0.88,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "formerCategories": [
+          "state"
+        ],
+        "formerAncestors": [
           "place"
         ],
         "disputed": false,
@@ -3548,12 +3814,17 @@ const STREET_DATA = {
         "knownFraction": 0.09,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "formerCategories": [
+          "state"
+        ],
+        "formerAncestors": [
           "place"
         ],
         "disputed": false,
@@ -3609,10 +3880,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3652,10 +3925,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3693,7 +3968,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3746,8 +4026,13 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -3791,7 +4076,7 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "stub"
         ],
         "disputed": false,
         "sources": [
@@ -3830,7 +4115,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3865,10 +4155,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3897,10 +4189,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -3954,10 +4248,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4019,10 +4315,12 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4096,10 +4394,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.8,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4150,10 +4450,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.82,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4220,10 +4522,12 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4270,10 +4574,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4338,14 +4644,16 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "formerCategories": [
           "person",
-          "unknown"
+          "family"
         ],
         "disputed": false,
         "sources": [
@@ -4417,10 +4725,12 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -4477,10 +4787,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4519,10 +4831,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4561,10 +4875,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4593,10 +4909,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4629,10 +4947,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4666,10 +4986,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4712,10 +5034,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4754,10 +5078,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4800,10 +5126,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4850,10 +5178,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.9,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -4926,10 +5256,12 @@ const STREET_DATA = {
         "knownFraction": 0.9,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -5002,10 +5334,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.9,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5072,10 +5406,12 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5138,10 +5474,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5192,10 +5530,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.85,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5242,10 +5582,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5292,10 +5634,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.81,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5357,10 +5701,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.79,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5430,10 +5776,12 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "formerCategories": [
           "tree"
@@ -5485,10 +5833,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5527,10 +5877,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5567,10 +5919,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5609,10 +5963,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5655,10 +6011,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5712,10 +6070,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.9,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5777,10 +6137,12 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5847,10 +6209,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.68,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5901,10 +6265,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.85,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -5959,10 +6325,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6009,10 +6377,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.79,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6054,10 +6424,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6099,10 +6471,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.8,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6149,10 +6523,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6187,10 +6563,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6224,7 +6602,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6249,7 +6632,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6279,10 +6667,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6331,10 +6721,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.84,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6405,10 +6797,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.86,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6479,10 +6873,12 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6553,10 +6949,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.8,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6611,10 +7009,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.81,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6681,10 +7081,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.81,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6759,10 +7161,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.79,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6821,10 +7225,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.79,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6899,10 +7305,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.79,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6956,10 +7364,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -6993,10 +7403,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7035,7 +7447,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7086,11 +7503,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7125,10 +7544,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7172,10 +7593,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.84,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7233,10 +7656,12 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7299,10 +7724,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.78,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7349,10 +7776,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7406,10 +7835,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.76,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7467,10 +7898,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.78,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7537,10 +7970,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.79,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7611,10 +8046,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.79,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7673,10 +8110,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7735,8 +8174,13 @@ const STREET_DATA = {
     "attested": true,
     "knownFraction": 0,
     "categories": [
-      "unresearched",
-      "renamed"
+      "renamed",
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "formerCategories": [
       "number"
@@ -7799,10 +8243,12 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7869,13 +8315,12 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "number",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
-        ],
-        "formerCategories": [
-          "unknown"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7937,10 +8382,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -7999,10 +8446,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.76,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8061,10 +8510,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.79,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8111,10 +8562,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8172,10 +8625,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.76,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8229,10 +8684,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.78,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8283,10 +8740,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.79,
         "categories": [
-          "number"
+          "number",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8344,10 +8803,12 @@ const STREET_DATA = {
     "attested": true,
     "knownFraction": 1,
     "categories": [
-      "material"
+      "material",
+      "basis-lexical"
     ],
     "ancestors": [
-      "object"
+      "object",
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -8385,7 +8846,11 @@ const STREET_DATA = {
     "categories": [
       "person",
       "alive",
-      "unknown"
+      "family",
+      "basis-eponymous"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -8431,11 +8896,13 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "descriptive",
-          "tree"
+          "tree",
+          "basis-intrinsic"
         ],
         "ancestors": [
           "abstract",
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8473,11 +8940,13 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "descriptive",
-          "tree"
+          "tree",
+          "basis-intrinsic"
         ],
         "ancestors": [
           "abstract",
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8521,11 +8990,13 @@ const STREET_DATA = {
         "knownFraction": 0.56,
         "categories": [
           "descriptive",
-          "tree"
+          "tree",
+          "basis-intrinsic"
         ],
         "ancestors": [
           "abstract",
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8588,11 +9059,13 @@ const STREET_DATA = {
         "knownFraction": 0.56,
         "categories": [
           "descriptive",
-          "tree"
+          "tree",
+          "basis-intrinsic"
         ],
         "ancestors": [
           "abstract",
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8659,11 +9132,13 @@ const STREET_DATA = {
         "knownFraction": 0.88,
         "categories": [
           "descriptive",
-          "tree"
+          "tree",
+          "basis-intrinsic"
         ],
         "ancestors": [
           "abstract",
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8742,11 +9217,13 @@ const STREET_DATA = {
         "knownFraction": 0.79,
         "categories": [
           "descriptive",
-          "tree"
+          "tree",
+          "basis-intrinsic"
         ],
         "ancestors": [
           "abstract",
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8817,11 +9294,13 @@ const STREET_DATA = {
         "knownFraction": 0.79,
         "categories": [
           "descriptive",
-          "tree"
+          "tree",
+          "basis-intrinsic"
         ],
         "ancestors": [
           "abstract",
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8873,11 +9352,13 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "descriptive",
-          "tree"
+          "tree",
+          "basis-intrinsic"
         ],
         "ancestors": [
           "abstract",
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8921,11 +9402,13 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "descriptive",
-          "tree"
+          "tree",
+          "basis-intrinsic"
         ],
         "ancestors": [
           "abstract",
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -8959,7 +9442,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -8983,7 +9471,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -9012,7 +9505,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9042,7 +9540,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9065,14 +9568,18 @@ const STREET_DATA = {
         "label": "west of Beaudry",
         "name": "Alpine Street",
         "entityId": "alpine",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly the Sierra country around {{Alpine County}} — how and when this stretch joined Alpine Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alpine_County,_California",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "place",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9089,8 +9596,8 @@ const STREET_DATA = {
         "label": "Beaudry to Cleveland (Virgin St)",
         "name": "Alpine Street",
         "entityId": "alpine",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly the Sierra country around {{Alpine County}}, once this stretch was folded into Alpine Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alpine_County,_California",
         "planned": null,
         "built": {
           "text": "already “Virgin street” by Aug. 22, 1887 (the Aug. 1887 Virgin Street ordinance)",
@@ -9126,11 +9633,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.79,
         "categories": [
-          "unresearched",
-          "renamed"
+          "place",
+          "renamed",
+          "basis-inferred"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9156,8 +9664,8 @@ const STREET_DATA = {
         "label": "Cleveland to Yale (Virgin St)",
         "name": "Alpine Street",
         "entityId": "alpine",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly the Sierra country around {{Alpine County}}, once this stretch was folded into Alpine Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alpine_County,_California",
         "planned": {
           "text": "1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
@@ -9192,11 +9700,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "unresearched",
-          "renamed"
+          "place",
+          "renamed",
+          "basis-inferred"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9222,8 +9731,8 @@ const STREET_DATA = {
         "label": "Yale to Spring (Virgin St)",
         "name": "Alpine Street",
         "entityId": "alpine",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly the Sierra country around {{Alpine County}}, once this stretch was folded into Alpine Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alpine_County,_California",
         "planned": {
           "text": "1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
@@ -9255,11 +9764,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "unresearched",
-          "renamed"
+          "place",
+          "renamed",
+          "basis-inferred"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9285,8 +9795,8 @@ const STREET_DATA = {
         "label": "beyond Spring",
         "name": "Alpine Street",
         "entityId": "alpine",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly the Sierra country around {{Alpine County}} — how and when this stretch joined Alpine Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Alpine_County,_California",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
@@ -9296,7 +9806,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "place",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9321,7 +9835,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -9341,7 +9860,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -9366,7 +9890,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9391,7 +9920,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9420,7 +9954,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -9444,7 +9983,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -9469,7 +10013,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9502,7 +10051,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9537,7 +10091,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9567,7 +10126,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -9621,8 +10185,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "place",
@@ -9671,7 +10240,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9709,7 +10283,12 @@ const STREET_DATA = {
     },
     "knownFraction": 0,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -9733,7 +10312,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -9753,7 +10337,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -9777,7 +10366,12 @@ const STREET_DATA = {
     "attested": true,
     "knownFraction": 0,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -9790,14 +10384,18 @@ const STREET_DATA = {
   "Banning Street": {
     "name": "Banning Street",
     "entityId": "banning-street",
-    "namedAfter": null,
-    "namedAfterLink": null,
+    "namedAfter": "Probably {{Phineas Banning}} (1830–1885), the harbour builder — how and when this stretch joined Banning Street is not yet researched",
+    "namedAfterLink": "https://en.wikipedia.org/wiki/Phineas_Banning",
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": "A short street on the Union Station ground, near Alameda and Vignes Streets.",
     "attested": false,
     "categories": [
-      "unknown"
+      "person",
+      "basis-guess"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -9822,7 +10420,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9847,7 +10450,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9881,7 +10489,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9915,7 +10528,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9950,7 +10568,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -9983,7 +10606,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0718/TR0718-007.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10013,7 +10641,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -10038,7 +10671,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10088,11 +10726,19 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "history"
+          "people"
+        ],
+        "formerAncestors": [
+          "person"
         ],
         "disputed": false,
         "sources": [
@@ -10126,7 +10772,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10159,7 +10810,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10199,7 +10855,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10234,7 +10895,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10284,11 +10950,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10318,7 +10986,11 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-none"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10343,7 +11015,11 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-none"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10385,7 +11061,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.75,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-none"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10410,7 +11090,11 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-none"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10436,7 +11120,11 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-none"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10461,7 +11149,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -10485,7 +11178,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -10509,7 +11207,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -10529,7 +11232,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -10549,7 +11257,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -10569,7 +11282,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -10614,7 +11332,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.82,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10651,7 +11373,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10687,7 +11413,11 @@ const STREET_DATA = {
         "note": "Lettered on the Orchard Tract of July 1882 between Wall Street and San Pedro Street, and still Boyd Street today. No Boyd is documented: the sheet names its three owners, its surveyor and the three earlier tracts it absorbed, and there is no Boyd among them.",
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10717,7 +11447,11 @@ const STREET_DATA = {
         "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard.",
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10750,7 +11484,11 @@ const STREET_DATA = {
         "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard.",
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10787,7 +11525,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -10805,8 +11548,8 @@ const STREET_DATA = {
         "label": "beyond Cottage Home",
         "name": "Broadway",
         "entityId": "broadway",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Broadway}} in New York — how and when this stretch joined Broadway is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Broadway_(Manhattan)",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "The name has no “Street”: the 1890 papers and the street signs both say simply Broadway.",
@@ -10816,7 +11559,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "borrowed",
+          "basis-guess"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10833,8 +11581,8 @@ const STREET_DATA = {
         "label": "Cottage Home to Cesar E Chavez (Eternity St)",
         "name": "Broadway",
         "entityId": "broadway",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Broadway}} in New York, once this stretch was folded into Broadway",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Broadway_(Manhattan)",
         "planned": {
           "text": "1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
@@ -10866,12 +11614,16 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "borrowed",
+          "renamed",
+          "basis-guess"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "formerCategories": [
-          "aspiration",
-          "mythological"
+          "idea"
         ],
         "formerAncestors": [
           "abstract"
@@ -10908,8 +11660,8 @@ const STREET_DATA = {
         "label": "beyond Cesar E Chavez",
         "name": "Broadway",
         "entityId": "broadway",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Broadway}} in New York — how and when this stretch joined Broadway is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Broadway_(Manhattan)",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "The name has no “Street”: the 1890 papers and the street signs both say simply Broadway.",
@@ -10919,7 +11671,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "categories": [
-          "unresearched"
+          "borrowed",
+          "basis-guess"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -10942,8 +11699,8 @@ const STREET_DATA = {
         "label": "beyond 1st (Fort St)",
         "name": "Broadway",
         "entityId": "broadway",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Broadway}} in New York, once this stretch was folded into Broadway",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Broadway_(Manhattan)",
         "planned": {
           "text": "by 1869",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
@@ -10979,8 +11736,13 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
-          "unresearched",
-          "renamed"
+          "borrowed",
+          "renamed",
+          "basis-guess"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "formerCategories": [
           "place"
@@ -11022,8 +11784,8 @@ const STREET_DATA = {
         "label": "beyond 1st (Fort St)",
         "name": "Broadway",
         "entityId": "broadway",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Broadway}} in New York, once this stretch was folded into Broadway",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Broadway_(Manhattan)",
         "planned": {
           "text": "1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
@@ -11055,8 +11817,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "unresearched",
-          "renamed"
+          "borrowed",
+          "renamed",
+          "basis-guess"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "formerCategories": [
           "place"
@@ -11106,14 +11873,19 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Broadway",
         "entityId": "broadway",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Broadway}} in New York — how and when this stretch joined Broadway is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Broadway_(Manhattan)",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "The name has no “Street”: the 1890 papers and the street signs both say simply Broadway.",
         "attested": false,
         "categories": [
-          "unresearched"
+          "borrowed",
+          "basis-guess"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11147,7 +11919,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -11176,7 +11953,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11205,7 +11987,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11235,7 +12022,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -11255,7 +12047,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -11284,7 +12081,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11313,7 +12115,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11349,7 +12156,13 @@ const STREET_DATA = {
     "categories": [
       "person",
       "alive",
-      "foreign"
+      "foreign",
+      "politician",
+      "official",
+      "basis-attested"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -11378,7 +12191,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11433,12 +12251,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
         ],
-        "formerCategories": [
-          "unknown",
-          "person"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11468,7 +12287,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -11488,7 +12312,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -11513,10 +12342,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11553,10 +12384,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11625,13 +12458,12 @@ const STREET_DATA = {
         "knownFraction": 0.73,
         "categories": [
           "descriptive",
-          "renamed"
+          "renamed",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
-        ],
-        "formerCategories": [
-          "unknown"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11693,10 +12525,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.48,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11760,13 +12594,16 @@ const STREET_DATA = {
         "knownFraction": 0.79,
         "categories": [
           "descriptive",
-          "renamed"
+          "renamed",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "formerCategories": [
-          "person"
+          "person",
+          "landowner"
         ],
         "disputed": false,
         "sources": [
@@ -11807,10 +12644,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11864,10 +12703,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.79,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11930,10 +12771,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.73,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -11980,10 +12823,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.78,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12034,7 +12879,12 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "mythological"
+          "mythological",
+          "basis-guess"
+        ],
+        "ancestors": [
+          "person",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12083,7 +12933,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.79,
         "categories": [
-          "mythological"
+          "mythological",
+          "basis-guess"
+        ],
+        "ancestors": [
+          "person",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12149,10 +13004,12 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "mythological",
-          "renamed"
+          "renamed",
+          "basis-guess"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "person",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12191,7 +13048,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12224,7 +13086,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12262,7 +13129,7 @@ const STREET_DATA = {
             "entityId": "short-street-chavez",
             "formInForce": "Short Street",
             "how": "origin",
-            "origin": "labeled “C CORTA” and “SHORT ST” on the 1849 Hutton / Ord Survey {{(source)}} — lettered on the 1849 survey along ground that roughly follows one block of what is now Cesar E. Chavez Avenue. Descriptive, presumably, but nothing documents it",
+            "origin": "labeled “C CORTA” and “SHORT ST” on the 1849 Hutton / Ord Survey {{(source)}} — Its length — lettered “C CORTA” on the sheet, which says the same thing in Spanish",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -12284,11 +13151,15 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "unknown",
           "descriptive"
         ],
         "formerAncestors": [
@@ -12326,7 +13197,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12360,7 +13236,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12390,7 +13271,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12424,7 +13310,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -12448,7 +13339,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -12468,7 +13364,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -12492,7 +13393,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -12516,7 +13422,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -12540,7 +13451,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -12565,10 +13481,11 @@ const STREET_DATA = {
         "note": "A church request in June 1849 for a colegio — a secondary school — on this ground prompted Ord and Hutton to letter it “Calle del Colegio” a month later. The school was never built; the street kept the name.",
         "attested": false,
         "categories": [
-          "descriptive"
+          "company",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12605,10 +13522,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "descriptive"
+          "company",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12658,10 +13576,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "descriptive"
+          "company",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12699,10 +13618,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "descriptive"
+          "company",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12740,10 +13660,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "descriptive"
+          "company",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12803,11 +13724,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12831,7 +13754,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12877,7 +13805,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.66,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12910,7 +13842,11 @@ const STREET_DATA = {
         "note": "Namesake untraced. The 1909 Crownwood sheet letters it, which is the earliest evidence the project holds for the street, but nothing found says who or what Columbia was meant to be.",
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12945,7 +13881,11 @@ const STREET_DATA = {
         "note": "Namesake untraced. The 1909 Crownwood sheet letters it, which is the earliest evidence the project holds for the street, but nothing found says who or what Columbia was meant to be.",
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -12978,7 +13918,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -13007,10 +13952,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13043,10 +13990,12 @@ const STREET_DATA = {
         "note": "One of the oldest named streets in Los Angeles — in print by June 19, 1852, and on Kines's reading older in practice than Flower or Hope, which were drawn in 1849 but stayed paper streets for years. Nearly the whole corridor was erased in the twentieth century by Civic Center expansion and the Hollywood Freeway.",
         "attested": false,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13110,12 +14059,16 @@ const STREET_DATA = {
     },
     "knownFraction": 0,
     "categories": [
-      "unresearched",
-      "renamed"
+      "renamed",
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "formerCategories": [
-      "descriptive",
-      "unknown"
+      "descriptive"
     ],
     "formerAncestors": [
       "abstract"
@@ -13154,7 +14107,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -13174,7 +14132,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -13198,7 +14161,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -13222,7 +14190,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -13247,7 +14220,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13272,7 +14250,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13302,7 +14285,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13335,7 +14323,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13370,7 +14363,11 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13410,7 +14407,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13440,7 +14441,11 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13480,7 +14485,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13505,7 +14514,11 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13566,12 +14579,17 @@ const STREET_DATA = {
         "categories": [
           "person",
           "alive",
-          "renamed"
+          "renamed",
+          "basis-pattern"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
-          "governor",
-          "alive"
+          "politician",
+          "alive",
+          "governor"
         ],
         "disputed": false,
         "sources": [
@@ -13640,12 +14658,17 @@ const STREET_DATA = {
         "categories": [
           "person",
           "alive",
-          "renamed"
+          "renamed",
+          "basis-pattern"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
-          "governor",
-          "alive"
+          "politician",
+          "alive",
+          "governor"
         ],
         "disputed": false,
         "sources": [
@@ -13709,7 +14732,11 @@ const STREET_DATA = {
         "knownFraction": 0.73,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-pattern"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13765,7 +14792,11 @@ const STREET_DATA = {
         "knownFraction": 0.68,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-pattern"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13831,11 +14862,16 @@ const STREET_DATA = {
         "categories": [
           "person",
           "alive",
-          "renamed"
+          "renamed",
+          "basis-pattern"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
-          "alive"
+          "alive",
+          "landowner"
         ],
         "disputed": false,
         "sources": [
@@ -13904,11 +14940,16 @@ const STREET_DATA = {
         "categories": [
           "person",
           "alive",
-          "renamed"
+          "renamed",
+          "basis-pattern"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
-          "alive"
+          "alive",
+          "landowner"
         ],
         "disputed": false,
         "sources": [
@@ -13951,7 +14992,11 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-pattern"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -13990,10 +15035,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "landform"
+          "landform",
+          "basis-inferred"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -14030,10 +15077,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.66,
         "categories": [
-          "landform"
+          "landform",
+          "basis-inferred"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -14067,7 +15116,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14087,7 +15141,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14107,7 +15166,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14127,7 +15191,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14151,7 +15220,12 @@ const STREET_DATA = {
       "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14171,7 +15245,11 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unknown"
+      "basis-none",
+      "searched-partial"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14196,7 +15274,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -14255,11 +15338,13 @@ const STREET_DATA = {
         },
         "knownFraction": 0.19,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -14289,7 +15374,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -14318,7 +15408,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14338,7 +15433,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14363,7 +15463,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -14388,7 +15493,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -14417,7 +15527,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14463,11 +15578,13 @@ const STREET_DATA = {
     "attested": true,
     "knownFraction": 0,
     "categories": [
-      "unresearched",
-      "renamed"
+      "renamed",
+      "basis-none",
+      "searched-none",
+      "stub"
     ],
-    "formerCategories": [
-      "unknown"
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14491,7 +15608,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14511,7 +15633,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14535,7 +15662,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -14561,7 +15693,12 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "governor"
+          "politician",
+          "governor",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -14599,7 +15736,12 @@ const STREET_DATA = {
         },
         "categories": [
           "person",
-          "governor"
+          "politician",
+          "governor",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -14674,12 +15816,16 @@ const STREET_DATA = {
         "knownFraction": 0.89,
         "categories": [
           "person",
+          "politician",
           "governor",
-          "renamed"
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "animal",
-          "unknown"
+          "animal"
         ],
         "formerAncestors": [
           "nature"
@@ -14784,12 +15930,16 @@ const STREET_DATA = {
         "knownFraction": 0.9,
         "categories": [
           "person",
+          "politician",
           "governor",
-          "renamed"
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "animal",
-          "unknown"
+          "animal"
         ],
         "formerAncestors": [
           "nature"
@@ -14894,11 +16044,13 @@ const STREET_DATA = {
         "knownFraction": 0.86,
         "categories": [
           "person",
+          "politician",
           "governor",
-          "renamed"
+          "renamed",
+          "basis-attested"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -14998,12 +16150,16 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "person",
+          "politician",
           "governor",
-          "renamed"
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "animal",
-          "unknown"
+          "animal"
         ],
         "formerAncestors": [
           "nature"
@@ -15082,7 +16238,12 @@ const STREET_DATA = {
         "knownFraction": 0.98,
         "categories": [
           "person",
-          "governor"
+          "politician",
+          "governor",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15133,7 +16294,12 @@ const STREET_DATA = {
         "knownFraction": 0.8,
         "categories": [
           "person",
-          "governor"
+          "politician",
+          "governor",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15168,7 +16334,12 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "governor"
+          "politician",
+          "governor",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15202,7 +16373,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -15222,7 +16398,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -15251,10 +16432,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
         },
         "categories": [
-          "plant"
+          "plant",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15307,10 +16490,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
-          "plant"
+          "plant",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15373,10 +16558,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.9,
         "categories": [
-          "plant"
+          "plant",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15435,10 +16622,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "plant"
+          "plant",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15493,10 +16682,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "plant"
+          "plant",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15539,10 +16730,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
-          "plant"
+          "plant",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15585,10 +16778,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "plant"
+          "plant",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15627,7 +16822,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15660,7 +16860,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15694,7 +16899,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -15739,7 +16949,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.51,
         "categories": [
-          "person"
+          "person",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15767,7 +16981,7 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "stub"
         ],
         "disputed": false,
         "sources": [
@@ -15819,10 +17033,11 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "person",
-          "renamed"
+          "renamed",
+          "basis-attested"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15860,7 +17075,11 @@ const STREET_DATA = {
         "note": "Not named for San Francisco. Moore Street and Okey Street were renamed Francisco Street in 1903, five years after Andy Francisco's death.",
         "attested": false,
         "categories": [
-          "person"
+          "person",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15895,7 +17114,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15924,7 +17148,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -15954,7 +17183,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -15980,7 +17214,11 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -16018,7 +17256,11 @@ const STREET_DATA = {
         },
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -16090,11 +17332,16 @@ const STREET_DATA = {
         "categories": [
           "person",
           "alive",
-          "renamed"
+          "renamed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
-          "alive"
+          "alive",
+          "landowner"
         ],
         "disputed": false,
         "sources": [
@@ -16132,7 +17379,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -16156,7 +17408,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -16181,7 +17438,7 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "stub"
         ],
         "disputed": false,
         "sources": [
@@ -16206,7 +17463,7 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "stub"
         ],
         "disputed": false,
         "sources": [
@@ -16235,7 +17492,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -16280,7 +17542,11 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "person"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -16343,11 +17609,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.73,
         "categories": [
-          "person",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-extensive"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -16424,11 +17691,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.32,
         "categories": [
-          "person",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-extensive"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -16501,11 +17769,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "person",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-extensive"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -16552,7 +17821,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -16584,7 +17858,7 @@ const STREET_DATA = {
             "entityId": "lake-avenue",
             "formInForce": "Lake Avenue",
             "how": "origin",
-            "origin": "labeled “Lake Avenue” on the 1884 Glassell's Subdivision map {{(source)}} — namesake untraced. Two candidates: Echo Park Lake, the city reservoir this street runs toward, which was already there in 1884; or Lake Vineyard, the ranch of Benjamin D. Wilson, whose daughter Ruth married George S. Patton — whose own street is on this same plat — in the year it was recorded",
+            "origin": "labeled “Lake Avenue” on the 1884 Glassell's Subdivision map {{(source)}} — Probably Echo Park Lake, the city reservoir this street runs toward, which was already there when the tract was laid out — though Benjamin D. Wilson's Lake Vineyard ranch is a second candidate and neither is sourced",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           },
           {
@@ -16606,11 +17880,19 @@ const STREET_DATA = {
         },
         "knownFraction": 0.19,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "unknown"
+          "water"
+        ],
+        "formerAncestors": [
+          "nature"
         ],
         "disputed": false,
         "sources": [
@@ -16635,7 +17917,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -16660,11 +17947,11 @@ const STREET_DATA = {
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": false,
         "categories": [
-          "unknown",
-          "aspiration"
+          "basis-none",
+          "searched-partial"
         ],
         "ancestors": [
-          "abstract"
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -16731,15 +18018,15 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "unknown",
-          "aspiration",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-partial"
         ],
         "ancestors": [
-          "abstract"
+          "basis"
         ],
         "formerCategories": [
-          "aspiration"
+          "idea"
         ],
         "formerAncestors": [
           "abstract"
@@ -16826,15 +18113,15 @@ const STREET_DATA = {
         },
         "knownFraction": 0.7,
         "categories": [
-          "unknown",
-          "aspiration",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-partial"
         ],
         "ancestors": [
-          "abstract"
+          "basis"
         ],
         "formerCategories": [
-          "aspiration"
+          "idea"
         ],
         "formerAncestors": [
           "abstract"
@@ -16918,15 +18205,15 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "unknown",
-          "aspiration",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-partial"
         ],
         "ancestors": [
-          "abstract"
+          "basis"
         ],
         "formerCategories": [
-          "aspiration"
+          "idea"
         ],
         "formerAncestors": [
           "abstract"
@@ -17006,15 +18293,15 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unknown",
-          "aspiration",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-partial"
         ],
         "ancestors": [
-          "abstract"
+          "basis"
         ],
         "formerCategories": [
-          "aspiration"
+          "idea"
         ],
         "formerAncestors": [
           "abstract"
@@ -17094,15 +18381,15 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unknown",
-          "aspiration",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-partial"
         ],
         "ancestors": [
-          "abstract"
+          "basis"
         ],
         "formerCategories": [
-          "aspiration"
+          "idea"
         ],
         "formerAncestors": [
           "abstract"
@@ -17156,11 +18443,11 @@ const STREET_DATA = {
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": false,
         "categories": [
-          "unknown",
-          "aspiration"
+          "basis-none",
+          "searched-partial"
         ],
         "ancestors": [
-          "abstract"
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -17223,11 +18510,16 @@ const STREET_DATA = {
     "attested": true,
     "knownFraction": 0,
     "categories": [
-      "unresearched",
-      "renamed"
+      "renamed",
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "formerCategories": [
-      "aspiration"
+      "idea"
     ],
     "formerAncestors": [
       "abstract"
@@ -17266,7 +18558,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -17291,7 +18588,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -17324,7 +18626,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0718/TR0718-007.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -17359,7 +18666,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -17394,7 +18706,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -17419,7 +18736,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -17469,7 +18791,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.88,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -17518,7 +18844,7 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "stub"
         ],
         "disputed": false,
         "sources": [
@@ -17556,7 +18882,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.79,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -17593,7 +18923,7 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "stub"
         ],
         "disputed": false,
         "sources": [
@@ -17626,7 +18956,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -17672,7 +19006,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -17714,7 +19052,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -17743,10 +19086,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "landform"
+          "landform",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -17815,16 +19160,20 @@ const STREET_DATA = {
         "knownFraction": 0.14,
         "categories": [
           "landform",
-          "renamed"
+          "renamed",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "formerCategories": [
           "animal",
           "person",
           "alive",
-          "foreign"
+          "foreign",
+          "politician",
+          "official"
         ],
         "formerAncestors": [
           "nature"
@@ -17877,10 +19226,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "categories": [
-          "landform"
+          "landform",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -17939,10 +19290,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
-          "landform"
+          "landform",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18005,10 +19358,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "landform"
+          "landform",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18063,10 +19418,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "landform"
+          "landform",
+          "basis-attested"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18100,7 +19457,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -18124,7 +19486,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -18157,12 +19524,13 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
-          "aspiration",
+          "idea",
           "person",
-          "unknown"
+          "basis-inferred"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": true,
         "sources": [
@@ -18224,12 +19592,13 @@ const STREET_DATA = {
         },
         "knownFraction": 0.9,
         "categories": [
-          "aspiration",
+          "idea",
           "person",
-          "unknown"
+          "basis-inferred"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": true,
         "sources": [
@@ -18288,12 +19657,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "aspiration",
+          "idea",
           "person",
-          "unknown"
+          "basis-inferred"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": true,
         "sources": [
@@ -18340,12 +19710,13 @@ const STREET_DATA = {
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
         "attested": false,
         "categories": [
-          "aspiration",
+          "idea",
           "person",
-          "unknown"
+          "basis-inferred"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": true,
         "sources": [
@@ -18388,12 +19759,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
-          "aspiration",
+          "idea",
           "person",
-          "unknown"
+          "basis-inferred"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": true,
         "sources": [
@@ -18436,12 +19808,13 @@ const STREET_DATA = {
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
         "attested": false,
         "categories": [
-          "aspiration",
+          "idea",
           "person",
-          "unknown"
+          "basis-inferred"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": true,
         "sources": [
@@ -18475,7 +19848,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -18504,7 +19882,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18533,7 +19916,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18598,11 +19986,15 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "unknown",
           "tree"
         ],
         "formerAncestors": [
@@ -18639,7 +20031,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18678,7 +20075,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18707,7 +20109,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18742,7 +20149,11 @@ const STREET_DATA = {
         "note": "A street of the City West pocket, west of downtown.",
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18767,7 +20178,11 @@ const STREET_DATA = {
         "note": "A street of the City West pocket, west of downtown.",
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18823,11 +20238,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18856,7 +20273,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18891,7 +20313,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -18945,8 +20372,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -19010,7 +20442,11 @@ const STREET_DATA = {
     },
     "knownFraction": 0.28,
     "categories": [
-      "place"
+      "place",
+      "basis-intrinsic"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19034,7 +20470,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19059,7 +20500,11 @@ const STREET_DATA = {
         "note": "Arrived on Aug. 31, 1896, when Ordinance No. 3829 changed Cincinnati Street, between Mateo and Mesquit, to this name. The ordinance spells it “Jessie”; the modern street is Jesse.",
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-none"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -19084,7 +20529,11 @@ const STREET_DATA = {
         "note": "Arrived on Aug. 31, 1896, when Ordinance No. 3829 changed Cincinnati Street, between Mateo and Mesquit, to this name. The ordinance spells it “Jessie”; the modern street is Jesse.",
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-none"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -19122,7 +20571,7 @@ const STREET_DATA = {
             "entityId": "wilmington-street",
             "formInForce": "Wilmington Street",
             "how": "extension",
-            "origin": "labeled “WILMINGTON” on the 1876 Requena Subdivision (sheets 1, 2) {{(source)}} — A lost downtown street, lettered on the Garden of J. Murat in 1868 (documents/mr010-008) and on the Requena Subdivision in 1876 (documents/mr003-146), and still alive in Sept. 1896, when a fire-district boundary runs along its centre line between First and Requena Streets (documents/min-1896-09-14). Its ground is today Judge John Aiso Street",
+            "origin": "labeled “WILMINGTON” on the 1876 Requena Subdivision (sheets 1, 2) {{(source)}} — Wilmington, the harbour town — the 1868 sheet letters it beside San Pedro Street, two adjacent harbour towns as two adjacent streets",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
           },
           {
@@ -19140,11 +20589,16 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "unknown"
+          "place"
         ],
         "disputed": false,
         "sources": [
@@ -19185,7 +20639,7 @@ const STREET_DATA = {
             "entityId": "wilmington-street",
             "formInForce": "Wilmington Street",
             "how": "origin",
-            "origin": "labeled “Wilmington” and “WILMINGTON” on the 1868 Garden of J. Murat and the 1876 Requena Subdivision {{(source)}} — A lost downtown street, lettered on the Garden of J. Murat in 1868 (documents/mr010-008) and on the Requena Subdivision in 1876 (documents/mr003-146), and still alive in Sept. 1896, when a fire-district boundary runs along its centre line between First and Requena Streets (documents/min-1896-09-14). Its ground is today Judge John Aiso Street",
+            "origin": "labeled “Wilmington” and “WILMINGTON” on the 1868 Garden of J. Murat and the 1876 Requena Subdivision {{(source)}} — Wilmington, the harbour town — the 1868 sheet letters it beside San Pedro Street, two adjacent harbour towns as two adjacent streets",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           },
           {
@@ -19207,11 +20661,16 @@ const STREET_DATA = {
         },
         "knownFraction": 0.15,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "unknown"
+          "place"
         ],
         "disputed": false,
         "sources": [
@@ -19249,7 +20708,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19269,7 +20733,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19289,7 +20758,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19309,7 +20783,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19338,7 +20817,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "categories": [
-          "person"
+          "person",
+          "landowner",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -19391,7 +20875,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.79,
         "categories": [
-          "person"
+          "person",
+          "landowner",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -19462,7 +20951,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.8,
         "categories": [
-          "person"
+          "person",
+          "landowner",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -19504,7 +20998,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19550,11 +21049,13 @@ const STREET_DATA = {
     "attested": true,
     "knownFraction": 0,
     "categories": [
-      "unresearched",
-      "renamed"
+      "renamed",
+      "basis-none",
+      "searched-none",
+      "stub"
     ],
-    "formerCategories": [
-      "unknown"
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19574,7 +21075,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19594,7 +21100,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19614,7 +21125,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19634,7 +21150,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19658,7 +21179,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19687,7 +21213,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -19716,7 +21247,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -19746,7 +21282,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19766,7 +21307,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19790,7 +21336,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19810,7 +21361,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19830,7 +21386,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -19859,7 +21420,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -19911,7 +21476,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -19977,7 +21546,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.85,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20024,7 +21597,11 @@ const STREET_DATA = {
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": false,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20075,7 +21652,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20126,7 +21707,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20177,7 +21762,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.82,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20248,7 +21837,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.8,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20303,7 +21896,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.82,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20370,7 +21967,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.68,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20425,7 +22026,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.8,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20496,7 +22101,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.78,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20547,7 +22156,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20610,7 +22223,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.76,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20665,7 +22282,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.81,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20716,7 +22337,11 @@ const STREET_DATA = {
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": false,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20763,7 +22388,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.76,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20810,7 +22439,11 @@ const STREET_DATA = {
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": false,
         "categories": [
-          "place"
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20854,7 +22487,12 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20904,7 +22542,12 @@ const STREET_DATA = {
         "knownFraction": 0.66,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20944,7 +22587,12 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -20982,7 +22630,12 @@ const STREET_DATA = {
     "attested": true,
     "knownFraction": 0,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -21006,7 +22659,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -21031,10 +22689,12 @@ const STREET_DATA = {
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": false,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21075,10 +22735,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21129,10 +22791,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21183,10 +22847,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21237,10 +22903,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21283,7 +22951,7 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "stub"
         ],
         "disputed": false,
         "sources": [
@@ -21322,10 +22990,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21379,10 +23049,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21449,10 +23121,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21538,10 +23212,12 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "descriptive",
-          "renamed"
+          "renamed",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "formerCategories": [
           "place"
@@ -21635,10 +23311,12 @@ const STREET_DATA = {
         },
         "knownFraction": 1,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21717,10 +23395,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.87,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21795,10 +23475,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.76,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21853,10 +23535,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.81,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21911,10 +23595,12 @@ const STREET_DATA = {
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": false,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -21961,10 +23647,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.76,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22011,10 +23699,12 @@ const STREET_DATA = {
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": false,
         "categories": [
-          "descriptive"
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
-          "abstract"
+          "abstract",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22050,8 +23740,8 @@ const STREET_DATA = {
         "label": "part of (Regent St)",
         "name": "Maple Avenue",
         "entityId": "maple-dtla",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{The maple}}, once this stretch was folded into Maple Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Maple",
         "planned": {
           "text": "by 1876",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
@@ -22065,7 +23755,7 @@ const STREET_DATA = {
             "entityId": "regent-street",
             "formInForce": "Regent Street",
             "how": "origin",
-            "origin": "labeled “Regent Street” on the 1876 Moreno Vineyard Tract {{(source)}} — lettered between Los Angeles Street and Wall Street on the Moreno Vineyard Tract — the building lots laid out beside the new railroad depot and recorded in March 1876. Nothing says what it was named for. The strongest argument available is the company it keeps: this one sheet is the earliest source in this corpus for BOTH Regent Street and Wall Street, lettered two blocks apart on a new commercial subdivision, which is London’s and New York’s most famous commercial streets named together on one page. Taken as a pair they read as a deliberate borrowing of two great trading addresses; taken singly neither can be shown. The corridor is Maple Avenue today, between 5th and 6th",
+            "origin": "labeled “Regent Street” on the 1876 Moreno Vineyard Tract {{(source)}} — Regent Street in London — the pairing with Wall Street on the one 1876 sheet that first letters both is the whole of the argument",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           },
           {
@@ -22087,15 +23777,19 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "unknown",
           "tree",
-          "renamed"
+          "renamed",
+          "basis-inferred"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "formerCategories": [
-          "unknown"
+          "borrowed"
+        ],
+        "formerAncestors": [
+          "place"
         ],
         "disputed": false,
         "sources": [
@@ -22121,8 +23815,8 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Maple Avenue",
         "entityId": "maple-dtla",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{The maple}}, extended onto this stretch",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Maple",
         "planned": {
           "text": "by 1906",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
@@ -22148,11 +23842,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.68,
         "categories": [
-          "unknown",
-          "tree"
+          "tree",
+          "basis-inferred"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22184,8 +23879,8 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Maple Avenue",
         "entityId": "maple-dtla",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{The maple}} — how and when this stretch joined Maple Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Maple",
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
@@ -22199,11 +23894,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.8,
         "categories": [
-          "unknown",
-          "tree"
+          "tree",
+          "basis-inferred"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22239,8 +23935,8 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Maple Avenue",
         "entityId": "maple-dtla",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{The maple}}, extended onto this stretch",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Maple",
         "planned": {
           "text": "by 1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
@@ -22262,11 +23958,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.78,
         "categories": [
-          "unknown",
-          "tree"
+          "tree",
+          "basis-inferred"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22298,18 +23995,19 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Maple Avenue",
         "entityId": "maple-dtla",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{The maple}} — how and when this stretch joined Maple Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Maple",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": false,
         "categories": [
-          "unknown",
-          "tree"
+          "tree",
+          "basis-inferred"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22337,8 +24035,8 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Maple Avenue",
         "entityId": "maple-dtla",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{The maple}}, extended onto this stretch",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Maple",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
@@ -22360,11 +24058,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.79,
         "categories": [
-          "unknown",
-          "tree"
+          "tree",
+          "basis-inferred"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22396,8 +24095,8 @@ const STREET_DATA = {
         "label": "part of (original Maple Ave)",
         "name": "Maple Avenue",
         "entityId": "maple-dtla",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{The maple}} — a tree name one block from Myrtle on O. W. Childs's 1885 tract, and Childs was the city's leading nurseryman",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Maple",
         "planned": {
           "text": "by 1883",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
@@ -22419,11 +24118,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "unknown",
-          "tree"
+          "tree",
+          "basis-inferred"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22455,18 +24155,19 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Maple Avenue",
         "entityId": "maple-dtla",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{The maple}} — how and when this stretch joined Maple Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Maple",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": false,
         "categories": [
-          "unknown",
-          "tree"
+          "tree",
+          "basis-inferred"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22494,8 +24195,8 @@ const STREET_DATA = {
         "label": "beyond 16th",
         "name": "Maple Avenue",
         "entityId": "maple-dtla",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{The maple}} — how and when this stretch joined Maple Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Maple",
         "planned": {
           "text": "by 1893",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
@@ -22505,11 +24206,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.76,
         "categories": [
-          "unknown",
-          "tree"
+          "tree",
+          "basis-inferred"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22543,7 +24245,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -22563,7 +24270,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -22587,7 +24299,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -22607,7 +24324,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -22632,7 +24354,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22657,7 +24384,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22691,7 +24423,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22750,11 +24487,15 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "unknown",
           "tree"
         ],
         "formerAncestors": [
@@ -22801,7 +24542,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22836,7 +24582,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -22870,7 +24621,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -22883,7 +24639,7 @@ const STREET_DATA = {
   "Merchant Street": {
     "name": "Merchant Street",
     "entityId": "merchant-st",
-    "namedAfter": null,
+    "namedAfter": "The wholesale merchants of the district it crossed — or the Kohler and Frohling wine house, whose own street is lettered beside it on every sheet that shows either; nothing states which",
     "namedAfterLink": null,
     "planned": {
       "text": "by 1887",
@@ -22910,7 +24666,12 @@ const STREET_DATA = {
     },
     "knownFraction": 0.79,
     "categories": [
-      "unknown"
+      "descriptive",
+      "basis-inferred"
+    ],
+    "ancestors": [
+      "abstract",
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -22946,7 +24707,12 @@ const STREET_DATA = {
     },
     "knownFraction": 0,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -22966,7 +24732,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -23007,10 +24778,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
-          "tree"
+          "tree",
+          "basis-pattern"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23043,10 +24816,12 @@ const STREET_DATA = {
         "note": "The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
         "attested": false,
         "categories": [
-          "tree"
+          "tree",
+          "basis-pattern"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23084,7 +24859,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -23104,7 +24884,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -23133,7 +24918,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23162,7 +24952,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23197,7 +24992,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23247,8 +25047,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -23313,8 +25118,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -23353,7 +25163,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23383,7 +25198,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23408,7 +25228,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23437,7 +25262,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -23457,7 +25287,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -23482,7 +25317,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23507,7 +25347,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23532,7 +25377,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -23561,7 +25411,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23591,7 +25446,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23621,7 +25481,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23654,7 +25519,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23693,7 +25563,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23722,7 +25597,7 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "stub"
         ],
         "disputed": false,
         "sources": [
@@ -23761,7 +25636,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23816,10 +25696,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
-          "tree"
+          "tree",
+          "basis-lexical"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23880,10 +25762,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.9,
         "categories": [
-          "tree"
+          "tree",
+          "basis-lexical"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -23950,10 +25834,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "tree"
+          "tree",
+          "basis-lexical"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -24000,10 +25886,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "tree"
+          "tree",
+          "basis-lexical"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -24041,7 +25929,12 @@ const STREET_DATA = {
     "attested": true,
     "knownFraction": 0,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -24070,7 +25963,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -24125,8 +26023,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -24187,7 +26090,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -24248,8 +26156,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -24331,8 +26244,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -24411,8 +26329,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.21,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -24486,8 +26409,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -24561,8 +26489,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.22,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -24630,7 +26563,11 @@ const STREET_DATA = {
     },
     "knownFraction": 0.79,
     "categories": [
-      "unknown"
+      "basis-none",
+      "searched-partial"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -24659,7 +26596,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -24696,7 +26638,7 @@ const STREET_DATA = {
             "entityId": "high-street-chinatown",
             "formInForce": "High Street",
             "how": "origin",
-            "origin": "labeled “CALLE ALTA” and “HIGH ST” on the 1849 Hutton / Ord Survey {{(source)}} — it became Walters Street in 1886, for a resident named George Walters, and Ord Street in 1890 — for the surveyor who had declined to name anything after himself in 1849",
+            "origin": "labeled “CALLE ALTA” and “HIGH ST” on the 1849 Hutton / Ord Survey {{(source)}} — The high ground it climbed — lettered “Calle Alta” on the 1849 survey, which says the same thing in Spanish",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -24714,11 +26656,19 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "unknown"
+          "descriptive"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -24756,7 +26706,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -24785,7 +26740,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -24805,7 +26765,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -24825,7 +26790,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -24845,7 +26815,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -24871,7 +26846,12 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "landowner",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -24925,7 +26905,12 @@ const STREET_DATA = {
         "knownFraction": 0.81,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "landowner",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -24963,7 +26948,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -24988,7 +26978,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -25043,13 +27038,19 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
-          "governor",
-          "alive"
+          "politician",
+          "alive",
+          "governor"
         ],
         "disputed": false,
         "sources": [
@@ -25088,7 +27089,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -25118,7 +27124,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -25138,7 +27149,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -25162,7 +27178,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0141/TR0141-011.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -25182,7 +27203,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -25202,7 +27228,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -25227,7 +27258,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -25277,11 +27313,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -25310,7 +27348,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -25334,7 +27377,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -25374,7 +27422,11 @@ const STREET_DATA = {
     },
     "knownFraction": 0.88,
     "categories": [
-      "unknown"
+      "basis-none",
+      "searched-partial"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -25406,7 +27458,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -25430,7 +27487,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -25450,7 +27512,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -25470,7 +27537,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -25503,7 +27575,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -25566,12 +27642,17 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "unknown",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
-          "alive"
+          "alive",
+          "landowner"
         ],
         "disputed": false,
         "sources": [
@@ -25614,7 +27695,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -25679,11 +27764,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "unknown",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-extensive"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -25756,11 +27842,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.01,
         "categories": [
-          "unknown",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-extensive"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -25829,11 +27916,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unknown",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-extensive"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -25892,7 +27980,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.79,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -25947,7 +28039,11 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -25986,7 +28082,11 @@ const STREET_DATA = {
         "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
         "attested": false,
         "categories": [
-          "unknown"
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26026,7 +28126,11 @@ const STREET_DATA = {
         },
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26063,7 +28167,11 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26125,7 +28233,11 @@ const STREET_DATA = {
         "knownFraction": 0.26,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26196,7 +28308,11 @@ const STREET_DATA = {
         "knownFraction": 0.79,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26255,7 +28371,11 @@ const STREET_DATA = {
         "knownFraction": 0.82,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26330,7 +28450,11 @@ const STREET_DATA = {
         "knownFraction": 0.79,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26389,7 +28513,11 @@ const STREET_DATA = {
         "knownFraction": 0.81,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26464,7 +28592,11 @@ const STREET_DATA = {
         "knownFraction": 0.8,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26539,7 +28671,11 @@ const STREET_DATA = {
         "knownFraction": 0.79,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26610,7 +28746,11 @@ const STREET_DATA = {
         "knownFraction": 0.8,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26673,7 +28813,11 @@ const STREET_DATA = {
         "knownFraction": 0.81,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26749,7 +28893,11 @@ const STREET_DATA = {
         "knownFraction": 0.8,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26825,7 +28973,11 @@ const STREET_DATA = {
         "knownFraction": 0.76,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26877,7 +29029,11 @@ const STREET_DATA = {
         "knownFraction": 0.81,
         "categories": [
           "place",
-          "destination"
+          "destination",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26931,7 +29087,12 @@ const STREET_DATA = {
     },
     "knownFraction": 0,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -26956,7 +29117,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -26989,7 +29155,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27024,7 +29195,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27059,7 +29235,11 @@ const STREET_DATA = {
         "note": "Named for the railway in May 1887, when its passenger depot opened near 1st Street. The name spread south later: on Aug. 31, 1896 Ordinance No. 3829 changed Tulip Street, from Willow to Seventh, to Santa Fe Avenue (documents/lah-1896-09-03).",
         "attested": false,
         "categories": [
-          "company"
+          "company",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27096,7 +29276,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "company"
+          "company",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27166,10 +29350,13 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "company",
-          "renamed"
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "unknown",
           "plant"
         ],
         "formerAncestors": [
@@ -27220,7 +29407,11 @@ const STREET_DATA = {
         "note": "Named for the railway in May 1887, when its passenger depot opened near 1st Street. The name spread south later: on Aug. 31, 1896 Ordinance No. 3829 changed Tulip Street, from Willow to Seventh, to Santa Fe Avenue (documents/lah-1896-09-03).",
         "attested": false,
         "categories": [
-          "company"
+          "company",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27254,7 +29445,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -27283,7 +29479,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27320,7 +29521,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27362,7 +29568,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.19,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27391,7 +29602,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -27444,10 +29660,15 @@ const STREET_DATA = {
         "categories": [
           "person",
           "alive",
-          "renamed"
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "person"
+          "person",
+          "landowner"
         ],
         "disputed": false,
         "sources": [
@@ -27489,7 +29710,11 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27533,7 +29758,11 @@ const STREET_DATA = {
         "knownFraction": 0.76,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27604,12 +29833,16 @@ const STREET_DATA = {
         "categories": [
           "person",
           "alive",
-          "renamed"
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
           "alive",
-          "unknown"
+          "landowner"
         ],
         "disputed": false,
         "sources": [
@@ -27661,7 +29894,11 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27717,7 +29954,11 @@ const STREET_DATA = {
         "knownFraction": 0.76,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27755,7 +29996,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -27775,7 +30021,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -27800,7 +30051,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27833,7 +30089,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27869,8 +30130,11 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "unknown",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27912,8 +30176,11 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "person",
-          "unknown",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -27965,8 +30232,11 @@ const STREET_DATA = {
         },
         "categories": [
           "person",
-          "unknown",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -28030,9 +30300,12 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "person",
-          "unknown",
           "alive",
-          "renamed"
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "descriptive"
@@ -28092,8 +30365,11 @@ const STREET_DATA = {
         },
         "categories": [
           "person",
-          "unknown",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -28143,8 +30419,11 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "person",
-          "unknown",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -28194,7 +30473,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -28227,7 +30511,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -28293,14 +30582,19 @@ const STREET_DATA = {
         "knownFraction": 0.21,
         "categories": [
           "person",
-          "governor",
+          "politician",
           "alive",
-          "renamed"
+          "governor",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
           "alive",
-          "unknown"
+          "family"
         ],
         "disputed": false,
         "sources": [
@@ -28368,14 +30662,19 @@ const STREET_DATA = {
         "knownFraction": 0.01,
         "categories": [
           "person",
-          "governor",
+          "politician",
           "alive",
-          "renamed"
+          "governor",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
           "alive",
-          "unknown"
+          "family"
         ],
         "disputed": false,
         "sources": [
@@ -28452,14 +30751,19 @@ const STREET_DATA = {
         "knownFraction": 0.36,
         "categories": [
           "person",
-          "governor",
+          "politician",
           "alive",
-          "renamed"
+          "governor",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
           "alive",
-          "unknown"
+          "family"
         ],
         "disputed": false,
         "sources": [
@@ -28545,14 +30849,19 @@ const STREET_DATA = {
         "knownFraction": 0.33,
         "categories": [
           "person",
-          "governor",
+          "politician",
           "alive",
-          "renamed"
+          "governor",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
           "alive",
-          "unknown"
+          "family"
         ],
         "disputed": false,
         "sources": [
@@ -28612,8 +30921,13 @@ const STREET_DATA = {
         "knownFraction": 0.78,
         "categories": [
           "person",
+          "politician",
+          "alive",
           "governor",
-          "alive"
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -28673,8 +30987,13 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
+          "politician",
+          "alive",
           "governor",
-          "alive"
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -28712,7 +31031,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -28732,7 +31056,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -28752,7 +31081,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -28772,7 +31106,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -28797,7 +31136,11 @@ const STREET_DATA = {
         "note": "Christened in 1859, along the one-block lane Temple had laid out himself beside his own downtown property.",
         "attested": false,
         "categories": [
-          "person"
+          "person",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -28854,7 +31197,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "categories": [
-          "person"
+          "person",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -28905,7 +31252,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "categories": [
-          "person"
+          "person",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -28984,12 +31335,16 @@ const STREET_DATA = {
         "knownFraction": 0,
         "categories": [
           "person",
-          "renamed"
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "person",
           "alive",
-          "unknown"
+          "landowner"
         ],
         "disputed": false,
         "sources": [
@@ -29043,7 +31398,11 @@ const STREET_DATA = {
         "note": "Christened in 1859, along the one-block lane Temple had laid out himself beside his own downtown property.",
         "attested": false,
         "categories": [
-          "person"
+          "person",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -29090,7 +31449,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
         },
         "categories": [
-          "person"
+          "person",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -29133,7 +31496,11 @@ const STREET_DATA = {
         "note": "Christened in 1859, along the one-block lane Temple had laid out himself beside his own downtown property.",
         "attested": false,
         "categories": [
-          "person"
+          "person",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -29171,7 +31538,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -29195,7 +31567,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -29229,7 +31606,11 @@ const STREET_DATA = {
         "knownFraction": 0.79,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -29283,7 +31664,11 @@ const STREET_DATA = {
         "knownFraction": 1,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -29343,7 +31728,11 @@ const STREET_DATA = {
         "knownFraction": 0.73,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -29415,7 +31804,11 @@ const STREET_DATA = {
         "knownFraction": 0.69,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -29467,7 +31860,11 @@ const STREET_DATA = {
         "knownFraction": 0.78,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -29511,7 +31908,11 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -29554,10 +31955,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
         },
         "categories": [
-          "descriptive"
+          "tool",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "object",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -29619,11 +32022,13 @@ const STREET_DATA = {
         },
         "knownFraction": 0.14,
         "categories": [
-          "descriptive",
-          "renamed"
+          "tool",
+          "renamed",
+          "basis-attested"
         ],
         "ancestors": [
-          "abstract"
+          "object",
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -29675,7 +32080,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -29695,7 +32105,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -29715,7 +32130,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -29735,7 +32155,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -29755,7 +32180,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -29775,7 +32205,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -29800,7 +32235,12 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "categories": [
-          "unresearched"
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -29854,8 +32294,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unresearched",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -29895,7 +32340,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -29924,7 +32374,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "person"
+          "person",
+          "landowner",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -29958,7 +32413,12 @@ const STREET_DATA = {
         "note": "Named in 1874, twelve years after Jean-Louis Vignes's death, on the ground of his El Aliso vineyard. His nephews Jean-Marie (1826–1906) and Vital (1827–1902) worked the winery from about 1850 and became prominent Angelenos, and their obituaries claimed them as the namesakes — which is why Kines settles on the family rather than the uncle alone.",
         "attested": false,
         "categories": [
-          "person"
+          "person",
+          "landowner",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30008,7 +32468,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.56,
         "categories": [
-          "person"
+          "person",
+          "landowner",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30051,7 +32516,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "person"
+          "person",
+          "landowner",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30083,8 +32553,8 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Wall Street",
         "entityId": "wall-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Wall Street}} in New York — how and when this stretch joined Wall Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Wall_Street",
         "planned": {
           "text": "by 1882",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-005.pdf"
@@ -30098,7 +32568,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.82,
         "categories": [
-          "unknown"
+          "borrowed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30128,8 +32603,8 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Wall Street",
         "entityId": "wall-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Wall Street}} in New York, extended onto this stretch",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Wall_Street",
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
@@ -30155,7 +32630,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.8,
         "categories": [
-          "unknown"
+          "borrowed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30187,8 +32667,8 @@ const STREET_DATA = {
         "label": "part of (original Wall St)",
         "name": "Wall Street",
         "entityId": "wall-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Wall Street}} in New York — the pairing with Regent Street on the one 1876 sheet that first letters both is the whole of the argument",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Wall_Street",
         "planned": {
           "text": "by 1876",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
@@ -30214,7 +32694,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.85,
         "categories": [
-          "unknown"
+          "borrowed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30242,8 +32727,8 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Wall Street",
         "entityId": "wall-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Wall Street}} in New York, extended onto this stretch",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Wall_Street",
         "planned": {
           "text": "by 1884",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-033.pdf"
@@ -30269,7 +32754,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.81,
         "categories": [
-          "unknown"
+          "borrowed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30301,8 +32791,8 @@ const STREET_DATA = {
         "label": "part of (Myrtle Ave)",
         "name": "Wall Street",
         "entityId": "wall-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Wall Street}} in New York, once this stretch was folded into Wall Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Wall_Street",
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
@@ -30315,7 +32805,7 @@ const STREET_DATA = {
             "name": "Myrtle Avenue",
             "entityId": "myrtle",
             "formInForce": "Myrtle Avenue",
-            "origin": "labeled “Myrtle Avenue” on the 1886 Maple Avenue Tract {{(source)}} — A plant name, and the company it keeps is the whole of the argument: the O. W. Childs Tract lays Myrtle one block from Maple, and Childs was the city's leading nurseryman. Nothing documents it. This one ran along modern Wall Street",
+            "origin": "labeled “Myrtle Avenue” on the 1886 Maple Avenue Tract {{(source)}} — The myrtle — a plant name one block from Maple on O. W. Childs's 1885 tract, and Childs was the city's leading nurseryman",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
           },
           {
@@ -30333,11 +32823,15 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unknown",
-          "renamed"
+          "borrowed",
+          "renamed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "formerCategories": [
-          "unknown",
           "plant"
         ],
         "formerAncestors": [
@@ -30377,8 +32871,8 @@ const STREET_DATA = {
         "label": "beyond 8th",
         "name": "Wall Street",
         "entityId": "wall-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Wall Street}} in New York — how and when this stretch joined Wall Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Wall_Street",
         "planned": {
           "text": "by 1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
@@ -30388,7 +32882,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.78,
         "categories": [
-          "unknown"
+          "borrowed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30415,8 +32914,8 @@ const STREET_DATA = {
         "label": "beyond 8th",
         "name": "Wall Street",
         "entityId": "wall-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Wall Street}} in New York — how and when this stretch joined Wall Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Wall_Street",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Nothing found says what it was named for. New York’s financial street is the obvious guess, and what supports it is the company it keeps: the Moreno Vineyard Tract sheet of March 1876 letters Wall Street and Regent Street two blocks apart on one new commercial subdivision beside the railroad depot — New York’s and London’s most famous trading addresses named together. As a pair they read as deliberate; singly neither can be shown. The name later spread north, taking Myrtle Avenue on Nov. 13, 1893 by Ordinance No. 1915.",
@@ -30426,7 +32925,12 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
         },
         "categories": [
-          "unknown"
+          "borrowed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30449,14 +32953,19 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Wall Street",
         "entityId": "wall-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Wall Street}} in New York — how and when this stretch joined Wall Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Wall_Street",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Nothing found says what it was named for. New York’s financial street is the obvious guess, and what supports it is the company it keeps: the Moreno Vineyard Tract sheet of March 1876 letters Wall Street and Regent Street two blocks apart on one new commercial subdivision beside the railroad depot — New York’s and London’s most famous trading addresses named together. As a pair they read as deliberate; singly neither can be shown. The name later spread north, taking Myrtle Avenue on Nov. 13, 1893 by Ordinance No. 1915.",
         "attested": false,
         "categories": [
-          "unknown"
+          "borrowed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30484,8 +32993,8 @@ const STREET_DATA = {
         "label": "part of (Myrtle Ave)",
         "name": "Wall Street",
         "entityId": "wall-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Wall Street}} in New York, once this stretch was folded into Wall Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Wall_Street",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
@@ -30499,7 +33008,7 @@ const STREET_DATA = {
             "entityId": "myrtle",
             "formInForce": "Myrtle Avenue",
             "how": "extension",
-            "origin": "labeled “Myrtle Avenue” on the 1887 Moran Tract {{(source)}} — A plant name, and the company it keeps is the whole of the argument: the O. W. Childs Tract lays Myrtle one block from Maple, and Childs was the city's leading nurseryman. Nothing documents it. This one ran along modern Wall Street",
+            "origin": "labeled “Myrtle Avenue” on the 1887 Moran Tract {{(source)}} — The myrtle — a plant name one block from Maple on O. W. Childs's 1885 tract, and Childs was the city's leading nurseryman",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
           },
           {
@@ -30517,11 +33026,15 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "unknown",
-          "renamed"
+          "borrowed",
+          "renamed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "formerCategories": [
-          "unknown",
           "plant"
         ],
         "formerAncestors": [
@@ -30561,8 +33074,8 @@ const STREET_DATA = {
         "label": "part of (Myrtle Ave)",
         "name": "Wall Street",
         "entityId": "wall-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Wall Street}} in New York, once this stretch was folded into Wall Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Wall_Street",
         "planned": {
           "text": "by 1883",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
@@ -30576,7 +33089,7 @@ const STREET_DATA = {
             "entityId": "myrtle",
             "formInForce": "Myrtle Avenue",
             "how": "origin",
-            "origin": "labeled “Wall Street” and “Myrtle Ave.” on the 1883 O. W. Childs Tract (Hansen & Solano survey) and the 1885 O. W. Childs Tract {{(source)}} — A plant name, and the company it keeps is the whole of the argument: the O. W. Childs Tract lays Myrtle one block from Maple, and Childs was the city's leading nurseryman. Nothing documents it. This one ran along modern Wall Street",
+            "origin": "labeled “Wall Street” and “Myrtle Ave.” on the 1883 O. W. Childs Tract (Hansen & Solano survey) and the 1885 O. W. Childs Tract {{(source)}} — The myrtle — a plant name one block from Maple on O. W. Childs's 1885 tract, and Childs was the city's leading nurseryman",
             "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           },
           {
@@ -30594,11 +33107,15 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.01,
         "categories": [
-          "unknown",
-          "renamed"
+          "borrowed",
+          "renamed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "formerCategories": [
-          "unknown",
           "plant"
         ],
         "formerAncestors": [
@@ -30638,14 +33155,19 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Wall Street",
         "entityId": "wall-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Wall Street}} in New York — how and when this stretch joined Wall Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Wall_Street",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Nothing found says what it was named for. New York’s financial street is the obvious guess, and what supports it is the company it keeps: the Moreno Vineyard Tract sheet of March 1876 letters Wall Street and Regent Street two blocks apart on one new commercial subdivision beside the railroad depot — New York’s and London’s most famous trading addresses named together. As a pair they read as deliberate; singly neither can be shown. The name later spread north, taking Myrtle Avenue on Nov. 13, 1893 by Ordinance No. 1915.",
         "attested": false,
         "categories": [
-          "unknown"
+          "borrowed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "place",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30675,7 +33197,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -30711,7 +33238,11 @@ const STREET_DATA = {
     "attested": true,
     "knownFraction": 0.81,
     "categories": [
-      "unknown"
+      "basis-none",
+      "searched-partial"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -30731,7 +33262,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -30755,7 +33291,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -30775,7 +33316,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -30795,7 +33341,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -30819,7 +33370,12 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
     },
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -30839,7 +33395,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -30884,11 +33445,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.8,
         "categories": [
-          "unknown",
-          "tree"
+          "tree",
+          "basis-pattern"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30917,11 +33479,12 @@ const STREET_DATA = {
         "note": "One of a run of tree and plant names platted on the Goodwin Tract in October 1886 — Palm, Spruce, Tulip and Willow together. None of them is documented beyond the plat, and the theme is the whole of the argument. This one ran along Willow Street, which keeps the name.",
         "attested": false,
         "categories": [
-          "unknown",
-          "tree"
+          "tree",
+          "basis-pattern"
         ],
         "ancestors": [
-          "nature"
+          "nature",
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -30956,7 +33519,12 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -31021,10 +33589,12 @@ const STREET_DATA = {
         "categories": [
           "person",
           "alive",
-          "renamed"
+          "landowner",
+          "renamed",
+          "basis-eponymous"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -31103,10 +33673,12 @@ const STREET_DATA = {
         "categories": [
           "person",
           "alive",
-          "renamed"
+          "landowner",
+          "renamed",
+          "basis-eponymous"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -31189,10 +33761,12 @@ const STREET_DATA = {
         "categories": [
           "person",
           "alive",
-          "renamed"
+          "landowner",
+          "renamed",
+          "basis-eponymous"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -31252,7 +33826,12 @@ const STREET_DATA = {
         },
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -31290,7 +33869,12 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "categories": [
-      "unresearched"
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
     ],
     "disputed": false,
     "sources": [
@@ -31346,10 +33930,11 @@ const STREET_DATA = {
         "knownFraction": 0.8,
         "categories": [
           "person",
-          "renamed"
+          "renamed",
+          "basis-attested"
         ],
-        "formerCategories": [
-          "unknown"
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -31410,7 +33995,11 @@ const STREET_DATA = {
         },
         "knownFraction": 0.8,
         "categories": [
-          "person"
+          "person",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -31453,7 +34042,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "person"
+          "person",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -31493,7 +34086,12 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -31543,7 +34141,12 @@ const STREET_DATA = {
         "knownFraction": 0.66,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -31583,7 +34186,12 @@ const STREET_DATA = {
         "attested": false,
         "categories": [
           "person",
-          "alive"
+          "alive",
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -31615,8 +34223,8 @@ const STREET_DATA = {
         "label": "part of (Hornet St)",
         "name": "Yale Street",
         "entityId": "yale",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Yale University}}, once this stretch was folded into Yale Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Yale_University",
         "planned": {
           "text": "1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
@@ -31648,8 +34256,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 1,
         "categories": [
-          "unresearched",
-          "renamed"
+          "company",
+          "renamed",
+          "basis-guess"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "animal"
@@ -31685,8 +34297,8 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Yale Street",
         "entityId": "yale",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Yale University}} — how and when this stretch joined Yale Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Yale_University",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
@@ -31696,7 +34308,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "unresearched"
+          "company",
+          "basis-guess"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [

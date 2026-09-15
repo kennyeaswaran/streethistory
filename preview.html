@@ -125,8 +125,26 @@
     #filters .facet { font-weight:600; margin:8px 0 2px; opacity:.75; font-size:11px;
                       text-transform:uppercase; letter-spacing:.04em; }
     #filters .facet:first-child { margin-top:2px; }
-    #filters .fcount { float:right; opacity:.55; font-variant-numeric:tabular-nums; }
+    /* flex, not float: a long child label at depth 2 wrapped the floated count
+       onto the next line and it collided with the row below. */
+    #filters label, #filters .grouprow { display:flex; align-items:baseline; gap:4px; }
+    #filters .grouprow { font-weight:600; opacity:.8; }
+    #filters label > input { flex:none; }
+    #filters .fcount { margin-left:auto; padding-left:8px; opacity:.55;
+                       font-variant-numeric:tabular-nums; flex:none; }
     #filters label.empty { opacity:.45; }
+    #filters .twisty { border:0; background:none; cursor:pointer; padding:0 3px 0 0;
+                       font-size:10px; line-height:1; opacity:.6; width:auto; }
+    #filters .twisty:hover { opacity:1; }
+    #filters .kids { margin:0; }
+    .street-popup .basis { font-size:10px; text-transform:uppercase; letter-spacing:.04em;
+      border:1px solid currentColor; border-radius:8px; padding:0 5px; margin-left:4px;
+      white-space:nowrap; opacity:.75; cursor:help; }
+    .street-popup .basis-intrinsic, .street-popup .basis-attested,
+    .street-popup .basis-eponymous { color:#2f6b4f; }
+    .street-popup .basis-pattern, .street-popup .basis-inferred,
+    .street-popup .basis-lexical { color:#8a5a2b; }
+    .street-popup .basis-guess, .street-popup .basis-none { color:#a8551f; }
   </style>
   <details id="filterBox" style="margin:6px 0">
     <summary style="cursor:pointer;font-weight:600">Highlight streets…</summary>
@@ -258,24 +276,44 @@ function resolveEntry(norm, lat, lng) {
 // eight before deciding whether it is worth clicking.
 const filtersDiv = document.getElementById("filters");
 (function buildFilters() {
-  const n = {};                                   // matches per category id
-  for (const [, v] of Object.entries(STREET_DATA))
-    for (const e of (v.entries || v.segments || []))
-      for (const c of new Set([...(e.categories || []), ...(e.ancestors || [])]))
-        n[c] = (n[c] || 0) + 1;
+  // COUNTS ARE NAME ENTITIES, NOT SEGMENTS. A street drawn in eleven pieces is
+  // one name, and "person: 86" meaning eighty-six stretches of pavement told a
+  // reader nothing they wanted to know. `entityId` is on every generated
+  // segment that has a researched name; the handful without one are stubs, and
+  // each is counted once under its own label so it is not silently dropped.
+  const byEntity = new Map();
+  for (const [name, v] of Object.entries(STREET_DATA))
+    for (const e of (v.segments || v.entries || [])) {
+      const key = e.entityId || ("~stub:" + (e.label || e.name || name));
+      if (!byEntity.has(key)) byEntity.set(key, new Set());
+      const set = byEntity.get(key);
+      for (const c of [...(e.categories || []), ...(e.ancestors || [])]) set.add(c);
+    }
+  const n = {};
+  for (const set of byEntity.values()) for (const c of set) n[c] = (n[c] || 0) + 1;
 
-  const kids = id => CATEGORIES.filter(c => c.parent === id)
-    .sort((a, b) => (n[b.id] || 0) - (n[a.id] || 0) || a.label.localeCompare(b.label));
+  // `only` marks a node that belongs to one of the two data models: the legacy
+  // `streets-data.js` authors `unknown`/`unresearched` and has no `basis`, this
+  // generated file is the other way round. Showing the other model's rows with
+  // a permanent zero would be noise.
+  // ORDER IS DECLARED, not sorted by count — site-config.js puts the owner
+  // before their family and the two person-facts last, and sorting by count put
+  // "alive when named" at the top of the people, which is not how it reads.
+  const kids = id => CATEGORIES.filter(c => c.parent === id && c.only !== "legacy");
 
-  const row = (cat, depth) => {
-    if (cat.facet) {
-      const h = document.createElement("div");
-      h.className = "facet";
-      h.textContent = cat.label;
-      filtersDiv.appendChild(h);
-    } else {
-      const label = document.createElement("label");
-      label.style.paddingLeft = (depth * 14) + "px";
+  // Collapsed by default. Thirty-two nodes is a scroll; the dozen top-level
+  // ones fit. A parent's count already includes its descendants, so the closed
+  // state is not hiding anything from the reader — opening it only says which
+  // kinds make up the number.
+  const row = (cat, depth, into) => {
+    const children = kids(cat.id);
+    // `heading: true` is a group with children but no choice of its own —
+    // selecting "how well we know it" would match every graded entity, which is
+    // every entity. It still opens, and still carries the count.
+    const label = document.createElement(cat.heading ? "div" : "label");
+    label.className = cat.heading ? "grouprow" : "";
+    label.style.paddingLeft = (depth * 14) + "px";
+    if (!cat.heading) {
       const rb = document.createElement("input");
       rb.type = "radio";
       rb.name = "catFilter";
@@ -286,17 +324,44 @@ const filtersDiv = document.getElementById("filters");
         restyleAll();
       });
       label.appendChild(rb);
-      label.appendChild(document.createTextNode(" " + cat.label));
-      const c = document.createElement("span");
-      c.className = "fcount";
-      c.textContent = n[cat.id] || 0;
-      label.appendChild(c);
-      if (!n[cat.id]) label.classList.add("empty");
-      filtersDiv.appendChild(label);
     }
-    kids(cat.id).forEach(k => row(k, cat.facet ? 0 : depth + 1));
+    label.appendChild(document.createTextNode(" " + cat.label));
+    const c = document.createElement("span");
+    c.className = "fcount";
+    c.textContent = n[cat.id] || 0;
+    label.appendChild(c);
+    if (!n[cat.id]) label.classList.add("empty");
+    into.appendChild(label);
+
+    if (children.length) {
+      const box = document.createElement("div");
+      box.className = "kids";
+      box.hidden = true;
+      const tw = document.createElement("button");
+      tw.type = "button";
+      tw.className = "twisty";
+      tw.setAttribute("aria-expanded", "false");
+      tw.title = "Show the kinds under this";
+      tw.textContent = "\u25b8";
+      tw.addEventListener("click", ev => {
+        ev.preventDefault();
+        box.hidden = !box.hidden;
+        tw.textContent = box.hidden ? "\u25b8" : "\u25be";
+        tw.setAttribute("aria-expanded", String(!box.hidden));
+      });
+      label.insertBefore(tw, label.firstChild);
+      into.appendChild(box);
+      children.forEach(k => row(k, depth + 1, box));
+    }
   };
-  CATEGORIES.filter(c => c.facet).forEach(f => row(f, 0));
+
+  CATEGORIES.filter(c => c.facet).forEach(f => {
+    const h = document.createElement("div");
+    h.className = "facet";
+    h.textContent = f.label;
+    filtersDiv.appendChild(h);
+    kids(f.id).forEach(k => row(k, 0, filtersDiv));
+  });
 })();
 
 // ---------------------------------------------------------------
@@ -356,7 +421,7 @@ function styleFor(street) {
   // strength of one names.js entry, so blue meant "somebody has heard of this
   // street" rather than "here is a document about this ground".
   if (!data || data.attested === false ||
-      (data.attested === undefined && data.categories.includes("unresearched")))
+      (data.attested === undefined && data.categories.includes("stub")))
     return { color: COLOR_NODATA, opacity: 0.7 };
   return { color: blueFor(data), opacity: 0.9 };  // violet base retired (§8)
 }
@@ -425,6 +490,19 @@ function renderNote(text) {
   return crossLinks(esc(text));
 }
 
+// MODEL-SPEC §3.1. Short label, then the sentence that says what it means —
+// shown on hover, because the label alone is jargon to a first-time reader.
+const BASIS_GLOSS = {
+  "basis-intrinsic": ["explains itself", "The name's occasion is verifiable from the ground itself — nothing external left to find."],
+  "basis-attested":  ["a source says so", "A source states the namesake."],
+  "basis-eponymous": ["named on the first map", "The earliest document carrying the name also carries the person, or a close family member."],
+  "basis-pattern":   ["one of a set", "One of three or more names the same document establishes as a theme."],
+  "basis-inferred":  ["inferred", "A reading anchored by something sourced beyond the name itself — but no document links the two."],
+  "basis-lexical":   ["the word's meaning", "The word names one thing; nothing says why that thing was chosen for this street."],
+  "basis-guess":     ["a guess", "A candidate with nothing anchoring it to this street."],
+  "basis-none":      ["not known", "No candidate at all."]
+};
+
 function popupHtml(street) {
   const d = street.entry;
   if (!d) {
@@ -443,7 +521,15 @@ function popupHtml(street) {
     }).join("") + `</div>`;
   }
   if (d.namedAfter) {
-    html += `<div class="namedafter">Named after: ${crossLinks(linkify(d.namedAfter, d.namedAfterLink))}</div>`;
+    html += `<div class="namedafter">Named after: ${crossLinks(linkify(d.namedAfter, d.namedAfterLink))}`;
+    // HOW WELL WE KNOW IT, beside what we claim. This is the whole point of
+    // grading the file: several of these namesakes are candid guesses, written
+    // down BECAUSE the grade travels with them. Printing one without the other
+    // would publish the guess as though it were a finding.
+    const b = (d.categories || []).find(c => c.startsWith("basis-"));
+    if (b && BASIS_GLOSS[b]) html += ` <span class="basis ${b}" title="${
+      esc(BASIS_GLOSS[b][1])}">${esc(BASIS_GLOSS[b][0])}</span>`;
+    html += `</div>`;
   }
   // planned/built accept a plain string or { text, url }
   const fact = v => {
@@ -483,10 +569,15 @@ function popupHtml(street) {
     html += `</ul>`;
   }
   if (d.note) html += `<div class="note">${renderNote(d.note)}</div>`;
-  html += `<div class="tags">` + d.categories.map(c => {
-    const cat = CATEGORIES.find(x => x.id === c);
-    return `<span>${esc(cat ? cat.label : c)}</span>`;
-  }).join("") + `</div>`;
+  // The evidence nodes are filters, not tags: the grade already rides beside
+  // the namesake as a badge, and "…a guess" in the tag row beneath it only says
+  // it twice. `stub` likewise — the popup's own no-data line covers that.
+  html += `<div class="tags">` + d.categories
+    .filter(c => !/^(basis|searched)-/.test(c) && c !== "stub")
+    .map(c => {
+      const cat = CATEGORIES.find(x => x.id === c);
+      return `<span>${esc(cat ? cat.label : c)}</span>`;
+    }).join("") + `</div>`;
   html += `<div class="sources"><strong>Sources:</strong>` +
     d.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join("") +
     `</div></div>`;
@@ -761,7 +852,7 @@ fetchStreets()
     restyleAll();
     populateSearch();
     const withData = [...streets.values()]
-      .filter(s => s.entry && !s.entry.categories.includes("unresearched")).length;
+      .filter(s => s.entry && !s.entry.categories.includes("stub")).length;
     statusEl.textContent = `${streets.size} street entries loaded · ${withData} researched`;
     setTimeout(() => statusEl.style.display = "none", 4000);
   })

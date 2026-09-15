@@ -118,8 +118,18 @@
     #filters .facet { font-weight:600; margin:8px 0 2px; opacity:.75; font-size:11px;
                       text-transform:uppercase; letter-spacing:.04em; }
     #filters .facet:first-child { margin-top:2px; }
-    #filters .fcount { float:right; opacity:.55; font-variant-numeric:tabular-nums; }
+    /* flex, not float: a long child label at depth 2 wrapped the floated count
+       onto the next line and it collided with the row below. */
+    #filters label, #filters .grouprow { display:flex; align-items:baseline; gap:4px; }
+    #filters .grouprow { font-weight:600; opacity:.8; }
+    #filters label > input { flex:none; }
+    #filters .fcount { margin-left:auto; padding-left:8px; opacity:.55;
+                       font-variant-numeric:tabular-nums; flex:none; }
     #filters label.empty { opacity:.45; }
+    #filters .twisty { border:0; background:none; cursor:pointer; padding:0 3px 0 0;
+                       font-size:10px; line-height:1; opacity:.6; width:auto; }
+    #filters .twisty:hover { opacity:1; }
+    #filters .kids { margin:0; }
   </style>
   <div id="filters"></div>
   <button class="clear" onclick="clearFilters()">Clear highlights</button>
@@ -257,24 +267,40 @@ const catDescendants = id => {
 // everything with a referent".
 const filtersDiv = document.getElementById("filters");
 (function buildFilters() {
-  const n = {};
-  for (const [, v] of Object.entries(STREET_DATA))
-    for (const e of (v.entries || v.segments || []))
+  // COUNTS ARE NAMES, NOT SEGMENTS. This file reads the legacy STREET_DATA, in
+  // which most streets are a single flat entry and fifteen carry `segments` —
+  // and the old count walked only the segmented ones, so it was reporting a
+  // fraction of the corpus. Count each distinct named thing once.
+  const byName = new Map();
+  for (const [name, v] of Object.entries(STREET_DATA))
+    for (const e of (v.segments || [v])) {
+      const key = e.name || name;
+      if (!byName.has(key)) byName.set(key, new Set());
+      const set = byName.get(key);
       for (const c of (e.categories || []))
-        for (const a of [c, ...ancestorsOf(c)]) n[a] = (n[a] || 0) + 1;
+        for (const a of [c, ...ancestorsOf(c)]) set.add(a);
+    }
+  const n = {};
+  for (const set of byName.values()) for (const c of set) n[c] = (n[c] || 0) + 1;
 
-  const kids = id => CATEGORIES.filter(c => c.parent === id)
-    .sort((a, b) => (n[b.id] || 0) - (n[a.id] || 0) || a.label.localeCompare(b.label));
+  // This file reads the LEGACY streets-data.js, which authors `unknown` and has
+  // no `basis` to derive the evidence nodes from — so it shows the legacy rows
+  // and hides the model-only ones. Order is declared in site-config.js, not
+  // sorted by count: the owner comes before their family, and the two facts
+  // that are true of a person rather than a kind of person come last.
+  const kids = id => CATEGORIES.filter(c => c.parent === id && c.only !== "model");
 
-  const row = (cat, depth) => {
-    if (cat.facet) {
-      const h = document.createElement("div");
-      h.className = "facet";
-      h.textContent = cat.label;
-      filtersDiv.appendChild(h);
-    } else {
-      const label = document.createElement("label");
-      label.style.paddingLeft = (depth * 14) + "px";
+  // Collapsed by default — a parent's count already includes its descendants,
+  // so a closed node hides nothing; opening it only says what makes up the number.
+  const row = (cat, depth, into) => {
+    const children = kids(cat.id);
+    // `heading: true` is a group with children but no choice of its own —
+    // selecting "how well we know it" would match every graded entity, which is
+    // every entity. It still opens, and still carries the count.
+    const label = document.createElement(cat.heading ? "div" : "label");
+    label.className = cat.heading ? "grouprow" : "";
+    label.style.paddingLeft = (depth * 14) + "px";
+    if (!cat.heading) {
       const cb = document.createElement("input");
       cb.type = "checkbox";
       cb.value = cat.id;
@@ -283,17 +309,44 @@ const filtersDiv = document.getElementById("filters");
         restyleAll();
       });
       label.appendChild(cb);
-      label.appendChild(document.createTextNode(" " + cat.label));
-      const c = document.createElement("span");
-      c.className = "fcount";
-      c.textContent = n[cat.id] || 0;
-      label.appendChild(c);
-      if (!n[cat.id]) label.classList.add("empty");
-      filtersDiv.appendChild(label);
     }
-    kids(cat.id).forEach(k => row(k, cat.facet ? 0 : depth + 1));
+    label.appendChild(document.createTextNode(" " + cat.label));
+    const c = document.createElement("span");
+    c.className = "fcount";
+    c.textContent = n[cat.id] || 0;
+    label.appendChild(c);
+    if (!n[cat.id]) label.classList.add("empty");
+    into.appendChild(label);
+
+    if (children.length) {
+      const box = document.createElement("div");
+      box.className = "kids";
+      box.hidden = true;
+      const tw = document.createElement("button");
+      tw.type = "button";
+      tw.className = "twisty";
+      tw.setAttribute("aria-expanded", "false");
+      tw.title = "Show the kinds under this";
+      tw.textContent = "\u25b8";
+      tw.addEventListener("click", ev => {
+        ev.preventDefault();
+        box.hidden = !box.hidden;
+        tw.textContent = box.hidden ? "\u25b8" : "\u25be";
+        tw.setAttribute("aria-expanded", String(!box.hidden));
+      });
+      label.insertBefore(tw, label.firstChild);
+      into.appendChild(box);
+      children.forEach(k => row(k, depth + 1, box));
+    }
   };
-  CATEGORIES.filter(c => c.facet).forEach(f => row(f, 0));
+
+  CATEGORIES.filter(c => c.facet).forEach(f => {
+    const h = document.createElement("div");
+    h.className = "facet";
+    h.textContent = f.label;
+    filtersDiv.appendChild(h);
+    kids(f.id).forEach(k => row(k, 0, filtersDiv));
+  });
 })();
 function ancestorsOf(id) {
   const out = [];

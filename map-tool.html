@@ -2264,7 +2264,10 @@ function mintEntityFor(r) {
   mintedEntities[id] = {
     spellings: [{ forms: [form] }],
     namedAfter: null, namedAfterLink: null,
-    categories: ["unknown"], sources: [],
+    // No categories: we do not yet know what this name points at, and
+    // `unknown` is DERIVED from a null namedAfter by generate.js (ROADMAP §7).
+    // Minting it here only created a tag that could disagree with the field.
+    categories: [], sources: [],
     disputed: false,
     note: null,
     // Provenance, not something a reader of the map wants: `note` is printed
@@ -2880,7 +2883,7 @@ function namesNewText(existing, sightings) {
       `    spellings: ${JSON.stringify(e.spellings)},\n` +
       `    namedAfter: ${JSON.stringify(e.namedAfter ?? null)},\n` +
       `    namedAfterLink: ${JSON.stringify(e.namedAfterLink ?? null)},\n` +
-      `    categories: ${JSON.stringify(e.categories || ["unknown"])},\n` +
+      `    categories: ${JSON.stringify(e.categories || [])},\n` +
       `    sources: ${JSON.stringify(e.sources || [])},\n` +
       `    disputed: ${e.disputed === true},\n` +
       `    note: ${JSON.stringify(e.note ?? null)},\n` +
