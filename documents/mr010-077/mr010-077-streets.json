@@ -1,0 +1,524 @@
+{
+  "document": "mr010-077",
+  "image": "mr010-077-100dpi.png",
+  "imageSize": [1125, 1605],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr010-077-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [141, 1247],
+    [1008, 1261],
+    [1027, 570],
+    [161, 579]
+  ],
+  "coverageLl": [
+    [34.038309, -118.272643],
+    [34.037053, -118.27006],
+    [34.03876, -118.268837],
+    [34.039957, -118.271456]
+  ],
+  "streets": [
+    {
+      "name": "15th Drive",
+      "runs": [
+        {
+          "px": [
+            [925, 923],
+            [881, 924],
+            [873, 924],
+            [852, 925],
+            [830, 925],
+            [615, 926],
+            [552, 919],
+            [496, 911],
+            [450, 911],
+            [352, 940]
+          ],
+          "ll": [
+            [34.038018, -118.269741],
+            [34.038077, -118.269874],
+            [34.038087, -118.269898],
+            [34.038116, -118.269963],
+            [34.038147, -118.270029],
+            [34.038447, -118.270675],
+            [34.038554, -118.270855],
+            [34.038654, -118.27101],
+            [34.038717, -118.271147],
+            [34.038782, -118.271491]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Convention Center Drive",
+          "px": [352, 940],
+          "ll": [34.038782, -118.271491],
+          "insideCoverage": true
+        },
+        {
+          "name": "Delong Street",
+          "px": [309, 938],
+          "ll": [34.038848, -118.271615],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [925, 923],
+          "ll": [34.038018, -118.269741],
+          "insideCoverage": true
+        },
+        {
+          "name": "Georgia Street",
+          "px": [352, 940],
+          "ll": [34.038782, -118.271491],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Convention Center Drive",
+      "runs": [
+        {
+          "px": [
+            [352, 940],
+            [335, 910],
+            [315, 881],
+            [266, 825],
+            [229, 785],
+            [172, 728],
+            [157, 713]
+          ],
+          "ll": [
+            [34.038782, -118.271491],
+            [34.03888, -118.271493],
+            [34.038981, -118.271501],
+            [34.03919, -118.271556],
+            [34.039342, -118.271599],
+            [34.039568, -118.271672],
+            [34.039626, -118.271694]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "15th Drive",
+          "px": [352, 940],
+          "ll": [34.038782, -118.271491],
+          "insideCoverage": true
+        },
+        {
+          "name": "Delong Street",
+          "px": [255, 855],
+          "ll": [34.039132, -118.271637],
+          "insideCoverage": true
+        },
+        {
+          "name": "Georgia Street",
+          "px": [352, 940],
+          "ll": [34.038782, -118.271491],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Delong Street",
+      "runs": [
+        {
+          "px": [
+            [245, 884],
+            [267, 935],
+            [274, 980],
+            [270, 1022],
+            [241, 1084],
+            [243, 1118],
+            [243, 1131],
+            [245, 1164]
+          ],
+          "ll": [
+            [34.039073, -118.271718],
+            [34.038914, -118.271739],
+            [34.038792, -118.271793],
+            [34.038692, -118.271874],
+            [34.038577, -118.272069],
+            [34.038488, -118.272121],
+            [34.038456, -118.272141],
+            [34.03837, -118.272191]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "15th Drive",
+          "px": [309, 938],
+          "ll": [34.038848, -118.271615],
+          "insideCoverage": true
+        },
+        {
+          "name": "Convention Center Drive",
+          "px": [255, 855],
+          "ll": [34.039132, -118.271637],
+          "insideCoverage": true
+        },
+        {
+          "name": "Georgia Street",
+          "px": [309, 938],
+          "ll": [34.038848, -118.271615],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [265, 1246],
+          "ll": [34.038137, -118.27227],
+          "insideCoverage": true
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [245, 1164],
+          "ll": [34.03837, -118.272191],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Figueroa Street",
+      "runs": [
+        {
+          "px": [
+            [931, 1260],
+            [931, 1248],
+            [928, 1166],
+            [928, 1128],
+            [928, 1094],
+            [926, 980],
+            [925, 923],
+            [923, 863],
+            [921, 766],
+            [917, 571]
+          ],
+          "ll": [
+            [34.037164, -118.27029],
+            [34.037194, -118.270271],
+            [34.037405, -118.270141],
+            [34.037498, -118.270075],
+            [34.037584, -118.27002],
+            [34.037875, -118.269833],
+            [34.038018, -118.269741],
+            [34.038171, -118.269644],
+            [34.038416, -118.269487],
+            [34.038913, -118.269171]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "15th Drive",
+          "px": [925, 923],
+          "ll": [34.038018, -118.269741],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [930, 1402],
+          "ll": [34.036809, -118.270532],
+          "insideCoverage": false
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [928, 1128],
+          "ll": [34.037498, -118.270075],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Georgia Street",
+      "runs": [
+        {
+          "px": [
+            [352, 940],
+            [366, 1013],
+            [369, 1027],
+            [372, 1071],
+            [374, 1101],
+            [375, 1114],
+            [379, 1162]
+          ],
+          "ll": [
+            [34.038782, -118.271491],
+            [34.038579, -118.271572],
+            [34.038541, -118.271587],
+            [34.038424, -118.271652],
+            [34.038347, -118.271696],
+            [34.038313, -118.271714],
+            [34.038188, -118.271784]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "15th Drive",
+          "px": [352, 940],
+          "ll": [34.038782, -118.271491],
+          "insideCoverage": true
+        },
+        {
+          "name": "Convention Center Drive",
+          "px": [352, 940],
+          "ll": [34.038782, -118.271491],
+          "insideCoverage": true
+        },
+        {
+          "name": "Delong Street",
+          "px": [309, 938],
+          "ll": [34.038848, -118.271615],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [363, 1244],
+          "ll": [34.038004, -118.27197],
+          "insideCoverage": true
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [379, 1162],
+          "ll": [34.038188, -118.271784],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Venice Boulevard",
+      "runs": [
+        {
+          "px": [
+            [1012, 1116],
+            [972, 1119],
+            [928, 1128],
+            [883, 1134],
+            [807, 1145],
+            [783, 1146],
+            [717, 1150],
+            [641, 1154],
+            [586, 1157],
+            [379, 1162],
+            [356, 1163],
+            [245, 1164],
+            [189, 1165]
+          ],
+          "ll": [
+            [34.03741, -118.269804],
+            [34.037461, -118.26993],
+            [34.037498, -118.270075],
+            [34.037548, -118.270223],
+            [34.037625, -118.270469],
+            [34.037658, -118.270545],
+            [34.037742, -118.270749],
+            [34.037839, -118.270983],
+            [34.03791, -118.271153],
+            [34.038188, -118.271784],
+            [34.038216, -118.271855],
+            [34.03837, -118.272191],
+            [34.038448, -118.272361]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Delong Street",
+          "px": [245, 1164],
+          "ll": [34.03837, -118.272191],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [928, 1128],
+          "ll": [34.037498, -118.270075],
+          "insideCoverage": true
+        },
+        {
+          "name": "Georgia Street",
+          "px": [379, 1162],
+          "ll": [34.038188, -118.271784],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [352, 1245],
+          "ll": [34.038018, -118.272005],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "15th Drive",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Convention Center Drive",
+      "continuesInto": [
+        "Georgia Street"
+      ],
+      "candidates": [
+        {
+          "id": "nevada-1886",
+          "display": "Nevada Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Georgia Street, which Convention Center Drive runs straight into"
+          ],
+          "ink": [
+            "Nevada",
+            "Nevada St"
+          ],
+          "docs": [
+            "mr010-030"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Delong Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Figueroa Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "FIGUEROA ST.",
+            "FIGUEROA STREET",
+            "Figueroa St",
+            "Figueroa Street"
+          ],
+          "docs": [
+            "mr007-021",
+            "mr021-032",
+            "tr0034-004",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "pearl",
+          "display": "Pearl Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "PEARL ST",
+            "PEARL STR.",
+            "PEARL STREET",
+            "Pearl"
+          ],
+          "docs": [
+            "mr003-016",
+            "mr003-032",
+            "mr003-569",
+            "mr005-307-a",
+            "mr010-030"
+          ]
+        },
+        {
+          "id": "chapules",
+          "display": "Grasshopper Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS CHAPULAS",
+            "CALLE DE LAS CHAPULES",
+            "GRASSHOPPER ST",
+            "GRASSHOPPER ST.",
+            "GRASSHOPPER STREET",
+            "Grasshopper St."
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Georgia Street",
+      "continuesInto": [
+        "Convention Center Drive"
+      ],
+      "candidates": [
+        {
+          "id": "nevada-1886",
+          "display": "Nevada Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Georgia Street by another sheet"
+          ],
+          "ink": [
+            "Nevada",
+            "Nevada St"
+          ],
+          "docs": [
+            "mr010-030"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Venice Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "sixteenth-street",
+          "display": "16th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Venice Boulevard by another sheet"
+          ],
+          "ink": [
+            "(formerly Pine St)",
+            "16th ST.",
+            "16th STREET"
+          ],
+          "docs": [
+            "mr053-016",
+            "tr0034-004"
+          ]
+        },
+        {
+          "id": "pine-street-venice",
+          "display": "Pine Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Venice Boulevard by another sheet"
+          ],
+          "ink": [
+            "PINE STREET",
+            "Pine Street."
+          ],
+          "docs": [
+            "mr003-038-p1",
+            "mr003-038-p2",
+            "mr021-032"
+          ]
+        }
+      ]
+    }
+  ]
+}

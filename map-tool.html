@@ -51,6 +51,9 @@
   #docList li:hover { background:#f3ecd8; }
   #docList li .st { color:#6f6f6f; font-style:italic; white-space:nowrap; }
   #docList li .aw { color:#8a7a52; font-style:italic; }
+  #docList li input.dpick { margin:0 5px 0 0; vertical-align:middle; cursor:pointer; }
+  #docList summary input.gpick { margin:0 4px 0 0; vertical-align:middle; cursor:pointer; }
+  #docList .copyIdsRow { margin:4px 0; }
   #docList li.mapname { cursor:default; }
   #docList li.mapname:hover { background:none; }
   #docList .mn { font-weight:600; color:#4a4034; }
@@ -1020,15 +1023,17 @@ async function refreshDocList() {
   // different typographic ranks for the same kind of word.
   const nm = s => `<b class="mn">${esc(s)}</b>`;
   const li = (d, cls, label) => `<li${cls ? ` class="${cls}"` : ""} data-doc="${esc(d.id)}" ` +
-    `data-mode="${esc(MODE_FOR[d.state] || "review")}"><span>${label}</span>` +
-    `<span class="st">${status(d)}</span></li>`;
+    `data-mode="${esc(MODE_FOR[d.state] || "review")}">` +
+    `<input type="checkbox" class="dpick" data-id="${esc(d.id)}" ` +
+    `title="select for “Copy ids”">` +
+    `<span>${label}</span><span class="st">${status(d)}</span></li>`;
   const group = g => g.docs.length === 1 && !g.name ? li(g.docs[0], "", esc(g.docs[0].id))
     : g.docs.length === 1
       ? li(g.docs[0], "", `${nm(g.name)} <span class="aw">${esc(g.docs[0].id)}</span>`)
       : `<li class="mapname"><span>${nm(g.name)}</span>` +
         `<span class="st">${g.docs.length} sheets</span></li>` +
         g.docs.map(d => li(d, "sheet", esc(d.id))).join("");
-  let html = "";
+  let body = "";
   for (const [key, title, hint] of DOC_GROUPS) {
     let list = docs.filter(d => d.state === key);
     if (!list.length) continue;
@@ -1042,14 +1047,73 @@ async function refreshDocList() {
     // Each list folds on its own caret. All three start open — they are
     // presented equally — but a pile you are not working through today is
     // worth getting out of the way, and the swept pile grows without end.
-    html += `<details class="docgroup" data-group="${key}"` +
+    // The section's own tick-all sits in its caret line, where the thing it
+    // acts on is named. It shows a dash when only some of the section is
+    // ticked, so the three of them read as a summary of the whole list.
+    body += `<details class="docgroup" data-group="${key}"` +
             `${docFolded.has(key) ? "" : " open"}>` +
-            `<summary>${title} (${list.length})</summary>` +
+            `<summary><input type="checkbox" class="gpick" data-group="${esc(key)}" ` +
+            `title="select every document in this section">${title} (${list.length})` +
+            `</summary>` +
             `<div class="hint">${hint}</div><ul>${groups.map(group).join("")}</ul></details>`;
   }
-  el.innerHTML = html;
+  // HANDING A PILE OF DOCUMENTS TO AN ASSISTANT is a real step in this
+  // project's workflow (CLAUDE.md, "Division of labor"), and until now it meant
+  // retyping folder names out of the list one at a time.
+  //
+  // ONE BAR ABOVE THE LIST AND ONE BELOW, because the list is long: whichever
+  // end you finish ticking at, the button is there. They are the same controls,
+  // so they are classes and not ids, and both notes say the same thing.
+  const bar = `<div class="row copyIdsRow"><button class="copyIds">Copy ids</button>` +
+              `<button class="copyIdsNone">Clear</button>` +
+              `<span class="hint copyIdsNote">${COPY_HINT}</span></div>`;
+  el.innerHTML = bar + body + bar;
   for (const row of el.querySelectorAll("li[data-doc]"))
-    row.onclick = () => openDocument(row.dataset.doc, row.dataset.mode);
+    row.onclick = e => {
+      // The checkbox is inside the row, and the row opens the document.
+      if (e.target.classList.contains("dpick")) return;
+      openDocument(row.dataset.doc, row.dataset.mode);
+    };
+  const boxes = () => [...el.querySelectorAll("input.dpick")];
+  const inGroup = k => [...el.querySelectorAll(`details.docgroup[data-group="${k}"] input.dpick`)];
+  const picked = () => boxes().filter(b => b.checked).map(b => b.dataset.id);
+  const say = t => { for (const nt of el.querySelectorAll(".copyIdsNote")) nt.textContent = t; };
+  // ONE PLACE DECIDES WHAT EVERY CONTROL SHOWS. With two bars and three section
+  // boxes there are five things that can fall out of step with the ticks, and
+  // the way that goes wrong is silent — a stale count next to a Copy button.
+  const sync = () => {
+    const k = picked().length;
+    say(k ? `${k} selected` : COPY_HINT);
+    for (const g of el.querySelectorAll("input.gpick")) {
+      const bs = inGroup(g.dataset.group), on = bs.filter(b => b.checked).length;
+      g.checked = bs.length > 0 && on === bs.length;
+      g.indeterminate = on > 0 && on < bs.length;
+    }
+  };
+  for (const box of boxes()) box.onchange = sync;
+  for (const g of el.querySelectorAll("input.gpick")) {
+    // A checkbox inside a <summary> would fold the section as well as tick,
+    // because the click reaches the summary and that is its default action.
+    g.onclick = e => e.stopPropagation();
+    g.onchange = () => { for (const b of inGroup(g.dataset.group)) b.checked = g.checked; sync(); };
+  }
+  for (const b of el.querySelectorAll("button.copyIdsNone"))
+    b.onclick = () => { for (const x of boxes()) x.checked = false; sync(); };
+  for (const b of el.querySelectorAll("button.copyIds")) b.onclick = async () => {
+    const ids = picked();
+    if (!ids.length) return alert("Tick one or more documents first.");
+    const text = ids.map(id => `documents/${id}/`).join("\n");
+    try {
+      await navigator.clipboard.writeText(text);
+      say(`copied ${ids.length} path${ids.length === 1 ? "" : "s"}`);
+    } catch (e) {
+      // Clipboard permission is not guaranteed off a file:// page; a prompt is
+      // ugly but it is copyable, which is the whole point.
+      window.prompt("Copy these:", text);
+      say(`${ids.length} path${ids.length === 1 ? "" : "s"}`);
+    }
+  };
+  sync();
   // Remembered across a refresh: the list is rebuilt from scratch every time
   // it is read, and a caret that reopened itself on every refresh would be a
   // caret you had to close again after every save.
@@ -1057,6 +1121,7 @@ async function refreshDocList() {
     d.addEventListener("toggle", () =>
       d.open ? docFolded.delete(d.dataset.group) : docFolded.add(d.dataset.group));
 }
+const COPY_HINT = "tick documents, then copy their folder names to paste into an assistant";
 const docFolded = new Set();
 const MODE_FOR = Object.fromEntries(DOC_GROUPS.map(([k, , , mode]) => [k, mode]));
 let docSort = "name";
@@ -2023,6 +2088,11 @@ function bindPopControls() {
     const sel = selStreet, keep = popRow;
     draw();
     if (sel) reopenPop(sel, keep);
+    // A VANISHED ROW HAS NO STREET, so selStreet is null and the branch above
+    // never fired: minting a name entity from a vanished row's popup set
+    // `r.name` correctly but left the stale, empty input on screen, so it
+    // looked as though nothing had been selected. Reopen the row's own popup.
+    else if (keep && isVanished(keep) && reviewRows().includes(keep)) focusRow(keep);
     updateReviewActions();
   }
   for (const el of p.querySelectorAll("input.npick")) el.onchange = () => {
@@ -2106,11 +2176,35 @@ function bindPopControls() {
     touch();
   };
   const dropFromCoverage = (entry, blurb) => {
+    // EXCLUDING A STREET AND KEEPING ITS ROWS IS A CONTRADICTION, and
+    // check-model.js says so: "it is either covered or it is not". Before this,
+    // dropping a whole street left its rows behind and the document went red —
+    // documents/tr0063-098-p1 collected three identical stretch entries, a
+    // whole-street entry and two live rows that way.
+    const whole = typeof entry === "string";
+    const street = whole ? entry : entry.street;
+    const victims = whole ? reviewRows().filter(r => r.street === street) : [];
+    const same = x => JSON.stringify(x) === JSON.stringify(entry);
+    if (coverageExcept.some(same)) {
+      hidePop();
+      return alert(`That stretch of ${street} is already excluded.`);
+    }
     if (!confirm(`${blurb}\n\nUse this when the polygon strays onto ground the ` +
         `document does not actually inform about — NOT when the sheet covers it ` +
         `and draws no street, which is "no street drawn here" instead.\n\n` +
+        (victims.length
+          ? `${victims.length} row${victims.length === 1 ? "" : "s"} on ${street} ` +
+            `will be DELETED, because a row is a claim about ground the document ` +
+            `informs about.\n\n`
+          : "") +
         `It is recorded in the document as coverageExcept, and reversible from ` +
         `the panel.`)) return;
+    if (whole) {
+      // A whole-street exclusion subsumes every stretch of the same street.
+      coverageExcept = coverageExcept.filter(x => typeof x === "string" || x.street !== street);
+      if (victims.length) loadedDoc.rows = reviewRows().filter(r => r.street !== street);
+      if (popRow && victims.includes(popRow)) popRow = null;
+    }
     coverageExcept.push(entry);
     hidePop();
     reviewDirty = true; lastModel = null; reviewSig = null;

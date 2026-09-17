@@ -1,0 +1,925 @@
+{
+  "document": "mr024-081",
+  "image": "mr024-081-100dpi.png",
+  "imageSize": [1679, 1137],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr024-081-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [1553, 353],
+    [755, 434],
+    [410, 483],
+    [130, 981],
+    [1502, 965]
+  ],
+  "coverageLl": [
+    [34.049037, -118.235267],
+    [34.045584, -118.234928],
+    [34.04409, -118.234708],
+    [34.042839, -118.232159],
+    [34.048766, -118.232105]
+  ],
+  "streets": [
+    {
+      "name": "1st Street",
+      "runs": [
+        {
+          "px": [
+            [1441, 364],
+            [1430, 449],
+            [1422, 513],
+            [1416, 561],
+            [1412, 591],
+            [1411, 599],
+            [1408, 619],
+            [1390, 748],
+            [1374, 875],
+            [1369, 912],
+            [1361, 967]
+          ],
+          "ll": [
+            [34.048551, -118.23522],
+            [34.048497, -118.234781],
+            [34.048457, -118.23445],
+            [34.048427, -118.234204],
+            [34.048408, -118.234048],
+            [34.048403, -118.234011],
+            [34.048391, -118.233905],
+            [34.048302, -118.23324],
+            [34.04822, -118.232586],
+            [34.048194, -118.232391],
+            [34.048157, -118.23211]
+          ]
+        },
+        {
+          "px": [
+            [1393, 966],
+            [1422, 751],
+            [1431, 687],
+            [1436, 648],
+            [1438, 621],
+            [1441, 600],
+            [1449, 541],
+            [1466, 411],
+            [1475, 361]
+          ],
+          "ll": [
+            [34.048296, -118.232109],
+            [34.048439, -118.233221],
+            [34.048481, -118.233553],
+            [34.048507, -118.233753],
+            [34.04852, -118.233893],
+            [34.048533, -118.234002],
+            [34.048571, -118.234306],
+            [34.048655, -118.234978],
+            [34.048698, -118.235234]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Santa Fe Avenue",
+          "px": [1368, 869],
+          "ll": [34.048197, -118.232614],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [1408, 619],
+          "ll": [34.048391, -118.233905],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "2nd Street",
+      "runs": [
+        {
+          "px": [
+            [1121, 397],
+            [1124, 537],
+            [1127, 623],
+            [1129, 703],
+            [1130, 759],
+            [1131, 835],
+            [1131, 838],
+            [1132, 863]
+          ],
+          "ll": [
+            [34.047167, -118.235083],
+            [34.047168, -118.234358],
+            [34.047176, -118.23391],
+            [34.047175, -118.233496],
+            [34.047177, -118.233209],
+            [34.047176, -118.232814],
+            [34.047176, -118.232799],
+            [34.047176, -118.232667]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Garey Street",
+          "px": [1121, 383],
+          "ll": [34.047167, -118.235157],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [1132, 863],
+          "ll": [34.047176, -118.232667],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [1127, 623],
+          "ll": [34.047176, -118.23391],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "3rd Street",
+      "runs": [
+        {
+          "px": [
+            [859, 872],
+            [858, 844],
+            [858, 838],
+            [857, 792],
+            [856, 710],
+            [854, 627],
+            [853, 562],
+            [853, 541],
+            [850, 499],
+            [841, 443],
+            [839, 426]
+          ],
+          "ll": [
+            [34.045996, -118.232648],
+            [34.045995, -118.232794],
+            [34.045996, -118.232826],
+            [34.045996, -118.233062],
+            [34.045996, -118.233488],
+            [34.045996, -118.233916],
+            [34.045997, -118.234257],
+            [34.045999, -118.234364],
+            [34.045991, -118.234582],
+            [34.045957, -118.234871],
+            [34.045946, -118.234963]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Avery Street",
+          "px": [791, 448],
+          "ll": [34.045739, -118.234849],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garey Street",
+          "px": [833, 391],
+          "ll": [34.045926, -118.235144],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [859, 872],
+          "ll": [34.045996, -118.232648],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Avery Street",
+      "runs": [
+        {
+          "px": [
+            [741, 454],
+            [637, 475],
+            [633, 476],
+            [619, 477],
+            [608, 473],
+            [587, 458]
+          ],
+          "ll": [
+            [34.045521, -118.234828],
+            [34.045072, -118.234725],
+            [34.045052, -118.234721],
+            [34.044992, -118.234721],
+            [34.044945, -118.234742],
+            [34.044857, -118.234821]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [791, 448],
+          "ll": [34.045739, -118.234849],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garey Street",
+          "px": [787, 422],
+          "ll": [34.045723, -118.234986],
+          "insideCoverage": false
+        },
+        {
+          "name": "Traction Avenue",
+          "px": [548, 430],
+          "ll": [34.04469, -118.23497],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Merrick Street",
+      "runs": [
+        {
+          "px": [
+            [375, 668],
+            [364, 668],
+            [355, 663],
+            [322, 640]
+          ],
+          "ll": [
+            [34.043923, -118.233753],
+            [34.043878, -118.233757],
+            [34.043837, -118.233781],
+            [34.043696, -118.233905]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Street",
+          "px": [191, 550],
+          "ll": [34.043138, -118.234384],
+          "insideCoverage": false
+        },
+        {
+          "name": "Molino Street",
+          "px": [173, 576],
+          "ll": [34.043061, -118.234252],
+          "insideCoverage": false
+        },
+        {
+          "name": "Traction Avenue",
+          "px": [375, 668],
+          "ll": [34.043923, -118.233753],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Santa Fe Avenue",
+      "runs": [
+        {
+          "px": [
+            [181, 890],
+            [195, 889],
+            [331, 886],
+            [357, 885],
+            [528, 881],
+            [708, 876],
+            [774, 875],
+            [829, 873],
+            [831, 873],
+            [859, 872],
+            [882, 872],
+            [889, 871],
+            [940, 870],
+            [993, 869],
+            [1004, 868],
+            [1031, 866],
+            [1132, 863],
+            [1236, 863],
+            [1291, 862],
+            [1349, 863],
+            [1363, 864],
+            [1392, 864],
+            [1422, 865],
+            [1507, 876],
+            [1509, 877]
+          ],
+          "ll": [
+            [34.043069, -118.232626],
+            [34.043127, -118.232626],
+            [34.043716, -118.232631],
+            [34.043827, -118.232632],
+            [34.044568, -118.232637],
+            [34.045345, -118.232644],
+            [34.045631, -118.232646],
+            [34.045867, -118.232647],
+            [34.045878, -118.232647],
+            [34.045996, -118.232648],
+            [34.046096, -118.23265],
+            [34.046126, -118.23265],
+            [34.046345, -118.232653],
+            [34.046574, -118.232654],
+            [34.046625, -118.232657],
+            [34.046739, -118.232662],
+            [34.047176, -118.232667],
+            [34.047627, -118.232662],
+            [34.047863, -118.232659],
+            [34.048116, -118.232646],
+            [34.048174, -118.232643],
+            [34.048301, -118.232637],
+            [34.048429, -118.232632],
+            [34.048794, -118.232563],
+            [34.048805, -118.23256]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1368, 869],
+          "ll": [34.048197, -118.232614],
+          "insideCoverage": true
+        },
+        {
+          "name": "2nd Street",
+          "px": [1132, 863],
+          "ll": [34.047176, -118.232667],
+          "insideCoverage": true
+        },
+        {
+          "name": "3rd Street",
+          "px": [859, 872],
+          "ll": [34.045996, -118.232648],
+          "insideCoverage": true
+        },
+        {
+          "name": "Banning Street",
+          "px": [1592, 902],
+          "ll": [34.04916, -118.232424],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Traction Avenue",
+      "runs": [
+        {
+          "px": [
+            [522, 467],
+            [518, 473],
+            [417, 620],
+            [402, 642],
+            [394, 653],
+            [385, 663],
+            [375, 668]
+          ],
+          "ll": [
+            [34.044576, -118.23478],
+            [34.044559, -118.234751],
+            [34.044108, -118.233996],
+            [34.044043, -118.233887],
+            [34.044007, -118.233828],
+            [34.043967, -118.233777],
+            [34.043923, -118.233753]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Avery Street",
+          "px": [548, 430],
+          "ll": [34.04469, -118.23497],
+          "insideCoverage": false
+        },
+        {
+          "name": "Merrick Street",
+          "px": [375, 668],
+          "ll": [34.043923, -118.233753],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Vignes Street",
+      "runs": [
+        {
+          "px": [
+            [1127, 623],
+            [1141, 623],
+            [1145, 623],
+            [1285, 621],
+            [1295, 621],
+            [1326, 620],
+            [1380, 619],
+            [1388, 619],
+            [1408, 619],
+            [1420, 620],
+            [1428, 620],
+            [1438, 621],
+            [1452, 623],
+            [1457, 624],
+            [1459, 624],
+            [1510, 631],
+            [1530, 634]
+          ],
+          "ll": [
+            [34.047176, -118.23391],
+            [34.047236, -118.233909],
+            [34.047251, -118.233909],
+            [34.047858, -118.233909],
+            [34.047899, -118.233908],
+            [34.048034, -118.233906],
+            [34.048268, -118.233907],
+            [34.048302, -118.233907],
+            [34.048391, -118.233905],
+            [34.048439, -118.2339],
+            [34.048477, -118.233897],
+            [34.04852, -118.233893],
+            [34.048578, -118.23388],
+            [34.0486, -118.233876],
+            [34.048609, -118.233875],
+            [34.048829, -118.233832],
+            [34.048913, -118.233815]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1408, 619],
+          "ll": [34.048391, -118.233905],
+          "insideCoverage": true
+        },
+        {
+          "name": "2nd Street",
+          "px": [1127, 623],
+          "ll": [34.047176, -118.23391],
+          "insideCoverage": true
+        },
+        {
+          "name": "Banning Street",
+          "px": [1625, 648],
+          "ll": [34.049324, -118.233733],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "1st Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "first-street",
+          "display": "1st Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 1st Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "1ST ST",
+            "1ST STREET",
+            "1st ST",
+            "1st STREET",
+            "CALLE 1a",
+            "FIRST ST",
+            "FIRST ST.",
+            "FIRST STREET",
+            "FIRST STREET.",
+            "First Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr002-092-p1",
+            "mr003-060-p1",
+            "mr003-146-p1",
+            "mr004-012-p2",
+            "mr005-307-a",
+            "mr006-308",
+            "mr010-008",
+            "mr053-069",
+            "mr053-071",
+            "tr0012-023a",
+            "tr0043-032",
+            "tr0221-009-p2",
+            "tr0417-049-p2",
+            "tr0713-093-p2",
+            "tr0856-050-p2",
+            "tr0885-030-p2",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "diamond-street",
+          "display": "Diamond Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 1st Street by another sheet"
+          ],
+          "ink": [
+            "DIAMOND STREET",
+            "Diamond",
+            "Diamond St."
+          ],
+          "docs": [
+            "mr005-069",
+            "mr006-115",
+            "mr007-026-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "2nd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        },
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "2nd STREET",
+            "CALLE 2a",
+            "SECOND ST.",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0016-005",
+            "tr0017-001b",
+            "tr0035-022",
+            "tr0417-049-p2",
+            "tr0713-093-p2",
+            "tr0856-050-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "lake-shore-ave",
+          "display": "Lake Shore Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "Lake Shore Ave"
+          ],
+          "docs": [
+            "mr010-081"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "3rd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "georgia-east",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "GEORGIA ST",
+            "Georgia St",
+            "Georgie Street."
+          ],
+          "docs": [
+            "mr002-092-p2",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "mr030-009-p5"
+          ]
+        },
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "3RD ST",
+            "3RD ST.",
+            "3RD STREET",
+            "3d Street",
+            "CALLE 3a",
+            "THIRD ST.",
+            "THIRD STREET",
+            "Third St",
+            "Third Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr016-059",
+            "mr030-009-p5",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "arnold",
+          "display": "Arnold Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "ARNOLD ST."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        },
+        {
+          "id": "morgan-lane",
+          "display": "Morgan Lane",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "Morgan Lane"
+          ],
+          "docs": [
+            "mr005-005"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Avery Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Merrick Street",
+      "continuesInto": [
+        "Traction Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "traction-avenue",
+          "display": "Traction Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Traction Avenue, which Merrick Street runs straight into"
+          ],
+          "ink": [
+            "TRACTION AVENUE"
+          ],
+          "docs": [
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Traction Avenue, which Merrick Street runs straight into"
+          ],
+          "ink": [
+            "SECOND"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Santa Fe Avenue",
+      "continuesInto": [
+        "Center Street",
+        "Mateo Street"
+      ],
+      "candidates": [
+        {
+          "id": "tulip",
+          "display": "Tulip Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santa Fe Avenue by another sheet"
+          ],
+          "ink": [
+            "Tulip St",
+            "Tulip St."
+          ],
+          "docs": [
+            "mr011-042",
+            "mr015-052"
+          ]
+        },
+        {
+          "id": "santa-fe-ave",
+          "display": "Santa Fe Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santa Fe Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "SANTA FE AVE.",
+            "SANTA FE AVENUE",
+            "Santa Fe Avenue",
+            "Santa Fe Avenue."
+          ],
+          "docs": [
+            "mr018-025",
+            "tr0012-186",
+            "tr0159-021-p2",
+            "tr0319-001-p1"
+          ]
+        },
+        {
+          "id": "center-street",
+          "display": "Center Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Center Street, which Santa Fe Avenue runs straight into"
+          ],
+          "ink": [
+            "CENTER ST.",
+            "CENTER STREET"
+          ],
+          "docs": [
+            "mr004-012-p2",
+            "tr0201-001-p2"
+          ]
+        },
+        {
+          "id": "mateo",
+          "display": "Mateo Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mateo Street, which Santa Fe Avenue runs straight into"
+          ],
+          "ink": [
+            "MATEO ST.",
+            "MATEO STREET",
+            "Mateo St.",
+            "Mateo Street"
+          ],
+          "docs": [
+            "mr015-052",
+            "mr018-025",
+            "mr053-083",
+            "tr0005-056a",
+            "tr0012-101",
+            "tr0012-186",
+            "tr0020-053b",
+            "tr0023-066",
+            "tr0159-032-p2"
+          ]
+        },
+        {
+          "id": "spruce",
+          "display": "Spruce Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mateo Street, which Santa Fe Avenue runs straight into"
+          ],
+          "ink": [
+            "Spruce St"
+          ],
+          "docs": [
+            "mr011-042"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Traction Avenue",
+      "continuesInto": [
+        "Merrick Street"
+      ],
+      "candidates": [
+        {
+          "id": "traction-avenue",
+          "display": "Traction Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Traction Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "TRACTION AVENUE"
+          ],
+          "docs": [
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Traction Avenue by another sheet"
+          ],
+          "ink": [
+            "SECOND"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Vignes Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "vignes-street",
+          "display": "Vignes Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Vignes Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "VIGNES ST.",
+            "VIGNES STREET",
+            "Vignes",
+            "Vignes Street"
+          ],
+          "docs": [
+            "mr002-526-p1",
+            "mr002-526-p2",
+            "mr004-012-p2",
+            "tr0145-062",
+            "tr0201-001-p2"
+          ]
+        }
+      ]
+    }
+  ]
+}

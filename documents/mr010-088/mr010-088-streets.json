@@ -1,0 +1,668 @@
+{
+  "document": "mr010-088",
+  "image": "mr010-088-100dpi.png",
+  "imageSize": [1103, 1667],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr010-088-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [286, 1294],
+    [661, 1140],
+    [628, 826],
+    [1038, 729],
+    [1030, 534],
+    [247, 448],
+    [32, 1022]
+  ],
+  "coverageLl": [
+    [34.061227, -118.26574],
+    [34.061065, -118.263674],
+    [34.062318, -118.263077],
+    [34.061871, -118.260988],
+    [34.062624, -118.26056],
+    [34.064504, -118.263904],
+    [34.06276, -118.266244]
+  ],
+  "streets": [
+    {
+      "name": "2nd Street",
+      "runs": [
+        {
+          "px": [
+            [231, 938],
+            [220, 933],
+            [123, 894],
+            [86, 879]
+          ],
+          "ll": [
+            [34.062684, -118.265142],
+            [34.062724, -118.265182],
+            [34.063063, -118.265529],
+            [34.063194, -118.265662]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Loma Drive",
+          "px": [631, 1096],
+          "ll": [34.06129, -118.263705],
+          "insideCoverage": true
+        },
+        {
+          "name": "Union Avenue",
+          "px": [-53, 823],
+          "ll": [34.063681, -118.266158],
+          "insideCoverage": false
+        },
+        {
+          "name": "Union Place",
+          "px": [231, 938],
+          "ll": [34.062684, -118.265142],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Belmont Avenue",
+      "runs": [
+        {
+          "px": [
+            [508, 599],
+            [514, 571],
+            [513, 560],
+            [509, 544],
+            [505, 535],
+            [465, 472]
+          ],
+          "ll": [
+            [34.063412, -118.26308],
+            [34.06351, -118.262984],
+            [34.063551, -118.262966],
+            [34.063623, -118.262946],
+            [34.063663, -118.26294],
+            [34.06398, -118.262972]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beverly Boulevard",
+          "px": [508, 599],
+          "ll": [34.063412, -118.26308],
+          "insideCoverage": true
+        },
+        {
+          "name": "Colton Street",
+          "px": [417, 394],
+          "ll": [34.06437, -118.263007],
+          "insideCoverage": false
+        },
+        {
+          "name": "Loma Drive",
+          "px": [508, 599],
+          "ll": [34.063412, -118.26308],
+          "insideCoverage": true
+        },
+        {
+          "name": "Rockwood Street",
+          "px": [386, 346],
+          "ll": [34.064614, -118.26303],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Beverly Boulevard",
+      "runs": [
+        {
+          "px": [
+            [191, 597],
+            [318, 598],
+            [349, 598],
+            [391, 597],
+            [429, 598],
+            [482, 599],
+            [508, 599],
+            [539, 600],
+            [673, 601],
+            [861, 603],
+            [1033, 605]
+          ],
+          "ll": [
+            [34.064052, -118.264511],
+            [34.063797, -118.263941],
+            [34.063735, -118.263797],
+            [34.063653, -118.263607],
+            [34.063575, -118.263439],
+            [34.063467, -118.263197],
+            [34.063412, -118.26308],
+            [34.063349, -118.262941],
+            [34.06308, -118.26234],
+            [34.062699, -118.261487],
+            [34.062351, -118.260715]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1099, 605],
+          "ll": [34.062216, -118.260417],
+          "insideCoverage": false
+        },
+        {
+          "name": "Belmont Avenue",
+          "px": [508, 599],
+          "ll": [34.063412, -118.26308],
+          "insideCoverage": true
+        },
+        {
+          "name": "Loma Drive",
+          "px": [508, 599],
+          "ll": [34.063412, -118.26308],
+          "insideCoverage": true
+        },
+        {
+          "name": "Union Place",
+          "px": [349, 598],
+          "ll": [34.063735, -118.263797],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [1050, 617],
+          "ll": [34.06227, -118.26067],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Crown Hill Avenue",
+      "runs": [
+        {
+          "px": [
+            [382, 1255],
+            [356, 1236],
+            [333, 1213],
+            [282, 1161],
+            [265, 1127]
+          ],
+          "ll": [
+            [34.061186, -118.265213],
+            [34.061307, -118.265284],
+            [34.061441, -118.265332],
+            [34.061737, -118.265441],
+            [34.061898, -118.265438]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Loma Drive",
+          "px": [525, 1341],
+          "ll": [34.060574, -118.264769],
+          "insideCoverage": false
+        },
+        {
+          "name": "Loma Place",
+          "px": [356, 1236],
+          "ll": [34.061307, -118.265284],
+          "insideCoverage": true
+        },
+        {
+          "name": "Union Place",
+          "px": [265, 1127],
+          "ll": [34.061898, -118.265438],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Loma Drive",
+      "runs": [
+        {
+          "px": [
+            [508, 599],
+            [505, 625],
+            [509, 721],
+            [503, 882],
+            [498, 1001],
+            [501, 1033],
+            [511, 1058],
+            [527, 1078],
+            [547, 1092],
+            [585, 1104],
+            [603, 1102],
+            [631, 1096],
+            [622, 1116],
+            [601, 1165]
+          ],
+          "ll": [
+            [34.063412, -118.26308],
+            [34.063323, -118.263155],
+            [34.06295, -118.263368],
+            [34.062356, -118.263777],
+            [34.061917, -118.264083],
+            [34.061787, -118.264145],
+            [34.061673, -118.264159],
+            [34.061566, -118.264135],
+            [34.061473, -118.264077],
+            [34.061354, -118.263933],
+            [34.061323, -118.263848],
+            [34.06129, -118.263705],
+            [34.061233, -118.263792],
+            [34.061091, -118.264004]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [631, 1096],
+          "ll": [34.06129, -118.263705],
+          "insideCoverage": true
+        },
+        {
+          "name": "Belmont Avenue",
+          "px": [508, 599],
+          "ll": [34.063412, -118.26308],
+          "insideCoverage": true
+        },
+        {
+          "name": "Beverly Boulevard",
+          "px": [508, 599],
+          "ll": [34.063412, -118.26308],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Union Place",
+      "runs": [
+        {
+          "px": [
+            [349, 598],
+            [344, 622],
+            [343, 625],
+            [313, 722],
+            [231, 938],
+            [228, 978],
+            [235, 1018],
+            [247, 1068],
+            [265, 1127],
+            [257, 1146],
+            [220, 1224]
+          ],
+          "ll": [
+            [34.063735, -118.263797],
+            [34.063653, -118.263878],
+            [34.063643, -118.263888],
+            [34.063337, -118.26426],
+            [34.062684, -118.265142],
+            [34.062536, -118.265251],
+            [34.062371, -118.265314],
+            [34.062158, -118.26538],
+            [34.061898, -118.265438],
+            [34.061846, -118.26552],
+            [34.061623, -118.265871]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [231, 938],
+          "ll": [34.062684, -118.265142],
+          "insideCoverage": true
+        },
+        {
+          "name": "Beverly Boulevard",
+          "px": [349, 598],
+          "ll": [34.063735, -118.263797],
+          "insideCoverage": true
+        },
+        {
+          "name": "Crown Hill Avenue",
+          "px": [265, 1127],
+          "ll": [34.061898, -118.265438],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Loma Place",
+      "metres": 18.6
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "2nd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "2nd STREET",
+            "CALLE 2a",
+            "SECOND ST.",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0016-005",
+            "tr0017-001b",
+            "tr0035-022",
+            "tr0417-049-p2",
+            "tr0713-093-p2",
+            "tr0856-050-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "lake-shore-ave",
+          "display": "Lake Shore Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "Lake Shore Ave"
+          ],
+          "docs": [
+            "mr010-081"
+          ]
+        },
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Belmont Avenue",
+      "continuesInto": [
+        "Loma Drive"
+      ],
+      "candidates": [
+        {
+          "id": "aztec-avenue",
+          "display": "Aztec Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Belmont Avenue by another sheet"
+          ],
+          "ink": [
+            "Aztec Avenue"
+          ],
+          "docs": [
+            "mr006-138"
+          ]
+        },
+        {
+          "id": "belmont-kincaid",
+          "display": "Belmont Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Beverly Boulevard",
+      "continuesInto": [
+        "1st Street"
+      ],
+      "candidates": [
+        {
+          "id": "diamond-street",
+          "display": "Diamond Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Beverly Boulevard by another sheet",
+            "attested on 1st Street, which Beverly Boulevard runs straight into"
+          ],
+          "ink": [
+            "DIAMOND STREET",
+            "Diamond",
+            "Diamond St.",
+            "Diamond Street"
+          ],
+          "docs": [
+            "mr005-069",
+            "mr006-115",
+            "mr006-138",
+            "mr007-026-p2"
+          ]
+        },
+        {
+          "id": "first-street",
+          "display": "1st Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Beverly Boulevard by another sheet",
+            "attested on 1st Street, which Beverly Boulevard runs straight into"
+          ],
+          "ink": [
+            "1ST ST",
+            "1ST STREET",
+            "1st ST",
+            "1st STREET",
+            "CALLE 1a",
+            "FIRST ST",
+            "FIRST ST.",
+            "FIRST STREET",
+            "FIRST STREET.",
+            "First Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr002-092-p1",
+            "mr003-060-p1",
+            "mr003-146-p1",
+            "mr004-012-p2",
+            "mr005-307-a",
+            "mr006-308",
+            "mr010-008",
+            "mr053-069",
+            "mr053-071",
+            "tr0012-023a",
+            "tr0043-032",
+            "tr0096-062",
+            "tr0221-009-p2",
+            "tr0417-049-p2",
+            "tr0713-093-p2",
+            "tr0856-050-p2",
+            "tr0885-030-p2",
+            "tr1339-069-p3"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Crown Hill Avenue",
+      "continuesInto": [
+        "Union Place"
+      ],
+      "candidates": [
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Crown Hill Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Loma Drive",
+      "continuesInto": [
+        "2nd Street",
+        "Belmont Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street, which Loma Drive runs straight into"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "2nd STREET",
+            "CALLE 2a",
+            "SECOND ST.",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0016-005",
+            "tr0017-001b",
+            "tr0035-022",
+            "tr0417-049-p2",
+            "tr0713-093-p2",
+            "tr0856-050-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "lake-shore-ave",
+          "display": "Lake Shore Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street, which Loma Drive runs straight into"
+          ],
+          "ink": [
+            "Lake Shore Ave"
+          ],
+          "docs": [
+            "mr010-081"
+          ]
+        },
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street, which Loma Drive runs straight into"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        },
+        {
+          "id": "aztec-avenue",
+          "display": "Aztec Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Belmont Avenue, which Loma Drive runs straight into"
+          ],
+          "ink": [
+            "Aztec Avenue"
+          ],
+          "docs": [
+            "mr006-138"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Union Place",
+      "continuesInto": [
+        "Crown Hill Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Crown Hill Avenue, which Union Place runs straight into"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        }
+      ]
+    }
+  ]
+}

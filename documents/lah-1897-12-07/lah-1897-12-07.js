@@ -25,10 +25,29 @@
 // street with two names, one name on two streets, or a generic that will not sit
 // still.
 //
-// ⚠ PARTIALLY TRANSCRIBED. The two long lists below are quoted; the tail of the
-// column (further changes, and a Naud Street referral on the second clip) is not.
+// ✔ NOW TRANSCRIBED END TO END. The tail of the column — ten further changes, from
+// Castello Street to Basil Street — is the `tail-list` excerpt below.
 //
-// PROVENANCE. Two clippings supplied by Kenny, 2026-09-06 (CDNC phrase search).
+// ⚠ IT WAS NEVER MISSING FROM THE SCAN. The clipping in this folder always ran to
+// the closing rule of the article; the Sept. header's "PARTIALLY TRANSCRIBED" was
+// a limit of the reading, not of the image. Same lesson as
+// documents/lah-1888-10-11 on the same day: open the clipping at full size before
+// asking for another one. Only the last line
+// ("Basil street should be changed to ——") runs off the bottom of the crop, and the
+// Naud Street referral on the second clip is a fragment whose item is off-crop.
+//
+// ★ THE TAIL ADDS A TRACT THIS CORPUS IS ABOUT TO NEED: "Castello street, in the
+// ANDERSON TRACT". `anderson` is sitting in names-new.js awaiting research as this
+// is written, and documents/lah-1888-10-11 has "Anderson St. and Anderson Ave.
+// changed to Anderson St." — so there are three independent sightings of an
+// Anderson holding in the city, nine years apart, before anyone has identified him.
+//
+// PROVENANCE. Clippings supplied by Kenny, 2026-09-06 and 2026-09-17, from CDNC
+// phrase searches. Three beside this file, all from LAH18971207.1.11:
+//   • `-clip.jpg`      crop 2128,1496,743,3573 — the engineer's report, entire
+//   • `-clip-tail.jpg` crop 2185,6034,663,529  — further down the same column
+//   • `-clip-naud.jpg` crop 2836,464,649,118   — the Naud Street referral, next
+//                                                column over
 
 module.exports = {
   id: "lah-1897-12-07",
@@ -97,9 +116,34 @@ module.exports = {
       note: "Every entry carries its diagnosis. Note the Sunset Boulevard gap-filling four years " +
             "after documents/lah-1893-10-29 assembled it." },
 
+    { id: "tail-list",
+      text: "Castello street, in the Anderson tract, should be changed to Zamora street. Herbert " +
+            "street, in the Lienaus Cottage Home tract, should be changed to Thirty-sixth street. " +
+            "Harwood street, in the Harwood tract, should be changed to Fifty-seventh street. San " +
+            "Diego street, from Santa Monica avenue to Figueroa street, should be changed; I would " +
+            "suggest to Rosecrans way. Park street, in Lambies subdivision, should be changed to San " +
+            "Pablo street. Alturas street, formerly Prospect street, in the Norton tract, should be " +
+            "changed; I would suggest Walker street. That portion of San Fernando street which was " +
+            "formerly Olympia street, should be changed to Downey avenue, as there are now two " +
+            "branches of San Fernando. Juanita street in Maltman's first addition should be changed " +
+            "to Juanita avenue. Rocksbury street in Kurts & Bradshaw's sub should be changed to " +
+            "Roxbury avenue. Basil street should be changed to \u2014\u2014",
+      note: "The tail of the column, supplied 2026-09-17. ★ THREE THINGS IN IT are worth more than " +
+            "the renamings. (1) The engineer twice writes \u201cI WOULD SUGGEST\u201d \u2014 Rosecrans way, " +
+            "Walker street \u2014 which is him coining a name at his desk rather than reporting one in " +
+            "use, exactly the hazard handbook/change-rows-amendment.md \u00a710 form 5 was written " +
+            "about, and here the document itself marks which lines those are. (2) \u201cAlturas street, " +
+            "FORMERLY PROSPECT STREET, in the Norton tract\u201d closes a loop with " +
+            "documents/lah-1888-10-11, which proposed \u201cProspect St., in Norton tract, changed to " +
+            "Altemas St.\u201d nine years earlier \u2014 so the 1888 committee's ALTEMAS was carried out and " +
+            "then drifted, in print at least, to ALTURAS. (3) \u201cCastello street, in the ANDERSON " +
+            "tract\u201d is a third sighting of an Anderson holding; see the header. \u26a0 The last line is " +
+            "cut off by the bottom of the crop: what Basil Street was to become is not known from " +
+            "this clip." },
+
     { id: "naud-street",
       text: "Naud street. Referred to board of public works.",
-      note: "The second clip: a fragment, the rest of the item off the crop." }
+      note: "The second clip: a fragment from further down the same column, after the engineer's report. The rest of the item is off the crop, so what was being referred about Naud Street is not known." }
   ],
 
   rows: []

@@ -1,0 +1,283 @@
+{
+  "document": "tr0016-005",
+  "image": "tr0016-005-100dpi.png",
+  "imageSize": [1139, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0016-005-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [935, 430],
+    [231, 483],
+    [233, 1619],
+    [721, 1633],
+    [1033, 1358]
+  ],
+  "coverageLl": [
+    [34.051056, -118.243037],
+    [34.05024, -118.243658],
+    [34.049313, -118.242162],
+    [34.049837, -118.241665],
+    [34.050405, -118.241721]
+  ],
+  "streets": [
+    {
+      "name": "2nd Street",
+      "runs": [
+        {
+          "px": [
+            [372, 1623],
+            [366, 1410],
+            [366, 1290],
+            [366, 1203],
+            [365, 1124],
+            [365, 1092],
+            [363, 949],
+            [359, 711],
+            [362, 615],
+            [360, 516],
+            [360, 473]
+          ],
+          "ll": [
+            [34.049463, -118.24202],
+            [34.04963, -118.242306],
+            [34.049728, -118.242464],
+            [34.049799, -118.242579],
+            [34.049863, -118.242683],
+            [34.049889, -118.242726],
+            [34.050005, -118.242915],
+            [34.050194, -118.243232],
+            [34.050276, -118.243355],
+            [34.050355, -118.243487],
+            [34.05039, -118.243544]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Astronaut Ellison S Onizuka Street",
+          "px": [411, 1699],
+          "ll": [34.049443, -118.241882],
+          "insideCoverage": false
+        },
+        {
+          "name": "Los Angeles Street",
+          "px": [362, 615],
+          "ll": [34.050276, -118.243355],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [374, 1830],
+          "ll": [34.049296, -118.241746],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Astronaut Ellison S Onizuka Street",
+      "runs": [
+        {
+          "px": [
+            [1013, 1167],
+            [968, 1213],
+            [908, 1276],
+            [810, 1374],
+            [705, 1480],
+            [585, 1594],
+            [536, 1628]
+          ],
+          "ll": [
+            [34.050539, -118.241992],
+            [34.050452, -118.241975],
+            [34.050334, -118.241953],
+            [34.050147, -118.24192],
+            [34.049945, -118.241883],
+            [34.04972, -118.24185],
+            [34.049639, -118.241853]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1402, 956],
+          "ll": [34.051138, -118.241889],
+          "insideCoverage": false
+        },
+        {
+          "name": "2nd Street",
+          "px": [411, 1699],
+          "ll": [34.049443, -118.241882],
+          "insideCoverage": false
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [448, 1749],
+          "ll": [34.049442, -118.24178],
+          "insideCoverage": false
+        },
+        {
+          "name": "Toriumi Plaza",
+          "px": [1447, 1142],
+          "ll": [34.051036, -118.241599],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Los Angeles Street",
+      "runs": [
+        {
+          "px": [
+            [950, 573],
+            [791, 585],
+            [749, 596],
+            [434, 621],
+            [362, 615],
+            [294, 619],
+            [231, 626]
+          ],
+          "ll": [
+            [34.050956, -118.242834],
+            [34.050772, -118.242976],
+            [34.050717, -118.243001],
+            [34.050351, -118.243277],
+            [34.050276, -118.243355],
+            [34.050199, -118.243418],
+            [34.050124, -118.243469]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1434, 535],
+          "ll": [34.051518, -118.242411],
+          "insideCoverage": false
+        },
+        {
+          "name": "2nd Street",
+          "px": [362, 615],
+          "ll": [34.050276, -118.243355],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "2nd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "CALLE 2a",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr053-069",
+            "mr053-071",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Astronaut Ellison S Onizuka Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "san-pedro",
+          "display": "San Pedro Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Astronaut Ellison S Onizuka Street by another sheet"
+          ],
+          "ink": [
+            "San Pedro St."
+          ],
+          "docs": [
+            "mr010-008"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Los Angeles Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "los-angeles-street",
+          "display": "Los Angeles Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Los Angeles Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "LOS ANGELES ST.",
+            "LOS ANGELES STREET",
+            "Los Angeles St.",
+            "Los Angeles Street"
+          ],
+          "docs": [
+            "12017",
+            "mr003-146-p2",
+            "mr005-005",
+            "mr005-110",
+            "mr006-378",
+            "mr011-063",
+            "mr011-094",
+            "mr012-026",
+            "mr029-026",
+            "mr039-069",
+            "mr053-016",
+            "mr053-063",
+            "tr0009-100a"
+          ]
+        }
+      ]
+    }
+  ]
+}

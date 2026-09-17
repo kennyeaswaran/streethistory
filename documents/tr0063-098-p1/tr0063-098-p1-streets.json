@@ -1,0 +1,699 @@
+{
+  "document": "tr0063-098-p1",
+  "image": "tr0063-098-p1-100dpi.png",
+  "imageSize": [1746, 2419],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0063-098-p1-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [-86, 407],
+    [-143, 1723],
+    [1085, 2502],
+    [1489, 2380],
+    [1486, 220]
+  ],
+  "coverageLl": [
+    [34.067104, -118.252011],
+    [34.065357, -118.251564],
+    [34.064751, -118.249315],
+    [34.065048, -118.248728],
+    [34.067883, -118.249613]
+  ],
+  "streets": [
+    {
+      "name": "Beaudry Avenue",
+      "runs": [
+        {
+          "px": [
+            [1489, 2070],
+            [1473, 2060],
+            [1430, 2056],
+            [1398, 2065],
+            [1302, 2132],
+            [1218, 2189],
+            [1128, 2251],
+            [934, 2383],
+            [916, 2395]
+          ],
+          "ll": [
+            [34.065455, -118.248855],
+            [34.065462, -118.248885],
+            [34.065453, -118.248953],
+            [34.065431, -118.248999],
+            [34.06531, -118.249124],
+            [34.065207, -118.249233],
+            [34.065095, -118.24935],
+            [34.064856, -118.249601],
+            [34.064834, -118.249624]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bartlett Street",
+          "px": [1839, 2215],
+          "ll": [34.065384, -118.248244],
+          "insideCoverage": false
+        },
+        {
+          "name": "Bellevue Avenue",
+          "px": [1066, 2166],
+          "ll": [34.065185, -118.249481],
+          "insideCoverage": true
+        },
+        {
+          "name": "Sunset Boulevard",
+          "px": [1218, 2189],
+          "ll": [34.065207, -118.249233],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bellevue Avenue",
+      "runs": [
+        {
+          "px": [
+            [184, 375],
+            [179, 582],
+            [172, 684],
+            [171, 711],
+            [170, 739],
+            [143, 761],
+            [131, 804],
+            [127, 839],
+            [115, 932],
+            [144, 982],
+            [158, 1085],
+            [152, 1207],
+            [145, 1293],
+            [160, 1386],
+            [183, 1480],
+            [184, 1487],
+            [227, 1590],
+            [356, 1782],
+            [417, 1842],
+            [525, 1922],
+            [630, 1983],
+            [735, 2024],
+            [865, 2056],
+            [1004, 2082]
+          ],
+          "ll": [
+            [34.067238, -118.251599],
+            [34.066964, -118.251523],
+            [34.066828, -118.251491],
+            [34.066793, -118.251483],
+            [34.066756, -118.251473],
+            [34.066717, -118.251505],
+            [34.066657, -118.251508],
+            [34.06661, -118.2515],
+            [34.066483, -118.25148],
+            [34.066427, -118.251415],
+            [34.066297, -118.251351],
+            [34.066134, -118.25131],
+            [34.06602, -118.251286],
+            [34.065902, -118.251226],
+            [34.065787, -118.251151],
+            [34.065778, -118.251145],
+            [34.065657, -118.251036],
+            [34.065449, -118.250754],
+            [34.065391, -118.250635],
+            [34.065322, -118.250433],
+            [34.065278, -118.250241],
+            [34.06526, -118.250059],
+            [34.065262, -118.249842],
+            [34.065275, -118.249613]
+          ]
+        },
+        {
+          "px": [
+            [158, 1085],
+            [183, 1036],
+            [190, 979],
+            [194, 846],
+            [196, 775],
+            [170, 739]
+          ],
+          "ll": [
+            [34.066297, -118.251351],
+            [34.06637, -118.251332],
+            [34.066447, -118.251343],
+            [34.066623, -118.251392],
+            [34.066716, -118.251417],
+            [34.066756, -118.251473]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beaudry Avenue",
+          "px": [1066, 2166],
+          "ll": [34.065185, -118.249481],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [179, 582],
+          "ll": [34.066964, -118.251523],
+          "insideCoverage": true
+        },
+        {
+          "name": "Kensington Road",
+          "px": [-19, -100],
+          "ll": [34.067793, -118.252111],
+          "insideCoverage": false
+        },
+        {
+          "name": "Sunset Boulevard",
+          "px": [1101, 2067],
+          "ll": [34.065328, -118.249467],
+          "insideCoverage": true
+        },
+        {
+          "name": "Sunvue Place",
+          "px": [545, 1704],
+          "ll": [34.065615, -118.250488],
+          "insideCoverage": true
+        },
+        {
+          "name": "Victor Street",
+          "px": [417, 1842],
+          "ll": [34.065391, -118.250635],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Boylston Street",
+      "runs": [
+        {
+          "px": [
+            [179, 582],
+            [255, 588],
+            [269, 589],
+            [576, 613],
+            [650, 621],
+            [1110, 656],
+            [1201, 672]
+          ],
+          "ll": [
+            [34.066964, -118.251523],
+            [34.066982, -118.2514],
+            [34.066986, -118.251377],
+            [34.067058, -118.250884],
+            [34.067072, -118.250765],
+            [34.067183, -118.250027],
+            [34.067193, -118.249877]
+          ]
+        },
+        {
+          "px": [
+            [-113, 1038],
+            [-59, 975],
+            [54, 945],
+            [79, 938],
+            [115, 932]
+          ],
+          "ll": [
+            [34.066266, -118.251797],
+            [34.066368, -118.251736],
+            [34.066446, -118.251571],
+            [34.066463, -118.251535],
+            [34.066483, -118.25148]
+          ]
+        },
+        {
+          "px": [
+            [143, 761],
+            [89, 785],
+            [-42, 940],
+            [-59, 975]
+          ],
+          "ll": [
+            [34.066717, -118.251505],
+            [34.066668, -118.251582],
+            [34.066419, -118.251725],
+            [34.066368, -118.251736]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bellevue Avenue",
+          "px": [179, 582],
+          "ll": [34.066964, -118.251523],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boston Street",
+          "px": [-400, 1293],
+          "ll": [34.065835, -118.252143],
+          "insideCoverage": false
+        },
+        {
+          "name": "Everett Street",
+          "px": [1201, 672],
+          "ll": [34.067193, -118.249877],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hollywood Freeway",
+          "px": [-442, 1361],
+          "ll": [34.065731, -118.252182],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [-419, 1394],
+          "ll": [34.065696, -118.252134],
+          "insideCoverage": false
+        },
+        {
+          "name": "Sunset Boulevard",
+          "px": [1201, 672],
+          "ll": [34.067193, -118.249877],
+          "insideCoverage": true
+        },
+        {
+          "name": "Sunvue Place",
+          "px": [650, 621],
+          "ll": [34.067072, -118.250765],
+          "insideCoverage": true
+        },
+        {
+          "name": "White Knoll Drive",
+          "px": [1200, 793],
+          "ll": [34.067033, -118.249829],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Everett Street",
+      "runs": [
+        {
+          "px": [
+            [1201, 672],
+            [1274, 606],
+            [1286, 590],
+            [1329, 532],
+            [1350, 495],
+            [1364, 457],
+            [1346, 474],
+            [1325, 484],
+            [1296, 490],
+            [1285, 490],
+            [1202, 489]
+          ],
+          "ll": [
+            [34.067193, -118.249877],
+            [34.067305, -118.249788],
+            [34.06733, -118.249776],
+            [34.06742, -118.249732],
+            [34.067475, -118.249715],
+            [34.06753, -118.249708],
+            [34.067502, -118.249729],
+            [34.067481, -118.249759],
+            [34.067464, -118.249801],
+            [34.06746, -118.24982],
+            [34.067434, -118.249951]
+          ]
+        },
+        {
+          "px": [
+            [1364, 457],
+            [1486, 296]
+          ],
+          "ll": [
+            [34.06753, -118.249708],
+            [34.067783, -118.249581]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Boylston Street",
+          "px": [1201, 672],
+          "ll": [34.067193, -118.249877],
+          "insideCoverage": true
+        },
+        {
+          "name": "Sunset Boulevard",
+          "px": [1201, 672],
+          "ll": [34.067193, -118.249877],
+          "insideCoverage": true
+        },
+        {
+          "name": "White Knoll Drive",
+          "px": [1200, 793],
+          "ll": [34.067033, -118.249829],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Sunset Boulevard",
+      "runs": [
+        {
+          "px": [
+            [1310, 2434],
+            [1288, 2389],
+            [1260, 2325],
+            [1239, 2254],
+            [1237, 2249],
+            [1218, 2189],
+            [1206, 2125],
+            [1205, 2117],
+            [1198, 2051],
+            [1195, 1946],
+            [1194, 1811],
+            [1194, 1718],
+            [1200, 915],
+            [1201, 672],
+            [1202, 489],
+            [1201, 348],
+            [1200, 254]
+          ],
+          "ll": [
+            [34.064916, -118.248988],
+            [34.064968, -118.249042],
+            [34.065043, -118.249111],
+            [34.065128, -118.249174],
+            [34.065134, -118.249178],
+            [34.065207, -118.249233],
+            [34.065287, -118.249278],
+            [34.065296, -118.249283],
+            [34.065381, -118.24932],
+            [34.065518, -118.249368],
+            [34.065694, -118.249425],
+            [34.065818, -118.249462],
+            [34.066874, -118.24978],
+            [34.067193, -118.249877],
+            [34.067434, -118.249951],
+            [34.067618, -118.250009],
+            [34.067741, -118.250049]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beaudry Avenue",
+          "px": [1218, 2189],
+          "ll": [34.065207, -118.249233],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bellevue Avenue",
+          "px": [1101, 2067],
+          "ll": [34.065328, -118.249467],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [1201, 672],
+          "ll": [34.067193, -118.249877],
+          "insideCoverage": true
+        },
+        {
+          "name": "Custer Avenue",
+          "px": [1547, 2848],
+          "ll": [34.064454, -118.248447],
+          "insideCoverage": false
+        },
+        {
+          "name": "Everett Street",
+          "px": [1201, 672],
+          "ll": [34.067193, -118.249877],
+          "insideCoverage": true
+        },
+        {
+          "name": "Marion Avenue",
+          "px": [1190, -84],
+          "ll": [34.068182, -118.250202],
+          "insideCoverage": false
+        },
+        {
+          "name": "White Knoll Drive",
+          "px": [1200, 915],
+          "ll": [34.066874, -118.24978],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Sunvue Place",
+      "runs": [
+        {
+          "px": [
+            [674, 1567],
+            [667, 799],
+            [647, 667],
+            [650, 621]
+          ],
+          "ll": [
+            [34.06584, -118.250342],
+            [34.066845, -118.250666],
+            [34.067012, -118.250751],
+            [34.067072, -118.250765]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bellevue Avenue",
+          "px": [545, 1704],
+          "ll": [34.065615, -118.250488],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [650, 621],
+          "ll": [34.067072, -118.250765],
+          "insideCoverage": true
+        },
+        {
+          "name": "Victor Street",
+          "px": [545, 1704],
+          "ll": [34.065615, -118.250488],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Victor Street",
+      "runs": [
+        {
+          "px": [
+            [240, 1966],
+            [353, 1888],
+            [361, 1883],
+            [417, 1842]
+          ],
+          "ll": [
+            [34.065168, -118.250863],
+            [34.065308, -118.250717],
+            [34.065318, -118.250706],
+            [34.065391, -118.250635]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bellevue Avenue",
+          "px": [417, 1842],
+          "ll": [34.065391, -118.250635],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hollywood Freeway",
+          "px": [-259, 2153],
+          "ll": [34.064753, -118.251572],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [51, 1991],
+          "ll": [34.065071, -118.25115],
+          "insideCoverage": false
+        },
+        {
+          "name": "Sunvue Place",
+          "px": [545, 1704],
+          "ll": [34.065615, -118.250488],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "White Knoll Drive",
+      "runs": [
+        {
+          "px": [
+            [1200, 915],
+            [1293, 904],
+            [1305, 903],
+            [1342, 879],
+            [1487, 742]
+          ],
+          "ll": [
+            [34.066874, -118.24978],
+            [34.06692, -118.249638],
+            [34.066926, -118.249619],
+            [34.066969, -118.24957],
+            [34.067198, -118.249399]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Boylston Street",
+          "px": [1200, 793],
+          "ll": [34.067033, -118.249829],
+          "insideCoverage": true
+        },
+        {
+          "name": "Everett Street",
+          "px": [1200, 793],
+          "ll": [34.067033, -118.249829],
+          "insideCoverage": true
+        },
+        {
+          "name": "Marview Avenue",
+          "px": [1852, 719],
+          "ll": [34.067352, -118.248834],
+          "insideCoverage": false
+        },
+        {
+          "name": "Sunset Boulevard",
+          "px": [1200, 915],
+          "ll": [34.066874, -118.24978],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Beaudry Avenue",
+      "continuesInto": [
+        "Alpine Street"
+      ],
+      "candidates": [
+        {
+          "id": "virgin",
+          "display": "Virgin Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alpine Street, which Beaudry Avenue runs straight into"
+          ],
+          "ink": [
+            "CALLE DE LAS VIRGENES",
+            "VIRGIN ST",
+            "Virgin street"
+          ],
+          "docs": [
+            "mr053-073",
+            "ord-1887-08-22"
+          ]
+        },
+        {
+          "id": "beaudry-st",
+          "display": "Beaudry Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Bellevue Avenue",
+      "continuesInto": [
+        "Marion Avenue"
+      ],
+      "candidates": []
+    },
+    {
+      "street": "Boylston Street",
+      "continuesInto": [
+        "Boston Street"
+      ],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Boylston Street by another sheet"
+          ],
+          "ink": [
+            "FIGUEROA ST."
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "boylston",
+          "display": "Boylston Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Everett Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Sunset Boulevard",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Sunvue Place",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Victor Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "White Knoll Drive",
+      "continuesInto": [
+        "Alpine Street"
+      ],
+      "candidates": [
+        {
+          "id": "virgin",
+          "display": "Virgin Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alpine Street, which White Knoll Drive runs straight into"
+          ],
+          "ink": [
+            "CALLE DE LAS VIRGENES",
+            "VIRGIN ST",
+            "Virgin street"
+          ],
+          "docs": [
+            "mr053-073",
+            "ord-1887-08-22"
+          ]
+        }
+      ]
+    }
+  ]
+}

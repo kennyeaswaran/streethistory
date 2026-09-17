@@ -1,0 +1,322 @@
+{
+  "document": "tr0035-022",
+  "image": "tr0035-022-100dpi.png",
+  "imageSize": [1564, 2256],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0035-022-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [275, 340],
+    [205, 1287],
+    [1180, 1628],
+    [1261, 379]
+  ],
+  "coverageLl": [
+    [34.050349, -118.241961],
+    [34.049521, -118.242423],
+    [34.048882, -118.241509],
+    [34.049979, -118.240913]
+  ],
+  "streets": [
+    {
+      "name": "2nd Street",
+      "runs": [
+        {
+          "px": [
+            [216, 1133],
+            [259, 1145],
+            [678, 1252],
+            [836, 1298],
+            [995, 1341],
+            [1133, 1385],
+            [1195, 1404]
+          ],
+          "ll": [
+            [34.049656, -118.242347],
+            [34.04963, -118.242306],
+            [34.049391, -118.241898],
+            [34.049296, -118.241746],
+            [34.049203, -118.241592],
+            [34.049117, -118.241461],
+            [34.049079, -118.241402]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Astronaut Ellison S Onizuka Street",
+          "px": [672, 1197],
+          "ll": [34.049443, -118.241882],
+          "insideCoverage": true
+        },
+        {
+          "name": "Frances K. Hashimoto Plaza",
+          "px": [1806, 1638],
+          "ll": [34.04866, -118.240838],
+          "insideCoverage": false
+        },
+        {
+          "name": "Japanese Village Plaza Mall",
+          "px": [1851, 1565],
+          "ll": [34.048711, -118.240759],
+          "insideCoverage": false
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [836, 1298],
+          "ll": [34.049296, -118.241746],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Astronaut Ellison S Onizuka Street",
+      "runs": [
+        {
+          "px": [
+            [280, 340],
+            [287, 352],
+            [383, 524],
+            [487, 709],
+            [596, 918],
+            [626, 1005],
+            [628, 1054],
+            [662, 1134],
+            [665, 1142]
+          ],
+          "ll": [
+            [34.050347, -118.241955],
+            [34.050334, -118.241953],
+            [34.050147, -118.24192],
+            [34.049945, -118.241883],
+            [34.04972, -118.24185],
+            [34.049631, -118.241854],
+            [34.049587, -118.24187],
+            [34.049503, -118.241867],
+            [34.049495, -118.241867]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [672, 1197],
+          "ll": [34.049443, -118.241882],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [755, 1166],
+          "ll": [34.049442, -118.24178],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "San Pedro Street",
+      "runs": [
+        {
+          "px": [
+            [831, 1506],
+            [827, 1394],
+            [836, 1298],
+            [845, 1191],
+            [850, 1070],
+            [872, 934],
+            [932, 703],
+            [952, 625],
+            [1016, 369]
+          ],
+          "ll": [
+            [34.049111, -118.241836],
+            [34.049213, -118.241795],
+            [34.049296, -118.241746],
+            [34.049389, -118.241693],
+            [34.049497, -118.241637],
+            [34.049611, -118.241558],
+            [34.049799, -118.2414],
+            [34.049863, -118.241347],
+            [34.050071, -118.241173]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1125, -26],
+          "ll": [34.050389, -118.240894],
+          "insideCoverage": false
+        },
+        {
+          "name": "2nd Street",
+          "px": [836, 1298],
+          "ll": [34.049296, -118.241746],
+          "insideCoverage": true
+        },
+        {
+          "name": "Astronaut Ellison S Onizuka Street",
+          "px": [755, 1166],
+          "ll": [34.049442, -118.24178],
+          "insideCoverage": true
+        },
+        {
+          "name": "Frances K. Hashimoto Plaza",
+          "px": [927, 2203],
+          "ll": [34.048451, -118.242017],
+          "insideCoverage": false
+        },
+        {
+          "name": "Judge John Aiso Street",
+          "px": [1125, -26],
+          "ll": [34.050389, -118.240894],
+          "insideCoverage": false
+        },
+        {
+          "name": "Toriumi Plaza",
+          "px": [1086, -150],
+          "ll": [34.050514, -118.240886],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "2nd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "CALLE 2a",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr053-069",
+            "mr053-071",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Astronaut Ellison S Onizuka Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "san-pedro",
+          "display": "San Pedro Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Astronaut Ellison S Onizuka Street by another sheet"
+          ],
+          "ink": [
+            "San Pedro St."
+          ],
+          "docs": [
+            "mr010-008"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "San Pedro Street",
+      "continuesInto": [
+        "Judge John Aiso Street"
+      ],
+      "candidates": [
+        {
+          "id": "san-pedro",
+          "display": "San Pedro Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on San Pedro Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "SAN PEDRO ST",
+            "SAN PEDRO STREET",
+            "San Pedro Ave",
+            "San Pedro St.",
+            "San Pedro Street"
+          ],
+          "docs": [
+            "12017",
+            "mr005-005",
+            "mr005-307-b",
+            "mr006-039",
+            "mr006-378",
+            "mr011-008",
+            "mr012-064",
+            "mr014-034",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-065",
+            "mr066-064",
+            "tr0013-048",
+            "tr0938-051-p3"
+          ]
+        },
+        {
+          "id": "wilmington-street",
+          "display": "Wilmington Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Judge John Aiso Street, which San Pedro Street runs straight into"
+          ],
+          "ink": [
+            "WILMINGTON",
+            "Wilmington"
+          ],
+          "docs": [
+            "mr003-146-p1",
+            "mr003-146-p2",
+            "mr010-008"
+          ]
+        }
+      ]
+    }
+  ]
+}

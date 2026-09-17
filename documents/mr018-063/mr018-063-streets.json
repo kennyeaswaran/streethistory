@@ -1,0 +1,880 @@
+{
+  "document": "mr018-063",
+  "image": "mr018-063-100dpi.png",
+  "imageSize": [1071, 1644],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr018-063-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [132, 416],
+    [120, 991],
+    [416, 1003],
+    [450, 1348],
+    [809, 1373],
+    [815, 966],
+    [1094, 965],
+    [1048, 360]
+  ],
+  "coverageLl": [
+    [34.056611, -118.267643],
+    [34.054437, -118.269111],
+    [34.053784, -118.267784],
+    [34.052395, -118.268476],
+    [34.051564, -118.266893],
+    [34.053108, -118.265865],
+    [34.052539, -118.264584],
+    [34.054947, -118.263308]
+  ],
+  "streets": [
+    {
+      "name": "6th Street",
+      "runs": [
+        {
+          "px": [
+            [131, 466],
+            [146, 466],
+            [157, 466],
+            [210, 464],
+            [233, 464],
+            [249, 463],
+            [330, 462],
+            [366, 462],
+            [383, 461],
+            [426, 461],
+            [450, 460],
+            [463, 460],
+            [578, 458],
+            [598, 458],
+            [618, 457],
+            [677, 455],
+            [715, 453],
+            [759, 452],
+            [800, 451],
+            [847, 449],
+            [872, 449],
+            [909, 448],
+            [973, 446],
+            [993, 445],
+            [1008, 445],
+            [1054, 444]
+          ],
+          "ll": [
+            [34.056421, -118.267772],
+            [34.05639, -118.2677],
+            [34.05637, -118.267651],
+            [34.056268, -118.267406],
+            [34.056222, -118.267295],
+            [34.05619, -118.267221],
+            [34.056028, -118.266847],
+            [34.055957, -118.266682],
+            [34.055924, -118.266605],
+            [34.055838, -118.266406],
+            [34.05579, -118.266295],
+            [34.055764, -118.266234],
+            [34.055536, -118.265704],
+            [34.055496, -118.265612],
+            [34.055458, -118.265518],
+            [34.055346, -118.265244],
+            [34.055273, -118.265063],
+            [34.055189, -118.264857],
+            [34.05511, -118.264668],
+            [34.055017, -118.264447],
+            [34.054969, -118.264331],
+            [34.054897, -118.26416],
+            [34.054772, -118.263861],
+            [34.054733, -118.263768],
+            [34.054705, -118.263702],
+            [34.054614, -118.263485]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Columbia Avenue",
+          "px": [450, 460],
+          "ll": [34.05579, -118.266295],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hartford Avenue",
+          "px": [759, 452],
+          "ll": [34.055189, -118.264857],
+          "insideCoverage": true
+        },
+        {
+          "name": "Loma Drive",
+          "px": [68, 468],
+          "ll": [34.056543, -118.268065],
+          "insideCoverage": false
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [993, 445],
+          "ll": [34.054733, -118.263768],
+          "insideCoverage": true
+        },
+        {
+          "name": "Valencia Street",
+          "px": [233, 464],
+          "ll": [34.056222, -118.267295],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [598, 458],
+          "ll": [34.055496, -118.265612],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [810, 1292],
+            [808, 1292],
+            [737, 1292],
+            [677, 1292],
+            [659, 1292],
+            [614, 1292],
+            [585, 1292],
+            [581, 1292],
+            [559, 1291],
+            [535, 1291],
+            [444, 1291]
+          ],
+          "ll": [
+            [34.051869, -118.266689],
+            [34.051875, -118.266701],
+            [34.05202, -118.267024],
+            [34.052143, -118.267297],
+            [34.05218, -118.267379],
+            [34.052275, -118.267589],
+            [34.052333, -118.267717],
+            [34.052343, -118.267738],
+            [34.052388, -118.267837],
+            [34.052438, -118.26795],
+            [34.052625, -118.268362]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Columbia Avenue",
+          "px": [406, 1291],
+          "ll": [34.052705, -118.268538],
+          "insideCoverage": false
+        },
+        {
+          "name": "Garland Avenue",
+          "px": [890, 1292],
+          "ll": [34.051708, -118.266321],
+          "insideCoverage": false
+        },
+        {
+          "name": "Hartford Avenue",
+          "px": [677, 1292],
+          "ll": [34.052143, -118.267297],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [585, 1292],
+          "ll": [34.052333, -118.267717],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Columbia Avenue",
+      "runs": [
+        {
+          "px": [
+            [449, 397],
+            [449, 437],
+            [450, 460]
+          ],
+          "ll": [
+            [34.056036, -118.266145],
+            [34.055881, -118.26624],
+            [34.05579, -118.266295]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [450, 460],
+          "ll": [34.05579, -118.266295],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hartford Avenue",
+      "runs": [
+        {
+          "px": [
+            [677, 1292],
+            [677, 1310],
+            [677, 1364]
+          ],
+          "ll": [
+            [34.052143, -118.267297],
+            [34.052076, -118.267341],
+            [34.05187, -118.267476]
+          ]
+        },
+        {
+          "px": [
+            [756, 378],
+            [758, 429],
+            [759, 452]
+          ],
+          "ll": [
+            [34.055477, -118.264688],
+            [34.055278, -118.264805],
+            [34.055189, -118.264857]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [754, 310],
+          "ll": [34.05574, -118.264534],
+          "insideCoverage": false
+        },
+        {
+          "name": "6th Street",
+          "px": [759, 452],
+          "ll": [34.055189, -118.264857],
+          "insideCoverage": true
+        },
+        {
+          "name": "7th Street",
+          "px": [677, 1292],
+          "ll": [34.052143, -118.267297],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [639, 1281],
+          "ll": [34.052265, -118.267445],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Ingraham Street",
+      "runs": [
+        {
+          "px": [
+            [813, 1094],
+            [670, 1094],
+            [638, 1094],
+            [618, 1094],
+            [600, 1094],
+            [585, 1094],
+            [425, 1092]
+          ],
+          "ll": [
+            [34.052621, -118.266189],
+            [34.052915, -118.266847],
+            [34.05298, -118.266993],
+            [34.053021, -118.267083],
+            [34.053056, -118.267164],
+            [34.05309, -118.267236],
+            [34.053424, -118.267964]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Witmer Street",
+          "px": [600, 1094],
+          "ll": [34.053056, -118.267164],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Lucas Avenue",
+      "runs": [
+        {
+          "px": [
+            [991, 363],
+            [993, 422],
+            [993, 445],
+            [994, 461],
+            [994, 586],
+            [995, 643],
+            [995, 691],
+            [995, 706],
+            [995, 710],
+            [995, 787],
+            [996, 820],
+            [995, 876],
+            [996, 897],
+            [997, 920],
+            [997, 965]
+          ],
+          "ll": [
+            [34.055051, -118.263577],
+            [34.054822, -118.263715],
+            [34.054733, -118.263768],
+            [34.054672, -118.263806],
+            [34.054193, -118.26411],
+            [34.053976, -118.264248],
+            [34.053792, -118.264365],
+            [34.053734, -118.264401],
+            [34.053718, -118.26441],
+            [34.053422, -118.264599],
+            [34.053294, -118.26468],
+            [34.053083, -118.264819],
+            [34.052999, -118.264867],
+            [34.052912, -118.264919],
+            [34.052737, -118.26503]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [990, 303],
+          "ll": [34.055284, -118.263437],
+          "insideCoverage": false
+        },
+        {
+          "name": "6th Street",
+          "px": [993, 445],
+          "ll": [34.054733, -118.263768],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ingraham Street",
+          "px": [996, 1094],
+          "ll": [34.052246, -118.26535],
+          "insideCoverage": false
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [996, 897],
+          "ll": [34.052999, -118.264867],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Shatto Street",
+      "runs": [
+        {
+          "px": [
+            [605, 691],
+            [586, 691],
+            [441, 691],
+            [246, 692],
+            [231, 692],
+            [209, 686],
+            [203, 685],
+            [126, 685]
+          ],
+          "ll": [
+            [34.05459, -118.266154],
+            [34.054628, -118.266238],
+            [34.054924, -118.266902],
+            [34.055324, -118.2678],
+            [34.055353, -118.267866],
+            [34.055424, -118.267954],
+            [34.055435, -118.26798],
+            [34.055595, -118.268329]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Valencia Street",
+          "px": [231, 692],
+          "ll": [34.055353, -118.267866],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [605, 691],
+          "ll": [34.05459, -118.266154],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Valencia Street",
+      "runs": [
+        {
+          "px": [
+            [233, 464],
+            [233, 489],
+            [232, 527],
+            [231, 676],
+            [231, 692],
+            [231, 697],
+            [230, 873],
+            [230, 896]
+          ],
+          "ll": [
+            [34.056222, -118.267295],
+            [34.056125, -118.267358],
+            [34.055982, -118.267457],
+            [34.055413, -118.267827],
+            [34.055353, -118.267866],
+            [34.055333, -118.267879],
+            [34.054662, -118.268317],
+            [34.054577, -118.268373]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [233, 464],
+          "ll": [34.056222, -118.267295],
+          "insideCoverage": true
+        },
+        {
+          "name": "Shatto Street",
+          "px": [231, 692],
+          "ll": [34.055353, -118.267866],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [230, 896],
+          "ll": [34.054577, -118.268373],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Wilshire Boulevard",
+      "runs": [
+        {
+          "px": [
+            [122, 895],
+            [123, 895],
+            [230, 896],
+            [246, 896],
+            [279, 896],
+            [472, 896],
+            [586, 897],
+            [606, 897],
+            [620, 897],
+            [720, 897],
+            [977, 897],
+            [996, 897],
+            [1017, 897],
+            [1089, 897]
+          ],
+          "ll": [
+            [34.054801, -118.268866],
+            [34.054799, -118.268863],
+            [34.054577, -118.268373],
+            [34.054544, -118.2683],
+            [34.054476, -118.26815],
+            [34.054077, -118.267266],
+            [34.053843, -118.266747],
+            [34.053801, -118.266654],
+            [34.053772, -118.266588],
+            [34.053566, -118.266129],
+            [34.053039, -118.264955],
+            [34.052999, -118.264867],
+            [34.052959, -118.264769],
+            [34.05281, -118.264441]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Lucas Avenue",
+          "px": [996, 897],
+          "ll": [34.052999, -118.264867],
+          "insideCoverage": true
+        },
+        {
+          "name": "Valencia Street",
+          "px": [230, 896],
+          "ll": [34.054577, -118.268373],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [606, 897],
+          "ll": [34.053801, -118.266654],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Witmer Street",
+      "runs": [
+        {
+          "px": [
+            [572, 1356],
+            [572, 1311],
+            [580, 1300],
+            [585, 1292],
+            [600, 1269],
+            [600, 1104],
+            [600, 1094],
+            [601, 1078],
+            [605, 919],
+            [606, 897],
+            [606, 871],
+            [605, 743],
+            [605, 691],
+            [605, 676],
+            [605, 637],
+            [605, 607],
+            [606, 499],
+            [607, 483],
+            [602, 471],
+            [598, 458],
+            [589, 434],
+            [589, 388]
+          ],
+          "ll": [
+            [34.052113, -118.267939],
+            [34.052287, -118.267825],
+            [34.052312, -118.267766],
+            [34.052333, -118.267717],
+            [34.052388, -118.267593],
+            [34.05302, -118.267187],
+            [34.053056, -118.267164],
+            [34.053118, -118.267121],
+            [34.053716, -118.266711],
+            [34.053801, -118.266654],
+            [34.053901, -118.266588],
+            [34.05439, -118.26628],
+            [34.05459, -118.266154],
+            [34.054646, -118.266117],
+            [34.054795, -118.266019],
+            [34.05491, -118.265944],
+            [34.05532, -118.265674],
+            [34.05538, -118.265634],
+            [34.055436, -118.265624],
+            [34.055496, -118.265612],
+            [34.055605, -118.265592],
+            [34.055782, -118.265481]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [588, 315],
+          "ll": [34.056062, -118.265306],
+          "insideCoverage": false
+        },
+        {
+          "name": "6th Street",
+          "px": [598, 458],
+          "ll": [34.055496, -118.265612],
+          "insideCoverage": true
+        },
+        {
+          "name": "7th Street",
+          "px": [585, 1292],
+          "ll": [34.052333, -118.267717],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hartford Avenue",
+          "px": [639, 1281],
+          "ll": [34.052265, -118.267445],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ingraham Street",
+          "px": [600, 1094],
+          "ll": [34.053056, -118.267164],
+          "insideCoverage": true
+        },
+        {
+          "name": "Shatto Street",
+          "px": [605, 691],
+          "ll": [34.05459, -118.266154],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [606, 897],
+          "ll": [34.053801, -118.266654],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "6th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "sixth-street",
+          "display": "6th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "6TH ST",
+            "6TH ST.",
+            "6TH STREET",
+            "6th St",
+            "CALLE 6a",
+            "SIXTH ST.",
+            "SIXTH STR.",
+            "SIXTH STREET",
+            "Sixth St",
+            "Sixth St Extension.",
+            "Sixth St.",
+            "proposed line of Sixth Street."
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-016",
+            "mr003-166-p1",
+            "mr003-569",
+            "mr006-033",
+            "mr011-042",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr053-068",
+            "mr053-071",
+            "mr078-055",
+            "mr084-053",
+            "tr0009-075",
+            "tr0009-100a",
+            "tr0010-175a",
+            "tr0012-101",
+            "tr0023-066",
+            "tr0159-032-p2",
+            "tr0273-017",
+            "tr0319-001-p1"
+          ]
+        },
+        {
+          "id": "ward-st",
+          "display": "Ward Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet"
+          ],
+          "ink": [
+            "WARD ST."
+          ],
+          "docs": [
+            "mr003-046-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "7th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "seventh-street",
+          "display": "7th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 7th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "7TH ST.",
+            "7TH STREET",
+            "7th ST",
+            "7th Street",
+            "CALLE 7a",
+            "SEVENTH ST",
+            "SEVENTH ST.",
+            "SEVENTH STR.",
+            "SEVENTH STREET",
+            "Seventh St",
+            "Seventh St.",
+            "Seventh Street",
+            "Seventh Street."
+          ],
+          "docs": [
+            "11824",
+            "mr003-016",
+            "mr003-569",
+            "mr006-033",
+            "mr006-039",
+            "mr011-063",
+            "mr013-091",
+            "mr014-034",
+            "mr015-052",
+            "mr018-025",
+            "mr018-092",
+            "mr021-046",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr053-068",
+            "mr053-071",
+            "mr054-051",
+            "mr055-081",
+            "mr066-064",
+            "mr070-084",
+            "tr0001-046",
+            "tr0005-056a",
+            "tr0009-100a",
+            "tr0011-196",
+            "tr0023-054c",
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Columbia Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "columbia-avenue",
+          "display": "Columbia Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Columbia Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "COLUMBIA AVENUE"
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Hartford Avenue",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Ingraham Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "ingraham",
+          "display": "Ingraham Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Lucas Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "lucas-avenue",
+          "display": "Lucas Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Lucas Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "LUCAS AVENUE",
+            "Lucas Ave"
+          ],
+          "docs": [
+            "mr006-115",
+            "mr010-081",
+            "tr0015-166a-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Shatto Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Valencia Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Wilshire Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "wilshire",
+          "display": "Wilshire Boulevard",
+          "pendingResearch": false,
+          "why": [
+            "attested on Wilshire Boulevard by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "WILSHIRE BOULEVARD"
+          ],
+          "docs": [
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "orange-st-wilshire",
+          "display": "Orange Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Wilshire Boulevard by another sheet"
+          ],
+          "ink": [
+            "ORANGE ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Witmer Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "witmer-street",
+          "display": "Witmer Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Witmer Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "WITMER",
+            "WITMER STREET"
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        }
+      ]
+    }
+  ]
+}

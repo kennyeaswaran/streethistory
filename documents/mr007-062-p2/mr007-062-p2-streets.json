@@ -1,0 +1,1300 @@
+{
+  "document": "mr007-062-p2",
+  "image": "mr007-062-p2-100dpi.png",
+  "imageSize": [1120, 1600],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr007-062-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [1152, 1],
+    [69, -110],
+    [52, 1593],
+    [1158, 1554]
+  ],
+  "coverageLl": [
+    [34.066759, -118.244364],
+    [34.064023, -118.246163],
+    [34.062079, -118.240796],
+    [34.065044, -118.239441]
+  ],
+  "streets": [
+    {
+      "name": "Adobe Street",
+      "runs": [
+        {
+          "px": [
+            [1156, 1051],
+            [1067, 1050],
+            [1046, 1056]
+          ],
+          "ll": [
+            [34.065599, -118.241035],
+            [34.065364, -118.241157],
+            [34.065304, -118.241167]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Arroyo Seco Parkway",
+          "px": [1350, 974],
+          "ll": [34.066197, -118.241019],
+          "insideCoverage": false
+        },
+        {
+          "name": "Cleveland Street",
+          "px": [1046, 1124],
+          "ll": [34.065226, -118.240951],
+          "insideCoverage": true
+        },
+        {
+          "name": "College Street",
+          "px": [1046, 1056],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": true
+        },
+        {
+          "name": "New Depot Street",
+          "px": [1046, 1056],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Alpine Street",
+      "runs": [
+        {
+          "px": [
+            [382, -78],
+            [296, -1],
+            [258, 34],
+            [236, 52],
+            [195, 68],
+            [183, 83],
+            [178, 94],
+            [173, 109],
+            [173, 118],
+            [192, 306],
+            [206, 512],
+            [218, 698],
+            [226, 735],
+            [240, 778],
+            [258, 815],
+            [274, 848],
+            [295, 879],
+            [314, 905],
+            [344, 943],
+            [372, 987],
+            [390, 1029],
+            [402, 1078],
+            [403, 1129],
+            [404, 1163],
+            [405, 1183],
+            [408, 1400],
+            [408, 1432],
+            [408, 1469],
+            [409, 1580]
+          ],
+          "ll": [
+            [34.064815, -118.245642],
+            [34.064501, -118.245514],
+            [34.064362, -118.245454],
+            [34.064283, -118.245427],
+            [34.064157, -118.245431],
+            [34.064109, -118.2454],
+            [34.064085, -118.245373],
+            [34.064053, -118.24533],
+            [34.064043, -118.245302],
+            [34.063884, -118.244682],
+            [34.063692, -118.24401],
+            [34.063517, -118.243406],
+            [34.063497, -118.243279],
+            [34.063486, -118.243123],
+            [34.06349, -118.242985],
+            [34.063497, -118.242856],
+            [34.063518, -118.242731],
+            [34.063538, -118.242622],
+            [34.063575, -118.242462],
+            [34.063601, -118.242285],
+            [34.063602, -118.242128],
+            [34.063578, -118.241958],
+            [34.063525, -118.241795],
+            [34.063489, -118.241685],
+            [34.063467, -118.24162],
+            [34.063235, -118.240932],
+            [34.063199, -118.240828],
+            [34.063157, -118.240712],
+            [34.063035, -118.240359]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Arroyo Seco Parkway",
+          "px": [422, -90],
+          "ll": [34.064934, -118.245629],
+          "insideCoverage": false
+        },
+        {
+          "name": "Bunker Hill Avenue",
+          "px": [206, 512],
+          "ll": [34.063692, -118.24401],
+          "insideCoverage": true
+        },
+        {
+          "name": "Cleveland Street",
+          "px": [405, 1183],
+          "ll": [34.063467, -118.24162],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [195, 68],
+          "ll": [34.064157, -118.245431],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Terrace",
+          "px": [464, -153],
+          "ll": [34.065113, -118.24577],
+          "insideCoverage": false
+        },
+        {
+          "name": "Grand Avenue",
+          "px": [218, 698],
+          "ll": [34.063517, -118.243406],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [402, -113],
+          "ll": [34.064905, -118.245728],
+          "insideCoverage": false
+        },
+        {
+          "name": "Hill Place",
+          "px": [314, 905],
+          "ll": [34.063538, -118.242622],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hill Street",
+          "px": [410, 1831],
+          "ll": [34.06276, -118.239563],
+          "insideCoverage": false
+        },
+        {
+          "name": "New Depot Street",
+          "px": [192, 306],
+          "ll": [34.063884, -118.244682],
+          "insideCoverage": true
+        },
+        {
+          "name": "Yale Street",
+          "px": [408, 1432],
+          "ll": [34.063199, -118.240828],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Arroyo Seco Parkway",
+      "runs": [
+        {
+          "px": [
+            [334, -83],
+            [599, 264],
+            [651, 331],
+            [700, 389],
+            [748, 440],
+            [807, 498],
+            [854, 538],
+            [994, 648],
+            [1155, 764]
+          ],
+          "ll": [
+            [34.064692, -118.245723],
+            [34.065006, -118.244269],
+            [34.065068, -118.243989],
+            [34.065133, -118.243741],
+            [34.065204, -118.243513],
+            [34.065294, -118.243252],
+            [34.065374, -118.243061],
+            [34.065621, -118.242526],
+            [34.065917, -118.241946]
+          ]
+        },
+        {
+          "px": [
+            [1155, 715],
+            [979, 589],
+            [939, 558],
+            [888, 518],
+            [833, 470],
+            [779, 419],
+            [727, 361],
+            [678, 302],
+            [629, 241],
+            [485, 46],
+            [446, -5],
+            [407, -53]
+          ],
+          "ll": [
+            [34.065971, -118.242102],
+            [34.065647, -118.242734],
+            [34.065575, -118.242887],
+            [34.065487, -118.24308],
+            [34.065393, -118.243306],
+            [34.065309, -118.24354],
+            [34.065236, -118.243793],
+            [34.06517, -118.244045],
+            [34.065111, -118.244305],
+            [34.064947, -118.245114],
+            [34.064901, -118.245327],
+            [34.064851, -118.245532]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [422, -90],
+          "ll": [34.064934, -118.245629],
+          "insideCoverage": false
+        },
+        {
+          "name": "College Street",
+          "px": [1010, 574],
+          "ll": [34.065746, -118.242739],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Terrace",
+          "px": [517, 17],
+          "ll": [34.065064, -118.245162],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [332, -86],
+          "ll": [34.06469, -118.245734],
+          "insideCoverage": false
+        },
+        {
+          "name": "New Depot Street",
+          "px": [716, 448],
+          "ll": [34.06511, -118.243533],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bunker Hill Avenue",
+      "runs": [
+        {
+          "px": [
+            [63, 487],
+            [89, 488],
+            [146, 495],
+            [179, 503],
+            [206, 512],
+            [233, 520],
+            [267, 531],
+            [335, 565],
+            [346, 573],
+            [383, 598],
+            [429, 636],
+            [465, 670],
+            [500, 713],
+            [527, 749],
+            [550, 785],
+            [584, 832],
+            [621, 866],
+            [662, 892],
+            [686, 903],
+            [705, 911],
+            [752, 921],
+            [787, 924],
+            [873, 923]
+          ],
+          "ll": [
+            [34.063341, -118.244281],
+            [34.06341, -118.244243],
+            [34.063551, -118.244144],
+            [34.063631, -118.244075],
+            [34.063692, -118.24401],
+            [34.063753, -118.243949],
+            [34.06383, -118.24387],
+            [34.063972, -118.243671],
+            [34.063993, -118.243631],
+            [34.064063, -118.243502],
+            [34.064141, -118.243322],
+            [34.0642, -118.243166],
+            [34.064243, -118.242983],
+            [34.064274, -118.242831],
+            [34.064296, -118.242688],
+            [34.064332, -118.242494],
+            [34.064393, -118.242337],
+            [34.064471, -118.242198],
+            [34.064522, -118.242133],
+            [34.064563, -118.242081],
+            [34.064676, -118.241987],
+            [34.064766, -118.241932],
+            [34.064995, -118.241818]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [206, 512],
+          "ll": [34.063692, -118.24401],
+          "insideCoverage": true
+        },
+        {
+          "name": "College Street",
+          "px": [959, 921],
+          "ll": [34.065224, -118.24171],
+          "insideCoverage": true
+        },
+        {
+          "name": "Grand Avenue",
+          "px": [243, 615],
+          "ll": [34.063674, -118.243638],
+          "insideCoverage": true
+        },
+        {
+          "name": "New Depot Street",
+          "px": [873, 923],
+          "ll": [34.064995, -118.241818],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Chavez Ravine Place",
+      "runs": [
+        {
+          "px": [
+            [1154, 557],
+            [1120, 524],
+            [1098, 511],
+            [1073, 510],
+            [1069, 510],
+            [1042, 510]
+          ],
+          "ll": [
+            [34.066145, -118.242602],
+            [34.066093, -118.242752],
+            [34.066049, -118.24282],
+            [34.065982, -118.242859],
+            [34.065972, -118.242864],
+            [34.0659, -118.242899]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "College Street",
+          "px": [1042, 510],
+          "ll": [34.0659, -118.242899],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Cleveland Street",
+      "runs": [
+        {
+          "px": [
+            [1045, 1193],
+            [826, 1190],
+            [431, 1186],
+            [405, 1183],
+            [377, 1184],
+            [240, 1182],
+            [180, 1182]
+          ],
+          "ll": [
+            [34.065147, -118.240735],
+            [34.064572, -118.241035],
+            [34.063535, -118.241579],
+            [34.063467, -118.24162],
+            [34.063395, -118.241656],
+            [34.063034, -118.241844],
+            [34.062876, -118.241926]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Adobe Street",
+          "px": [1046, 1124],
+          "ll": [34.065226, -118.240951],
+          "insideCoverage": true
+        },
+        {
+          "name": "Alpine Street",
+          "px": [405, 1183],
+          "ll": [34.063467, -118.24162],
+          "insideCoverage": true
+        },
+        {
+          "name": "College Street",
+          "px": [1045, 1193],
+          "ll": [34.065147, -118.240735],
+          "insideCoverage": true
+        },
+        {
+          "name": "New Depot Street",
+          "px": [1034, 1127],
+          "ll": [34.065193, -118.240957],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "College Street",
+      "runs": [
+        {
+          "px": [
+            [1045, 1558],
+            [1045, 1469],
+            [1045, 1435],
+            [1045, 1402],
+            [1045, 1325],
+            [1045, 1193],
+            [1046, 1077],
+            [1046, 1056],
+            [1047, 1032],
+            [1045, 919],
+            [1045, 862],
+            [1043, 736],
+            [1041, 560],
+            [1042, 510],
+            [1040, 346],
+            [1039, 141],
+            [1039, 112],
+            [1039, 85],
+            [1037, -11]
+          ],
+          "ll": [
+            [34.064741, -118.239579],
+            [34.06484, -118.239861],
+            [34.064878, -118.239969],
+            [34.064914, -118.240072],
+            [34.065, -118.240316],
+            [34.065147, -118.240735],
+            [34.06528, -118.241101],
+            [34.065304, -118.241167],
+            [34.065332, -118.24124],
+            [34.065454, -118.241602],
+            [34.065518, -118.241781],
+            [34.065651, -118.242184],
+            [34.065844, -118.242744],
+            [34.0659, -118.242899],
+            [34.06608, -118.24342],
+            [34.066305, -118.244072],
+            [34.066337, -118.244165],
+            [34.066367, -118.244251],
+            [34.066469, -118.244555]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Adobe Street",
+          "px": [1046, 1056],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": true
+        },
+        {
+          "name": "Arroyo Seco Parkway",
+          "px": [1010, 574],
+          "ll": [34.065746, -118.242739],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bunker Hill Avenue",
+          "px": [959, 921],
+          "ll": [34.065224, -118.24171],
+          "insideCoverage": true
+        },
+        {
+          "name": "Chavez Ravine Place",
+          "px": [1042, 510],
+          "ll": [34.0659, -118.242899],
+          "insideCoverage": true
+        },
+        {
+          "name": "Cleveland Street",
+          "px": [1045, 1193],
+          "ll": [34.065147, -118.240735],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Terrace",
+          "px": [1039, 112],
+          "ll": [34.066337, -118.244165],
+          "insideCoverage": true
+        },
+        {
+          "name": "New Depot Street",
+          "px": [1046, 1056],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": true
+        },
+        {
+          "name": "Yale Street",
+          "px": [1045, 1435],
+          "ll": [34.064878, -118.239969],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Figueroa Street",
+      "runs": [
+        {
+          "px": [
+            [67, 61],
+            [131, 65],
+            [143, 65],
+            [195, 68]
+          ],
+          "ll": [
+            [34.063827, -118.245623],
+            [34.063991, -118.245528],
+            [34.064024, -118.245508],
+            [34.064157, -118.245431]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [195, 68],
+          "ll": [34.064157, -118.245431],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bartlett Street",
+          "px": [-76, 52],
+          "ll": [34.063459, -118.245846],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Figueroa Terrace",
+      "runs": [
+        {
+          "px": [
+            [1152, 118],
+            [1100, 116],
+            [1061, 113],
+            [1039, 112],
+            [1012, 110],
+            [856, 102],
+            [651, 90],
+            [623, 82],
+            [603, 70],
+            [591, 58],
+            [549, -12],
+            [517, -64]
+          ],
+          "ll": [
+            [34.06663, -118.243994],
+            [34.066494, -118.244071],
+            [34.066395, -118.244131],
+            [34.066337, -118.244165],
+            [34.066268, -118.244205],
+            [34.065866, -118.24444],
+            [34.065338, -118.244752],
+            [34.065272, -118.244816],
+            [34.065233, -118.244878],
+            [34.065213, -118.244935],
+            [34.06518, -118.24521],
+            [34.065155, -118.245419]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [464, -153],
+          "ll": [34.065113, -118.24577],
+          "insideCoverage": false
+        },
+        {
+          "name": "Arroyo Seco Parkway",
+          "px": [517, 17],
+          "ll": [34.065064, -118.245162],
+          "insideCoverage": true
+        },
+        {
+          "name": "College Street",
+          "px": [1039, 112],
+          "ll": [34.066337, -118.244165],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [443, -90],
+          "ll": [34.064988, -118.245601],
+          "insideCoverage": false
+        },
+        {
+          "name": "New Depot Street",
+          "px": [549, -12],
+          "ll": [34.06518, -118.24521],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Grand Avenue",
+      "runs": [
+        {
+          "px": [
+            [218, 698],
+            [197, 708],
+            [154, 730],
+            [80, 762],
+            [60, 771]
+          ],
+          "ll": [
+            [34.063517, -118.243406],
+            [34.063449, -118.243401],
+            [34.06331, -118.243393],
+            [34.063078, -118.243388],
+            [34.063017, -118.243385]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [218, 698],
+          "ll": [34.063517, -118.243406],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bartlett Street",
+          "px": [-75, 834],
+          "ll": [34.062592, -118.243368],
+          "insideCoverage": false
+        },
+        {
+          "name": "Bunker Hill Avenue",
+          "px": [243, 615],
+          "ll": [34.063674, -118.243638],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hill Place",
+      "runs": [
+        {
+          "px": [
+            [57, 1045],
+            [177, 982],
+            [298, 914],
+            [314, 905]
+          ],
+          "ll": [
+            [34.062705, -118.242523],
+            [34.063091, -118.242562],
+            [34.063485, -118.242615],
+            [34.063538, -118.242622]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [314, 905],
+          "ll": [34.063538, -118.242622],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "New Depot Street",
+      "runs": [
+        {
+          "px": [
+            [1046, 1056],
+            [1024, 1061],
+            [980, 1059],
+            [934, 1048],
+            [897, 1017],
+            [878, 976],
+            [873, 923],
+            [872, 840],
+            [870, 793],
+            [862, 747],
+            [855, 725],
+            [847, 702],
+            [827, 662],
+            [797, 610],
+            [729, 511],
+            [684, 455],
+            [634, 399],
+            [556, 322],
+            [522, 297],
+            [491, 283],
+            [455, 276],
+            [411, 277],
+            [212, 303],
+            [192, 306]
+          ],
+          "ll": [
+            [34.065304, -118.241167],
+            [34.065239, -118.241179],
+            [34.065124, -118.241245],
+            [34.065016, -118.241341],
+            [34.064954, -118.24149],
+            [34.064949, -118.241646],
+            [34.064995, -118.241818],
+            [34.065086, -118.242083],
+            [34.065132, -118.242232],
+            [34.065162, -118.24239],
+            [34.065167, -118.242469],
+            [34.065173, -118.242553],
+            [34.065164, -118.242708],
+            [34.065142, -118.24291],
+            [34.065073, -118.243316],
+            [34.065016, -118.243553],
+            [34.064946, -118.243796],
+            [34.064827, -118.244146],
+            [34.064764, -118.244269],
+            [34.064699, -118.244355],
+            [34.064613, -118.244424],
+            [34.064496, -118.244482],
+            [34.063939, -118.244664],
+            [34.063884, -118.244682]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Adobe Street",
+          "px": [1046, 1056],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": true
+        },
+        {
+          "name": "Alpine Street",
+          "px": [192, 306],
+          "ll": [34.063884, -118.244682],
+          "insideCoverage": true
+        },
+        {
+          "name": "Arroyo Seco Parkway",
+          "px": [716, 448],
+          "ll": [34.06511, -118.243533],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bunker Hill Avenue",
+          "px": [873, 923],
+          "ll": [34.064995, -118.241818],
+          "insideCoverage": true
+        },
+        {
+          "name": "Cleveland Street",
+          "px": [1034, 1127],
+          "ll": [34.065193, -118.240957],
+          "insideCoverage": true
+        },
+        {
+          "name": "College Street",
+          "px": [1046, 1056],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Terrace",
+          "px": [549, -12],
+          "ll": [34.06518, -118.24521],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [478, -32],
+          "ll": [34.065016, -118.245371],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Yale Street",
+      "runs": [
+        {
+          "px": [
+            [54, 1432],
+            [159, 1432],
+            [380, 1432],
+            [408, 1432],
+            [435, 1432],
+            [688, 1431],
+            [775, 1445],
+            [790, 1444],
+            [805, 1444],
+            [1003, 1439],
+            [1013, 1432],
+            [1018, 1435],
+            [1045, 1435],
+            [1072, 1435],
+            [1156, 1436],
+            [1158, 1436]
+          ],
+          "ll": [
+            [34.062263, -118.241303],
+            [34.062541, -118.241161],
+            [34.063124, -118.240866],
+            [34.063199, -118.240828],
+            [34.063269, -118.240793],
+            [34.063939, -118.240458],
+            [34.064154, -118.240297],
+            [34.064195, -118.240279],
+            [34.064235, -118.240259],
+            [34.064763, -118.240012],
+            [34.064797, -118.240021],
+            [34.064806, -118.240005],
+            [34.064878, -118.239969],
+            [34.064949, -118.239931],
+            [34.065169, -118.239818],
+            [34.065174, -118.239815]
+          ]
+        },
+        {
+          "px": [
+            [1013, 1432],
+            [1007, 1422],
+            [807, 1421],
+            [790, 1422],
+            [731, 1424],
+            [688, 1431]
+          ],
+          "ll": [
+            [34.064797, -118.240021],
+            [34.064793, -118.240061],
+            [34.064264, -118.240333],
+            [34.064219, -118.240351],
+            [34.064061, -118.240424],
+            [34.063939, -118.240458]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [408, 1432],
+          "ll": [34.063199, -118.240828],
+          "insideCoverage": true
+        },
+        {
+          "name": "College Street",
+          "px": [1045, 1435],
+          "ll": [34.064878, -118.239969],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Harbor Freeway",
+      "metres": 10.4
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Adobe Street",
+      "continuesInto": [
+        "New Depot Street"
+      ],
+      "candidates": [
+        {
+          "id": "adobe",
+          "display": "Adobe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Adobe Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE DE LAS ADOBES"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Alpine Street",
+      "continuesInto": [
+        "Figueroa Street"
+      ],
+      "candidates": [
+        {
+          "id": "virgin",
+          "display": "Virgin Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alpine Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS VIRGENES",
+            "VIRGIN ST",
+            "Virgin street"
+          ],
+          "docs": [
+            "mr053-073",
+            "ord-1887-08-22"
+          ]
+        },
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street, which Alpine Street runs straight into"
+          ],
+          "ink": [
+            "FIGUEROA ST.",
+            "FIGUEROA STREET",
+            "Figueroa St",
+            "Figueroa Street"
+          ],
+          "docs": [
+            "mr007-021",
+            "mr021-032",
+            "tr0034-004",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "pearl",
+          "display": "Pearl Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street, which Alpine Street runs straight into"
+          ],
+          "ink": [
+            "PEARL ST",
+            "PEARL STR.",
+            "PEARL STREET",
+            "Pearl"
+          ],
+          "docs": [
+            "mr003-016",
+            "mr003-032",
+            "mr003-569",
+            "mr005-307-a",
+            "mr010-030"
+          ]
+        },
+        {
+          "id": "chapules",
+          "display": "Grasshopper Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street, which Alpine Street runs straight into"
+          ],
+          "ink": [
+            "CALLE DE LAS CHAPULAS",
+            "CALLE DE LAS CHAPULES",
+            "GRASSHOPPER ST",
+            "GRASSHOPPER ST.",
+            "GRASSHOPPER STREET",
+            "Grasshopper St."
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr053-067",
+            "mr053-068"
+          ]
+        },
+        {
+          "id": "alpine",
+          "display": "Alpine Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Arroyo Seco Parkway",
+      "continuesInto": [
+        "Harbor Freeway"
+      ],
+      "candidates": []
+    },
+    {
+      "street": "Bunker Hill Avenue",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Chavez Ravine Place",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Cleveland Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "College Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "college",
+          "display": "College Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on College Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE DEL COLEGIO",
+            "COLLEGE ST"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Figueroa Street",
+      "continuesInto": [
+        "Alpine Street"
+      ],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "FIGUEROA ST.",
+            "FIGUEROA STREET",
+            "Figueroa St",
+            "Figueroa Street"
+          ],
+          "docs": [
+            "mr007-021",
+            "mr021-032",
+            "tr0034-004",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "pearl",
+          "display": "Pearl Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "PEARL ST",
+            "PEARL STR.",
+            "PEARL STREET",
+            "Pearl"
+          ],
+          "docs": [
+            "mr003-016",
+            "mr003-032",
+            "mr003-569",
+            "mr005-307-a",
+            "mr010-030"
+          ]
+        },
+        {
+          "id": "chapules",
+          "display": "Grasshopper Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS CHAPULAS",
+            "CALLE DE LAS CHAPULES",
+            "GRASSHOPPER ST",
+            "GRASSHOPPER ST.",
+            "GRASSHOPPER STREET",
+            "Grasshopper St."
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr053-067",
+            "mr053-068"
+          ]
+        },
+        {
+          "id": "virgin",
+          "display": "Virgin Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alpine Street, which Figueroa Street runs straight into"
+          ],
+          "ink": [
+            "CALLE DE LAS VIRGENES",
+            "VIRGIN ST",
+            "Virgin street"
+          ],
+          "docs": [
+            "mr053-073",
+            "ord-1887-08-22"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Figueroa Terrace",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Grand Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "charity",
+          "display": "Charity Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Grand Avenue by another sheet"
+          ],
+          "ink": [
+            "CALLE DE CARIDAD",
+            "CHARITY",
+            "CHARITY ST.",
+            "CHARITY STREET",
+            "Charity St",
+            "Charity St.",
+            "Charity Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr001-489",
+            "mr003-038-p1",
+            "mr005-573",
+            "mr007-021",
+            "mr053-067",
+            "mr053-068"
+          ]
+        },
+        {
+          "id": "grand-ave",
+          "display": "Grand Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Grand Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "GRAND AV."
+          ],
+          "docs": [
+            "mr084-053"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Hill Place",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "New Depot Street",
+      "continuesInto": [
+        "Adobe Street"
+      ],
+      "candidates": [
+        {
+          "id": "adobe",
+          "display": "Adobe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Adobe Street, which New Depot Street runs straight into"
+          ],
+          "ink": [
+            "CALLE DE LAS ADOBES"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Yale Street",
+      "continuesInto": [
+        "Ord Street"
+      ],
+      "candidates": [
+        {
+          "id": "hornet",
+          "display": "Hornet Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Yale Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS AVISPAS",
+            "HORNET ST."
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "high-street-chinatown",
+          "display": "High Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Ord Street, which Yale Street runs straight into"
+          ],
+          "ink": [
+            "CALLE ALTA",
+            "HIGH ST"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "yale",
+          "display": "Yale Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

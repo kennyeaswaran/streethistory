@@ -29,6 +29,7 @@ JavaScript-only archives, and committing to git.
 | working on renamings / change rows | **handbook/change-rows-amendment.md** (the three scopes a change row declares, `excerpts`, and the derivation — §§1-9 now BUILT) |
 | wondering what document to hunt for next | **handbook/WANTED.md** (a standing shopping list: what each missing document unblocks, worst damage first) |
 | holding an unverified hunch | **handbook/research-leads.md** (dated parking lot; sweep it before a street pass) |
+| going to a library, or have a browser and ten minutes | **handbook/IN-PERSON.md** (what to look for at UCLA, LAPL and the Huntington) + **handbook/CDNC-QUERIES.md** (exact phrases for the sites that refuse robots) |
 | wondering what to build next, or whether a wanted change is quick or a project | **handbook/ROADMAP.md** (every wanted change, sized and ordered; MODEL-SPEC §13 is its index) |
 | publishing / git | **handbook/PUBLISHING.md** |
 | looking at the proposed names/documents/generator model | **handbook/MODEL-SPEC.md** (the contract) + **handbook/MODEL-IMPLEMENTATION.md** (built 2026-08-24; 3rd St acceptance diff clean; NOT live) |
@@ -67,6 +68,10 @@ The 1897 council minutes and the omnibus renaming files are in
                                 alignment, its render, its scan, its Part A.
                                 This is the unit you hand to another AI system.
   inbox/                        raw downloads not yet made into documents
+  clippings/                    newspaper cuttings that back a NAMESAKE but say
+                                nothing about the ground — evidence for
+                                names.js, not documents. Has its own README
+                                indexing every file to the entity it supports.
   generated/  legacy/           generator output; the frozen pre-model data
   attic/                        superseded but kept (align.html)
 ```
@@ -123,10 +128,54 @@ inside the file must match; the checker says so if they drift.
   - `loc.gov` (Sanborn) — item pages fetch fine; the collection search, the
     JSON API and IIIF manifests return 403 to automated fetching.
   - NavigateLA, CDNC, ResCarta (LAPL directories) — JavaScript apps; fetch
-    tools see nothing. Browser (Claude in Chrome) or human only.
+    tools see nothing. Browser (Claude in Chrome) or human only. CDNC is now
+    robots-disallowed too, so it is blocked twice over.
+  - **Three sources LIE rather than fail** — they answer, ignoring your query,
+    with stale or default results, so a search that was never run looks like a
+    clean negative. Run a deliberate nonsense control term first, every time:
+    `lastreetnames.com/?s=` (use `/search/<term>/` instead, which works),
+    `losangelesrevisited`'s RSS `?q=`, and archive.org's `advancedsearch.php`
+    and `fulltext/inside.php`. This has already produced false negatives here.
+  - **Dead:** chroniclingamerica.loc.gov (404, API retired), loc.gov collection
+    search (403), HathiTrust babel, Calisphere *search* (item pages are fine),
+    Nominatim, Overpass, Google Books API (persistent 429).
+  - **Three that work well and are worth reaching for first** (details and
+    query forms in NAME-RESEARCH.md): the City's own street registry at
+    `data.lacity.org`, the Census geocoder, and LMU's digitised tract maps.
+  - ⚠ **DON'T HAMMER A SITE.** These are small, often volunteer-run archives.
+    `jmaw.org` began answering "Your Host has been locked out", and
+    `data.lacity.org` 429s under parallel load — both consistent with rate
+    limiting rather than a policy block, and a research pass can easily fire
+    dozens of requests at one host in a minute. Keep it to a few at a time,
+    stop after two or three failures rather than retrying, and if a site that
+    worked starts refusing, SAY SO and ask Kenny to check it by hand rather
+    than pressing on. Getting this project blocked from a source would cost
+    far more than the answer is worth. (Kenny raised this 2026-09-17.)
   - **Downloads first:** if a map is already in `inbox/` or `documents/<id>/`,
     read it locally (`pdftoppm -png -r 150`, then Read the PNGs). Never squint
     at a PDF in a browser viewer when a local copy exists.
+  - ⭐ **BOOKS LIVE IN THE REPO, NOT ON A SEARCH ENDPOINT.** Two of the sources
+    this project leans on hardest are now plain text on disk, and grepping them
+    is free, instant, exact and honest — everything the remote full-text search
+    was not:
+      - `documents/newmark-1916/newmark-1916.txt` — Harris Newmark, *Sixty Years in Southern
+        California* (1916), whole book and index. **The archive.org full-text
+        endpoint had been returning zero for names that are plainly in this
+        book** (Potts appears three times; the endpoint said nothing), which is
+        the clearest proof yet of the "sources that lie" problem above. Never
+        record a Newmark negative from a remote search again — grep the file.
+      - `documents/guinn-1912/guinn-1912.pdf`.
+    Both are `type: "history"` documents with no rows: secondary scholarship
+    about the people, not records of the ground. That is the pattern to copy
+    for any further book.
+    If a book matters to a name, get it into `inbox/` as text and search it
+    there. Project Gutenberg and the Internet Archive both serve whole files
+    fine; it is only their SEARCH that is broken.
+- ⚠ **Patching a file with `String.replace(a, b)` corrupts `$$` in the
+  REPLACEMENT.** `$$` means a literal `$`, so `page.$$eval` silently becomes
+  `page.$eval` — and `$&`, `\`$\`` and `$'` are escapes too. Pass a
+  FUNCTION instead: `s.replace(a, () => b)`. This bit once, on 2026-09-17,
+  writing tests into browser-test.js.
 - **Git through the bridge — use `git --no-optional-locks`.** The bridge shell
   cannot delete files, so an ordinary `git status` or `git diff` creates
   `.git/index.lock` and then fails to remove it. The stale lock blocks Kenny's
@@ -205,7 +254,10 @@ has researched. Those stubs are the queue; `generated/report.md` lists them.
   on Kenny's machine, so that one runs in the assistant's sandbox). Two bugs
   that shipped were invisible to anything but the third: a stylesheet rule that
   hid the review panel and every popup, and stale indices that made buttons
-  silently do nothing. **If you change the tool, run the browser suite.**
+  silently do nothing. **If you change the tool, run the browser suite —
+  and check the PASS COUNT went up, not just that it is green.** `test-review.js`
+  was found dead on 2026-09-17 (it threw on a function renamed under it) and
+  three of its assertions had been passing while measuring nothing.
   `node preview-test.js` is the same idea for the MAP — it drives
   `preview.html` over the generated data and reads the colours back off the
   polylines, which is the only way to check a claim like "this stretch is

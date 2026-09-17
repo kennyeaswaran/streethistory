@@ -1,0 +1,412 @@
+{
+  "document": "tr0001-057a",
+  "image": "tr0001-057a-100dpi.png",
+  "imageSize": [1151, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0001-057a-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [1077, 272],
+    [177, 285],
+    [227, 1740],
+    [1022, 1723]
+  ],
+  "coverageLl": [
+    [34.059344, -118.261243],
+    [34.058229, -118.261929],
+    [34.057339, -118.259745],
+    [34.058327, -118.259147]
+  ],
+  "streets": [
+    {
+      "name": "3rd Street",
+      "runs": [
+        {
+          "px": [
+            [345, 1737],
+            [344, 1710],
+            [340, 1631],
+            [339, 1552],
+            [335, 1296],
+            [319, 831],
+            [317, 771],
+            [317, 767],
+            [308, 514],
+            [305, 418],
+            [302, 331],
+            [300, 283]
+          ],
+          "ll": [
+            [34.057486, -118.259657],
+            [34.057502, -118.259698],
+            [34.057549, -118.259818],
+            [34.057599, -118.259934],
+            [34.057762, -118.260315],
+            [34.058047, -118.261013],
+            [34.058084, -118.261103],
+            [34.058086, -118.261109],
+            [34.058241, -118.261488],
+            [34.058299, -118.261632],
+            [34.058353, -118.261764],
+            [34.058382, -118.261835]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [340, 1631],
+          "ll": [34.057549, -118.259818],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [305, 418],
+          "ll": [34.058299, -118.261632],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bixel Street",
+      "runs": [
+        {
+          "px": [
+            [860, 1647],
+            [805, 1638],
+            [426, 1632],
+            [340, 1631],
+            [264, 1632],
+            [223, 1633]
+          ],
+          "ll": [
+            [34.058178, -118.259387],
+            [34.058116, -118.259443],
+            [34.057654, -118.259748],
+            [34.057549, -118.259818],
+            [34.057454, -118.259876],
+            [34.057405, -118.259907]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [340, 1631],
+          "ll": [34.057549, -118.259818],
+          "insideCoverage": true
+        },
+        {
+          "name": "Miramar Street",
+          "px": [860, 1647],
+          "ll": [34.058178, -118.259387],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Lucas Avenue",
+      "runs": [
+        {
+          "px": [
+            [1071, 422],
+            [633, 419],
+            [386, 419],
+            [305, 418],
+            [215, 422],
+            [182, 423]
+          ],
+          "ll": [
+            [34.059239, -118.261027],
+            [34.058702, -118.261374],
+            [34.058399, -118.261568],
+            [34.058299, -118.261632],
+            [34.058187, -118.261698],
+            [34.058145, -118.261723]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [305, 418],
+          "ll": [34.058299, -118.261632],
+          "insideCoverage": true
+        },
+        {
+          "name": "Emerald Drive",
+          "px": [1507, 413],
+          "ll": [34.05978, -118.260698],
+          "insideCoverage": false
+        },
+        {
+          "name": "Miramar Street",
+          "px": [1156, 422],
+          "ll": [34.059343, -118.260959],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Miramar Street",
+      "metres": 13
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "3rd Street",
+      "continuesInto": [
+        "4th Street"
+      ],
+      "candidates": [
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet",
+            "attested on 4th Street, which 3rd Street runs straight into",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "3RD ST",
+            "3RD ST.",
+            "3RD STREET",
+            "3d Street",
+            "CALLE 3a",
+            "THIRD",
+            "THIRD ST.",
+            "THIRD STREET",
+            "Third St",
+            "Third Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr013-087-p1",
+            "mr016-059",
+            "mr030-009-p5",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        },
+        {
+          "id": "georgia-east",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "GEORGIA ST",
+            "Georgia St",
+            "Georgie Street."
+          ],
+          "docs": [
+            "mr002-092-p2",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "mr030-009-p5"
+          ]
+        },
+        {
+          "id": "arnold",
+          "display": "Arnold Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "ARNOLD ST."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "morgan-lane",
+          "display": "Morgan Lane",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "Morgan Lane"
+          ],
+          "docs": [
+            "mr005-005"
+          ]
+        },
+        {
+          "id": "fourth-street",
+          "display": "4th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which 3rd Street runs straight into"
+          ],
+          "ink": [
+            "4TH ST",
+            "4TH ST.",
+            "4TH STREET",
+            "CALLE 4a",
+            "FOURTH ST.",
+            "FOURTH STREET",
+            "Fourth St",
+            "Fourth Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr003-046-p1",
+            "mr005-005",
+            "mr012-026",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071",
+            "tr0012-186",
+            "tr0751-038"
+          ]
+        },
+        {
+          "id": "huber-st",
+          "display": "Huber Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which 3rd Street runs straight into"
+          ],
+          "ink": [
+            "HUBER ST.",
+            "Huber St",
+            "Huber St."
+          ],
+          "docs": [
+            "mr012-042",
+            "mr013-087-p1",
+            "mr030-009-p4"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Bixel Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "lafayette-bixel",
+          "display": "Lafayette Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "LAFAYETTE ST.",
+            "Lafayette Av."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr003-046-p2",
+            "mr006-115"
+          ]
+        },
+        {
+          "id": "bixel",
+          "display": "Bixel Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "BIXEL ST",
+            "BIXEL ST.",
+            "BIXEL STREET"
+          ],
+          "docs": [
+            "mr066-035",
+            "tr0417-049-p2",
+            "tr0588-055",
+            "tr0713-093-p2"
+          ]
+        },
+        {
+          "id": "ohio-street",
+          "display": "Ohio Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "OHIO ST.",
+            "Ohio Street"
+          ],
+          "docs": [
+            "mr005-069",
+            "tr0014-097b"
+          ]
+        },
+        {
+          "id": "metcalf-st",
+          "display": "Metcalf Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "Metcalf St"
+          ],
+          "docs": [
+            "mr007-026-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Lucas Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "lucas-avenue",
+          "display": "Lucas Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Lucas Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "LUCAS AVENUE",
+            "Lucas Ave"
+          ],
+          "docs": [
+            "mr006-115",
+            "mr010-081",
+            "tr0015-166a-p2"
+          ]
+        }
+      ]
+    }
+  ]
+}

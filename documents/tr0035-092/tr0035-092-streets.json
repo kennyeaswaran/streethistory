@@ -1,0 +1,756 @@
+{
+  "document": "tr0035-092",
+  "image": "tr0035-092-100dpi.png",
+  "imageSize": [1746, 2440],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0035-092-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [600, 1238],
+    [750, 2170],
+    [1678, 2124],
+    [1659, 1188]
+  ],
+  "coverageLl": [
+    [34.057398, -118.257682],
+    [34.056326, -118.258462],
+    [34.055573, -118.257288],
+    [34.056537, -118.256345]
+  ],
+  "streets": [
+    {
+      "name": "3rd Street",
+      "runs": [
+        {
+          "px": [
+            [1661, 1305],
+            [1624, 1306],
+            [1584, 1307],
+            [1511, 1309],
+            [1444, 1348],
+            [1375, 1390],
+            [1089, 1533],
+            [1070, 1543],
+            [918, 1619],
+            [848, 1654],
+            [766, 1678],
+            [758, 1680],
+            [674, 1701]
+          ],
+          "ll": [
+            [34.056416, -118.256463],
+            [34.056448, -118.256509],
+            [34.056481, -118.256559],
+            [34.056542, -118.25665],
+            [34.05656, -118.256771],
+            [34.056577, -118.256897],
+            [34.056678, -118.257393],
+            [34.056685, -118.257426],
+            [34.056739, -118.257689],
+            [34.056764, -118.257811],
+            [34.05681, -118.257934],
+            [34.056815, -118.257946],
+            [34.056866, -118.258069]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Street",
+          "px": [233, 1835],
+          "ll": [34.05711, -118.258744],
+          "insideCoverage": false
+        },
+        {
+          "name": "Beaudry Avenue",
+          "px": [1511, 1309],
+          "ll": [34.056542, -118.25665],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [848, 1654],
+          "ll": [34.056764, -118.257811],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [2150, 1347],
+          "ll": [34.055952, -118.255913],
+          "insideCoverage": false
+        },
+        {
+          "name": "Huntley Drive",
+          "px": [849, 1477],
+          "ll": [34.056942, -118.257626],
+          "insideCoverage": true
+        },
+        {
+          "name": "Miramar Street",
+          "px": [1511, 1309],
+          "ll": [34.056542, -118.25665],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "4th Street",
+      "runs": [
+        {
+          "px": [
+            [694, 1821],
+            [703, 1823],
+            [786, 1850],
+            [807, 1860],
+            [909, 1906],
+            [1003, 1952],
+            [1297, 2089],
+            [1371, 2139]
+          ],
+          "ll": [
+            [34.056728, -118.25817],
+            [34.056718, -118.258161],
+            [34.056619, -118.258088],
+            [34.056591, -118.258073],
+            [34.056456, -118.257997],
+            [34.056328, -118.25793],
+            [34.055936, -118.257715],
+            [34.055822, -118.257677]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [233, 1835],
+          "ll": [34.05711, -118.258744],
+          "insideCoverage": false
+        },
+        {
+          "name": "Beaudry Avenue",
+          "px": [1526, 2167],
+          "ll": [34.055661, -118.257518],
+          "insideCoverage": false
+        },
+        {
+          "name": "Boylston Street",
+          "px": [909, 1906],
+          "ll": [34.056456, -118.257997],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Beaudry Avenue",
+      "runs": [
+        {
+          "px": [
+            [1525, 2132],
+            [1524, 2051],
+            [1518, 1717],
+            [1514, 1448],
+            [1511, 1309],
+            [1514, 1239],
+            [1513, 1212],
+            [1513, 1195]
+          ],
+          "ll": [
+            [34.055697, -118.257482],
+            [34.05578, -118.2574],
+            [34.056123, -118.257062],
+            [34.056399, -118.25679],
+            [34.056542, -118.25665],
+            [34.05661, -118.256574],
+            [34.056638, -118.256547],
+            [34.056656, -118.256529]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [1511, 1309],
+          "ll": [34.056542, -118.25665],
+          "insideCoverage": true
+        },
+        {
+          "name": "4th Street",
+          "px": [1531, 2250],
+          "ll": [34.055572, -118.257597],
+          "insideCoverage": false
+        },
+        {
+          "name": "Miramar Street",
+          "px": [1511, 1309],
+          "ll": [34.056542, -118.25665],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Boylston Street",
+      "runs": [
+        {
+          "px": [
+            [781, 1336],
+            [791, 1376],
+            [835, 1594],
+            [848, 1654],
+            [909, 1906],
+            [924, 1977],
+            [962, 2159]
+          ],
+          "ll": [
+            [34.057144, -118.257564],
+            [34.057094, -118.257593],
+            [34.056836, -118.257764],
+            [34.056764, -118.257811],
+            [34.056456, -118.257997],
+            [34.056372, -118.258052],
+            [34.056154, -118.258194]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [848, 1654],
+          "ll": [34.056764, -118.257811],
+          "insideCoverage": true
+        },
+        {
+          "name": "4th Street",
+          "px": [1016, 2421],
+          "ll": [34.055843, -118.258399],
+          "insideCoverage": false
+        },
+        {
+          "name": "Huntley Drive",
+          "px": [781, 1336],
+          "ll": [34.057144, -118.257564],
+          "insideCoverage": true
+        },
+        {
+          "name": "Miramar Street",
+          "px": [781, 1336],
+          "ll": [34.057144, -118.257564],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Miramar Street",
+      "runs": [
+        {
+          "px": [
+            [1511, 1309],
+            [1441, 1304],
+            [1387, 1298],
+            [1291, 1304],
+            [929, 1328],
+            [856, 1332],
+            [781, 1336],
+            [710, 1327],
+            [612, 1315]
+          ],
+          "ll": [
+            [34.056542, -118.25665],
+            [34.056607, -118.256729],
+            [34.05666, -118.256789],
+            [34.056737, -118.256911],
+            [34.057024, -118.257375],
+            [34.057083, -118.257469],
+            [34.057144, -118.257564],
+            [34.057213, -118.25764],
+            [34.05731, -118.257746]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [1511, 1309],
+          "ll": [34.056542, -118.25665],
+          "insideCoverage": true
+        },
+        {
+          "name": "Beaudry Avenue",
+          "px": [1511, 1309],
+          "ll": [34.056542, -118.25665],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [781, 1336],
+          "ll": [34.057144, -118.257564],
+          "insideCoverage": true
+        },
+        {
+          "name": "Huntley Drive",
+          "px": [781, 1336],
+          "ll": [34.057144, -118.257564],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Huntley Drive",
+      "metres": 15.9
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "3rd Street",
+      "continuesInto": [
+        "4th Street",
+        "Miramar Street"
+      ],
+      "candidates": [
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet",
+            "attested on 4th Street, which 3rd Street runs straight into",
+            "attested on Miramar Street, which 3rd Street runs straight into",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "3RD ST",
+            "3RD ST.",
+            "3RD STREET",
+            "CALLE 3a",
+            "THIRD",
+            "THIRD ST.",
+            "THIRD STREET",
+            "Third St",
+            "Third Street",
+            "W. 3RD STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr013-087-p1",
+            "mr030-009-p5",
+            "mr053-069",
+            "mr053-071",
+            "mr066-035",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        },
+        {
+          "id": "arnold",
+          "display": "Arnold Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "ARNOLD ST."
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "georgia-east",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "GEORGIA ST",
+            "Georgia St",
+            "Georgie Street."
+          ],
+          "docs": [
+            "mr002-092-p2",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "mr030-009-p5"
+          ]
+        },
+        {
+          "id": "morgan-lane",
+          "display": "Morgan Lane",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "Morgan Lane"
+          ],
+          "docs": [
+            "mr005-005"
+          ]
+        },
+        {
+          "id": "fourth-street",
+          "display": "4th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which 3rd Street runs straight into"
+          ],
+          "ink": [
+            "4TH ST",
+            "4TH ST.",
+            "4TH STREET",
+            "CALLE 4a",
+            "FOURTH STREET",
+            "Fourth St",
+            "Fourth Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-005",
+            "mr012-026",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071",
+            "tr0012-186",
+            "tr0751-038"
+          ]
+        },
+        {
+          "id": "huber-st",
+          "display": "Huber Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which 3rd Street runs straight into"
+          ],
+          "ink": [
+            "HUBER ST.",
+            "Huber St",
+            "Huber St."
+          ],
+          "docs": [
+            "mr012-042",
+            "mr013-087-p1",
+            "mr030-009-p4"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "4th Street",
+      "continuesInto": [
+        "3rd Street"
+      ],
+      "candidates": [
+        {
+          "id": "fourth-street",
+          "display": "4th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "4TH ST",
+            "4TH ST.",
+            "4TH STREET",
+            "CALLE 4a",
+            "FOURTH STREET",
+            "Fourth St",
+            "Fourth Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-005",
+            "mr012-026",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071",
+            "tr0012-186",
+            "tr0751-038"
+          ]
+        },
+        {
+          "id": "huber-st",
+          "display": "Huber Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet"
+          ],
+          "ink": [
+            "HUBER ST.",
+            "Huber St",
+            "Huber St."
+          ],
+          "docs": [
+            "mr012-042",
+            "mr013-087-p1",
+            "mr030-009-p4"
+          ]
+        },
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet",
+            "attested on 3rd Street, which 4th Street runs straight into"
+          ],
+          "ink": [
+            "3RD ST",
+            "3RD ST.",
+            "3RD STREET",
+            "CALLE 3a",
+            "THIRD",
+            "THIRD STREET",
+            "Third St",
+            "Third Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr013-087-p1",
+            "mr030-009-p5",
+            "mr053-069",
+            "mr053-071",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street, which 4th Street runs straight into"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        },
+        {
+          "id": "arnold",
+          "display": "Arnold Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street, which 4th Street runs straight into"
+          ],
+          "ink": [
+            "ARNOLD ST."
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "georgia-east",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street, which 4th Street runs straight into"
+          ],
+          "ink": [
+            "GEORGIA ST",
+            "Georgia St",
+            "Georgie Street."
+          ],
+          "docs": [
+            "mr002-092-p2",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "mr030-009-p5"
+          ]
+        },
+        {
+          "id": "morgan-lane",
+          "display": "Morgan Lane",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street, which 4th Street runs straight into"
+          ],
+          "ink": [
+            "Morgan Lane"
+          ],
+          "docs": [
+            "mr005-005"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Beaudry Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "beaudry-st",
+          "display": "Beaudry Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Boylston Street",
+      "continuesInto": [
+        "Huntley Drive"
+      ],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Boylston Street by another sheet"
+          ],
+          "ink": [
+            "FIGUEROA ST."
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "boylston",
+          "display": "Boylston Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Miramar Street",
+      "continuesInto": [
+        "3rd Street"
+      ],
+      "candidates": [
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Miramar Street by another sheet",
+            "attested on 3rd Street, which Miramar Street runs straight into"
+          ],
+          "ink": [
+            "3RD ST",
+            "3RD ST.",
+            "3RD STREET",
+            "CALLE 3a",
+            "THIRD ST.",
+            "THIRD STREET",
+            "Third St",
+            "Third Street",
+            "W. 3RD STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr030-009-p5",
+            "mr053-069",
+            "mr053-071",
+            "mr066-035",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street, which Miramar Street runs straight into"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        },
+        {
+          "id": "arnold",
+          "display": "Arnold Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street, which Miramar Street runs straight into"
+          ],
+          "ink": [
+            "ARNOLD ST."
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "georgia-east",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street, which Miramar Street runs straight into"
+          ],
+          "ink": [
+            "GEORGIA ST",
+            "Georgia St",
+            "Georgie Street."
+          ],
+          "docs": [
+            "mr002-092-p2",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "mr030-009-p5"
+          ]
+        },
+        {
+          "id": "morgan-lane",
+          "display": "Morgan Lane",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street, which Miramar Street runs straight into"
+          ],
+          "ink": [
+            "Morgan Lane"
+          ],
+          "docs": [
+            "mr005-005"
+          ]
+        }
+      ]
+    }
+  ]
+}

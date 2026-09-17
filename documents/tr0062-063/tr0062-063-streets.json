@@ -1,0 +1,382 @@
+{
+  "document": "tr0062-063",
+  "image": "tr0062-063-100dpi.png",
+  "imageSize": [1746, 2424],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0062-063-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [259, 1357],
+    [1655, 1385],
+    [1681, -27],
+    [425, 264]
+  ],
+  "coverageLl": [
+    [34.060444, -118.263664],
+    [34.059667, -118.262028],
+    [34.061049, -118.261089],
+    [34.061435, -118.262764]
+  ],
+  "streets": [
+    {
+      "name": "2nd Street",
+      "runs": [
+        {
+          "px": [
+            [1677, 195],
+            [1555, 200],
+            [1488, 197],
+            [1441, 196],
+            [1380, 199],
+            [1135, 214],
+            [1014, 264],
+            [984, 277],
+            [951, 291],
+            [838, 338],
+            [574, 439],
+            [478, 475],
+            [388, 510]
+          ],
+          "ll": [
+            [34.060832, -118.261236],
+            [34.060891, -118.261384],
+            [34.06093, -118.261462],
+            [34.060957, -118.261516],
+            [34.060986, -118.261591],
+            [34.061103, -118.26189],
+            [34.061118, -118.262066],
+            [34.061122, -118.26211],
+            [34.061126, -118.262158],
+            [34.06114, -118.262322],
+            [34.061182, -118.2627],
+            [34.061198, -118.262838],
+            [34.061212, -118.262967]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Columbia Avenue",
+          "px": [478, 475],
+          "ll": [34.061198, -118.262838],
+          "insideCoverage": true
+        },
+        {
+          "name": "Loma Drive",
+          "px": [-127, 710],
+          "ll": [34.06129, -118.263705],
+          "insideCoverage": false
+        },
+        {
+          "name": "Witmer Street",
+          "px": [1441, 196],
+          "ll": [34.060957, -118.261516],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Columbia Avenue",
+      "runs": [
+        {
+          "px": [
+            [478, 475],
+            [499, 532],
+            [525, 601],
+            [422, 1257],
+            [409, 1360]
+          ],
+          "ll": [
+            [34.061198, -118.262838],
+            [34.06113, -118.262849],
+            [34.061048, -118.262863],
+            [34.060454, -118.263406],
+            [34.06036, -118.263488]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [478, 475],
+          "ll": [34.061198, -118.262838],
+          "insideCoverage": true
+        },
+        {
+          "name": "Miramar Street",
+          "px": [422, 1257],
+          "ll": [34.060454, -118.263406],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Miramar Street",
+      "runs": [
+        {
+          "px": [
+            [1657, 1258],
+            [1432, 1258],
+            [943, 1264],
+            [788, 1262],
+            [473, 1258],
+            [422, 1257]
+          ],
+          "ll": [
+            [34.059791, -118.261943],
+            [34.059913, -118.262211],
+            [34.060168, -118.262794],
+            [34.060254, -118.262976],
+            [34.060427, -118.263347],
+            [34.060454, -118.263406]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Columbia Avenue",
+          "px": [422, 1257],
+          "ll": [34.060454, -118.263406],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [1432, 1258],
+          "ll": [34.059913, -118.262211],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Witmer Street",
+      "runs": [
+        {
+          "px": [
+            [1441, 29],
+            [1441, 143],
+            [1441, 196],
+            [1441, 264],
+            [1435, 882],
+            [1435, 901],
+            [1432, 1218],
+            [1432, 1258]
+          ],
+          "ll": [
+            [34.061123, -118.261409],
+            [34.061009, -118.261482],
+            [34.060957, -118.261516],
+            [34.06089, -118.261561],
+            [34.060282, -118.261965],
+            [34.060264, -118.261977],
+            [34.059951, -118.262185],
+            [34.059913, -118.262211]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [1441, 196],
+          "ll": [34.060957, -118.261516],
+          "insideCoverage": true
+        },
+        {
+          "name": "Miramar Street",
+          "px": [1432, 1258],
+          "ll": [34.059913, -118.262211],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "2nd Street",
+      "continuesInto": [
+        "Loma Drive"
+      ],
+      "candidates": [
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "2nd STREET",
+            "CALLE 2a",
+            "SECOND ST.",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0016-005",
+            "tr0017-001b",
+            "tr0035-022",
+            "tr0417-049-p2",
+            "tr0713-093-p2",
+            "tr0856-050-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "lake-shore-ave",
+          "display": "Lake Shore Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "Lake Shore Ave"
+          ],
+          "docs": [
+            "mr010-081"
+          ]
+        },
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Columbia Avenue",
+      "continuesInto": [
+        "Crown Hill Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "columbia-avenue",
+          "display": "Columbia Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Columbia Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "COLUMBIA AVENUE"
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Crown Hill Avenue, which Columbia Avenue runs straight into"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Miramar Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Miramar Street by another sheet"
+          ],
+          "ink": [
+            "3RD ST.",
+            "3d Street",
+            "THIRD ST.",
+            "W. 3RD STREET"
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr016-059",
+            "mr066-035",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0035-092"
+          ]
+        },
+        {
+          "id": "seminary",
+          "display": "Seminary Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Miramar Street by another sheet"
+          ],
+          "ink": [
+            "Seminary Street"
+          ],
+          "docs": [
+            "mr006-115"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Witmer Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "witmer-street",
+          "display": "Witmer Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Witmer Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "WITMER",
+            "WITMER STREET"
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -356,12 +356,12 @@ module.exports = {
       "asWritten": "WARD ST",
       "trace": [
         [
-          1534,
-          382
+          1539,
+          484
         ],
         [
-          1554,
-          478
+          1517,
+          376
         ]
       ],
       "basis": "alignment",

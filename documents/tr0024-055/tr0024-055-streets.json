@@ -1,0 +1,721 @@
+{
+  "document": "tr0024-055",
+  "image": "tr0024-055-100dpi.png",
+  "imageSize": [1173, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0024-055-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [80, 1617],
+    [1218, 1831],
+    [1201, 964],
+    [741, 194],
+    [112, 252]
+  ],
+  "coverageLl": [
+    [34.059904, -118.268793],
+    [34.058899, -118.267306],
+    [34.059961, -118.26665],
+    [34.061197, -118.266714],
+    [34.061539, -118.267674]
+  ],
+  "streets": [
+    {
+      "name": "3rd Street",
+      "runs": [
+        {
+          "px": [
+            [1055, 719],
+            [939, 723],
+            [838, 727],
+            [690, 733],
+            [493, 738],
+            [389, 742],
+            [242, 746],
+            [205, 747],
+            [141, 749],
+            [100, 750]
+          ],
+          "ll": [
+            [34.060355, -118.26667],
+            [34.060425, -118.266841],
+            [34.060487, -118.266991],
+            [34.060577, -118.267211],
+            [34.060699, -118.267502],
+            [34.060764, -118.267656],
+            [34.060855, -118.267873],
+            [34.060878, -118.267928],
+            [34.060918, -118.268022],
+            [34.060943, -118.268082]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Union Avenue",
+          "px": [205, 747],
+          "ll": [34.060878, -118.267928],
+          "insideCoverage": true
+        },
+        {
+          "name": "Union Place",
+          "px": [690, 733],
+          "ll": [34.060577, -118.267211],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "4th Street",
+      "runs": [
+        {
+          "px": [
+            [1217, 1772],
+            [1069, 1717],
+            [596, 1566],
+            [406, 1508],
+            [348, 1490],
+            [282, 1468],
+            [242, 1449],
+            [217, 1424]
+          ],
+          "ll": [
+            [34.058971, -118.267261],
+            [34.059135, -118.267433],
+            [34.059628, -118.268002],
+            [34.059823, -118.268233],
+            [34.059883, -118.268302],
+            [34.059953, -118.268382],
+            [34.060002, -118.268426],
+            [34.060048, -118.268443]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Loma Drive",
+          "px": [1572, 1992],
+          "ll": [34.058472, -118.266918],
+          "insideCoverage": false
+        },
+        {
+          "name": "Union Avenue",
+          "px": [406, 1508],
+          "ll": [34.059823, -118.268233],
+          "insideCoverage": true
+        },
+        {
+          "name": "Union Drive",
+          "px": [1069, 1717],
+          "ll": [34.059135, -118.267433],
+          "insideCoverage": true
+        },
+        {
+          "name": "Union Place",
+          "px": [596, 1566],
+          "ll": [34.059628, -118.268002],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Union Avenue",
+      "runs": [
+        {
+          "px": [
+            [406, 1508],
+            [406, 1569],
+            [406, 1678]
+          ],
+          "ll": [
+            [34.059823, -118.268233],
+            [34.059748, -118.268281],
+            [34.059617, -118.268367]
+          ]
+        },
+        {
+          "px": [
+            [198, 244],
+            [204, 690],
+            [205, 747],
+            [205, 826],
+            [205, 1010],
+            [205, 1031],
+            [205, 1379],
+            [217, 1424]
+          ],
+          "ll": [
+            [34.061492, -118.267543],
+            [34.060947, -118.267884],
+            [34.060878, -118.267928],
+            [34.060781, -118.26799],
+            [34.060558, -118.268135],
+            [34.060534, -118.26815],
+            [34.060112, -118.268424],
+            [34.060048, -118.268443]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [205, 747],
+          "ll": [34.060878, -118.267928],
+          "insideCoverage": true
+        },
+        {
+          "name": "4th Street",
+          "px": [406, 1508],
+          "ll": [34.059823, -118.268233],
+          "insideCoverage": true
+        },
+        {
+          "name": "Miramar Street",
+          "px": [196, 142],
+          "ll": [34.061617, -118.267465],
+          "insideCoverage": false
+        },
+        {
+          "name": "Union Place",
+          "px": [501, 1568],
+          "ll": [34.059688, -118.268142],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Union Place",
+      "runs": [
+        {
+          "px": [
+            [781, 261],
+            [731, 372],
+            [714, 440],
+            [703, 478],
+            [698, 525],
+            [691, 576],
+            [690, 733],
+            [686, 823],
+            [681, 917],
+            [660, 998],
+            [642, 1043],
+            [633, 1067],
+            [617, 1121],
+            [608, 1182],
+            [607, 1473],
+            [601, 1523],
+            [596, 1566]
+          ],
+          "ll": [
+            [34.06109, -118.266708],
+            [34.060988, -118.266867],
+            [34.060916, -118.266947],
+            [34.060877, -118.266992],
+            [34.060824, -118.267037],
+            [34.060766, -118.267086],
+            [34.060577, -118.267211],
+            [34.060469, -118.267288],
+            [34.060359, -118.267369],
+            [34.060275, -118.267464],
+            [34.060232, -118.267524],
+            [34.060209, -118.267557],
+            [34.060155, -118.267623],
+            [34.060086, -118.267684],
+            [34.059734, -118.267913],
+            [34.059677, -118.267962],
+            [34.059628, -118.268002]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [690, 733],
+          "ll": [34.060577, -118.267211],
+          "insideCoverage": true
+        },
+        {
+          "name": "4th Street",
+          "px": [596, 1566],
+          "ll": [34.059628, -118.268002],
+          "insideCoverage": true
+        },
+        {
+          "name": "Union Avenue",
+          "px": [501, 1568],
+          "ll": [34.059688, -118.268142],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Union Drive",
+      "metres": 13.2
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "3rd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "3RD ST",
+            "3RD ST.",
+            "3RD STREET",
+            "3d Street",
+            "CALLE 3a",
+            "THIRD ST.",
+            "THIRD STREET",
+            "Third St",
+            "Third Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr016-059",
+            "mr030-009-p5",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0013-168-p1",
+            "tr0116-085-p1",
+            "tr0122-053-p3",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "arnold",
+          "display": "Arnold Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "ARNOLD ST",
+            "ARNOLD ST.",
+            "Arnold St",
+            "Arnold Street"
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr006-427",
+            "mr007-036-p2",
+            "mr007-096-p2",
+            "mr037-078",
+            "mr066-035",
+            "tr0001-057a"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        },
+        {
+          "id": "georgia-east",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "GEORGIA ST",
+            "Georgia St",
+            "Georgie Street."
+          ],
+          "docs": [
+            "mr002-092-p2",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "mr030-009-p5"
+          ]
+        },
+        {
+          "id": "atchison-st",
+          "display": "Atchison Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "ATCHISON ST."
+          ],
+          "docs": [
+            "mr024-081"
+          ]
+        },
+        {
+          "id": "morgan-lane",
+          "display": "Morgan Lane",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "Morgan Lane"
+          ],
+          "docs": [
+            "mr005-005"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "4th Street",
+      "continuesInto": [
+        "Loma Drive",
+        "Union Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "fourth-street",
+          "display": "4th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "4TH ST",
+            "4TH ST.",
+            "4TH STREET",
+            "CALLE 4a",
+            "FOURTH ST.",
+            "FOURTH STREET",
+            "Fourth St",
+            "Fourth Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr003-046-p1",
+            "mr005-005",
+            "mr006-427",
+            "mr007-096-p2",
+            "mr012-026",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071",
+            "tr0012-186",
+            "tr0013-168-p1",
+            "tr0122-053-p3",
+            "tr0751-038"
+          ]
+        },
+        {
+          "id": "huber-st",
+          "display": "Huber Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet"
+          ],
+          "ink": [
+            "HUBER ST.",
+            "Huber St",
+            "Huber St."
+          ],
+          "docs": [
+            "mr012-042",
+            "mr013-087-p1",
+            "mr030-009-p4"
+          ]
+        },
+        {
+          "id": "acacia-st",
+          "display": "Acacia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet"
+          ],
+          "ink": [
+            "Acacia St"
+          ],
+          "docs": [
+            "mr007-036-p2"
+          ]
+        },
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet"
+          ],
+          "ink": [
+            "THIRD"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        },
+        {
+          "id": "belmont-ave",
+          "display": "Belmont Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Loma Drive, which 4th Street runs straight into"
+          ],
+          "ink": [
+            "Belmont Ave"
+          ],
+          "docs": [
+            "mr010-088"
+          ]
+        },
+        {
+          "id": "loma-drive",
+          "display": "Loma Drive",
+          "pendingResearch": false,
+          "why": [
+            "attested on Loma Drive, which 4th Street runs straight into"
+          ],
+          "ink": [
+            "LOMA DRIVE",
+            "Loma Drive"
+          ],
+          "docs": [
+            "mr007-036-p2",
+            "tr0015-179a"
+          ]
+        },
+        {
+          "id": "collado-st",
+          "display": "Collado Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Union Avenue, which 4th Street runs straight into"
+          ],
+          "ink": [
+            "Collado St"
+          ],
+          "docs": [
+            "mr007-036-p2",
+            "mr010-062"
+          ]
+        },
+        {
+          "id": "union-st",
+          "display": "Union Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Union Avenue, which 4th Street runs straight into"
+          ],
+          "ink": [
+            "Union St"
+          ],
+          "docs": [
+            "mr007-036-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Union Avenue",
+      "continuesInto": [
+        "4th Street"
+      ],
+      "candidates": [
+        {
+          "id": "collado-st",
+          "display": "Collado Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Union Avenue by another sheet"
+          ],
+          "ink": [
+            "Collado St"
+          ],
+          "docs": [
+            "mr007-036-p2",
+            "mr010-062"
+          ]
+        },
+        {
+          "id": "union-st",
+          "display": "Union Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Union Avenue by another sheet"
+          ],
+          "ink": [
+            "Union St"
+          ],
+          "docs": [
+            "mr007-036-p2"
+          ]
+        },
+        {
+          "id": "fourth-street",
+          "display": "4th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which Union Avenue runs straight into"
+          ],
+          "ink": [
+            "4TH ST",
+            "4TH ST.",
+            "4TH STREET",
+            "CALLE 4a",
+            "FOURTH ST.",
+            "FOURTH STREET",
+            "Fourth St",
+            "Fourth Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr003-046-p1",
+            "mr005-005",
+            "mr006-427",
+            "mr007-096-p2",
+            "mr012-026",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071",
+            "tr0012-186",
+            "tr0013-168-p1",
+            "tr0122-053-p3",
+            "tr0751-038"
+          ]
+        },
+        {
+          "id": "huber-st",
+          "display": "Huber Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which Union Avenue runs straight into"
+          ],
+          "ink": [
+            "HUBER ST.",
+            "Huber St",
+            "Huber St."
+          ],
+          "docs": [
+            "mr012-042",
+            "mr013-087-p1",
+            "mr030-009-p4"
+          ]
+        },
+        {
+          "id": "acacia-st",
+          "display": "Acacia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which Union Avenue runs straight into"
+          ],
+          "ink": [
+            "Acacia St"
+          ],
+          "docs": [
+            "mr007-036-p2"
+          ]
+        },
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which Union Avenue runs straight into"
+          ],
+          "ink": [
+            "THIRD"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        },
+        {
+          "id": "union-avenue",
+          "display": "Union Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Union Place",
+      "continuesInto": [
+        "Crown Hill Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "western-ave-colina-park",
+          "display": "Western Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Union Place by another sheet",
+            "attested on Crown Hill Avenue, which Union Place runs straight into"
+          ],
+          "ink": [
+            "Western Ave"
+          ],
+          "docs": [
+            "mr007-036-p2",
+            "mr010-062",
+            "mr010-088"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Crown Hill Avenue, which Union Place runs straight into"
+          ],
+          "ink": [
+            "CROWN HILL AVE.",
+            "Crown Hill Ave"
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-179a"
+          ]
+        },
+        {
+          "id": "arch-st",
+          "display": "Arch Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Crown Hill Avenue, which Union Place runs straight into"
+          ],
+          "ink": [
+            "Arch St"
+          ],
+          "docs": [
+            "mr007-036-p2"
+          ]
+        }
+      ]
+    }
+  ]
+}

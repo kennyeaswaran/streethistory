@@ -1,0 +1,624 @@
+{
+  "document": "tr0201-001-p2",
+  "image": "tr0201-001-p2-100dpi.png",
+  "imageSize": [1759, 2432],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0201-001-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [424, 781],
+    [440, 1885],
+    [1451, 1894],
+    [1505, 762]
+  ],
+  "coverageLl": [
+    [34.053129, -118.233357],
+    [34.050097, -118.233898],
+    [34.049619, -118.230583],
+    [34.052696, -118.229797]
+  ],
+  "streets": [
+    {
+      "name": "Center Street",
+      "runs": [
+        {
+          "px": [
+            [1009, 771],
+            [1012, 786],
+            [1019, 807],
+            [1021, 812],
+            [1034, 852],
+            [1041, 872],
+            [1044, 880],
+            [1061, 929],
+            [1072, 1008],
+            [1073, 1017],
+            [1072, 1152],
+            [1073, 1175],
+            [1073, 1195],
+            [1074, 1243],
+            [1073, 1481],
+            [1073, 1500],
+            [1073, 1514],
+            [1074, 1806],
+            [1074, 1822],
+            [1071, 1891]
+          ],
+          "ll": [
+            [34.052895, -118.231432],
+            [34.052852, -118.231428],
+            [34.052792, -118.231417],
+            [34.052776, -118.231414],
+            [34.052661, -118.231391],
+            [34.052603, -118.231379],
+            [34.052579, -118.231374],
+            [34.052436, -118.231344],
+            [34.052217, -118.231352],
+            [34.052191, -118.231352],
+            [34.051822, -118.231428],
+            [34.051759, -118.231438],
+            [34.051704, -118.231448],
+            [34.051572, -118.231472],
+            [34.050921, -118.231603],
+            [34.050867, -118.231613],
+            [34.05083, -118.231621],
+            [34.050029, -118.231772],
+            [34.049984, -118.231781],
+            [34.049799, -118.231828]
+          ]
+        },
+        {
+          "px": [
+            [1070, 770],
+            [1070, 812],
+            [1070, 826],
+            [1071, 852],
+            [1076, 872],
+            [1078, 880],
+            [1081, 987],
+            [1073, 1017]
+          ],
+          "ll": [
+            [34.05287, -118.231229],
+            [34.052755, -118.231253],
+            [34.052717, -118.23126],
+            [34.052645, -118.231272],
+            [34.052588, -118.231264],
+            [34.052565, -118.231263],
+            [34.052269, -118.23131],
+            [34.052191, -118.231352]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Banning Street",
+          "px": [1083, 2144],
+          "ll": [34.049098, -118.231925],
+          "insideCoverage": false
+        },
+        {
+          "name": "Commercial Street",
+          "px": [1034, 852],
+          "ll": [34.052661, -118.231391],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ducommun Street",
+          "px": [1073, 1175],
+          "ll": [34.051759, -118.231438],
+          "insideCoverage": true
+        },
+        {
+          "name": "Jackson Street",
+          "px": [1073, 1500],
+          "ll": [34.050867, -118.231613],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [960, 610],
+          "ll": [34.053357, -118.231506],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [1068, 1956],
+          "ll": [34.049621, -118.231873],
+          "insideCoverage": false
+        },
+        {
+          "name": "Temple Street",
+          "px": [1074, 1822],
+          "ll": [34.049984, -118.231781],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Commercial Street",
+      "runs": [
+        {
+          "px": [
+            [425, 844],
+            [532, 846],
+            [577, 848],
+            [636, 850],
+            [849, 850],
+            [912, 850],
+            [988, 851],
+            [994, 851],
+            [1034, 852],
+            [1071, 852],
+            [1088, 851],
+            [1093, 851],
+            [1407, 851],
+            [1501, 850]
+          ],
+          "ll": [
+            [34.052956, -118.233388],
+            [34.052903, -118.233037],
+            [34.052878, -118.232891],
+            [34.052844, -118.232698],
+            [34.05275, -118.231999],
+            [34.052722, -118.231791],
+            [34.052684, -118.231543],
+            [34.052682, -118.231523],
+            [34.052661, -118.231391],
+            [34.052645, -118.231272],
+            [34.052639, -118.231213],
+            [34.052637, -118.231197],
+            [34.052497, -118.230165],
+            [34.052456, -118.229858]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Center Street",
+          "px": [1071, 852],
+          "ll": [34.052645, -118.231272],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garey Street",
+          "px": [224, 841],
+          "ll": [34.053055, -118.234044],
+          "insideCoverage": false
+        },
+        {
+          "name": "Keller Street",
+          "px": [1407, 851],
+          "ll": [34.052497, -118.230165],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [532, 846],
+          "ll": [34.052903, -118.233037],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Ducommun Street",
+      "runs": [
+        {
+          "px": [
+            [1097, 1175],
+            [1093, 1175],
+            [1088, 1175],
+            [1073, 1175],
+            [1044, 1175],
+            [1039, 1175],
+            [814, 1179],
+            [548, 1179],
+            [544, 1179],
+            [525, 1178],
+            [503, 1178],
+            [495, 1178],
+            [430, 1178]
+          ],
+          "ll": [
+            [34.051748, -118.23136],
+            [34.05175, -118.231373],
+            [34.051752, -118.231387],
+            [34.051759, -118.231438],
+            [34.051771, -118.231533],
+            [34.051773, -118.231548],
+            [34.051864, -118.232289],
+            [34.051983, -118.233162],
+            [34.051985, -118.233175],
+            [34.051995, -118.233238],
+            [34.052006, -118.233312],
+            [34.05201, -118.233338],
+            [34.052038, -118.233552]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Center Street",
+          "px": [1073, 1175],
+          "ll": [34.051759, -118.231438],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garey Street",
+          "px": [224, 1110],
+          "ll": [34.052316, -118.234192],
+          "insideCoverage": false
+        },
+        {
+          "name": "Vignes Street",
+          "px": [525, 1178],
+          "ll": [34.051995, -118.233238],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Jackson Street",
+      "runs": [
+        {
+          "px": [
+            [434, 1504],
+            [502, 1503],
+            [505, 1503],
+            [527, 1503],
+            [546, 1503],
+            [549, 1503],
+            [1047, 1501],
+            [1073, 1500]
+          ],
+          "ll": [
+            [34.051145, -118.233711],
+            [34.051115, -118.233491],
+            [34.051114, -118.233481],
+            [34.051104, -118.233406],
+            [34.051095, -118.233344],
+            [34.051094, -118.233335],
+            [34.050879, -118.231699],
+            [34.050867, -118.231613]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Center Street",
+          "px": [1073, 1500],
+          "ll": [34.050867, -118.231613],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garey Street",
+          "px": [226, 1504],
+          "ll": [34.051237, -118.234395],
+          "insideCoverage": false
+        },
+        {
+          "name": "Vignes Street",
+          "px": [527, 1503],
+          "ll": [34.051104, -118.233406],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Keller Street",
+      "runs": [
+        {
+          "px": [
+            [1407, 851],
+            [1408, 828],
+            [1409, 764]
+          ],
+          "ll": [
+            [34.052497, -118.230165],
+            [34.052558, -118.230152],
+            [34.052735, -118.230113]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Commercial Street",
+          "px": [1407, 851],
+          "ll": [34.052497, -118.230165],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [1361, 612],
+          "ll": [34.053173, -118.23019],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Temple Street",
+      "runs": [
+        {
+          "px": [
+            [439, 1826],
+            [496, 1826],
+            [530, 1826],
+            [555, 1827],
+            [670, 1827],
+            [929, 1824],
+            [1031, 1824],
+            [1042, 1823],
+            [1074, 1822]
+          ],
+          "ll": [
+            [34.050259, -118.233869],
+            [34.050232, -118.233682],
+            [34.050218, -118.233572],
+            [34.050205, -118.233488],
+            [34.050153, -118.233113],
+            [34.050045, -118.23226],
+            [34.05, -118.231924],
+            [34.049996, -118.231887],
+            [34.049984, -118.231781]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Center Street",
+          "px": [1074, 1822],
+          "ll": [34.049984, -118.231781],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garey Street",
+          "px": [229, 1824],
+          "ll": [34.050359, -118.234557],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Fe Avenue",
+          "px": [1071, 1889],
+          "ll": [34.049803, -118.231827],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [530, 1826],
+          "ll": [34.050218, -118.233572],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Vignes Street",
+      "runs": [
+        {
+          "px": [
+            [527, 1886],
+            [526, 1856],
+            [530, 1826],
+            [529, 1800],
+            [529, 1747],
+            [529, 1691],
+            [529, 1684],
+            [528, 1555],
+            [528, 1529],
+            [528, 1520],
+            [527, 1503],
+            [528, 1483],
+            [528, 1475],
+            [525, 1196],
+            [525, 1178],
+            [525, 1159],
+            [527, 1046],
+            [531, 874],
+            [532, 846]
+          ],
+          "ll": [
+            [34.050056, -118.233612],
+            [34.050139, -118.233598],
+            [34.050218, -118.233572],
+            [34.050289, -118.233561],
+            [34.050435, -118.233531],
+            [34.050589, -118.233502],
+            [34.050607, -118.233499],
+            [34.050962, -118.233432],
+            [34.051033, -118.233419],
+            [34.051058, -118.233414],
+            [34.051104, -118.233406],
+            [34.05116, -118.233394],
+            [34.051181, -118.23339],
+            [34.051946, -118.233249],
+            [34.051995, -118.233238],
+            [34.052047, -118.233227],
+            [34.052356, -118.233162],
+            [34.052825, -118.233054],
+            [34.052903, -118.233037]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Commercial Street",
+          "px": [532, 846],
+          "ll": [34.052903, -118.233037],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ducommun Street",
+          "px": [525, 1178],
+          "ll": [34.051995, -118.233238],
+          "insideCoverage": true
+        },
+        {
+          "name": "Jackson Street",
+          "px": [527, 1503],
+          "ll": [34.051104, -118.233406],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [530, 1826],
+          "ll": [34.050218, -118.233572],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Center Street",
+      "continuesInto": [
+        "Ramirez Street",
+        "Santa Fe Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "tulip",
+          "display": "Tulip Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santa Fe Avenue, which Center Street runs straight into"
+          ],
+          "ink": [
+            "Tulip St",
+            "Tulip St."
+          ],
+          "docs": [
+            "mr011-042",
+            "mr015-052"
+          ]
+        },
+        {
+          "id": "santa-fe-ave",
+          "display": "Santa Fe Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Santa Fe Avenue, which Center Street runs straight into"
+          ],
+          "ink": [
+            "SANTA FE AVE.",
+            "SANTA FE AVENUE",
+            "Santa Fe Avenue",
+            "Santa Fe Avenue."
+          ],
+          "docs": [
+            "mr018-025",
+            "tr0012-186",
+            "tr0159-021-p2",
+            "tr0319-001-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Commercial Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "commercial-street",
+          "display": "Commercial Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Ducommun Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Jackson Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "turner-street",
+          "display": "Turner Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Jackson Street by another sheet"
+          ],
+          "ink": [
+            "Turner Street"
+          ],
+          "docs": [
+            "tr0145-062"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Keller Street",
+      "continuesInto": [
+        "Ramirez Street"
+      ],
+      "candidates": []
+    },
+    {
+      "street": "Temple Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "requena-street",
+          "display": "Requena Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet"
+          ],
+          "ink": [
+            "REQUENA STREET"
+          ],
+          "docs": [
+            "mr003-146-p2"
+          ]
+        },
+        {
+          "id": "temple",
+          "display": "Temple Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "TEMPLE STREET",
+            "Temple Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Vignes Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "vignes-street",
+          "display": "Vignes Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Vignes Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "VIGNES STREET"
+          ],
+          "docs": [
+            "tr0145-062"
+          ]
+        }
+      ]
+    }
+  ]
+}

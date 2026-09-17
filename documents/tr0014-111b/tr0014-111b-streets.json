@@ -1,0 +1,145 @@
+{
+  "document": "tr0014-111b",
+  "image": "tr0014-111b-100dpi.png",
+  "imageSize": [1129, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0014-111b-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [176, 513],
+    [192, 1221],
+    [1114, 1277],
+    [1127, 799]
+  ],
+  "coverageLl": [
+    [34.053153, -118.238299],
+    [34.051201, -118.238303],
+    [34.050985, -118.235262],
+    [34.052301, -118.235181]
+  ],
+  "streets": [
+    {
+      "name": "Alameda Street",
+      "runs": [
+        {
+          "px": [
+            [269, 541],
+            [269, 594],
+            [269, 604],
+            [268, 641],
+            [268, 805],
+            [266, 944],
+            [265, 1042],
+            [264, 1199],
+            [263, 1225]
+          ],
+          "ll": [
+            [34.05307, -118.237993],
+            [34.052925, -118.238],
+            [34.052895, -118.238],
+            [34.052795, -118.238006],
+            [34.052344, -118.23802],
+            [34.051961, -118.238035],
+            [34.051689, -118.238047],
+            [34.051258, -118.238065],
+            [34.051185, -118.238068]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Ducommun Street",
+          "px": [332, 614],
+          "ll": [34.052865, -118.237792],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [263, 1262],
+          "ll": [34.051085, -118.238072],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Ducommun Street",
+      "runs": [
+        {
+          "px": [
+            [395, 623],
+            [452, 649],
+            [768, 691]
+          ],
+          "ll": [
+            [34.052836, -118.237583],
+            [34.052761, -118.237398],
+            [34.052623, -118.236359]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [332, 614],
+          "ll": [34.052865, -118.237792],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Temple Street",
+      "metres": 12.8
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Alameda Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "alameda-st",
+          "display": "Alameda Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alameda Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "ALAMEDA ST",
+            "ALAMEDA ST.",
+            "ALAMEDA STREET",
+            "Alameda STREET.",
+            "Alameda St",
+            "Alameda St."
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2",
+            "mr012-042",
+            "mr013-087-p1",
+            "mr013-091",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "tr0005-056a",
+            "tr0009-075",
+            "tr0012-101",
+            "tr0145-062",
+            "tr0926-086-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Ducommun Street",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

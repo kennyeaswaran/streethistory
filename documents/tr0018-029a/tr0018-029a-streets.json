@@ -1,0 +1,101 @@
+{
+  "document": "tr0018-029a",
+  "image": "tr0018-029a-100dpi.png",
+  "imageSize": [1171, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0018-029a-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [171, 604],
+    [223, 1422],
+    [1010, 1390],
+    [1006, 605]
+  ],
+  "coverageLl": [
+    [34.053344, -118.235434],
+    [34.05242, -118.235562],
+    [34.052298, -118.234501],
+    [34.053175, -118.234317]
+  ],
+  "streets": [
+    {
+      "name": "Commercial Street",
+      "runs": [
+        {
+          "px": [
+            [177, 702],
+            [313, 699],
+            [598, 691],
+            [944, 683],
+            [1006, 681]
+          ],
+          "ll": [
+            [34.053233, -118.235449],
+            [34.05321, -118.235267],
+            [34.05316, -118.234884],
+            [34.0531, -118.23442],
+            [34.05309, -118.234335]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Garey Street",
+          "px": [1223, 674],
+          "ll": [34.053055, -118.234044],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Ducommun Street",
+      "runs": [
+        {
+          "px": [
+            [218, 1339],
+            [301, 1338],
+            [1010, 1334]
+          ],
+          "ll": [
+            [34.052514, -118.235549],
+            [34.052498, -118.235437],
+            [34.05236, -118.234488]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Garey Street",
+          "px": [1231, 1334],
+          "ll": [34.052316, -118.234192],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Commercial Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "commercial-street",
+          "display": "Commercial Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Ducommun Street",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

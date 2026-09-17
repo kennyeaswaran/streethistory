@@ -1,0 +1,221 @@
+{
+  "document": "tr0014-101a",
+  "image": "tr0014-101a-100dpi.png",
+  "imageSize": [1138, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0014-101a-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [186, 605],
+    [175, 1087],
+    [881, 1066],
+    [923, 556]
+  ],
+  "coverageLl": [
+    [34.0653, -118.240832],
+    [34.064682, -118.241159],
+    [34.064331, -118.24005],
+    [34.064969, -118.239657]
+  ],
+  "streets": [
+    {
+      "name": "Cleveland Street",
+      "runs": [
+        {
+          "px": [
+            [281, 684],
+            [274, 1084]
+          ],
+          "ll": [
+            [34.065147, -118.240735],
+            [34.064633, -118.241003]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Adobe Street",
+          "px": [141, 681],
+          "ll": [34.065226, -118.240951],
+          "insideCoverage": false
+        },
+        {
+          "name": "College Street",
+          "px": [281, 684],
+          "ll": [34.065147, -118.240735],
+          "insideCoverage": true
+        },
+        {
+          "name": "New Depot Street",
+          "px": [146, 704],
+          "ll": [34.065193, -118.240957],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "College Street",
+      "runs": [
+        {
+          "px": [
+            [912, 688],
+            [846, 687],
+            [776, 687],
+            [710, 686],
+            [552, 685],
+            [281, 684],
+            [184, 682]
+          ],
+          "ll": [
+            [34.064804, -118.239758],
+            [34.06484, -118.239861],
+            [34.064878, -118.239969],
+            [34.064914, -118.240072],
+            [34.065, -118.240316],
+            [34.065147, -118.240735],
+            [34.065201, -118.240885]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Adobe Street",
+          "px": [1, 679],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": false
+        },
+        {
+          "name": "Bunker Hill Avenue",
+          "px": [-276, 855],
+          "ll": [34.065224, -118.24171],
+          "insideCoverage": false
+        },
+        {
+          "name": "Cleveland Street",
+          "px": [281, 684],
+          "ll": [34.065147, -118.240735],
+          "insideCoverage": true
+        },
+        {
+          "name": "New Depot Street",
+          "px": [1, 679],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": false
+        },
+        {
+          "name": "Yale Street",
+          "px": [776, 687],
+          "ll": [34.064878, -118.239969],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Yale Street",
+      "runs": [
+        {
+          "px": [
+            [790, 1069],
+            [784, 773],
+            [770, 752],
+            [776, 742],
+            [776, 687],
+            [778, 631],
+            [778, 566]
+          ],
+          "ll": [
+            [34.064376, -118.240193],
+            [34.064763, -118.240012],
+            [34.064797, -118.240021],
+            [34.064806, -118.240005],
+            [34.064878, -118.239969],
+            [34.064949, -118.239931],
+            [34.065034, -118.239888]
+          ]
+        },
+        {
+          "px": [
+            [770, 752],
+            [749, 764],
+            [745, 1070]
+          ],
+          "ll": [
+            [34.064797, -118.240021],
+            [34.064793, -118.240061],
+            [34.064399, -118.240264]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "College Street",
+          "px": [776, 687],
+          "ll": [34.064878, -118.239969],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Cleveland Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "College Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "college",
+          "display": "College Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on College Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE DEL COLEGIO",
+            "COLLEGE ST"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Yale Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "hornet",
+          "display": "Hornet Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Yale Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS AVISPAS",
+            "HORNET ST."
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "yale",
+          "display": "Yale Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

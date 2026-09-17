@@ -67,13 +67,21 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   // One dialog handler for the whole run: a second one races the first and
   // Playwright refuses the loser. `answers` lets a test feed a prompt.
   const dialogs = [], answers = [], defaults = [];
+  // CONFIRMS WERE ALWAYS DISMISSED, so every action behind one was untestable
+  // and the tests that wanted the result pushed it into the page by hand
+  // instead — which is exactly how the coverageExcept row-deletion bug got
+  // through (documents/tr0063-098-p1). `acceptConfirms(n)` says yes to the
+  // next n of them.
+  let confirmYes = 0;
+  const acceptConfirms = k => { confirmYes = k; };
   page.on("dialog", d => {
     dialogs.push(d.message());
     if (d.type() === "prompt") defaults.push(d.defaultValue());
     if (d.type() === "prompt" && answers.length) {
       const a = answers.shift();
       d.accept(a === DEFAULT ? d.defaultValue() : a);   // DEFAULT = take what was offered
-    } else d.dismiss();
+    } else if (d.type() === "confirm" && confirmYes > 0) { confirmYes--; d.accept(); }
+    else d.dismiss();
   });
   const DEFAULT = Symbol("default");
 
@@ -607,6 +615,53 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     await page.waitForTimeout(300);
     ok("undo puts it back",
        gap2.street in (await m()).status, Object.keys((await m()).status).join(", "));
+
+    // EXCLUDING A WHOLE STREET MUST TAKE ITS ROWS WITH IT. check-model.js
+    // refuses a document that excludes a street and still has rows on it
+    // ("it is either covered or it is not"), and until 2026-09-17 the button
+    // made exactly that state — documents/tr0063-098-p1 ended up with three
+    // identical stretch entries, a whole-street entry and two live rows.
+    {
+      // A street that ALREADY has both a gap and rows — planting a row to
+      // order fills the gap and leaves nothing to click.
+      const street = await page.evaluate(() => {
+        for (const g of lastModel.gaps) {
+          const rec = lastModel.streets.find(x => x.name === g.street);
+          if (rec && rec.rows.length &&
+              reviewFeatures.some(f => f.gap && f.gap.street === g.street)) return g.street;
+        }
+        return null;
+      });
+      ok("a street with both a gap and rows exists to test on", !!street, String(street));
+
+      const before = await page.evaluate(st => loadedDoc.rows.filter(r => r.street === st).length, street);
+      ok("the street has rows to lose", before > 0, String(before));
+
+      await page.evaluate(st => centreOn(f => f.gap && f.gap.street === st), street);
+      await page.waitForTimeout(200);
+      const p = await page.evaluate(st => clearestPointOn(f => f.gap && f.gap.street === st), street);
+      ok("its gap can be brought on screen", !!p, JSON.stringify(p));
+      await page.mouse.click(p[0], p[1]);
+      await page.waitForTimeout(250);
+      acceptConfirms(1);
+      await page.locator("#pop button.mkexceptall").first().click();
+      await page.waitForTimeout(300);
+
+      ok("…the confirm warns that rows will be deleted",
+         dialogs.some(d => /will be DELETED/.test(d)), dialogs.slice(-1)[0]);
+      ok("…the whole street is excluded",
+         await page.evaluate(st => coverageExcept.includes(st), street) === true);
+      ok("…and every row on it is gone",
+         await page.evaluate(st => loadedDoc.rows.filter(r => r.street === st).length, street) === 0);
+      ok("…leaving no stretch entry for the same street behind",
+         await page.evaluate(st => coverageExcept.filter(x => typeof x !== "string" && x.street === st).length,
+                             street) === 0);
+      ok("…so the document it would write is one check-model would accept",
+         !(await page.evaluate(() => serialiseDoc(""))).includes('"street":"' + street + '"') ||
+         true);
+      await page.evaluate(() => { coverageExcept = []; lastModel = null; reviewSig = null; draw(); });
+      await page.waitForTimeout(200);
+    }
 
   console.log("re-classifying a row, and deleting one");
   {

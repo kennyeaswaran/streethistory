@@ -1,0 +1,458 @@
+{
+  "document": "tr0007-078a",
+  "image": "tr0007-078a-100dpi.png",
+  "imageSize": [1181, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0007-078a-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [341, 683],
+    [341, 1179],
+    [855, 1180],
+    [830, 606]
+  ],
+  "coverageLl": [
+    [34.055405, -118.262183],
+    [34.054175, -118.262912],
+    [34.053543, -118.261385],
+    [34.054997, -118.260616]
+  ],
+  "streets": [
+    {
+      "name": "5th Street",
+      "runs": [
+        {
+          "px": [
+            [836, 746],
+            [679, 744],
+            [652, 744],
+            [621, 744],
+            [585, 744],
+            [341, 744]
+          ],
+          "ll": [
+            [34.054642, -118.260804],
+            [34.054839, -118.261267],
+            [34.054873, -118.261349],
+            [34.054911, -118.26144],
+            [34.054955, -118.261548],
+            [34.055255, -118.262272]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [621, 744],
+          "ll": [34.054911, -118.26144],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "6th Street",
+      "runs": [
+        {
+          "px": [
+            [341, 1115],
+            [431, 1116],
+            [547, 1117],
+            [591, 1118],
+            [635, 1118],
+            [816, 1119],
+            [852, 1120]
+          ],
+          "ll": [
+            [34.054334, -118.262817],
+            [34.054222, -118.262551],
+            [34.054076, -118.262207],
+            [34.054021, -118.262078],
+            [34.053966, -118.261947],
+            [34.053741, -118.261411],
+            [34.053696, -118.261305]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [993, 1121],
+          "ll": [34.053519, -118.260888],
+          "insideCoverage": false
+        },
+        {
+          "name": "Bixel Street",
+          "px": [591, 1118],
+          "ll": [34.054021, -118.262078],
+          "insideCoverage": true
+        },
+        {
+          "name": "Saint Paul Avenue",
+          "px": [993, 1121],
+          "ll": [34.053519, -118.260888],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Bixel Street",
+      "runs": [
+        {
+          "px": [
+            [622, 639],
+            [621, 744],
+            [618, 897],
+            [618, 931],
+            [611, 1046],
+            [603, 1075],
+            [591, 1118],
+            [580, 1156],
+            [572, 1179]
+          ],
+          "ll": [
+            [34.055171, -118.261283],
+            [34.054911, -118.26144],
+            [34.054534, -118.261675],
+            [34.054451, -118.261725],
+            [34.054175, -118.261912],
+            [34.054112, -118.26198],
+            [34.054021, -118.262078],
+            [34.053941, -118.262168],
+            [34.053891, -118.262225]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street",
+          "px": [621, 744],
+          "ll": [34.054911, -118.26144],
+          "insideCoverage": true
+        },
+        {
+          "name": "6th Street",
+          "px": [591, 1118],
+          "ll": [34.054021, -118.262078],
+          "insideCoverage": true
+        },
+        {
+          "name": "Maryland Street",
+          "px": [626, 387],
+          "ll": [34.055789, -118.2609],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "5th Street",
+      "continuesInto": [
+        "6th Street"
+      ],
+      "candidates": [
+        {
+          "id": "fifth-street",
+          "display": "5th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 5th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "5TH ST",
+            "5TH ST.",
+            "CALLE 5a",
+            "FIFTH ST.",
+            "FIFTH STREET",
+            "Fifth St",
+            "Fifth St.",
+            "Fifth St. (Extension)"
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-046-p2",
+            "mr003-166-p2",
+            "mr005-307-b",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr039-069",
+            "mr053-068",
+            "mr053-071",
+            "tr0010-175a",
+            "tr0588-055",
+            "tr0751-038"
+          ]
+        },
+        {
+          "id": "ward-st",
+          "display": "Ward Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 5th Street by another sheet",
+            "attested on 6th Street, which 5th Street runs straight into"
+          ],
+          "ink": [
+            "WARD ST."
+          ],
+          "docs": [
+            "mr003-046-p2"
+          ]
+        },
+        {
+          "id": "poplar-st",
+          "display": "Poplar Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 5th Street by another sheet"
+          ],
+          "ink": [
+            "Poplar St",
+            "Poplar St."
+          ],
+          "docs": [
+            "mr012-042",
+            "mr030-009-p2"
+          ]
+        },
+        {
+          "id": "sixth-street",
+          "display": "6th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street, which 5th Street runs straight into"
+          ],
+          "ink": [
+            "6TH ST",
+            "6TH ST.",
+            "6TH STREET",
+            "6th St",
+            "CALLE 6a",
+            "SIXTH ST.",
+            "SIXTH STR.",
+            "SIXTH STREET",
+            "Sixth St",
+            "Sixth St Extension.",
+            "Sixth St.",
+            "proposed line of Sixth Street."
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-016",
+            "mr003-166-p1",
+            "mr003-569",
+            "mr006-033",
+            "mr011-042",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr053-068",
+            "mr053-071",
+            "mr078-055",
+            "mr084-053",
+            "tr0009-075",
+            "tr0009-100a",
+            "tr0010-175a",
+            "tr0012-101",
+            "tr0023-066",
+            "tr0159-032-p2",
+            "tr0273-017",
+            "tr0319-001-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "6th Street",
+      "continuesInto": [
+        "5th Street"
+      ],
+      "candidates": [
+        {
+          "id": "sixth-street",
+          "display": "6th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "6TH ST",
+            "6TH ST.",
+            "6TH STREET",
+            "6th St",
+            "CALLE 6a",
+            "SIXTH ST.",
+            "SIXTH STR.",
+            "SIXTH STREET",
+            "Sixth St",
+            "Sixth St Extension.",
+            "Sixth St.",
+            "proposed line of Sixth Street."
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-016",
+            "mr003-166-p1",
+            "mr003-569",
+            "mr006-033",
+            "mr011-042",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr053-068",
+            "mr053-071",
+            "mr078-055",
+            "mr084-053",
+            "tr0009-075",
+            "tr0009-100a",
+            "tr0010-175a",
+            "tr0012-101",
+            "tr0023-066",
+            "tr0159-032-p2",
+            "tr0273-017",
+            "tr0319-001-p1"
+          ]
+        },
+        {
+          "id": "ward-st",
+          "display": "Ward Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet",
+            "attested on 5th Street, which 6th Street runs straight into"
+          ],
+          "ink": [
+            "WARD ST."
+          ],
+          "docs": [
+            "mr003-046-p2"
+          ]
+        },
+        {
+          "id": "fifth-street",
+          "display": "5th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 5th Street, which 6th Street runs straight into"
+          ],
+          "ink": [
+            "5TH ST",
+            "5TH ST.",
+            "CALLE 5a",
+            "FIFTH ST.",
+            "FIFTH STREET",
+            "Fifth St",
+            "Fifth St.",
+            "Fifth St. (Extension)"
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-046-p2",
+            "mr003-166-p2",
+            "mr005-307-b",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr039-069",
+            "mr053-068",
+            "mr053-071",
+            "tr0010-175a",
+            "tr0588-055",
+            "tr0751-038"
+          ]
+        },
+        {
+          "id": "poplar-st",
+          "display": "Poplar Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 5th Street, which 6th Street runs straight into"
+          ],
+          "ink": [
+            "Poplar St",
+            "Poplar St."
+          ],
+          "docs": [
+            "mr012-042",
+            "mr030-009-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Bixel Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "lafayette-bixel",
+          "display": "Lafayette Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "LAFAYETTE ST.",
+            "Lafayette Av."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr003-046-p2",
+            "mr006-115"
+          ]
+        },
+        {
+          "id": "bixel",
+          "display": "Bixel Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "BIXEL ST",
+            "BIXEL ST.",
+            "BIXEL STREET"
+          ],
+          "docs": [
+            "mr066-035",
+            "tr0417-049-p2",
+            "tr0588-055",
+            "tr0713-093-p2"
+          ]
+        },
+        {
+          "id": "ohio-street",
+          "display": "Ohio Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "OHIO ST.",
+            "Ohio Street"
+          ],
+          "docs": [
+            "mr005-069",
+            "tr0014-097b"
+          ]
+        },
+        {
+          "id": "metcalf-st",
+          "display": "Metcalf Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "Metcalf St"
+          ],
+          "docs": [
+            "mr007-026-p2"
+          ]
+        }
+      ]
+    }
+  ]
+}

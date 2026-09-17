@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-15
+// Built: 2026-09-17
 const SEARCH_INDEX = [
   {
     "form": "11th Street",
@@ -76,7 +76,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "17th Street",
-    "entity": "17th-street",
+    "entity": "seventeenth-street",
     "label": "17th Street",
     "street": "17th Street"
   },
@@ -85,6 +85,12 @@ const SEARCH_INDEX = [
     "entity": "18th-street",
     "label": "18th Street",
     "street": "18th Street"
+  },
+  {
+    "form": "Diamond Street",
+    "entity": "diamond-street",
+    "label": "Diamond Street",
+    "street": "1st Street"
   },
   {
     "form": "1st Street",
@@ -105,9 +111,45 @@ const SEARCH_INDEX = [
     "street": "2nd Street"
   },
   {
+    "form": "North Avenue",
+    "entity": "north-ave",
+    "label": "North Avenue",
+    "street": "2nd Street"
+  },
+  {
+    "form": "Northern Avenue",
+    "entity": "northern-ave",
+    "label": "Northern Avenue",
+    "street": "2nd Street"
+  },
+  {
+    "form": "Silver Street",
+    "entity": "silver-st",
+    "label": "Silver Street",
+    "street": "2nd Street"
+  },
+  {
+    "form": "Lake Shore Avenue",
+    "entity": "lake-shore-ave",
+    "label": "Lake Shore Avenue",
+    "street": "2nd Street"
+  },
+  {
     "form": "Guadalupe Street",
     "entity": "guadalupe",
     "label": "Guadalupe Street",
+    "street": "2nd Street"
+  },
+  {
+    "form": "Topeka Street",
+    "entity": "topeka-st",
+    "label": "Topeka Street",
+    "street": "2nd Street"
+  },
+  {
+    "form": "Clementina Street",
+    "entity": "clementina-street",
+    "label": "Clementina Street",
     "street": "2nd Street"
   },
   {
@@ -117,15 +159,15 @@ const SEARCH_INDEX = [
     "street": "3rd Street"
   },
   {
-    "form": "Crown Hill Avenue",
-    "entity": "crown-hill-ave",
-    "label": "Crown Hill Avenue",
-    "street": "3rd Street"
-  },
-  {
     "form": "Arnold Street",
     "entity": "arnold",
     "label": "Arnold Street",
+    "street": "3rd Street"
+  },
+  {
+    "form": "Crown Hill Avenue",
+    "entity": "crown-hill-ave",
+    "label": "Crown Hill Avenue",
     "street": "3rd Street"
   },
   {
@@ -137,7 +179,19 @@ const SEARCH_INDEX = [
   {
     "form": "Georgia Street",
     "entity": "georgia-east",
-    "label": "Georgia Street",
+    "label": "Georgia Street (east of Alameda)",
+    "street": "3rd Street"
+  },
+  {
+    "form": "Georgia Street",
+    "entity": "georgia-bell",
+    "label": "Georgia Street (west downtown)",
+    "street": "Georgia Street"
+  },
+  {
+    "form": "Atchison Street",
+    "entity": "atchison-st",
+    "label": "Atchison Street",
     "street": "3rd Street"
   },
   {
@@ -153,6 +207,12 @@ const SEARCH_INDEX = [
     "street": "4th Street"
   },
   {
+    "form": "Acacia Street",
+    "entity": "acacia-st",
+    "label": "Acacia Street",
+    "street": "4th Street"
+  },
+  {
     "form": "Huber Street",
     "entity": "huber-st",
     "label": "Huber Street",
@@ -165,9 +225,9 @@ const SEARCH_INDEX = [
     "street": "5th Street"
   },
   {
-    "form": "6th Street",
-    "entity": "sixth-street",
-    "label": "6th Street",
+    "form": "Ward Street",
+    "entity": "ward-st",
+    "label": "Ward Street",
     "street": "5th Street"
   },
   {
@@ -177,15 +237,33 @@ const SEARCH_INDEX = [
     "street": "5th Street"
   },
   {
+    "form": "6th Street",
+    "entity": "sixth-street",
+    "label": "6th Street",
+    "street": "6th Street"
+  },
+  {
     "form": "7th Place",
     "entity": "7th-place",
     "label": "7th Place",
     "street": "7th Place"
   },
   {
+    "form": "Atlantic Street",
+    "entity": "atlantic-st-dtla",
+    "label": "Atlantic Street",
+    "street": "7th Place"
+  },
+  {
     "form": "7th Street",
     "entity": "seventh-street",
     "label": "7th Street",
+    "street": "7th Street"
+  },
+  {
+    "form": "Orange Street",
+    "entity": "orange-st-wilshire",
+    "label": "Orange Street",
     "street": "7th Street"
   },
   {
@@ -198,6 +276,12 @@ const SEARCH_INDEX = [
     "form": "Ruby Street",
     "entity": "ruby-st",
     "label": "Ruby Street",
+    "street": "8th Place"
+  },
+  {
+    "form": "Lincoln Street",
+    "entity": "lincoln-street",
+    "label": "Lincoln Street",
     "street": "8th Place"
   },
   {
@@ -280,13 +364,25 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Anderson Street",
-    "entity": "anderson-street",
+    "entity": "anderson",
     "label": "Anderson Street",
     "street": "Anderson Street"
   },
   {
+    "form": "Rio Avenue",
+    "entity": "rio-avenue",
+    "label": "Rio Avenue",
+    "street": "Anderson Street"
+  },
+  {
+    "form": "Rio Street",
+    "entity": "rio-st",
+    "label": "Rio Street",
+    "street": "Anderson Street"
+  },
+  {
     "form": "Angelina Street",
-    "entity": "angelina-street",
+    "entity": "angelina-st",
     "label": "Angelina Street",
     "street": "Angelina Street"
   },
@@ -310,9 +406,21 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Artemus Street",
-    "entity": "artemus-street",
+    "entity": "artemus",
     "label": "Artemus Street",
     "street": "Artemus Street"
+  },
+  {
+    "form": "Wilmington Street",
+    "entity": "wilmington-street",
+    "label": "Wilmington Street",
+    "street": "Astronaut Ellison S Onizuka Street"
+  },
+  {
+    "form": "Weller Street",
+    "entity": "weller-street",
+    "label": "Weller Street",
+    "street": "Astronaut Ellison S Onizuka Street"
   },
   {
     "form": "Astronaut Ellison S Onizuka Street",
@@ -340,7 +448,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Azusa Street",
-    "entity": "azusa-street",
+    "entity": "azusa",
     "label": "Azusa Street",
     "street": "Azusa Street"
   },
@@ -375,9 +483,21 @@ const SEARCH_INDEX = [
     "street": "Beaudry Avenue"
   },
   {
+    "form": "Canal Street",
+    "entity": "canal-street-beaudry",
+    "label": "Canal Street",
+    "street": "Beaudry Avenue"
+  },
+  {
     "form": "Bellevue Avenue",
-    "entity": "bellevue-avenue",
+    "entity": "bellevue-ave",
     "label": "Bellevue Avenue",
+    "street": "Bellevue Avenue"
+  },
+  {
+    "form": "Canal and Reservoir Street",
+    "entity": "canal-and-reservoir-st",
+    "label": "Canal and Reservoir Street",
     "street": "Bellevue Avenue"
   },
   {
@@ -387,9 +507,9 @@ const SEARCH_INDEX = [
     "street": "Belmont Avenue"
   },
   {
-    "form": "Belmont Avenue",
-    "entity": "belmont-avenue",
-    "label": "Belmont Avenue",
+    "form": "Texas Street",
+    "entity": "texas-st",
+    "label": "Texas Street",
     "street": "Belmont Avenue"
   },
   {
@@ -405,15 +525,39 @@ const SEARCH_INDEX = [
     "street": "Beverly Boulevard"
   },
   {
-    "form": "Diamond Street",
-    "entity": "diamond-street",
-    "label": "Diamond Street",
-    "street": "Beverly Boulevard"
-  },
-  {
     "form": "Bixel Street",
     "entity": "bixel",
     "label": "Bixel Street",
+    "street": "Bixel Street"
+  },
+  {
+    "form": "William Street",
+    "entity": "william",
+    "label": "William Street",
+    "street": "Bixel Street"
+  },
+  {
+    "form": "Lafayette Street",
+    "entity": "lafayette-bixel",
+    "label": "Lafayette Street",
+    "street": "Bixel Street"
+  },
+  {
+    "form": "Lafayette Avenue",
+    "entity": "lafayette-bixel",
+    "label": "Lafayette Avenue",
+    "street": "Bixel Street"
+  },
+  {
+    "form": "Ohio Street",
+    "entity": "ohio-street",
+    "label": "Ohio Street",
+    "street": "Bixel Street"
+  },
+  {
+    "form": "Metcalf Street",
+    "entity": "metcalf-st",
+    "label": "Metcalf Street",
     "street": "Bixel Street"
   },
   {
@@ -447,6 +591,12 @@ const SEARCH_INDEX = [
     "street": "Bonnie Brae Street"
   },
   {
+    "form": "Cummings Avenue",
+    "entity": "cummings-ave",
+    "label": "Cummings Avenue",
+    "street": "Boston Street"
+  },
+  {
     "form": "Boston Street",
     "entity": "boston-street",
     "label": "Boston Street",
@@ -457,6 +607,12 @@ const SEARCH_INDEX = [
     "entity": "boyd-street",
     "label": "Boyd Street",
     "street": "Boyd Street"
+  },
+  {
+    "form": "Figueroa Street",
+    "entity": "figueroa-gov",
+    "label": "Figueroa Street",
+    "street": "Boylston Street"
   },
   {
     "form": "Boylston Street",
@@ -495,8 +651,14 @@ const SEARCH_INDEX = [
     "street": "Bruno Street"
   },
   {
+    "form": "Montreal Street",
+    "entity": "montreal-st",
+    "label": "Montreal Street",
+    "street": "Bunker Hill Avenue"
+  },
+  {
     "form": "Bunker Hill Avenue",
-    "entity": "bunker-hill-avenue",
+    "entity": "bunker-hill-ave",
     "label": "Bunker Hill Avenue",
     "street": "Bunker Hill Avenue"
   },
@@ -504,6 +666,12 @@ const SEARCH_INDEX = [
     "form": "Burlington Avenue",
     "entity": "burlington-avenue",
     "label": "Burlington Avenue",
+    "street": "Burlington Avenue"
+  },
+  {
+    "form": "Union Avenue",
+    "entity": "union-avenue",
+    "label": "Union Avenue",
     "street": "Burlington Avenue"
   },
   {
@@ -592,7 +760,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Channing Street",
-    "entity": "channing-street",
+    "entity": "channing-st",
     "label": "Channing Street",
     "street": "Channing Street"
   },
@@ -622,7 +790,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Cleveland Street",
-    "entity": "cleveland-street",
+    "entity": "cleveland-st",
     "label": "Cleveland Street",
     "street": "Cleveland Street"
   },
@@ -640,7 +808,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Colton Street",
-    "entity": "colton-street",
+    "entity": "colton-st",
     "label": "Colton Street",
     "street": "Colton Street"
   },
@@ -652,9 +820,15 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Colyton Street",
-    "entity": "colyton-street",
+    "entity": "colyton",
     "label": "Colyton Street",
     "street": "Colyton Street"
+  },
+  {
+    "form": "Sainsevain Street",
+    "entity": "sainsevain-street",
+    "label": "Sainsevain Street",
+    "street": "Commercial Street"
   },
   {
     "form": "Commercial Street",
@@ -741,8 +915,20 @@ const SEARCH_INDEX = [
     "street": "Crocker Street"
   },
   {
+    "form": "Arch Street",
+    "entity": "arch-st",
+    "label": "Arch Street",
+    "street": "Crown Hill Avenue"
+  },
+  {
+    "form": "Western Avenue",
+    "entity": "western-ave-colina-park",
+    "label": "Western Avenue",
+    "street": "Crown Hill Avenue"
+  },
+  {
     "form": "Custer Avenue",
-    "entity": "custer-avenue",
+    "entity": "custer-ave",
     "label": "Custer Avenue",
     "street": "Custer Avenue"
   },
@@ -753,10 +939,28 @@ const SEARCH_INDEX = [
     "street": "Dawson Street"
   },
   {
+    "form": "Warren Street",
+    "entity": "warren-st-arts-district",
+    "label": "Warren Street",
+    "street": "Decatur Street"
+  },
+  {
     "form": "Decatur Street",
-    "entity": "decatur-street",
+    "entity": "decatur-st",
     "label": "Decatur Street",
     "street": "Decatur Street"
+  },
+  {
+    "form": "Virginia Street",
+    "entity": "virginia-conv-center",
+    "label": "Virginia Street (Delong Street)",
+    "street": "Delong Street"
+  },
+  {
+    "form": "Virginia Street",
+    "entity": "virginia-st-angeleno-hgts",
+    "label": "Virginia Street (Toluca Street)",
+    "street": "Toluca Street"
   },
   {
     "form": "Delong Street",
@@ -790,14 +994,32 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Ducommun Street",
-    "entity": "ducommun-street",
+    "entity": "ducommun",
     "label": "Ducommun Street",
     "street": "Ducommun Street"
   },
   {
+    "form": "Lazard Street",
+    "entity": "lazard-street",
+    "label": "Lazard Street",
+    "street": "Ducommun Street"
+  },
+  {
+    "form": "Alabama Street",
+    "entity": "alabama-street",
+    "label": "Alabama Street",
+    "street": "Edgeware Road"
+  },
+  {
     "form": "Edgeware Road",
-    "entity": "edgeware-road",
+    "entity": "edgeware",
     "label": "Edgeware Road",
+    "street": "Edgeware Road"
+  },
+  {
+    "form": "New Cincinnati Street",
+    "entity": "new-cincinnati-st",
+    "label": "New Cincinnati Street",
     "street": "Edgeware Road"
   },
   {
@@ -820,7 +1042,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Emerald Street",
-    "entity": "emerald-street",
+    "entity": "emerald",
     "label": "Emerald Street",
     "street": "Emerald Street"
   },
@@ -835,12 +1057,6 @@ const SEARCH_INDEX = [
     "entity": "factory-place",
     "label": "Factory Place",
     "street": "Factory Place"
-  },
-  {
-    "form": "Figueroa Street",
-    "entity": "figueroa-gov",
-    "label": "Figueroa Street",
-    "street": "Figueroa Street"
   },
   {
     "form": "Pearl Street",
@@ -859,6 +1075,12 @@ const SEARCH_INDEX = [
     "entity": "figueroa-terrace",
     "label": "Figueroa Terrace",
     "street": "Figueroa Terrace"
+  },
+  {
+    "form": "Fireman Street",
+    "entity": "fireman-st",
+    "label": "Fireman Street",
+    "street": "Firmin Street"
   },
   {
     "form": "Firmin Street",
@@ -903,6 +1125,12 @@ const SEARCH_INDEX = [
     "street": "Fremont Avenue"
   },
   {
+    "form": "Beaudry Street",
+    "entity": "beaudry-st",
+    "label": "Beaudry Street",
+    "street": "Fremont Avenue"
+  },
+  {
     "form": "Gabriel Garcia Marquez Street",
     "entity": "gabriel-garcia-marquez-street",
     "label": "Gabriel Garcia Marquez Street",
@@ -921,8 +1149,14 @@ const SEARCH_INDEX = [
     "street": "Garey Street"
   },
   {
+    "form": "Amelia Street",
+    "entity": "amelia",
+    "label": "Amelia Street",
+    "street": "Garey Street"
+  },
+  {
     "form": "Garland Avenue",
-    "entity": "garland-avenue",
+    "entity": "garland",
     "label": "Garland Avenue",
     "street": "Garland Avenue"
   },
@@ -931,6 +1165,18 @@ const SEARCH_INDEX = [
     "entity": "general-thaddeus-kosciuszko-way",
     "label": "General Thaddeus Kosciuszko Way",
     "street": "General Thaddeus Kosciuszko Way"
+  },
+  {
+    "form": "Nevada Street",
+    "entity": "nevada-1886",
+    "label": "Nevada Street",
+    "street": "Georgia Street"
+  },
+  {
+    "form": "Georgia Bell Street",
+    "entity": "georgia-bell",
+    "label": "Georgia Bell Street",
+    "street": "Georgia Street"
   },
   {
     "form": "Gin Ling Way",
@@ -987,6 +1233,12 @@ const SEARCH_INDEX = [
     "street": "Grand Avenue"
   },
   {
+    "form": "Philadelphia Street",
+    "entity": "philadelphia-st",
+    "label": "Philadelphia Street",
+    "street": "Grand Avenue"
+  },
+  {
     "form": "Grand Avenue Lower Level",
     "entity": "grand-avenue-lower-level",
     "label": "Grand Avenue Lower Level",
@@ -1006,15 +1258,27 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Hartford Avenue",
-    "entity": "hartford-avenue",
+    "entity": "hartford-ave",
     "label": "Hartford Avenue",
     "street": "Hartford Avenue"
+  },
+  {
+    "form": "Carolina Street",
+    "entity": "carolina-arts-district",
+    "label": "Carolina Street",
+    "street": "Hewitt Street"
   },
   {
     "form": "Hewitt Street",
     "entity": "hewitt",
     "label": "Hewitt Street",
     "street": "Hewitt Street"
+  },
+  {
+    "form": "Rosas Street",
+    "entity": "rosas-street",
+    "label": "Rosas Street",
+    "street": "Hill Place"
   },
   {
     "form": "Hill Place",
@@ -1065,12 +1329,6 @@ const SEARCH_INDEX = [
     "street": "I-10 Metro ExpressLanes"
   },
   {
-    "form": "Imperial Street",
-    "entity": "imperial-street",
-    "label": "Imperial Street",
-    "street": "Imperial Street"
-  },
-  {
     "form": "Palm Street",
     "entity": "palm-st-arts-district",
     "label": "Palm Street (Imperial Street)",
@@ -1083,8 +1341,26 @@ const SEARCH_INDEX = [
     "street": "Margo Street"
   },
   {
+    "form": "Imperial Street",
+    "entity": "imperial-street",
+    "label": "Imperial Street",
+    "street": "Imperial Street"
+  },
+  {
+    "form": "Mimosa Street",
+    "entity": "mimosa-st",
+    "label": "Mimosa Street",
+    "street": "Imperial Street"
+  },
+  {
+    "form": "Easton Street",
+    "entity": "easton",
+    "label": "Easton Street",
+    "street": "Industrial Street"
+  },
+  {
     "form": "Industrial Street",
-    "entity": "industrial-street",
+    "entity": "industrial-st",
     "label": "Industrial Street",
     "street": "Industrial Street"
   },
@@ -1095,6 +1371,18 @@ const SEARCH_INDEX = [
     "street": "Ingraham Street"
   },
   {
+    "form": "Ventura Street",
+    "entity": "ventura-ingraham",
+    "label": "Ventura Street",
+    "street": "Ingraham Street"
+  },
+  {
+    "form": "Weill Street",
+    "entity": "weill",
+    "label": "Weill Street",
+    "street": "Jackson Street"
+  },
+  {
     "form": "Turner Street",
     "entity": "turner-street",
     "label": "Turner Street",
@@ -1102,7 +1390,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Jackson Street",
-    "entity": "jackson-street",
+    "entity": "jackson-st",
     "label": "Jackson Street",
     "street": "Jackson Street"
   },
@@ -1131,12 +1419,6 @@ const SEARCH_INDEX = [
     "street": "Jesse Street"
   },
   {
-    "form": "Wilmington Street",
-    "entity": "wilmington-street",
-    "label": "Wilmington Street",
-    "street": "Judge John Aiso Street"
-  },
-  {
     "form": "Judge John Aiso Street",
     "entity": "judge-john-aiso-street",
     "label": "Judge John Aiso Street",
@@ -1149,6 +1431,12 @@ const SEARCH_INDEX = [
     "street": "Jung Jing Road"
   },
   {
+    "form": "Shenandoah Avenue",
+    "entity": "shenandoah-avenue",
+    "label": "Shenandoah Avenue",
+    "street": "Kearney Street"
+  },
+  {
     "form": "Kearney Street",
     "entity": "kearney-street",
     "label": "Kearney Street",
@@ -1156,9 +1444,15 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Keller Street",
-    "entity": "keller-street",
+    "entity": "keller",
     "label": "Keller Street",
     "street": "Keller Street"
+  },
+  {
+    "form": "Holliday Street",
+    "entity": "holliday-st",
+    "label": "Holliday Street",
+    "street": "Kensington Road"
   },
   {
     "form": "Kensington Road",
@@ -1171,6 +1465,12 @@ const SEARCH_INDEX = [
     "entity": "kohler",
     "label": "Kohler Street",
     "street": "Kohler Street"
+  },
+  {
+    "form": "Cherry Street",
+    "entity": "cherry-street",
+    "label": "Cherry Street",
+    "street": "L. A. Live Way"
   },
   {
     "form": "L. A. Live Way",
@@ -1210,7 +1510,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Lawrence Street",
-    "entity": "lawrence-street",
+    "entity": "lawrence",
     "label": "Lawrence Street",
     "street": "Lawrence Street"
   },
@@ -1251,6 +1551,12 @@ const SEARCH_INDEX = [
     "street": "Loma Drive"
   },
   {
+    "form": "Belmont Avenue",
+    "entity": "belmont-ave",
+    "label": "Belmont Avenue",
+    "street": "Loma Drive"
+  },
+  {
     "form": "Loma Place",
     "entity": "loma-place",
     "label": "Loma Place",
@@ -1265,7 +1571,13 @@ const SEARCH_INDEX = [
   {
     "form": "Lucas Avenue",
     "entity": "lucas-avenue",
-    "label": "Lucas Avenue",
+    "label": "Lucas Avenue (Lucas Avenue)",
+    "street": "Lucas Avenue"
+  },
+  {
+    "form": "Lucas Avenue",
+    "entity": "lucas-ave",
+    "label": "Lucas Avenue (Lucas Avenue)",
     "street": "Lucas Avenue"
   },
   {
@@ -1306,7 +1618,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Marion Avenue",
-    "entity": "marion-avenue",
+    "entity": "marion-ave",
     "label": "Marion Avenue",
     "street": "Marion Avenue"
   },
@@ -1329,8 +1641,20 @@ const SEARCH_INDEX = [
     "street": "Maryland Street"
   },
   {
+    "form": "Strelitz Street",
+    "entity": "strelitz-st",
+    "label": "Strelitz Street",
+    "street": "Maryland Street"
+  },
+  {
+    "form": "Potts Street",
+    "entity": "potts-st",
+    "label": "Potts Street",
+    "street": "Maryland Street"
+  },
+  {
     "form": "Mateo Street",
-    "entity": "mateo-street",
+    "entity": "mateo",
     "label": "Mateo Street",
     "street": "Mateo Street"
   },
@@ -1378,13 +1702,13 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Mignonette Street",
-    "entity": "mignonette-street",
+    "entity": "mignonette-st",
     "label": "Mignonette Street",
     "street": "Mignonette Street"
   },
   {
     "form": "Mill Street",
-    "entity": "mill-street",
+    "entity": "mill-st-arts-district",
     "label": "Mill Street",
     "street": "Mill Street"
   },
@@ -1395,6 +1719,12 @@ const SEARCH_INDEX = [
     "street": "Miramar Street"
   },
   {
+    "form": "Seminary Street",
+    "entity": "seminary",
+    "label": "Seminary Street",
+    "street": "Miramar Street"
+  },
+  {
     "form": "Mission Road",
     "entity": "mission-road",
     "label": "Mission Road",
@@ -1402,7 +1732,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Molino Street",
-    "entity": "molino-street",
+    "entity": "molino-st",
     "label": "Molino Street",
     "street": "Molino Street"
   },
@@ -1414,7 +1744,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Myers Street",
-    "entity": "myers-street",
+    "entity": "myers",
     "label": "Myers Street",
     "street": "Myers Street"
   },
@@ -1432,7 +1762,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "New Depot Street",
-    "entity": "new-depot-street",
+    "entity": "new-depot-st",
     "label": "New Depot Street",
     "street": "New Depot Street"
   },
@@ -1473,20 +1803,20 @@ const SEARCH_INDEX = [
     "street": "Omar Street"
   },
   {
-    "form": "Ord Street",
-    "entity": "ord-street",
-    "label": "Ord Street",
-    "street": "Ord Street"
-  },
-  {
     "form": "High Street",
     "entity": "high-street-chinatown",
     "label": "High Street",
     "street": "Ord Street"
   },
   {
+    "form": "Ord Street",
+    "entity": "ord-street",
+    "label": "Ord Street",
+    "street": "Ord Street"
+  },
+  {
     "form": "Palmetto Street",
-    "entity": "palmetto-street",
+    "entity": "palmetto",
     "label": "Palmetto Street",
     "street": "Palmetto Street"
   },
@@ -1513,12 +1843,6 @@ const SEARCH_INDEX = [
     "entity": "patton-street",
     "label": "Patton Street",
     "street": "Patton Street"
-  },
-  {
-    "form": "Pico Boulevard",
-    "entity": "pico-boulevard",
-    "label": "Pico Boulevard",
-    "street": "Pico Boulevard"
   },
   {
     "form": "Pico Street",
@@ -1596,6 +1920,12 @@ const SEARCH_INDEX = [
     "form": "Saint Paul Avenue",
     "entity": "saint-paul-avenue",
     "label": "Saint Paul Avenue",
+    "street": "Saint Paul Avenue"
+  },
+  {
+    "form": "St. Paul Avenue",
+    "entity": "st-paul-avenue",
+    "label": "St. Paul Avenue",
     "street": "Saint Paul Avenue"
   },
   {
@@ -1677,12 +2007,6 @@ const SEARCH_INDEX = [
     "street": "Santee Street"
   },
   {
-    "form": "William Street",
-    "entity": "william",
-    "label": "William Street",
-    "street": "Santee Street"
-  },
-  {
     "form": "Botiller Street",
     "entity": "botiller-street",
     "label": "Botiller Street",
@@ -1690,13 +2014,13 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Seaton Street",
-    "entity": "seaton-street",
+    "entity": "seaton",
     "label": "Seaton Street",
     "street": "Seaton Street"
   },
   {
     "form": "Shatto Street",
-    "entity": "shatto-street",
+    "entity": "shatto-st",
     "label": "Shatto Street",
     "street": "Shatto Street"
   },
@@ -1761,10 +2085,10 @@ const SEARCH_INDEX = [
     "street": "Temple Street"
   },
   {
-    "form": "Market Street",
-    "entity": "market-st",
-    "label": "Market Street",
-    "street": "Temple Street"
+    "form": "Brook Street",
+    "entity": "brook-st",
+    "label": "Brook Street",
+    "street": "Toluca Street"
   },
   {
     "form": "Toluca Street",
@@ -1791,9 +2115,15 @@ const SEARCH_INDEX = [
     "street": "Traction Avenue"
   },
   {
-    "form": "Union Avenue",
-    "entity": "union-avenue",
-    "label": "Union Avenue",
+    "form": "Union Street",
+    "entity": "union-st",
+    "label": "Union Street",
+    "street": "Union Avenue"
+  },
+  {
+    "form": "Collado Street",
+    "entity": "collado-st",
+    "label": "Collado Street",
     "street": "Union Avenue"
   },
   {
@@ -1810,7 +2140,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Utah Street",
-    "entity": "utah-street",
+    "entity": "utah-st",
     "label": "Utah Street",
     "street": "Utah Street"
   },
@@ -1821,10 +2151,22 @@ const SEARCH_INDEX = [
     "street": "Valencia Street"
   },
   {
+    "form": "Vernon Av",
+    "entity": "vernon-ave",
+    "label": "Vernon Av",
+    "street": "Valencia Street"
+  },
+  {
     "form": "Valley Street",
     "entity": "valley-street",
     "label": "Valley Street",
     "street": "Valley Street"
+  },
+  {
+    "form": "Rouland Street",
+    "entity": "rouland-street",
+    "label": "Rouland Street",
+    "street": "Venice Boulevard"
   },
   {
     "form": "Venice Boulevard",
@@ -1837,6 +2179,12 @@ const SEARCH_INDEX = [
     "entity": "pine-street-venice",
     "label": "Pine Street",
     "street": "Venice Boulevard"
+  },
+  {
+    "form": "Victor Avenue",
+    "entity": "victor-ave",
+    "label": "Victor Avenue",
+    "street": "Victor Street"
   },
   {
     "form": "Victor Street",
@@ -1900,7 +2248,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "Wilde Street",
-    "entity": "wilde-street",
+    "entity": "wilde-st",
     "label": "Wilde Street",
     "street": "Wilde Street"
   },
@@ -1923,10 +2271,10 @@ const SEARCH_INDEX = [
     "street": "Wilshire Boulevard"
   },
   {
-    "form": "Orange Street",
-    "entity": "orange-st-wilshire",
-    "label": "Orange Street",
-    "street": "Wilshire Boulevard"
+    "form": "Lemon Street",
+    "entity": "lemon-st-arts-district",
+    "label": "Lemon Street",
+    "street": "Wilson Street"
   },
   {
     "form": "Wilson Street",
@@ -1950,6 +2298,18 @@ const SEARCH_INDEX = [
     "form": "Witmer Street",
     "entity": "witmer-street",
     "label": "Witmer Street",
+    "street": "Witmer Street"
+  },
+  {
+    "form": "Logan Avenue",
+    "entity": "logan-ave",
+    "label": "Logan Avenue",
+    "street": "Witmer Street"
+  },
+  {
+    "form": "Nichols Avenue",
+    "entity": "nichols-ave",
+    "label": "Nichols Avenue",
     "street": "Witmer Street"
   },
   {

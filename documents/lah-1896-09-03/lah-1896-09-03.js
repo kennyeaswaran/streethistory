@@ -50,9 +50,10 @@
 // explicitly not the last.
 //
 // PROVENANCE. Two clippings supplied by Kenny, 2026-09-06, from CDNC —
-// LAH18960903.1.3, crops 1580,4497,658,1690 (the article) and 2249,350,639,99
-// (its last two lines, which run over to the next column). Both beside this
-// file. Transcribed by Claude from the clips; the print is clean. Two readings
+// LAH18960903.1.3, crops 1580,4497,658,1690 (the article) and, for its last two
+// lines which run over to the next column, 2252,349,631,97 (a wider re-clip
+// supplied 2026-09-17, which replaced the original 2249,350,639,99). Both beside
+// this file. Transcribed by Claude from the clips; the print is clean. Two readings
 // are the paper's own oddities and are kept as printed: the stray parenthesis
 // in "Bellevue avenue or street)," and "Thirty-sixth street" appearing as the
 // new name of two different streets.

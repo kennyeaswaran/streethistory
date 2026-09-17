@@ -545,7 +545,13 @@ beside the .js in the same folder; the two cross-reference by id.
   form: "drawn",                     // drawn | textual | derived — see §4.1a
   type: "tract-map",                 // tract-map | survey | sanborn | directory
                                      // | ordinance | news-report | osm
-                                     // | annotation   — genre; see §4.1a
+                                     // | annotation | minutes | history
+                                     //               — genre; see §4.1a
+                                     // "history" is SECONDARY scholarship — a
+                                     // historian writing ABOUT the naming rather
+                                     // than a record OF it (documents/guinn-1912).
+                                     // Kept distinct so a primary-anchor count can
+                                     // exclude it, as it excludes osm.
   attests: "planned-on",             // planned-on | planned-by
                                      // built-on   | built-by     — see §4.2
   completeness: "incidental",        // incidental | exhaustive-in-scope — see §4.3

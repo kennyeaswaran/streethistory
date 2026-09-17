@@ -1,0 +1,113 @@
+{
+  "document": "tr0020-196b",
+  "image": "tr0020-196b-100dpi.png",
+  "imageSize": [1117, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0020-196b-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [960, 923],
+    [444, 855],
+    [394, 1420],
+    [808, 1637]
+  ],
+  "coverageLl": [
+    [34.053304, -118.239298],
+    [34.053443, -118.240159],
+    [34.052655, -118.240301],
+    [34.052315, -118.239627]
+  ],
+  "streets": [
+    {
+      "name": "Temple Street",
+      "runs": [
+        {
+          "px": [
+            [818, 1588],
+            [750, 1536],
+            [652, 1450],
+            [589, 1396],
+            [443, 1268],
+            [410, 1239]
+          ],
+          "ll": [
+            [34.052382, -118.239605],
+            [34.052461, -118.239714],
+            [34.05259, -118.239871],
+            [34.052672, -118.23997],
+            [34.052864, -118.240203],
+            [34.052907, -118.240255]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Judge John Aiso Street",
+          "px": [750, 1536],
+          "ll": [34.052461, -118.239714],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Judge John Aiso Street",
+      "metres": 9.8
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Temple Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "requena-street",
+          "display": "Requena Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet"
+          ],
+          "ink": [
+            "REQUENA STREET"
+          ],
+          "docs": [
+            "mr003-146-p2"
+          ]
+        },
+        {
+          "id": "temple",
+          "display": "Temple Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "TEMPLE STREET",
+            "Temple Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489"
+          ]
+        },
+        {
+          "id": "market-st",
+          "display": "Market Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet"
+          ],
+          "ink": [
+            "Market St"
+          ],
+          "docs": [
+            "tr0020-196b"
+          ]
+        }
+      ]
+    }
+  ]
+}

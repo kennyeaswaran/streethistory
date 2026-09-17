@@ -343,6 +343,21 @@ so the flip needs no edit to it:
   documents/11824), `Main Street::9` (Jones and Ponet Block 1889, "Los
   Angeles St."). Rule 2: geometry, not name. **These block the flip until
   swept** — the deploy would refuse the file.
+- *(2026-09-17)* Two generator fixes the checker forced, both in
+  `generate.js`: an interval now takes any OSM row that overlaps it (the
+  eps tolerance is for document rows; a way shorter than eps at a street's
+  end, or a bridged pavement gap, was left with a former name and no current
+  period — 3 of 8 `until` errors that day), and OSM binding matches any form
+  of the current spelling period, display form first (so `pico` with forms
+  ["Pico Street", "Pico Boulevard"] binds instead of minting a stub).
+- *(2026-09-17, evening)* **Revived names built** (closes the §12 item
+  decided 2026-08-24). In `timelineFor`, an entity with dated evidence on an
+  interval both before and after another entity's gets two periods: the
+  earlier ending "?", the later starting from the change that brought it
+  back, else "by" its next sighting, else undated. Every split goes to
+  `generated/report.md` → "Revived names", because a row on the wrong street
+  produces the same shape. Also: spelling periods carry `bracketStart` so an
+  unpinned later spelling sorts with its entity, not after the current name.
 - Still to decide: what `check-data.js` is *for* after the flip. The
   authored layers have `check-model.js`; the generated file is the output
   of a deterministic program. What is still worth checking there is the

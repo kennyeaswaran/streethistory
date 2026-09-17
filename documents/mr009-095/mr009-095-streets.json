@@ -1,0 +1,537 @@
+{
+  "document": "mr009-095",
+  "image": "mr009-095-100dpi.png",
+  "imageSize": [1078, 1630],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr009-095-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [131, 554],
+    [795, 572],
+    [918, 1356],
+    [116, 1333]
+  ],
+  "coverageLl": [
+    [34.05336, -118.265006],
+    [34.052524, -118.26301],
+    [34.050386, -118.263754],
+    [34.051399, -118.266163]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [903, 1259],
+            [770, 1261],
+            [725, 1261],
+            [683, 1262],
+            [573, 1264],
+            [506, 1263],
+            [439, 1262],
+            [380, 1262],
+            [318, 1261],
+            [247, 1261],
+            [217, 1260],
+            [191, 1260],
+            [157, 1258],
+            [117, 1257]
+          ],
+          "ll": [
+            [34.050649, -118.263662],
+            [34.050804, -118.264068],
+            [34.050856, -118.264205],
+            [34.050905, -118.264336],
+            [34.051031, -118.264672],
+            [34.051112, -118.264875],
+            [34.051193, -118.265078],
+            [34.051265, -118.265258],
+            [34.05134, -118.265445],
+            [34.051426, -118.265661],
+            [34.051463, -118.265753],
+            [34.051495, -118.265832],
+            [34.051542, -118.265931],
+            [34.05159, -118.26605]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [725, 1261],
+          "ll": [34.050856, -118.264205],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garland Avenue",
+          "px": [27, 1253],
+          "ll": [34.051708, -118.266321],
+          "insideCoverage": false
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [1142, 1270],
+          "ll": [34.050337, -118.262948],
+          "insideCoverage": false
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [191, 1260],
+          "ll": [34.051495, -118.265832],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bixel Street",
+      "runs": [
+        {
+          "px": [
+            [746, 571],
+            [742, 627],
+            [737, 679],
+            [736, 721],
+            [736, 789],
+            [737, 834],
+            [736, 871],
+            [735, 900],
+            [735, 922],
+            [735, 958],
+            [735, 1012],
+            [735, 1039],
+            [735, 1055],
+            [735, 1217],
+            [725, 1261],
+            [717, 1300],
+            [718, 1350]
+          ],
+          "ll": [
+            [34.052586, -118.263157],
+            [34.052447, -118.263249],
+            [34.052321, -118.263341],
+            [34.052215, -118.263401],
+            [34.052042, -118.263499],
+            [34.051928, -118.263559],
+            [34.051834, -118.263616],
+            [34.051763, -118.263659],
+            [34.051707, -118.26369],
+            [34.051613, -118.263743],
+            [34.051476, -118.26382],
+            [34.051409, -118.263857],
+            [34.051369, -118.26388],
+            [34.050958, -118.264112],
+            [34.050856, -118.264205],
+            [34.050767, -118.264286],
+            [34.050639, -118.264356]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [725, 1261],
+          "ll": [34.050856, -118.264205],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ingraham Street",
+          "px": [735, 900],
+          "ll": [34.051763, -118.263659],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [737, 679],
+          "ll": [34.052321, -118.263341],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Ingraham Street",
+      "runs": [
+        {
+          "px": [
+            [207, 957],
+            [179, 955],
+            [123, 953]
+          ],
+          "ll": [
+            [34.052246, -118.26535],
+            [34.052283, -118.265432],
+            [34.052357, -118.265598]
+          ]
+        },
+        {
+          "px": [
+            [846, 899],
+            [841, 899],
+            [776, 899],
+            [735, 900],
+            [703, 900],
+            [493, 900],
+            [429, 901],
+            [373, 901],
+            [314, 901],
+            [310, 901],
+            [266, 901],
+            [233, 901],
+            [212, 901]
+          ],
+          "ll": [
+            [34.051634, -118.26332],
+            [34.05164, -118.263336],
+            [34.051716, -118.263535],
+            [34.051763, -118.263659],
+            [34.051801, -118.263757],
+            [34.05205, -118.264398],
+            [34.052125, -118.264593],
+            [34.052191, -118.264765],
+            [34.052261, -118.264945],
+            [34.052265, -118.264955],
+            [34.052318, -118.265091],
+            [34.052356, -118.26519],
+            [34.052381, -118.265253]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [735, 900],
+          "ll": [34.051763, -118.263659],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [212, 901],
+          "ll": [34.052381, -118.265253],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Lucas Avenue",
+      "runs": [
+        {
+          "px": [
+            [227, 557],
+            [223, 620],
+            [223, 653],
+            [222, 688],
+            [218, 782],
+            [212, 901],
+            [207, 957],
+            [201, 1069],
+            [200, 1086],
+            [192, 1227],
+            [191, 1260]
+          ],
+          "ll": [
+            [34.053239, -118.264716],
+            [34.053083, -118.264819],
+            [34.052999, -118.264867],
+            [34.052912, -118.264919],
+            [34.052677, -118.265068],
+            [34.052381, -118.265253],
+            [34.052246, -118.26535],
+            [34.051969, -118.265528],
+            [34.051926, -118.265555],
+            [34.051578, -118.26578],
+            [34.051495, -118.265832]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [191, 1260],
+          "ll": [34.051495, -118.265832],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garland Avenue",
+          "px": [109, 1257],
+          "ll": [34.051601, -118.266076],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ingraham Street",
+          "px": [207, 957],
+          "ll": [34.052246, -118.26535],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [223, 653],
+          "ll": [34.052999, -118.264867],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Wilshire Boulevard",
+      "runs": [
+        {
+          "px": [
+            [129, 648],
+            [193, 651],
+            [223, 653],
+            [256, 654],
+            [374, 661],
+            [493, 664],
+            [696, 677],
+            [737, 679],
+            [776, 682],
+            [813, 684]
+          ],
+          "ll": [
+            [34.053124, -118.265145],
+            [34.053039, -118.264955],
+            [34.052999, -118.264867],
+            [34.052959, -118.264769],
+            [34.052799, -118.264417],
+            [34.052649, -118.264061],
+            [34.052375, -118.263459],
+            [34.052321, -118.263341],
+            [34.052268, -118.263223],
+            [34.05222, -118.263116]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [737, 679],
+          "ll": [34.052321, -118.263341],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [223, 653],
+          "ll": [34.052999, -118.264867],
+          "insideCoverage": true
+        },
+        {
+          "name": "Saint Paul Place",
+          "px": [943, 691],
+          "ll": [34.052047, -118.262729],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "7th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "seventh-street",
+          "display": "7th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 7th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "7TH ST.",
+            "7TH STREET",
+            "7th ST",
+            "7th Street",
+            "CALLE 7a",
+            "SEVENTH ST",
+            "SEVENTH ST.",
+            "SEVENTH STR.",
+            "SEVENTH STREET",
+            "Seventh St",
+            "Seventh St.",
+            "Seventh Street",
+            "Seventh Street."
+          ],
+          "docs": [
+            "11824",
+            "mr003-016",
+            "mr003-569",
+            "mr006-033",
+            "mr006-039",
+            "mr011-063",
+            "mr013-091",
+            "mr014-034",
+            "mr015-052",
+            "mr018-025",
+            "mr018-092",
+            "mr021-046",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr053-068",
+            "mr053-071",
+            "mr054-051",
+            "mr055-081",
+            "mr066-064",
+            "mr070-084",
+            "tr0001-046",
+            "tr0005-056a",
+            "tr0009-100a",
+            "tr0011-196",
+            "tr0023-054c",
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Bixel Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "lafayette-bixel",
+          "display": "Lafayette Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "LAFAYETTE ST.",
+            "Lafayette Av."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr003-046-p2",
+            "mr006-115"
+          ]
+        },
+        {
+          "id": "bixel",
+          "display": "Bixel Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "BIXEL ST",
+            "BIXEL ST.",
+            "BIXEL STREET"
+          ],
+          "docs": [
+            "mr066-035",
+            "tr0417-049-p2",
+            "tr0588-055",
+            "tr0713-093-p2"
+          ]
+        },
+        {
+          "id": "ohio-street",
+          "display": "Ohio Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "OHIO ST.",
+            "Ohio Street"
+          ],
+          "docs": [
+            "mr005-069",
+            "tr0014-097b"
+          ]
+        },
+        {
+          "id": "metcalf-st",
+          "display": "Metcalf Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "Metcalf St"
+          ],
+          "docs": [
+            "mr007-026-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Ingraham Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "ingraham",
+          "display": "Ingraham Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Lucas Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "lucas-avenue",
+          "display": "Lucas Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Lucas Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "LUCAS AVENUE",
+            "Lucas Ave"
+          ],
+          "docs": [
+            "mr006-115",
+            "mr010-081",
+            "tr0015-166a-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Wilshire Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "wilshire",
+          "display": "Wilshire Boulevard",
+          "pendingResearch": false,
+          "why": [
+            "attested on Wilshire Boulevard by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "WILSHIRE BOULEVARD"
+          ],
+          "docs": [
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "orange-st-wilshire",
+          "display": "Orange Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Wilshire Boulevard by another sheet"
+          ],
+          "ink": [
+            "ORANGE ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        }
+      ]
+    }
+  ]
+}

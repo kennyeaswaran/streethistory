@@ -1,0 +1,133 @@
+{
+  "document": "tr0096-062",
+  "image": "tr0096-062-100dpi.png",
+  "imageSize": [1746, 2429],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0096-062-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [779, 221],
+    [737, 1280],
+    [1620, 1299],
+    [1586, 293]
+  ],
+  "coverageLl": [
+    [34.066706, -118.268661],
+    [34.065968, -118.269161],
+    [34.065632, -118.268416],
+    [34.06636, -118.268005]
+  ],
+  "streets": [
+    {
+      "name": "Beverly Boulevard",
+      "runs": [
+        {
+          "px": [
+            [745, 1070],
+            [776, 1070],
+            [965, 1073],
+            [1243, 1082],
+            [1458, 1087],
+            [1508, 1087],
+            [1550, 1088],
+            [1613, 1090]
+          ],
+          "ll": [
+            [34.066115, -118.269061],
+            [34.066103, -118.269035],
+            [34.066032, -118.268876],
+            [34.065924, -118.268643],
+            [34.065842, -118.268461],
+            [34.065824, -118.268418],
+            [34.065807, -118.268384],
+            [34.065783, -118.268331]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bonnie Brae Street",
+          "px": [2144, 1103],
+          "ll": [34.06558, -118.267884],
+          "insideCoverage": false
+        },
+        {
+          "name": "Mountain View Avenue",
+          "px": [340, 1062],
+          "ll": [34.066268, -118.269403],
+          "insideCoverage": false
+        },
+        {
+          "name": "Westlake Avenue",
+          "px": [965, 1073],
+          "ll": [34.066032, -118.268876],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Westlake Avenue",
+      "runs": [
+        {
+          "px": [
+            [969, 238],
+            [970, 498],
+            [963, 928],
+            [964, 949],
+            [965, 1073],
+            [981, 1211],
+            [983, 1226],
+            [984, 1285]
+          ],
+          "ll": [
+            [34.066625, -118.268506],
+            [34.066439, -118.268619],
+            [34.066136, -118.268813],
+            [34.066121, -118.268822],
+            [34.066032, -118.268876],
+            [34.065928, -118.268922],
+            [34.065916, -118.268927],
+            [34.065874, -118.268953]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beverly Boulevard",
+          "px": [965, 1073],
+          "ll": [34.066032, -118.268876],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Beverly Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "diamond-street",
+          "display": "Diamond Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Beverly Boulevard by another sheet"
+          ],
+          "ink": [
+            "Diamond Street"
+          ],
+          "docs": [
+            "mr006-138"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Westlake Avenue",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

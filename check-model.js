@@ -239,7 +239,11 @@ const DATE_RE = /^\d{4}(-\d{2}(-\d{2})?)?$/;
 // volume that quotes an ordinance in full is type "ordinance" (the 1874 and
 // 1887 renamings are), but one that records a petition being received and
 // referred enacts nothing and should not claim to.
-const TYPES = ["tract-map", "survey", "sanborn", "directory", "ordinance", "minutes", "osm", "annotation", "news-report"];
+// "history" (added 2026-09-17 for documents/guinn-1912) is SECONDARY scholarship —
+// a historian writing about the naming, not a record of it. It earns a type of its
+// own rather than being filed as a news-report so that a later primary-anchor count
+// can exclude it; nothing in the code keys off type except the osm lookup.
+const TYPES = ["tract-map", "survey", "sanborn", "directory", "ordinance", "minutes", "osm", "annotation", "news-report", "history"];
 const ATTESTS = ["planned-on", "planned-by", "built-on", "built-by"];
 // §4.1a: what KIND of evidence, as opposed to what kind of publication. It is
 // what the tools dispatch on, and it is declared rather than sniffed — "is

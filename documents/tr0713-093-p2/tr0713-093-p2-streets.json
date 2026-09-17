@@ -1,0 +1,504 @@
+{
+  "document": "tr0713-093-p2",
+  "image": "tr0713-093-p2-100dpi.png",
+  "imageSize": [1707, 2402],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0713-093-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [2, 1153],
+    [261, 1666],
+    [1068, 2160],
+    [1744, 1344],
+    [416, 575]
+  ],
+  "coverageLl": [
+    [34.059881, -118.258008],
+    [34.058716, -118.257343],
+    [34.057567, -118.255203],
+    [34.059363, -118.253335],
+    [34.061157, -118.256859]
+  ],
+  "streets": [
+    {
+      "name": "1st Street",
+      "runs": [
+        {
+          "px": [
+            [291, 750],
+            [293, 751],
+            [448, 828],
+            [518, 863],
+            [546, 876],
+            [590, 898],
+            [755, 978],
+            [857, 1026],
+            [1007, 1114],
+            [1044, 1142],
+            [1214, 1271],
+            [1242, 1292],
+            [1375, 1399],
+            [1437, 1439],
+            [1482, 1473],
+            [1513, 1496],
+            [1578, 1544]
+          ],
+          "ll": [
+            [34.060771, -118.257207],
+            [34.060769, -118.257202],
+            [34.060586, -118.256789],
+            [34.060506, -118.256603],
+            [34.060474, -118.256529],
+            [34.060423, -118.256412],
+            [34.060236, -118.255972],
+            [34.060123, -118.2557],
+            [34.059916, -118.255304],
+            [34.059851, -118.255205],
+            [34.059554, -118.254756],
+            [34.059505, -118.254681],
+            [34.059259, -118.25433],
+            [34.059165, -118.254167],
+            [34.059088, -118.254046],
+            [34.059035, -118.253966],
+            [34.058923, -118.253793]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beaudry Avenue",
+          "px": [1437, 1439],
+          "ll": [34.059165, -118.254167],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bixel Street",
+          "px": [448, 828],
+          "ll": [34.060586, -118.256789],
+          "insideCoverage": true
+        },
+        {
+          "name": "Diamond Street",
+          "px": [1472, 1365],
+          "ll": [34.059331, -118.254067],
+          "insideCoverage": true
+        },
+        {
+          "name": "Edgeware Road",
+          "px": [50, 654],
+          "ll": [34.060998, -118.257848],
+          "insideCoverage": false
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [1659, 1644],
+          "ll": [34.058695, -118.253582],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "2nd Street",
+      "runs": [
+        {
+          "px": [
+            [1144, 2068],
+            [1074, 2016],
+            [1040, 1991],
+            [998, 1959],
+            [856, 1857],
+            [830, 1838],
+            [563, 1641],
+            [505, 1588],
+            [453, 1535],
+            [372, 1433],
+            [283, 1321],
+            [227, 1250],
+            [132, 1141],
+            [64, 1066]
+          ],
+          "ll": [
+            [34.057769, -118.254992],
+            [34.05789, -118.255179],
+            [34.057948, -118.255268],
+            [34.058022, -118.255379],
+            [34.058258, -118.255755],
+            [34.058301, -118.255823],
+            [34.058758, -118.256528],
+            [34.05888, -118.256681],
+            [34.059001, -118.256818],
+            [34.059234, -118.257031],
+            [34.059489, -118.257263],
+            [34.059652, -118.257408],
+            [34.059902, -118.257659],
+            [34.060073, -118.257835]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beaudry Avenue",
+          "px": [1040, 1991],
+          "ll": [34.057948, -118.255268],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bixel Street",
+          "px": [227, 1250],
+          "ll": [34.059652, -118.257408],
+          "insideCoverage": true
+        },
+        {
+          "name": "Edgeware Road",
+          "px": [-87, 891],
+          "ll": [34.060473, -118.25823],
+          "insideCoverage": false
+        },
+        {
+          "name": "Emerald Street",
+          "px": [283, 1321],
+          "ll": [34.059489, -118.257263],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [1220, 2176],
+          "ll": [34.057524, -118.254794],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Beaudry Avenue",
+      "runs": [
+        {
+          "px": [
+            [960, 2094],
+            [969, 2082],
+            [1001, 2040],
+            [1040, 1991],
+            [1071, 1952],
+            [1094, 1926],
+            [1143, 1867],
+            [1162, 1843],
+            [1343, 1584],
+            [1374, 1539],
+            [1402, 1492],
+            [1437, 1439],
+            [1469, 1377],
+            [1495, 1318],
+            [1499, 1309],
+            [1508, 1290],
+            [1537, 1224]
+          ],
+          "ll": [
+            [34.057721, -118.25549],
+            [34.057748, -118.255464],
+            [34.05784, -118.255375],
+            [34.057948, -118.255268],
+            [34.058033, -118.255181],
+            [34.058089, -118.25512],
+            [34.058221, -118.254983],
+            [34.058273, -118.25493],
+            [34.058846, -118.254429],
+            [34.058944, -118.254343],
+            [34.059049, -118.254264],
+            [34.059165, -118.254167],
+            [34.059304, -118.254076],
+            [34.059435, -118.254004],
+            [34.059455, -118.253992],
+            [34.059496, -118.253967],
+            [34.059643, -118.253885]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1437, 1439],
+          "ll": [34.059165, -118.254167],
+          "insideCoverage": true
+        },
+        {
+          "name": "2nd Street",
+          "px": [1040, 1991],
+          "ll": [34.057948, -118.255268],
+          "insideCoverage": true
+        },
+        {
+          "name": "Diamond Street",
+          "px": [1508, 1290],
+          "ll": [34.059496, -118.253967],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bixel Street",
+      "runs": [
+        {
+          "px": [
+            [448, 828],
+            [428, 867],
+            [334, 1046],
+            [247, 1212],
+            [227, 1250]
+          ],
+          "ll": [
+            [34.060586, -118.256789],
+            [34.0605, -118.256846],
+            [34.060103, -118.257109],
+            [34.059737, -118.257352],
+            [34.059652, -118.257408]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [448, 828],
+          "ll": [34.060586, -118.256789],
+          "insideCoverage": true
+        },
+        {
+          "name": "2nd Street",
+          "px": [227, 1250],
+          "ll": [34.059652, -118.257408],
+          "insideCoverage": true
+        },
+        {
+          "name": "Emerald Street",
+          "px": [220, 1291],
+          "ll": [34.05956, -118.257429],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Diamond Street",
+      "runs": [
+        {
+          "px": [
+            [1508, 1290],
+            [1554, 1313],
+            [1650, 1360],
+            [1702, 1385]
+          ],
+          "ll": [
+            [34.059496, -118.253967],
+            [34.059443, -118.253843],
+            [34.059333, -118.25359],
+            [34.059274, -118.253449]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1472, 1365],
+          "ll": [34.059331, -118.254067],
+          "insideCoverage": true
+        },
+        {
+          "name": "Beaudry Avenue",
+          "px": [1508, 1290],
+          "ll": [34.059496, -118.253967],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [1726, 1466],
+          "ll": [34.059092, -118.253392],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Emerald Street",
+      "runs": [
+        {
+          "px": [
+            [283, 1321],
+            [214, 1332],
+            [100, 1347]
+          ],
+          "ll": [
+            [34.059489, -118.257263],
+            [34.059468, -118.25745],
+            [34.05944, -118.257757]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [283, 1321],
+          "ll": [34.059489, -118.257263],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bixel Street",
+          "px": [220, 1291],
+          "ll": [34.05956, -118.257429],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "1st Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "first-street",
+          "display": "1st Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 1st Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "1ST ST",
+            "1ST STREET",
+            "1st ST",
+            "CALLE 1a",
+            "FIRST ST",
+            "FIRST STREET",
+            "FIRST STREET.",
+            "First Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr002-092-p1",
+            "mr003-060-p1",
+            "mr003-146-p1",
+            "mr005-307-a",
+            "mr010-008",
+            "mr053-069",
+            "mr053-071",
+            "tr0885-030-p2",
+            "tr1339-069-p3"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "2nd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "CALLE 2a",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr053-069",
+            "mr053-071",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Beaudry Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "beaudry-st",
+          "display": "Beaudry Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Bixel Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "bixel",
+          "display": "Bixel Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "BIXEL ST"
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Diamond Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "diamond-street",
+          "display": "Diamond Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Emerald Street",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

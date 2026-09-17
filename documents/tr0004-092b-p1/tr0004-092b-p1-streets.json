@@ -1,0 +1,180 @@
+{
+  "document": "tr0004-092b-p1",
+  "image": "tr0004-092b-p1-100dpi.png",
+  "imageSize": [1162, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0004-092b-p1-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [205, 545],
+    [100, 1581],
+    [159, 1815],
+    [620, 1846],
+    [707, 597]
+  ],
+  "coverageLl": [
+    [34.045583, -118.223945],
+    [34.04257, -118.223862],
+    [34.041918, -118.223558],
+    [34.041994, -118.221958],
+    [34.045613, -118.222194]
+  ],
+  "streets": [
+    {
+      "name": "3rd Street",
+      "runs": [
+        {
+          "px": [
+            [190, 691],
+            [263, 695],
+            [437, 703],
+            [605, 709],
+            [699, 710]
+          ],
+          "ll": [
+            [34.045157, -118.223933],
+            [34.045173, -118.223682],
+            [34.045213, -118.223077],
+            [34.045255, -118.222499],
+            [34.045286, -118.222173]
+          ]
+        }
+      ],
+      "crossings": []
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "4th Street",
+      "metres": 16.7
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "3rd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "3RD ST",
+            "3RD ST.",
+            "3RD STREET",
+            "3d Street",
+            "CALLE 3a",
+            "THIRD ST.",
+            "THIRD STREET",
+            "Third St",
+            "Third Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr016-059",
+            "mr030-009-p5",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0013-168-p1",
+            "tr0116-085-p1",
+            "tr0122-053-p3",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "arnold",
+          "display": "Arnold Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "ARNOLD ST",
+            "ARNOLD ST.",
+            "Arnold St",
+            "Arnold Street"
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr006-427",
+            "mr007-036-p2",
+            "mr007-096-p2",
+            "mr037-078",
+            "mr066-035",
+            "tr0001-057a"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        },
+        {
+          "id": "georgia-east",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "GEORGIA ST",
+            "Georgia St",
+            "Georgie Street."
+          ],
+          "docs": [
+            "mr002-092-p2",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "mr030-009-p5"
+          ]
+        },
+        {
+          "id": "atchison-st",
+          "display": "Atchison Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "ATCHISON ST."
+          ],
+          "docs": [
+            "mr024-081"
+          ]
+        },
+        {
+          "id": "morgan-lane",
+          "display": "Morgan Lane",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "Morgan Lane"
+          ],
+          "docs": [
+            "mr005-005"
+          ]
+        }
+      ]
+    }
+  ]
+}

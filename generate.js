@@ -208,7 +208,7 @@ function displayForm(e) { const sp = e.spellings[e.spellings.length - 1]; return
 // stubs for new coverage. Reports ambiguities instead of guessing.
 const DocGeom = require("./doc-geometry.js");
 const report = { stubs: [], ambiguous: [], unmatchedAsWritten: new Map(),
-                 derivedDisambig: [], partialDocs: [], notes: [] };
+                 derivedDisambig: [], partialDocs: [], notes: [], revived: [] };
 const vanished = [];   // §5.3 — drawn pavement with no modern counterpart
 const osmDoc = DOCUMENTS.find(d => d.type === "osm");
 let proposalCount = 0;              // unconfirmed rows held back from the map
@@ -226,9 +226,18 @@ function entityHasRowsOnStreet(id, streetName) {
 const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const osmBinding = new Map(); // street name -> entity id
 for (const streetName of streets.keys()) {
-  const matches = Object.entries(entities)
-    .filter(([, e]) => formMatches(streetName, displayForm(e)))
-    .map(([id]) => id);
+  // Any form of the entity's CURRENT spelling period binds — "Pico Street"
+  // and "Pico Boulevard" listed together mean both are in force, and OSM
+  // says the second (2026-09-17; matching only forms[0] minted a stub beside
+  // the curated entity).
+  // The display form (forms[0] of that period) wins when it matches, so an
+  // entity that merely LISTS another entity's name among its forms does not
+  // turn a clean bind into an ambiguity; the other forms are the fallback.
+  const currentForms = e => e.spellings[e.spellings.length - 1].forms;
+  const byDisplay = Object.entries(entities)
+    .filter(([, e]) => formMatches(streetName, displayForm(e))).map(([id]) => id);
+  const matches = byDisplay.length ? byDisplay : Object.entries(entities)
+    .filter(([, e]) => currentForms(e).some(f => formMatches(streetName, f))).map(([id]) => id);
   if (matches.length === 1) { osmBinding.set(streetName, matches[0]); continue; }
   if (matches.length > 1) {
     // Disambiguate by geometry: the entity whose known (documented) extents
@@ -572,8 +581,22 @@ function buildStreet(streetName) {
     const mid = (a + b) / 2;
     if (!pav.some(([pa, pb]) => mid >= pa - SNAP && mid <= pb + SNAP)) continue;
     const eps = Math.min(SNAP, (b - a) / 3); // don't starve narrow intervals
-    intervals.push({ a, b, crossA: cuts[i].cross, crossB: cuts[i + 1].cross,
-      rows: rows.filter(r => r.a < b - eps && r.b > a + eps) });
+    // Document rows must reach past the tolerance, so alignment slop does not
+    // bleed a claim across a cut. OSM rows are the pavement itself, not a
+    // claim about it: any overlap counts (2026-09-17 — a 25 m way at the end
+    // of Victor Street fell inside eps, and the ground it is on was left with
+    // the 1885 "Victor ave" row alone: a timeline ending in a former name).
+    const ivRows = rows.filter(r => r.osm ? (r.a < b && r.b > a) : (r.a < b - eps && r.b > a + eps));
+    // A bridged pavement gap (ways closer than GAP_M are one pavement, §6.1)
+    // has no way of its own, but the street bears its modern name across it:
+    // carry the nearest OSM row over, so the current period exists there too.
+    if (!ivRows.some(r => r.osm)) {
+      const osmRows = rows.filter(r => r.osm);
+      const dist = r => Math.max(0, r.a - b, a - r.b);
+      const near = osmRows.reduce((best, r) => !best || dist(r) < dist(best) ? r : best, null);
+      if (near) ivRows.push(near);
+    }
+    intervals.push({ a, b, crossA: cuts[i].cross, crossB: cuts[i + 1].cross, rows: ivRows });
   }
   intervals.forEach(iv => { iv.timeline = timelineFor(streetName, iv); });
 
@@ -665,6 +688,13 @@ function timelineFor(streetName, iv) {
     else { get(c.to).opens.push(c); get(c.from).closes.push(c); }
   }
 
+  // Dated evidence per entity on this interval (non-OSM sightings and the
+  // changes that open it), for the revival test below.
+  const evid = new Map();
+  for (const [ent, info] of present)
+    evid.set(ent, info.sightings.filter(s => !s.osm).map(s => dkey(docDate(s.doc)))
+      .concat(info.opens.map(c => dkey(c.date))).sort());
+
   const periods = [];
   for (const [ent, info] of present) {
     const e = entities[ent];
@@ -701,6 +731,43 @@ function timelineFor(streetName, iv) {
       // rows do — e.g. an entity known only from prose plus the change row
       // that ended it.
       if (start === null && sps[0].from) { start = sps[0].from; startKind = "prose"; }
+
+      // REVIVAL (MODEL-SPEC §12, decided 2026-08-24: a revived name resumes
+      // its old entity; built 2026-09-17). This name has dated evidence here
+      // BEFORE another name's, and again AFTER it — NINTH on the 1849 survey,
+      // Moran's Lane on the 1873 lots, NINTH on the 1893 tract; or Wall in
+      // 1884, Myrtle in 1886, then the 1893 ordinance making Myrtle Wall. One
+      // bracket would swallow the intervening name and end the timeline in it.
+      // So: two periods — the earlier one ending "?" (nothing documents when
+      // it gave way), the later one starting from the change that brought the
+      // name back, else "by" its next sighting, else undated (the base map
+      // alone says it is back). The same shape is also what a row on the
+      // WRONG street looks like, so every split is reported for a human eye.
+      const mine = evid.get(ent), others = [...evid].filter(([id]) => id !== ent).flatMap(([, ks]) => ks).sort();
+      const first = mine[0];
+      const intruder = first === undefined ? undefined : others.find(k => k > first);
+      const laterOpen = intruder && open && dkey(open.date) > intruder ? open : null;
+      const laterSight = intruder ? nonOsm.find(s0 => dkey(docDate(s0.doc)) > intruder) : null;
+      const comesBack = intruder && (laterOpen || laterSight || (hasOsm && end === null));
+      if (comesBack && !(close && dkey(close.date) <= intruder)) {
+        const form = sps[0].forms[0];
+        const firstSight = nonOsm[0];
+        const s1 = laterOpen ? (firstSight ? docDate(firstSight.doc) : start) : start;
+        const k1 = laterOpen ? (firstSight ? (firstSight.attests === "planned-on" ? "exact" : "by") : startKind) : startKind;
+        const before = sight.filter(s0 => !s0.osm && dkey(docDate(s0.doc)) <= intruder);
+        periods.push(mkPeriod(ent, form, s1, k1, "?", "unknown",
+          { sightings: before, open: laterOpen ? null : open, close: null, startDoc: firstSight ? firstSight.doc : startDoc,
+            endDoc: null, proseSource: sps[0].source || null, revived: "earlier" }));
+        let s2 = null, k2 = "unknown", d2 = null;
+        if (laterOpen) { s2 = laterOpen.date; k2 = "change"; d2 = laterOpen.doc; }
+        else if (laterSight) { s2 = docDate(laterSight.doc); k2 = laterSight.attests === "planned-on" ? "exact" : "by"; d2 = laterSight.doc; }
+        const after = sight.filter(s0 => s0.osm || dkey(docDate(s0.doc)) > intruder);
+        periods.push(mkPeriod(ent, form, s2, k2, end, endKind,
+          { sightings: after, open: laterOpen, close, startDoc: d2, endDoc, proseSource: sps[0].source || null, revived: "resumed" }));
+        const between = [...evid].filter(([id, ks]) => id !== ent && ks.some(k => k > first && (s2 === null || k < dkey(s2)))).map(([id]) => displayForm(entities[id]));
+        report.revived.push(`${streetName} [${iv.a.toFixed(4)}–${iv.b.toFixed(4)}]: ${form} (${dyear(s1 || "????")}) → ${between.join(", ")} → ${form} (${s2 ? dyear(s2) : "undated"}) — a revived name, or a row on the wrong street`);
+        continue;
+      }
       periods.push(mkPeriod(ent, sps[0].forms[0], start, startKind, end, endKind,
         { sightings: sight, open, close, startDoc, endDoc, proseSource: sps[0].source || null }));
     } else {
@@ -728,7 +795,11 @@ function timelineFor(streetName, iv) {
         periods.push(mkPeriod(ent, sps[i].forms[0], cursorStart, cursorKind, pEnd, pEndKind,
           { sightings: sight, open: i === 0 ? open : (bounds[i - 1] && bounds[i - 1].kind === "change" ? { date: bounds[i - 1].date, doc: bounds[i - 1].doc, respell: true } : null),
             close: isLast ? close : null, startDoc, endDoc: isLast ? endDoc : null,
-            proseSource: sps[i].source || null, spellingIndex: i }));
+            proseSource: sps[i].source || null, spellingIndex: i,
+            // The bracket the spelling periods share, so an unpinned later
+            // spelling ("?"–"?") sorts with its entity rather than after the
+            // current name (Bixel's Lafayette Street / Lafayette Avenue, 2026-09-17).
+            bracketStart: start }));
         cursorStart = pEnd === "?" ? null : pEnd;
         cursorKind = bnd ? bnd.kind : "unknown";
       }
@@ -738,7 +809,8 @@ function timelineFor(streetName, iv) {
   // Order by effective date; on a tie (a transition day), the period ENDING
   // that day precedes the one beginning.
   periods.sort((x, y) => {
-    const key = p => p.start ? dkey(p.start) : (p.end && p.end !== "?" ? dkey(p.end) : "9999");
+    const key = p => p.start ? dkey(p.start)
+      : (p.ctx.bracketStart ? dkey(p.ctx.bracketStart) : (p.end && p.end !== "?" ? dkey(p.end) : "9999"));
     const endsAt = p => p.end && p.end !== "?" && dkey(p.end) === key(p) ? 0 : 1;
     const kx = key(x), ky = key(y);
     if (kx !== ky) return kx < ky ? -1 : 1;
@@ -1506,6 +1578,7 @@ if (EXCLUDE_NAMES.size) rep.push(`- Excluded OSM names (normalizeName misparses 
 rep.push("");
 if (report.ambiguous.length) { rep.push("## Ambiguous OSM binds (NOT bound — fix by adding extents or disambiguation)"); report.ambiguous.forEach(x => rep.push("- " + x)); rep.push(""); }
 if (problems.length) { rep.push("## Row problems"); problems.forEach(x => rep.push("- " + x)); rep.push(""); }
+if (report.revived.length) { rep.push("## Revived names (a name recurs around another — check the intervening row is on the right street)"); [...new Set(report.revived)].forEach(x => rep.push("- " + x)); rep.push(""); }
 if (report.partialDocs.length) { rep.push("## Partially swept documents (no negative inference contributed)"); report.partialDocs.forEach(x => rep.push("- " + x)); rep.push(""); }
 if (report.unmatchedAsWritten.size) {
   rep.push("## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)");

@@ -1,0 +1,103 @@
+{
+  "document": "tr0221-009-p2",
+  "image": "tr0221-009-p2-100dpi.png",
+  "imageSize": [1796, 2536],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0221-009-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [-241, 614],
+    [272, 2152],
+    [1776, 1982],
+    [1895, 635]
+  ],
+  "coverageLl": [
+    [34.060537, -118.255829],
+    [34.059346, -118.256326],
+    [34.058737, -118.255118],
+    [34.059511, -118.254263]
+  ],
+  "streets": [
+    {
+      "name": "1st Street",
+      "runs": [
+        {
+          "px": [
+            [-109, 1011],
+            [194, 951],
+            [693, 902],
+            [827, 904],
+            [1442, 913],
+            [1544, 915],
+            [1869, 928]
+          ],
+          "ll": [
+            [34.060229, -118.255957],
+            [34.060123, -118.2557],
+            [34.059916, -118.255304],
+            [34.059851, -118.255205],
+            [34.059554, -118.254756],
+            [34.059505, -118.254681],
+            [34.059342, -118.254449]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beaudry Avenue",
+          "px": [2247, 924],
+          "ll": [34.059165, -118.254167],
+          "insideCoverage": false
+        },
+        {
+          "name": "Diamond Street",
+          "px": [2203, 690],
+          "ll": [34.059331, -118.254067],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "1st Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "first-street",
+          "display": "1st Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 1st Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "1ST ST",
+            "1ST STREET",
+            "1st ST",
+            "CALLE 1a",
+            "FIRST ST",
+            "FIRST STREET",
+            "FIRST STREET.",
+            "First Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr002-092-p1",
+            "mr003-060-p1",
+            "mr003-146-p1",
+            "mr005-307-a",
+            "mr010-008",
+            "mr053-069",
+            "mr053-071",
+            "tr0885-030-p2",
+            "tr1339-069-p3"
+          ]
+        }
+      ]
+    }
+  ]
+}

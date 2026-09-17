@@ -1,0 +1,539 @@
+{
+  "document": "mr002-526-p1",
+  "image": "mr002-526-p1-100dpi.png",
+  "imageSize": [1111, 1775],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr002-526-p1-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [335, 1758],
+    [1058, 1640],
+    [1084, 50],
+    [295, 60]
+  ],
+  "coverageLl": [
+    [34.054011, -118.238335],
+    [34.051976, -118.238349],
+    [34.051168, -118.233145],
+    [34.053334, -118.23274]
+  ],
+  "streets": [
+    {
+      "name": "Alameda Street",
+      "runs": [
+        {
+          "px": [
+            [1060, 1544],
+            [1047, 1546],
+            [911, 1564],
+            [750, 1587],
+            [714, 1592],
+            [704, 1593],
+            [486, 1622],
+            [441, 1626],
+            [394, 1630],
+            [334, 1633],
+            [332, 1633]
+          ],
+          "ll": [
+            [34.051927, -118.238037],
+            [34.051961, -118.238035],
+            [34.052344, -118.23802],
+            [34.052795, -118.238006],
+            [34.052895, -118.238],
+            [34.052925, -118.238],
+            [34.053534, -118.237973],
+            [34.05366, -118.237962],
+            [34.053791, -118.237947],
+            [34.053955, -118.237925],
+            [34.053961, -118.237924]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Arcadia Street",
+          "px": [125, 1643],
+          "ll": [34.054532, -118.237841],
+          "insideCoverage": false
+        },
+        {
+          "name": "Commercial Street",
+          "px": [394, 1630],
+          "ll": [34.053791, -118.237947],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ducommun Street",
+          "px": [714, 1528],
+          "ll": [34.052865, -118.237792],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [195, 1654],
+          "ll": [34.054346, -118.237917],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Aliso Street",
+      "runs": [
+        {
+          "px": [
+            [335, 1754],
+            [344, 1735],
+            [373, 1682],
+            [394, 1630]
+          ],
+          "ll": [
+            [34.054009, -118.238323],
+            [34.053976, -118.238266],
+            [34.05387, -118.238106],
+            [34.053791, -118.237947]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [394, 1630],
+          "ll": [34.053791, -118.237947],
+          "insideCoverage": true
+        },
+        {
+          "name": "Commercial Street",
+          "px": [394, 1630],
+          "ll": [34.053791, -118.237947],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Commercial Street",
+      "runs": [
+        {
+          "px": [
+            [394, 1630],
+            [421, 1578],
+            [450, 1519],
+            [465, 1475],
+            [470, 1450],
+            [472, 1417],
+            [467, 875],
+            [466, 801],
+            [464, 685],
+            [462, 544],
+            [461, 510],
+            [459, 430],
+            [462, 371],
+            [462, 355],
+            [461, 253],
+            [463, 122],
+            [464, 77],
+            [465, 58]
+          ],
+          "ll": [
+            [34.053791, -118.237947],
+            [34.053691, -118.237792],
+            [34.053584, -118.237615],
+            [34.053525, -118.23748],
+            [34.053499, -118.237401],
+            [34.053478, -118.237293],
+            [34.05324, -118.235509],
+            [34.05321, -118.235267],
+            [34.05316, -118.234884],
+            [34.0531, -118.23442],
+            [34.053087, -118.234311],
+            [34.053055, -118.234044],
+            [34.053021, -118.233852],
+            [34.053014, -118.233799],
+            [34.052968, -118.233465],
+            [34.052903, -118.233037],
+            [34.052878, -118.232891],
+            [34.052867, -118.232827]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [394, 1630],
+          "ll": [34.053791, -118.237947],
+          "insideCoverage": true
+        },
+        {
+          "name": "Aliso Street",
+          "px": [394, 1630],
+          "ll": [34.053791, -118.237947],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garey Street",
+          "px": [459, 430],
+          "ll": [34.053055, -118.234044],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [339, 1627],
+          "ll": [34.053939, -118.237907],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [463, 122],
+          "ll": [34.052903, -118.233037],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Ducommun Street",
+      "runs": [
+        {
+          "px": [
+            [795, 54],
+            [796, 104],
+            [796, 108],
+            [795, 127],
+            [795, 150],
+            [795, 158],
+            [796, 265],
+            [799, 400],
+            [799, 406],
+            [799, 428]
+          ],
+          "ll": [
+            [34.05196, -118.232997],
+            [34.051983, -118.233162],
+            [34.051985, -118.233175],
+            [34.051995, -118.233238],
+            [34.052006, -118.233312],
+            [34.05201, -118.233338],
+            [34.052056, -118.233692],
+            [34.052111, -118.234137],
+            [34.052114, -118.234156],
+            [34.052124, -118.234228]
+          ]
+        },
+        {
+          "px": [
+            [714, 1465],
+            [732, 1405],
+            [727, 968],
+            [727, 901],
+            [727, 809],
+            [729, 453],
+            [729, 449],
+            [729, 429]
+          ],
+          "ll": [
+            [34.052836, -118.237583],
+            [34.052761, -118.237398],
+            [34.052571, -118.235962],
+            [34.052541, -118.23574],
+            [34.052498, -118.235437],
+            [34.052328, -118.234272],
+            [34.052326, -118.234256],
+            [34.052316, -118.234192]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [714, 1528],
+          "ll": [34.052865, -118.237792],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garey Street",
+          "px": [729, 429],
+          "ll": [34.052316, -118.234192],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [795, 127],
+          "ll": [34.051995, -118.233238],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Garey Street",
+      "runs": [
+        {
+          "px": [
+            [459, 430],
+            [502, 434],
+            [515, 434],
+            [729, 429],
+            [738, 429],
+            [799, 428],
+            [1078, 425]
+          ],
+          "ll": [
+            [34.053055, -118.234044],
+            [34.05294, -118.234082],
+            [34.052904, -118.234089],
+            [34.052316, -118.234192],
+            [34.052292, -118.234197],
+            [34.052124, -118.234228],
+            [34.051358, -118.234372]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Commercial Street",
+          "px": [459, 430],
+          "ll": [34.053055, -118.234044],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ducommun Street",
+          "px": [799, 428],
+          "ll": [34.052124, -118.234228],
+          "insideCoverage": true
+        },
+        {
+          "name": "Jackson Street",
+          "px": [1122, 424],
+          "ll": [34.051237, -118.234395],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Santa Ana Freeway",
+      "runs": [
+        {
+          "px": [
+            [328, 1474],
+            [333, 1454],
+            [345, 1375],
+            [352, 1293],
+            [354, 1221],
+            [350, 1141],
+            [336, 1045],
+            [315, 917]
+          ],
+          "ll": [
+            [34.053897, -118.237398],
+            [34.053875, -118.237336],
+            [34.053805, -118.237084],
+            [34.053748, -118.23682],
+            [34.05371, -118.236583],
+            [34.053684, -118.236319],
+            [34.053677, -118.235996],
+            [34.053676, -118.235565]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [195, 1654],
+          "ll": [34.054346, -118.237917],
+          "insideCoverage": false
+        },
+        {
+          "name": "Commercial Street",
+          "px": [339, 1627],
+          "ll": [34.053939, -118.237907],
+          "insideCoverage": true
+        },
+        {
+          "name": "I-10 Metro ExpressLanes",
+          "px": [163, 767],
+          "ll": [34.054023, -118.234989],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Vignes Street",
+      "runs": [
+        {
+          "px": [
+            [1083, 123],
+            [813, 128],
+            [795, 127],
+            [776, 127],
+            [663, 126],
+            [491, 123],
+            [463, 122]
+          ],
+          "ll": [
+            [34.051205, -118.233385],
+            [34.051946, -118.233249],
+            [34.051995, -118.233238],
+            [34.052047, -118.233227],
+            [34.052356, -118.233162],
+            [34.052825, -118.233054],
+            [34.052903, -118.233037]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Commercial Street",
+          "px": [463, 122],
+          "ll": [34.052903, -118.233037],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ducommun Street",
+          "px": [795, 127],
+          "ll": [34.051995, -118.233238],
+          "insideCoverage": true
+        },
+        {
+          "name": "Jackson Street",
+          "px": [1120, 123],
+          "ll": [34.051104, -118.233406],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Alameda Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "alameda-st",
+          "display": "Alameda Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alameda Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "ALAMEDA ST",
+            "ALAMEDA ST.",
+            "ALAMEDA STREET",
+            "Alameda STREET.",
+            "Alameda St",
+            "Alameda St."
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2",
+            "mr012-042",
+            "mr013-087-p1",
+            "mr013-091",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "tr0005-056a",
+            "tr0009-075",
+            "tr0012-101",
+            "tr0145-062",
+            "tr0926-086-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Aliso Street",
+      "continuesInto": [
+        "Commercial Street"
+      ],
+      "candidates": []
+    },
+    {
+      "street": "Commercial Street",
+      "continuesInto": [
+        "Aliso Street"
+      ],
+      "candidates": [
+        {
+          "id": "commercial-street",
+          "display": "Commercial Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Ducommun Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Garey Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "garey",
+          "display": "Garey Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Garey Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "GAREY STREET"
+          ],
+          "docs": [
+            "mr003-060-p2"
+          ]
+        },
+        {
+          "id": "messer-street",
+          "display": "Messer Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Garey Street by another sheet"
+          ],
+          "ink": [
+            "Messer STREET."
+          ],
+          "docs": [
+            "mr002-092-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Santa Ana Freeway",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Vignes Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "vignes-street",
+          "display": "Vignes Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Vignes Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "VIGNES STREET"
+          ],
+          "docs": [
+            "tr0145-062"
+          ]
+        }
+      ]
+    }
+  ]
+}

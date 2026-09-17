@@ -1,0 +1,446 @@
+{
+  "document": "mr060-088",
+  "image": "mr060-088-100dpi.png",
+  "imageSize": [1042, 1649],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr060-088-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [434, 305],
+    [-13, 1226],
+    [304, 1391],
+    [566, 1239],
+    [861, 508]
+  ],
+  "coverageLl": [
+    [34.052165, -118.266869],
+    [34.049619, -118.268491],
+    [34.049122, -118.267442],
+    [34.049523, -118.266539],
+    [34.05155, -118.265453]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [836, 569],
+            [801, 554],
+            [773, 542],
+            [750, 532],
+            [720, 516],
+            [674, 496],
+            [640, 479],
+            [602, 461],
+            [487, 406],
+            [405, 365]
+          ],
+          "ll": [
+            [34.05138, -118.265544],
+            [34.051426, -118.265661],
+            [34.051463, -118.265753],
+            [34.051495, -118.265832],
+            [34.051542, -118.265931],
+            [34.051604, -118.266082],
+            [34.051654, -118.266197],
+            [34.051708, -118.266321],
+            [34.051875, -118.266701],
+            [34.051998, -118.266975]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Garland Avenue",
+          "px": [602, 461],
+          "ll": [34.051708, -118.266321],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hartford Avenue",
+          "px": [308, 317],
+          "ll": [34.052143, -118.267297],
+          "insideCoverage": false
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [750, 532],
+          "ll": [34.051495, -118.265832],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [181, 255],
+          "ll": [34.052333, -118.267717],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "8th Place",
+      "runs": [
+        {
+          "px": [
+            [229, 1219],
+            [254, 1233],
+            [308, 1262],
+            [398, 1307],
+            [417, 1318],
+            [423, 1322]
+          ],
+          "ll": [
+            [34.049613, -118.267675],
+            [34.049572, -118.267591],
+            [34.049484, -118.267413],
+            [34.049348, -118.267114],
+            [34.049315, -118.267051],
+            [34.049303, -118.267033]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [229, 1219],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garland Avenue",
+          "px": [229, 1219],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [593, 1172],
+            [529, 1184],
+            [443, 1200],
+            [362, 1215],
+            [300, 1226],
+            [259, 1222],
+            [229, 1219],
+            [204, 1208],
+            [119, 1171],
+            [80, 1153],
+            [48, 1139],
+            [33, 1131]
+          ],
+          "ll": [
+            [34.049709, -118.266439],
+            [34.04968, -118.266658],
+            [34.049645, -118.26695],
+            [34.049611, -118.267224],
+            [34.049585, -118.267434],
+            [34.049601, -118.267572],
+            [34.049613, -118.267675],
+            [34.049646, -118.267755],
+            [34.049761, -118.268037],
+            [34.049815, -118.268169],
+            [34.049859, -118.268276],
+            [34.04988, -118.268324]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Place",
+          "px": [229, 1219],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garland Avenue",
+          "px": [229, 1219],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hartford Avenue",
+          "px": [-74, 1079],
+          "ll": [34.050038, -118.268677],
+          "insideCoverage": false
+        },
+        {
+          "name": "Witmer Street",
+          "px": [-194, 1020],
+          "ll": [34.050218, -118.269074],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Garland Avenue",
+      "runs": [
+        {
+          "px": [
+            [602, 461],
+            [589, 488],
+            [500, 669],
+            [472, 725],
+            [395, 881],
+            [387, 898],
+            [330, 1013],
+            [246, 1185],
+            [229, 1219],
+            [216, 1244],
+            [176, 1324]
+          ],
+          "ll": [
+            [34.051708, -118.266321],
+            [34.051635, -118.266368],
+            [34.051133, -118.266692],
+            [34.05098, -118.266791],
+            [34.050548, -118.267071],
+            [34.050501, -118.267101],
+            [34.050184, -118.267306],
+            [34.049708, -118.267613],
+            [34.049613, -118.267675],
+            [34.049545, -118.267719],
+            [34.049322, -118.267864]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [602, 461],
+          "ll": [34.051708, -118.266321],
+          "insideCoverage": true
+        },
+        {
+          "name": "8th Place",
+          "px": [229, 1219],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": true
+        },
+        {
+          "name": "8th Street",
+          "px": [229, 1219],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [676, 497],
+          "ll": [34.051601, -118.266076],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Lucas Avenue",
+      "metres": 21.6
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "7th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "seventh-street",
+          "display": "7th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 7th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "7TH ST.",
+            "7TH STREET",
+            "7th ST",
+            "7th Street",
+            "CALLE 7a",
+            "SEVENTH ST",
+            "SEVENTH ST.",
+            "SEVENTH STR.",
+            "SEVENTH STREET",
+            "Seventh St",
+            "Seventh St.",
+            "Seventh Street",
+            "Seventh Street."
+          ],
+          "docs": [
+            "11824",
+            "mr003-016",
+            "mr003-569",
+            "mr006-033",
+            "mr006-039",
+            "mr011-063",
+            "mr013-091",
+            "mr014-034",
+            "mr015-052",
+            "mr018-025",
+            "mr018-092",
+            "mr021-046",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr053-068",
+            "mr053-071",
+            "mr054-051",
+            "mr055-081",
+            "mr066-064",
+            "mr070-084",
+            "tr0001-046",
+            "tr0005-056a",
+            "tr0009-100a",
+            "tr0011-196",
+            "tr0023-054c",
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "8th Place",
+      "continuesInto": [
+        "8th Street"
+      ],
+      "candidates": [
+        {
+          "id": "ruby-st",
+          "display": "Ruby Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place by another sheet"
+          ],
+          "ink": [
+            "RUBY ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        },
+        {
+          "id": "eighth-street",
+          "display": "8th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street, which 8th Place runs straight into"
+          ],
+          "ink": [
+            "8TH ST",
+            "8TH STREET",
+            "8th St",
+            "8th St.",
+            "8th Street",
+            "CALLE 8a",
+            "EAST EIGHTH STREET",
+            "EIGHTH ST",
+            "EIGHTH ST.",
+            "EIGHTH STREET",
+            "Eighth St",
+            "Eighth St.",
+            "Eighth Street",
+            "new 8th Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-569",
+            "mr011-008",
+            "mr018-092",
+            "mr021-046",
+            "mr026-060",
+            "mr029-026",
+            "mr029-085",
+            "mr053-065",
+            "mr053-068",
+            "mr054-051",
+            "mr055-086",
+            "mr070-051",
+            "pm017-045",
+            "tr0005-156a",
+            "tr0007-085",
+            "tr0013-048",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "8th Street",
+      "continuesInto": [
+        "8th Place"
+      ],
+      "candidates": [
+        {
+          "id": "eighth-street",
+          "display": "8th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "8TH ST",
+            "8TH STREET",
+            "8th St",
+            "8th St.",
+            "8th Street",
+            "CALLE 8a",
+            "EAST EIGHTH STREET",
+            "EIGHTH ST",
+            "EIGHTH ST.",
+            "EIGHTH STREET",
+            "Eighth St",
+            "Eighth St.",
+            "Eighth Street",
+            "new 8th Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-569",
+            "mr011-008",
+            "mr018-092",
+            "mr021-046",
+            "mr026-060",
+            "mr029-026",
+            "mr029-085",
+            "mr053-065",
+            "mr053-068",
+            "mr054-051",
+            "mr055-086",
+            "mr070-051",
+            "pm017-045",
+            "tr0005-156a",
+            "tr0007-085",
+            "tr0013-048",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        },
+        {
+          "id": "ruby-st",
+          "display": "Ruby Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place, which 8th Street runs straight into"
+          ],
+          "ink": [
+            "RUBY ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Garland Avenue",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "document": "mr006-429",
+  "image": "mr006-429-100dpi.png",
+  "imageSize": [1708, 1100],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr006-429-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [1486, 629],
+    [1328, 1032],
+    [287, 1071],
+    [271, 576]
+  ],
+  "coverageLl": [
+    [34.065294, -118.253108],
+    [34.064729, -118.252537],
+    [34.063134, -118.253485],
+    [34.063513, -118.254391]
+  ],
+  "streets": [
+    {
+      "name": "Boylston Street",
+      "runs": [
+        {
+          "px": [
+            [282, 927],
+            [841, 925],
+            [911, 926],
+            [995, 930],
+            [1057, 931],
+            [1251, 929],
+            [1323, 930],
+            [1367, 931]
+          ],
+          "ll": [
+            [34.063244, -118.253749],
+            [34.064085, -118.253206],
+            [34.064189, -118.253137],
+            [34.064312, -118.253045],
+            [34.064405, -118.252984],
+            [34.064697, -118.252797],
+            [34.064804, -118.252726],
+            [34.06487, -118.252679]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Court Street",
+          "px": [39, 928],
+          "ll": [34.062877, -118.253985],
+          "insideCoverage": false
+        },
+        {
+          "name": "Temple Street",
+          "px": [1323, 930],
+          "ll": [34.064804, -118.252726],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Temple Street",
+      "runs": [
+        {
+          "px": [
+            [1286, 1034],
+            [1299, 1003],
+            [1323, 930],
+            [1341, 862],
+            [1387, 756],
+            [1409, 701],
+            [1437, 627]
+          ],
+          "ll": [
+            [34.064665, -118.252575],
+            [34.064709, -118.252617],
+            [34.064804, -118.252726],
+            [34.064887, -118.252831],
+            [34.065042, -118.252977],
+            [34.06512, -118.253055],
+            [34.065223, -118.253159]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Boylston Street",
+          "px": [1323, 930],
+          "ll": [34.064804, -118.252726],
+          "insideCoverage": true
+        },
+        {
+          "name": "Firmin Street",
+          "px": [1512, 435],
+          "ll": [34.065492, -118.253431],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Boylston Street",
+      "continuesInto": [
+        "Boston Street"
+      ],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Boylston Street by another sheet"
+          ],
+          "ink": [
+            "FIGUEROA ST."
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "boylston",
+          "display": "Boylston Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Temple Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "requena-street",
+          "display": "Requena Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet"
+          ],
+          "ink": [
+            "REQUENA STREET"
+          ],
+          "docs": [
+            "mr003-146-p2"
+          ]
+        },
+        {
+          "id": "temple",
+          "display": "Temple Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "TEMPLE STREET",
+            "Temple Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489"
+          ]
+        },
+        {
+          "id": "market-st",
+          "display": "Market Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet"
+          ],
+          "ink": [
+            "Market St"
+          ],
+          "docs": [
+            "tr0020-196b"
+          ]
+        }
+      ]
+    }
+  ]
+}

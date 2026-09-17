@@ -1,0 +1,1211 @@
+{
+  "document": "mr005-069",
+  "image": "mr005-069-100dpi.png",
+  "imageSize": [1146, 1786],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr005-069-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [1092, 1244],
+    [1097, 327],
+    [397, 467],
+    [371, 927],
+    [244, 1032],
+    [279, 1172]
+  ],
+  "coverageLl": [
+    [34.059288, -118.25568],
+    [34.063944, -118.252736],
+    [34.065086, -118.257454],
+    [34.062813, -118.259074],
+    [34.062615, -118.260183],
+    [34.061809, -118.260414]
+  ],
+  "streets": [
+    {
+      "name": "1st Street",
+      "runs": [
+        {
+          "px": [
+            [263, 1110],
+            [634, 1115],
+            [675, 1115],
+            [777, 1117],
+            [845, 1118],
+            [875, 1118],
+            [887, 1118],
+            [906, 1118],
+            [978, 1117],
+            [1022, 1116],
+            [1090, 1122],
+            [1093, 1122]
+          ],
+          "ll": [
+            [34.062169, -118.260311],
+            [34.061158, -118.258065],
+            [34.061048, -118.257818],
+            [34.060769, -118.257202],
+            [34.060586, -118.256789],
+            [34.060506, -118.256603],
+            [34.060474, -118.256529],
+            [34.060423, -118.256412],
+            [34.060236, -118.255972],
+            [34.060123, -118.2557],
+            [34.059916, -118.255304],
+            [34.059907, -118.255289]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [612, 1156],
+          "ll": [34.061011, -118.258332],
+          "insideCoverage": true
+        },
+        {
+          "name": "Beverly Boulevard",
+          "px": [246, 1109],
+          "ll": [34.062216, -118.260417],
+          "insideCoverage": false
+        },
+        {
+          "name": "Bixel Street",
+          "px": [845, 1118],
+          "ll": [34.060586, -118.256789],
+          "insideCoverage": true
+        },
+        {
+          "name": "Edgeware Road",
+          "px": [675, 1125],
+          "ll": [34.060998, -118.257848],
+          "insideCoverage": true
+        },
+        {
+          "name": "Toluca Street",
+          "px": [612, 1156],
+          "ll": [34.061011, -118.258332],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [227, 1118],
+          "ll": [34.06222, -118.260558],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "2nd Street",
+      "runs": [
+        {
+          "px": [
+            [389, 1114],
+            [427, 1134],
+            [449, 1140],
+            [487, 1146],
+            [452, 1127],
+            [434, 1118],
+            [400, 1105]
+          ],
+          "ll": [
+            [34.061813, -118.259557],
+            [34.061612, -118.259386],
+            [34.061518, -118.259274],
+            [34.061387, -118.259061],
+            [34.061581, -118.259217],
+            [34.061673, -118.259295],
+            [34.061829, -118.259465]
+          ]
+        },
+        {
+          "px": [
+            [598, 1200],
+            [589, 1196],
+            [582, 1193],
+            [557, 1181],
+            [535, 1170],
+            [531, 1168],
+            [517, 1161],
+            [504, 1155],
+            [487, 1146]
+          ],
+          "ll": [
+            [34.060821, -118.258558],
+            [34.060864, -118.258599],
+            [34.060897, -118.258629],
+            [34.061027, -118.258746],
+            [34.061138, -118.258846],
+            [34.061161, -118.258867],
+            [34.061232, -118.258929],
+            [34.061301, -118.258988],
+            [34.061387, -118.259061]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [612, 1156],
+          "ll": [34.061011, -118.258332],
+          "insideCoverage": true
+        },
+        {
+          "name": "Douglas Street",
+          "px": [509, 1105],
+          "ll": [34.061543, -118.258798],
+          "insideCoverage": true
+        },
+        {
+          "name": "Edgeware Road",
+          "px": [668, 1232],
+          "ll": [34.060473, -118.25823],
+          "insideCoverage": false
+        },
+        {
+          "name": "Glendale Boulevard",
+          "px": [400, 1105],
+          "ll": [34.061829, -118.259465],
+          "insideCoverage": true
+        },
+        {
+          "name": "Toluca Street",
+          "px": [589, 1196],
+          "ll": [34.060864, -118.258599],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bixel Street",
+      "runs": [
+        {
+          "px": [
+            [784, 575],
+            [785, 566],
+            [788, 389]
+          ],
+          "ll": [
+            [34.063509, -118.255432],
+            [34.063556, -118.255402],
+            [34.064449, -118.254822]
+          ]
+        },
+        {
+          "px": [
+            [851, 744],
+            [851, 734],
+            [851, 657],
+            [852, 585],
+            [852, 575]
+          ],
+          "ll": [
+            [34.062475, -118.255562],
+            [34.062523, -118.255531],
+            [34.062913, -118.255286],
+            [34.063281, -118.255054],
+            [34.06333, -118.255022]
+          ]
+        },
+        {
+          "px": [
+            [845, 1118],
+            [844, 1135],
+            [842, 1214],
+            [842, 1222]
+          ],
+          "ll": [
+            [34.060586, -118.256789],
+            [34.0605, -118.256846],
+            [34.060103, -118.257109],
+            [34.060063, -118.257136]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [845, 1118],
+          "ll": [34.060586, -118.256789],
+          "insideCoverage": true
+        },
+        {
+          "name": "2nd Street",
+          "px": [840, 1304],
+          "ll": [34.059652, -118.257408],
+          "insideCoverage": false
+        },
+        {
+          "name": "Colton Street",
+          "px": [851, 744],
+          "ll": [34.062475, -118.255562],
+          "insideCoverage": true
+        },
+        {
+          "name": "Court Street",
+          "px": [852, 575],
+          "ll": [34.06333, -118.255022],
+          "insideCoverage": true
+        },
+        {
+          "name": "Emerald Street",
+          "px": [845, 1319],
+          "ll": [34.05956, -118.257429],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Boylston Street",
+      "runs": [
+        {
+          "px": [
+            [1012, 742],
+            [1021, 724],
+            [1022, 664],
+            [1022, 586],
+            [1022, 576],
+            [1025, 341]
+          ],
+          "ll": [
+            [34.062057, -118.254573],
+            [34.062125, -118.254458],
+            [34.06243, -118.254266],
+            [34.062824, -118.254019],
+            [34.062877, -118.253985],
+            [34.064061, -118.253221]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Colton Street",
+          "px": [1012, 742],
+          "ll": [34.062057, -118.254573],
+          "insideCoverage": true
+        },
+        {
+          "name": "Court Street",
+          "px": [1022, 576],
+          "ll": [34.062877, -118.253985],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Colton Street",
+      "runs": [
+        {
+          "px": [
+            [1012, 742],
+            [998, 745],
+            [973, 745],
+            [859, 744],
+            [851, 744],
+            [839, 744],
+            [682, 745],
+            [546, 743],
+            [538, 743],
+            [526, 743],
+            [463, 743],
+            [381, 744]
+          ],
+          "ll": [
+            [34.062057, -118.254573],
+            [34.062078, -118.254668],
+            [34.062145, -118.254818],
+            [34.062453, -118.255513],
+            [34.062475, -118.255562],
+            [34.062506, -118.255637],
+            [34.062913, -118.256598],
+            [34.063285, -118.25742],
+            [34.063308, -118.257469],
+            [34.063339, -118.257543],
+            [34.063503, -118.257928],
+            [34.063717, -118.25843]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [851, 744],
+          "ll": [34.062475, -118.255562],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [1012, 742],
+          "ll": [34.062057, -118.254573],
+          "insideCoverage": true
+        },
+        {
+          "name": "Douglas Street",
+          "px": [319, 745],
+          "ll": [34.063878, -118.258809],
+          "insideCoverage": false
+        },
+        {
+          "name": "Edgeware Road",
+          "px": [682, 745],
+          "ll": [34.062913, -118.256598],
+          "insideCoverage": true
+        },
+        {
+          "name": "Toluca Street",
+          "px": [538, 743],
+          "ll": [34.063308, -118.257469],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Court Street",
+      "runs": [
+        {
+          "px": [
+            [1022, 576],
+            [1008, 576],
+            [852, 575],
+            [794, 575],
+            [784, 575],
+            [773, 575],
+            [636, 575],
+            [626, 575],
+            [611, 575],
+            [540, 574],
+            [391, 574]
+          ],
+          "ll": [
+            [34.062877, -118.253985],
+            [34.062913, -118.254066],
+            [34.06333, -118.255022],
+            [34.063484, -118.255374],
+            [34.063509, -118.255432],
+            [34.063539, -118.255501],
+            [34.063904, -118.256336],
+            [34.063931, -118.256397],
+            [34.06397, -118.256486],
+            [34.064161, -118.256923],
+            [34.064557, -118.257831]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [784, 575],
+          "ll": [34.063509, -118.255432],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [1022, 576],
+          "ll": [34.062877, -118.253985],
+          "insideCoverage": true
+        },
+        {
+          "name": "Douglas Street",
+          "px": [323, 574],
+          "ll": [34.064739, -118.258247],
+          "insideCoverage": false
+        },
+        {
+          "name": "Edgeware Road",
+          "px": [626, 575],
+          "ll": [34.063931, -118.256397],
+          "insideCoverage": true
+        },
+        {
+          "name": "Firmin Street",
+          "px": [865, 530],
+          "ll": [34.063527, -118.2548],
+          "insideCoverage": true
+        },
+        {
+          "name": "Toluca Street",
+          "px": [540, 574],
+          "ll": [34.064161, -118.256923],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Douglas Street",
+      "runs": [
+        {
+          "px": [
+            [530, 1063],
+            [511, 1043],
+            [504, 1033],
+            [450, 952],
+            [376, 839]
+          ],
+          "ll": [
+            [34.061699, -118.258535],
+            [34.06185, -118.258591],
+            [34.061924, -118.2586],
+            [34.062476, -118.258669],
+            [34.063249, -118.258763]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [509, 1105],
+          "ll": [34.061543, -118.258798],
+          "insideCoverage": true
+        },
+        {
+          "name": "Colton Street",
+          "px": [319, 745],
+          "ll": [34.063878, -118.258809],
+          "insideCoverage": false
+        },
+        {
+          "name": "Toluca Street",
+          "px": [530, 1063],
+          "ll": [34.061699, -118.258535],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Edgeware Road",
+      "runs": [
+        {
+          "px": [
+            [626, 575],
+            [626, 566],
+            [628, 421]
+          ],
+          "ll": [
+            [34.063931, -118.256397],
+            [34.063975, -118.256369],
+            [34.064709, -118.255898]
+          ]
+        },
+        {
+          "px": [
+            [681, 818],
+            [682, 755],
+            [682, 745]
+          ],
+          "ll": [
+            [34.062549, -118.256836],
+            [34.062863, -118.256631],
+            [34.062913, -118.256598]
+          ]
+        },
+        {
+          "px": [
+            [675, 1207],
+            [675, 1203],
+            [675, 1169],
+            [675, 1144],
+            [675, 1135]
+          ],
+          "ll": [
+            [34.060582, -118.25811],
+            [34.060601, -118.258097],
+            [34.060775, -118.257988],
+            [34.0609, -118.257909],
+            [34.060948, -118.257878]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [675, 1125],
+          "ll": [34.060998, -118.257848],
+          "insideCoverage": true
+        },
+        {
+          "name": "2nd Street",
+          "px": [668, 1232],
+          "ll": [34.060473, -118.25823],
+          "insideCoverage": false
+        },
+        {
+          "name": "Angelina Street",
+          "px": [628, 403],
+          "ll": [34.064801, -118.255839],
+          "insideCoverage": false
+        },
+        {
+          "name": "Colton Street",
+          "px": [682, 745],
+          "ll": [34.062913, -118.256598],
+          "insideCoverage": true
+        },
+        {
+          "name": "Court Street",
+          "px": [626, 575],
+          "ll": [34.063931, -118.256397],
+          "insideCoverage": true
+        },
+        {
+          "name": "Toluca Street",
+          "px": [632, 1200],
+          "ll": [34.060733, -118.258348],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Firmin Street",
+      "runs": [
+        {
+          "px": [
+            [877, 485],
+            [879, 371]
+          ],
+          "ll": [
+            [34.063723, -118.254577],
+            [34.064299, -118.254204]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Court Street",
+          "px": [865, 530],
+          "ll": [34.063527, -118.2548],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Glendale Boulevard",
+      "runs": [
+        {
+          "px": [
+            [400, 1105],
+            [380, 1097],
+            [365, 1087],
+            [353, 1078],
+            [348, 1074],
+            [345, 1070],
+            [343, 1067],
+            [341, 1064],
+            [339, 1062],
+            [313, 1022],
+            [293, 992]
+          ],
+          "ll": [
+            [34.061829, -118.259465],
+            [34.06192, -118.259558],
+            [34.062015, -118.259621],
+            [34.06209, -118.259662],
+            [34.062128, -118.259682],
+            [34.062154, -118.259688],
+            [34.062177, -118.259691],
+            [34.062195, -118.259695],
+            [34.062208, -118.259697],
+            [34.062481, -118.259732],
+            [34.062691, -118.259756]
+          ]
+        },
+        {
+          "px": [
+            [348, 1074],
+            [352, 1088],
+            [365, 1100],
+            [389, 1114]
+          ],
+          "ll": [
+            [34.062128, -118.259682],
+            [34.062046, -118.259702],
+            [34.061945, -118.259662],
+            [34.061813, -118.259557]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [389, 1114],
+          "ll": [34.061813, -118.259557],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [352, 1088],
+          "ll": [34.062046, -118.259702],
+          "insideCoverage": true
+        },
+        {
+          "name": "Rockwood Street",
+          "px": [261, 943],
+          "ll": [34.063024, -118.259794],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Lucas Avenue",
+      "runs": [
+        {
+          "px": [
+            [352, 1088],
+            [358, 1122],
+            [363, 1130],
+            [368, 1142],
+            [370, 1149],
+            [379, 1168],
+            [388, 1182]
+          ],
+          "ll": [
+            [34.062046, -118.259702],
+            [34.061855, -118.259769],
+            [34.061801, -118.259764],
+            [34.061724, -118.259777],
+            [34.061683, -118.259787],
+            [34.061565, -118.259791],
+            [34.061472, -118.259782]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [404, 1298],
+          "ll": [34.060836, -118.26005],
+          "insideCoverage": false
+        },
+        {
+          "name": "Glendale Boulevard",
+          "px": [352, 1088],
+          "ll": [34.062046, -118.259702],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Toluca Street",
+      "runs": [
+        {
+          "px": [
+            [517, 1161],
+            [525, 1145],
+            [530, 1134],
+            [531, 1128],
+            [531, 1095],
+            [531, 1081],
+            [531, 1075],
+            [530, 1063],
+            [534, 1024],
+            [538, 754],
+            [538, 743],
+            [538, 733],
+            [539, 656],
+            [540, 584],
+            [540, 574]
+          ],
+          "ll": [
+            [34.061232, -118.258929],
+            [34.061298, -118.258827],
+            [34.061338, -118.258764],
+            [34.061364, -118.258734],
+            [34.061535, -118.25863],
+            [34.061607, -118.258586],
+            [34.061635, -118.25857],
+            [34.061699, -118.258535],
+            [34.061889, -118.258389],
+            [34.063249, -118.257507],
+            [34.063308, -118.257469],
+            [34.063356, -118.257438],
+            [34.063747, -118.257187],
+            [34.064113, -118.256954],
+            [34.064161, -118.256923]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [612, 1156],
+          "ll": [34.061011, -118.258332],
+          "insideCoverage": true
+        },
+        {
+          "name": "2nd Street",
+          "px": [589, 1196],
+          "ll": [34.060864, -118.258599],
+          "insideCoverage": true
+        },
+        {
+          "name": "Colton Street",
+          "px": [538, 743],
+          "ll": [34.063308, -118.257469],
+          "insideCoverage": true
+        },
+        {
+          "name": "Court Street",
+          "px": [540, 574],
+          "ll": [34.064161, -118.256923],
+          "insideCoverage": true
+        },
+        {
+          "name": "Douglas Street",
+          "px": [530, 1063],
+          "ll": [34.061699, -118.258535],
+          "insideCoverage": true
+        },
+        {
+          "name": "Edgeware Road",
+          "px": [632, 1200],
+          "ll": [34.060733, -118.258348],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "1st Street",
+      "continuesInto": [
+        "Beverly Boulevard"
+      ],
+      "candidates": [
+        {
+          "id": "first-street",
+          "display": "1st Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 1st Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "1ST ST",
+            "1ST STREET",
+            "1st ST",
+            "CALLE 1a",
+            "FIRST ST",
+            "FIRST STREET",
+            "FIRST STREET.",
+            "First Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr002-092-p1",
+            "mr003-060-p1",
+            "mr003-146-p1",
+            "mr005-307-a",
+            "mr010-008",
+            "mr053-069",
+            "mr053-071",
+            "tr0885-030-p2",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "diamond-street",
+          "display": "Diamond Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Beverly Boulevard, which 1st Street runs straight into"
+          ],
+          "ink": [
+            "Diamond Street"
+          ],
+          "docs": [
+            "mr006-138"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "2nd Street",
+      "continuesInto": [
+        "Glendale Boulevard",
+        "Lucas Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "CALLE 2a",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr053-069",
+            "mr053-071",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        },
+        {
+          "id": "lake-avenue",
+          "display": "Lake Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Glendale Boulevard, which 2nd Street runs straight into"
+          ],
+          "ink": [
+            "Lake Avenue"
+          ],
+          "docs": [
+            "mr006-138"
+          ]
+        },
+        {
+          "id": "lucas-avenue",
+          "display": "Lucas Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Lucas Avenue, which 2nd Street runs straight into"
+          ],
+          "ink": [
+            "LUCAS AVENUE"
+          ],
+          "docs": [
+            "tr0015-166a-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Bixel Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "bixel",
+          "display": "Bixel Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "BIXEL ST"
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Boylston Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Boylston Street by another sheet"
+          ],
+          "ink": [
+            "FIGUEROA ST."
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "boylston",
+          "display": "Boylston Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Colton Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "state-colton",
+          "display": "State Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Colton Street by another sheet"
+          ],
+          "ink": [
+            "State Street"
+          ],
+          "docs": [
+            "mr006-138"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Court Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "court-street",
+          "display": "Court Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Court Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "Court Street"
+          ],
+          "docs": [
+            "mr006-138"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Douglas Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "waters-street",
+          "display": "Waters Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Douglas Street by another sheet"
+          ],
+          "ink": [
+            "Waters Street"
+          ],
+          "docs": [
+            "mr006-138"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Edgeware Road",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Firmin Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Glendale Boulevard",
+      "continuesInto": [
+        "2nd Street",
+        "Lucas Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "lake-avenue",
+          "display": "Lake Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Glendale Boulevard by another sheet"
+          ],
+          "ink": [
+            "Lake Avenue"
+          ],
+          "docs": [
+            "mr006-138"
+          ]
+        },
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street, which Glendale Boulevard runs straight into"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "CALLE 2a",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr053-069",
+            "mr053-071",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street, which Glendale Boulevard runs straight into"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        },
+        {
+          "id": "lucas-avenue",
+          "display": "Lucas Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Lucas Avenue, which Glendale Boulevard runs straight into"
+          ],
+          "ink": [
+            "LUCAS AVENUE"
+          ],
+          "docs": [
+            "tr0015-166a-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Lucas Avenue",
+      "continuesInto": [
+        "2nd Street",
+        "Glendale Boulevard"
+      ],
+      "candidates": [
+        {
+          "id": "lucas-avenue",
+          "display": "Lucas Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Lucas Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "LUCAS AVENUE"
+          ],
+          "docs": [
+            "tr0015-166a-p2"
+          ]
+        },
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street, which Lucas Avenue runs straight into"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "CALLE 2a",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr053-069",
+            "mr053-071",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street, which Lucas Avenue runs straight into"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        },
+        {
+          "id": "lake-avenue",
+          "display": "Lake Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Glendale Boulevard, which Lucas Avenue runs straight into"
+          ],
+          "ink": [
+            "Lake Avenue"
+          ],
+          "docs": [
+            "mr006-138"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Toluca Street",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

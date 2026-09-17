@@ -62,7 +62,54 @@ standing work.
   concluding a namesake is untraceable.
 - Homestead Museum, SurveyLA, and LAPL's photo collection have each answered a
   question the others could not. None of them is systematic; try them when a
-  name resists.
+  name resists. **SurveyLA's historic-context statements and the neighbourhood
+  preservation plans on planning.lacity.org are better than their reputation**
+  and have been decisive twice: the Angelino Heights Preservation Plan states
+  that tract's naming scheme outright, and the Industrial Development context
+  statement dates the idea behind Industrial Street.
+
+### Four tools that answer "which street is this, and does it still exist"
+
+Namesake work keeps turning into identity work — is the modern street the same
+one, is this a second street of the same name, what did it become. These four
+answer that faster than any amount of prose-hunting, and none was in this
+handbook before 2026-09-17.
+
+- **The City's own street registry**, `https://data.lacity.org/resource/hntu-mwxc.json?$q=<term>`
+  — the Bureau of Engineering's list of every official street name, with a
+  Thomas Bros. grid reference that works as a coarse locator. **The single most
+  useful tool found so far.** It answers "does this name survive" definitively,
+  and a record whose `tbm_map` is `"NA"` is a *retired* name, which is how
+  Weller Street was confirmed gone. Throttle to about three at a time or it 429s.
+- **The Census geocoder**,
+  `https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=<addr>&benchmark=Public_AR_Current&format=json`
+  — free, no key, precise lat/long for a surviving address, which turns a
+  registry hit into a point you can compare against a row. ⚠ Short industrial
+  blocks often have no address range, so NO MATCH is not evidence of absence.
+- **LMU's Hurley/Wright Surveyors Map Collection**, at
+  `https://digitalcollections.lmu.edu/Documents/Detail/<slug>/<id>` — original
+  linen drawings of many recorded L.A. tract maps, **with the boundary streets
+  transcribed in the catalogue record**. That transcription is the useful part:
+  it pinned New Cincinnati Street to Edgeware Road without anyone reading a
+  scan. Its own search endpoint 404s, so arrive via web search.
+- **George Garrigues, "What Ever Became of Those Old L.A. City Streets?"**
+  `https://stevemorse.org/census/changes/LosAngelesChanges2.htm` — old street
+  name → what absorbed it, with cross-street extents. Repeatedly the
+  highest-yield single page for vanished names. There is no page 1; it 404s.
+  ⚠ **The parenthesised numbers are ZIP suffixes, not years** — "(26)" means
+  90026 — and the list compares the 1904 Chamber of Commerce map (drawn 1903 by
+  Félix Violé) against the 2002 Thomas Guide, so **it dates nothing**. A name's
+  absence means either the street kept its name or it was gone before 1904.
+  Pull it in alphabet slices to get entries verbatim rather than summarised.
+
+⚠ **Some sources answer without searching.** `lastreetnames.com/?s=` serves a
+stale cached page — use `https://lastreetnames.com/search/<term>/`; the
+Los Angeles Revisited RSS `?q=` and archive.org's `advancedsearch.php` and
+`fulltext/inside.php` have all been seen ignoring the query and returning
+defaults. **Always run a nonsense control term first.** A negative from an
+unrun search is worse than no answer, because it gets recorded as `searched`.
+For proving Kines does NOT cover a name, walk `/neighborhoods/<slug>/`, which
+is complete; `/alpha/<letter>/` paginates at 20 and will lie to you.
 
 ## What may be written down
 

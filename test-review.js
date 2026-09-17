@@ -77,7 +77,7 @@ Object.defineProperty(sandbox, "loadedDoc", { get: () => ({ rows }) });
 vm.createContext(sandbox);
 vm.runInContext("const KY = 110540; let lastModel = null; let coverageExcept = [];\n" +
   "let docSwept = { fully: false, for: [] };\n" + zoomSource + source + bundleSource + gateSource +
-  "\n;this.API = { reviewModel, clipRun, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers, runGaps, clipRange, foldIndices, sameCorridor, splitRowAt, sameExtent, blockingRows, rowMetres, asWrittenForms, retractSweepIfBroken, setModel: m => { lastModel = m; }, runEnds, streetIsNS, rowSpansNothing, emptyRows, setSwept: v => { docSwept = v; }, getSwept: () => docSwept };", sandbox);
+  "\n;this.API = { reviewModel, clipRuns, extentPoint, crossPoint, documentStreets, stitchRuns, coverageStreets, zoomView, MIN_RUN_M, confirmBlocker, sweepBlockers, runGaps, clipRanges, foldIndices, sameCorridor, splitRowAt, sameExtent, blockingRows, rowMetres, asWrittenForms, retractSweepIfBroken, setModel: m => { lastModel = m; }, runEnds, streetIsNS, rowSpansNothing, emptyRows, setSwept: v => { docSwept = v; }, getSwept: () => docSwept };", sandbox);
 const API = sandbox.API;
 const setRows = r => { rows = r; };
 
@@ -227,16 +227,28 @@ console.log("clipping a run to a row's extent");
   const q = i => ({ lat: run[i].lat, lon: run[i].lon });
   ok("a run long enough to test on exists", run.length >= 5, String(run.length));
 
-  const clipped = API.clipRun(run, q(1), q(run.length - 2));
-  ok("clipping drops vertices", clipped.length < run.length, `${clipped.length} of ${run.length}`);
-  ok("and shortens the drawn line", len(clipped) < len(run),
-     `${len(clipped).toFixed(0)} m of ${len(run).toFixed(0)} m`);
-  ok("both ends null draws the whole run", API.clipRun(run, null, null).length === run.length);
-  ok("the ends are unordered", API.clipRun(run, q(run.length - 2), q(1)).length === clipped.length);
-  ok("coincident ends still leave something drawable", API.clipRun(run, q(3), q(3)).length >= 2);
+  // clipRuns returns a LIST OF RUNS, not one polyline — a row may cover a
+  // corridor in more than one piece (a loop clipped at two points comes back
+  // as two arcs). These assertions counted the list's length as if it were a
+  // vertex count, which made "3 of 224" look like successful clipping and let
+  // three of them pass while measuring nothing. Flatten first, then measure.
+  // (Found 2026-09-17: the suite had been dead since `clipRun` was renamed, so
+  // nothing caught the shape change under it.)
+  const pts = rs => rs.flat();
+  const vcount = rs => pts(rs).length;
+  const clipped = API.clipRuns(run, q(1), q(run.length - 2));
+  ok("clipping drops vertices", vcount(clipped) < run.length,
+     `${vcount(clipped)} of ${run.length}`);
+  ok("and shortens the drawn line", len(pts(clipped)) < len(run),
+     `${len(pts(clipped)).toFixed(0)} m of ${len(run).toFixed(0)} m`);
+  ok("both ends null draws the whole run", vcount(API.clipRuns(run, null, null)) === run.length);
+  ok("the ends are unordered",
+     vcount(API.clipRuns(run, q(run.length - 2), q(1))) === vcount(clipped));
+  ok("coincident ends still leave something drawable",
+     vcount(API.clipRuns(run, q(3), q(3))) >= 2);
   // A row may legitimately run past the coverage edge; it must clamp, not vanish.
-  const far = API.clipRun(run, { lat: 34.2, lon: -118.5 }, q(2));
-  ok("an end outside the run clamps to it", far.length >= 2 && far.length <= run.length);
+  const far = API.clipRuns(run, { lat: 34.2, lon: -118.5 }, q(2));
+  ok("an end outside the run clamps to it", vcount(far) >= 2 && vcount(far) <= run.length);
 }
 
 console.log("stitching OSM's fragments back into streets");
@@ -656,16 +668,18 @@ console.log("which way round a run is");
   const run = third.runs[0];
   const west = run.reduce((a, b) => a.lon <= b.lon ? a : b);
   const east = run.reduce((a, b) => a.lon >= b.lon ? a : b);
-  const fwd = API.clipRun(run, west, null, false);
-  const back = API.clipRun(run.slice().reverse(), west, null, false);
+  // clipRuns returns a list of runs; flatten before measuring. Without this
+  // both lengths came out 0 and the comparison passed while measuring nothing.
+  const fwd = API.clipRuns(run, west, null, false).flat();
+  const back = API.clipRuns(run.slice().reverse(), west, null, false).flat();
   const len = r => r.slice(1).reduce((t, p, i) => t + G.metres(r[i], p), 0);
   ok("a null `to` reaches the east end whichever way the run is drawn",
      Math.abs(len(fwd) - len(back)) < 1, `${len(fwd).toFixed(0)} vs ${len(back).toFixed(0)}`);
   ok("…and that is nearly the whole run", len(fwd) > len(run) * 0.9,
      `${len(fwd).toFixed(0)} of ${len(run).toFixed(0)}`);
-  const partial = API.clipRun(run, west, east, false);
+  const partial = API.clipRuns(run, west, east, false);
   ok("two given ends are order-insensitive too",
-     Math.abs(len(partial) - len(API.clipRun(run, east, west, false))) < 1);
+     Math.abs(len(partial) - len(API.clipRuns(run, east, west, false))) < 1);
 }
 
 console.log("a divided street is one corridor, not an unaccounted stretch");

@@ -1,0 +1,118 @@
+{
+  "document": "tr0043-032",
+  "image": "tr0043-032-100dpi.png",
+  "imageSize": [1746, 2434],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0043-032-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [37, 1546],
+    [911, 1498],
+    [897, 416],
+    [24, 480]
+  ],
+  "coverageLl": [
+    [34.060247, -118.256411],
+    [34.059946, -118.255603],
+    [34.060762, -118.255116],
+    [34.061051, -118.25593]
+  ],
+  "streets": [
+    {
+      "name": "1st Street",
+      "runs": [
+        {
+          "px": [
+            [35, 1360],
+            [429, 1359],
+            [730, 1355],
+            [909, 1370]
+          ],
+          "ll": [
+            [34.060387, -118.256327],
+            [34.060236, -118.255972],
+            [34.060123, -118.2557],
+            [34.060042, -118.255546]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [-479, 1358],
+          "ll": [34.060586, -118.256789],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "1st Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "first-street",
+          "display": "1st Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 1st Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "1ST ST",
+            "1ST STREET",
+            "1st ST",
+            "1st STREET",
+            "CALLE 1a",
+            "FIRST ST",
+            "FIRST ST.",
+            "FIRST STREET",
+            "FIRST STREET.",
+            "First Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr002-092-p1",
+            "mr003-060-p1",
+            "mr003-146-p1",
+            "mr004-012-p2",
+            "mr005-307-a",
+            "mr006-308",
+            "mr010-008",
+            "mr053-069",
+            "mr053-071",
+            "tr0012-023a",
+            "tr0221-009-p2",
+            "tr0417-049-p2",
+            "tr0713-093-p2",
+            "tr0856-050-p2",
+            "tr0885-030-p2",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "diamond-street",
+          "display": "Diamond Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 1st Street by another sheet"
+          ],
+          "ink": [
+            "DIAMOND STREET",
+            "Diamond",
+            "Diamond St."
+          ],
+          "docs": [
+            "mr005-069",
+            "mr006-115",
+            "mr007-026-p2"
+          ]
+        }
+      ]
+    }
+  ]
+}

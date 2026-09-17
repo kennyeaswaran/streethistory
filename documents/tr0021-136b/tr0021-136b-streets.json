@@ -1,0 +1,196 @@
+{
+  "document": "tr0021-136b",
+  "image": "tr0021-136b-100dpi.png",
+  "imageSize": [1158, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0021-136b-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [1142, 1046],
+    [1155, 1453],
+    [635, 1463],
+    [609, 1042]
+  ],
+  "coverageLl": [
+    [34.062717, -118.255124],
+    [34.062098, -118.253559],
+    [34.06044, -118.254532],
+    [34.061041, -118.256176]
+  ],
+  "streets": [
+    {
+      "name": "Boylston Street",
+      "runs": [
+        {
+          "px": [
+            [1036, 1246],
+            [1065, 1261],
+            [1149, 1262]
+          ],
+          "ll": [
+            [34.062057, -118.254573],
+            [34.062125, -118.254458],
+            [34.062388, -118.254293]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Colton Street",
+          "px": [1036, 1246],
+          "ll": [34.062057, -118.254573],
+          "insideCoverage": true
+        },
+        {
+          "name": "Court Street",
+          "px": [1305, 1263],
+          "ll": [34.062877, -118.253985],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Colton Street",
+      "runs": [
+        {
+          "px": [
+            [1036, 1246],
+            [1031, 1224],
+            [1031, 1184],
+            [1033, 1045]
+          ],
+          "ll": [
+            [34.062057, -118.254573],
+            [34.062078, -118.254668],
+            [34.062145, -118.254818],
+            [34.062375, -118.255339]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [1034, 986],
+          "ll": [34.062475, -118.255562],
+          "insideCoverage": false
+        },
+        {
+          "name": "Boylston Street",
+          "px": [1036, 1246],
+          "ll": [34.062057, -118.254573],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Boylston Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "boylston",
+          "display": "Boylston Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Boylston Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "BOYLSTON ST.",
+            "BOYLSTON STREET"
+          ],
+          "docs": [
+            "tr0010-175a",
+            "tr0014-097b",
+            "tr0017-143b",
+            "tr0035-092",
+            "tr0063-098-p1",
+            "tr0588-055"
+          ]
+        },
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Boylston Street by another sheet"
+          ],
+          "ink": [
+            "FIGUEROA ST.",
+            "FIGUEROA STREET",
+            "Figueroa St",
+            "Figueroa Street"
+          ],
+          "docs": [
+            "mr005-069",
+            "mr006-115",
+            "mr006-391",
+            "mr006-429",
+            "mr007-026-p1",
+            "mr007-026-p2",
+            "mr010-063-p2",
+            "mr012-025",
+            "mr016-059",
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "sumner-place",
+          "display": "Sumner Place",
+          "pendingResearch": true,
+          "why": [
+            "attested on Boylston Street by another sheet"
+          ],
+          "ink": [
+            "Sumner Place"
+          ],
+          "docs": [
+            "mr010-063-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Colton Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "state-colton",
+          "display": "State Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Colton Street by another sheet"
+          ],
+          "ink": [
+            "COLTON ST.",
+            "STATE STREET",
+            "State Street"
+          ],
+          "docs": [
+            "mr005-069",
+            "mr006-138",
+            "tr0017-143b"
+          ]
+        },
+        {
+          "id": "colton-st",
+          "display": "Colton Street",
+          "pendingResearch": true,
+          "why": [
+            "attested on Colton Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "COLTON ST."
+          ],
+          "docs": [
+            "tr0014-097b"
+          ]
+        }
+      ]
+    }
+  ]
+}

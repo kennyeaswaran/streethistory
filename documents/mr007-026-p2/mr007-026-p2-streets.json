@@ -1,0 +1,1361 @@
+{
+  "document": "mr007-026-p2",
+  "image": "mr007-026-p2-100dpi.png",
+  "imageSize": [1661, 1125],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr007-026-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [127, 129],
+    [341, 529],
+    [543, 426],
+    [838, 1025],
+    [1652, 540],
+    [1580, -46]
+  ],
+  "coverageLl": [
+    [34.066315, -118.25403],
+    [34.064026, -118.255567],
+    [34.063362, -118.254211],
+    [34.060058, -118.256608],
+    [34.057602, -118.250733],
+    [34.059779, -118.247579]
+  ],
+  "streets": [
+    {
+      "name": "1st Street",
+      "runs": [
+        {
+          "px": [
+            [807, 963],
+            [861, 931],
+            [899, 909],
+            [960, 880],
+            [977, 874],
+            [1055, 847],
+            [1068, 842],
+            [1131, 823],
+            [1158, 812],
+            [1178, 804],
+            [1192, 799],
+            [1231, 785],
+            [1253, 777]
+          ],
+          "ll": [
+            [34.0604, -118.256359],
+            [34.060236, -118.255972],
+            [34.060123, -118.2557],
+            [34.059916, -118.255304],
+            [34.059851, -118.255205],
+            [34.059554, -118.254756],
+            [34.059505, -118.254681],
+            [34.059259, -118.25433],
+            [34.059165, -118.254167],
+            [34.059088, -118.254046],
+            [34.059035, -118.253966],
+            [34.058888, -118.253739],
+            [34.058804, -118.25361]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beaudry Avenue",
+          "px": [1158, 812],
+          "ll": [34.059165, -118.254167],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bixel Street",
+          "px": [747, 998],
+          "ll": [34.060586, -118.256789],
+          "insideCoverage": false
+        },
+        {
+          "name": "Diamond Street",
+          "px": [1141, 784],
+          "ll": [34.059331, -118.254067],
+          "insideCoverage": true
+        },
+        {
+          "name": "Fremont Avenue",
+          "px": [1349, 744],
+          "ll": [34.058443, -118.253056],
+          "insideCoverage": false
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [1271, 784],
+          "ll": [34.058695, -118.253582],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Angelina Street",
+      "runs": [
+        {
+          "px": [
+            [741, 182],
+            [763, 171],
+            [788, 157],
+            [806, 147]
+          ],
+          "ll": [
+            [34.063156, -118.252048],
+            [34.063085, -118.251896],
+            [34.063007, -118.251721],
+            [34.062948, -118.251599]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beaudry Avenue",
+          "px": [806, 147],
+          "ll": [34.062948, -118.251599],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [808, 121],
+          "ll": [34.063024, -118.251438],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Beaudry Avenue",
+      "runs": [
+        {
+          "px": [
+            [1165, 830],
+            [1158, 812],
+            [1144, 788],
+            [1131, 767],
+            [1129, 763],
+            [1125, 756],
+            [1085, 694],
+            [1036, 603],
+            [896, 353],
+            [843, 259],
+            [819, 190],
+            [810, 159],
+            [806, 147],
+            [798, 116],
+            [791, 95],
+            [785, 76],
+            [778, 51]
+          ],
+          "ll": [
+            [34.05907, -118.254246],
+            [34.059165, -118.254167],
+            [34.059304, -118.254076],
+            [34.059435, -118.254004],
+            [34.059455, -118.253992],
+            [34.059496, -118.253967],
+            [34.059886, -118.253749],
+            [34.060405, -118.253404],
+            [34.06187, -118.252466],
+            [34.062421, -118.252114],
+            [34.062753, -118.251801],
+            [34.062895, -118.251654],
+            [34.062948, -118.251599],
+            [34.063085, -118.251447],
+            [34.063185, -118.251352],
+            [34.063274, -118.25126],
+            [34.063388, -118.251141]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1158, 812],
+          "ll": [34.059165, -118.254167],
+          "insideCoverage": true
+        },
+        {
+          "name": "Angelina Street",
+          "px": [806, 147],
+          "ll": [34.062948, -118.251599],
+          "insideCoverage": true
+        },
+        {
+          "name": "Diamond Street",
+          "px": [1125, 756],
+          "ll": [34.059496, -118.253967],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mignonette Street",
+          "px": [1036, 603],
+          "ll": [34.060405, -118.253404],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [791, 95],
+          "ll": [34.063185, -118.251352],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bixel Street",
+      "runs": [
+        {
+          "px": [
+            [394, 502],
+            [246, 234],
+            [203, 160],
+            [196, 147]
+          ],
+          "ll": [
+            [34.063851, -118.25521],
+            [34.065405, -118.254201],
+            [34.065846, -118.253927],
+            [34.065926, -118.253877]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Court Street",
+          "px": [485, 528],
+          "ll": [34.06333, -118.255022],
+          "insideCoverage": false
+        },
+        {
+          "name": "Firmin Street",
+          "px": [286, 212],
+          "ll": [34.065282, -118.253924],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hollywood Freeway",
+          "px": [175, 107],
+          "ll": [34.066152, -118.25372],
+          "insideCoverage": false
+        },
+        {
+          "name": "Temple Street",
+          "px": [196, 147],
+          "ll": [34.065926, -118.253877],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Boylston Street",
+      "runs": [
+        {
+          "px": [
+            [705, 592],
+            [704, 571],
+            [674, 520],
+            [636, 453],
+            [631, 444],
+            [516, 237],
+            [506, 219],
+            [495, 196],
+            [486, 180],
+            [458, 130],
+            [448, 111],
+            [438, 92]
+          ],
+          "ll": [
+            [34.062057, -118.254573],
+            [34.062125, -118.254458],
+            [34.06243, -118.254266],
+            [34.062824, -118.254019],
+            [34.062877, -118.253985],
+            [34.064085, -118.253206],
+            [34.064189, -118.253137],
+            [34.064312, -118.253045],
+            [34.064405, -118.252984],
+            [34.064697, -118.252797],
+            [34.064804, -118.252726],
+            [34.064915, -118.252648]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Colton Street",
+          "px": [705, 592],
+          "ll": [34.062057, -118.254573],
+          "insideCoverage": true
+        },
+        {
+          "name": "Court Street",
+          "px": [631, 444],
+          "ll": [34.062877, -118.253985],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [448, 111],
+          "ll": [34.064804, -118.252726],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Colton Street",
+      "runs": [
+        {
+          "px": [
+            [705, 592],
+            [695, 601],
+            [673, 613],
+            [643, 630]
+          ],
+          "ll": [
+            [34.062057, -118.254573],
+            [34.062078, -118.254668],
+            [34.062145, -118.254818],
+            [34.062237, -118.255027]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [567, 673],
+          "ll": [34.062475, -118.255562],
+          "insideCoverage": false
+        },
+        {
+          "name": "Boylston Street",
+          "px": [705, 592],
+          "ll": [34.062057, -118.254573],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Court Street",
+      "runs": [
+        {
+          "px": [
+            [631, 444],
+            [620, 450],
+            [569, 479]
+          ],
+          "ll": [
+            [34.062877, -118.253985],
+            [34.062913, -118.254066],
+            [34.063069, -118.254423]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Boylston Street",
+          "px": [631, 444],
+          "ll": [34.062877, -118.253985],
+          "insideCoverage": true
+        },
+        {
+          "name": "Firmin Street",
+          "px": [473, 482],
+          "ll": [34.063527, -118.2548],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Dewap Road",
+      "runs": [
+        {
+          "px": [
+            [1561, 594],
+            [1554, 572],
+            [1537, 532],
+            [1533, 518],
+            [1532, 507],
+            [1532, 481],
+            [1532, 431],
+            [1533, 390],
+            [1532, 244],
+            [1531, 205],
+            [1532, 196],
+            [1537, 150],
+            [1540, 122],
+            [1539, 112],
+            [1528, 78],
+            [1526, 72],
+            [1523, 53]
+          ],
+          "ll": [
+            [34.057875, -118.251386],
+            [34.057981, -118.251287],
+            [34.058186, -118.251114],
+            [34.058248, -118.251049],
+            [34.058289, -118.250986],
+            [34.058371, -118.250837],
+            [34.058527, -118.250545],
+            [34.058649, -118.250303],
+            [34.059111, -118.249452],
+            [34.059232, -118.249229],
+            [34.05926, -118.249172],
+            [34.059377, -118.248881],
+            [34.05945, -118.248709],
+            [34.059488, -118.248653],
+            [34.059644, -118.248499],
+            [34.059672, -118.248469],
+            [34.059749, -118.24837]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1584, 657],
+          "ll": [34.057566, -118.251672],
+          "insideCoverage": false
+        },
+        {
+          "name": "Diamond Street",
+          "px": [1513, 539],
+          "ll": [34.05828, -118.251246],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [1512, 46],
+          "ll": [34.059823, -118.248367],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [1523, 53],
+          "ll": [34.059749, -118.24837],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Diamond Street",
+      "runs": [
+        {
+          "px": [
+            [1489, 546],
+            [1464, 556],
+            [1410, 588],
+            [1336, 636],
+            [1319, 646]
+          ],
+          "ll": [
+            [34.058375, -118.251378],
+            [34.058468, -118.251532],
+            [34.058628, -118.251918],
+            [34.058845, -118.252473],
+            [34.058897, -118.252596]
+          ]
+        },
+        {
+          "px": [
+            [1125, 756],
+            [1142, 746],
+            [1178, 726],
+            [1198, 714]
+          ],
+          "ll": [
+            [34.059496, -118.253967],
+            [34.059443, -118.253843],
+            [34.059333, -118.25359],
+            [34.059274, -118.253449]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1141, 784],
+          "ll": [34.059331, -118.254067],
+          "insideCoverage": true
+        },
+        {
+          "name": "Beaudry Avenue",
+          "px": [1125, 756],
+          "ll": [34.059496, -118.253967],
+          "insideCoverage": true
+        },
+        {
+          "name": "Dewap Road",
+          "px": [1513, 539],
+          "ll": [34.05828, -118.251246],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [1489, 546],
+          "ll": [34.058375, -118.251378],
+          "insideCoverage": true
+        },
+        {
+          "name": "Fremont Avenue",
+          "px": [1319, 646],
+          "ll": [34.058897, -118.252596],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [1229, 724],
+          "ll": [34.059092, -118.253392],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Figueroa Street",
+      "runs": [
+        {
+          "px": [
+            [1513, 623],
+            [1501, 591],
+            [1496, 572],
+            [1489, 546],
+            [1486, 527],
+            [1484, 508],
+            [1483, 485],
+            [1483, 453],
+            [1485, 307],
+            [1493, 174],
+            [1500, 108],
+            [1502, 38],
+            [1501, 16],
+            [1499, -9],
+            [1495, -33],
+            [1495, -36]
+          ],
+          "ll": [
+            [34.058021, -118.251736],
+            [34.058182, -118.251595],
+            [34.058263, -118.251507],
+            [34.058375, -118.251378],
+            [34.058448, -118.251279],
+            [34.058521, -118.251174],
+            [34.058596, -118.251045],
+            [34.058698, -118.250859],
+            [34.059143, -118.249994],
+            [34.059517, -118.249189],
+            [34.059688, -118.248779],
+            [34.059896, -118.248364],
+            [34.05997, -118.248239],
+            [34.06006, -118.2481],
+            [34.060151, -118.24797],
+            [34.060162, -118.247957]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1508, 661],
+          "ll": [34.057925, -118.251981],
+          "insideCoverage": false
+        },
+        {
+          "name": "Dewap Road",
+          "px": [1512, 46],
+          "ll": [34.059823, -118.248367],
+          "insideCoverage": true
+        },
+        {
+          "name": "Diamond Street",
+          "px": [1489, 546],
+          "ll": [34.058375, -118.251378],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [1508, 47],
+          "ll": [34.059843, -118.24839],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Firmin Street",
+      "runs": [
+        {
+          "px": [
+            [462, 437],
+            [395, 316],
+            [325, 190],
+            [302, 148],
+            [293, 133]
+          ],
+          "ll": [
+            [34.063723, -118.254577],
+            [34.064424, -118.254122],
+            [34.065158, -118.253647],
+            [34.065402, -118.253486],
+            [34.065492, -118.253431]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [286, 212],
+          "ll": [34.065282, -118.253924],
+          "insideCoverage": true
+        },
+        {
+          "name": "Court Street",
+          "px": [473, 482],
+          "ll": [34.063527, -118.2548],
+          "insideCoverage": false
+        },
+        {
+          "name": "Temple Street",
+          "px": [293, 133],
+          "ll": [34.065492, -118.253431],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Fremont Avenue",
+      "runs": [
+        {
+          "px": [
+            [1343, 724],
+            [1342, 719],
+            [1335, 696],
+            [1324, 661],
+            [1319, 646],
+            [1312, 631],
+            [1304, 607],
+            [1303, 598],
+            [1305, 112],
+            [1305, 91],
+            [1305, 71],
+            [1305, 64],
+            [1301, 28]
+          ],
+          "ll": [
+            [34.058534, -118.252962],
+            [34.058556, -118.252939],
+            [34.058661, -118.252831],
+            [34.058821, -118.252667],
+            [34.058897, -118.252596],
+            [34.058973, -118.252537],
+            [34.059091, -118.252423],
+            [34.059123, -118.252374],
+            [34.060628, -118.249529],
+            [34.060691, -118.249409],
+            [34.060753, -118.249292],
+            [34.060777, -118.24925],
+            [34.060908, -118.249054]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1349, 744],
+          "ll": [34.058443, -118.253056],
+          "insideCoverage": false
+        },
+        {
+          "name": "Diamond Street",
+          "px": [1319, 646],
+          "ll": [34.058897, -118.252596],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [1314, 707],
+          "ll": [34.05873, -118.252973],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [1305, 91],
+          "ll": [34.060691, -118.249409],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Harbor Freeway",
+      "runs": [
+        {
+          "px": [
+            [1302, 749],
+            [1293, 718],
+            [1232, 463],
+            [1211, 383],
+            [1200, 329],
+            [1185, 265],
+            [1169, 192],
+            [1148, 113],
+            [1137, 70],
+            [1122, 9]
+          ],
+          "ll": [
+            [34.058658, -118.25326],
+            [34.058799, -118.253115],
+            [34.059887, -118.251852],
+            [34.060239, -118.251462],
+            [34.060464, -118.251191],
+            [34.060731, -118.250872],
+            [34.061042, -118.250507],
+            [34.061388, -118.250122],
+            [34.061577, -118.249913],
+            [34.06184, -118.249613]
+          ]
+        },
+        {
+          "px": [
+            [1101, 12],
+            [1116, 70],
+            [1127, 113],
+            [1163, 254],
+            [1175, 306],
+            [1191, 432],
+            [1210, 521],
+            [1260, 734],
+            [1270, 768]
+          ],
+          "ll": [
+            [34.061933, -118.249705],
+            [34.061679, -118.249991],
+            [34.061491, -118.250202],
+            [34.060878, -118.250891],
+            [34.060654, -118.251151],
+            [34.060183, -118.251822],
+            [34.059818, -118.252273],
+            [34.058909, -118.253334],
+            [34.058756, -118.253493]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1271, 784],
+          "ll": [34.058695, -118.253582],
+          "insideCoverage": false
+        },
+        {
+          "name": "Diamond Street",
+          "px": [1229, 724],
+          "ll": [34.059092, -118.253392],
+          "insideCoverage": true
+        },
+        {
+          "name": "Fremont Avenue",
+          "px": [1314, 707],
+          "ll": [34.05873, -118.252973],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mignonette Street",
+          "px": [1187, 524],
+          "ll": [34.059919, -118.252376],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [1181, 102],
+          "ll": [34.061259, -118.249934],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Mignonette Street",
+      "runs": [
+        {
+          "px": [
+            [1164, 527],
+            [1149, 540],
+            [1057, 592],
+            [1054, 594],
+            [1036, 603]
+          ],
+          "ll": [
+            [34.06002, -118.252479],
+            [34.060053, -118.252613],
+            [34.060338, -118.253258],
+            [34.060351, -118.253281],
+            [34.060405, -118.253404]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beaudry Avenue",
+          "px": [1036, 603],
+          "ll": [34.060405, -118.253404],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [1187, 524],
+          "ll": [34.059919, -118.252376],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Temple Street",
+      "runs": [
+        {
+          "px": [
+            [1590, 38],
+            [1582, 40],
+            [1542, 48],
+            [1536, 49],
+            [1523, 53],
+            [1515, 54],
+            [1514, 55],
+            [1489, 60],
+            [1487, 60],
+            [1475, 63],
+            [1461, 65],
+            [1456, 67],
+            [1405, 78],
+            [1349, 87],
+            [1320, 89],
+            [1305, 91],
+            [1290, 92],
+            [1231, 92],
+            [1215, 92],
+            [1039, 93],
+            [1010, 93],
+            [931, 94],
+            [884, 94],
+            [809, 94],
+            [791, 95],
+            [774, 95],
+            [740, 95],
+            [734, 95],
+            [687, 95],
+            [612, 95],
+            [593, 96],
+            [568, 97],
+            [556, 98],
+            [543, 100],
+            [536, 100],
+            [471, 107],
+            [448, 111],
+            [428, 116],
+            [394, 120],
+            [377, 122],
+            [353, 125],
+            [293, 133],
+            [228, 142],
+            [196, 147],
+            [140, 154]
+          ],
+          "ll": [
+            [34.059467, -118.248031],
+            [34.059501, -118.24807],
+            [34.059674, -118.248271],
+            [34.059698, -118.248299],
+            [34.059749, -118.24837],
+            [34.059784, -118.248409],
+            [34.059789, -118.248415],
+            [34.059894, -118.248539],
+            [34.059901, -118.248548],
+            [34.059953, -118.248611],
+            [34.060012, -118.248675],
+            [34.060033, -118.248699],
+            [34.060244, -118.248955],
+            [34.060493, -118.249218],
+            [34.060626, -118.249339],
+            [34.060691, -118.249409],
+            [34.060765, -118.249469],
+            [34.06105, -118.249686],
+            [34.061129, -118.249747],
+            [34.061982, -118.250408],
+            [34.062124, -118.25052],
+            [34.062509, -118.250822],
+            [34.062733, -118.250997],
+            [34.063099, -118.251278],
+            [34.063185, -118.251352],
+            [34.063267, -118.25141],
+            [34.063435, -118.251544],
+            [34.063462, -118.251564],
+            [34.063693, -118.251742],
+            [34.064058, -118.252021],
+            [34.064147, -118.252094],
+            [34.064267, -118.252196],
+            [34.064323, -118.252248],
+            [34.064381, -118.252306],
+            [34.06441, -118.252335],
+            [34.064709, -118.252617],
+            [34.064804, -118.252726],
+            [34.064887, -118.252831],
+            [34.065042, -118.252977],
+            [34.06512, -118.253055],
+            [34.065226, -118.253162],
+            [34.065492, -118.253431],
+            [34.065783, -118.25373],
+            [34.065926, -118.253877],
+            [34.066173, -118.254125]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Angelina Street",
+          "px": [808, 121],
+          "ll": [34.063024, -118.251438],
+          "insideCoverage": true
+        },
+        {
+          "name": "Beaudry Avenue",
+          "px": [791, 95],
+          "ll": [34.063185, -118.251352],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bixel Street",
+          "px": [196, 147],
+          "ll": [34.065926, -118.253877],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [448, 111],
+          "ll": [34.064804, -118.252726],
+          "insideCoverage": true
+        },
+        {
+          "name": "Dewap Road",
+          "px": [1523, 53],
+          "ll": [34.059749, -118.24837],
+          "insideCoverage": true
+        },
+        {
+          "name": "Edgeware Road",
+          "px": [28, 168],
+          "ll": [34.066674, -118.25463],
+          "insideCoverage": false
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [1508, 47],
+          "ll": [34.059843, -118.24839],
+          "insideCoverage": true
+        },
+        {
+          "name": "Firmin Street",
+          "px": [293, 133],
+          "ll": [34.065492, -118.253431],
+          "insideCoverage": true
+        },
+        {
+          "name": "Fremont Avenue",
+          "px": [1305, 91],
+          "ll": [34.060691, -118.249409],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [1181, 102],
+          "ll": [34.061259, -118.249934],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hope Street",
+          "px": [1707, 14],
+          "ll": [34.058972, -118.247454],
+          "insideCoverage": false
+        },
+        {
+          "name": "Victor Street",
+          "px": [612, 95],
+          "ll": [34.064058, -118.252021],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Victor Street",
+      "metres": 15.8
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "1st Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "first-street",
+          "display": "1st Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 1st Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "1ST ST",
+            "1ST STREET",
+            "1st ST",
+            "CALLE 1a",
+            "FIRST ST",
+            "FIRST STREET",
+            "FIRST STREET.",
+            "First Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr002-092-p1",
+            "mr003-060-p1",
+            "mr003-146-p1",
+            "mr005-307-a",
+            "mr010-008",
+            "mr053-069",
+            "mr053-071",
+            "tr0885-030-p2",
+            "tr1339-069-p3"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Angelina Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Beaudry Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "beaudry-st",
+          "display": "Beaudry Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Bixel Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "bixel",
+          "display": "Bixel Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "BIXEL ST"
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Boylston Street",
+      "continuesInto": [
+        "Boston Street"
+      ],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Boylston Street by another sheet"
+          ],
+          "ink": [
+            "FIGUEROA ST."
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "boylston",
+          "display": "Boylston Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Colton Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "state-colton",
+          "display": "State Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Colton Street by another sheet"
+          ],
+          "ink": [
+            "State Street"
+          ],
+          "docs": [
+            "mr006-138"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Court Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "court-street",
+          "display": "Court Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Court Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "Court Street"
+          ],
+          "docs": [
+            "mr006-138"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Dewap Road",
+      "continuesInto": [
+        "Figueroa Street"
+      ],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street, which Dewap Road runs straight into"
+          ],
+          "ink": [
+            "FIGUEROA ST.",
+            "FIGUEROA STREET",
+            "Figueroa St",
+            "Figueroa Street"
+          ],
+          "docs": [
+            "mr007-021",
+            "mr021-032",
+            "tr0034-004",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "pearl",
+          "display": "Pearl Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street, which Dewap Road runs straight into"
+          ],
+          "ink": [
+            "PEARL ST",
+            "PEARL STR.",
+            "PEARL STREET",
+            "Pearl"
+          ],
+          "docs": [
+            "mr003-016",
+            "mr003-032",
+            "mr003-569",
+            "mr005-307-a",
+            "mr010-030"
+          ]
+        },
+        {
+          "id": "chapules",
+          "display": "Grasshopper Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street, which Dewap Road runs straight into"
+          ],
+          "ink": [
+            "CALLE DE LAS CHAPULAS",
+            "CALLE DE LAS CHAPULES",
+            "GRASSHOPPER ST",
+            "GRASSHOPPER ST.",
+            "GRASSHOPPER STREET",
+            "Grasshopper St."
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Diamond Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "diamond-street",
+          "display": "Diamond Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Figueroa Street",
+      "continuesInto": [
+        "Dewap Road"
+      ],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "FIGUEROA ST.",
+            "FIGUEROA STREET",
+            "Figueroa St",
+            "Figueroa Street"
+          ],
+          "docs": [
+            "mr007-021",
+            "mr021-032",
+            "tr0034-004",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "pearl",
+          "display": "Pearl Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "PEARL ST",
+            "PEARL STR.",
+            "PEARL STREET",
+            "Pearl"
+          ],
+          "docs": [
+            "mr003-016",
+            "mr003-032",
+            "mr003-569",
+            "mr005-307-a",
+            "mr010-030"
+          ]
+        },
+        {
+          "id": "chapules",
+          "display": "Grasshopper Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS CHAPULAS",
+            "CALLE DE LAS CHAPULES",
+            "GRASSHOPPER ST",
+            "GRASSHOPPER ST.",
+            "GRASSHOPPER STREET",
+            "Grasshopper St."
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Firmin Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Fremont Avenue",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Harbor Freeway",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Mignonette Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Temple Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "requena-street",
+          "display": "Requena Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet"
+          ],
+          "ink": [
+            "REQUENA STREET"
+          ],
+          "docs": [
+            "mr003-146-p2"
+          ]
+        },
+        {
+          "id": "temple",
+          "display": "Temple Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "TEMPLE STREET",
+            "Temple Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489"
+          ]
+        }
+      ]
+    }
+  ]
+}

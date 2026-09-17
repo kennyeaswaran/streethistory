@@ -1,0 +1,735 @@
+{
+  "document": "mr005-566",
+  "image": "mr005-566-100dpi.png",
+  "imageSize": [1718, 1119],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr005-566-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [-26, 163],
+    [-20, 869],
+    [911, 990],
+    [979, 522],
+    [1298, 263],
+    [867, 33]
+  ],
+  "coverageLl": [
+    [34.052765, -118.264033],
+    [34.050886, -118.265008],
+    [34.049471, -118.262221],
+    [34.050632, -118.261345],
+    [34.050944, -118.259967],
+    [34.052061, -118.261013]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [941, 784],
+            [936, 784],
+            [882, 786],
+            [845, 787],
+            [573, 786],
+            [542, 786],
+            [397, 787],
+            [239, 785],
+            [196, 785],
+            [154, 785],
+            [48, 784],
+            [-16, 782],
+            [-21, 782]
+          ],
+          "ll": [
+            [34.049984, -118.261834],
+            [34.049989, -118.261851],
+            [34.050047, -118.262025],
+            [34.050087, -118.262146],
+            [34.050408, -118.263007],
+            [34.050446, -118.263107],
+            [34.050613, -118.263567],
+            [34.050804, -118.264068],
+            [34.050856, -118.264205],
+            [34.050905, -118.264336],
+            [34.051031, -118.264672],
+            [34.051112, -118.264875],
+            [34.051117, -118.264889]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [196, 785],
+          "ll": [34.050856, -118.264205],
+          "insideCoverage": true
+        },
+        {
+          "name": "Francisco Street",
+          "px": [1060, 777],
+          "ll": [34.049862, -118.261446],
+          "insideCoverage": false
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [599, 802],
+          "ll": [34.050337, -118.262948],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Beaudry Avenue",
+      "runs": [
+        {
+          "px": [
+            [937, 70],
+            [913, 110],
+            [837, 241],
+            [818, 269],
+            [797, 304],
+            [782, 328],
+            [743, 385],
+            [703, 441]
+          ],
+          "ll": [
+            [34.051879, -118.260843],
+            [34.051801, -118.260975],
+            [34.051545, -118.2614],
+            [34.051492, -118.261499],
+            [34.051424, -118.261618],
+            [34.051378, -118.261696],
+            [34.051272, -118.261903],
+            [34.051172, -118.262108]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Harbor Freeway",
+          "px": [1017, 37],
+          "ll": [34.051874, -118.26054],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ingraham Street",
+          "px": [703, 441],
+          "ll": [34.051172, -118.262108],
+          "insideCoverage": true
+        },
+        {
+          "name": "Saint Paul Avenue",
+          "px": [715, 291],
+          "ll": [34.051556, -118.26186],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [818, 269],
+          "ll": [34.051492, -118.261499],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bixel Street",
+      "runs": [
+        {
+          "px": [
+            [229, 126],
+            [225, 172],
+            [218, 222],
+            [217, 263],
+            [216, 329],
+            [216, 372],
+            [214, 408],
+            [213, 435],
+            [212, 457],
+            [211, 492],
+            [210, 545],
+            [210, 570],
+            [209, 585],
+            [206, 742],
+            [196, 785],
+            [187, 823],
+            [186, 896]
+          ],
+          "ll": [
+            [34.052564, -118.263172],
+            [34.052447, -118.263249],
+            [34.052321, -118.263341],
+            [34.052215, -118.263401],
+            [34.052042, -118.263499],
+            [34.051928, -118.263559],
+            [34.051834, -118.263616],
+            [34.051763, -118.263659],
+            [34.051707, -118.26369],
+            [34.051613, -118.263743],
+            [34.051476, -118.26382],
+            [34.051409, -118.263857],
+            [34.051369, -118.26388],
+            [34.050958, -118.264112],
+            [34.050856, -118.264205],
+            [34.050767, -118.264286],
+            [34.050573, -118.264391]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [196, 785],
+          "ll": [34.050856, -118.264205],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ingraham Street",
+          "px": [213, 435],
+          "ll": [34.051763, -118.263659],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [218, 222],
+          "ll": [34.052321, -118.263341],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Harbor Freeway",
+      "runs": [
+        {
+          "px": [
+            [1029, 120],
+            [949, 257],
+            [702, 689],
+            [662, 755],
+            [624, 818],
+            [584, 891],
+            [553, 944]
+          ],
+          "ll": [
+            [34.051641, -118.260619],
+            [34.051369, -118.261067],
+            [34.050515, -118.262463],
+            [34.050386, -118.26268],
+            [34.050265, -118.26289],
+            [34.050119, -118.26312],
+            [34.050015, -118.263291]
+          ]
+        },
+        {
+          "px": [
+            [609, 951],
+            [689, 820],
+            [745, 729],
+            [959, 349],
+            [1072, 142]
+          ],
+          "ll": [
+            [34.04993, -118.263124],
+            [34.050184, -118.262684],
+            [34.050359, -118.262382],
+            [34.051116, -118.261165],
+            [34.05153, -118.260516]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [599, 802],
+          "ll": [34.050337, -118.262948],
+          "insideCoverage": true
+        },
+        {
+          "name": "Beaudry Avenue",
+          "px": [1017, 37],
+          "ll": [34.051874, -118.26054],
+          "insideCoverage": false
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [919, 269],
+          "ll": [34.051374, -118.26118],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Ingraham Street",
+      "runs": [
+        {
+          "px": [
+            [703, 441],
+            [624, 440],
+            [397, 437],
+            [315, 437],
+            [252, 436],
+            [213, 435],
+            [181, 435],
+            [-22, 431],
+            [-24, 431]
+          ],
+          "ll": [
+            [34.051172, -118.262108],
+            [34.051268, -118.262359],
+            [34.051541, -118.263076],
+            [34.05164, -118.263336],
+            [34.051716, -118.263535],
+            [34.051763, -118.263659],
+            [34.051801, -118.263757],
+            [34.05205, -118.264398],
+            [34.052052, -118.264403]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beaudry Avenue",
+          "px": [703, 441],
+          "ll": [34.051172, -118.262108],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bixel Street",
+          "px": [213, 435],
+          "ll": [34.051763, -118.263659],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [712, 351],
+          "ll": [34.0514, -118.261952],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Saint Paul Avenue",
+      "runs": [
+        {
+          "px": [
+            [660, 63],
+            [660, 73],
+            [649, 222],
+            [647, 254]
+          ],
+          "ll": [
+            [34.052224, -118.261712],
+            [34.0522, -118.261727],
+            [34.051815, -118.261971],
+            [34.051733, -118.262023]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beaudry Avenue",
+          "px": [715, 291],
+          "ll": [34.051556, -118.26186],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilshire Boulevard",
+          "px": [647, 254],
+          "ll": [34.051733, -118.262023],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Saint Paul Place",
+      "runs": [
+        {
+          "px": [
+            [432, 96],
+            [424, 197],
+            [417, 237]
+          ],
+          "ll": [
+            [34.052404, -118.262482],
+            [34.052147, -118.262651],
+            [34.052047, -118.262729]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Wilshire Boulevard",
+          "px": [417, 237],
+          "ll": [34.052047, -118.262729],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Wilshire Boulevard",
+      "runs": [
+        {
+          "px": [
+            [-26, 203],
+            [-17, 203],
+            [179, 219],
+            [218, 222],
+            [257, 225],
+            [365, 233],
+            [417, 237],
+            [611, 251],
+            [647, 254],
+            [684, 258],
+            [721, 260],
+            [792, 267],
+            [818, 269],
+            [845, 273],
+            [857, 273],
+            [872, 277],
+            [889, 281],
+            [1082, 332],
+            [1126, 345],
+            [1162, 354],
+            [1181, 358]
+          ],
+          "ll": [
+            [34.05266, -118.264088],
+            [34.052649, -118.264061],
+            [34.052375, -118.263459],
+            [34.052321, -118.263341],
+            [34.052268, -118.263223],
+            [34.05212, -118.262891],
+            [34.052047, -118.262729],
+            [34.051783, -118.262135],
+            [34.051733, -118.262023],
+            [34.051679, -118.261909],
+            [34.051629, -118.261796],
+            [34.051529, -118.261582],
+            [34.051492, -118.261499],
+            [34.051451, -118.26142],
+            [34.051434, -118.261382],
+            [34.051409, -118.261341],
+            [34.051378, -118.261293],
+            [34.051015, -118.260751],
+            [34.050929, -118.260628],
+            [34.050863, -118.260525],
+            [34.05083, -118.260472]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Beaudry Avenue",
+          "px": [818, 269],
+          "ll": [34.051492, -118.261499],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bixel Street",
+          "px": [218, 222],
+          "ll": [34.052321, -118.263341],
+          "insideCoverage": true
+        },
+        {
+          "name": "Francisco Street",
+          "px": [1162, 354],
+          "ll": [34.050863, -118.260525],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [919, 269],
+          "ll": [34.051374, -118.26118],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ingraham Street",
+          "px": [712, 351],
+          "ll": [34.0514, -118.261952],
+          "insideCoverage": true
+        },
+        {
+          "name": "Saint Paul Avenue",
+          "px": [647, 254],
+          "ll": [34.051733, -118.262023],
+          "insideCoverage": true
+        },
+        {
+          "name": "Saint Paul Place",
+          "px": [417, 237],
+          "ll": [34.052047, -118.262729],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Francisco Street",
+      "metres": 7.9
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "7th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "seventh-street",
+          "display": "7th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 7th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "7TH ST.",
+            "7TH STREET",
+            "7th ST",
+            "7th Street",
+            "CALLE 7a",
+            "SEVENTH ST",
+            "SEVENTH ST.",
+            "SEVENTH STR.",
+            "SEVENTH STREET",
+            "Seventh St",
+            "Seventh St.",
+            "Seventh Street",
+            "Seventh Street."
+          ],
+          "docs": [
+            "11824",
+            "mr003-016",
+            "mr003-569",
+            "mr006-033",
+            "mr006-039",
+            "mr011-063",
+            "mr013-091",
+            "mr014-034",
+            "mr015-052",
+            "mr018-025",
+            "mr018-092",
+            "mr021-046",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr053-068",
+            "mr053-071",
+            "mr054-051",
+            "mr055-081",
+            "mr066-064",
+            "mr070-084",
+            "tr0001-046",
+            "tr0005-056a",
+            "tr0009-100a",
+            "tr0011-196",
+            "tr0023-054c",
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Beaudry Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "beaudry-avenue",
+          "display": "Beaudry Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Beaudry Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "BEAUDRY AVE.",
+            "BEAUDRY AVENUE",
+            "Beaudry",
+            "Beaudry avenue"
+          ],
+          "docs": [
+            "mr006-115",
+            "mr007-026-p1",
+            "mr007-026-p2",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0010-175a",
+            "tr0035-092",
+            "tr0588-055",
+            "tr0713-093-p2"
+          ]
+        },
+        {
+          "id": "canal-street-beaudry",
+          "display": "Canal Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Beaudry Avenue by another sheet"
+          ],
+          "ink": [
+            "Canal Street"
+          ],
+          "docs": [
+            "mr016-059"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Bixel Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "lafayette-bixel",
+          "display": "Lafayette Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "LAFAYETTE ST.",
+            "Lafayette Av."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr003-046-p2",
+            "mr006-115"
+          ]
+        },
+        {
+          "id": "bixel",
+          "display": "Bixel Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "BIXEL ST",
+            "BIXEL ST.",
+            "BIXEL STREET"
+          ],
+          "docs": [
+            "mr066-035",
+            "tr0417-049-p2",
+            "tr0588-055",
+            "tr0713-093-p2"
+          ]
+        },
+        {
+          "id": "ohio-street",
+          "display": "Ohio Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "OHIO ST.",
+            "Ohio Street"
+          ],
+          "docs": [
+            "mr005-069",
+            "tr0014-097b"
+          ]
+        },
+        {
+          "id": "metcalf-st",
+          "display": "Metcalf Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "Metcalf St"
+          ],
+          "docs": [
+            "mr007-026-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Harbor Freeway",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Ingraham Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "ingraham",
+          "display": "Ingraham Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Saint Paul Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "st-paul-avenue",
+          "display": "St. Paul Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Saint Paul Avenue by another sheet"
+          ],
+          "ink": [
+            "ST. PAUL AVENUE"
+          ],
+          "docs": [
+            "mr078-055"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Saint Paul Place",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Wilshire Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "wilshire",
+          "display": "Wilshire Boulevard",
+          "pendingResearch": false,
+          "why": [
+            "attested on Wilshire Boulevard by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "WILSHIRE BOULEVARD"
+          ],
+          "docs": [
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "orange-st-wilshire",
+          "display": "Orange Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Wilshire Boulevard by another sheet"
+          ],
+          "ink": [
+            "ORANGE ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "document": "mr006-391",
+  "image": "mr006-391-100dpi.png",
+  "imageSize": [1128, 1700],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr006-391-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [372, 1279],
+    [832, 1287],
+    [998, 730],
+    [501, 674]
+  ],
+  "coverageLl": [
+    [34.065568, -118.252519],
+    [34.064648, -118.253108],
+    [34.063737, -118.251966],
+    [34.064682, -118.251215]
+  ],
+  "streets": [
+    {
+      "name": "Boylston Street",
+      "runs": [
+        {
+          "px": [
+            [859, 1197],
+            [760, 1195],
+            [707, 1193],
+            [642, 1189],
+            [490, 1188]
+          ],
+          "ll": [
+            [34.0645, -118.252923],
+            [34.064697, -118.252797],
+            [34.064804, -118.252726],
+            [34.064931, -118.252637],
+            [34.065235, -118.252445]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Boston Street",
+          "px": [204, 1210],
+          "ll": [34.065835, -118.252143],
+          "insideCoverage": false
+        },
+        {
+          "name": "Hollywood Freeway",
+          "px": [251, 1201],
+          "ll": [34.065731, -118.252182],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [257, 1178],
+          "ll": [34.065696, -118.252134],
+          "insideCoverage": false
+        },
+        {
+          "name": "Temple Street",
+          "px": [707, 1193],
+          "ll": [34.064804, -118.252726],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Temple Street",
+      "runs": [
+        {
+          "px": [
+            [934, 723],
+            [881, 813],
+            [858, 854],
+            [828, 912],
+            [815, 940],
+            [802, 971],
+            [795, 986],
+            [726, 1138],
+            [707, 1193],
+            [692, 1244],
+            [673, 1284]
+          ],
+          "ll": [
+            [34.063859, -118.251869],
+            [34.064058, -118.252021],
+            [34.064147, -118.252094],
+            [34.064267, -118.252196],
+            [34.064323, -118.252248],
+            [34.064381, -118.252306],
+            [34.06441, -118.252335],
+            [34.064709, -118.252617],
+            [34.064804, -118.252726],
+            [34.064887, -118.252831],
+            [34.064965, -118.252905]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Boylston Street",
+          "px": [707, 1193],
+          "ll": [34.064804, -118.252726],
+          "insideCoverage": true
+        },
+        {
+          "name": "Firmin Street",
+          "px": [555, 1562],
+          "ll": [34.065492, -118.253431],
+          "insideCoverage": false
+        },
+        {
+          "name": "Victor Street",
+          "px": [881, 813],
+          "ll": [34.064058, -118.252021],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Victor Street",
+      "runs": [
+        {
+          "px": [
+            [881, 813],
+            [838, 802],
+            [631, 749]
+          ],
+          "ll": [
+            [34.064058, -118.252021],
+            [34.064133, -118.251942],
+            [34.064497, -118.251557]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Hollywood Freeway",
+          "px": [533, 805],
+          "ll": [34.064753, -118.251572],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [337, 731],
+          "ll": [34.065071, -118.25115],
+          "insideCoverage": false
+        },
+        {
+          "name": "Temple Street",
+          "px": [881, 813],
+          "ll": [34.064058, -118.252021],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Boylston Street",
+      "continuesInto": [
+        "Boston Street"
+      ],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Boylston Street by another sheet"
+          ],
+          "ink": [
+            "FIGUEROA ST."
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "boylston",
+          "display": "Boylston Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Temple Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "requena-street",
+          "display": "Requena Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet"
+          ],
+          "ink": [
+            "REQUENA STREET"
+          ],
+          "docs": [
+            "mr003-146-p2"
+          ]
+        },
+        {
+          "id": "temple",
+          "display": "Temple Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "TEMPLE STREET",
+            "Temple Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Victor Street",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

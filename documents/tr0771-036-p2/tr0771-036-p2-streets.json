@@ -1,0 +1,380 @@
+{
+  "document": "tr0771-036-p2",
+  "image": "tr0771-036-p2-100dpi.png",
+  "imageSize": [1734, 2448],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0771-036-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [242, 840],
+    [1021, 2333],
+    [1621, 2233],
+    [1674, 446],
+    [668, 468]
+  ],
+  "coverageLl": [
+    [34.063647, -118.242865],
+    [34.061318, -118.242667],
+    [34.061113, -118.241686],
+    [34.063356, -118.240421],
+    [34.063884, -118.241969]
+  ],
+  "streets": [
+    {
+      "name": "Alpine Street",
+      "runs": [
+        {
+          "px": [
+            [1668, 646],
+            [1571, 647],
+            [1494, 647],
+            [1427, 649],
+            [980, 660],
+            [938, 662],
+            [867, 664],
+            [762, 668],
+            [662, 693],
+            [575, 731],
+            [485, 791],
+            [407, 854],
+            [353, 893],
+            [292, 936]
+          ],
+          "ll": [
+            [34.063106, -118.240562],
+            [34.063157, -118.240712],
+            [34.063199, -118.240828],
+            [34.063235, -118.240932],
+            [34.063467, -118.24162],
+            [34.063489, -118.241685],
+            [34.063525, -118.241795],
+            [34.063578, -118.241958],
+            [34.063602, -118.242128],
+            [34.063601, -118.242285],
+            [34.063575, -118.242462],
+            [34.063538, -118.242622],
+            [34.063518, -118.242731],
+            [34.063498, -118.242852]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Cleveland Street",
+          "px": [980, 660],
+          "ll": [34.063467, -118.24162],
+          "insideCoverage": true
+        },
+        {
+          "name": "Grand Avenue",
+          "px": [-19, 1056],
+          "ll": [34.063517, -118.243406],
+          "insideCoverage": false
+        },
+        {
+          "name": "Hill Place",
+          "px": [407, 854],
+          "ll": [34.063538, -118.242622],
+          "insideCoverage": true
+        },
+        {
+          "name": "Yale Street",
+          "px": [1494, 647],
+          "ll": [34.063199, -118.240828],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Cleveland Street",
+      "runs": [
+        {
+          "px": [
+            [984, 461],
+            [984, 606],
+            [980, 660],
+            [981, 717],
+            [981, 1001],
+            [981, 1125]
+          ],
+          "ll": [
+            [34.063718, -118.241482],
+            [34.063535, -118.241579],
+            [34.063467, -118.24162],
+            [34.063395, -118.241656],
+            [34.063034, -118.241844],
+            [34.062876, -118.241926]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [980, 660],
+          "ll": [34.063467, -118.24162],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hill Place",
+      "runs": [
+        {
+          "px": [
+            [1163, 2309],
+            [1149, 2256],
+            [1140, 2220],
+            [1123, 2169],
+            [1103, 2122],
+            [977, 1893],
+            [569, 1135],
+            [426, 887],
+            [407, 854]
+          ],
+          "ll": [
+            [34.061269, -118.242434],
+            [34.061345, -118.24242],
+            [34.061396, -118.24241],
+            [34.061469, -118.242402],
+            [34.06154, -118.242402],
+            [34.061901, -118.242442],
+            [34.063091, -118.242562],
+            [34.063485, -118.242615],
+            [34.063538, -118.242622]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [407, 854],
+          "ll": [34.063538, -118.242622],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ord Street",
+          "px": [1140, 2220],
+          "ll": [34.061396, -118.24241],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Ord Street",
+      "runs": [
+        {
+          "px": [
+            [1327, 2155],
+            [1331, 2205],
+            [1170, 2218],
+            [1140, 2220]
+          ],
+          "ll": [
+            [34.061375, -118.242082],
+            [34.061309, -118.24211],
+            [34.061382, -118.242364],
+            [34.061396, -118.24241]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Hill Place",
+          "px": [1140, 2220],
+          "ll": [34.061396, -118.24241],
+          "insideCoverage": true
+        },
+        {
+          "name": "Yale Street",
+          "px": [1553, 2128],
+          "ll": [34.061284, -118.24172],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Yale Street",
+      "runs": [
+        {
+          "px": [
+            [1553, 2128],
+            [1540, 2097],
+            [1538, 2084],
+            [1535, 2061],
+            [1513, 1994],
+            [1512, 1981],
+            [1505, 1914],
+            [1505, 1889],
+            [1500, 1163],
+            [1495, 706],
+            [1494, 647],
+            [1493, 593],
+            [1491, 450]
+          ],
+          "ll": [
+            [34.061284, -118.24172],
+            [34.06133, -118.241719],
+            [34.061347, -118.241713],
+            [34.061378, -118.241703],
+            [34.061477, -118.241691],
+            [34.061494, -118.241685],
+            [34.061583, -118.241651],
+            [34.061614, -118.241634],
+            [34.062541, -118.241161],
+            [34.063124, -118.240866],
+            [34.063199, -118.240828],
+            [34.063269, -118.240793],
+            [34.063452, -118.240702]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [1494, 647],
+          "ll": [34.063199, -118.240828],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ord Street",
+          "px": [1553, 2128],
+          "ll": [34.061284, -118.24172],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Alpine Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "virgin",
+          "display": "Virgin Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alpine Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS VIRGENES",
+            "VIRGIN ST",
+            "Virgin street"
+          ],
+          "docs": [
+            "mr053-073",
+            "ord-1887-08-22"
+          ]
+        },
+        {
+          "id": "alpine",
+          "display": "Alpine Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Cleveland Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Hill Place",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Ord Street",
+      "continuesInto": [
+        "Yale Street"
+      ],
+      "candidates": [
+        {
+          "id": "high-street-chinatown",
+          "display": "High Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Ord Street by another sheet"
+          ],
+          "ink": [
+            "CALLE ALTA",
+            "HIGH ST"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "hornet",
+          "display": "Hornet Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Yale Street, which Ord Street runs straight into"
+          ],
+          "ink": [
+            "CALLE DE LAS AVISPAS",
+            "HORNET ST."
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Yale Street",
+      "continuesInto": [
+        "Ord Street"
+      ],
+      "candidates": [
+        {
+          "id": "hornet",
+          "display": "Hornet Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Yale Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS AVISPAS",
+            "HORNET ST."
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "high-street-chinatown",
+          "display": "High Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Ord Street, which Yale Street runs straight into"
+          ],
+          "ink": [
+            "CALLE ALTA",
+            "HIGH ST"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "yale",
+          "display": "Yale Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

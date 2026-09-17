@@ -1,0 +1,563 @@
+{
+  "document": "tr0015-179a",
+  "image": "tr0015-179a-100dpi.png",
+  "imageSize": [1154, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0015-179a-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [257, 698],
+    [147, 1350],
+    [715, 1365],
+    [925, 1131],
+    [987, 683]
+  ],
+  "coverageLl": [
+    [34.059438, -118.266304],
+    [34.058006, -118.264976],
+    [34.059122, -118.263675],
+    [34.059979, -118.263772],
+    [34.060936, -118.264715]
+  ],
+  "streets": [
+    {
+      "name": "3rd Street",
+      "runs": [
+        {
+          "px": [
+            [717, 1362],
+            [712, 1345],
+            [701, 1306],
+            [666, 1184],
+            [651, 1131],
+            [639, 1092],
+            [588, 927],
+            [571, 871],
+            [561, 838],
+            [543, 781],
+            [536, 757],
+            [525, 720],
+            [517, 693]
+          ],
+          "ll": [
+            [34.059132, -118.263676],
+            [34.059153, -118.26373],
+            [34.059204, -118.26385],
+            [34.05936, -118.26422],
+            [34.059429, -118.264382],
+            [34.059476, -118.264501],
+            [34.059681, -118.265015],
+            [34.05975, -118.265188],
+            [34.05979, -118.265289],
+            [34.05986, -118.265466],
+            [34.05989, -118.265541],
+            [34.059937, -118.265655],
+            [34.059971, -118.265738]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Columbia Avenue",
+          "px": [651, 1131],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": true
+        },
+        {
+          "name": "Crown Hill Avenue",
+          "px": [651, 1131],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": true
+        },
+        {
+          "name": "Loma Drive",
+          "px": [536, 757],
+          "ll": [34.05989, -118.265541],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [736, 1424],
+          "ll": [34.059055, -118.263486],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Columbia Avenue",
+      "runs": [
+        {
+          "px": [
+            [927, 1119],
+            [695, 1146],
+            [690, 1147],
+            [651, 1131],
+            [616, 1140],
+            [460, 1183],
+            [432, 1190],
+            [256, 1239],
+            [161, 1264]
+          ],
+          "ll": [
+            [34.060005, -118.263798],
+            [34.059488, -118.264247],
+            [34.059478, -118.264256],
+            [34.059429, -118.264382],
+            [34.059341, -118.264437],
+            [34.058946, -118.264683],
+            [34.058877, -118.264726],
+            [34.058433, -118.265002],
+            [34.058195, -118.26515]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [651, 1131],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": true
+        },
+        {
+          "name": "Crown Hill Avenue",
+          "px": [651, 1131],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": true
+        },
+        {
+          "name": "Miramar Street",
+          "px": [1128, 1095],
+          "ll": [34.060454, -118.263406],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Crown Hill Avenue",
+      "runs": [
+        {
+          "px": [
+            [651, 1131],
+            [685, 1121],
+            [866, 784],
+            [879, 761],
+            [886, 728],
+            [897, 685]
+          ],
+          "ll": [
+            [34.059429, -118.264382],
+            [34.059513, -118.26433],
+            [34.060506, -118.264741],
+            [34.060574, -118.264769],
+            [34.060649, -118.264829],
+            [34.060751, -118.264911]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [651, 1131],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": true
+        },
+        {
+          "name": "Columbia Avenue",
+          "px": [651, 1131],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": true
+        },
+        {
+          "name": "Loma Drive",
+          "px": [879, 761],
+          "ll": [34.060574, -118.264769],
+          "insideCoverage": true
+        },
+        {
+          "name": "Loma Place",
+          "px": [969, 464],
+          "ll": [34.061307, -118.265284],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Loma Drive",
+      "runs": [
+        {
+          "px": [
+            [245, 767],
+            [287, 765],
+            [312, 765],
+            [339, 764],
+            [501, 758],
+            [536, 757],
+            [570, 756],
+            [713, 753],
+            [810, 754],
+            [879, 761],
+            [900, 763],
+            [917, 765],
+            [953, 770],
+            [975, 773]
+          ],
+          "ll": [
+            [34.059286, -118.266163],
+            [34.059373, -118.266076],
+            [34.059425, -118.266021],
+            [34.059481, -118.265963],
+            [34.059818, -118.265616],
+            [34.05989, -118.265541],
+            [34.059961, -118.265467],
+            [34.060253, -118.265157],
+            [34.060449, -118.264937],
+            [34.060574, -118.264769],
+            [34.060613, -118.264716],
+            [34.060643, -118.264675],
+            [34.060706, -118.26458],
+            [34.060743, -118.264525]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [536, 757],
+          "ll": [34.05989, -118.265541],
+          "insideCoverage": true
+        },
+        {
+          "name": "Crown Hill Avenue",
+          "px": [879, 761],
+          "ll": [34.060574, -118.264769],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "3rd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "3RD ST",
+            "3RD ST.",
+            "3RD STREET",
+            "3d Street",
+            "CALLE 3a",
+            "THIRD ST.",
+            "THIRD STREET",
+            "Third St",
+            "Third Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr016-059",
+            "mr030-009-p5",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        },
+        {
+          "id": "georgia-east",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "GEORGIA ST",
+            "Georgia St",
+            "Georgie Street."
+          ],
+          "docs": [
+            "mr002-092-p2",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "mr030-009-p5"
+          ]
+        },
+        {
+          "id": "arnold",
+          "display": "Arnold Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "ARNOLD ST."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "morgan-lane",
+          "display": "Morgan Lane",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "Morgan Lane"
+          ],
+          "docs": [
+            "mr005-005"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Columbia Avenue",
+      "continuesInto": [
+        "Crown Hill Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "columbia-avenue",
+          "display": "Columbia Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Columbia Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "COLUMBIA AVENUE"
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Crown Hill Avenue, which Columbia Avenue runs straight into"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Crown Hill Avenue",
+      "continuesInto": [
+        "Columbia Avenue",
+        "Union Place"
+      ],
+      "candidates": [
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Crown Hill Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        },
+        {
+          "id": "columbia-avenue",
+          "display": "Columbia Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Columbia Avenue, which Crown Hill Avenue runs straight into"
+          ],
+          "ink": [
+            "COLUMBIA AVENUE"
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Loma Drive",
+      "continuesInto": [
+        "2nd Street",
+        "4th Street"
+      ],
+      "candidates": [
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street, which Loma Drive runs straight into"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "2nd STREET",
+            "CALLE 2a",
+            "SECOND ST.",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0016-005",
+            "tr0017-001b",
+            "tr0035-022",
+            "tr0417-049-p2",
+            "tr0713-093-p2",
+            "tr0856-050-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "lake-shore-ave",
+          "display": "Lake Shore Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street, which Loma Drive runs straight into"
+          ],
+          "ink": [
+            "Lake Shore Ave"
+          ],
+          "docs": [
+            "mr010-081"
+          ]
+        },
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street, which Loma Drive runs straight into"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        },
+        {
+          "id": "fourth-street",
+          "display": "4th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which Loma Drive runs straight into"
+          ],
+          "ink": [
+            "4TH ST",
+            "4TH ST.",
+            "4TH STREET",
+            "CALLE 4a",
+            "FOURTH ST.",
+            "FOURTH STREET",
+            "Fourth St",
+            "Fourth Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr003-046-p1",
+            "mr005-005",
+            "mr012-026",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071",
+            "tr0012-186",
+            "tr0751-038"
+          ]
+        },
+        {
+          "id": "huber-st",
+          "display": "Huber Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which Loma Drive runs straight into"
+          ],
+          "ink": [
+            "HUBER ST.",
+            "Huber St",
+            "Huber St."
+          ],
+          "docs": [
+            "mr012-042",
+            "mr013-087-p1",
+            "mr030-009-p4"
+          ]
+        },
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street, which Loma Drive runs straight into"
+          ],
+          "ink": [
+            "THIRD"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        }
+      ]
+    }
+  ]
+}

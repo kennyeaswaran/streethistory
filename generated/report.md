@@ -2,13 +2,14 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 270; entries: 713
-- Stub entities minted from OSM (unresearched): 199
-- Curated entities: 151
+- Streets: 270; entries: 917
+- Stub entities minted from OSM (unresearched): 149
+- Curated entities: 288
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
 
 ## Ambiguous OSM binds (NOT bound — fix by adding extents or disambiguation)
-- OSM "Georgia Street" matches entities georgia-east, georgia-bell — not bound
+- OSM "Belmont Avenue" matches entities belmont-kincaid, belmont-ave — not bound
+- OSM "Lucas Avenue" matches entities lucas-avenue, lucas-ave — not bound
 
 ## Row problems
 - 12685: street not in geometry: West Bank Plaza at The Broad
@@ -19,6 +20,21 @@
 - mr001-489: cross-street not on Grand Avenue: West Bank Plaza at The Broad
 - mr001-489: cross-street not on Grand Avenue: West Bank Plaza at The Broad
 - mr010-008: row on Japanese Village Plaza Mall — the street does not enter this document's coverage at all
+- tr0856-050-p2: row on Toriumi Plaza (absent) spans nothing — its two ends resolve to the same point. the two cross streets meet this one at the same place.
+
+## Revived names (a name recurs around another — check the intervening row is on the right street)
+- 15th Street [-118.2625–-118.2619]: Laurel Street (1886) → 15th Street → Laurel Street (1915) — a revived name, or a row on the wrong street
+- 15th Street [-118.2625–-118.2619]: 15th Street (1893) → Laurel Street → 15th Street (undated) — a revived name, or a row on the wrong street
+- 2nd Street [-118.2591–-118.2586]: 2nd Street (1886) → Lake Shore Avenue → 2nd Street (undated) — a revived name, or a row on the wrong street
+- 7th Street [-118.2667–-118.2661]: 7th Street (1893) → Orange Street → 7th Street (1915) — a revived name, or a row on the wrong street
+- 7th Street [-118.2661–-118.2656]: 7th Street (1888) → Orange Street → 7th Street (1915) — a revived name, or a row on the wrong street
+- 9th Street [-118.2550–-118.2537]: 9th Street (1849) → Moran's Lane → 9th Street (1893) — a revived name, or a row on the wrong street
+- Lucas Avenue [34.0600–34.0612]: Lucas Avenue (1884) → Lucas Avenue → Lucas Avenue (1886) — a revived name, or a row on the wrong street
+- Lucas Avenue [34.0612–34.0618]: Lucas Avenue (1884) → Lucas Avenue → Lucas Avenue (1886) — a revived name, or a row on the wrong street
+- Miramar Street [-118.2576–-118.2571]: 3rd Street (1875) → Seminary Street → 3rd Street (1886) — a revived name, or a row on the wrong street
+- Wall Street [34.0415–34.0421]: Wall Street (1884) → Myrtle Avenue → Wall Street (undated) — a revived name, or a row on the wrong street
+- Wilshire Boulevard [-118.2641–-118.2631]: Wilshire Boulevard (1889) → Orange Street → Wilshire Boulevard (undated) — a revived name, or a row on the wrong street
+- Wilshire Boulevard [-118.2641–-118.2631]: Orange Street (1888) → Wilshire Boulevard → Orange Street (1893) — a revived name, or a row on the wrong street
 
 ## Partially swept documents (no negative inference contributed)
 - dnla-1924-01-04: sweptFor = []
@@ -36,6 +52,7 @@
 - dnla-1933-09-06: sweptFor = []
 - dnla-1934-02-03: sweptFor = []
 - dnla-1935-09-10: sweptFor = []
+- guinn-1912: sweptFor = []
 - lae-1923-05-02: sweptFor = []
 - lae-1924-04-04: sweptFor = []
 - lae-1924-04-07: sweptFor = []
@@ -191,6 +208,7 @@
 - lah-1917-01-29: sweptFor = []
 - lah-1917-02-14: sweptFor = []
 - lah-1919-09-30: sweptFor = []
+- lah-1919-11-27: sweptFor = []
 - lah-1920-08-12: sweptFor = []
 - lah-1926-06-08: sweptFor = []
 - lah-1926-06-17: sweptFor = []
@@ -200,39 +218,37 @@
 - min-1896-09-08: sweptFor = []
 - min-1896-09-14: sweptFor = []
 - min-1896-09-21: sweptFor = []
-- mr012-042: sweptFor = []
-- mr013-091: sweptFor = []
-- mr015-052: sweptFor = []
-- mr018-025: sweptFor = []
-- mr053-083: sweptFor = []
-- mr055-081: sweptFor = []
+- mr005-405: sweptFor = []
+- mr006-193: sweptFor = []
+- newmark-1916: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
-- tr0005-056a: sweptFor = []
-- tr0009-075: sweptFor = []
-- tr0011-196: sweptFor = []
-- tr0012-101: sweptFor = []
-- tr0012-186: sweptFor = []
-- tr0020-053b: sweptFor = []
-- tr0023-054c: sweptFor = []
-- tr0023-066: sweptFor = []
-- tr0159-021-p2: sweptFor = []
-- tr0159-032-p2: sweptFor = []
-- tr0273-017: sweptFor = []
-- tr0319-001-p1: sweptFor = []
-- tr0751-038: sweptFor = []
+- tr0003-067: sweptFor = []
+- tr0004-092b-p1: sweptFor = []
+- tr0004-092b-p2: sweptFor = []
+- tr0024-055: sweptFor = []
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
 - myrtle: "Wall Street" ×1
 - georgia-east: "Georgie Street." ×1
+- alameda-st: "Alameda Strt." ×1
 - sixth-street: "SIXTH STR." ×1
 - seventh-street: "SEVENTH STR." ×1
 - pearl: "PEARL STR." ×1
 - flower: "FLOWER STR." ×1
+- arnold: "ARNOLD ST." ×3
+- fourth-street: "FOURTH ST." ×5
+- lafayette-bixel: "LAFAYETTE ST." ×2
+- figueroa-gov: "FIGUEROA ST." ×7
+- potts-st: "POTTS ST." ×2
+- third-street: "THIRD ST." ×7
+- fifth-street: "FIFTH ST." ×3
+- ward-st: "WARD ST." ×2
 - first-street: "FIRST ST" ×2
 - guadalupe: "GUADALUPE ST" ×2
 - georgia-east: "GEORGIA ST" ×2
 - sixth-street: "Sixth St Extension." ×1
 - fifth-street: "Fifth St. (Extension)" ×1
+- castelar: "Castellar Street" ×1
 - sixth-street: "6TH ST" ×2
 - seventh-street: "SEVENTH ST" ×1
 - ruby-st: "RUBY ST" ×1
@@ -241,11 +257,34 @@
 - moore-st: "MOORE ST" ×1
 - ninth-street: "NINTH ST" ×1
 - orange-st-wilshire: "ORANGE ST" ×1
+- seventh-street: "SEVENTH ST." ×6
+- william: "WILLIAM ST." ×1
+- ingraham: "INGRAHAM ST." ×1
+- wilshire: "ORANGE ST." ×1
 - sixth-street: "proposed line of Sixth Street." ×1
+- wilmington-street: "WILMINGTON ST." ×2
+- los-angeles-street: "LOS ANGELES ST." ×4
+- fireman-st: "FIREMAN ST." ×1
+- strelitz-st: "STRELITZ ST." ×1
+- temple: "TEMPLE ST." ×1
+- custer-ave: "Custer ave" ×1
+- victor-ave: "Victor ave" ×1
+- north-ave: "North Ave" ×1
+- arnold: "ARNOLD ST" ×1
+- texas-st: "TEXAS ST" ×1
+- nevada-1886: "Nevado St" ×1
+- diamond-street: "DIAMOND ST" ×1
+- cummings-ave: "Cummings ave." ×1
 - huber-st: "HUBER ST." ×1
 - alameda-st: "ALAMEDA ST" ×1
 - hewitt: "HEWITT ST" ×1
 - ninth-street: "Ninth Street Extension" ×1
+- third-street: "3d Street" ×2
+- first-street: "FIRST ST." ×5
+- topeka-st: "TOPEKA ST." ×1
+- atchison-st: "ATCHISON ST." ×1
+- santa-fe-ave: "SANTA FE ST." ×1
+- second-street: "SECOND ST." ×5
 - eighth-street: "new 8th Street" ×1
 - san-pedro: "San Pedro Ave" ×4
 - omar-ave: "Omar Ave" ×1
@@ -254,7 +293,6 @@
 - fifteenth-street: "(formerly Laura St)" ×1
 - sixteenth-street: "16th ST." ×2
 - sixteenth-street: "(formerly Pine St)" ×2
-- los-angeles-street: "LOS ANGELES ST." ×2
 - main-street-dtla: "MAIN ST." ×1
 - maple-dtla: "MAPLE AVE." ×2
 - santee-street: "SANTEE ST." ×1
@@ -287,11 +325,11 @@
 - second-street: "2D ST" ×1
 - hill-street-downtown: "HILL ST" ×1
 - first-street: "1st ST" ×2
-- second-street: "2ND ST." ×1
-- third-street: "3RD ST." ×1
+- second-street: "2ND ST." ×2
+- third-street: "3RD ST." ×3
 - fourth-street: "4TH ST." ×1
-- fifth-street: "5TH ST." ×1
-- sixth-street: "6TH ST." ×1
+- fifth-street: "5TH ST." ×2
+- sixth-street: "6TH ST." ×3
 - seventh-street: "7TH ST." ×1
 - adobe: "CALLE DE LAS ADOBES" ×1
 - virgin: "CALLE DE LAS VIRGENES" ×1
@@ -304,27 +342,73 @@
 - short-street-chavez: "SHORT ST" ×1
 - college: "CALLE DEL COLEGIO" ×1
 - college: "COLLEGE ST" ×1
+- mateo: "MATEO ST." ×5
+- palmetto: "PALMETTO ST." ×4
+- willow: "WILLOW ST." ×1
+- ingraham: "INGRAM STREET" ×1
+- wilshire: "ORANGE STREET" ×1
+- central-ave: "CENTRAL AVE." ×3
+- easton: "EASTON ST." ×4
+- kohler: "KOHLER ST." ×3
+- wilde-st: "WILDE ST." ×2
 - stanford-ave: "STANFORD AVE." ×1
-- arnold: "ARNOLD ST." ×1
-- third-street: "THIRD ST." ×1
 - bixel: "BIXEL ST" ×1
-- figueroa-gov: "FIGUEROA ST." ×2
 - towne-ave: "TOWNE AVE" ×2
-- sixth-street: "SIXTH ST." ×2
+- st-paul-avenue: "ST. PAUL AVENUE" ×1
+- sixth-street: "SIXTH ST." ×6
 - grand-ave: "GRAND AV." ×1
+- beaudry-avenue: "BEAUDRY AVE." ×4
+- boylston: "BOYLSTON ST." ×7
+- alameda-st: "ALAMEDA ST." ×4
+- industrial-st: "INDUSTRIAL ST." ×2
+- mill-st-arts-district: "MILL ST." ×4
 - eighth-street: "EIGHTH ST." ×1
 - ruth-ave: "RUTH AVE." ×2
 - towne-ave: "TOWNE AVE." ×2
-- seventh-street: "SEVENTH ST." ×1
+- bixel: "BIXEL ST." ×2
+- easton: "Industrial" ×2
+- merchant-st: "MERCHANT ST." ×1
+- san-pedro: "SAN PEDRO ST." ×3
+- colyton: "COLYTON ST." ×1
+- carolina-arts-district: "CAROLINA ST." ×1
+- molino-st: "MOLINO ST." ×1
+- seaton: "SEATON ST." ×1
+- santa-fe-ave: "SANTA FE AVE." ×2
 - crocker-street: "CROCKER ST" ×1
 - san-pedro: "SAN PEDRO ST" ×1
+- anderson: "ANDERSON ST." ×1
+- utah-st: "UTAH ST." ×1
+- lucas-avenue: "LUCAS AVE." ×1
+- ohio-street: "OHIO ST." ×1
+- colton-st: "COLTON ST." ×3
+- court-street: "COURT ST." ×1
+- cleveland-st: "CLEVELAND ST." ×2
+- college: "COLLEGE ST." ×2
+- yale: "YALE ST." ×2
+- ducommun: "Ducommun ST." ×1
 - second-street: "W. 2ND ST." ×1
 - crown-hill-ave: "CROWN HILL AVE." ×3
 - farmer: "FARMER ST." ×1
+- commercial-street: "COMMERCIAL ST." ×2
+- ducommun: "DUCOMMUN ST." ×2
+- mimosa-st: "MIMOSA ST." ×1
+- jesse: "JESSE ST." ×2
+- atlantic-st-dtla: "ATLANTIC ST." ×1
+- decatur-st: "DECATUR ST." ×1
+- adobe: "ADOBE ST." ×1
+- vignes-street: "VIGNES ST." ×2
+- center-street: "CENTER ST." ×1
+- jackson-st: "JACKSON ST." ×1
+- turner-street: "TURNER ST." ×1
+- emerald: "EMERALD ST." ×1
 
 ## Derived (unauthored) search disambiguations — consider authoring better ones
+- virginia-conv-center: "Virginia Street (Delong Street)"
+- virginia-st-angeleno-hgts: "Virginia Street (Toluca Street)"
 - palm-st-arts-district: "Palm Street (Imperial Street)"
 - palm-street-margo: "Palm Street (Margo Street)"
+- lucas-avenue: "Lucas Avenue (Lucas Avenue)"
+- lucas-ave: "Lucas Avenue (Lucas Avenue)"
 
 
 ## Vanished streets (§5.3)
@@ -338,31 +422,110 @@ Traced through a document alignment; approximate to roughly a street width.
 - **Hope St** (hope) — 2 points, from mr001-462
 - **Beaudry St** (beaudry-st) — 2 points, from mr001-462
 - **Messer STREET.** (messer-street) — 2 points, from mr002-092-p1
+- **Labory Lane** (labory-lane) — 3 points, from mr002-526-p1
+- **Lafayette Str.** (lafayette-french) — 2 points, from mr002-526-p1
+- **Banning St** (banning-street) — 2 points, from mr002-526-p2
+- **Lafayette Str** (lafayette-french) — 2 points, from mr002-526-p2
 - **PARK LANE** (park-lane) — 2 points, from mr003-016
+- **Potts St** (potts-st) — 2 points, from mr003-046-p2
+- **Fifth St** (fifth-street) — 2 points, from mr003-046-p2
 - **GAREY STREET** (garey) — 2 points, from mr003-060-p1
 - **(unlettered)** — 2 points, from mr003-146-p1
 - **Commercial Street** (commercial-street) — 3 points, from mr003-146-p2
 - **Wilmington Street** (wilmington-street) — 2 points, from mr003-146-p2
+- **Teed Street** (teed-street) — 2 points, from mr003-240
 - **MOORE ST** (moore-st) — 2 points, from mr003-569
 - **FLORIDA ST** (florida-st) — 2 points, from mr003-569
 - **LOOMIS ST** (loomis-st) — 2 points, from mr003-569
 - **WARD ST** (ward-st) — 2 points, from mr003-569
 - **(unlettered)** — 2 points, from mr003-569
+- **Sainsevain Street** (sainsevain-street) — 2 points, from mr004-012-p2
+- **Front St** (front-st) — 2 points, from mr004-012-p2
+- **Lazard Street** (lazard-street) — 2 points, from mr004-012-p2
+- **Weill Street** (weill) — 2 points, from mr004-012-p2
+- **Turner Street** (turner-street) — 2 points, from mr004-012-p2
+- **Banning Street** (banning-street) — 2 points, from mr004-012-p2
+- **Keller Street** (keller) — 2 points, from mr004-012-p2
+- **Center Street** (center-street) — 2 points, from mr004-012-p2
+- **Alabama Street** (alabama-street) — 2 points, from mr005-069
+- **Ohio Street** (ohio-street) — 2 points, from mr005-069
+- **Figueroa Street** (figueroa-gov) — 2 points, from mr005-069
 - **FLOWER STREET** (flower) — 2 points, from mr005-307-a
+- **VIRGINIA STREET** (virginia-conv-center) — 2 points, from mr005-431
+- **WRIGHT STREET** (wright-street) — 2 points, from mr005-431
+- **Kip St** (kip-street) — 2 points, from mr005-566
+- **Loomis St** (loomis-st) — 2 points, from mr005-566
+- **Seminary Street** (seminary) — 2 points, from mr006-115
+- **Emerald St** (emerald) — 2 points, from mr006-115
+- **Sapphire St.** (sapphire) — 2 points, from mr006-115
+- **Jewel St.** (jewel-st) — 2 points, from mr006-115
+- **Emerald Street** (emerald) — 2 points, from mr006-115
+- **Figueroa St** (figueroa-gov) — 2 points, from mr006-115
+- **Mariposa Street** (mariposa-street-hancock) — 2 points, from mr006-115
+- **(unlettered)** — 2 points, from mr006-115
+- **Brook St** (brook-st) — 2 points, from mr006-115
+- **South Diamond Street** (south-diamond) — 3 points, from mr006-115
+- **Ruby Street** (ruby-street-hancock) — 2 points, from mr006-115
 - **Council Street** (council-street) — 2 points, from mr006-138
 - **Waters Street** (waters-street) — 2 points, from mr006-138
+- **Jackson St** (jackson-st-little-tokyo) — 4 points, from mr006-308
 - **CAMERON LANE** (cameron-lane) — 2 points, from mr007-021
 - **ALEXANDER LANE** (alexander-lane) — 2 points, from mr007-021
 - **CENTERBROOK LANE** (centerbrook-lane) — 2 points, from mr007-021
 - **CATSBY LANE** (catesby-lane) — 2 points, from mr007-021
+- **Custer Ave** (custer-ave) — 2 points, from mr007-026-p1
+- **Centennial Ave** (centennial-ave) — 2 points, from mr007-026-p1
+- **(unlettered)** — 2 points, from mr007-026-p1
+- **Boston Street** (boston-street) — 3 points, from mr007-026-p1
+- **Montreal St** (montreal-st) — 2 points, from mr007-026-p1
+- **Bunker Hill Ave** (bunker-hill-ave) — 6 points, from mr007-026-p1
+- **(unlettered)** — 2 points, from mr007-026-p1
+- **Sand St** (sand-st) — 2 points, from mr007-026-p1
+- **Crescent Ave** (crescent-park-tract) — 5 points, from mr007-026-p1
+- **Figueroa Street** (figueroa-gov) — 2 points, from mr007-026-p1
+- **Victor Ave** (victor-ave) — 2 points, from mr007-026-p1
+- **Court St** (court-street) — 3 points, from mr007-026-p2
+- **Angelina St** (angelina-st) — 2 points, from mr007-026-p2
+- **Mignonette Street** (mignonette-st) — 2 points, from mr007-026-p2
+- **Mignonette St** (mignonette-st) — 2 points, from mr007-026-p2
+- **Figueroa St** (figueroa-gov) — 2 points, from mr007-026-p2
+- **Pink St** (pink-st) — 2 points, from mr007-026-p2
+- **Centennial Ave** (centennial-ave) — 2 points, from mr007-026-p2
+- **North Court** (north-court) — 3 points, from mr007-026-p2
+- **South Court** (south-court) — 3 points, from mr007-026-p2
+- **Court Street** (court-street) — 2 points, from mr007-026-p2
+- **Diamond St** (diamond-street) — 2 points, from mr007-026-p2
+- **Silver St** (silver-st) — 2 points, from mr007-036-p2
+- **Gravitta St** (gravitta-st) — 4 points, from mr007-036-p2
+- **Western Ave** (western-ave-colina-park) — 6 points, from mr007-036-p2
+- **New Depot St** (new-depot-st) — 2 points, from mr007-062-p2
+- **Pearl St** (pearl) — 2 points, from mr007-062-p2
+- **Fourth St** (fourth-street) — 3 points, from mr007-096-p2
 - **Eleventh St.** (eleventh-street) — 2 points, from mr010-030
 - **Nevada** (nevada-1886) — 2 points, from mr010-030
-- **Belmont Avenue** (belmont) — 2 points, from mr010-030
+- **Belmont Avenue** (belmont-kincaid) — 2 points, from mr010-030
 - **Twelfth St.** (twelfth-street) — 2 points, from mr010-030
+- **Adele St** (adele-st) — 2 points, from mr010-077
+- **Nevado St** (nevada-1886) — 2 points, from mr010-077
+- **(unlettered)** — 2 points, from mr010-081
+- **(unlettered)** — 2 points, from mr010-081
+- **Silver St** (silver-st) — 2 points, from mr010-088
 - **Willow St** (willow) — 2 points, from mr011-042
 - **Mesquit St** (mesquit) — 2 points, from mr011-042
+- **Figueroa St** (figueroa-gov) — 2 points, from mr012-025
+- **Park** (park-angeleno-hgts) — 2 points, from mr012-025
+- **Lemon St** (lemon-st-arts-district) — 2 points, from mr013-091
+- **Ida Street** (ida-street-fourth) — 2 points, from mr016-059
+- **Rio Avenue** (rio-avenue) — 2 points, from mr017-041
+- **Shenandoah Avenue** (shenandoah-avenue) — 2 points, from mr017-041
+- **Grace Street** (grace) — 2 points, from mr017-041
+- **Pacific Street** (pacific-st-dtla) — 2 points, from mr018-025
+- **San Francisco Street** (san-francisco-st-dtla) — 2 points, from mr018-025
+- **Sixth St** (sixth-street) — 2 points, from mr018-063
+- **2nd St** (second-street) — 2 points, from mr024-081
+- **Freight St** (freight-st) — 2 points, from mr024-081
 - **Fourth St** (fourth-street) — 2 points, from mr030-009-p4
-- **Winston St** (winston-st) — 2 points, from mr039-069
+- **(unlettered)** — 2 points, from mr052-085
 - **Santee St** (santee-street) — 2 points, from mr053-016
 - **Maple Ave** (maple-dtla) — 2 points, from mr053-016
 - **(unlettered)** — 2 points, from mr053-063
@@ -379,12 +542,53 @@ Traced through a document alignment; approximate to roughly a street width.
 - **(unlettered)** — 2 points, from mr053-073
 - **(unlettered)** — 2 points, from mr053-073
 - **PARKER DRIVE** (parker-drive) — 2 points, from mr070-051
+- **Boylston St** (boylston) — 2 points, from tr0001-052
+- **Third Street** (third-street) — 2 points, from tr0001-057a
+- **Boylston St** (boylston) — 2 points, from tr0006-150a
+- **Sapphire St** (sapphire) — 2 points, from tr0006-150a
+- **Easton St** (easton) — 2 points, from tr0009-075
+- **Clarence St** (clarence-st) — 2 points, from tr0013-168-p1
+- **Shatto St** (shatto-st) — 2 points, from tr0014-087a
+- **Nina St** (nina-st) — 2 points, from tr0014-111b
+- **Lafayette St** (lafayette-french) — 2 points, from tr0014-111b
+- **Jackson St** (jackson-st) — 2 points, from tr0014-111b
 - **W. 3RD ST.** (third-street) — 2 points, from tr0015-166a-p2
+- **Woodworth Court** (woodworth-court) — 2 points, from tr0017-001b
+- **Colton St** (colton-st) — 2 points, from tr0017-143b
+- **Boylston St** (boylston) — 2 points, from tr0017-143b
+- **Mignoette St** (mignonette-st) — 2 points, from tr0017-143b
+- **Adobe St** (adobe) — 2 points, from tr0026-074
+- **Hartford Ave** (hartford-ave) — 2 points, from tr0030-069
+- **Georgia Street** (georgia-bell) — 2 points, from tr0030-086
+- **Seventeenth Street** (seventeenth-street) — 2 points, from tr0030-086
+- **Fourth St** (fourth-street) — 2 points, from tr0035-092
+- **Boylston St** (boylston) — 2 points, from tr0043-032
+- **(unlettered)** — 2 points, from tr0062-063
+- **Jackson Street** (jackson-st) — 2 points, from tr0100-025
+- **Jackson Street** (jackson-st) — 2 points, from tr0100-025
+- **Hewitt Street** (hewitt) — 3 points, from tr0100-025
 - **CERES AVENUE** (ceres-ave) — 2 points, from tr0105-001-p2
+- **Jackson Street** (jackson-st) — 2 points, from tr0110-048
+- **Jackson Street** (jackson-st) — 2 points, from tr0110-048
+- **Hewitt Street** (hewitt) — 3 points, from tr0110-048
+- **Clarence St** (clarence-st) — 2 points, from tr0122-053-p3
 - **MERCHANT STREET** (merchant-st) — 2 points, from tr0141-011
 - **Banning Street** (banning-street) — 3 points, from tr0145-062
 - **Turner Street** (turner-street) — 3 points, from tr0145-062
 - **Hewitt St** (hewitt) — 2 points, from tr0145-062
+- **Turner Street** (turner-street) — 2 points, from tr0201-001-p2
+- **Jackson Street** (jackson-st) — 2 points, from tr0201-001-p2
+- **Ducommun Street** (ducommun) — 2 points, from tr0201-001-p2
+- **Boylston Street** (boylston) — 2 points, from tr0221-009-p2
+- **Corto Street** (corto-street) — 2 points, from tr0221-009-p2
+- **MESQUITE STREET** (mesquit) — 2 points, from tr0319-001-p1
+- **Boylston St.** (boylston) — 2 points, from tr0417-049-p2
+- **Maryland Street** (maryland-street) — 2 points, from tr0588-055
+- **Fourth Street** (fourth-street) — 2 points, from tr0588-055
+- **Maryland Street** (maryland-street) — 2 points, from tr0588-055
+- **Boylston Street** (boylston) — 2 points, from tr0713-093-p2
+- **Bixel Street** (bixel) — 2 points, from tr0713-093-p2
 - **KIP STREET** (kip-street) — 2 points, from tr0718-007-p2
 - **INGRAHAM STREET** (ingraham) — 2 points, from tr0718-007-p2
+- **Ord Street** (ord-street) — 2 points, from tr0771-036-p2
 - **WOODWORTH COURT** (woodworth-court) — 2 points, from tr0938-051-p3

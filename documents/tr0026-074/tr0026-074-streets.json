@@ -1,0 +1,404 @@
+{
+  "document": "tr0026-074",
+  "image": "tr0026-074-100dpi.png",
+  "imageSize": [1152, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0026-074-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [184, 385],
+    [162, 1507],
+    [1207, 1498],
+    [1102, 261]
+  ],
+  "coverageLl": [
+    [34.066896, -118.240637],
+    [34.065216, -118.241629],
+    [34.064489, -118.239727],
+    [34.066433, -118.238868]
+  ],
+  "streets": [
+    {
+      "name": "Adobe Street",
+      "runs": [
+        {
+          "px": [
+            [320, 825],
+            [325, 963],
+            [329, 1058],
+            [333, 1155],
+            [338, 1326],
+            [349, 1361]
+          ],
+          "ll": [
+            [34.066134, -118.240764],
+            [34.065923, -118.240871],
+            [34.065776, -118.240945],
+            [34.065627, -118.241021],
+            [34.065364, -118.241157],
+            [34.065304, -118.241167]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Arroyo Seco Parkway",
+          "px": [189, 845],
+          "ll": [34.066197, -118.241019],
+          "insideCoverage": true
+        },
+        {
+          "name": "Cleveland Street",
+          "px": [466, 1358],
+          "ll": [34.065226, -118.240951],
+          "insideCoverage": true
+        },
+        {
+          "name": "College Street",
+          "px": [349, 1361],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": true
+        },
+        {
+          "name": "New Depot Street",
+          "px": [349, 1361],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Arroyo Seco Parkway",
+      "runs": [
+        {
+          "px": [
+            [305, 369],
+            [181, 552]
+          ],
+          "ll": [
+            [34.066835, -118.240403],
+            [34.066646, -118.240785]
+          ]
+        },
+        {
+          "px": [
+            [178, 686],
+            [401, 356]
+          ],
+          "ll": [
+            [34.066445, -118.240904],
+            [34.066787, -118.24022]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Adobe Street",
+          "px": [189, 845],
+          "ll": [34.066197, -118.241019],
+          "insideCoverage": true
+        },
+        {
+          "name": "Chavez Ravine Place",
+          "px": [110, 566],
+          "ll": [34.066675, -118.240924],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Cleveland Street",
+      "runs": [
+        {
+          "px": [
+            [584, 1355],
+            [588, 1503]
+          ],
+          "ll": [
+            [34.065147, -118.240735],
+            [34.064919, -118.240854]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Adobe Street",
+          "px": [466, 1358],
+          "ll": [34.065226, -118.240951],
+          "insideCoverage": true
+        },
+        {
+          "name": "College Street",
+          "px": [584, 1355],
+          "ll": [34.065147, -118.240735],
+          "insideCoverage": true
+        },
+        {
+          "name": "New Depot Street",
+          "px": [472, 1377],
+          "ll": [34.065193, -118.240957],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "College Street",
+      "runs": [
+        {
+          "px": [
+            [1193, 1330],
+            [1057, 1336],
+            [999, 1338],
+            [943, 1340],
+            [811, 1345],
+            [584, 1355],
+            [384, 1360],
+            [349, 1361],
+            [308, 1361],
+            [165, 1369]
+          ],
+          "ll": [
+            [34.064752, -118.239611],
+            [34.06484, -118.239861],
+            [34.064878, -118.239969],
+            [34.064914, -118.240072],
+            [34.065, -118.240316],
+            [34.065147, -118.240735],
+            [34.06528, -118.241101],
+            [34.065304, -118.241167],
+            [34.065332, -118.24124],
+            [34.065422, -118.241507]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Adobe Street",
+          "px": [349, 1361],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bunker Hill Avenue",
+          "px": [123, 1519],
+          "ll": [34.065224, -118.24171],
+          "insideCoverage": false
+        },
+        {
+          "name": "Cleveland Street",
+          "px": [584, 1355],
+          "ll": [34.065147, -118.240735],
+          "insideCoverage": true
+        },
+        {
+          "name": "New Depot Street",
+          "px": [349, 1361],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": true
+        },
+        {
+          "name": "Yale Street",
+          "px": [999, 1338],
+          "ll": [34.064878, -118.239969],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "New Depot Street",
+      "runs": [
+        {
+          "px": [
+            [349, 1361],
+            [359, 1399],
+            [359, 1475],
+            [353, 1505]
+          ],
+          "ll": [
+            [34.065304, -118.241167],
+            [34.065239, -118.241179],
+            [34.065124, -118.241245],
+            [34.065083, -118.241282]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Adobe Street",
+          "px": [349, 1361],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bunker Hill Avenue",
+          "px": [132, 1667],
+          "ll": [34.064995, -118.241818],
+          "insideCoverage": false
+        },
+        {
+          "name": "Cleveland Street",
+          "px": [472, 1377],
+          "ll": [34.065193, -118.240957],
+          "insideCoverage": true
+        },
+        {
+          "name": "College Street",
+          "px": [349, 1361],
+          "ll": [34.065304, -118.241167],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Yale Street",
+      "runs": [
+        {
+          "px": [
+            [1014, 1500],
+            [1008, 1410],
+            [996, 1393],
+            [1001, 1385],
+            [999, 1338],
+            [998, 1292],
+            [993, 1148],
+            [984, 858],
+            [981, 758],
+            [965, 280]
+          ],
+          "ll": [
+            [34.064623, -118.240078],
+            [34.064763, -118.240012],
+            [34.064797, -118.240021],
+            [34.064806, -118.240005],
+            [34.064878, -118.239969],
+            [34.064949, -118.239931],
+            [34.065169, -118.239818],
+            [34.065614, -118.239588],
+            [34.065767, -118.239509],
+            [34.066502, -118.239132]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "College Street",
+          "px": [999, 1338],
+          "ll": [34.064878, -118.239969],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Adobe Street",
+      "continuesInto": [
+        "New Depot Street"
+      ],
+      "candidates": [
+        {
+          "id": "adobe",
+          "display": "Adobe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Adobe Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE DE LAS ADOBES"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Arroyo Seco Parkway",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Cleveland Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "College Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "college",
+          "display": "College Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on College Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE DEL COLEGIO",
+            "COLLEGE ST"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "New Depot Street",
+      "continuesInto": [
+        "Adobe Street"
+      ],
+      "candidates": [
+        {
+          "id": "adobe",
+          "display": "Adobe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Adobe Street, which New Depot Street runs straight into"
+          ],
+          "ink": [
+            "CALLE DE LAS ADOBES"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Yale Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "hornet",
+          "display": "Hornet Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Yale Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS AVISPAS",
+            "HORNET ST."
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "yale",
+          "display": "Yale Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

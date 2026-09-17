@@ -1,0 +1,1056 @@
+{
+  "document": "tr0122-053-p3",
+  "image": "tr0122-053-p3-100dpi.png",
+  "imageSize": [1746, 2446],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0122-053-p3-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [334, 338],
+    [911, 522],
+    [967, 824],
+    [1260, 884],
+    [1528, 1262],
+    [1466, 1981],
+    [378, 2112]
+  ],
+  "coverageLl": [
+    [34.048379, -118.23026],
+    [34.048055, -118.227178],
+    [34.046828, -118.226613],
+    [34.046804, -118.22508],
+    [34.045422, -118.223375],
+    [34.042348, -118.223016],
+    [34.040948, -118.22838]
+  ],
+  "streets": [
+    {
+      "name": "1st Street",
+      "runs": [
+        {
+          "px": [
+            [337, 453],
+            [382, 469],
+            [429, 485],
+            [447, 491],
+            [463, 496],
+            [473, 499],
+            [498, 506],
+            [525, 514],
+            [564, 524],
+            [737, 570],
+            [750, 574],
+            [781, 583],
+            [804, 589],
+            [930, 626]
+          ],
+          "ll": [
+            [34.047898, -118.230138],
+            [34.047866, -118.229895],
+            [34.047835, -118.229644],
+            [34.047824, -118.229549],
+            [34.047815, -118.229459],
+            [34.047811, -118.229411],
+            [34.0478, -118.229277],
+            [34.047789, -118.229134],
+            [34.047776, -118.228926],
+            [34.047715, -118.228012],
+            [34.04771, -118.227939],
+            [34.047699, -118.227776],
+            [34.047689, -118.227654],
+            [34.047634, -118.226984]
+          ]
+        },
+        {
+          "px": [
+            [923, 585],
+            [917, 584],
+            [844, 564],
+            [825, 558],
+            [819, 557],
+            [792, 549],
+            [745, 537],
+            [545, 486],
+            [521, 479],
+            [491, 471],
+            [477, 466],
+            [466, 463],
+            [457, 460],
+            [441, 455],
+            [420, 448],
+            [384, 435],
+            [336, 418]
+          ],
+          "ll": [
+            [34.047798, -118.22706],
+            [34.0478, -118.227089],
+            [34.047827, -118.227476],
+            [34.047835, -118.22758],
+            [34.047837, -118.22761],
+            [34.047847, -118.227755],
+            [34.047862, -118.228002],
+            [34.047922, -118.229055],
+            [34.047931, -118.229183],
+            [34.047943, -118.229343],
+            [34.047951, -118.229419],
+            [34.047957, -118.229478],
+            [34.047962, -118.229528],
+            [34.047971, -118.229612],
+            [34.047985, -118.229722],
+            [34.04801, -118.229918],
+            [34.048045, -118.230175]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Anderson Street",
+          "px": [989, 603],
+          "ll": [34.047774, -118.226711],
+          "insideCoverage": false
+        },
+        {
+          "name": "Mission Road",
+          "px": [792, 549],
+          "ll": [34.047847, -118.227755],
+          "insideCoverage": true
+        },
+        {
+          "name": "Myers Street",
+          "px": [570, 536],
+          "ll": [34.047732, -118.228887],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "2nd Street",
+      "runs": [
+        {
+          "px": [
+            [929, 831],
+            [1064, 866],
+            [1086, 872]
+          ],
+          "ll": [
+            [34.046768, -118.226797],
+            [34.046727, -118.226085],
+            [34.04672, -118.225969]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Anderson Street",
+          "px": [929, 831],
+          "ll": [34.046768, -118.226797],
+          "insideCoverage": true
+        },
+        {
+          "name": "Utah Street",
+          "px": [1148, 882],
+          "ll": [34.046725, -118.225645],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "3rd Street",
+      "runs": [
+        {
+          "px": [
+            [662, 1353],
+            [897, 1314],
+            [1098, 1282],
+            [1132, 1277],
+            [1229, 1286],
+            [1337, 1296],
+            [1384, 1300],
+            [1459, 1308],
+            [1523, 1315]
+          ],
+          "ll": [
+            [34.044365, -118.227658],
+            [34.044712, -118.226506],
+            [34.045001, -118.225525],
+            [34.04505, -118.225358],
+            [34.045088, -118.224861],
+            [34.04513, -118.224304],
+            [34.045149, -118.224066],
+            [34.045173, -118.223682],
+            [34.045195, -118.223348]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Anderson Street",
+          "px": [897, 1314],
+          "ll": [34.044712, -118.226506],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mission Road",
+          "px": [662, 1353],
+          "ll": [34.044365, -118.227658],
+          "insideCoverage": true
+        },
+        {
+          "name": "Utah Street",
+          "px": [1229, 1286],
+          "ll": [34.045088, -118.224861],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "4th Street",
+      "runs": [
+        {
+          "px": [
+            [1351, 1879],
+            [1239, 1897],
+            [1214, 1901],
+            [1180, 1907],
+            [1144, 1912],
+            [1114, 1917],
+            [1021, 1932],
+            [999, 1935],
+            [973, 1939],
+            [964, 1941],
+            [721, 1979],
+            [651, 1990],
+            [619, 1994],
+            [599, 1995],
+            [580, 1996],
+            [568, 1995],
+            [555, 1994],
+            [374, 1965]
+          ],
+          "ll": [
+            [34.042686, -118.223693],
+            [34.042524, -118.224238],
+            [34.042487, -118.224362],
+            [34.042439, -118.224526],
+            [34.042387, -118.224702],
+            [34.042343, -118.22485],
+            [34.042207, -118.225307],
+            [34.042176, -118.225412],
+            [34.042139, -118.225539],
+            [34.042126, -118.225583],
+            [34.041777, -118.226776],
+            [34.041674, -118.227115],
+            [34.041634, -118.227272],
+            [34.041613, -118.227374],
+            [34.041596, -118.227469],
+            [34.041587, -118.227533],
+            [34.041582, -118.227598],
+            [34.041563, -118.228535]
+          ]
+        },
+        {
+          "px": [
+            [670, 1952],
+            [740, 1940],
+            [835, 1923],
+            [992, 1896]
+          ],
+          "ll": [
+            [34.041849, -118.227059],
+            [34.041956, -118.226718],
+            [34.042102, -118.226253],
+            [34.042335, -118.225484]
+          ]
+        },
+        {
+          "px": [
+            [670, 2022],
+            [695, 2018],
+            [1004, 1971]
+          ],
+          "ll": [
+            [34.041556, -118.226991],
+            [34.041592, -118.226867],
+            [34.042031, -118.225353]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Anderson Street",
+          "px": [999, 1935],
+          "ll": [34.042176, -118.225412],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mission Road",
+          "px": [670, 2022],
+          "ll": [34.041556, -118.226991],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Anderson Street",
+      "runs": [
+        {
+          "px": [
+            [952, 743],
+            [929, 831],
+            [872, 1045],
+            [866, 1073],
+            [865, 1118],
+            [897, 1314],
+            [930, 1512],
+            [961, 1709],
+            [978, 1808],
+            [992, 1896],
+            [994, 1904],
+            [995, 1914],
+            [999, 1935],
+            [1002, 1955],
+            [1004, 1971],
+            [1015, 2035]
+          ],
+          "ll": [
+            [34.047156, -118.226764],
+            [34.046768, -118.226797],
+            [34.045824, -118.226887],
+            [34.045701, -118.226892],
+            [34.045509, -118.226855],
+            [34.044712, -118.226506],
+            [34.043905, -118.226155],
+            [34.043101, -118.225816],
+            [34.042697, -118.225641],
+            [34.042335, -118.225484],
+            [34.042305, -118.225471],
+            [34.042262, -118.225452],
+            [34.042176, -118.225412],
+            [34.042094, -118.22538],
+            [34.042031, -118.225353],
+            [34.041768, -118.22524]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [989, 603],
+          "ll": [34.047774, -118.226711],
+          "insideCoverage": false
+        },
+        {
+          "name": "2nd Street",
+          "px": [929, 831],
+          "ll": [34.046768, -118.226797],
+          "insideCoverage": true
+        },
+        {
+          "name": "3rd Street",
+          "px": [897, 1314],
+          "ll": [34.044712, -118.226506],
+          "insideCoverage": true
+        },
+        {
+          "name": "4th Street",
+          "px": [999, 1935],
+          "ll": [34.042176, -118.225412],
+          "insideCoverage": true
+        },
+        {
+          "name": "Artemus Street",
+          "px": [961, 1709],
+          "ll": [34.043101, -118.225816],
+          "insideCoverage": true
+        },
+        {
+          "name": "Azusa Street",
+          "px": [865, 1118],
+          "ll": [34.045509, -118.226855],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boyd Street",
+          "px": [930, 1512],
+          "ll": [34.043905, -118.226155],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Artemus Street",
+      "runs": [
+        {
+          "px": [
+            [668, 1751],
+            [961, 1709],
+            [1259, 1662]
+          ],
+          "ll": [
+            [34.042693, -118.227253],
+            [34.043101, -118.225816],
+            [34.043531, -118.224356]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Anderson Street",
+          "px": [961, 1709],
+          "ll": [34.043101, -118.225816],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mission Road",
+          "px": [668, 1751],
+          "ll": [34.042693, -118.227253],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Azusa Street",
+      "runs": [
+        {
+          "px": [
+            [660, 1149],
+            [865, 1118]
+          ],
+          "ll": [
+            [34.045223, -118.227856],
+            [34.045509, -118.226855]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Anderson Street",
+          "px": [865, 1118],
+          "ll": [34.045509, -118.226855],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mission Road",
+          "px": [660, 1149],
+          "ll": [34.045223, -118.227856],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Boyd Street",
+      "runs": [
+        {
+          "px": [
+            [666, 1547],
+            [930, 1512],
+            [1253, 1463]
+          ],
+          "ll": [
+            [34.043553, -118.227454],
+            [34.043905, -118.226155],
+            [34.044363, -118.224574]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Anderson Street",
+          "px": [930, 1512],
+          "ll": [34.043905, -118.226155],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mission Road",
+          "px": [666, 1547],
+          "ll": [34.043553, -118.227454],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Mission Road",
+      "runs": [
+        {
+          "px": [
+            [810, 490],
+            [797, 530],
+            [797, 532],
+            [796, 533],
+            [792, 549],
+            [788, 561],
+            [785, 571],
+            [781, 583],
+            [776, 603],
+            [773, 612],
+            [746, 709],
+            [717, 814],
+            [668, 992],
+            [666, 1018],
+            [664, 1035],
+            [660, 1149],
+            [662, 1353],
+            [666, 1547],
+            [668, 1751],
+            [669, 1879],
+            [669, 1915],
+            [670, 1952],
+            [670, 2022],
+            [670, 2077]
+          ],
+          "ll": [
+            [34.048112, -118.227718],
+            [34.047933, -118.227744],
+            [34.047924, -118.227745],
+            [34.047917, -118.227746],
+            [34.047847, -118.227755],
+            [34.047793, -118.227762],
+            [34.047752, -118.227768],
+            [34.047699, -118.227776],
+            [34.047607, -118.227785],
+            [34.047569, -118.227789],
+            [34.04714, -118.227834],
+            [34.046676, -118.227883],
+            [34.045886, -118.227965],
+            [34.045778, -118.227953],
+            [34.045703, -118.227944],
+            [34.045223, -118.227856],
+            [34.044365, -118.227658],
+            [34.043553, -118.227454],
+            [34.042693, -118.227253],
+            [34.042157, -118.22713],
+            [34.042006, -118.227095],
+            [34.041849, -118.227059],
+            [34.041556, -118.226991],
+            [34.041325, -118.226938]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [792, 549],
+          "ll": [34.047847, -118.227755],
+          "insideCoverage": true
+        },
+        {
+          "name": "3rd Street",
+          "px": [662, 1353],
+          "ll": [34.044365, -118.227658],
+          "insideCoverage": true
+        },
+        {
+          "name": "4th Street",
+          "px": [670, 1952],
+          "ll": [34.041849, -118.227059],
+          "insideCoverage": true
+        },
+        {
+          "name": "Artemus Street",
+          "px": [668, 1751],
+          "ll": [34.042693, -118.227253],
+          "insideCoverage": true
+        },
+        {
+          "name": "Azusa Street",
+          "px": [660, 1149],
+          "ll": [34.045223, -118.227856],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boyd Street",
+          "px": [666, 1547],
+          "ll": [34.043553, -118.227454],
+          "insideCoverage": true
+        },
+        {
+          "name": "Myers Street",
+          "px": [666, 1018],
+          "ll": [34.045778, -118.227953],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Myers Street",
+      "runs": [
+        {
+          "px": [
+            [610, 426],
+            [609, 435],
+            [614, 471],
+            [613, 480],
+            [596, 550],
+            [584, 571],
+            [588, 605],
+            [587, 626],
+            [583, 658],
+            [525, 865],
+            [503, 951],
+            [508, 975],
+            [587, 997],
+            [666, 1018]
+          ],
+          "ll": [
+            [34.048224, -118.228784],
+            [34.048184, -118.228781],
+            [34.048037, -118.228725],
+            [34.048001, -118.22872],
+            [34.047692, -118.228743],
+            [34.047593, -118.228779],
+            [34.047452, -118.228729],
+            [34.047365, -118.228713],
+            [34.047228, -118.228704],
+            [34.046312, -118.228806],
+            [34.045933, -118.228836],
+            [34.045834, -118.228787],
+            [34.045805, -118.228369],
+            [34.045778, -118.227953]
+          ]
+        },
+        {
+          "px": [
+            [609, 435],
+            [595, 464],
+            [593, 472],
+            [575, 547],
+            [584, 571]
+          ],
+          "ll": [
+            [34.048184, -118.228781],
+            [34.048054, -118.228827],
+            [34.048015, -118.22883],
+            [34.047688, -118.228847],
+            [34.047593, -118.228779]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [570, 536],
+          "ll": [34.047732, -118.228887],
+          "insideCoverage": true
+        },
+        {
+          "name": "Mission Road",
+          "px": [666, 1018],
+          "ll": [34.045778, -118.227953],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Utah Street",
+      "runs": [
+        {
+          "px": [
+            [1215, 875],
+            [1211, 892],
+            [1204, 916],
+            [1185, 990],
+            [1159, 1093],
+            [1212, 1101],
+            [1229, 1286]
+          ],
+          "ll": [
+            [34.046808, -118.225314],
+            [34.04673, -118.225321],
+            [34.046626, -118.22533],
+            [34.046298, -118.225358],
+            [34.045847, -118.225396],
+            [34.045851, -118.225118],
+            [34.045088, -118.224861]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [1148, 882],
+          "ll": [34.046725, -118.225645],
+          "insideCoverage": true
+        },
+        {
+          "name": "3rd Street",
+          "px": [1229, 1286],
+          "ll": [34.045088, -118.224861],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "1st Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "first-street",
+          "display": "1st Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 1st Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "1ST ST",
+            "1ST STREET",
+            "1st ST",
+            "1st STREET",
+            "CALLE 1a",
+            "FIRST ST",
+            "FIRST ST.",
+            "FIRST STREET",
+            "FIRST STREET.",
+            "First Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr002-092-p1",
+            "mr003-060-p1",
+            "mr003-146-p1",
+            "mr004-012-p2",
+            "mr005-307-a",
+            "mr006-308",
+            "mr010-008",
+            "mr053-069",
+            "mr053-071",
+            "tr0012-023a",
+            "tr0043-032",
+            "tr0221-009-p2",
+            "tr0417-049-p2",
+            "tr0713-093-p2",
+            "tr0856-050-p2",
+            "tr0885-030-p2",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "diamond-street",
+          "display": "Diamond Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 1st Street by another sheet"
+          ],
+          "ink": [
+            "DIAMOND STREET",
+            "Diamond",
+            "Diamond St."
+          ],
+          "docs": [
+            "mr005-069",
+            "mr006-115",
+            "mr007-026-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "2nd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "2nd STREET",
+            "CALLE 2a",
+            "SECOND ST.",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0016-005",
+            "tr0017-001b",
+            "tr0035-022",
+            "tr0417-049-p2",
+            "tr0713-093-p2",
+            "tr0856-050-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "lake-shore-ave",
+          "display": "Lake Shore Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "Lake Shore Ave"
+          ],
+          "docs": [
+            "mr010-081"
+          ]
+        },
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "3rd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "3RD ST",
+            "3RD ST.",
+            "3RD STREET",
+            "3d Street",
+            "CALLE 3a",
+            "THIRD ST.",
+            "THIRD STREET",
+            "Third St",
+            "Third Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr016-059",
+            "mr030-009-p5",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        },
+        {
+          "id": "georgia-east",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "GEORGIA ST",
+            "Georgia St",
+            "Georgie Street."
+          ],
+          "docs": [
+            "mr002-092-p2",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "mr030-009-p5"
+          ]
+        },
+        {
+          "id": "arnold",
+          "display": "Arnold Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "ARNOLD ST."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "morgan-lane",
+          "display": "Morgan Lane",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "Morgan Lane"
+          ],
+          "docs": [
+            "mr005-005"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "4th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "fourth-street",
+          "display": "4th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "4TH ST",
+            "4TH ST.",
+            "4TH STREET",
+            "CALLE 4a",
+            "FOURTH ST.",
+            "FOURTH STREET",
+            "Fourth St",
+            "Fourth Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr003-046-p1",
+            "mr005-005",
+            "mr012-026",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071",
+            "tr0012-186",
+            "tr0751-038"
+          ]
+        },
+        {
+          "id": "huber-st",
+          "display": "Huber Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet"
+          ],
+          "ink": [
+            "HUBER ST.",
+            "Huber St",
+            "Huber St."
+          ],
+          "docs": [
+            "mr012-042",
+            "mr013-087-p1",
+            "mr030-009-p4"
+          ]
+        },
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet"
+          ],
+          "ink": [
+            "THIRD"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Anderson Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Artemus Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Azusa Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Boyd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "boyd-street",
+          "display": "Boyd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Boyd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "Boyd Street"
+          ],
+          "docs": [
+            "mr005-005",
+            "mr012-026"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Mission Road",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Myers Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Utah Street",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

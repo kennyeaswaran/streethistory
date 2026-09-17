@@ -1,0 +1,403 @@
+{
+  "document": "mr037-078",
+  "image": "mr037-078-100dpi.png",
+  "imageSize": [1128, 1713],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr037-078-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [241, 691],
+    [514, 563],
+    [797, 648],
+    [803, 1245],
+    [286, 1247]
+  ],
+  "coverageLl": [
+    [34.059996, -118.264731],
+    [34.059978, -118.263692],
+    [34.059399, -118.262949],
+    [34.057853, -118.263841],
+    [34.058506, -118.26544]
+  ],
+  "streets": [
+    {
+      "name": "3rd Street",
+      "runs": [
+        {
+          "px": [
+            [799, 825],
+            [736, 825],
+            [710, 824],
+            [684, 825],
+            [631, 825],
+            [593, 825],
+            [472, 824],
+            [419, 823],
+            [381, 824],
+            [252, 825]
+          ],
+          "ll": [
+            [34.058941, -118.263213],
+            [34.059021, -118.263405],
+            [34.059055, -118.263486],
+            [34.059088, -118.263566],
+            [34.059153, -118.26373],
+            [34.059204, -118.26385],
+            [34.05936, -118.26422],
+            [34.059429, -118.264382],
+            [34.059476, -118.264501],
+            [34.059636, -118.264902]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Columbia Avenue",
+          "px": [419, 823],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": true
+        },
+        {
+          "name": "Crown Hill Avenue",
+          "px": [419, 823],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": true
+        },
+        {
+          "name": "Loma Drive",
+          "px": [46, 828],
+          "ll": [34.05989, -118.265541],
+          "insideCoverage": false
+        },
+        {
+          "name": "Witmer Street",
+          "px": [710, 824],
+          "ll": [34.059055, -118.263486],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Columbia Avenue",
+      "runs": [
+        {
+          "px": [
+            [481, 579],
+            [445, 787],
+            [444, 792],
+            [419, 823],
+            [418, 858],
+            [415, 1012],
+            [415, 1039],
+            [411, 1214],
+            [411, 1247]
+          ],
+          "ll": [
+            [34.05998, -118.263819],
+            [34.059488, -118.264247],
+            [34.059478, -118.264256],
+            [34.059429, -118.264382],
+            [34.059341, -118.264437],
+            [34.058946, -118.264683],
+            [34.058877, -118.264726],
+            [34.058433, -118.265002],
+            [34.058349, -118.265054]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [419, 823],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": true
+        },
+        {
+          "name": "Crown Hill Avenue",
+          "px": [419, 823],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": true
+        },
+        {
+          "name": "Miramar Street",
+          "px": [515, 378],
+          "ll": [34.060454, -118.263406],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Crown Hill Avenue",
+      "runs": [
+        {
+          "px": [
+            [419, 823],
+            [420, 790],
+            [294, 666]
+          ],
+          "ll": [
+            [34.059429, -118.264382],
+            [34.059513, -118.26433],
+            [34.059993, -118.264528]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [419, 823],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": true
+        },
+        {
+          "name": "Columbia Avenue",
+          "px": [419, 823],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": true
+        },
+        {
+          "name": "Loma Drive",
+          "px": [142, 516],
+          "ll": [34.060574, -118.264769],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Witmer Street",
+      "runs": [
+        {
+          "px": [
+            [709, 1245],
+            [708, 1178],
+            [708, 1166],
+            [710, 853],
+            [710, 824],
+            [711, 788],
+            [714, 703],
+            [715, 623]
+          ],
+          "ll": [
+            [34.057972, -118.264131],
+            [34.058146, -118.264031],
+            [34.058178, -118.264013],
+            [34.058981, -118.263529],
+            [34.059055, -118.263486],
+            [34.059148, -118.263426],
+            [34.059363, -118.263288],
+            [34.059566, -118.263163]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [710, 824],
+          "ll": [34.059055, -118.263486],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "3rd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "3RD ST",
+            "3RD ST.",
+            "3RD STREET",
+            "3d Street",
+            "CALLE 3a",
+            "THIRD ST.",
+            "THIRD STREET",
+            "Third St",
+            "Third Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr016-059",
+            "mr030-009-p5",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        },
+        {
+          "id": "georgia-east",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "GEORGIA ST",
+            "Georgia St",
+            "Georgie Street."
+          ],
+          "docs": [
+            "mr002-092-p2",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "mr030-009-p5"
+          ]
+        },
+        {
+          "id": "arnold",
+          "display": "Arnold Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "ARNOLD ST."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "morgan-lane",
+          "display": "Morgan Lane",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "Morgan Lane"
+          ],
+          "docs": [
+            "mr005-005"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Columbia Avenue",
+      "continuesInto": [
+        "Crown Hill Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "columbia-avenue",
+          "display": "Columbia Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Columbia Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "COLUMBIA AVENUE"
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Crown Hill Avenue, which Columbia Avenue runs straight into"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Crown Hill Avenue",
+      "continuesInto": [
+        "Columbia Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Crown Hill Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        },
+        {
+          "id": "columbia-avenue",
+          "display": "Columbia Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Columbia Avenue, which Crown Hill Avenue runs straight into"
+          ],
+          "ink": [
+            "COLUMBIA AVENUE"
+          ],
+          "docs": [
+            "tr0015-166a-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Witmer Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "witmer-street",
+          "display": "Witmer Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Witmer Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "WITMER",
+            "WITMER STREET"
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        }
+      ]
+    }
+  ]
+}

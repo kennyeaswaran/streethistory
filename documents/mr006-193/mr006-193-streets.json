@@ -1,0 +1,658 @@
+{
+  "document": "mr006-193",
+  "image": "mr006-193-100dpi.png",
+  "imageSize": [1069, 1711],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr006-193-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [185, 382],
+    [196, 915],
+    [949, 912],
+    [966, 401]
+  ],
+  "coverageLl": [
+    [34.050572, -118.269219],
+    [34.049226, -118.270052],
+    [34.048214, -118.267794],
+    [34.049467, -118.266913]
+  ],
+  "streets": [
+    {
+      "name": "8th Place",
+      "runs": [
+        {
+          "px": [
+            [745, 462],
+            [774, 463],
+            [834, 465],
+            [934, 466],
+            [956, 467],
+            [964, 468]
+          ],
+          "ll": [
+            [34.049613, -118.267675],
+            [34.049572, -118.267591],
+            [34.049484, -118.267413],
+            [34.049348, -118.267114],
+            [34.049315, -118.267051],
+            [34.049301, -118.26703]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [745, 462],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garland Avenue",
+          "px": [745, 462],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [863, 398],
+            [861, 400],
+            [812, 437],
+            [773, 452],
+            [745, 462],
+            [719, 463],
+            [626, 467],
+            [583, 469],
+            [548, 470],
+            [415, 471],
+            [282, 471],
+            [187, 473]
+          ],
+          "ll": [
+            [34.049612, -118.267217],
+            [34.049611, -118.267224],
+            [34.049585, -118.267434],
+            [34.049601, -118.267572],
+            [34.049613, -118.267675],
+            [34.049646, -118.267755],
+            [34.049761, -118.268037],
+            [34.049815, -118.268169],
+            [34.049859, -118.268276],
+            [34.050038, -118.268677],
+            [34.050218, -118.269074],
+            [34.050343, -118.26936]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Place",
+          "px": [745, 462],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": true
+        },
+        {
+          "name": "Columbia Avenue",
+          "px": [2, 475],
+          "ll": [34.050587, -118.269919],
+          "insideCoverage": false
+        },
+        {
+          "name": "Garland Avenue",
+          "px": [745, 462],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hartford Avenue",
+          "px": [415, 471],
+          "ll": [34.050038, -118.268677],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [282, 471],
+          "ll": [34.050218, -118.269074],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Garland Avenue",
+      "runs": [
+        {
+          "px": [
+            [745, 396],
+            [745, 424],
+            [745, 462],
+            [745, 490],
+            [745, 599],
+            [745, 663],
+            [744, 823],
+            [744, 848]
+          ],
+          "ll": [
+            [34.04978, -118.267567],
+            [34.049708, -118.267613],
+            [34.049613, -118.267675],
+            [34.049545, -118.267719],
+            [34.049272, -118.267897],
+            [34.049113, -118.268001],
+            [34.048714, -118.268261],
+            [34.048652, -118.268302]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Place",
+          "px": [745, 462],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": true
+        },
+        {
+          "name": "8th Street",
+          "px": [745, 462],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": true
+        },
+        {
+          "name": "James M Wood Boulevard",
+          "px": [744, 848],
+          "ll": [34.048652, -118.268302],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hartford Avenue",
+      "runs": [
+        {
+          "px": [
+            [415, 388],
+            [415, 431],
+            [415, 471]
+          ],
+          "ll": [
+            [34.050247, -118.268541],
+            [34.050138, -118.268612],
+            [34.050038, -118.268677]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [415, 471],
+          "ll": [34.050038, -118.268677],
+          "insideCoverage": true
+        },
+        {
+          "name": "Linwood Avenue",
+          "px": [415, 173],
+          "ll": [34.050781, -118.268192],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "James M Wood Boulevard",
+      "runs": [
+        {
+          "px": [
+            [951, 846],
+            [764, 847],
+            [744, 848],
+            [648, 848],
+            [594, 849],
+            [577, 849],
+            [524, 849],
+            [279, 849],
+            [235, 849],
+            [199, 850],
+            [195, 850]
+          ],
+          "ll": [
+            [34.048376, -118.26768],
+            [34.048625, -118.268242],
+            [34.048652, -118.268302],
+            [34.04878, -118.268591],
+            [34.048853, -118.268754],
+            [34.048876, -118.268805],
+            [34.048947, -118.268965],
+            [34.049279, -118.269694],
+            [34.049338, -118.269829],
+            [34.049386, -118.269937],
+            [34.049391, -118.26995]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Albany Street",
+          "px": [157, 850],
+          "ll": [34.049441, -118.270064],
+          "insideCoverage": false
+        },
+        {
+          "name": "Blaine Street",
+          "px": [524, 849],
+          "ll": [34.048947, -118.268965],
+          "insideCoverage": true
+        },
+        {
+          "name": "Columbia Avenue",
+          "px": [5, 850],
+          "ll": [34.049648, -118.270516],
+          "insideCoverage": false
+        },
+        {
+          "name": "Garland Avenue",
+          "px": [744, 848],
+          "ll": [34.048652, -118.268302],
+          "insideCoverage": true
+        },
+        {
+          "name": "Golden Avenue",
+          "px": [1081, 848],
+          "ll": [34.048194, -118.267295],
+          "insideCoverage": false
+        },
+        {
+          "name": "Sunbury Street",
+          "px": [971, 846],
+          "ll": [34.04835, -118.26762],
+          "insideCoverage": false
+        },
+        {
+          "name": "Witmer Street",
+          "px": [279, 849],
+          "ll": [34.049279, -118.269694],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Witmer Street",
+      "runs": [
+        {
+          "px": [
+            [282, 471],
+            [282, 503],
+            [281, 664],
+            [280, 822],
+            [279, 849]
+          ],
+          "ll": [
+            [34.050218, -118.269074],
+            [34.050138, -118.269127],
+            [34.049739, -118.269391],
+            [34.049344, -118.269651],
+            [34.049279, -118.269694]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [282, 471],
+          "ll": [34.050218, -118.269074],
+          "insideCoverage": true
+        },
+        {
+          "name": "Albany Street",
+          "px": [218, 849],
+          "ll": [34.04936, -118.269879],
+          "insideCoverage": true
+        },
+        {
+          "name": "James M Wood Boulevard",
+          "px": [279, 849],
+          "ll": [34.049279, -118.269694],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Blaine Street",
+      "metres": 20.3
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "8th Place",
+      "continuesInto": [
+        "8th Street"
+      ],
+      "candidates": [
+        {
+          "id": "ruby-st",
+          "display": "Ruby Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place by another sheet"
+          ],
+          "ink": [
+            "RUBY ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        },
+        {
+          "id": "lincoln-street",
+          "display": "Lincoln Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place by another sheet"
+          ],
+          "ink": [
+            "Lincoln Street"
+          ],
+          "docs": [
+            "mr021-087"
+          ]
+        },
+        {
+          "id": "eighth-street",
+          "display": "8th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street, which 8th Place runs straight into"
+          ],
+          "ink": [
+            "8TH ST",
+            "8TH STREET",
+            "8th St",
+            "8th St.",
+            "8th Street",
+            "CALLE 8a",
+            "EAST EIGHTH STREET",
+            "EIGHTH ST",
+            "EIGHTH ST.",
+            "EIGHTH STREET",
+            "Eighth St",
+            "Eighth St.",
+            "Eighth Street",
+            "new 8th Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-569",
+            "mr011-008",
+            "mr018-092",
+            "mr021-046",
+            "mr021-087",
+            "mr026-060",
+            "mr029-026",
+            "mr029-085",
+            "mr053-065",
+            "mr053-068",
+            "mr054-051",
+            "mr055-086",
+            "mr060-088",
+            "mr070-051",
+            "pm017-045",
+            "tr0005-156a",
+            "tr0007-085",
+            "tr0013-048",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "8th Street",
+      "continuesInto": [
+        "8th Place"
+      ],
+      "candidates": [
+        {
+          "id": "eighth-street",
+          "display": "8th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "8TH ST",
+            "8TH STREET",
+            "8th St",
+            "8th St.",
+            "8th Street",
+            "CALLE 8a",
+            "EAST EIGHTH STREET",
+            "EIGHTH ST",
+            "EIGHTH ST.",
+            "EIGHTH STREET",
+            "Eighth St",
+            "Eighth St.",
+            "Eighth Street",
+            "new 8th Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-569",
+            "mr011-008",
+            "mr018-092",
+            "mr021-046",
+            "mr021-087",
+            "mr026-060",
+            "mr029-026",
+            "mr029-085",
+            "mr053-065",
+            "mr053-068",
+            "mr054-051",
+            "mr055-086",
+            "mr060-088",
+            "mr070-051",
+            "pm017-045",
+            "tr0005-156a",
+            "tr0007-085",
+            "tr0013-048",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        },
+        {
+          "id": "ruby-st",
+          "display": "Ruby Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place, which 8th Street runs straight into"
+          ],
+          "ink": [
+            "RUBY ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        },
+        {
+          "id": "lincoln-street",
+          "display": "Lincoln Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place, which 8th Street runs straight into"
+          ],
+          "ink": [
+            "Lincoln Street"
+          ],
+          "docs": [
+            "mr021-087"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Garland Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "garland",
+          "display": "Garland Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Garland Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "GARLAND AVENUE"
+          ],
+          "docs": [
+            "mr060-088",
+            "tr0030-069"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Hartford Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "fourth-street",
+          "display": "4th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hartford Avenue by another sheet"
+          ],
+          "ink": [
+            "Fourth St"
+          ],
+          "docs": [
+            "mr007-096-p2"
+          ]
+        },
+        {
+          "id": "hartford-ave",
+          "display": "Hartford Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "James M Wood Boulevard",
+      "continuesInto": [
+        "8th Place"
+      ],
+      "candidates": [
+        {
+          "id": "ninth-street",
+          "display": "9th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on James M Wood Boulevard by another sheet"
+          ],
+          "ink": [
+            "NINTH ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        },
+        {
+          "id": "ruby-st",
+          "display": "Ruby Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place, which James M Wood Boulevard runs straight into"
+          ],
+          "ink": [
+            "RUBY ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        },
+        {
+          "id": "lincoln-street",
+          "display": "Lincoln Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place, which James M Wood Boulevard runs straight into"
+          ],
+          "ink": [
+            "Lincoln Street"
+          ],
+          "docs": [
+            "mr021-087"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Witmer Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "witmer-street",
+          "display": "Witmer Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Witmer Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "WITMER",
+            "WITMER STREET",
+            "Witmer St"
+          ],
+          "docs": [
+            "mr007-056",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0030-069",
+            "tr0062-063"
+          ]
+        },
+        {
+          "id": "logan-ave",
+          "display": "Logan Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Witmer Street by another sheet"
+          ],
+          "ink": [
+            "Logan Ave"
+          ],
+          "docs": [
+            "mr018-063"
+          ]
+        },
+        {
+          "id": "nichols-ave",
+          "display": "Nichols Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Witmer Street by another sheet"
+          ],
+          "ink": [
+            "Nichols Ave",
+            "Nichols Avenue"
+          ],
+          "docs": [
+            "mr007-036-p2",
+            "mr007-096-p2",
+            "mr037-078"
+          ]
+        }
+      ]
+    }
+  ]
+}

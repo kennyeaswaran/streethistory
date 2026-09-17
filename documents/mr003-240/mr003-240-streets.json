@@ -1,0 +1,472 @@
+{
+  "document": "mr003-240",
+  "image": "mr003-240-100dpi.png",
+  "imageSize": [1730, 1123],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr003-240-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [1440, -5],
+    [1614, 523],
+    [1627, 1091],
+    [107, 1174],
+    [263, 470]
+  ],
+  "coverageLl": [
+    [34.062912, -118.242757],
+    [34.062801, -118.24112],
+    [34.062286, -118.239559],
+    [34.058755, -118.24108],
+    [34.059784, -118.242817]
+  ],
+  "streets": [
+    {
+      "name": "Cesar E Chavez Avenue",
+      "runs": [
+        {
+          "px": [
+            [198, 1169],
+            [235, 990],
+            [299, 630],
+            [321, 509],
+            [328, 461],
+            [332, 442]
+          ],
+          "ll": [
+            [34.058967, -118.240989],
+            [34.059221, -118.241433],
+            [34.059713, -118.242339],
+            [34.05988, -118.242644],
+            [34.059941, -118.242767],
+            [34.059967, -118.242814]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Fort Moore Place",
+          "px": [366, 271],
+          "ll": [34.06021, -118.243239],
+          "insideCoverage": false
+        },
+        {
+          "name": "Hill Place",
+          "px": [321, 509],
+          "ll": [34.05988, -118.242644],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hill Street",
+          "px": [230, 1045],
+          "ll": [34.059157, -118.24129],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hill Place",
+      "runs": [
+        {
+          "px": [
+            [321, 509],
+            [370, 502],
+            [384, 503],
+            [522, 463],
+            [796, 382],
+            [827, 365],
+            [899, 347],
+            [919, 343],
+            [947, 333],
+            [974, 322],
+            [1103, 253],
+            [1463, 64]
+          ],
+          "ll": [
+            [34.05988, -118.242644],
+            [34.059996, -118.242606],
+            [34.060029, -118.242588],
+            [34.06038, -118.242538],
+            [34.061079, -118.242445],
+            [34.061164, -118.242454],
+            [34.061345, -118.24242],
+            [34.061396, -118.24241],
+            [34.061469, -118.242402],
+            [34.06154, -118.242402],
+            [34.061901, -118.242442],
+            [34.062898, -118.242542]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [1692, -62],
+          "ll": [34.063538, -118.242622],
+          "insideCoverage": false
+        },
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [321, 509],
+          "ll": [34.05988, -118.242644],
+          "insideCoverage": true
+        },
+        {
+          "name": "Fort Moore Place",
+          "px": [265, 450],
+          "ll": [34.05981, -118.24287],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ord Street",
+          "px": [919, 343],
+          "ll": [34.061396, -118.24241],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hill Street",
+      "runs": [
+        {
+          "px": [
+            [1625, 1017],
+            [1616, 1017],
+            [1546, 1020],
+            [1458, 1020],
+            [1306, 1020],
+            [1176, 1024],
+            [1084, 1031],
+            [973, 1037],
+            [961, 1038],
+            [932, 1041],
+            [895, 1044],
+            [881, 1045],
+            [717, 1062],
+            [366, 1096],
+            [311, 1099],
+            [225, 1100],
+            [153, 1093],
+            [126, 1089]
+          ],
+          "ll": [
+            [34.062353, -118.239761],
+            [34.062331, -118.239772],
+            [34.062169, -118.239846],
+            [34.061971, -118.239946],
+            [34.061624, -118.240121],
+            [34.061325, -118.240258],
+            [34.061111, -118.240345],
+            [34.060853, -118.240456],
+            [34.060825, -118.240468],
+            [34.060755, -118.240495],
+            [34.060668, -118.24053],
+            [34.060637, -118.240541],
+            [34.060248, -118.240683],
+            [34.059418, -118.240995],
+            [34.05929, -118.24105],
+            [34.059094, -118.241147],
+            [34.058937, -118.241247],
+            [34.058879, -118.241289]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [1804, 1015],
+          "ll": [34.06276, -118.239563],
+          "insideCoverage": false
+        },
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [230, 1045],
+          "ll": [34.059157, -118.24129],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ord Street",
+          "px": [932, 1041],
+          "ll": [34.060755, -118.240495],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Ord Street",
+      "runs": [
+        {
+          "px": [
+            [954, 448],
+            [926, 450],
+            [920, 359],
+            [919, 343]
+          ],
+          "ll": [
+            [34.061375, -118.242082],
+            [34.061309, -118.24211],
+            [34.061382, -118.242364],
+            [34.061396, -118.24241]
+          ]
+        },
+        {
+          "px": [
+            [932, 1129],
+            [932, 1099],
+            [932, 1090],
+            [932, 1041],
+            [933, 981],
+            [933, 969],
+            [931, 759],
+            [933, 706],
+            [935, 621],
+            [938, 607],
+            [948, 590],
+            [968, 575]
+          ],
+          "ll": [
+            [34.060671, -118.240255],
+            [34.060701, -118.240337],
+            [34.06071, -118.24036],
+            [34.060755, -118.240495],
+            [34.060816, -118.240657],
+            [34.060826, -118.240688],
+            [34.061025, -118.241263],
+            [34.061079, -118.241406],
+            [34.061164, -118.241634],
+            [34.061185, -118.24167],
+            [34.061225, -118.241704],
+            [34.061284, -118.24172]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Hill Place",
+          "px": [919, 343],
+          "ll": [34.061396, -118.24241],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hill Street",
+          "px": [932, 1041],
+          "ll": [34.060755, -118.240495],
+          "insideCoverage": true
+        },
+        {
+          "name": "Yale Street",
+          "px": [968, 575],
+          "ll": [34.061284, -118.24172],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Yale Street",
+      "runs": [
+        {
+          "px": [
+            [968, 575],
+            [985, 568],
+            [993, 567],
+            [1006, 566],
+            [1044, 554],
+            [1051, 553],
+            [1089, 550],
+            [1103, 550],
+            [1511, 551],
+            [1615, 551]
+          ],
+          "ll": [
+            [34.061284, -118.24172],
+            [34.06133, -118.241719],
+            [34.061347, -118.241713],
+            [34.061378, -118.241703],
+            [34.061477, -118.241691],
+            [34.061494, -118.241685],
+            [34.061583, -118.241651],
+            [34.061614, -118.241634],
+            [34.062541, -118.241161],
+            [34.062776, -118.241042]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [1801, 551],
+          "ll": [34.063199, -118.240828],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ord Street",
+          "px": [968, 575],
+          "ll": [34.061284, -118.24172],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Cesar E Chavez Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "C CORTA",
+            "SHORT ST"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Hill Place",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Hill Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "hill-street-downtown",
+          "display": "Hill Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hill Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE LOMA",
+            "HILL ST",
+            "HILL STREET",
+            "Hill Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr003-038-p1",
+            "mr003-038-p2",
+            "mr005-105",
+            "mr005-573",
+            "mr053-067",
+            "mr053-068",
+            "mr053-069"
+          ]
+        },
+        {
+          "id": "bull",
+          "display": "Bull Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hill Street by another sheet"
+          ],
+          "ink": [
+            "BULL ST.",
+            "CALLE DEL TORO"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Ord Street",
+      "continuesInto": [
+        "Yale Street"
+      ],
+      "candidates": [
+        {
+          "id": "high-street-chinatown",
+          "display": "High Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Ord Street by another sheet"
+          ],
+          "ink": [
+            "CALLE ALTA",
+            "HIGH ST"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "hornet",
+          "display": "Hornet Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Yale Street, which Ord Street runs straight into"
+          ],
+          "ink": [
+            "CALLE DE LAS AVISPAS",
+            "HORNET ST."
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Yale Street",
+      "continuesInto": [
+        "Ord Street"
+      ],
+      "candidates": [
+        {
+          "id": "hornet",
+          "display": "Hornet Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Yale Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS AVISPAS",
+            "HORNET ST."
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "high-street-chinatown",
+          "display": "High Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Ord Street, which Yale Street runs straight into"
+          ],
+          "ink": [
+            "CALLE ALTA",
+            "HIGH ST"
+          ],
+          "docs": [
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "yale",
+          "display": "Yale Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

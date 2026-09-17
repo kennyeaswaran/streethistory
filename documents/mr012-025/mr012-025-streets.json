@@ -1,0 +1,972 @@
+{
+  "document": "mr012-025",
+  "image": "mr012-025-100dpi.png",
+  "imageSize": [1108, 1671],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr012-025-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [23, 1308],
+    [1095, 1711],
+    [1157, 807],
+    [695, 197],
+    [17, 693]
+  ],
+  "coverageLl": [
+    [34.066583, -118.255156],
+    [34.064127, -118.252524],
+    [34.066349, -118.25089],
+    [34.068519, -118.251328],
+    [34.068158, -118.254192]
+  ],
+  "streets": [
+    {
+      "name": "Bellevue Avenue",
+      "runs": [
+        {
+          "px": [
+            [19, 893],
+            [35, 890],
+            [68, 873],
+            [121, 840],
+            [150, 820],
+            [181, 800],
+            [191, 793],
+            [266, 737],
+            [370, 658],
+            [452, 595],
+            [489, 567],
+            [540, 527],
+            [569, 505],
+            [597, 517],
+            [606, 524],
+            [611, 526],
+            [688, 542],
+            [712, 547],
+            [757, 570],
+            [776, 584],
+            [808, 608],
+            [829, 625],
+            [895, 702],
+            [925, 740],
+            [933, 750],
+            [942, 760],
+            [940, 776],
+            [949, 795],
+            [958, 809],
+            [984, 845],
+            [1009, 853],
+            [1047, 885],
+            [1084, 930],
+            [1108, 962],
+            [1143, 990],
+            [1144, 991]
+          ],
+          "ll": [
+            [34.067645, -118.254506],
+            [34.067634, -118.254452],
+            [34.067631, -118.254323],
+            [34.067645, -118.254109],
+            [34.067656, -118.253988],
+            [34.067665, -118.253861],
+            [34.067671, -118.253819],
+            [34.067713, -118.253501],
+            [34.067777, -118.253059],
+            [34.067828, -118.252704],
+            [34.067851, -118.25255],
+            [34.067885, -118.252327],
+            [34.067902, -118.252205],
+            [34.067834, -118.252138],
+            [34.067805, -118.252122],
+            [34.067793, -118.252111],
+            [34.067649, -118.251901],
+            [34.067604, -118.251836],
+            [34.067485, -118.251733],
+            [34.067426, -118.2517],
+            [34.067321, -118.251639],
+            [34.06725, -118.251602],
+            [34.066964, -118.251523],
+            [34.066828, -118.251491],
+            [34.066793, -118.251483],
+            [34.066756, -118.251473],
+            [34.066717, -118.251505],
+            [34.066657, -118.251508],
+            [34.06661, -118.2515],
+            [34.066483, -118.25148],
+            [34.066427, -118.251415],
+            [34.066297, -118.251351],
+            [34.066134, -118.25131],
+            [34.06602, -118.251286],
+            [34.065902, -118.251226],
+            [34.065897, -118.251222]
+          ]
+        },
+        {
+          "px": [
+            [1047, 885],
+            [1040, 860],
+            [1025, 837],
+            [984, 790],
+            [962, 765],
+            [942, 760]
+          ],
+          "ll": [
+            [34.066297, -118.251351],
+            [34.06637, -118.251332],
+            [34.066447, -118.251343],
+            [34.066623, -118.251392],
+            [34.066716, -118.251417],
+            [34.066756, -118.251473]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Boston Street",
+          "px": [135, 887],
+          "ll": [34.067507, -118.25414],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [895, 702],
+          "ll": [34.066964, -118.251523],
+          "insideCoverage": true
+        },
+        {
+          "name": "Edgeware Road",
+          "px": [150, 820],
+          "ll": [34.067656, -118.253988],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hollywood Freeway",
+          "px": [-78, 963],
+          "ll": [34.067596, -118.254912],
+          "insideCoverage": false
+        },
+        {
+          "name": "Kensington Road",
+          "px": [611, 526],
+          "ll": [34.067793, -118.252111],
+          "insideCoverage": true
+        },
+        {
+          "name": "Marion Avenue",
+          "px": [569, 505],
+          "ll": [34.067902, -118.252205],
+          "insideCoverage": true
+        },
+        {
+          "name": "Sunvue Place",
+          "px": [1378, 979],
+          "ll": [34.065615, -118.250488],
+          "insideCoverage": false
+        },
+        {
+          "name": "Victor Street",
+          "px": [1377, 1068],
+          "ll": [34.065391, -118.250635],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Bixel Street",
+      "runs": [
+        {
+          "px": [
+            [458, 1471],
+            [458, 1370],
+            [458, 1338]
+          ],
+          "ll": [
+            [34.065587, -118.254088],
+            [34.065846, -118.253927],
+            [34.065926, -118.253877]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Firmin Street",
+          "px": [549, 1543],
+          "ll": [34.065282, -118.253924],
+          "insideCoverage": false
+        },
+        {
+          "name": "Hollywood Freeway",
+          "px": [461, 1248],
+          "ll": [34.066152, -118.25372],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [458, 1338],
+          "ll": [34.065926, -118.253877],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Boston Street",
+      "runs": [
+        {
+          "px": [
+            [918, 1134],
+            [894, 1143],
+            [873, 1140],
+            [611, 1040],
+            [496, 996],
+            [425, 965],
+            [360, 943],
+            [177, 937],
+            [150, 933]
+          ],
+          "ll": [
+            [34.065835, -118.252143],
+            [34.065842, -118.252229],
+            [34.065877, -118.252289],
+            [34.066483, -118.252929],
+            [34.066749, -118.253213],
+            [34.066923, -118.253379],
+            [34.067065, -118.253542],
+            [34.067322, -118.254094],
+            [34.067369, -118.25417]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bellevue Avenue",
+          "px": [135, 887],
+          "ll": [34.067507, -118.25414],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [918, 1134],
+          "ll": [34.065835, -118.252143],
+          "insideCoverage": true
+        },
+        {
+          "name": "Edgeware Road",
+          "px": [150, 933],
+          "ll": [34.067369, -118.25417],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hollywood Freeway",
+          "px": [913, 1175],
+          "ll": [34.065735, -118.252225],
+          "insideCoverage": true
+        },
+        {
+          "name": "Kensington Road",
+          "px": [611, 1040],
+          "ll": [34.066483, -118.252929],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [943, 1175],
+          "ll": [34.065696, -118.252134],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Boylston Street",
+      "runs": [
+        {
+          "px": [
+            [895, 702],
+            [924, 680],
+            [929, 676],
+            [1011, 614]
+          ],
+          "ll": [
+            [34.066964, -118.251523],
+            [34.066982, -118.2514],
+            [34.066986, -118.251377],
+            [34.067037, -118.251029]
+          ]
+        },
+        {
+          "px": [
+            [918, 1134],
+            [930, 1119],
+            [940, 1091],
+            [936, 915],
+            [966, 869],
+            [973, 859],
+            [984, 845]
+          ],
+          "ll": [
+            [34.065835, -118.252143],
+            [34.065856, -118.252083],
+            [34.065913, -118.252006],
+            [34.066368, -118.251736],
+            [34.066446, -118.251571],
+            [34.066463, -118.251535],
+            [34.066483, -118.25148]
+          ]
+        },
+        {
+          "px": [
+            [932, 1650],
+            [933, 1572],
+            [934, 1530],
+            [937, 1479],
+            [937, 1359]
+          ],
+          "ll": [
+            [34.0645, -118.252923],
+            [34.064697, -118.252797],
+            [34.064804, -118.252726],
+            [34.064931, -118.252637],
+            [34.065235, -118.252445]
+          ]
+        },
+        {
+          "px": [
+            [940, 776],
+            [928, 802],
+            [931, 897],
+            [936, 915]
+          ],
+          "ll": [
+            [34.066717, -118.251505],
+            [34.066668, -118.251582],
+            [34.066419, -118.251725],
+            [34.066368, -118.251736]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bellevue Avenue",
+          "px": [895, 702],
+          "ll": [34.066964, -118.251523],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boston Street",
+          "px": [918, 1134],
+          "ll": [34.065835, -118.252143],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hollywood Freeway",
+          "px": [924, 1171],
+          "ll": [34.065731, -118.252182],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [943, 1175],
+          "ll": [34.065696, -118.252134],
+          "insideCoverage": true
+        },
+        {
+          "name": "Sunvue Place",
+          "px": [1073, 567],
+          "ll": [34.067072, -118.250765],
+          "insideCoverage": false
+        },
+        {
+          "name": "Temple Street",
+          "px": [934, 1530],
+          "ll": [34.064804, -118.252726],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Edgeware Road",
+      "runs": [
+        {
+          "px": [
+            [139, 1352],
+            [140, 1247],
+            [143, 1209],
+            [144, 1172],
+            [144, 1166],
+            [148, 974],
+            [150, 933],
+            [149, 914],
+            [151, 879],
+            [152, 863],
+            [150, 820],
+            [149, 771],
+            [157, 639],
+            [158, 590]
+          ],
+          "ll": [
+            [34.066317, -118.254871],
+            [34.066584, -118.254701],
+            [34.066674, -118.25463],
+            [34.066768, -118.25457],
+            [34.066784, -118.254558],
+            [34.067268, -118.254239],
+            [34.067369, -118.25417],
+            [34.067418, -118.254143],
+            [34.067506, -118.254079],
+            [34.067545, -118.25405],
+            [34.067656, -118.253988],
+            [34.067785, -118.253914],
+            [34.068109, -118.25368],
+            [34.068233, -118.253598]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bellevue Avenue",
+          "px": [150, 820],
+          "ll": [34.067656, -118.253988],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boston Street",
+          "px": [150, 933],
+          "ll": [34.067369, -118.25417],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hollywood Freeway",
+          "px": [142, 1007],
+          "ll": [34.067192, -118.254311],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [143, 1209],
+          "ll": [34.066674, -118.25463],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Firmin Street",
+      "runs": [
+        {
+          "px": [
+            [640, 1540],
+            [642, 1447],
+            [642, 1413]
+          ],
+          "ll": [
+            [34.065169, -118.25364],
+            [34.065402, -118.253486],
+            [34.065492, -118.253431]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [549, 1543],
+          "ll": [34.065282, -118.253924],
+          "insideCoverage": false
+        },
+        {
+          "name": "Temple Street",
+          "px": [642, 1413],
+          "ll": [34.065492, -118.253431],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hollywood Freeway",
+      "runs": [
+        {
+          "px": [
+            [967, 1217],
+            [931, 1208],
+            [478, 1104],
+            [361, 1078],
+            [248, 1056],
+            [135, 1040],
+            [29, 1027],
+            [20, 1026]
+          ],
+          "ll": [
+            [34.065557, -118.252124],
+            [34.065628, -118.25222],
+            [34.066496, -118.253441],
+            [34.066719, -118.253755],
+            [34.066924, -118.254065],
+            [34.067117, -118.254383],
+            [34.067291, -118.254688],
+            [34.067305, -118.254714]
+          ]
+        },
+        {
+          "px": [
+            [21, 1081],
+            [23, 1081],
+            [128, 1094],
+            [239, 1110],
+            [350, 1131],
+            [407, 1144],
+            [465, 1157],
+            [914, 1254],
+            [1123, 1298]
+          ],
+          "ll": [
+            [34.067164, -118.2548],
+            [34.06716, -118.254792],
+            [34.066989, -118.254493],
+            [34.066799, -118.25418],
+            [34.066598, -118.253875],
+            [34.066488, -118.25372],
+            [34.066377, -118.253564],
+            [34.065534, -118.252346],
+            [34.065142, -118.251778]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bellevue Avenue",
+          "px": [-78, 963],
+          "ll": [34.067596, -118.254912],
+          "insideCoverage": false
+        },
+        {
+          "name": "Bixel Street",
+          "px": [461, 1248],
+          "ll": [34.066152, -118.25372],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boston Street",
+          "px": [913, 1175],
+          "ll": [34.065735, -118.252225],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [924, 1171],
+          "ll": [34.065731, -118.252182],
+          "insideCoverage": true
+        },
+        {
+          "name": "Edgeware Road",
+          "px": [142, 1007],
+          "ll": [34.067192, -118.254311],
+          "insideCoverage": true
+        },
+        {
+          "name": "Kensington Road",
+          "px": [545, 1072],
+          "ll": [34.066489, -118.253185],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [967, 1217],
+          "ll": [34.065557, -118.252124],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [23, 1134],
+          "ll": [34.067026, -118.254878],
+          "insideCoverage": true
+        },
+        {
+          "name": "Victor Street",
+          "px": [1239, 1390],
+          "ll": [34.064753, -118.251572],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Kensington Road",
+      "runs": [
+        {
+          "px": [
+            [611, 1040],
+            [611, 1023],
+            [611, 831],
+            [605, 564],
+            [606, 559],
+            [611, 526]
+          ],
+          "ll": [
+            [34.066483, -118.252929],
+            [34.066525, -118.252903],
+            [34.067017, -118.252597],
+            [34.067702, -118.252188],
+            [34.067715, -118.252177],
+            [34.067793, -118.252111]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bellevue Avenue",
+          "px": [611, 526],
+          "ll": [34.067793, -118.252111],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boston Street",
+          "px": [611, 1040],
+          "ll": [34.066483, -118.252929],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hollywood Freeway",
+          "px": [545, 1072],
+          "ll": [34.066489, -118.253185],
+          "insideCoverage": true
+        },
+        {
+          "name": "Marion Avenue",
+          "px": [590, 515],
+          "ll": [34.067848, -118.252158],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Marion Avenue",
+      "runs": [
+        {
+          "px": [
+            [797, 332],
+            [769, 353],
+            [714, 395],
+            [709, 399],
+            [695, 407]
+          ],
+          "ll": [
+            [34.068039, -118.251231],
+            [34.068023, -118.25135],
+            [34.067989, -118.251588],
+            [34.067986, -118.251608],
+            [34.067983, -118.251665]
+          ]
+        },
+        {
+          "px": [
+            [680, 419],
+            [663, 433],
+            [658, 437],
+            [569, 505]
+          ],
+          "ll": [
+            [34.067975, -118.251729],
+            [34.067961, -118.251802],
+            [34.067957, -118.251825],
+            [34.067902, -118.252205]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bellevue Avenue",
+          "px": [569, 505],
+          "ll": [34.067902, -118.252205],
+          "insideCoverage": true
+        },
+        {
+          "name": "Kensington Road",
+          "px": [590, 515],
+          "ll": [34.067848, -118.252158],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Santa Ana Freeway",
+      "runs": [
+        {
+          "px": [
+            [1126, 1258],
+            [967, 1217]
+          ],
+          "ll": [
+            [34.06524, -118.251706],
+            [34.065557, -118.252124]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Boston Street",
+          "px": [943, 1175],
+          "ll": [34.065696, -118.252134],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [943, 1175],
+          "ll": [34.065696, -118.252134],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hollywood Freeway",
+          "px": [967, 1217],
+          "ll": [34.065557, -118.252124],
+          "insideCoverage": true
+        },
+        {
+          "name": "Victor Street",
+          "px": [1296, 1236],
+          "ll": [34.065071, -118.25115],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Temple Street",
+      "runs": [
+        {
+          "px": [
+            [1103, 1600],
+            [1098, 1598],
+            [977, 1544],
+            [934, 1530],
+            [894, 1518],
+            [831, 1490],
+            [799, 1477],
+            [754, 1458],
+            [642, 1413],
+            [518, 1363],
+            [458, 1338],
+            [168, 1219],
+            [143, 1209],
+            [114, 1200],
+            [105, 1198],
+            [63, 1190],
+            [23, 1187],
+            [22, 1187]
+          ],
+          "ll": [
+            [34.064399, -118.252324],
+            [34.06441, -118.252335],
+            [34.064709, -118.252617],
+            [34.064804, -118.252726],
+            [34.064887, -118.252831],
+            [34.065042, -118.252977],
+            [34.06512, -118.253055],
+            [34.065226, -118.253162],
+            [34.065492, -118.253431],
+            [34.065783, -118.25373],
+            [34.065926, -118.253877],
+            [34.066616, -118.254571],
+            [34.066674, -118.25463],
+            [34.066736, -118.254705],
+            [34.066755, -118.254729],
+            [34.06683, -118.254845],
+            [34.066893, -118.254963],
+            [34.066894, -118.254966]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [458, 1338],
+          "ll": [34.065926, -118.253877],
+          "insideCoverage": true
+        },
+        {
+          "name": "Boylston Street",
+          "px": [934, 1530],
+          "ll": [34.064804, -118.252726],
+          "insideCoverage": true
+        },
+        {
+          "name": "Edgeware Road",
+          "px": [143, 1209],
+          "ll": [34.066674, -118.25463],
+          "insideCoverage": true
+        },
+        {
+          "name": "Firmin Street",
+          "px": [642, 1413],
+          "ll": [34.065492, -118.253431],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hollywood Freeway",
+          "px": [23, 1134],
+          "ll": [34.067026, -118.254878],
+          "insideCoverage": true
+        },
+        {
+          "name": "Victor Street",
+          "px": [1235, 1665],
+          "ll": [34.064058, -118.252021],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Bellevue Avenue",
+      "continuesInto": [
+        "Marion Avenue"
+      ],
+      "candidates": []
+    },
+    {
+      "street": "Bixel Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "bixel",
+          "display": "Bixel Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "BIXEL ST"
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Boston Street",
+      "continuesInto": [
+        "Boylston Street"
+      ],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Boylston Street, which Boston Street runs straight into"
+          ],
+          "ink": [
+            "FIGUEROA ST."
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Boylston Street",
+      "continuesInto": [
+        "Boston Street"
+      ],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Boylston Street by another sheet"
+          ],
+          "ink": [
+            "FIGUEROA ST."
+          ],
+          "docs": [
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "boylston",
+          "display": "Boylston Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Edgeware Road",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Firmin Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Hollywood Freeway",
+      "continuesInto": [
+        "Santa Ana Freeway"
+      ],
+      "candidates": []
+    },
+    {
+      "street": "Kensington Road",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Marion Avenue",
+      "continuesInto": [
+        "Bellevue Avenue"
+      ],
+      "candidates": []
+    },
+    {
+      "street": "Santa Ana Freeway",
+      "continuesInto": [
+        "Hollywood Freeway"
+      ],
+      "candidates": []
+    },
+    {
+      "street": "Temple Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "requena-street",
+          "display": "Requena Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet"
+          ],
+          "ink": [
+            "REQUENA STREET"
+          ],
+          "docs": [
+            "mr003-146-p2"
+          ]
+        },
+        {
+          "id": "temple",
+          "display": "Temple Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "TEMPLE STREET",
+            "Temple Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489"
+          ]
+        }
+      ]
+    }
+  ]
+}

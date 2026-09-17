@@ -1,0 +1,228 @@
+{
+  "document": "tr0110-048",
+  "image": "tr0110-048-100dpi.png",
+  "imageSize": [1746, 2350],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0110-048-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [318, 384],
+    [217, 1162],
+    [1221, 1192],
+    [1298, 583]
+  ],
+  "coverageLl": [
+    [34.053246, -118.238363],
+    [34.051001, -118.238737],
+    [34.050889, -118.235261],
+    [34.052646, -118.234976]
+  ],
+  "streets": [
+    {
+      "name": "Alameda Street",
+      "runs": [
+        {
+          "px": [
+            [427, 406],
+            [424, 494],
+            [424, 504],
+            [423, 539],
+            [420, 695],
+            [417, 828],
+            [414, 922],
+            [410, 1071],
+            [409, 1131],
+            [408, 1168]
+          ],
+          "ll": [
+            [34.053179, -118.237988],
+            [34.052925, -118.238],
+            [34.052895, -118.238],
+            [34.052795, -118.238006],
+            [34.052344, -118.23802],
+            [34.051961, -118.238035],
+            [34.051689, -118.238047],
+            [34.051258, -118.238065],
+            [34.051085, -118.238072],
+            [34.050979, -118.238075]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Commercial Street",
+          "px": [436, 194],
+          "ll": [34.053791, -118.237947],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ducommun Street",
+          "px": [484, 514],
+          "ll": [34.052865, -118.237792],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [409, 1131],
+          "ll": [34.051085, -118.238072],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Ducommun Street",
+      "runs": [
+        {
+          "px": [
+            [545, 524],
+            [598, 549],
+            [1014, 612],
+            [1078, 621],
+            [1165, 635],
+            [1289, 656]
+          ],
+          "ll": [
+            [34.052836, -118.237583],
+            [34.052761, -118.237398],
+            [34.052571, -118.235962],
+            [34.052541, -118.23574],
+            [34.052498, -118.235437],
+            [34.052436, -118.23501]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [484, 514],
+          "ll": [34.052865, -118.237792],
+          "insideCoverage": true
+        },
+        {
+          "name": "Garey Street",
+          "px": [1525, 695],
+          "ll": [34.052316, -118.234192],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Temple Street",
+      "runs": [
+        {
+          "px": [
+            [242, 967],
+            [260, 985],
+            [300, 1025],
+            [372, 1095],
+            [409, 1131],
+            [448, 1169]
+          ],
+          "ll": [
+            [34.051564, -118.238643],
+            [34.051511, -118.238581],
+            [34.051395, -118.238445],
+            [34.05119, -118.238199],
+            [34.051085, -118.238072],
+            [34.050975, -118.237937]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [409, 1131],
+          "ll": [34.051085, -118.238072],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Alameda Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "alameda-st",
+          "display": "Alameda Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alameda Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "ALAMEDA ST",
+            "ALAMEDA ST.",
+            "ALAMEDA STREET",
+            "Alameda STREET.",
+            "Alameda St",
+            "Alameda St."
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2",
+            "mr012-042",
+            "mr013-087-p1",
+            "mr013-091",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "tr0005-056a",
+            "tr0009-075",
+            "tr0012-101",
+            "tr0145-062",
+            "tr0926-086-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Ducommun Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Temple Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "requena-street",
+          "display": "Requena Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet"
+          ],
+          "ink": [
+            "REQUENA STREET"
+          ],
+          "docs": [
+            "mr003-146-p2"
+          ]
+        },
+        {
+          "id": "temple",
+          "display": "Temple Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "TEMPLE STREET",
+            "Temple Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489"
+          ]
+        }
+      ]
+    }
+  ]
+}

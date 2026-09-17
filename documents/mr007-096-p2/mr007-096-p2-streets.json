@@ -1,0 +1,892 @@
+{
+  "document": "mr007-096-p2",
+  "image": "mr007-096-p2-100dpi.png",
+  "imageSize": [1123, 1678],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr007-096-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [128, -12],
+    [904, -34],
+    [944, 1731],
+    [129, 1719]
+  ],
+  "coverageLl": [
+    [34.059738, -118.263372],
+    [34.058812, -118.261021],
+    [34.054362, -118.263576],
+    [34.055423, -118.265992]
+  ],
+  "streets": [
+    {
+      "name": "3rd Street",
+      "runs": [
+        {
+          "px": [
+            [910, 211],
+            [872, 211],
+            [824, 212],
+            [780, 213],
+            [691, 214],
+            [335, 221],
+            [235, 221],
+            [208, 221],
+            [182, 222],
+            [128, 223]
+          ],
+          "ll": [
+            [34.058195, -118.261375],
+            [34.058241, -118.261488],
+            [34.058299, -118.261632],
+            [34.058353, -118.261764],
+            [34.058462, -118.262033],
+            [34.058896, -118.263107],
+            [34.059021, -118.263405],
+            [34.059055, -118.263486],
+            [34.059088, -118.263566],
+            [34.059152, -118.263727]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Columbia Avenue",
+          "px": [-91, 223],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": false
+        },
+        {
+          "name": "Crown Hill Avenue",
+          "px": [-91, 223],
+          "ll": [34.059429, -118.264382],
+          "insideCoverage": false
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [824, 212],
+          "ll": [34.058299, -118.261632],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [208, 221],
+          "ll": [34.059055, -118.263486],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "4th Street",
+      "runs": [
+        {
+          "px": [
+            [918, 562],
+            [857, 562],
+            [828, 562]
+          ],
+          "ll": [
+            [34.057309, -118.261884],
+            [34.057385, -118.262063],
+            [34.057423, -118.262152]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Hartford Avenue",
+          "px": [829, 641],
+          "ll": [34.057226, -118.262268],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [828, 562],
+          "ll": [34.057423, -118.262152],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "5th Street",
+      "runs": [
+        {
+          "px": [
+            [832, 1418],
+            [794, 1418],
+            [528, 1420],
+            [501, 1420],
+            [466, 1421],
+            [439, 1421],
+            [226, 1422],
+            [208, 1422]
+          ],
+          "ll": [
+            [34.055284, -118.263437],
+            [34.055332, -118.263551],
+            [34.055663, -118.264348],
+            [34.055697, -118.264428],
+            [34.05574, -118.264534],
+            [34.055774, -118.264613],
+            [34.056039, -118.265252],
+            [34.056062, -118.265306]
+          ]
+        },
+        {
+          "px": [
+            [934, 1272],
+            [849, 1273],
+            [836, 1273]
+          ],
+          "ll": [
+            [34.055519, -118.262912],
+            [34.055624, -118.263165],
+            [34.05564, -118.263205]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Hartford Avenue",
+          "px": [466, 1421],
+          "ll": [34.05574, -118.264534],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [836, 1273],
+          "ll": [34.05564, -118.263205],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [208, 1422],
+          "ll": [34.056062, -118.265306],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "6th Street",
+      "runs": [
+        {
+          "px": [
+            [129, 1644],
+            [187, 1644],
+            [218, 1644],
+            [250, 1644],
+            [341, 1642],
+            [401, 1641],
+            [469, 1640],
+            [532, 1640],
+            [606, 1640],
+            [645, 1640],
+            [702, 1639],
+            [802, 1639],
+            [833, 1639],
+            [855, 1639],
+            [942, 1638]
+          ],
+          "ll": [
+            [34.05561, -118.265878],
+            [34.055536, -118.265704],
+            [34.055496, -118.265612],
+            [34.055458, -118.265518],
+            [34.055346, -118.265244],
+            [34.055273, -118.265063],
+            [34.055189, -118.264857],
+            [34.05511, -118.264668],
+            [34.055017, -118.264447],
+            [34.054969, -118.264331],
+            [34.054897, -118.26416],
+            [34.054772, -118.263861],
+            [34.054733, -118.263768],
+            [34.054705, -118.263702],
+            [34.054596, -118.263442]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Columbia Avenue",
+          "px": [-11, 1643],
+          "ll": [34.05579, -118.266295],
+          "insideCoverage": false
+        },
+        {
+          "name": "Hartford Avenue",
+          "px": [469, 1640],
+          "ll": [34.055189, -118.264857],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [833, 1639],
+          "ll": [34.054733, -118.263768],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [218, 1644],
+          "ll": [34.055496, -118.265612],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hartford Avenue",
+      "runs": [
+        {
+          "px": [
+            [830, 719],
+            [789, 719],
+            [729, 718],
+            [585, 717],
+            [557, 727],
+            [546, 752],
+            [535, 822],
+            [530, 855],
+            [526, 884],
+            [468, 1349],
+            [467, 1378],
+            [467, 1385],
+            [466, 1421],
+            [466, 1446],
+            [469, 1605],
+            [469, 1640]
+          ],
+          "ll": [
+            [34.057028, -118.262384],
+            [34.057081, -118.262506],
+            [34.057158, -118.262685],
+            [34.057343, -118.263114],
+            [34.057353, -118.26321],
+            [34.057306, -118.263279],
+            [34.057144, -118.263421],
+            [34.05707, -118.263485],
+            [34.057002, -118.26354],
+            [34.055917, -118.264418],
+            [34.055846, -118.264465],
+            [34.055829, -118.264476],
+            [34.05574, -118.264534],
+            [34.055678, -118.26457],
+            [34.055278, -118.264805],
+            [34.055189, -118.264857]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "4th Street",
+          "px": [829, 641],
+          "ll": [34.057226, -118.262268],
+          "insideCoverage": true
+        },
+        {
+          "name": "5th Street",
+          "px": [466, 1421],
+          "ll": [34.05574, -118.264534],
+          "insideCoverage": true
+        },
+        {
+          "name": "6th Street",
+          "px": [469, 1640],
+          "ll": [34.055189, -118.264857],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lucas Avenue",
+          "px": [830, 719],
+          "ll": [34.057028, -118.262384],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Lucas Avenue",
+      "runs": [
+        {
+          "px": [
+            [830, -32],
+            [828, 49],
+            [825, 172],
+            [824, 212],
+            [825, 257],
+            [828, 562],
+            [830, 719],
+            [834, 890],
+            [835, 923],
+            [835, 944],
+            [835, 987],
+            [835, 1050],
+            [836, 1273],
+            [832, 1418],
+            [832, 1452],
+            [833, 1603],
+            [833, 1639],
+            [832, 1663],
+            [831, 1729]
+          ],
+          "ll": [
+            [34.0589, -118.261246],
+            [34.058702, -118.261374],
+            [34.058399, -118.261568],
+            [34.058299, -118.261632],
+            [34.058187, -118.261698],
+            [34.057423, -118.262152],
+            [34.057028, -118.262384],
+            [34.056598, -118.26263],
+            [34.056515, -118.262678],
+            [34.056461, -118.26271],
+            [34.056356, -118.262774],
+            [34.056198, -118.26287],
+            [34.05564, -118.263205],
+            [34.055284, -118.263437],
+            [34.0552, -118.263487],
+            [34.054822, -118.263715],
+            [34.054733, -118.263768],
+            [34.054672, -118.263806],
+            [34.054509, -118.26391]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [824, 212],
+          "ll": [34.058299, -118.261632],
+          "insideCoverage": true
+        },
+        {
+          "name": "4th Street",
+          "px": [828, 562],
+          "ll": [34.057423, -118.262152],
+          "insideCoverage": true
+        },
+        {
+          "name": "5th Street",
+          "px": [832, 1418],
+          "ll": [34.055284, -118.263437],
+          "insideCoverage": true
+        },
+        {
+          "name": "6th Street",
+          "px": [833, 1639],
+          "ll": [34.054733, -118.263768],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hartford Avenue",
+          "px": [830, 719],
+          "ll": [34.057028, -118.262384],
+          "insideCoverage": true
+        },
+        {
+          "name": "Maryland Street",
+          "px": [835, 923],
+          "ll": [34.056515, -118.262678],
+          "insideCoverage": true
+        },
+        {
+          "name": "Miramar Street",
+          "px": [834, -212],
+          "ll": [34.059343, -118.260959],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Maryland Street",
+      "runs": [
+        {
+          "px": [
+            [926, 922],
+            [854, 923],
+            [835, 923]
+          ],
+          "ll": [
+            [34.056403, -118.262404],
+            [34.056491, -118.262619],
+            [34.056515, -118.262678]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Lucas Avenue",
+          "px": [835, 923],
+          "ll": [34.056515, -118.262678],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Witmer Street",
+      "runs": [
+        {
+          "px": [
+            [230, 1720],
+            [230, 1709],
+            [231, 1684],
+            [225, 1665],
+            [218, 1644],
+            [206, 1607],
+            [208, 1422],
+            [210, 1143],
+            [210, 1049],
+            [210, 1014],
+            [211, 973],
+            [212, 732],
+            [212, 680],
+            [210, 585],
+            [210, 572],
+            [209, 251],
+            [208, 221],
+            [209, 183],
+            [211, 96],
+            [211, -14]
+          ],
+          "ll": [
+            [34.055291, -118.265693],
+            [34.05532, -118.265674],
+            [34.05538, -118.265634],
+            [34.055436, -118.265624],
+            [34.055496, -118.265612],
+            [34.055605, -118.265592],
+            [34.056062, -118.265306],
+            [34.056755, -118.264878],
+            [34.056989, -118.264734],
+            [34.057076, -118.26468],
+            [34.057179, -118.264617],
+            [34.057776, -118.264248],
+            [34.057906, -118.264169],
+            [34.058146, -118.264031],
+            [34.058178, -118.264013],
+            [34.058981, -118.263529],
+            [34.059055, -118.263486],
+            [34.059148, -118.263426],
+            [34.059363, -118.263288],
+            [34.059638, -118.263119]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "3rd Street",
+          "px": [208, 221],
+          "ll": [34.059055, -118.263486],
+          "insideCoverage": true
+        },
+        {
+          "name": "5th Street",
+          "px": [208, 1422],
+          "ll": [34.056062, -118.265306],
+          "insideCoverage": true
+        },
+        {
+          "name": "6th Street",
+          "px": [218, 1644],
+          "ll": [34.055496, -118.265612],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "3rd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "3RD ST",
+            "3RD ST.",
+            "3RD STREET",
+            "3d Street",
+            "CALLE 3a",
+            "THIRD ST.",
+            "THIRD STREET",
+            "Third St",
+            "Third Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr016-059",
+            "mr030-009-p5",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "crown-hill-ave",
+          "display": "Crown Hill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "CROWN HILL AVE."
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        },
+        {
+          "id": "georgia-east",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "GEORGIA ST",
+            "Georgia St",
+            "Georgie Street."
+          ],
+          "docs": [
+            "mr002-092-p2",
+            "mr003-060-p2",
+            "mr013-087-p1",
+            "mr030-009-p5"
+          ]
+        },
+        {
+          "id": "arnold",
+          "display": "Arnold Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "ARNOLD ST."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr066-035"
+          ]
+        },
+        {
+          "id": "morgan-lane",
+          "display": "Morgan Lane",
+          "pendingResearch": false,
+          "why": [
+            "attested on 3rd Street by another sheet"
+          ],
+          "ink": [
+            "Morgan Lane"
+          ],
+          "docs": [
+            "mr005-005"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "4th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "fourth-street",
+          "display": "4th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "4TH ST",
+            "4TH ST.",
+            "4TH STREET",
+            "CALLE 4a",
+            "FOURTH ST.",
+            "FOURTH STREET",
+            "Fourth St",
+            "Fourth Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr003-046-p1",
+            "mr005-005",
+            "mr012-026",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071",
+            "tr0012-186",
+            "tr0751-038"
+          ]
+        },
+        {
+          "id": "huber-st",
+          "display": "Huber Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet"
+          ],
+          "ink": [
+            "HUBER ST.",
+            "Huber St",
+            "Huber St."
+          ],
+          "docs": [
+            "mr012-042",
+            "mr013-087-p1",
+            "mr030-009-p4"
+          ]
+        },
+        {
+          "id": "third-street",
+          "display": "3rd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 4th Street by another sheet"
+          ],
+          "ink": [
+            "THIRD"
+          ],
+          "docs": [
+            "mr013-087-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "5th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "fifth-street",
+          "display": "5th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 5th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "5TH ST",
+            "5TH ST.",
+            "CALLE 5a",
+            "FIFTH ST.",
+            "FIFTH STREET",
+            "Fifth St",
+            "Fifth St.",
+            "Fifth St. (Extension)"
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-046-p2",
+            "mr003-166-p2",
+            "mr005-307-b",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr039-069",
+            "mr053-068",
+            "mr053-071",
+            "tr0010-175a",
+            "tr0588-055",
+            "tr0751-038"
+          ]
+        },
+        {
+          "id": "ward-st",
+          "display": "Ward Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 5th Street by another sheet"
+          ],
+          "ink": [
+            "WARD ST."
+          ],
+          "docs": [
+            "mr003-046-p2"
+          ]
+        },
+        {
+          "id": "poplar-st",
+          "display": "Poplar Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 5th Street by another sheet"
+          ],
+          "ink": [
+            "Poplar St",
+            "Poplar St."
+          ],
+          "docs": [
+            "mr012-042",
+            "mr030-009-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "6th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "sixth-street",
+          "display": "6th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "6TH ST",
+            "6TH ST.",
+            "6TH STREET",
+            "6th St",
+            "CALLE 6a",
+            "SIXTH ST.",
+            "SIXTH STR.",
+            "SIXTH STREET",
+            "Sixth St",
+            "Sixth St Extension.",
+            "Sixth St.",
+            "proposed line of Sixth Street."
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-016",
+            "mr003-166-p1",
+            "mr003-569",
+            "mr006-033",
+            "mr011-042",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr053-068",
+            "mr053-071",
+            "mr078-055",
+            "mr084-053",
+            "tr0009-075",
+            "tr0009-100a",
+            "tr0010-175a",
+            "tr0012-101",
+            "tr0023-066",
+            "tr0159-032-p2",
+            "tr0273-017",
+            "tr0319-001-p1"
+          ]
+        },
+        {
+          "id": "ward-st",
+          "display": "Ward Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet"
+          ],
+          "ink": [
+            "WARD ST."
+          ],
+          "docs": [
+            "mr003-046-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Hartford Avenue",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Lucas Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "lucas-avenue",
+          "display": "Lucas Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Lucas Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "LUCAS AVENUE",
+            "Lucas Ave"
+          ],
+          "docs": [
+            "mr006-115",
+            "mr010-081",
+            "tr0015-166a-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Maryland Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "potts-st",
+          "display": "Potts Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Maryland Street by another sheet"
+          ],
+          "ink": [
+            "POTTS ST."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr003-046-p2"
+          ]
+        },
+        {
+          "id": "maryland-street",
+          "display": "Maryland Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Maryland Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "MARYLAND STREET"
+          ],
+          "docs": [
+            "tr0588-055"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Witmer Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "witmer-street",
+          "display": "Witmer Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Witmer Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "WITMER",
+            "WITMER STREET"
+          ],
+          "docs": [
+            "tr0015-166a-p1",
+            "tr0015-166a-p2"
+          ]
+        }
+      ]
+    }
+  ]
+}

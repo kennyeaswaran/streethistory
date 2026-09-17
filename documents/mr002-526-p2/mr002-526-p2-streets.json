@@ -1,0 +1,401 @@
+{
+  "document": "mr002-526-p2",
+  "image": "mr002-526-p2-100dpi.png",
+  "imageSize": [1105, 1736],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr002-526-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [108, 858],
+    [84, 41],
+    [903, 41],
+    [930, 747]
+  ],
+  "coverageLl": [
+    [34.051667, -118.235654],
+    [34.051275, -118.23288],
+    [34.048968, -118.233433],
+    [34.04929, -118.235834]
+  ],
+  "streets": [
+    {
+      "name": "Banning Street",
+      "runs": [
+        {
+          "px": [
+            [799, 151],
+            [798, 133],
+            [797, 126],
+            [793, 41]
+          ],
+          "ll": [
+            [34.049324, -118.233733],
+            [34.049317, -118.233674],
+            [34.049313, -118.233649],
+            [34.049277, -118.233359]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Vignes Street",
+          "px": [799, 151],
+          "ll": [34.049324, -118.233733],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Garey Street",
+      "runs": [
+        {
+          "px": [
+            [97, 474],
+            [183, 470],
+            [321, 464],
+            [358, 462],
+            [430, 459],
+            [468, 457],
+            [492, 456]
+          ],
+          "ll": [
+            [34.051482, -118.234349],
+            [34.051237, -118.234395],
+            [34.050844, -118.234467],
+            [34.050741, -118.234487],
+            [34.050537, -118.234525],
+            [34.050428, -118.234543],
+            [34.050359, -118.234557]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Ducommun Street",
+          "px": [-129, 483],
+          "ll": [34.052124, -118.234228],
+          "insideCoverage": false
+        },
+        {
+          "name": "Jackson Street",
+          "px": [183, 470],
+          "ll": [34.051237, -118.234395],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [492, 456],
+          "ll": [34.050359, -118.234557],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Jackson Street",
+      "runs": [
+        {
+          "px": [
+            [183, 470],
+            [182, 449],
+            [182, 443],
+            [178, 325],
+            [173, 204],
+            [173, 201],
+            [172, 179],
+            [172, 161],
+            [171, 158],
+            [167, 41]
+          ],
+          "ll": [
+            [34.051237, -118.234395],
+            [34.051228, -118.234325],
+            [34.051225, -118.234305],
+            [34.051171, -118.233903],
+            [34.051115, -118.233491],
+            [34.051114, -118.233481],
+            [34.051104, -118.233406],
+            [34.051095, -118.233344],
+            [34.051094, -118.233335],
+            [34.051042, -118.232936]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Garey Street",
+          "px": [183, 470],
+          "ll": [34.051237, -118.234395],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [172, 179],
+          "ll": [34.051104, -118.233406],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Temple Street",
+      "runs": [
+        {
+          "px": [
+            [506, 804],
+            [504, 794],
+            [499, 766],
+            [494, 656],
+            [493, 498],
+            [492, 456],
+            [488, 283],
+            [485, 198],
+            [484, 166],
+            [484, 141],
+            [481, 41]
+          ],
+          "ll": [
+            [34.050516, -118.235741],
+            [34.050516, -118.235706],
+            [34.050513, -118.235606],
+            [34.050466, -118.235234],
+            [34.050381, -118.234698],
+            [34.050359, -118.234557],
+            [34.050273, -118.233969],
+            [34.050232, -118.233682],
+            [34.050218, -118.233572],
+            [34.050205, -118.233488],
+            [34.050158, -118.233148]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Garey Street",
+          "px": [492, 456],
+          "ll": [34.050359, -118.234557],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [484, 166],
+          "ll": [34.050218, -118.233572],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Vignes Street",
+      "runs": [
+        {
+          "px": [
+            [907, 147],
+            [856, 149],
+            [799, 151],
+            [778, 152],
+            [513, 168],
+            [484, 166],
+            [459, 168],
+            [408, 169],
+            [354, 171],
+            [347, 172],
+            [222, 177],
+            [197, 178],
+            [188, 178],
+            [172, 179],
+            [152, 179],
+            [145, 180],
+            [88, 182]
+          ],
+          "ll": [
+            [34.049016, -118.233794],
+            [34.049161, -118.233766],
+            [34.049324, -118.233733],
+            [34.049382, -118.233723],
+            [34.050139, -118.233598],
+            [34.050218, -118.233572],
+            [34.050289, -118.233561],
+            [34.050435, -118.233531],
+            [34.050589, -118.233502],
+            [34.050607, -118.233499],
+            [34.050962, -118.233432],
+            [34.051033, -118.233419],
+            [34.051058, -118.233414],
+            [34.051104, -118.233406],
+            [34.05116, -118.233394],
+            [34.051181, -118.23339],
+            [34.051342, -118.23336]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "1st Street",
+          "px": [1127, 136],
+          "ll": [34.048391, -118.233905],
+          "insideCoverage": false
+        },
+        {
+          "name": "Banning Street",
+          "px": [799, 151],
+          "ll": [34.049324, -118.233733],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ducommun Street",
+          "px": [-142, 192],
+          "ll": [34.051995, -118.233238],
+          "insideCoverage": false
+        },
+        {
+          "name": "Jackson Street",
+          "px": [172, 179],
+          "ll": [34.051104, -118.233406],
+          "insideCoverage": true
+        },
+        {
+          "name": "Temple Street",
+          "px": [484, 166],
+          "ll": [34.050218, -118.233572],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Banning Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "banning-street",
+          "display": "Banning Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Banning Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "Banning Street"
+          ],
+          "docs": [
+            "tr0145-062"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Garey Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "garey",
+          "display": "Garey Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Garey Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "GAREY STREET"
+          ],
+          "docs": [
+            "mr003-060-p2"
+          ]
+        },
+        {
+          "id": "messer-street",
+          "display": "Messer Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Garey Street by another sheet"
+          ],
+          "ink": [
+            "Messer STREET."
+          ],
+          "docs": [
+            "mr002-092-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Jackson Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "turner-street",
+          "display": "Turner Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Jackson Street by another sheet"
+          ],
+          "ink": [
+            "Turner Street"
+          ],
+          "docs": [
+            "tr0145-062"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Temple Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "requena-street",
+          "display": "Requena Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet"
+          ],
+          "ink": [
+            "REQUENA STREET"
+          ],
+          "docs": [
+            "mr003-146-p2"
+          ]
+        },
+        {
+          "id": "temple",
+          "display": "Temple Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Temple Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "TEMPLE STREET",
+            "Temple Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Vignes Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "vignes-street",
+          "display": "Vignes Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Vignes Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "VIGNES STREET"
+          ],
+          "docs": [
+            "tr0145-062"
+          ]
+        }
+      ]
+    }
+  ]
+}

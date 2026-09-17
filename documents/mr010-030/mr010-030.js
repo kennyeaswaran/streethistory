@@ -253,7 +253,7 @@ module.exports = {
       ],
       "basis": "alignment",
       "note": "North-south corridor between the two blocks of numbered lots, without a modern match in the supplied street list.",
-      "name": "belmont"
+      "name": "belmont-kincaid"
     },
     {
       "kind": "vanished",

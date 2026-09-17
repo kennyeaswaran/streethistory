@@ -1,0 +1,351 @@
+{
+  "document": "mr005-405",
+  "image": "mr005-405-100dpi.png",
+  "imageSize": [1113, 1694],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr005-405-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [303, 1653],
+    [1012, 1626],
+    [1097, 138],
+    [330, 600]
+  ],
+  "coverageLl": [
+    [34.048292, -118.267971],
+    [34.047859, -118.26692],
+    [34.049606, -118.265624],
+    [34.049551, -118.267102]
+  ],
+  "streets": [
+    {
+      "name": "8th Place",
+      "runs": [
+        {
+          "px": [
+            [327, 733],
+            [394, 733],
+            [439, 736],
+            [483, 743],
+            [526, 755],
+            [568, 772],
+            [607, 793],
+            [644, 819],
+            [678, 848],
+            [709, 881],
+            [735, 917],
+            [758, 955],
+            [776, 996],
+            [853, 1168],
+            [878, 1226],
+            [909, 1281],
+            [945, 1333],
+            [977, 1369],
+            [1013, 1400],
+            [1024, 1408]
+          ],
+          "ll": [
+            [34.049392, -118.267211],
+            [34.049348, -118.267114],
+            [34.049315, -118.267051],
+            [34.049277, -118.266992],
+            [34.049234, -118.266939],
+            [34.049186, -118.266892],
+            [34.049134, -118.266851],
+            [34.049079, -118.266818],
+            [34.049021, -118.266791],
+            [34.048961, -118.266773],
+            [34.0489, -118.266763],
+            [34.048839, -118.266761],
+            [34.048777, -118.266766],
+            [34.048519, -118.26679],
+            [34.048432, -118.2668],
+            [34.048344, -118.266799],
+            [34.048258, -118.266787],
+            [34.048194, -118.266768],
+            [34.048132, -118.26674],
+            [34.048115, -118.26673]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [4, 726],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": false
+        },
+        {
+          "name": "Garland Avenue",
+          "px": [4, 726],
+          "ll": [34.049613, -118.267675],
+          "insideCoverage": false
+        },
+        {
+          "name": "Golden Avenue",
+          "px": [782, 1157],
+          "ll": [34.048579, -118.266884],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [1299, 1427],
+          "ll": [34.047912, -118.266346],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Golden Avenue",
+      "runs": [
+        {
+          "px": [
+            [712, 1146],
+            [699, 1478],
+            [697, 1521]
+          ],
+          "ll": [
+            [34.048638, -118.266977],
+            [34.048244, -118.267259],
+            [34.048194, -118.267295]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Place",
+          "px": [782, 1157],
+          "ll": [34.048579, -118.266884],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [862, 1586],
+          "ll": [34.048006, -118.267106],
+          "insideCoverage": true
+        },
+        {
+          "name": "James M Wood Boulevard",
+          "px": [697, 1521],
+          "ll": [34.048194, -118.267295],
+          "insideCoverage": true
+        },
+        {
+          "name": "Sunbury Street",
+          "px": [583, 1518],
+          "ll": [34.048272, -118.267457],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "James M Wood Boulevard",
+      "runs": [
+        {
+          "px": [
+            [306, 1517],
+            [470, 1515],
+            [697, 1521],
+            [959, 1548],
+            [1016, 1549]
+          ],
+          "ll": [
+            [34.048455, -118.267858],
+            [34.04835, -118.26762],
+            [34.048194, -118.267295],
+            [34.047988, -118.266936],
+            [34.047949, -118.266853]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Garland Avenue",
+          "px": [3, 1520],
+          "ll": [34.048652, -118.268302],
+          "insideCoverage": false
+        },
+        {
+          "name": "Golden Avenue",
+          "px": [697, 1521],
+          "ll": [34.048194, -118.267295],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [993, 1599],
+          "ll": [34.047904, -118.266927],
+          "insideCoverage": true
+        },
+        {
+          "name": "Sunbury Street",
+          "px": [470, 1515],
+          "ll": [34.04835, -118.26762],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Sunbury Street",
+      "metres": 20.1
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "8th Place",
+      "continuesInto": [
+        "8th Street",
+        "James M Wood Boulevard"
+      ],
+      "candidates": [
+        {
+          "id": "ruby-st",
+          "display": "Ruby Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place by another sheet"
+          ],
+          "ink": [
+            "RUBY ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        },
+        {
+          "id": "lincoln-street",
+          "display": "Lincoln Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place by another sheet"
+          ],
+          "ink": [
+            "Lincoln Street"
+          ],
+          "docs": [
+            "mr021-087"
+          ]
+        },
+        {
+          "id": "eighth-street",
+          "display": "8th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street, which 8th Place runs straight into"
+          ],
+          "ink": [
+            "8TH ST",
+            "8TH STREET",
+            "8th St",
+            "8th St.",
+            "8th Street",
+            "CALLE 8a",
+            "EAST EIGHTH STREET",
+            "EIGHTH ST",
+            "EIGHTH ST.",
+            "EIGHTH STREET",
+            "Eighth St",
+            "Eighth St.",
+            "Eighth Street",
+            "new 8th Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-569",
+            "mr011-008",
+            "mr018-092",
+            "mr021-046",
+            "mr021-087",
+            "mr026-060",
+            "mr029-026",
+            "mr029-085",
+            "mr053-065",
+            "mr053-068",
+            "mr054-051",
+            "mr055-086",
+            "mr060-088",
+            "mr070-051",
+            "pm017-045",
+            "tr0005-156a",
+            "tr0007-085",
+            "tr0013-048",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        },
+        {
+          "id": "ninth-street",
+          "display": "9th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on James M Wood Boulevard, which 8th Place runs straight into"
+          ],
+          "ink": [
+            "NINTH ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Golden Avenue",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "James M Wood Boulevard",
+      "continuesInto": [
+        "8th Place"
+      ],
+      "candidates": [
+        {
+          "id": "ninth-street",
+          "display": "9th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on James M Wood Boulevard by another sheet"
+          ],
+          "ink": [
+            "NINTH ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        },
+        {
+          "id": "ruby-st",
+          "display": "Ruby Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place, which James M Wood Boulevard runs straight into"
+          ],
+          "ink": [
+            "RUBY ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        },
+        {
+          "id": "lincoln-street",
+          "display": "Lincoln Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place, which James M Wood Boulevard runs straight into"
+          ],
+          "ink": [
+            "Lincoln Street"
+          ],
+          "docs": [
+            "mr021-087"
+          ]
+        }
+      ]
+    }
+  ]
+}

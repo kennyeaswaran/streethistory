@@ -47,5 +47,15 @@ module.exports = {
             "this 17th day of November, 1893. T. E. ROWAN, Mayor." }
   ],
 
-  rows: []
+  rows: [
+    { kind: "change", from: "myrtle", to: "wall-street",
+      // "that certain street ... heretofore known as MYRTLE AVENUE" — the whole
+      // name, no stretch named (change-rows-amendment §2). It lands where a
+      // sheet letters Myrtle: the 1886 Maple Avenue Tract (mr011-063).
+      scope: "whole-name",
+      says: ["title", "sec-1", "certification"],
+      mechanism: "renaming",
+      note: "Adopted Nov. 13, approved Nov. 17, 1893; the Herald of Nov. 14 (lah-1893-11-14) reports the passage and the Oct. 17 paper (lah-1893-10-17) the week's postponement.",
+      confirmed: false }
+  ]
 };
