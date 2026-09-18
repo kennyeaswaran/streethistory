@@ -15,7 +15,7 @@ module.exports = {
   title: "Map of the Kennedy Tract, Los Angeles, Cal. (surveyed May 1884 by E. T. Wright)",
   shortTitle: "Kennedy Tract",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf",
-  scan: null,
+  scan: "documents/mr006-193/mr006-193.pdf",
   transcription: null,
 
   date: { on: "1885-01-14" },   
@@ -44,9 +44,111 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  // The polygon strays onto these; the document does not inform about them.
+  // NOT the same as a absent row, which says the sheet covers the ground and
+  // draws nothing there (MODEL-SPEC §4.4, §5.2).
+  coverageExcept: [{"street":"Hartford Avenue","from":null,"to":null}],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
-  rows: []
+  sweptFully: true,
+  sweptFor: ["8th Place","8th Street","Garland Avenue","Hartford Avenue","James M Wood Boulevard","Witmer Street"],
+
+  rows: [
+    {
+      "kind": "state",
+      "asWritten": "Lincoln Place",
+      "street": "8th Place",
+      "from": {
+        "px": [
+          745,
+          462
+        ]
+      },
+      "to": {
+        "px": [
+          964,
+          468
+        ]
+      },
+      "basis": "alignment",
+      "note": "East of Holmes St., the modern 8th Place trace follows the eastern end of the roadway lettered Lincoln Place.",
+      "name": "lincoln-place"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Lincoln Place",
+      "street": "8th Street",
+      "from": {
+        "px": [
+          187,
+          473
+        ]
+      },
+      "to": {
+        "px": [
+          863,
+          398
+        ]
+      },
+      "basis": "alignment",
+      "note": "The modern 8th Street trace follows Lincoln Place, bending northward only after it leaves the historical corridor near the northeast edge.",
+      "name": "lincoln-place"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Holmes St.",
+      "street": "Garland Avenue",
+      "from": {
+        "px": [
+          745,
+          396
+        ]
+      },
+      "to": {
+        "px": [
+          744,
+          848
+        ]
+      },
+      "basis": "alignment",
+      "name": "holmes-st"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Ninth Street",
+      "street": "James M Wood Boulevard",
+      "from": {
+        "px": [
+          195,
+          850
+        ]
+      },
+      "to": {
+        "px": [
+          951,
+          846
+        ]
+      },
+      "basis": "alignment",
+      "name": "ninth-street"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Bryan St.",
+      "street": "Witmer Street",
+      "from": {
+        "px": [
+          282,
+          471
+        ]
+      },
+      "to": {
+        "px": [
+          279,
+          849
+        ]
+      },
+      "basis": "alignment",
+      "name": "bryan-st"
+    }
+  ]
 };

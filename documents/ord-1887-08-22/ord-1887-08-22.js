@@ -73,8 +73,8 @@ module.exports = {
             "the following vote: Ayes, Councilmen, Collins, Frankenfield, Sibbs, Heyans, " +
             "Kuhrts, Lovell, Teed, and President Breed (8); Noes, none.",
       note: "Frankenfield and Kuhrts are corroborated as Los Angeles councilmen of this " +
-            "period; “Sibbs”, “Heyans” and “Teed” are uncertain readings and want a " +
-            "second pass. None of them bears on the renaming." },
+            "period; “Sibbs” and “Heyans” are uncertain readings and want a " +
+            "second pass. ✔ “TEED” IS NO LONGER ONE OF THEM, 2026-09-18: Matthew Teed (1828–1904), the carpenter and builder of `teed-street`, is documented on the Common Council for a term running Dec. 1880 to Dec. 1888, so a Councilman Teed voting in August 1887 is exactly what the record should show. ⚠ NOT the Freeman G. Teed who signs as City Clerk in the 1889 documents here and sits on the council from 1892 — see `teed-street` for the rule that separates them. None of them bears on the renaming." },
     { id: "ordinance",
       text: "Ordinance No. — An Ordinance changing the name of Virgin Street. " +
             "The Mayor and Council of the city of Los Angeles do ordain as follows: " +

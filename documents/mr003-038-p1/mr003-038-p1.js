@@ -1,12 +1,19 @@
 module.exports = {
   id: "mr003-038-p1",
-  title: "Plan of the Norris",
-  shortTitle: "Norris Plan",
+  title: "Plan of the Morris, Main & Pico Streets",
+  shortTitle: "Morris Plan",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf",
   scan: "documents/mr003-038-p1/mr003-038-p1.pdf",
   transcription: null,
 
-  date: { before: "1915-05-04" },   
+  // DATE CORRECTED 2026-09-18 (was `before: 1915-05-04`, and the title read
+  // "Norris"). The sheet itself carries no date; the facing page, M.R. 3-39
+  // (mr003-038-p2, the same county PDF), is "Recorded May 4th A.D. 1875" by J. W.
+  // Gillette — the "1875" was misread as 1915. This plan is M.R. 3-38, and Book 3
+  // is recorded in page order: p. 33 is Apr. 29, 1875 (mr003-033) and p. 46 is
+  // May 6, 1875 (mr003-046-p1). So it was recorded between those two dates. The
+  // title is "Plan of the MORRIS … Main & Pico Streets", not Norris.
+  date: { after: "1875-04-29", before: "1875-05-06" },
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.

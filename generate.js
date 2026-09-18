@@ -36,8 +36,13 @@ const OUT_DIR = path.join(__dirname, "generated");
 // the vocabulary out of streets-data.js was self-referential the moment that
 // file became generated output (MODEL-IMPLEMENTATION checklist A, done
 // 2026-09-15). `unresearched` is declared there now too, so nothing is injected.
-const { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS, categoryAncestors, normalizeName } =
+const { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS, categoryAncestors, normalizeName, WAY_STREET_KEYS } =
   require(path.join(__dirname, "site-config.js"));
+// A street key from WAY_STREET_KEYS is "<name> (<label>)": the label tells a
+// branch apart, the NAME is what the roadway is called and what binds to an
+// entity ("5th Street (south branch)" is 5th Street).
+const BRANCH_KEYS = new Set(Object.values(WAY_STREET_KEYS));
+const streetDisplayName = key => BRANCH_KEYS.has(key) ? key.replace(/ \([^)]*\)$/, "") : key;
 const GEN_CATEGORIES = CATEGORIES;
 
 // ---------------------------------------------------------------------------
@@ -85,7 +90,7 @@ const streets = new Map(); // name -> { ways:[], points:[], orientation, axis }
 for (const w of geom.elements) {
   if (!w.geometry || !w.tags || !w.tags.name) continue;
   if (EXCLUDE_NAMES.has(w.tags.name)) continue;
-  const n = normalizeName(w.tags.name);
+  const n = normalizeName(w.tags.name, w.id);
   if (!streets.has(n)) streets.set(n, { ways: [], points: [] });
   const s = streets.get(n);
   s.ways.push(w);
@@ -223,9 +228,20 @@ function entityHasRowsOnStreet(id, streetName) {
   return false;
 }
 
+function entityOnlyVanished(id) {
+  let any = false;
+  for (const doc of nonOsmDocs) for (const r of doc.rows) {
+    const ids = r.kind === "change" ? [r.from, r.to] : [r.name];
+    if (!ids.map(resolveEntity).includes(id)) continue;
+    any = true;
+    if (r.kind !== "vanished") return false;
+  }
+  return any;
+}
 const slug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 const osmBinding = new Map(); // street name -> entity id
 for (const streetName of streets.keys()) {
+  const bindName = streetDisplayName(streetName);
   // Any form of the entity's CURRENT spelling period binds — "Pico Street"
   // and "Pico Boulevard" listed together mean both are in force, and OSM
   // says the second (2026-09-17; matching only forms[0] minted a stub beside
@@ -235,9 +251,9 @@ for (const streetName of streets.keys()) {
   // turn a clean bind into an ambiguity; the other forms are the fallback.
   const currentForms = e => e.spellings[e.spellings.length - 1].forms;
   const byDisplay = Object.entries(entities)
-    .filter(([, e]) => formMatches(streetName, displayForm(e))).map(([id]) => id);
+    .filter(([, e]) => formMatches(bindName, displayForm(e))).map(([id]) => id);
   const matches = byDisplay.length ? byDisplay : Object.entries(entities)
-    .filter(([, e]) => currentForms(e).some(f => formMatches(streetName, f))).map(([id]) => id);
+    .filter(([, e]) => currentForms(e).some(f => formMatches(bindName, f))).map(([id]) => id);
   if (matches.length === 1) { osmBinding.set(streetName, matches[0]); continue; }
   if (matches.length > 1) {
     // Disambiguate by geometry: the entity whose known (documented) extents
@@ -245,6 +261,12 @@ for (const streetName of streets.keys()) {
     // of guessing when this fails.
     const onStreet = matches.filter(id => entityHasRowsOnStreet(id, streetName));
     if (onStreet.length === 1) { osmBinding.set(streetName, onStreet[0]); continue; }
+    // A ghost street (§5.3: every row of the entity is a `vanished` trace)
+    // cannot be the name a living way bears today; drop it from the tie
+    // (2026-09-17: belmont-kincaid vs belmont-ave left modern Belmont Avenue
+    // unbound, and every documented stretch of it without a current name).
+    const living = matches.filter(id => !entityOnlyVanished(id));
+    if (living.length === 1) { osmBinding.set(streetName, living[0]); report.notes.push(`OSM "${streetName}": bound to ${living[0]}; ${matches.filter(m => m !== living[0]).join(", ")} match(es) the name but exist only as vanished trace(s)`); continue; }
     report.ambiguous.push(`OSM "${streetName}" matches entities ${matches.join(", ")} — not bound`);
     continue;
   }
@@ -1332,7 +1354,7 @@ for (const streetName of [...streets.keys()].sort()) {
     const cur = tl.find(p => p.end === null);
     const entry = {
       label: labelFor(streetName, seg, i, merged, street),
-      name: streetName,
+      name: streetDisplayName(streetName),
       entityId: cur ? cur.entity : null,   // §6.6: entity queries without the corpus
       namedAfter: na.namedAfter,
       namedAfterLink: na.namedAfterLink || null,
@@ -1429,6 +1451,12 @@ for (const streetName of [...streets.keys()].sort()) {
     // anyone looked, which the old pair could not.
     if (e && e.basis) cats.push("basis-" + e.basis);
     if (e && e.searched) cats.push("searched-" + e.searched);
+    // An entity minted in the tool and not yet researched (names-new.js,
+    // `pendingResearch`) carries no `basis` yet. What is true of it is exactly
+    // "no candidate, nobody has looked": say so, rather than emit a segment
+    // with no categories at all, which the map cannot file and check-data.js
+    // refuses (2026-09-18: Rosabell Street, Valencia Street).
+    if (e && e.pendingResearch && !e.basis) { cats.push("basis-none"); if (!e.searched) cats.push("searched-none"); }
     // A street the base map mentions and nothing else does. Not the same as
     // "researched and not found", which is `basis-none` + `searched-extensive`.
     if (e && e.stub) cats.push("stub");
@@ -1489,7 +1517,7 @@ for (const streetName of [...streets.keys()].sort()) {
     delete single.gapAfter;
     STREET_DATA[streetName] = single;
   } else {
-    STREET_DATA[streetName] = { name: streetName, orientation: street.orientation, segments: ordered };
+    STREET_DATA[streetName] = { name: streetDisplayName(streetName), orientation: street.orientation, segments: ordered };
   }
 
   // Search index rows: every recorded form of every entity seen on this street.
@@ -1534,6 +1562,7 @@ for (const [id, e] of Object.entries(entities)) {
   if (e.searched === "none" && !cats.includes("unresearched")) cats.push("unresearched");
   if (e.basis) cats.push("basis-" + e.basis);
   if (e.searched) cats.push("searched-" + e.searched);
+  if (e.pendingResearch && !e.basis) { cats.push("basis-none"); if (!e.searched) cats.push("searched-none"); }
   if (e.stub) cats.push("stub");
   const full = [...new Set(cats.flatMap(c => [c, ...categoryAncestors(c)]))];
   if (full.length) NAME_CATEGORY_INDEX[id] = full;

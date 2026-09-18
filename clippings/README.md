@@ -39,6 +39,16 @@ happened to the four 1888–1919 items Kenny clipped in the same batch.
 | `LAH18870617-kiefer-tract-lots.jpg` | `LAH18870617.1.4` | For-sale column: *"Pacific avenue, **Kiefer tract**, lot 40x140 to an alley; $750, one-half cash"*, beside **Goodwin** and **Weisendanger** tract lots | thin — confirms the Kiefer tract existed and was selling; the man is still untraced |
 | `LAH18870405-pacific-coast-land-bureau.jpg` | `LAH18870405.1.7` | The Pacific Coast Land Bureau's auction colophon — San Francisco, Wendell Easton president, Geo. W. Frink general manager, Easton & Eldridge auctioneers | ✘ **nothing yet.** Kept because boom-era auction houses named streets, and none of these four surnames has been checked against the corpus |
 
+## Not newspaper cuttings
+
+Two more things live here because they are the same KIND of evidence — they back
+a namesake and say nothing about the ground — and neither warrants a document.
+
+| File | What it is | Supports |
+|---|---|---|
+| `1889-la-railway-map.jpg` | ★★ A published **"Map of Los Angeles Railway and Railroad circa 1889"**, supplied 2026-09-17 with the Echo Park History thread on Diamond Street. It glosses each cable-line street with its modern name: *"Texas St. (Belmont Ave.)"*, *"Diamond St. (Beverly Blvd.)"*, *"Lake Shore Ave. (Glendale Blvd.)"*, *"Fort St. (Broadway)"*, *"San Fernando St. (N. Spring)"*, *"Downey Ave. (N. Broadway)"*, *"Pritchard St. (Lincoln Park Ave.)"*, and shows the Temple Street and Second Street cable lines entire. ⚠ The parentheses are a modern author's annotation, not an 1889 fact. | ★★ `diamond-street`, `texas-st`, `lake-shore-ave` |
+| `crown-hill-chronicles/` (5 PDFs) | Saved pages of **crownhillchronicles.blogspot.com** (2009), a neighbourhood blog, supplied 2026-09-17 after the site refused automated fetching. ⚠⚠ **HANDLE WITH TONGS.** Its own commenters correct the dating of its photographs by a decade, and its claim that the Witmers arrived in 1850 contradicts Kines's November 1884. Kenny flagged it as unreliable when supplying it. The one durable thing in it is `the-real-o.g.pdf`: *"Henry and his two siblings constructed large Victorian estates next door to one another on a dirt road and named it 'Witmer Street'"* — which is consistent with everything else here. ✘ It does **not** name the Colina Park subdividers, which was the reason for wanting it; the sheet's own title block did that instead. | `witmer-street` |
+
 ## Provenance
 
 All ten supplied by **Kenny, 2026-09-17**, from CDNC phrase searches run against

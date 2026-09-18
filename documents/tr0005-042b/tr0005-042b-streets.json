@@ -1,0 +1,236 @@
+{
+  "document": "tr0005-042b",
+  "image": "tr0005-042b-100dpi.png",
+  "imageSize": [1155, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0005-042b-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [341, 507],
+    [158, 1741],
+    [686, 1823],
+    [964, 550]
+  ],
+  "coverageLl": [
+    [34.050293, -118.262361],
+    [34.048752, -118.26332],
+    [34.048405, -118.262532],
+    [34.049955, -118.261402]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [948, 622],
+            [853, 620],
+            [701, 614],
+            [589, 609],
+            [511, 605],
+            [329, 589]
+          ],
+          "ll": [
+            [34.049867, -118.261466],
+            [34.049913, -118.261616],
+            [34.049989, -118.261851],
+            [34.050047, -118.262025],
+            [34.050087, -118.262146],
+            [34.050191, -118.262425]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Francisco Street",
+          "px": [961, 622],
+          "ll": [34.049862, -118.261446],
+          "insideCoverage": false
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [-2, 592],
+          "ll": [34.050337, -118.262948],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [716, 1688],
+            [562, 1651],
+            [492, 1636],
+            [436, 1622],
+            [380, 1608],
+            [335, 1596],
+            [292, 1582],
+            [186, 1550]
+          ],
+          "ll": [
+            [34.04857, -118.262411],
+            [34.048687, -118.262633],
+            [34.048739, -118.262736],
+            [34.048783, -118.262817],
+            [34.048827, -118.262897],
+            [34.048863, -118.262962],
+            [34.0489, -118.263022],
+            [34.04899, -118.263172]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Francisco Street",
+          "px": [492, 1636],
+          "ll": [34.048739, -118.262736],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Francisco Street",
+      "metres": 24.2
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "7th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "seventh-street",
+          "display": "7th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 7th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "7TH ST.",
+            "7TH STREET",
+            "7th ST",
+            "7th Street",
+            "CALLE 7a",
+            "SEVENTH ST",
+            "SEVENTH ST.",
+            "SEVENTH STR.",
+            "SEVENTH STREET",
+            "Seventh St",
+            "Seventh St.",
+            "Seventh Street",
+            "Seventh Street."
+          ],
+          "docs": [
+            "11824",
+            "mr003-016",
+            "mr003-569",
+            "mr005-566",
+            "mr006-033",
+            "mr006-039",
+            "mr009-095",
+            "mr011-063",
+            "mr013-091",
+            "mr014-034",
+            "mr015-052",
+            "mr018-025",
+            "mr018-063",
+            "mr018-092",
+            "mr021-046",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr053-068",
+            "mr053-071",
+            "mr054-051",
+            "mr055-014",
+            "mr055-081",
+            "mr060-088",
+            "mr066-064",
+            "mr070-084",
+            "tr0001-046",
+            "tr0005-056a",
+            "tr0009-100a",
+            "tr0011-196",
+            "tr0023-054c",
+            "tr0030-069",
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "8th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "eighth-street",
+          "display": "8th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "8TH ST",
+            "8TH STREET",
+            "8th St",
+            "8th St.",
+            "8th Street",
+            "CALLE 8a",
+            "EAST EIGHTH STREET",
+            "EIGHTH ST",
+            "EIGHTH ST.",
+            "EIGHTH STREET",
+            "Eighth St",
+            "Eighth St.",
+            "Eighth Street",
+            "new 8th Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-569",
+            "mr011-008",
+            "mr018-092",
+            "mr021-046",
+            "mr021-087",
+            "mr026-060",
+            "mr029-026",
+            "mr029-085",
+            "mr053-065",
+            "mr053-068",
+            "mr054-051",
+            "mr055-086",
+            "mr060-088",
+            "mr070-051",
+            "pm017-045",
+            "tr0005-156a",
+            "tr0007-085",
+            "tr0013-048",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        },
+        {
+          "id": "lincoln-place",
+          "display": "Lincoln Place",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet"
+          ],
+          "ink": [
+            "Lincoln Place"
+          ],
+          "docs": [
+            "mr006-193"
+          ]
+        }
+      ]
+    }
+  ]
+}

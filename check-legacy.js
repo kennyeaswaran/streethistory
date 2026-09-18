@@ -55,7 +55,7 @@ const geom = g.data || g;
 const extent = new Map(); // name -> { lat:[min,max], lng:[min,max] }
 for (const w of geom.elements) {
   if (!w.geometry || !w.tags || !w.tags.name) continue;
-  const n = normalizeName(w.tags.name);
+  const n = normalizeName(w.tags.name, w.id);
   const e = extent.get(n) || { lat: [Infinity, -Infinity], lng: [Infinity, -Infinity] };
   for (const p of w.geometry) {
     e.lat[0] = Math.min(e.lat[0], p.lat); e.lat[1] = Math.max(e.lat[1], p.lat);
@@ -73,8 +73,12 @@ function band(unit, isNS, ext) {
   return [lo === null ? full[0] : lo, hi === null ? full[1] : hi];
 }
 const overlap = (a, b) => Math.max(0, Math.min(a[1], b[1]) - Math.max(a[0], b[0]));
+// Only the TRAILING type word is dropped — "Court Street" is the name Court,
+// not nothing (2026-09-18: stripping type words anywhere made it match itself
+// on neither side and flagged Court Street as lost from Court Street).
 const canon = s => (s || "").toLowerCase()
-  .replace(/[“”"']/g, "").replace(/\(.*?\)/g, " ").replace(/\b(street|st|avenue|ave|boulevard|blvd|place|pl|road|rd|court|ct|lane|ln)\b\.?/g, " ")
+  .replace(/[“”"']/g, "").replace(/\(.*?\)/g, " ").trim()
+  .replace(/\s+(street|st|avenue|ave|boulevard|blvd|place|pl|road|rd|court|ct|lane|ln|alley|drive|dr|way|terrace|parkway|freeway)\.?$/, "")
   .replace(/[^a-z0-9]+/g, " ").trim();
 const nameForms = s => { // "Calle de los Chapules (“Grasshopper Street”)" → both forms
   const inner = (s.match(/\((.*?)\)/) || [])[1];

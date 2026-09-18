@@ -1,0 +1,145 @@
+{
+  "document": "tr0006-051a",
+  "image": "tr0006-051a-100dpi.png",
+  "imageSize": [1182, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0006-051a-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [-8, 892],
+    [229, 1693],
+    [864, 1673],
+    [1152, 860]
+  ],
+  "coverageLl": [
+    [34.055766, -118.228696],
+    [34.054871, -118.228813],
+    [34.054626, -118.228047],
+    [34.055315, -118.227298]
+  ],
+  "streets": [
+    {
+      "name": "Cesar E Chavez Avenue",
+      "runs": [
+        {
+          "px": [
+            [1068, 1098],
+            [868, 1089],
+            [344, 1080],
+            [47, 1076]
+          ],
+          "ll": [
+            [34.055113, -118.227517],
+            [34.055205, -118.227751],
+            [34.055432, -118.228371],
+            [34.05556, -118.228723]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Keller Street",
+          "px": [443, 1203],
+          "ll": [34.055269, -118.228314],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Keller Street",
+      "runs": [
+        {
+          "px": [
+            [477, 1685],
+            [483, 1667],
+            [523, 1552],
+            [568, 1423],
+            [542, 1327]
+          ],
+          "ll": [
+            [34.054775, -118.228514],
+            [34.054791, -118.228497],
+            [34.054889, -118.228392],
+            [34.054998, -118.228275],
+            [34.055105, -118.228258]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [443, 1203],
+          "ll": [34.055269, -118.228314],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Cesar E Chavez Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "C CORTA",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        },
+        {
+          "id": "cesar-e-chavez-avenue",
+          "display": "Cesar E Chavez Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Keller Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "keller",
+          "display": "Keller Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,665 @@
+{
+  "document": "tr0001-038a",
+  "image": "tr0001-038a-100dpi.png",
+  "imageSize": [1177, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0001-038a-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [389, 460],
+    [858, 438],
+    [843, 1231],
+    [376, 1230]
+  ],
+  "coverageLl": [
+    [34.048119, -118.266814],
+    [34.047522, -118.265376],
+    [34.045566, -118.26674],
+    [34.046216, -118.268133]
+  ],
+  "streets": [
+    {
+      "name": "8th Place",
+      "runs": [
+        {
+          "px": [
+            [425, 458],
+            [445, 469],
+            [467, 477],
+            [489, 483],
+            [541, 488],
+            [611, 491],
+            [737, 501],
+            [765, 503]
+          ],
+          "ll": [
+            [34.048073, -118.266704],
+            [34.048019, -118.266661],
+            [34.047968, -118.26661],
+            [34.047923, -118.266552],
+            [34.047839, -118.266406],
+            [34.047734, -118.266201],
+            [34.047534, -118.265842],
+            [34.047488, -118.265761]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Georgia Street",
+          "px": [765, 503],
+          "ll": [34.047488, -118.265761],
+          "insideCoverage": true
+        },
+        {
+          "name": "Golden Avenue",
+          "px": [293, 329],
+          "ll": [34.048579, -118.266884],
+          "insideCoverage": false
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [544, 457],
+          "ll": [34.047912, -118.266346],
+          "insideCoverage": true
+        },
+        {
+          "name": "James M Wood Boulevard",
+          "px": [765, 503],
+          "ll": [34.047488, -118.265761],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bixel Street",
+      "runs": [
+        {
+          "px": [
+            [458, 1156],
+            [458, 1109],
+            [454, 974],
+            [449, 951],
+            [442, 919]
+          ],
+          "ll": [
+            [34.046287, -118.267764],
+            [34.046404, -118.267689],
+            [34.046745, -118.267475],
+            [34.046812, -118.267451],
+            [34.046901, -118.26742]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "L. A. Live Way",
+          "px": [387, 1157],
+          "ll": [34.046384, -118.267979],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olympic Boulevard",
+          "px": [458, 1156],
+          "ll": [34.046287, -118.267764],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Georgia Street",
+      "runs": [
+        {
+          "px": [
+            [765, 503],
+            [766, 530],
+            [766, 618],
+            [768, 853],
+            [769, 944],
+            [769, 953],
+            [769, 1017],
+            [769, 1034],
+            [768, 1099],
+            [765, 1108],
+            [754, 1154],
+            [746, 1205],
+            [743, 1231]
+          ],
+          "ll": [
+            [34.047488, -118.265761],
+            [34.047421, -118.265805],
+            [34.047202, -118.265949],
+            [34.046612, -118.266335],
+            [34.046383, -118.266485],
+            [34.046363, -118.266498],
+            [34.046202, -118.266604],
+            [34.046159, -118.266632],
+            [34.045999, -118.266745],
+            [34.045982, -118.266769],
+            [34.045882, -118.266879],
+            [34.045764, -118.266985],
+            [34.045705, -118.267038]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Place",
+          "px": [765, 503],
+          "ll": [34.047488, -118.265761],
+          "insideCoverage": true
+        },
+        {
+          "name": "James M Wood Boulevard",
+          "px": [765, 503],
+          "ll": [34.047488, -118.265761],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olympic Boulevard",
+          "px": [754, 1154],
+          "ll": [34.045882, -118.266879],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Harbor Freeway",
+      "runs": [
+        {
+          "px": [
+            [384, 781],
+            [454, 631],
+            [534, 453]
+          ],
+          "ll": [
+            [34.047326, -118.267363],
+            [34.047602, -118.266906],
+            [34.047934, -118.266369]
+          ]
+        },
+        {
+          "px": [
+            [465, 456],
+            [413, 567],
+            [398, 601],
+            [386, 629]
+          ],
+          "ll": [
+            [34.048022, -118.266581],
+            [34.047819, -118.266918],
+            [34.047755, -118.26702],
+            [34.047702, -118.267103]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Place",
+          "px": [544, 457],
+          "ll": [34.047912, -118.266346],
+          "insideCoverage": true
+        },
+        {
+          "name": "Golden Avenue",
+          "px": [333, 536],
+          "ll": [34.048006, -118.267106],
+          "insideCoverage": false
+        },
+        {
+          "name": "James M Wood Boulevard",
+          "px": [397, 542],
+          "ll": [34.047904, -118.266927],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "James M Wood Boulevard",
+      "runs": [
+        {
+          "px": [
+            [388, 517],
+            [596, 518],
+            [737, 506],
+            [765, 503],
+            [783, 503],
+            [815, 503],
+            [857, 502]
+          ],
+          "ll": [
+            [34.047977, -118.266912],
+            [34.047686, -118.266293],
+            [34.047521, -118.265849],
+            [34.047488, -118.265761],
+            [34.047465, -118.265709],
+            [34.04742, -118.265611],
+            [34.047363, -118.265487]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Place",
+          "px": [765, 503],
+          "ll": [34.047488, -118.265761],
+          "insideCoverage": true
+        },
+        {
+          "name": "Georgia Street",
+          "px": [765, 503],
+          "ll": [34.047488, -118.265761],
+          "insideCoverage": true
+        },
+        {
+          "name": "Golden Avenue",
+          "px": [253, 505],
+          "ll": [34.048194, -118.267295],
+          "insideCoverage": false
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [397, 542],
+          "ll": [34.047904, -118.266927],
+          "insideCoverage": true
+        },
+        {
+          "name": "Sunbury Street",
+          "px": [144, 504],
+          "ll": [34.04835, -118.26762],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Olympic Boulevard",
+      "runs": [
+        {
+          "px": [
+            [844, 1152],
+            [793, 1153],
+            [754, 1154],
+            [718, 1154],
+            [710, 1154],
+            [669, 1154],
+            [589, 1155],
+            [563, 1155],
+            [458, 1156],
+            [377, 1157]
+          ],
+          "ll": [
+            [34.045759, -118.266605],
+            [34.045829, -118.26676],
+            [34.045882, -118.266879],
+            [34.045931, -118.266985],
+            [34.045942, -118.26701],
+            [34.045998, -118.267133],
+            [34.046108, -118.267372],
+            [34.046144, -118.267451],
+            [34.046287, -118.267764],
+            [34.046398, -118.268008]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [458, 1156],
+          "ll": [34.046287, -118.267764],
+          "insideCoverage": true
+        },
+        {
+          "name": "Georgia Street",
+          "px": [754, 1154],
+          "ll": [34.045882, -118.266879],
+          "insideCoverage": true
+        },
+        {
+          "name": "L. A. Live Way",
+          "px": [315, 1157],
+          "ll": [34.046482, -118.268193],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "8th Place",
+      "continuesInto": [
+        "James M Wood Boulevard"
+      ],
+      "candidates": [
+        {
+          "id": "ruby-st",
+          "display": "Ruby Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place by another sheet"
+          ],
+          "ink": [
+            "RUBY ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        },
+        {
+          "id": "lincoln-place",
+          "display": "Lincoln Place",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place by another sheet"
+          ],
+          "ink": [
+            "Lincoln Place"
+          ],
+          "docs": [
+            "mr006-193"
+          ]
+        },
+        {
+          "id": "lincoln-street",
+          "display": "Lincoln Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place by another sheet"
+          ],
+          "ink": [
+            "Lincoln Street"
+          ],
+          "docs": [
+            "mr021-087"
+          ]
+        },
+        {
+          "id": "ninth-street",
+          "display": "9th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on James M Wood Boulevard, which 8th Place runs straight into"
+          ],
+          "ink": [
+            "NINTH ST",
+            "Ninth Street"
+          ],
+          "docs": [
+            "mr003-569",
+            "mr005-405",
+            "mr006-193"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Bixel Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "lafayette-bixel",
+          "display": "Lafayette Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "LAFAYETTE AVENUE",
+            "LAFAYETTE ST.",
+            "Lafayette Av."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr003-046-p2",
+            "mr006-115",
+            "mr006-427"
+          ]
+        },
+        {
+          "id": "bixel",
+          "display": "Bixel Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "BIXEL ST",
+            "BIXEL ST.",
+            "BIXEL STREET",
+            "Bixel St",
+            "Bixel Street"
+          ],
+          "docs": [
+            "mr052-085",
+            "mr066-035",
+            "tr0001-057a",
+            "tr0002-037a",
+            "tr0007-078a",
+            "tr0417-049-p2",
+            "tr0588-055",
+            "tr0713-093-p2"
+          ]
+        },
+        {
+          "id": "william-farragut",
+          "display": "William Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "WILLIAM ST.",
+            "William St."
+          ],
+          "docs": [
+            "mr005-566",
+            "mr009-095"
+          ]
+        },
+        {
+          "id": "ohio-street",
+          "display": "Ohio Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "OHIO ST.",
+            "Ohio Street"
+          ],
+          "docs": [
+            "mr005-069",
+            "tr0014-097b"
+          ]
+        },
+        {
+          "id": "metcalf-st",
+          "display": "Metcalf Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "Metcalf St"
+          ],
+          "docs": [
+            "mr007-026-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Georgia Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "nevada-1886",
+          "display": "Nevada Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Georgia Street by another sheet"
+          ],
+          "ink": [
+            "Nevada",
+            "Nevada St",
+            "Nevado St"
+          ],
+          "docs": [
+            "mr010-030",
+            "mr010-077"
+          ]
+        },
+        {
+          "id": "georgia-bell",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Georgia Street by another sheet"
+          ],
+          "ink": [
+            "Georgia Street"
+          ],
+          "docs": [
+            "tr0030-086"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Harbor Freeway",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "James M Wood Boulevard",
+      "continuesInto": [
+        "8th Place"
+      ],
+      "candidates": [
+        {
+          "id": "ninth-street",
+          "display": "9th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on James M Wood Boulevard by another sheet"
+          ],
+          "ink": [
+            "NINTH ST",
+            "Ninth Street"
+          ],
+          "docs": [
+            "mr003-569",
+            "mr005-405",
+            "mr006-193"
+          ]
+        },
+        {
+          "id": "ruby-st",
+          "display": "Ruby Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place, which James M Wood Boulevard runs straight into"
+          ],
+          "ink": [
+            "RUBY ST"
+          ],
+          "docs": [
+            "mr003-569"
+          ]
+        },
+        {
+          "id": "lincoln-place",
+          "display": "Lincoln Place",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place, which James M Wood Boulevard runs straight into"
+          ],
+          "ink": [
+            "Lincoln Place"
+          ],
+          "docs": [
+            "mr006-193"
+          ]
+        },
+        {
+          "id": "lincoln-street",
+          "display": "Lincoln Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Place, which James M Wood Boulevard runs straight into"
+          ],
+          "ink": [
+            "Lincoln Street"
+          ],
+          "docs": [
+            "mr021-087"
+          ]
+        },
+        {
+          "id": "james-m-wood-boulevard",
+          "display": "James M Wood Boulevard",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Olympic Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "ninth-street",
+          "display": "9th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Olympic Boulevard by another sheet"
+          ],
+          "ink": [
+            "East 9th Street",
+            "NINTH STREET"
+          ],
+          "docs": [
+            "mr026-059",
+            "mr037-087",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        },
+        {
+          "id": "tenth-street",
+          "display": "10th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Olympic Boulevard by another sheet"
+          ],
+          "ink": [
+            "TENTH STREET",
+            "Tenth Street"
+          ],
+          "docs": [
+            "mr003-032",
+            "mr003-033",
+            "mr016-027",
+            "mr053-063"
+          ]
+        },
+        {
+          "id": "olympic-boulevard",
+          "display": "Olympic Boulevard",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

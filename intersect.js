@@ -14,7 +14,7 @@ function points(name) {
   const pts = [];
   for (const w of geom.elements) {
     if (!w.geometry || !w.tags || !w.tags.name) continue;
-    if (normalize(w.tags.name) === name) pts.push(...w.geometry);
+    if (normalize(w.tags.name, w.id) === name) pts.push(...w.geometry);
   }
   return pts;
 }

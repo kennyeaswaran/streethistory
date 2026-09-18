@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-17
+// Built: 2026-09-18
 const SEARCH_INDEX = [
   {
     "form": "11th Street",
@@ -40,7 +40,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "14th Street",
-    "entity": "14th-street",
+    "entity": "fourteenth-street",
     "label": "14th Street",
     "street": "14th Street"
   },
@@ -82,7 +82,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "18th Street",
-    "entity": "18th-street",
+    "entity": "eighteenth-street",
     "label": "18th Street",
     "street": "18th Street"
   },
@@ -196,7 +196,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "4th Place",
-    "entity": "4th-place",
+    "entity": "fourth-place",
     "label": "4th Place",
     "street": "4th Place"
   },
@@ -225,16 +225,16 @@ const SEARCH_INDEX = [
     "street": "5th Street"
   },
   {
-    "form": "Ward Street",
-    "entity": "ward-st",
-    "label": "Ward Street",
-    "street": "5th Street"
-  },
-  {
     "form": "Poplar Street",
     "entity": "poplar-st",
     "label": "Poplar Street",
     "street": "5th Street"
+  },
+  {
+    "form": "Ward Street",
+    "entity": "ward-st",
+    "label": "Ward Street",
+    "street": "5th Street (south branch)"
   },
   {
     "form": "6th Street",
@@ -244,7 +244,7 @@ const SEARCH_INDEX = [
   },
   {
     "form": "7th Place",
-    "entity": "7th-place",
+    "entity": "seventh-place",
     "label": "7th Place",
     "street": "7th Place"
   },
@@ -261,15 +261,21 @@ const SEARCH_INDEX = [
     "street": "7th Street"
   },
   {
-    "form": "Orange Street",
-    "entity": "orange-st-wilshire",
-    "label": "Orange Street",
-    "street": "7th Street"
+    "form": "Lincoln Place",
+    "entity": "lincoln-place",
+    "label": "Lincoln Place",
+    "street": "8th Place"
   },
   {
     "form": "8th Place",
     "entity": "8th-place",
     "label": "8th Place",
+    "street": "8th Place"
+  },
+  {
+    "form": "9th Street",
+    "entity": "ninth-street",
+    "label": "9th Street",
     "street": "8th Place"
   },
   {
@@ -295,12 +301,6 @@ const SEARCH_INDEX = [
     "entity": "9th-place",
     "label": "9th Place",
     "street": "9th Place"
-  },
-  {
-    "form": "9th Street",
-    "entity": "ninth-street",
-    "label": "9th Street",
-    "street": "9th Street"
   },
   {
     "form": "Moran's Lane",
@@ -477,6 +477,12 @@ const SEARCH_INDEX = [
     "street": "Bauchet Street"
   },
   {
+    "form": "Rosabell Street",
+    "entity": "rosabell-street",
+    "label": "Rosabell Street",
+    "street": "Bauchet Street"
+  },
+  {
     "form": "Beaudry Avenue",
     "entity": "beaudry-avenue",
     "label": "Beaudry Avenue",
@@ -513,6 +519,12 @@ const SEARCH_INDEX = [
     "street": "Belmont Avenue"
   },
   {
+    "form": "Belmont Avenue",
+    "entity": "belmont-ave",
+    "label": "Belmont Avenue",
+    "street": "Belmont Avenue"
+  },
+  {
     "form": "Bernard Street",
     "entity": "bernard-street",
     "label": "Bernard Street",
@@ -525,6 +537,12 @@ const SEARCH_INDEX = [
     "street": "Beverly Boulevard"
   },
   {
+    "form": "Grattan Street",
+    "entity": "grattan-street",
+    "label": "Grattan Street",
+    "street": "Bixel Street"
+  },
+  {
     "form": "Bixel Street",
     "entity": "bixel",
     "label": "Bixel Street",
@@ -532,9 +550,15 @@ const SEARCH_INDEX = [
   },
   {
     "form": "William Street",
-    "entity": "william",
-    "label": "William Street",
+    "entity": "william-farragut",
+    "label": "William Street (Hancock's block 37, later Farragut Street, now Bixel Street)",
     "street": "Bixel Street"
+  },
+  {
+    "form": "William Street",
+    "entity": "william-santee",
+    "label": "William Street (Childs Tract, later Santee Street)",
+    "street": "Santee Street"
   },
   {
     "form": "Lafayette Street",
@@ -756,6 +780,18 @@ const SEARCH_INDEX = [
     "form": "Short Street",
     "entity": "short-street-chavez",
     "label": "Short Street",
+    "street": "Cesar E Chavez Avenue"
+  },
+  {
+    "form": "Marchessault Street",
+    "entity": "marchessault-street",
+    "label": "Marchessault Street",
+    "street": "Cesar E Chavez Avenue"
+  },
+  {
+    "form": "Macy Street",
+    "entity": "macy-street",
+    "label": "Macy Street",
     "street": "Cesar E Chavez Avenue"
   },
   {
@@ -1155,6 +1191,12 @@ const SEARCH_INDEX = [
     "street": "Garey Street"
   },
   {
+    "form": "Holmes Street",
+    "entity": "holmes-st",
+    "label": "Holmes Street",
+    "street": "Garland Avenue"
+  },
+  {
     "form": "Garland Avenue",
     "entity": "garland",
     "label": "Garland Avenue",
@@ -1176,6 +1218,12 @@ const SEARCH_INDEX = [
     "form": "Georgia Bell Street",
     "entity": "georgia-bell",
     "label": "Georgia Bell Street",
+    "street": "Georgia Street"
+  },
+  {
+    "form": "Valencia Street",
+    "entity": "valencia-street-poindexter",
+    "label": "Valencia Street",
     "street": "Georgia Street"
   },
   {
@@ -1213,6 +1261,18 @@ const SEARCH_INDEX = [
     "entity": "glendale-boulevard",
     "label": "Glendale Boulevard",
     "street": "Glendale Boulevard"
+  },
+  {
+    "form": "Willow Street",
+    "entity": "willow-golden",
+    "label": "Willow Street (Truman Tract, later Golden Avenue)",
+    "street": "Golden Avenue"
+  },
+  {
+    "form": "Willow Street",
+    "entity": "willow",
+    "label": "Willow Street (Willow Street)",
+    "street": "Willow Street"
   },
   {
     "form": "Golden Avenue",
@@ -1551,12 +1611,6 @@ const SEARCH_INDEX = [
     "street": "Loma Drive"
   },
   {
-    "form": "Belmont Avenue",
-    "entity": "belmont-ave",
-    "label": "Belmont Avenue",
-    "street": "Loma Drive"
-  },
-  {
     "form": "Loma Place",
     "entity": "loma-place",
     "label": "Loma Place",
@@ -1569,15 +1623,15 @@ const SEARCH_INDEX = [
     "street": "Los Angeles Street"
   },
   {
-    "form": "Lucas Avenue",
-    "entity": "lucas-avenue",
-    "label": "Lucas Avenue (Lucas Avenue)",
-    "street": "Lucas Avenue"
+    "form": "Calle De Los Negros",
+    "entity": "calle-de-los-negros",
+    "label": "Calle De Los Negros",
+    "street": "Los Angeles Street"
   },
   {
     "form": "Lucas Avenue",
-    "entity": "lucas-ave",
-    "label": "Lucas Avenue (Lucas Avenue)",
+    "entity": "lucas-avenue",
+    "label": "Lucas Avenue",
     "street": "Lucas Avenue"
   },
   {
@@ -1596,6 +1650,12 @@ const SEARCH_INDEX = [
     "form": "Main Street",
     "entity": "main-street-dtla",
     "label": "Main Street",
+    "street": "Main Street"
+  },
+  {
+    "form": "Bath Street",
+    "entity": "bath-street-plaza",
+    "label": "Bath Street",
     "street": "Main Street"
   },
   {
@@ -1785,6 +1845,12 @@ const SEARCH_INDEX = [
     "street": "Olive Street"
   },
   {
+    "form": "Wine Street",
+    "entity": "wine-street-plaza",
+    "label": "Wine Street",
+    "street": "Olvera Street"
+  },
+  {
     "form": "Olvera Street",
     "entity": "olvera-street",
     "label": "Olvera Street",
@@ -1806,6 +1872,12 @@ const SEARCH_INDEX = [
     "form": "High Street",
     "entity": "high-street-chinatown",
     "label": "High Street",
+    "street": "Ord Street"
+  },
+  {
+    "form": "Walters Street",
+    "entity": "walters-street",
+    "label": "Walters Street",
     "street": "Ord Street"
   },
   {
@@ -1897,12 +1969,6 @@ const SEARCH_INDEX = [
     "entity": "rondout-street",
     "label": "Rondout Street",
     "street": "Rondout Street"
-  },
-  {
-    "form": "Rosabell Street",
-    "entity": "rosabell-street",
-    "label": "Rosabell Street",
-    "street": "Rosabell Street"
   },
   {
     "form": "Rose Street",
@@ -2037,6 +2103,12 @@ const SEARCH_INDEX = [
     "street": "Spring Street"
   },
   {
+    "form": "San Fernando Street",
+    "entity": "san-fernando-st-spring",
+    "label": "San Fernando Street",
+    "street": "Spring Street"
+  },
+  {
     "form": "Stadium Way",
     "entity": "stadium-way",
     "label": "Stadium Way",
@@ -2109,6 +2181,12 @@ const SEARCH_INDEX = [
     "street": "Towne Avenue"
   },
   {
+    "form": "Stephenson Avenue",
+    "entity": "stephenson-avenue",
+    "label": "Stephenson Avenue",
+    "street": "Traction Avenue"
+  },
+  {
     "form": "Traction Avenue",
     "entity": "traction-avenue",
     "label": "Traction Avenue",
@@ -2133,6 +2211,12 @@ const SEARCH_INDEX = [
     "street": "Union Drive"
   },
   {
+    "form": "Colina Avenue",
+    "entity": "colina-ave",
+    "label": "Colina Avenue",
+    "street": "Union Place"
+  },
+  {
     "form": "Union Place",
     "entity": "union-place",
     "label": "Union Place",
@@ -2145,15 +2229,9 @@ const SEARCH_INDEX = [
     "street": "Utah Street"
   },
   {
-    "form": "Valencia Street",
-    "entity": "valencia-street",
-    "label": "Valencia Street",
-    "street": "Valencia Street"
-  },
-  {
-    "form": "Vernon Av",
+    "form": "Vernon Avenue",
     "entity": "vernon-ave",
-    "label": "Vernon Av",
+    "label": "Vernon Avenue",
     "street": "Valencia Street"
   },
   {
@@ -2259,15 +2337,15 @@ const SEARCH_INDEX = [
     "street": "Wilhardt Street"
   },
   {
-    "form": "Willow Street",
-    "entity": "willow",
-    "label": "Willow Street",
-    "street": "Willow Street"
-  },
-  {
     "form": "Wilshire Boulevard",
     "entity": "wilshire",
     "label": "Wilshire Boulevard",
+    "street": "Wilshire Boulevard"
+  },
+  {
+    "form": "Orange Street",
+    "entity": "orange-st-wilshire",
+    "label": "Orange Street",
     "street": "Wilshire Boulevard"
   },
   {
@@ -2293,6 +2371,12 @@ const SEARCH_INDEX = [
     "entity": "winston-st",
     "label": "Winston Street",
     "street": "Winston Street"
+  },
+  {
+    "form": "Bryan Street",
+    "entity": "bryan-st",
+    "label": "Bryan Street",
+    "street": "Witmer Street"
   },
   {
     "form": "Witmer Street",

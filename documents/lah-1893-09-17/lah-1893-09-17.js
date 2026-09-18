@@ -58,5 +58,17 @@ module.exports = {
             "Approved this 14th day of September, 1893. T. E. ROWAN, Mayor." }
   ],
 
-  rows: []
+  rows: [
+    // Audit 2026-09-18 (handbook/change-rows-audit-2026-09-18.md), bin A.
+    // UNQUALIFIED, and read off the printed instrument itself. The derivation will
+    // carry Eighth Street onto ALL of `lincoln-place`'s ground — which on the
+    // Kennedy Tract (mr006-193) includes the stretch that is 8th PLACE today. That
+    // is what the ordinance says; how part of it became 8th Place is undocumented.
+    { kind: "change", from: "lincoln-place", to: "eighth-street",
+      scope: "whole-name",
+      says: ["sec-1", "certification"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Adopted Sept. 11, approved Sept. 14 and published Sept. 17, 1893." }
+  ]
 };

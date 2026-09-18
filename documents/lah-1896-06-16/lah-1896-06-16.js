@@ -52,5 +52,19 @@ module.exports = {
       note: "★ Cooper Street, three years after documents/ord-1613 abolished the name." }
   ],
 
-  rows: []
+  rows: [
+    // Audit 2026-09-18 (handbook/change-rows-audit-2026-09-18.md), bin B.
+    // QUALIFIED, UNRESOLVED. Stage: the item closes "Adopted." after a numbered
+    // "An ordinance changing the names …" — read as the ordinance adopted, not a
+    // recommendation (contrast lah-1883-08-19). Modern 8th Street does not meet
+    // Wilson Street (nearest 495 m), and "Hiscock & Smith's second addition" is a
+    // tract, not a cross street. The other five changes here need entities
+    // (Wilson, Santa Clara, Kercheval, a South, a second Cooper): bin C.
+    { kind: "change", from: "lemon-st-arts-district", to: "eighth-street",
+      scope: "extent-unresolved",
+      wording: "Lemon street, from Wilson street easterly to Hiscock & Smith's second addition, to Eighth street",
+      says: ["lemon-and-others"],
+      mechanism: "renaming",
+      confirmed: false }
+  ]
 };

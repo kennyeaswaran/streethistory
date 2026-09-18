@@ -67,5 +67,48 @@ module.exports = {
             "street\" are the predecessors the 1893 Miguel Subdivision names parenthetically." }
   ],
 
-  rows: []
+  rows: [
+    // Audit 2026-09-18 (handbook/change-rows-audit-2026-09-18.md), bin A.
+    // ⚠ TWO-DOCUMENT WARRANT. This list was read on Nov. 5 and LAID OVER; the
+    // adoption is documents/lah-1889-11-13, "as published a week ago in the HERALD
+    // was read and adopted" — which names no street, so the rows have to live
+    // here, where the words are. The row's date is therefore this document's
+    // (before Nov. 6), a week before the Nov. 12 adoption.
+    // UNQUALIFIED: bare names, no stretches.
+    { kind: "change", from: "california-street-14th", to: "fourteenth-street",
+      scope: "whole-name",
+      says: ["laid-over", "the-list"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Read Nov. 5 and adopted Nov. 12, 1889, as printed here; one of four names folded into Fourteenth Street." },
+    // The Oct. 1888 committee draft proposed Consuelo → California (lah-1888-10-11);
+    // whether Ordinance No. 48 enacted that in May 1889 is unknown (its body is
+    // untranscribed). If it did, this row dates Consuelo's end six months late.
+    { kind: "change", from: "consuelo", to: "fourteenth-street",
+      scope: "whole-name",
+      says: ["laid-over", "the-list"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Read Nov. 5 and adopted Nov. 12, 1889, as printed here; one of four names folded into Fourteenth Street." },
+    { kind: "change", from: "laurel-dtla", to: "fifteenth-street",
+      scope: "whole-name",
+      says: ["laid-over", "the-list"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Read Nov. 5 and adopted Nov. 12, 1889, as printed here, with Adele Street." },
+    // `adele-st`, the other half of this clause, gets no row: its only lettering
+    // is a vanished trace (mr010-077), so a whole-name change would land nowhere.
+    { kind: "change", from: "pine-street-venice", to: "sixteenth-street",
+      scope: "whole-name",
+      says: ["laid-over", "the-list"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Read Nov. 5 and adopted Nov. 12, 1889, as printed here, with Rowland Street." },
+    { kind: "change", from: "rouland-street", to: "sixteenth-street",
+      scope: "whole-name",
+      says: ["laid-over", "the-list"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Read Nov. 5 and adopted Nov. 12, 1889, as printed here; the ordinance spells it Rowland." }
+  ]
 };

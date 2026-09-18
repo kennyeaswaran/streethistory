@@ -211,7 +211,7 @@ module.exports = {
       },
       "basis": "alignment",
       "note": "The modern Santee Street centerline follows the historical roadway lettered William St.",
-      "name": "william"
+      "name": "william-santee"
     },
     {
       "kind": "state",

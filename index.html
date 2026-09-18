@@ -663,7 +663,7 @@ fetchStreets()
   .then(json => {
     json.elements.forEach(way => {
       if (!way.geometry || !way.tags || !way.tags.name) return;
-      const norm = normalizeName(way.tags.name);
+      const norm = normalizeName(way.tags.name, way.id);
       const latlngs = way.geometry.map(p => [p.lat, p.lon]);
       const mid = latlngs[Math.floor(latlngs.length / 2)];
       const { entry, key } = resolveEntry(norm, mid[0], mid[1]);

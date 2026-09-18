@@ -35,7 +35,7 @@ const inBox = (p, b) => p.lat >= b.s && p.lat < b.n && p.lon >= b.w && p.lon < b
 const streets = new Map(); // name -> { length, hoods:Set, count }
 for (const way of geom.elements || []) {
   if (!way.geometry || !way.tags || !way.tags.name) continue;
-  const name = normalize(way.tags.name);
+  const name = normalize(way.tags.name, way.id);
   if (!streets.has(name)) streets.set(name, { length: 0, hoods: new Set(), count: 0 });
   const s = streets.get(name);
   s.count++;

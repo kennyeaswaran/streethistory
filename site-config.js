@@ -36,7 +36,29 @@
 const NAME_ALIASES = {
   "2nd Street Tunnel": "2nd Street"
 };
-function normalizeName(n) {
+// Two roadways under one name. The model folds every way that shares a name
+// onto one axis, so two branches running side by side occupy the same
+// interval and a sheet that letters them differently puts two names on one
+// stretch at once (2026-09-18: the 1875 Beaudry Subdivision B letters FIFTH
+// on the northern West 5th Street and WARD on the one-way southern branch a
+// block down, and the timeline could not hold both). A way listed here is
+// keyed as its own street, by OSM way id — the suffix is a label, not a
+// name: the name is still 5th Street. Find candidates with the lateral-
+// separation test in MODEL-IMPLEMENTATION.md (same name, overlapping along
+// the axis, > 40 m apart across it); twin motorway carriageways and short
+// connectors are NOT this — nothing will ever letter them differently.
+const WAY_STREET_KEYS = {
+  // West 5th Street's one-way southern branch, Fremont → 6th → Beaudry → 6th:
+  // the old Ward Street corridor (documents/mr003-046-p2).
+  27747409:  "5th Street (south branch)",
+  161569700: "5th Street (south branch)",
+  237022768: "5th Street (south branch)",
+  // The 1931 East 4th Street viaduct, 4th Place to Anderson, over the surface
+  // street it replaced on the Boyle Heights side.
+  185949003: "4th Street (viaduct)"
+};
+function normalizeName(n, wayId) {
+  if (wayId !== undefined && WAY_STREET_KEYS[wayId]) return WAY_STREET_KEYS[wayId];
   const stripped = n.replace(/^(North|South|East|West|N\.?|S\.?|E\.?|W\.?)\s+/i, "");
   return NAME_ALIASES[stripped] || stripped;
 }
@@ -245,5 +267,5 @@ const SIMILAR_PROJECTS = [
 
 if (typeof module !== "undefined") module.exports = {
   NEIGHBORHOODS, CATEGORIES, CATEGORY_BY_ID, categoryAncestors, SIMILAR_PROJECTS,
-  NAME_ALIASES, normalizeName
+  NAME_ALIASES, WAY_STREET_KEYS, normalizeName
 };

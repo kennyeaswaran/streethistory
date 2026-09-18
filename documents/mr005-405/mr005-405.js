@@ -15,7 +15,7 @@ module.exports = {
   title: "Plan of the Truman Tract of Los Angeles City (surveyed 18 June 1883 by Geo. Butler Griffin C.E.; re-arranged 11 January 1884 by W. R. Blackman)",
   shortTitle: "Truman Tract",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-405.pdf",
-  scan: null,
+  scan: "documents/mr005-405/mr005-405.pdf",
   transcription: null,
 
   date: { on: "1884-01-12" },   
@@ -44,9 +44,82 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["8th Place","Golden Avenue","James M Wood Boulevard"],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
-  rows: []
+  rows: [
+    {
+      "kind": "absent",
+      "street": "8th Place",
+      "from": {
+        "px": [
+          327,
+          733
+        ]
+      },
+      "to": {
+        "px": [
+          1024,
+          1408
+        ]
+      },
+      "note": "The curving modern trace crosses numbered lot interiors and the Willow Street corridor; no corresponding roadway is drawn."
+    },
+    {
+      "kind": "state",
+      "asWritten": "Willow Street",
+      "street": "Golden Avenue",
+      "from": {
+        "px": [
+          712,
+          1146
+        ]
+      },
+      "to": {
+        "px": [
+          697,
+          1521
+        ]
+      },
+      "basis": "alignment",
+      "note": "The modern Golden Avenue segment follows the southern part of the roadway lettered Willow Street.",
+      "name": "willow-golden"
+    },
+    {
+      "kind": "state",
+      "asWritten": "Ninth Street",
+      "street": "James M Wood Boulevard",
+      "from": {
+        "px": [
+          306,
+          1517
+        ]
+      },
+      "to": {
+        "px": [
+          1016,
+          1549
+        ]
+      },
+      "basis": "alignment",
+      "name": "ninth-street"
+    },
+    {
+      "kind": "vanished",
+      "asWritten": "Willow Street",
+      "trace": [
+        [
+          719,
+          304
+        ],
+        [
+          712,
+          1146
+        ]
+      ],
+      "basis": "alignment",
+      "note": "North of the modern Golden Avenue segment, the same historical roadway continues through the tract without a modern counterpart in the supplied street set.",
+      "name": "willow-golden"
+    }
+  ]
 };

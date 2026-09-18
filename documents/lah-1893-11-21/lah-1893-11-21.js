@@ -56,6 +56,6 @@ module.exports = {
       says: ["title", "sec-1", "certification"],
       mechanism: "renaming",
       note: "Adopted Nov. 13, approved Nov. 17, 1893; the Herald of Nov. 14 (lah-1893-11-14) reports the passage and the Oct. 17 paper (lah-1893-10-17) the week's postponement.",
-      confirmed: false }
+      confirmed: true }
   ]
 };

@@ -75,5 +75,43 @@ module.exports = {
             "December 13, 1889. HENRY T. HAZARD, Mayor." }
   ],
 
-  rows: []
+  rows: [
+    // Audit 2026-09-18 (handbook/change-rows-audit-2026-09-18.md), bin B.
+    // QUALIFIED, UNRESOLVED — and a rule-2 catch. It was first written as resolved,
+    // 2nd Street from Lucas Avenue to Figueroa Street (both 0 m), and the what-if
+    // build painted Lake Shore Avenue over 2nd Street ground lettered “Second” since
+    // 1869. The 1889 “Figueroa street” is NOT modern Figueroa: modern Figueroa north
+    // of Pico was Pearl Street until Ord. 4093 (1897). The Figueroa of 1889 is
+    // `figueroa-gov`, now Boylston Street — which does not meet modern 2nd Street at
+    // all (nearest 203 m), so the east end is on vanished ground and has no crossing
+    // to name. The west end resolves (2nd × Lucas, 0 m; `lake-shore-ave`'s own row on
+    // mr010-081 starts there).
+    // ⚠ READ DIFFERENTLY FROM THE HEADER: this is not §10's form 4, which
+    // withdraws a change a DRAFT would have made; it is an enacted ordinance changing
+    // the name on the ground back again, i.e. a genuine revival, and the model
+    // expresses it as an ordinary change row. When Second Street took this ground is
+    // not in the corpus — the Oct. 1888 committee proposed "Diamond St., Lake Shore
+    // Ave. and Stevenson Ave., changed to Second St." and Ordinance No. 48 (body
+    // untranscribed) presumably did it. `from` is `second-street` on that reading:
+    // the downtown name extended west along the cable route.
+    { kind: "change", from: "second-street", to: "lake-shore-ave",
+      scope: "extent-unresolved",
+      wording: "that portion of Second street (formerly Lakeshore avenue) between Lucas avenue and Figueroa street",
+      says: ["sec-1-lakeshore", "certification"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Adopted Dec. 9, approved Dec. 13, 1889. The ordinance itself records that the stretch had been Lakeshore Avenue before." },
+    // QUALIFIED, UNRESOLVED. The north end resolves (Maple Avenue × 5th Street,
+    // 0 m). The south end is Regent's OWN 1889 terminus, which no document states;
+    // the 1876 Moreno Vineyard sheet letters Regent only from 5th to 6th, and using
+    // that as the end would be writing derived evidence in the ordinance's voice —
+    // the failure change-rows-amendment.md §1 records three times.
+    { kind: "change", from: "regent-street", to: "maple-dtla",
+      scope: "extent-unresolved",
+      wording: "all that portion of Regent street, from Fifth street to the present southern terminus of said Regent street",
+      says: ["sec-1-regent-maple", "certification"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Adopted Dec. 9, approved Dec. 13, 1889." }
+  ]
 };

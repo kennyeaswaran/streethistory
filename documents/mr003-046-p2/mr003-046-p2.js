@@ -58,7 +58,7 @@ module.exports = {
     {
       "kind": "state",
       "asWritten": "WARD ST.",
-      "street": "5th Street",
+      "street": "5th Street (south branch)",
       "from": {
         "px": [
           600,

@@ -73,5 +73,33 @@ module.exports = {
             "SPENCE, Mayor." }
   ],
 
-  rows: []
+  rows: [
+    // Audit 2026-09-18 (handbook/change-rows-audit-2026-09-18.md), bin B.
+    // QUALIFIED AND RESOLVED. The header's "NO ROWS … no California Street is in the
+    // OSM extract" predates `california-street-14th`, which is now aligned to modern
+    // 14th Street (mr003-038-p1/-p2) and cites this very ordinance as its anchor.
+    // Olive Street meets Pico Boulevard and 14th Street at 0 m. `elm-street`'s own
+    // row on mr003-038-p1 ends at 14th Street, so the two agree.
+    { kind: "change", from: "elm-street", to: "olive",
+      scope: "extent",
+      street: "Olive Street", fromCross: "Pico Boulevard", toCross: "14th Street",
+      wording: "that certain street known as Elm street, and extending from Pico street to California street",
+      says: ["sec-1-elm-olive", "certification"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Adopted Jan. 6 and approved Jan. 14, 1886. California Street is the street that became Fourteenth Street in 1889." },
+    // QUALIFIED, UNRESOLVED. "Situated in the Childs Tract" bounds the change by a
+    // tract, not by cross streets; the tract's extent on Santee Street is what would
+    // resolve it (mr006-378's footprint), and reading that is research, not
+    // transcription. ⚠ (Split 2026-09-18: the Bixel William is now `william-farragut`.) The entity used to carry 1888–89 sightings on BIXEL
+    // Street (mr009-095, mr005-566) — whichever William those are, this row is not
+    // about them. Section 3's other William (→ Goss) has no entity: audit bin C.
+    { kind: "change", from: "william-santee", to: "santee-street",
+      scope: "extent-unresolved",
+      wording: "that certain street known as William street, situated in the Childs Tract",
+      says: ["sec-2-william-santee", "certification"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Adopted Jan. 6 and approved Jan. 14, 1886." }
+  ]
 };

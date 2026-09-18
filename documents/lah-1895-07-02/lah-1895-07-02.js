@@ -48,5 +48,20 @@ module.exports = {
       text: "An ordinance changing the name of Philadelphia street to Grand avenue. Adopted." }
   ],
 
-  rows: []
+  rows: [
+    // Audit 2026-09-18 (handbook/change-rows-audit-2026-09-18.md), bin A.
+    // UNQUALIFIED: "An ordinance changing the name of Philadelphia street to Grand
+    // avenue. Adopted." `grand-ave` is the Charity Street successor; the name is
+    // being extended north over Beaudry's Park-tract Philadelphia Street, which is
+    // lettered on Grand Avenue ground (mr007-026-p1, mr007-062-p2).
+    // ⚠ Step 2c: a one-line report of an ordinance can be an abridgement. The
+    // Board's recommendation of June 22 (lah-1895-06-22) is also bare, which is
+    // the best available sign that the instrument was too.
+    { kind: "change", from: "philadelphia-st", to: "grand-ave",
+      scope: "whole-name",
+      says: ["philadelphia-grand-adopted"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Adopted on the petition of J. E. Fay et al. (No. 639), which the Board of Public Works had recommended on June 22, 1895." }
+  ]
 };

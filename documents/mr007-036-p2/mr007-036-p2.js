@@ -517,7 +517,7 @@ module.exports = {
     },
     {
       "kind": "vanished",
-      "asWritten": "Gravitta St",
+      "asWritten": "Gravilla St",
       "trace": [
         [
           385,
@@ -537,7 +537,7 @@ module.exports = {
         ]
       ],
       "basis": "alignment",
-      "name": "gravitta-st"
+      "name": "gravilla-st"
     },
     {
       "kind": "vanished",

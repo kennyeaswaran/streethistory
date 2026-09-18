@@ -166,7 +166,7 @@ module.exports = {
         ]
       },
       "basis": "alignment",
-      "name": "lucas-ave"
+      "name": "lucas-avenue"
     },
     {
       "kind": "absent",

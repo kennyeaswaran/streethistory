@@ -1,0 +1,326 @@
+{
+  "document": "tr0005-065",
+  "image": "tr0005-065-100dpi.png",
+  "imageSize": [1176, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0005-065-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [178, 510],
+    [358, 436],
+    [499, 688],
+    [1139, 857],
+    [1128, 1192],
+    [150, 1235]
+  ],
+  "coverageLl": [
+    [34.035067, -118.248058],
+    [34.034983, -118.247414],
+    [34.034176, -118.247447],
+    [34.032844, -118.245906],
+    [34.032059, -118.246519],
+    [34.033373, -118.249397]
+  ],
+  "streets": [
+    {
+      "name": "10th Street",
+      "runs": [
+        {
+          "px": [
+            [158, 1019],
+            [225, 1019],
+            [248, 1019],
+            [285, 1019],
+            [539, 1020],
+            [764, 1020],
+            [772, 1020],
+            [820, 1020],
+            [877, 1020],
+            [921, 1020],
+            [991, 1020],
+            [1133, 1020],
+            [1134, 1020]
+          ],
+          "ll": [
+            [34.033878, -118.248998],
+            [34.033782, -118.248807],
+            [34.033749, -118.248741],
+            [34.033695, -118.248635],
+            [34.033324, -118.247909],
+            [34.032998, -118.247265],
+            [34.032986, -118.247242],
+            [34.032916, -118.247105],
+            [34.032833, -118.24694],
+            [34.032769, -118.246814],
+            [34.032667, -118.246613],
+            [34.032461, -118.246206],
+            [34.032461, -118.246205]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Stanford Avenue",
+          "px": [248, 1019],
+          "ll": [34.033749, -118.248741],
+          "insideCoverage": true
+        },
+        {
+          "name": "Towne Avenue",
+          "px": [-64, 1020],
+          "ll": [34.034198, -118.249639],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "9th Street",
+      "runs": [
+        {
+          "px": [
+            [235, 487],
+            [240, 488],
+            [273, 498],
+            [372, 527],
+            [395, 534],
+            [415, 539]
+          ],
+          "ll": [
+            [34.03504, -118.247854],
+            [34.03503, -118.247842],
+            [34.03496, -118.247766],
+            [34.034745, -118.247531],
+            [34.034695, -118.247478],
+            [34.034655, -118.247427]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Gladys Avenue",
+          "px": [559, 569],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": false
+        },
+        {
+          "name": "Olympic Boulevard",
+          "px": [559, 569],
+          "ll": [34.034373, -118.247068],
+          "insideCoverage": false
+        },
+        {
+          "name": "Stanford Avenue",
+          "px": [240, 488],
+          "ll": [34.03503, -118.247842],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Stanford Avenue",
+      "runs": [
+        {
+          "px": [
+            [250, 1231],
+            [248, 1047],
+            [248, 1019],
+            [248, 991],
+            [251, 751],
+            [250, 658],
+            [242, 523],
+            [240, 488],
+            [240, 485]
+          ],
+          "ll": [
+            [34.033238, -118.249102],
+            [34.033682, -118.248789],
+            [34.033749, -118.248741],
+            [34.033815, -118.248692],
+            [34.034385, -118.248267],
+            [34.034609, -118.248107],
+            [34.034944, -118.247896],
+            [34.03503, -118.247842],
+            [34.035038, -118.247836]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "10th Street",
+          "px": [248, 1019],
+          "ll": [34.033749, -118.248741],
+          "insideCoverage": true
+        },
+        {
+          "name": "9th Street",
+          "px": [240, 488],
+          "ll": [34.03503, -118.247842],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "10th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "eleventh-street",
+          "display": "11th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 10th Street by another sheet"
+          ],
+          "ink": [
+            "11th St.",
+            "Eleventh St."
+          ],
+          "docs": [
+            "mr029-085",
+            "mr053-065"
+          ]
+        },
+        {
+          "id": "tenth-street",
+          "display": "10th Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "9th Street",
+      "continuesInto": [
+        "Olympic Boulevard"
+      ],
+      "candidates": [
+        {
+          "id": "ninth-street",
+          "display": "9th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 9th Street by another sheet",
+            "attested on Olympic Boulevard, which 9th Street runs straight into",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "9TH STREET",
+            "9th St.",
+            "9th Street",
+            "CALLE 9a",
+            "East 9th Street",
+            "NINTH STREET",
+            "Ninth St.",
+            "Ninth Street",
+            "Ninth Street Extension"
+          ],
+          "docs": [
+            "11824",
+            "mr011-008",
+            "mr016-027",
+            "mr026-059",
+            "mr029-085",
+            "mr037-087",
+            "mr053-063",
+            "mr053-065",
+            "mr053-067",
+            "mr053-068",
+            "mr055-086",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        },
+        {
+          "id": "moran-s-lane",
+          "display": "Moran's Lane",
+          "pendingResearch": false,
+          "why": [
+            "attested on 9th Street by another sheet"
+          ],
+          "ink": [
+            "Moran's Lane"
+          ],
+          "docs": [
+            "11824"
+          ]
+        },
+        {
+          "id": "tenth-street",
+          "display": "10th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Olympic Boulevard, which 9th Street runs straight into"
+          ],
+          "ink": [
+            "TENTH STREET",
+            "Tenth Street"
+          ],
+          "docs": [
+            "mr003-032",
+            "mr003-033",
+            "mr016-027",
+            "mr053-063"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Stanford Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "ruth-ave",
+          "display": "Ruth Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Stanford Avenue by another sheet"
+          ],
+          "ink": [
+            "RUTH AVE.",
+            "RUTH AVENUE",
+            "Ruth Ave"
+          ],
+          "docs": [
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "mr066-064",
+            "mr070-084",
+            "tr0005-156a",
+            "tr0007-085"
+          ]
+        },
+        {
+          "id": "stanford-ave",
+          "display": "Stanford Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Stanford Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "STANFORD AVE.",
+            "STANFORD AVENUE",
+            "Stanford Ave",
+            "Stanford Ave."
+          ],
+          "docs": [
+            "mr029-085",
+            "mr055-086",
+            "pm017-045",
+            "tr0005-156a",
+            "tr0007-085"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -69,5 +69,24 @@ module.exports = {
             "quote. Adopted at the same Sept. 16, 1889 meeting." }
   ],
 
-  rows: []
+  rows: [
+    // Audit 2026-09-18 (handbook/change-rows-audit-2026-09-18.md), bin B.
+    // QUALIFIED, UNRESOLVED — deliberately. Canal Street is `canal-street-beaudry`,
+    // on modern Beaudry Avenue, and 1st Street meets Beaudry at 0 m, so the EAST end
+    // is safe. The WEST end, "Lakeshore avenue", is not: the likeliest reading is
+    // 1st Street's own west end at Glendale Boulevard, where the Second Street Cable
+    // Railway's franchise route ran "along said Lake Shore Avenue … to Diamond
+    // Street" (see `lake-shore-ave`), but that is an inference from a franchise, and
+    // the header's identity question about this stretch stands.
+    // The ordinance's second clause ("Second street from Lakeshore avenue to the
+    // west city line") gets no row: which entity that "Second street" is — the
+    // downtown lineage extended west in 1889, or something else — is open (bin C).
+    { kind: "change", from: "diamond-street", to: "first-street",
+      scope: "extent-unresolved",
+      wording: "that portion of Diamond street from Canal street to Lakeshore avenue",
+      says: ["sec-1-diamond-first", "certification"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Adopted Sept. 16, approved Sept. 18, 1889." }
+  ]
 };

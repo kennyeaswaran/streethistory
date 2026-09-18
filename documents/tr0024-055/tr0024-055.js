@@ -15,7 +15,7 @@ module.exports = {
   title: "Tract No. 2473, being a subdivision of portions of Blocks 2 and 3 and of Lots 2-4 of Block L, Colina Park (Daniel S. Halladay C.E.)",
   shortTitle: "Tract No. 2473",
   url: "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0024/TR0024-055.pdf",
-  scan: null,
+  scan: "documents/tr0024-055/tr0024-055.pdf",
   transcription: null,
 
   date: { on: "1913-12-16" },   
@@ -45,9 +45,105 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["3rd Street","4th Street","Union Avenue","Union Place"],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
-  rows: []
+  rows: [
+    {
+      "kind": "absent",
+      "street": "3rd Street",
+      "from": {
+        "px": [
+          100,
+          750
+        ]
+      },
+      "to": {
+        "px": [
+          1055,
+          719
+        ]
+      },
+      "note": "The modern trace crosses numbered lots and unsubdivided land; no east-west roadway is drawn here."
+    },
+    {
+      "kind": "state",
+      "asWritten": "ACACIA ST.",
+      "street": "4th Street",
+      "from": {
+        "px": [
+          217,
+          1424
+        ]
+      },
+      "to": {
+        "px": [
+          1217,
+          1772
+        ]
+      },
+      "basis": "alignment",
+      "name": "acacia-st"
+    },
+    {
+      "kind": "state",
+      "asWritten": "UNION AVE.",
+      "street": "Union Avenue",
+      "from": {
+        "px": [
+          198,
+          244
+        ]
+      },
+      "to": {
+        "px": [
+          217,
+          1424
+        ]
+      },
+      "basis": "alignment",
+      "name": "union-avenue",
+      "note": "The northern modern run follows the long western roadway lettered UNION AVE."
+    },
+    {
+      "kind": "state",
+      "asWritten": "UNION AVE.",
+      "street": "Union Avenue",
+      "from": {
+        "px": [
+          406,
+          1508
+        ]
+      },
+      "to": {
+        "px": [
+          406,
+          1678
+        ]
+      },
+      "basis": "alignment",
+      "name": "union-avenue",
+      "note": "South of Acacia St., the separate modern run follows the continuation lettered UNION AVE."
+    },
+    {
+      "kind": "state",
+      "asWritten": "COLINA AVE.",
+      "street": "Union Place",
+      "from": {
+        "px": [
+          781,
+          261
+        ]
+      },
+      "to": {
+        "px": [
+          596,
+          1566
+        ]
+      },
+      "basis": "alignment",
+      "note": "The curved modern Union Place trace follows the historical Colina Avenue corridor through the tract.",
+      "name": "colina-ave"
+    }
+  ]
 };

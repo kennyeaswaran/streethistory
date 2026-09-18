@@ -70,6 +70,9 @@
   td.id code { font-size:12px; }
   td.disp { font-variant:small-caps; }
   td.docs, th.docs { text-align:right; }
+  td.drift b { font-weight:600; }
+  td.drift .never { color:#8a6d1f; }
+  td.drift .clean { color:#1f5c3c; }
   .badge { font-size:10px; border:1px solid #c9b98a; border-radius:8px;
            padding:0 5px; margin-left:5px; color:#6b5f4a; white-space:nowrap; }
   .badge.pending { border-color:#c08a3c; color:#8a5c00; background:#fdf4e2; }
@@ -176,6 +179,8 @@
         <button data-s="any" class="on">any state</button>
         <button data-s="todo">no namesake</button>
         <button data-s="problems">problems</button>
+        <button data-s="drifted" title="Approved once, and the text has moved since">drifted</button>
+        <button data-s="unapproved" title="Public prose nobody has ever approved">unapproved</button>
         <button data-s="edited">edited</button>
       </span>
       <button id="newEntity">New entity…</button>
@@ -193,6 +198,7 @@
           <th data-k="cats">Categories</th>
           <th data-k="basis">Basis</th>
           <th data-k="named">Namesake</th>
+          <th data-k="drift" class="docs" title="Words changed in note and namedAfter since a person last approved them">Drift</th>
           <th data-k="docs" class="docs">Docs</th>
         </tr></thead>
         <tbody id="rows"></tbody>
@@ -813,6 +819,7 @@ function visibleRows() {
       basis: e.basis || "",
       named: e.namedAfter ? e.namedAfter.replace(/[{}]/g, "") : "",
       docs: (docCounts[id] || []).length,
+      drift: driftOf(e),
       err: p.some(x => x.kind === "err"),
       wrn: p.some(x => x.kind === "wrn"),
       dirty: !!edited[id]
@@ -822,6 +829,8 @@ function visibleRows() {
     if (filterFile === "new" && r.file !== "newNames") return false;
     if (filterState === "todo" && r.e.namedAfter) return false;
     if (filterState === "problems" && !r.err && !r.wrn) return false;
+    if (filterState === "drifted" && !r.drift.changed) return false;
+    if (filterState === "unapproved" && !r.drift.never) return false;
     if (filterState === "edited" && !r.dirty) return false;
     if (filterBasis !== "any" && (r.e.basis || "") !== filterBasis) return false;
     if (!q) return true;
@@ -832,6 +841,21 @@ function visibleRows() {
   });
   const cmp = (a, b) => {
     if (sortKey === "docs") return (a.docs - b.docs) || a.id.localeCompare(b.id);
+    // Drift sorts BIGGEST FIRST on the first click, unlike every other column.
+    // The question this column answers is "what has moved furthest since I read
+    // it", and answering it with a screen of zeroes would be a joke; so the
+    // comparator is inverted here and the arrow still points the way the data
+    // runs. Within a tie, prose that was approved and then changed outranks
+    // prose nobody ever approved — a broken promise before an unmade one — and
+    // entities with no public prose at all sort last whichever way it points,
+    // the same rule the blank-namesake case already follows.
+    if (sortKey === "drift") {
+      const A = a.drift, B = b.drift;
+      if (A.any !== B.any) return sortDir * (A.any ? -1 : 1);
+      return (B.words - A.words)
+          || ((B.changed ? 1 : 0) - (A.changed ? 1 : 0))
+          || a.id.localeCompare(b.id);
+    }
     const av = String(a[sortKey] || ""), bv = String(b[sortKey] || "");
     // Blanks sort last whichever way the column is pointing: "which of these
     // has no namesake yet" is the question, and it is answered by the column,
@@ -861,6 +885,12 @@ function render() {
       <td>${r.named ? esc(r.named.length > 90 ? r.named.slice(0, 88) + "…" : r.named)
                     : '<span class="na">not researched</span>'}${
         r.e.disputed ? '<span class="badge">disputed</span>' : ""}</td>
+      <td class="docs drift">${
+        !r.drift.any ? '<span class="na">·</span>'
+        : r.drift.changed ? `<b>${r.drift.words}</b>` +
+            (r.drift.never ? '<span class="never" title="the other field has never been approved"> +new</span>' : "")
+        : r.drift.never ? `<span class="never" title="never approved: the whole of it is unreviewed">${r.drift.words} new</span>`
+        : '<span class="clean" title="matches the approved version">0</span>'}</td>
       <td class="docs">${r.docs || '<span class="na">·</span>'}</td>
     </tr>`).join("");
   $("empty").style.display = rows.length ? "none" : "";
@@ -952,7 +982,16 @@ $("stateChips").onclick = ev => {
 const allCategories = () => {
   const c = {};
   for (const cat of (corpus && corpus.categoryTree) || [])
-    if (!cat.facet && !cat.derived) c[cat.id] = 0;
+    // `facet` is a heading, `derived` is computed from other fields, and
+    // `only: "legacy"` belongs to the frozen pre-model data in legacy/ — none of
+    // the three is a thing a reviewer may tick on an entity in names.js. ⚠ The
+    // legacy pair was leaking: `unknown` and `unresearched` are the only entries
+    // in site-config.js with an `only` and no `derived`, so they slipped past a
+    // filter that tested `derived` alone, and the picker offered a reviewer two
+    // categories that check-model.js would then reject. Caught 2026-09-17 by the
+    // browser test's "the picker does not offer a derived category", which had
+    // been red on its own for some time.
+    if (!cat.facet && !cat.derived && cat.only !== "legacy") c[cat.id] = 0;
   for (const id of Object.keys(all)) for (const x of entityOf(id).categories || []) c[x] = (c[x] || 0) + 1;
   for (const e of Object.values(edited)) for (const x of e.categories || []) c[x] = c[x] || 0;
   return c;
@@ -1023,6 +1062,61 @@ function wordDiff(oldText, newText) {
     k = e;
   }
   return out;
+}
+
+// HOW FAR HAS THE PROSE MOVED SINCE A PERSON LAST READ IT?
+//
+// `note` and `namedAfter` are published — the map prints namedAfter as a
+// street's origin line — and an agent may rewrite either at will, so the file
+// accumulates sentences that were approved once and have since been redrafted.
+// Counting the words a reviewer would have to re-read is the only ordering
+// that puts the worst of that first; sorting by date approved does not, because
+// a field approved long ago and never touched needs nothing.
+//
+// The unit is WORDS CHANGED — deleted plus inserted — over both fields, using
+// the same LCS the diff panel draws. A pure replacement of n words by n words
+// therefore scores 2n, which is right: a reviewer reads both halves.
+//
+// ⚠ ONE DELIBERATE DEPARTURE FROM THE PANEL, and it is not cosmetic. The diff
+// tokenises a word TOGETHER WITH its trailing whitespace, which is what stops
+// the display stuttering (see the note above wordDiff). The side effect is that
+// the LAST word of a text has no trailing space, so it never matches the same
+// word once something follows it: appending "c d" to "a b" diffs as del "b" /
+// ins "b c d" and would score 4 for a two-word addition. That is a constant +2
+// on every append, and on a column people sort by it is a lie. So the measure —
+// and ONLY the measure — normalises whitespace and adds a terminal space first,
+// which makes every token uniform and the boundary artefact disappear. The
+// panel keeps the raw text, because there the artefact costs nothing and the
+// cure would cost readability. The two can therefore differ by up to one token
+// each way; the measure is the truthful one.
+//
+// THREE STATES, AND THEY ARE NOT THE SAME QUESTION.
+//   approved and unchanged  -> 0.  Nothing to do.
+//   approved and changed    -> the count. THIS is the reason the column exists.
+//   never approved          -> the current word count, flagged `never`.
+// The third is not a drift at all, and it is given a number anyway because the
+// honest reading of "nobody has approved this" is that every word of it is
+// unreviewed. It is marked in the cell and separated by its own filter, so the
+// 200-odd entities in that state cannot be mistaken for prose that moved.
+function driftOf(e) {
+  const tok = t => String(t || "").match(/\S+\s*/g) || [];
+  // Uniform tokens: collapse runs of whitespace, then give the last word a
+  // trailing space like every other word has. See the note above.
+  const flat = t => { const s = String(t || "").replace(/\s+/g, " ").trim(); return s ? s + " " : ""; };
+  let words = 0, never = false, changed = false, any = false;
+  for (const field of ["namedAfter", "note"]) {
+    const cur = e[field] ?? "";
+    const ap = e[field + "Approved"];
+    if (!cur && ap === undefined) continue;          // no prose in this field
+    any = true;
+    if (ap === undefined) { never = true; words += tok(flat(cur)).length; continue; }
+    if (ap === cur) continue;                        // compare RAW: whitespace-only
+    changed = true;                                  // edits are still edits
+    const parts = wordDiff(flat(ap), flat(cur));
+    if (!parts) { words += tok(flat(ap)).length + tok(flat(cur)).length; continue; }
+    for (const p of parts) if (p.kind !== "same") words += tok(p.text).length;
+  }
+  return { words, never, changed, any };
 }
 
 function diffHtml(oldText, newText) {

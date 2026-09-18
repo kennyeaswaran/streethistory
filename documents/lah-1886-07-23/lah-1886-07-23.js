@@ -69,5 +69,21 @@ module.exports = {
             "SPENCE, Mayor." }
   ],
 
-  rows: []
+  rows: [
+    // Audit 2026-09-18. QUALIFIED AND RESOLVED: "from Alameda street to Geary
+    // street". 2nd Street meets Alameda and Garey at 0 m. "Geary" is read as GAREY:
+    // Ordinance No. 48 (lah-1889-05-10, c067) extends Davies over Topeka Street
+    // "from near Garey street eastward to Santa Fe avenue", which is exactly the
+    // continuation of this stretch — the two instruments meet at Garey. A spelling
+    // inference all the same; Kenny to confirm. `guadalupe` is lettered on 2nd
+    // Street east of Alameda (mr002-092, mr003-060).
+    { kind: "change", from: "guadalupe", to: "davies-2nd",
+      scope: "extent",
+      street: "2nd Street", fromCross: "Alameda Street", toCross: "Garey Street",
+      wording: "The name of that certain street, extending from Alameda street to Geary street and known as Guadalupe street, be and the same is hereby changed to Davies street.",
+      says: ["sec-1-guadalupe-davies", "certification"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Ordinance No. 242, adopted July 19 and approved July 22, 1886." }
+  ]
 };

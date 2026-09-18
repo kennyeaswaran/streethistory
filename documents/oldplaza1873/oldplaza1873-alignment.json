@@ -1,0 +1,38 @@
+{
+  "image": "documents/oldplaza1873/oldplaza1873.jpg",
+  "points": [
+    {
+      "px": [
+        0,
+        0
+      ],
+      "ll": [
+        34.055394,
+        -118.24145
+      ],
+      "note": "map-tool corner (0,0)"
+    },
+    {
+      "px": [
+        1141,
+        0
+      ],
+      "ll": [
+        34.06182,
+        -118.238196
+      ],
+      "note": "map-tool corner (1141,0)"
+    },
+    {
+      "px": [
+        0,
+        796
+      ],
+      "ll": [
+        34.0535,
+        -118.236077
+      ],
+      "note": "map-tool corner (0,796)"
+    }
+  ]
+}

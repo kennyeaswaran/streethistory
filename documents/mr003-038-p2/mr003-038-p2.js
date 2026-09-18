@@ -6,7 +6,10 @@ module.exports = {
   scan: "documents/mr003-038-p2/mr003-038-p2.pdf",
   transcription: null,
 
-  date: { on: "1915-05-04" },   
+  // DATE CORRECTED 2026-09-18 (was 1915-05-04): the certificate reads "Recorded
+  // May 4th A.D. 1875 at 9 o'clock A.M. At the request of Wiley & Berry", signed
+  // by J. W. Gillette, County Recorder — the 7 of 1875 was misread as a 9.
+  date: { on: "1875-05-04" },
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.

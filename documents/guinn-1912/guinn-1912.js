@@ -74,7 +74,14 @@ module.exports = {
             "Figueroa, date their existence from the Ord Survey, made in 1849. They were christened " +
             "both in English and Spanish. The Spanish names long since ceased to be used and are " +
             "forgotten. Forten, Caridad and Chapules have been changed to Broadway, Grand avenue and " +
-            "Figueroa." },
+            "Figueroa.",
+      note: "★ A DATING RULE FOR THE WHOLE DOWNTOWN GRID, and the most useful single sentence in " +
+            "either Guinn paper for this corpus: nothing south of First or west of Main existed " +
+            "before 1849. Any claim that a street in that rectangle carried a name earlier than the " +
+            "Ord Survey is wrong about the street. That is what resolves the Caridad tangle — see " +
+            "`oldest-streets` below. ⚠ “Forten” is Fortin (Calle Fortin, Fort Street); the OCR " +
+            "and possibly the printer mangled it. documents/guinn-1895 gives the full concordance of " +
+            "which this is a three-item summary." },
 
     { id: "los-angeles-street-lineage",
       text: "long before the Gringo came, Los Angeles street was known as Calle Zanja (Ditch street), " +
@@ -86,7 +93,21 @@ module.exports = {
     { id: "oldest-streets",
       text: "San Fernando street (formerly Upper Main), North Main (once Alegro or Junction street) " +
             "and North Spring street, in the early years of the last century Calle Caridad (Charity " +
-            "street), are the oldest streets of the city." },
+            "street), are the oldest streets of the city.",
+      note: "★★ THE SENTENCE THAT SEPARATES THE TWO CARIDADS, and the reason `charity` and any " +
+            "Caridad on the Spring line are two entities rather than one. Guinn names three streets " +
+            "as the city's oldest, all north of the plaza, and gives NORTH SPRING the name Calle " +
+            "Caridad in the early 1800s — while the Caridad of `ord-survey-names` above, the one " +
+            "that became Grand Avenue, is the Ord Survey's own 1849 christening two blocks west of " +
+            "Olive. ★ IT ALSO RESOLVES documents/guinn-1895, where the same author writes loosely " +
+            "that “Spring street, sixty or seventy years ago was known as the Calle de Las " +
+            "Caridad”: the passage above dates everything south of First to the Ord Survey, so " +
+            "downtown Spring did not exist to be named in the 1830s and the north end is the only " +
+            "candidate. (Kenny read it this way on 2026-09-17, before the 1912 text was checked; the " +
+            "paper says it in so many words.) ⭐ TWO MORE LINEAGES IN ONE SENTENCE, neither yet an " +
+            "entity: SAN FERNANDO STREET was formerly UPPER MAIN, and NORTH MAIN was once ALEGRO or " +
+            "JUNCTION STREET — the “Calle de Las Allegria — Junction street” of the 1895 " +
+            "paper." },
 
     { id: "marchessault-lineage",
       text: "That portion of Marchessault street which was recently absorbed by Sunset Boulevard early " +

@@ -28,6 +28,36 @@ sentence — the petitioners' name is settled, and separately "An ordinance
 changing Grasshopper street to Pearl street was carried." When a newspaper
 account gives you only stage 1 or 2, you have a lead, not a source.
 
+## Step 0 — look at the plats over that ground first ⭐
+
+Added 2026-09-18, after two plats handed over four ordinance numbers that six
+newspaper articles had not mentioned once.
+
+**County recorder's copies of plats are annotated, sometimes for decades after
+recording, and the annotations cite ordinance numbers.** A renaming that touches
+a platted block gets written onto the recorder's copy — and if the renaming is
+later repealed, the annotation is *struck through* and a second number written
+in. So a plat can tell you three things a newspaper cannot:
+
+1. **The number of the instrument.** `documents/mr005-566` carries a clean
+   marginal note, "Orange St. changed to Wilshire Blvd. Ord. 48435", and
+   `documents/mr055-014` carries "ord 16916" beside a re-lettered Orange.
+2. **Which of two competing accounts won**, because the loser is crossed out.
+   Both those sheets show "Wilshire … Blvd." with "ORD 16790" struck through —
+   the June 1908 change, cancelled after the December 1908 repeal.
+3. **Vacations and establishments**, in the same hand: "Por. of Kip St. vacated
+   Ord. 46278", "Name of Kip St. established Ord. 36214".
+
+**So the order of work is:** identify the ground, list the plats the corpus
+already holds over it, read their margins and their street labels at full size —
+*then* go to the newspapers. It is free, it is offline, and the numbers it yields
+turn an archive visit from a search into a retrieval.
+
+⚠ **What a plat annotation does NOT give you is a date.** Which number is which
+is read off where the pen struck; only the ordinance index confirms it. And ⚠ an
+annotation is not the instrument — it still cannot carry a `change` row (step 3
+below). It tells you what to ask for.
+
 ## Step 1 — read the newspaper item for which stage it reports
 
 Words that mean stage 1 or 2 and are **not** enough: *a petition was received*,

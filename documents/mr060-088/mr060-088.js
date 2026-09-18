@@ -39,7 +39,7 @@ module.exports = {
   rows: [
     {
       "kind": "state",
-      "asWritten": "ORANGE STREET",
+      "asWritten": "SEVENTH STREET",
       "street": "7th Street",
       "from": {
         "px": [
@@ -54,7 +54,8 @@ module.exports = {
         ]
       },
       "basis": "alignment",
-      "name": "orange-st-wilshire"
+      "note": "Corrected 2026-09-18: this row was entered as ORANGE STREET and pointed at `orange-st-wilshire`. The sheet letters SEVENTH STREET here, in capitals, along the tract's northern boundary \u2014 there is no Orange Street anywhere on it. The GEOMETRY was right (the row sits on modern 7th Street); only the ink and the entity were wrong.",
+      "name": "seventh-street"
     },
     {
       "kind": "unnamed",

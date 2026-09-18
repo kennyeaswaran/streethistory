@@ -36,7 +36,7 @@ module.exports = {
   // The polygon strays onto these; the document does not inform about them.
   // NOT the same as a absent row, which says the sheet covers the ground and
   // draws nothing there (MODEL-SPEC §4.4, §5.2).
-  coverageExcept: [{"street":"8th Street","from":null,"to":"Francisco Street"},{"street":"Fremont Avenue","from":null,"to":"6th Street"}],
+  coverageExcept: [{"street":"8th Street","from":null,"to":"Francisco Street"},{"street":"Fremont Avenue","from":null,"to":"6th Street"},{"street":"5th Street","from":null,"to":null},{"street":"Saint Paul Avenue","from":null,"to":"Wilshire Boulevard"}],
 
   sweptFully: true,
   sweptFor: ["5th Street","6th Street","7th Street","8th Place","8th Street","9th Street","Beaudry Avenue","Figueroa Street","Francisco Street","Fremont Avenue","Harbor Freeway","James M Wood Boulevard","Saint Paul Avenue","Wilshire Boulevard"],
@@ -44,7 +44,7 @@ module.exports = {
   rows: [
     {
       "kind": "absent",
-      "street": "5th Street",
+      "street": "5th Street (south branch)",
       "from": "6th Street",
       "to": {
         "px": [
@@ -52,10 +52,11 @@ module.exports = {
           494
         ]
       },
-      "note": "The short modern 5th Street branch lies east of the Ward St. corridor and does not follow a roadway shown on the map."
+      "note": "The short modern 5th Street branch lies east of the Ward St. corridor and does not follow a roadway shown on the map. (Re-keyed 2026-09-18 to the one-way southern branch, which is its own street key; the 1875 Beaudry sheet, mr003-046-p2, letters WARD on this same branch — whether this sheet's silence here is real or the same scale slip as the 6th Street row is Kenny's call.)"
     },
     {
-      "kind": "absent",
+      "kind": "state",
+      "asWritten": "WARD ST",
       "street": "6th Street",
       "from": {
         "px": [
@@ -69,7 +70,9 @@ module.exports = {
           538
         ]
       },
-      "note": "The northern modern 6th Street branch lies just east of Ward St.; it does not track that corridor's middle."
+      "basis": "alignment",
+      "note": "Ward St. is drawn a little west of the modern 6th Street line here; read as 6th Street's ground, as the 1875 Beaudry sheet (mr003-046-p2) has it — the offset is taken to be a scale slip in one corner of a map about other property (Kenny, 2026-09-18). Was an absent row plus a vanished Ward trace until then.",
+      "name": "ward-st"
     },
     {
       "kind": "absent",
@@ -274,13 +277,6 @@ module.exports = {
       "name": "ninth-street"
     },
     {
-      "kind": "absent",
-      "street": "Saint Paul Avenue",
-      "from": "Wilshire Boulevard",
-      "to": "5th Street",
-      "note": "Modern Saint Paul follows a parcel boundary toward Ward St., but the map does not draw a two-edged street corridor along it."
-    },
-    {
       "kind": "state",
       "asWritten": "ORANGE ST",
       "street": "Wilshire Boulevard",
@@ -350,23 +346,6 @@ module.exports = {
       "basis": "alignment",
       "note": "The east-west roadway between Orange St. and the tract's eastern side is not followed by a supplied modern street.",
       "name": "loomis-st"
-    },
-    {
-      "kind": "vanished",
-      "asWritten": "WARD ST",
-      "trace": [
-        [
-          1539,
-          484
-        ],
-        [
-          1517,
-          376
-        ]
-      ],
-      "basis": "alignment",
-      "note": "Ward St. is drawn as a separate corridor west of the modern 5th and 6th Street branches.",
-      "name": "ward-st"
     },
     {
       "kind": "vanished-unnamed",

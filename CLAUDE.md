@@ -59,7 +59,7 @@ The 1897 council minutes and the omnibus renaming files are in
                                 map-tool (align + bound a scan),
                                 names-tool (review + edit names.js)
   *.js                          the runnable pieces: generate, the checkers,
-                                doc-geometry, intersect
+                                doc-geometry, intersect, branch-check
   names.js  streets-data.js     the authored name layer; the live map data
   names-new.js                  entities minted in the tool, awaiting research
                                 and a move into names.js (rewritten by the tool)
@@ -130,15 +130,33 @@ inside the file must match; the checker says so if they drift.
   - NavigateLA, CDNC, ResCarta (LAPL directories) — JavaScript apps; fetch
     tools see nothing. Browser (Claude in Chrome) or human only. CDNC is now
     robots-disallowed too, so it is blocked twice over.
-  - **Three sources LIE rather than fail** — they answer, ignoring your query,
+  - **Sources that LIE rather than fail** — they answer, ignoring your query,
     with stale or default results, so a search that was never run looks like a
-    clean negative. Run a deliberate nonsense control term first, every time:
-    `lastreetnames.com/?s=` (use `/search/<term>/` instead, which works),
-    `losangelesrevisited`'s RSS `?q=`, and archive.org's `advancedsearch.php`
-    and `fulltext/inside.php`. This has already produced false negatives here.
+    clean negative. **Run a deliberate nonsense control term first, every time,
+    and a POSITIVE one too** (a term you know is in there): a nonsense control
+    only catches the endpoint that answers everything, not the one that answers
+    nothing. Known liars: `lastreetnames.com/?s=` (use `/search/<term>/`
+    instead, which works), `losangelesrevisited`'s RSS `?q=`, archive.org's
+    `advancedsearch.php` and `fulltext/inside.php`, and — found 2026-09-17 —
+    **`digitalcollections.lmu.edu/documents?q=`**, which returns "Sorry, no
+    results found" to a query whose record demonstrably exists. Every one of
+    these has produced a false negative in this project.
+  - ⚠⚠ **`curl` FAILS SILENTLY EMPTY THROUGH THE AGENT PROXY.** Found
+    2026-09-17, after two research agents filed false negatives from it: the
+    proxy returns 403 on CONNECT for `data.lacity.org` and `stevemorse.org`,
+    and curl then exits with **no output and no error text**, which is
+    indistinguishable from "the search found nothing". **Use WebFetch for those
+    hosts, not the shell**, and treat any empty curl result as a tooling
+    failure until a positive control says otherwise. This is the same class of
+    bug as the archive.org one and it cost the same thing.
   - **Dead:** chroniclingamerica.loc.gov (404, API retired), loc.gov collection
-    search (403), HathiTrust babel, Calisphere *search* (item pages are fine),
-    Nominatim, Overpass, Google Books API (persistent 429).
+    search (403), HathiTrust babel, Nominatim, Overpass, Google Books API
+    (persistent 429), elephind.com (403).
+    ⚠ **Calisphere is now robots-blocked for ITEM PAGES too**, not just search
+    (2026-09-17) — an earlier note here said item pages were fine and that is no
+    longer true. **`losangelesrevisited.blogspot.com/search?q=` is likewise
+    robots-blocked**, so the whole of that site's search is out, not only its
+    RSS; reach its posts through a general web search instead.
   - **Three that work well and are worth reaching for first** (details and
     query forms in NAME-RESEARCH.md): the City's own street registry at
     `data.lacity.org`, the Census geocoder, and LMU's digitised tract maps.

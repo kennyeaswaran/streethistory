@@ -52,5 +52,19 @@ module.exports = {
             "amendment list. Wanted." }
   ],
 
-  rows: []
+  rows: [
+    // Audit 2026-09-18 (handbook/change-rows-audit-2026-09-18.md), bin A.
+    // A RESPELLING (from === to), and the first REAL warrant for it: ord-4093's
+    // row for the same event cites a PLACEHOLDER excerpt. This row is a second
+    // witness with the words; whether to retire the placeholder row is Kenny's call.
+    // UNQUALIFIED: "that thoroughfare" is the whole Georgia Bell–Nevada street.
+    // ⚠ Lands on no ground today: `georgia-bell`'s only lettering is a 1915 sheet
+    // (tr0030-086), after the change date, so the derivation has nothing to move.
+    { kind: "change", from: "georgia-bell", to: "georgia-bell",
+      scope: "whole-name",
+      says: ["passed-as-amended"],
+      toForm: "Georgia Street",
+      confirmed: false,
+      note: "The joint committee's compromise, adopted with Ordinance No. 4093 on Feb. 23, 1897; the mayor signed the ordinance on Feb. 26." }
+  ]
 };

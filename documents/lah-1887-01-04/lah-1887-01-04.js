@@ -39,5 +39,17 @@ module.exports = {
             "avenue. Ordinance adopted." }
   ],
 
-  rows: []
+  rows: [
+    // Audit 2026-09-18 (handbook/change-rows-audit-2026-09-18.md), bin A.
+    // UNQUALIFIED: a bare pair, no stretch named. `belmont-ave` is the Crown Hill
+    // Belmont whose 1886 row (mr010-088) BEGINS where `texas-st`'s 1885 row ends —
+    // the neighbouring name extended over Texas. NOT `belmont-kincaid`, which is
+    // eleven blocks south and survives only as a vanished trace.
+    { kind: "change", from: "texas-st", to: "belmont-ave",
+      scope: "whole-name",
+      says: ["texas-belmont"],
+      mechanism: "renaming",
+      confirmed: true,   // Kenny, 2026-09-18
+      note: "Adopted at the council meeting reported on Jan. 4, 1887; the item gives neither the ordinance's number nor the meeting date." }
+  ]
 };

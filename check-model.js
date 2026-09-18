@@ -57,7 +57,7 @@ const geom = g.data || g;
 const streets = new Map();
 for (const w of geom.elements) {
   if (!w.geometry || !w.tags || !w.tags.name) continue;
-  const n = normalizeName(w.tags.name);
+  const n = normalizeName(w.tags.name, w.id);
   if (!streets.has(n)) streets.set(n, []);
   streets.get(n).push(...w.geometry);
 }
@@ -650,11 +650,25 @@ for (const doc of DOCUMENTS) {
     if (doc.type === "osm") continue;
     for (const r of doc.rows || []) if (r.kind === "state" && r.name) hasStateRow.add(resolve(r.name));
   }
+  // A name can also hold ground it was never lettered on: the `to` of an
+  // earlier change lands wherever the `from` held (change-rows-amendment §4),
+  // and a later change from it chains on — High → Walters (1886) → Ord (1890),
+  // where nothing letters Walters. Count those as grounded too (2026-09-18).
+  const groundedByChange = new Set();
+  let grew = true;
+  while (grew) {
+    grew = false;
+    for (const doc of DOCUMENTS) for (const r of doc.rows || []) {
+      if (r.kind !== "change" || r.from === r.to) continue;
+      const from = resolve(r.from), to = resolve(r.to);
+      if (to && !groundedByChange.has(to) && (hasStateRow.has(from) || groundedByChange.has(from))) { groundedByChange.add(to); grew = true; }
+    }
+  }
   for (const doc of DOCUMENTS)
     for (const [i, row] of (doc.rows || []).entries()) {
       if (row.kind !== "change" || row.scope !== "whole-name") continue;
       const from = resolve(row.from);
-      if (from && !hasStateRow.has(from))
+      if (from && !hasStateRow.has(from) && !groundedByChange.has(from))
         warn(`${doc.id}.rows[${i}]`, `unqualified change from "${row.from}", which no document ` +
              `letters — so it lands on no ground and draws nothing. The renaming is recorded; ` +
              `the name's extent is not. A sheet lettering it is what unblocks this (WANTED.md).`);

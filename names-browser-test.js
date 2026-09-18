@@ -70,6 +70,18 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   });
 
   const rows = () => page.$$eval("#rows tr.ent", ts => ts.map(t => t.dataset.id));
+  // ★ ADDRESS A COLUMN BY ITS HEADER, NEVER BY COUNTING. This file used to read
+  // the Docs column as `td:nth-child(6)`, so inserting a column to its left made
+  // a passing assertion silently start measuring a different column — it failed
+  // loudly here, but the same shape of mistake is exactly how a test quietly
+  // stops testing what it names. (Caught adding Drift, 2026-09-17.)
+  const colIndex = k => page.$$eval("#list th", (ths, key) =>
+    ths.findIndex(t => t.dataset.k === key) + 1, k);
+  const column = async k => {
+    const n = await colIndex(k);
+    if (!n) throw new Error(`no column with data-k="${k}"`);
+    return page.$$eval(`#rows tr.ent td:nth-child(${n})`, ts => ts.map(t => t.innerText.trim()));
+  };
   const cell = (i, n) => page.$eval(`#rows tr.ent:nth-child(${i}) td:nth-child(${n})`, t => t.innerText.trim());
   const visible = sel => page.$eval(sel, el => {
     const r = el.getBoundingClientRect(), s = getComputedStyle(el);
@@ -106,15 +118,68 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   ok("spellings come out in order",
      disp.filter(Boolean).join() === [...disp.filter(Boolean)].sort(
        (a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })).join());
+  // ⚠ WAIT FOR THE documents/ SCAN, do not race it. It is async — the page
+  // lists entities immediately and fills the Docs column when the scan lands —
+  // and this assertion used to run before it finished. It survived only because
+  // it was reading the column by POSITION and a neighbouring column happened to
+  // hold a number; once it addressed the right column it went red. A growing
+  // corpus would have found it eventually, silently, as a flake.
+  await page.waitForFunction(() => {
+    const th = [...document.querySelectorAll("#list th")].findIndex(t => t.dataset.k === "docs");
+    if (th < 0) return false;
+    return [...document.querySelectorAll("#rows tr.ent")]
+      .some(tr => +tr.children[th].innerText.trim() > 0);
+  }, null, { timeout: 30000 }).catch(() => {});
   await page.click('#list th[data-k="docs"]');
   await page.click('#list th[data-k="docs"]');
-  const docs = await page.$$eval("#rows tr.ent td:nth-child(6)", ts => ts.map(t => +t.innerText.trim() || 0));
+  const docs = (await column("docs")).map(t => +t || 0);
   if (!HAVE_DOCS) console.log("  --  skipped: no documents/ corpus in this checkout");
   else {
     ok("the docs column is populated from documents/", docs.some(d => d > 0),
        "no entity showed a document count — the documents/ scan found nothing");
     ok("sorting by docs puts the most-attested first", docs[0] === Math.max(...docs));
   }
+
+  // ── Drift: how far the published prose has moved since a person approved it.
+  // The column's whole job is to be sorted, and it is the one column that sorts
+  // biggest-first on the first click, so both halves of that are asserted here.
+  console.log("\ndrift");
+  ok("the list has a Drift column", (await colIndex("drift")) > 0);
+  await page.click('#list th[data-k="drift"]');
+  const drift = await column("drift");
+  const num = t => { const m = String(t).match(/\d+/); return m ? +m[0] : -1; };
+  ok("one click sorts it biggest-first, without needing a second",
+     num(drift[0]) === Math.max(...drift.map(num)),
+     `top cell was ${JSON.stringify(drift[0])}`);
+  ok("entities with no public prose sink to the bottom",
+     drift.filter(t => t === "\u00b7").every((_, i, a) =>
+       drift.slice(drift.length - a.length).every(t => t === "\u00b7")));
+  ok("a cell nobody has approved says so rather than showing a bare number",
+     drift.some(t => /new/.test(t)));
+
+  // The two filters exist because "approved once and since rewritten" is a
+  // handful of entities and "never approved" is most of the file; one buries
+  // the other unless they can be asked for separately.
+  await page.click('#stateChips button[data-s="drifted"]');
+  const drifted = await rows();
+  const reallyDrifted = Object.entries(live).filter(([, e]) =>
+    ["namedAfter", "note"].some(f =>
+      e[f + "Approved"] !== undefined && e[f + "Approved"] !== (e[f] ?? ""))).map(([id]) => id);
+  ok("the drifted filter shows exactly the entities whose approved text moved",
+     drifted.slice().sort().join() === reallyDrifted.slice().sort().join(),
+     `tool: ${drifted.join()} — file: ${reallyDrifted.join()}`);
+  await page.click('#stateChips button[data-s="unapproved"]');
+  const unapproved = await rows();
+  ok("the unapproved filter is a different, much larger set",
+     unapproved.length > drifted.length);
+  ok("…and it excludes anything fully approved",
+     !unapproved.some(id => {
+       const e = live[id]; if (!e) return false;
+       return ["namedAfter", "note"].every(f =>
+         !(e[f] ?? "") || e[f + "Approved"] !== undefined);
+     }));
+  await page.click('#stateChips button[data-s="any"]');
+  await page.click('#list th[data-k="id"]');
 
   console.log("\nfiltering");
   await page.click('#fileChips button[data-f="new"]');

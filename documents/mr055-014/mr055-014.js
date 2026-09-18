@@ -130,8 +130,8 @@ module.exports = {
         ]
       },
       "basis": "alignment",
-      "note": "The original Orange Street label and later Wilshire Boulevard annotation share this corridor.",
-      "name": "wilshire"
+      "note": "\u2605\u2605 THE SAME STRUCK-OUT ANNOTATION AS documents/mr005-566, and between them the two sheets give the ordinance numbers. This label reads, in layers: the plat's own \u201cORANGE\u2026STREET\u201d in capitals (struck); a cursive \u201cWilshire \u2026 Blvd.\u201d with \u201cord 16790\u201d (struck); and then, live and unstruck, \u201cOrange \u2026 St.\u201d with \u201cord 16916\u201d. So Wilshire was written on, cancelled, and Orange re-lettered under a second ordinance number. Assigned to `orange-st-wilshire`, the name in force in June 1893 when the tract was surveyed, and the name the sheet itself ends on.",
+      "name": "orange-st-wilshire"
     },
     {
       "kind": "unnamed",

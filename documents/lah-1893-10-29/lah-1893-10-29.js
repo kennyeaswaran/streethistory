@@ -62,5 +62,21 @@ module.exports = {
             "this 26th day of October, 1893. T. E. ROWAN, Mayor." }
   ],
 
-  rows: []
+  rows: [
+    // Audit 2026-09-18 (handbook/change-rows-audit-2026-09-18.md), bin B.
+    // QUALIFIED, UNRESOLVED. One row for both Elysian Park Avenue clauses (same
+    // pair, same instrument). The Beaudry end resolves (Sunset × Beaudry 0 m);
+    // Reservoir Street is not in the OSM extract, and the tract-bounded clause lies
+    // outside it. ⚠ IDENTITY TO CONFIRM: this takes the 1893 Elysian Park Avenue to
+    // be the same lineage as `elysian-park-ave` (the stretch north of Sunset that
+    // kept the name) — a street partly renamed, not two streets. Reservoir Street,
+    // Childs Avenue and Effie Street have no entities (bin C).
+    { kind: "change", from: "elysian-park-ave", to: "sunset-boulevard",
+      scope: "extent-unresolved",
+      wording: "\"Elysian Park avenue,\" from Beaudry avenue to Reservoir street; … also, \"Elysian Park avenue\" through the Washington Heights tract, Augusta Heights and Golden Gate tract",
+      says: ["sec-1", "certification"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Adopted Oct. 23, approved Oct. 26, 1893, so that the Sunset Boulevard opening could proceed." }
+  ]
 };

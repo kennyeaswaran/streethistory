@@ -37,6 +37,41 @@ Sanborn sheet or a city directory would serve too (handbook/SERIAL-SOURCES.md).
 **Also fixed by the same sheet:** the `georgia-east` / `georgia-bell` OSM
 ambiguity, which is reported on every build.
 
+## P1 — Four ordinances by number: 16790, 16915/16916 and 48435 (Orange → Wilshire)
+
+**Found as numbers 2026-09-18, off plat annotations. Never yet read as text.**
+
+| Ordinance | What it should say | Status |
+|---|---|---|
+| **16790** | Orange Street, Figueroa to Alvarado → Wilshire Boulevard, ~June 1908 | struck off both plats after the repeal |
+| **16915** and **16916** | the repeal; Orange restored, Dec. 1908 | unstruck on the plats, beside the surviving Orange |
+| **48435** | Orange Street, Alvarado to Figueroa → Wilshire Boulevard, April 1924 | the one that held |
+
+**What they unblock.** The change row `orange-st-wilshire` → `wilshire`, which is
+still unwritten. Six newspaper documents report this renaming
+(`lah-1908-07-14`, `lah-1908-12-05`, `laevex-1924-04-01`, `lae-1924-04-04`,
+`lae-1924-04-07`, `lae-1924-04-12`) and **not one of them is the instrument** —
+by RENAMING-SOURCES.md step 3, only the ordinance may carry the row. Ord. 48435
+is the document that finally does it.
+
+**Why this is unusually cheap.** We are not searching for an unknown document.
+We have four numbers. The City Clerk's ordinance index turns them into dates and
+Ordinance Book pages in one lookup, and the same lookup resolves the one thing
+the plats cannot: **which number is which.** The assignment above is read off
+where the pen struck, not from any index.
+
+**Where to look.** Los Angeles City Archives & Records Center (Erwin Piper
+Technical Center) — Ordinance Books, New Series. Same visit as Ordinance No.
+4093 below.
+
+⭐ **And the technique generalises**, which may matter more than these four
+ordinances: **county plat copies carry ordinance numbers as marginal annotations**.
+Where a newspaper gives a date and no number, the plat over that ground may give
+the number. See handbook/RENAMING-SOURCES.md. Three more numbers were sitting on
+the same two sheets unexamined — Kip Street established by **Ord. 36214**, a
+portion of Kip Street vacated by **Ord. 46278** (both on `mr005-566`), and an
+alley vacated by **Ord. 33107** with **Ord. 5347** beside it (on `mr055-014`).
+
 ## P1 — Ordinance No. 4093 (N.S.), Ordinance Book IV p. 337
 
 The standing ⭐ target; request with the City Archivist since 2026-08.
@@ -53,6 +88,43 @@ The standing ⭐ target; request with the City Archivist since 2026-08.
   "Alcantara Street | Taylor Street" from the same table names a street the
   commission only *proposed*. Both readings cannot hold; only the ordinance
   settles which line is which (amendment §10, form 5).
+
+## P2 — the four compiled-ordinance volumes, 1878–1889 ⭐ NEW 2026-09-18
+
+**Nobody on this project has ever looked at these, and they cover the corpus's
+densest period.** Found while answering Kenny's question about whether UCLA
+holds ordinance books in print.
+
+| Volume | Compiler | Where |
+|---|---|---|
+| **1878** Revised charter and compiled ordinances and resolutions | Wm. M. Caswell | UCLA Law `KFX1621 .A6 1878`; SRLF→LSC `JS1001 .A8 1878`; **also a licensed e-book** |
+| **1884** Compiled ordinances and resolutions | W. W. Robinson | UCLA Law `KFX1621 .A6 1884`; SRLF→LSC `JS1001.A9 A3 1884` |
+| **1887** Compiled ordinances and resolutions, Vol. III | Freeman G. Teed | SRLF→LSC `JS1001.A9 A3 1887`; **also a licensed e-book** |
+| **1889** Charter and compiled ordinances and resolutions, Vol. IV | Freeman G. Teed | UCLA Law `KFX1621 .A6 1889`; SRLF→LSC `JS1001 .A8 1889` |
+
+**What they unblock — potentially a lot.** These are the ordinances *in force*,
+indexed, published by order of the Council, covering 1850–1889. A compiled
+volume of that era normally carries a streets chapter: opening, grading,
+widening, vacating and **naming**. If the Feb. 1874 renaming ordinance, or any
+of the 1870s–80s changes this project keeps dating by inference, was still in
+force at compilation, the text is in one of these four books — with a number.
+
+⚠ **WHAT THEY WILL NOT DO** is answer the outstanding numbers. They are
+compilations of what was in force, not a register by number, and the series (as
+UCLA holds it) stops at 1889. Ordinances **3829 / 3847 / 4093** (1896) and
+**16790 / 16915 / 16916 / 48435** (1908, 1924) are still a City Clerk errand.
+There is no published series anywhere that prints every LA ordinance by number.
+
+⭐ **THE CHEAP SHOT FIRST:** the 1878 and 1887 volumes appear in UC Library
+Search as electronic books with no holdings attached — probably Gale's *Making
+of Modern Law*, which would open in a browser on the UCLA network with no
+reading room and no request. Unverified; one click on campus settles it.
+
+⚠ **Access is the annoying part**, and it is set out in handbook/IN-PERSON.md
+§1b: the `KFX` copies are in the Law Library, which is closed to the public by
+policy; the `JS` copies are off-site at SRLF **and** non-circulating, so they
+need a Library Special Collections request **two business days ahead**, and LSC
+is weekday-only. Request all four at once.
 
 ## P2 — Ordinance Book 11: No. 3829 at p. 460, No. 3847 at p. 496
 
@@ -162,7 +234,7 @@ handbook/RENAMING-SOURCES.md § Step 2b.
 | Charity → Grand | 1886–87 | petition by residents — ⚠ **"Charity" occurs zero times in 176 newspaper documents** under either name, though 1886–87 is inside the swept window. Either an unsearched paper, or the date is wrong. Note that Grand Avenue GREW: "changing the name of Philadelphia street to Grand avenue, as petitioned for by J. E. Fay et al., No. 639" (documents/lah-1895-07-02). So the name did not arrive in one act, and the Charity change may be a smaller piece of a longer assembly. |
 | High → Walters | **1886-09-20, found** | "Presented an ordinance changing name of High street to Walters street. Adopted" (Herald, Sept. 21, 1886). Text not in hand; minutes not checked — handbook/MINUTES-TO-CHECK.md. |
 | Georgia → Georgia Bell | **1889-05-10, resolved** | **Ordinance No. 48 (New Series)**, adopted Apr. 22, 1889, approved May 8, in force on publication May 10 — text in hand from the Herald of May 10, 1889, 212 changes. Forman's date exactly. Still unexplained: the Herald of Sept. 2, 1883 reports an ordinance adopted using the same new name six years earlier (documents/lah-1883-09-02). Pull the Sept. 1, 1883 minutes. |
-| Walters → Ord | 1890 | ⚠ found in the Oct. 1890 21-change omnibus (documents/lah-1890-10-28) — **which Mayor Hazard vetoed on Nov. 8.** A different instrument is needed for the 1890 date. |
+| Walters → Ord | 1890–91 | ⚠ found in the Oct. 1890 21-change omnibus (documents/lah-1890-10-28) — **which Mayor Hazard vetoed on Nov. 8** and the council referred back to Public Works for amendment (lah-1890-11-11). **Kenny, CDNC 2026-09-18: "Ord street" is in print by 1891, "Walters street" as late as 1896, with "High or Walters street" and "Walter (Ord) street" in between** — the shape of an amended omnibus re-passed in early 1891, with the old names lingering in use. The instrument to find: the amended ordinance's passage, Herald Nov. 1890 – spring 1891 ("changing the names of certain streets"). Walters was in official use in May 1890 (documents/lah-1890-05-22). |
 | Ruth ↔ Stanford / Crocker | after Feb. 1897 | unresearched — ⚠ **and there are other Stanfords.** "Stanford street" already exists in Mar. 1896 (documents/lah-1896-03-31), and in Dec. 1897 "Bellard street, in the Washington-street tract, should be changed to Stanford" (documents/lah-1897-12-07). Locate those two by geometry before assuming either is Ruth's. Crocker appears nowhere in 176 newspaper documents. |
 | 10th → Olympic | 1935 (asked 1929) | the ask is found: the Tenth Street Improvement Association's petition, referred Aug. 20, 1929 (documents/lae-1929-08-21). The 1935 act is not. |
 
@@ -261,7 +333,7 @@ Step 2d: **search the successor name first.**
 | **Ozier Lane → Winston Street** | 1887 | Wikipedia | We have the June 1887 ordinance being **postponed** (`documents/lah-1887-06-14`). The act that carried it is later in 1887. |
 | **Moore + Okey Streets → Francisco Street** | 1903 | Kines | Two streets in one act; Okey Street has no entity here. |
 | **Requena Street → Market Street** | July 1904 petition | Los Angeles Revisited | Petition from the North Main Street merchants, approved by the council. |
-| **Stephenson Avenue → Traction Avenue** | 1915 | Kines | No Stephenson Avenue entity yet. The *other* Stephenson Ave became Whittier Boulevard five years later. |
+| **Stephenson Avenue → Traction Avenue** | 1915 | Kines | Entity `stephenson-avenue` exists (2026-09-18). **Its origin is the same Oct. 1890 omnibus**: "Second street, from Alameda to east city line, to Stephenson avenue" (documents/lah-1890-10-28; the veto message, lah-1890-11-11, says the name "had been suggested in open council … because of its deflection to the south in Boyle Heights"). So the Traction end and the *other* Stephenson that became Whittier Boulevard are the two ends of one 1890 renaming, and the same amended-omnibus instrument that made Walters into Ord is what adopted it. Kenny found nothing further on Stephenson in CDNC (2026-09-18); a post-1891 sheet on Traction would letter it (shopping-list-2026-09-17b.md). |
 | **Park Lane → Lebanon Street** | 1897 | Los Angeles Revisited | Pairs with Alexander Lane → Lebanon in 1917, already in `names.js`. No Lebanon Street entity yet. |
 | **Turner Street (First to Alameda) → Jackson Street** | May 1883 | **we have it** — `documents/lah-1883-05-13` | Listed only because our 1928 sheet still letters Turner; the conflict needs settling before a row. |
 | **Orange Street → Wilshire Boulevard** | Apr. 1924 | **we have it** — `documents/laevex-1924-04-01`, `lae-1924-04-12` | Fully documented; awaiting Kenny's confirmation, not more evidence. |

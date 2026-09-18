@@ -73,5 +73,15 @@ module.exports = {
             "city line, to Stephenson avenue; and Davies street to Second street." }
   ],
 
+  // NO ROWS — withdrawn 2026-09-18 (Kenny). Two change rows were written here
+  // earlier that day, walters-street → ord-street (whole-name) and second-street →
+  // stephenson-avenue (Traction Avenue, Alameda to the east end). This list is an
+  // ordinance Mayor Hazard VETOED (lah-1890-11-09) and the council sent back for
+  // amendment (lah-1890-11-11); no override and no amended version is in the
+  // corpus. RENAMING-SOURCES: only an instrument that took effect may carry a change
+  // row. Both changes evidently happened later — Ord Street and Stephenson Avenue
+  // are both real names — so the instrument to find is the AMENDED ordinance of
+  // late 1890 or 1891, which would carry both rows (and Waters → Douglas,
+  // Collado → Union, Davies → Second, Canal → Beaudry…) with its own date.
   rows: []
 };

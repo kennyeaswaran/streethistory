@@ -1,0 +1,38 @@
+{
+  "image": "documents/stevenson-1884-hi-res/stevenson-1884-hi-res.jpg",
+  "points": [
+    {
+      "px": [
+        0,
+        0
+      ],
+      "ll": [
+        34.126168,
+        -118.300029
+      ],
+      "note": "map-tool corner (0,0)"
+    },
+    {
+      "px": [
+        6472,
+        0
+      ],
+      "ll": [
+        34.127294,
+        -118.189508
+      ],
+      "note": "map-tool corner (6472,0)"
+    },
+    {
+      "px": [
+        0,
+        8108
+      ],
+      "ll": [
+        34.010665,
+        -118.298337
+      ],
+      "note": "map-tool corner (0,8108)"
+    }
+  ]
+}

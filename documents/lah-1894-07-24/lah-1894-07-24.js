@@ -43,5 +43,18 @@ module.exports = {
             "Castelar street to Hill street. Passed." }
   ],
 
-  rows: []
+  rows: [
+    // Audit 2026-09-18 (handbook/change-rows-audit-2026-09-18.md), bin B.
+    // QUALIFIED, UNRESOLVED: "a portion" with no extent. `castelar` is lettered on
+    // modern Hill Street (mr003-240). ⚠ `hill-street-downtown`'s internal note says
+    // the Hill name was extended north onto Castelar in 1960; this 1894 portion is an
+    // earlier, smaller step and the two accounts need reconciling.
+    { kind: "change", from: "castelar", to: "hill-street-downtown",
+      scope: "extent-unresolved",
+      wording: "a portion of Castelar street to Hill street",
+      says: ["castelar-hill"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Passed on the city attorney's report, July 1894." }
+  ]
 };

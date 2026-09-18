@@ -352,7 +352,7 @@ const normalize = normalizeName;
 const ways = [], streetPoints = new Map();
 for (const w of geomRaw) {
   if (!w.geometry || !w.tags || !w.tags.name) continue;
-  const n = normalize(w.tags.name);
+  const n = normalize(w.tags.name, w.id);
   ways.push({ name: n, geometry: w.geometry });
   if (!streetPoints.has(n)) streetPoints.set(n, []);
   streetPoints.get(n).push(...w.geometry);

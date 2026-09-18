@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-17
+// Built: 2026-09-18
 const NAME_CATEGORY_INDEX = {
   "first-street": [
     "number",
@@ -110,10 +110,10 @@ const NAME_CATEGORY_INDEX = {
     "searched-partial"
   ],
   "court-street": [
-    "unknown",
-    "basis-none",
-    "basis",
-    "searched-partial"
+    "descriptive",
+    "abstract",
+    "basis-inferred",
+    "basis"
   ],
   "diamond-street": [
     "unknown",
@@ -195,10 +195,10 @@ const NAME_CATEGORY_INDEX = {
     "basis"
   ],
   "boylston": [
-    "unknown",
-    "basis-none",
-    "basis",
-    "searched-extensive"
+    "place",
+    "borrowed",
+    "basis-guess",
+    "basis"
   ],
   "central-ave": [
     "descriptive",
@@ -503,6 +503,18 @@ const NAME_CATEGORY_INDEX = {
     "basis-intrinsic",
     "basis"
   ],
+  "fourteenth-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "eighteenth-street": [
+    "number",
+    "abstract",
+    "basis-intrinsic",
+    "basis"
+  ],
   "fifteenth-street": [
     "number",
     "abstract",
@@ -557,12 +569,19 @@ const NAME_CATEGORY_INDEX = {
     "basis-lexical",
     "basis"
   ],
-  "william": [
+  "william-santee": [
     "person",
     "alive",
     "landowner",
     "basis-eponymous",
     "basis"
+  ],
+  "william-farragut": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
   ],
   "maple-dtla": [
     "tree",
@@ -577,10 +596,9 @@ const NAME_CATEGORY_INDEX = {
     "basis"
   ],
   "san-julian-st": [
-    "unknown",
-    "basis-none",
-    "basis",
-    "searched-extensive"
+    "person",
+    "basis-guess",
+    "basis"
   ],
   "botiller-street": [
     "person",
@@ -1471,10 +1489,9 @@ const NAME_CATEGORY_INDEX = {
     "basis"
   ],
   "st-paul-avenue": [
-    "unknown",
-    "basis-none",
-    "basis",
-    "searched-partial"
+    "company",
+    "basis-inferred",
+    "basis"
   ],
   "teed-street": [
     "person",
@@ -1488,6 +1505,13 @@ const NAME_CATEGORY_INDEX = {
     "basis-none",
     "basis",
     "searched-partial"
+  ],
+  "macy-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
   ],
   "westlake-avenue": [
     "place",
@@ -1506,122 +1530,471 @@ const NAME_CATEGORY_INDEX = {
     "basis",
     "searched-partial"
   ],
-  "acacia-st": [
-    "unknown"
-  ],
-  "anderson": [
-    "unknown"
-  ],
-  "arch-st": [
-    "unknown"
-  ],
-  "artemus": [
-    "unknown"
-  ],
-  "atchison-st": [
-    "unknown"
-  ],
-  "azusa": [
-    "unknown"
-  ],
-  "belmont-ave": [
-    "unknown"
-  ],
-  "clarence-st": [
-    "unknown"
-  ],
-  "clementina-street": [
-    "unknown"
-  ],
-  "collado-st": [
-    "unknown"
-  ],
-  "freight-st": [
-    "unknown"
-  ],
-  "garland": [
-    "unknown"
-  ],
-  "grace": [
-    "unknown"
-  ],
-  "gravitta-st": [
-    "unknown"
-  ],
-  "hartford-ave": [
-    "unknown"
-  ],
-  "lincoln-street": [
-    "unknown"
-  ],
-  "logan-ave": [
-    "unknown"
+  "colina-ave": [
+    "nature",
+    "landform",
+    "basis-pattern",
+    "basis"
   ],
   "loma-drive": [
-    "unknown"
+    "nature",
+    "landform",
+    "basis-pattern",
+    "basis"
   ],
-  "lucas-ave": [
-    "unknown"
+  "collado-st": [
+    "nature",
+    "landform",
+    "basis-pattern",
+    "basis"
   ],
-  "mission-road": [
-    "unknown"
+  "gravilla-st": [
+    "nature",
+    "landform",
+    "basis-pattern",
+    "basis"
   ],
-  "myers": [
-    "unknown"
+  "acacia-st": [
+    "nature",
+    "tree",
+    "basis-lexical",
+    "basis"
   ],
-  "nichols-ave": [
-    "unknown"
-  ],
-  "north-ave": [
-    "unknown"
-  ],
-  "northern-ave": [
-    "unknown"
-  ],
-  "rio-avenue": [
-    "unknown"
-  ],
-  "rio-st": [
-    "unknown"
-  ],
-  "shatto-st": [
-    "unknown"
-  ],
-  "shenandoah-avenue": [
-    "unknown"
+  "arch-st": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
   ],
   "silver-st": [
-    "unknown"
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
   ],
-  "stevenson-ave": [
-    "unknown"
+  "north-ave": [
+    "abstract",
+    "descriptive",
+    "basis-lexical",
+    "basis"
   ],
-  "strelitz-st": [
-    "unknown"
-  ],
-  "texas-st": [
-    "unknown"
-  ],
-  "topeka-st": [
-    "unknown"
+  "northern-ave": [
+    "abstract",
+    "descriptive",
+    "basis-lexical",
+    "basis"
   ],
   "union-avenue": [
-    "unknown"
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
   ],
   "union-st": [
-    "unknown"
-  ],
-  "utah-st": [
-    "unknown"
-  ],
-  "ventura-ingraham": [
-    "unknown"
-  ],
-  "vernon-ave": [
-    "unknown"
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
   ],
   "western-ave-colina-park": [
-    "unknown"
+    "abstract",
+    "descriptive",
+    "basis-lexical",
+    "basis"
+  ],
+  "vernon-ave": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "texas-st": [
+    "place",
+    "state",
+    "basis-guess",
+    "basis"
+  ],
+  "belmont-ave": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "strelitz-st": [
+    "person",
+    "landowner",
+    "basis-inferred",
+    "basis"
+  ],
+  "shatto-st": [
+    "person",
+    "landowner",
+    "family",
+    "basis-attested",
+    "basis"
+  ],
+  "clementina-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "myers": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "anderson": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "rio-avenue": [
+    "nature",
+    "water",
+    "basis-lexical",
+    "basis"
+  ],
+  "rio-st": [
+    "nature",
+    "water",
+    "basis-lexical",
+    "basis"
+  ],
+  "shenandoah-avenue": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "grace": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-extensive"
+  ],
+  "clarence-st": [
+    "person",
+    "alive",
+    "family",
+    "basis-attested",
+    "basis"
+  ],
+  "utah-st": [
+    "place",
+    "state",
+    "basis-attested",
+    "basis"
+  ],
+  "azusa": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "artemus": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "mission-road": [
+    "place",
+    "destination",
+    "basis-lexical",
+    "basis"
+  ],
+  "stevenson-ave": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "atchison-st": [
+    "company",
+    "basis-pattern",
+    "basis"
+  ],
+  "topeka-st": [
+    "company",
+    "basis-pattern",
+    "basis"
+  ],
+  "freight-st": [
+    "abstract",
+    "descriptive",
+    "basis-pattern",
+    "basis"
+  ],
+  "nichols-ave": [
+    "person",
+    "politician",
+    "mayor",
+    "landowner",
+    "basis-inferred",
+    "basis"
+  ],
+  "logan-ave": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "bryan-st": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "holmes-st": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "lincoln-place": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "lincoln-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "garland": [
+    "person",
+    "alive",
+    "landowner",
+    "basis-eponymous",
+    "basis"
+  ],
+  "ventura-ingraham": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "hartford-ave": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "willow-golden": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-partial"
+  ],
+  "fourth-place": [
+    "number",
+    "abstract",
+    "descriptive",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "seventh-place": [
+    "number",
+    "abstract",
+    "descriptive",
+    "basis-intrinsic",
+    "basis"
+  ],
+  "santee-alley": [
+    "person",
+    "basis-inferred",
+    "basis"
+  ],
+  "judge-john-aiso-street": [
+    "person",
+    "official",
+    "politician",
+    "basis-attested",
+    "basis"
+  ],
+  "astronaut-ellison-s-onizuka-street": [
+    "person",
+    "basis-attested",
+    "basis"
+  ],
+  "toriumi-plaza": [
+    "person",
+    "basis-attested",
+    "basis"
+  ],
+  "olympic-boulevard": [
+    "event",
+    "abstract",
+    "basis-attested",
+    "basis"
+  ],
+  "james-m-wood-boulevard": [
+    "person",
+    "official",
+    "politician",
+    "basis-attested",
+    "basis"
+  ],
+  "miramar-street": [
+    "descriptive",
+    "abstract",
+    "basis-lexical",
+    "basis"
+  ],
+  "cesar-e-chavez-avenue": [
+    "person",
+    "basis-attested",
+    "basis"
+  ],
+  "venice-boulevard": [
+    "place",
+    "destination",
+    "borrowed",
+    "basis-attested",
+    "basis"
+  ],
+  "walters-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "stephenson-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "davies-2nd": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "golden-avenue": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "huntley-drive": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "sepulveda-jackson": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "rockwood-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "shaw-winston": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "ionia-boston": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "duplex-cecelia": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "toluca-street": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "farragut-bixel": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "bath-street-plaza": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "calle-de-los-negros": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "grattan-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "mallard-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "marchessault-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "rosabell-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "san-fernando-st-spring": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "valencia-street-poindexter": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "wine-street-plaza": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-none"
   ],
   "stadium-way": [
     "unknown",
@@ -1664,22 +2037,6 @@ const NAME_CATEGORY_INDEX = {
     "stub"
   ],
   "roselake-avenue": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "14th-street": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "rockwood-street": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -1807,23 +2164,7 @@ const NAME_CATEGORY_INDEX = {
     "searched-none",
     "stub"
   ],
-  "huntley-drive": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
   "aliso-street": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "toluca-street": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -1887,14 +2228,6 @@ const NAME_CATEGORY_INDEX = {
     "searched-none",
     "stub"
   ],
-  "4th-place": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
   "mesnager-street": [
     "unknown",
     "unresearched",
@@ -1912,14 +2245,6 @@ const NAME_CATEGORY_INDEX = {
     "stub"
   ],
   "douglas-street": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "golden-avenue": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -2031,14 +2356,6 @@ const NAME_CATEGORY_INDEX = {
     "searched-none",
     "stub"
   ],
-  "7th-place": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
   "general-thaddeus-kosciuszko-way": [
     "unknown",
     "unresearched",
@@ -2135,14 +2452,6 @@ const NAME_CATEGORY_INDEX = {
     "searched-none",
     "stub"
   ],
-  "miramar-street": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
   "green-avenue": [
     "unknown",
     "unresearched",
@@ -2191,14 +2500,6 @@ const NAME_CATEGORY_INDEX = {
     "searched-none",
     "stub"
   ],
-  "18th-street": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
   "white-knoll-drive": [
     "unknown",
     "unresearched",
@@ -2224,14 +2525,6 @@ const NAME_CATEGORY_INDEX = {
     "stub"
   ],
   "cambria-street": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "valencia-street": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -2271,14 +2564,6 @@ const NAME_CATEGORY_INDEX = {
     "searched-none",
     "stub"
   ],
-  "astronaut-ellison-s-onizuka-street": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
   "linwood-avenue": [
     "unknown",
     "unresearched",
@@ -2288,14 +2573,6 @@ const NAME_CATEGORY_INDEX = {
     "stub"
   ],
   "leroy-street": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "cesar-e-chavez-avenue": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -2359,14 +2636,6 @@ const NAME_CATEGORY_INDEX = {
     "searched-none",
     "stub"
   ],
-  "olympic-boulevard": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
   "ramirez-street": [
     "unknown",
     "unresearched",
@@ -2376,14 +2645,6 @@ const NAME_CATEGORY_INDEX = {
     "stub"
   ],
   "metro-driveway": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "james-m-wood-boulevard": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -2471,23 +2732,7 @@ const NAME_CATEGORY_INDEX = {
     "searched-none",
     "stub"
   ],
-  "venice-boulevard": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
   "i-10-metro-expresslanes": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "judge-john-aiso-street": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -2631,14 +2876,6 @@ const NAME_CATEGORY_INDEX = {
     "searched-none",
     "stub"
   ],
-  "santee-alley": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
   "rondout-street": [
     "unknown",
     "unresearched",
@@ -2664,14 +2901,6 @@ const NAME_CATEGORY_INDEX = {
     "stub"
   ],
   "santee-court": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "toriumi-plaza": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -2712,14 +2941,6 @@ const NAME_CATEGORY_INDEX = {
     "stub"
   ],
   "road": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "rosabell-street": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -2991,6 +3212,62 @@ const STREET_DATA = {
         "entityId": "tenth-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 10th Street is not yet researched",
         "namedAfterLink": null,
+        "planned": {
+          "text": "by 1904",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-065.pdf"
+        },
+        "built": "not yet researched",
+        "note": "Renamed Olympic Boulevard in 1935, for the 1932 Games — the request went in in July 1929, and that they had been the tenth Olympiad seems to have gone unremarked.",
+        "attested": true,
+        "knownFraction": 0.69,
+        "categories": [
+          "number",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Map of a portion of the E. N. Fletcher Tract in the City of Los Angeles (surveyed April 1896 and March 1904 by V. J. Rowan) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-065.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
+          }
+        ],
+        "minLng": -118.2486,
+        "maxLng": -118.2462,
+        "from": {
+          "px": [
+            998,
+            1427
+          ]
+        },
+        "to": {
+          "px": [
+            1134,
+            1020
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "10th Street",
+        "entityId": "tenth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 10th Street is not yet researched",
+        "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "Renamed Olympic Boulevard in 1935, for the 1932 Games — the request went in in July 1929, and that they had been the tenth Olympiad seems to have gone unremarked.",
@@ -3018,11 +3295,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
           }
         ],
-        "minLng": -118.2486,
+        "minLng": -118.2462,
         "from": {
           "px": [
-            998,
-            1427
+            1134,
+            1020
           ]
         },
         "to": null
@@ -3735,8 +4012,8 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "absentAsOf": {
-      "text": "1915 (Vineyard Subdivision)",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+      "text": "1886 (Josefa Subdivision)",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
     },
     "categories": [
       "basis-none",
@@ -3761,30 +4038,30 @@ const STREET_DATA = {
       {
         "label": "part of (California St)",
         "name": "14th Street",
-        "entityId": "14th-street",
-        "namedAfter": null,
+        "entityId": "fourteenth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 14th Street",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1915",
+          "text": "by 1875",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1915",
+            "from": "by 1875",
             "until": "?",
             "name": "California Street",
             "entityId": "california-street-14th",
             "formInForce": "California Street",
-            "how": "origin",
-            "origin": "labeled “CALIFORNIA STREET” on the 1915 Norris Plan and the 1915 Vineyard Subdivision {{(source)}} — The state of California — no source says so; the state is simply what the word names",
+            "how": "extension",
+            "origin": "labeled “CALIFORNIA STREET” on the 1875 Morris Plan {{(source)}} — The state of California — no source says so; the state is simply what the word names",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
             "from": "?",
             "until": null,
             "name": "14th Street",
-            "entityId": "14th-street",
+            "entityId": "fourteenth-street",
             "formInForce": "14th Street",
             "how": "renaming",
             "origin": "arrival on this stretch not directly documented",
@@ -3795,12 +4072,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "number",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-intrinsic"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -3812,8 +4089,20 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Plan of the Morris, Main & Pico Streets (M.R. 3-38, after May 6, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Consuelo St. changed to California St.”",
@@ -3824,49 +4113,46 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860115.1.1"
           },
           {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “From California, Consuelo, Greenwell and Vejar to Fourteenth street”",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
-          },
-          {
             "title": "Los Angeles Herald, Nov. 13, 1889 — the same ordinance “was read and adopted” at the Council meeting of Nov. 12",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891113.1.2"
           }
         ],
-        "maxLng": -118.262,
+        "maxLng": -118.2637,
         "from": null,
         "to": {
           "px": [
-            397,
-            390
+            122,
+            898
           ]
         }
       },
       {
         "label": "part of (California St)",
         "name": "14th Street",
-        "entityId": "14th-street",
-        "namedAfter": null,
+        "entityId": "fourteenth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 14th Street",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1886",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1915",
+            "from": "by 1875",
             "until": "?",
             "name": "California Street",
             "entityId": "california-street-14th",
             "formInForce": "California Street",
-            "origin": "labeled “CALIFORNIA STREET” on the 1915 Vineyard Subdivision {{(source)}} — The state of California — no source says so; the state is simply what the word names",
+            "how": "origin",
+            "origin": "labeled “CALIFORNIA STREET” on the 1875 Vineyard Subdivision and the 1875 Morris Plan {{(source)}} — The state of California — no source says so; the state is simply what the word names",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
             "from": "?",
             "until": null,
             "name": "14th Street",
-            "entityId": "14th-street",
+            "entityId": "fourteenth-street",
             "formInForce": "14th Street",
             "how": "renaming",
             "origin": "arrival on this stretch not directly documented",
@@ -3877,12 +4163,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "number",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-intrinsic"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -3894,12 +4180,24 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
             "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           },
           {
-            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Consuelo St. changed to California St.”",
@@ -3910,20 +4208,16 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860115.1.1"
           },
           {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “From California, Consuelo, Greenwell and Vejar to Fourteenth street”",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
-          },
-          {
             "title": "Los Angeles Herald, Nov. 13, 1889 — the same ordinance “was read and adopted” at the Council meeting of Nov. 12",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891113.1.2"
           }
         ],
-        "minLng": -118.262,
+        "minLng": -118.2637,
         "maxLng": -118.2615,
         "from": {
           "px": [
-            397,
-            390
+            122,
+            898
           ]
         },
         "to": {
@@ -3936,8 +4230,8 @@ const STREET_DATA = {
       {
         "label": "part of (Consuelo St)",
         "name": "14th Street",
-        "entityId": "14th-street",
-        "namedAfter": null,
+        "entityId": "fourteenth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 14th Street",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1886",
@@ -3959,7 +4253,7 @@ const STREET_DATA = {
             "from": "?",
             "until": null,
             "name": "14th Street",
-            "entityId": "14th-street",
+            "entityId": "fourteenth-street",
             "formInForce": "14th Street",
             "how": "renaming",
             "origin": "arrival on this stretch not directly documented",
@@ -3970,27 +4264,35 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "number",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-intrinsic"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
         "sources": [
           {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          },
+          {
             "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           },
           {
-            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Consuelo St. changed to California St.”",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “From California, Consuelo, Greenwell and Vejar to Fourteenth street”",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Consuelo St. changed to California St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           },
           {
             "title": "Los Angeles Herald, Nov. 13, 1889 — the same ordinance “was read and adopted” at the Council meeting of Nov. 12",
@@ -4070,8 +4372,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           }
         ],
         "maxLng": -118.2661,
@@ -4090,19 +4392,19 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 15th Street",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1915",
+          "text": "by 1875",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1915",
+            "from": "by 1875",
             "until": "?",
             "name": "Laurel Street",
             "entityId": "laurel-dtla",
             "formInForce": "Laurel Street",
             "how": "extension",
-            "origin": "labeled “LAUREL STREET” on the 1915 Norris Plan and the 1915 Vineyard Subdivision {{(source)}} — The laurel, one of four tree names lettered together on the Norris Plan — Elm, Laurel, Palm and Pine",
+            "origin": "labeled “LAUREL STREET” on the 1875 Morris Plan {{(source)}} — The laurel, one of four tree names lettered together on the Morris Plan — Elm, Laurel, Palm and Pine",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
@@ -4141,19 +4443,11 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "title": "Plan of the Morris, Main & Pico Streets (M.R. 3-38, after May 6, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
-            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
-          },
-          {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
-          },
-          {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “from Laurel and Adele to Fifteenth street”",
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
@@ -4166,11 +4460,100 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2661,
-        "maxLng": -118.2625,
+        "maxLng": -118.2642,
         "from": {
           "px": [
             213,
             1173
+          ]
+        },
+        "to": {
+          "px": [
+            122,
+            1193
+          ]
+        }
+      },
+      {
+        "label": "part of (Laurel St)",
+        "name": "15th Street",
+        "entityId": "fifteenth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 15th Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1875",
+            "until": "?",
+            "name": "Laurel Street",
+            "entityId": "laurel-dtla",
+            "formInForce": "Laurel Street",
+            "how": "origin",
+            "origin": "labeled “LAUREL STREET” on the 1875 Vineyard Subdivision and the 1875 Morris Plan {{(source)}} — The laurel, one of four tree names lettered together on the Morris Plan — Elm, Laurel, Palm and Pine",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "15th Street",
+            "entityId": "fifteenth-street",
+            "formInForce": "15th Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "number",
+          "renamed",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "formerCategories": [
+          "tree"
+        ],
+        "formerAncestors": [
+          "nature"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
+          },
+          {
+            "title": "Los Angeles Herald, Nov. 13, 1889 — the same ordinance “was read and adopted” at the Council meeting of Nov. 12",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891113.1.2"
+          },
+          {
+            "title": "George Garrigues, What Ever Became of Those Old L.A. City Streets? — “Laurel St., bet. Pacific & Magnolia, is part of W. 15th St. (06)”",
+            "url": "https://stevemorse.org/census/changes/LosAngelesChanges2.htm"
+          }
+        ],
+        "minLng": -118.2642,
+        "maxLng": -118.2625,
+        "from": {
+          "px": [
+            122,
+            1193
           ]
         },
         "to": {
@@ -4187,55 +4570,35 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1886",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1886",
+            "from": "by 1875",
             "until": "?",
             "name": "Laurel Street",
             "entityId": "laurel-dtla",
             "formInForce": "Laurel Street",
             "how": "origin",
-            "origin": "labeled “Laurel Street” on the 1886 Josefa Subdivision {{(source)}} — The laurel, one of four tree names lettered together on the Norris Plan — Elm, Laurel, Palm and Pine",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
-          },
-          {
-            "from": "by 1893",
-            "until": "?",
-            "name": "15th Street",
-            "entityId": "fifteenth-street",
-            "formInForce": "15th Street",
-            "how": "origin",
-            "origin": "labeled “15th ST.” and “(formerly Laura St)” on the 1893 Miguel Subdivision {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
-          },
-          {
-            "from": "by 1915",
-            "until": "?",
-            "name": "Laurel Street",
-            "entityId": "laurel-dtla",
-            "formInForce": "Laurel Street",
-            "how": "renaming",
-            "origin": "labeled “LAUREL STREET” on the 1915 Vineyard Subdivision {{(source)}} — The laurel, one of four tree names lettered together on the Norris Plan — Elm, Laurel, Palm and Pine",
+            "origin": "labeled “LAUREL STREET” and “Laurel Street” on the 1875 Vineyard Subdivision and the 1886 Josefa Subdivision {{(source)}} — The laurel, one of four tree names lettered together on the Morris Plan — Elm, Laurel, Palm and Pine",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
-            "from": "?",
+            "from": "by 1893",
             "until": null,
             "name": "15th Street",
             "entityId": "fifteenth-street",
             "formInForce": "15th Street",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "how": "origin",
+            "origin": "labeled “15th ST.” and “(formerly Laura St)” on the 1893 Miguel Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           }
         ],
         "note": null,
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.82,
         "categories": [
           "number",
           "renamed",
@@ -4258,6 +4621,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
             "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           },
@@ -4266,11 +4633,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           },
           {
-            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          },
-          {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “from Laurel and Adele to Fifteenth street”",
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
@@ -4315,8 +4678,8 @@ const STREET_DATA = {
             "name": "Laurel Street",
             "entityId": "laurel-dtla",
             "formInForce": "Laurel Street",
-            "how": "origin",
-            "origin": "labeled “Laurel Street” on the 1886 Josefa Subdivision {{(source)}} — The laurel, one of four tree names lettered together on the Norris Plan — Elm, Laurel, Palm and Pine",
+            "how": "extension",
+            "origin": "labeled “Laurel Street” on the 1886 Josefa Subdivision {{(source)}} — The laurel, one of four tree names lettered together on the Morris Plan — Elm, Laurel, Palm and Pine",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           },
           {
@@ -4363,7 +4726,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           },
           {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “from Laurel and Adele to Fifteenth street”",
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
@@ -4415,8 +4782,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           }
         ],
         "minLng": -118.2583,
@@ -4472,6 +4839,10 @@ const STREET_DATA = {
       {
         "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+      },
+      {
+        "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
+        "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
       }
     ]
   },
@@ -4622,26 +4993,30 @@ const STREET_DATA = {
   },
   "18th Street": {
     "name": "18th Street",
-    "entityId": "18th-street",
-    "namedAfter": null,
+    "entityId": "eighteenth-street",
+    "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 18th Street is not yet researched",
     "namedAfterLink": null,
     "planned": "not yet researched",
     "built": "not yet researched",
     "note": null,
     "attested": false,
     "categories": [
-      "basis-none",
-      "searched-none",
-      "stub"
+      "number",
+      "basis-intrinsic"
     ],
     "ancestors": [
+      "abstract",
       "basis"
     ],
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "L.A. Street Names: 1st Street (on the numbering system)",
+        "url": "https://lastreetnames.com/street/0001st-street/"
+      },
+      {
+        "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+        "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
       }
     ]
   },
@@ -4719,6 +5094,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Electric Railway Historical Association of Southern California, quoting the Second Street Cable Railroad franchise — “Commencing at the intersection of Second Street with the westerly line of Spring Street, and running thence westerly along said Second Street… to Lake Shore Avenue; thence westerly along said Lake Shore Avenue… to Diamond Street; thence westerly along said Diamond Street… to the west boundary of said city”, with the note that “Diamond Street and what is now (1921) known as West First Street are the same street.”",
+            "url": "https://www.facebook.com/groups/echoparkhistory/posts/1741372899282840/"
           }
         ],
         "maxLng": -118.2571,
@@ -4800,6 +5179,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Electric Railway Historical Association of Southern California, quoting the Second Street Cable Railroad franchise — “Commencing at the intersection of Second Street with the westerly line of Spring Street, and running thence westerly along said Second Street… to Lake Shore Avenue; thence westerly along said Lake Shore Avenue… to Diamond Street; thence westerly along said Diamond Street… to the west boundary of said city”, with the note that “Diamond Street and what is now (1921) known as West First Street are the same street.”",
+            "url": "https://www.facebook.com/groups/echoparkhistory/posts/1741372899282840/"
           }
         ],
         "minLng": -118.2571,
@@ -4903,6 +5286,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Electric Railway Historical Association of Southern California, quoting the Second Street Cable Railroad franchise — “Commencing at the intersection of Second Street with the westerly line of Spring Street, and running thence westerly along said Second Street… to Lake Shore Avenue; thence westerly along said Lake Shore Avenue… to Diamond Street; thence westerly along said Diamond Street… to the west boundary of said city”, with the note that “Diamond Street and what is now (1921) known as West First Street are the same street.”",
+            "url": "https://www.facebook.com/groups/echoparkhistory/posts/1741372899282840/"
           }
         ],
         "minLng": -118.2564,
@@ -4994,6 +5381,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Electric Railway Historical Association of Southern California, quoting the Second Street Cable Railroad franchise — “Commencing at the intersection of Second Street with the westerly line of Spring Street, and running thence westerly along said Second Street… to Lake Shore Avenue; thence westerly along said Lake Shore Avenue… to Diamond Street; thence westerly along said Diamond Street… to the west boundary of said city”, with the note that “Diamond Street and what is now (1921) known as West First Street are the same street.”",
+            "url": "https://www.facebook.com/groups/echoparkhistory/posts/1741372899282840/"
           }
         ],
         "minLng": -118.2553,
@@ -5080,6 +5471,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Electric Railway Historical Association of Southern California, quoting the Second Street Cable Railroad franchise — “Commencing at the intersection of Second Street with the westerly line of Spring Street, and running thence westerly along said Second Street… to Lake Shore Avenue; thence westerly along said Lake Shore Avenue… to Diamond Street; thence westerly along said Diamond Street… to the west boundary of said city”, with the note that “Diamond Street and what is now (1921) known as West First Street are the same street.”",
+            "url": "https://www.facebook.com/groups/echoparkhistory/posts/1741372899282840/"
           }
         ],
         "minLng": -118.2544,
@@ -5911,7 +6306,7 @@ const STREET_DATA = {
             "entityId": "north-ave",
             "formInForce": "North Avenue",
             "how": "origin",
-            "origin": "labeled “North Ave” on the 1885 Colina Park {{(source)}} — no namesake documented",
+            "origin": "labeled “North Ave” on the 1885 Colina Park {{(source)}} — The north side of the Colina Park tract, which this street bounded",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -5921,7 +6316,7 @@ const STREET_DATA = {
             "entityId": "northern-ave",
             "formInForce": "Northern Avenue",
             "how": "origin",
-            "origin": "labeled “Northern Ave” on the 1886 J. W. Ellis' Subdivision {{(source)}} — no namesake documented",
+            "origin": "labeled “Northern Ave” on the 1886 J. W. Ellis' Subdivision {{(source)}} — The north side of the Colina Park tract, which this street bounded",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-062.pdf"
           },
           {
@@ -5947,6 +6342,10 @@ const STREET_DATA = {
           "abstract",
           "basis"
         ],
+        "formerCategories": [
+          "abstract",
+          "descriptive"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -5968,6 +6367,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Northern Ave. and North Ave., in Colina Park tract, changed to North St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLng": -118.2686,
@@ -6005,7 +6408,7 @@ const STREET_DATA = {
             "entityId": "silver-st",
             "formInForce": "Silver Street",
             "how": "origin",
-            "origin": "labeled “Silver St” on the 1885 Colina Park {{(source)}} — no namesake documented",
+            "origin": "labeled “Silver St” on the 1885 Colina Park {{(source)}} — lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2), on the Los Angeles Improvement Co.'s subdivision of Jan. 1886 (documents/mr007-056) and on J. W. Ellis's of Sept. 1886 (documents/mr010-088); it became part of West 2nd Street. Nothing found says what the name meant here",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -6044,6 +6447,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "George Garrigues, What Ever Became of Those Old L.A. City Streets? — “Silver St. is part of W. 2nd St. just south of Belmont High.”",
+            "url": "https://stevemorse.org/census/changes/LosAngelesChanges2.htm"
           }
         ],
         "minLng": -118.2651,
@@ -6080,7 +6487,7 @@ const STREET_DATA = {
             "entityId": "silver-st",
             "formInForce": "Silver Street",
             "how": "origin",
-            "origin": "labeled “Silver St” on the 1885 Colina Park and the 1886 Los Angeles Improvement Co.'s Subdivision {{(source)}} — no namesake documented",
+            "origin": "labeled “Silver St” on the 1885 Colina Park and the 1886 Los Angeles Improvement Co.'s Subdivision {{(source)}} — lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2), on the Los Angeles Improvement Co.'s subdivision of Jan. 1886 (documents/mr007-056) and on J. W. Ellis's of Sept. 1886 (documents/mr010-088); it became part of West 2nd Street. Nothing found says what the name meant here",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -6131,6 +6538,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "George Garrigues, What Ever Became of Those Old L.A. City Streets? — “Silver St. is part of W. 2nd St. just south of Belmont High.”",
+            "url": "https://stevemorse.org/census/changes/LosAngelesChanges2.htm"
           }
         ],
         "minLng": -118.2632,
@@ -6167,7 +6578,7 @@ const STREET_DATA = {
             "entityId": "silver-st",
             "formInForce": "Silver Street",
             "how": "extension",
-            "origin": "labeled “Silver St” on the 1886 Los Angeles Improvement Co.'s Subdivision {{(source)}} — no namesake documented",
+            "origin": "labeled “Silver St” on the 1886 Los Angeles Improvement Co.'s Subdivision {{(source)}} — lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2), on the Los Angeles Improvement Co.'s subdivision of Jan. 1886 (documents/mr007-056) and on J. W. Ellis's of Sept. 1886 (documents/mr010-088); it became part of West 2nd Street. Nothing found says what the name meant here",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-056.pdf"
           },
           {
@@ -6218,6 +6629,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "George Garrigues, What Ever Became of Those Old L.A. City Streets? — “Silver St. is part of W. 2nd St. just south of Belmont High.”",
+            "url": "https://stevemorse.org/census/changes/LosAngelesChanges2.htm"
           }
         ],
         "minLng": -118.2617,
@@ -6253,7 +6668,7 @@ const STREET_DATA = {
             "name": "Silver Street",
             "entityId": "silver-st",
             "formInForce": "Silver Street",
-            "origin": "labeled “Silver St” on the 1886 Los Angeles Improvement Co.'s Subdivision {{(source)}} — no namesake documented",
+            "origin": "labeled “Silver St” on the 1886 Los Angeles Improvement Co.'s Subdivision {{(source)}} — lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2), on the Los Angeles Improvement Co.'s subdivision of Jan. 1886 (documents/mr007-056) and on J. W. Ellis's of Sept. 1886 (documents/mr010-088); it became part of West 2nd Street. Nothing found says what the name meant here",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-056.pdf"
           },
           {
@@ -6328,6 +6743,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "George Garrigues, What Ever Became of Those Old L.A. City Streets? — “Silver St. is part of W. 2nd St. just south of Belmont High.”",
+            "url": "https://stevemorse.org/census/changes/LosAngelesChanges2.htm"
           }
         ],
         "minLng": -118.2612,
@@ -7491,7 +7910,7 @@ const STREET_DATA = {
             "entityId": "guadalupe",
             "formInForce": "Guadalupe Street",
             "how": "origin",
-            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known from the Johnston and Thomas Tract maps of 1871–1875, in 2nd Street’s position east of Alameda. Ordinance No. 242 of July 19, 1886 changed Guadalupe Street, from Alameda Street to Geary Street, to Davies Street (documents/lah-1886-07-23), and the Oct. 1890 ordinance then changed Davies Street to Second Street (documents/lah-1890-10-28) — Guadalupe to Davies to Second, in four years",
+            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known from the Johnston and Thomas Tract maps of 1871–1875, in 2nd Street’s position east of Alameda. Ordinance No. 242 of July 19, 1886 changed Guadalupe Street, from Alameda Street to Geary Street, to Davies Street (documents/lah-1886-07-23), and an Oct. 1890 ordinance would then have changed Davies Street to Second Street (documents/lah-1890-10-28), but the mayor returned it unsigned — so when Davies became Second is not yet documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           },
           {
@@ -7578,7 +7997,7 @@ const STREET_DATA = {
             "entityId": "guadalupe",
             "formInForce": "Guadalupe Street",
             "how": "origin",
-            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known from the Johnston and Thomas Tract maps of 1871–1875, in 2nd Street’s position east of Alameda. Ordinance No. 242 of July 19, 1886 changed Guadalupe Street, from Alameda Street to Geary Street, to Davies Street (documents/lah-1886-07-23), and the Oct. 1890 ordinance then changed Davies Street to Second Street (documents/lah-1890-10-28) — Guadalupe to Davies to Second, in four years",
+            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known from the Johnston and Thomas Tract maps of 1871–1875, in 2nd Street’s position east of Alameda. Ordinance No. 242 of July 19, 1886 changed Guadalupe Street, from Alameda Street to Geary Street, to Davies Street (documents/lah-1886-07-23), and an Oct. 1890 ordinance would then have changed Davies Street to Second Street (documents/lah-1890-10-28), but the mayor returned it unsigned — so when Davies became Second is not yet documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           },
           {
@@ -7661,7 +8080,7 @@ const STREET_DATA = {
             "entityId": "guadalupe",
             "formInForce": "Guadalupe Street",
             "how": "origin",
-            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known from the Johnston and Thomas Tract maps of 1871–1875, in 2nd Street’s position east of Alameda. Ordinance No. 242 of July 19, 1886 changed Guadalupe Street, from Alameda Street to Geary Street, to Davies Street (documents/lah-1886-07-23), and the Oct. 1890 ordinance then changed Davies Street to Second Street (documents/lah-1890-10-28) — Guadalupe to Davies to Second, in four years",
+            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known from the Johnston and Thomas Tract maps of 1871–1875, in 2nd Street’s position east of Alameda. Ordinance No. 242 of July 19, 1886 changed Guadalupe Street, from Alameda Street to Geary Street, to Davies Street (documents/lah-1886-07-23), and an Oct. 1890 ordinance would then have changed Davies Street to Second Street (documents/lah-1890-10-28), but the mayor returned it unsigned — so when Davies became Second is not yet documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           },
           {
@@ -7748,7 +8167,7 @@ const STREET_DATA = {
             "entityId": "guadalupe",
             "formInForce": "Guadalupe Street",
             "how": "origin",
-            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known from the Johnston and Thomas Tract maps of 1871–1875, in 2nd Street’s position east of Alameda. Ordinance No. 242 of July 19, 1886 changed Guadalupe Street, from Alameda Street to Geary Street, to Davies Street (documents/lah-1886-07-23), and the Oct. 1890 ordinance then changed Davies Street to Second Street (documents/lah-1890-10-28) — Guadalupe to Davies to Second, in four years",
+            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known from the Johnston and Thomas Tract maps of 1871–1875, in 2nd Street’s position east of Alameda. Ordinance No. 242 of July 19, 1886 changed Guadalupe Street, from Alameda Street to Geary Street, to Davies Street (documents/lah-1886-07-23), and an Oct. 1890 ordinance would then have changed Davies Street to Second Street (documents/lah-1890-10-28), but the mayor returned it unsigned — so when Davies became Second is not yet documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           },
           {
@@ -7831,7 +8250,7 @@ const STREET_DATA = {
             "entityId": "guadalupe",
             "formInForce": "Guadalupe Street",
             "how": "origin",
-            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known from the Johnston and Thomas Tract maps of 1871–1875, in 2nd Street’s position east of Alameda. Ordinance No. 242 of July 19, 1886 changed Guadalupe Street, from Alameda Street to Geary Street, to Davies Street (documents/lah-1886-07-23), and the Oct. 1890 ordinance then changed Davies Street to Second Street (documents/lah-1890-10-28) — Guadalupe to Davies to Second, in four years",
+            "origin": "labeled “Guadalupe Street” and “GUADALUPE ST” on the 1871 Johnston Tract (sheets 1, 2) and the 1875 Thomas Tract (sheets 1, 2) {{(source)}} — known from the Johnston and Thomas Tract maps of 1871–1875, in 2nd Street’s position east of Alameda. Ordinance No. 242 of July 19, 1886 changed Guadalupe Street, from Alameda Street to Geary Street, to Davies Street (documents/lah-1886-07-23), and an Oct. 1890 ordinance would then have changed Davies Street to Second Street (documents/lah-1890-10-28), but the mayor returned it unsigned — so when Davies became Second is not yet documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           },
           {
@@ -7841,7 +8260,7 @@ const STREET_DATA = {
             "entityId": "topeka-st",
             "formInForce": "Topeka Street",
             "how": "origin",
-            "origin": "labeled “TOPEKA ST.” on the 1887 Bigelow Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “TOPEKA ST.” on the 1887 Bigelow Tract {{(source)}} — The Atchison, Topeka and Santa Fe Railway, whose subsidiary the California Central had reached Los Angeles five months before this tract was recorded beside its depot",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR024/MR024-081.pdf"
           },
           {
@@ -7871,6 +8290,9 @@ const STREET_DATA = {
           "abstract",
           "basis"
         ],
+        "formerCategories": [
+          "company"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -7896,6 +8318,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Topeka St., near river, changed to Davies St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLng": -118.2351,
@@ -7932,7 +8358,7 @@ const STREET_DATA = {
             "entityId": "topeka-st",
             "formInForce": "Topeka Street",
             "how": "origin",
-            "origin": "labeled “TOPEKA ST.” on the 1887 Bigelow Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “TOPEKA ST.” on the 1887 Bigelow Tract {{(source)}} — The Atchison, Topeka and Santa Fe Railway, whose subsidiary the California Central had reached Los Angeles five months before this tract was recorded beside its depot",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR024/MR024-081.pdf"
           },
           {
@@ -7962,6 +8388,9 @@ const STREET_DATA = {
           "abstract",
           "basis"
         ],
+        "formerCategories": [
+          "company"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -7979,6 +8408,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Topeka St., near river, changed to Davies St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLng": -118.2344,
@@ -8016,7 +8449,7 @@ const STREET_DATA = {
             "entityId": "clementina-street",
             "formInForce": "Clementina Street",
             "how": "origin",
-            "origin": "labeled “Clementina Street” on the 1887 Clement Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “Clementina Street” on the 1887 Clement Tract {{(source)}} — lettered on the Clement Tract of May 1887 (documents/mr017-041), along what is now 2nd Street east of the river. The tract and the street share a root, so the name is presumably a woman of the subdividing family — but nobody has identified the Clement of the Clement Tract",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
           },
           {
@@ -8125,8 +8558,8 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "absentAsOf": {
-          "text": "1910 (Tract No. 754)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-179a.pdf"
+          "text": "1913 (Tract No. 2473)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0024/TR0024-055.pdf"
         },
         "categories": [
           "number",
@@ -9201,7 +9634,7 @@ const STREET_DATA = {
             "entityId": "third-street",
             "formInForce": "3rd Street",
             "how": "renaming",
-            "origin": "labeled “Third St” and “3RD STREET” on the 1887 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) and the 1979 Tract No. 35332 {{(source)}}",
+            "origin": "labeled “Third St”, “THIRD ST.” and “3RD STREET” on the 1887 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13), the 1912 Tract No. 2097 and the 1979 Tract No. 35332 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -9250,6 +9683,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
+            "title": "Tract No. 2097, being a portion of Lots 7, 9, 10, 11, 12, 13, 14 and 15 and all of Lot 16, Block B, Johnston Tract (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0021/TR0021-144A.pdf"
+          },
+          {
             "title": "Tract No. 35332 in the City of Los Angeles, State of California, for Redevelopment Purposes (Sept. 18, 1979; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0926/TR0926-086.pdf"
           },
@@ -9270,6 +9707,103 @@ const STREET_DATA = {
           "px": [
             633,
             1311
+          ]
+        }
+      },
+      {
+        "label": "part of (Georgia St)",
+        "name": "3rd Street",
+        "entityId": "third-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 3rd Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1871",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1871",
+            "until": "?",
+            "name": "Georgia Street",
+            "entityId": "georgia-east",
+            "formInForce": "Georgia Street",
+            "how": "origin",
+            "origin": "labeled “Georgie Street.” and “GEORGIA ST” on the 1871 Johnston Tract, the 1875 Thomas Tract and the 1887 Mills and Wicks Extension map, sheet 1 {{(source)}} — Likely the state",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
+          {
+            "from": "by 1912",
+            "until": null,
+            "name": "3rd Street",
+            "entityId": "third-street",
+            "formInForce": "3rd Street",
+            "how": "renaming",
+            "origin": "labeled “THIRD ST.” on the 1912 Tract No. 2097 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0021/TR0021-144A.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.74,
+        "categories": [
+          "number",
+          "renamed",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "formerCategories": [
+          "state"
+        ],
+        "formerAncestors": [
+          "place"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan of the Johnston Tract at the corner of First and Alameda Sts., Los Angeles City (M.R. 2-92, Mar. 1871; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
+          },
+          {
+            "title": "Map of the Thomas Tract, being a portion of the Johnson and Mott Tract (M.R. 3-60, May 19, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
+          },
+          {
+            "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+          },
+          {
+            "title": "Tract No. 2097, being a portion of Lots 7, 9, 10, 11, 12, 13, 14 and 15 and all of Lot 16, Block B, Johnston Tract (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0021/TR0021-144A.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          }
+        ],
+        "minLng": -118.2376,
+        "maxLng": -118.2368,
+        "from": {
+          "px": [
+            633,
+            1311
+          ]
+        },
+        "to": {
+          "px": [
+            1135,
+            1500
           ]
         }
       },
@@ -9351,12 +9885,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
-        "minLng": -118.2376,
+        "minLng": -118.2368,
         "maxLng": -118.235,
         "from": {
           "px": [
-            633,
-            1311
+            1135,
+            1500
           ]
         },
         "to": {
@@ -9395,7 +9929,7 @@ const STREET_DATA = {
             "entityId": "atchison-st",
             "formInForce": "Atchison Street",
             "how": "origin",
-            "origin": "labeled “ATCHISON ST.” on the 1887 Bigelow Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “ATCHISON ST.” on the 1887 Bigelow Tract {{(source)}} — The Atchison, Topeka and Santa Fe Railway, whose subsidiary the California Central had reached Los Angeles five months before this tract was recorded beside its depot",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR024/MR024-081.pdf"
           },
           {
@@ -9426,7 +9960,8 @@ const STREET_DATA = {
           "basis"
         ],
         "formerCategories": [
-          "state"
+          "state",
+          "company"
         ],
         "formerAncestors": [
           "place"
@@ -9452,6 +9987,18 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Wikipedia: California Central Railway — “The California Central Railway was incorporated on April 23, 1887… On June 30, 1888, it began operations as a subsidiary of the Atchison, Topeka and Santa Fe Railway”, and the May 20, 1887 purchase of the Los Angeles and San Gabriel Valley Railroad “complet[ed] the rail line from Chicago to Los Angeles through the San Gabriel Valley”",
+            "url": "https://en.wikipedia.org/wiki/California_Central_Railway"
+          },
+          {
+            "title": "L.A. Street Names: Atchison Street — Macpherson's 1887 Pasadena Highland tract named “Atchison, Topeka, and Santa Fe streets for the Atchison, Topeka & Santa Fe Railway”, alongside Erie, Denver and Rio Grande streets “after famous railroads”",
+            "url": "https://lastreetnames.com/street/atchison-street/"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Third St. from San Pedro to Wolfskill Ave. and Georgia St., changed to Atchison St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLng": -118.235,
@@ -9488,7 +10035,7 @@ const STREET_DATA = {
             "entityId": "atchison-st",
             "formInForce": "Atchison Street",
             "how": "origin",
-            "origin": "labeled “ATCHISON ST.” on the 1887 Bigelow Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “ATCHISON ST.” on the 1887 Bigelow Tract {{(source)}} — The Atchison, Topeka and Santa Fe Railway, whose subsidiary the California Central had reached Los Angeles five months before this tract was recorded beside its depot",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR024/MR024-081.pdf"
           },
           {
@@ -9518,6 +10065,9 @@ const STREET_DATA = {
           "abstract",
           "basis"
         ],
+        "formerCategories": [
+          "company"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -9531,6 +10081,18 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Wikipedia: California Central Railway — “The California Central Railway was incorporated on April 23, 1887… On June 30, 1888, it began operations as a subsidiary of the Atchison, Topeka and Santa Fe Railway”, and the May 20, 1887 purchase of the Los Angeles and San Gabriel Valley Railroad “complet[ed] the rail line from Chicago to Los Angeles through the San Gabriel Valley”",
+            "url": "https://en.wikipedia.org/wiki/California_Central_Railway"
+          },
+          {
+            "title": "L.A. Street Names: Atchison Street — Macpherson's 1887 Pasadena Highland tract named “Atchison, Topeka, and Santa Fe streets for the Atchison, Topeka & Santa Fe Railway”, alongside Erie, Denver and Rio Grande streets “after famous railroads”",
+            "url": "https://lastreetnames.com/street/atchison-street/"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Third St. from San Pedro to Wolfskill Ave. and Georgia St., changed to Atchison St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLng": -118.2345,
@@ -9567,7 +10129,7 @@ const STREET_DATA = {
             "entityId": "atchison-st",
             "formInForce": "Atchison Street",
             "how": "origin",
-            "origin": "labeled “ATCHISON ST.” on the 1887 Bigelow Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “ATCHISON ST.” on the 1887 Bigelow Tract {{(source)}} — The Atchison, Topeka and Santa Fe Railway, whose subsidiary the California Central had reached Los Angeles five months before this tract was recorded beside its depot",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR024/MR024-081.pdf"
           },
           {
@@ -9597,6 +10159,9 @@ const STREET_DATA = {
           "abstract",
           "basis"
         ],
+        "formerCategories": [
+          "company"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -9614,6 +10179,18 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Wikipedia: California Central Railway — “The California Central Railway was incorporated on April 23, 1887… On June 30, 1888, it began operations as a subsidiary of the Atchison, Topeka and Santa Fe Railway”, and the May 20, 1887 purchase of the Los Angeles and San Gabriel Valley Railroad “complet[ed] the rail line from Chicago to Los Angeles through the San Gabriel Valley”",
+            "url": "https://en.wikipedia.org/wiki/California_Central_Railway"
+          },
+          {
+            "title": "L.A. Street Names: Atchison Street — Macpherson's 1887 Pasadena Highland tract named “Atchison, Topeka, and Santa Fe streets for the Atchison, Topeka & Santa Fe Railway”, alongside Erie, Denver and Rio Grande streets “after famous railroads”",
+            "url": "https://lastreetnames.com/street/atchison-street/"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Third St. from San Pedro to Wolfskill Ave. and Georgia St., changed to Atchison St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLng": -118.2337,
@@ -9799,30 +10376,31 @@ const STREET_DATA = {
       {
         "label": "beyond Hewitt",
         "name": "4th Place",
-        "entityId": "4th-place",
-        "namedAfter": null,
+        "entityId": "fourth-place",
+        "namedAfter": "A short spur off [[name:fourth-street]] in the numbered downtown grid — how and when this stretch joined 4th Place is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Runs between Mateo and Molino streets; home in the 1980s to the gallery and performance space Dangerous Curve, on an unsafe bend of the street.",
         "attested": false,
         "absentAsOf": {
           "text": "1887 (Mills and Wicks Extension map, sheet 1)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
         },
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "number",
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
           }
         ],
         "maxLng": -118.2367,
@@ -9832,8 +10410,8 @@ const STREET_DATA = {
       {
         "label": "beyond Hewitt (3rd St)",
         "name": "4th Place",
-        "entityId": "4th-place",
-        "namedAfter": null,
+        "entityId": "fourth-place",
+        "namedAfter": "A short spur off [[name:fourth-street]] in the numbered downtown grid, once this stretch was folded into 4th Place",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1887",
@@ -9854,14 +10432,14 @@ const STREET_DATA = {
             "from": "?",
             "until": null,
             "name": "4th Place",
-            "entityId": "4th-place",
+            "entityId": "fourth-place",
             "formInForce": "4th Place",
             "how": "renaming",
             "origin": "arrival on this stretch not directly documented",
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Runs between Mateo and Molino streets; home in the 1980s to the gallery and performance space Dangerous Curve, on an unsafe bend of the street.",
         "attested": true,
         "absentAsOf": {
           "text": "1886 (Howard's Bliss Tract Subdivision)",
@@ -9869,12 +10447,13 @@ const STREET_DATA = {
         },
         "knownFraction": 0.2,
         "categories": [
+          "number",
+          "descriptive",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-intrinsic"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -9885,6 +10464,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          },
           {
             "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
@@ -9915,15 +10498,15 @@ const STREET_DATA = {
       {
         "label": "part of",
         "name": "4th Place",
-        "entityId": "4th-place",
-        "namedAfter": null,
+        "entityId": "fourth-place",
+        "namedAfter": "A short spur off [[name:fourth-street]] in the numbered downtown grid — how and when this stretch joined 4th Place is not yet researched",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1966",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0751/TR0751-038.pdf"
         },
         "built": "not yet researched",
-        "note": null,
+        "note": "Runs between Mateo and Molino streets; home in the 1980s to the gallery and performance space Dangerous Curve, on an unsafe bend of the street.",
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -9931,15 +10514,20 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "number",
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          },
           {
             "title": "Tract No. 29338 (Jan. 4, 1966)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0751/TR0751-038.pdf"
@@ -9963,30 +10551,31 @@ const STREET_DATA = {
       {
         "label": "part of",
         "name": "4th Place",
-        "entityId": "4th-place",
-        "namedAfter": null,
+        "entityId": "fourth-place",
+        "namedAfter": "A short spur off [[name:fourth-street]] in the numbered downtown grid — how and when this stretch joined 4th Place is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Runs between Mateo and Molino streets; home in the 1980s to the gallery and performance space Dangerous Curve, on an unsafe bend of the street.",
         "attested": false,
         "absentAsOf": {
           "text": "1907 (Tract No. 35)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-186.pdf"
         },
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "number",
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
           }
         ],
         "minLng": -118.2331,
@@ -10061,7 +10650,7 @@ const STREET_DATA = {
             "entityId": "acacia-st",
             "formInForce": "Acacia Street",
             "how": "origin",
-            "origin": "labeled “Acacia St” on the 1885 Colina Park {{(source)}} — no namesake documented",
+            "origin": "labeled “Acacia St” and “ACACIA ST.” on the 1885 Colina Park and the 1913 Tract No. 2473 {{(source)}} — The acacia",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -10077,7 +10666,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.16,
         "categories": [
           "number",
           "renamed",
@@ -10086,6 +10675,10 @@ const STREET_DATA = {
         "ancestors": [
           "abstract",
           "basis"
+        ],
+        "formerCategories": [
+          "nature",
+          "tree"
         ],
         "disputed": false,
         "sources": [
@@ -10098,8 +10691,16 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
+            "title": "Tract No. 2473, being a subdivision of portions of Blocks 2 and 3 and of Lots 2-4 of Block L, Colina Park (Daniel S. Halladay C.E.) (Dec. 16, 1913; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0024/TR0024-055.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "George Garrigues, What Ever Became of Those Old L.A. City Streets? — “Acacia St. bet. Loma & South Union Avenue is either W. 4th St. or abandoned (17).”",
+            "url": "https://stevemorse.org/census/changes/LosAngelesChanges2.htm"
           }
         ],
         "minLng": -118.2684,
@@ -11130,7 +11731,7 @@ const STREET_DATA = {
         "to": "Santa Fe Avenue"
       },
       {
-        "label": "beyond Santa Fe",
+        "label": "Santa Fe to ?",
         "name": "4th Street",
         "entityId": "fourth-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 4th Street is not yet researched",
@@ -11163,81 +11764,13 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2322,
-        "maxLng": -118.2287,
+        "maxLng": -118.2311,
         "from": "Santa Fe Avenue",
-        "to": {
-          "px": [
-            782,
-            1260
-          ]
-        }
+        "to": null,
+        "gapAfter": true
       },
       {
-        "label": "part of",
-        "name": "4th Street",
-        "entityId": "fourth-street",
-        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1926",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1926",
-            "until": null,
-            "name": "4th Street",
-            "entityId": "fourth-street",
-            "formInForce": "4th Street",
-            "how": "extension",
-            "origin": "labeled “FOURTH STREET” on the 1926 Tract No. 5301 {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
-          }
-        ],
-        "note": null,
-        "attested": true,
-        "knownFraction": 0.57,
-        "categories": [
-          "number",
-          "basis-intrinsic"
-        ],
-        "ancestors": [
-          "abstract",
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Tract No. 5301, Sheet No. 3 (Feb. 20, 1926; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          }
-        ],
-        "minLng": -118.2287,
-        "maxLng": -118.2277,
-        "from": {
-          "px": [
-            782,
-            1260
-          ]
-        },
-        "to": {
-          "px": [
-            284,
-            1578
-          ]
-        }
-      },
-      {
-        "label": "part of",
+        "label": "part of (discontinuous)",
         "name": "4th Street",
         "entityId": "fourth-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 4th Street is not yet researched",
@@ -11277,14 +11810,43 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.2277,
+        "minLng": -118.2311,
         "from": {
           "px": [
-            284,
-            1578
+            395,
+            1549
           ]
         },
         "to": null
+      }
+    ]
+  },
+  "4th Street (viaduct)": {
+    "name": "4th Street",
+    "entityId": "fourth-street",
+    "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 4th Street is not yet researched",
+    "namedAfterLink": null,
+    "planned": "not yet researched",
+    "built": "not yet researched",
+    "note": null,
+    "attested": false,
+    "categories": [
+      "number",
+      "basis-intrinsic"
+    ],
+    "ancestors": [
+      "abstract",
+      "basis"
+    ],
+    "disputed": false,
+    "sources": [
+      {
+        "title": "L.A. Street Names: 1st Street (on the numbering system)",
+        "url": "https://lastreetnames.com/street/0001st-street/"
+      },
+      {
+        "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
       }
     ]
   },
@@ -11463,7 +12025,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of",
+        "label": "beyond Beaudry",
         "name": "5th Street",
         "entityId": "fifth-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 5th Street is not yet researched",
@@ -11507,6 +12069,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0007/TR0007-078a.pdf"
           },
           {
+            "title": "Arthur G. Newton's Subdivision of Block 18, Woolen Mill Tract (Apr. 1906; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0010/TR0010-175a.pdf"
+          },
+          {
             "title": "Tract No. 21497 (Mar. 1955; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0588/TR0588-055.pdf"
           },
@@ -11516,161 +12082,11 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2619,
-        "maxLng": -118.2609,
+        "maxLng": -118.2591,
         "from": {
           "px": [
             54,
             565
-          ]
-        },
-        "to": {
-          "px": [
-            600,
-            946
-          ]
-        }
-      },
-      {
-        "label": "part of (Ward St)",
-        "name": "5th Street",
-        "entityId": "fifth-street",
-        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 5th Street",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1875",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1875",
-            "until": null,
-            "name": "5th Street",
-            "entityId": "fifth-street",
-            "formInForce": "5th Street",
-            "origin": "labeled “FIFTH ST.”, “5TH ST.” and “FIFTH STREET” on the 1875 P. Beaudry Subdivision B, the 1906 Arthur G. Newton's Subdivision and the 1955 Tract No. 21497 {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
-          },
-          {
-            "from": "by 1875",
-            "until": "?",
-            "name": "Ward Street",
-            "entityId": "ward-st",
-            "formInForce": "Ward Street",
-            "how": "origin",
-            "origin": "labeled “WARD ST.” on the 1875 P. Beaudry Subdivision B {{(source)}} — A lost street of the 1878 Nichols Addition, west of downtown (documents/mr003-569)",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
-          }
-        ],
-        "note": null,
-        "attested": true,
-        "absentAsOf": {
-          "text": "1878 (Nichols Addition)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
-        },
-        "knownFraction": 1,
-        "categories": [
-          "number",
-          "renamed",
-          "basis-intrinsic"
-        ],
-        "ancestors": [
-          "abstract",
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Plan of Subdivision B of Lot 8, Block 38, Hancock's Survey, the Property of P. Beaudry (M.R. 3-46, May 6, 1875; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
-          },
-          {
-            "title": "Arthur G. Newton's Subdivision of Block 18, Woolen Mill Tract (Apr. 1906; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0010/TR0010-175a.pdf"
-          },
-          {
-            "title": "Tract No. 21497 (Mar. 1955; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0588/TR0588-055.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          }
-        ],
-        "minLng": -118.2609,
-        "maxLng": -118.2595,
-        "from": {
-          "px": [
-            600,
-            946
-          ]
-        },
-        "to": {
-          "px": [
-            373,
-            186
-          ]
-        }
-      },
-      {
-        "label": "beyond Beaudry",
-        "name": "5th Street",
-        "entityId": "fifth-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 5th Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1875",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
-        },
-        "built": "not yet researched",
-        "note": null,
-        "attested": true,
-        "absentAsOf": {
-          "text": "1868 (Beaudry Tract)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
-        },
-        "knownFraction": 0.96,
-        "categories": [
-          "number",
-          "basis-intrinsic"
-        ],
-        "ancestors": [
-          "abstract",
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Plan of Subdivision B of Lot 8, Block 38, Hancock's Survey, the Property of P. Beaudry (M.R. 3-46, May 6, 1875; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
-          },
-          {
-            "title": "Arthur G. Newton's Subdivision of Block 18, Woolen Mill Tract (Apr. 1906; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0010/TR0010-175a.pdf"
-          },
-          {
-            "title": "Tract No. 21497 (Mar. 1955; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0588/TR0588-055.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          }
-        ],
-        "minLng": -118.2595,
-        "maxLng": -118.2591,
-        "from": {
-          "px": [
-            373,
-            186
           ]
         },
         "to": "Beaudry Avenue"
@@ -11685,10 +12101,6 @@ const STREET_DATA = {
         "built": "not yet researched",
         "note": null,
         "attested": false,
-        "absentAsOf": {
-          "text": "1868 (Beaudry Tract)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
-        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11709,52 +12121,8 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2591,
-        "maxLng": -118.2585,
-        "from": "Beaudry Avenue",
-        "to": {
-          "px": [
-            454,
-            331
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "5th Street",
-        "entityId": "fifth-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 5th Street is not yet researched",
-        "namedAfterLink": null,
-        "planned": "not yet researched",
-        "built": "not yet researched",
-        "note": null,
-        "attested": false,
-        "categories": [
-          "number",
-          "basis-intrinsic"
-        ],
-        "ancestors": [
-          "abstract",
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          }
-        ],
-        "minLng": -118.2585,
         "maxLng": -118.2576,
-        "from": {
-          "px": [
-            454,
-            331
-          ]
-        },
+        "from": "Beaudry Avenue",
         "to": {
           "px": [
             726,
@@ -12423,6 +12791,127 @@ const STREET_DATA = {
       }
     ]
   },
+  "5th Street (south branch)": {
+    "name": "5th Street",
+    "orientation": "EW",
+    "segments": [
+      {
+        "label": "part of (Ward St)",
+        "name": "5th Street",
+        "entityId": "fifth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 5th Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1875",
+            "until": "?",
+            "name": "Ward Street",
+            "entityId": "ward-st",
+            "formInForce": "Ward Street",
+            "how": "origin",
+            "origin": "labeled “WARD ST.” on the 1875 P. Beaudry Subdivision B {{(source)}} — A lost street of the 1878 Nichols Addition, west of downtown (documents/mr003-569)",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "5th Street",
+            "entityId": "fifth-street",
+            "formInForce": "5th Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1878 (Nichols Addition)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+        },
+        "knownFraction": 0.16,
+        "categories": [
+          "number",
+          "renamed",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan of Subdivision B of Lot 8, Block 38, Hancock's Survey, the Property of P. Beaudry (M.R. 3-46, May 6, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "maxLng": -118.2595,
+        "from": null,
+        "to": {
+          "px": [
+            373,
+            186
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "5th Street",
+        "entityId": "fifth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 5th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1868 (Beaudry Tract)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+        },
+        "categories": [
+          "number",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2595,
+        "from": {
+          "px": [
+            373,
+            186
+          ]
+        },
+        "to": null
+      }
+    ]
+  },
   "6th Street": {
     "name": "6th Street",
     "orientation": "EW",
@@ -12923,7 +13412,7 @@ const STREET_DATA = {
             "name": "Ward Street",
             "entityId": "ward-st",
             "formInForce": "Ward Street",
-            "origin": "labeled “WARD ST.” on the 1875 P. Beaudry Subdivision B {{(source)}} — A lost street of the 1878 Nichols Addition, west of downtown (documents/mr003-569)",
+            "origin": "labeled “WARD ST.” and “WARD ST” on the 1875 P. Beaudry Subdivision B and the 1878 Nichols Addition {{(source)}} — A lost street of the 1878 Nichols Addition, west of downtown (documents/mr003-569)",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
           },
           {
@@ -12939,11 +13428,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
-        "absentAsOf": {
-          "text": "1878 (Nichols Addition)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
-        },
-        "knownFraction": 0.88,
+        "knownFraction": 0.73,
         "categories": [
           "number",
           "renamed",
@@ -12962,6 +13447,10 @@ const STREET_DATA = {
           {
             "title": "Plan of Subdivision B of Lot 8, Block 38, Hancock's Survey, the Property of P. Beaudry (M.R. 3-46, May 6, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
+          },
+          {
+            "title": "Map of Nichols Addition to West Los Angeles (M.R. 3-569, May 4, 1878; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
           },
           {
             "title": "Map of a Replat of a Portion of the Subdivision of the Lands of St. Paul's School (M.R. 78-55, Feb. 1900; identified by map alignment, not a lot-level record)",
@@ -13727,26 +14216,27 @@ const STREET_DATA = {
       {
         "label": "part of",
         "name": "7th Place",
-        "entityId": "7th-place",
-        "namedAfter": null,
+        "entityId": "seventh-place",
+        "namedAfter": "A short spur off [[name:seventh-street]] in the numbered downtown grid — how and when this stretch joined 7th Place is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
         "attested": false,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "number",
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
           }
         ],
         "maxLng": -118.2353,
@@ -13761,8 +14251,8 @@ const STREET_DATA = {
       {
         "label": "part of (Atlantic St)",
         "name": "7th Place",
-        "entityId": "7th-place",
-        "namedAfter": null,
+        "entityId": "seventh-place",
+        "namedAfter": "A short spur off [[name:seventh-street]] in the numbered downtown grid, once this stretch was folded into 7th Place",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1913",
@@ -13784,7 +14274,7 @@ const STREET_DATA = {
             "from": "?",
             "until": null,
             "name": "7th Place",
-            "entityId": "7th-place",
+            "entityId": "seventh-place",
             "formInForce": "7th Place",
             "how": "renaming",
             "origin": "arrival on this stretch not directly documented",
@@ -13795,12 +14285,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "number",
+          "descriptive",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-intrinsic"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -13811,6 +14302,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          },
           {
             "title": "Tract No. 1836 (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0023/TR0023-054c.pdf"
@@ -13842,8 +14337,8 @@ const STREET_DATA = {
       {
         "label": "part of (Atlantic St)",
         "name": "7th Place",
-        "entityId": "7th-place",
-        "namedAfter": null,
+        "entityId": "seventh-place",
+        "namedAfter": "A short spur off [[name:seventh-street]] in the numbered downtown grid, once this stretch was folded into 7th Place",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1887",
@@ -13865,7 +14360,7 @@ const STREET_DATA = {
             "from": "?",
             "until": null,
             "name": "7th Place",
-            "entityId": "7th-place",
+            "entityId": "seventh-place",
             "formInForce": "7th Place",
             "how": "renaming",
             "origin": "arrival on this stretch not directly documented",
@@ -13876,12 +14371,13 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "number",
+          "descriptive",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-intrinsic"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -13892,6 +14388,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
+          },
           {
             "title": "M. L. Wicks Subdivision of Kiefer Tract (M.R. 18-25, June 11, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-025.pdf"
@@ -13919,26 +14419,27 @@ const STREET_DATA = {
       {
         "label": "part of",
         "name": "7th Place",
-        "entityId": "7th-place",
-        "namedAfter": null,
+        "entityId": "seventh-place",
+        "namedAfter": "A short spur off [[name:seventh-street]] in the numbered downtown grid — how and when this stretch joined 7th Place is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
         "attested": false,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "number",
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
           }
         ],
         "minLng": -118.23,
@@ -13955,26 +14456,27 @@ const STREET_DATA = {
       {
         "label": "east of Mission Rd (discontinuous)",
         "name": "7th Place",
-        "entityId": "7th-place",
-        "namedAfter": null,
+        "entityId": "seventh-place",
+        "namedAfter": "A short spur off [[name:seventh-street]] in the numbered downtown grid — how and when this stretch joined 7th Place is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": null,
         "attested": false,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "number",
+          "descriptive",
+          "basis-intrinsic"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Wikipedia: Arts District, Los Angeles",
+            "url": "https://en.wikipedia.org/wiki/Arts_District,_Los_Angeles"
           }
         ],
         "minLng": -118.2285,
@@ -14086,7 +14588,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (Orange St)",
+        "label": "part of",
         "name": "7th Street",
         "entityId": "seventh-street",
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
@@ -14099,41 +14601,20 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1893",
-            "until": "?",
-            "name": "7th Street",
-            "entityId": "seventh-street",
-            "formInForce": "7th Street",
-            "how": "extension",
-            "origin": "labeled “SEVENTH STREET” on the 1893 Wright & Lynch Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-014.pdf"
-          },
-          {
-            "from": "by 1897",
-            "until": "?",
-            "name": "Orange Street",
-            "entityId": "orange-st-wilshire",
-            "formInForce": "Orange Street",
-            "how": "renaming",
-            "origin": "labeled “ORANGE STREET” on the 1897 Garland Tract {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
-          },
-          {
-            "from": "by 1915",
             "until": null,
             "name": "7th Street",
             "entityId": "seventh-street",
             "formInForce": "7th Street",
-            "how": "renaming",
-            "origin": "labeled “SEVENTH STREET” on the 1915 Tract No. 2905 {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0030/TR0030-069.pdf"
+            "how": "extension",
+            "origin": "labeled “SEVENTH STREET” on the 1893 Wright & Lynch Tract, the 1897 Garland Tract and the 1915 Tract No. 2905 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-014.pdf"
           }
         ],
         "note": null,
         "attested": true,
-        "knownFraction": 0.63,
+        "knownFraction": 0.76,
         "categories": [
           "number",
-          "renamed",
           "basis-intrinsic"
         ],
         "ancestors": [
@@ -14161,14 +14642,6 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
-            "title": "Map of Nichols Addition to West Los Angeles (M.R. 3-569, May 4, 1878)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
-          },
-          {
-            "title": "L.A. Street Names: Orange Street (the old Orange Street ran between Figueroa and Alvarado and “became part of Wilshire in April 1924”)",
-            "url": "https://lastreetnames.com/street/orange-street/"
           }
         ],
         "minLng": -118.2667,
@@ -14183,110 +14656,6 @@ const STREET_DATA = {
           "px": [
             117,
             1257
-          ]
-        }
-      },
-      {
-        "label": "part of (Orange St)",
-        "name": "7th Street",
-        "entityId": "seventh-street",
-        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 7th Street",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1888",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-095.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1888",
-            "until": "?",
-            "name": "7th Street",
-            "entityId": "seventh-street",
-            "formInForce": "7th Street",
-            "origin": "labeled “Seventh Street” and “SEVENTH STREET” on the 1888 St. Paul's P.E. Church Subdivision and the 1893 Wright & Lynch Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-095.pdf"
-          },
-          {
-            "from": "by 1897",
-            "until": "?",
-            "name": "Orange Street",
-            "entityId": "orange-st-wilshire",
-            "formInForce": "Orange Street",
-            "how": "renaming",
-            "origin": "labeled “ORANGE STREET” on the 1897 Garland Tract {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
-          },
-          {
-            "from": "by 1915",
-            "until": null,
-            "name": "7th Street",
-            "entityId": "seventh-street",
-            "formInForce": "7th Street",
-            "how": "renaming",
-            "origin": "labeled “SEVENTH STREET” on the 1915 Tract No. 2905 {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0030/TR0030-069.pdf"
-          }
-        ],
-        "note": null,
-        "attested": true,
-        "knownFraction": 0.66,
-        "categories": [
-          "number",
-          "renamed",
-          "basis-intrinsic"
-        ],
-        "ancestors": [
-          "abstract",
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Plot of Subdivision of That Part of Lot 1, Block 37, Hancock's Survey, Lying South of Orange Street and Westerly from William Street, in the City of Los Angeles (M.R. 9-95, June 19, 1888; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-095.pdf"
-          },
-          {
-            "title": "Map of the Wright & Lynch Tract, Being a Part of Lot 2, Block 37, Hancock's Survey, of the 35 Acre Tract, City of Los Angeles, California (M.R. 55-14, Aug. 9, 1893; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-014.pdf"
-          },
-          {
-            "title": "Map of the Garland Tract, Being a Subdivision of a Portion of Lot 7, Block 37, Hancock's Survey, in the City of Los Angeles, California (M.R. 60-88, Apr. 1897; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
-          },
-          {
-            "title": "Tract No. 2905 (Oct. 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0030/TR0030-069.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-          },
-          {
-            "title": "Map of Nichols Addition to West Los Angeles (M.R. 3-569, May 4, 1878)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
-          },
-          {
-            "title": "L.A. Street Names: Orange Street (the old Orange Street ran between Figueroa and Alvarado and “became part of Wilshire in April 1924”)",
-            "url": "https://lastreetnames.com/street/orange-street/"
-          }
-        ],
-        "minLng": -118.2661,
-        "maxLng": -118.2656,
-        "from": {
-          "px": [
-            117,
-            1257
-          ]
-        },
-        "to": {
-          "px": [
-            1109,
-            1370
           ]
         }
       },
@@ -14327,16 +14696,28 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
           },
           {
+            "title": "Map of the Wright & Lynch Tract, Being a Part of Lot 2, Block 37, Hancock's Survey, of the 35 Acre Tract, City of Los Angeles, California (M.R. 55-14, Aug. 9, 1893; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-014.pdf"
+          },
+          {
+            "title": "Map of the Garland Tract, Being a Subdivision of a Portion of Lot 7, Block 37, Hancock's Survey, in the City of Los Angeles, California (M.R. 60-88, Apr. 1897; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
+          },
+          {
+            "title": "Tract No. 2905 (Oct. 4, 1915; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0030/TR0030-069.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.2656,
+        "minLng": -118.2661,
         "maxLng": -118.2637,
         "from": {
           "px": [
-            1109,
-            1370
+            117,
+            1257
           ]
         },
         "to": {
@@ -14429,7 +14810,7 @@ const STREET_DATA = {
             "entityId": "seventh-street",
             "formInForce": "7th Street",
             "how": "extension",
-            "origin": "labeled “SEVENTH ST”, “SEVENTH ST.”, “SEVENTH STREET” and “7TH STREET” on the 1878 Nichols Addition, the 1889 St. Paul's P.E. Church Subdivision, the 1964 Tract No. 25510 and the 2017 Tract No. 71141 {{(source)}}",
+            "origin": "labeled “SEVENTH ST”, “SEVENTH ST.”, “SEVENTH STREET” and “7TH STREET” on the 1878 Nichols Addition, the 1889 St. Paul's P.E. Church Subdivision, the 1904 E. M. Crow's Replat, the 1964 Tract No. 25510 and the 2017 Tract No. 71141 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
           }
         ],
@@ -14457,6 +14838,10 @@ const STREET_DATA = {
           {
             "title": "Plat of Subdivision of a Portion of Lot 1, Block 37, Hancock's Survey, Los Angeles City, Made at the Request of the Vestry of St. Paul's P.E. Church (M.R. 5-566, May 9, 1889; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
+          },
+          {
+            "title": "E. M. Crow's Replat of Block 6 of Nichols Addition to West Los Angeles and land adjoining on the west (Feb. 1904; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-042B.pdf"
           },
           {
             "title": "Tract No. 25510 in the City of Los Angeles (Feb. 26, 1964; identified by map alignment, not a lot-level record)",
@@ -15333,20 +15718,47 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "part of",
+        "label": "part of (Lincoln Place)",
         "name": "8th Place",
         "entityId": "8th-place",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1897",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
         },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "?",
+            "name": "Lincoln Place",
+            "entityId": "lincoln-place",
+            "formInForce": "Lincoln Place",
+            "how": "origin",
+            "origin": "labeled “Lincoln Place” on the 1885 Kennedy Tract {{(source)}} — lettered on the Kennedy Tract of Jan. 1885 (documents/mr006-193), on what are now 8th Street and 8th Place. Nothing found says whether the president, a family or something else was meant",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "8th Place",
+            "entityId": "8th-place",
+            "formInForce": "8th Place",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
         "note": null,
         "attested": true,
-        "knownFraction": 0,
+        "absentAsOf": {
+          "text": "1884 (Truman Tract)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-405.pdf"
+        },
+        "knownFraction": 0.19,
         "categories": [
+          "renamed",
           "basis-none",
           "searched-none",
           "stub"
@@ -15356,31 +15768,61 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Map of the Kennedy Tract, Los Angeles, Cal. (surveyed May 1884 by E. T. Wright) (M.R. 6-193; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
           {
             "title": "Map of the Garland Tract, Being a Subdivision of a Portion of Lot 7, Block 37, Hancock's Survey, in the City of Los Angeles, California (M.R. 60-88, Apr. 1897; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
           }
         ],
-        "maxLng": -118.267,
+        "maxLng": -118.2667,
         "from": null,
         "to": {
           "px": [
-            423,
-            1322
+            1024,
+            1408
           ]
         }
       },
       {
-        "label": "beyond Georgia",
+        "label": "part of (9th St)",
         "name": "8th Place",
         "entityId": "8th-place",
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1901",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1901",
+            "until": "?",
+            "name": "9th Street",
+            "entityId": "ninth-street",
+            "formInForce": "9th Street",
+            "origin": "labeled “NINTH STREET” on the 1901 R. W. Poindexter's Subdivision and the 1901 Mallard Home Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "8th Place",
+            "entityId": "8th-place",
+            "formInForce": "8th Place",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
         "note": null,
-        "attested": false,
+        "attested": true,
+        "knownFraction": 0,
         "categories": [
+          "renamed",
           "basis-none",
           "searched-none",
           "stub"
@@ -15388,22 +15830,45 @@ const STREET_DATA = {
         "ancestors": [
           "basis"
         ],
+        "formerCategories": [
+          "number"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Map of R. W. Poindexter's Subdivision of the easterly portion of Block A of the Mrs. Fitzgerald Tract (Oct. 1901; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+          },
+          {
+            "title": "Map of the Mallard Home Tract in the City of Los Angeles (surveyed October 1901 by J. J. Rowan) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-037.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
           }
         ],
-        "minLng": -118.267,
+        "minLng": -118.2667,
         "maxLng": -118.2658,
         "from": {
           "px": [
-            423,
-            1322
+            1024,
+            1408
           ]
         },
-        "to": "Georgia Street",
+        "to": {
+          "px": [
+            590,
+            1285
+          ]
+        },
         "gapAfter": true
       },
       {
@@ -15435,7 +15900,7 @@ const STREET_DATA = {
             "entityId": "lincoln-street",
             "formInForce": "Lincoln Street",
             "how": "origin",
-            "origin": "labeled “Lincoln Street” on the 1887 Potter's Subdivision {{(source)}} — no namesake documented",
+            "origin": "labeled “Lincoln Street” on the 1887 Potter's Subdivision {{(source)}} — lettered on Potter's Subdivision of Block 3 of Nichols' Addition to West Los Angeles, Aug. 1887 (documents/mr021-087), on what is now 8th Place. Nothing found says whether the president, a family or something else was meant",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-087.pdf"
           },
           {
@@ -15470,6 +15935,10 @@ const STREET_DATA = {
           {
             "title": "Potter's Subdivision of Block 3 of Nichols' Addition to West Los Angeles, Also Lots 26 and 27 of Meyers' Subdivision of Block 4 (M.R. 21-87, Aug. 13, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-087.pdf"
+          },
+          {
+            "title": "George Garrigues, What Ever Became of Those Old L.A. City Streets? — “Lincoln St., east & west of Francisco St., is W. 8th Place (17).”",
+            "url": "https://stevemorse.org/census/changes/LosAngelesChanges2.htm"
           }
         ],
         "minLng": -118.2658,
@@ -15516,12 +15985,164 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "maxLng": -118.2683,
+        "maxLng": -118.2694,
         "from": null,
+        "to": {
+          "px": [
+            187,
+            473
+          ]
+        }
+      },
+      {
+        "label": "part of (Lincoln Place)",
+        "name": "8th Street",
+        "entityId": "eighth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 8th Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "?",
+            "name": "Lincoln Place",
+            "entityId": "lincoln-place",
+            "formInForce": "Lincoln Place",
+            "origin": "labeled “Lincoln Place” on the 1885 Kennedy Tract {{(source)}} — lettered on the Kennedy Tract of Jan. 1885 (documents/mr006-193), on what are now 8th Street and 8th Place. Nothing found says whether the president, a family or something else was meant",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "8th Street",
+            "entityId": "eighth-street",
+            "formInForce": "8th Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "number",
+          "renamed",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Kennedy Tract, Los Angeles, Cal. (surveyed May 1884 by E. T. Wright) (M.R. 6-193; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2694,
+        "maxLng": -118.2683,
+        "from": {
+          "px": [
+            187,
+            473
+          ]
+        },
         "to": {
           "px": [
             33,
             1131
+          ]
+        }
+      },
+      {
+        "label": "part of (Lincoln Place)",
+        "name": "8th Street",
+        "entityId": "eighth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 8th Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "?",
+            "name": "Lincoln Place",
+            "entityId": "lincoln-place",
+            "formInForce": "Lincoln Place",
+            "origin": "labeled “Lincoln Place” on the 1885 Kennedy Tract {{(source)}} — lettered on the Kennedy Tract of Jan. 1885 (documents/mr006-193), on what are now 8th Street and 8th Place. Nothing found says whether the president, a family or something else was meant",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
+            "from": "by 1897",
+            "until": null,
+            "name": "8th Street",
+            "entityId": "eighth-street",
+            "formInForce": "8th Street",
+            "how": "renaming",
+            "origin": "labeled “EIGHTH STREET” on the 1897 Garland Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.73,
+        "categories": [
+          "number",
+          "renamed",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Kennedy Tract, Los Angeles, Cal. (surveyed May 1884 by E. T. Wright) (M.R. 6-193; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
+            "title": "Map of the Garland Tract, Being a Subdivision of a Portion of Lot 7, Block 37, Hancock's Survey, in the City of Los Angeles, California (M.R. 60-88, Apr. 1897; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2683,
+        "maxLng": -118.2672,
+        "from": {
+          "px": [
+            33,
+            1131
+          ]
+        },
+        "to": {
+          "px": [
+            863,
+            398
           ]
         }
       },
@@ -15562,12 +16183,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.2683,
+        "minLng": -118.2672,
         "maxLng": -118.2664,
         "from": {
           "px": [
-            33,
-            1131
+            863,
+            398
           ]
         },
         "to": {
@@ -15578,7 +16199,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Francisco",
+        "label": "part of",
         "name": "8th Street",
         "entityId": "eighth-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 8th Street is not yet researched",
@@ -15607,11 +16228,175 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2664,
-        "maxLng": -118.2627,
+        "maxLng": -118.2652,
         "from": {
           "px": [
             593,
             1172
+          ]
+        },
+        "to": {
+          "px": [
+            381,
+            563
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "8th Street",
+        "entityId": "eighth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 8th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1901",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-037.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.71,
+        "categories": [
+          "number",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Mallard Home Tract in the City of Los Angeles (surveyed October 1901 by J. J. Rowan) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-037.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2652,
+        "maxLng": -118.2636,
+        "from": {
+          "px": [
+            381,
+            563
+          ]
+        },
+        "to": {
+          "px": [
+            845,
+            475
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "8th Street",
+        "entityId": "eighth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 8th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "number",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2636,
+        "maxLng": -118.2632,
+        "from": {
+          "px": [
+            845,
+            475
+          ]
+        },
+        "to": {
+          "px": [
+            186,
+            1550
+          ]
+        }
+      },
+      {
+        "label": "beyond Francisco",
+        "name": "8th Street",
+        "entityId": "eighth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1887",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-087.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1887",
+            "until": null,
+            "name": "8th Street",
+            "entityId": "eighth-street",
+            "formInForce": "8th Street",
+            "how": "extension",
+            "origin": "labeled “Eighth Street” and “EIGHTH ST.” on the 1887 Potter's Subdivision and the 1904 E. M. Crow's Replat {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-087.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.79,
+        "categories": [
+          "number",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Potter's Subdivision of Block 3 of Nichols' Addition to West Los Angeles, Also Lots 26 and 27 of Meyers' Subdivision of Block 4 (M.R. 21-87, Aug. 13, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-087.pdf"
+          },
+          {
+            "title": "E. M. Crow's Replat of Block 6 of Nichols Addition to West Los Angeles and land adjoining on the west (Feb. 1904; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-042B.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2632,
+        "maxLng": -118.2627,
+        "from": {
+          "px": [
+            186,
+            1550
           ]
         },
         "to": "Francisco Street"
@@ -16706,7 +17491,7 @@ const STREET_DATA = {
             "entityId": "ninth-street",
             "formInForce": "9th Street",
             "how": "extension",
-            "origin": "labeled “Ninth St.” and “9TH STREET” on the 1888 Denison Tract and the 1895 Stanford Ave Tract {{(source)}}",
+            "origin": "labeled “Ninth St.”, “9TH STREET” and “9th St.” on the 1888 Denison Tract, the 1895 Stanford Ave Tract and the 1904 E. N. Fletcher Tract {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-085.pdf"
           }
         ],
@@ -16734,6 +17519,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Stanford Ave Tract (M.R. 55-86, Oct. 23, 1895; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-086.pdf"
+          },
+          {
+            "title": "Map of a portion of the E. N. Fletcher Tract in the City of Los Angeles (surveyed April 1896 and March 1904 by V. J. Rowan) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-065.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
@@ -16923,10 +17712,6 @@ const STREET_DATA = {
         },
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
-        "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
-        },
         "knownFraction": 0,
         "categories": [
           "descriptive",
@@ -16953,8 +17738,166 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
           }
         ],
-        "minLat": 34.0545,
+        "minLat": 34.0609,
         "from": null,
+        "to": {
+          "px": [
+            1067,
+            653
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Alameda Street",
+        "entityId": "alameda-st",
+        "namedAfter": "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
+        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
+        "planned": {
+          "text": "by 1909",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+        },
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "nameHistory": [
+          {
+            "from": "by 1909",
+            "until": null,
+            "name": "Alameda Street",
+            "entityId": "alameda-st",
+            "formInForce": "Alameda Street",
+            "how": "extension",
+            "origin": "labeled “ALAMEDA ST.” on the 1909 Oil Well Supply Company Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+          }
+        ],
+        "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
+        "attested": true,
+        "knownFraction": 0.66,
+        "categories": [
+          "descriptive",
+          "tree",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "nature",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
+            "url": "https://lastreetnames.com/street/alameda-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Oil Well Supply Company Tract, being a plat of a portion of acreage property in the City of Los Angeles (Jan. 1909; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+          },
+          {
+            "title": "Plan of the Subdivision of the Aliso Tract (M.R. 4-12, Jan. 1869)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
+          }
+        ],
+        "minLat": 34.0598,
+        "maxLat": 34.0609,
+        "from": {
+          "px": [
+            1067,
+            653
+          ]
+        },
+        "to": {
+          "px": [
+            923,
+            314
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Alameda Street",
+        "entityId": "alameda-st",
+        "namedAfter": "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
+        "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
+        "planned": {
+          "text": "by 1873",
+          "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+        },
+        "built": {
+          "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "nameHistory": [
+          {
+            "from": "by 1873",
+            "until": null,
+            "name": "Alameda Street",
+            "entityId": "alameda-st",
+            "formInForce": "Alameda Street",
+            "how": "extension",
+            "origin": "labeled “ALAMEDA STREET” and “ALAMEDA ST.” on the 1873 Old Plaza, 1873, the 1907 Tract No. 49 and the 1909 Oil Well Supply Company Tract {{(source)}}",
+            "originLink": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          }
+        ],
+        "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
+        "knownFraction": 0.87,
+        "categories": [
+          "descriptive",
+          "tree",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "nature",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Alameda Street (“officially named on February 2nd, 1855”)",
+            "url": "https://lastreetnames.com/street/alameda-street/"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Plat of Tract No. 49, being a subdivision of the northerly portion of the block bounded by Main, Ord, San Fernando and Marchessault Streets, in the City of Los Angeles (July 1907; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
+          },
+          {
+            "title": "Oil Well Supply Company Tract, being a plat of a portion of acreage property in the City of Los Angeles (Jan. 1909; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+          },
+          {
+            "title": "Plan of the Subdivision of the Aliso Tract (M.R. 4-12, Jan. 1869)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
+          }
+        ],
+        "minLat": 34.0545,
+        "maxLat": 34.0598,
+        "from": {
+          "px": [
+            923,
+            314
+          ]
+        },
         "to": {
           "px": [
             304,
@@ -17220,7 +18163,7 @@ const STREET_DATA = {
             "entityId": "alameda-st",
             "formInForce": "Alameda Street",
             "how": "extension",
-            "origin": "labeled “Alameda STREET.”, “ALAMEDA STREET”, “ALAMEDA ST” and “Alameda St” on the 1871 Johnston Tract (sheets 1, 2), the 1875 Thomas Tract (sheets 1, 2), the 1887 Mills and Wicks Extension map, sheet 1, the 1887 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13) and the 1979 Tract No. 35332 {{(source)}}",
+            "origin": "labeled “Alameda STREET.”, “ALAMEDA STREET”, “ALAMEDA ST”, “Alameda St” and “ALAMEDA ST.” on the 1871 Johnston Tract (sheets 1, 2), the 1875 Thomas Tract (sheets 1, 2), the 1887 Mills and Wicks Extension map, sheet 1, the 1887 Wolfskill Orchard Tract, sheet 5 (M.R. 30-13), the 1912 Tract No. 2097 and the 1979 Tract No. 35332 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
           }
         ],
@@ -17262,6 +18205,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 5, M.R. 30-13, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Tract No. 2097, being a portion of Lots 7, 9, 10, 11, 12, 13, 14 and 15 and all of Lot 16, Block B, Johnston Tract (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0021/TR0021-144A.pdf"
           },
           {
             "title": "Tract No. 35332 in the City of Los Angeles, State of California, for Redevelopment Purposes (Sept. 18, 1979; identified by map alignment, not a lot-level record)",
@@ -17702,8 +18649,8 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "absentAsOf": {
-          "text": "1869 (Alanis Vineyard Tract)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-526.pdf"
+          "text": "1873 (Old Plaza, 1873)",
+          "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
         },
         "categories": [
           "basis-none",
@@ -18175,7 +19122,7 @@ const STREET_DATA = {
             "entityId": "rio-avenue",
             "formInForce": "Rio Avenue",
             "how": "origin",
-            "origin": "labeled “Rio Avenue” on the 1887 Clement Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “Rio Avenue” on the 1887 Clement Tract {{(source)}} — The river — the Los Angeles River, which this street ran beside",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
           },
           {
@@ -18189,14 +19136,31 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041), on Tract No. 207 of 1908 (documents/tr0013-168-p1) and on Tract No. 5301 of 1926 (documents/tr0122-053-p3), and still Anderson Street today. It grew by absorbing its neighbours: an Anderson Avenue was folded into it in Oct. 1888, and South Rio Street became South Anderson Street in the mid-1920s when the Union Pacific extended it to East 7th. Nothing found says who Anderson was.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "nature",
+          "water"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Anderson St. and Anderson Ave. changed to Anderson St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
+          },
+          {
+            "title": "L.A. City Planning, 500–600 South Anderson Street Industrial District (Adelante district DPR forms) — “the renaming of South Rio Street as South Anderson Street as it was extended to East 7th Street”, among works “completed by the Union Pacific” by the mid-1920s",
+            "url": "https://planning.lacity.gov/odocument/f94c695f-d13c-4889-825e-ea340112c233/Adelante_District_DPR_Forms_0.pdf"
+          },
           {
             "title": "Map of the Clement Tract, Situated on First Street in the City and County of Los Angeles, California (M.R. 17-41, May 23, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
@@ -18230,7 +19194,7 @@ const STREET_DATA = {
             "entityId": "rio-avenue",
             "formInForce": "Rio Avenue",
             "how": "origin",
-            "origin": "labeled “Rio Avenue” on the 1887 Clement Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “Rio Avenue” on the 1887 Clement Tract {{(source)}} — The river — the Los Angeles River, which this street ran beside",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
           },
           {
@@ -18244,14 +19208,31 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
           }
         ],
-        "note": null,
+        "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041), on Tract No. 207 of 1908 (documents/tr0013-168-p1) and on Tract No. 5301 of 1926 (documents/tr0122-053-p3), and still Anderson Street today. It grew by absorbing its neighbours: an Anderson Avenue was folded into it in Oct. 1888, and South Rio Street became South Anderson Street in the mid-1920s when the Union Pacific extended it to East 7th. Nothing found says who Anderson was.",
         "attested": true,
         "knownFraction": 0.57,
         "categories": [
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "nature",
+          "water"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Anderson St. and Anderson Ave. changed to Anderson St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
+          },
+          {
+            "title": "L.A. City Planning, 500–600 South Anderson Street Industrial District (Adelante district DPR forms) — “the renaming of South Rio Street as South Anderson Street as it was extended to East 7th Street”, among works “completed by the Union Pacific” by the mid-1920s",
+            "url": "https://planning.lacity.gov/odocument/f94c695f-d13c-4889-825e-ea340112c233/Adelante_District_DPR_Forms_0.pdf"
+          },
           {
             "title": "Map of the Clement Tract, Situated on First Street in the City and County of Los Angeles, California (M.R. 17-41, May 23, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
@@ -18295,7 +19276,7 @@ const STREET_DATA = {
             "entityId": "rio-avenue",
             "formInForce": "Rio Avenue",
             "how": "origin",
-            "origin": "labeled “Rio Avenue” on the 1887 Clement Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “Rio Avenue” on the 1887 Clement Tract {{(source)}} — The river — the Los Angeles River, which this street ran beside",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
           },
           {
@@ -18305,7 +19286,7 @@ const STREET_DATA = {
             "entityId": "rio-st",
             "formInForce": "Rio Street",
             "how": "origin",
-            "origin": "labeled “Rio St” on the 1908 Tract No. 207 {{(source)}} — no namesake documented",
+            "origin": "labeled “Rio St” on the 1908 Tract No. 207 {{(source)}} — The river — the Los Angeles River, which this street ran beside",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0013/TR0013-168.pdf"
           },
           {
@@ -18319,14 +19300,31 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
           }
         ],
-        "note": null,
+        "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041), on Tract No. 207 of 1908 (documents/tr0013-168-p1) and on Tract No. 5301 of 1926 (documents/tr0122-053-p3), and still Anderson Street today. It grew by absorbing its neighbours: an Anderson Avenue was folded into it in Oct. 1888, and South Rio Street became South Anderson Street in the mid-1920s when the Union Pacific extended it to East 7th. Nothing found says who Anderson was.",
         "attested": true,
         "knownFraction": 0.57,
         "categories": [
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "nature",
+          "water"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Anderson St. and Anderson Ave. changed to Anderson St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
+          },
+          {
+            "title": "L.A. City Planning, 500–600 South Anderson Street Industrial District (Adelante district DPR forms) — “the renaming of South Rio Street as South Anderson Street as it was extended to East 7th Street”, among works “completed by the Union Pacific” by the mid-1920s",
+            "url": "https://planning.lacity.gov/odocument/f94c695f-d13c-4889-825e-ea340112c233/Adelante_District_DPR_Forms_0.pdf"
+          },
           {
             "title": "Map of the Clement Tract, Situated on First Street in the City and County of Los Angeles, California (M.R. 17-41, May 23, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
@@ -18338,6 +19336,10 @@ const STREET_DATA = {
           {
             "title": "Tract No. 5301, Sheet No. 3 (Feb. 20, 1926; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0457,
@@ -18366,12 +19368,26 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
         },
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041), on Tract No. 207 of 1908 (documents/tr0013-168-p1) and on Tract No. 5301 of 1926 (documents/tr0122-053-p3), and still Anderson Street today. It grew by absorbing its neighbours: an Anderson Avenue was folded into it in Oct. 1888, and South Rio Street became South Anderson Street in the mid-1920s when the Union Pacific extended it to East 7th. Nothing found says who Anderson was.",
         "attested": true,
         "knownFraction": 0.57,
-        "categories": [],
+        "categories": [
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Anderson St. and Anderson Ave. changed to Anderson St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
+          },
+          {
+            "title": "L.A. City Planning, 500–600 South Anderson Street Industrial District (Adelante district DPR forms) — “the renaming of South Rio Street as South Anderson Street as it was extended to East 7th Street”, among works “completed by the Union Pacific” by the mid-1920s",
+            "url": "https://planning.lacity.gov/odocument/f94c695f-d13c-4889-825e-ea340112c233/Adelante_District_DPR_Forms_0.pdf"
+          },
           {
             "title": "Tract No. 5301, Sheet No. 3 (Feb. 20, 1926; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
@@ -18404,11 +19420,25 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041), on Tract No. 207 of 1908 (documents/tr0013-168-p1) and on Tract No. 5301 of 1926 (documents/tr0122-053-p3), and still Anderson Street today. It grew by absorbing its neighbours: an Anderson Avenue was folded into it in Oct. 1888, and South Rio Street became South Anderson Street in the mid-1920s when the Union Pacific extended it to East 7th. Nothing found says who Anderson was.",
         "attested": false,
-        "categories": [],
+        "categories": [
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Anderson St. and Anderson Ave. changed to Anderson St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
+          },
+          {
+            "title": "L.A. City Planning, 500–600 South Anderson Street Industrial District (Adelante district DPR forms) — “the renaming of South Rio Street as South Anderson Street as it was extended to East 7th Street”, among works “completed by the Union Pacific” by the mid-1920s",
+            "url": "https://planning.lacity.gov/odocument/f94c695f-d13c-4889-825e-ea340112c233/Adelante_District_DPR_Forms_0.pdf"
+          },
           {
             "title": "Map of the Clement Tract, Situated on First Street in the City and County of Los Angeles, California (M.R. 17-41, May 23, 1887)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
@@ -18566,8 +19596,8 @@ const STREET_DATA = {
     "note": null,
     "attested": false,
     "absentAsOf": {
-      "text": "1869 (Aliso Tract)",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
+      "text": "1873 (Old Plaza, 1873)",
+      "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
     },
     "categories": [
       "basis-none",
@@ -18685,10 +19715,16 @@ const STREET_DATA = {
         "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
       }
     ],
-    "note": null,
+    "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Artemus Street today. Nothing found says who or what it was named for.",
     "attested": true,
     "knownFraction": 0.57,
-    "categories": [],
+    "categories": [
+      "basis-none",
+      "searched-partial"
+    ],
+    "ancestors": [
+      "basis"
+    ],
     "disputed": false,
     "sources": [
       {
@@ -18705,8 +19741,8 @@ const STREET_DATA = {
         "label": "beyond 1st (Weller St)",
         "name": "Astronaut Ellison S Onizuka Street",
         "entityId": "astronaut-ellison-s-onizuka-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Ellison Onizuka}} (1946–1986), the first Asian American in space, killed in the 1986 Space Shuttle Challenger disaster, once this stretch was folded into Astronaut Ellison S Onizuka Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Ellison_Onizuka",
         "planned": {
           "text": "by 1868",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
@@ -18728,33 +19764,32 @@ const STREET_DATA = {
           },
           {
             "from": "by 1976",
-            "until": "?",
+            "until": "Feb. 1987",
             "name": "Weller Street",
             "entityId": "weller-street",
             "formInForce": "Weller Street",
             "how": "origin",
-            "origin": "labeled “WELLER STREET” on the 1976 Tract No. 30213 {{(source)}} — A Little Tokyo street, lettered on documents/tr0856-050-p2, renamed Astronaut Ellison S. Onizuka Street in the late 1980s for the astronaut killed aboard the Challenger. Nothing found says who Weller was",
+            "origin": "labeled “WELLER STREET” on the 1976 Tract No. 30213 {{(source)}} — A Little Tokyo street, lettered on documents/tr0856-050-p2, renamed Astronaut Ellison S. Onizuka Street in 1987 for the astronaut killed aboard the Challenger. Nothing found says who Weller was",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0856/TR0856-050-p2.pdf"
           },
           {
-            "from": "?",
+            "from": "Feb. 1987",
             "until": null,
             "name": "Astronaut Ellison S Onizuka Street",
             "entityId": "astronaut-ellison-s-onizuka-street",
             "formInForce": "Astronaut Ellison S Onizuka Street",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 162010, Weller Street to Onizuka Street {{(source)}}",
+            "originLink": "https://cityclerk.lacity.org/onlinedocs/1986/86-0259_ORD_162010_02-10-1987.pdf"
           }
         ],
-        "note": null,
+        "note": "Weller Street until 1987, when the City Council renamed it in Onizuka's honor a year after the Challenger explosion, with a memorial plaque and shuttle model at the street's centre. The longest street name in the city.",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.28,
         "categories": [
+          "person",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -18765,6 +19800,14 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Astronaut Ellison S. Onizuka Street",
+            "url": "https://lastreetnames.com/street/astronaut-ellison-s-onizuka-street/"
+          },
+          {
+            "title": "LAPL: The Long and Winding Story of the Streets of Los Angeles",
+            "url": "https://www.lapl.org/news-stories/articles/long-and-winding-story-streets-los-angeles"
+          },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
@@ -18778,16 +19821,16 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0856/TR0856-050-p2.pdf"
           },
           {
+            "title": "Ordinance No. 162010, “An Ordinance of the City of Los Angeles changing the name of Weller Street between 1st Street and 2nd Street and establishing the same as Astronaut Ellison S. Onizuka Street” — passed Feb. 10, 1987, approved Feb. 12, 1987 (Council File 86-0259)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1986/86-0259_ORD_162010_02-10-1987.pdf"
+          },
+          {
             "title": "L.A. Street Names: San Pedro Street",
             "url": "https://lastreetnames.com/street/san-pedro-street/"
           },
           {
             "title": "Wikipedia: San Pedro Street",
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
-          },
-          {
-            "title": "L.A. Street Names: Astronaut Ellison S. Onizuka Street — “A year after the tragedy, the former Weller Street was renamed in Onizuka's honor, with a memorial plaque and a model of the Challenger standing as the street's centerpiece.”",
-            "url": "https://lastreetnames.com/street/astronaut-ellison-s-onizuka-street/"
           }
         ],
         "minLat": 34.0505,
@@ -18803,8 +19846,8 @@ const STREET_DATA = {
         "label": "part of (Weller St)",
         "name": "Astronaut Ellison S Onizuka Street",
         "entityId": "astronaut-ellison-s-onizuka-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Ellison Onizuka}} (1946–1986), the first Asian American in space, killed in the 1986 Space Shuttle Challenger disaster, once this stretch was folded into Astronaut Ellison S Onizuka Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Ellison_Onizuka",
         "planned": {
           "text": "by 1868",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
@@ -18836,33 +19879,32 @@ const STREET_DATA = {
           },
           {
             "from": "by 1976",
-            "until": "?",
+            "until": "Feb. 1987",
             "name": "Weller Street",
             "entityId": "weller-street",
             "formInForce": "Weller Street",
             "how": "origin",
-            "origin": "labeled “WELLER STREET” on the 1976 Tract No. 30213 {{(source)}} — A Little Tokyo street, lettered on documents/tr0856-050-p2, renamed Astronaut Ellison S. Onizuka Street in the late 1980s for the astronaut killed aboard the Challenger. Nothing found says who Weller was",
+            "origin": "labeled “WELLER STREET” on the 1976 Tract No. 30213 {{(source)}} — A Little Tokyo street, lettered on documents/tr0856-050-p2, renamed Astronaut Ellison S. Onizuka Street in 1987 for the astronaut killed aboard the Challenger. Nothing found says who Weller was",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0856/TR0856-050-p2.pdf"
           },
           {
-            "from": "?",
+            "from": "Feb. 1987",
             "until": null,
             "name": "Astronaut Ellison S Onizuka Street",
             "entityId": "astronaut-ellison-s-onizuka-street",
             "formInForce": "Astronaut Ellison S Onizuka Street",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 162010, Weller Street to Onizuka Street {{(source)}}",
+            "originLink": "https://cityclerk.lacity.org/onlinedocs/1986/86-0259_ORD_162010_02-10-1987.pdf"
           }
         ],
-        "note": null,
+        "note": "Weller Street until 1987, when the City Council renamed it in Onizuka's honor a year after the Challenger explosion, with a memorial plaque and shuttle model at the street's centre. The longest street name in the city.",
         "attested": true,
-        "knownFraction": 0.04,
+        "knownFraction": 0.32,
         "categories": [
+          "person",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -18873,6 +19915,14 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Astronaut Ellison S. Onizuka Street",
+            "url": "https://lastreetnames.com/street/astronaut-ellison-s-onizuka-street/"
+          },
+          {
+            "title": "LAPL: The Long and Winding Story of the Streets of Los Angeles",
+            "url": "https://www.lapl.org/news-stories/articles/long-and-winding-story-streets-los-angeles"
+          },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
@@ -18898,16 +19948,16 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0856/TR0856-050-p2.pdf"
           },
           {
+            "title": "Ordinance No. 162010, “An Ordinance of the City of Los Angeles changing the name of Weller Street between 1st Street and 2nd Street and establishing the same as Astronaut Ellison S. Onizuka Street” — passed Feb. 10, 1987, approved Feb. 12, 1987 (Council File 86-0259)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1986/86-0259_ORD_162010_02-10-1987.pdf"
+          },
+          {
             "title": "L.A. Street Names: San Pedro Street",
             "url": "https://lastreetnames.com/street/san-pedro-street/"
           },
           {
             "title": "Wikipedia: San Pedro Street",
             "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
-          },
-          {
-            "title": "L.A. Street Names: Astronaut Ellison S. Onizuka Street — “A year after the tragedy, the former Weller Street was renamed in Onizuka's honor, with a memorial plaque and a model of the Challenger standing as the street's centerpiece.”",
-            "url": "https://lastreetnames.com/street/astronaut-ellison-s-onizuka-street/"
           }
         ],
         "minLat": 34.05,
@@ -18929,8 +19979,8 @@ const STREET_DATA = {
         "label": "part of (Weller St)",
         "name": "Astronaut Ellison S Onizuka Street",
         "entityId": "astronaut-ellison-s-onizuka-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Ellison Onizuka}} (1946–1986), the first Asian American in space, killed in the 1986 Space Shuttle Challenger disaster, once this stretch was folded into Astronaut Ellison S Onizuka Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Ellison_Onizuka",
         "planned": {
           "text": "by 1910",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0016/TR0016-005.pdf"
@@ -18951,33 +20001,32 @@ const STREET_DATA = {
           },
           {
             "from": "by 1976",
-            "until": "?",
+            "until": "Feb. 1987",
             "name": "Weller Street",
             "entityId": "weller-street",
             "formInForce": "Weller Street",
             "how": "origin",
-            "origin": "labeled “WELLER STREET” on the 1976 Tract No. 30213 {{(source)}} — A Little Tokyo street, lettered on documents/tr0856-050-p2, renamed Astronaut Ellison S. Onizuka Street in the late 1980s for the astronaut killed aboard the Challenger. Nothing found says who Weller was",
+            "origin": "labeled “WELLER STREET” on the 1976 Tract No. 30213 {{(source)}} — A Little Tokyo street, lettered on documents/tr0856-050-p2, renamed Astronaut Ellison S. Onizuka Street in 1987 for the astronaut killed aboard the Challenger. Nothing found says who Weller was",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0856/TR0856-050-p2.pdf"
           },
           {
-            "from": "?",
+            "from": "Feb. 1987",
             "until": null,
             "name": "Astronaut Ellison S Onizuka Street",
             "entityId": "astronaut-ellison-s-onizuka-street",
             "formInForce": "Astronaut Ellison S Onizuka Street",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 162010, Weller Street to Onizuka Street {{(source)}}",
+            "originLink": "https://cityclerk.lacity.org/onlinedocs/1986/86-0259_ORD_162010_02-10-1987.pdf"
           }
         ],
-        "note": null,
+        "note": "Weller Street until 1987, when the City Council renamed it in Onizuka's honor a year after the Challenger explosion, with a memorial plaque and shuttle model at the street's centre. The longest street name in the city.",
         "attested": true,
-        "knownFraction": 0.04,
+        "knownFraction": 0.32,
         "categories": [
+          "person",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -18987,6 +20036,14 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Astronaut Ellison S. Onizuka Street",
+            "url": "https://lastreetnames.com/street/astronaut-ellison-s-onizuka-street/"
+          },
+          {
+            "title": "LAPL: The Long and Winding Story of the Streets of Los Angeles",
+            "url": "https://www.lapl.org/news-stories/articles/long-and-winding-story-streets-los-angeles"
+          },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
@@ -19008,12 +20065,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0856/TR0856-050-p2.pdf"
           },
           {
-            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
+            "title": "Ordinance No. 162010, “An Ordinance of the City of Los Angeles changing the name of Weller Street between 1st Street and 2nd Street and establishing the same as Astronaut Ellison S. Onizuka Street” — passed Feb. 10, 1987, approved Feb. 12, 1987 (Council File 86-0259)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1986/86-0259_ORD_162010_02-10-1987.pdf"
           },
           {
-            "title": "L.A. Street Names: Astronaut Ellison S. Onizuka Street — “A year after the tragedy, the former Weller Street was renamed in Onizuka's honor, with a memorial plaque and a model of the Challenger standing as the street's centerpiece.”",
-            "url": "https://lastreetnames.com/street/astronaut-ellison-s-onizuka-street/"
+            "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
           }
         ],
         "maxLat": 34.05,
@@ -19111,10 +20168,16 @@ const STREET_DATA = {
         "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
       }
     ],
-    "note": null,
+    "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Azusa Street today. Nothing found says why the name was chosen here.",
     "attested": true,
     "knownFraction": 0.57,
-    "categories": [],
+    "categories": [
+      "basis-none",
+      "searched-partial"
+    ],
+    "ancestors": [
+      "basis"
+    ],
     "disputed": false,
     "sources": [
       {
@@ -19260,8 +20323,8 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          "text": "1907 (Tract No. 49)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
         },
         "categories": [
           "basis-none",
@@ -19278,8 +20341,79 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "maxLng": -118.2352,
+        "maxLng": -118.2357,
         "from": null,
+        "to": {
+          "px": [
+            467,
+            1167
+          ]
+        }
+      },
+      {
+        "label": "part of (Rosabell St)",
+        "name": "Bauchet Street",
+        "entityId": "bauchet-street",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1909",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1909",
+            "until": "?",
+            "name": "Rosabell Street",
+            "entityId": "rosabell-street",
+            "formInForce": "Rosabell Street",
+            "how": "origin",
+            "origin": "labeled “ROSABELL ST.” on the 1909 Oil Well Supply Company Tract {{(source)}} — A street along the south side of the Oil Well Supply Company Tract",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Bauchet Street",
+            "entityId": "bauchet-street",
+            "formInForce": "Bauchet Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "knownFraction": 0,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Oil Well Supply Company Tract, being a plat of a portion of acreage property in the City of Los Angeles (Jan. 1909; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+          }
+        ],
+        "minLng": -118.2357,
+        "maxLng": -118.2352,
+        "from": {
+          "px": [
+            467,
+            1167
+          ]
+        },
         "to": {
           "px": [
             467,
@@ -20152,21 +21286,25 @@ const STREET_DATA = {
       {
         "label": "north of Court",
         "name": "Belmont Avenue",
-        "entityId": null,
+        "entityId": "belmont-ave",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on J. W. Ellis's subdivision of Sept. 1886 (documents/mr010-088), running south-west from the end of Texas Street along what is now Loma Drive. Nothing found says who or what Belmont was named for.",
         "attested": false,
         "categories": [
-          "stub"
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Map of J. W. Ellis' Subdivision of Parts of Lots 2 and 3, Block 38, Hancock's Survey (M.R. 10-88, Sept. 2, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-088.pdf"
           }
         ],
         "minLat": 34.0669,
@@ -20174,9 +21312,9 @@ const STREET_DATA = {
         "to": "Court Street"
       },
       {
-        "label": "beyond Court",
+        "label": "beyond Court (Aztec Ave)",
         "name": "Belmont Avenue",
-        "entityId": null,
+        "entityId": "belmont-ave",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
@@ -20194,13 +21332,28 @@ const STREET_DATA = {
             "how": "origin",
             "origin": "labeled “Aztec Avenue” on the 1884 Glassell's Subdivision map {{(source)}} — The Aztec empire — one of a conquest theme Andrew Glassell ran through his 1884 subdivision, alongside Cortez Street for Hernán Cortés and Montezuma Avenue (now Dawson Street) for Moctezuma II",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Belmont Avenue",
+            "entityId": "belmont-ave",
+            "formInForce": "Belmont Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
           }
         ],
-        "note": null,
+        "note": "Lettered on J. W. Ellis's subdivision of Sept. 1886 (documents/mr010-088), running south-west from the end of Texas Street along what is now Loma Drive. Nothing found says who or what Belmont was named for.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "stub"
+          "renamed",
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "people"
@@ -20213,6 +21366,10 @@ const STREET_DATA = {
           {
             "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          },
+          {
+            "title": "Map of J. W. Ellis' Subdivision of Parts of Lots 2 and 3, Block 38, Hancock's Survey (M.R. 10-88, Sept. 2, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-088.pdf"
           },
           {
             "title": "L.A. Street Names: Cortez Street (“what is now Belmont Avenue was called Aztec Avenue and what is now Dawson Street was called Montezuma Avenue… Glassell was clearly going for a theme here”)",
@@ -20230,9 +21387,9 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Beverly",
+        "label": "beyond Beverly (Texas St)",
         "name": "Belmont Avenue",
-        "entityId": null,
+        "entityId": "belmont-ave",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
@@ -20253,24 +21410,40 @@ const STREET_DATA = {
           },
           {
             "from": "by 1885",
-            "until": "?",
+            "until": "Jan. 1887",
             "name": "Texas Street",
             "entityId": "texas-st",
             "formInForce": "Texas Street",
             "how": "origin",
-            "origin": "labeled “TEXAS ST” on the 1885 Colina Park {{(source)}} — no namesake documented",
+            "origin": "labeled “TEXAS ST” on the 1885 Colina Park {{(source)}} — Texas — no source says so; the state is simply what the word names",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+          },
+          {
+            "from": "Jan. 1887",
+            "until": null,
+            "name": "Belmont Avenue",
+            "entityId": "belmont-ave",
+            "formInForce": "Belmont Avenue",
+            "how": "renaming",
+            "origin": "renamed per the 1887 Texas → Belmont renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18870104.1.7"
           }
         ],
-        "note": null,
+        "note": "Lettered on J. W. Ellis's subdivision of Sept. 1886 (documents/mr010-088), running south-west from the end of Texas Street along what is now Loma Drive. Nothing found says who or what Belmont was named for.",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.8,
         "categories": [
-          "stub",
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
-          "people"
+          "people",
+          "place",
+          "state"
         ],
         "formerAncestors": [
           "person"
@@ -20288,6 +21461,10 @@ const STREET_DATA = {
           {
             "title": "Map of J. W. Ellis' Subdivision of Parts of Lots 2 and 3, Block 38, Hancock's Survey (M.R. 10-88, Sept. 2, 1886)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-088.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Jan. 4, 1887, p. 7 — an ordinance changing the name of Texas Street to Belmont Avenue is adopted",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18870104.1.7"
           },
           {
             "title": "L.A. Street Names: Cortez Street (“what is now Belmont Avenue was called Aztec Avenue and what is now Dawson Street was called Montezuma Avenue… Glassell was clearly going for a theme here”)",
@@ -20648,6 +21825,10 @@ const STREET_DATA = {
           {
             "title": "Subdivision Map of Lot 8, Block 35, Hancock Survey (M.R. 5-69, Jan. 25, 1883)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
+          },
+          {
+            "title": "Electric Railway Historical Association of Southern California, quoting the Second Street Cable Railroad franchise — “Commencing at the intersection of Second Street with the westerly line of Spring Street, and running thence westerly along said Second Street… to Lake Shore Avenue; thence westerly along said Lake Shore Avenue… to Diamond Street; thence westerly along said Diamond Street… to the west boundary of said city”, with the note that “Diamond Street and what is now (1921) known as West First Street are the same street.”",
+            "url": "https://www.facebook.com/groups/echoparkhistory/posts/1741372899282840/"
           }
         ],
         "minLng": -118.2669,
@@ -20729,6 +21910,10 @@ const STREET_DATA = {
           {
             "title": "Subdivision Map of Lot 8, Block 35, Hancock Survey (M.R. 5-69, Jan. 25, 1883)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
+          },
+          {
+            "title": "Electric Railway Historical Association of Southern California, quoting the Second Street Cable Railroad franchise — “Commencing at the intersection of Second Street with the westerly line of Spring Street, and running thence westerly along said Second Street… to Lake Shore Avenue; thence westerly along said Lake Shore Avenue… to Diamond Street; thence westerly along said Diamond Street… to the west boundary of said city”, with the note that “Diamond Street and what is now (1921) known as West First Street are the same street.”",
+            "url": "https://www.facebook.com/groups/echoparkhistory/posts/1741372899282840/"
           }
         ],
         "minLng": -118.2631,
@@ -20800,8 +21985,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
           },
           {
-            "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           },
           {
             "title": "George Garrigues, What Ever Became of Those Old L.A. City Streets? — “Metcalf St. bet. Court St. & W. Temple is part of N. Bixel St. (26)”",
@@ -20845,8 +22030,8 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18971207.1.11"
           },
           {
-            "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0633,
@@ -20932,8 +22117,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
           },
           {
-            "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           },
           {
             "title": "George Garrigues, What Ever Became of Those Old L.A. City Streets? — “Ohio St. bet. W. 1st St. & Court St. is part of N. Bixel (26)”",
@@ -21024,8 +22209,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0713/TR0713-093-p2.pdf"
           },
           {
-            "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           },
           {
             "title": "George Garrigues, What Ever Became of Those Old L.A. City Streets? — “Ohio St. bet. W. 1st St. & Court St. is part of N. Bixel (26)”",
@@ -21118,8 +22303,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-057a.pdf"
           },
           {
-            "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “La Fayett Ave. in W part of city, changed to Contra Costa St.”",
@@ -21204,8 +22389,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-427.pdf"
           },
           {
-            "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “La Fayett Ave. in W part of city, changed to Contra Costa St.”",
@@ -21294,8 +22479,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0588/TR0588-055.pdf"
           },
           {
-            "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “La Fayett Ave. in W part of city, changed to Contra Costa St.”",
@@ -21396,8 +22581,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0588/TR0588-055.pdf"
           },
           {
-            "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “La Fayett Ave. in W part of city, changed to Contra Costa St.”",
@@ -21498,6 +22683,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0007/TR0007-078a.pdf"
           },
           {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
+          },
+          {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “La Fayett Ave. in W part of city, changed to Contra Costa St.”",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
@@ -21559,6 +22748,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0526,
@@ -21592,9 +22785,10 @@ const STREET_DATA = {
             "from": "by 1888",
             "until": "?",
             "name": "William Street",
-            "entityId": "william",
+            "entityId": "william-farragut",
             "formInForce": "William Street",
-            "origin": "labeled “William St.” on the 1888 St. Paul's P.E. Church Subdivision {{(source)}} — Probably Ozro William Childs (1824–1890) himself — the W of “O. W. Childs” is William — or his eldest surviving son, Ozro William Childs Jr. (1865–1933), who was twenty when the tract was recorded",
+            "how": "origin",
+            "origin": "labeled “William St.” on the 1888 St. Paul's P.E. Church Subdivision {{(source)}} — lettered in 1888 and 1889 on two subdivisions of lot 1, block 37 of Hancock's survey (documents/mr009-095, documents/mr005-566), between Seventh and Ingraham streets on what is now Bixel Street. Ordinance No. 48 of May 1889 changed it to Farragut Street",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-095.pdf"
           },
           {
@@ -21623,11 +22817,6 @@ const STREET_DATA = {
         "ancestors": [
           "basis"
         ],
-        "formerCategories": [
-          "person",
-          "alive",
-          "landowner"
-        ],
         "disputed": false,
         "sources": [
           {
@@ -21643,12 +22832,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
           },
           {
-            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
-            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
-          },
-          {
-            "title": "Find a Grave: Ozro William Childs (1824–1890), memorial 8297711 — full name, and the ten children including Ozro William Childs Jr.",
-            "url": "https://www.findagrave.com/memorial/8297711/ozro-w-childs"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0518,
@@ -21677,9 +22862,10 @@ const STREET_DATA = {
             "from": "by 1888",
             "until": "?",
             "name": "William Street",
-            "entityId": "william",
+            "entityId": "william-farragut",
             "formInForce": "William Street",
-            "origin": "labeled “William St.” and “WILLIAM ST.” on the 1888 St. Paul's P.E. Church Subdivision and the 1889 St. Paul's P.E. Church Subdivision {{(source)}} — Probably Ozro William Childs (1824–1890) himself — the W of “O. W. Childs” is William — or his eldest surviving son, Ozro William Childs Jr. (1865–1933), who was twenty when the tract was recorded",
+            "how": "origin",
+            "origin": "labeled “William St.” and “WILLIAM ST.” on the 1888 St. Paul's P.E. Church Subdivision and the 1889 St. Paul's P.E. Church Subdivision {{(source)}} — lettered in 1888 and 1889 on two subdivisions of lot 1, block 37 of Hancock's survey (documents/mr009-095, documents/mr005-566), between Seventh and Ingraham streets on what is now Bixel Street. Ordinance No. 48 of May 1889 changed it to Farragut Street",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-095.pdf"
           },
           {
@@ -21704,11 +22890,6 @@ const STREET_DATA = {
         "ancestors": [
           "basis"
         ],
-        "formerCategories": [
-          "person",
-          "alive",
-          "landowner"
-        ],
         "disputed": false,
         "sources": [
           {
@@ -21724,16 +22905,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
           },
           {
-            "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
-            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
-          },
-          {
-            "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
-          },
-          {
-            "title": "Find a Grave: Ozro William Childs (1824–1890), memorial 8297711 — full name, and the ten children including Ozro William Childs Jr.",
-            "url": "https://www.findagrave.com/memorial/8297711/ozro-w-childs"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0509,
@@ -21765,8 +22938,8 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18971207.1.11"
           },
           {
-            "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0469,
@@ -21776,16 +22949,43 @@ const STREET_DATA = {
         "gapAfter": true
       },
       {
-        "label": "south of Olympic",
+        "label": "part of (Grattan St)",
         "name": "Bixel Street",
         "entityId": "bixel",
         "namedAfter": null,
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1901",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1901",
+            "until": "?",
+            "name": "Grattan Street",
+            "entityId": "grattan-street",
+            "formInForce": "Grattan Street",
+            "how": "origin",
+            "origin": "labeled “GRATTAN STREET” on the 1901 R. W. Poindexter's Subdivision {{(source)}} — A street in the Mrs. Fitzgerald Tract, shown on R. W. Poindexter's 1901 subdivision",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Bixel Street",
+            "entityId": "bixel",
+            "formInForce": "Bixel Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
         "note": "The name reached this ground in stages. Kines dates its arrival on the Lafayette Avenue corridor to 1889; in December 1897 the city engineer proposed carrying it north over Jewel Street, from Sapphire Street to that street’s north end. Nothing found here says who Bixel was.",
-        "attested": false,
+        "attested": true,
+        "knownFraction": 0,
         "categories": [
+          "renamed",
           "basis-none",
           "searched-partial"
         ],
@@ -21799,12 +22999,21 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18971207.1.11"
           },
           {
-            "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
+            "title": "Map of R. W. Poindexter's Subdivision of the easterly portion of Block A of the Mrs. Fitzgerald Tract (Oct. 1901; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "maxLat": 34.0469,
-        "from": "Olympic Boulevard",
+        "from": {
+          "px": [
+            442,
+            919
+          ]
+        },
         "to": null
       }
     ]
@@ -22169,8 +23378,8 @@ const STREET_DATA = {
         "label": "part of (Figueroa St)",
         "name": "Boylston Street",
         "entityId": "boylston",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly Boston's {{Boylston Street}}, once this stretch was folded into Boylston Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Boylston_Street",
         "planned": {
           "text": "by 1885",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
@@ -22197,13 +23406,14 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0063/TR0063-098-p1.pdf"
           }
         ],
-        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard.",
+        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.6,
         "categories": [
+          "place",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-extensive"
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
@@ -22261,8 +23471,8 @@ const STREET_DATA = {
         "label": "part of (Figueroa St)",
         "name": "Boylston Street",
         "entityId": "boylston",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly Boston's {{Boylston Street}}, once this stretch was folded into Boylston Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Boylston_Street",
         "planned": {
           "text": "by 1885",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
@@ -22290,13 +23500,14 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard.",
+        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.02,
         "categories": [
+          "place",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-extensive"
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
@@ -22364,8 +23575,8 @@ const STREET_DATA = {
         "label": "part of (Figueroa St)",
         "name": "Boylston Street",
         "entityId": "boylston",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly Boston's {{Boylston Street}}, once this stretch was folded into Boylston Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Boylston_Street",
         "planned": {
           "text": "by 1883",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
@@ -22392,13 +23603,14 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard.",
+        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.01,
         "categories": [
+          "place",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-extensive"
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
@@ -22462,8 +23674,8 @@ const STREET_DATA = {
         "label": "beyond Colton (Figueroa St) (discontinuous)",
         "name": "Boylston Street",
         "entityId": "boylston",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly Boston's {{Boylston Street}}, once this stretch was folded into Boylston Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Boylston_Street",
         "planned": {
           "text": "by 1883",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
@@ -22490,13 +23702,14 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-097b.pdf"
           }
         ],
-        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard.",
+        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.68,
         "categories": [
+          "place",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-extensive"
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
@@ -22564,8 +23777,8 @@ const STREET_DATA = {
         "label": "beyond Huntley Drive (Figueroa St)",
         "name": "Boylston Street",
         "entityId": "boylston",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly Boston's {{Boylston Street}}, once this stretch was folded into Boylston Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Boylston_Street",
         "planned": {
           "text": "by 1875",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
@@ -22593,13 +23806,14 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0035/TR0035-092.pdf"
           }
         ],
-        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard.",
+        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.73,
         "categories": [
+          "place",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-extensive"
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
@@ -22658,8 +23872,8 @@ const STREET_DATA = {
         "label": "part of (Figueroa St)",
         "name": "Boylston Street",
         "entityId": "boylston",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly Boston's {{Boylston Street}}, once this stretch was folded into Boylston Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Boylston_Street",
         "planned": {
           "text": "by 1875",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
@@ -22687,13 +23901,14 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0588/TR0588-055.pdf"
           }
         ],
-        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard.",
+        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.4,
         "categories": [
+          "place",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-extensive"
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
@@ -22749,8 +23964,8 @@ const STREET_DATA = {
         "label": "part of (Figueroa St)",
         "name": "Boylston Street",
         "entityId": "boylston",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly Boston's {{Boylston Street}}, once this stretch was folded into Boylston Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Boylston_Street",
         "planned": {
           "text": "by 1875",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
@@ -22777,13 +23992,14 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0010/TR0010-175a.pdf"
           }
         ],
-        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard.",
+        "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.68,
         "categories": [
+          "place",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-extensive"
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
@@ -23204,8 +24420,8 @@ const STREET_DATA = {
         "note": "The name has no “Street”: the 1890 papers and the street signs both say simply Broadway.",
         "attested": false,
         "absentAsOf": {
-          "text": "1915 (Vineyard Subdivision)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          "text": "1883 (North Carr Tract Subdivision)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
         },
         "categories": [
           "borrowed",
@@ -23557,7 +24773,7 @@ const STREET_DATA = {
             "entityId": "union-avenue",
             "formInForce": "Union Avenue",
             "how": "origin",
-            "origin": "labeled “Union Avenue” on the 1885 Colina Park {{(source)}} — no namesake documented",
+            "origin": "labeled “Union Avenue” on the 1885 Colina Park {{(source)}} — lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and on Tract No. 2473 of 1913 (documents/tr0024-055), and still Union Avenue today. Kines suggests the name may have been given a decade earlier on the adjoining Fairview tract; nothing found says what union was meant",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -23588,6 +24804,10 @@ const STREET_DATA = {
           {
             "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Union Avenue — “There's also a good chance that Union Ave. was named earlier in 1875 on the adjoining Fairview tract, owned by merchant tailor Jacob Strelitz.”",
+            "url": "https://lastreetnames.com/street/union-avenue/"
           }
         ],
         "minLat": 34.0596,
@@ -24866,8 +26086,8 @@ const STREET_DATA = {
         "label": "part of (Canal and Reservoir St)",
         "name": "Cesar E Chavez Avenue",
         "entityId": "cesar-e-chavez-avenue",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers, once this stretch was folded into Cesar E Chavez Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
         "planned": {
           "text": "by 1885",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
@@ -24894,14 +26114,13 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "person",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -24912,8 +26131,28 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
             "title": "Map of the Park Tract, Los Angeles City, Cal. (M.R. 7-26, Jan. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
           },
           {
             "title": "Los Angeles Magazine, CityDig — “Monsieur Beaudry managed to wrangle two other L.A. big shots to form the Canal and Reservoir Company, of which Prudent was, prudently, president.”",
@@ -24941,16 +26180,15 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Cesar E Chavez Avenue",
         "entityId": "cesar-e-chavez-avenue",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers — how and when this stretch joined Cesar E Chavez Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
         "attested": false,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "person",
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -24958,8 +26196,24 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
           }
         ],
         "minLng": -118.2435,
@@ -24981,8 +26235,8 @@ const STREET_DATA = {
         "label": "part of (Short St)",
         "name": "Cesar E Chavez Avenue",
         "entityId": "cesar-e-chavez-avenue",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers, once this stretch was folded into Cesar E Chavez Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
         "planned": {
           "text": "by 1876",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-240.pdf"
@@ -25009,7 +26263,7 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
@@ -25017,10 +26271,9 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
+          "person",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -25034,12 +26287,32 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
             "title": "Map of Block 35½, Being an Extension of Ord's Survey of the City of Los Angeles (M.R. 3-240, July 20, 1876; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-240.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
           }
         ],
         "minLng": -118.2428,
@@ -25061,20 +26334,19 @@ const STREET_DATA = {
         "label": "beyond Broadway",
         "name": "Cesar E Chavez Avenue",
         "entityId": "cesar-e-chavez-avenue",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers — how and when this stretch joined Cesar E Chavez Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
         "attested": false,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "person",
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -25082,8 +26354,24 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
           }
         ],
         "minLng": -118.241,
@@ -25100,8 +26388,8 @@ const STREET_DATA = {
         "label": "beyond Broadway (Short St)",
         "name": "Cesar E Chavez Avenue",
         "entityId": "cesar-e-chavez-avenue",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers, once this stretch was folded into Cesar E Chavez Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
         "planned": {
           "text": "1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
@@ -25115,7 +26403,7 @@ const STREET_DATA = {
             "entityId": "short-street-chavez",
             "formInForce": "Short Street",
             "how": "origin",
-            "origin": "labeled “C CORTA” and “SHORT ST” on the 1849 Hutton / Ord Survey {{(source)}} — Its length — lettered “C CORTA” on the sheet, which says the same thing in Spanish",
+            "origin": "labeled “C CORTA”, “SHORT ST” and “Calle Corta” on the 1849 Hutton / Ord Survey and the 1873 Old Plaza, 1873 {{(source)}} — Its length — lettered “C CORTA” on the sheet, which says the same thing in Spanish",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -25129,18 +26417,17 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
-        "knownFraction": 0,
+        "knownFraction": 0.13,
         "categories": [
+          "person",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -25154,8 +26441,32 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
           }
         ],
         "minLng": -118.2402,
@@ -25169,23 +26480,22 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Lyon",
+        "label": "part of",
         "name": "Cesar E Chavez Avenue",
         "entityId": "cesar-e-chavez-avenue",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers — how and when this stretch joined Cesar E Chavez Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
         "attested": false,
         "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          "text": "1873 (Old Plaza, 1873)",
+          "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
         },
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "person",
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -25193,16 +26503,261 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
           }
         ],
         "minLng": -118.239,
-        "maxLng": -118.2309,
+        "maxLng": -118.2379,
         "from": {
           "px": [
             270,
             794
+          ]
+        },
+        "to": {
+          "px": [
+            951,
+            1407
+          ]
+        }
+      },
+      {
+        "label": "beyond Alameda (Marchessault St)",
+        "name": "Cesar E Chavez Avenue",
+        "entityId": "cesar-e-chavez-avenue",
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers, once this stretch was folded into Cesar E Chavez Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
+        "planned": {
+          "text": "by 1873",
+          "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1873",
+            "until": "?",
+            "name": "Marchessault Street",
+            "entityId": "marchessault-street",
+            "formInForce": "Marchessault Street",
+            "how": "origin",
+            "origin": "labeled “MARCHESSAULT STREET” on the 1873 Old Plaza, 1873 {{(source)}} — an early street through the Old Plaza district, later absorbed into another route",
+            "originLink": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Cesar E Chavez Avenue",
+            "entityId": "cesar-e-chavez-avenue",
+            "formInForce": "Cesar E Chavez Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "knownFraction": 0,
+        "categories": [
+          "person",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
+          }
+        ],
+        "minLng": -118.2379,
+        "maxLng": -118.2371,
+        "from": {
+          "px": [
+            951,
+            1407
+          ]
+        },
+        "to": "Alameda Street"
+      },
+      {
+        "label": "beyond Alameda (Macy St)",
+        "name": "Cesar E Chavez Avenue",
+        "entityId": "cesar-e-chavez-avenue",
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers, once this stretch was folded into Cesar E Chavez Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
+        "planned": {
+          "text": "by 1873",
+          "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1873",
+            "until": "?",
+            "name": "Macy Street",
+            "entityId": "macy-street",
+            "formInForce": "Macy Street",
+            "how": "origin",
+            "origin": "labeled “MACY STREET” on the 1873 Old Plaza, 1873 {{(source)}} — the street through the Plaza district that became part of Cesar E. Chavez Avenue on March 31, 1994",
+            "originLink": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Cesar E Chavez Avenue",
+            "entityId": "cesar-e-chavez-avenue",
+            "formInForce": "Cesar E Chavez Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "knownFraction": 0,
+        "categories": [
+          "person",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
+          }
+        ],
+        "minLng": -118.2371,
+        "maxLng": -118.2366,
+        "from": "Alameda Street",
+        "to": {
+          "px": [
+            643,
+            446
+          ]
+        }
+      },
+      {
+        "label": "beyond Lyon",
+        "name": "Cesar E Chavez Avenue",
+        "entityId": "cesar-e-chavez-avenue",
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers — how and when this stretch joined Cesar E Chavez Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
+        "attested": false,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "categories": [
+          "person",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
+          }
+        ],
+        "minLng": -118.2366,
+        "maxLng": -118.2309,
+        "from": {
+          "px": [
+            643,
+            446
           ]
         },
         "to": "Lyon Street"
@@ -25211,20 +26766,19 @@ const STREET_DATA = {
         "label": "beyond Lyon",
         "name": "Cesar E Chavez Avenue",
         "entityId": "cesar-e-chavez-avenue",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers — how and when this stretch joined Cesar E Chavez Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
         "planned": null,
         "built": {
           "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
-        "note": null,
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "person",
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -25232,8 +26786,28 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
           }
         ],
         "minLng": -118.2309,
@@ -25250,16 +26824,15 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Cesar E Chavez Avenue",
         "entityId": "cesar-e-chavez-avenue",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers — how and when this stretch joined Cesar E Chavez Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
         "attested": false,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "person",
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -25267,15 +26840,175 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
           }
         ],
         "minLng": -118.2305,
+        "maxLng": -118.2287,
         "from": {
           "px": [
             447,
             1247
+          ]
+        },
+        "to": {
+          "px": [
+            47,
+            1076
+          ]
+        }
+      },
+      {
+        "label": "part of (Macy St)",
+        "name": "Cesar E Chavez Avenue",
+        "entityId": "cesar-e-chavez-avenue",
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers, once this stretch was folded into Cesar E Chavez Avenue",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
+        "planned": {
+          "text": "by 1904",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0006/TR0006-051A.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1904",
+            "until": "?",
+            "name": "Macy Street",
+            "entityId": "macy-street",
+            "formInForce": "Macy Street",
+            "origin": "labeled “MACY ST.” on the 1904 Agnes L. Cline Tract {{(source)}} — the street through the Plaza district that became part of Cesar E. Chavez Avenue on March 31, 1994",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0006/TR0006-051A.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Cesar E Chavez Avenue",
+            "entityId": "cesar-e-chavez-avenue",
+            "formInForce": "Cesar E Chavez Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "person",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
+            "title": "Map of the Agnes L. Cline Tract in the City of Los Angeles, Cal. (Dec. 13, 1904; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0006/TR0006-051A.pdf"
+          },
+          {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
+          }
+        ],
+        "minLng": -118.2287,
+        "maxLng": -118.2275,
+        "from": {
+          "px": [
+            47,
+            1076
+          ]
+        },
+        "to": {
+          "px": [
+            1068,
+            1098
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Cesar E Chavez Avenue",
+        "entityId": "cesar-e-chavez-avenue",
+        "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers — how and when this stretch joined Cesar E Chavez Avenue is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Cesar_Chavez",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
+        "attested": false,
+        "categories": [
+          "person",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Cesar E. Chavez Avenue",
+            "url": "https://lastreetnames.com/street/cesar-e-chavez-avenue/"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez Avenue",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_Avenue"
+          },
+          {
+            "title": "LAist: How L.A.'s Brooklyn Avenue Became Avenida Cesar Chavez",
+            "url": "https://laist.com/news/entertainment/brooklyn-cesar"
+          },
+          {
+            "title": "Wikipedia: Cesar Chavez sexual abuse allegations",
+            "url": "https://en.wikipedia.org/wiki/Cesar_Chavez_sexual_abuse_allegations"
+          },
+          {
+            "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1993/93-0907_ORD_169111_03-03-1994.pdf"
+          }
+        ],
+        "minLng": -118.2275,
+        "from": {
+          "px": [
+            1068,
+            1098
           ]
         },
         "to": null
@@ -26967,17 +28700,18 @@ const STREET_DATA = {
         "label": "west of Union",
         "name": "Court Street",
         "entityId": "court-street",
-        "namedAfter": null,
+        "namedAfter": "Its shape — how and when this stretch joined Court Street is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Named on the sheets of the early 1880s north-west of downtown — first on a January 1883 subdivision of Lot 8, Block 35 of Hancock's survey, then Glassell's of 1884 — and on Prudent Beaudry's Park tract (1885), where a curving Court Street is one of the tract's design features, with North Court and South Court on its arms. Why “Court” is not documented.",
         "attested": false,
         "categories": [
-          "basis-none",
-          "searched-partial"
+          "descriptive",
+          "basis-inferred"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
@@ -26995,7 +28729,7 @@ const STREET_DATA = {
         "label": "beyond Union",
         "name": "Court Street",
         "entityId": "court-street",
-        "namedAfter": null,
+        "namedAfter": "Its shape, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1884",
@@ -27014,14 +28748,15 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
           }
         ],
-        "note": null,
+        "note": "Named on the sheets of the early 1880s north-west of downtown — first on a January 1883 subdivision of Lot 8, Block 35 of Hancock's survey, then Glassell's of 1884 — and on Prudent Beaudry's Park tract (1885), where a curving Court Street is one of the tract's design features, with North Court and South Court on its arms. Why “Court” is not documented.",
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "basis-none",
-          "searched-partial"
+          "descriptive",
+          "basis-inferred"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
@@ -27049,7 +28784,7 @@ const STREET_DATA = {
         "label": "beyond Boylston (original Court St)",
         "name": "Court Street",
         "entityId": "court-street",
-        "namedAfter": null,
+        "namedAfter": "Its shape — the curving “court” Prudent Beaudry drew into his Park tract as a design feature, with North Court and South Court on its arms; Crescent Avenue, on the same tract, meets the circle",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1883",
@@ -27068,14 +28803,15 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
           }
         ],
-        "note": null,
+        "note": "Named on the sheets of the early 1880s north-west of downtown — first on a January 1883 subdivision of Lot 8, Block 35 of Hancock's survey, then Glassell's of 1884 — and on Prudent Beaudry's Park tract (1885), where a curving Court Street is one of the tract's design features, with North Court and South Court on its arms. Why “Court” is not documented.",
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "basis-none",
-          "searched-partial"
+          "descriptive",
+          "basis-inferred"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
@@ -27173,8 +28909,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of Wilde and Strong's Subdivision of the Frank Sabichi Tract (M.R. 66-64, Sept. 21, 1897)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0454,
@@ -27252,8 +28988,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           },
           {
-            "title": "Map of Wilde and Strong's Subdivision of the Frank Sabichi Tract (M.R. 66-64, Sept. 21, 1897)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0401,
@@ -27318,6 +29054,10 @@ const STREET_DATA = {
           {
             "title": "Map of Wilde and Strong's Subdivision of the Frank Sabichi Tract (M.R. 66-64, Sept. 21, 1897; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0385,
@@ -27380,8 +29120,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0013/TR0013-048.pdf"
           },
           {
-            "title": "Map of Wilde and Strong's Subdivision of the Frank Sabichi Tract (M.R. 66-64, Sept. 21, 1897)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0378,
@@ -27459,8 +29199,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0013/TR0013-048.pdf"
           },
           {
-            "title": "Map of Wilde and Strong's Subdivision of the Frank Sabichi Tract (M.R. 66-64, Sept. 21, 1897)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           },
           {
             "title": "Homestead Museum: “No Place Like Home: The Elden P. Bryan Residence” (on the firm of Clark & Bryan)",
@@ -27533,8 +29273,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-065.pdf"
           },
           {
-            "title": "Map of Wilde and Strong's Subdivision of the Frank Sabichi Tract (M.R. 66-64, Sept. 21, 1897)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           },
           {
             "title": "Homestead Museum: “No Place Like Home: The Elden P. Bryan Residence” (on the firm of Clark & Bryan)",
@@ -27576,8 +29316,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/towne-avenue-dtla/"
           },
           {
-            "title": "Map of Wilde and Strong's Subdivision of the Frank Sabichi Tract (M.R. 66-64, Sept. 21, 1897)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR066/MR066-064.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "maxLat": 34.0345,
@@ -27614,7 +29354,7 @@ const STREET_DATA = {
             "entityId": "arch-st",
             "formInForce": "Arch Street",
             "how": "origin",
-            "origin": "labeled “Arch St” on the 1885 Colina Park {{(source)}} — no namesake documented",
+            "origin": "labeled “Arch St” on the 1885 Colina Park {{(source)}} — lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2), along what is now Crown Hill Avenue. Nothing found says who or what it was named for",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -27624,7 +29364,7 @@ const STREET_DATA = {
             "entityId": "western-ave-colina-park",
             "formInForce": "Western Avenue",
             "how": "renaming",
-            "origin": "labeled “Western Ave” on the 1886 J. W. Ellis' Subdivision {{(source)}} — no namesake documented",
+            "origin": "labeled “Western Ave” on the 1886 J. W. Ellis' Subdivision {{(source)}} — The west side of the Colina Park tract, which this street bounded",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-088.pdf"
           },
           {
@@ -27649,6 +29389,10 @@ const STREET_DATA = {
         "ancestors": [
           "nature",
           "basis"
+        ],
+        "formerCategories": [
+          "abstract",
+          "descriptive"
         ],
         "disputed": false,
         "sources": [
@@ -27701,7 +29445,7 @@ const STREET_DATA = {
             "entityId": "arch-st",
             "formInForce": "Arch Street",
             "how": "origin",
-            "origin": "labeled “Arch St” on the 1885 Colina Park {{(source)}} — no namesake documented",
+            "origin": "labeled “Arch St” on the 1885 Colina Park {{(source)}} — lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2), along what is now Crown Hill Avenue. Nothing found says who or what it was named for",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -27776,7 +29520,7 @@ const STREET_DATA = {
             "entityId": "arch-st",
             "formInForce": "Arch Street",
             "how": "origin",
-            "origin": "labeled “Arch St” on the 1885 Colina Park {{(source)}} — no namesake documented",
+            "origin": "labeled “Arch St” on the 1885 Colina Park {{(source)}} — lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2), along what is now Crown Hill Avenue. Nothing found says who or what it was named for",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -27855,7 +29599,7 @@ const STREET_DATA = {
             "entityId": "arch-st",
             "formInForce": "Arch Street",
             "how": "origin",
-            "origin": "labeled “Arch St” on the 1885 Colina Park {{(source)}} — no namesake documented",
+            "origin": "labeled “Arch St” on the 1885 Colina Park {{(source)}} — lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2), along what is now Crown Hill Avenue. Nothing found says who or what it was named for",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -28042,6 +29786,10 @@ const STREET_DATA = {
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0023/TR0023-054c.pdf"
       },
       {
+        "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+        "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
+      },
+      {
         "title": "Los Angeles Herald, Feb. 5, 1887 — “For Sale. The E. B. Millar Property”, 26 lots bounded by Seventh Street, Alameda St. and Lemon St., “first-class vineyard”, “Just near the famous Wolfskill Orchard”; agents Byram & Poindexter, 27 W. First St.",
         "url": "https://cdnc.ucr.edu/?a=d&d=LAH18870205.1.4"
       }
@@ -28113,6 +29861,10 @@ const STREET_DATA = {
       {
         "title": "Map of Whiffen Tract (Oct. 1915; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0030/TR0030-086.pdf"
+      },
+      {
+        "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+        "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
       },
       {
         "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list, which disposes of all four of the city’s Virginias at once: Boyle Heights keeps the name, the SE one becomes Lion Street, “Virginia St., in SW. part of city, changed to Rouland St.”, and the W one becomes Toluca Street",
@@ -28234,6 +29986,10 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "Electric Railway Historical Association of Southern California, quoting the Second Street Cable Railroad franchise — “Commencing at the intersection of Second Street with the westerly line of Spring Street, and running thence westerly along said Second Street… to Lake Shore Avenue; thence westerly along said Lake Shore Avenue… to Diamond Street; thence westerly along said Diamond Street… to the west boundary of said city”, with the note that “Diamond Street and what is now (1921) known as West First Street are the same street.”",
+            "url": "https://www.facebook.com/groups/echoparkhistory/posts/1741372899282840/"
+          },
+          {
             "title": "Subdivision Map of 35 Acre Lot 1, Block 38, Hancock's Survey, and Part of Woolen Mill Tract (M.R. 6-115, Nov. 24, 1884; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
           },
@@ -28290,6 +30046,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Electric Railway Historical Association of Southern California, quoting the Second Street Cable Railroad franchise — “Commencing at the intersection of Second Street with the westerly line of Spring Street, and running thence westerly along said Second Street… to Lake Shore Avenue; thence westerly along said Lake Shore Avenue… to Diamond Street; thence westerly along said Diamond Street… to the west boundary of said city”, with the note that “Diamond Street and what is now (1921) known as West First Street are the same street.”",
+            "url": "https://www.facebook.com/groups/echoparkhistory/posts/1741372899282840/"
+          },
           {
             "title": "Map of the Park Tract, Los Angeles City, Cal. (M.R. 7-26, Jan. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
@@ -29101,6 +30861,10 @@ const STREET_DATA = {
           {
             "title": "Angelino Heights Preservation Plan (2004) — “In naming others, Edgeware and Crescent, they had considered the topography as factors”; “Basic to the layout of the tract was the topography of two crescent heights or hills, initially the Edgeware loop road”",
             "url": "https://planning.lacity.gov/odocument/db73a2ea-a3b9-4111-a9f5-f548d4e16553/Angelino%20Heights%20PP.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0682,
@@ -29166,6 +30930,10 @@ const STREET_DATA = {
           {
             "title": "Map of Blocks 23, 24 and 25, Angeleno Heights, Los Angeles, Cal. (M.R. 12-25, Nov. 24, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-025.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0663,
@@ -29206,6 +30974,10 @@ const STREET_DATA = {
           {
             "title": "Angelino Heights Preservation Plan (2004) — “In naming others, Edgeware and Crescent, they had considered the topography as factors”; “Basic to the layout of the tract was the topography of two crescent heights or hills, initially the Edgeware loop road”",
             "url": "https://planning.lacity.gov/odocument/db73a2ea-a3b9-4111-a9f5-f548d4e16553/Angelino%20Heights%20PP.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0647,
@@ -29287,6 +31059,10 @@ const STREET_DATA = {
           {
             "title": "Subdivision Map of Lot 8, Block 35, Hancock Survey (M.R. 5-69, Jan. 25, 1883; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "maxLat": 34.0647,
@@ -31333,6 +33109,10 @@ const STREET_DATA = {
           {
             "title": "Tract No. 71141 in the City of Los Angeles (May 4, 2017; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1397/TR1397-017.pdf"
+          },
+          {
+            "title": "E. M. Crow's Replat of Block 6 of Nichols Addition to West Los Angeles and land adjoining on the west (Feb. 1904)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-042B.pdf"
           }
         ],
         "minLat": 34.0499,
@@ -31359,8 +33139,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Tract No. 25510 in the City of Los Angeles (Feb. 26, 1964)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0718/TR0718-007.pdf"
+            "title": "E. M. Crow's Replat of Block 6 of Nichols Addition to West Los Angeles and land adjoining on the west (Feb. 1904)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-042B.pdf"
           }
         ],
         "minLat": 34.0487,
@@ -31423,8 +33203,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-087.pdf"
           },
           {
-            "title": "Tract No. 25510 in the City of Los Angeles (Feb. 26, 1964)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0718/TR0718-007.pdf"
+            "title": "E. M. Crow's Replat of Block 6 of Nichols Addition to West Los Angeles and land adjoining on the west (Feb. 1904)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-042B.pdf"
           },
           {
             "title": "L.A. Street Names: Francisco Street (“the former Moore Street and Okey Street” were renamed Francisco Street in 1903)",
@@ -31461,8 +33241,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Tract No. 25510 in the City of Los Angeles (Feb. 26, 1964)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0718/TR0718-007.pdf"
+            "title": "E. M. Crow's Replat of Block 6 of Nichols Addition to West Los Angeles and land adjoining on the west (Feb. 1904)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-042B.pdf"
           }
         ],
         "maxLat": 34.0469,
@@ -31785,8 +33565,8 @@ const STREET_DATA = {
         "label": "part of (original Garland Ave)",
         "name": "Garland Avenue",
         "entityId": "garland",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{William May Garland}} (1866–1948), the real-estate man who subdivided this tract and who later brought the 1932 Olympic Games to Los Angeles",
+        "namedAfterLink": "https://lastreetnames.com/street/garland-avenue/",
         "planned": {
           "text": "by 1897",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
@@ -31804,19 +33584,111 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
           }
         ],
-        "note": null,
+        "note": "Lettered on the Map of the Garland Tract of April 1897 (documents/mr060-088) and again on Tract No. 2905 of 1915 (documents/tr0030-069), and still Garland Avenue. Garland came to Los Angeles from Maine in 1890 as an auditor for a streetcar company, turned to real estate in 1893, and in 1897 — the year this tract was recorded — sold Harrison Gray Otis the Wilshire Boulevard property that became the Otis College of Art and Design. He is better remembered for securing the 1932 Summer Olympics for Los Angeles, which he had pushed for almost singlehandedly since 1920.",
         "attested": true,
         "knownFraction": 0.73,
-        "categories": [],
+        "categories": [
+          "person",
+          "alive",
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Contemporary biography of William May Garland — “In 1890, because of a threatened break in his health, Mr. Garland came to Los Angeles and accepted a position as auditor of the Pacific Cable Railway Company”; “Mr. Garland subdivided and sold the Wilshire Boulevard tract, and the Garland tract and a few other subdivisions”",
+            "url": "https://goldennuggetlibrary.sfgenealogy.org/lagar2.htm"
+          },
           {
             "title": "Map of the Garland Tract, Being a Subdivision of a Portion of Lot 7, Block 37, Hancock's Survey, in the City of Los Angeles, California (M.R. 60-88, Apr. 1897; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
           }
         ],
-        "minLat": 34.0493,
+        "minLat": 34.0498,
         "from": null,
+        "to": {
+          "px": [
+            745,
+            396
+          ]
+        }
+      },
+      {
+        "label": "part of (Holmes St)",
+        "name": "Garland Avenue",
+        "entityId": "garland",
+        "namedAfter": "{{William May Garland}} (1866–1948), the real-estate man who subdivided this tract and who later brought the 1932 Olympic Games to Los Angeles",
+        "namedAfterLink": "https://lastreetnames.com/street/garland-avenue/",
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "?",
+            "name": "Holmes Street",
+            "entityId": "holmes-st",
+            "formInForce": "Holmes Street",
+            "how": "origin",
+            "origin": "labeled “Holmes St.” on the 1885 Kennedy Tract {{(source)}} — lettered on the Kennedy Tract of Jan. 1885 (documents/mr006-193) and renamed Garland Avenue in 1897, on one of William May Garland's tracts. Nothing found says who Holmes was",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
+            "from": "by 1897",
+            "until": null,
+            "name": "Garland Avenue",
+            "entityId": "garland",
+            "formInForce": "Garland Avenue",
+            "how": "origin",
+            "origin": "labeled “GARLAND AVENUE” on the 1897 Garland Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
+          }
+        ],
+        "note": "Lettered on the Map of the Garland Tract of April 1897 (documents/mr060-088) and again on Tract No. 2905 of 1915 (documents/tr0030-069), and still Garland Avenue. Garland came to Los Angeles from Maine in 1890 as an auditor for a streetcar company, turned to real estate in 1893, and in 1897 — the year this tract was recorded — sold Harrison Gray Otis the Wilshire Boulevard property that became the Otis College of Art and Design. He is better remembered for securing the 1932 Summer Olympics for Los Angeles, which he had pushed for almost singlehandedly since 1920.",
+        "attested": true,
+        "knownFraction": 0.73,
+        "categories": [
+          "person",
+          "alive",
+          "landowner",
+          "renamed",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Contemporary biography of William May Garland — “In 1890, because of a threatened break in his health, Mr. Garland came to Los Angeles and accepted a position as auditor of the Pacific Cable Railway Company”; “Mr. Garland subdivided and sold the Wilshire Boulevard tract, and the Garland tract and a few other subdivisions”",
+            "url": "https://goldennuggetlibrary.sfgenealogy.org/lagar2.htm"
+          },
+          {
+            "title": "Map of the Kennedy Tract, Los Angeles, Cal. (surveyed May 1884 by E. T. Wright) (M.R. 6-193; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
+            "title": "Map of the Garland Tract, Being a Subdivision of a Portion of Lot 7, Block 37, Hancock's Survey, in the City of Los Angeles, California (M.R. 60-88, Apr. 1897; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Garland Avenue — “Also in 1897, the former Holmes Street was renamed Garland Avenue on one of Garland's tracts.”",
+            "url": "https://lastreetnames.com/street/garland-avenue/"
+          }
+        ],
+        "minLat": 34.0493,
+        "maxLat": 34.0498,
+        "from": {
+          "px": [
+            745,
+            396
+          ]
+        },
         "to": {
           "px": [
             176,
@@ -31825,21 +33697,68 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of",
+        "label": "part of (Holmes St)",
         "name": "Garland Avenue",
         "entityId": "garland",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": "not yet researched",
+        "namedAfter": "{{William May Garland}} (1866–1948), the real-estate man who subdivided this tract and who later brought the 1932 Olympic Games to Los Angeles, once this stretch was folded into Garland Avenue",
+        "namedAfterLink": "https://lastreetnames.com/street/garland-avenue/",
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+        },
         "built": "not yet researched",
-        "note": null,
-        "attested": false,
-        "categories": [],
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "?",
+            "name": "Holmes Street",
+            "entityId": "holmes-st",
+            "formInForce": "Holmes Street",
+            "how": "origin",
+            "origin": "labeled “Holmes St.” on the 1885 Kennedy Tract {{(source)}} — lettered on the Kennedy Tract of Jan. 1885 (documents/mr006-193) and renamed Garland Avenue in 1897, on one of William May Garland's tracts. Nothing found says who Holmes was",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Garland Avenue",
+            "entityId": "garland",
+            "formInForce": "Garland Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Lettered on the Map of the Garland Tract of April 1897 (documents/mr060-088) and again on Tract No. 2905 of 1915 (documents/tr0030-069), and still Garland Avenue. Garland came to Los Angeles from Maine in 1890 as an auditor for a streetcar company, turned to real estate in 1893, and in 1897 — the year this tract was recorded — sold Harrison Gray Otis the Wilshire Boulevard property that became the Otis College of Art and Design. He is better remembered for securing the 1932 Summer Olympics for Los Angeles, which he had pushed for almost singlehandedly since 1920.",
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "person",
+          "alive",
+          "landowner",
+          "renamed",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
+            "title": "Contemporary biography of William May Garland — “In 1890, because of a threatened break in his health, Mr. Garland came to Los Angeles and accepted a position as auditor of the Pacific Cable Railway Company”; “Mr. Garland subdivided and sold the Wilshire Boulevard tract, and the Garland tract and a few other subdivisions”",
+            "url": "https://goldennuggetlibrary.sfgenealogy.org/lagar2.htm"
+          },
+          {
+            "title": "Map of the Kennedy Tract, Los Angeles, Cal. (surveyed May 1884 by E. T. Wright) (M.R. 6-193; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
             "title": "Map of the Garland Tract, Being a Subdivision of a Portion of Lot 7, Block 37, Hancock's Survey, in the City of Los Angeles, California (M.R. 60-88, Apr. 1897)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Garland Avenue — “Also in 1897, the former Holmes Street was renamed Garland Avenue on one of Garland's tracts.”",
+            "url": "https://lastreetnames.com/street/garland-avenue/"
           }
         ],
         "maxLat": 34.0493,
@@ -31886,6 +33805,97 @@ const STREET_DATA = {
     "name": "Georgia Street",
     "orientation": "NS",
     "segments": [
+      {
+        "label": "part of (Valencia St)",
+        "name": "Georgia Street",
+        "entityId": "georgia-bell",
+        "namedAfter": "Georgia Herrick Bell (1845–1899), wife of {{Major Horace Bell}}, on whose land the street was laid out, once this stretch was folded into Georgia Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Horace_Bell",
+        "planned": {
+          "text": "by 1901",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "1874",
+            "until": "1889",
+            "name": "Georgia Street",
+            "entityId": "georgia-bell",
+            "formInForce": "Georgia Street",
+            "origin": "this spelling attested from 1874 {{(source)}} — Georgia Herrick Bell (1845–1899), wife of Major Horace Bell, on whose land the street was laid out",
+            "originLink": "https://lastreetnames.com/street/georgia-street/"
+          },
+          {
+            "from": "1889",
+            "until": "?",
+            "name": "Georgia Bell Street",
+            "entityId": "georgia-bell",
+            "formInForce": "Georgia Bell Street",
+            "origin": "this spelling attested from 1889 {{(source)}} — Georgia Herrick Bell (1845–1899), wife of Major Horace Bell, on whose land the street was laid out",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          },
+          {
+            "from": "by 1901",
+            "until": "?",
+            "name": "Valencia Street",
+            "entityId": "valencia-street-poindexter",
+            "formInForce": "Valencia Street",
+            "how": "origin",
+            "origin": "labeled “VALENCIA STREET” on the 1901 R. W. Poindexter's Subdivision {{(source)}} — the Valencia Street shown on R. W. Poindexter's 1901 subdivision of the Mrs. Fitzgerald Tract",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Georgia Street",
+            "entityId": "georgia-bell",
+            "formInForce": "Georgia Street",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.09,
+        "categories": [
+          "person",
+          "alive",
+          "family",
+          "renamed",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Georgia Street",
+            "url": "https://lastreetnames.com/street/georgia-street/"
+          },
+          {
+            "title": "Los Angeles Herald, “A Storm of Words” (Forman's dated history), Feb. 19, 1897",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          },
+          {
+            "title": "Map of R. W. Poindexter's Subdivision of the easterly portion of Block A of the Mrs. Fitzgerald Tract (Oct. 1901; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
+          }
+        ],
+        "minLat": 34.0457,
+        "from": null,
+        "to": {
+          "px": [
+            743,
+            1231
+          ]
+        }
+      },
       {
         "label": "part of (discontinuous)",
         "name": "Georgia Street",
@@ -31946,12 +33956,18 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
           },
           {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLat": 34.0391,
-        "from": null,
+        "maxLat": 34.0457,
+        "from": {
+          "px": [
+            743,
+            1231
+          ]
+        },
         "to": {
           "px": [
             265,
@@ -32056,8 +34072,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
           },
           {
-            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "maxLat": 34.0391,
@@ -32590,14 +34606,40 @@ const STREET_DATA = {
     "entityId": "golden-avenue",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1884",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-405.pdf"
+    },
     "built": "not yet researched",
-    "note": null,
-    "attested": false,
+    "nameHistory": [
+      {
+        "from": "by 1884",
+        "until": "?",
+        "name": "Willow Street",
+        "entityId": "willow-golden",
+        "formInForce": "Willow Street",
+        "how": "origin",
+        "origin": "labeled “Willow Street” on the 1884 Truman Tract {{(source)}} — lettered on the Plan of the Truman Tract of Jan. 1884 (documents/mr005-405), on what is now Golden Avenue. Nothing found says why the tree was chosen here",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-405.pdf"
+      },
+      {
+        "from": "?",
+        "until": null,
+        "name": "Golden Avenue",
+        "entityId": "golden-avenue",
+        "formInForce": "Golden Avenue",
+        "how": "renaming",
+        "origin": "arrival on this stretch not directly documented",
+        "originLink": null
+      }
+    ],
+    "note": "An ordinance adopted in February 1894 changed Willow Street, between Eighth and Ninth streets, to Golden Avenue.",
+    "attested": true,
+    "knownFraction": 0,
     "categories": [
+      "renamed",
       "basis-none",
-      "searched-none",
-      "stub"
+      "searched-none"
     ],
     "ancestors": [
       "basis"
@@ -32605,8 +34647,8 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Plan of the Truman Tract of Los Angeles City (surveyed 18 June 1883 by Geo. Butler Griffin C.E.; re-arranged 11 January 1884 by W. R. Blackman) (M.R. 5-405; identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-405.pdf"
       }
     ]
   },
@@ -32679,8 +34721,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
           },
           {
-            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
           },
           {
             "title": "L.A. Street Names: Centennial Street — the Park tract “introduced Custer, Boston, and Philadelphia streets (the latter since erased by the 101 and/or 110 freeways)”",
@@ -32724,8 +34766,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
           },
           {
-            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
           }
         ],
         "minLat": 34.061,
@@ -32805,8 +34847,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
           },
           {
-            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
           },
           {
             "title": "L.A. Street Names: Centennial Street — the Park tract “introduced Custer, Boston, and Philadelphia streets (the latter since erased by the 101 and/or 110 freeways)”",
@@ -32915,8 +34957,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
           },
           {
             "title": "L.A. Street Names: Centennial Street — the Park tract “introduced Custer, Boston, and Philadelphia streets (the latter since erased by the 101 and/or 110 freeways)”",
@@ -33015,8 +35057,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
           }
         ],
         "minLat": 34.0507,
@@ -33107,8 +35149,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
           }
         ],
         "minLat": 34.0486,
@@ -33199,8 +35241,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
           },
           {
-            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
           }
         ],
         "minLat": 34.0397,
@@ -33291,8 +35333,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
           }
         ],
         "minLat": 34.039,
@@ -33311,202 +35353,24 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Pico (Charity St)",
-        "name": "Grand Avenue",
-        "entityId": "grand-ave",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1884",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1885",
-            "until": "?",
-            "name": "Charity Street",
-            "entityId": "charity",
-            "formInForce": "Charity Street",
-            "how": "extension",
-            "origin": "labeled “Charity St” and “CHARITY” on the 1885 Cameron Tract and the 1915 Norris Plan {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "Grand Avenue",
-            "entityId": "grand-ave",
-            "formInForce": "Grand Avenue",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
-        "attested": true,
-        "knownFraction": 0.17,
-        "categories": [
-          "renamed",
-          "basis-none",
-          "searched-partial"
-        ],
-        "ancestors": [
-          "basis"
-        ],
-        "formerCategories": [
-          "idea"
-        ],
-        "formerAncestors": [
-          "abstract"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Grand Avenue (Charity Street, designated 1849, opened 1869; council vote May 10, 1886)",
-            "url": "https://lastreetnames.com/street/grand-avenue/"
-          },
-          {
-            "title": "Wikipedia: Grand Avenue (Los Angeles) — renamed Feb. 15, 1887",
-            "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
-          },
-          {
-            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
-          },
-          {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
-          },
-          {
-            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
-          },
-          {
-            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
-          }
-        ],
-        "minLat": 34.0382,
-        "maxLat": 34.039,
-        "from": {
-          "px": [
-            156,
-            165
-          ]
-        },
-        "to": "Pico Boulevard"
-      },
-      {
-        "label": "beyond Pico (Charity St)",
-        "name": "Grand Avenue",
-        "entityId": "grand-ave",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1885",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1885",
-            "until": "?",
-            "name": "Charity Street",
-            "entityId": "charity",
-            "formInForce": "Charity Street",
-            "origin": "labeled “Charity St” and “CHARITY” on the 1885 Cameron Tract and the 1915 Norris Plan {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "Grand Avenue",
-            "entityId": "grand-ave",
-            "formInForce": "Grand Avenue",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
-        "attested": true,
-        "knownFraction": 0.17,
-        "categories": [
-          "renamed",
-          "basis-none",
-          "searched-partial"
-        ],
-        "ancestors": [
-          "basis"
-        ],
-        "formerCategories": [
-          "idea"
-        ],
-        "formerAncestors": [
-          "abstract"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Grand Avenue (Charity Street, designated 1849, opened 1869; council vote May 10, 1886)",
-            "url": "https://lastreetnames.com/street/grand-avenue/"
-          },
-          {
-            "title": "Wikipedia: Grand Avenue (Los Angeles) — renamed Feb. 15, 1887",
-            "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
-          },
-          {
-            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
-          },
-          {
-            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
-          },
-          {
-            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
-          }
-        ],
-        "minLat": 34.0376,
-        "maxLat": 34.0382,
-        "from": "Pico Boulevard",
-        "to": {
-          "px": [
-            1150,
-            836
-          ]
-        }
-      },
-      {
         "label": "part of (Charity St)",
         "name": "Grand Avenue",
         "entityId": "grand-ave",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1915",
+          "text": "by 1875",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1915",
+            "from": "by 1875",
             "until": "?",
             "name": "Charity Street",
             "entityId": "charity",
             "formInForce": "Charity Street",
-            "how": "extension",
-            "origin": "labeled “CHARITY” on the 1915 Norris Plan {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
+            "origin": "labeled “CHARITY” and “Charity St” on the 1875 Morris Plan and the 1885 Cameron Tract {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
@@ -33522,7 +35386,7 @@ const STREET_DATA = {
         ],
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.06,
         "categories": [
           "renamed",
           "basis-none",
@@ -33548,24 +35412,32 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
           },
           {
-            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "title": "Plan of the Morris, Main & Pico Streets (M.R. 3-38, after May 6, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          },
+          {
+            "title": "Map of the Cameron Tract, Los Angeles, Los Angeles Co., Cal. (M.R. 7-21, Oct. 1885; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
           }
         ],
         "minLat": 34.0356,
-        "maxLat": 34.0376,
+        "maxLat": 34.039,
         "from": {
           "px": [
-            1150,
-            836
+            156,
+            165
           ]
         },
         "to": {
@@ -33603,8 +35475,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
           },
           {
-            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
+            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
           }
         ],
         "maxLat": 34.0356,
@@ -33745,8 +35617,92 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "maxLng": -118.2633,
+        "maxLng": -118.2674,
         "from": null,
+        "to": {
+          "px": [
+            384,
+            781
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Harbor Freeway",
+        "entityId": "harbor-freeway",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "absentAsOf": {
+          "text": "1901 (Mallard Home Tract)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-037.pdf"
+        },
+        "categories": [
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLng": -118.2674,
+        "maxLng": -118.2641,
+        "from": {
+          "px": [
+            384,
+            781
+          ]
+        },
+        "to": {
+          "px": [
+            666,
+            444
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Harbor Freeway",
+        "entityId": "harbor-freeway",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": null,
+        "attested": false,
+        "categories": [
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+            "url": "https://www.openstreetmap.org/"
+          }
+        ],
+        "minLng": -118.2641,
+        "maxLng": -118.2633,
+        "from": {
+          "px": [
+            666,
+            444
+          ]
+        },
         "to": {
           "px": [
             553,
@@ -33954,11 +35910,16 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Lettered on Tract No. 2905 of Oct. 1915 (documents/tr0030-069). Hartford Avenue still exists in the same neighbourhood; this short stretch is gone. Nothing found says who or what it was named for.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -34003,9 +35964,15 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on Tract No. 2905 of Oct. 1915 (documents/tr0030-069). Hartford Avenue still exists in the same neighbourhood; this short stretch is gone. Nothing found says who or what it was named for.",
         "attested": false,
-        "categories": [],
+        "categories": [
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -34963,13 +36930,13 @@ const STREET_DATA = {
         "namedAfter": "{{Bunker Hill}} — how and when this stretch joined Hill Street is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
         "planned": {
-          "text": "by 1883",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "note": null,
         "attested": true,
-        "knownFraction": 0.81,
+        "knownFraction": 0.86,
         "categories": [
           "landform",
           "basis-attested"
@@ -34983,6 +36950,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Hill Street",
             "url": "https://lastreetnames.com/street/hill-street/"
+          },
+          {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
             "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883; identified by map alignment, not a lot-level record)",
@@ -34993,84 +36964,16 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
           },
           {
-            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
-          }
-        ],
-        "minLat": 34.0371,
-        "maxLat": 34.0378,
-        "from": {
-          "px": [
-            946,
-            127
-          ]
-        },
-        "to": {
-          "px": [
-            155,
-            697
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "Hill Street",
-        "entityId": "hill-street-downtown",
-        "namedAfter": "{{Bunker Hill}}, extended onto this stretch",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Bunker_Hill_(Los_Angeles)",
-        "planned": {
-          "text": "by 1915",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1915",
-            "until": null,
-            "name": "Hill Street",
-            "entityId": "hill-street-downtown",
-            "formInForce": "Hill Street",
-            "how": "extension",
-            "origin": "labeled “HILL STREET” on the 1915 Norris Plan and the 1915 Vineyard Subdivision {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          }
-        ],
-        "note": null,
-        "attested": true,
-        "knownFraction": 0.63,
-        "categories": [
-          "landform",
-          "basis-attested"
-        ],
-        "ancestors": [
-          "nature",
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Hill Street",
-            "url": "https://lastreetnames.com/street/hill-street/"
-          },
-          {
-            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          },
-          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0346,
-        "maxLat": 34.0371,
+        "maxLat": 34.0378,
         "from": {
           "px": [
-            155,
-            697
+            946,
+            127
           ]
         },
         "to": {
@@ -35688,7 +37591,7 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "In November 1919 the council ordered that part of Boylston Avenue and Sapphire Street north of Third changed to Huntley Drive.",
         "attested": false,
         "absentAsOf": {
           "text": "1903 (Allison Barlow Tract)",
@@ -35696,8 +37599,7 @@ const STREET_DATA = {
         },
         "categories": [
           "basis-none",
-          "searched-none",
-          "stub"
+          "searched-none"
         ],
         "ancestors": [
           "basis"
@@ -35746,7 +37648,7 @@ const STREET_DATA = {
             "entityId": "boylston",
             "formInForce": "Boylston Street",
             "how": "origin",
-            "origin": "labeled “BOYLSTON ST.” on the 1901 Allison Barlow's Subdivision and the 1903 Allison Barlow Tract {{(source)}} — the name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard",
+            "origin": "labeled “BOYLSTON ST.” on the 1901 Allison Barlow's Subdivision and the 1903 Allison Barlow Tract {{(source)}} — Possibly Boston's Boylston Street — the name O. T. Johnson proposed in 1897 for the old Figueroa line where it crosses Prudent Beaudry's Boston Street; Kines's presumption, and nothing documents the reason",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-052.pdf"
           },
           {
@@ -35760,14 +37662,13 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "In November 1919 the council ordered that part of Boylston Avenue and Sapphire Street north of Third changed to Huntley Drive.",
         "attested": true,
         "knownFraction": 0.07,
         "categories": [
           "renamed",
           "basis-none",
-          "searched-none",
-          "stub"
+          "searched-none"
         ],
         "ancestors": [
           "basis"
@@ -35775,7 +37676,9 @@ const STREET_DATA = {
         "formerCategories": [
           "person",
           "politician",
-          "governor"
+          "governor",
+          "place",
+          "borrowed"
         ],
         "disputed": false,
         "sources": [
@@ -36058,6 +37961,10 @@ const STREET_DATA = {
           {
             "title": "Plan of the Goodwin Tract (M.R. 11-42, Oct. 6, 1886)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-042.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           },
           {
             "title": "Wikipedia: Arts District, Los Angeles",
@@ -36563,7 +38470,7 @@ const STREET_DATA = {
             "entityId": "ventura-ingraham",
             "formInForce": "Ventura Street",
             "how": "origin",
-            "origin": "labeled “Ventura Street” on the 1887 Orange Heights {{(source)}} — no namesake documented",
+            "origin": "labeled “Ventura Street” on the 1887 Orange Heights {{(source)}} — lettered on Orange Heights in June 1887 (documents/mr018-063), George R. Shatto's tract, on what is now Ingraham Street. In Oct. 1888 the city council's street-name committee proposed the change to Ingraham, and the name took. Nothing found says whether the county, the town or something else was meant",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
           },
           {
@@ -36597,6 +38504,10 @@ const STREET_DATA = {
           {
             "title": "Plot of Subdivision of That Part of Lot 1, Block 37, Hancock's Survey, Lying South of Orange Street and Westerly from William Street, in the City of Los Angeles (M.R. 9-95, June 19, 1888)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-095.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Ventura St., changed to Ingraham St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLng": -118.268,
@@ -36633,7 +38544,7 @@ const STREET_DATA = {
             "entityId": "ventura-ingraham",
             "formInForce": "Ventura Street",
             "how": "origin",
-            "origin": "labeled “Ventura Street” on the 1887 Orange Heights {{(source)}} — no namesake documented",
+            "origin": "labeled “Ventura Street” on the 1887 Orange Heights {{(source)}} — lettered on Orange Heights in June 1887 (documents/mr018-063), George R. Shatto's tract, on what is now Ingraham Street. In Oct. 1888 the city council's street-name committee proposed the change to Ingraham, and the name took. Nothing found says whether the county, the town or something else was meant",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
           },
           {
@@ -36675,6 +38586,10 @@ const STREET_DATA = {
           {
             "title": "Plot of Subdivision of That Part of Lot 1, Block 37, Hancock's Survey, Lying South of Orange Street and Westerly from William Street, in the City of Los Angeles (M.R. 9-95, June 19, 1888)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-095.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Ventura St., changed to Ingraham St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLng": -118.2674,
@@ -37164,81 +39079,44 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "part of",
+        "label": "part of (9th St)",
         "name": "James M Wood Boulevard",
         "entityId": "james-m-wood-boulevard",
-        "namedAfter": null,
+        "namedAfter": "James Michael Wood (1945–1996), labor leader and chair of the Community Redevelopment Agency, once this stretch was folded into James M Wood Boulevard",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
-        "attested": false,
-        "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
-        ],
-        "ancestors": [
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
-          }
-        ],
-        "maxLng": -118.2646,
-        "from": null,
-        "to": {
-          "px": [
-            323,
-            686
-          ]
-        }
-      },
-      {
-        "label": "beyond Figueroa (9th St)",
-        "name": "James M Wood Boulevard",
-        "entityId": "james-m-wood-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1878",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
-        },
-        "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1878",
-            "until": "?",
+            "from": "?",
+            "until": "May 1999",
             "name": "9th Street",
             "entityId": "ninth-street",
             "formInForce": "9th Street",
-            "origin": "labeled “NINTH ST” on the 1878 Nichols Addition {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+            "origin": "arrival on this stretch not directly documented — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": null
           },
           {
-            "from": "?",
+            "from": "May 1999",
             "until": null,
             "name": "James M Wood Boulevard",
             "entityId": "james-m-wood-boulevard",
             "formInForce": "James M Wood Boulevard",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 172590, 9th Street to James M. Wood Boulevard {{(source)}}",
+            "originLink": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
           }
         ],
-        "note": null,
-        "attested": true,
-        "knownFraction": 0,
+        "note": "The stretch of 9th Street between Figueroa and Western, renamed by the City Council in 1999; the motion to honour Wood was made in 1997, the year after his death.",
+        "attested": false,
         "categories": [
+          "person",
+          "official",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
+          "politician",
           "basis"
         ],
         "formerCategories": [
@@ -37250,8 +39128,449 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "L.A. Street Names: James M. Wood Boulevard",
+            "url": "https://lastreetnames.com/street/james-m-wood-boulevard/"
+          },
+          {
+            "title": "Ordinance No. 172590, “An Ordinance of The City of Los Angeles changing the name of 9th Street between Figueroa Street and Western Avenue and establishing the same as James M. Wood Boulevard” — passed May 11, 1999, approved May 14, 1999 (Council File 97-1566)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "maxLng": -118.2699,
+        "from": null,
+        "to": {
+          "px": [
+            195,
+            850
+          ]
+        }
+      },
+      {
+        "label": "part of (9th St)",
+        "name": "James M Wood Boulevard",
+        "entityId": "james-m-wood-boulevard",
+        "namedAfter": "James Michael Wood (1945–1996), labor leader and chair of the Community Redevelopment Agency, once this stretch was folded into James M Wood Boulevard",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "May 1999",
+            "name": "9th Street",
+            "entityId": "ninth-street",
+            "formInForce": "9th Street",
+            "how": "extension",
+            "origin": "labeled “Ninth Street” on the 1885 Kennedy Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
+            "from": "May 1999",
+            "until": null,
+            "name": "James M Wood Boulevard",
+            "entityId": "james-m-wood-boulevard",
+            "formInForce": "James M Wood Boulevard",
+            "how": "renaming",
+            "origin": "renamed per Ord. 172590, 9th Street to James M. Wood Boulevard {{(source)}}",
+            "originLink": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
+          }
+        ],
+        "note": "The stretch of 9th Street between Figueroa and Western, renamed by the City Council in 1999; the motion to honour Wood was made in 1997, the year after his death.",
+        "attested": true,
+        "knownFraction": 0.8,
+        "categories": [
+          "person",
+          "official",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "politician",
+          "basis"
+        ],
+        "formerCategories": [
+          "number"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: James M. Wood Boulevard",
+            "url": "https://lastreetnames.com/street/james-m-wood-boulevard/"
+          },
+          {
+            "title": "Map of the Kennedy Tract, Los Angeles, Cal. (surveyed May 1884 by E. T. Wright) (M.R. 6-193; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
+            "title": "Ordinance No. 172590, “An Ordinance of The City of Los Angeles changing the name of 9th Street between Figueroa Street and Western Avenue and establishing the same as James M. Wood Boulevard” — passed May 11, 1999, approved May 14, 1999 (Council File 97-1566)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.2699,
+        "maxLng": -118.2679,
+        "from": {
+          "px": [
+            195,
+            850
+          ]
+        },
+        "to": {
+          "px": [
+            306,
+            1517
+          ]
+        }
+      },
+      {
+        "label": "part of (9th St)",
+        "name": "James M Wood Boulevard",
+        "entityId": "james-m-wood-boulevard",
+        "namedAfter": "James Michael Wood (1945–1996), labor leader and chair of the Community Redevelopment Agency, once this stretch was folded into James M Wood Boulevard",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1884",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-405.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1884",
+            "until": "May 1999",
+            "name": "9th Street",
+            "entityId": "ninth-street",
+            "formInForce": "9th Street",
+            "origin": "labeled “Ninth Street” on the 1884 Truman Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-405.pdf"
+          },
+          {
+            "from": "May 1999",
+            "until": null,
+            "name": "James M Wood Boulevard",
+            "entityId": "james-m-wood-boulevard",
+            "formInForce": "James M Wood Boulevard",
+            "how": "renaming",
+            "origin": "renamed per Ord. 172590, 9th Street to James M. Wood Boulevard {{(source)}}",
+            "originLink": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
+          }
+        ],
+        "note": "The stretch of 9th Street between Figueroa and Western, renamed by the City Council in 1999; the motion to honour Wood was made in 1997, the year after his death.",
+        "attested": true,
+        "knownFraction": 0.81,
+        "categories": [
+          "person",
+          "official",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "politician",
+          "basis"
+        ],
+        "formerCategories": [
+          "number"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: James M. Wood Boulevard",
+            "url": "https://lastreetnames.com/street/james-m-wood-boulevard/"
+          },
+          {
+            "title": "Plan of the Truman Tract of Los Angeles City (surveyed 18 June 1883 by Geo. Butler Griffin C.E.; re-arranged 11 January 1884 by W. R. Blackman) (M.R. 5-405; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-405.pdf"
+          },
+          {
+            "title": "Ordinance No. 172590, “An Ordinance of The City of Los Angeles changing the name of 9th Street between Figueroa Street and Western Avenue and establishing the same as James M. Wood Boulevard” — passed May 11, 1999, approved May 14, 1999 (Council File 97-1566)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.2679,
+        "maxLng": -118.2669,
+        "from": {
+          "px": [
+            306,
+            1517
+          ]
+        },
+        "to": {
+          "px": [
+            1016,
+            1549
+          ]
+        }
+      },
+      {
+        "label": "part of (9th St)",
+        "name": "James M Wood Boulevard",
+        "entityId": "james-m-wood-boulevard",
+        "namedAfter": "James Michael Wood (1945–1996), labor leader and chair of the Community Redevelopment Agency, once this stretch was folded into James M Wood Boulevard",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1901",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1901",
+            "until": "May 1999",
+            "name": "9th Street",
+            "entityId": "ninth-street",
+            "formInForce": "9th Street",
+            "how": "extension",
+            "origin": "labeled “NINTH STREET” on the 1901 R. W. Poindexter's Subdivision and the 1901 Mallard Home Tract {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+          },
+          {
+            "from": "May 1999",
+            "until": null,
+            "name": "James M Wood Boulevard",
+            "entityId": "james-m-wood-boulevard",
+            "formInForce": "James M Wood Boulevard",
+            "how": "renaming",
+            "origin": "renamed per Ord. 172590, 9th Street to James M. Wood Boulevard {{(source)}}",
+            "originLink": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
+          }
+        ],
+        "note": "The stretch of 9th Street between Figueroa and Western, renamed by the City Council in 1999; the motion to honour Wood was made in 1997, the year after his death.",
+        "attested": true,
+        "knownFraction": 0.71,
+        "categories": [
+          "person",
+          "official",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "politician",
+          "basis"
+        ],
+        "formerCategories": [
+          "number"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: James M. Wood Boulevard",
+            "url": "https://lastreetnames.com/street/james-m-wood-boulevard/"
+          },
+          {
+            "title": "Map of R. W. Poindexter's Subdivision of the easterly portion of Block A of the Mrs. Fitzgerald Tract (Oct. 1901; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+          },
+          {
+            "title": "Map of the Mallard Home Tract in the City of Los Angeles (surveyed October 1901 by J. J. Rowan) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-037.pdf"
+          },
+          {
+            "title": "Ordinance No. 172590, “An Ordinance of The City of Los Angeles changing the name of 9th Street between Figueroa Street and Western Avenue and establishing the same as James M. Wood Boulevard” — passed May 11, 1999, approved May 14, 1999 (Council File 97-1566)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.2669,
+        "maxLng": -118.2651,
+        "from": {
+          "px": [
+            1016,
+            1549
+          ]
+        },
+        "to": {
+          "px": [
+            817,
+            1283
+          ]
+        }
+      },
+      {
+        "label": "part of (9th St)",
+        "name": "James M Wood Boulevard",
+        "entityId": "james-m-wood-boulevard",
+        "namedAfter": "James Michael Wood (1945–1996), labor leader and chair of the Community Redevelopment Agency, once this stretch was folded into James M Wood Boulevard",
+        "namedAfterLink": null,
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "?",
+            "until": "May 1999",
+            "name": "9th Street",
+            "entityId": "ninth-street",
+            "formInForce": "9th Street",
+            "origin": "arrival on this stretch not directly documented — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": null
+          },
+          {
+            "from": "May 1999",
+            "until": null,
+            "name": "James M Wood Boulevard",
+            "entityId": "james-m-wood-boulevard",
+            "formInForce": "James M Wood Boulevard",
+            "how": "renaming",
+            "origin": "renamed per Ord. 172590, 9th Street to James M. Wood Boulevard {{(source)}}",
+            "originLink": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
+          }
+        ],
+        "note": "The stretch of 9th Street between Figueroa and Western, renamed by the City Council in 1999; the motion to honour Wood was made in 1997, the year after his death.",
+        "attested": false,
+        "categories": [
+          "person",
+          "official",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "politician",
+          "basis"
+        ],
+        "formerCategories": [
+          "number"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: James M. Wood Boulevard",
+            "url": "https://lastreetnames.com/street/james-m-wood-boulevard/"
+          },
+          {
+            "title": "Ordinance No. 172590, “An Ordinance of The City of Los Angeles changing the name of 9th Street between Figueroa Street and Western Avenue and establishing the same as James M. Wood Boulevard” — passed May 11, 1999, approved May 14, 1999 (Council File 97-1566)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.2651,
+        "maxLng": -118.2646,
+        "from": {
+          "px": [
+            817,
+            1283
+          ]
+        },
+        "to": {
+          "px": [
+            323,
+            686
+          ]
+        }
+      },
+      {
+        "label": "beyond Figueroa (9th St)",
+        "name": "James M Wood Boulevard",
+        "entityId": "james-m-wood-boulevard",
+        "namedAfter": "James Michael Wood (1945–1996), labor leader and chair of the Community Redevelopment Agency, once this stretch was folded into James M Wood Boulevard",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1878",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1878",
+            "until": "May 1999",
+            "name": "9th Street",
+            "entityId": "ninth-street",
+            "formInForce": "9th Street",
+            "origin": "labeled “NINTH ST” on the 1878 Nichols Addition {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+          },
+          {
+            "from": "May 1999",
+            "until": null,
+            "name": "James M Wood Boulevard",
+            "entityId": "james-m-wood-boulevard",
+            "formInForce": "James M Wood Boulevard",
+            "how": "renaming",
+            "origin": "renamed per Ord. 172590, 9th Street to James M. Wood Boulevard {{(source)}}",
+            "originLink": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
+          }
+        ],
+        "note": "The stretch of 9th Street between Figueroa and Western, renamed by the City Council in 1999; the motion to honour Wood was made in 1997, the year after his death.",
+        "attested": true,
+        "knownFraction": 0.84,
+        "categories": [
+          "person",
+          "official",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "politician",
+          "basis"
+        ],
+        "formerCategories": [
+          "number"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: James M. Wood Boulevard",
+            "url": "https://lastreetnames.com/street/james-m-wood-boulevard/"
+          },
+          {
             "title": "Map of Nichols Addition to West Los Angeles (M.R. 3-569, May 4, 1878; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+          },
+          {
+            "title": "Ordinance No. 172590, “An Ordinance of The City of Los Angeles changing the name of 9th Street between Figueroa Street and Western Avenue and establishing the same as James M. Wood Boulevard” — passed May 11, 1999, approved May 14, 1999 (Council File 97-1566)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
@@ -37553,11 +39872,11 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "beyond Temple (Wilmington St)",
+        "label": "beyond Temple (San Pedro St)",
         "name": "Judge John Aiso Street",
         "entityId": "judge-john-aiso-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{John Fujio Aiso}} (1909–1987), the highest-ranking Japanese American officer in the U.S. Army in World War II and the first Japanese American named to the California judiciary, once this stretch was folded into Judge John Aiso Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/John_Aiso",
         "planned": {
           "text": "by 1876",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
@@ -37576,32 +39895,48 @@ const STREET_DATA = {
           },
           {
             "from": "?",
+            "until": "Apr. 1997",
+            "name": "San Pedro Street",
+            "entityId": "san-pedro",
+            "formInForce": "San Pedro Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented — The port town of {{San Pedro}}, which the street ran toward",
+            "originLink": "https://en.wikipedia.org/wiki/San_Pedro,_Los_Angeles"
+          },
+          {
+            "from": "Apr. 1997",
             "until": null,
             "name": "Judge John Aiso Street",
             "entityId": "judge-john-aiso-street",
             "formInForce": "Judge John Aiso Street",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 171586, San Pedro Street to Judge John Aiso Street {{(source)}}",
+            "originLink": "https://cityclerk.lacity.org/onlinedocs/1997/97-0429_ORD_171586_05-06-1997.pdf"
           }
         ],
-        "note": null,
+        "note": "Until 1997 this was the northernmost block of San Pedro Street, on the edge of Little Tokyo.",
         "attested": true,
-        "knownFraction": 0.07,
+        "knownFraction": 0.23,
         "categories": [
+          "person",
+          "official",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
+          "politician",
           "basis"
         ],
         "formerCategories": [
-          "place"
+          "place",
+          "destination"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Judge John Aiso Street",
+            "url": "https://lastreetnames.com/street/judge-john-aiso-street/"
+          },
           {
             "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
@@ -37611,8 +39946,20 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-308.pdf"
           },
           {
+            "title": "Ordinance No. 171586, “An Ordinance of The City of Los Angeles changing the name of San Pedro Street between Temple Street and 1st Street and establishing the same as Judge John Aiso Street” — passed Apr. 23, 1997, approved Apr. 25, 1997 (Council File 97-0429)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1997/97-0429_ORD_171586_05-06-1997.pdf"
+          },
+          {
             "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
+          },
+          {
+            "title": "L.A. Street Names: San Pedro Street",
+            "url": "https://lastreetnames.com/street/san-pedro-street/"
+          },
+          {
+            "title": "Wikipedia: San Pedro Street",
+            "url": "https://en.wikipedia.org/wiki/San_Pedro_Street"
           }
         ],
         "minLat": 34.0511,
@@ -37628,8 +39975,8 @@ const STREET_DATA = {
         "label": "beyond 1st (San Pedro St)",
         "name": "Judge John Aiso Street",
         "entityId": "judge-john-aiso-street",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{John Fujio Aiso}} (1909–1987), the highest-ranking Japanese American officer in the U.S. Army in World War II and the first Japanese American named to the California judiciary, once this stretch was folded into Judge John Aiso Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/John_Aiso",
         "planned": {
           "text": "by 1868",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
@@ -37648,7 +39995,7 @@ const STREET_DATA = {
           },
           {
             "from": "by 1907",
-            "until": "?",
+            "until": "Apr. 1997",
             "name": "San Pedro Street",
             "entityId": "san-pedro",
             "formInForce": "San Pedro Street",
@@ -37657,30 +40004,31 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-023a.pdf"
           },
           {
-            "from": "?",
+            "from": "Apr. 1997",
             "until": null,
             "name": "Judge John Aiso Street",
             "entityId": "judge-john-aiso-street",
             "formInForce": "Judge John Aiso Street",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 171586, San Pedro Street to Judge John Aiso Street {{(source)}}",
+            "originLink": "https://cityclerk.lacity.org/onlinedocs/1997/97-0429_ORD_171586_05-06-1997.pdf"
           }
         ],
-        "note": null,
+        "note": "Until 1997 this was the northernmost block of San Pedro Street, on the edge of Little Tokyo.",
         "attested": true,
         "absentAsOf": {
           "text": "1868 (Garden of J. Murat)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
         },
-        "knownFraction": 0.22,
+        "knownFraction": 0.89,
         "categories": [
+          "person",
+          "official",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
+          "politician",
           "basis"
         ],
         "formerCategories": [
@@ -37689,6 +40037,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Judge John Aiso Street",
+            "url": "https://lastreetnames.com/street/judge-john-aiso-street/"
+          },
           {
             "title": "Subdivision of the Garden of J. Murat (M.R. 10-8, June 1868; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
@@ -37704,6 +40056,10 @@ const STREET_DATA = {
           {
             "title": "Map of Lot A, Axelrod and Winogura Property (Feb. 19, 1907; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-023a.pdf"
+          },
+          {
+            "title": "Ordinance No. 171586, “An Ordinance of The City of Los Angeles changing the name of San Pedro Street between Temple Street and 1st Street and establishing the same as Judge John Aiso Street” — passed Apr. 23, 1997, approved Apr. 25, 1997 (Council File 97-0429)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1997/97-0429_ORD_171586_05-06-1997.pdf"
           },
           {
             "title": "L.A. Street Names: San Pedro Street",
@@ -37772,7 +40128,7 @@ const STREET_DATA = {
         "entityId": "shenandoah-avenue",
         "formInForce": "Shenandoah Avenue",
         "how": "origin",
-        "origin": "labeled “Shenandoah Avenue” on the 1887 Clement Tract {{(source)}} — no namesake documented",
+        "origin": "labeled “Shenandoah Avenue” on the 1887 Clement Tract {{(source)}} — lettered on the Clement Tract of May 1887 (documents/mr017-041), on what is now Kearney Street east of the river. Nothing found says whether the Virginia valley, the Civil War campaign fought in it, or something else was meant",
         "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
       },
       {
@@ -38575,7 +40931,7 @@ const STREET_DATA = {
         "label": "part of (Belmont Ave)",
         "name": "Loma Drive",
         "entityId": "loma-drive",
-        "namedAfter": null,
+        "namedAfter": "{{Loma}}, Spanish for a rise or low hill, once this stretch was folded into Loma Drive",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1886",
@@ -38590,7 +40946,7 @@ const STREET_DATA = {
             "entityId": "belmont-ave",
             "formInForce": "Belmont Avenue",
             "how": "origin",
-            "origin": "labeled “Belmont Ave” on the 1886 J. W. Ellis' Subdivision {{(source)}} — no namesake documented",
+            "origin": "labeled “Belmont Ave” on the 1886 J. W. Ellis' Subdivision {{(source)}} — lettered on J. W. Ellis's subdivision of Sept. 1886 (documents/mr010-088), running south-west from the end of Texas Street along what is now Loma Drive. Nothing found says who or what Belmont was named for",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-088.pdf"
           },
           {
@@ -38604,7 +40960,7 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and again on Tract No. 754 of 1910 (documents/tr0015-179a), and still Loma Drive today. The tract also carries Colina, Collado and Gravilla — four Spanish words for ground on one hill.",
         "attested": true,
         "absentAsOf": {
           "text": "1885 (Colina Park)",
@@ -38612,7 +40968,13 @@ const STREET_DATA = {
         },
         "knownFraction": 0.2,
         "categories": [
-          "renamed"
+          "nature",
+          "landform",
+          "renamed",
+          "basis-pattern"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -38638,17 +41000,24 @@ const STREET_DATA = {
         "label": "beyond 2nd",
         "name": "Loma Drive",
         "entityId": "loma-drive",
-        "namedAfter": null,
+        "namedAfter": "{{Loma}}, Spanish for a rise or low hill — how and when this stretch joined Loma Drive is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and again on Tract No. 754 of 1910 (documents/tr0015-179a), and still Loma Drive today. The tract also carries Colina, Collado and Gravilla — four Spanish words for ground on one hill.",
         "attested": false,
         "absentAsOf": {
           "text": "1886 (J. W. Ellis' Subdivision)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-088.pdf"
         },
-        "categories": [],
+        "categories": [
+          "nature",
+          "landform",
+          "basis-pattern"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -38670,7 +41039,7 @@ const STREET_DATA = {
         "label": "beyond 2nd (original Loma Drive)",
         "name": "Loma Drive",
         "entityId": "loma-drive",
-        "namedAfter": null,
+        "namedAfter": "{{Loma}}, Spanish for a rise or low hill — one of four Spanish ground-words platted together on Colina Park in 1885",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1885",
@@ -38689,10 +41058,17 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           }
         ],
-        "note": null,
+        "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and again on Tract No. 754 of 1910 (documents/tr0015-179a), and still Loma Drive today. The tract also carries Colina, Collado and Gravilla — four Spanish words for ground on one hill.",
         "attested": true,
         "knownFraction": 0.8,
-        "categories": [],
+        "categories": [
+          "nature",
+          "landform",
+          "basis-pattern"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -38748,21 +41124,47 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "part of",
+        "label": "part of (Calle De Los Negros)",
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
-        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfter": "The city itself, once this stretch was folded into Los Angeles Street",
         "namedAfterLink": null,
-        "planned": null,
+        "planned": {
+          "text": "by 1873",
+          "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+        },
         "built": {
           "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
+        "nameHistory": [
+          {
+            "from": "by 1873",
+            "until": "?",
+            "name": "Calle De Los Negros",
+            "entityId": "calle-de-los-negros",
+            "formInForce": "Calle De Los Negros",
+            "how": "origin",
+            "origin": "labeled “CALLE de los NEGROS” and “Calle de los Negros” on the 1873 Old Plaza, 1873 {{(source)}} — no namesake documented",
+            "originLink": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Los Angeles Street",
+            "entityId": "los-angeles-street",
+            "formInForce": "Los Angeles Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
           "place",
+          "renamed",
           "basis-intrinsic"
         ],
         "ancestors": [
@@ -38787,8 +41189,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0548,
@@ -38839,8 +41241,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0543,
@@ -38859,11 +41261,11 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (original Los Angeles St)",
+        "label": "part of",
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
-        "namedAfter": "The city itself — ultimately Nuestra Señora de los Ángeles de Porciúncula, the 1769 Spanish naming of {{the river}}",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Los_Angeles_River",
+        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfterLink": null,
         "planned": {
           "text": "by 1876",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
@@ -38872,18 +41274,6 @@ const STREET_DATA = {
           "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
-        "nameHistory": [
-          {
-            "from": "by 1876",
-            "until": null,
-            "name": "Los Angeles Street",
-            "entityId": "los-angeles-street",
-            "formInForce": "Los Angeles Street",
-            "how": "origin",
-            "origin": "labeled “LOS ANGELES STREET” on the 1876 Requena Subdivision {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
-          }
-        ],
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "knownFraction": 0.85,
@@ -38911,6 +41301,10 @@ const STREET_DATA = {
           {
             "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+          },
+          {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0531,
@@ -38956,8 +41350,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0526,
@@ -39011,8 +41405,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-308.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0521,
@@ -39081,8 +41475,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0856/TR0856-050-p2.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0515,
@@ -39154,8 +41548,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0856/TR0856-050-p2.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.051,
@@ -39212,8 +41606,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0856/TR0856-050-p2.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0501,
@@ -39263,8 +41657,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0487,
@@ -39326,8 +41720,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0477,
@@ -39397,8 +41791,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0468,
@@ -39460,8 +41854,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR039/MR039-069.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.045,
@@ -39531,8 +41925,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0434,
@@ -39594,8 +41988,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-100a.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0422,
@@ -39665,8 +42059,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0415,
@@ -39716,8 +42110,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.041,
@@ -39787,8 +42181,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0393,
@@ -39850,8 +42244,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0361,
@@ -39921,8 +42315,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0334,
@@ -39988,8 +42382,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "minLat": 34.0327,
@@ -40035,8 +42429,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
           },
           {
-            "title": "Subdivision of Property of Don Manuel Requena, Surveyed by Moore and Kelleher (M.R. 3-146, Feb. 11, 1876)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-146.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
         "maxLat": 34.0327,
@@ -40057,9 +42451,9 @@ const STREET_DATA = {
       {
         "label": "part of",
         "name": "Lucas Avenue",
-        "entityId": null,
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "entityId": "lucas-avenue",
+        "namedAfter": "{{John Henry “J.H.” Lucas}} (1836–1924), attorney, who was selling the tract it was named on, extended onto this stretch",
+        "namedAfterLink": "https://lastreetnames.com/street/lucas-avenue/",
         "planned": {
           "text": "by 1884",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
@@ -40068,48 +42462,33 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1884",
-            "until": "?",
+            "until": null,
             "name": "Lucas Avenue",
             "entityId": "lucas-avenue",
             "formInForce": "Lucas Avenue",
-            "origin": "labeled “Lucas Ave” on the 1884 35 Acre Lot 1, Block 38 {{(source)}} — John Henry “J.H.” Lucas (1836–1924), attorney, who was selling the tract it was named on",
+            "how": "extension",
+            "origin": "labeled “Lucas Ave”, “Lucas”, “Lucas Avenue” and “LUCAS AVENUE” on the 1884 35 Acre Lot 1, Block 38, the 1886 Los Angeles Improvement Co.'s Subdivision, the 1886 Bentley & Crippens Subdivision, the 1886 Los Angeles Improvement Co. Subdivision, the 1901 Nicklin Tract, the 1909 Crownwood and the 1919 Tract No. 3267 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
-          },
-          {
-            "from": "by 1886",
-            "until": "?",
-            "name": "Lucas Avenue",
-            "entityId": "lucas-ave",
-            "formInForce": "Lucas Avenue",
-            "how": "origin",
-            "origin": "labeled “Lucas Ave” on the 1886 Los Angeles Improvement Co.'s Subdivision {{(source)}} — no namesake documented",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-056.pdf"
-          },
-          {
-            "from": "by 1886",
-            "until": "?",
-            "name": "Lucas Avenue",
-            "entityId": "lucas-avenue",
-            "formInForce": "Lucas Avenue",
-            "how": "renaming",
-            "origin": "labeled “Lucas Ave” and “LUCAS AVENUE” on the 1886 Los Angeles Improvement Co. Subdivision, the 1909 Crownwood and the 1919 Tract No. 3267 {{(source)}} — John Henry “J.H.” Lucas (1836–1924), attorney, who was selling the tract it was named on",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-081.pdf"
           }
         ],
-        "note": null,
+        "note": "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
         "attested": true,
-        "knownFraction": 0.19,
+        "knownFraction": 0.81,
         "categories": [
-          "stub",
-          "renamed"
-        ],
-        "formerCategories": [
           "person",
           "alive",
-          "landowner"
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
           {
             "title": "Subdivision Map of 35 Acre Lot 1, Block 38, Hancock's Survey, and Part of Woolen Mill Tract (M.R. 6-115, Nov. 24, 1884; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
@@ -40117,76 +42496,6 @@ const STREET_DATA = {
           {
             "title": "Map of the Los Angeles Improvement Co.'s Subdivision of Part of Lot 2, Block 38, Hancock's Survey (M.R. 7-56, Jan. 26, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-056.pdf"
-          },
-          {
-            "title": "Map of the Los Angeles Improvement Co's Subdivision of Part of Lot 1, Block 38, Hancock's Survey (M.R. 10-81, after June 30, 1886; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-081.pdf"
-          },
-          {
-            "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
-          },
-          {
-            "title": "Tract No. 3267 (June 9, 1919; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0034/TR0034-065.pdf"
-          },
-          {
-            "title": "Downey Tract, Being a Subdivision of Division A, Lot 8, Block 38, of the Canal and Reservoir Lands, Los Angeles City (M.R. 6-427, Aug. 20, 1883)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-427.pdf"
-          },
-          {
-            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
-            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
-          }
-        ],
-        "minLat": 34.06,
-        "from": null,
-        "to": {
-          "px": [
-            827,
-            1252
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "Lucas Avenue",
-        "entityId": null,
-        "namedAfter": null,
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1884",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1884",
-            "until": "?",
-            "name": "Lucas Avenue",
-            "entityId": "lucas-avenue",
-            "formInForce": "Lucas Avenue",
-            "how": "extension",
-            "origin": "labeled “Lucas Ave”, “Lucas”, “Lucas Avenue” and “LUCAS AVENUE” on the 1884 35 Acre Lot 1, Block 38, the 1886 Bentley & Crippens Subdivision, the 1886 Los Angeles Improvement Co. Subdivision, the 1901 Nicklin Tract and the 1909 Crownwood {{(source)}} — John Henry “J.H.” Lucas (1836–1924), attorney, who was selling the tract it was named on",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
-          }
-        ],
-        "note": null,
-        "attested": true,
-        "knownFraction": 0.14,
-        "categories": [
-          "stub"
-        ],
-        "formerCategories": [
-          "person",
-          "alive",
-          "landowner"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "Subdivision Map of 35 Acre Lot 1, Block 38, Hancock's Survey, and Part of Woolen Mill Tract (M.R. 6-115, Nov. 24, 1884; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
           },
           {
             "title": "Map of Bentley & Crippens Subdivision of the East Half of Lot 7, Block 38, Hancock's Survey, Los Angeles, California (M.R. 7-96, Apr. 1, 1886; identified by map alignment, not a lot-level record)",
@@ -40205,22 +42514,16 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
           },
           {
-            "title": "Downey Tract, Being a Subdivision of Division A, Lot 8, Block 38, of the Canal and Reservoir Lands, Los Angeles City (M.R. 6-427, Aug. 20, 1883)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-427.pdf"
+            "title": "Tract No. 3267 (June 9, 1919; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0034/TR0034-065.pdf"
           },
           {
-            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
-            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+            "title": "Downey Tract, Being a Subdivision of Division A, Lot 8, Block 38, of the Canal and Reservoir Lands, Los Angeles City (M.R. 6-427, Aug. 20, 1883)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-427.pdf"
           }
         ],
         "minLat": 34.0585,
-        "maxLat": 34.06,
-        "from": {
-          "px": [
-            827,
-            1252
-          ]
-        },
+        "from": null,
         "to": {
           "px": [
             226,
@@ -40229,11 +42532,11 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of",
+        "label": "part of (original Lucas Ave)",
         "name": "Lucas Avenue",
-        "entityId": null,
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "entityId": "lucas-avenue",
+        "namedAfter": "{{John Henry “J.H.” Lucas}} (1836–1924), attorney, who was selling the tract it was named on",
+        "namedAfterLink": "https://lastreetnames.com/street/lucas-avenue/",
         "planned": {
           "text": "by 1883",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-427.pdf"
@@ -40242,28 +42545,33 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1883",
-            "until": "?",
+            "until": null,
             "name": "Lucas Avenue",
             "entityId": "lucas-avenue",
             "formInForce": "Lucas Avenue",
             "how": "origin",
-            "origin": "labeled “LUCAS AVENUE”, “Lucas”, “Lucas Ave”, “LUCAS”, “Lucas Avenue” and “LUCAS AVE.” on the 1883 Downey Tract, the 1886 Bentley & Crippens Subdivision, the 1887 Orange Heights, the 1893 St. Paul's School Subdivision, the 1901 Nicklin Tract, the 1902 Sixth Street and Lucas Avenue Tract, the 1908 Tract No. 321 and the 1909 Crownwood {{(source)}} — John Henry “J.H.” Lucas (1836–1924), attorney, who was selling the tract it was named on",
+            "origin": "labeled “LUCAS AVENUE”, “Lucas”, “Lucas Ave”, “LUCAS”, “Lucas Avenue” and “LUCAS AVE.” on the 1883 Downey Tract, the 1886 Bentley & Crippens Subdivision, the 1887 Orange Heights, the 1893 St. Paul's School Subdivision, the 1901 Nicklin Tract, the 1902 Sixth Street and Lucas Avenue Tract, the 1908 Tract No. 321 and the 1909 Crownwood {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-427.pdf"
           }
         ],
-        "note": null,
+        "note": "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
         "attested": true,
-        "knownFraction": 0.15,
+        "knownFraction": 0.81,
         "categories": [
-          "stub"
-        ],
-        "formerCategories": [
           "person",
           "alive",
-          "landowner"
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
           {
             "title": "Downey Tract, Being a Subdivision of Division A, Lot 8, Block 38, of the Canal and Reservoir Lands, Los Angeles City (M.R. 6-427, Aug. 20, 1883; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-427.pdf"
@@ -40295,10 +42603,6 @@ const STREET_DATA = {
           {
             "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
-          },
-          {
-            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
-            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           }
         ],
         "minLat": 34.0545,
@@ -40319,9 +42623,9 @@ const STREET_DATA = {
       {
         "label": "part of",
         "name": "Lucas Avenue",
-        "entityId": null,
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "entityId": "lucas-avenue",
+        "namedAfter": "{{John Henry “J.H.” Lucas}} (1836–1924), attorney, who was selling the tract it was named on, extended onto this stretch",
+        "namedAfterLink": "https://lastreetnames.com/street/lucas-avenue/",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
@@ -40330,28 +42634,33 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1887",
-            "until": "?",
+            "until": null,
             "name": "Lucas Avenue",
             "entityId": "lucas-avenue",
             "formInForce": "Lucas Avenue",
             "how": "extension",
-            "origin": "labeled “Lucas Ave”, “LUCAS”, “LUCAS AVENUE” and “LUCAS AVE.” on the 1887 Orange Heights, the 1893 St. Paul's School Subdivision, the 1893 Wright & Lynch Tract and the 1908 Tract No. 321 {{(source)}} — John Henry “J.H.” Lucas (1836–1924), attorney, who was selling the tract it was named on",
+            "origin": "labeled “Lucas Ave”, “LUCAS”, “LUCAS AVENUE” and “LUCAS AVE.” on the 1887 Orange Heights, the 1893 St. Paul's School Subdivision, the 1893 Wright & Lynch Tract and the 1908 Tract No. 321 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
           }
         ],
-        "note": null,
+        "note": "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
         "attested": true,
-        "knownFraction": 0.12,
+        "knownFraction": 0.79,
         "categories": [
-          "stub"
-        ],
-        "formerCategories": [
           "person",
           "alive",
-          "landowner"
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
           {
             "title": "Map of Orange Heights, Los Angeles, California (M.R. 18-63, June 21, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
@@ -40371,10 +42680,6 @@ const STREET_DATA = {
           {
             "title": "Downey Tract, Being a Subdivision of Division A, Lot 8, Block 38, of the Canal and Reservoir Lands, Los Angeles City (M.R. 6-427, Aug. 20, 1883)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-427.pdf"
-          },
-          {
-            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
-            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           }
         ],
         "minLat": 34.0527,
@@ -40395,9 +42700,9 @@ const STREET_DATA = {
       {
         "label": "part of",
         "name": "Lucas Avenue",
-        "entityId": null,
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "entityId": "lucas-avenue",
+        "namedAfter": "{{John Henry “J.H.” Lucas}} (1836–1924), attorney, who was selling the tract it was named on, extended onto this stretch",
+        "namedAfterLink": "https://lastreetnames.com/street/lucas-avenue/",
         "planned": {
           "text": "by 1893",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-014.pdf"
@@ -40406,28 +42711,33 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1893",
-            "until": "?",
+            "until": null,
             "name": "Lucas Avenue",
             "entityId": "lucas-avenue",
             "formInForce": "Lucas Avenue",
             "how": "extension",
-            "origin": "labeled “LUCAS AVENUE” on the 1893 Wright & Lynch Tract and the 1915 Tract No. 2905 {{(source)}} — John Henry “J.H.” Lucas (1836–1924), attorney, who was selling the tract it was named on",
+            "origin": "labeled “LUCAS AVENUE” on the 1893 Wright & Lynch Tract and the 1915 Tract No. 2905 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-014.pdf"
           }
         ],
-        "note": null,
+        "note": "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
         "attested": true,
-        "knownFraction": 0.13,
+        "knownFraction": 0.76,
         "categories": [
-          "stub"
-        ],
-        "formerCategories": [
           "person",
           "alive",
-          "landowner"
+          "landowner",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
           {
             "title": "Map of the Wright & Lynch Tract, Being a Part of Lot 2, Block 37, Hancock's Survey, of the 35 Acre Tract, City of Los Angeles, California (M.R. 55-14, Aug. 9, 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-014.pdf"
@@ -40439,10 +42749,6 @@ const STREET_DATA = {
           {
             "title": "Downey Tract, Being a Subdivision of Division A, Lot 8, Block 38, of the Canal and Reservoir Lands, Los Angeles City (M.R. 6-427, Aug. 20, 1883)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-427.pdf"
-          },
-          {
-            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
-            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
           }
         ],
         "maxLat": 34.0527,
@@ -40685,7 +42991,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
-        "knownFraction": 0,
+        "knownFraction": 0.66,
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -40707,6 +43013,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Oil Well Supply Company Tract, being a plat of a portion of acreage property in the City of Los Angeles (Jan. 1909; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
@@ -40732,16 +43042,32 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Main Street",
         "entityId": "main-street-dtla",
-        "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
+        "namedAfter": "Its standing as the pueblo’s principal street, extended onto this stretch",
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1909",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1909",
+            "until": null,
+            "name": "Main Street",
+            "entityId": "main-street-dtla",
+            "formInForce": "Main Street",
+            "how": "extension",
+            "origin": "labeled “MAIN ST.” on the 1909 Oil Well Supply Company Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+          }
+        ],
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "knownFraction": 0.66,
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -40759,6 +43085,10 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Oil Well Supply Company Tract, being a plat of a portion of acreage property in the City of Los Angeles (Jan. 1909; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
@@ -40786,10 +43116,14 @@ const STREET_DATA = {
         "entityId": "main-street-dtla",
         "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1907",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
+        },
         "built": "not yet researched",
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
-        "attested": false,
+        "attested": true,
+        "knownFraction": 0.68,
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -40807,6 +43141,10 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plat of Tract No. 49, being a subdivision of the northerly portion of the block bounded by Main, Ord, San Fernando and Marchessault Streets, in the City of Los Angeles (July 1907; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
@@ -40829,21 +43167,47 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of",
+        "label": "part of (Bath St)",
         "name": "Main Street",
         "entityId": "main-street-dtla",
-        "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
+        "namedAfter": "Its standing as the pueblo’s principal street, once this stretch was folded into Main Street",
         "namedAfterLink": null,
-        "planned": null,
+        "planned": {
+          "text": "by 1873",
+          "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+        },
         "built": {
           "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "nameHistory": [
+          {
+            "from": "by 1873",
+            "until": "?",
+            "name": "Bath Street",
+            "entityId": "bath-street-plaza",
+            "formInForce": "Bath Street",
+            "how": "origin",
+            "origin": "labeled “BATH STREET” on the 1873 Old Plaza, 1873 {{(source)}} — A historical street in the Old Plaza district shown on the 1873 survey",
+            "originLink": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "from": "by 1907",
+            "until": null,
+            "name": "Main Street",
+            "entityId": "main-street-dtla",
+            "formInForce": "Main Street",
+            "how": "renaming",
+            "origin": "labeled “Main St” and “MAIN ST.” on the 1907 Tract No. 49 and the 1909 Oil Well Supply Company Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
+          }
+        ],
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.68,
         "categories": [
           "descriptive",
+          "renamed",
           "basis-intrinsic"
         ],
         "ancestors": [
@@ -40863,6 +43227,18 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Plat of Tract No. 49, being a subdivision of the northerly portion of the block bounded by Main, Ord, San Fernando and Marchessault Streets, in the City of Los Angeles (July 1907; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
+          },
+          {
+            "title": "Oil Well Supply Company Tract, being a plat of a portion of acreage property in the City of Los Angeles (Jan. 1909; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
@@ -40885,7 +43261,101 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of",
+        "label": "beyond Arcadia (Bath St)",
+        "name": "Main Street",
+        "entityId": "main-street-dtla",
+        "namedAfter": "Its standing as the pueblo’s principal street, once this stretch was folded into Main Street",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+        },
+        "built": {
+          "text": "Aug. 29, 1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "nameHistory": [
+          {
+            "from": "1849",
+            "until": "?",
+            "name": "Main Street",
+            "entityId": "main-street-dtla",
+            "formInForce": "Main Street",
+            "origin": "labeled “MAIN STREET” on the 1849 Hutton / Ord Survey {{(source)}} — Its standing as the pueblo’s principal street",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "from": "by 1873",
+            "until": "?",
+            "name": "Bath Street",
+            "entityId": "bath-street-plaza",
+            "formInForce": "Bath Street",
+            "how": "origin",
+            "origin": "labeled “BATH STREET” on the 1873 Old Plaza, 1873 {{(source)}} — A historical street in the Old Plaza district shown on the 1873 survey",
+            "originLink": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Main Street",
+            "entityId": "main-street-dtla",
+            "formInForce": "Main Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "descriptive",
+          "renamed",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Main Street",
+            "url": "https://lastreetnames.com/street/main-street/"
+          },
+          {
+            "title": "Wikipedia: Main Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-69, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0558,
+        "maxLat": 34.0582,
+        "from": {
+          "px": [
+            950,
+            1408
+          ]
+        },
+        "to": "Arcadia Street"
+      },
+      {
+        "label": "beyond Arcadia",
         "name": "Main Street",
         "entityId": "main-street-dtla",
         "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
@@ -40928,18 +43398,17 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0548,
-        "maxLat": 34.0582,
-        "from": {
-          "px": [
-            950,
-            1408
-          ]
-        },
+        "maxLat": 34.0558,
+        "from": "Arcadia Street",
         "to": {
           "px": [
             22,
@@ -41278,13 +43747,13 @@ const STREET_DATA = {
         "namedAfter": "Its standing as the pueblo’s principal street — how and when this stretch joined Main Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1883",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
-        "knownFraction": 0.81,
+        "knownFraction": 0.86,
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -41302,6 +43771,10 @@ const STREET_DATA = {
           {
             "title": "Wikipedia: Main Street (Los Angeles)",
             "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
             "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883; identified by map alignment, not a lot-level record)",
@@ -41312,156 +43785,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           },
           {
-            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
-          }
-        ],
-        "minLat": 34.036,
-        "maxLat": 34.0367,
-        "from": {
-          "px": [
-            893,
-            5904
-          ]
-        },
-        "to": {
-          "px": [
-            1038,
-            684
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "Main Street",
-        "entityId": "main-street-dtla",
-        "namedAfter": "Its standing as the pueblo’s principal street, extended onto this stretch",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1886",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1886",
-            "until": null,
-            "name": "Main Street",
-            "entityId": "main-street-dtla",
-            "formInForce": "Main Street",
-            "how": "extension",
-            "origin": "labeled “Main Street”, “MAIN ST.” and “MAIN STREET” on the 1886 Josefa Subdivision, the 1893 Miguel Subdivision and the 1915 Vineyard Subdivision {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
-          }
-        ],
-        "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
-        "attested": true,
-        "knownFraction": 0.8,
-        "categories": [
-          "descriptive",
-          "basis-intrinsic"
-        ],
-        "ancestors": [
-          "abstract",
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Main Street",
-            "url": "https://lastreetnames.com/street/main-street/"
-          },
-          {
-            "title": "Wikipedia: Main Street (Los Angeles)",
-            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
-          },
-          {
-            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
-          },
-          {
             "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
-          },
-          {
-            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
-          }
-        ],
-        "minLat": 34.0339,
-        "maxLat": 34.036,
-        "from": {
-          "px": [
-            1038,
-            684
-          ]
-        },
-        "to": {
-          "px": [
-            106,
-            513
-          ]
-        }
-      },
-      {
-        "label": "part of",
-        "name": "Main Street",
-        "entityId": "main-street-dtla",
-        "namedAfter": "Its standing as the pueblo’s principal street, extended onto this stretch",
-        "namedAfterLink": null,
-        "planned": {
-          "text": "by 1893",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1893",
-            "until": null,
-            "name": "Main Street",
-            "entityId": "main-street-dtla",
-            "formInForce": "Main Street",
-            "how": "extension",
-            "origin": "labeled “MAIN ST.” and “MAIN STREET” on the 1893 Miguel Subdivision and the 1915 Vineyard Subdivision {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
-          }
-        ],
-        "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
-        "attested": true,
-        "knownFraction": 0.76,
-        "categories": [
-          "descriptive",
-          "basis-intrinsic"
-        ],
-        "ancestors": [
-          "abstract",
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Main Street",
-            "url": "https://lastreetnames.com/street/main-street/"
-          },
-          {
-            "title": "Wikipedia: Main Street (Los Angeles)",
-            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
-          },
-          {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
-          },
-          {
-            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
@@ -41469,11 +43794,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0334,
-        "maxLat": 34.0339,
+        "maxLat": 34.0367,
         "from": {
           "px": [
-            106,
-            513
+            893,
+            5904
           ]
         },
         "to": {
@@ -41550,7 +43875,7 @@ const STREET_DATA = {
             "entityId": "regent-street",
             "formInForce": "Regent Street",
             "how": "origin",
-            "origin": "labeled “Regent Street” on the 1876 Moreno Vineyard Tract {{(source)}} — Regent Street in London — the pairing with Wall Street on the one 1876 sheet that first letters both is the whole of the argument",
+            "origin": "labeled “Regent Street” on the 1876 Moreno Vineyard Tract {{(source)}} — Likely Regent Street in London — the Moreno Vineyard Tract in 1876 pairs Regent Street with Wall Street next door, London’s and New York’s most famous commercial streets named together on one page.",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-166.pdf"
           },
           {
@@ -41980,19 +44305,19 @@ const STREET_DATA = {
     "namedAfter": null,
     "namedAfterLink": null,
     "planned": {
-      "text": "by 1915",
+      "text": "by 1875",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
     },
     "built": "not yet researched",
     "nameHistory": [
       {
-        "from": "by 1915",
+        "from": "by 1875",
         "until": "?",
         "name": "Palm Street",
         "entityId": "palm-street-margo",
         "formInForce": "Palm Street",
         "how": "origin",
-        "origin": "labeled “PALM STREET” on the 1915 Norris Plan {{(source)}} — The palm, one of four tree names lettered together on the Norris Plan — Elm, Laurel, Palm and Pine",
+        "origin": "labeled “PALM STREET” on the 1875 Morris Plan {{(source)}} — The palm, one of four tree names lettered together on the Morris Plan — Elm, Laurel, Palm and Pine",
         "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
       },
       {
@@ -42027,7 +44352,7 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+        "title": "Plan of the Morris, Main & Pico Streets (M.R. 3-38, after May 6, 1875; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
       },
       {
@@ -42219,8 +44544,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Tract No. 21497 (Mar. 1955)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0588/TR0588-055.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "maxLng": -118.27,
@@ -42247,7 +44572,7 @@ const STREET_DATA = {
             "entityId": "strelitz-st",
             "formInForce": "Strelitz Street",
             "how": "origin",
-            "origin": "labeled “STRELITZ ST.” on the 1883 Downey Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “STRELITZ ST.” on the 1883 Downey Tract {{(source)}} — Jacob Strelitz, a Los Angeles merchant tailor who owned the adjoining Fairview tract",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-427.pdf"
           },
           {
@@ -42273,6 +44598,10 @@ const STREET_DATA = {
           "place",
           "basis"
         ],
+        "formerCategories": [
+          "person",
+          "landowner"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -42280,8 +44609,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-427.pdf"
           },
           {
-            "title": "Tract No. 21497 (Mar. 1955)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0588/TR0588-055.pdf"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLng": -118.27,
@@ -42318,7 +44647,7 @@ const STREET_DATA = {
             "entityId": "potts-st",
             "formInForce": "Potts Street",
             "how": "origin",
-            "origin": "labeled “POTTS ST.” on the 1875 P. Beaudry Subdivision B (sheets 1, 2) {{(source)}} — J. Wesley Potts, Prudent Beaudry’s partner in opening Temple Street, a Texan who tramped across the plains in 1852, came up from hauling dirt and peddling fruit, and was later known about town as a weather prophet",
+            "origin": "labeled “POTTS ST.” on the 1875 P. Beaudry Subdivision B (sheets 1, 2) {{(source)}} — J. Wesley Potts, Prudent Beaudry’s partner in opening Temple Street, arrived in 1852, later known about town as a weather prophet",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
           },
           {
@@ -42328,7 +44657,7 @@ const STREET_DATA = {
             "entityId": "strelitz-st",
             "formInForce": "Strelitz Street",
             "how": "origin",
-            "origin": "labeled “STRELITZ ST.” on the 1883 Downey Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “STRELITZ ST.” on the 1883 Downey Tract {{(source)}} — Jacob Strelitz, a Los Angeles merchant tailor who owned the adjoining Fairview tract",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-427.pdf"
           },
           {
@@ -42371,6 +44700,10 @@ const STREET_DATA = {
           {
             "title": "Tract No. 21497 (Mar. 1955; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0588/TR0588-055.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           },
           {
             "title": "Harris Newmark, Sixty Years in Southern California, 1853–1913 (1916), p. 61 — “Temple Street had not then been opened by Beaudry and Potts, although there was a little cul-de-sac extending west from Spring Street”; and p. 126, the biography of J. Wesley Potts. Newmark’s own index runs the two together: “Potts, J. Wesley, 61, 126”.",
@@ -43447,25 +45780,25 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Miramar Street",
         "entityId": "miramar-street",
-        "namedAfter": null,
+        "namedAfter": "Descriptive coinage — how and when this stretch joined Miramar Street is not yet researched",
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "The name dates from 1915, when the city unified most of Ocean View Avenue under it — Ocean View having been opened in 1886 on the Nob Hill tract, renamed Nob Hill Avenue on residents' petition in 1896, and changed back by ordinance in 1897 (the same ordinance that named a separately grown section Miramar). The original 1886 diagonal, outside this map, is still Ocean View Avenue.",
         "attested": false,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "descriptive",
+          "basis-lexical"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: Miramar Street / Ocean View Avenue",
+            "url": "https://lastreetnames.com/street/miramar-street/"
           }
         ],
         "maxLng": -118.2684,
@@ -43481,26 +45814,30 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Miramar Street",
         "entityId": "miramar-street",
-        "namedAfter": null,
+        "namedAfter": "Descriptive coinage — how and when this stretch joined Miramar Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1885",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
         },
         "built": "not yet researched",
-        "note": null,
+        "note": "The name dates from 1915, when the city unified most of Ocean View Avenue under it — Ocean View having been opened in 1886 on the Nob Hill tract, renamed Nob Hill Avenue on residents' petition in 1896, and changed back by ordinance in 1897 (the same ordinance that named a separately grown section Miramar). The original 1886 diagonal, outside this map, is still Ocean View Avenue.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "descriptive",
+          "basis-lexical"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Miramar Street / Ocean View Avenue",
+            "url": "https://lastreetnames.com/street/miramar-street/"
+          },
           {
             "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
@@ -43530,7 +45867,7 @@ const STREET_DATA = {
         "label": "beyond Lucas (3rd St) (discontinuous)",
         "name": "Miramar Street",
         "entityId": "miramar-street",
-        "namedAfter": null,
+        "namedAfter": "Descriptive coinage, once this stretch was folded into Miramar Street",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1909",
@@ -43558,7 +45895,7 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "The name dates from 1915, when the city unified most of Ocean View Avenue under it — Ocean View having been opened in 1886 on the Nob Hill tract, renamed Nob Hill Avenue on residents' petition in 1896, and changed back by ordinance in 1897 (the same ordinance that named a separately grown section Miramar). The original 1886 diagonal, outside this map, is still Ocean View Avenue.",
         "attested": true,
         "absentAsOf": {
           "text": "1885 (Colina Park)",
@@ -43566,12 +45903,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.28,
         "categories": [
+          "descriptive",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-lexical"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -43582,6 +45919,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Miramar Street / Ocean View Avenue",
+            "url": "https://lastreetnames.com/street/miramar-street/"
+          },
           {
             "title": "Plat of \"Crownwood\" (Dec. 10, 1909; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-166a.pdf"
@@ -43614,7 +45955,7 @@ const STREET_DATA = {
         "label": "beyond Bixel (3rd St) (discontinuous)",
         "name": "Miramar Street",
         "entityId": "miramar-street",
-        "namedAfter": null,
+        "namedAfter": "Descriptive coinage, once this stretch was folded into Miramar Street",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1884",
@@ -43653,16 +45994,16 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "The name dates from 1915, when the city unified most of Ocean View Avenue under it — Ocean View having been opened in 1886 on the Nob Hill tract, renamed Nob Hill Avenue on residents' petition in 1896, and changed back by ordinance in 1897 (the same ordinance that named a separately grown section Miramar). The original 1886 diagonal, outside this map, is still Ocean View Avenue.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "descriptive",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-lexical"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -43673,6 +46014,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Miramar Street / Ocean View Avenue",
+            "url": "https://lastreetnames.com/street/miramar-street/"
+          },
           {
             "title": "Subdivision Map of 35 Acre Lot 1, Block 38, Hancock's Survey, and Part of Woolen Mill Tract (M.R. 6-115, Nov. 24, 1884; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
@@ -43704,7 +46049,7 @@ const STREET_DATA = {
         "label": "beyond Boylston (3rd St)",
         "name": "Miramar Street",
         "entityId": "miramar-street",
-        "namedAfter": null,
+        "namedAfter": "Descriptive coinage, once this stretch was folded into Miramar Street",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1884",
@@ -43743,7 +46088,7 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "The name dates from 1915, when the city unified most of Ocean View Avenue under it — Ocean View having been opened in 1886 on the Nob Hill tract, renamed Nob Hill Avenue on residents' petition in 1896, and changed back by ordinance in 1897 (the same ordinance that named a separately grown section Miramar). The original 1886 diagonal, outside this map, is still Ocean View Avenue.",
         "attested": true,
         "absentAsOf": {
           "text": "1875 (P. Beaudry Subdivision B)",
@@ -43751,12 +46096,12 @@ const STREET_DATA = {
         },
         "knownFraction": 0.24,
         "categories": [
+          "descriptive",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-lexical"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -43767,6 +46112,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Miramar Street / Ocean View Avenue",
+            "url": "https://lastreetnames.com/street/miramar-street/"
+          },
           {
             "title": "Subdivision Map of 35 Acre Lot 1, Block 38, Hancock's Survey, and Part of Woolen Mill Tract (M.R. 6-115, Nov. 24, 1884; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
@@ -43806,7 +46155,7 @@ const STREET_DATA = {
         "label": "beyond Boylston (3rd St)",
         "name": "Miramar Street",
         "entityId": "miramar-street",
-        "namedAfter": null,
+        "namedAfter": "Descriptive coinage, once this stretch was folded into Miramar Street",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1875",
@@ -43854,16 +46203,16 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "The name dates from 1915, when the city unified most of Ocean View Avenue under it — Ocean View having been opened in 1886 on the Nob Hill tract, renamed Nob Hill Avenue on residents' petition in 1896, and changed back by ordinance in 1897 (the same ordinance that named a separately grown section Miramar). The original 1886 diagonal, outside this map, is still Ocean View Avenue.",
         "attested": true,
         "knownFraction": 0.18,
         "categories": [
+          "descriptive",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-lexical"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -43874,6 +46223,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Miramar Street / Ocean View Avenue",
+            "url": "https://lastreetnames.com/street/miramar-street/"
+          },
           {
             "title": "Plan of Subdivision B of Lot 8, Block 38, Hancock's Survey, the Property of P. Beaudry (M.R. 3-46, May 6, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
@@ -43921,7 +46274,7 @@ const STREET_DATA = {
         "label": "part of (3rd St)",
         "name": "Miramar Street",
         "entityId": "miramar-street",
-        "namedAfter": null,
+        "namedAfter": "Descriptive coinage, once this stretch was folded into Miramar Street",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1886",
@@ -43950,16 +46303,16 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "The name dates from 1915, when the city unified most of Ocean View Avenue under it — Ocean View having been opened in 1886 on the Nob Hill tract, renamed Nob Hill Avenue on residents' petition in 1896, and changed back by ordinance in 1897 (the same ordinance that named a separately grown section Miramar). The original 1886 diagonal, outside this map, is still Ocean View Avenue.",
         "attested": true,
         "knownFraction": 0.18,
         "categories": [
+          "descriptive",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-lexical"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -43970,6 +46323,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Miramar Street / Ocean View Avenue",
+            "url": "https://lastreetnames.com/street/miramar-street/"
+          },
           {
             "title": "Map of the Chadwick Subdivision of Blocks 1 and 12, Woolen Mill Tract, Los Angeles City, Cal. (M.R. 16-59, Dec. 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-059.pdf"
@@ -44014,13 +46371,20 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Mission Road",
         "entityId": "mission-road",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Mission San Gabriel Arcángel}}, which the road ran to from the pueblo — how and when this stretch joined Mission Road is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Mission_San_Gabriel_Arc%C3%A1ngel",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Mission Road. The road is far older than the sheet: it is the route from the pueblo out to Mission San Gabriel, and the tracts along it record a name already long in use.",
         "attested": false,
-        "categories": [],
+        "categories": [
+          "place",
+          "destination",
+          "basis-lexical"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -44041,8 +46405,8 @@ const STREET_DATA = {
         "label": "part of (Anderson St)",
         "name": "Mission Road",
         "entityId": "mission-road",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Mission San Gabriel Arcángel}}, which the road ran to from the pueblo, once this stretch was folded into Mission Road",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Mission_San_Gabriel_Arc%C3%A1ngel",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
@@ -44056,7 +46420,7 @@ const STREET_DATA = {
             "entityId": "anderson",
             "formInForce": "Anderson Street",
             "how": "origin",
-            "origin": "labeled “Anderson Street” on the 1887 Clement Tract {{(source)}} — no namesake documented",
+            "origin": "labeled “Anderson Street” on the 1887 Clement Tract {{(source)}} — lettered on the Clement Tract of May 1887 (documents/mr017-041), on Tract No. 207 of 1908 (documents/tr0013-168-p1) and on Tract No. 5301 of 1926 (documents/tr0122-053-p3), and still Anderson Street today. It grew by absorbing its neighbours: an Anderson Avenue was folded into it in Oct. 1888, and South Rio Street became South Anderson Street in the mid-1920s when the Union Pacific extended it to East 7th. Nothing found says who Anderson was",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
           },
           {
@@ -44070,11 +46434,17 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Mission Road. The road is far older than the sheet: it is the route from the pueblo out to Mission San Gabriel, and the tracts along it record a name already long in use.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "renamed"
+          "place",
+          "destination",
+          "renamed",
+          "basis-lexical"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -44085,6 +46455,14 @@ const STREET_DATA = {
           {
             "title": "Tract No. 5301, Sheet No. 3 (Feb. 20, 1926)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Anderson St. and Anderson Ave. changed to Anderson St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
+          },
+          {
+            "title": "L.A. City Planning, 500–600 South Anderson Street Industrial District (Adelante district DPR forms) — “the renaming of South Rio Street as South Anderson Street as it was extended to East 7th Street”, among works “completed by the Union Pacific” by the mid-1920s",
+            "url": "https://planning.lacity.gov/odocument/f94c695f-d13c-4889-825e-ea340112c233/Adelante_District_DPR_Forms_0.pdf"
           }
         ],
         "minLat": 34.0482,
@@ -44106,8 +46484,8 @@ const STREET_DATA = {
         "label": "part of (Anderson St)",
         "name": "Mission Road",
         "entityId": "mission-road",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Mission San Gabriel Arcángel}}, which the road ran to from the pueblo",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Mission_San_Gabriel_Arc%C3%A1ngel",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
@@ -44121,7 +46499,7 @@ const STREET_DATA = {
             "entityId": "anderson",
             "formInForce": "Anderson Street",
             "how": "origin",
-            "origin": "labeled “Anderson Street” and “ANDERSON ST.” on the 1887 Clement Tract and the 1908 Tract No. 207 {{(source)}} — no namesake documented",
+            "origin": "labeled “Anderson Street” and “ANDERSON ST.” on the 1887 Clement Tract and the 1908 Tract No. 207 {{(source)}} — lettered on the Clement Tract of May 1887 (documents/mr017-041), on Tract No. 207 of 1908 (documents/tr0013-168-p1) and on Tract No. 5301 of 1926 (documents/tr0122-053-p3), and still Anderson Street today. It grew by absorbing its neighbours: an Anderson Avenue was folded into it in Oct. 1888, and South Rio Street became South Anderson Street in the mid-1920s when the Union Pacific extended it to East 7th. Nothing found says who Anderson was",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
           },
           {
@@ -44135,11 +46513,17 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
           }
         ],
-        "note": null,
+        "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Mission Road. The road is far older than the sheet: it is the route from the pueblo out to Mission San Gabriel, and the tracts along it record a name already long in use.",
         "attested": true,
         "knownFraction": 0.69,
         "categories": [
-          "renamed"
+          "place",
+          "destination",
+          "renamed",
+          "basis-lexical"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
@@ -44154,6 +46538,14 @@ const STREET_DATA = {
           {
             "title": "Tract No. 5301, Sheet No. 3 (Feb. 20, 1926; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Anderson St. and Anderson Ave. changed to Anderson St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
+          },
+          {
+            "title": "L.A. City Planning, 500–600 South Anderson Street Industrial District (Adelante district DPR forms) — “the renaming of South Rio Street as South Anderson Street as it was extended to East 7th Street”, among works “completed by the Union Pacific” by the mid-1920s",
+            "url": "https://planning.lacity.gov/odocument/f94c695f-d13c-4889-825e-ea340112c233/Adelante_District_DPR_Forms_0.pdf"
           }
         ],
         "minLat": 34.0457,
@@ -44175,8 +46567,8 @@ const STREET_DATA = {
         "label": "part of (original Mission Road)",
         "name": "Mission Road",
         "entityId": "mission-road",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Mission San Gabriel Arcángel}}, which the road ran to from the pueblo",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Mission_San_Gabriel_Arc%C3%A1ngel",
         "planned": {
           "text": "by 1926",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
@@ -44194,14 +46586,21 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
           }
         ],
-        "note": null,
+        "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Mission Road. The road is far older than the sheet: it is the route from the pueblo out to Mission San Gabriel, and the tracts along it record a name already long in use.",
         "attested": true,
         "absentAsOf": {
           "text": "1908 (Tract No. 207)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0013/TR0013-168.pdf"
         },
         "knownFraction": 0.9,
-        "categories": [],
+        "categories": [
+          "place",
+          "destination",
+          "basis-lexical"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -44228,13 +46627,20 @@ const STREET_DATA = {
         "label": "beyond Jesse (discontinuous)",
         "name": "Mission Road",
         "entityId": "mission-road",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Mission San Gabriel Arcángel}}, which the road ran to from the pueblo — how and when this stretch joined Mission Road is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Mission_San_Gabriel_Arc%C3%A1ngel",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Mission Road. The road is far older than the sheet: it is the route from the pueblo out to Mission San Gabriel, and the tracts along it record a name already long in use.",
         "attested": false,
-        "categories": [],
+        "categories": [
+          "place",
+          "destination",
+          "basis-lexical"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -44257,13 +46663,20 @@ const STREET_DATA = {
         "label": "south of 7th",
         "name": "Mission Road",
         "entityId": "mission-road",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Mission San Gabriel Arcángel}}, which the road ran to from the pueblo — how and when this stretch joined Mission Road is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Mission_San_Gabriel_Arc%C3%A1ngel",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Mission Road. The road is far older than the sheet: it is the route from the pueblo out to Mission San Gabriel, and the tracts along it record a name already long in use.",
         "attested": false,
-        "categories": [],
+        "categories": [
+          "place",
+          "destination",
+          "basis-lexical"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -44321,10 +46734,6 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Los Angeles Herald, “Street Names Changed — The Last Lot Rechristened by the City Council,” Sept. 3, 1896 (Ordinance No. 3829, adopted Aug. 31)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18960903.1.3"
-          },
-          {
             "title": "Los Angeles Herald, Aug. 11, 1896 — the earlier ordinance proposing “Shafer” for the same stretch",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18960811.1.5"
           },
@@ -44337,8 +46746,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0751/TR0751-038.pdf"
           },
           {
-            "title": "Industrial Center Tract (Apr. 11, 1907)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-101.pdf"
+            "title": "Los Angeles Herald, “Street Names Changed — The Last Lot Rechristened by the City Council,” Sept. 3, 1896 (the fourteen changes made by Ordinance No. 3829, adopted Aug. 31)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18960903.1.3"
           }
         ],
         "minLat": 34.0407,
@@ -44390,10 +46799,6 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Los Angeles Herald, “Street Names Changed — The Last Lot Rechristened by the City Council,” Sept. 3, 1896 (Ordinance No. 3829, adopted Aug. 31)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18960903.1.3"
-          },
-          {
             "title": "Los Angeles Herald, Aug. 11, 1896 — the earlier ordinance proposing “Shafer” for the same stretch",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18960811.1.5"
           },
@@ -44408,6 +46813,10 @@ const STREET_DATA = {
           {
             "title": "Tract No. 29338 (Jan. 4, 1966; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0751/TR0751-038.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, “Street Names Changed — The Last Lot Rechristened by the City Council,” Sept. 3, 1896 (the fourteen changes made by Ordinance No. 3829, adopted Aug. 31)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18960903.1.3"
           }
         ],
         "maxLat": 34.0407,
@@ -44458,9 +46867,15 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041) and still Myers Street today, in the industrial strip on the east bank of the river. Nothing found says who Myers was.",
         "attested": false,
-        "categories": [],
+        "categories": [
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -44500,14 +46915,20 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
           }
         ],
-        "note": null,
+        "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041) and still Myers Street today, in the industrial strip on the east bank of the river. Nothing found says who Myers was.",
         "attested": true,
         "absentAsOf": {
           "text": "1926 (Tract No. 5301)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
         },
         "knownFraction": 1,
-        "categories": [],
+        "categories": [
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -44546,13 +46967,19 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041) and still Myers Street today, in the industrial strip on the east bank of the river. Nothing found says who Myers was.",
         "attested": false,
         "absentAsOf": {
           "text": "1926 (Tract No. 5301)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
         },
-        "categories": [],
+        "categories": [
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -44579,9 +47006,15 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041) and still Myers Street today, in the industrial strip on the east bank of the river. Nothing found says who Myers was.",
         "attested": false,
-        "categories": [],
+        "categories": [
+          "basis-none",
+          "searched-extensive"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -44834,8 +47267,8 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          "text": "1873 (Old Plaza, 1873)",
+          "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
         },
         "categories": [
           "basis-none",
@@ -45185,10 +47618,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "absentAsOf": {
-          "text": "1915 (Norris Plan)",
+          "text": "1875 (Morris Plan)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
-        "knownFraction": 1,
+        "knownFraction": 0.95,
         "categories": [
           "tree",
           "basis-lexical"
@@ -45228,25 +47661,25 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (Elm St)",
+        "label": "beyond 14th (Elm St)",
         "name": "Olive Street",
         "entityId": "olive",
         "namedAfter": "{{The olive}}, once this stretch was folded into Olive Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Olive",
         "planned": {
-          "text": "by 1884",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1915",
+            "from": "by 1875",
             "until": "?",
             "name": "Elm Street",
             "entityId": "elm-street",
             "formInForce": "Elm Street",
             "how": "origin",
-            "origin": "labeled “ELM STREET” on the 1915 Norris Plan {{(source)}} — The elm, one of four tree names lettered together on the Norris Plan — Elm, Laurel, Palm and Pine",
+            "origin": "labeled “ELM STREET” on the 1875 Morris Plan {{(source)}} — The elm, one of four tree names lettered together on the Morris Plan — Elm, Laurel, Palm and Pine",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
@@ -45263,10 +47696,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "absentAsOf": {
-          "text": "1915 (Norris Plan)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          "text": "1884 (Feldhauser's Subdivision)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
         },
-        "knownFraction": 0.37,
+        "knownFraction": 0.19,
         "categories": [
           "tree",
           "renamed",
@@ -45287,115 +47720,26 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Olive Street",
             "url": "https://lastreetnames.com/street/olive-street/"
+          },
+          {
+            "title": "Plan of the Morris, Main & Pico Streets (M.R. 3-38, after May 6, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
             "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
           },
           {
-            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          },
-          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
-          },
-          {
-            "title": "Ordinance No. 207, adopted Jan. 6, 1886, approved Jan. 14 — §1: “That the name of that certain street known as Elm street, and extending from Pico street to California street, be and the same is hereby changed to Olive street.”",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860115.1.1"
           }
         ],
-        "minLat": 34.0377,
+        "minLat": 34.0366,
         "maxLat": 34.0381,
         "from": {
           "px": [
             648,
             192
-          ]
-        },
-        "to": {
-          "px": [
-            607,
-            407
-          ]
-        }
-      },
-      {
-        "label": "beyond 14th (Elm St)",
-        "name": "Olive Street",
-        "entityId": "olive",
-        "namedAfter": "{{The olive}}, once this stretch was folded into Olive Street",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/Olive",
-        "planned": {
-          "text": "by 1915",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1915",
-            "until": "?",
-            "name": "Elm Street",
-            "entityId": "elm-street",
-            "formInForce": "Elm Street",
-            "how": "origin",
-            "origin": "labeled “ELM STREET” on the 1915 Norris Plan {{(source)}} — The elm, one of four tree names lettered together on the Norris Plan — Elm, Laurel, Palm and Pine",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "Olive Street",
-            "entityId": "olive",
-            "formInForce": "Olive Street",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": null,
-        "attested": true,
-        "knownFraction": 0,
-        "categories": [
-          "tree",
-          "renamed",
-          "basis-lexical"
-        ],
-        "ancestors": [
-          "nature",
-          "basis"
-        ],
-        "formerCategories": [
-          "tree"
-        ],
-        "formerAncestors": [
-          "nature"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "L.A. Street Names: Olive Street",
-            "url": "https://lastreetnames.com/street/olive-street/"
-          },
-          {
-            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          },
-          {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
-          },
-          {
-            "title": "Ordinance No. 207, adopted Jan. 6, 1886, approved Jan. 14 — §1: “That the name of that certain street known as Elm street, and extending from Pico street to California street, be and the same is hereby changed to Olive street.”",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860115.1.1"
-          }
-        ],
-        "minLat": 34.0366,
-        "maxLat": 34.0377,
-        "from": {
-          "px": [
-            607,
-            407
           ]
         },
         "to": "14th Street"
@@ -45411,7 +47755,7 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "absentAsOf": {
-          "text": "1915 (Norris Plan)",
+          "text": "1875 (Morris Plan)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "categories": [
@@ -45488,15 +47832,41 @@ const STREET_DATA = {
     "entityId": "olvera-street",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": null,
+    "planned": {
+      "text": "by 1873",
+      "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+    },
     "built": {
       "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
     },
+    "nameHistory": [
+      {
+        "from": "by 1873",
+        "until": "?",
+        "name": "Wine Street",
+        "entityId": "wine-street-plaza",
+        "formInForce": "Wine Street",
+        "how": "origin",
+        "origin": "labeled “WINE STREET” on the 1873 Old Plaza, 1873 {{(source)}} — the Plaza lane later renamed Olvera Street",
+        "originLink": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+      },
+      {
+        "from": "?",
+        "until": null,
+        "name": "Olvera Street",
+        "entityId": "olvera-street",
+        "formInForce": "Olvera Street",
+        "how": "renaming",
+        "origin": "arrival on this stretch not directly documented",
+        "originLink": null
+      }
+    ],
     "note": null,
     "attested": true,
     "knownFraction": 0,
     "categories": [
+      "renamed",
       "basis-none",
       "searched-none",
       "stub"
@@ -45513,6 +47883,10 @@ const STREET_DATA = {
       {
         "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+      },
+      {
+        "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+        "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
       }
     ]
   },
@@ -45524,29 +47898,181 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Olympic Boulevard",
         "entityId": "olympic-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{1932 Summer Olympics}}, held in Los Angeles — how and when this stretch joined Olympic Boulevard is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": false,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "event",
+          "basis-attested"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: Olympic Boulevard",
+            "url": "https://lastreetnames.com/street/olympic-boulevard/"
+          },
+          {
+            "title": "Wikipedia: Olympic Boulevard (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Olympic_Boulevard_(Los_Angeles)"
+          },
+          {
+            "title": "L.A. Street Names: 10th Street",
+            "url": "https://lastreetnames.com/street/010th-street/"
           }
         ],
-        "maxLng": -118.2643,
+        "maxLng": -118.268,
         "from": null,
+        "to": {
+          "px": [
+            377,
+            1157
+          ]
+        }
+      },
+      {
+        "label": "part of (10th St)",
+        "name": "Olympic Boulevard",
+        "entityId": "olympic-boulevard",
+        "namedAfter": "The {{1932 Summer Olympics}}, held in Los Angeles, once this stretch was folded into Olympic Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
+        "planned": {
+          "text": "by 1901",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1901",
+            "until": "?",
+            "name": "10th Street",
+            "entityId": "tenth-street",
+            "formInForce": "10th Street",
+            "origin": "labeled “TENTH STREET” on the 1901 R. W. Poindexter's Subdivision {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Olympic Boulevard",
+            "entityId": "olympic-boulevard",
+            "formInForce": "Olympic Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "event",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "formerCategories": [
+          "number"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Olympic Boulevard",
+            "url": "https://lastreetnames.com/street/olympic-boulevard/"
+          },
+          {
+            "title": "Wikipedia: Olympic Boulevard (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Olympic_Boulevard_(Los_Angeles)"
+          },
+          {
+            "title": "L.A. Street Names: 10th Street",
+            "url": "https://lastreetnames.com/street/010th-street/"
+          },
+          {
+            "title": "Map of R. W. Poindexter's Subdivision of the easterly portion of Block A of the Mrs. Fitzgerald Tract (Oct. 1901; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
+          },
+          {
+            "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-32, Apr. 29, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-032.pdf"
+          },
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
+            "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+          }
+        ],
+        "minLng": -118.268,
+        "maxLng": -118.2666,
+        "from": {
+          "px": [
+            377,
+            1157
+          ]
+        },
+        "to": {
+          "px": [
+            844,
+            1152
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Olympic Boulevard",
+        "entityId": "olympic-boulevard",
+        "namedAfter": "The {{1932 Summer Olympics}}, held in Los Angeles — how and when this stretch joined Olympic Boulevard is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
+        "planned": "not yet researched",
+        "built": "not yet researched",
+        "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
+        "attested": false,
+        "categories": [
+          "event",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Olympic Boulevard",
+            "url": "https://lastreetnames.com/street/olympic-boulevard/"
+          },
+          {
+            "title": "Wikipedia: Olympic Boulevard (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Olympic_Boulevard_(Los_Angeles)"
+          },
+          {
+            "title": "L.A. Street Names: 10th Street",
+            "url": "https://lastreetnames.com/street/010th-street/"
+          }
+        ],
+        "minLng": -118.2666,
+        "maxLng": -118.2643,
+        "from": {
+          "px": [
+            844,
+            1152
+          ]
+        },
         "to": {
           "px": [
             -25,
@@ -45558,8 +48084,8 @@ const STREET_DATA = {
         "label": "part of (10th St)",
         "name": "Olympic Boulevard",
         "entityId": "olympic-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{1932 Summer Olympics}}, held in Los Angeles, once this stretch was folded into Olympic Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
         "planned": {
           "text": "1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
@@ -45587,16 +48113,16 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "event",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -45607,6 +48133,18 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Olympic Boulevard",
+            "url": "https://lastreetnames.com/street/olympic-boulevard/"
+          },
+          {
+            "title": "Wikipedia: Olympic Boulevard (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Olympic_Boulevard_(Los_Angeles)"
+          },
+          {
+            "title": "L.A. Street Names: 10th Street",
+            "url": "https://lastreetnames.com/street/010th-street/"
+          },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
@@ -45647,26 +48185,38 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Olympic Boulevard",
         "entityId": "olympic-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{1932 Summer Olympics}}, held in Los Angeles — how and when this stretch joined Olympic Boulevard is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
         "planned": {
           "text": "1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
         },
         "built": "not yet researched",
-        "note": null,
+        "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "event",
+          "basis-attested"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Olympic Boulevard",
+            "url": "https://lastreetnames.com/street/olympic-boulevard/"
+          },
+          {
+            "title": "Wikipedia: Olympic Boulevard (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Olympic_Boulevard_(Los_Angeles)"
+          },
+          {
+            "title": "L.A. Street Names: 10th Street",
+            "url": "https://lastreetnames.com/street/010th-street/"
+          },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
@@ -45691,8 +48241,8 @@ const STREET_DATA = {
         "label": "part of (10th St)",
         "name": "Olympic Boulevard",
         "entityId": "olympic-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{1932 Summer Olympics}}, held in Los Angeles, once this stretch was folded into Olympic Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
         "planned": {
           "text": "1849",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
@@ -45720,16 +48270,16 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "event",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -45740,6 +48290,18 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Olympic Boulevard",
+            "url": "https://lastreetnames.com/street/olympic-boulevard/"
+          },
+          {
+            "title": "Wikipedia: Olympic Boulevard (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Olympic_Boulevard_(Los_Angeles)"
+          },
+          {
+            "title": "L.A. Street Names: 10th Street",
+            "url": "https://lastreetnames.com/street/010th-street/"
+          },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
@@ -45780,8 +48342,8 @@ const STREET_DATA = {
         "label": "part of (10th St)",
         "name": "Olympic Boulevard",
         "entityId": "olympic-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{1932 Summer Olympics}}, held in Los Angeles, once this stretch was folded into Olympic Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
@@ -45808,16 +48370,16 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "event",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -45828,6 +48390,18 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Olympic Boulevard",
+            "url": "https://lastreetnames.com/street/olympic-boulevard/"
+          },
+          {
+            "title": "Wikipedia: Olympic Boulevard (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Olympic_Boulevard_(Los_Angeles)"
+          },
+          {
+            "title": "L.A. Street Names: 10th Street",
+            "url": "https://lastreetnames.com/street/010th-street/"
+          },
           {
             "title": "Map of the Moran Tract (M.R. 16-27, Apr. 22, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
@@ -45865,8 +48439,8 @@ const STREET_DATA = {
         "label": "beyond Gladys (9th St) (discontinuous)",
         "name": "Olympic Boulevard",
         "entityId": "olympic-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{1932 Summer Olympics}}, held in Los Angeles, once this stretch was folded into Olympic Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR026/MR026-059.pdf"
@@ -45893,16 +48467,16 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0.21,
         "categories": [
+          "event",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -45913,6 +48487,18 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Olympic Boulevard",
+            "url": "https://lastreetnames.com/street/olympic-boulevard/"
+          },
+          {
+            "title": "Wikipedia: Olympic Boulevard (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Olympic_Boulevard_(Los_Angeles)"
+          },
+          {
+            "title": "L.A. Street Names: 10th Street",
+            "url": "https://lastreetnames.com/street/010th-street/"
+          },
           {
             "title": "Map of the Goldsworthy 9th St. Tract (M.R. 26-59, Nov. 29, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR026/MR026-059.pdf"
@@ -45944,8 +48530,8 @@ const STREET_DATA = {
         "label": "part of (9th St)",
         "name": "Olympic Boulevard",
         "entityId": "olympic-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{1932 Summer Olympics}}, held in Los Angeles, once this stretch was folded into Olympic Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
         "planned": {
           "text": "by 1924",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0105/TR0105-001.pdf"
@@ -45973,16 +48559,16 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "event",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -45993,6 +48579,18 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Olympic Boulevard",
+            "url": "https://lastreetnames.com/street/olympic-boulevard/"
+          },
+          {
+            "title": "Wikipedia: Olympic Boulevard (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Olympic_Boulevard_(Los_Angeles)"
+          },
+          {
+            "title": "L.A. Street Names: 10th Street",
+            "url": "https://lastreetnames.com/street/010th-street/"
+          },
           {
             "title": "Tract No. 8657 in the City of Los Angeles (Oct. 16, 1924; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0105/TR0105-001.pdf"
@@ -46025,8 +48623,8 @@ const STREET_DATA = {
         "label": "part of (9th St)",
         "name": "Olympic Boulevard",
         "entityId": "olympic-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{1932 Summer Olympics}}, held in Los Angeles, once this stretch was folded into Olympic Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/1932_Summer_Olympics",
         "planned": {
           "text": "by 1888",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR037/MR037-087.pdf"
@@ -46053,16 +48651,16 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0.22,
         "categories": [
+          "event",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
+          "abstract",
           "basis"
         ],
         "formerCategories": [
@@ -46073,6 +48671,18 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Olympic Boulevard",
+            "url": "https://lastreetnames.com/street/olympic-boulevard/"
+          },
+          {
+            "title": "Wikipedia: Olympic Boulevard (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Olympic_Boulevard_(Los_Angeles)"
+          },
+          {
+            "title": "L.A. Street Names: 10th Street",
+            "url": "https://lastreetnames.com/street/010th-street/"
+          },
           {
             "title": "Map of Contreras and Reyes Subdivision (M.R. 37-87, Nov. 8, 1888; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR037/MR037-087.pdf"
@@ -46150,10 +48760,10 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "beyond Hill Pl (High St)",
+        "label": "beyond Hill Pl (Walters St)",
         "name": "Ord Street",
         "entityId": "ord-street",
-        "namedAfter": "{{Edward Otho Cresap Ord}} (1818–1883), the US Army engineer who surveyed and mapped Los Angeles in the summer of 1849 — honoured here more than forty years later",
+        "namedAfter": "{{Edward Otho Cresap Ord}} (1818–1883), the US Army engineer who surveyed and mapped Los Angeles in the summer of 1849, once this stretch was folded into Ord Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Edward_Ord",
         "planned": {
           "text": "by 1876",
@@ -46163,7 +48773,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1876",
-            "until": "?",
+            "until": "Sept. 1886",
             "name": "High Street",
             "entityId": "high-street-chinatown",
             "formInForce": "High Street",
@@ -46171,12 +48781,22 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-240.pdf"
           },
           {
+            "from": "Sept. 1886",
+            "until": "?",
+            "name": "Walters Street",
+            "entityId": "walters-street",
+            "formInForce": "Walters Street",
+            "how": "renaming",
+            "origin": "renamed per the 1886 High → Walters renaming {{(source)}} — the name given to High Street, north of the plaza, by an ordinance of September 1886, and still in official use in May 1890, when the city engineer's map of Walters Street was declared official. An omnibus ordinance passed that October would have made it Ord Street, but the mayor returned it unsigned; the change to Ord came by an instrument not yet found",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18860921.1.5"
+          },
+          {
             "from": "by 1968",
             "until": null,
             "name": "Ord Street",
             "entityId": "ord-street",
             "formInForce": "Ord Street",
-            "how": "origin",
+            "how": "renaming",
             "origin": "labeled “ORD STREET” on the 1968 Tract No. 26170 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0771/TR0771-036-p2.pdf"
           }
@@ -46187,7 +48807,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
-        "knownFraction": 0.33,
+        "knownFraction": 0.39,
         "categories": [
           "person",
           "official",
@@ -46219,12 +48839,24 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-240.pdf"
           },
           {
+            "title": "Los Angeles Herald, Sept. 21, 1886, p. 5 — an ordinance changing the name of High Street to Walters Street is adopted",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860921.1.5"
+          },
+          {
             "title": "Tract No. 26170 (Feb. 20, 1968; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0771/TR0771-036-p2.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Plat of Tract No. 49, being a subdivision of the northerly portion of the block bounded by Main, Ord, San Fernando and Marchessault Streets, in the City of Los Angeles (July 1907)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, May 22, 1890, p. 2 — a map of Walters Street declared official (the name in use)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18900522.1.2"
           }
         ],
         "maxLng": -118.2417,
@@ -46237,7 +48869,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (High St)",
+        "label": "part of (Walters St)",
         "name": "Ord Street",
         "entityId": "ord-street",
         "namedAfter": "{{Edward Otho Cresap Ord}} (1818–1883), the US Army engineer who surveyed and mapped Los Angeles in the summer of 1849, once this stretch was folded into Ord Street",
@@ -46250,13 +48882,23 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1876",
-            "until": "?",
+            "until": "Sept. 1886",
             "name": "High Street",
             "entityId": "high-street-chinatown",
             "formInForce": "High Street",
             "how": "extension",
             "origin": "labeled “High St” on the 1876 Block 35½, Ord's Survey {{(source)}} — The high ground it climbed — lettered “Calle Alta” on the 1849 survey, which says the same thing in Spanish",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-240.pdf"
+          },
+          {
+            "from": "Sept. 1886",
+            "until": "?",
+            "name": "Walters Street",
+            "entityId": "walters-street",
+            "formInForce": "Walters Street",
+            "how": "renaming",
+            "origin": "renamed per the 1886 High → Walters renaming {{(source)}} — the name given to High Street, north of the plaza, by an ordinance of September 1886, and still in official use in May 1890, when the city engineer's map of Walters Street was declared official. An omnibus ordinance passed that October would have made it Ord Street, but the mayor returned it unsigned; the change to Ord came by an instrument not yet found",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18860921.1.5"
           },
           {
             "from": "?",
@@ -46275,7 +48917,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
-        "knownFraction": 0,
+        "knownFraction": 0.06,
         "categories": [
           "person",
           "official",
@@ -46307,12 +48949,20 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-240.pdf"
           },
           {
+            "title": "Los Angeles Herald, Sept. 21, 1886, p. 5 — an ordinance changing the name of High Street to Walters Street is adopted",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860921.1.5"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
-            "title": "Tract No. 26170 (Feb. 20, 1968)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0771/TR0771-036-p2.pdf"
+            "title": "Plat of Tract No. 49, being a subdivision of the northerly portion of the block bounded by Main, Ord, San Fernando and Marchessault Streets, in the City of Los Angeles (July 1907)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, May 22, 1890, p. 2 — a map of Walters Street declared official (the name in use)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18900522.1.2"
           }
         ],
         "minLng": -118.2417,
@@ -46331,7 +48981,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Spring (High St)",
+        "label": "beyond Spring (Walters St)",
         "name": "Ord Street",
         "entityId": "ord-street",
         "namedAfter": "{{Edward Otho Cresap Ord}} (1818–1883), the US Army engineer who surveyed and mapped Los Angeles in the summer of 1849, once this stretch was folded into Ord Street",
@@ -46344,13 +48994,23 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "1849",
-            "until": "?",
+            "until": "Sept. 1886",
             "name": "High Street",
             "entityId": "high-street-chinatown",
             "formInForce": "High Street",
             "how": "origin",
-            "origin": "labeled “CALLE ALTA”, “HIGH ST” and “High St” on the 1849 Hutton / Ord Survey and the 1876 Block 35½, Ord's Survey {{(source)}} — The high ground it climbed — lettered “Calle Alta” on the 1849 survey, which says the same thing in Spanish",
+            "origin": "labeled “CALLE ALTA”, “HIGH ST” and “High St” on the 1849 Hutton / Ord Survey, the 1873 Old Plaza, 1873 and the 1876 Block 35½, Ord's Survey {{(source)}} — The high ground it climbed — lettered “Calle Alta” on the 1849 survey, which says the same thing in Spanish",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "from": "Sept. 1886",
+            "until": "?",
+            "name": "Walters Street",
+            "entityId": "walters-street",
+            "formInForce": "Walters Street",
+            "how": "renaming",
+            "origin": "renamed per the 1886 High → Walters renaming {{(source)}} — the name given to High Street, north of the plaza, by an ordinance of September 1886, and still in official use in May 1890, when the city engineer's map of Walters Street was declared official. An omnibus ordinance passed that October would have made it Ord Street, but the mayor returned it unsigned; the change to Ord came by an instrument not yet found",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18860921.1.5"
           },
           {
             "from": "?",
@@ -46365,7 +49025,7 @@ const STREET_DATA = {
         ],
         "note": "Ord came to Los Angeles for two months in 1849 at the request of city leaders and, with the civil engineer William Rich Hutton, surveyed and mapped the town. Most of the streets on their map did not yet exist: the sheet was a plan for expansion as much as a record. He did not name this street for himself — his map has it as Calle Alta, High Street; it was Walters Street from 1886, and Ord from 1890.",
         "attested": true,
-        "knownFraction": 0.15,
+        "knownFraction": 0.2,
         "categories": [
           "person",
           "official",
@@ -46397,12 +49057,24 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
             "title": "Map of Block 35½, Being an Extension of Ord's Survey of the City of Los Angeles (M.R. 3-240, July 20, 1876; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-240.pdf"
           },
           {
-            "title": "Tract No. 26170 (Feb. 20, 1968)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0771/TR0771-036-p2.pdf"
+            "title": "Los Angeles Herald, Sept. 21, 1886, p. 5 — an ordinance changing the name of High Street to Walters Street is adopted",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860921.1.5"
+          },
+          {
+            "title": "Plat of Tract No. 49, being a subdivision of the northerly portion of the block bounded by Main, Ord, San Fernando and Marchessault Streets, in the City of Los Angeles (July 1907)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, May 22, 1890, p. 2 — a map of Walters Street declared official (the name in use)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18900522.1.2"
           }
         ],
         "minLng": -118.2412,
@@ -46416,27 +49088,70 @@ const STREET_DATA = {
         "to": "Spring Street"
       },
       {
-        "label": "beyond Spring",
+        "label": "beyond Spring (Walters St)",
         "name": "Ord Street",
         "entityId": "ord-street",
-        "namedAfter": "{{Edward Otho Cresap Ord}} (1818–1883), the US Army engineer who surveyed and mapped Los Angeles in the summer of 1849 — how and when this stretch joined Ord Street is not yet researched",
+        "namedAfter": "{{Edward Otho Cresap Ord}} (1818–1883), the US Army engineer who surveyed and mapped Los Angeles in the summer of 1849 — honoured here more than forty years later",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Edward_Ord",
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1873",
+          "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1873",
+            "until": "Sept. 1886",
+            "name": "High Street",
+            "entityId": "high-street-chinatown",
+            "formInForce": "High Street",
+            "how": "extension",
+            "origin": "labeled “Calle Alta” on the 1873 Old Plaza, 1873 {{(source)}} — The high ground it climbed — lettered “Calle Alta” on the 1849 survey, which says the same thing in Spanish",
+            "originLink": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "from": "Sept. 1886",
+            "until": "?",
+            "name": "Walters Street",
+            "entityId": "walters-street",
+            "formInForce": "Walters Street",
+            "how": "renaming",
+            "origin": "renamed per the 1886 High → Walters renaming {{(source)}} — the name given to High Street, north of the plaza, by an ordinance of September 1886, and still in official use in May 1890, when the city engineer's map of Walters Street was declared official. An omnibus ordinance passed that October would have made it Ord Street, but the mayor returned it unsigned; the change to Ord came by an instrument not yet found",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18860921.1.5"
+          },
+          {
+            "from": "by 1907",
+            "until": null,
+            "name": "Ord Street",
+            "entityId": "ord-street",
+            "formInForce": "Ord Street",
+            "how": "origin",
+            "origin": "labeled “ORD ST.” on the 1907 Tract No. 49 and the 1909 Oil Well Supply Company Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
+          }
+        ],
         "note": "Ord came to Los Angeles for two months in 1849 at the request of city leaders and, with the civil engineer William Rich Hutton, surveyed and mapped the town. Most of the streets on their map did not yet exist: the sheet was a plan for expansion as much as a record. He did not name this street for himself — his map has it as Calle Alta, High Street; it was Walters Street from 1886, and Ord from 1890.",
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "knownFraction": 0.75,
         "categories": [
           "person",
           "official",
+          "renamed",
           "basis-attested"
         ],
         "ancestors": [
           "politician",
           "basis"
+        ],
+        "formerCategories": [
+          "descriptive"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -46449,8 +49164,28 @@ const STREET_DATA = {
             "url": "https://lapl.org/collections-resources/blogs/lapl/long-and-winding-story-streets-los-angeles"
           },
           {
-            "title": "Tract No. 26170 (Feb. 20, 1968)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0771/TR0771-036-p2.pdf"
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Los Angeles Herald, Sept. 21, 1886, p. 5 — an ordinance changing the name of High Street to Walters Street is adopted",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860921.1.5"
+          },
+          {
+            "title": "Plat of Tract No. 49, being a subdivision of the northerly portion of the block bounded by Main, Ord, San Fernando and Marchessault Streets, in the City of Los Angeles (July 1907; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
+          },
+          {
+            "title": "Oil Well Supply Company Tract, being a plat of a portion of acreage property in the City of Los Angeles (Jan. 1909; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, May 22, 1890, p. 2 — a map of Walters Street declared official (the name in use)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18900522.1.2"
           }
         ],
         "minLng": -118.2379,
@@ -46955,8 +49690,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-431.pdf"
           },
           {
-            "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           }
         ],
         "maxLng": -118.2696,
@@ -46995,8 +49730,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/pico-boulevard/"
           },
           {
-            "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           }
         ],
         "minLng": -118.2696,
@@ -47065,8 +49800,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
           },
           {
-            "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           }
         ],
         "minLng": -118.2685,
@@ -47091,25 +49826,25 @@ const STREET_DATA = {
         "namedAfter": "{{Pío de Jesús Pico}} (1801–1894), the last Mexican governor of Alta California and a major landowner, extended onto this stretch",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Pio_Pico",
         "planned": {
-          "text": "by 1884",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1884",
+            "from": "by 1875",
             "until": null,
             "name": "Pico Street",
             "entityId": "pico",
             "formInForce": "Pico Street",
             "how": "extension",
-            "origin": "labeled “Pico Street” and “PICO STREET” on the 1884 Feldhauser's Subdivision and the 1915 Norris Plan {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
+            "origin": "labeled “PICO STREET” and “Pico Street” on the 1875 Morris Plan and the 1884 Feldhauser's Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           }
         ],
         "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid.",
         "attested": true,
-        "knownFraction": 0.81,
+        "knownFraction": 0.86,
         "categories": [
           "person",
           "politician",
@@ -47127,16 +49862,12 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/pico-boulevard/"
           },
           {
-            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
-          },
-          {
-            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "title": "Plan of the Morris, Main & Pico Streets (M.R. 3-38, after May 6, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
-            "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+            "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
           }
         ],
         "minLng": -118.2645,
@@ -47161,27 +49892,27 @@ const STREET_DATA = {
         "namedAfter": "{{Pío de Jesús Pico}} (1801–1894), the last Mexican governor of Alta California and a major landowner",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Pio_Pico",
         "planned": {
-          "text": "by 1883",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1883",
+            "from": "by 1875",
             "until": null,
             "name": "Pico Street",
             "entityId": "pico",
             "formInForce": "Pico Street",
             "how": "origin",
-            "origin": "labeled “Pico Street” and “PICO STREET” on the 1883 North Carr Tract Subdivision, the 1884 Feldhauser's Subdivision, the 1886 Josefa Subdivision, the 1915 Norris Plan and the 1915 Vineyard Subdivision {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+            "origin": "labeled “PICO STREET” and “Pico Street” on the 1875 Vineyard Subdivision, the 1875 Morris Plan, the 1883 North Carr Tract Subdivision, the 1884 Feldhauser's Subdivision and the 1886 Josefa Subdivision {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           }
         ],
         "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid.",
         "attested": true,
         "absentAsOf": {
-          "text": "1915 (Vineyard Subdivision)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          "text": "1883 (North Carr Tract Subdivision)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
         },
         "knownFraction": 1,
         "categories": [
@@ -47201,6 +49932,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/pico-boulevard/"
           },
           {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
             "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
           },
@@ -47211,10 +49946,6 @@ const STREET_DATA = {
           {
             "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
-          },
-          {
-            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           }
         ],
         "minLng": -118.2624,
@@ -47279,8 +50010,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           },
           {
-            "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           }
         ],
         "minLng": -118.2602,
@@ -47325,8 +50056,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/pico-boulevard/"
           },
           {
-            "title": "Map of Subdivision of North Part of Carr Tract in Los Angeles City (M.R. 5-105, Feb. 21, 1883)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           }
         ],
         "minLng": -118.2568,
@@ -47538,12 +50269,11 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Ordinance No. 48 of May 1889 gave the name to Temperance Street and Home Street, from Union Avenue through Belmont Avenue to Lake Shore Avenue.",
         "attested": false,
         "categories": [
           "basis-none",
-          "searched-none",
-          "stub"
+          "searched-none"
         ],
         "ancestors": [
           "basis"
@@ -47551,8 +50281,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "maxLng": -118.263,
@@ -47592,14 +50322,13 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Ordinance No. 48 of May 1889 gave the name to Temperance Street and Home Street, from Union Avenue through Belmont Avenue to Lake Shore Avenue.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
           "renamed",
           "basis-none",
-          "searched-none",
-          "stub"
+          "searched-none"
         ],
         "ancestors": [
           "basis"
@@ -47609,6 +50338,10 @@ const STREET_DATA = {
           {
             "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           }
         ],
         "minLng": -118.263,
@@ -47651,18 +50384,21 @@ const STREET_DATA = {
     "entityId": "rosabell-street",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1909",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+    },
     "built": "not yet researched",
-    "note": null,
-    "attested": false,
+    "note": "A street along the south side of the Oil Well Supply Company Tract.",
+    "attested": true,
     "absentAsOf": {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "knownFraction": 0.66,
     "categories": [
       "basis-none",
-      "searched-none",
-      "stub"
+      "searched-none"
     ],
     "ancestors": [
       "basis"
@@ -47670,8 +50406,8 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Oil Well Supply Company Tract, being a plat of a portion of acreage property in the City of Los Angeles (Jan. 1909; identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
       }
     ]
   },
@@ -47693,7 +50429,7 @@ const STREET_DATA = {
         "entityId": "rose-street",
         "formInForce": "Rose Street",
         "how": "origin",
-        "origin": "labeled “Rose STREET.” and “ROSE STREET” on the 1871 Johnston Tract (sheets 1, 2) and the 2007 Tract No. 62057 {{(source)}}",
+        "origin": "labeled “Rose STREET.”, “ROSE ST.” and “ROSE STREET” on the 1871 Johnston Tract (sheets 1, 2), the 1912 Tract No. 2097 and the 2007 Tract No. 62057 {{(source)}}",
         "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-092.pdf"
       }
     ],
@@ -47724,6 +50460,10 @@ const STREET_DATA = {
       {
         "title": "Recorded map: Mills and Wicks' Extension of Second St. and adjoining subdivision, City of Los Angeles, M.R. 13-87 — lots 1–144 and 160–236 subdivided at the request of M. L. Wicks and Howard W. Mills, April–May 1886, under the direction of Geo. C. Knox; further lots added Jan. 1887 (sheet 1 of 2) (identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
+      },
+      {
+        "title": "Tract No. 2097, being a portion of Lots 7, 9, 10, 11, 12, 13, 14 and 15 and all of Lot 16, Block B, Johnston Tract (identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0021/TR0021-144A.pdf"
       },
       {
         "title": "Tract No. 62057 in the City of Los Angeles, State of California (Oct. 9, 2007; identified by map alignment, not a lot-level record)",
@@ -47761,7 +50501,7 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "beyond 5th (St. Paul Ave)",
+        "label": "part of (St. Paul Ave)",
         "name": "Saint Paul Avenue",
         "entityId": "saint-paul-avenue",
         "namedAfter": null,
@@ -47779,7 +50519,7 @@ const STREET_DATA = {
             "entityId": "st-paul-avenue",
             "formInForce": "St. Paul Avenue",
             "how": "origin",
-            "origin": "labeled “ST. PAUL AVENUE” on the 1900 St. Paul's School Replat {{(source)}} — lettered on documents/mr078-055, west of downtown. It survives. Whether the name is the apostle, the city in Minnesota or a local church is not documented",
+            "origin": "labeled “ST. PAUL AVENUE” on the 1900 St. Paul's School Replat {{(source)}} — St. Paul’s School, the Episcopal school whose lands this street was cut across — its own 1900 replat is the first document to letter the name",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR078/MR078-055.pdf"
           },
           {
@@ -47795,11 +50535,7 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
-        "absentAsOf": {
-          "text": "1878 (Nichols Addition)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
-        },
-        "knownFraction": 0.16,
+        "knownFraction": 0,
         "categories": [
           "renamed",
           "basis-none",
@@ -47809,11 +50545,22 @@ const STREET_DATA = {
         "ancestors": [
           "basis"
         ],
+        "formerCategories": [
+          "company"
+        ],
         "disputed": false,
         "sources": [
           {
             "title": "Map of a Replat of a Portion of the Subdivision of the Lands of St. Paul's School (M.R. 78-55, Feb. 1900; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR078/MR078-055.pdf"
+          },
+          {
+            "title": "Recorded map: “Plat of Subdivision of a portion of Lot 1 Block 37 Hancocks Surv. L.A. City, made at request of the Vestry of St. Paul’s P. E. Church”, recorded May 9, 1889 (M.R. 5-566) — the sheet’s own title block",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
+          },
+          {
+            "title": "Recorded map: “Map of the Subdivision of the Lands of St. Paul’s School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street”, Jan. 1893 (M.R. 52-85)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
           }
         ],
         "minLat": 34.0522,
@@ -47826,7 +50573,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Wilshire",
+        "label": "part of",
         "name": "Saint Paul Avenue",
         "entityId": "saint-paul-avenue",
         "namedAfter": null,
@@ -47927,8 +50674,8 @@ const STREET_DATA = {
         "label": "part of",
         "name": "San Julian Street",
         "entityId": "san-julian-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly {{St. Julian the Hospitaller}}, patron of travellers and innkeepers — how and when this stretch joined San Julian Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Julian_the_Hospitaller",
         "planned": {
           "text": "by 1883",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
@@ -47942,14 +50689,18 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
-          "basis-none",
-          "searched-extensive"
+          "person",
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "J. Michael Walker, “Street Saints: Los Angeles Is Full of Them,” U.S. Catholic (Sept. 2009)",
+            "url": "https://uscatholic.org/articles/200909/street-saints-los-angeles-is-full-of-them/"
+          },
           {
             "title": "Map of Hamilton's Subdivision of Part of the Urquidez Garden, Los Angeles City, Cal. (M.R. 5-307, Sept. 12, 1883)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-307.pdf"
@@ -47972,8 +50723,8 @@ const STREET_DATA = {
         "label": "part of (Whisler St)",
         "name": "San Julian Street",
         "entityId": "san-julian-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly {{St. Julian the Hospitaller}}, patron of travellers and innkeepers, once this stretch was folded into San Julian Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Julian_the_Hospitaller",
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-064.pdf"
@@ -48009,9 +50760,9 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
+          "person",
           "renamed",
-          "basis-none",
-          "searched-extensive"
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
@@ -48023,6 +50774,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "J. Michael Walker, “Street Saints: Los Angeles Is Full of Them,” U.S. Catholic (Sept. 2009)",
+            "url": "https://uscatholic.org/articles/200909/street-saints-los-angeles-is-full-of-them/"
+          },
           {
             "title": "Map of the Whisler Subdivision on the West Side of San Pedro Street on Part of the Urquidez Vineyard in the City of Los Angeles, Cal. (M.R. 12-64, Dec. 14, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-064.pdf"
@@ -48051,8 +50806,8 @@ const STREET_DATA = {
         "label": "part of",
         "name": "San Julian Street",
         "entityId": "san-julian-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly {{St. Julian the Hospitaller}}, patron of travellers and innkeepers — how and when this stretch joined San Julian Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Julian_the_Hospitaller",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
@@ -48062,14 +50817,18 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "categories": [
-          "basis-none",
-          "searched-extensive"
+          "person",
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "J. Michael Walker, “Street Saints: Los Angeles Is Full of Them,” U.S. Catholic (Sept. 2009)",
+            "url": "https://uscatholic.org/articles/200909/street-saints-los-angeles-is-full-of-them/"
+          },
           {
             "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
             "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
@@ -48094,8 +50853,8 @@ const STREET_DATA = {
         "label": "part of (Earl St)",
         "name": "San Julian Street",
         "entityId": "san-julian-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly {{St. Julian the Hospitaller}}, patron of travellers and innkeepers, once this stretch was folded into San Julian Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Julian_the_Hospitaller",
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR014/MR014-034.pdf"
@@ -48131,15 +50890,19 @@ const STREET_DATA = {
         },
         "knownFraction": 0,
         "categories": [
+          "person",
           "renamed",
-          "basis-none",
-          "searched-extensive"
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "J. Michael Walker, “Street Saints: Los Angeles Is Full of Them,” U.S. Catholic (Sept. 2009)",
+            "url": "https://uscatholic.org/articles/200909/street-saints-los-angeles-is-full-of-them/"
+          },
           {
             "title": "Beck Tract (M.R. 14-34, Dec. 23, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR014/MR014-034.pdf"
@@ -48172,8 +50935,8 @@ const STREET_DATA = {
         "label": "part of (Earl St)",
         "name": "San Julian Street",
         "entityId": "san-julian-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly {{St. Julian the Hospitaller}}, patron of travellers and innkeepers, once this stretch was folded into San Julian Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Julian_the_Hospitaller",
         "planned": {
           "text": "by 1884",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-039.pdf"
@@ -48209,15 +50972,19 @@ const STREET_DATA = {
         },
         "knownFraction": 0.01,
         "categories": [
+          "person",
           "renamed",
-          "basis-none",
-          "searched-extensive"
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "J. Michael Walker, “Street Saints: Los Angeles Is Full of Them,” U.S. Catholic (Sept. 2009)",
+            "url": "https://uscatholic.org/articles/200909/street-saints-los-angeles-is-full-of-them/"
+          },
           {
             "title": "Map of the Rowan Tract, Los Angeles City, Cal. (M.R. 6-39, Sept. 15, 1884; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-039.pdf"
@@ -48250,8 +51017,8 @@ const STREET_DATA = {
         "label": "part of (Earl St)",
         "name": "San Julian Street",
         "entityId": "san-julian-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly {{St. Julian the Hospitaller}}, patron of travellers and innkeepers, once this stretch was folded into San Julian Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Julian_the_Hospitaller",
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-008.pdf"
@@ -48283,15 +51050,19 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "person",
           "renamed",
-          "basis-none",
-          "searched-extensive"
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "J. Michael Walker, “Street Saints: Los Angeles Is Full of Them,” U.S. Catholic (Sept. 2009)",
+            "url": "https://uscatholic.org/articles/200909/street-saints-los-angeles-is-full-of-them/"
+          },
           {
             "title": "Map of the Goldsworthy 8th St. Tract in the City of Los Angeles, Cal. (M.R. 11-8, Sept. 4, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-008.pdf"
@@ -48324,8 +51095,8 @@ const STREET_DATA = {
         "label": "part of",
         "name": "San Julian Street",
         "entityId": "san-julian-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly {{St. Julian the Hospitaller}}, patron of travellers and innkeepers, extended onto this stretch",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Julian_the_Hospitaller",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
@@ -48347,14 +51118,18 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.79,
         "categories": [
-          "basis-none",
-          "searched-extensive"
+          "person",
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "J. Michael Walker, “Street Saints: Los Angeles Is Full of Them,” U.S. Catholic (Sept. 2009)",
+            "url": "https://uscatholic.org/articles/200909/street-saints-los-angeles-is-full-of-them/"
+          },
           {
             "title": "Map of the Moran Tract (M.R. 16-27, Apr. 22, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
@@ -48383,8 +51158,8 @@ const STREET_DATA = {
         "label": "part of (original San Julian St)",
         "name": "San Julian Street",
         "entityId": "san-julian-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly {{St. Julian the Hospitaller}}, patron of travellers and innkeepers — J. Michael Walker's reading in a 2009 survey of the county's saint-named streets, not a documented namesake",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Julian_the_Hospitaller",
         "planned": {
           "text": "by 1883",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
@@ -48406,14 +51181,18 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
-          "basis-none",
-          "searched-extensive"
+          "person",
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "J. Michael Walker, “Street Saints: Los Angeles Is Full of Them,” U.S. Catholic (Sept. 2009)",
+            "url": "https://uscatholic.org/articles/200909/street-saints-los-angeles-is-full-of-them/"
+          },
           {
             "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
             "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
@@ -48442,21 +51221,25 @@ const STREET_DATA = {
         "label": "part of",
         "name": "San Julian Street",
         "entityId": "san-julian-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Possibly {{St. Julian the Hospitaller}}, patron of travellers and innkeepers — how and when this stretch joined San Julian Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Julian_the_Hospitaller",
         "planned": "not yet researched",
         "built": "not yet researched",
         "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
         "attested": false,
         "categories": [
-          "basis-none",
-          "searched-extensive"
+          "person",
+          "basis-guess"
         ],
         "ancestors": [
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "J. Michael Walker, “Street Saints: Los Angeles Is Full of Them,” U.S. Catholic (Sept. 2009)",
+            "url": "https://uscatholic.org/articles/200909/street-saints-los-angeles-is-full-of-them/"
+          },
           {
             "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
             "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
@@ -49552,10 +52335,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "absentAsOf": {
-      "text": "1849 (Hutton / Ord Survey)",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+      "text": "1873 (Old Plaza, 1873)",
+      "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
     },
-    "knownFraction": 0,
+    "knownFraction": 0.13,
     "categories": [
       "basis-none",
       "searched-none",
@@ -49665,8 +52448,8 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "absentAsOf": {
-          "text": "1869 (Alanis Vineyard Tract)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-526.pdf"
+          "text": "1873 (Old Plaza, 1873)",
+          "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
         },
         "categories": [
           "basis-none",
@@ -50753,26 +53536,33 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Santee Alley",
         "entityId": "santee-alley",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Named for the adjacent [[name:santee-street]], itself honoring 1880s city councilman {{Milton Santee}} (1835–1901) — how and when this stretch joined Santee Alley is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Milton_Santee",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
         },
         "built": "not yet researched",
-        "note": null,
+        "note": "Runs between Santee Street and Maple Avenue; grew out of Fashion District wholesalers selling overstock through their back doors on weekends. Known simply as “The Alley” as of 1982 and branded Santee Alley some time after.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "person",
+          "basis-inferred"
         ],
         "ancestors": [
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Wikipedia: Los Angeles Fashion District",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Fashion_District"
+          },
+          {
+            "title": "The Santee Alley: The Story of Santee Alley",
+            "url": "http://thesanteealley.blogspot.com/2013/09/the-story-of-santee-alley.html"
+          },
           {
             "title": "Map of the Moran Tract (M.R. 16-27, Apr. 22, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
@@ -50795,26 +53585,33 @@ const STREET_DATA = {
         "label": "beyond 12th",
         "name": "Santee Alley",
         "entityId": "santee-alley",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Named for the adjacent [[name:santee-street]], itself honoring 1880s city councilman {{Milton Santee}} (1835–1901) — how and when this stretch joined Santee Alley is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Milton_Santee",
         "planned": {
           "text": "by 1883",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "built": "not yet researched",
-        "note": null,
+        "note": "Runs between Santee Street and Maple Avenue; grew out of Fashion District wholesalers selling overstock through their back doors on weekends. Known simply as “The Alley” as of 1982 and branded Santee Alley some time after.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "person",
+          "basis-inferred"
         ],
         "ancestors": [
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Wikipedia: Los Angeles Fashion District",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Fashion_District"
+          },
+          {
+            "title": "The Santee Alley: The Story of Santee Alley",
+            "url": "http://thesanteealley.blogspot.com/2013/09/the-story-of-santee-alley.html"
+          },
           {
             "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883; identified by map alignment, not a lot-level record)",
             "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
@@ -50838,14 +53635,14 @@ const STREET_DATA = {
         "label": "beyond 12th",
         "name": "Santee Alley",
         "entityId": "santee-alley",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "Named for the adjacent [[name:santee-street]], itself honoring 1880s city councilman {{Milton Santee}} (1835–1901) — how and when this stretch joined Santee Alley is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Milton_Santee",
         "planned": {
           "text": "by 1885",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
         },
         "built": "not yet researched",
-        "note": null,
+        "note": "Runs between Santee Street and Maple Avenue; grew out of Fashion District wholesalers selling overstock through their back doors on weekends. Known simply as “The Alley” as of 1982 and branded Santee Alley some time after.",
         "attested": true,
         "absentAsOf": {
           "text": "1883 (O. W. Childs Tract (Hansen & Solano survey))",
@@ -50853,15 +53650,22 @@ const STREET_DATA = {
         },
         "knownFraction": 0.19,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "person",
+          "basis-inferred"
         ],
         "ancestors": [
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "Wikipedia: Los Angeles Fashion District",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Fashion_District"
+          },
+          {
+            "title": "The Santee Alley: The Story of Santee Alley",
+            "url": "http://thesanteealley.blogspot.com/2013/09/the-story-of-santee-alley.html"
+          },
           {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
@@ -50972,8 +53776,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
           },
           {
-            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+            "title": "Ordinance No. 207, “An Ordinance changing the names of certain streets” — adopted Jan. 6, 1886, approved Jan. 14, published in the Los Angeles Herald Jan. 15, 1886",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860115.1.1"
           },
           {
             "title": "Wikipedia: Dionisio Botiller (1842–1915), councilman and city auditor, whose land adjoins this tract on the sheet",
@@ -51020,8 +53824,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/santee-street/"
           },
           {
-            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+            "title": "Ordinance No. 207, “An Ordinance changing the names of certain streets” — adopted Jan. 6, 1886, approved Jan. 14, published in the Los Angeles Herald Jan. 15, 1886",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860115.1.1"
           }
         ],
         "minLat": 34.0403,
@@ -51078,8 +53882,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-063.pdf"
           },
           {
-            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+            "title": "Ordinance No. 207, “An Ordinance changing the names of certain streets” — adopted Jan. 6, 1886, approved Jan. 14, published in the Los Angeles Herald Jan. 15, 1886",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860115.1.1"
           }
         ],
         "minLat": 34.0386,
@@ -51113,7 +53917,7 @@ const STREET_DATA = {
             "from": "by 1883",
             "until": "?",
             "name": "William Street",
-            "entityId": "william",
+            "entityId": "william-santee",
             "formInForce": "William Street",
             "how": "origin",
             "origin": "labeled “William Street” and “William St.” on the 1883 O. W. Childs Tract (Hansen & Solano survey) and the 1885 O. W. Childs Tract {{(source)}} — Probably Ozro William Childs (1824–1890) himself — the W of “O. W. Childs” is William — or his eldest surviving son, Ozro William Childs Jr. (1865–1933), who was twenty when the tract was recorded",
@@ -51164,8 +53968,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
           },
           {
-            "title": "Map of the Josefa Subdivision of the Celis Vineyard Tract (M.R. 11-94, Nov. 9, 1886)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
+            "title": "Ordinance No. 207, “An Ordinance changing the names of certain streets” — adopted Jan. 6, 1886, approved Jan. 14, published in the Los Angeles Herald Jan. 15, 1886",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860115.1.1"
           },
           {
             "title": "Find a Grave: Ozro William Childs (1824–1890), memorial 8297711 — full name, and the ten children including Ozro William Childs Jr.",
@@ -51236,6 +54040,10 @@ const STREET_DATA = {
           {
             "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          },
+          {
+            "title": "Ordinance No. 207, “An Ordinance changing the names of certain streets” — adopted Jan. 6, 1886, approved Jan. 14, published in the Los Angeles Herald Jan. 15, 1886",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18860115.1.1"
           }
         ],
         "maxLat": 34.0354,
@@ -51309,15 +54117,27 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Shatto Street",
         "entityId": "shatto-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{George Rufus Shatto}} (1850–1893) and his wife Clara Ruth (1853–1942), the Michigan couple whose Westlake mansion stood beside it and who bought the whole of Santa Catalina Island in 1887 — how and when this stretch joined Shatto Street is not yet researched",
+        "namedAfterLink": "https://lastreetnames.com/street/shatto-street/",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Named in 1891, after the Shattos' own proposal of “Vieudelou” was rejected, and running behind their mansion on Orange Street — now part of Wilshire Boulevard. Shatto Street still exists; the stretch lettered on Tract No. 321 in Nov. 1908 (documents/tr0014-087a) is a lost piece of it.",
         "attested": false,
-        "categories": [],
+        "categories": [
+          "person",
+          "landowner",
+          "family",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
+          {
+            "title": "SurveyLA, Westlake Community Plan Area Historic Resources Survey Report — “George Rufus Shatto developed the residential avenue of Orange Street, what is now the easternmost portion of Wilshire Boulevard, as part of the Orange Heights Tract.”",
+            "url": "https://planning.lacity.gov/odocument/db31e62f-7e53-4de9-b891-07a8515913bc/Westlake_Report_0.pdf"
+          },
           {
             "title": "Map of Tract No. 321 (Nov. 16, 1908)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-087a.pdf"
@@ -51336,8 +54156,8 @@ const STREET_DATA = {
         "label": "part of (6th St)",
         "name": "Shatto Street",
         "entityId": "shatto-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{George Rufus Shatto}} (1850–1893) and his wife Clara Ruth (1853–1942), the Michigan couple whose Westlake mansion stood beside it and who bought the whole of Santa Catalina Island in 1887, once this stretch was folded into Shatto Street",
+        "namedAfterLink": "https://lastreetnames.com/street/shatto-street/",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
@@ -51364,11 +54184,18 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Named in 1891, after the Shattos' own proposal of “Vieudelou” was rejected, and running behind their mansion on Orange Street — now part of Wilshire Boulevard. Shatto Street still exists; the stretch lettered on Tract No. 321 in Nov. 1908 (documents/tr0014-087a) is a lost piece of it.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "renamed"
+          "person",
+          "landowner",
+          "family",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "formerCategories": [
           "number"
@@ -51378,6 +54205,10 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "SurveyLA, Westlake Community Plan Area Historic Resources Survey Report — “George Rufus Shatto developed the residential avenue of Orange Street, what is now the easternmost portion of Wilshire Boulevard, as part of the Orange Heights Tract.”",
+            "url": "https://planning.lacity.gov/odocument/db31e62f-7e53-4de9-b891-07a8515913bc/Westlake_Report_0.pdf"
+          },
           {
             "title": "Map of Orange Heights, Los Angeles, California (M.R. 18-63, June 21, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
@@ -51634,7 +54465,208 @@ const STREET_DATA = {
         "to": "Alpine Street"
       },
       {
-        "label": "Alpine to Cesar E Chavez (Main St)",
+        "label": "beyond Alpine (Main St)",
+        "name": "Spring Street",
+        "entityId": "spring",
+        "namedAfter": "Possibly {{Trinidad Ortega}} (1832–1903), who was nicknamed “Primavera”, once this stretch was folded into Spring Street",
+        "namedAfterLink": "https://calisphere.org/item/e876794cf7de2e5b0c7b83aae7c4d0da/",
+        "planned": {
+          "text": "1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "1849",
+            "until": "?",
+            "name": "Main Street",
+            "entityId": "main-street-dtla",
+            "formInForce": "Main Street",
+            "origin": "labeled “MAIN STREET” and “CALLE PRINCIPAL” on the 1849 Hutton / Ord Survey and the 1873 Old Plaza, 1873 {{(source)}} — Its standing as the pueblo’s principal street",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Spring Street",
+            "entityId": "spring",
+            "formInForce": "Spring Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
+        "attested": true,
+        "knownFraction": 0.13,
+        "categories": [
+          "person",
+          "alive",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "descriptive"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Spring Street",
+            "url": "https://lastreetnames.com/street/spring-street/"
+          },
+          {
+            "title": "Wikipedia: Spring Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Main Street",
+            "url": "https://lastreetnames.com/street/main-street/"
+          },
+          {
+            "title": "Wikipedia: Main Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          }
+        ],
+        "minLat": 34.0601,
+        "maxLat": 34.0619,
+        "from": "Alpine Street",
+        "to": {
+          "px": [
+            234,
+            656
+          ]
+        }
+      },
+      {
+        "label": "part of (San Fernando St)",
+        "name": "Spring Street",
+        "entityId": "spring",
+        "namedAfter": "Possibly {{Trinidad Ortega}} (1832–1903), who was nicknamed “Primavera”, once this stretch was folded into Spring Street",
+        "namedAfterLink": "https://calisphere.org/item/e876794cf7de2e5b0c7b83aae7c4d0da/",
+        "planned": {
+          "text": "1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "1849",
+            "until": "?",
+            "name": "Main Street",
+            "entityId": "main-street-dtla",
+            "formInForce": "Main Street",
+            "origin": "labeled “MAIN STREET” and “CALLE PRINCIPAL” on the 1849 Hutton / Ord Survey and the 1873 Old Plaza, 1873 {{(source)}} — Its standing as the pueblo’s principal street",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "from": "by 1907",
+            "until": "?",
+            "name": "San Fernando Street",
+            "entityId": "san-fernando-st-spring",
+            "formInForce": "San Fernando Street",
+            "how": "origin",
+            "origin": "labeled “SAN FERNANDO ST.” on the 1907 Tract No. 49 {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Spring Street",
+            "entityId": "spring",
+            "formInForce": "Spring Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
+        "attested": true,
+        "knownFraction": 0.13,
+        "categories": [
+          "person",
+          "alive",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "descriptive"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Spring Street",
+            "url": "https://lastreetnames.com/street/spring-street/"
+          },
+          {
+            "title": "Wikipedia: Spring Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Plat of Tract No. 49, being a subdivision of the northerly portion of the block bounded by Main, Ord, San Fernando and Marchessault Streets, in the City of Los Angeles (July 1907; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Main Street",
+            "url": "https://lastreetnames.com/street/main-street/"
+          },
+          {
+            "title": "Wikipedia: Main Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          }
+        ],
+        "minLat": 34.0587,
+        "maxLat": 34.0601,
+        "from": {
+          "px": [
+            234,
+            656
+          ]
+        },
+        "to": {
+          "px": [
+            956,
+            1364
+          ]
+        }
+      },
+      {
+        "label": "beyond Cesar E Chavez (Main St)",
         "name": "Spring Street",
         "entityId": "spring",
         "namedAfter": "Possibly {{Trinidad Ortega}} (1832–1903), who was nicknamed “Primavera”, once this stretch was folded into Spring Street",
@@ -51651,7 +54683,7 @@ const STREET_DATA = {
             "name": "Main Street",
             "entityId": "main-street-dtla",
             "formInForce": "Main Street",
-            "origin": "labeled “MAIN STREET” on the 1849 Hutton / Ord Survey {{(source)}} — Its standing as the pueblo’s principal street",
+            "origin": "labeled “MAIN STREET” and “CALLE PRINCIPAL” on the 1849 Hutton / Ord Survey and the 1873 Old Plaza, 1873 {{(source)}} — Its standing as the pueblo’s principal street",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
@@ -51667,7 +54699,7 @@ const STREET_DATA = {
         ],
         "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.13,
         "categories": [
           "person",
           "alive",
@@ -51702,6 +54734,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
@@ -51715,8 +54751,13 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0583,
-        "maxLat": 34.0619,
-        "from": "Alpine Street",
+        "maxLat": 34.0587,
+        "from": {
+          "px": [
+            956,
+            1364
+          ]
+        },
         "to": "Cesar E Chavez Avenue"
       },
       {
@@ -52318,6 +55359,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0007/TR0007-085.pdf"
           },
           {
+            "title": "Map of a portion of the E. N. Fletcher Tract in the City of Los Angeles (surveyed April 1896 and March 1904 by V. J. Rowan) (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-065.pdf"
+          },
+          {
             "title": "Map of Culvers Addition to the Frank Sabichi Tract (July 26, 1904; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-156a.pdf"
           },
@@ -52469,8 +55514,8 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/sunset-boulevard/"
           },
           {
-            "title": "Tract No. 3791 (May 1922)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0063/TR0063-098-p1.pdf"
+            "title": "Ordinance No. 1888 (New Series), changing five streets to Sunset Boulevard — adopted Oct. 23, 1893, approved Oct. 26, published Oct. 29, 1893",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18931029.1.11"
           }
         ],
         "minLat": 34.0677,
@@ -52524,6 +55569,10 @@ const STREET_DATA = {
           {
             "title": "Tract No. 3791 (May 1922; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0063/TR0063-098-p1.pdf"
+          },
+          {
+            "title": "Ordinance No. 1888 (New Series), changing five streets to Sunset Boulevard — adopted Oct. 23, 1893, approved Oct. 26, published Oct. 29, 1893",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18931029.1.11"
           }
         ],
         "minLat": 34.0659,
@@ -52600,6 +55649,10 @@ const STREET_DATA = {
           {
             "title": "Tract No. 3791 (May 1922; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0063/TR0063-098-p1.pdf"
+          },
+          {
+            "title": "Ordinance No. 1888 (New Series), changing five streets to Sunset Boulevard — adopted Oct. 23, 1893, approved Oct. 26, published Oct. 29, 1893",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18931029.1.11"
           },
           {
             "title": "Los Angeles Magazine, CityDig — “Monsieur Beaudry managed to wrangle two other L.A. big shots to form the Canal and Reservoir Company, of which Prudent was, prudently, president.”",
@@ -52686,8 +55739,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
           },
           {
-            "title": "Tract No. 3791 (May 1922)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0063/TR0063-098-p1.pdf"
+            "title": "Ordinance No. 1888 (New Series), changing five streets to Sunset Boulevard — adopted Oct. 23, 1893, approved Oct. 26, published Oct. 29, 1893",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18931029.1.11"
           },
           {
             "title": "Los Angeles Magazine, CityDig — “Monsieur Beaudry managed to wrangle two other L.A. big shots to form the Canal and Reservoir Company, of which Prudent was, prudently, president.”",
@@ -53478,7 +56531,7 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "The name Ordinance No. 48 of May 1889 gave Virginia Street, on the east side of Second Street Park, from Diamond Street northeast to Court Street; it is still Toluca Street.",
         "attested": true,
         "absentAsOf": {
           "text": "1886 (Los Angeles Improvement Co. Subdivision)",
@@ -53488,8 +56541,7 @@ const STREET_DATA = {
         "categories": [
           "renamed",
           "basis-none",
-          "searched-none",
-          "stub"
+          "searched-none"
         ],
         "ancestors": [
           "basis"
@@ -53505,6 +56557,10 @@ const STREET_DATA = {
           {
             "title": "Subdivision Map of Lot 8, Block 35, Hancock Survey (M.R. 5-69, Jan. 25, 1883; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
+          },
+          {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Virginia St., in W. part of city, changed to Toluca St.”",
@@ -53557,7 +56613,7 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "The name Ordinance No. 48 of May 1889 gave Virginia Street, on the east side of Second Street Park, from Diamond Street northeast to Court Street; it is still Toluca Street.",
         "attested": true,
         "absentAsOf": {
           "text": "1884 (35 Acre Lot 1, Block 38)",
@@ -53567,8 +56623,7 @@ const STREET_DATA = {
         "categories": [
           "renamed",
           "basis-none",
-          "searched-none",
-          "stub"
+          "searched-none"
         ],
         "ancestors": [
           "basis"
@@ -53590,6 +56645,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
           },
           {
+            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
+          },
+          {
             "title": "George Garrigues, What Ever Became of Those Old L.A. City Streets? — “Brook, south of W. 2nd St. is part of S. Toluca St. (26)”",
             "url": "https://stevemorse.org/census/changes/LosAngelesChanges2.htm"
           }
@@ -53608,20 +56667,19 @@ const STREET_DATA = {
   "Toriumi Plaza": {
     "name": "Toriumi Plaza",
     "entityId": "toriumi-plaza",
-    "namedAfter": null,
+    "namedAfter": "Rev. Howard Toriumi (1916–1987), Union Church minister who led the fight to preserve Little Tokyo through the redevelopment of the 1960s–70s — how and when this stretch joined Toriumi Plaza is not yet researched",
     "namedAfterLink": null,
     "planned": "not yet researched",
     "built": "not yet researched",
-    "note": null,
+    "note": "Named in 2012; sits atop a parking garage at the northwest corner of 1st and Judge John Aiso Street.",
     "attested": false,
     "absentAsOf": {
       "text": "1907 (Axelrod and Winogura Property)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-023a.pdf"
     },
     "categories": [
-      "basis-none",
-      "searched-none",
-      "stub"
+      "person",
+      "basis-attested"
     ],
     "ancestors": [
       "basis"
@@ -53629,8 +56687,8 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Little Tokyo Historical Society: Naming Projects (Rev. Howard Toriumi, 2012)",
+        "url": "https://www.littletokyohs.org/naming-projects"
       }
     ]
   },
@@ -53993,21 +57051,48 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "part of",
+        "label": "part of (Stephenson Ave)",
         "name": "Traction Avenue",
         "entityId": "traction-avenue",
-        "namedAfter": "The {{electric traction motor}} that powered the streetcars running along it — how and when this stretch joined Traction Avenue is not yet researched",
+        "namedAfter": "The {{electric traction motor}} that powered the streetcars running along it, once this stretch was folded into Traction Avenue",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Traction_motor",
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1912",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0021/TR0021-144A.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1912",
+            "until": "?",
+            "name": "Stephenson Avenue",
+            "entityId": "stephenson-avenue",
+            "formInForce": "Stephenson Avenue",
+            "how": "origin",
+            "origin": "labeled “STEPHENSON AVE.” on the 1912 Tract No. 2097 {{(source)}} — the name an omnibus ordinance of October 1890 would have given Second Street east of Alameda — the ground that is Traction Avenue today. Mayor Hazard returned that ordinance unsigned; when Stephenson Avenue actually took effect, and when Traction replaced it, is not yet documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0021/TR0021-144A.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Traction Avenue",
+            "entityId": "traction-avenue",
+            "formInForce": "Traction Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
         "note": "Stephenson Avenue until 1915, when it was renamed to avoid confusion with the larger Stephenson Avenue on the East Side — which itself became Whittier Boulevard five years later. Traction-powered trolleys ran along it to the nearby Santa Fe depot.",
-        "attested": false,
+        "attested": true,
         "absentAsOf": {
           "text": "1875 (Thomas Tract)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
         },
+        "knownFraction": 0.14,
         "categories": [
           "tool",
+          "renamed",
           "basis-attested"
         ],
         "ancestors": [
@@ -54019,6 +57104,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Traction Avenue (the former Stephenson Ave. renamed in 1915; “the word referred to the electric traction motor that powered streetcars via a trolley pole”)",
             "url": "https://lastreetnames.com/street/traction-avenue/"
+          },
+          {
+            "title": "Tract No. 2097, being a portion of Lots 7, 9, 10, 11, 12, 13, 14 and 15 and all of Lot 16, Block B, Johnston Tract (identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0021/TR0021-144A.pdf"
           },
           {
             "title": "Tract No. 35332 in the City of Los Angeles, State of California, for Redevelopment Purposes (Sept. 18, 1979)",
@@ -54138,11 +57227,21 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and on Tract No. 2473 of 1913 (documents/tr0024-055), and still Union Avenue today. Kines suggests the name may have been given a decade earlier on the adjoining Fairview tract; nothing found says what union was meant.",
         "attested": false,
-        "categories": [],
+        "categories": [
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Union Avenue — “There's also a good chance that Union Ave. was named earlier in 1875 on the adjoining Fairview tract, owned by merchant tailor Jacob Strelitz.”",
+            "url": "https://lastreetnames.com/street/union-avenue/"
+          },
           {
             "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
@@ -54176,7 +57275,7 @@ const STREET_DATA = {
             "entityId": "collado-st",
             "formInForce": "Collado Street",
             "how": "origin",
-            "origin": "labeled “Collado St” on the 1885 Colina Park and the 1886 J. W. Ellis' Subdivision {{(source)}} — no namesake documented",
+            "origin": "labeled “Collado St” on the 1885 Colina Park and the 1886 J. W. Ellis' Subdivision {{(source)}} — Collado, Spanish for a col or low hill — one of four Spanish ground-words platted together on Colina Park in 1885",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -54190,14 +57289,27 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and on Tract No. 2473 of 1913 (documents/tr0024-055), and still Union Avenue today. Kines suggests the name may have been given a decade earlier on the adjoining Fairview tract; nothing found says what union was meant.",
         "attested": true,
         "knownFraction": 0.01,
         "categories": [
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "nature",
+          "landform"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Union Avenue — “There's also a good chance that Union Ave. was named earlier in 1875 on the adjoining Fairview tract, owned by merchant tailor Jacob Strelitz.”",
+            "url": "https://lastreetnames.com/street/union-avenue/"
+          },
           {
             "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
@@ -54207,12 +57319,94 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-062.pdf"
           }
         ],
-        "minLat": 34.0598,
+        "minLat": 34.0615,
         "maxLat": 34.0649,
         "from": {
           "px": [
             233,
             38
+          ]
+        },
+        "to": {
+          "px": [
+            198,
+            244
+          ]
+        }
+      },
+      {
+        "label": "part of (Collado St)",
+        "name": "Union Avenue",
+        "entityId": "union-avenue",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "?",
+            "name": "Collado Street",
+            "entityId": "collado-st",
+            "formInForce": "Collado Street",
+            "how": "origin",
+            "origin": "labeled “Collado St” on the 1885 Colina Park and the 1886 J. W. Ellis' Subdivision {{(source)}} — Collado, Spanish for a col or low hill — one of four Spanish ground-words platted together on Colina Park in 1885",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+          },
+          {
+            "from": "by 1913",
+            "until": null,
+            "name": "Union Avenue",
+            "entityId": "union-avenue",
+            "formInForce": "Union Avenue",
+            "how": "renaming",
+            "origin": "labeled “UNION AVE.” on the 1913 Tract No. 2473 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0024/TR0024-055.pdf"
+          }
+        ],
+        "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and on Tract No. 2473 of 1913 (documents/tr0024-055), and still Union Avenue today. Kines suggests the name may have been given a decade earlier on the adjoining Fairview tract; nothing found says what union was meant.",
+        "attested": true,
+        "knownFraction": 0.65,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "nature",
+          "landform"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Union Avenue — “There's also a good chance that Union Ave. was named earlier in 1875 on the adjoining Fairview tract, owned by merchant tailor Jacob Strelitz.”",
+            "url": "https://lastreetnames.com/street/union-avenue/"
+          },
+          {
+            "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+          },
+          {
+            "title": "Map of J. W. Ellis' Subdivision of Part of Lot 3, Block 38, Hancock's Survey (M.R. 10-62, Aug. 16, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-062.pdf"
+          },
+          {
+            "title": "Tract No. 2473, being a subdivision of portions of Blocks 2 and 3 and of Lots 2-4 of Block L, Colina Park (Daniel S. Halladay C.E.) (Dec. 16, 1913; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0024/TR0024-055.pdf"
+          }
+        ],
+        "minLat": 34.0598,
+        "maxLat": 34.0615,
+        "from": {
+          "px": [
+            198,
+            244
           ]
         },
         "to": {
@@ -54230,15 +57424,25 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and on Tract No. 2473 of 1913 (documents/tr0024-055), and still Union Avenue today. Kines suggests the name may have been given a decade earlier on the adjoining Fairview tract; nothing found says what union was meant.",
         "attested": false,
         "absentAsOf": {
           "text": "1885 (Colina Park)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
         },
-        "categories": [],
+        "categories": [
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Union Avenue — “There's also a good chance that Union Ave. was named earlier in 1875 on the adjoining Fairview tract, owned by merchant tailor Jacob Strelitz.”",
+            "url": "https://lastreetnames.com/street/union-avenue/"
+          },
           {
             "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
@@ -54278,7 +57482,7 @@ const STREET_DATA = {
             "entityId": "union-st",
             "formInForce": "Union Street",
             "how": "origin",
-            "origin": "labeled “Union St” on the 1885 Colina Park {{(source)}} — no namesake documented",
+            "origin": "labeled “Union St” on the 1885 Colina Park {{(source)}} — lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2), south of the tract's Union Avenue, on what is now Union Avenue. Nothing found says what union was meant",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -54292,14 +57496,23 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and on Tract No. 2473 of 1913 (documents/tr0024-055), and still Union Avenue today. Kines suggests the name may have been given a decade earlier on the adjoining Fairview tract; nothing found says what union was meant.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
-          "renamed"
+          "renamed",
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Union Avenue — “There's also a good chance that Union Ave. was named earlier in 1875 on the adjoining Fairview tract, owned by merchant tailor Jacob Strelitz.”",
+            "url": "https://lastreetnames.com/street/union-avenue/"
+          },
           {
             "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
@@ -54328,11 +57541,21 @@ const STREET_DATA = {
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and on Tract No. 2473 of 1913 (documents/tr0024-055), and still Union Avenue today. Kines suggests the name may have been given a decade earlier on the adjoining Fairview tract; nothing found says what union was meant.",
         "attested": false,
-        "categories": [],
+        "categories": [
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Union Avenue — “There's also a good chance that Union Ave. was named earlier in 1875 on the adjoining Fairview tract, owned by merchant tailor Jacob Strelitz.”",
+            "url": "https://lastreetnames.com/street/union-avenue/"
+          },
           {
             "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
@@ -54380,61 +57603,173 @@ const STREET_DATA = {
   },
   "Union Place": {
     "name": "Union Place",
-    "entityId": "union-place",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": {
-      "text": "by 1885",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
-    },
-    "built": "not yet researched",
-    "nameHistory": [
+    "orientation": "NS",
+    "segments": [
       {
-        "from": "by 1885",
-        "until": "?",
-        "name": "Western Avenue",
-        "entityId": "western-ave-colina-park",
-        "formInForce": "Western Avenue",
-        "how": "origin",
-        "origin": "labeled “Western Ave” on the 1885 Colina Park and the 1886 J. W. Ellis' Subdivision {{(source)}} — no namesake documented",
-        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
-      },
-      {
-        "from": "?",
-        "until": null,
+        "label": "part of (Western Ave)",
         "name": "Union Place",
         "entityId": "union-place",
-        "formInForce": "Union Place",
-        "how": "renaming",
-        "origin": "arrival on this stretch not directly documented",
-        "originLink": null
-      }
-    ],
-    "note": null,
-    "attested": true,
-    "knownFraction": 0.01,
-    "categories": [
-      "renamed",
-      "basis-none",
-      "searched-none",
-      "stub"
-    ],
-    "ancestors": [
-      "basis"
-    ],
-    "disputed": false,
-    "sources": [
-      {
-        "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885; identified by map alignment, not a lot-level record)",
-        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "?",
+            "name": "Western Avenue",
+            "entityId": "western-ave-colina-park",
+            "formInForce": "Western Avenue",
+            "how": "origin",
+            "origin": "labeled “Western Ave” on the 1885 Colina Park and the 1886 J. W. Ellis' Subdivision {{(source)}} — The west side of the Colina Park tract, which this street bounded",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Union Place",
+            "entityId": "union-place",
+            "formInForce": "Union Place",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.01,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "abstract",
+          "descriptive"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+          },
+          {
+            "title": "Map of J. W. Ellis' Subdivision of Part of Lot 3, Block 38, Hancock's Survey (M.R. 10-62, Aug. 16, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-062.pdf"
+          },
+          {
+            "title": "Map of J. W. Ellis' Subdivision of Parts of Lots 2 and 3, Block 38, Hancock's Survey (M.R. 10-88, Sept. 2, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-088.pdf"
+          }
+        ],
+        "minLat": 34.0611,
+        "from": null,
+        "to": {
+          "px": [
+            781,
+            261
+          ]
+        }
       },
       {
-        "title": "Map of J. W. Ellis' Subdivision of Part of Lot 3, Block 38, Hancock's Survey (M.R. 10-62, Aug. 16, 1886; identified by map alignment, not a lot-level record)",
-        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-062.pdf"
-      },
-      {
-        "title": "Map of J. W. Ellis' Subdivision of Parts of Lots 2 and 3, Block 38, Hancock's Survey (M.R. 10-88, Sept. 2, 1886; identified by map alignment, not a lot-level record)",
-        "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-088.pdf"
+        "label": "part of (Colina Ave)",
+        "name": "Union Place",
+        "entityId": "union-place",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "?",
+            "name": "Western Avenue",
+            "entityId": "western-ave-colina-park",
+            "formInForce": "Western Avenue",
+            "how": "origin",
+            "origin": "labeled “Western Ave” on the 1885 Colina Park and the 1886 J. W. Ellis' Subdivision {{(source)}} — The west side of the Colina Park tract, which this street bounded",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+          },
+          {
+            "from": "by 1913",
+            "until": "?",
+            "name": "Colina Avenue",
+            "entityId": "colina-ave",
+            "formInForce": "Colina Avenue",
+            "how": "origin",
+            "origin": "labeled “COLINA AVE.” on the 1913 Tract No. 2473 {{(source)}} — Colina, Spanish for a hill — the tract's own name, on the Crown Hill ridge it was platted over",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0024/TR0024-055.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Union Place",
+            "entityId": "union-place",
+            "formInForce": "Union Place",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.01,
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "abstract",
+          "descriptive",
+          "nature",
+          "landform"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+          },
+          {
+            "title": "Map of J. W. Ellis' Subdivision of Part of Lot 3, Block 38, Hancock's Survey (M.R. 10-62, Aug. 16, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-062.pdf"
+          },
+          {
+            "title": "Tract No. 2473, being a subdivision of portions of Blocks 2 and 3 and of Lots 2-4 of Block L, Colina Park (Daniel S. Halladay C.E.) (Dec. 16, 1913; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0024/TR0024-055.pdf"
+          },
+          {
+            "title": "SurveyLA, Westlake Community Plan Area Historic Resources Survey Report — “In 1885, the Colina Park tract was developed adjacent to the western terminus of the proposed 2nd Street cable railway.”",
+            "url": "https://planning.lacity.gov/odocument/db31e62f-7e53-4de9-b891-07a8515913bc/Westlake_Report_0.pdf"
+          },
+          {
+            "title": "George Garrigues, What Ever Became of Those Old L.A. City Streets? — “Colina Ave., east of Union & South of 1st, is abandoned (26).”",
+            "url": "https://stevemorse.org/census/changes/LosAngelesChanges2.htm"
+          }
+        ],
+        "maxLat": 34.0611,
+        "from": {
+          "px": [
+            781,
+            261
+          ]
+        },
+        "to": null
       }
     ]
   },
@@ -54446,13 +57781,20 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Utah Street",
         "entityId": "utah-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Utah}}, proposed by Thomas W. Collins, who had been living in Salt Lake City, on land owned by the Salt Lake City native Henry J. Woollacott — how and when this stretch joined Utah Street is not yet researched",
+        "namedAfterLink": "https://lastreetnames.com/street/utah-street/",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "Originally Pleasant Street, and renamed in 1896 because it was being confused with the nearby Pleasant Avenue. Thomas W. Collins petitioned for the change and proposed Utah: he had been living in Salt Lake City when his son was born in 1886, and the land was owned by Henry J. Woollacott, a Salt Lake City native whose brother married Collins's daughter that year. Collins, a bartender who came to Los Angeles about 1888, went blind in 1898 and worked as a guide at City Hall, known about town as “Blind Tom”.",
         "attested": false,
-        "categories": [],
+        "categories": [
+          "place",
+          "state",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -54473,8 +57815,8 @@ const STREET_DATA = {
         "label": "part of (original Utah St)",
         "name": "Utah Street",
         "entityId": "utah-st",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "{{Utah}}, proposed by Thomas W. Collins, who had been living in Salt Lake City, on land owned by the Salt Lake City native Henry J. Woollacott",
+        "namedAfterLink": "https://lastreetnames.com/street/utah-street/",
         "planned": {
           "text": "by 1908",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0013/TR0013-168.pdf"
@@ -54492,10 +57834,17 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0013/TR0013-168.pdf"
           }
         ],
-        "note": null,
+        "note": "Originally Pleasant Street, and renamed in 1896 because it was being confused with the nearby Pleasant Avenue. Thomas W. Collins petitioned for the change and proposed Utah: he had been living in Salt Lake City when his son was born in 1886, and the land was owned by Henry J. Woollacott, a Salt Lake City native whose brother married Collins's daughter that year. Collins, a bartender who came to Los Angeles about 1888, went blind in 1898 and worked as a guide at City Hall, known about town as “Blind Tom”.",
         "attested": true,
         "knownFraction": 0.67,
-        "categories": [],
+        "categories": [
+          "place",
+          "state",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -54523,9 +57872,9 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "part of (Vernon Av)",
+        "label": "part of (Vernon Ave)",
         "name": "Valencia Street",
-        "entityId": "valencia-street",
+        "entityId": "valencia-street-poindexter",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
@@ -54537,32 +57886,31 @@ const STREET_DATA = {
           {
             "from": "by 1885",
             "until": "?",
-            "name": "Vernon Av",
+            "name": "Vernon Avenue",
             "entityId": "vernon-ave",
-            "formInForce": "Vernon Av",
+            "formInForce": "Vernon Avenue",
             "how": "origin",
-            "origin": "labeled “Vernon Av” and “Vernon Ave” on the 1885 Colina Park and the 1887 Orange Heights {{(source)}} — no namesake documented",
+            "origin": "labeled “Vernon Av” and “Vernon Ave” on the 1885 Colina Park and the 1887 Orange Heights {{(source)}} — lettered “Vernon Av” on Colina Park in Nov. 1885 (documents/mr007-036-p2) and “Vernon Ave” on Orange Heights in June 1887 (documents/mr018-063), along what is now Valencia Street. Nothing found says who or what it was named for",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
             "from": "?",
             "until": null,
             "name": "Valencia Street",
-            "entityId": "valencia-street",
+            "entityId": "valencia-street-poindexter",
             "formInForce": "Valencia Street",
             "how": "renaming",
             "origin": "arrival on this stretch not directly documented",
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "The Valencia Street shown on R. W. Poindexter's 1901 subdivision of the Mrs. Fitzgerald Tract.",
         "attested": true,
         "knownFraction": 0.01,
         "categories": [
           "renamed",
           "basis-none",
-          "searched-none",
-          "stub"
+          "searched-none"
         ],
         "ancestors": [
           "basis"
@@ -54576,6 +57924,10 @@ const STREET_DATA = {
           {
             "title": "Map of Orange Heights, Los Angeles, California (M.R. 18-63, June 21, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
+          },
+          {
+            "title": "Map of R. W. Poindexter's Subdivision of the easterly portion of Block A of the Mrs. Fitzgerald Tract (Oct. 1901)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
           }
         ],
         "minLat": 34.0558,
@@ -54588,9 +57940,9 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (Vernon Av)",
+        "label": "part of (Vernon Ave)",
         "name": "Valencia Street",
-        "entityId": "valencia-street",
+        "entityId": "valencia-street-poindexter",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
@@ -54602,32 +57954,31 @@ const STREET_DATA = {
           {
             "from": "by 1887",
             "until": "?",
-            "name": "Vernon Av",
+            "name": "Vernon Avenue",
             "entityId": "vernon-ave",
-            "formInForce": "Vernon Av",
+            "formInForce": "Vernon Avenue",
             "how": "extension",
-            "origin": "labeled “Vernon Ave” on the 1887 Orange Heights {{(source)}} — no namesake documented",
+            "origin": "labeled “Vernon Ave” on the 1887 Orange Heights {{(source)}} — lettered “Vernon Av” on Colina Park in Nov. 1885 (documents/mr007-036-p2) and “Vernon Ave” on Orange Heights in June 1887 (documents/mr018-063), along what is now Valencia Street. Nothing found says who or what it was named for",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
           },
           {
             "from": "?",
             "until": null,
             "name": "Valencia Street",
-            "entityId": "valencia-street",
+            "entityId": "valencia-street-poindexter",
             "formInForce": "Valencia Street",
             "how": "renaming",
             "origin": "arrival on this stretch not directly documented",
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "The Valencia Street shown on R. W. Poindexter's 1901 subdivision of the Mrs. Fitzgerald Tract.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
           "renamed",
           "basis-none",
-          "searched-none",
-          "stub"
+          "searched-none"
         ],
         "ancestors": [
           "basis"
@@ -54641,6 +57992,10 @@ const STREET_DATA = {
           {
             "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+          },
+          {
+            "title": "Map of R. W. Poindexter's Subdivision of the easterly portion of Block A of the Mrs. Fitzgerald Tract (Oct. 1901)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
           }
         ],
         "minLat": 34.0546,
@@ -54661,17 +58016,16 @@ const STREET_DATA = {
       {
         "label": "part of",
         "name": "Valencia Street",
-        "entityId": "valencia-street",
+        "entityId": "valencia-street-poindexter",
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "The Valencia Street shown on R. W. Poindexter's 1901 subdivision of the Mrs. Fitzgerald Tract.",
         "attested": false,
         "categories": [
           "basis-none",
-          "searched-none",
-          "stub"
+          "searched-none"
         ],
         "ancestors": [
           "basis"
@@ -54679,8 +58033,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "Map of R. W. Poindexter's Subdivision of the easterly portion of Block A of the Mrs. Fitzgerald Tract (Oct. 1901)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
           }
         ],
         "maxLat": 34.0546,
@@ -54727,8 +58081,8 @@ const STREET_DATA = {
         "label": "part of (16th St)",
         "name": "Venice Boulevard",
         "entityId": "venice-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{Venice}} beach resort the roadway leads to, itself modeled on Venice, Italy, once this stretch was folded into Venice Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
         "planned": {
           "text": "by 1884",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-431.pdf"
@@ -54766,14 +58120,15 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0.01,
         "categories": [
+          "place",
+          "destination",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -54787,6 +58142,14 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "L.A. Street Names: Venice Boulevard",
+            "url": "https://lastreetnames.com/street/venice-boulevard/"
+          },
+          {
+            "title": "Los Angeles Herald, Feb. 26, 1927 (a business at Figueroa and Venice Blvd., “formerly Sixteenth street”)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH19270226.1.9"
+          },
+          {
             "title": "Wright's Subdivision of the Sisters of Charity Tract (M.R. 5-431, Jan. 1884; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-431.pdf"
           },
@@ -54799,16 +58162,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0030/TR0030-086.pdf"
           },
           {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Virginia St., in SW. part of city, changed to Rouland St.”",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
-          },
-          {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “from Pine and Rowland to Sixteenth street”",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
             "title": "Los Angeles Herald, Nov. 13, 1889 — the same ordinance “was read and adopted” at the Council meeting of Nov. 12",
@@ -54832,8 +58191,8 @@ const STREET_DATA = {
         "label": "part of (Rouland St)",
         "name": "Venice Boulevard",
         "entityId": "venice-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{Venice}} beach resort the roadway leads to, itself modeled on Venice, Italy, once this stretch was folded into Venice Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
@@ -54861,20 +58220,29 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "place",
+          "destination",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Venice Boulevard",
+            "url": "https://lastreetnames.com/street/venice-boulevard/"
+          },
+          {
+            "title": "Los Angeles Herald, Feb. 26, 1927 (a business at Figueroa and Venice Blvd., “formerly Sixteenth street”)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH19270226.1.9"
+          },
           {
             "title": "Map of the Harvey Tract, Los Angeles, Cal., the Property of Henry W. O'Melveny (M.R. 10-77, Aug. 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
@@ -54886,10 +58254,6 @@ const STREET_DATA = {
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Virginia St., in SW. part of city, changed to Rouland St.”",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
-          },
-          {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “from Pine and Rowland to Sixteenth street”",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
             "title": "Los Angeles Herald, Nov. 13, 1889 — the same ordinance “was read and adopted” at the Council meeting of Nov. 12",
@@ -54915,8 +58279,8 @@ const STREET_DATA = {
         "label": "part of (16th St)",
         "name": "Venice Boulevard",
         "entityId": "venice-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{Venice}} beach resort the roadway leads to, itself modeled on Venice, Italy, once this stretch was folded into Venice Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
@@ -54953,14 +58317,15 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "place",
+          "destination",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -54974,6 +58339,14 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "L.A. Street Names: Venice Boulevard",
+            "url": "https://lastreetnames.com/street/venice-boulevard/"
+          },
+          {
+            "title": "Los Angeles Herald, Feb. 26, 1927 (a business at Figueroa and Venice Blvd., “formerly Sixteenth street”)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH19270226.1.9"
+          },
+          {
             "title": "Map of the Harvey Tract, Los Angeles, Cal., the Property of Henry W. O'Melveny (M.R. 10-77, Aug. 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
           },
@@ -54986,16 +58359,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-431.pdf"
           },
           {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Virginia St., in SW. part of city, changed to Rouland St.”",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
-          },
-          {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “from Pine and Rowland to Sixteenth street”",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
             "title": "Los Angeles Herald, Nov. 13, 1889 — the same ordinance “was read and adopted” at the Council meeting of Nov. 12",
@@ -55025,8 +58394,8 @@ const STREET_DATA = {
         "label": "part of (16th St)",
         "name": "Venice Boulevard",
         "entityId": "venice-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{Venice}} beach resort the roadway leads to, itself modeled on Venice, Italy, once this stretch was folded into Venice Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
         "planned": {
           "text": "by 1886",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
@@ -55048,8 +58417,8 @@ const STREET_DATA = {
             "name": "Pine Street",
             "entityId": "pine-street-venice",
             "formInForce": "Pine Street",
-            "how": "origin",
-            "origin": "labeled “Pine Street.” on the 1887 Bryan's Figueroa Street Subdivision {{(source)}} — The pine, one of four tree names lettered together on the Norris Plan — Elm, Laurel, Palm and Pine",
+            "how": "renaming",
+            "origin": "labeled “Pine Street.” on the 1887 Bryan's Figueroa Street Subdivision {{(source)}} — The pine, one of four tree names lettered together on the Morris Plan — Elm, Laurel, Palm and Pine",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
           },
           {
@@ -55073,14 +58442,15 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "place",
+          "destination",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -55095,6 +58465,14 @@ const STREET_DATA = {
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Venice Boulevard",
+            "url": "https://lastreetnames.com/street/venice-boulevard/"
+          },
+          {
+            "title": "Los Angeles Herald, Feb. 26, 1927 (a business at Figueroa and Venice Blvd., “formerly Sixteenth street”)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH19270226.1.9"
+          },
           {
             "title": "Map of the Harvey Tract, Los Angeles, Cal., the Property of Henry W. O'Melveny (M.R. 10-77, Aug. 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
@@ -55112,24 +58490,20 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-431.pdf"
           },
           {
-            "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Virginia St., in SW. part of city, changed to Rouland St.”",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           },
           {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “from Pine and Rowland to Sixteenth street”",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
-          },
-          {
             "title": "Los Angeles Herald, Nov. 13, 1889 — the same ordinance “was read and adopted” at the Council meeting of Nov. 12",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891113.1.2"
-          },
-          {
-            "title": "L.A. Street Names: Venice Boulevard — “Between present-day La Cienega and DTLA it was plain old West 16th Street”, rebranded in a process that “wasn't completed until 1938”",
-            "url": "https://lastreetnames.com/street/venice-boulevard/"
           },
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
@@ -55155,8 +58529,8 @@ const STREET_DATA = {
         "label": "part of (Pine St)",
         "name": "Venice Boulevard",
         "entityId": "venice-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{Venice}} beach resort the roadway leads to, itself modeled on Venice, Italy, once this stretch was folded into Venice Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
         "planned": {
           "text": "by 1887",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
@@ -55169,8 +58543,7 @@ const STREET_DATA = {
             "name": "Pine Street",
             "entityId": "pine-street-venice",
             "formInForce": "Pine Street",
-            "how": "origin",
-            "origin": "labeled “Pine Street.” on the 1887 Bryan's Figueroa Street Subdivision {{(source)}} — The pine, one of four tree names lettered together on the Norris Plan — Elm, Laurel, Palm and Pine",
+            "origin": "labeled “Pine Street.” on the 1887 Bryan's Figueroa Street Subdivision {{(source)}} — The pine, one of four tree names lettered together on the Morris Plan — Elm, Laurel, Palm and Pine",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
           },
           {
@@ -55184,14 +58557,15 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "place",
+          "destination",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -55205,20 +58579,24 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
+            "title": "L.A. Street Names: Venice Boulevard",
+            "url": "https://lastreetnames.com/street/venice-boulevard/"
+          },
+          {
+            "title": "Los Angeles Herald, Feb. 26, 1927 (a business at Figueroa and Venice Blvd., “formerly Sixteenth street”)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH19270226.1.9"
+          },
+          {
             "title": "J. H. Bryan's Figueroa Street Subdivision (M.R. 21-32, Aug. 6, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
           },
           {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “from Pine and Rowland to Sixteenth street”",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
             "title": "Los Angeles Herald, Nov. 13, 1889 — the same ordinance “was read and adopted” at the Council meeting of Nov. 12",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891113.1.2"
-          },
-          {
-            "title": "L.A. Street Names: Venice Boulevard — “Between present-day La Cienega and DTLA it was plain old West 16th Street”, rebranded in a process that “wasn't completed until 1938”",
-            "url": "https://lastreetnames.com/street/venice-boulevard/"
           }
         ],
         "minLng": -118.2698,
@@ -55240,16 +58618,17 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Venice Boulevard",
         "entityId": "venice-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{Venice}} beach resort the roadway leads to, itself modeled on Venice, Italy — how and when this stretch joined Venice Boulevard is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": null,
+        "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": false,
         "categories": [
-          "basis-none",
-          "searched-none",
-          "stub"
+          "place",
+          "destination",
+          "borrowed",
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -55257,8 +58636,12 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-            "url": "https://www.openstreetmap.org/"
+            "title": "L.A. Street Names: Venice Boulevard",
+            "url": "https://lastreetnames.com/street/venice-boulevard/"
+          },
+          {
+            "title": "Los Angeles Herald, Feb. 26, 1927 (a business at Figueroa and Venice Blvd., “formerly Sixteenth street”)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH19270226.1.9"
           }
         ],
         "minLng": -118.2677,
@@ -55280,21 +58663,22 @@ const STREET_DATA = {
         "label": "part of (Pine St)",
         "name": "Venice Boulevard",
         "entityId": "venice-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{Venice}} beach resort the roadway leads to, itself modeled on Venice, Italy, once this stretch was folded into Venice Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
         "planned": {
-          "text": "by 1915",
+          "text": "by 1875",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1915",
+            "from": "by 1875",
             "until": "?",
             "name": "Pine Street",
             "entityId": "pine-street-venice",
             "formInForce": "Pine Street",
-            "origin": "labeled “PINE STREET” on the 1915 Norris Plan and the 1915 Vineyard Subdivision {{(source)}} — The pine, one of four tree names lettered together on the Norris Plan — Elm, Laurel, Palm and Pine",
+            "how": "extension",
+            "origin": "labeled “PINE STREET” on the 1875 Morris Plan {{(source)}} — The pine, one of four tree names lettered together on the Morris Plan — Elm, Laurel, Palm and Pine",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
@@ -55308,14 +58692,15 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "place",
+          "destination",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
@@ -55329,32 +58714,114 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Plan of the Norris (M.R. 3-38, before May 4, 1915; identified by map alignment, not a lot-level record)",
+            "title": "L.A. Street Names: Venice Boulevard",
+            "url": "https://lastreetnames.com/street/venice-boulevard/"
+          },
+          {
+            "title": "Los Angeles Herald, Feb. 26, 1927 (a business at Figueroa and Venice Blvd., “formerly Sixteenth street”)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH19270226.1.9"
+          },
+          {
+            "title": "Plan of the Morris, Main & Pico Streets (M.R. 3-38, after May 6, 1875; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          },
-          {
-            "title": "J. H. Bryan's Figueroa Street Subdivision (M.R. 21-32, Aug. 6, 1887)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
-          },
-          {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “from Pine and Rowland to Sixteenth street”",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
             "title": "Los Angeles Herald, Nov. 13, 1889 — the same ordinance “was read and adopted” at the Council meeting of Nov. 12",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891113.1.2"
-          },
-          {
-            "title": "L.A. Street Names: Venice Boulevard — “Between present-day La Cienega and DTLA it was plain old West 16th Street”, rebranded in a process that “wasn't completed until 1938”",
-            "url": "https://lastreetnames.com/street/venice-boulevard/"
           }
         ],
         "minLng": -118.2665,
-        "maxLng": -118.263,
+        "maxLng": -118.2648,
         "from": {
           "px": [
             241,
             1461
+          ]
+        },
+        "to": {
+          "px": [
+            121,
+            1484
+          ]
+        }
+      },
+      {
+        "label": "part of (Pine St)",
+        "name": "Venice Boulevard",
+        "entityId": "venice-boulevard",
+        "namedAfter": "The {{Venice}} beach resort the roadway leads to, itself modeled on Venice, Italy, once this stretch was folded into Venice Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
+        "planned": {
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1875",
+            "until": "?",
+            "name": "Pine Street",
+            "entityId": "pine-street-venice",
+            "formInForce": "Pine Street",
+            "how": "origin",
+            "origin": "labeled “PINE STREET” on the 1875 Vineyard Subdivision and the 1875 Morris Plan {{(source)}} — The pine, one of four tree names lettered together on the Morris Plan — Elm, Laurel, Palm and Pine",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Venice Boulevard",
+            "entityId": "venice-boulevard",
+            "formInForce": "Venice Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "place",
+          "destination",
+          "borrowed",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "tree"
+        ],
+        "formerAncestors": [
+          "nature"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Venice Boulevard",
+            "url": "https://lastreetnames.com/street/venice-boulevard/"
+          },
+          {
+            "title": "Los Angeles Herald, Feb. 26, 1927 (a business at Figueroa and Venice Blvd., “formerly Sixteenth street”)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH19270226.1.9"
+          },
+          {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Nov. 13, 1889 — the same ordinance “was read and adopted” at the Council meeting of Nov. 12",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891113.1.2"
+          }
+        ],
+        "minLng": -118.2648,
+        "maxLng": -118.263,
+        "from": {
+          "px": [
+            121,
+            1484
           ]
         },
         "to": {
@@ -55365,35 +58832,36 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (Pine St)",
+        "label": "part of (16th St)",
         "name": "Venice Boulevard",
         "entityId": "venice-boulevard",
-        "namedAfter": null,
-        "namedAfterLink": null,
+        "namedAfter": "The {{Venice}} beach resort the roadway leads to, itself modeled on Venice, Italy, once this stretch was folded into Venice Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
         "planned": {
-          "text": "by 1893",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
+          "text": "by 1875",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
+          {
+            "from": "by 1875",
+            "until": "?",
+            "name": "Pine Street",
+            "entityId": "pine-street-venice",
+            "formInForce": "Pine Street",
+            "how": "origin",
+            "origin": "labeled “PINE STREET” on the 1875 Vineyard Subdivision {{(source)}} — The pine, one of four tree names lettered together on the Morris Plan — Elm, Laurel, Palm and Pine",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
           {
             "from": "by 1893",
             "until": "?",
             "name": "16th Street",
             "entityId": "sixteenth-street",
             "formInForce": "16th Street",
+            "how": "renaming",
             "origin": "labeled “16th ST.” and “(formerly Pine St)” on the 1893 Miguel Subdivision {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
-          },
-          {
-            "from": "by 1915",
-            "until": "?",
-            "name": "Pine Street",
-            "entityId": "pine-street-venice",
-            "formInForce": "Pine Street",
-            "how": "renaming",
-            "origin": "labeled “PINE STREET” on the 1915 Vineyard Subdivision {{(source)}} — The pine, one of four tree names lettered together on the Norris Plan — Elm, Laurel, Palm and Pine",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
             "from": "?",
@@ -55406,46 +58874,47 @@ const STREET_DATA = {
             "originLink": null
           }
         ],
-        "note": null,
+        "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
         "categories": [
+          "place",
+          "destination",
+          "borrowed",
           "renamed",
-          "basis-none",
-          "searched-none",
-          "stub"
+          "basis-attested"
         ],
         "ancestors": [
           "basis"
         ],
         "formerCategories": [
-          "number",
-          "tree"
+          "tree",
+          "number"
         ],
         "formerAncestors": [
-          "abstract",
-          "nature"
+          "nature",
+          "abstract"
         ],
         "disputed": false,
         "sources": [
+          {
+            "title": "L.A. Street Names: Venice Boulevard",
+            "url": "https://lastreetnames.com/street/venice-boulevard/"
+          },
+          {
+            "title": "Los Angeles Herald, Feb. 26, 1927 (a business at Figueroa and Venice Blvd., “formerly Sixteenth street”)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH19270226.1.9"
+          },
+          {
+            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
+          },
           {
             "title": "Miguel Subdivision, part of the Celis Vineyard Tract in Los Angeles City, Cal. (M.R. 53-16, Mar. 25, 1893; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-016.pdf"
           },
           {
-            "title": "Vineyard Subdivision, Los Angeles Cal., for Sale by Wiley & Berry (M.R. 3-38, May 4, 1915; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
-          },
-          {
-            "title": "J. H. Bryan's Figueroa Street Subdivision (M.R. 21-32, Aug. 6, 1887)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
-          },
-          {
-            "title": "L.A. Street Names: 1st Street (on the numbering system)",
-            "url": "https://lastreetnames.com/street/0001st-street/"
-          },
-          {
-            "title": "Los Angeles Herald, Nov. 6, 1889 — the numbering ordinance as read to the Council: “from Pine and Rowland to Sixteenth street”",
+            "title": "Los Angeles Herald, Nov. 6, 1889, p. 2 — an ordinance changing the names of a number of streets to numbers is read and laid over one week, with the full list printed",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891106.1.2"
           },
           {
@@ -55453,8 +58922,8 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891113.1.2"
           },
           {
-            "title": "L.A. Street Names: Venice Boulevard — “Between present-day La Cienega and DTLA it was plain old West 16th Street”, rebranded in a process that “wasn't completed until 1938”",
-            "url": "https://lastreetnames.com/street/venice-boulevard/"
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
           }
         ],
         "minLng": -118.263,
@@ -56019,7 +59488,7 @@ const STREET_DATA = {
           },
           {
             "from": "by 1886",
-            "until": "?",
+            "until": "Nov. 1893",
             "name": "Myrtle Avenue",
             "entityId": "myrtle",
             "formInForce": "Myrtle Avenue",
@@ -56028,14 +59497,14 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
           },
           {
-            "from": "?",
+            "from": "Nov. 1893",
             "until": null,
             "name": "Wall Street",
             "entityId": "wall-street",
             "formInForce": "Wall Street",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 1915, Myrtle → Wall {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18931121.1.9"
           }
         ],
         "note": "Nothing found says what it was named for. New York’s financial street is the obvious guess, and what supports it is the company it keeps: the Moreno Vineyard Tract sheet of March 1876 letters Wall Street and Regent Street two blocks apart on one new commercial subdivision beside the railroad depot — New York’s and London’s most famous trading addresses named together. As a pair they read as deliberate; singly neither can be shown. The name later spread north, taking Myrtle Avenue on Nov. 13, 1893 by Ordinance No. 1915.",
@@ -56044,7 +59513,7 @@ const STREET_DATA = {
           "text": "1873 (Botiller and Reyes lots)",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
-        "knownFraction": 0.13,
+        "knownFraction": 0.93,
         "categories": [
           "borrowed",
           "renamed",
@@ -56069,6 +59538,10 @@ const STREET_DATA = {
           {
             "title": "Map of Maple Avenue Tract in City of Los Angeles (M.R. 11-63, Oct. 21, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+          },
+          {
+            "title": "Ordinance No. 1915 (New Series), “An ordinance changing the name of Myrtle Avenue to Wall Street” — adopted Nov. 13, 1893, approved Nov. 17, published Nov. 21, 1893",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18931121.1.9"
           },
           {
             "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, Mar. 1, 1876)",
@@ -56108,7 +59581,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1886",
-            "until": "?",
+            "until": "Nov. 1893",
             "name": "Myrtle Avenue",
             "entityId": "myrtle",
             "formInForce": "Myrtle Avenue",
@@ -56116,14 +59589,14 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
           },
           {
-            "from": "?",
+            "from": "Nov. 1893",
             "until": null,
             "name": "Wall Street",
             "entityId": "wall-street",
             "formInForce": "Wall Street",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 1915, Myrtle → Wall {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18931121.1.9"
           }
         ],
         "note": "Nothing found says what it was named for. New York’s financial street is the obvious guess, and what supports it is the company it keeps: the Moreno Vineyard Tract sheet of March 1876 letters Wall Street and Regent Street two blocks apart on one new commercial subdivision beside the railroad depot — New York’s and London’s most famous trading addresses named together. As a pair they read as deliberate; singly neither can be shown. The name later spread north, taking Myrtle Avenue on Nov. 13, 1893 by Ordinance No. 1915.",
@@ -56132,7 +59605,7 @@ const STREET_DATA = {
           "text": "1873 (Botiller and Reyes lots)",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
-        "knownFraction": 0.13,
+        "knownFraction": 0.93,
         "categories": [
           "borrowed",
           "renamed",
@@ -56153,6 +59626,10 @@ const STREET_DATA = {
           {
             "title": "Map of Maple Avenue Tract in City of Los Angeles (M.R. 11-63, Oct. 21, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
+          },
+          {
+            "title": "Ordinance No. 1915 (New Series), “An ordinance changing the name of Myrtle Avenue to Wall Street” — adopted Nov. 13, 1893, approved Nov. 17, published Nov. 21, 1893",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18931121.1.9"
           },
           {
             "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
@@ -56278,7 +59755,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1887",
-            "until": "?",
+            "until": "Nov. 1893",
             "name": "Myrtle Avenue",
             "entityId": "myrtle",
             "formInForce": "Myrtle Avenue",
@@ -56287,14 +59764,14 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
           },
           {
-            "from": "?",
+            "from": "Nov. 1893",
             "until": null,
             "name": "Wall Street",
             "entityId": "wall-street",
             "formInForce": "Wall Street",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 1915, Myrtle → Wall {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18931121.1.9"
           }
         ],
         "note": "Nothing found says what it was named for. New York’s financial street is the obvious guess, and what supports it is the company it keeps: the Moreno Vineyard Tract sheet of March 1876 letters Wall Street and Regent Street two blocks apart on one new commercial subdivision beside the railroad depot — New York’s and London’s most famous trading addresses named together. As a pair they read as deliberate; singly neither can be shown. The name later spread north, taking Myrtle Avenue on Nov. 13, 1893 by Ordinance No. 1915.",
@@ -56303,7 +59780,7 @@ const STREET_DATA = {
           "text": "1873 (Botiller and Reyes lots)",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
-        "knownFraction": 0.13,
+        "knownFraction": 0.92,
         "categories": [
           "borrowed",
           "renamed",
@@ -56324,6 +59801,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Moran Tract (M.R. 16-27, Apr. 22, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR016/MR016-027.pdf"
+          },
+          {
+            "title": "Ordinance No. 1915 (New Series), “An ordinance changing the name of Myrtle Avenue to Wall Street” — adopted Nov. 13, 1893, approved Nov. 17, published Nov. 21, 1893",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18931121.1.9"
           },
           {
             "title": "Map of O. W. Childs Tract in the city of Los Angeles, Cal. (Apr. 10, 1883)",
@@ -56363,7 +59844,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1883",
-            "until": "?",
+            "until": "Nov. 1893",
             "name": "Myrtle Avenue",
             "entityId": "myrtle",
             "formInForce": "Myrtle Avenue",
@@ -56372,19 +59853,19 @@ const STREET_DATA = {
             "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
           },
           {
-            "from": "?",
+            "from": "Nov. 1893",
             "until": null,
             "name": "Wall Street",
             "entityId": "wall-street",
             "formInForce": "Wall Street",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 1915, Myrtle → Wall {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18931121.1.9"
           }
         ],
         "note": "Nothing found says what it was named for. New York’s financial street is the obvious guess, and what supports it is the company it keeps: the Moreno Vineyard Tract sheet of March 1876 letters Wall Street and Regent Street two blocks apart on one new commercial subdivision beside the railroad depot — New York’s and London’s most famous trading addresses named together. As a pair they read as deliberate; singly neither can be shown. The name later spread north, taking Myrtle Avenue on Nov. 13, 1893 by Ordinance No. 1915.",
         "attested": true,
-        "knownFraction": 0.01,
+        "knownFraction": 0.81,
         "categories": [
           "borrowed",
           "renamed",
@@ -56409,6 +59890,10 @@ const STREET_DATA = {
           {
             "title": "Map of the O. W. Childs Tract, 200 Lots in the City of Los Angeles, Cal. (M.R. 6-378, July 11, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-378.pdf"
+          },
+          {
+            "title": "Ordinance No. 1915 (New Series), “An ordinance changing the name of Myrtle Avenue to Wall Street” — adopted Nov. 13, 1893, approved Nov. 17, published Nov. 21, 1893",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18931121.1.9"
           },
           {
             "title": "Map showing Building Lots near L.A. & I. RR. Depot on San Pedro Street known as the Moreno Vineyard Tract (M.R. 3-166, Mar. 1, 1876)",
@@ -56958,8 +60443,8 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18971207.1.11"
           },
           {
-            "title": "Plat of Subdivision of a Portion of Lot 1, Block 37, Hancock's Survey, Los Angeles City, Made at the Request of the Vestry of St. Paul's P.E. Church (M.R. 5-566, May 9, 1889)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
+            "title": "Los Angeles Examiner, Apr. 12, 1924 — Mayor Cryer signs the ordinance changing Orange street between Alvarado and Figueroa to Wilshire boulevard",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAE19240412.1.18"
           }
         ],
         "maxLng": -118.2689,
@@ -56989,193 +60474,7 @@ const STREET_DATA = {
             "name": "Orange Street",
             "entityId": "orange-st-wilshire",
             "formInForce": "Orange Street",
-            "origin": "labeled “Orange Street” on the 1887 Orange Heights {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
-          },
-          {
-            "from": "?",
-            "until": null,
-            "name": "Wilshire Boulevard",
-            "entityId": "wilshire",
-            "formInForce": "Wilshire Boulevard",
-            "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
-          }
-        ],
-        "note": "Named in Dec. 1897, when Sixth Street from Hoover Street to the west city boundary was changed to Wilshire Boulevard — fifteen months after H. G. Wilshire petitioned the council about that street. The name then travelled east in stages: Orange Street, between Figueroa and Alvarado, was folded into it in April 1924 after a first attempt in 1908 had been repealed (documents/laevex-1924-04-01, documents/lae-1924-04-12). The council's stated aim in 1924 was “a continuous thoroughfare from the heart of the business district of the city to the ocean”.",
-        "attested": true,
-        "knownFraction": 0,
-        "categories": [
-          "person",
-          "alive",
-          "landowner",
-          "renamed",
-          "basis-eponymous"
-        ],
-        "ancestors": [
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "Council minutes, Sept. 21, 1896 — H. G. Wilshire's petition about Sixth Street (documents/min-1896-09-21)",
-            "url": "https://clerkapps.lacity.org/oldcfidocs/"
-          },
-          {
-            "title": "Los Angeles Herald, Dec. 7, 1897 — “Sixth street, Hoover street to west city boundary, changed to Wilshire boulevard” (documents/lah-1897-12-07)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18971207.1.11"
-          },
-          {
-            "title": "Map of Orange Heights, Los Angeles, California (M.R. 18-63, June 21, 1887; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
-          },
-          {
-            "title": "Map of Nichols Addition to West Los Angeles (M.R. 3-569, May 4, 1878)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
-          },
-          {
-            "title": "Plat of Subdivision of a Portion of Lot 1, Block 37, Hancock's Survey, Los Angeles City, Made at the Request of the Vestry of St. Paul's P.E. Church (M.R. 5-566, May 9, 1889)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
-          },
-          {
-            "title": "L.A. Street Names: Orange Street (the old Orange Street ran between Figueroa and Alvarado and “became part of Wilshire in April 1924”)",
-            "url": "https://lastreetnames.com/street/orange-street/"
-          }
-        ],
-        "minLng": -118.2689,
-        "maxLng": -118.2669,
-        "from": {
-          "px": [
-            122,
-            895
-          ]
-        },
-        "to": {
-          "px": [
-            107,
-            576
-          ]
-        }
-      },
-      {
-        "label": "part of (Orange St)",
-        "name": "Wilshire Boulevard",
-        "entityId": "wilshire",
-        "namedAfter": "{{H. Gaylord Wilshire}} (1861–1927), developer, publisher and socialist candidate, who subdivided the tract the first stretch ran through, once this stretch was folded into Wilshire Boulevard",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/H._Gaylord_Wilshire",
-        "planned": {
-          "text": "by 1887",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1887",
-            "until": "?",
-            "name": "Orange Street",
-            "entityId": "orange-st-wilshire",
-            "formInForce": "Orange Street",
-            "origin": "labeled “Orange Street” and “ORANGE” on the 1887 Orange Heights, the 1888 St. Paul's P.E. Church Subdivision and the 1893 St. Paul's School Subdivision {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
-          },
-          {
-            "from": "by 1893",
-            "until": null,
-            "name": "Wilshire Boulevard",
-            "entityId": "wilshire",
-            "formInForce": "Wilshire Boulevard",
-            "how": "renaming",
-            "origin": "labeled “ORANGE STREET” and “Wilshire Blvd” on the 1893 Wright & Lynch Tract {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-014.pdf"
-          }
-        ],
-        "note": "Named in Dec. 1897, when Sixth Street from Hoover Street to the west city boundary was changed to Wilshire Boulevard — fifteen months after H. G. Wilshire petitioned the council about that street. The name then travelled east in stages: Orange Street, between Figueroa and Alvarado, was folded into it in April 1924 after a first attempt in 1908 had been repealed (documents/laevex-1924-04-01, documents/lae-1924-04-12). The council's stated aim in 1924 was “a continuous thoroughfare from the heart of the business district of the city to the ocean”.",
-        "attested": true,
-        "knownFraction": 0.79,
-        "categories": [
-          "person",
-          "alive",
-          "landowner",
-          "renamed",
-          "basis-eponymous"
-        ],
-        "ancestors": [
-          "basis"
-        ],
-        "disputed": false,
-        "sources": [
-          {
-            "title": "Council minutes, Sept. 21, 1896 — H. G. Wilshire's petition about Sixth Street (documents/min-1896-09-21)",
-            "url": "https://clerkapps.lacity.org/oldcfidocs/"
-          },
-          {
-            "title": "Los Angeles Herald, Dec. 7, 1897 — “Sixth street, Hoover street to west city boundary, changed to Wilshire boulevard” (documents/lah-1897-12-07)",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18971207.1.11"
-          },
-          {
-            "title": "Map of Orange Heights, Los Angeles, California (M.R. 18-63, June 21, 1887; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
-          },
-          {
-            "title": "Plot of Subdivision of That Part of Lot 1, Block 37, Hancock's Survey, Lying South of Orange Street and Westerly from William Street, in the City of Los Angeles (M.R. 9-95, June 19, 1888; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-095.pdf"
-          },
-          {
-            "title": "Map of the Subdivision of the Lands of St. Paul's School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street, Los Angeles, California (M.R. 52-85, Jan. 1893; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
-          },
-          {
-            "title": "Map of the Wright & Lynch Tract, Being a Part of Lot 2, Block 37, Hancock's Survey, of the 35 Acre Tract, City of Los Angeles, California (M.R. 55-14, Aug. 9, 1893; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-014.pdf"
-          },
-          {
-            "title": "Map of Nichols Addition to West Los Angeles (M.R. 3-569, May 4, 1878)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
-          },
-          {
-            "title": "Plat of Subdivision of a Portion of Lot 1, Block 37, Hancock's Survey, Los Angeles City, Made at the Request of the Vestry of St. Paul's P.E. Church (M.R. 5-566, May 9, 1889)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
-          },
-          {
-            "title": "L.A. Street Names: Orange Street (the old Orange Street ran between Figueroa and Alvarado and “became part of Wilshire in April 1924”)",
-            "url": "https://lastreetnames.com/street/orange-street/"
-          }
-        ],
-        "minLng": -118.2669,
-        "maxLng": -118.2646,
-        "from": {
-          "px": [
-            107,
-            576
-          ]
-        },
-        "to": {
-          "px": [
-            1112,
-            581
-          ]
-        }
-      },
-      {
-        "label": "part of (Orange St)",
-        "name": "Wilshire Boulevard",
-        "entityId": "wilshire",
-        "namedAfter": "{{H. Gaylord Wilshire}} (1861–1927), developer, publisher and socialist candidate, who subdivided the tract the first stretch ran through, once this stretch was folded into Wilshire Boulevard",
-        "namedAfterLink": "https://en.wikipedia.org/wiki/H._Gaylord_Wilshire",
-        "planned": {
-          "text": "by 1887",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
-        },
-        "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1887",
-            "until": "?",
-            "name": "Orange Street",
-            "entityId": "orange-st-wilshire",
-            "formInForce": "Orange Street",
-            "origin": "labeled “Orange Street” and “ORANGE” on the 1887 Orange Heights, the 1888 St. Paul's P.E. Church Subdivision and the 1893 St. Paul's School Subdivision {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
+            "origin": "labeled “Orange Street”, “ORANGE”, “ORANGE STREET” and “Wilshire Blvd” on the 1887 Orange Heights, the 1888 St. Paul's P.E. Church Subdivision, the 1893 St. Paul's School Subdivision and the 1893 Wright & Lynch Tract {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
           },
           {
@@ -57225,24 +60524,28 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
           },
           {
+            "title": "Map of the Wright & Lynch Tract, Being a Part of Lot 2, Block 37, Hancock's Survey, of the 35 Acre Tract, City of Los Angeles, California (M.R. 55-14, Aug. 9, 1893; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-014.pdf"
+          },
+          {
             "title": "Map of Nichols Addition to West Los Angeles (M.R. 3-569, May 4, 1878)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
           },
           {
-            "title": "Plat of Subdivision of a Portion of Lot 1, Block 37, Hancock's Survey, Los Angeles City, Made at the Request of the Vestry of St. Paul's P.E. Church (M.R. 5-566, May 9, 1889)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
+            "title": "Los Angeles Examiner, Apr. 12, 1924 — Mayor Cryer signs the ordinance changing Orange street between Alvarado and Figueroa to Wilshire boulevard",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAE19240412.1.18"
           },
           {
             "title": "L.A. Street Names: Orange Street (the old Orange Street ran between Figueroa and Alvarado and “became part of Wilshire in April 1924”)",
             "url": "https://lastreetnames.com/street/orange-street/"
           }
         ],
-        "minLng": -118.2646,
+        "minLng": -118.2689,
         "maxLng": -118.2641,
         "from": {
           "px": [
-            1112,
-            581
+            122,
+            895
           ]
         },
         "to": {
@@ -57256,7 +60559,7 @@ const STREET_DATA = {
         "label": "part of (Orange St)",
         "name": "Wilshire Boulevard",
         "entityId": "wilshire",
-        "namedAfter": "{{H. Gaylord Wilshire}} (1861–1927), developer, publisher and socialist candidate, who subdivided the tract the first stretch ran through",
+        "namedAfter": "{{H. Gaylord Wilshire}} (1861–1927), developer, publisher and socialist candidate, who subdivided the tract the first stretch ran through, once this stretch was folded into Wilshire Boulevard",
         "namedAfterLink": "https://en.wikipedia.org/wiki/H._Gaylord_Wilshire",
         "planned": {
           "text": "by 1888",
@@ -57271,28 +60574,8 @@ const STREET_DATA = {
             "entityId": "orange-st-wilshire",
             "formInForce": "Orange Street",
             "how": "extension",
-            "origin": "labeled “Orange Street” on the 1888 St. Paul's P.E. Church Subdivision {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
+            "origin": "labeled “Orange Street”, “ORANGE ST.”, “Wilshire Blvd” and “ORANGE” on the 1888 St. Paul's P.E. Church Subdivision, the 1889 St. Paul's P.E. Church Subdivision and the 1893 St. Paul's School Subdivision {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-095.pdf"
-          },
-          {
-            "from": "by 1889",
-            "until": "?",
-            "name": "Wilshire Boulevard",
-            "entityId": "wilshire",
-            "formInForce": "Wilshire Boulevard",
-            "how": "origin",
-            "origin": "labeled “ORANGE ST.” and “Wilshire Blvd” on the 1889 St. Paul's P.E. Church Subdivision {{(source)}} — H. Gaylord Wilshire (1861–1927), developer, publisher and socialist candidate, who subdivided the tract the first stretch ran through",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
-          },
-          {
-            "from": "by 1893",
-            "until": "?",
-            "name": "Orange Street",
-            "entityId": "orange-st-wilshire",
-            "formInForce": "Orange Street",
-            "how": "renaming",
-            "origin": "labeled “ORANGE” on the 1893 St. Paul's School Subdivision {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
           },
           {
             "from": "?",
@@ -57307,7 +60590,7 @@ const STREET_DATA = {
         ],
         "note": "Named in Dec. 1897, when Sixth Street from Hoover Street to the west city boundary was changed to Wilshire Boulevard — fifteen months after H. G. Wilshire petitioned the council about that street. The name then travelled east in stages: Orange Street, between Figueroa and Alvarado, was folded into it in April 1924 after a first attempt in 1908 had been repealed (documents/laevex-1924-04-01, documents/lae-1924-04-12). The council's stated aim in 1924 was “a continuous thoroughfare from the heart of the business district of the city to the ocean”.",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.03,
         "categories": [
           "person",
           "alive",
@@ -57345,6 +60628,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
           },
           {
+            "title": "Los Angeles Examiner, Apr. 12, 1924 — Mayor Cryer signs the ordinance changing Orange street between Alvarado and Figueroa to Wilshire boulevard",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAE19240412.1.18"
+          },
+          {
             "title": "L.A. Street Names: Orange Street (the old Orange Street ran between Figueroa and Alvarado and “became part of Wilshire in April 1924”)",
             "url": "https://lastreetnames.com/street/orange-street/"
           }
@@ -57365,10 +60652,10 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (original Wilshire Blvd)",
+        "label": "part of (Orange St)",
         "name": "Wilshire Boulevard",
         "entityId": "wilshire",
-        "namedAfter": "{{H. Gaylord Wilshire}} (1861–1927), developer, publisher and socialist candidate, who subdivided the tract the first stretch ran through",
+        "namedAfter": "{{H. Gaylord Wilshire}} (1861–1927), developer, publisher and socialist candidate, who subdivided the tract the first stretch ran through, once this stretch was folded into Wilshire Boulevard",
         "namedAfterLink": "https://en.wikipedia.org/wiki/H._Gaylord_Wilshire",
         "planned": {
           "text": "by 1889",
@@ -57378,22 +60665,33 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1889",
+            "until": "?",
+            "name": "Orange Street",
+            "entityId": "orange-st-wilshire",
+            "formInForce": "Orange Street",
+            "how": "extension",
+            "origin": "labeled “ORANGE ST.” and “Wilshire Blvd” on the 1889 St. Paul's P.E. Church Subdivision {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
+          },
+          {
+            "from": "?",
             "until": null,
             "name": "Wilshire Boulevard",
             "entityId": "wilshire",
             "formInForce": "Wilshire Boulevard",
-            "how": "origin",
-            "origin": "labeled “ORANGE ST.” and “Wilshire Blvd” on the 1889 St. Paul's P.E. Church Subdivision {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
           }
         ],
         "note": "Named in Dec. 1897, when Sixth Street from Hoover Street to the west city boundary was changed to Wilshire Boulevard — fifteen months after H. G. Wilshire petitioned the council about that street. The name then travelled east in stages: Orange Street, between Figueroa and Alvarado, was folded into it in April 1924 after a first attempt in 1908 had been repealed (documents/laevex-1924-04-01, documents/lae-1924-04-12). The council's stated aim in 1924 was “a continuous thoroughfare from the heart of the business district of the city to the ocean”.",
         "attested": true,
-        "knownFraction": 0.78,
+        "knownFraction": 0,
         "categories": [
           "person",
           "alive",
           "landowner",
+          "renamed",
           "basis-eponymous"
         ],
         "ancestors": [
@@ -57412,6 +60710,18 @@ const STREET_DATA = {
           {
             "title": "Plat of Subdivision of a Portion of Lot 1, Block 37, Hancock's Survey, Los Angeles City, Made at the Request of the Vestry of St. Paul's P.E. Church (M.R. 5-566, May 9, 1889; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
+          },
+          {
+            "title": "Map of Nichols Addition to West Los Angeles (M.R. 3-569, May 4, 1878)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+          },
+          {
+            "title": "Los Angeles Examiner, Apr. 12, 1924 — Mayor Cryer signs the ordinance changing Orange street between Alvarado and Figueroa to Wilshire boulevard",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAE19240412.1.18"
+          },
+          {
+            "title": "L.A. Street Names: Orange Street (the old Orange Street ran between Figueroa and Alvarado and “became part of Wilshire in April 1924”)",
+            "url": "https://lastreetnames.com/street/orange-street/"
           }
         ],
         "minLng": -118.2631,
@@ -57426,6 +60736,94 @@ const STREET_DATA = {
           "px": [
             1213,
             464
+          ]
+        }
+      },
+      {
+        "label": "part of (Orange St)",
+        "name": "Wilshire Boulevard",
+        "entityId": "wilshire",
+        "namedAfter": "{{H. Gaylord Wilshire}} (1861–1927), developer, publisher and socialist candidate, who subdivided the tract the first stretch ran through, once this stretch was folded into Wilshire Boulevard",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/H._Gaylord_Wilshire",
+        "planned": {
+          "text": "by 1878",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1878",
+            "until": "?",
+            "name": "Orange Street",
+            "entityId": "orange-st-wilshire",
+            "formInForce": "Orange Street",
+            "how": "origin",
+            "origin": "labeled “ORANGE ST”, “ORANGE ST.” and “Wilshire Blvd” on the 1878 Nichols Addition and the 1889 St. Paul's P.E. Church Subdivision {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Wilshire Boulevard",
+            "entityId": "wilshire",
+            "formInForce": "Wilshire Boulevard",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Named in Dec. 1897, when Sixth Street from Hoover Street to the west city boundary was changed to Wilshire Boulevard — fifteen months after H. G. Wilshire petitioned the council about that street. The name then travelled east in stages: Orange Street, between Figueroa and Alvarado, was folded into it in April 1924 after a first attempt in 1908 had been repealed (documents/laevex-1924-04-01, documents/lae-1924-04-12). The council's stated aim in 1924 was “a continuous thoroughfare from the heart of the business district of the city to the ocean”.",
+        "attested": true,
+        "knownFraction": 0.06,
+        "categories": [
+          "person",
+          "alive",
+          "landowner",
+          "renamed",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Council minutes, Sept. 21, 1896 — H. G. Wilshire's petition about Sixth Street (documents/min-1896-09-21)",
+            "url": "https://clerkapps.lacity.org/oldcfidocs/"
+          },
+          {
+            "title": "Los Angeles Herald, Dec. 7, 1897 — “Sixth street, Hoover street to west city boundary, changed to Wilshire boulevard” (documents/lah-1897-12-07)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18971207.1.11"
+          },
+          {
+            "title": "Map of Nichols Addition to West Los Angeles (M.R. 3-569, May 4, 1878; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+          },
+          {
+            "title": "Plat of Subdivision of a Portion of Lot 1, Block 37, Hancock's Survey, Los Angeles City, Made at the Request of the Vestry of St. Paul's P.E. Church (M.R. 5-566, May 9, 1889; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
+          },
+          {
+            "title": "Los Angeles Examiner, Apr. 12, 1924 — Mayor Cryer signs the ordinance changing Orange street between Alvarado and Figueroa to Wilshire boulevard",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAE19240412.1.18"
+          },
+          {
+            "title": "L.A. Street Names: Orange Street (the old Orange Street ran between Figueroa and Alvarado and “became part of Wilshire in April 1924”)",
+            "url": "https://lastreetnames.com/street/orange-street/"
+          }
+        ],
+        "minLng": -118.262,
+        "maxLng": -118.2616,
+        "from": {
+          "px": [
+            1213,
+            464
+          ]
+        },
+        "to": {
+          "px": [
+            167,
+            251
           ]
         }
       },
@@ -57448,23 +60846,23 @@ const STREET_DATA = {
             "entityId": "orange-st-wilshire",
             "formInForce": "Orange Street",
             "how": "origin",
-            "origin": "labeled “ORANGE ST” on the 1878 Nichols Addition {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
+            "origin": "labeled “ORANGE ST”, “ORANGE ST.” and “Wilshire Blvd” on the 1878 Nichols Addition and the 1889 St. Paul's P.E. Church Subdivision {{(source)}} — the street that became the downtown end of Wilshire Boulevard, lettered here on the 1878 Nichols Addition (documents/mr003-569). It took two attempts. In about June 1908 the council renamed it Wilshire Boulevard and sign posts went up, and in December the ordinance was repealed after Wilshire Boulevard's own residents protested — “Orange street is still Orange street” (documents/lah-1908-07-14, documents/lah-1908-12-05). On Apr. 1, 1924 the council passed the change again, unanimously, and Mayor George E. Cryer signed it on Apr. 11 (documents/laevex-1924-04-01, documents/lae-1924-04-12)",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
           },
           {
-            "from": "by 1889",
+            "from": "by 1964",
             "until": null,
             "name": "Wilshire Boulevard",
             "entityId": "wilshire",
             "formInForce": "Wilshire Boulevard",
             "how": "origin",
-            "origin": "labeled “ORANGE ST.”, “Wilshire Blvd” and “WILSHIRE BOULEVARD” on the 1889 St. Paul's P.E. Church Subdivision and the 1964 Tract No. 25510 {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
+            "origin": "labeled “WILSHIRE BOULEVARD” on the 1964 Tract No. 25510 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0718/TR0718-007.pdf"
           }
         ],
         "note": "Named in Dec. 1897, when Sixth Street from Hoover Street to the west city boundary was changed to Wilshire Boulevard — fifteen months after H. G. Wilshire petitioned the council about that street. The name then travelled east in stages: Orange Street, between Figueroa and Alvarado, was folded into it in April 1924 after a first attempt in 1908 had been repealed (documents/laevex-1924-04-01, documents/lae-1924-04-12). The council's stated aim in 1924 was “a continuous thoroughfare from the heart of the business district of the city to the ocean”.",
         "attested": true,
-        "knownFraction": 0.78,
+        "knownFraction": 0.41,
         "categories": [
           "person",
           "alive",
@@ -57498,16 +60896,20 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0718/TR0718-007.pdf"
           },
           {
+            "title": "Los Angeles Examiner, Apr. 12, 1924 — Mayor Cryer signs the ordinance changing Orange street between Alvarado and Figueroa to Wilshire boulevard",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAE19240412.1.18"
+          },
+          {
             "title": "L.A. Street Names: Orange Street (the old Orange Street ran between Figueroa and Alvarado and “became part of Wilshire in April 1924”)",
             "url": "https://lastreetnames.com/street/orange-street/"
           }
         ],
-        "minLng": -118.262,
+        "minLng": -118.2616,
         "maxLng": -118.2605,
         "from": {
           "px": [
-            1213,
-            464
+            167,
+            251
           ]
         },
         "to": {
@@ -57586,8 +60988,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB1397/TR1397-017.pdf"
           },
           {
-            "title": "Plat of Subdivision of a Portion of Lot 1, Block 37, Hancock's Survey, Los Angeles City, Made at the Request of the Vestry of St. Paul's P.E. Church (M.R. 5-566, May 9, 1889)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
+            "title": "Los Angeles Examiner, Apr. 12, 1924 — Mayor Cryer signs the ordinance changing Orange street between Alvarado and Figueroa to Wilshire boulevard",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAE19240412.1.18"
           },
           {
             "title": "L.A. Street Names: Orange Street (the old Orange Street ran between Figueroa and Alvarado and “became part of Wilshire in April 1924”)",
@@ -57643,8 +61045,8 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18971207.1.11"
           },
           {
-            "title": "Plat of Subdivision of a Portion of Lot 1, Block 37, Hancock's Survey, Los Angeles City, Made at the Request of the Vestry of St. Paul's P.E. Church (M.R. 5-566, May 9, 1889)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
+            "title": "Los Angeles Examiner, Apr. 12, 1924 — Mayor Cryer signs the ordinance changing Orange street between Alvarado and Figueroa to Wilshire boulevard",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAE19240412.1.18"
           }
         ],
         "minLng": -118.259,
@@ -58155,7 +61557,7 @@ const STREET_DATA = {
             "entityId": "nichols-ave",
             "formInForce": "Nichols Avenue",
             "how": "origin",
-            "origin": "labeled “Nichols Avenue” and “Nichols Ave” on the 1885 Colina Park, the 1886 Bentley & Crippens Subdivision and the 1889 Day, Hinton and Mathes Resubdivision {{(source)}} — no namesake documented",
+            "origin": "labeled “Nichols Avenue” and “Nichols Ave” on the 1885 Colina Park, the 1886 Bentley & Crippens Subdivision and the 1889 Day, Hinton and Mathes Resubdivision {{(source)}} — John Gregg Nichols (1812–1898), mayor of Los Angeles, or his son John Jr. (1851–1916) — the family that owned this ground before it was subdivided",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -58181,6 +61583,12 @@ const STREET_DATA = {
         ],
         "ancestors": [
           "basis"
+        ],
+        "formerCategories": [
+          "person",
+          "politician",
+          "mayor",
+          "landowner"
         ],
         "disputed": false,
         "sources": [
@@ -58211,6 +61619,18 @@ const STREET_DATA = {
           {
             "title": "Map of the Los Angeles Improvement Co.'s Subdivision of Part of Lot 2, Block 38, Hancock's Survey (M.R. 7-56, Jan. 26, 1886)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-056.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Union Avenue — of the adjoining Crown Hill land, “The land's previous owners were mayors Prudent Beaudry and John G. Nichols.”",
+            "url": "https://lastreetnames.com/street/union-avenue/"
+          },
+          {
+            "title": "L.A. Street Names: Nichols Canyon Road — “Named for John Gregg Nichols (1812-1898) and/or his son John Jr. (1851-1916). The elder Nichols… wagoned out to California in 1849 and settled in Los Angeles the following year… wound up serving three terms as mayor.”",
+            "url": "https://lastreetnames.com/street/nichols-canyon-road/"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Witmer St., Nichols St. and Logan Ave., changed to Nichols St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLat": 34.0588,
@@ -58247,7 +61667,7 @@ const STREET_DATA = {
             "entityId": "nichols-ave",
             "formInForce": "Nichols Avenue",
             "how": "origin",
-            "origin": "labeled “Nichols Avenue” and “Nichols Ave” on the 1885 Colina Park, the 1886 Bentley & Crippens Subdivision and the 1889 Day, Hinton and Mathes Resubdivision {{(source)}} — no namesake documented",
+            "origin": "labeled “Nichols Avenue” and “Nichols Ave” on the 1885 Colina Park, the 1886 Bentley & Crippens Subdivision and the 1889 Day, Hinton and Mathes Resubdivision {{(source)}} — John Gregg Nichols (1812–1898), mayor of Los Angeles, or his son John Jr. (1851–1916) — the family that owned this ground before it was subdivided",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -58274,6 +61694,12 @@ const STREET_DATA = {
         "ancestors": [
           "basis"
         ],
+        "formerCategories": [
+          "person",
+          "politician",
+          "mayor",
+          "landowner"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -58295,6 +61721,18 @@ const STREET_DATA = {
           {
             "title": "Map of the Los Angeles Improvement Co.'s Subdivision of Part of Lot 2, Block 38, Hancock's Survey (M.R. 7-56, Jan. 26, 1886)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-056.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Union Avenue — of the adjoining Crown Hill land, “The land's previous owners were mayors Prudent Beaudry and John G. Nichols.”",
+            "url": "https://lastreetnames.com/street/union-avenue/"
+          },
+          {
+            "title": "L.A. Street Names: Nichols Canyon Road — “Named for John Gregg Nichols (1812-1898) and/or his son John Jr. (1851-1916). The elder Nichols… wagoned out to California in 1849 and settled in Los Angeles the following year… wound up serving three terms as mayor.”",
+            "url": "https://lastreetnames.com/street/nichols-canyon-road/"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Witmer St., Nichols St. and Logan Ave., changed to Nichols St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLat": 34.0558,
@@ -58331,7 +61769,7 @@ const STREET_DATA = {
             "entityId": "nichols-ave",
             "formInForce": "Nichols Avenue",
             "how": "origin",
-            "origin": "labeled “Nichols Avenue” and “Nichols Ave” on the 1885 Colina Park and the 1886 Bentley & Crippens Subdivision {{(source)}} — no namesake documented",
+            "origin": "labeled “Nichols Avenue” and “Nichols Ave” on the 1885 Colina Park and the 1886 Bentley & Crippens Subdivision {{(source)}} — John Gregg Nichols (1812–1898), mayor of Los Angeles, or his son John Jr. (1851–1916) — the family that owned this ground before it was subdivided",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           },
           {
@@ -58341,7 +61779,7 @@ const STREET_DATA = {
             "entityId": "logan-ave",
             "formInForce": "Logan Avenue",
             "how": "origin",
-            "origin": "labeled “Logan Ave” on the 1887 Orange Heights {{(source)}} — no namesake documented",
+            "origin": "labeled “Logan Ave” on the 1887 Orange Heights {{(source)}} — lettered on Orange Heights in June 1887 (documents/mr018-063), George R. Shatto's tract, along what is now Witmer Street. In Oct. 1888 the city council's street-name committee proposed folding it, with Witmer Street, into Nichols Street. Nothing found says who Logan was",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
           },
           {
@@ -58368,6 +61806,12 @@ const STREET_DATA = {
         "ancestors": [
           "basis"
         ],
+        "formerCategories": [
+          "person",
+          "politician",
+          "mayor",
+          "landowner"
+        ],
         "disputed": false,
         "sources": [
           {
@@ -58389,6 +61833,18 @@ const STREET_DATA = {
           {
             "title": "Map of the Los Angeles Improvement Co.'s Subdivision of Part of Lot 2, Block 38, Hancock's Survey (M.R. 7-56, Jan. 26, 1886)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-056.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Union Avenue — of the adjoining Crown Hill land, “The land's previous owners were mayors Prudent Beaudry and John G. Nichols.”",
+            "url": "https://lastreetnames.com/street/union-avenue/"
+          },
+          {
+            "title": "L.A. Street Names: Nichols Canyon Road — “Named for John Gregg Nichols (1812-1898) and/or his son John Jr. (1851-1916). The elder Nichols… wagoned out to California in 1849 and settled in Los Angeles the following year… wound up serving three terms as mayor.”",
+            "url": "https://lastreetnames.com/street/nichols-canyon-road/"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Witmer St., Nichols St. and Logan Ave., changed to Nichols St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLat": 34.0551,
@@ -58425,7 +61881,7 @@ const STREET_DATA = {
             "entityId": "logan-ave",
             "formInForce": "Logan Avenue",
             "how": "origin",
-            "origin": "labeled “Logan Ave” on the 1887 Orange Heights {{(source)}} — no namesake documented",
+            "origin": "labeled “Logan Ave” on the 1887 Orange Heights {{(source)}} — lettered on Orange Heights in June 1887 (documents/mr018-063), George R. Shatto's tract, along what is now Witmer Street. In Oct. 1888 the city council's street-name committee proposed folding it, with Witmer Street, into Nichols Street. Nothing found says who Logan was",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
           },
           {
@@ -58469,6 +61925,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Los Angeles Improvement Co.'s Subdivision of Part of Lot 2, Block 38, Hancock's Survey (M.R. 7-56, Jan. 26, 1886)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-056.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Witmer St., Nichols St. and Logan Ave., changed to Nichols St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLat": 34.0533,
@@ -58505,7 +61965,7 @@ const STREET_DATA = {
             "entityId": "logan-ave",
             "formInForce": "Logan Avenue",
             "how": "origin",
-            "origin": "labeled “Logan Ave” on the 1887 Orange Heights {{(source)}} — no namesake documented",
+            "origin": "labeled “Logan Ave” on the 1887 Orange Heights {{(source)}} — lettered on Orange Heights in June 1887 (documents/mr018-063), George R. Shatto's tract, along what is now Witmer Street. In Oct. 1888 the city council's street-name committee proposed folding it, with Witmer Street, into Nichols Street. Nothing found says who Logan was",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR018/MR018-063.pdf"
           },
           {
@@ -58553,6 +62013,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Los Angeles Improvement Co.'s Subdivision of Part of Lot 2, Block 38, Hancock's Survey (M.R. 7-56, Jan. 26, 1886)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-056.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Witmer St., Nichols St. and Logan Ave., changed to Nichols St.”",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           }
         ],
         "minLat": 34.0521,
@@ -58600,11 +62064,87 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-056.pdf"
           }
         ],
+        "minLat": 34.0502,
         "maxLat": 34.0521,
         "from": {
           "px": [
             572,
             1356
+          ]
+        },
+        "to": {
+          "px": [
+            282,
+            471
+          ]
+        }
+      },
+      {
+        "label": "part of (Bryan St)",
+        "name": "Witmer Street",
+        "entityId": "witmer-street",
+        "namedAfter": "{{Henry Clayton Witmer}} (1856–1909), banker and real-estate developer, whose family's land was Crown Hill, once this stretch was folded into Witmer Street",
+        "namedAfterLink": "https://lastreetnames.com/street/witmer-street/",
+        "planned": {
+          "text": "by 1885",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1885",
+            "until": "?",
+            "name": "Bryan Street",
+            "entityId": "bryan-st",
+            "formInForce": "Bryan Street",
+            "how": "origin",
+            "origin": "labeled “Bryan St.” on the 1885 Kennedy Tract {{(source)}} — lettered on the Kennedy Tract of Jan. 1885 (documents/mr006-193), along what is now Witmer Street. Nothing found says who Bryan was",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Witmer Street",
+            "entityId": "witmer-street",
+            "formInForce": "Witmer Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
+        "attested": true,
+        "knownFraction": 0,
+        "categories": [
+          "person",
+          "alive",
+          "landowner",
+          "renamed",
+          "basis-eponymous"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "Map of the Kennedy Tract, Los Angeles, Cal. (surveyed May 1884 by E. T. Wright) (M.R. 6-193; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-193.pdf"
+          },
+          {
+            "title": "Map of the Los Angeles Improvement Co.'s Subdivision of Part of Lot 2, Block 38, Hancock's Survey (M.R. 7-56, Jan. 26, 1886)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-056.pdf"
+          }
+        ],
+        "maxLat": 34.0502,
+        "from": {
+          "px": [
+            282,
+            471
           ]
         },
         "to": null
@@ -59166,23 +62706,6 @@ const VANISHED_STREETS = [
     ]
   },
   {
-    "entity": "ward-st",
-    "asWritten": "WARD ST",
-    "doc": "mr003-569",
-    "basis": "alignment",
-    "note": "Ward St. is drawn as a separate corridor west of the modern 5th and 6th Street branches.",
-    "path": [
-      [
-        34.053133,
-        -118.260564
-      ],
-      [
-        34.053415,
-        -118.261237
-      ]
-    ]
-  },
-  {
     "entity": null,
     "asWritten": null,
     "doc": "mr003-569",
@@ -59400,6 +62923,23 @@ const VANISHED_STREETS = [
       [
         34.055937,
         -118.252053
+      ]
+    ]
+  },
+  {
+    "entity": "willow-golden",
+    "asWritten": "Willow Street",
+    "doc": "mr005-405",
+    "basis": "alignment",
+    "note": "North of the modern Golden Avenue segment, the same historical roadway continues through the tract without a modern counterpart in the supplied street set.",
+    "path": [
+      [
+        34.049654,
+        -118.266304
+      ],
+      [
+        34.048638,
+        -118.266977
       ]
     ]
   },
@@ -60225,8 +63765,8 @@ const VANISHED_STREETS = [
     ]
   },
   {
-    "entity": "gravitta-st",
-    "asWritten": "Gravitta St",
+    "entity": "gravilla-st",
+    "asWritten": "Gravilla St",
     "doc": "mr007-036-p2",
     "basis": "alignment",
     "note": null,
@@ -61063,6 +64603,57 @@ const VANISHED_STREETS = [
     ]
   },
   {
+    "entity": "main-street-dtla",
+    "asWritten": "Calle Principal",
+    "doc": "oldplaza1873",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.058266,
+        -118.238715
+      ],
+      [
+        34.05693,
+        -118.239368
+      ]
+    ]
+  },
+  {
+    "entity": "mallard-street",
+    "asWritten": "MALLARD STREET",
+    "doc": "tr0001-037",
+    "basis": "alignment",
+    "note": "The central roadway, later annotated as changed to Bixel Street, has no supplied modern centerline following its historical alignment.",
+    "path": [
+      [
+        34.049404,
+        -118.264504
+      ],
+      [
+        34.047573,
+        -118.265726
+      ]
+    ]
+  },
+  {
+    "entity": "grattan-street",
+    "asWritten": "GRATTAN STREET",
+    "doc": "tr0001-038a",
+    "basis": "alignment",
+    "note": "The northern part of Grattan Street continues beyond the surviving modern Bixel segment without a supplied modern counterpart.",
+    "path": [
+      [
+        34.047775,
+        -118.266742
+      ],
+      [
+        34.0469,
+        -118.267419
+      ]
+    ]
+  },
+  {
     "entity": "boylston",
     "asWritten": "Boylston St",
     "doc": "tr0001-052",
@@ -61093,6 +64684,40 @@ const VANISHED_STREETS = [
       [
         34.059016,
         -118.261165
+      ]
+    ]
+  },
+  {
+    "entity": "francisco",
+    "asWritten": "FRANCISCO ST.",
+    "doc": "tr0005-042b",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.04982,
+        -118.261743
+      ],
+      [
+        34.048611,
+        -118.262813
+      ]
+    ]
+  },
+  {
+    "entity": "keller",
+    "asWritten": "KELLER ST.",
+    "doc": "tr0006-051a",
+    "basis": "alignment",
+    "note": "The historical roadway continues north-west to Macy Street beyond the present Keller Street endpoint.",
+    "path": [
+      [
+        34.055265,
+        -118.227936
+      ],
+      [
+        34.055104,
+        -118.228258
       ]
     ]
   },
@@ -61229,6 +64854,40 @@ const VANISHED_STREETS = [
       [
         34.051201,
         -118.23556
+      ]
+    ]
+  },
+  {
+    "entity": "rosabell-street",
+    "asWritten": "ROSABELL ST.",
+    "doc": "tr0014-200a",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.058742,
+        -118.235927
+      ],
+      [
+        34.058991,
+        -118.235716
+      ]
+    ]
+  },
+  {
+    "entity": "rosabell-street",
+    "asWritten": "ROSABELL ST.",
+    "doc": "tr0014-200a",
+    "basis": "alignment",
+    "note": null,
+    "path": [
+      [
+        34.059603,
+        -118.235201
+      ],
+      [
+        34.060026,
+        -118.234672
       ]
     ]
   },

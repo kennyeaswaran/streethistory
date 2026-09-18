@@ -28,7 +28,7 @@ function load() {
       kind: "state",
       name: null,                  // bound by the generator (§4.1) — never by hand
       asWritten: w.tags.name,
-      street: normalizeName(w.tags.name),
+      street: normalizeName(w.tags.name, w.id),
       wayId: w.id,
       geometry: w.geometry,        // extent = the way itself
       basis: "label"

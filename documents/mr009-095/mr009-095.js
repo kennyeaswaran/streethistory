@@ -77,7 +77,7 @@ module.exports = {
         ]
       },
       "basis": "alignment",
-      "name": "william"
+      "name": "william-farragut"
     },
     {
       "kind": "state",

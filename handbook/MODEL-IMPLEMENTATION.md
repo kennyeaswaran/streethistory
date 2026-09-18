@@ -217,6 +217,24 @@ Street's mid-street gap at Hope closed (18 → 17 segments; the four gaps left
 are Westlake's real discontinuities and the river). `coverage-report.js`, which
 had been crashing since item A, reads NEIGHBORHOODS from site-config.js again.
 Not yet run: the two Playwright suites (sandbox only).
+**Addendum 2026-09-18 — branches.** The same table now has a sibling,
+`WAY_STREET_KEYS` in site-config.js, keyed by OSM way id: two roadways under
+one name that run side by side (West 5th Street's one-way southern branch,
+the old Ward Street corridor; the East 4th Street viaduct over the surface
+street) are keyed as their own streets — `"5th Street (south branch)"` — so a
+sheet that letters them differently no longer puts two names on one interval.
+`normalizeName(name, wayId)` consults it; every way loop passes the id (the
+same eight consumers plus check-legacy.js). The suffix is a label: the
+generator binds and displays the base name (`streetDisplayName`), so the
+branch is still 5th Street, bound to `fifth-street`. Rows on the branch are
+keyed to the branch (`mr003-046-p2`'s WARD row, `mr003-569`'s and
+`mr001-462`'s absent rows, a Saint Paul Avenue crossing). Candidates are
+found by the lateral-separation test (same name, overlapping along the axis,
+> 40 m apart across it; `$HOME/sw/branches.js` was the script — same name,
+project on the street's principal axis, compare mean across-offsets where
+the along-ranges overlap). Twin motorway carriageways, the 4th Street
+bridges over the 110 and a hook-shaped Fort Moore Place also trip the test
+and are deliberately not in the table: nothing will letter them differently.
 The map's `NAME_ALIASES` ("2nd Street Tunnel" → "2nd Street") exists only in
 index.html/preview.html; the generator doesn't know it. Consequences today:
 the generated data has an orphan "2nd Street Tunnel" stub entry the map never

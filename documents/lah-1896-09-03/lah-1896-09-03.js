@@ -193,6 +193,21 @@ module.exports = {
       confirmed: false,
       note: "The ordinance spells the new name “Jessie”; the modern street is Jesse, and " +
             "the entity holds both forms. “In the Wingerter tract” is all the document " +
-            "says about where the old name came from, and that tract is not in this corpus." }
+            "says about where the old name came from, and that tract is not in this corpus." },
+
+    // Audit 2026-09-18 (handbook/change-rows-audit-2026-09-18.md), bin B.
+    // QUALIFIED, UNRESOLVED. Molino Street meets Palmetto Street at 0 m; "Short"
+    // is not in the OSM extract, so the south end cannot be placed. `from` is
+    // `mateo`: the ordinance's "Mateo, or Shafer" records a street with two names at
+    // once, and Shafer (lah-1896-08-11, three weeks earlier) has no entity and no
+    // lettering. The stretch is modern Molino; `mateo`'s own rows are all on
+    // modern Mateo, so a whole-name reading would have been wrong ground.
+    { kind: "change", from: "mateo", to: "molino-st",
+      scope: "extent-unresolved",
+      wording: "Mateo, or Shafer, street, from Palmetto to Short, be changed to Molino street",
+      says: ["mateo-molino", "lede"],
+      mechanism: "renaming",
+      confirmed: false,
+      note: "Ordinance No. 3829, adopted Aug. 31, 1896." }
   ]
 };

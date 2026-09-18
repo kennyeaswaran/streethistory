@@ -76,13 +76,49 @@ range directly, which is the fastest route for everything below.
 | 3 | `"F. B. Wilde"`, then `"Wilde & Strong"` | ✘ **NOT YET RUN.** `wilde-st` is still `eponymous` with the man untraced. Newmark has 2 hits, unchecked. |
 | 4 | `"F. H. Wright"` | ✘ **NOT YET RUN.** Kenny read the cartouche: M.R. 5-431 was recorded at F. H. Wright's request. Different initials from E. T. Wright the county surveyor. Still the cleanest untried search on the list. |
 | 5 | `"Labory"` | ✔ **CRACKED IT.** Three clippings. Herald 1887-05-20, *"A Reunion of Old Friends"*: **Antonio Labory**, "a hale looking Frenchman, over whose head sixty-eight summers have passed", schoolmate of Vital F. Vignes in **Bordeaux**, landed San Francisco 1844, in Los Angeles ever since. Herald 1874-03-04: he sells 4,000 sheep and rents out his ranch. Herald 1887-08-03: an **H. Labory** in the vintage business at the Aliso "in company with such men as Pedro Sansevine". `labory-lane` went `none` → `inferred`. |
-| 6 | `"Teed"` | ✔ **CRACKED IT.** Herald 1873-10-03, a display ad: *"M. TEED, CONTRACTOR AND BUILDER, Shop on First Street, Between Main and Spring."* Herald 1873-10-10: he is on the **Common Council**, present with Sabichi, Mullaly, **Beaudry**, Workman, De Celis and Dockweiler. Plus Newmark p. 614. `teed-street` went `none` → `inferred`. ⚠ **His given name is still an initial** — the Council rolls would expand it. ✘ And `rosas-street` did **not** come with it; that half of the prediction failed. |
+| 6 | `"Teed"` | ✔ **CRACKED IT.** Herald 1873-10-03, a display ad: *"M. TEED, CONTRACTOR AND BUILDER, Shop on First Street, Between Main and Spring."* Herald 1873-10-10: he is on the **Common Council**, present with Sabichi, Mullaly, **Beaudry**, Workman, De Celis and Dockweiler. Plus Newmark p. 614. `teed-street` went `none` → `inferred`. ✔ **AND HIS GIVEN NAME IS NOW KNOWN, 2026-09-18: MATTHEW TEED** (1828–1904), Common Council 1870–73, 1874–76 and 1880–88 — found in one web search, not in the Council rolls this line sent us to. ✘ And `rosas-street` did **not** come with it; that half of the prediction failed. |
 | 7 | `"Chadwick"` | ✔ **DONE, thin.** Herald 1886-05-04 real-estate transfers: **J. S. Chadwick** buying Hollenbeck Tract lots from Myron H. Raymond, and 14 acres in the **Blow tract** from W. R. Huff and R. A. Ling for $14,000. So Chadwick was an active buyer in 1886, the year his subdivision was recorded — but nothing about the streets on it. |
 | 8 | `"Kiefer tract"` | ✔ **DONE, thin.** Herald 1887-06-17, a for-sale column: *"Pacific avenue, Kiefer tract, lot 40x140 to an alley; $750, one-half cash"*, alongside Goodwin Tract and Weisendanger Tract lots. Confirms the tract existed and was selling; Kiefer the man is still untraced, and Newmark has zero. |
 | 9 | `"O. H. Bliss"` / `"Bliss tract"` | ✔ **DONE, useful.** Herald 1886-10-19, court decrees: *"Oliver H Bliss vs Joseph Wolfskill, administrator of Lewis Wolfskill, deceased … Decree quieting title to part of **O H Bliss tract on E side Alameda street**."* So the Bliss Tract is east of Alameda and Bliss litigated it out of the Wolfskill estate. The Oct. 1888 committee list independently names it ("Huber St., in Bliss tract, changed to Mendocino St."). No entity yet. |
 | 10 | `"Molino"` | ✘ **NOT YET RUN.** |
+| 15 | `"Clement tract"` ⭐ | **NEW, and the highest-value newspaper search on the list.** Six untraced names come off that one 1887 sheet and no digitised copy of it exists anywhere reachable. A boom-era real-estate column naming the subdivider would settle `clementina-street`, `myers`, `anderson`, `grace` and `shenandoah-avenue` together. |
+| 16 | `"Colina Park"` ⭐ | Same shape: twelve streets, a Spanish naming scheme nobody states, an unnamed subdivider. SurveyLA gives only "In 1885, the Colina Park tract was developed adjacent to the western terminus of the proposed 2nd Street cable railway." |
+| 17 | `"Bigelow tract"` | Would name the Bigelow behind Atchison, Topeka and Freight Streets. |
+| 18 | `"Kennedy tract"` | Bryan, Holmes and Lincoln Place come off this 1885 sheet; Kennedy is untraced. |
+| 19 | `"Byram & Poindexter"` | The agents who sold the E. B. Millar Property in Feb. 1887, from 27 W. First St. Their own advertisements may carry the lot plan with the street names on it — the one live lead on Channing, Lawrence and Warren. |
 | 11 | `"Harvey tract"` | ✘ **NOT YET RUN.** Would give Adele Street a family. Newmark has 8 unchecked Harveys. |
 | 12 | `"Soda Water street"` | ✘ **NOT YET RUN.** Guinn says it intersected **Lemon Street** near Moran's Lane — would date Lemon Street decades before our 1887 sheets. |
+
+### Results of the 2026-09-17 name batch, for the record
+
+Forty-three entities were researched on 2026-09-17 using the sources above. What
+is worth adding here is the **negatives**, because each one is a search somebody
+would otherwise run again. All were taken with both a nonsense control and, where
+the endpoint supports it, a positive control.
+
+**Kines has NO PAGE AT ALL** for: Loma Drive, Collado, Colina (or Colina Park, or
+Crown Hill), Arch Street, Crown Hill Avenue, Acacia (downtown), Shenandoah *(any,
+anywhere — he has never written the word)*, Artemus, Clementina, Myers Street,
+Anderson Street, Kearney Street, Bigelow, Atchison/Topeka/Freight *in Los Angeles*
+(his Atchison is Pasadena), Nichols Avenue, Logan, Ventura *(this ground)*,
+Ingraham, Hartford, Willow Street, Bryan Street *(this ground)*, Holmes Street,
+Kennedy, Strelitz *(he mentions the man only in passing, on the Union Avenue page)*.
+
+**Garrigues has NO ENTRY** for: Arch, Texas, North, Vernon, Loma, Crown, Union,
+Downey, Clementina, Clement, Myers, Anderson, Shenandoah, Grace, Artemus, Atchison,
+Garland, Kennedy, Ingraham, Hartford, Ventura, Logan, Nichols, Willow *(any)*,
+Strelitz, Maryland.
+
+**Gone from the city registry** (so: retired names, not surviving streets):
+Clementina, Shenandoah *(east side)*, Strelitz, Collado, Gravilla, Atchison,
+Freight, Topeka *(the city's one Topeka is a Valley drive)*.
+
+⚠ **Two registry findings that reverse the obvious assumption**, both worth
+keeping: the city holds exactly ONE **Azusa Street** and it is the Boyle Heights
+one, not the Little Tokyo alley of the 1906 revival — the famous street no longer
+carries an official name. And **Clarence Street still exists** (grid 634J5)
+despite Garrigues putting it under Paseo El Coronel; only its northern stretch is
+gone.
 
 ### Two new searches the 1888 list generates
 
@@ -110,9 +146,32 @@ capture enough surrounding text to place it.
   passages sitting unread on disk, and they cost nothing.
 - **ResCarta / LAPL city directories** — JavaScript-only. See
   handbook/IN-PERSON.md for the specific lookups. ⭐ A city directory would
-  expand **M. Teed** and **A. Weill** to full names in one visit.
+  expand **A. Weill** to a full name. (✔ **M. Teed no longer needs this** — he is Matthew Teed, closed 2026-09-18 from a keyboard.)
 - **NavigateLA** — JavaScript-only; the route to tract Map-Refs, and now the
   route to the **A. Weill tract** filing (#13).
-- **A Facebook thread**, `facebook.com/groups/echoparkhistory/posts/1741372899282840/`,
-  titled *"What is the origin of Diamond Street's name in Los Angeles?"* —
-  robots-blocked. Bears on the gemstone set, since Diamond is the sixth member.
+- ✔ **CLOSED 2026-09-17. A Facebook thread**,
+  `facebook.com/groups/echoparkhistory/posts/1741372899282840/`, titled *"What is
+  the origin of Diamond Street's name in Los Angeles?"* Kenny supplied it in
+  full. **It gives no namesake** — the gemstone set is untouched — but it did two
+  other things. (1) Its attached image is a published **"Map of Los Angeles
+  Railway and Railroad circa 1889"**, now `clippings/1889-la-railway-map.jpg`,
+  which glosses seven streets with their modern names and independently
+  corroborates Texas → Belmont. (2) The post contradicts itself about what
+  Diamond Street became — its author says Beverly Blvd., the railway society it
+  quotes says West First Street — and **this corpus's own rows arbitrate**: the
+  eleven `diamond-street` rows fall into three contiguous longitude bands, west
+  to east, on Beverly Boulevard, 1st Street and the surviving Diamond Street,
+  with `mr007-056` handing over between the first two at −118.26042. One street,
+  three modern names, and both published claims true of different thirds.
+- ✔ **CLOSED 2026-09-17. `crownhillchronicles.blogspot.com`** — Kenny saved all
+  five substantive posts (`clippings/crown-hill-chronicles/`). ✘ **It does not
+  name the Colina Park subdividers**, which was the whole reason for wanting it.
+  ★ The sheet's own title block did, the same afternoon, from a PDF already in
+  `documents/mr007-036-p2/` — see `handbook/IN-PERSON.md` §3a, which is a lesson
+  about checking the folder before writing down a lead. ⚠⚠ And the blog is a weak
+  source in any case: its commenters correct its photo datings by a decade and its
+  Witmer chronology contradicts Kines. Only `the-real-o.g.pdf`'s account of the
+  Witmers naming their own street survived into `witmer-street`.
+- **Calisphere item pages** are robots-blocked as well as its search
+  (2026-09-17). The one thing wanted behind it is a record titled
+  *"Bigelow, L. M. - Downtown Los Angeles parcel"*.
