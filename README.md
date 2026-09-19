@@ -16,19 +16,19 @@ street geometry live from the Overpass API). For a local server:
   prefixes) are grouped into one clickable street.
 - Click target: each street segment carries an invisible ~18px-wide stroke, so the
   street's drawn area is clickable without hunting for a hairline.
-- Data, today: `streets-data.js` — one entry per street, subdivided into **segments**
-  wherever stretches have distinct name lineages (see the schema comment at the top
-  of that file). Segments are bounded by cross-streets (`from`/`to`), and each
-  carries its own chronological `nameHistory` whose items can be tagged with `how`
-  the name arrived there: the segment where a name originated vs. stretches it
-  reached by extension, renaming, or transfer (rendered as popup badges).
-  3rd Street is the exemplar. Streets without an entry render grey; entries render
-  blue; filter checkboxes highlight matches in amber.
-- Data, next: this hand-authored file is being replaced by a **generated** one.
-  `names.js` + `documents/` + `node generate.js` → `generated/streets-data.gen.js`,
-  rendered by `preview.html`. Built and passing its acceptance test, not yet
-  live — the switchover waits on the full corpus being encoded
-  (handbook/MODEL-SPEC.md, handbook/MODEL-IMPLEMENTATION.md).
+- Data: `streets-data.js` is **generated** — `names.js` (what is known about
+  each name) + `documents/` (what each primary document says about each
+  stretch of each street) + `node generate.js` → `streets-data.js`, the file
+  the map loads. Nobody edits it by hand; the deploy refuses a copy that does
+  not match a fresh build. One entry per street, subdivided into **segments**
+  wherever stretches have distinct name lineages, bounded by cross-streets or
+  by a point on a document; each carries its own chronological `nameHistory`
+  with `how` the name arrived there (origin, extension, renaming, transfer —
+  popup badges). A stretch is blue because some document speaks about that
+  ground, grey because none does yet; search and the Highlight list mark
+  matches in amber, and purple where the match is a former name. The model:
+  handbook/MODEL-SPEC.md. (The hand-authored data it replaced on 2026-09-19 is
+  archived as `legacy/streets-data-2026-08.js`.)
 
 ## Adding history
 
@@ -77,7 +77,7 @@ street was named after: handbook/NAME-RESEARCH.md.
 
 ## Expanding coverage
 
-Coverage is neighborhood-based: `NEIGHBORHOODS` in `streets-data.js` drives the
+Coverage is neighborhood-based: `NEIGHBORHOODS` in `site-config.js` drives the
 Overpass query, the dashed coverage outlines, and the geometry-file staleness
 check. `node generate.js` writes `generated/report.md`, which lists every street
 no document speaks about yet — the research queue. Step by step:

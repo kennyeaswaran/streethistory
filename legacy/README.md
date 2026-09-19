@@ -1,22 +1,31 @@
-# legacy/ — frozen snapshots of the hand-authored data
+# legacy/ — the hand-authored data, frozen
 
-`streets-data-2026-08.js` is a copy of `streets-data.js` as it stood on
-2026-08-23: 107 streets, 140 entries, all hand-authored under the segment
-model described in ADDING-STREETS.md.
+`streets-data-2026-08.js` is `streets-data.js` as it stood on 2026-08-23: 107
+streets, 140 entries, all hand-authored under the segment model of the
+retired ADDING-STREETS.md. On **2026-09-19 the generator took over**:
+`streets-data.js` in the project root is now written by `generate.js` from
+`names.js` + `documents/`, and this file is the last state of the data it
+replaced. (The two differ only by the vocabulary move to `site-config.js`
+and one category rename; git history has every step between.)
 
-It is kept for one purpose: **to diff against generated output** while the
-name/document/generator model is built (see the spec doc). The generator's
-acceptance test is that it reproduces the segmentation and name timelines in
-here — starting with 3rd Street, the exemplar.
+It is kept for one purpose: **the subsumption gate.** `node check-legacy.js`
+checks that every entry in here is either reproduced by the generated
+output — its ground covered, its names, namesake, dates and sources carried
+— or explicitly accepted as a difference in `accepted-differences.js`, each
+acceptance with a reason. The gate was green (0 unaccepted, 54 accepts) at
+the switchover, and stays useful: an entity edit that loses a namesake, or a
+sheet re-key that loses a stretch, trips it. `diff-street.js <street>` is the
+field-by-field comparison for one street.
 
 Nothing loads this file. `index.html`, `check-data.js`, `coverage-report.js`
-and `intersect.js` all continue to read the live `streets-data.js` in the
-project root, which stays hand-edited until the generator replaces it.
+and `intersect.js` all read the generated `streets-data.js` in the project
+root.
 
 Not snapshotted, and why:
 - `streets-geometry.js` — regenerable from OSM via the map's "Save geometry
   file" button; not hand-authored content.
 - `tracts/transcriptions/`, `omnibus-*.md` — not superseded. These are the
   source documents the new model reads from; they stay where they are.
-- the docs — ADDING-STREETS.md and friends describe the current working
-  process and get revised in place, only once the generator takes over.
+- the old `index.html` — deleted at the switchover, not parked (decision
+  2026-09-15: it could not render `{px}` extents and Pages would have
+  published it anyway). Git history is the archive.

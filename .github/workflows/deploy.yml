@@ -15,7 +15,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Data conventions are enforced here; a failure blocks deployment.
+  # Three gates; any failure blocks deployment. Since the 2026-09-19 switchover
+  # streets-data.js is the generator's output, committed alongside the
+  # documents that changed it (handbook/PUBLISHING.md).
   check:
     runs-on: ubuntu-latest
     steps:
@@ -23,13 +25,33 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      # The contract the map relies on (labels, vocabulary, sources, bands
+      # tiling, timelines ending in the current name). --require-generated
+      # is the hand-edit tripwire: a streets-data.js without the generator's
+      # header cannot deploy.
       - name: Validate street data
-        run: node check-data.js
-      # The authored layers behind the generated map (names.js, documents/).
-      # Gating since 2026-09-15 (switchover checklist E): an invalid entity or
-      # row blocks the site the way an invalid streets-data.js always has.
+        run: node check-data.js --require-generated
+      # The authored layers behind it (names.js, documents/). Gating since
+      # 2026-09-15 (switchover checklist E).
       - name: Validate names and documents
         run: node check-model.js
+      # The committed streets-data.js and generated/search-index.js must be
+      # what a fresh build produces. If this fails, someone pushed documents
+      # or names.js without running `node generate.js` and committing its
+      # output (or edited the generated file by hand): regenerate, commit, push.
+      #
+      # generate.js exits 1 whenever a row cannot be placed on the geometry
+      # (see generated/report.md). Such rows are DROPPED and the files are
+      # still written whole, so that alone does not hold the site back — a few
+      # are expected at any time. A generator that crashed mid-run is different:
+      # it never prints its summary line, and that fails the step.
+      - name: Regeneration check
+        run: |
+          node generate.js > generate.log 2>&1 || true
+          cat generate.log
+          grep -q '^Generated ' generate.log || { echo "::error::generate.js did not finish"; exit 1; }
+          git diff --exit-code -- streets-data.js generated/search-index.js \
+            || { echo "::error::committed streets-data.js / generated/search-index.js differ from a fresh build — run 'node generate.js' and commit the result"; exit 1; }
 
   deploy:
     needs: check
@@ -39,31 +61,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      # The preview page reads generated/streets-data.gen.js, which is built
-      # from documents/ by generate.js. Rebuilding it here means a pushed
-      # document reaches the site whether or not anyone remembered to run the
-      # generator and commit its output (the committed copy is still useful:
-      # it is what a checkout shows, and the fallback if this step is skipped).
-      #
-      # generate.js exits 1 whenever a row cannot be placed on the geometry
-      # (see generated/report.md). Such rows are DROPPED from the output and
-      # the files are still written whole, so that is not a reason to hold the
-      # site back — a few are expected at any time. What would be is a
-      # generator that crashed mid-write, so the outputs are parsed afterwards
-      # and only a file that does not parse fails the deploy.
-      - name: Rebuild generated/ from documents/
-        run: |
-          node check-model.js || echo "::warning::check-model.js reported problems (not blocking the deploy)"
-          node generate.js || echo "::warning::generate.js reported row problems — see generated/report.md (not blocking the deploy)"
-          node -e "
-            const fs = require('fs');
-            for (const f of ['generated/streets-data.gen.js', 'generated/search-index.js'])
-              new Function(fs.readFileSync(f, 'utf8'));
-            console.log('generated/ parses');
-          "
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

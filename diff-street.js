@@ -1,7 +1,7 @@
 // diff-street.js — the acceptance-test harness (MODEL-SPEC.md §11).
 // Usage: node diff-street.js "3rd Street" [--full]
 // Structurally diffs one street's entry between legacy/streets-data-2026-08.js
-// and generated/streets-data.gen.js, field by field, segment by segment.
+// and streets-data.js (the generated file), field by field, segment by segment.
 // Formatting noise (key order, whitespace) is invisible by construction:
 // both sides are parsed and compared as data.
 
@@ -13,7 +13,7 @@ function loadData(file) {
   return new Function(src + "; return STREET_DATA;")();
 }
 const legacy = loadData("legacy/streets-data-2026-08.js");
-const gen = loadData("generated/streets-data.gen.js");
+const gen = loadData("streets-data.js");
 
 const streetName = process.argv[2] || "3rd Street";
 const full = process.argv.includes("--full");

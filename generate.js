@@ -1,13 +1,13 @@
 // generate.js — derives streets-data from names.js + documents/ (MODEL-SPEC §6).
 // Run: node generate.js
-// Writes: generated/streets-data.gen.js, generated/search-index.js, generated/report.md
+// Writes: streets-data.js (the file the map loads), generated/search-index.js, generated/report.md
 // (the data only — the vocabulary stays in site-config.js, which the map loads beside it)
 //
 // The authored layers hold what documents SAY (documents/) and facts about
 // names (names.js); everything here is computed and never authored:
 // segmentation, timelines, `how`, planned/built, labels, bands, the search
-// index. During migration the output goes to generated/ and the live
-// hand-authored streets-data.js is untouched (MODEL-SPEC §0, §11).
+// index. Since the switchover (2026-09-19) the output IS streets-data.js;
+// the last hand-authored version is archived as legacy/streets-data-2026-08.js.
 
 const fs = require("fs");
 const path = require("path");
@@ -972,7 +972,7 @@ for (const doc of nonOsmDocs) {
 for (const list of DOCS_ATTESTING.values())
   list.sort((a, b) => dkey(docDate(a)) < dkey(docDate(b)) ? -1
                     : dkey(docDate(a)) > dkey(docDate(b)) ? 1
-                    : String(a.id).localeCompare(String(b.id)));
+                    : String(a.id) < String(b.id) ? -1 : String(a.id) > String(b.id) ? 1 : 0);
 const earliestDocFor = id => (DOCS_ATTESTING.get(id) || [])[0] || null;
 // Every url by which the corpus can be reached, and which entity ids the
 // document behind it letters. Used to drop a hand-written citation that the
@@ -1465,7 +1465,7 @@ for (const streetName of [...streets.keys()].sort()) {
     // Highlight list has to find the trees, and nobody is going to tag a street
     // `tree` AND `nature`. Bake the chain in here rather than shipping the tree
     // walk to the map: it is computed once, it cannot drift from the vocabulary
-    // the rest of this file was generated against, and `preview.html` gets to
+    // the rest of this file was generated against, and the map gets to
     // stay a lookup. Facet rows are excluded — they are headings, not matches.
     const anc = [...new Set(cats.flatMap(c => categoryAncestors(c)))]
       .filter(c => !cats.includes(c));
@@ -1553,7 +1553,6 @@ const stringify = o => JSON.stringify(o, null, 2);
 
 const header = `// GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: ${new Date().toISOString().slice(0, 10)}
 `;
 const NAME_CATEGORY_INDEX = {};
 for (const [id, e] of Object.entries(entities)) {
@@ -1570,9 +1569,12 @@ for (const [id, e] of Object.entries(entities)) {
 
 // The vocabulary (NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS) is NOT in this
 // file: the map loads site-config.js beside it, as index.html always has. It
-// was re-emitted here for preview.html until 2026-09-15; a page loading both
+// was re-emitted here for the preview page until 2026-09-15; a page loading both
 // would hit a duplicate-`const` SyntaxError (checklist C).
-fs.writeFileSync(path.join(OUT_DIR, "streets-data.gen.js"),
+// The data file itself, at the root, where index.html loads it. The
+// header carries no build date: CI regenerates and diffs this file
+// against the committed copy, so the output must be byte-deterministic.
+fs.writeFileSync(path.join(__dirname, "streets-data.js"),
   header +
   // Every entity's categories, ancestors folded in, keyed by id. The Highlight
   // list needs it to count FORMER names: a segment carries `formerCategories`
@@ -1590,13 +1592,11 @@ fs.writeFileSync(path.join(OUT_DIR, "streets-data.gen.js"),
 fs.writeFileSync(path.join(OUT_DIR, "search-index.js"),
   header + `const SEARCH_INDEX = ${stringify(SEARCH_INDEX)};\n`);
 
-// preview.html is a STANDING FILE, no longer generated from index.html
-// (decision 2026-08-25): it is the map-side migration workspace for the §8
-// features (entity search, grey/blue scheme, former-name and former-category
-// highlighting, way-splitting at band boundaries) and is edited directly.
-// At the §10 switchover it replaces index.html. It reads
-// generated/streets-data.gen.js + generated/search-index.js, so a data
-// regeneration here is all it needs to stay current.
+// index.html (the former preview.html, promoted at the 2026-09-19 switchover)
+// reads streets-data.js + generated/search-index.js, so a regeneration here
+// is all it needs to stay current. Commit both files with the documents that
+// changed them: the deploy refuses a push whose committed output differs
+// from a fresh build.
 
 const rep = [];
 rep.push("# Generated report", "", "**Overwritten every build** (`node generate.js`).", "");

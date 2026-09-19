@@ -45,9 +45,12 @@ that letters it.
 
 **4. Generate.** `node check-model.js && node generate.js` validates the corpus
 and computes segments, timelines, planned/built dates, sources and the search
-index into `generated/`. → **MODEL-SPEC.md** is the contract;
-**MODEL-IMPLEMENTATION.md** records what was built and what remains before the
-switchover.
+index into `streets-data.js` (the file the map loads — generated since the
+2026-09-19 switchover, never hand-edited) and `generated/search-index.js`.
+Commit both with the change that produced them; the deploy refuses a push
+whose committed output differs from a fresh build (PUBLISHING.md). →
+**MODEL-SPEC.md** is the contract; **MODEL-IMPLEMENTATION.md** records what
+was built.
 
 Textual documents — an ordinance, a newspaper column, a directory's street
 section — go through stages 1, 3 and 4 but not 2: they have no sheet to align

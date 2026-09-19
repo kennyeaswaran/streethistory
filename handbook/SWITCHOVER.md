@@ -1,53 +1,65 @@
-# Switchover — what is left, and whose it is
+# Switchover — done 2026-09-19; what is owed after it
 
-*Updated 2026-09-19. **All three gates are green**: `node check-model.js`
-clean (328 entities, 392 documents, 4312 rows); `node check-data.js` on the
-generated output clean; `node check-legacy.js` — "Every legacy entry is
-subsumed or accepted" (140 entries, 54 accepts, 0 hard). The flip is ready
-to schedule.*
+*The flip ran on 2026-09-19 on a clean, fully committed tree (Kenny's
+"documents from UCLA added" commit was the last corpus commit before it).
+All three gates were green before and after: `node check-model.js` (328
+entities, 418 documents, 4322 rows), `node check-data.js
+--require-generated` on the generated `streets-data.js` (272 streets, 941
+entries, 770 anchored), `node check-legacy.js` (every legacy entry subsumed
+or accepted; 54 accepts, 0 hard). The generated map is the site once the
+flip commit is pushed and Actions goes green.*
 
-## Where things stand
+## What the flip changed (one commit)
 
 | | |
 |---|---|
-| A vocabulary, B aliasing (+ branches), E checker/CI | ✔ done |
-| C — generator writes `streets-data.js` | vocabulary no longer re-emitted and preview loads site-config.js; **output path, header date, CI regeneration check, `--require-generated` — the flip** |
-| D — preview → index, old index deleted | **the flip** |
-| F — docs | **the flip** |
-| the corpus | gates green; growing before and after, which is the design |
+| `generate.js` | writes `streets-data.js` at the root (was `generated/streets-data.gen.js`); no `Built:` date in the header; the one locale-collated sort is now code-point order, so CI's rebuild is byte-identical to Kenny's |
+| `streets-data.js` | now generated — 2.5 MB, `GENERATED FILE — DO NOT EDIT` header; the hand-authored file it replaces is `legacy/streets-data-2026-08.js` (differs from it only by the vocabulary move and one category rename) |
+| `generated/` | `search-index.js` and `report.md` only; `streets-data.gen.js` deleted |
+| `index.html` | the former preview.html: title prefix, purple banner and back-link gone, header comment rewritten, `<script src="streets-data.js">`; old index.html and preview.html deleted (git history is the archive) |
+| `.github/workflows/deploy.yml` | check job: `check-data.js --require-generated`, `check-model.js`, then the regeneration diff (`node generate.js`, then `git diff --exit-code -- streets-data.js generated/search-index.js`; row problems tolerated, a crash not). Deploy job just uploads — no rebuild, since the committed file is proven current |
+| `diff-street.js`, `preview-test.js`, `check-legacy.js`, `check-data.js` | retargeted / comments |
+| `site-config.js` | comments; the two `only: "legacy"` rows stay, marked dead (post-flip cleanup) |
+| `utilities/start-*.command` | print "the map" instead of preview + live; the names-tool one now says to run `generate.js` after a save |
+| docs | PUBLISHING.md (the three gates; commit the output with the change), MODEL-SPEC §0/§10/§12, MODEL-IMPLEMENTATION (status, C/D/F marked), README, CLAUDE.md (What this is, rule 7, layout, State), legacy/README.md, MAP-TOOL-SPEC, ROADMAP, this file |
 
-## How to run the flip (Kenny + one instance, one sitting)
+## The standing rule from here
 
-1. **Commit first.** Every sheet, ordinance and entity in progress goes in
-   as its own commit, so the flip's diff is readable and revertible. Any
-   instance mid-batch (the UCLA material) reaches a point where
-   `check-model.js` passes, and that gets committed too.
-2. **Nobody edits `index.html`, `preview.html`, `generate.js`, `check-*.js`,
-   `site-config.js` or `.github/workflows/deploy.yml` while it runs.**
-   `documents/` and `names.js` are fair game throughout.
-3. **The instance does C, D, F** from MODEL-IMPLEMENTATION.md's checklist,
-   in that order: point the generator at `streets-data.js`, drop the
-   `Built:` date from the header, retarget `diff-street.js`,
-   `preview-test.js`, `check-legacy.js` and deploy.yml's parse step; add
-   `node generate.js && git diff --exit-code streets-data.js` and
-   `check-data.js --require-generated` to deploy.yml; make preview.html the
-   new index.html (add the `site-config.js` script line, delete the
-   `[PREVIEW]` title prefix and the purple banner with its back-link) and
-   delete the old index.html and preview.html; then the doc list under F —
-   README, CLAUDE.md, legacy/README.md, PUBLISHING.md, MODEL-SPEC §0, the
-   `preview.html` mentions in ROADMAP and MAP-TOOL-SPEC, the utilities'
-   printed lines. It ends with the three gates run once more and the list of
-   files changed.
-4. **You commit the flip as one commit and push.** Watch the Actions tab:
-   the deploy now runs `check-data.js --require-generated`, `check-model.js`
-   and the regeneration check before it uploads. Green, and the generated
-   map is the site.
-5. **After:** the Misc Records half of `shopping-list-2026-09-17b.md` when
-   the City service is back; the confirmation tool for the 58 held-back
-   audit rows (MAP-TOOL-SPEC §9); the proceedings model (ROADMAP §2) for
-   Buena Vista and the Miramar chain; Olympic's 1935 ordinance
-   (`shopping-list-2026-09-18-council-files.md`); the Chavez extents from
-   council file 93-0907's exhibit map.
+**Every change to `documents/` or the name files is two things in the
+commit: the change, and the regenerated output.** `node check-model.js &&
+node generate.js`, then commit `streets-data.js` and
+`generated/search-index.js` with it. The deploy's regeneration check fails
+the push otherwise — and the red X is the whole safety net, so do not push
+around it.
+
+## After the flip — the list
+
+1. **Kenny: commit and push the flip** as one commit; watch the Actions
+   tab. Before committing, delete `_to_delete/` in Finder — its contents
+   (scratch, old index.html and preview.html, `streets-data.gen.js`) were
+   committed in an earlier "commit all", so the deletion has to be committed
+   too. If the regeneration check fails on the first run, the most likely
+   reason is a Node-version difference in output; the Actions log shows the
+   diff, and the fix is a follow-up commit, not a revert.
+2. The **Misc Records half** of `shopping-list-2026-09-17b.md` when the City
+   service is back.
+3. The **confirmation tool** for the 61 held-back audit rows (MAP-TOOL-SPEC
+   §9) — `generate.js` prints the count on every run.
+4. The **proceedings model** (ROADMAP §2) for Buena Vista and the Miramar
+   chain, which were accepted as proceedings work.
+5. **Olympic's 1935 ordinance** (`shopping-list-2026-09-18-council-files.md`);
+   the Chavez extents from council file 93-0907's exhibit map.
+6. **Cleanup the flip left on purpose:** the `only: "legacy"` rows in
+   site-config.js and the legacy branches of check-data.js, names-tool.html
+   and generate.js's `NAME_CATEGORY_INDEX` (`unknown` / `unresearched`); the
+   three `documents/tr0002-008b`, `tr0002-062a`, `tr0012-088a` folders that
+   have no `.js` yet (generate.js skips them with a warning).
+7. **`preview-test.js`:** ran at the flip in the sandbox — page loads with
+   zero errors, 41 pass, 5 fail on segment labels the grown corpus no longer
+   produces ("Belmont to Toluca (State St)" is now "beyond Belmont (State
+   St)", etc.). Refresh the expectations; the map is fine.
+8. Style-budget warnings (note / namedAfter / origin length) → check-model
+   or the names tool, once per entity, instead of 70-odd per build.
 
 ## What was decided along the way (for the record)
 
@@ -139,10 +151,9 @@ span: Mesquit.
 
 1. §4 — the five `namedAfter` fields, and the freeways if wanted.
 2. The tract maps for §2.
-3. Checklist C, then D and F.
+3. ~~Checklist C, then D and F.~~ Done 2026-09-19.
 4. Browser suites in a sandbox (`browser-test.js` was edited by the other
-   instance; `preview-test.js` not run since preview.html gained
-   site-config.js).
+   instance; `preview-test.js` run at the flip — see the after-list).
 5. Style-budget warnings → check-model / names tool, once per entity.
 6. `tmp/ord-069-plaza*.png` are crops I rendered to look at the plaza; delete.
 

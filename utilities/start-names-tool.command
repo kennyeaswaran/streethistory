@@ -80,12 +80,12 @@ echo "  Streetymology — serving $(pwd)"
 echo
 echo "    names tool      $BASE/names-tool.html"
 echo "    map tool        $BASE/map-tool.html"
-echo "    map preview     $BASE/preview.html"
-echo "    live map        $BASE/index.html"
+echo "    the map         $BASE/index.html"
 echo
 echo "  The names tool writes names.js IN PLACE. After a save, run"
-echo "      node check-model.js"
-echo "  before committing — it is the gate the name layer answers to."
+echo "      node check-model.js && node generate.js"
+echo "  before committing — the checker is the gate the name layer answers to,"
+echo "  and streets-data.js (generated) must be committed with the change."
 echo
 
 # Open in Chrome if it's there (the File System Access API is a Chrome

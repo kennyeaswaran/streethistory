@@ -61,8 +61,7 @@ echo
 echo "  Streetymology tools — serving $(pwd)"
 echo
 echo "    map tool   $BASE/map-tool.html"
-echo "    map preview     $BASE/preview.html"
-echo "    live map        $BASE/index.html"
+echo "    the map         $BASE/index.html"
 echo "    old aligner     $BASE/attic/align.html"
 echo
 

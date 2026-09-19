@@ -3,19 +3,20 @@
 // contract the map relies on. It gates the deploy (.github/workflows/deploy.yml).
 //
 // TWO SHAPES OF DATA FILE (MODEL-IMPLEMENTATION.md, switchover checklist E).
-// Until the §10 switchover, streets-data.js is hand-authored and this checker
-// is its only guard: extents are cross-street NAMES, and the research-status
-// conventions ('unknown' beside namedAfter: null) are authored here. After
-// it, streets-data.js is written by generate.js from names.js + documents/,
-// the authored layers have check-model.js, and this file's job narrows to
-// the output contract: every segment labelled, categories in the vocabulary,
+// Until the §10 switchover (2026-09-19) streets-data.js was hand-authored and
+// this checker was its only guard: extents were cross-street NAMES, and the
+// research-status conventions ('unknown' beside namedAfter: null) were
+// authored here. Since it, streets-data.js is written by generate.js from
+// names.js + documents/, the authored layers have check-model.js, and this
+// file's job is the output contract: every segment labelled, categories in the vocabulary,
 // sources with URLs, bands tiling. In that shape extents may be positions
 // (`{ px: [x, y] }`, MODEL-SPEC §5.4 — a pixel clicked on a document's
 // render) and research status is `basis-*` / `stub`, derived. The checker
 // tells the two apart by the generated header and by what an entry carries,
-// so it passes on BOTH shapes and can be flipped in CI with no edit here:
+// so it passes on BOTH shapes (the legacy branches are kept for
+// legacy/streets-data-2026-08.js and are post-flip cleanup):
 // `--require-generated` makes a missing header an error (the hand-edit
-// tripwire §10 asks for), and is what deploy.yml passes once item C lands.
+// tripwire §10 asks for), and is what deploy.yml passes.
 
 const fs = require("fs");
 const src = fs.readFileSync(__dirname + "/streets-data.js", "utf8");

@@ -533,7 +533,7 @@ Lessons for next time:
   usually a one-letter/one-number match against the map's own lot labels,
   and confirms or refutes a hypothesis in seconds.
 - **When the best available evidence is still an eyeballed alignment match**
-  (no label, no lot-number confirmation), don't write it into streets-data.js
+  (no label, no lot-number confirmation), don't write it into the document
   as a stated fact. Either flag it explicitly as an unconfirmed inference in
   the row's `note` (NAME-RESEARCH.md asks for the same), or — better, when the
   claim is the actual new finding rather than incidental context — crop and

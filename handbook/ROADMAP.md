@@ -78,7 +78,7 @@ here, "by 1873" there), the segment-level period shows the earliest exact
 date, or the earliest "by" if no exact one exists, and the stretch table shows
 the rest. That is the same choice `knownFraction` already makes per segment.
 
-This is generator + `preview.html` only — no model change, no re-reading of any
+This is generator + `index.html` only — no model change, no re-reading of any
 sheet — and `preview-test.js` can assert the colours per stretch as it does per
 segment today. Do it first, because it is the one step whose result cannot be
 wrong about history: it changes nothing about what is claimed, only how it is
@@ -263,7 +263,7 @@ What stands between that and the site:
 **The cheap first step, worth doing regardless:** have the generator emit
 `generated/documents.js` — every document's id, title, date, url and its
 coverage ring in world coordinates — and draw the rings as an optional layer
-on `preview.html`. No imagery, no rights question, and it makes visible the
+on `index.html`. No imagery, no rights question, and it makes visible the
 distinction the whole model rests on: ground somebody has looked at versus
 ground nobody has. It is also the precondition for §5a's year slider and for
 the imagery when it comes.
@@ -308,7 +308,7 @@ dates) and reads naturally off §3's `documents.js`.
 This is §8 scheme 3, specified and not built ("Age: earliest document showing
 the segment existed"). The generator already computes the date for the
 `planned` / `built` text; emit it once more as a number (`earliestYear`, with
-`kind` exact/by) and give `preview.html` a sequential ramp from 1849 to the
+`kind` exact/by) and give `index.html` a sequential ramp from 1849 to the
 extract date. Scheme 4 (latest document showing it did *not* yet exist) is the
 mirror and needs only `absentAsOf` as a number; build both in the same
 afternoon, and the gap between them is the "how well pinned" scheme §12
@@ -330,8 +330,8 @@ some canon(form) token, order-free, so "20" reaches "Avenue 20" and "chavez"
 reaches "Cesar E Chavez", both of which §6.5 already asks for. The generator
 emits the canonical key per row and ships its three tables in
 `search-index.js` so the browser folds the query identically (§12 notes this
-requirement). Apply to both `index.html` (live; street-keyed) and
-`preview.html` (entity-keyed). An hour or two; `preview-test.js` gets a case.
+requirement). Apply to `index.html` (entity-keyed since the 2026-09-19
+switchover). An hour or two; `preview-test.js` gets a case.
 
 ---
 
@@ -571,9 +571,9 @@ sources. What neither says yet, because nobody has done it:
   item — it serves §1's grades, §3, §5a, and the "what has been looked at"
   question, and it costs an afternoon.
 - **The bridging report** §6.2a already asks for, before the rule lands.
-- **Retire the four-way duplication of `normalizeName` / alias tables**
-  across `generate.js`, `preview.html`, `index.html` and the checker
-  (MODEL-IMPLEMENTATION checklist B), which §6 above will otherwise make five.
+- ~~**Retire the four-way duplication of `normalizeName` / alias tables**~~
+  — done 2026-09-15 (MODEL-IMPLEMENTATION checklist B): one `normalizeName`
+  in `site-config.js`, every consumer calling it.
 
 Not proposed: anything that changes what a row can claim. Every item above is
 about how claims are grouped, shown, found or connected; the evidence rules in

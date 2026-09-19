@@ -1,11 +1,12 @@
 # Spec: names, documents, and the generated segment file
 
-**Status (2026-08-25): built, not live.** The generator exists and passes the
-§11 acceptance test on 3rd Street — see MODEL-IMPLEMENTATION.md for what was
-built, the accounted differences, and the switchover checklist. The
-hand-authored `streets-data.js` remains the map's source until the full corpus
-is encoded and Kenny approves the §10 switchover. A frozen copy of the
-hand-authored data sits in `legacy/streets-data-2026-08.js` for diffing.
+**Status (2026-09-19): live.** The §10 switchover happened: `streets-data.js`
+is the generator's output, `index.html` (the former preview page) renders it,
+and the deploy refuses a push whose committed output differs from a fresh
+build. The §11 street-by-street accounting is the standing gate
+`check-legacy.js` against `legacy/streets-data-2026-08.js` (every legacy
+entry subsumed or accepted with a reason in `legacy/accepted-differences.js`).
+What was built, and how the differences were accounted: MODEL-IMPLEMENTATION.md.
 
 **Amended 2026-08-25 (§5.2–§5.4, §4.6):** row kinds for vanished streets and
 for documented silence, extents that can end mid-block, alignment stored on
@@ -1557,12 +1558,14 @@ Also: pixel-space extents and traces require the document to have an
 
 ## 10. Build
 
-Generate into `streets-data.js` and commit it, during migration: the git diff
-is the safety net, showing exactly where generated segmentation differs from
-what was hand-built. CI regenerates and fails if the committed artifact
-differs, or it will silently go stale. The file gets a do-not-edit header and
-a checker rule to match. Once generated segmentation stops being surprising,
-the artifact can move to build-time-only.
+Generate into `streets-data.js` and commit it: the git diff is the safety
+net, showing exactly what a document or entity change did to the map. CI
+regenerates and fails if the committed artifact differs, or it would silently
+go stale. The file has a do-not-edit header and a checker rule to match
+(`check-data.js --require-generated`). Once generated segmentation stops
+being surprising, the artifact can move to build-time-only. *(All in place
+since 2026-09-19; the output is byte-deterministic, and the header carries no
+build date, so the CI diff is exact.)*
 
 **The switchover is a big bang, deliberately.** The generator does not merge
 with, or fall back to, hand-authored entries: on the day it lands, every
@@ -1636,9 +1639,10 @@ First documents to encode, in order:
   wait until the generator has proven itself.
 - Rendering derived brackets as prose in popups.
 - The bracket-width ("how well pinned") color scheme.
-- Whether a revived name resumes its old entity or begins a new one — Georgia
-  in 1897 revives a pre-1889 name on the same street. The model can express
-  either; the call hasn't been made.
+- ~~Whether a revived name resumes its old entity or begins a new one~~ —
+  resumed: one entity, two periods (built 2026-09-17; the split is reported
+  under "Revived names" in `generated/report.md`, since a row on the wrong
+  street produces the same shape).
 
 ## 13. Roadmap — wanted, not yet specified (2026-09-10)
 

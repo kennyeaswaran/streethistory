@@ -1,10 +1,14 @@
 # The generator, built: acceptance results and implementation notes
 
-**Status (2026-08-24): built; the §11 acceptance test passes on 3rd Street.**
-The live `streets-data.js` is untouched — generator output goes to
-`generated/streets-data.gen.js` until the full-corpus diff (§11's last step)
-is done and Kenny approves the switchover. Written by the instance that built
-it, for Kenny's review; MODEL-SPEC.md is unedited and remains the contract.
+**Status (2026-09-19): live.** The switchover ran that day (checklist C, D, F
+below; the account is in handbook/SWITCHOVER.md): `generate.js` writes
+`streets-data.js`, `index.html` is the former preview page, the old map is
+deleted, and the deploy gates on `check-data.js --require-generated`,
+`check-model.js` and a regeneration diff. *(Original status, 2026-08-24:
+built; the §11 acceptance test passes on 3rd Street; output went to
+`generated/streets-data.gen.js` until the full-corpus accounting was done
+and Kenny approved.)* Written by the instance that built it, for Kenny's
+review; MODEL-SPEC.md is the contract.
 
 **Re-checked 2026-09-15** against the live tree (checklist item A had just
 landed). Findings folded in below, each marked *(2026-09-15)*: the claim that
@@ -22,7 +26,8 @@ and not only code, and item C has two traps of its own.
 | `generate.js` | the generator (§6): segmentation, timelines, `how`, planned/built, labels, bands, search index, reports |
 | `check-model.js` | validates the authored layers (§9): ids resolve, extents lie on their streets, change rows only on transition-attesting documents, prose-dated spellings carry sources, shared forms produce distinct labels |
 | `diff-street.js` | the acceptance harness: structural per-field diff of one street, legacy vs generated |
-| `generated/` | `streets-data.gen.js` (today's consumable shape — `check-data.js` passed on it unmodified on 2026-08-24; **no longer**, see item E), `search-index.js`, `report.md` |
+| `streets-data.js` | the generated map data, at the root since 2026-09-19 (was `generated/streets-data.gen.js`); `check-data.js --require-generated` passes on it |
+| `generated/` | `search-index.js`, `report.md` |
 
 Documents encoded — **24 plus `osm`, of which 23 are fully swept** (2026-09-01;
 `node check-model.js` prints the live count, and the tool's Open → "What's left
@@ -162,9 +167,9 @@ All small; flagging them so they get ratified or reversed consciously:
    `legacy/accepted-differences.js` as the waiver file; first run: 121 hard
    findings (70 coverage, 15 names, 36 namesake), 219 soft. The human-facing
    reading of that output is **handbook/SWITCHOVER.md**.
-3. **Map/checker migration** (§8) — now underway in **`preview.html`**, which
-   as of 2026-08-25 is a STANDING file (no longer auto-derived from
-   index.html; it is the future index.html and is edited directly). Already
+3. **Map/checker migration** (§8) — done in **`preview.html`**, which
+   as of 2026-08-25 was a STANDING file (no longer auto-derived from
+   index.html) and became index.html at the 2026-09-19 flip. Already
    in it: entity search over all recorded forms with fit-on-select and
    three-way coloring (bears / formerly bore / neither), the grey =
    OSM-only base scheme with the violet base retired, single-select radio
@@ -175,8 +180,8 @@ All small; flagging them so they get ratified or reversed consciously:
    cross-links as saved searches (`[[name:<id>]]`), the two age color
    schemes, match-count stepping, and retiring the checker's stub-hostile
    warning.
-4. Then the big-bang switchover per §10: generate into `streets-data.js`,
-   do-not-edit header, CI regeneration check.
+4. ~~Then the big-bang switchover per §10: generate into `streets-data.js`,
+   do-not-edit header, CI regeneration check.~~ **Done 2026-09-19.**
 
 Known soft spots worth eyes: coverage polygons for the tract documents are
 hand-estimated rectangles pending measured footprints (harmless while
@@ -265,7 +270,16 @@ confirm nothing in `names.js` / `names-new.js` refers to it (nothing did on
 2026-09-15). Then re-run the segment count on 2nd Street: the tunnel gap
 should close, and what remains of 4 → 18 is coverage edges for ROADMAP §1.
 
-**C. Flip the artifact.**
+**C. Flip the artifact.** ✔ **Done 2026-09-19.** Generator writes
+`streets-data.js`; header without a build date; output confirmed
+byte-deterministic (two runs identical — and the one `localeCompare` in the
+sort keys became a plain code-point compare, so an ICU difference between
+Kenny's Node and CI's cannot reorder it); `diff-street.js`, `preview-test.js`,
+`check-legacy.js` retargeted; deploy.yml's check job now runs
+`check-data.js --require-generated`, `check-model.js` and the regeneration
+diff (row problems tolerated, a crash — no summary line — not), and its
+deploy job no longer rebuilds, since the committed file is proven current.
+*Original text:*
 Point the generator's output at `streets-data.js` itself (keep emitting
 `generated/search-index.js` and `generated/report.md` where they are). Give
 it the DO-NOT-EDIT header §10 specifies. Commit the generated file during the
@@ -302,7 +316,13 @@ site-config.js like index.html). The rest is open.
   `coverage-report.js` and `intersect.js` read `streets-data.js` and are
   unaffected by name, but check they survive `{px}` extents.
 
-**D. Promote preview.html to index.html.**
+**D. Promote preview.html to index.html.** ✔ **Done 2026-09-19** — the three
+edits, header comment rewritten, old index.html and preview.html deleted
+(and `generated/streets-data.gen.js` with them), the utilities' printed
+lines. Rendered in the sandbox: loads clean, no banner, 941 entries. NOT done,
+deliberately: the `only: "legacy"` rows in site-config.js and the legacy
+branches of check-data.js stay for now (four files know them; post-flip
+cleanup, noted in site-config.js). *Original text:*
 preview.html IS the future index.html (standing file; decision 2026-08-25).
 At the flip: change its data `<script src>` to `streets-data.js` (and add
 `site-config.js` before it, per C), delete the purple PREVIEW banner and the
@@ -385,7 +405,10 @@ so the flip needs no edit to it:
   `names.js` prose via the generator, 70-odd of them; they belong in
   `check-model.js` or the names tool, on the entity, once.
 
-**F. Rewrite the authoring docs.** ✔ **Done ahead of the switchover, 2026-09.**
+**F. Rewrite the authoring docs.** ✔ **Done ahead of the switchover, 2026-09;
+the flip-dependent remainder done 2026-09-19** (PUBLISHING.md, MODEL-SPEC §0
+and §10 and the revived-name item in §12, README.md, CLAUDE.md, legacy/README.md,
+site-config.js, MAP-TOOL-SPEC.md, ROADMAP.md, check-data.js's header).
 The handbook was reorganised around the document model rather than waiting for
 it: `ADDING-STREETS.md` was retired into **NAME-RESEARCH.md** and
 **ADDING-A-NEIGHBORHOOD.md**, **PIPELINE.md** was rewritten as a four-stage

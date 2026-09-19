@@ -1,4 +1,4 @@
-// preview-test.js — drives preview.html in a real browser.
+// preview-test.js — drives index.html (the generated-data map) in a real browser.
 //
 // The colour scheme is a claim about what the map SAYS, and it is made of a
 // CSS-ish stroke colour on a Leaflet polyline. Nothing in the generator can
@@ -18,7 +18,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
                           : (fail++, console.error("  FAIL " + n + (d ? " — " + d : "")));
 
 // Blue stopped being one colour when scheme 1 grew its saturation ramp
-// (preview.html blueFor): a stretch is painted somewhere between hsl(205 25%
+// (index.html blueFor): a stretch is painted somewhere between hsl(205 25%
 // 68%) and hsl(205 55% 40%) depending on how much of its story is pinned. The
 // claim under test was never about a particular hex — it is "a document speaks
 // about this stretch" versus "only the OSM extract does" — so the test asks
@@ -35,7 +35,7 @@ const isGrey = c => String(c) === GREY;
                   "  npm install leaflet@1.9.4 --no-save");
     process.exit(1);
   }
-  if (!fs.existsSync(path.join(__dirname, "generated/streets-data.gen.js"))) {
+  if (!fs.existsSync(path.join(__dirname, "streets-data.js"))) {
     console.error("Run `node generate.js` first — this tests the generated map.");
     process.exit(1);
   }
@@ -60,7 +60,7 @@ const isGrey = c => String(c) === GREY;
     r.fulfill({ contentType: "text/css",
                 body: fs.readFileSync(path.join(LEAFLET, "leaflet.css"), "utf8") }));
 
-  await page.goto("http://localhost:8124/preview.html");
+  await page.goto("http://localhost:8124/index.html");
   // Geometry comes from the bundled extract, so the map settles without network.
   await page.waitForFunction(() => typeof streets !== "undefined" && streets.size > 100,
                              null, { timeout: 30000 });

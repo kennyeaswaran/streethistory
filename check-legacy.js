@@ -8,7 +8,7 @@
 //
 // Run: node check-legacy.js [--verbose] [--street "3rd Street"]
 // Reads: legacy/streets-data-2026-08.js (the hand-authored map, frozen),
-//        generated/streets-data.gen.js (today's build), streets-geometry.js,
+//        streets-data.js (the generated file), streets-geometry.js,
 //        legacy/accepted-differences.js (what a person has waived, with reasons).
 // Exits 1 while any HARD finding stands unaccepted.
 //
@@ -42,7 +42,7 @@ const { normalizeName } = require(path.join(__dirname, "site-config.js"));
 
 const load = f => new Function(fs.readFileSync(path.join(__dirname, f), "utf8") + "; return STREET_DATA;")();
 const LEGACY = load("legacy/streets-data-2026-08.js");
-const GEN = load("generated/streets-data.gen.js");
+const GEN = load("streets-data.js");
 const ACCEPTED = fs.existsSync(path.join(__dirname, "legacy/accepted-differences.js"))
   ? require(path.join(__dirname, "legacy/accepted-differences.js")) : [];
 const VERBOSE = process.argv.includes("--verbose");

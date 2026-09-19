@@ -27,24 +27,39 @@ e.g. `streetymology`). A custom domain can be pointed at it later.
 5. **Turn on Pages.** On github.com, open the repo → Settings → Pages →
    under "Build and deployment", set Source to **GitHub Actions**. The included
    workflow (.github/workflows/deploy.yml) takes over: on every push it runs
-   `node check-data.js` and deploys only if the data validates. Watch progress
-   in the repo's Actions tab; the first run finishes in about a minute, then the
-   site is live.
+   the three gates below and deploys only if they pass. Watch progress in the
+   repo's Actions tab; the first run finishes in about a minute, then the site
+   is live.
 
 ## Everyday updates
 
-Edit files → GitHub Desktop shows the diff → write a one-line summary →
-Commit to main → Push origin. The checker runs automatically; if it fails,
-the previous version of the site stays up (see the red X in the Actions tab
-for what went wrong).
+Edit files → run the generator → GitHub Desktop shows the diff → write a
+one-line summary → Commit to main → Push origin. The gates run automatically;
+if one fails, the previous version of the site stays up (see the red X in the
+Actions tab for what went wrong).
 
-The deploy also **rebuilds `generated/` itself** (`node generate.js`) before
-uploading, so a pushed document reaches `preview.html` even if the generator
-was not run locally. Row problems (a street the geometry file lacks, a cross
-street that does not meet it) do not block it — those rows are dropped and
-listed in the Actions log; only a generator crash that leaves an unparseable
-file does. Still run the generator and commit its output when you can: the
-committed copy is what a checkout and the local preview show.
+**`streets-data.js` is generated** (since the 2026-09-19 switchover): the map
+reads it, `generate.js` writes it from `names.js` + `documents/`, and nobody
+edits it by hand. So every change to a document or an entity is two files in
+the commit — the change itself and the regenerated output:
+
+    node check-model.js && node generate.js
+
+then commit `streets-data.js` (and `generated/search-index.js`) with the rest.
+
+The deploy runs three gates before it uploads anything:
+
+1. `node check-data.js --require-generated` — the contract the map relies
+   on, and a refusal to publish a `streets-data.js` that lacks the
+   generator's header (someone edited it by hand).
+2. `node check-model.js` — the authored layers (`names.js`, `documents/`).
+3. **Regeneration check** — it runs `node generate.js` on the pushed tree and
+   fails if the result differs from the committed `streets-data.js` /
+   `generated/search-index.js`. That is the "forgot to run the generator"
+   tripwire: regenerate, commit, push again. Row problems (a street the
+   geometry file lacks, a cross street that does not meet it) do not fail
+   it — those rows are dropped and listed in `generated/report.md` and the
+   Actions log; a generator that crashes mid-run does.
 
 ## Custom domain (later)
 

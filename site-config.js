@@ -1,19 +1,18 @@
 // Site configuration — authored, never generated.
 //
-// These three constants used to live in `streets-data.js`, which is on its way
-// to becoming generated output (MODEL-IMPLEMENTATION checklist A). A generator
+// These three constants used to live in `streets-data.js`, which has been
+// generated output since 2026-09-19 (MODEL-IMPLEMENTATION checklist A). A generator
 // that reads its own output to learn the vocabulary is a circularity waiting to
 // happen, so the vocabulary moved here, where nothing writes it but a person.
 //
 // Loaded three ways, so it must stay plain `const` declarations with a
 // `module.exports` guard at the end:
-//   • `<script src="site-config.js">` — index.html, preview.html,
-//     map-tool.html, names-tool.html
+//   • `<script src="site-config.js">` — index.html, map-tool.html,
+//     names-tool.html
 //   • `require("./site-config.js")` — generate.js, documents/osm.js,
 //     check-model.js, check-data.js, intersect.js, coverage-report.js
-//   (It was also re-emitted into `generated/streets-data.gen.js` for
-//   preview.html until 2026-09-15; that page loads this file now, like the
-//   others — MODEL-IMPLEMENTATION checklist C.)
+//   (It was also re-emitted into the generated file for the preview page
+//   until 2026-09-15 — MODEL-IMPLEMENTATION checklist C.)
 
 // ---------------------------------------------------------------------------
 // STREET NAMES: one normalisation, shared by everything that keys OSM ways.
@@ -205,10 +204,12 @@ const CATEGORIES = [
   // "this street has never entered the corpus" are different answers.
   { id: "stub",         label: "Only the base map has it", parent: "status", only: "model", derived: true },
 
-  // LEGACY ONLY. `streets-data.js` authors these two by hand and has no `basis`
-  // or `searched` to derive anything from; index.html reads that file and needs
-  // them. The generated model replaced them with the `basis` node above, so
-  // they are hidden from preview.html rather than shown with a permanent zero.
+  // LEGACY ONLY. The hand-authored streets-data.js (archived as
+  // legacy/streets-data-2026-08.js) tagged these two by hand; the generated
+  // model replaced them with the `basis` node above, and the map hides them.
+  // Dead since the 2026-09-19 switchover; removing them (and the branches in
+  // check-model.js, check-data.js, names-tool.html and generate.js's
+  // NAME_CATEGORY_INDEX that still know them) is post-flip cleanup.
   { id: "unknown",      label: "Researched — origin not yet found",  parent: "status", only: "legacy" },
   { id: "unresearched", label: "Not yet researched",                parent: "status", only: "legacy" }
 ];
