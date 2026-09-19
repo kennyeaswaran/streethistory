@@ -11,6 +11,17 @@ Ordered by what it costs the map today, not by how interesting it is.
 
 ## P1 — a sheet lettering Georgia Bell Street (west downtown)
 
+> ★★★ **SUPERSEDED IN PART, 2026-09-18 — WE NOW HAVE AN ORDINANCE NUMBER.**
+> **Robinson 1884, Ordinance 97, p. 293: "Changing name of Turner, Pine,
+> GEORGIA, Elm, Pacific and Rose streets."** Read off the volume's own list of
+> ordinances (handbook/COMPILED-ORDINANCES.md). The page itself is not yet
+> pulled, and it is the cheapest high-value page in this whole file: it names
+> what Georgia became, and does the same for Elm and Rose in passing.
+> ⚠ A renaming ordinance still does not PLACE the street — the sheet asked for
+> below is what puts it on ground — but it dates and bounds the lineage, and it
+> may name a successor street the corpus already holds.
+
+
 **What it unblocks:** modern Georgia Street currently carries **no name entity
 at all** and no history.
 

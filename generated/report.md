@@ -2,7 +2,7 @@
 
 **Overwritten every build** (`node generate.js`).
 
-- Streets: 272; entries: 940
+- Streets: 272; entries: 941
 - Stub entities minted from OSM (unresearched): 130
 - Curated entities: 328
 - Excluded OSM names (normalizeName misparses them; see generate.js): East West Bank Plaza at The Broad
@@ -21,11 +21,12 @@
 ## Revived names (a name recurs around another — check the intervening row is on the right street)
 - 2nd Street [-118.2591–-118.2586]: 2nd Street (1886) → Lake Shore Avenue → 2nd Street (undated) — a revived name, or a row on the wrong street
 - 9th Street [-118.2550–-118.2537]: 9th Street (1849) → Moran's Lane → 9th Street (1893) — a revived name, or a row on the wrong street
-- Main Street [34.0558–34.0582]: Main Street (1849) → Bath Street → Main Street (undated) — a revived name, or a row on the wrong street
+- Main Street [34.0558–34.0582]: Main Street (1849) → Bath Street → Main Street (1883) — a revived name, or a row on the wrong street
 - Miramar Street [-118.2576–-118.2571]: 3rd Street (1875) → Seminary Street → 3rd Street (1886) — a revived name, or a row on the wrong street
 - Wall Street [34.0415–34.0421]: Wall Street (1884) → Myrtle Avenue → Wall Street (1893) — a revived name, or a row on the wrong street
 
 ## Partially swept documents (no negative inference contributed)
+- caswell-1878: sweptFor = []
 - dnla-1924-01-04: sweptFor = []
 - dnla-1925-07-16: sweptFor = []
 - dnla-1926-05-06: sweptFor = []
@@ -204,18 +205,29 @@
 - lah-1926-06-08: sweptFor = []
 - lah-1926-06-17: sweptFor = []
 - lah-1927-06-29: sweptFor = []
+- mcpherson-1873: sweptFor = []
 - min-1893-04-10: sweptFor = []
 - min-1896-08-31: sweptFor = []
 - min-1896-09-08: sweptFor = []
 - min-1896-09-14: sweptFor = []
 - min-1896-09-21: sweptFor = []
 - newmark-1916: sweptFor = []
+- ord-103: sweptFor = []
+- ord-105: sweptFor = ["Ord Street"]
 - ord-162010: sweptFor = []
 - ord-169111: sweptFor = []
 - ord-171586: sweptFor = []
 - ord-172590: sweptFor = []
 - ord-4093: sweptFor = ["Figueroa Street","Boylston Street","Georgia Street","Central Avenue"]
+- ord-76: sweptFor = []
+- ord-77: sweptFor = []
+- ord-81: sweptFor = ["Turner Street","Jackson Street"]
+- ord-88: sweptFor = []
+- ord-92: sweptFor = ["Ducommun Street"]
+- robinson-1884: sweptFor = []
 - stevenson-1884-hi-res: sweptFor = []
+- teed-1887: sweptFor = []
+- teed-1889: sweptFor = []
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
 - myrtle: "Wall Street" ×1

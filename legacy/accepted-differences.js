@@ -68,4 +68,29 @@ module.exports = [
   ...["Harbor Freeway", "Santa Ana Freeway", "Hollywood Freeway", "Santa Monica Freeway",
       "San Bernardino Freeway", "Arroyo Seco Parkway", "I-10 Metro ExpressLanes"]
     .map(s => acc(s, "namesake", "freeway / ExpressLanes namesake: shallow research, reconstructible from the standard sources in minutes; no entity until one is wanted (Kenny, 2026-09-18)")),
+
+  // The last ten coverage gaps, compared stretch by stretch with the old map
+  // on 2026-09-19: on every one the old claim was the whole-street entity
+  // claim (namesake, Kines/Wikipedia citation, a renaming sentence), which the
+  // entity still carries onto the grey stretch; no stretch-specific sighting
+  // ever existed there. Grey means "no sheet yet", which is the truth, and
+  // the corridors stay on the shopping list as work after the flip.
+  // (Kenny, 2026-09-19)
+  ...[["Georgia Street", "*"], ["Willow Street", "*"], ["Jesse Street", "*"], ["7th Place", "*"],
+      ["Vignes Street", "*"], ["3rd Street", "west of Bixel"], ["3rd Street", "Boylston to Figueroa"],
+      ["17th Street", "*"], ["Olympic Boulevard", "east of Central Ave (former 9th St)"],
+      ["Cesar E Chavez Avenue", "*"]]
+    .map(([street, label]) => ({ street, label, check: "coverage",
+      reason: "no sheet reaches this ground yet; the old claim here was the whole-street entity claim, which the entity still carries — research queue, not a loss (Kenny, 2026-09-19)" })),
+
+  // Two former-name histories the old map had from Kines alone and the new
+  // map cannot yet draw: each is a chain of council actions across several
+  // rowless documents, which is what the proceedings model (ROADMAP §2) is
+  // for. Kenny has chosen to design that after the changeover. The ground is
+  // blue and the current names and namesakes are on the map; only the chain
+  // waits. (Kenny, 2026-09-19)
+  { street: "Broadway", label: "north of Cesar Chavez (Chinatown)", check: "names",
+    reason: "Buena Vista Road/Street: Eternidad → Buena Vista (1888 survey extension) → North Broadway (1909), across lah-1896-05-16, min-1893-04-10, lah-1899-05-06, lah-1908-09-22 and Guinn — proceedings work, after the changeover" },
+  { street: "Miramar Street", label: "*", check: "names",
+    reason: "Ocean View Avenue → Nob Hill Avenue (1896) → Ocean View (1897) → Miramar (1915): Kines's chain, with lah-1896-05-16 and min-1893-04-10 mentioning Ocean View and no rows — proceedings work, after the changeover" },
 ];

@@ -1,55 +1,57 @@
 # Switchover — what is left, and whose it is
 
-*Updated 2026-09-17, late, after commit 6ec2c6a (377 documents, 292
-entities, 64 namesakes approved). Numbers are from that tree;
-`node check-legacy.js` and `node check-data.js` reprint them. Instance
-mechanics: MODEL-IMPLEMENTATION.md's checklist.*
+*Updated 2026-09-19. **All three gates are green**: `node check-model.js`
+clean (328 entities, 392 documents, 4312 rows); `node check-data.js` on the
+generated output clean; `node check-legacy.js` — "Every legacy entry is
+subsumed or accepted" (140 entries, 54 accepts, 0 hard). The flip is ready
+to schedule.*
 
 ## Where things stand
 
 | | |
 |---|---|
-| A vocabulary, B aliasing, E checker/CI | ✔ done |
-| C — generator writes `streets-data.js` | vocabulary no longer re-emitted, preview loads site-config.js; **output path, header date, CI regeneration check, `--require-generated` — untouched** |
-| D — preview → index, old index deleted | untouched; the three edits are listed at the top of preview.html |
-| F — docs | pending the flip |
-| gates | `check-model.js` clean · `check-data.js` on generated: **clean** · `check-legacy.js`: **12 hard** (10 coverage, 2 names), 42 accepted |
+| A vocabulary, B aliasing (+ branches), E checker/CI | ✔ done |
+| C — generator writes `streets-data.js` | vocabulary no longer re-emitted and preview loads site-config.js; **output path, header date, CI regeneration check, `--require-generated` — the flip** |
+| D — preview → index, old index deleted | **the flip** |
+| F — docs | **the flip** |
+| the corpus | gates green; growing before and after, which is the design |
 
-**C, D and F are one sitting, and they ARE the flip**: the moment the
-generator writes `streets-data.js`, the old index.html is rendering a file it
-cannot read (`{px}` extents), so C cannot be done "early" — it lands together
-with D. An instance does the three in an hour once the gates below are
-clean. What is left before that sitting is all corpus and decisions:
+## How to run the flip (Kenny + one instance, one sitting)
 
-1. ~~`oldplaza1873` source URL~~ — done.
-2. Coverage: 10 hard entries (§2) — two shopping lists cover them:
-   `shopping-list-2026-09-17.md` (Crown Hill, east of Alameda) and
-   `shopping-list-2026-09-17b.md` (north of the plaza, Traction, the
-   southwest; query ready to paste). Three are bbox edges, three are Boyle
-   Heights (accept).
-3. Names: 2 (§3) — Buena Vista and the Miramar chain, both proceedings
-   work; Negros, Stephenson and Macy cleared by your sheets 2026-09-18.
-4. ~~Namesakes~~ — done 2026-09-18: the four ordinance rows confirmed, the
-   freeways accepted. The audit's 58 held-back rows wait for the confirmation
-   tool.
-5. The §4(c) decision: how a renaming with only a secondary source is drawn.
-6. Your read of the 13 new entities (§4) — they are on the site the day of
-   the flip.
-7. Confirm the High → Walters row (§3); the 1890 pair waits on its single ordinances.
-8. The corpus-wide renaming audit runs in its own thread
-   (`handbook/PROMPT-change-rows-audit.md`); its bin-B rows come back to you
-   for extent verification.
+1. **Commit first.** Every sheet, ordinance and entity in progress goes in
+   as its own commit, so the flip's diff is readable and revertible. Any
+   instance mid-batch (the UCLA material) reaches a point where
+   `check-model.js` passes, and that gets committed too.
+2. **Nobody edits `index.html`, `preview.html`, `generate.js`, `check-*.js`,
+   `site-config.js` or `.github/workflows/deploy.yml` while it runs.**
+   `documents/` and `names.js` are fair game throughout.
+3. **The instance does C, D, F** from MODEL-IMPLEMENTATION.md's checklist,
+   in that order: point the generator at `streets-data.js`, drop the
+   `Built:` date from the header, retarget `diff-street.js`,
+   `preview-test.js`, `check-legacy.js` and deploy.yml's parse step; add
+   `node generate.js && git diff --exit-code streets-data.js` and
+   `check-data.js --require-generated` to deploy.yml; make preview.html the
+   new index.html (add the `site-config.js` script line, delete the
+   `[PREVIEW]` title prefix and the purple banner with its back-link) and
+   delete the old index.html and preview.html; then the doc list under F —
+   README, CLAUDE.md, legacy/README.md, PUBLISHING.md, MODEL-SPEC §0, the
+   `preview.html` mentions in ROADMAP and MAP-TOOL-SPEC, the utilities'
+   printed lines. It ends with the three gates run once more and the list of
+   files changed.
+4. **You commit the flip as one commit and push.** Watch the Actions tab:
+   the deploy now runs `check-data.js --require-generated`, `check-model.js`
+   and the regeneration check before it uploads. Green, and the generated
+   map is the site.
+5. **After:** the Misc Records half of `shopping-list-2026-09-17b.md` when
+   the City service is back; the confirmation tool for the 58 held-back
+   audit rows (MAP-TOOL-SPEC §9); the proceedings model (ROADMAP §2) for
+   Buena Vista and the Miramar chain; Olympic's 1935 ordinance
+   (`shopping-list-2026-09-18-council-files.md`); the Chavez extents from
+   council file 93-0907's exhibit map.
 
-Since the last rewrite: Belmont Avenue went unbound (two entities share the
-name; one is a ghost street) and left its documented stretches without a
-current name — the binder now drops vanished-only entities from a tie and
-says so in the report; **check that modern Belmont Avenue is `belmont-ave`'s
-lineage** (moved north onto Aztec's ground), because that is what it now
-assumes. "Revived names" in `generated/report.md` has ten entries now
-(Wilshire/Orange and 7th/Orange are new); each is either a real revival or
-a row on the wrong street.
+## What was decided along the way (for the record)
 
-## 1. The checkers are clean
+### The checkers
 
 `oldplaza1873` has its Huntington record as `url` (Kenny, 2026-09-18) and the
 35 citation errors are gone; `stevenson-1884-hi-res` (partially processed:
@@ -58,30 +60,19 @@ the IIIF full-size image as a `copies` entry, and an interim title. Also
 that day: an entity minted in the tool and not yet researched derives
 `basis-none` / `searched-none` instead of an empty category list.
 
-## 2. Coverage — *10 left*
+### Coverage — done
 
-```
-  6%  3rd Street — Boylston to Figueroa
-  6%  17th Street
- 27%  Willow Street
- 29%  Georgia Street
- 35%  Jesse Street
- 40%  Vignes Street
- 41%  Cesar E Chavez Avenue
- 42%  3rd Street — west of Bixel
- 42%  7th Place
-  —   Olympic Boulevard — east of Central Ave (bbox edge; no segment)
-```
+The last ten were compared stretch by stretch with the old map on
+2026-09-19 and accepted: on every one the old claim was the whole-street
+entity claim, which the entity still carries onto the grey stretch. The
+corridors in `shopping-list-2026-09-17b.md` (Misc Records half still to run
+when the City service is back) are work for after the flip.
 
-Willow, Jesse and 7th Place are the Boyle Heights stretches (accept); Olympic
-east of Central is the neighbourhood's southern edge (accept or widen the
-bbox); the Misc Records half of `shopping-list-2026-09-17b.md` is still to
-run for the rest. Whatever the sheets do not reach: accept, one line each.
+### Names — done (two deferred to proceedings)
 
-## 3. Names the old map recorded that the new map does not — *fix or accept*
-
-7 findings (De La Guerra, Cuidado/Caridad and Calle Real are accepted).
-What the corpus already holds for each:
+Buena Vista and the Miramar chain were accepted 2026-09-19 as proceedings
+work; the rest cleared or were accepted as recorded below. What the corpus
+held for each, at the time:
 
 | finding | evidence in the corpus | do |
 |---|---|---|
@@ -112,7 +103,7 @@ which is proceedings work, not a sheet. So:
 - Sanborn (1888, 1894) and the directories as serial sources stay deferred,
   as planned; nothing above needs the neighbourhood expanded.
 
-## 4. Legacy namesakes — *7 left, all freeways*
+### Legacy namesakes — done
 
 The 13 carried-over entities are in; the five empty fields are settled
 (2026-09-18: grand-ave and Delong accepted, Boylston / San Julian graded
@@ -131,7 +122,7 @@ Engineer's exhibit map in council file 93-0907 settles the ground. Olympic
 
 **Left: nothing.** The freeways and ExpressLanes are accepted for `namesake` too (shallow research, reconstructible in minutes).
 
-## 5. Accepts — *33 in; Negros after the look*
+### Accepts
 
 `legacy/accepted-differences.js`: coverage for the six streets, freeways,
 ExpressLanes, plazas; names for the freeways, De La Guerra, Spring's two
@@ -139,12 +130,12 @@ pre-Ord names, Calle Real. Still open: Calle de los Negros (after the LAPL
 Ord original / 1872–75 directories), and the Boyle Heights stretches of
 Willow, Jesse and 7th Place for `coverage`.
 
-## 6. Prose — *you, names tool*
+### Prose — still open, not a gate
 
 `{{span}}` with no link: Spring, Angelina, Industrial, Wilde. Link with no
 span: Mesquit.
 
-## 7. Instance work, in order
+### Instance work that was listed
 
 1. §4 — the five `namedAfter` fields, and the freeways if wanted.
 2. The tract maps for §2.
@@ -155,7 +146,7 @@ span: Mesquit.
 5. Style-budget warnings → check-model / names tool, once per entity.
 6. `tmp/ord-069-plaza*.png` are crops I rendered to look at the plaza; delete.
 
-## 8. Gate
+### The gate, as it was phrased
 
 `node check-model.js && node generate.js; node check-data.js
 --require-generated && node check-legacy.js` — all three clean, then C, D, F.

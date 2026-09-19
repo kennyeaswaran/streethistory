@@ -1,6 +1,6 @@
 // GENERATED FILE — DO NOT EDIT (built by generate.js from names.js and
 // documents/; see MODEL-SPEC.md). Regenerate with: node generate.js
-// Built: 2026-09-18
+// Built: 2026-09-19
 const NAME_CATEGORY_INDEX = {
   "first-street": [
     "number",
@@ -21124,8 +21124,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Map of Blocks 23, 24 and 25, Angeleno Heights, Los Angeles, Cal. (M.R. 12-25, Nov. 24, 1886)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-025.pdf"
+            "title": "Ordinance No. 152 (Old Series), “An Ordinance consolidating Short street and Canal and Reservoir street, and changing the name of the streets so consolidated to Bellevue avenue” — adopted by the Council of the City of Los Angeles January 13, 1885, approved January 22, published January 24, 1885; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 58",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
         ],
         "maxLng": -118.2545,
@@ -21176,6 +21176,10 @@ const STREET_DATA = {
           {
             "title": "Map of Blocks 23, 24 and 25, Angeleno Heights, Los Angeles, Cal. (M.R. 12-25, Nov. 24, 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-025.pdf"
+          },
+          {
+            "title": "Ordinance No. 152 (Old Series), “An Ordinance consolidating Short street and Canal and Reservoir street, and changing the name of the streets so consolidated to Bellevue avenue” — adopted by the Council of the City of Los Angeles January 13, 1885, approved January 22, published January 24, 1885; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 58",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
         ],
         "minLng": -118.2545,
@@ -21207,7 +21211,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1885",
-            "until": "?",
+            "until": "Jan. 1885",
             "name": "Canal and Reservoir Street",
             "entityId": "canal-and-reservoir-st",
             "formInForce": "Canal and Reservoir Street",
@@ -21216,19 +21220,19 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
           },
           {
-            "from": "by 1922",
+            "from": "Jan. 1885",
             "until": null,
             "name": "Bellevue Avenue",
             "entityId": "bellevue-ave",
             "formInForce": "Bellevue Avenue",
             "how": "renaming",
-            "origin": "labeled “BELLEVUE AVENUE” on the 1922 Tract No. 3791 {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0063/TR0063-098-p1.pdf"
+            "origin": "renamed per Ord. 152 (Old Series), Short and Canal and Reservoir become Bellevue Avenue (1885) {{(source)}}",
+            "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
         ],
         "note": "Lettered on documents/mr012-025 and documents/tr0063-098-p1. It predates the 1886 Angeleno Heights tract, which uses it as a boundary. Most of it east of the 110 is now Sunset Boulevard and Cesar E. Chavez Avenue; a western remnant keeps the name.",
         "attested": true,
-        "knownFraction": 0.59,
+        "knownFraction": 0.8,
         "categories": [
           "descriptive",
           "renamed",
@@ -21248,12 +21252,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
           },
           {
-            "title": "Tract No. 3791 (May 1922; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0063/TR0063-098-p1.pdf"
+            "title": "Ordinance No. 152 (Old Series), “An Ordinance consolidating Short street and Canal and Reservoir street, and changing the name of the streets so consolidated to Bellevue avenue” — adopted by the Council of the City of Los Angeles January 13, 1885, approved January 22, published January 24, 1885; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 58",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
-            "title": "Map of Blocks 23, 24 and 25, Angeleno Heights, Los Angeles, Cal. (M.R. 12-25, Nov. 24, 1886)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-025.pdf"
+            "title": "Tract No. 3791 (May 1922; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0063/TR0063-098-p1.pdf"
           },
           {
             "title": "Los Angeles Magazine, CityDig — “Monsieur Beaudry managed to wrangle two other L.A. big shots to form the Canal and Reservoir Company, of which Prudent was, prudently, president.”",
@@ -26083,7 +26087,7 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "part of (Canal and Reservoir St)",
+        "label": "part of (Bellevue Ave)",
         "name": "Cesar E Chavez Avenue",
         "entityId": "cesar-e-chavez-avenue",
         "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers, once this stretch was folded into Cesar E Chavez Avenue",
@@ -26096,12 +26100,22 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1885",
-            "until": "?",
+            "until": "Jan. 1885",
             "name": "Canal and Reservoir Street",
             "entityId": "canal-and-reservoir-st",
             "formInForce": "Canal and Reservoir Street",
             "origin": "labeled “Canal and Reservoir Street” on the 1885 Park Tract {{(source)}} — The Canal and Reservoir Company, the water utility Prudent Beaudry founded and led — its ditches had run across this ground since 1868, and the tract was his",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
+          },
+          {
+            "from": "Jan. 1885",
+            "until": "?",
+            "name": "Bellevue Avenue",
+            "entityId": "bellevue-ave",
+            "formInForce": "Bellevue Avenue",
+            "how": "renaming",
+            "origin": "renamed per Ord. 152 (Old Series), Short and Canal and Reservoir become Bellevue Avenue (1885) {{(source)}} — French for “beautiful view” — descriptive of the outlook from the hill, though no source states it",
+            "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
             "from": "?",
@@ -26126,7 +26140,11 @@ const STREET_DATA = {
           "basis"
         ],
         "formerCategories": [
-          "company"
+          "company",
+          "descriptive"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -26149,6 +26167,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Park Tract, Los Angeles City, Cal. (M.R. 7-26, Jan. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
+          },
+          {
+            "title": "Ordinance No. 152 (Old Series), “An Ordinance consolidating Short street and Canal and Reservoir street, and changing the name of the streets so consolidated to Bellevue avenue” — adopted by the Council of the City of Los Angeles January 13, 1885, approved January 22, published January 24, 1885; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 58",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
             "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
@@ -26232,7 +26254,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (Short St)",
+        "label": "part of (Bellevue Ave)",
         "name": "Cesar E Chavez Avenue",
         "entityId": "cesar-e-chavez-avenue",
         "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers, once this stretch was folded into Cesar E Chavez Avenue",
@@ -26245,12 +26267,22 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1876",
-            "until": "?",
+            "until": "Jan. 1885",
             "name": "Short Street",
             "entityId": "short-street-chavez",
             "formInForce": "Short Street",
             "origin": "labeled “Short St” on the 1876 Block 35½, Ord's Survey {{(source)}} — Its length — lettered “C CORTA” on the sheet, which says the same thing in Spanish",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-240.pdf"
+          },
+          {
+            "from": "Jan. 1885",
+            "until": "?",
+            "name": "Bellevue Avenue",
+            "entityId": "bellevue-ave",
+            "formInForce": "Bellevue Avenue",
+            "how": "renaming",
+            "origin": "renamed per Ord. 152 (Old Series), Short and Canal and Reservoir become Bellevue Avenue (1885) {{(source)}} — French for “beautiful view” — descriptive of the outlook from the hill, though no source states it",
+            "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
             "from": "?",
@@ -26269,7 +26301,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
-        "knownFraction": 0,
+        "knownFraction": 0.05,
         "categories": [
           "person",
           "renamed",
@@ -26305,6 +26337,10 @@ const STREET_DATA = {
           {
             "title": "Map of Block 35½, Being an Extension of Ord's Survey of the City of Los Angeles (M.R. 3-240, July 20, 1876; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-240.pdf"
+          },
+          {
+            "title": "Ordinance No. 152 (Old Series), “An Ordinance consolidating Short street and Canal and Reservoir street, and changing the name of the streets so consolidated to Bellevue avenue” — adopted by the Council of the City of Los Angeles January 13, 1885, approved January 22, published January 24, 1885; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 58",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849)",
@@ -26385,7 +26421,7 @@ const STREET_DATA = {
         "to": "Broadway"
       },
       {
-        "label": "beyond Broadway (Short St)",
+        "label": "beyond Broadway (Bellevue Ave)",
         "name": "Cesar E Chavez Avenue",
         "entityId": "cesar-e-chavez-avenue",
         "namedAfter": "{{Cesar Chavez}} (1927–1993), labor leader who co-founded the United Farm Workers, once this stretch was folded into Cesar E Chavez Avenue",
@@ -26398,13 +26434,23 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "1849",
-            "until": "?",
+            "until": "Jan. 1885",
             "name": "Short Street",
             "entityId": "short-street-chavez",
             "formInForce": "Short Street",
             "how": "origin",
             "origin": "labeled “C CORTA”, “SHORT ST” and “Calle Corta” on the 1849 Hutton / Ord Survey and the 1873 Old Plaza, 1873 {{(source)}} — Its length — lettered “C CORTA” on the sheet, which says the same thing in Spanish",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "from": "Jan. 1885",
+            "until": "?",
+            "name": "Bellevue Avenue",
+            "entityId": "bellevue-ave",
+            "formInForce": "Bellevue Avenue",
+            "how": "renaming",
+            "origin": "renamed per Ord. 152 (Old Series), Short and Canal and Reservoir become Bellevue Avenue (1885) {{(source)}} — French for “beautiful view” — descriptive of the outlook from the hill, though no source states it",
+            "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
             "from": "?",
@@ -26423,7 +26469,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
-        "knownFraction": 0.13,
+        "knownFraction": 0.2,
         "categories": [
           "person",
           "renamed",
@@ -26463,6 +26509,10 @@ const STREET_DATA = {
           {
             "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
             "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Ordinance No. 152 (Old Series), “An Ordinance consolidating Short street and Canal and Reservoir street, and changing the name of the streets so consolidated to Bellevue avenue” — adopted by the Council of the City of Los Angeles January 13, 1885, approved January 22, published January 24, 1885; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 58",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
             "title": "Ordinance No. 169111, “An Ordinance of the City of Los Angeles changing the names of Brooklyn Avenue between Indiana Street and Bridge Street; Macy Street between Bridge Street and New High Street; and Sunset Boulevard between Alameda Street and Los Angeles Street and between North Main Street and Figueroa Street and establishing the same as Cesar E. Chavez Avenue” — passed Oct. 22, 1993, approved Oct. 29, 1993, effective Mar. 31, 1994 (Council File 93-0907)",
@@ -30377,6 +30427,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0110/TR0110-048.pdf"
           },
           {
+            "title": "Ordinance No. 92 (Robinson series), “An Ordinance fixing the name of Ducommun street” — adopted July 28, 1883, approved July 30, published Aug. 1, 1883",
+            "url": "https://link.gale.com/apps/doc/DT0102876584/MMLP?u=uclosangeles&sid=bookmark-MMLP"
+          },
+          {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Sainsevain St., changed to Commercial St.”",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           },
@@ -30497,8 +30551,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0110/TR0110-048.pdf"
           },
           {
-            "title": "Tract No. 320 (Nov. 1908)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-111b.pdf"
+            "title": "Ordinance No. 92 (Robinson series), “An Ordinance fixing the name of Ducommun street” — adopted July 28, 1883, approved July 30, published Aug. 1, 1883",
+            "url": "https://link.gale.com/apps/doc/DT0102876584/MMLP?u=uclosangeles&sid=bookmark-MMLP"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Sainsevain St., changed to Commercial St.”",
@@ -30602,8 +30656,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-526.pdf"
           },
           {
-            "title": "Tract No. 320 (Nov. 1908)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-111b.pdf"
+            "title": "Ordinance No. 92 (Robinson series), “An Ordinance fixing the name of Ducommun street” — adopted July 28, 1883, approved July 30, published Aug. 1, 1883",
+            "url": "https://link.gale.com/apps/doc/DT0102876584/MMLP?u=uclosangeles&sid=bookmark-MMLP"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Sainsevain St., changed to Commercial St.”",
@@ -30711,8 +30765,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0201/TR0201-001-p2.pdf"
           },
           {
-            "title": "Tract No. 320 (Nov. 1908)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-111b.pdf"
+            "title": "Ordinance No. 92 (Robinson series), “An Ordinance fixing the name of Ducommun street” — adopted July 28, 1883, approved July 30, published Aug. 1, 1883",
+            "url": "https://link.gale.com/apps/doc/DT0102876584/MMLP?u=uclosangeles&sid=bookmark-MMLP"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Sainsevain St., changed to Commercial St.”",
@@ -30811,8 +30865,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0201/TR0201-001-p2.pdf"
           },
           {
-            "title": "Tract No. 320 (Nov. 1908)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-111b.pdf"
+            "title": "Ordinance No. 92 (Robinson series), “An Ordinance fixing the name of Ducommun street” — adopted July 28, 1883, approved July 30, published Aug. 1, 1883",
+            "url": "https://link.gale.com/apps/doc/DT0102876584/MMLP?u=uclosangeles&sid=bookmark-MMLP"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee’s street-name list: “Sainsevain St., changed to Commercial St.”",
@@ -30863,8 +30917,8 @@ const STREET_DATA = {
             "url": "https://planning.lacity.gov/odocument/db73a2ea-a3b9-4111-a9f5-f548d4e16553/Angelino%20Heights%20PP.pdf"
           },
           {
-            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
+            "title": "Ordinance No. 381, “An Ordinance changing the name of a portion of New Cincinnati street” — adopted by the Council of the City of Los Angeles Mar. 12, 1888, approved Mar. 19, published Mar. 21, 1888; printed in Freeman G. Teed, comp., Charter and Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. IV (1889), p. 168",
+            "url": "https://link.gale.com/apps/doc/DT0106634468/MMLP?u=uclosangeles"
           }
         ],
         "minLat": 34.0682,
@@ -30877,7 +30931,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (New Cincinnati St)",
+        "label": "beyond Bellevue (New Cincinnati St)",
         "name": "Edgeware Road",
         "entityId": "edgeware",
         "namedAfter": "The topography of the Angeleno Heights hill, once this stretch was folded into Edgeware Road",
@@ -30932,11 +30986,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-025.pdf"
           },
           {
-            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
+            "title": "Ordinance No. 381, “An Ordinance changing the name of a portion of New Cincinnati street” — adopted by the Council of the City of Los Angeles Mar. 12, 1888, approved Mar. 19, published Mar. 21, 1888; printed in Freeman G. Teed, comp., Charter and Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. IV (1889), p. 168",
+            "url": "https://link.gale.com/apps/doc/DT0106634468/MMLP?u=uclosangeles"
           }
         ],
-        "minLat": 34.0663,
+        "minLat": 34.0677,
         "maxLat": 34.0682,
         "from": {
           "px": [
@@ -30944,6 +30998,71 @@ const STREET_DATA = {
             590
           ]
         },
+        "to": "Bellevue Avenue"
+      },
+      {
+        "label": "beyond Bellevue (New Cincinnati St)",
+        "name": "Edgeware Road",
+        "entityId": "edgeware",
+        "namedAfter": "The topography of the Angeleno Heights hill, once this stretch was folded into Edgeware Road",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-025.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": "Mar. 1888",
+            "name": "New Cincinnati Street",
+            "entityId": "new-cincinnati-st",
+            "formInForce": "New Cincinnati Street",
+            "how": "origin",
+            "origin": "labeled “New Cincinnati St” on the 1886 Angeleno Heights, Blocks 23–25 {{(source)}} — lettered on documents/mr012-025, which the recorded map describes as bounded by Bellevue Avenue, Figueroa Street, Temple Street and New Cincinnati Street. It is the southern arm of Edgeware Road today",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-025.pdf"
+          },
+          {
+            "from": "Mar. 1888",
+            "until": null,
+            "name": "Edgeware Road",
+            "entityId": "edgeware",
+            "formInForce": "Edgeware Road",
+            "how": "renaming",
+            "origin": "renamed per Ord. 381, New Cincinnati becomes Edgeware Road (1888) {{(source)}}",
+            "originLink": "https://link.gale.com/apps/doc/DT0106634468/MMLP?u=uclosangeles"
+          }
+        ],
+        "note": "One of the two loop roads around the crescent hills of Angeleno Heights, laid out by Hall and Stilson in 1886. It later absorbed Kern Street on its northern arm and New Cincinnati Street on its southern one.",
+        "attested": true,
+        "knownFraction": 0.8,
+        "categories": [
+          "descriptive",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Angelino Heights Preservation Plan (2004) — “In naming others, Edgeware and Crescent, they had considered the topography as factors”; “Basic to the layout of the tract was the topography of two crescent heights or hills, initially the Edgeware loop road”",
+            "url": "https://planning.lacity.gov/odocument/db73a2ea-a3b9-4111-a9f5-f548d4e16553/Angelino%20Heights%20PP.pdf"
+          },
+          {
+            "title": "Map of Blocks 23, 24 and 25, Angeleno Heights, Los Angeles, Cal. (M.R. 12-25, Nov. 24, 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-025.pdf"
+          },
+          {
+            "title": "Ordinance No. 381, “An Ordinance changing the name of a portion of New Cincinnati street” — adopted by the Council of the City of Los Angeles Mar. 12, 1888, approved Mar. 19, published Mar. 21, 1888; printed in Freeman G. Teed, comp., Charter and Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. IV (1889), p. 168",
+            "url": "https://link.gale.com/apps/doc/DT0106634468/MMLP?u=uclosangeles"
+          }
+        ],
+        "minLat": 34.0663,
+        "maxLat": 34.0677,
+        "from": "Bellevue Avenue",
         "to": {
           "px": [
             139,
@@ -30976,8 +31095,8 @@ const STREET_DATA = {
             "url": "https://planning.lacity.gov/odocument/db73a2ea-a3b9-4111-a9f5-f548d4e16553/Angelino%20Heights%20PP.pdf"
           },
           {
-            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
+            "title": "Ordinance No. 381, “An Ordinance changing the name of a portion of New Cincinnati street” — adopted by the Council of the City of Los Angeles Mar. 12, 1888, approved Mar. 19, published Mar. 21, 1888; printed in Freeman G. Teed, comp., Charter and Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. IV (1889), p. 168",
+            "url": "https://link.gale.com/apps/doc/DT0106634468/MMLP?u=uclosangeles"
           }
         ],
         "minLat": 34.0647,
@@ -31061,8 +31180,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
           },
           {
-            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
+            "title": "Ordinance No. 381, “An Ordinance changing the name of a portion of New Cincinnati street” — adopted by the Council of the City of Los Angeles Mar. 12, 1888, approved Mar. 19, published Mar. 21, 1888; printed in Freeman G. Teed, comp., Charter and Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. IV (1889), p. 168",
+            "url": "https://link.gale.com/apps/doc/DT0106634468/MMLP?u=uclosangeles"
           }
         ],
         "maxLat": 34.0647,
@@ -33883,8 +34002,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-038A.pdf"
           },
           {
-            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
+            "title": "Ordinance No. 97 (Robinson series), “An Ordinance changing the names of Turner, Pine, Georgia, Elm, Pacific and Rose streets” — adopted Sept. 1, 1883, approved Sept. 3, published Sept. 11, 1883",
+            "url": "https://link.gale.com/apps/doc/DT0102876584/MMLP?u=uclosangeles&sid=bookmark-MMLP"
           }
         ],
         "minLat": 34.0457,
@@ -33956,8 +34075,8 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
           },
           {
-            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
+            "title": "Ordinance No. 97 (Robinson series), “An Ordinance changing the names of Turner, Pine, Georgia, Elm, Pacific and Rose streets” — adopted Sept. 1, 1883, approved Sept. 3, published Sept. 11, 1883",
+            "url": "https://link.gale.com/apps/doc/DT0102876584/MMLP?u=uclosangeles&sid=bookmark-MMLP"
           }
         ],
         "minLat": 34.0391,
@@ -34072,8 +34191,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
           },
           {
-            "title": "Ordinance No. 48 (New Series), “An ordinance changing the names of certain streets and avenues in the city of Los Angeles, which, while forming one practically continuous street, have different names” — adopted Apr. 22, 1889, approved May 8, published (and in force) May 10, 1889",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18890510.1.7"
+            "title": "Ordinance No. 97 (Robinson series), “An Ordinance changing the names of Turner, Pine, Georgia, Elm, Pacific and Rose streets” — adopted Sept. 1, 1883, approved Sept. 3, published Sept. 11, 1883",
+            "url": "https://link.gale.com/apps/doc/DT0102876584/MMLP?u=uclosangeles&sid=bookmark-MMLP"
           }
         ],
         "maxLat": 34.0391,
@@ -34721,8 +34840,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
           },
           {
-            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
+            "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
             "title": "L.A. Street Names: Centennial Street — the Park tract “introduced Custer, Boston, and Philadelphia streets (the latter since erased by the 101 and/or 110 freeways)”",
@@ -34766,8 +34885,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
           },
           {
-            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
+            "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
         ],
         "minLat": 34.061,
@@ -34847,8 +34966,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
           },
           {
-            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
+            "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
             "title": "L.A. Street Names: Centennial Street — the Park tract “introduced Custer, Boston, and Philadelphia streets (the latter since erased by the 101 and/or 110 freeways)”",
@@ -34884,7 +35003,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1869",
-            "until": "?",
+            "until": "Feb. 1887",
             "name": "Charity Street",
             "entityId": "charity",
             "formInForce": "Charity Street",
@@ -34902,19 +35021,19 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
           },
           {
-            "from": "?",
+            "from": "Feb. 1887",
             "until": null,
             "name": "Grand Avenue",
             "entityId": "grand-ave",
             "formInForce": "Grand Avenue",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 286 (Old Series), Charity Street becomes Grand Avenue (1887) {{(source)}}",
+            "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
         ],
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.89,
         "categories": [
           "renamed",
           "basis-none",
@@ -34953,12 +35072,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+            "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
-            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
             "title": "L.A. Street Names: Centennial Street — the Park tract “introduced Custer, Boston, and Philadelphia streets (the latter since erased by the 101 and/or 110 freeways)”",
@@ -34994,7 +35113,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1869",
-            "until": "?",
+            "until": "Feb. 1887",
             "name": "Charity Street",
             "entityId": "charity",
             "formInForce": "Charity Street",
@@ -35003,14 +35122,14 @@ const STREET_DATA = {
             "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           },
           {
-            "from": "?",
+            "from": "Feb. 1887",
             "until": null,
             "name": "Grand Avenue",
             "entityId": "grand-ave",
             "formInForce": "Grand Avenue",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 286 (Old Series), Charity Street becomes Grand Avenue (1887) {{(source)}}",
+            "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
         ],
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
@@ -35019,7 +35138,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
-        "knownFraction": 0,
+        "knownFraction": 0.89,
         "categories": [
           "renamed",
           "basis-none",
@@ -35053,12 +35172,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+            "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
-            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0507,
@@ -35090,7 +35209,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1868",
-            "until": "?",
+            "until": "Feb. 1887",
             "name": "Charity Street",
             "entityId": "charity",
             "formInForce": "Charity Street",
@@ -35099,14 +35218,14 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
           },
           {
-            "from": "?",
+            "from": "Feb. 1887",
             "until": null,
             "name": "Grand Avenue",
             "entityId": "grand-ave",
             "formInForce": "Grand Avenue",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 286 (Old Series), Charity Street becomes Grand Avenue (1887) {{(source)}}",
+            "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
         ],
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
@@ -35115,7 +35234,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
-        "knownFraction": 0,
+        "knownFraction": 0.9,
         "categories": [
           "renamed",
           "basis-none",
@@ -35145,12 +35264,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+            "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
-            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0486,
@@ -35182,7 +35301,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "1849",
-            "until": "?",
+            "until": "Feb. 1887",
             "name": "Charity Street",
             "entityId": "charity",
             "formInForce": "Charity Street",
@@ -35191,19 +35310,19 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
-            "from": "?",
+            "from": "Feb. 1887",
             "until": null,
             "name": "Grand Avenue",
             "entityId": "grand-ave",
             "formInForce": "Grand Avenue",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 286 (Old Series), Charity Street becomes Grand Avenue (1887) {{(source)}}",
+            "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
         ],
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
-        "knownFraction": 0.19,
+        "knownFraction": 1,
         "categories": [
           "renamed",
           "basis-none",
@@ -35241,8 +35360,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
           },
           {
-            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
+            "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
         ],
         "minLat": 34.0397,
@@ -35274,7 +35393,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1884",
-            "until": "?",
+            "until": "Feb. 1887",
             "name": "Charity Street",
             "entityId": "charity",
             "formInForce": "Charity Street",
@@ -35283,19 +35402,19 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
           },
           {
-            "from": "?",
+            "from": "Feb. 1887",
             "until": null,
             "name": "Grand Avenue",
             "entityId": "grand-ave",
             "formInForce": "Grand Avenue",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 286 (Old Series), Charity Street becomes Grand Avenue (1887) {{(source)}}",
+            "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
         ],
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
-        "knownFraction": 0.01,
+        "knownFraction": 0.81,
         "categories": [
           "renamed",
           "basis-none",
@@ -35329,12 +35448,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+            "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
-            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.039,
@@ -35366,7 +35485,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1875",
-            "until": "?",
+            "until": "Feb. 1887",
             "name": "Charity Street",
             "entityId": "charity",
             "formInForce": "Charity Street",
@@ -35374,19 +35493,19 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           },
           {
-            "from": "?",
+            "from": "Feb. 1887",
             "until": null,
             "name": "Grand Avenue",
             "entityId": "grand-ave",
             "formInForce": "Grand Avenue",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 286 (Old Series), Charity Street becomes Grand Avenue (1887) {{(source)}}",
+            "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
         ],
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
-        "knownFraction": 0.06,
+        "knownFraction": 0.86,
         "categories": [
           "renamed",
           "basis-none",
@@ -35424,12 +35543,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           },
           {
-            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+            "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
-            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
         "minLat": 34.0356,
@@ -35475,8 +35594,8 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
           },
           {
-            "title": "Los Angeles Herald, July 2, 1895, p. 5 — Milton and Wheaton streets to become Hoover Street, with a standing rule for the west city line; and Philadelphia Street becomes Grand Avenue",
-            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18950702.1.5"
+            "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
         ],
         "maxLat": 34.0356,
@@ -35503,12 +35622,22 @@ const STREET_DATA = {
     "nameHistory": [
       {
         "from": "by 1869",
-        "until": "?",
+        "until": "Feb. 1887",
         "name": "Charity Street",
         "entityId": "charity",
         "formInForce": "Charity Street",
         "origin": "labeled “CHARITY STREET” and “Charity Street” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
         "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+      },
+      {
+        "from": "Feb. 1887",
+        "until": "?",
+        "name": "Grand Avenue",
+        "entityId": "grand-ave",
+        "formInForce": "Grand Avenue",
+        "how": "renaming",
+        "origin": "renamed per Ord. 286 (Old Series), Charity Street becomes Grand Avenue (1887) {{(source)}} — the name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02)",
+        "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
       },
       {
         "from": "?",
@@ -35523,7 +35652,7 @@ const STREET_DATA = {
     ],
     "note": null,
     "attested": true,
-    "knownFraction": 0,
+    "knownFraction": 0.1,
     "categories": [
       "renamed",
       "basis-none",
@@ -35548,6 +35677,10 @@ const STREET_DATA = {
       {
         "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+      },
+      {
+        "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
+        "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
       },
       {
         "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
@@ -43183,7 +43316,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1873",
-            "until": "?",
+            "until": "Mar. 1883",
             "name": "Bath Street",
             "entityId": "bath-street-plaza",
             "formInForce": "Bath Street",
@@ -43192,19 +43325,19 @@ const STREET_DATA = {
             "originLink": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           },
           {
-            "from": "by 1907",
+            "from": "Mar. 1883",
             "until": null,
             "name": "Main Street",
             "entityId": "main-street-dtla",
             "formInForce": "Main Street",
             "how": "renaming",
-            "origin": "labeled “Main St” and “MAIN ST.” on the 1907 Tract No. 49 and the 1909 Oil Well Supply Company Tract {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
+            "origin": "renamed per Ord. 77, Bath street becomes Main street {{(source)}}",
+            "originLink": "https://link.gale.com/apps/doc/DT0102876584/MMLP?u=uclosangeles&sid=bookmark-MMLP"
           }
         ],
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
-        "knownFraction": 0.68,
+        "knownFraction": 0.87,
         "categories": [
           "descriptive",
           "renamed",
@@ -43231,6 +43364,10 @@ const STREET_DATA = {
           {
             "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
             "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Ordinance No. 77 (Robinson series), “An Ordinance changing the name of Bath street to Main street” — adopted Mar. 19, 1883, approved Mar. 21, published Mar. 27, 1883",
+            "url": "https://link.gale.com/apps/doc/DT0102876584/MMLP?u=uclosangeles&sid=bookmark-MMLP"
           },
           {
             "title": "Plat of Tract No. 49, being a subdivision of the northerly portion of the block bounded by Main, Ord, San Fernando and Marchessault Streets, in the City of Los Angeles (July 1907; identified by map alignment, not a lot-level record)",
@@ -43286,7 +43423,7 @@ const STREET_DATA = {
           },
           {
             "from": "by 1873",
-            "until": "?",
+            "until": "Mar. 1883",
             "name": "Bath Street",
             "entityId": "bath-street-plaza",
             "formInForce": "Bath Street",
@@ -43295,19 +43432,19 @@ const STREET_DATA = {
             "originLink": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           },
           {
-            "from": "?",
+            "from": "Mar. 1883",
             "until": null,
             "name": "Main Street",
             "entityId": "main-street-dtla",
             "formInForce": "Main Street",
             "how": "renaming",
-            "origin": "arrival on this stretch not directly documented",
-            "originLink": null
+            "origin": "renamed per Ord. 77, Bath street becomes Main street {{(source)}}",
+            "originLink": "https://link.gale.com/apps/doc/DT0102876584/MMLP?u=uclosangeles&sid=bookmark-MMLP"
           }
         ],
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
-        "knownFraction": 0,
+        "knownFraction": 0.87,
         "categories": [
           "descriptive",
           "renamed",
@@ -43338,6 +43475,10 @@ const STREET_DATA = {
           {
             "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873) (identified by map alignment, not a lot-level record)",
             "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          },
+          {
+            "title": "Ordinance No. 77 (Robinson series), “An Ordinance changing the name of Bath street to Main street” — adopted Mar. 19, 1883, approved Mar. 21, published Mar. 27, 1883",
+            "url": "https://link.gale.com/apps/doc/DT0102876584/MMLP?u=uclosangeles&sid=bookmark-MMLP"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
@@ -55591,7 +55732,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (Canal and Reservoir St)",
+        "label": "part of (Bellevue Ave)",
         "name": "Sunset Boulevard",
         "entityId": "sunset-boulevard",
         "namedAfter": null,
@@ -55604,12 +55745,22 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1885",
-            "until": "?",
+            "until": "Jan. 1885",
             "name": "Canal and Reservoir Street",
             "entityId": "canal-and-reservoir-st",
             "formInForce": "Canal and Reservoir Street",
             "origin": "labeled “Canal and Reservoir Street” on the 1885 Park Tract {{(source)}} — The Canal and Reservoir Company, the water utility Prudent Beaudry founded and led — its ditches had run across this ground since 1868, and the tract was his",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
+          },
+          {
+            "from": "Jan. 1885",
+            "until": "?",
+            "name": "Bellevue Avenue",
+            "entityId": "bellevue-ave",
+            "formInForce": "Bellevue Avenue",
+            "how": "renaming",
+            "origin": "renamed per Ord. 152 (Old Series), Short and Canal and Reservoir become Bellevue Avenue (1885) {{(source)}} — French for “beautiful view” — descriptive of the outlook from the hill, though no source states it",
+            "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
             "from": "by 1922",
@@ -55634,7 +55785,11 @@ const STREET_DATA = {
           "basis"
         ],
         "formerCategories": [
-          "company"
+          "company",
+          "descriptive"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -55645,6 +55800,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Park Tract, Los Angeles City, Cal. (M.R. 7-26, Jan. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
+          },
+          {
+            "title": "Ordinance No. 152 (Old Series), “An Ordinance consolidating Short street and Canal and Reservoir street, and changing the name of the streets so consolidated to Bellevue avenue” — adopted by the Council of the City of Los Angeles January 13, 1885, approved January 22, published January 24, 1885; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 58",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
             "title": "Tract No. 3791 (May 1922; identified by map alignment, not a lot-level record)",
@@ -55683,7 +55842,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (Canal and Reservoir St)",
+        "label": "part of (Bellevue Ave)",
         "name": "Sunset Boulevard",
         "entityId": "sunset-boulevard",
         "namedAfter": null,
@@ -55696,12 +55855,22 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1885",
-            "until": "?",
+            "until": "Jan. 1885",
             "name": "Canal and Reservoir Street",
             "entityId": "canal-and-reservoir-st",
             "formInForce": "Canal and Reservoir Street",
             "origin": "labeled “Canal and Reservoir Street” on the 1885 Park Tract {{(source)}} — The Canal and Reservoir Company, the water utility Prudent Beaudry founded and led — its ditches had run across this ground since 1868, and the tract was his",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
+          },
+          {
+            "from": "Jan. 1885",
+            "until": "?",
+            "name": "Bellevue Avenue",
+            "entityId": "bellevue-ave",
+            "formInForce": "Bellevue Avenue",
+            "how": "renaming",
+            "origin": "renamed per Ord. 152 (Old Series), Short and Canal and Reservoir become Bellevue Avenue (1885) {{(source)}} — French for “beautiful view” — descriptive of the outlook from the hill, though no source states it",
+            "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
             "from": "?",
@@ -55726,7 +55895,11 @@ const STREET_DATA = {
           "basis"
         ],
         "formerCategories": [
-          "company"
+          "company",
+          "descriptive"
+        ],
+        "formerAncestors": [
+          "abstract"
         ],
         "disputed": false,
         "sources": [
@@ -55737,6 +55910,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Park Tract, Los Angeles City, Cal. (M.R. 7-26, Jan. 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
+          },
+          {
+            "title": "Ordinance No. 152 (Old Series), “An Ordinance consolidating Short street and Canal and Reservoir street, and changing the name of the streets so consolidated to Bellevue avenue” — adopted by the Council of the City of Los Angeles January 13, 1885, approved January 22, published January 24, 1885; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 58",
+            "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           },
           {
             "title": "Ordinance No. 1888 (New Series), changing five streets to Sunset Boulevard — adopted Oct. 23, 1893, approved Oct. 26, published Oct. 29, 1893",
@@ -61234,7 +61411,7 @@ const STREET_DATA = {
         "nameHistory": [
           {
             "from": "by 1881",
-            "until": "?",
+            "until": "July 1887",
             "name": "Ozier Lane",
             "entityId": "ozier-lane",
             "formInForce": "Ozier Lane",
@@ -61243,14 +61420,14 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-110.pdf"
           },
           {
-            "from": "by 1886",
+            "from": "July 1887",
             "until": null,
             "name": "Winston Street",
             "entityId": "winston-st",
             "formInForce": "Winston Street",
             "how": "origin",
-            "origin": "labeled “Winston Street” and “WINSTON ST” on the 1886 Mills' Tract and the 1889 Jones and Ponet Block {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+            "origin": "renamed per Ord. 320, Ogier lane becomes Winston Street (1887) {{(source)}}",
+            "originLink": "https://link.gale.com/apps/doc/DT0106634468/MMLP?u=uclosangeles"
           }
         ],
         "note": "Given to Ozier Lane in 1887, three years after Winston's death, for a man who had lived on it. The council's first attempt was postponed in June (documents/lah-1887-06-14).",
@@ -61259,7 +61436,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.8,
+        "knownFraction": 0.82,
         "categories": [
           "person",
           "renamed",
@@ -61281,6 +61458,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Mills' Tract in the City of Los Angeles (M.R. 12-26, Nov. 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
+          },
+          {
+            "title": "Ordinance No. 320, “An Ordinance changing the name and establishing the lines of Ogier lane” — adopted by the Council of the City of Los Angeles July 5, 1887, approved July 7, published July 8, 1887; printed in Freeman G. Teed, comp., Charter and Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. IV (1889), p. 83",
+            "url": "https://link.gale.com/apps/doc/DT0106634468/MMLP?u=uclosangeles"
           },
           {
             "title": "Plat of the Jones and Ponet Block in the City of Los Angeles, Cal. (M.R. 39-69, Mar. 1889; identified by map alignment, not a lot-level record)",
