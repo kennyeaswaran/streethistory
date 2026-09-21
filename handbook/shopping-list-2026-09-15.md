@@ -121,7 +121,7 @@ TR 52046-01 1997 · [TR1225-028](https://pw.lacounty.gov/sur/nas/landrecords/tra
 
 1. **M R 55-81 — F. B. Wilde's Subdivision of a part of the Coronel Tract.**
    This is the reason the Region B block was worth sweeping. **Wilde Street has
-   no entity in names.js or names-new.js**, and the only Wilde the project holds
+   no entity in data/names.js or data/names-new.js**, and the only Wilde the project holds
    is `mr066-064`, *Wilde and Strong's Subdivision of the Frank Sabichi Tract*
    over by San Pedro — a surname with no first name attached. This sheet gives
    an initialled **F. B. Wilde** subdividing the very block Wilde Street runs
@@ -140,7 +140,7 @@ TR 52046-01 1997 · [TR1225-028](https://pw.lacounty.gov/sur/nas/landrecords/tra
 5. **M R 37-91 — W. J. Fisher's Addition No. 1.** The corpus already has
    Fisher's *Subdivision* (`mr021-046`) and the *Kohler Tract* re-subdivision
    (`mr054-051`); this is the third filing in that family and closes the set.
-   Note `kohler` in names.js carries a ⚠ about **two** Kohler Streets — the
+   Note `kohler` in data/names.js carries a ⚠ about **two** Kohler Streets — the
    original running where 9th Street now runs — so a third Fisher sheet is worth
    reading against that.
 

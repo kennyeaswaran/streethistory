@@ -4,7 +4,7 @@
 
 > **⚠ SECOND PASS, same day (Kenny's three asks) — read this before the tables below, which are the first pass and are partly superseded.**
 >
-> 1. **The "1915" on M.R. 3-38/3-39 was a misreading.** The certificate on 3-39 reads "Recorded May 4th A.D. 1875", J. W. Gillette, County Recorder; 3-38 has no certificate of its own but sits between p. 33 (Apr. 29, 1875) and p. 46 (May 6, 1875) of a book recorded in page order. Both sheets are redated (`on: 1875-05-04`; `after: 1875-04-29, before: 1875-05-06`), and 3-38's title is corrected from "Norris" to **Morris** ("Plan of the MORRIS … Main & Pico Streets") in the document and in 17 places in `names.js`. research-leads.md's "still Pine in 1915" is corrected. **Effect in the what-if build: the Olive/Elm and 15th/Laurel false revivals are gone**, and California → 14th (Nov. 1889) now lands, because California is lettered by 1875.
+> 1. **The "1915" on M.R. 3-38/3-39 was a misreading.** The certificate on 3-39 reads "Recorded May 4th A.D. 1875", J. W. Gillette, County Recorder; 3-38 has no certificate of its own but sits between p. 33 (Apr. 29, 1875) and p. 46 (May 6, 1875) of a book recorded in page order. Both sheets are redated (`on: 1875-05-04`; `after: 1875-04-29, before: 1875-05-06`), and 3-38's title is corrected from "Norris" to **Morris** ("Plan of the MORRIS … Main & Pico Streets") in the document and in 17 places in `data/names.js`. research-leads.md's "still Pine in 1915" is corrected. **Effect in the what-if build: the Olive/Elm and 15th/Laurel false revivals are gone**, and California → 14th (Nov. 1889) now lands, because California is lettered by 1875.
 > 2. **The two rows on the vetoed Oct. 1890 ordinance (lah-1890-10-28) are withdrawn** — walters-street → ord-street and second-street → stephenson-avenue — with a comment in the document saying why and what instrument to look for (the amended ordinance of late 1890/1891). The notes on `walters-street`, `stephenson-avenue` and `guadalupe` no longer say the 1890 ordinance made anything; both entities' internalNotes record the withdrawal. (`ord-street` and `high-street-chinatown` still say "Ord Street in 1890" from Kines — left alone, but no document in the corpus supports the year now.)
 > 3. **Ordinance No. 48 is transcribed** — all 207 clauses, excerpts `c001`–`c207` on `documents/lah-1889-05-10`, read from the clip in 28 full-resolution tiles; not yet checked by a human. **37 change rows** from it (11 resolved extents, 19 whole-name, 7 extent-unresolved), plus **one on Ord. 242** (guadalupe → davies-2nd, 2nd Street Alameda → Garey), which Ord. 48 made safe: its Topeka → Davies clause begins "from near Garey street", so Ord. 242's "Geary" is Garey. **Seven entities minted** for the `to` side: `sepulveda-jackson`, `rockwood-street`, `shaw-winston`, `ionia-boston`, `duplex-cecelia`, `toluca-street`, `farragut-bixel`. `check-model`: 317 entities, 4240 rows, passing.
 >
@@ -28,8 +28,8 @@ line below may stand for several — the `n` column):
 | total | 549 | 19 | plus 19 change rows already in the corpus (table below) and 43 documents that report a renaming without naming a pair |
 
 Every new row is `confirmed: false`, so none of it reaches the map until Kenny
-passes it. `node check-model.js` passed after each document; the final count is
-310 entities, 4206 rows. `node generate.js` output is unchanged except the three
+passes it. `node tools/check-model.js` passed after each document; the final count is
+310 entities, 4206 rows. `node tools/generate.js` output is unchanged except the three
 minted entities replacing OSM stubs (136 → 134 stubs; Golden Avenue and Huntley
 Drive) — which is expected, because unconfirmed rows are held back.
 
@@ -52,16 +52,16 @@ first.
 - **Stage** follows RENAMING-SOURCES.md: only *adopted / passed / approved /
   published* may carry a row. After a Board of Public Works recommendation,
   "Adopted." means the recommendation (lah-1883-08-19 says so), not an ordinance.
-- **Entities** were resolved against `names.js` (`names-new.js` is empty),
+- **Entities** were resolved against `data/names.js` (`data/names-new.js` is empty),
   checking the traps: the two Georgias (plus a possible third in Bell's addition),
   the two Belmonts (`belmont-ave` vs `belmont-kincaid`), the two Willows
   (`willow` vs `willow-golden`), Beaudry Street vs Avenue, and — new — two or
   three Williams, two Coopers, two Californias, four Pines, three Jacksons.
 - **A what-if build.** Unconfirmed rows never reach the generator, so reading
-  `generated/report.md` after `node generate.js` would have tested nothing. A copy
+  `generated/report.md` after `node tools/generate.js` would have tested nothing. A copy
   of the tree in the device shell's scratch space was built with only *these*
   rows let through. It caught one wrong-street row and one generator limitation
-  (below); the real `generate.js` was not touched.
+  (below); the real `tools/generate.js` was not touched.
 
 ## What the what-if build found
 
@@ -79,7 +79,7 @@ first.
   1908 | Orange Dec. 1908 → July 1908* and the 1878 Orange lettering disappeared.
   The revival check did not fire. With the 1924 row alone it is right (Orange by
   1878 → Wilshire Apr. 1924). So the 1924 row is written and **the 1908 pair is
-  held back** (bin B, not written) until `generate.js` can give a name two separate
+  held back** (bin B, not written) until `tools/generate.js` can give a name two separate
   periods — the other session's file, so reported rather than touched.
 - **Two false revivals from one sheet's date, not from a wrong street.** Olive
   Street (Elm by 1915 after Olive from 1886) and 15th Street (Laurel by 1915 after
@@ -109,7 +109,7 @@ first.
 
 ## Bin B — ready, qualified (13)
 
-Resolved extents use the street's own crossings (0 m, via `intersect.js`);
+Resolved extents use the street's own crossings (0 m, via `tools/intersect.js`);
 `fromCross: null` on Wilshire is the OSM extract's west edge, inside the stated
 stretch. Kenny verifies every one — the two resolved rows first.
 
@@ -348,7 +348,7 @@ both entities exist). Also Lazard → Ducommun (recommended Aug. 1894).
 ## Files changed by this audit
 
 - `handbook/change-rows-audit-2026-09-18.md` — this report (new).
-- `names.js` — three entities appended at the end: `davies-2nd`,
+- `data/names.js` — three entities appended at the end: `davies-2nd`,
   `golden-avenue`, `huntley-drive`.
 - Rows added (all `confirmed: false`, each headed "Audit 2026-09-18"):
   `documents/lah-1887-01-04`, `lah-1895-07-02`, `lah-1893-09-17`,
@@ -356,7 +356,7 @@ both entities exist). Also Lazard → Ducommun (recommended Aug. 1894).
   `lah-1889-09-19`, `lah-1889-12-14` (2), `lah-1893-10-29`, `lah-1894-07-24`,
   `lah-1896-06-16`, `lah-1896-09-03` (appended after the two existing rows),
   `lae-1924-04-12`.
-- `generated/` — rebuilt by `node generate.js`, as asked.
-- Not touched: `generate.js`, `check-*.js`, `site-config.js`, SWITCHOVER.md,
+- `generated/` — rebuilt by `node tools/generate.js`, as asked.
+- Not touched: `tools/generate.js`, `check-*.js`, `data/site-config.js`, SWITCHOVER.md,
   MODEL-IMPLEMENTATION.md. The 1908 documents were edited and then restored
   byte-for-byte.

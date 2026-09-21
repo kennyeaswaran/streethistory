@@ -5,7 +5,7 @@
 //
 // Folders are discovered, not listed: adding a document means creating its
 // folder, nothing else. The osm pseudo-document is the one exception — it is
-// derived from streets-geometry.js at load time rather than read from disk.
+// derived from data/streets-geometry.js at load time rather than read from disk.
 
 const fs = require("fs");
 const path = require("path");

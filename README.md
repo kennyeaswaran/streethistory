@@ -16,9 +16,9 @@ street geometry live from the Overpass API). For a local server:
   prefixes) are grouped into one clickable street.
 - Click target: each street segment carries an invisible ~18px-wide stroke, so the
   street's drawn area is clickable without hunting for a hairline.
-- Data: `streets-data.js` is **generated** — `names.js` (what is known about
+- Data: `generated/streets-data.js` is **generated** — `data/names.js` (what is known about
   each name) + `documents/` (what each primary document says about each
-  stretch of each street) + `node generate.js` → `streets-data.js`, the file
+  stretch of each street) + `node tools/generate.js` → `generated/streets-data.js`, the file
   the map loads. Nobody edits it by hand; the deploy refuses a copy that does
   not match a fresh build. One entry per street, subdivided into **segments**
   wherever stretches have distinct name lineages, bounded by cross-streets or
@@ -36,7 +36,7 @@ Research is **document-first**, and nobody edits a street's history directly.
 Find a primary document — a recorded tract map, a renaming ordinance, a
 newspaper report of a council action — and read it into `documents/<id>/`. Each
 row it produces says one thing about one stretch of one modern street, and
-`generate.js` computes the map from the corpus of rows. A stretch is blue
+`tools/generate.js` computes the map from the corpus of rows. A stretch is blue
 because some document speaks about that ground and grey because none does.
 
 For a map that means: `utilities/new-map.command` to make the folder, then the
@@ -46,11 +46,11 @@ and sweep the sheet. Marking a document swept is what licenses arguing from its
 silence, so it is a gate rather than a checkbox.
 
 Names are the other half. A name entity is a naming lineage rather than a
-string, and `names.js` is where the research on one lives.
+string, and `data/names.js` is where the research on one lives.
 `utilities/start-names-tool.command` opens the **names tool**: every entity in
 one sortable list — spelling, categories, namesake, and how many documents
 letter it — and an editor for every field, including moving an entity out of
-`names-new.js` once its namesake has been looked into.
+`data/names-new.js` once its namesake has been looked into.
 
 Orientation for AI instances (and a map of every doc below): **CLAUDE.md**. How
 the whole thing fits together: **handbook/PIPELINE.md**. Reading a map in:
@@ -60,9 +60,9 @@ street was named after: handbook/NAME-RESEARCH.md.
 
 ## Known limitations / next steps
 
-- Geometry loading order: `streets-geometry.js` if present → browser cache (7 days) →
+- Geometry loading order: `data/streets-geometry.js` if present → browser cache (7 days) →
   Overpass mirrors (20s timeout each). After a successful network load, click
-  "Save geometry file" in the panel and move the downloaded `streets-geometry.js`
+  "Save geometry file" in the panel and move the downloaded `data/streets-geometry.js`
   next to `index.html` — from then on the map never depends on Overpass. Delete the
   file and reload to refresh geometry from OSM.
 - OSM rarely maps streets as areas (`area:highway` coverage is near zero), so true
@@ -77,9 +77,9 @@ street was named after: handbook/NAME-RESEARCH.md.
 
 ## Expanding coverage
 
-Coverage is neighborhood-based: `NEIGHBORHOODS` in `site-config.js` drives the
+Coverage is neighborhood-based: `NEIGHBORHOODS` in `data/site-config.js` drives the
 Overpass query, the dashed coverage outlines, and the geometry-file staleness
-check. `node generate.js` writes `generated/report.md`, which lists every street
+check. `node tools/generate.js` writes `generated/report.md`, which lists every street
 no document speaks about yet — the research queue. Step by step:
 handbook/ADDING-A-NEIGHBORHOOD.md.
 

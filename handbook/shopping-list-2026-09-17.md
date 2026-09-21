@@ -1,6 +1,6 @@
 # Download shopping list — 2026-09-17
 
-Filling the grey segments named by `node check-legacy.js --verbose`: the
+Filling the grey segments named by `node tools/check-legacy.js --verbose`: the
 Crown Hill / Figueroa-to-Bixel hole on 2nd–8th west of Figueroa, and the
 east-of-Alameda / east-of-Hewitt stretches on 2nd and 4th.
 
@@ -101,7 +101,7 @@ these corridors but it is there if the name ever comes up.
 
 1. **⚠ Olympic east of Central Avenue is a geometry gap, not a document gap.**
    check-legacy reports "no generated segment overlaps this ground", and the
-   reason is that **the modern street is not in `streets-geometry.js` at all**:
+   reason is that **the modern street is not in `data/streets-geometry.js` at all**:
    the easternmost mapped Olympic node is lon −118.24453, lat **34.03234** —
    at Central, on the neighbourhood's own southern edge. The Overpass bbox is
    `s: 34.033`, and Olympic drops below it immediately east of Central. No sheet

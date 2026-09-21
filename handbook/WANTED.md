@@ -345,7 +345,7 @@ Step 2d: **search the successor name first.**
 | **Moore + Okey Streets → Francisco Street** | 1903 | Kines | Two streets in one act; Okey Street has no entity here. |
 | **Requena Street → Market Street** | July 1904 petition | Los Angeles Revisited | Petition from the North Main Street merchants, approved by the council. |
 | **Stephenson Avenue → Traction Avenue** | 1915 | Kines | Entity `stephenson-avenue` exists (2026-09-18). **Its origin is the same Oct. 1890 omnibus**: "Second street, from Alameda to east city line, to Stephenson avenue" (documents/lah-1890-10-28; the veto message, lah-1890-11-11, says the name "had been suggested in open council … because of its deflection to the south in Boyle Heights"). So the Traction end and the *other* Stephenson that became Whittier Boulevard are the two ends of one 1890 renaming, and the same amended-omnibus instrument that made Walters into Ord is what adopted it. Kenny found nothing further on Stephenson in CDNC (2026-09-18); a post-1891 sheet on Traction would letter it (shopping-list-2026-09-17b.md). |
-| **Park Lane → Lebanon Street** | 1897 | Los Angeles Revisited | Pairs with Alexander Lane → Lebanon in 1917, already in `names.js`. No Lebanon Street entity yet. |
+| **Park Lane → Lebanon Street** | 1897 | Los Angeles Revisited | Pairs with Alexander Lane → Lebanon in 1917, already in `data/names.js`. No Lebanon Street entity yet. |
 | **Turner Street (First to Alameda) → Jackson Street** | May 1883 | **we have it** — `documents/lah-1883-05-13` | Listed only because our 1928 sheet still letters Turner; the conflict needs settling before a row. |
 | **Orange Street → Wilshire Boulevard** | Apr. 1924 | **we have it** — `documents/laevex-1924-04-01`, `lae-1924-04-12` | Fully documented; awaiting Kenny's confirmation, not more evidence. |
 
@@ -361,4 +361,4 @@ Step 2d: **search the successor name first.**
    look like the current street.
 3. **When was Wilmington Street absorbed into North San Pedro Street?** Undocumented
    anywhere checked. Also resolve the Judge John Aiso date: Kines says 1997,
-   Wikipedia 1999, and `names.js` currently says 1997 at `san-pedro`.
+   Wikipedia 1999, and `data/names.js` currently says 1997 at `san-pedro`.

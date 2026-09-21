@@ -283,7 +283,7 @@ That inverts the order this file used to recommend, and the three finds of
 - **Fort → Broadway** was found in the Herald after the minutes for those dates
   turned out to be missing. Newspaper-first would have gone straight to it.
 - **Virgin → Alpine** was found in the minutes at the first try — because a
-  month was already known. The month came from prose in `names.js`, which came
+  month was already known. The month came from prose in `data/names.js`, which came
   from Kines, who got it from somewhere.
 - **Bull → Castelar** was found only because the Feb. 1874 petition gave a
   fortnight to search.

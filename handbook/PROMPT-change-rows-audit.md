@@ -1,10 +1,10 @@
 # Prompt — audit the corpus for renamings we can already draw (2026-09-18)
 
 *Written for a fresh thread. Paste from the line below. Another session is
-working the switchover in parallel and owns `generate.js`, `check-data.js`,
-`check-legacy.js`, `check-model.js`, `site-config.js`, `handbook/SWITCHOVER.md`
+working the switchover in parallel and owns `tools/generate.js`, `tools/check-data.js`,
+`tools/check-legacy.js`, `tools/check-model.js`, `data/site-config.js`, `handbook/SWITCHOVER.md`
 and `handbook/MODEL-IMPLEMENTATION.md` — do not edit those; everything else
-in `documents/` and `names.js` is fair game under the rules in CLAUDE.md.*
+in `documents/` and `data/names.js` is fair game under the rules in CLAUDE.md.*
 
 ---
 
@@ -29,15 +29,15 @@ don't unpark). Most of them carry `excerpts` and no rows; 179 of 186 did on
   mayor's veto is a proceeding, not a change (ROADMAP §2). A `history`-type
   document (Guinn) may not carry a change row at all (check-model
   TRANSITION_TYPES) — note what it says and move on;
-- the `from` and `to` entities: resolve each name against `names.js` and
-  `names-new.js` (forms, aliases, disambiguation — beware the two Georgias,
+- the `from` and `to` entities: resolve each name against `data/names.js` and
+  `data/names-new.js` (forms, aliases, disambiguation — beware the two Georgias,
   the two Belmonts, the two Willows, Beaudry Street vs Beaudry Avenue) and
   say whether the entity exists, and if not what you would mint;
 - whether the `from` entity is **attested on the map**: it has a `state` row
   somewhere in `documents/`, or it is the `to` of an earlier change that
   chains from one (High → Walters → Ord is the specimen: nothing letters
-  Walters, and it still holds ground). `node generate.js` then
-  `generated/report.md` and `node diff-street.js "<street>"` will show you
+  Walters, and it still holds ground). `node tools/generate.js` then
+  `generated/report.md` and `node tools/diff-street.js "<street>"` will show you
   where a name currently lands.
 
 **2. Sort the statements into four bins and count them:**
@@ -64,16 +64,16 @@ form, stage, what's missing), then a short section on patterns worth knowing
 (which omnibus ordinances carry the most, which are vetoed, which names recur).
 
 **4. Then write the rows for bins A and B**, document by document, every one
-`confirmed: false`, and mint the bin-C entities in `names.js` only where the
+`confirmed: false`, and mint the bin-C entities in `data/names.js` only where the
 document itself gives the name and the ground (no namesake research; `basis:
 "none"`, `searched: "none"`, an `internalNote` saying which document minted
-it and why). After each document: `node check-model.js` must pass; at the
-end `node generate.js`, and read `generated/report.md`'s "Revived names" and
+it and why). After each document: `node tools/check-model.js` must pass; at the
+end `node tools/generate.js`, and read `generated/report.md`'s "Revived names" and
 "Row problems" sections — a change row that produces a revival on ground
 where no revival happened is a wrong-street row, and belongs in the report,
 not the corpus.
 
-Rules that bite here: never write the `*Approved` fields in `names.js`; never
+Rules that bite here: never write the `*Approved` fields in `data/names.js`; never
 hand-write a coordinate; never confirm a row — Kenny does that; `git
 --no-optional-locks` for every read-only git call and no `git add`/`commit`;
 end by listing every file you changed and the boldest claim you made, so

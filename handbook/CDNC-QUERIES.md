@@ -6,7 +6,7 @@ they should be typed, in quotation marks where the quotation marks matter.
 
 > **STATUS, 2026-09-17.** Kenny ran most of the CDNC list and fetched Newmark.
 > What came back is recorded below, query by query. **Nine of the twelve phrase
-> searches are done**; the results are in `documents/` and in `names.js`, and
+> searches are done**; the results are in `documents/` and in `data/names.js`, and
 > the clippings are in `inbox/`. The Newmark section is now a results table, not
 > a wish list — the book is in the repo and greppable.
 

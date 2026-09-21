@@ -144,7 +144,7 @@ Nobody had read the sheets' own text blocks. Two crops at 300 and 100 dpi gave:
 **Sheet 1, title block.** "Map of the Wolfskill Orchard Tract situated in the City of
 Los Angeles Cal. **Surveyed by J. H. Dockweiler in July & August 1887.** Scale one
 hundred and twenty feet to one inch." — so survey 1887, recording Jan. 1888, and
-several entities in `names.js` had been conflating the two.
+several entities in `data/names.js` had been conflating the two.
 
 **Sheet 5, recorder's certificate.** "A full true and correct copy of the original
 (reduced to two thirds size) recorded Jany. 11th 1888 at 22 min past 9 a.m. **at

@@ -2,10 +2,10 @@
 
 *The flip ran on 2026-09-19 on a clean, fully committed tree (Kenny's
 "documents from UCLA added" commit was the last corpus commit before it).
-All three gates were green before and after: `node check-model.js` (328
-entities, 418 documents, 4322 rows), `node check-data.js
---require-generated` on the generated `streets-data.js` (272 streets, 941
-entries, 770 anchored), `node check-legacy.js` (every legacy entry subsumed
+All three gates were green before and after: `node tools/check-model.js` (328
+entities, 418 documents, 4322 rows), `node tools/check-data.js
+--require-generated` on the generated `generated/streets-data.js` (272 streets, 941
+entries, 770 anchored), `node tools/check-legacy.js` (every legacy entry subsumed
 or accepted; 54 accepts, 0 hard). The generated map is the site once the
 flip commit is pushed and Actions goes green.*
 
@@ -13,21 +13,21 @@ flip commit is pushed and Actions goes green.*
 
 | | |
 |---|---|
-| `generate.js` | writes `streets-data.js` at the root (was `generated/streets-data.gen.js`); no `Built:` date in the header; the one locale-collated sort is now code-point order, so CI's rebuild is byte-identical to Kenny's |
-| `streets-data.js` | now generated — 2.5 MB, `GENERATED FILE — DO NOT EDIT` header; the hand-authored file it replaces is `legacy/streets-data-2026-08.js` (differs from it only by the vocabulary move and one category rename) |
+| `tools/generate.js` | wrote `streets-data.js` at the root (was `generated/streets-data.gen.js`; moved to `generated/streets-data.js` 2026-09-20); no `Built:` date in the header; the one locale-collated sort is now code-point order, so CI's rebuild is byte-identical to Kenny's |
+| `generated/streets-data.js` | now generated — 2.5 MB, `GENERATED FILE — DO NOT EDIT` header; the hand-authored file it replaces is `legacy/streets-data-2026-08.js` (differs from it only by the vocabulary move and one category rename) |
 | `generated/` | `search-index.js` and `report.md` only; `streets-data.gen.js` deleted |
-| `index.html` | the former preview.html: title prefix, purple banner and back-link gone, header comment rewritten, `<script src="streets-data.js">`; old index.html and preview.html deleted (git history is the archive) |
-| `.github/workflows/deploy.yml` | check job: `check-data.js --require-generated`, `check-model.js`, then the regeneration diff (`node generate.js`, then `git diff --exit-code -- streets-data.js generated/search-index.js`; row problems tolerated, a crash not). Deploy job just uploads — no rebuild, since the committed file is proven current |
-| `diff-street.js`, `preview-test.js`, `check-legacy.js`, `check-data.js` | retargeted / comments |
-| `site-config.js` | comments; the two `only: "legacy"` rows stay, marked dead (post-flip cleanup) |
-| `utilities/start-*.command` | print "the map" instead of preview + live; the names-tool one now says to run `generate.js` after a save |
+| `index.html` | the former preview.html: title prefix, purple banner and back-link gone, header comment rewritten, `<script src="generated/streets-data.js">`; old index.html and preview.html deleted (git history is the archive) |
+| `.github/workflows/deploy.yml` | check job: `tools/check-data.js --require-generated`, `tools/check-model.js`, then the regeneration diff (`node tools/generate.js`, then `git diff --exit-code -- generated/streets-data.js generated/search-index.js`; row problems tolerated, a crash not). Deploy job just uploads — no rebuild, since the committed file is proven current |
+| `tools/diff-street.js`, `tests/preview-test.js`, `tools/check-legacy.js`, `tools/check-data.js` | retargeted / comments |
+| `data/site-config.js` | comments; the two `only: "legacy"` rows stay, marked dead (post-flip cleanup) |
+| `utilities/start-*.command` | print "the map" instead of preview + live; the names-tool one now says to run `tools/generate.js` after a save |
 | docs | PUBLISHING.md (the three gates; commit the output with the change), MODEL-SPEC §0/§10/§12, MODEL-IMPLEMENTATION (status, C/D/F marked), README, CLAUDE.md (What this is, rule 7, layout, State), legacy/README.md, MAP-TOOL-SPEC, ROADMAP, this file |
 
 ## The standing rule from here
 
 **Every change to `documents/` or the name files is two things in the
-commit: the change, and the regenerated output.** `node check-model.js &&
-node generate.js`, then commit `streets-data.js` and
+commit: the change, and the regenerated output.** `node tools/check-model.js &&
+node tools/generate.js`, then commit `generated/streets-data.js` and
 `generated/search-index.js` with it. The deploy's regeneration check fails
 the push otherwise — and the red X is the whole safety net, so do not push
 around it.
@@ -44,17 +44,17 @@ around it.
 2. The **Misc Records half** of `shopping-list-2026-09-17b.md` when the City
    service is back.
 3. The **confirmation tool** for the 61 held-back audit rows (MAP-TOOL-SPEC
-   §9) — `generate.js` prints the count on every run.
+   §9) — `tools/generate.js` prints the count on every run.
 4. The **proceedings model** (ROADMAP §2) for Buena Vista and the Miramar
    chain, which were accepted as proceedings work.
 5. **Olympic's 1935 ordinance** (`shopping-list-2026-09-18-council-files.md`);
    the Chavez extents from council file 93-0907's exhibit map.
 6. **Cleanup the flip left on purpose:** the `only: "legacy"` rows in
-   site-config.js and the legacy branches of check-data.js, names-tool.html
-   and generate.js's `NAME_CATEGORY_INDEX` (`unknown` / `unresearched`); the
+   data/site-config.js and the legacy branches of tools/check-data.js, utilities/names-tool.html
+   and tools/generate.js's `NAME_CATEGORY_INDEX` (`unknown` / `unresearched`); the
    three `documents/tr0002-008b`, `tr0002-062a`, `tr0012-088a` folders that
-   have no `.js` yet (generate.js skips them with a warning).
-7. **`preview-test.js`:** ran at the flip in the sandbox — page loads with
+   have no `.js` yet (tools/generate.js skips them with a warning).
+7. **`tests/preview-test.js`:** ran at the flip in the sandbox — page loads with
    zero errors, 41 pass, 5 fail on segment labels the grown corpus no longer
    produces ("Belmont to Toluca (State St)" is now "beyond Belmont (State
    St)", etc.). Refresh the expectations; the map is fine.
@@ -152,12 +152,12 @@ span: Mesquit.
 1. §4 — the five `namedAfter` fields, and the freeways if wanted.
 2. The tract maps for §2.
 3. ~~Checklist C, then D and F.~~ Done 2026-09-19.
-4. Browser suites in a sandbox (`browser-test.js` was edited by the other
-   instance; `preview-test.js` run at the flip — see the after-list).
+4. Browser suites in a sandbox (`tests/browser-test.js` was edited by the other
+   instance; `tests/preview-test.js` run at the flip — see the after-list).
 5. Style-budget warnings → check-model / names tool, once per entity.
 6. `tmp/ord-069-plaza*.png` are crops I rendered to look at the plaza; delete.
 
 ### The gate, as it was phrased
 
-`node check-model.js && node generate.js; node check-data.js
---require-generated && node check-legacy.js` — all three clean, then C, D, F.
+`node tools/check-model.js && node tools/generate.js; node tools/check-data.js
+--require-generated && node tools/check-legacy.js` — all three clean, then C, D, F.

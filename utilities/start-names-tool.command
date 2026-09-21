@@ -1,23 +1,24 @@
 #!/bin/bash
 # Double-click me. Serves the project folder and opens the NAMES tool.
 #
-# The names tool is to names.js what the map tool is to a document's .js: a
+# The names tool is to data/names.js what the map tool is to a document's .js: a
 # list of every name entity, sortable by any column, and an editor carrying
 # every field the schema has. It writes names.js in place, entity by entity —
 # the file's comments and hand formatting survive a save.
 #
 # The tools have to be SERVED rather than opened as file:// — the File System
 # Access API (the Save dialog) needs a secure context, and the names tool
-# fetches names.js and documents/ over HTTP.
+# fetches data/names.js and documents/ over HTTP.
 #
 # This window IS the server. Leave it open while you work; close it (or press
 # Ctrl-C) to stop.
 
 # It lives in utilities/, so everything below runs from the PROJECT
-# FOLDER one level up — that is where names.js, documents/ and the tools are.
+# FOLDER one level up — the server's root, so the pages (which live here in
+# utilities/) can reach documents/, data/ and generated/.
 cd "$(dirname "$0")/.." || { echo "Could not find the project folder."; exit 1; }
 
-PAGE="names-tool.html"
+PAGE="utilities/names-tool.html"
 PORT=8000
 MAXPORT=8010
 
@@ -31,14 +32,14 @@ fi
 
 if [ ! -f "$PAGE" ]; then
   echo "Can't see $PAGE in $(pwd)."
-  echo "This script needs to live in utilities/, one level below $PAGE."
+  echo "This script needs to live in utilities/, next to names-tool.html."
   echo
   read -r -p "Press return to close."
   exit 1
 fi
 
-if [ ! -f "names.js" ]; then
-  echo "Can't see names.js in $(pwd) — this doesn't look like the project folder."
+if [ ! -f "data/names.js" ]; then
+  echo "Can't see data/names.js in $(pwd) — this doesn't look like the project folder."
   echo
   read -r -p "Press return to close."
   exit 1
@@ -48,14 +49,14 @@ fi
 # back our own page, reuse it rather than starting a second one. If the port is
 # busy with something else, move up until we find one that's free.
 #
-# NB the probe asks for map-tool.html, not $PAGE: the map tool's launcher may
+# NB the probe asks for the map tool, not $PAGE: the map tool's launcher may
 # already be serving this folder, and the point is to notice THAT server and
 # reuse it rather than start a second one on another port. Both tools want the
 # same origin — they share the remembered project-folder handle, which the
 # browser scopes per origin, so two ports means granting access twice.
 REUSE=""
 while [ "$PORT" -le "$MAXPORT" ]; do
-  CODE=$(curl -s -o /dev/null -m 1 -w "%{http_code}" "http://localhost:$PORT/map-tool.html" 2>/dev/null)
+  CODE=$(curl -s -o /dev/null -m 1 -w "%{http_code}" "http://localhost:$PORT/utilities/map-tool.html" 2>/dev/null)
   if [ "$CODE" = "200" ]; then REUSE="yes"; break; fi          # already ours
   if [ -z "$CODE" ] || [ "$CODE" = "000" ]; then break; fi      # nothing there — free
   PORT=$((PORT + 1))                                            # someone else's
@@ -72,20 +73,20 @@ fi
 # picker shows names only, and a served page cannot see the filesystem it came
 # from. So write the name here, where the page can fetch it.
 printf '{ "folder": %s, "path": %s, "note": "written by utilities/start-names-tool.command" }\n' \
-  "\"$(basename "$(pwd)")\"" "\"$(pwd)\"" > project-info.json
+  "\"$(basename "$(pwd)")\"" "\"$(pwd)\"" > utilities/project-info.json
 
 BASE="http://localhost:$PORT"
 echo
 echo "  Streetymology — serving $(pwd)"
 echo
-echo "    names tool      $BASE/names-tool.html"
-echo "    map tool        $BASE/map-tool.html"
+echo "    names tool      $BASE/utilities/names-tool.html"
+echo "    map tool        $BASE/utilities/map-tool.html"
 echo "    the map         $BASE/index.html"
 echo
-echo "  The names tool writes names.js IN PLACE. After a save, run"
-echo "      node check-model.js && node generate.js"
+echo "  The names tool writes data/names.js IN PLACE. After a save, run"
+echo "      node tools/check-model.js && node tools/generate.js"
 echo "  before committing — the checker is the gate the name layer answers to,"
-echo "  and streets-data.js (generated) must be committed with the change."
+echo "  and generated/streets-data.js must be committed with the change."
 echo
 
 # Open in Chrome if it's there (the File System Access API is a Chrome

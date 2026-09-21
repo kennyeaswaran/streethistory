@@ -60,9 +60,9 @@ folder, and writes `project-info.json` so the tool can tell you by name which
 folder to connect.
 
 The manual equivalent is `python3 -m http.server 8000` from the project folder,
-then http://localhost:8000/map-tool.html.
+then http://localhost:8000/utilities/map-tool.html.
 
-**Do not double-click `map-tool.html` itself.** Opening it as `file://`
+**Do not double-click `utilities/map-tool.html` itself.** Opening it as `file://`
 looks like it works and then fails in two ways that are hard to diagnose: the
 save dialog never appears (the File System Access API needs a secure context,
 and localhost counts as one but `file://` does not), and loading a document by
@@ -308,7 +308,7 @@ it up front.
 `TASK.md` is regenerated on every save, so edits to it are lost — and it must
 stay free of answers, since it is handed to the assistant being tested. If you
 ever need to add standing guidance for the AI pass, it belongs in the generator
-in `map-tool.html`, not in the file.
+in `utilities/map-tool.html`, not in the file.
 
 Without a connected folder it falls back to asking where to put each file
 (or downloading them, outside Chrome), and then you move them yourself.
@@ -321,8 +321,8 @@ data.
 Then, back in the terminal:
 
 ```
-node check-model.js     # the header and any rows are valid
-node generate.js        # rebuild generated/
+node tools/check-model.js     # the header and any rows are valid
+node tools/generate.js        # rebuild generated/
 ```
 
 ## The AI pass, and reviewing what it says
@@ -399,16 +399,16 @@ matches on both id and display name (`3rd` and `third` both find
 `third-street`). Only ids that exist are accepted.
 
 **＋ new** mints one. It asks for an id and a display name and writes the
-entity to **`names-new.js`**, not `names.js` — a browser tool has no business
+entity to **`data/names-new.js`**, not `data/names.js` — a browser tool has no business
 writing into the file that holds the namesake research. Entities there work
-everywhere `names.js` entities do, and `check-model.js` lists them every run as
-awaiting research. When you have looked one up, move it into `names.js` and
-delete it from `names-new.js`.
+everywhere `data/names.js` entities do, and `tools/check-model.js` lists them every run as
+awaiting research. When you have looked one up, move it into `data/names.js` and
+delete it from `data/names-new.js`.
 
 Two things to know about that file. **The tool rewrites it whole on every
 review save** — it re-reads it from disk first, so a hand edit made while the
 page was open is merged rather than lost, but an entity you are actively
-working on is safer moved into `names.js` first. And what it writes about
+working on is safer moved into `data/names.js` first. And what it writes about
 provenance goes in **`internalNote`**, never `note`: `note` is *published* —
 the generator prints it as a former name's origin line on the public site —
 while `internalNote` is not rendered anywhere. Identity decisions, dead-end
@@ -490,7 +490,7 @@ honour; a finer split has to go into the file by hand.
 
 ### Confirming, and the sweep
 
-**Confirm this row** removes `confirmed: false`. Until then, `generate.js`
+**Confirm this row** removes `confirmed: false`. Until then, `tools/generate.js`
 holds the row back entirely — a proposal is not evidence, and one that reached
 the map would make review optional in practice. `generate` says how many it is
 holding on each run.
@@ -535,7 +535,7 @@ first; delete only if the row really has nothing to say.
 **Editing a swept document takes the sweep back.** The gate used to run only
 on the way in, so an edit afterwards — tracing a new vanished street,
 splitting a row, deleting one — could leave `sweptFully: true` standing over
-rows that no longer supported it, and only `check-model.js` would notice.
+rows that no longer supported it, and only `tools/check-model.js` would notice.
 (M.R. 53-68 was saved exactly that way.) Now whatever would refuse the sweep
 also withdraws it, the panel says it has been withdrawn, and the rows waiting
 are listed underneath.
@@ -575,7 +575,7 @@ Clicking a red stretch offers three answers, and they are different claims:
 
 Guessing between them by hand is how a traced boundary's slop turns into a
 false historical claim, which is why the tool will not choose for you. The
-panel lists what has been dropped, with an undo, and `check-model.js` refuses a
+panel lists what has been dropped, with an undo, and `tools/check-model.js` refuses a
 document that both excludes a street and carries rows for it.
 
 ### The AI pass and `name`
@@ -737,7 +737,7 @@ first.
 | "Ports 8000-8010 are all busy" | an old server is still running; close its Terminal window |
 | "could not load …" on a render path | the path is relative to the project folder: `documents/<id>/<id>-100dpi.png` |
 | Load by id does nothing | no `documents/<id>.js` yet — use the render path instead |
-| No red streets at all | `streets-geometry.js` missing or the view is far from downtown; try Set view with `34.0570, -118.2590, 0.55` |
+| No red streets at all | `data/streets-geometry.js` missing or the view is far from downtown; try Set view with `34.0570, -118.2590, 0.55` |
 | Alignment restores in the wrong place | the render is a different page or resolution than the one the alignment was made against — check `alignment.image` |
 | Streets-in-coverage count looks too low | polygon drawn over the sheet edge rather than the tract, or the alignment is off |
 | Review mode is empty / all red | the document has no rows yet — that is what the AI pass produces |
@@ -748,4 +748,4 @@ first.
 | Clicking a street in the list seems to do nothing | it now pans to the stretch — if not, the document may have no geometry there |
 | "Save review" is greyed out | there are no unsaved edits |
 | Review edits vanished | "Re-read rows from disk" discards them; save first |
-| `check-model` warns about names-new.js | those entities still need their namesake researched and moving into `names.js` |
+| `check-model` warns about data/names-new.js | those entities still need their namesake researched and moving into `data/names.js` |

@@ -1,6 +1,6 @@
 # Download shopping list — 2026-09-17b (north of the plaza, Traction, the southwest)
 
-The corridors `node check-legacy.js --verbose` still names grey and that
+The corridors `node tools/check-legacy.js --verbose` still names grey and that
 **neither the 09-15 list (Alameda to the river, 4th–7th Pl) nor the 09-17
 list (Crown Hill / Figueroa–Bixel on 2nd–7th; east of Alameda on 2nd and 4th)
 reached**, plus the two ordinance-assigned names Kenny wants a sheet for.

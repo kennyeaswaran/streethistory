@@ -9,10 +9,11 @@
 # Ctrl-C) to stop.
 
 # It lives in utilities/, so everything below runs from the PROJECT
-# FOLDER one level up — that is where documents/, inbox/ and the tools are.
+# FOLDER one level up — the server's root, so the pages (which live here in
+# utilities/) can reach documents/, data/ and generated/.
 cd "$(dirname "$0")/.." || { echo "Could not find the project folder."; exit 1; }
 
-PAGE="map-tool.html"
+PAGE="utilities/map-tool.html"
 PORT=8000
 MAXPORT=8010
 
@@ -26,7 +27,7 @@ fi
 
 if [ ! -f "$PAGE" ]; then
   echo "Can't see $PAGE in $(pwd)."
-  echo "This script needs to live in utilities/, one level below $PAGE."
+  echo "This script needs to live in utilities/, next to map-tool.html."
   echo
   read -r -p "Press return to close."
   exit 1
@@ -54,13 +55,13 @@ fi
 # picker shows names only, and a served page cannot see the filesystem it came
 # from. So write the name here, where the page can fetch it.
 printf '{ "folder": %s, "path": %s, "note": "written by utilities/start-map-tools.command" }\n' \
-  "\"$(basename "$(pwd)")\"" "\"$(pwd)\"" > project-info.json
+  "\"$(basename "$(pwd)")\"" "\"$(pwd)\"" > utilities/project-info.json
 
 BASE="http://localhost:$PORT"
 echo
 echo "  Streetymology tools — serving $(pwd)"
 echo
-echo "    map tool   $BASE/map-tool.html"
+echo "    map tool   $BASE/utilities/map-tool.html"
 echo "    the map         $BASE/index.html"
 echo "    old aligner     $BASE/attic/align.html"
 echo

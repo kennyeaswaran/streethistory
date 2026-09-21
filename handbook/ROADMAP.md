@@ -43,7 +43,7 @@ thing to fix, and it says what "without losing information" has to mean: the
 evidence extents must survive somewhere the reader can reach; they need not be
 the unit the reader clicks.
 
-The merge key is in `generate.js` (`entryKey`): timeline signature (entity,
+The merge key is in `tools/generate.js` (`entryKey`): timeline signature (entity,
 form, start, start-kind, end, end-kind, `how`) + `planned` text + `built` text
 + `attested`. Everything above follows from that key.
 
@@ -79,7 +79,7 @@ date, or the earliest "by" if no exact one exists, and the stretch table shows
 the rest. That is the same choice `knownFraction` already makes per segment.
 
 This is generator + `index.html` only — no model change, no re-reading of any
-sheet — and `preview-test.js` can assert the colours per stretch as it does per
+sheet — and `tests/preview-test.js` can assert the colours per stretch as it does per
 segment today. Do it first, because it is the one step whose result cannot be
 wrong about history: it changes nothing about what is claimed, only how it is
 grouped.
@@ -187,7 +187,7 @@ Decisions this forces, with a recommendation for each:
 
 - **Where the change rows live.** On the instrument document when the
   instrument is in hand (as now); on the proceeding when it is not. Never on a
-  news report. `check-model.js` should warn on a `change` row in a
+  news report. `tools/check-model.js` should warn on a `change` row in a
   `news-report` document — the three that exist today are the migration list.
   The generator reads rows from both places; the proceeding's rows carry
   `says` that cross documents, which is the excerpt-citation question
@@ -231,7 +231,7 @@ made navigable, `scope` made visible. A proceeding is the right *list item* for
 that tool rather than a document: open one, see every step's clip and excerpt
 in date order down one column, and the resulting rows in the other, and write
 the rows while looking at all of the evidence at once. Same surgical file
-editing as `names-tool.html`, no canvas. Build it after the two hand-written
+editing as `utilities/names-tool.html`, no canvas. Build it after the two hand-written
 pilots, not before.
 
 ---
@@ -331,13 +331,13 @@ reaches "Cesar E Chavez", both of which §6.5 already asks for. The generator
 emits the canonical key per row and ships its three tables in
 `search-index.js` so the browser folds the query identically (§12 notes this
 requirement). Apply to `index.html` (entity-keyed since the 2026-09-19
-switchover). An hour or two; `preview-test.js` gets a case.
+switchover). An hour or two; `tests/preview-test.js` gets a case.
 
 ---
 
 ## 7. Categories: a vocabulary, a tree, and a review pass — *mostly done 2026-09-15*
 
-**Status.** The move to `site-config.js`, the tree, the `object` branch, the
+**Status.** The move to `data/site-config.js`, the tree, the `object` branch, the
 `nature` split and descendant matching on both maps are **done**. What is left
 is listed at the end of this section under *Still open*.
 
@@ -345,18 +345,18 @@ is listed at the end of this section under *Still open*.
 
 - ~~**Four category ids are in use and not declared.**~~ *Fixed 2026-09-12:*
   `mythological`, `history`, `foreign` and `company` are declared in
-  `CATEGORIES`; `check-model.js` now errors on an undeclared id, and the names
+  `CATEGORIES`; `tools/check-model.js` now errors on an undeclared id, and the names
   tool warns on one as it is coined (the "new category" row is how the four
   came about). What remains here is the tree below.
 - ~~**The list is flat and mixes three different kinds of thing.**~~ *Fixed
   2026-09-15: the three facets below are built, and facet rows are headings
-  rather than choices — `check-model.js` errors if an entity tags one.*
+  rather than choices — `tools/check-model.js` errors if an entity tags one.*
 - ~~**Research status was typed by hand.**~~ *Fixed 2026-09-15: `unknown` and
-  `unresearched` are DERIVED by `generate.js` from `namedAfter` and `searched`,
+  `unresearched` are DERIVED by `tools/generate.js` from `namedAfter` and `searched`,
   alongside `renamed`. They had drifted badly — twenty of the 143 entities
   disagreed with their own fields, thirteen of them claiming `unknown` beside a
-  populated `namedAfter`. `check-model.js` and the names tool now error on
-  authoring one, and `map-tool.html` mints entities with no categories at all
+  populated `namedAfter`. `tools/check-model.js` and the names tool now error on
+  authoring one, and `utilities/map-tool.html` mints entities with no categories at all
   rather than guessing `unknown`, which also settles the mint disagreement
   between the two tools.* "Named after
   a person" is a referent; "Namesake alive when named" is a circumstance of a
@@ -365,7 +365,7 @@ is listed at the end of this section under *Still open*.
 
 ### The vocabulary, as built
 
-`CATEGORIES` lives in `site-config.js` (MODEL-IMPLEMENTATION checklist item A,
+`CATEGORIES` lives in `data/site-config.js` (MODEL-IMPLEMENTATION checklist item A,
 done together with this). The sketch below is what shipped 2026-09-15, after
 Kenny's review pass — **six top-level referents**, which is the number a reader
 can hold at a glance, and everything else a subtype of one of them.
@@ -403,7 +403,7 @@ What stays open is whether the 1886 Beaudry tract name and an Ord-survey
 predecessor are the same street. See research-leads.md, 2026-09-15.)
 
 **`landowner` and `family` are what `basis: "eponymous"` is about**, and
-`check-model.js` requires one of them on every eponymous entity. They are not a
+`tools/check-model.js` requires one of them on every eponymous entity. They are not a
 restatement of the grade: both also occur under `basis: "attested"`, where a
 secondary source tells us the same thing — Patton, Wolfskill, Vignes, Kohler
 and Huber are all tagged and none of them is eponymous.
@@ -474,7 +474,7 @@ prompted this note is resolved by renaming the basis value to `lexical`, so the
 category keeps its name. But the family is still redundant: `number` (position
 in a grid), `destination` (where it goes) and `descriptive` (role or position
 otherwise) all say *the name describes the street*, and `descriptive` is the
-residual — some older `streets-data.js` rows already carry
+residual — some older `generated/streets-data.js` rows already carry
 `["number","descriptive"]`, which is that showing through. Under the tree,
 `descriptive` should be documented as the residual of that group rather than as
 a peer of it. All 8 current members describe the roadway itself: Main, Central,
@@ -495,7 +495,7 @@ opposite ways is exactly the kind of thing the tree should make visible.
   thing that distinguishes a closed question from an untouched one. The popup
   prints the grade beside the namesake. In the generated model these REPLACE
   `unknown` and `unresearched`, which are now legacy-only (`only: "legacy"` in
-  site-config.js) — `basis-none` says the same thing about the namesake and its
+  data/site-config.js) — `basis-none` says the same thing about the namesake and its
   children say what the old pair could not. A street the base map alone knows
   gets its own row, `stub`, because "researched and not found" and "never
   entered the corpus" are different answers.
@@ -516,12 +516,12 @@ opposite ways is exactly the kind of thing the tree should make visible.
   `mayor` and `people`-adjacent nodes are still empty in the new model, some of
   them legitimately (the freeways are legacy-only ground).
 - **The " — " convention in `namedAfter` is load-bearing and undocumented
-  outside §3.1.** `generate.js` keeps only the head of the field for a stretch
+  outside §3.1.** `tools/generate.js` keeps only the head of the field for a stretch
   that did not originate under the name, so a hedge written after the dash does
   not reach those popups. The basis badge covers it now, but anyone writing a
   `namedAfter` should know the tail is conditional.
-- **The legacy path still authors `unknown`.** `streets-data.js` and the
-  `check-data.js` rules over it are unchanged and correct: that file has no
+- **The legacy path still authors `unknown`.** `generated/streets-data.js` and the
+  `tools/check-data.js` rules over it are unchanged and correct: that file has no
   `basis` or `searched` to derive from and never will, since it is being
   replaced rather than migrated. Both go away with the big-bang switchover
   (MODEL-IMPLEMENTATION §C–D), not before.
@@ -552,9 +552,9 @@ sources. What neither says yet, because nobody has done it:
   decision here: the candidates that share the most documents with downtown
   (so the existing corpus already speaks about them) are the cheap ones.
   Bunker Hill / Westlake to the west and Boyle Heights to the east are the
-  obvious pair; `coverage-report.js` can say which existing sheets already
+  obvious pair; `tools/coverage-report.js` can say which existing sheets already
   reach into each.
-- `NEIGHBORHOODS` moves to `site-config.js` with the categories (item 7).
+- `NEIGHBORHOODS` moves to `data/site-config.js` with the categories (item 7).
 
 ---
 
@@ -573,7 +573,7 @@ sources. What neither says yet, because nobody has done it:
 - **The bridging report** §6.2a already asks for, before the rule lands.
 - ~~**Retire the four-way duplication of `normalizeName` / alias tables**~~
   — done 2026-09-15 (MODEL-IMPLEMENTATION checklist B): one `normalizeName`
-  in `site-config.js`, every consumer calling it.
+  in `data/site-config.js`, every consumer calling it.
 
 Not proposed: anything that changes what a row can claim. Every item above is
 about how claims are grouped, shown, found or connected; the evidence rules in
@@ -584,14 +584,14 @@ MODEL-SPEC §§4–5 and CLAUDE.md's broken-rules list stay as they are.
 ## 10. Suggested order
 
 1. **Quick fixes, this week:** ~~declare the four missing categories and make
-   `check-model.js` validate ids (7)~~ done 2026-09-12; the search matcher (6);
+   `tools/check-model.js` validate ids (7)~~ done 2026-09-12; the search matcher (6);
    scheme 3/4 colours (5b); permalinks and the segmentation report (9).
 1.5 **Add two new similar projects: https://lax-skyline.parcelscope.net/ and https://maps.bristol.gov.uk/kyp/?
 2. **The Orange → Wilshire proceeding, written by hand** (2) — a day, and it
    settles the shape before anything is built to it.
 3. **§1 Step A**, display unit vs evidence unit — the largest single
    improvement to the map for the least risk to the claims.
-4. **`site-config.js` + the category tree** (7, and checklist A).
+4. **`data/site-config.js` + the category tree** (7, and checklist A).
 5. **`documents.js` and the coverage layer** (3, first step).
 6. **The rectangle rule and existence hull** (1B), with its report.
 7. **Ordinance 48 as a proceeding; then the textual review tool** (2).

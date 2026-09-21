@@ -18,7 +18,7 @@ tools see nothing). Written for a fresh thread: paste from "The job" down.
 ## The job
 
 Read CLAUDE.md, handbook/RENAMING-SOURCES.md and handbook/change-rows-amendment.md
-§§2–5. Another session owns `generate.js`, `check-*.js`, `site-config.js`,
+§§2–5. Another session owns `tools/generate.js`, `check-*.js`, `data/site-config.js`,
 `handbook/SWITCHOVER.md` and `handbook/MODEL-IMPLEMENTATION.md`; do not edit
 those.
 
@@ -65,12 +65,12 @@ a person read it. The L.A. Times item is its own `news-report` document.
 names the whole street (Onizuka, Chavez on Macy); `scope: "extent"` with the
 modern `street`, `fromCross`/`toCross` from that street's crossings and the
 `wording` verbatim where it names a stretch (Aiso, Wood, Olympic's 9th).
-Mint `weller-street` and `macy-street` in `names.js` from what the ordinance
+Mint `weller-street` and `macy-street` in `data/names.js` from what the ordinance
 says (`basis: "none"`, `searched: "none"`, `internalNote` naming the
 document); the legacy map's namesake for Macy ("pioneer merchants Obed and
 Oscar Macy") is a lead for the internal note, not a `namedAfter`. Never write
-the `*Approved` fields. Then `node check-model.js` per document, `node
-generate.js` at the end, and read "Revived names" and "Row problems" in
+the `*Approved` fields. Then `node tools/check-model.js` per document, `node
+tools/generate.js` at the end, and read "Revived names" and "Row problems" in
 `generated/report.md`. Kenny confirms the rows and verifies each qualified
 extent against a map.
 

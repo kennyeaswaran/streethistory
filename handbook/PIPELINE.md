@@ -6,7 +6,7 @@ before opening any of them.
 
 The claim the whole thing rests on: **the unit of evidence is the document, and
 the unit of data is the segment.** Nobody edits a street's history directly.
-Documents are read into `documents/`, and `generate.js` computes what the map
+Documents are read into `documents/`, and `tools/generate.js` computes what the map
 says from them. A stretch of street is blue because some document speaks about
 that ground and grey because none does — which is a fact about the corpus, not
 a gap somebody forgot to fill.
@@ -40,12 +40,12 @@ coordinates instead of a person fitting a scan by eye.
 Deciding which lineage a label belongs to is review's job, and can only be done
 against the whole corpus. Finding out who or what the name honoured is separate
 work, done later, from a different set of sources. → **NAME-RESEARCH.md**;
-`names-new.js` is the queue, and each entry's `sightings` lists every sheet
+`data/names-new.js` is the queue, and each entry's `sightings` lists every sheet
 that letters it.
 
-**4. Generate.** `node check-model.js && node generate.js` validates the corpus
+**4. Generate.** `node tools/check-model.js && node tools/generate.js` validates the corpus
 and computes segments, timelines, planned/built dates, sources and the search
-index into `streets-data.js` (the file the map loads — generated since the
+index into `generated/streets-data.js` (the file the map loads — generated since the
 2026-09-19 switchover, never hand-edited) and `generated/search-index.js`.
 Commit both with the change that produced them; the deploy refuses a push
 whose committed output differs from a fresh build (PUBLISHING.md). →
@@ -89,7 +89,7 @@ documents are hand work, and are committed.
 | read rows off the sheet | an AI pass, from `TASK.md` and `<id>-streets.json` | batch |
 | confirm and sweep | **human**, in review mode | the other bottleneck |
 | research a namesake | any instance, from NAME-RESEARCH.md's trails | batch |
-| generate | `node generate.js` | instant |
+| generate | `node tools/generate.js` | instant |
 
 The two human steps are the two that carry judgement: where a scan sits on the
 earth, and whether a row's claim is true. Everything on either side of them is
@@ -97,8 +97,8 @@ mechanical, and has been automated in proportion.
 
 ## What only a person at the browser can check (2026-09-15)
 
-Three test files need Playwright — `names-browser-test.js`, `preview-test.js`
-and `browser-test.js` — and it is not installed on Kenny's machine. They run in
+Three test files need Playwright — `tests/names-browser-test.js`, `tests/preview-test.js`
+and `tests/browser-test.js` — and it is not installed on Kenny's machine. They run in
 the assistant's sandbox instead, which has Chromium, but that sandbox has no
 `documents/` corpus and cannot exercise the File System Access API at all. So
 two kinds of thing fall through:
@@ -116,13 +116,13 @@ only where the corpus exists):
 **Needs the real browser permission flow**, and is not automated anywhere:
 
 - **Connect project folder…, then Save, then look at `git diff`.** Nothing in
-  any test writes a file to disk. `names-browser-test.js` asserts only that Save
+  any test writes a file to disk. `tests/names-browser-test.js` asserts only that Save
   *refuses* when no folder is connected. Every time the serializer changes — and
   it changed twice in September 2026, for `basis` and again for the approved-text
   fields — one real save on one entity, followed by a diff, is the check that
   the round trip is intact. A serializer that drops a field looks perfectly
   healthy until you read the diff.
 
-The practical habit: after any change to `names-tool.html`, edit one entity,
-save, `git diff names.js`, and confirm the diff shows exactly the field you
+The practical habit: after any change to `utilities/names-tool.html`, edit one entity,
+save, `git diff data/names.js`, and confirm the diff shows exactly the field you
 touched and nothing else.

@@ -1,6 +1,6 @@
 // OSM is a document (MODEL-SPEC.md §4.1): the current extract is the newest
 // sighting of every living name. Its rows are DERIVED from
-// streets-geometry.js at load time — code, not data — so they can never go
+// data/streets-geometry.js at load time — code, not data — so they can never go
 // stale against the extract. Tertiary: excluded from the primary-anchor
 // metric, and (generator policy) from planned/built derivation.
 //
@@ -12,10 +12,10 @@ const path = require("path");
 // The same normalisation the generator keys geometry by — directionals
 // stripped, NAME_ALIASES applied — so the tunnel's ways become rows of 2nd
 // Street rather than of a street nothing else knows.
-const { normalizeName } = require(path.join(__dirname, "..", "site-config.js"));
+const { normalizeName } = require(path.join(__dirname, "..", "data", "site-config.js"));
 
 function load() {
-  const src = fs.readFileSync(path.join(__dirname, "..", "streets-geometry.js"), "utf8");
+  const src = fs.readFileSync(path.join(__dirname, "..", "data", "streets-geometry.js"), "utf8");
   const g = new Function(src + "; return STREET_GEOMETRY;")();
   const geom = g.data || g;
   const timestamp = (geom.osm3s && geom.osm3s.timestamp_osm_base) || null;
@@ -43,7 +43,7 @@ function load() {
     transcription: null,
     date: { on: date },
     // Neither drawn nor written: the rows below are computed from
-    // streets-geometry.js at load time (§4.1a). Saying so beats exempting the
+    // data/streets-geometry.js at load time (§4.1a). Saying so beats exempting the
     // pseudo-document from the field.
     form: "derived",
     type: "osm",

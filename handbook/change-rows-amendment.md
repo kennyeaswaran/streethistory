@@ -1,7 +1,7 @@
 # PROPOSED — change rows: what a renaming does and does not say
 
 **Status: BUILT and live as of 2026-09-04.** §§2–6 and §12 are implemented in
-`generate.js` and enforced by `check-model.js`; §13 records what landing it
+`tools/generate.js` and enforced by `tools/check-model.js`; §13 records what landing it
 cost. This file folds into MODEL-SPEC §5 whenever Kenny is ready. It is written against MODEL-SPEC §5 (row kinds) and §6.2 (what
 each kind does to each axis), and folds into them if Kenny approves.
 
@@ -27,7 +27,7 @@ Figueroa, Central and Georgia had the same shape of problem.
 Two mechanisms, and they compound:
 
 **A renaming was being read as testimony about pavement.** §6.2's table already
-gives `change` no existence axis at all — the cell is `—` — but `generate.js`
+gives `change` no existence axis at all — the cell is `—` — but `tools/generate.js`
 counted it, and §8's 2026-08-31 amendment listed `change` among the positive
 rows. Those two passages contradicted each other and the wrong one was in code.
 
@@ -347,7 +347,7 @@ for an instance. These need Kenny, or Chrome with his own session.
 | what | url | why first |
 |---|---|---|
 | Herald, Feb. 27, 1874, "City and Suburbs" | `cdnc.ucr.edu/?a=d&d=LAH18740227.2.10` | already a document (`lah-1874-02-27`) with a change row and **no transcription**. Its wording decides whether `chapules → pearl` is really unqualified |
-| Herald, Feb. 14, 1874, "Common Council" | `cdnc.ucr.edu/?a=d&d=LAH18740214.2.12` | the same council's petition renaming **Bull → Castelar and Hornet → Yale**; url is already in `names.js` under `bull`. Two more renamings, one document, and a *petition* rather than an ordinance — a different document type to design against |
+| Herald, Feb. 14, 1874, "Common Council" | `cdnc.ucr.edu/?a=d&d=LAH18740214.2.12` | the same council's petition renaming **Bull → Castelar and Hornet → Yale**; url is already in `data/names.js` under `bull`. Two more renamings, one document, and a *petition* rather than an ordinance — a different document type to design against |
 | Herald, Feb. 19, 1897, "A Storm of Words" | `cdnc.ucr.edu/?a=d&d=LAH18970219.2.24` | cited by `georgia-bell`, `nevada-1886` and `pearl`; carries Forman's dated history and Toberman's claim, and is the source for a **prose-dated spelling period** |
 | Herald, Feb. 21, 1897, "Talking Retrenchment" | `cdnc.ucr.edu/?a=d&d=LAH18970221.2.28` | already transcribed in part; wanted to check the committee table's left column against the manuscript |
 
@@ -447,7 +447,7 @@ warrant and the claim must travel together, because the confirm step (rule 5) is
 ### Settled and enforced (2026-09-04)
 
 **`says` is required on every row of a `form: "textual"` document**, and every
-id in it must name an excerpt the document carries. `check-model.js` enforces
+id in it must name an excerpt the document carries. `tools/check-model.js` enforces
 both, plus unique excerpt ids and text on each. The reason it is an error and
 not a warning: a plat's coverage polygon is what stops a claim outrunning its
 document, and a textual document has no polygon — the quoted sentence is the
@@ -555,7 +555,7 @@ An unqualified change whose `from` is attested nowhere reports to
 `generated/report.md` and draws nothing — but nothing yet warns that an entity
 placed *only* by an authored `street` on a change row has no evidence behind it.
 That is the condition Georgia was in, and it was invisible until the field was
-removed. `check-model.js` should say so.
+removed. `tools/check-model.js` should say so.
 
 
 ## 14. Landed (2026-09-04)
@@ -564,7 +564,7 @@ Kenny's call: **accept the holes.** `georgia-bell` is on no pavement until a
 document puts it there, and modern Georgia Street carries no entity in the
 meantime. `handbook/WANTED.md` P1 is the sheet that fixes it.
 
-Enforced by `check-model.js` from today:
+Enforced by `tools/check-model.js` from today:
 
 - every change row declares a `scope` — `whole-name`, `extent` or
   `extent-unresolved` — and it is an error to omit it, because a row with no

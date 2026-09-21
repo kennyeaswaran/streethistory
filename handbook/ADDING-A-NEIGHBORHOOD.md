@@ -7,7 +7,7 @@ OSM extract carries, and therefore which streets the map can draw at all.
 Use the L.A. Times *Mapping L.A.* boundaries as the reference for what counts
 as the neighbourhood.
 
-`NEIGHBORHOODS` lives in **`site-config.js`** (since 2026-09-15), beside the
+`NEIGHBORHOODS` lives in **`data/site-config.js`** (since 2026-09-15), beside the
 category vocabulary, the name aliases and the way-keyed branches below.
 
 ## The steps
@@ -16,13 +16,13 @@ category vocabulary, the name aliases and the way-keyed branches below.
 
 2. **Refresh the street geometry.** The saved extract no longer matches the new
    coverage, so open the live map and let it refetch from Overpass, then click
-   "Save geometry file" and replace `streets-geometry.js` with the download.
+   "Save geometry file" and replace `data/streets-geometry.js` with the download.
    Everything downstream reads that file: the map tool's sense of where streets
    are, `documents/osm.js` (which derives its rows from it at load time), and
    the generator.
 
 3. **Look for branches — two roadways under one name.** Run
-   `node branch-check.js`. The model folds every way that shares a name onto
+   `node tools/branch-check.js`. The model folds every way that shares a name onto
    one axis, so where OSM carries two parallel roadways as the same street
    they occupy the same stretch of it, and the first sheet that letters them
    differently puts two names on one interval (West 5th Street: the through
@@ -34,11 +34,11 @@ category vocabulary, the name aliases and the way-keyed branches below.
    - **A real second roadway** — a one-way couplet, a frontage road beside a
      freeway, a surface street under a viaduct, an old alignment kept beside
      a realigned one: these are the ones by the freeways and the river.
-     Key it apart in `WAY_STREET_KEYS` (site-config.js), one line per OSM
+     Key it apart in `WAY_STREET_KEYS` (data/site-config.js), one line per OSM
      way id, as `"<name> (<label>)"` — the label describes the roadway
      ("south branch", "viaduct", "frontage"); the name stays the street's,
      and the generator binds and displays the name, not the label. Then
-     re-key any existing rows on that ground to the branch (`check-model.js`
+     re-key any existing rows on that ground to the branch (`tools/check-model.js`
      catches cross-street rows; pixel-extent rows you find by their
      latitude) and rebuild.
    - **Not a branch** — twin motorway carriageways, the two halves of a
@@ -54,7 +54,7 @@ category vocabulary, the name aliases and the way-keyed branches below.
    streets, and the omnibus files may already hold citations for them. Rows
    land wherever the document covers, so this costs nothing but attention.
 
-5. **Find what the new area needs.** `node generate.js` writes
+5. **Find what the new area needs.** `node tools/generate.js` writes
    `generated/report.md`, which lists every street with no documentary sighting
    beyond the OSM extract — the stubs. Those are the research queue.
 
@@ -65,5 +65,5 @@ category vocabulary, the name aliases and the way-keyed branches below.
    speaks about it the generator will correctly leave it grey. Never let an
    existing entity silently claim ground no document has put it on.
 
-7. **Check and rebuild.** `node check-model.js && node generate.js`, then
+7. **Check and rebuild.** `node tools/check-model.js && node tools/generate.js`, then
    reload the map.

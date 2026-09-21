@@ -7,7 +7,7 @@ e.g. `streetymology`). A custom domain can be pointed at it later.
 ## One-time setup
 
 1. **Save the geometry file first.** Open the map, click "Save geometry file",
-   and move `streets-geometry.js` from Downloads into this folder. Committing it
+   and move `data/streets-geometry.js` from Downloads into this folder. Committing it
    means visitors never depend on Overpass.
 
 2. **Create the repo on github.com.** Click the "+" (top right) → New repository
@@ -38,23 +38,23 @@ one-line summary → Commit to main → Push origin. The gates run automatically
 if one fails, the previous version of the site stays up (see the red X in the
 Actions tab for what went wrong).
 
-**`streets-data.js` is generated** (since the 2026-09-19 switchover): the map
-reads it, `generate.js` writes it from `names.js` + `documents/`, and nobody
+**`generated/streets-data.js` is generated** (since the 2026-09-19 switchover): the map
+reads it, `tools/generate.js` writes it from `data/names.js` + `documents/`, and nobody
 edits it by hand. So every change to a document or an entity is two files in
 the commit — the change itself and the regenerated output:
 
-    node check-model.js && node generate.js
+    node tools/check-model.js && node tools/generate.js
 
-then commit `streets-data.js` (and `generated/search-index.js`) with the rest.
+then commit `generated/streets-data.js` (and `generated/search-index.js`) with the rest.
 
 The deploy runs three gates before it uploads anything:
 
-1. `node check-data.js --require-generated` — the contract the map relies
-   on, and a refusal to publish a `streets-data.js` that lacks the
+1. `node tools/check-data.js --require-generated` — the contract the map relies
+   on, and a refusal to publish a `generated/streets-data.js` that lacks the
    generator's header (someone edited it by hand).
-2. `node check-model.js` — the authored layers (`names.js`, `documents/`).
-3. **Regeneration check** — it runs `node generate.js` on the pushed tree and
-   fails if the result differs from the committed `streets-data.js` /
+2. `node tools/check-model.js` — the authored layers (`data/names.js`, `documents/`).
+3. **Regeneration check** — it runs `node tools/generate.js` on the pushed tree and
+   fails if the result differs from the committed `generated/streets-data.js` /
    `generated/search-index.js`. That is the "forgot to run the generator"
    tripwire: regenerate, commit, push again. Row problems (a street the
    geometry file lacks, a cross street that does not meet it) do not fail

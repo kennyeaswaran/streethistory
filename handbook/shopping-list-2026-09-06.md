@@ -361,7 +361,7 @@ Sampled 2026-09-15 at 801/600/400/200/104 W and 100/200/400/500/600 E Pico, and
 
 Already read in, no need to fetch: 600 W and 400 W Pico are both the **Cameron
 Tract, M R 7-21** (`documents/mr007-021`) — Cameron Thom's ground, already
-covered in `names.js`.
+covered in `data/names.js`.
 
 Notes before reading these in:
 
@@ -505,7 +505,7 @@ bounds.** They stay parked with `mr002-467.pdf` and `mr029-031.pdf`, which are
 in the same folder for the same reason. Nothing here becomes a document until
 the coverage expands to reach Georgia Street's ground
 (handbook/ADDING-A-NEIGHBORHOOD.md). That is the gate on `georgia-bell`, which
-`check-model.js` still reports as lettered by no document.
+`tools/check-model.js` still reports as lettered by no document.
 
 ### Mott Tract — 1 of 6 kept
 

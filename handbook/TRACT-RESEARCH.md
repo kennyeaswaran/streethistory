@@ -240,7 +240,7 @@ eleven of the Map Book pages held two unrelated filings, and the plain
 un-suffixed filename was the wrong map in six of them. This layer is CORS-open,
 so it answers from any origin, including a NavigateLA page.
 
-**The recipe.** Get the block corners from `node intersect.js` (never eyeball
+**The recipe.** Get the block corners from `node tools/intersect.js` (never eyeball
 them), build one polygon per block or per half-block strip, shrink it ~14%
 toward its centroid so the query doesn't reach across the street, and query
 layer 2 for `TRACT,MAP_REF` and layer 8 for `REFERENCE,SUB_NAME,RCRD_DATE`.
@@ -422,7 +422,7 @@ it, which still holds.
 
 > **Retired 2026-09.** This section used to give a command-line recipe built on
 > `georef.py` (`grid` → estimate pixel coords → `fit` → `overlay` → `locate` →
-> `trace`). That program is gone; a human aligns in `map-tool.html` and the
+> `trace`). That program is gone; a human aligns in `utilities/map-tool.html` and the
 > tool emits `<id>-streets.json`, so nobody has to estimate a pixel coordinate
 > or re-fit a transform. Findings in `research-leads.md` that cite
 > "georeferenced via georef.py" were made that way and stand as recorded.
@@ -565,7 +565,7 @@ instantly showing a tract's footprint. Use when a source names a tract
 
 Two queues, and they answer different questions:
 
-- `generated/report.md`, rebuilt by every `node generate.js`, lists the streets
+- `generated/report.md`, rebuilt by every `node tools/generate.js`, lists the streets
   no document speaks about yet — the ones drawn grey on the map. That is the
   coverage queue, and it is where a tract lookup pays best.
 - `handbook/research-leads.md` holds the specific open questions: extents

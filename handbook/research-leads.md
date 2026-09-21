@@ -7,15 +7,15 @@
 > `documents/ord-4093/`). Left as written rather than rewritten.
 >
 > **Where a finding lands.** This file predates the document model, so it talks
-> about `streets-data.js`. A finding now goes to one of two places: *where* a
+> about `generated/streets-data.js`. A finding now goes to one of two places: *where* a
 > name applied becomes rows on a document in `documents/`, read in with the map
-> tool; *who or what* it was named after becomes an entity in `names.js`
-> (NAME-RESEARCH.md). `names-new.js` is the queue of names waiting on the
+> tool; *who or what* it was named after becomes an entity in `data/names.js`
+> (NAME-RESEARCH.md). `data/names-new.js` is the queue of names waiting on the
 > second.
 
 
 Unverified hunches, patterns, and open questions — things NOT yet solid enough
-for streets-data.js. Rule of thumb: a claim with a citable source goes straight
+for generated/streets-data.js. Rule of thumb: a claim with a citable source goes straight
 into the data (partial entries are fine); anything inferred, remembered, or
 pattern-based waits here until verified.
 
@@ -35,7 +35,7 @@ Periodically sweep the whole file. Keep entries dated.
   pages": **request with the City Archivist is in flight (Kenny, 2026-08).**
 - **The two Herald items — NEGATIVE (2026-09-04):** Kenny read
   `LAH18970219.2.24` ("A Storm of Words") and `LAH18970221.2.28` ("Talking
-  Retrenchment"); neither helps the renaming data. They stay cited in names.js
+  Retrenchment"); neither helps the renaming data. They stay cited in data/names.js
   for what they do carry — the Feb. 19 piece is the source for `georgia-bell`'s
   prose-dated spelling period. Full note in
   `documents/ord-4093/omnibus-1897-renaming-full.md`. Don't re-run this;
@@ -96,7 +96,7 @@ The Herald item that reports the Fort Street renaming
 > Tenth street will be nearly in a straight line with Broadway."
 
 **It did not happen** (Kenny, from the modern map), and the geometry says why.
-Measured off `streets-geometry.js`, as dLon per dLat — how hard a street angles
+Measured off `data/streets-geometry.js`, as dLon per dLat — how hard a street angles
 west as it runs south:
 
 ```
@@ -130,7 +130,7 @@ only that it was not renamed **Broadway**, which is what the article predicted.
 L. Alles et al, asking that the name of Fort street be changed to Broadway.
 Referred to the Board of Public Works."
 
-Sources a claim `names.js` had carried on nothing. Two corrections it brings:
+Sources a claim `data/names.js` had carried on nothing. Two corrections it brings:
 the clerk writes **Fred L. Alles**, not Fred Lind Alles, and says nothing about
 his being a printer. It also brackets the renaming to **seventeen days** —
 petition Feb. 3, in force by Feb. 20 — and the minutes for that window are the
@@ -179,7 +179,7 @@ unqualified changes. Two things worth keeping from the hunt:
   become Union Avenue; the ordinance says Pearl. Stage 1 and stage 3 disagree
   in the record (handbook/RENAMING-SOURCES.md).
 
-⚠ **`names.js` still says "by petition".** `bull`'s note reads "Renamed
+⚠ **`data/names.js` still says "by petition".** `bull`'s note reads "Renamed
 Castelar Street by petition in February 1874" and `hornet`'s the same for Yale.
 The outcome was right; the mechanism was not — a petition asked, an ordinance
 did it, and the ordinance is now citable. Both notes are PUBLIC prose and are
@@ -404,10 +404,10 @@ corpus's first 1880s textual documents and they change three things.
   street; **Georgia to Georgia Bell street**; Elm to Bush street; Rose street,
   East Los Angeles, to Kuhrts street. Adopted."*
 
-  ⚠ **Nothing in names.js has been changed.** The 1889 date there is sourced —
+  ⚠ **Nothing in data/names.js has been changed.** The 1889 date there is sourced —
   Gen. Forman's dated history in the Herald of Feb. 19, 1897, "renamed Georgia
   Bell May 10, 1889" — and a contemporary report normally beats a recollection
-  but not automatically when the two may be about different events. names.js
+  but not automatically when the two may be about different events. data/names.js
   itself describes the 1889 act as FOLDING IN the stretches platted Nevada in
   1886. If the name was coined in 1883 and the Nevada stretches were folded into
   it in 1889, both dates are right about different things and Forman is
@@ -615,7 +615,7 @@ Fe Avenue from Willow Street to 7th Street (both crosses resolve at 0 m), marked
   (documents/mr012-064) is "subdivided at request of Mrs. Lourena Whisler,
   Nov. 25th 1886" and was recorded three weeks later at her request. Owner's
   name on her own ground — the third such identification after Clark Avenue and
-  Morgan Lane, and the first where the owner is a woman. Moved into names.js.
+  Morgan Lane, and the first where the owner is a woman. Moved into data/names.js.
   Kines has no page. Its surveyor, John Goldsworthy, County Surveyor-elect,
   turns up twice more in this corner of the corpus.
 
@@ -740,10 +740,10 @@ already knew who Fred L. Alles was. A reader without that context would have
 skimmed past petition 465 as one more appropriation request. The value is in the
 index, not the sweep.
 
-## Names moved out of names-new.js — what the move left open (2026-09-06)
+## Names moved out of data/names-new.js — what the move left open (2026-09-06)
 
-All twenty-one entities in `names-new.js` were researched and moved into
-`names.js`; the file is now empty. Five came back with a namesake (Temple,
+All twenty-one entities in `data/names-new.js` were researched and moved into
+`data/names.js`; the file is now empty. Five came back with a namesake (Temple,
 Clark Avenue, Botiller Street, 15th, 16th) and the rest carry a null
 `namedAfter` with the checks recorded in `internalNote`. Four things surfaced
 in the pass that are leads rather than entries:
@@ -790,13 +790,13 @@ researched and moved the same way. One has a namesake: **Morgan Lane** is
 G. W. Morgan's, from the Orchard Tract's own title block. What the second pass
 added:
 
-- **⚠ names-new.js was overwritten at 18:33 on 2026-09-06**, three minutes after
+- **⚠ data/names-new.js was overwritten at 18:33 on 2026-09-06**, three minutes after
   the map tool saved `morgan-lane` and `boyd-street` into it, by an assistant
   that had read the file before that save. Both entities were rebuilt from
   `documents/mr005-005`'s rows in the tool's own minting format and lose nothing
   the rows carry — but a display form or note typed by hand at minting would not
   have survived, so both want a glance. The lesson is mechanical: the map tool
-  owns names-new.js, and anything that rewrites the file must re-read it
+  owns data/names-new.js, and anything that rewrites the file must re-read it
   immediately before writing, not before doing the work.
 
 - **The undated absorptions are now nine, not six.** Add Regent → Maple Avenue
@@ -901,7 +901,7 @@ written up in SERIAL-SOURCES.md. Nothing below has been run yet.
   segments. Sanborn sheets covering those blocks in 1894 and 1906 would
   replace the presumption with a dated bracket on the exact blocks, whether
   or not the ordinance itself ever turns up. Same trick applies wholesale to
-  the 96 "not yet researched" field values in streets-data.js as of 2026-08
+  the 96 "not yet researched" field values in generated/streets-data.js as of 2026-08
   (34 `planned`, 59 `built`, 3 elsewhere).
 - **ProQuest Digital Sanborn Maps (1867–1970), via an LAPL card** (2026-08):
   many more L.A. years than LOC has online, including the 1929/1930 and
@@ -913,7 +913,7 @@ written up in SERIAL-SOURCES.md. Nothing below has been run yet.
   Downtown. Annexation is itself a renaming event class (duplicate names with
   existing L.A. streets had to be resolved), so the pre- and post-annexation
   editions of an annexed town are a natural bracket for that whole class.
-- **Checker follow-up** (2026-08): `check-data.js`'s `PRIMARY` regex doesn't
+- **Checker follow-up** (2026-08): `tools/check-data.js`'s `PRIMARY` regex doesn't
   recognize `loc.gov` or `rescarta.lapl.org`, so the primary-anchor count will
   under-report once Sanborn/directory sources land. Add them with the first
   such source.
@@ -958,8 +958,8 @@ written up in SERIAL-SOURCES.md. Nothing below has been run yet.
 
 
 - **MR006-138 name entities — research pass** (2026-08-30). Eleven entities
-  were minted in review; ten remain in `names-new.js`. What was checked:
-  - **Patton Street — SOLVED, moved into `names.js`.** Kines: "This 1883 street
+  were minted in review; ten remain in `data/names-new.js`. What was checked:
+  - **Patton Street — SOLVED, moved into `data/names.js`.** Kines: "This 1883 street
     was named for its developer, attorney George Smith Patton (1856-1927)."
     Patton was **Andrew Glassell's nephew** and replaced George Hugh Smith in
     Glassell's firm (Kines's Glassell Street page; Wikipedia). Glassell
@@ -974,7 +974,7 @@ written up in SERIAL-SOURCES.md. Nothing below has been run yet.
     The other is a coincidence worth recording: Patton married **Ruth Wilson**
     in 1884, and Pasadena's Lake Avenue is named for her father's **Lake
     Vineyard** (Kines). Wants a contemporary source.
-  - **Aztec Avenue — SOLVED, moved into `names.js`.** Kenny noticed that a block
+  - **Aztec Avenue — SOLVED, moved into `data/names.js`.** Kenny noticed that a block
     outside coverage the same street meets **Cortez Street**, with **Pizarro
     Street** 206 m away — a naming scheme, not a coincidence. Kines's Cortez
     Street page confirms it: Cortez (1884, *Glassell's Subdivision No. 2*,
@@ -1108,7 +1108,7 @@ street (40 ft wide, ~3,000 ft) — context for Broadway/Hill-area entries.
 > Three bullets closed here (2026-09): the Court/Olympic/Pico tract batch and
 > the MR066-035 Third↔Arnold correction are both applied and encoded — the
 > correction is now Rule 2 in CLAUDE.md and the reason MR066-035 is the
-> benchmark sheet. Spruce Street is answered: `names.js` records it as modern
+> benchmark sheet. Spruce Street is answered: `data/names.js` records it as modern
 > Mateo Street, with a row on `documents/mr011-042/`.
 
 - **Goodwin/Thomas/Mills-Wicks batch, loose ends** (2026-07): reading the three
@@ -1116,7 +1116,7 @@ street (40 ft wide, ~3,000 ft) — context for Broadway/Hill-area entries.
   than the browser viewer, much easier for side-by-side comparison) confirmed
   Hewitt's segment split, 2nd St's "Guadalupe" stretch, Traction Ave's "Second
   St" predecessor, and Imperial/Santa Fe's "Palm"/"Tulip" predecessors (all
-  now in streets-data.js). Three loose ends remain:
+  now in generated/streets-data.js). Three loose ends remain:
   - **Second unnamed "STREET" on the Thomas Tract's north sheet (M.R. 3-61)**:
     the sheet shows TWO unlabeled N-S streets between "Guadalupe" and
     "Georgia." One is very likely [[Rose Street|Rose]] (flagged in that
@@ -1198,7 +1198,7 @@ street (40 ft wide, ~3,000 ft) — context for Broadway/Hill-area entries.
 Kenny finished the CDNC phrase search on *"ordinance changing"* in the Los
 Angeles Herald and supplied every remaining result that touched street names.
 All 49 are now documents with transcriptions. The corpus is **192 documents**;
-`node check-model.js` and `node check-data.js` both pass. No rows were written —
+`node tools/check-model.js` and `node tools/check-data.js` both pass. No rows were written —
 these are reading material for the textual-document tool, and the confirming is
 Kenny's step.
 
@@ -1328,8 +1328,8 @@ Ordinance No. 48's 212 changes (`lah-1889-05-10`), the Oct. 1888 committee's
 
 Kenny carried the *"ordinance changing"* search into two more CDNC titles and supplied
 34 clippings across the day, in batches, while the Herald run was being written up. All
-34 are now documents. **The corpus is 226 documents**; `check-model.js` and
-`check-data.js` both pass. No rows written.
+34 are now documents. **The corpus is 226 documents**; `tools/check-model.js` and
+`tools/check-data.js` both pass. No rows written.
 
 ⚠ **Paper identification is provisional.** The CDNC codes are DNLA (read as the Daily
 News, Los Angeles) and LAE / LAEVEX (both read as the Los Angeles Evening Express).
@@ -1505,7 +1505,7 @@ unexplainable.
   it did not follow. **A predicted follow-on renaming is not evidence that it
   occurred.**
 - **★ Childs avenue** is very likely named for **O. W. Childs**, whose tract is already
-  in `names.js`. If so, `laevex-1925-10-16` records the loss of the last street
+  in `data/names.js`. If so, `laevex-1925-10-16` records the loss of the last street
   carrying his name. Check against the Childs Tract geometry (rule 2) before writing
   anything.
 - **"Swanking up."** Freitas terrace → Londonderry place, and the Daily News says the
@@ -1523,7 +1523,7 @@ unexplainable.
 Kenny asked what fraction of the renamings we knew from **maps or Kines** actually
 turned up in the newspaper sweeps. Measured rather than guessed.
 
-**Method.** The denominator is `names.js` as it stood at commit `de8172b`
+**Method.** The denominator is `data/names.js` as it stood at commit `de8172b`
 (2026-09-03), *before* any newspaper work — 72 entities, of which 18 carry a public
 `note` asserting a renaming, each resting on the 1849 Ord survey, a tract plat, or
 Kines, with no document behind it. The numerator is what the 176 newspaper documents
@@ -1733,9 +1733,9 @@ to be what Cemetery Avenue is.
 
 ## 34 names out of the review queue (2026-09-13)
 
-The map tool minted 34 entities; all 34 are researched and moved into `names.js`,
-which is now **143 entities**. `names-new.js` is empty. `check-model.js` and
-`check-data.js` pass, `generate.js` runs, and the 72 names-tool tests pass.
+The map tool minted 34 entities; all 34 are researched and moved into `data/names.js`,
+which is now **143 entities**. `data/names-new.js` is empty. `tools/check-model.js` and
+`tools/check-data.js` pass, `tools/generate.js` runs, and the 72 names-tool tests pass.
 
 **Kines covers 7 of the 34.** Every other name was checked against
 lastreetnames.com's own `?s=` search endpoint (the alpha indexes are paginated and
@@ -1861,7 +1861,7 @@ in 1868.
 ## Working the unknowns: four threads, one answered outright (2026-09-13)
 
 Kenny went through the 78 unknown-namesake entities and set several lines going at
-once. Four research agents ran in parallel plus geometry checks here. `names.js` is
+once. Four research agents ran in parallel plus geometry checks here. `data/names.js` is
 still 143 entities; nothing was minted, twenty entities were revised.
 
 ### ★★ O. W. Childs was Ozro WILLIAM Childs
@@ -2311,9 +2311,9 @@ this to the Ord Survey's "Calle de las Adobes" — sheet 73's northernmost platt
 street — against Kines dating the name to a fresh 1886 tract with no 1849
 predecessor. If those are two streets, they are two entities.
 
-Cleveland Street is legacy-only: it lives in `streets-data.js`, which has no
+Cleveland Street is legacy-only: it lives in `generated/streets-data.js`, which has no
 `basis` field, so none of this can be recorded until it is migrated into
-`names.js`. This note is what should be read when it is.
+`data/names.js`. This note is what should be read when it is.
 
 ## 2026-09-15 — Four Venice Boulevard sheets, and three names for one corridor
 
@@ -2393,14 +2393,14 @@ Pine finally gave way to Venice Boulevard.
 
 **What this fixes, and what it opens:**
 
-- **`pine-street-venice` already exists in names-new.js**, minted from the two
+- **`pine-street-venice` already exists in data/names-new.js**, minted from the two
   1915 sheets and awaiting a namesake. Bryan's `mr021-032` is a **third sighting
   and pushes the name back 28 years, to 1887** — and unlike the Greenwell and
   Valentine's sheets it is inside the neighbourhood and correctly aligned, so it
   can carry rows now. Its `sightings` list should pick that up on the next
   review save.
-- **Rouland has no entity anywhere** — it is in neither names.js nor
-  names-new.js, and the only prose mention in the project is the Forman
+- **Rouland has no entity anywhere** — it is in neither data/names.js nor
+  data/names-new.js, and the only prose mention in the project is the Forman
   passage above. On the house convention for a vanished street it would be
   `rouland-street-venice`. Worth minting, and the namesake is unresearched:
   Rouland reads as a surname, and the party who filed the Greenwell plat —
@@ -2441,7 +2441,7 @@ block numbers, so none of them is an eyeball match:
 | Bond St | **Bond St** | blk 8 lots 3, 4 = 1312, 1320 Bond St |
 
 **Greenwell Street is the name that vanished** — the corridor is 14th Street
-today and has no entity in names.js. Auburn is the other loss: the plat's Auburn
+today and has no entity in data/names.js. Auburn is the other loss: the plat's Auburn
 Street is now Valencia Street. Rich → Oak is a third. All three are unresearched.
 
 **The Harbor Freeway took the tract's east side.** One assembled parcel
@@ -2538,10 +2538,10 @@ Street's centre line is measured from on this very sheet.
   identical value across four sheets suggests a carried-over default rather than
   four independent fits.
 
-## 2026-09-15 — names-new.js emptied: 28 namesakes researched, and what they left open
+## 2026-09-15 — data/names-new.js emptied: 28 namesakes researched, and what they left open
 
-All 28 entities minted into `names-new.js` were researched and moved into
-`names.js`. Fourteen came back with a reading (`attested`, `eponymous`,
+All 28 entities minted into `data/names-new.js` were researched and moved into
+`data/names.js`. Fourteen came back with a reading (`attested`, `eponymous`,
 `pattern`, `lexical`, `inferred` or `guess`); fourteen stayed `basis: "none"`
 with `searched` recording how hard the look was. The per-entity detail is in
 each `internalNote`; what follows is only what is still open, plus the leads
@@ -2700,7 +2700,7 @@ Consequences, all checked after regenerating:
   (Requena St)`, Requena by 1876 [origin] → Temple [renaming] — off
   `mr003-146-p2`, a sheet that has never given trouble. Street and entry counts
   unchanged (270 / 738); HARD findings unchanged at 97.
-- `market-st` stays in `names.js` with no sighting. Nothing errors — no rule
+- `market-st` stays in `data/names.js` with no sighting. Nothing errors — no rule
   requires an entity to be lettered — and it simply drops off the generated map,
   surviving only in `NAME_CATEGORY_INDEX`. Every claim in it came from outside
   the corpus anyway (Los Angeles Revisited for the July 1904 petition and the
@@ -2762,10 +2762,10 @@ Consequences, all checked after regenerating:
   attempt across two sessions** — it is the best untried route to 1890s
   municipal reports and compiled ordinance volumes, and is worth retrying.
 
-## 2026-09-17 — names-new.js emptied again: 78 namesakes, and two tracts cracked open
+## 2026-09-17 — data/names-new.js emptied again: 78 namesakes, and two tracts cracked open
 
 All 78 entities the map tool had minted were researched and moved into
-`names.js`, which now holds **249**. Per-entity detail is in each
+`data/names.js`, which now holds **249**. Per-entity detail is in each
 `internalNote`; this records only what is still open and what the pass created.
 Generated output went from 738 entries to **841**, stubs from 186 to **161**,
 and `check-legacy` HARD findings from 97 to **75**.
@@ -2858,7 +2858,7 @@ tr0006-150a, tr0010-175a**.
 Street, at the corner of 6th" is about lat ~34.045, south of everything this
 corpus covers. **Not acted on** — reassigning rows is Kenny's call. Until then
 `beaudry-st` carries an authored `disambiguation` so the two render apart
-(§6.5), which is what `check-model.js` was erroring on.
+(§6.5), which is what `tools/check-model.js` was erroring on.
 
 ### ⚠ LAFAYETTE: the split is drawn on the ink, and the ink is the wrong axis
 
@@ -2962,10 +2962,10 @@ bound to `state-colton` and is now `colton-st`.
 
 ## 2026-09-17 (later) — tool fixes, and a test suite that had been dead
 
-### ⚠ `test-review.js` WAS NOT RUNNING, and had not been for some time
+### ⚠ `tests/test-review.js` WAS NOT RUNNING, and had not been for some time
 
 It threw on load — `ReferenceError: clipRun is not defined` — because the
-function in `map-tool.html` had been renamed `clipRuns` (plural) and
+function in `utilities/map-tool.html` had been renamed `clipRuns` (plural) and
 `clipRange` renamed `clipRanges`, and the test's API export line was never
 updated. **This was true in the committed tree, not something this session
 broke.**
@@ -2986,7 +2986,7 @@ worth checking that the count went UP.
 
 1. **Excluding a whole street now deletes its rows.** `mkexceptall` pushed the
    bare street name into `coverageExcept` and left the rows alone, which is the
-   exact state `check-model.js` refuses ("it is either covered or it is not").
+   exact state `tools/check-model.js` refuses ("it is either covered or it is not").
    That is how `documents/tr0063-098-p1` collected three identical stretch
    entries, a whole-street entry and two live rows. The confirm now says how
    many rows will be deleted, a whole-street exclusion drops any per-stretch
@@ -3002,7 +3002,7 @@ worth checking that the count went UP.
 
 ### A harness gap that let (1) through
 
-`browser-test.js` **dismissed every `confirm()`**, so no test could exercise an
+`tests/browser-test.js` **dismissed every `confirm()`**, so no test could exercise an
 action behind one — the existing exclusion test pushed the value into the page
 by hand instead, which is why the row-deletion bug survived. Added
 `acceptConfirms(n)` and a test that clicks the real button and asserts the rows
@@ -3161,10 +3161,10 @@ whole files fine; it is only their *search* that is broken.
 
 ---
 
-## 2026-09-17 (late) — the 43-entity batch out of names-new.js
+## 2026-09-17 (late) — the 43-entity batch out of data/names-new.js
 
-Everything the tool had minted was researched and moved into `names.js`, which
-is now 292 entities and `names-new.js` is empty. Three web-research agents ran in
+Everything the tool had minted was researched and moved into `data/names.js`, which
+is now 292 entities and `data/names-new.js` is empty. Three web-research agents ran in
 parallel on disjoint name sets; the corpus side — the Oct. 1888 committee list,
 Newmark, and the row geometry — was done here.
 
@@ -3284,7 +3284,7 @@ anyway, because the research had been framed as a web problem from the start.
   already in the corpus under other hats. ⭐ W. A. Boring may be the Ellis Island
   architect. Nothing about the Spanish street names, so `pattern` stands.
 - **Bigelow Tract** (M.R. 24-81): recorded "at request of **A. W. Francisco**" —
-  Andrew Wiggins Francisco, already in `names.js`. And the sheet **already had a
+  Andrew Wiggins Francisco, already in `data/names.js`. And the sheet **already had a
   `santa-fe-ave` row**, so the plat letters ATCHISON, TOPEKA, SANTA FE and
   FREIGHT together beside a depot its own title names. The `pattern` for that set
   no longer needs Kines's Pasadena tract to make its case.
@@ -3386,7 +3386,7 @@ street" is the imprecise one; the 1912 paper's "North Spring street" is right.
 "Charity St / Calle de Caridad" as a **separate street on the same sheet**.
 
 ⭐ **The `charity` entity predicted this before anyone checked**, and the note is
-worth quoting as a model of how to park an unresolved possibility: *"streets-data.js
+worth quoting as a model of how to park an unresolved possibility: *"generated/streets-data.js
 also records Calle de Caridad as an unverified early name for SPRING Street. If
 that is ever confirmed it is a second entity that spells alike, not this one."*
 It is now confirmed and it is a second entity.
@@ -3531,7 +3531,7 @@ One institution holds the ground across twenty-two years, and the street is firs
 named on that institution's own replat. That is the ordinary landowner shape.
 
 ⚠ **Why `inferred` and not `eponymous`.** MODEL-SPEC §3.1's `eponymous` is
-**person-shaped**: check-model.js errors unless `landowner` or `family` is
+**person-shaped**: tools/check-model.js errors unless `landowner` or `family` is
 tagged, and both sit under `person` in the category tree. The landowner here is
 an institution, so categories say `company` ("An institution") and the grade
 drops to `inferred` — whose anchor, a documented landholding over four sheets, is
@@ -3642,7 +3642,7 @@ five minutes at the keyboard.**
 ### ⚠ A tooling gotcha, third occurrence, now costing real time
 
 Patch scripts written through the editor pipeline get their real Unicode turned
-into literal backslash-u, which then matches nothing in `names.js` (which stores
+into literal backslash-u, which then matches nothing in `data/names.js` (which stores
 real characters). **Rule: match strings in a patch script must be pure ASCII** —
 locate fields by their ASCII names and replace whole spans, and build
 replacement text with `\uXXXX` escapes in the Python source, which Python turns
@@ -3676,7 +3676,7 @@ Findings in full: `inbox/stevenson-1884 — what is actually on it.md`.
 **Short answer: yes, and it lands on the two HARD categories that a map can
 touch — but not on the third.**
 
-`check-legacy.js` has **31 HARD: 13 coverage, 6 names, 12 namesakes.**
+`tools/check-legacy.js` has **31 HARD: 13 coverage, 6 names, 12 namesakes.**
 
 - **Coverage (13)** — all of the form "X% of this ground is attested by a
   document". One citywide sheet, one alignment, attests a great deal of it at

@@ -3,14 +3,14 @@
 ## What lives here, and why it is not in `documents/`
 
 A file in `documents/` is a thing the map reads: it has an id, a date, a
-coverage polygon and usually rows, and `check-model.js` will complain if it does
+coverage polygon and usually rows, and `tools/check-model.js` will complain if it does
 not. These cuttings have none of that. They are **biographical or
 circumstantial evidence for a namesake** — an advertisement, a court decree, a
 council roll, a property transfer — that says nothing about where a street ran
 or what it was called. Making each one a rowless document would add a dozen
 entries to the corpus that draw nothing and assert nothing about the ground.
 
-So they sit here instead, and `names.js` cites them the way it cites any source:
+So they sit here instead, and `data/names.js` cites them the way it cites any source:
 by **title and CDNC URL**, not by local path. The file is the working copy, the
 URL is the citation.
 
@@ -52,5 +52,5 @@ a namesake and say nothing about the ground — and neither warrants a document.
 ## Provenance
 
 All ten supplied by **Kenny, 2026-09-17**, from CDNC phrase searches run against
-`handbook/CDNC-QUERIES.md`. Read at full size and applied to `names.js` the same
+`handbook/CDNC-QUERIES.md`. Read at full size and applied to `data/names.js` the same
 day; see the 2026-09-17 entry in `handbook/research-leads.md`.

@@ -1,12 +1,12 @@
 # Researching a name: where the evidence comes from, and what may be written down
 
-A **name entity** (`names.js`, MODEL-SPEC §3) is a naming *lineage*, and this
+A **name entity** (`data/names.js`, MODEL-SPEC §3) is a naming *lineage*, and this
 file is about filling one in: finding out who or what a street was named after,
 and what may honestly be claimed once you have.
 
 It is not about finding out where a name applied — that is the map tool's job
 (MAP-TOOL-GUIDE.md), and the document corpus answers it. This file starts where
-that leaves off: `names-new.js` holds entities the tool minted because a plat
+that leaves off: `data/names-new.js` holds entities the tool minted because a plat
 lettered something nobody had entered, each waiting for a namesake. Its
 `sightings` field lists every sheet in the corpus that letters the name, with
 the ink each one uses. That is where to start on one.
@@ -54,7 +54,7 @@ standing work.
 
 - **L.A. Street Names (Kines)**, lastreetnames.com — the standing reference,
   street by street. We cite it rather than duplicating its prose. Its coverage
-  is uneven: several entities in `names-new.js` are marked "NOT COVERED BY
+  is uneven: several entities in `data/names-new.js` are marked "NOT COVERED BY
   KINES", checked and recorded so nobody checks twice.
 - **Los Angeles Revisited**, losangelesrevisited.blogspot.com — long, sourced
   neighbourhood deep-dives, and repeatedly the only source that has traced a
@@ -128,7 +128,7 @@ is complete; `/alpha/<letter>/` paginates at 20 and will lie to you.
   `internalNote`, where they save the next person the same search. ⚠ `note` is
   not the only public prose — **`namedAfter` is read far more often**, since the
   map prints it as the street's origin line. Both are writing for a reader.
-- ⚠ **The " — " in `namedAfter` is a separator.** `generate.js` keeps only the
+- ⚠ **The " — " in `namedAfter` is a separator.** `tools/generate.js` keeps only the
   text before the first em-dash-with-spaces when a stretch did not originate
   under the name, so a hedge written after the dash will not reach those
   popups. Put the namesake first and the qualifier after; the `basis` badge is
@@ -168,7 +168,7 @@ unknown would assert more than the file knows. Silence is the honest entry.
 `basis: "eponymous"` and `categories: ["landowner"]`, because the plat is titled
 "J. B. Parker Subdivision" — the ROLE is attested even though the man is
 untraced. An `eponymous` entity must say `landowner` or `family`; that is what
-the plat attests, and check-model.js errors if neither is there.
+the plat attests, and tools/check-model.js errors if neither is there.
 
 ## Whose sentences are these: approved text
 
@@ -177,7 +177,7 @@ as an agent's draft. `namedAfterApproved` / `noteApproved`, with their `…On`
 dates, record **the last version a person wrote** (MODEL-SPEC §3.2). They start
 absent, which means "never approved" — true of nearly everything.
 
-In `names-tool.html` each of the two fields carries a panel underneath: the
+In `utilities/names-tool.html` each of the two fields carries a panel underneath: the
 approved text, an **Approve this text** button, and a word-level diff as soon as
 the live text drifts from it. Approving is a person's act and takes one click;
 the date comes along automatically.
@@ -186,7 +186,7 @@ the date comes along automatically.
 approved fields.** They are the only record of which published sentences are
 Kenny's, and an agent that fills them in has destroyed that record while
 appearing to be helpful. Absent is the honest value. The same rule is at the top
-of `names.js`.
+of `data/names.js`.
 
 A practical habit that follows: when you draft public prose, say so in
 `internalNote` — who drafted it, on what date, and on what argument. The
@@ -226,5 +226,5 @@ tells them what to check when they review it.
   dated, one bullet each. Consume the relevant ones when applying a document,
   and sweep the file periodically.
 - **Separate author from reviewer.** Draft in one session or sub-agent, review
-  in another: run `node check-model.js`, and spot-check the boldest claim of
+  in another: run `node tools/check-model.js`, and spot-check the boldest claim of
   the batch against its source.

@@ -1,10 +1,10 @@
 # Spec: names, documents, and the generated segment file
 
-**Status (2026-09-19): live.** The §10 switchover happened: `streets-data.js`
+**Status (2026-09-19): live.** The §10 switchover happened: `generated/streets-data.js`
 is the generator's output, `index.html` (the former preview page) renders it,
 and the deploy refuses a push whose committed output differs from a fresh
 build. The §11 street-by-street accounting is the standing gate
-`check-legacy.js` against `legacy/streets-data-2026-08.js` (every legacy
+`tools/check-legacy.js` against `legacy/streets-data-2026-08.js` (every legacy
 entry subsumed or accepted with a reason in `legacy/accepted-differences.js`).
 What was built, and how the differences were accounted: MODEL-IMPLEMENTATION.md.
 
@@ -12,7 +12,7 @@ What was built, and how the differences were accounted: MODEL-IMPLEMENTATION.md.
 for documented silence, extents that can end mid-block, alignment stored on
 the document, and pixel-space storage for anything traced on a scan. These
 came out of designing the map tool (MAP-TOOL-SPEC.md) and are contract, not
-UI: `check-model.js` and `generate.js` must honour them.
+UI: `tools/check-model.js` and `tools/generate.js` must honour them.
 
 This spec is written to be handed to an implementer cold. Where a rule exists
 because we already got it wrong once, that's noted — those are the parts worth
@@ -63,7 +63,7 @@ band, its name history, its sources. That has four costs the project keeps
 paying:
 
 1. **Segmentation is hand-maintained.** Splits are a documented five-step
-   procedure; `check-data.js` exists largely to police tiling, adjacency and
+   procedure; `tools/check-data.js` exists largely to police tiling, adjacency and
    ordering that a generator would get right by construction.
 2. **Entries can out-claim their evidence.** The whole "Segment-review flags"
    section of research-leads.md is instances of a segment asserting something
@@ -82,9 +82,9 @@ record what documents say, and derive segments from that.
 
 | layer | file(s) | authored by | holds |
 |---|---|---|---|
-| **Names** | `names.js` | human | one entry per name *entity*: spellings, namesake, categories |
+| **Names** | `data/names.js` | human | one entry per name *entity*: spellings, namesake, categories |
 | **Documents** | `documents/<doc-id>/<doc-id>.js` | human/instance, one file per document | what a document attests: which name covered which extent, when |
-| **Generated** | `streets-data.js`, `generated/*` | the generator | segments, timelines, search index, reports |
+| **Generated** | `generated/streets-data.js`, `generated/*` | the generator | segments, timelines, search index, reports |
 
 Rule of thumb for where something belongs: if it's a fact about *a name*, it's
 in names; if a document *testifies* to it, it's in documents; if it can be
@@ -119,7 +119,7 @@ the evidence arrives. This asymmetry is deliberate:
 
 Record a suspicion with `possiblySameAs` rather than acting on it.
 
-### `names.js` schema
+### `data/names.js` schema
 
 ```js
 "figueroa-gov": {
@@ -231,7 +231,7 @@ Act-documentation is not attestation of a namesake.*
 document — Wilshire's anchor is council minutes) carrying the person's name, or
 a close family member's, **and we can say which person that was**. The categories
 must say WHICH: `landowner` (owned or subdivided the ground) or `family` (of the
-owner or subdivider). `check-model.js` errors otherwise — the grade claims the
+owner or subdivider). `tools/check-model.js` errors otherwise — the grade claims the
 plat attests a role, so the file should record which role. Owner,
 subdivider, surveyor, signatory, or the wife, daughter, son or grandparent of
 one. Where the family is on the document but no individual has been found —
@@ -315,11 +315,11 @@ checked 2026-08-30"), while `extensive` marks a closed question where someone
 picking it up would waste a day re-running searches already recorded as empty.
 
 `unresearched` in `categories` is no longer authored: it is DERIVED from this
-field by `generate.js`, alongside `unknown` (derived from a null `namedAfter`)
+field by `tools/generate.js`, alongside `unknown` (derived from a null `namedAfter`)
 and `renamed` (derived from the timeline). Hand-typed, the two research-status
 tags had drifted from the fields they restate — twenty of 143 entities
 disagreed, thirteen of them claiming `unknown` beside a populated `namedAfter`.
-`check-model.js` errors if either is authored. See ROADMAP §7.
+`tools/check-model.js` errors if either is authored. See ROADMAP §7.
 
 #### The three flags
 
@@ -403,15 +403,15 @@ round trip.
 
 Nothing is derived from these and nothing warns on them. On the day they landed
 all 143 entities were unapproved, and a check that always complains is a check
-nobody reads; `check-model.js` prints a count instead, which is legible as a
+nobody reads; `tools/check-model.js` prints a count instead, which is legible as a
 trend.
 
-**Only a person writes them.** `names-tool.html` shows the approved text under
+**Only a person writes them.** `utilities/names-tool.html` shows the approved text under
 each field with an *Approve this text* button, and a word-level diff whenever
 the live text has drifted from it. An agent may rewrite `note` and `namedAfter`
 at will — that is the job — and must never write the approved fields, because
 doing so erases the only evidence of whose sentences are whose. The rule is
-stated at the top of `names.js`, where an agent editing the file will meet it
+stated at the top of `data/names.js`, where an agent editing the file will meet it
 without opening the handbook.
 
 The status is deliberately **internal**. The published site says nothing about
@@ -433,26 +433,26 @@ pass repeating the search — but it is working apparatus, not history.
 
 Getting this backwards is easy and was done: "Kenny: worth a look" and a
 paragraph comparing two Hobart Streets both reached the public site through
-`note`. `check-model.js` now warns when a `note` reads like a working note.
+`note`. `tools/check-model.js` now warns when a `note` reads like a working note.
 
-### Entities minted during review: `names-new.js`
+### Entities minted during review: `data/names-new.js`
 
 Review (MAP-TOOL-SPEC §4) has to mint an entity the moment a plat shows a label
 nobody has entered, and a browser tool should not write into the file holding
-the project's namesake research. So new entities land in **`names-new.js`**,
-exported as `NEW_NAME_ENTITIES` and merged by `check-model.js` and
-`generate.js` exactly as if they were in `names.js`, with `pendingResearch`
+the project's namesake research. So new entities land in **`data/names-new.js`**,
+exported as `NEW_NAME_ENTITIES` and merged by `tools/check-model.js` and
+`tools/generate.js` exactly as if they were in `data/names.js`, with `pendingResearch`
 set. An id may not appear in both files.
 
 The lifecycle: research the namesake, fill in `namedAfter` / `categories` /
-`sources`, move the entity into `names.js`, delete it from `names-new.js`.
-Anything still sitting in `names-new.js` is a to-do list, and `check-model.js`
+`sources`, move the entity into `data/names.js`, delete it from `data/names-new.js`.
+Anything still sitting in `data/names-new.js` is a to-do list, and `tools/check-model.js`
 names them on every run. The tool rewrites the file whole on each review save
 — re-reading it from disk first, so hand edits are merged rather than lost —
 which is another reason to move an entity out before doing real work on it.
 
 **`sightings` — every sheet that letters the name.** Each entity in
-`names-new.js` carries a derived list of the documents whose rows point at it,
+`data/names-new.js` carries a derived list of the documents whose rows point at it,
 with the ink each one uses:
 
 ```js
@@ -469,7 +469,7 @@ never hand-edited** — recomputed from `documents/` every time the tool rewrite
 the file, which is on every review save, since re-pointing a row at a different
 entity changes it. Where the scan cannot run, the list already on disk is
 carried through unchanged rather than replaced with an empty one. It exists
-only in `names-new.js`: an entity that has reached `names.js` has had its
+only in `data/names-new.js`: an entity that has reached `data/names.js` has had its
 namesake decided and does not need the trail any more.
 
 **Identity cannot be deferred the way namesakes can.** An absent `namedAfter`
@@ -645,11 +645,11 @@ not to the genre.
 tempting derivation and it breaks on the first scanned ordinance: ord-4093's
 full text is a scan request outstanding with the City Archivist, and the day it
 arrives that folder gets a PDF and a PNG without becoming a map. A newspaper
-page is the same. So the document declares it, and `check-model.js` enforces
+page is the same. So the document declares it, and `tools/check-model.js` enforces
 what the declaration implies rather than trusting it.
 
 `derived` exists so the OSM pseudo-document is not a fourth special case: it
-has no sheet and no text, its rows are built from `streets-geometry.js` at load
+has no sheet and no text, its rows are built from `data/streets-geometry.js` at load
 time, and saying so is better than exempting it from the field.
 
 ### 4.2 `attests` — what kind of existence, and how tightly dated
@@ -732,7 +732,7 @@ they are not interchangeable:
   about the MAP — that the document covers this ground and draws nothing on it
   — and only the second licenses arguing that no street was there. Conflating
   them turns a traced boundary's slop into a false historical claim, so the
-  review tool offers both and chooses neither. `check-model.js` rejects a
+  review tool offers both and chooses neither. `tools/check-model.js` rejects a
   document that both excludes a street and carries rows for it.
 
 ### 4.4a A sheet is the unit, not a bound volume
@@ -794,7 +794,7 @@ the test is that no latitude exceeds 90 and no longitude exceeds 180, while a
 vertex instead — "is this x large?" — was wrong on half the corpus, because a
 polygon traced from the sheet's top-left corner starts small, and every check
 that used the ring quietly became a no-op on those documents. `ringIsPixels`
-in `doc-geometry.js` is the one answer, so the tool and the checker cannot
+in `data/doc-geometry.js` is the one answer, so the tool and the checker cannot
 drift apart on it.
 
 The document is the single home for what used to live in
@@ -841,7 +841,7 @@ text for the name goes in `asWritten`.
 
 // A RESPELLING is a change row with from === to: one lineage taking up a new
 // written form, on a stated date. It MUST carry `toForm` — the form taken up
-// — and check-model.js rejects it without one, because a change from an
+// — and tools/check-model.js rejects it without one, because a change from an
 // entity to itself with nothing else said is not a claim.
 { kind: "change", from: "georgia-bell", to: "georgia-bell",
   toForm: "Georgia Street",
@@ -977,7 +977,7 @@ for absent pavement.
 The generator emits these as their own collection, with world coordinates
 derived through the alignment. That matters for more than completeness: a
 name entity whose only appearances are vanished streets would otherwise be
-unreachable — present in `names.js`, with an origin and a namesake, and
+unreachable — present in `data/names.js`, with an origin and a namesake, and
 findable by no query on the map. In the generated collection it can be
 indexed and searched like any other name. Whether the public map *draws*
 ghost streets is a display decision, deliberately left open.
@@ -1055,7 +1055,7 @@ a stretch that merely runs off the edge of coverage claims the document
 testifies about every block between here and the far side of the city, and on
 an `absent` row that is a false negative at city scale. Use it only where the
 street genuinely ends inside the polygon; otherwise end at the last crossing
-inside, or give a point. `check-model.js` warns on every `null` end whose
+inside, or give a point. `tools/check-model.js` warns on every `null` end whose
 street leaves the coverage polygon.
 
 **And the generator truncates regardless (2026-08-31).** Every row from a
@@ -1092,7 +1092,7 @@ A document may not be marked `sweptFully` while any row is explicitly
 `confirmed: false`. The `osm` pseudo-document is exempt: it is derived at load
 time, read by nobody, and tertiary anyway (§4.1).
 
-**A proposal does not reach the map.** `generate.js` holds back every row
+**A proposal does not reach the map.** `tools/generate.js` holds back every row
 still marked `confirmed: false` and says how many on each run. A proposal that
 generated a public claim would make review optional in practice; review is
 where a proposal becomes evidence, by having the flag removed.
@@ -1102,7 +1102,7 @@ lineage, and one sheet does not contain the answer — whether a plat's
 "Figueroa" is the same Figueroa as the one three blocks east cannot be read
 off that plat. So the AI pass is told to leave `name` out and record the ink
 in `asWritten`, and identity is assigned in review against the whole name
-list. `check-model.js` treats a nameless proposal as a warning; a row that is
+list. `tools/check-model.js` treats a nameless proposal as a warning; a row that is
 not marked as a proposal must still resolve, and a row cannot be confirmed
 without one.
 
@@ -1120,7 +1120,7 @@ regenerate away.
 
 ### 6.0a `NAME_CATEGORY_INDEX` — every entity's categories, by id
 
-`generate.js` emits a map from entity id to its categories with the tree's
+`tools/generate.js` emits a map from entity id to its categories with the tree's
 ancestors folded in, covering every entity that appears anywhere on the map,
 current or former.
 
@@ -1133,7 +1133,7 @@ categories. The Highlight list uses the pair to show **current (current and
 former)** beside each node: `A person 18 (31)`, and `…family of the owner or
 subdivider 0 (2)`, where every such name has since been replaced.
 
-`index.html` shows one number instead, because the legacy `streets-data.js` has
+`index.html` shows one number instead, because the legacy `generated/streets-data.js` has
 neither ids in its `nameHistory` nor an index to look them up in.
 
 ### 6.1 Segments
@@ -1391,7 +1391,7 @@ Labels: a form unique to one entity displays alone. A form shared by several
 displays with a disambiguator — the authored one if present, otherwise
 derived. **The derived one is currently the modern street name** —
 `Georgia Street (3rd Street)` — which is enough while no two entities share a
-form on the same street, and `check-model.js` errors the day two do (§9). A
+form on the same street, and `tools/check-model.js` errors the day two do (§9). A
 richer derivation is deferred (§12).
 
 **Derive locality, don't author it, in the normal case.** The namesake is the
@@ -1408,7 +1408,7 @@ saying they are overwritten every build.
 
 ### 6.6 Output requirements
 
-Generated `streets-data.js` keeps today's consumable shape — the map, the
+Generated `generated/streets-data.js` keeps today's consumable shape — the map, the
 checker and the report scripts read it unchanged — plus: each segment's
 name-periods carry **both the form in force and the entity id**, so
 spelling-set matching and entity queries work without loading the document
@@ -1448,7 +1448,7 @@ Color schemes, one active at a time, with the legend reflecting the active one:
    answers this with `attested` on each segment, and the map reads that field.
    Deciding it from the current name
    instead — is its entity a stub? — paints a whole numbered street blue on
-   the strength of one `names.js` entry, so blue comes to mean "somebody has
+   the strength of one `data/names.js` entry, so blue comes to mean "somebody has
    heard of this street" rather than "here is a document about this ground".
 
    **Amended 2026-08-31: `attested` counts POSITIVE rows only** (`state`,
@@ -1558,11 +1558,11 @@ Also: pixel-space extents and traces require the document to have an
 
 ## 10. Build
 
-Generate into `streets-data.js` and commit it: the git diff is the safety
+Generate into `generated/streets-data.js` and commit it: the git diff is the safety
 net, showing exactly what a document or entity change did to the map. CI
 regenerates and fails if the committed artifact differs, or it would silently
 go stale. The file has a do-not-edit header and a checker rule to match
-(`check-data.js --require-generated`). Once generated segmentation stops
+(`tools/check-data.js --require-generated`). Once generated segmentation stops
 being surprising, the artifact can move to build-time-only. *(All in place
 since 2026-09-19; the output is byte-deterministic, and the header carries no
 build date, so the CI diff is exact.)*
@@ -1617,7 +1617,7 @@ First documents to encode, in order:
   locality plus, for a dead form, a date range and successor
   (`Georgia Street (by 1875–1897; now 3rd Street, Alameda to Santa Fe)`). Worth
   keeping as a description because the *problem* is real: two entities sharing
-  a form on one street render identically. `check-model.js` now catches that
+  a form on one street render identically. `tools/check-model.js` now catches that
   case rather than letting it through, so this is a display improvement, not a
   correctness hole.
 
@@ -1673,7 +1673,7 @@ body of this spec when its design is settled, and out of both when it ships.
    matcher on canonical tokens; the `<datalist>` cannot do it.
 7. **Categories as a checked vocabulary and a tree** (referent /
    circumstance / status; nature split into plant, animal, landform, water),
-   living in `site-config.js` with `NEIGHBORHOODS` (MODEL-IMPLEMENTATION
+   living in `data/site-config.js` with `NEIGHBORHOODS` (MODEL-IMPLEMENTATION
    checklist A). The vocabulary is checked since 2026-09-12; the tree is not.
 8. **A second neighbourhood, and the large serial sheets** — ADDING-A-
    NEIGHBORHOOD.md and SERIAL-SOURCES.md, plus what a one-affine tool does

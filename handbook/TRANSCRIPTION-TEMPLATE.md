@@ -6,7 +6,7 @@ and named in the document's `transcription` field.
 Filled in by whoever READS the scan — a human, ChatGPT, or a Claude instance.
 **Verbatim only**: what is drawn and written on the map, with no modern-street
 identifications. Matching old streets to modern ones is the error-prone step,
-and it is done separately against geometry (`map-tool.html`), never by
+and it is done separately against geometry (`utilities/map-tool.html`), never by
 eyeballing a transcription.
 
 Transcription is optional. Most documents in the corpus have none: the AI pass

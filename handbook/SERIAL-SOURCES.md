@@ -173,6 +173,6 @@ Two consequences for this project:
   having verbatim — an index page, a long street table, correction-slip dates
   — it gets a Part A transcription beside the document file
   (`handbook/TRANSCRIPTION-TEMPLATE.md`).
-- `check-data.js`'s `PRIMARY` regex doesn't yet recognize `loc.gov` or
+- `tools/check-data.js`'s `PRIMARY` regex doesn't yet recognize `loc.gov` or
   `rescarta.lapl.org`; add them when the first such source lands, so the
   primary-anchor count stays honest.

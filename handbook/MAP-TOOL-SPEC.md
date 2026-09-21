@@ -1,7 +1,7 @@
 # Spec: the map tool (align → propose → review)
 
 **Status (2026-08-25): specified, not built.** Target file:
-`map-tool.html`, a single self-contained page served from the project
+`utilities/map-tool.html`, a single self-contained page served from the project
 folder. `align.html` was retired to `attic/` when this superseded it (2026-08-26).
 
 Written against MODEL-SPEC.md as amended 2026-08-25 (§4.4, §4.6, §5.2–§5.5).
@@ -37,7 +37,7 @@ Essentially the old `align.html` plus one step.
 1. **Load** a render (`documents/<id>/<id>-100dpi.png`) and, if resuming, an
    existing `documents/<id>/<id>.js`.
 2. **Align** — drag to move, wheel to scale, slider to rotate the scan over
-   the live modern street network drawn from `streets-geometry.js`. Separate
+   the live modern street network drawn from `data/streets-geometry.js`. Separate
    controls pan and zoom the *view* without disturbing the alignment, so the
    human can check a corner up close and come back out.
 3. **Draw the coverage polygon** — click a ring around the area the document
@@ -92,7 +92,7 @@ network in faint grey. Not built: the AI pass currently reads the plain render
 plus `<id>-streets.json`, which carries the same geometry in the scan's own
 pixel space, and that has proved enough for the assistants tried on it. If
 per-street overlays are ever wanted, they should be drawn from the stored
-alignment through `doc-geometry.js` rather than by reviving a second
+alignment through `data/doc-geometry.js` rather than by reviving a second
 implementation of the projection.
 
 **Instructions to the model**: `TASK.md`, which the tool generates per document
@@ -117,7 +117,7 @@ overlays correctly — and any tract map can now be turned into a fresh test wit
 `utilities/new-map.command`, so it was retired rather than maintained.)
 
 **Everything returned lands `confirmed: false`** (§5.5). Proposals are never
-data until a human says so, and `generate.js` holds them back from the map
+data until a human says so, and `tools/generate.js` holds them back from the map
 entirely until the flag is gone.
 
 **And nothing returned carries a `name`.** The pass is told to leave it out and
@@ -267,7 +267,7 @@ has an entity, and no row's two ends land in the same place — and it is WITHDR
 that untrue again.
 
 **This gate lives here and nowhere else.** MODEL-SPEC §9 once listed the
-segment-accounting half among the checker's rules; `check-model.js` cannot run
+segment-accounting half among the checker's rules; `tools/check-model.js` cannot run
 it, because the coverage geometry — the polygon, the clipped runs, the 25 m
 sliver rule — exists only in this tool. The checker enforces the half it can
 (every row confirmed) and the spec now says so. A gate that only guards the way in leaves the model's
@@ -331,8 +331,8 @@ The files are CommonJS modules with prose comments worth keeping —
 `mr066-035.js` opens by explaining that it is the adversarial benchmark. So:
 
 - **Read** by fetching the file, stripping `module.exports =`, and evaluating
-  the object (`new Function("return " + body)`, the same trick `check-data.js`
-  uses on `streets-data.js`).
+  the object (`new Function("return " + body)`, the same trick `tools/check-data.js`
+  uses on `generated/streets-data.js`).
 - **Preserve** everything before `module.exports` verbatim as an opaque
   prefix, and re-emit it unchanged.
 - **Regenerate** the object body with the tool's own serializer. Row-level
@@ -375,13 +375,13 @@ they are where absent wrongness would hide:
 - `zoomView` — zoom about a fixed screen point. A sign error here does not look
   like a broken zoom; it looks like the map scrolling away under you.
 - `nearestCrossStreet` — given a point on street X, the nearest street
-  intersecting X, and the distance. This is `intersect.js`'s job in the
+  intersecting X, and the distance. This is `tools/intersect.js`'s job in the
   browser; reuse its logic rather than reimplementing.
 - `snapOrPoint` — cross-street name if one is within tolerance, else a pixel
   point (§5.4).
 
 Test against the real data: MR066-035's committed alignment, read live from
-`documents/mr066-035/mr066-035.js`, and known intersections (`node intersect.js
+`documents/mr066-035/mr066-035.js`, and known intersections (`node tools/intersect.js
 "3rd Street" "Bixel Street"`) as expected values for the snapping. There was a
 frozen copy in `fixtures/` for a while, so that parking a document could not
 break the suite; it went stale instead — holding an alignment from the retired
@@ -393,10 +393,10 @@ Three suites, and they catch different things:
 
 | suite | what it runs | what it can see |
 |---|---|---|
-| `node test-doc-geometry.js` | `doc-geometry.js` | the pure geometry: alignment round-trips, polygon clipping, snapping |
-| `node test-review.js` | the review model, **extracted from `map-tool.html`** rather than copied, so it cannot drift | gaps, the confirm and sweep gates, extents, slivers |
-| `node browser-test.js` | the real page in a real browser (Playwright) | everything the other two structurally cannot: whether a panel is on screen, whether a click reaches it, whether a button does anything |
-| `node preview-test.js` | `index.html` (the map) on the generated data, in a real browser | what the MAP says: which stretches are blue, what a popup prints. Needs `npm install leaflet@1.9.4 --no-save` to stand in for the CDN copy |
+| `node tests/test-doc-geometry.js` | `data/doc-geometry.js` | the pure geometry: alignment round-trips, polygon clipping, snapping |
+| `node tests/test-review.js` | the review model, **extracted from `utilities/map-tool.html`** rather than copied, so it cannot drift | gaps, the confirm and sweep gates, extents, slivers |
+| `node tests/browser-test.js` | the real page in a real browser (Playwright) | everything the other two structurally cannot: whether a panel is on screen, whether a click reaches it, whether a button does anything |
+| `node tests/preview-test.js` | `index.html` (the map) on the generated data, in a real browser | what the MAP says: which stretches are blue, what a popup prints. Needs `npm install leaflet@1.9.4 --no-save` to stand in for the CDN copy |
 
 The last two exist because two shipped bugs were invisible to unit tests — a
 stylesheet rule that made the review panel and every popup `display:none`, and
@@ -410,9 +410,9 @@ installed on Kenny's machine; that suite runs in the assistant's sandbox.
 - **Promote `asWritten` into a name's spellings.** That is a judgement about
   what was a real form versus a scribal error (§5.1).
 - **Infer dates.** Dates come from the document header and the generator.
-- **Write `names.js`.** New entities go to `names-new.js`, quarantined and
+- **Write `data/names.js`.** New entities go to `data/names-new.js`, quarantined and
   marked `pendingResearch` (MODEL-SPEC §3); the authored file stays a human's.
-  The tool re-reads `names-new.js` from disk before rewriting it, so a hand
+  The tool re-reads `data/names-new.js` from disk before rewriting it, so a hand
   edit made while the page was open is merged rather than overwritten.
 - **Set `sweptFully` on its own**, ever. A human presses it, and only once
   nothing in coverage is unaccounted, no proposal is outstanding, and every
@@ -443,7 +443,7 @@ by 2026-09 there are five of them — two Herald reports, two council ordinances
 and Ord 4093 — carrying rows that nothing can review.
 
 The gap showed itself the day the 1874 and 1887 ordinances were transcribed:
-`check-model.js` correctly refused `sweptFully: true` on rows still marked
+`tools/check-model.js` correctly refused `sweptFully: true` on rows still marked
 `confirmed: false`, and there was no way to clear the flag except editing the
 file by hand. A gate nobody can pass is a gate that gets walked around.
 
@@ -469,14 +469,14 @@ geometry:
   the sheet was entered".
 - **Minting entities.** The 1874 ordinance minted `castelar` and `yale`; the
   1887 one minted `alpine`. That is the same job review mode does with
-  `names-new.js`, and it should work the same way.
+  `data/names-new.js`, and it should work the same way.
 
 **What it must not do.** No extents from geometry, no alignment, no coverage
 polygon — a textual document's scope is its own words, and inventing a spatial
 extent for it is the failure the change-rows amendment exists to stop.
 
-**Where it probably lives.** Closer to `names-tool.html` than to
-`map-tool.html`: the same surgical file editing, the same list-plus-editor
+**Where it probably lives.** Closer to `utilities/names-tool.html` than to
+`utilities/map-tool.html`: the same surgical file editing, the same list-plus-editor
 shape, no canvas at all.
 
 **Amended 2026-09-10.** The list item should be a *proceeding*, not a document

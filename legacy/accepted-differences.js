@@ -1,4 +1,4 @@
-// legacy/accepted-differences.js — findings of `node check-legacy.js` that a
+// legacy/accepted-differences.js — findings of `node tools/check-legacy.js` that a
 // PERSON has looked at and waived, each with the reason. An entry here is the
 // only thing that turns a HARD finding green; the harness never decides for
 // itself. Match on the legacy street key, the legacy segment label ("*" for
