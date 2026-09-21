@@ -43,7 +43,7 @@ const NAME_ALIASES = {
 // block down, and the timeline could not hold both). A way listed here is
 // keyed as its own street, by OSM way id — the suffix is a label, not a
 // name: the name is still 5th Street. Find candidates with the lateral-
-// separation test in MODEL-IMPLEMENTATION.md (same name, overlapping along
+// separation test in handbook/ADDING-A-NEIGHBORHOOD.md step 3 (same name, overlapping along
 // the axis, > 40 m apart across it); twin motorway carriageways and short
 // connectors are NOT this — nothing will ever letter them differently.
 const WAY_STREET_KEYS = {

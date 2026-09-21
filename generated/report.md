@@ -228,6 +228,8 @@
 - stevenson-1884-hi-res: sweptFor = []
 - teed-1887: sweptFor = []
 - teed-1889: sweptFor = []
+- tr0013-008: sweptFor = []
+- tr0014-013b: sweptFor = []
 
 ## asWritten strings matching no recorded spelling (recurring ones may be real spellings — §5.1)
 - myrtle: "Wall Street" ×1

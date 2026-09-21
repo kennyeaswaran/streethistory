@@ -63,7 +63,6 @@ echo "  Streetymology tools — serving $(pwd)"
 echo
 echo "    map tool   $BASE/utilities/map-tool.html"
 echo "    the map         $BASE/index.html"
-echo "    old aligner     $BASE/attic/align.html"
 echo
 
 # Open in Chrome if it's there (the File System Access API is a Chrome

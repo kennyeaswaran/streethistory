@@ -24,19 +24,19 @@ JavaScript-only archives, and committing to git.
 |---|---|
 | reading a map into the corpus | **handbook/MAP-TOOL-GUIDE.md** (the tool, end to end) |
 | researching who a street was named after | **handbook/NAME-RESEARCH.md** (sources, and what may be claimed) |
-| chasing the ordinance behind a renaming | **handbook/RENAMING-SOURCES.md** (petition → referral → ordinance, and the council-minutes URL that reaches any date) |
+| chasing the ordinance behind a renaming | **handbook/RENAMING-SOURCES.md** (petition → referral → ordinance; the council-minutes browser; how to search CDNC; the traps that fooled earlier readings) |
 | extending coverage to a new area | handbook/ADDING-A-NEIGHBORHOOD.md |
 | chasing one subdivision's platted names | **handbook/TRACT-RESEARCH.md** (NavigateLA → Map-Ref → DPW scan → transcription) |
 | after name-change dates across a neighborhood | **handbook/SERIAL-SOURCES.md** (Sanborn atlases, city directories) |
 | wanting the shape of the whole thing | **handbook/PIPELINE.md** (four stages, and which two need a human) |
-| working on renamings / change rows | **handbook/change-rows-amendment.md** (the three scopes a change row declares, `excerpts`, and the derivation — §§1-9 now BUILT) |
-| wondering what document to hunt for next | **handbook/WANTED.md** (a standing shopping list: what each missing document unblocks, worst damage first) |
+| working on renamings / change rows | **handbook/MODEL-SPEC.md §5.6–5.8** (the three scopes a change row declares, `excerpts` and `says`, the grammar of a renaming statement) |
+| wondering what document to hunt for next | **handbook/WANTED.md** (every document and search still to obtain, by errand: archives, browser, keyboard-only, council minutes, county sheets by corridor) |
 | holding an unverified hunch | **handbook/research-leads.md** (dated parking lot; sweep it before a street pass) |
-| going to a library, or have a browser and ten minutes | **handbook/IN-PERSON.md** (what to look for at UCLA, LAPL and the Huntington) + **handbook/CDNC-QUERIES.md** (exact phrases for the sites that refuse robots) |
+| going to a library | **handbook/IN-PERSON.md** (the trip sheet: UCLA, LAPL, the Huntington). With a browser and ten minutes instead: WANTED.md §2 |
 | wondering what to build next, or whether a wanted change is quick or a project | **handbook/ROADMAP.md** (every wanted change, sized and ordered; MODEL-SPEC §13 is its index) |
 | publishing / git | **handbook/PUBLISHING.md** |
-| the names/documents/generator model | **handbook/MODEL-SPEC.md** (the contract) + **handbook/MODEL-IMPLEMENTATION.md** (what was built, and how every difference from the hand-authored data was accounted) |
-| the switchover to generated data (done 2026-09-19) and what is owed after it | **handbook/SWITCHOVER.md** (how it was run; the after-list) and **MODEL-IMPLEMENTATION.md → "Switchover checklist"** (the mechanics, A–G) |
+| the names/documents/generator model | **handbook/MODEL-SPEC.md** (the contract) + **handbook/MODEL-IMPLEMENTATION.md** (the switchover record: checklist A–G and where each item is now described) |
+| the switchover to generated data (done 2026-09-19) and what is owed after it | **handbook/ROADMAP.md §11** (the after-list), research-leads.md "Settled and open at the switchover" (the audit's findings), and **MODEL-IMPLEMENTATION.md → "Switchover checklist"** (the mechanics, A–G). The switchover commit in git is the record of what changed |
 | **using** the map tool (Kenny) | **handbook/MAP-TOOL-GUIDE.md** — serve the folder, open via localhost, align, draw coverage, save |
 | reviewing or editing a NAME entity | **utilities/names-tool.html** — every entity in data/names.js and data/names-new.js, sortable, with an editor for every field. Kenny: `utilities/start-names-tool.command` |
 | building the names tool | **utilities/names-tool.html** itself (its header explains the surgical save); run `node tests/test-names-tool.js` after any change, and `node tests/names-browser-test.js` in a sandbox |
@@ -78,6 +78,11 @@ The 1897 council minutes and the omnibus renaming files are in
   tests/                        the test suites. Its README says which suite
                                 covers what, and which need Playwright
   handbook/                     every guide, spec and standing decision
+                                (tidied 2026-09-21: finished plans, prompts,
+                                shopping lists and search lists were retired
+                                into MODEL-SPEC, WANTED and the guides; the
+                                files are in git history, and older notes in
+                                documents/ still name them)
   documents/<id>/               ONE FOLDER PER DOCUMENT — its .js, its
                                 alignment, its render, its scan, its Part A.
                                 This is the unit you hand to another AI system.
@@ -87,7 +92,6 @@ The 1897 council minutes and the omnibus renaming files are in
                                 data/names.js, not documents. Has its own README
                                 indexing every file to the entity it supports.
   legacy/                       the frozen pre-model data
-  attic/                        superseded but kept (align.html)
 ```
 
 **Every path is from the project root.** Run scripts from there (`node
@@ -279,16 +283,17 @@ keeps every one of its entries subsumed or accepted.
   could not come clean (77 of 107 streets segment differently, by design),
   so the gate is subsumption: `node tools/check-legacy.js` — every legacy entry
   reproduced by the generated output or accepted by name, with a reason, in
-  `legacy/accepted-differences.js` (54 accepts at the flip). Validate
+  `legacy/accepted-differences.js` (54 accepts at the flip). It is
+  temporary: when it next fails on a difference that was meant, consider
+  retiring it rather than adding an accept (legacy/README.md). Validate
   authored layers with `node tools/check-model.js`; diff a street with `node
   tools/diff-street.js "3rd Street"`. `data/site-config.js` owns the vocabulary,
   `normalizeName`, `NAME_ALIASES` and `WAY_STREET_KEYS` — one copy, every
-  consumer. How the flip was run, and what is owed after it:
-  handbook/SWITCHOVER.md.
+  consumer. What is owed after the flip: handbook/ROADMAP.md §11.
 - **The map tool is built end to end** (2026-08-30): align → coverage →
   drag `documents/<id>/` into an assistant → review, name, confirm, sweep.
   handbook/MAP-TOOL-GUIDE.md is the how-to, handbook/MAP-TOOL-SPEC.md the
-  design. Four test suites, and they see different things: `node
+  design. Its test suites see different things (tests/README.md has all of them): `node
   tests/test-doc-geometry.js` (pure geometry), `node tests/test-review.js` (the review
   model, extracted from the page rather than copied so it cannot drift), and
   `node tests/browser-test.js` (the real page in Playwright — which is NOT installed
@@ -303,9 +308,16 @@ keeps every one of its entries subsumed or accepted.
   `index.html` over the generated data and reads the colours back off the
   polylines, which is the only way to check a claim like "this stretch is
   grey". It needs `npm install leaflet@1.9.4 --no-save` first, and it too runs
-  in the assistant's sandbox. (Run at the flip: page loads clean, 41 pass;
-  five colour checks name segment labels the grown corpus no longer
-  produces — stale expectations to refresh, not map faults.)
+  in the assistant's sandbox.
+  **A test must not depend on the state of the live corpus** (2026-09-20).
+  Five colour checks looked stretches up by label, and browser-test's Bunker
+  Hill section needed particular gaps, branches and rings on that sheet.
+  Adding and reviewing sheets made seven of them fail while the tools were
+  fine. They now use synthetic geometry or a rule checked across the whole
+  map, and browser-test reads no real document at all: every sheet it opens
+  is a fixture in tests/fixtures/. tests/README.md has the details. Writing
+  the synthetic gap cases turned up a real bug (an inset closer than
+  AT_VERTEX_M, fixed in map-tool.html).
 - **The names tool is built** (2026-09-04): `utilities/names-tool.html` is to `data/names.js`
   what the map tool is to a document — every entity in `data/names.js` and
   `data/names-new.js` in one sortable list (entity, latest spelling, categories,
@@ -355,8 +367,8 @@ keeps every one of its entries subsumed or accepted.
   of a renaming (179 of 186 textual documents carry no rows), historic sheets
   on the site, a year slider, search that folds "eleventh"/"11th", a category
   tree. Read it before starting anything that is not a document or a namesake.
-- **WANTED: a review tool for TEXTUAL documents** (handbook/MAP-TOOL-SPEC.md
-  §9). Review mode confirms rows against a sheet; the five textual documents —
+- **WANTED: a review tool for TEXTUAL documents** (handbook/ROADMAP.md §2,
+  "The tool"; 61 audit rows are held back waiting for it). Review mode confirms rows against a sheet; the five textual documents —
   two Herald reports, the 1874 and 1887 ordinances, Ord 4093 — have excerpts and
   a page clip instead, and nothing can review them. Clearing `confirmed: false`
   on such a row currently means editing the file by hand, which is how a

@@ -32,9 +32,9 @@ standing work.
 - **Newspaper reports of Council actions** — often the easiest linkable proxy
   for the ordinance itself. The California Digital Newspaper Collection
   (cdnc.ucr.edu) has the Herald from the 1870s–1900s, free. The L.A. Times
-  archive through LAPL/ProQuest covers the rest. **For instances:** CDNC pages
-  are JavaScript-rendered, so fetch tools see empty pages — reading them needs
-  a browser or a human.
+  archive through LAPL/ProQuest covers the rest. **For instances:** CDNC is
+  robots-disallowed as well as JavaScript-rendered, so searching it is a human
+  step; RENAMING-SOURCES.md, "Searching CDNC", has the query and URL forms.
 - **Recorded tract maps** — new streets, and their first names, appear on
   recorded subdivision maps. Street → tract → scanned map:
   **TRACT-RESEARCH.md**.
@@ -48,7 +48,7 @@ standing work.
 - **Bernice Kimball, "Street Names of Los Angeles"** (Bureau of Engineering,
   1988) — the BOE's own compendium of name changes, compiled from city records.
   Not online; LAPL holds it, and Kines relies on it. Worth consulting to pin
-  dates the web cannot.
+  dates the web cannot; the lookups waiting on it are in IN-PERSON.md §2.
 
 ### Secondary sources worth knowing
 
@@ -110,6 +110,93 @@ defaults. **Always run a nonsense control term first.** A negative from an
 unrun search is worse than no answer, because it gets recorded as `searched`.
 For proving Kines does NOT cover a name, walk `/neighborhoods/<slug>/`, which
 is complete; `/alpha/<letter>/` paginates at 20 and will lie to you.
+
+### One name, several streets
+
+Many Los Angeles names belonged to two, three or four unrelated streets, often at
+the same time — Virginia, Lafayette, Jackson, Ida, Pine, Crescent among them; the
+Oct. 1888 committee list alone has four Virginias, three Williams, three Grants,
+and two Aurora Streets four Hancock blocks apart. A source that names the street
+without a cross-street, a tract or an extent cannot be attached to an entity.
+RENAMING-SOURCES.md, "Recurring names — each a trap", keeps the fuller list.
+
+### A name attested nowhere is probably a misreading
+
+**When a name is attested nowhere at all — not as a surname, a place or a word,
+in any source — suspect the transcription before concluding the name is
+obscure.** A real but rare name leaves some trace; a misread letter leaves none.
+The rule was on its third instance by 2026-09-17; two are recorded: Labury was
+Labory, and Gravitta on M.R. 7-36 was **GRAVILLA** (the street's dashed
+centreline runs through the word, which made the doubled letter look plausible;
+Kenny read the ink). Go back to the sheet at full resolution before searching
+further.
+
+## Libraries and licensed databases
+
+Standing access facts, checked 2026-09-18. The day-of-trip sheet, with call
+numbers and what to look up, is IN-PERSON.md.
+
+**UCLA.**
+
+- **Library Special Collections (LSC) is weekday-only — closed every Saturday**,
+  in every week checked. Anything there is a weekday errand, permanently.
+- **Items shelved at SRLF as "Non-Circ Request at UCLA YRL Special Collections"**
+  (`JS…` call numbers) are off-site *and* non-circulating: they need an LSC
+  request at least **two business days** ahead. Register the LSC account first
+  (https://speccoll.library.ucla.edu/).
+- **UCLA LSC does not lend through interlibrary loan at all**
+  (https://ucla.libanswers.com/lsc/faq/380952).
+- **The Law Library is effectively closed to the public.** Its policy admits the
+  general public only to the Federal Depository collection, by advance
+  reservation. Write first: govdocs@law.ucla.edu, (310) 825-3166; bring
+  government photo ID. Its superseded-materials copies (`KFX…`) are a different,
+  easier lending category than Special Collections.
+- **Campus IP unlocks licensed databases** invisible from home: Gale's *Making of
+  Modern Law* (the compiled ordinances, `u=uclosangeles`) and Ancestry Library
+  Edition (city directories).
+- **UCLA's georeferenced viewer** (`uclalibrary.oldmapsonline.org`) serves ~1000 px
+  thumbnails and gates exports behind an upgraded account, not a campus
+  address.
+- **There is no LA City Council minute run at UCLA**, print or film. The nearest
+  is *Chronological record of Los Angeles city officials, 1850–1938* (SRLF→LSC,
+  `JS1001 .A4 1966`), a roster, not proceedings.
+- Hours change by quarter: https://calendar.library.ucla.edu/hours.
+
+**UC Irvine** (Kenny is on campus constantly; UC request machinery reaches UCLA
+and SRLF).
+
+- **Scanning Service** — free scans of book chapters, requested from UC Library
+  Search, 2–3 business days: https://www.lib.uci.edu/scanning-service. For
+  pre-1930 (public-domain) books say so in the request and ask for the chapter
+  complete plus the index pages; the usual one-chapter / 10% cap is a copyright
+  limit.
+- **Interlibrary Loan** — free, ~5–10 working days, unlimited for SRLF-stored
+  items: https://www.lib.uci.edu/interlibrary-loan · libill@uci.edu. Circulating
+  UCLA/SRLF items can be requested for pickup at UCI.
+- **For Special Collections items that cannot be lent**, the UC systemwide
+  *Interlibrary Loan Needs Statement for UC Special Collections* says reproduction
+  "will be funded by the ILL budget to provide a surrogate for loan" —
+  https://libraries.universityofcalifornia.edu/rsc/interlibrary-loan-needs-statement-for-uc-special-collections/
+  Cite it in the request. Untested whether UCI applies it routinely.
+- **Databases UCI licenses:** ProQuest Historical Newspapers (*L.A. Times*,
+  1881–); Fire Insurance Maps Online, described as including real-estate atlases
+  and plat books; HeinOnline (no municipal ordinances — useful only for state
+  session laws amending the LA charter). **Not** Ancestry. Whether UCI has Gale's
+  *Making of Modern Law* is unchecked: https://libguides.law.uci.edu/az/databases
+  · refdesk@law.uci.edu.
+
+**Elsewhere.**
+
+- **Orange County Public Library card** (ocpl.org) — free access to Ancestry
+  Library Edition and HeritageQuest, the cheap way to the city directories.
+- **Sherman Library, Corona del Mar** (~20 min from UCI, open daily 10:30–4) — a
+  Southern California research library with particular strength in California
+  city directories, including street-address directories. It runs a fee-based
+  lookup service, so a query can be posted rather than driven:
+  https://thesherman.org/library/
+- **The LA as Subject directory** (https://laassubject.org/directory) is the
+  index for "who holds this LA map" before committing to any drive. Chapman
+  University is a member.
 
 ## What may be written down
 

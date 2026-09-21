@@ -49,21 +49,20 @@ index into `generated/streets-data.js` (the file the map loads — generated sin
 2026-09-19 switchover, never hand-edited) and `generated/search-index.js`.
 Commit both with the change that produced them; the deploy refuses a push
 whose committed output differs from a fresh build (PUBLISHING.md). →
-**MODEL-SPEC.md** is the contract; **MODEL-IMPLEMENTATION.md** records what
-was built.
+**MODEL-SPEC.md** is the contract, and describes what was built.
 
 Textual documents — an ordinance, a newspaper column, a directory's street
 section — go through stages 1, 3 and 4 but not 2: they have no sheet to align
-(MODEL-SPEC §4.1a). Reading them in is by hand for now, and a tool for written
-evidence is the obvious next one to build.
+(MODEL-SPEC §4.1a), and carry their evidence as quoted excerpts instead
+(§5.7). Reading them in is by hand for now; the tool for written evidence is
+ROADMAP §2.
 
 ## Conventions that cross every stage
 
 **Resolution.** A pixel coordinate is meaningless without the render it was
-measured on. Renders are `pdftoppm -png -r <dpi>`, and **100 dpi is the
-project's alignment convention** — every stored pixel in `documents/` is
-against a `<id>-100dpi.png`. Re-render at 300 dpi when you need to *read* fine
-label text, but align against the 100 dpi copy.
+measured on, and **100 dpi is the project's alignment convention** — every
+stored pixel in `documents/` is against a `<id>-100dpi.png` (MAP-TOOL-GUIDE.md,
+"Before you start").
 
 **Downloads first.** Before opening a map PDF in a browser viewer, check
 `inbox/` and `documents/*/` — if it is already here, read it locally. Local

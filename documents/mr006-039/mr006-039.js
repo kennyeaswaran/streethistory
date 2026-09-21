@@ -73,7 +73,7 @@ module.exports = {
         ]
       },
       "basis": "alignment",
-      "note": "Modern San Julian Street follows the roadway lettered Euclid St. between the tract's two blocks.",
+      "note": "Modern San Julian Street follows the roadway lettered Earl St. between the tract's two blocks.",
       "name": "earl-st"
     },
     {

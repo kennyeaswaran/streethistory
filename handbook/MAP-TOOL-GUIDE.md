@@ -166,7 +166,8 @@ Two buttons move the view and the scan towards each other, and the second is
 the one that saves the work:
 
 - **Find the scan** re-centres the view on the sheet and zooms out far enough
-  to see all of it. One hard drag with the map selected can put the sheet a
+  to see all of it. Opening an aligned document does this by itself
+  (2026-09-20). One hard drag with the map selected can put the sheet a
   mile off screen, and there is no way to look for something you cannot see.
   Review has this button too — the row list and the popup both move the view,
   and getting back to the sheet afterwards used to mean guessing which way to

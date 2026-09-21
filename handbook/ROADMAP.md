@@ -1,10 +1,13 @@
 # Roadmap: the changes we want, sized and sequenced
 
 Written 2026-09-10 from a list of Kenny's, checked against what the code and
-the spec already do. This is the standing home for **wanted changes that are
-not yet specified**; MODEL-SPEC.md §13 is the index into it. When an item is
-designed properly, its design moves into the spec (or MAP-TOOL-SPEC.md) and the
-entry here shrinks to a pointer. When an item ships, delete it.
+the spec already do; trimmed 2026-09-21 to what is still to do. This is the
+standing home for **wanted changes that are not yet specified**; MODEL-SPEC.md
+§13 is the index into it. When an item is designed properly, its design moves
+into the spec (or MAP-TOOL-SPEC.md) and the entry here shrinks to a pointer.
+When an item ships, delete it — git keeps the old text. **Section numbers are
+stable** (code comments and other handbook files cite them), so an emptied
+section keeps its heading and a one-line pointer.
 
 Each item carries a size:
 
@@ -19,12 +22,14 @@ Suggested order is at the end (§10).
 
 ## 1. Fewer segments on the map, with nothing lost — *project, in three steps*
 
-### What the map does today, measured
+### What the map does, measured 2026-09-07 (112 streets); re-measure
 
-The generated data (2026-09-07 build) has 112 streets with entries and 483
-segments — Main Street is 17 pieces, 2nd Street 18, Los Angeles Street 18 —
-against 140 entries for 107 streets in the hand-authored file. Classifying
-all 371 adjacent-segment boundaries by what differs across them:
+That build had 112 streets with entries and 483 segments — Main Street 17
+pieces, 2nd Street 18, Los Angeles Street 18. The corpus has grown since (272
+streets at the 2026-09-19 switchover; CLAUDE.md, "State"), so the numbers below
+want re-measuring — ideally by the segmentation report in §9 — but the
+proportions are the argument.
+Classifying all 371 adjacent-segment boundaries by what differs across them:
 
 | what differs across the boundary | boundaries |
 |---|---|
@@ -32,7 +37,7 @@ all 371 adjacent-segment boundaries by what differs across them:
 | same lineage; a document letters the name on one side and **nothing** speaks about the other (OSM-only) | 176 |
 | same names and same name dates; only `planned` / `built` / `absentAsOf` differ | 105 |
 | same names; the same names carry different dates ("1849" one side, "by 1873" the other) | 40 |
-| nothing differs but geometry (2nd Street ×2, Bixel) — pavement gaps, see MODEL-IMPLEMENTATION checklist B | 3 |
+| nothing differs but geometry (2nd Street ×2, Bixel) — pavement gaps | 3 |
 | other (different entity bound to the roadway, etc.) | 24 |
 
 So **about one boundary in sixteen marks a change of name**; the rest mark
@@ -70,7 +75,7 @@ loses nothing and the research queue stays visible), but the click target and
 the popup are the segment, and the popup prints the stretch table beneath the
 name history: *"documented 1875 (Thomas Tract) west of Hewitt; nothing yet
 between Hewitt and Garey; by 1893 (M.R. 53-65) east of Garey."* Nothing that a
-fine segment carried today goes away; what changes is that a reader clicking
+fine segment carried goes away; what changes is that a reader clicking
 anywhere on Georgia-Street-era 3rd gets one story instead of five fragments.
 
 Where a segment's periods carry different dates in different stretches ("1849"
@@ -79,25 +84,27 @@ date, or the earliest "by" if no exact one exists, and the stretch table shows
 the rest. That is the same choice `knownFraction` already makes per segment.
 
 This is generator + `index.html` only — no model change, no re-reading of any
-sheet — and `tests/preview-test.js` can assert the colours per stretch as it does per
-segment today. Do it first, because it is the one step whose result cannot be
-wrong about history: it changes nothing about what is claimed, only how it is
-grouped.
+sheet — and `tests/preview-test.js` can assert the colours per stretch as it
+does per segment today. Do it first, because it is the one step whose result
+cannot be wrong about history: it changes nothing about what is claimed, only
+how it is grouped.
 
 ### Step B — the rectangle rule and the existence hull — *medium; specified*
 
-§6.2a is specified and unbuilt (§12). Step A groups the fragments; §6.2a is what
-would actually *bridge* them — fill Georgia across the block no sheet letters,
-and (the existence hull, same section) fill `planned: 1849` across a middle
-stretch when both ends show 1849. It collapses most of the 176 and the 105
-above into claims, each carrying its grade: attested / swept-silent /
-unexamined. The bridging report §6.2a asks for is the guard, and with Step A
-in place it has a natural home — a bridged part is just a stretch with grade 2
-or 3, and the popup already prints the stretch table.
+MODEL-SPEC §6.2a is specified and unbuilt (§12). Step A groups the fragments;
+§6.2a is what would actually *bridge* them — fill Georgia across the block no
+sheet letters, and (the existence hull, same section) fill `planned: 1849`
+across a middle stretch when both ends show 1849. It collapses most of the 176
+and the 105 above into claims, each carrying its grade: attested /
+swept-silent / unexamined. The bridging report §6.2a asks for is the guard
+(§9 here), and with Step A in place it has a natural home — a bridged part is
+just a stretch with grade 2 or 3, and the popup already prints the stretch
+table.
 
 Two things §6.2a leaves open and this item needs settled before it lands:
 
-- `knownFraction` must count grade-3 years fractionally (§8 already says so).
+- `knownFraction` must count grade-3 years fractionally (MODEL-SPEC §8 already
+  says so).
 - **Vacation.** The hull is monotone. Fine for now; note it in the report.
 
 ### Step C — "runs off the sheet" — *project; not yet in the model*
@@ -126,7 +133,8 @@ the next cross-street is the obvious answer and probably the right one.
 - Hiding "not yet researched" stretches inside a documented street. Grey inside
   blue is the research queue; Step A keeps it visible as a stretch colour.
 - Raising the snap tolerance to swallow mid-block ends. A mid-block extent is a
-  pixel somebody clicked (§5.4); rounding it to the block is a false claim.
+  pixel somebody clicked (MODEL-SPEC §5.4); rounding it to the block is a false
+  claim.
 
 ---
 
@@ -134,18 +142,19 @@ the next cross-street is the obvious answer and probably the right one.
 
 ### Where it stands
 
-186 textual documents are in `documents/` — Herald, Examiner, Daily News
-clippings and six sets of minutes — and **179 of them carry no rows.** Seven
-carry change rows: the four instruments (`ord-1613`, `ord-1874-02-26`,
-`ord-1887-08-22`, `ord-4093`) and three Herald reports standing in for
-instruments not yet found. Everything that connects a clipping to the change it
-reports about lives in **comments at the top of the file** — see
-`documents/lae-1924-04-12` for the five-document, sixteen-year Orange → Wilshire
-arc, written out by hand, with the model knowing nothing of it. Meanwhile
-`handbook/MINUTES-TO-CHECK.md` invented a stage vocabulary on the fly (§1 asked,
-§2 ordered drafted, §3 adopted, §3+ approved, ✔TEXT), and
-`change-rows-amendment.md` §10 found that two of its six statement forms are
-not change rows at all. All the pieces of a design exist; none is in the model.
+186 textual documents were in `documents/` at 2026-09-10 — Herald, Examiner,
+Daily News clippings and six sets of minutes — and **179 of them carried no
+rows.** Seven carried change rows: the four instruments (`ord-1613`,
+`ord-1874-02-26`, `ord-1887-08-22`, `ord-4093`) and three Herald reports
+standing in for instruments not yet found. Everything that connects a clipping
+to the change it reports about lives in **comments at the top of the file** —
+see `documents/lae-1924-04-12` for the five-document, sixteen-year Orange →
+Wilshire arc, written out by hand, with the model knowing nothing of it.
+Meanwhile the minutes worklist (then MINUTES-TO-CHECK.md; its meetings are now
+WANTED.md §4) invented a stage vocabulary on the fly
+(§1 asked, §2 ordered drafted, §3 adopted, §3+ approved, ✔TEXT), and the
+change-rows design (MODEL-SPEC §5.8) found that two of its six statement forms are not change rows at
+all. All the pieces of a design exist; none is in the model.
 
 ### The object that is missing: a *proceeding*
 
@@ -188,14 +197,15 @@ Decisions this forces, with a recommendation for each:
 - **Where the change rows live.** On the instrument document when the
   instrument is in hand (as now); on the proceeding when it is not. Never on a
   news report. `tools/check-model.js` should warn on a `change` row in a
-  `news-report` document — the three that exist today are the migration list.
-  The generator reads rows from both places; the proceeding's rows carry
-  `says` that cross documents, which is the excerpt-citation question
-  change-rows §12 left open, answered.
+  `news-report` document (today `news-report` is one of its
+  `TRANSITION_TYPES`, so it is allowed) — the three that exist are the
+  migration list. The generator reads rows from both places; the proceeding's
+  rows carry `says` that cross documents, which answers the cross-document
+  excerpt-citation question below.
 - **Effective date.** Approval (or publication where the law required it),
   not adoption, not the report's date. The proceeding computes it from its
-  steps; a row inherits it. That is what §3+ in MINUTES-TO-CHECK was reaching
-  for.
+  steps; a row inherits it. That is what the worklist's "§3+ approved" stage was
+  reaching for.
 - **Proposals that differ from the outcome.** A step may carry `proposes:`
   (the names that report floated — Alpine was first to be Eighth). They
   never reach the map's timeline. They do reach the popup narrative (§4
@@ -204,10 +214,51 @@ Decisions this forces, with a recommendation for each:
 - **Stage vocabulary** — closed list, checked: `petition`, `referral`,
   `committee-report`, `draft`, `adopted`, `vetoed`, `reconsidered`,
   `approved`, `published`, `repealed`, `report` (a paper simply reporting the
-  state of things). MINUTES-TO-CHECK's §1/§2/§3/§3+ map onto it directly.
+  state of things). The old worklist's asked / ordered drafted / adopted / approved
+  stages map onto it directly.
 - **`attests`.** A proceeding whose rows are qualified attests `built-by` at
-  the effective date on that stretch (change-rows §9); unqualified rows attest
-  nothing about ground, as now.
+  the effective date on that stretch; unqualified rows attest nothing about
+  ground, as now.
+
+### Open questions carried from the change-rows design
+
+Moved here from `change-rows-amendment.md` (§§5, 9, 12) when it was folded into
+MODEL-SPEC; none is settled.
+
+- **`basis` for a resolved extent.** A qualified change's resolved extent is a
+  researched row carrying a `basis`, but the row vocabulary is lot-level /
+  label / alignment / position, and "a human read an ordinance against a map"
+  is none of them.
+- **`attests: "built-by"` on `ord-4093`.** Defensible — you do not rename a
+  street that is not there — but an existence claim with no extent. Under the
+  change-row rules it is right for qualified/resolved rows and inert for the
+  others, so it can probably stay; make it a conscious decision, not drift.
+- **`completeness: "exhaustive-in-scope"` as negative evidence.** If an
+  ordinance really lists everything in scope, a name it does not mention did
+  not change that day. Potentially strong; do not design it out (MODEL-SPEC
+  §6.2a's open questions say the same for the rectangle rule).
+- **`annotation` rows still count toward `attested`.** MODEL-SPEC §6.2a's
+  table says they should only if the row asserts existence, which nothing
+  encodes. Flagged so it is not forgotten.
+- **An excerpt that quotes another document.** The committee report is quoted
+  inside the council minutes, and `ord-4093`'s two real excerpts are really the
+  minutes quoting the committee. Whether such an excerpt wants its own
+  citation — a proceeding's cross-document `says` is one answer.
+- **A clipping for every textual document?** Piloted on `lah-1874-02-27`, whose
+  `scan` is a 20 KB crop from CDNC's page-image cropper, committed because a
+  crop behind a bot-verification wall cannot be re-derived. It costs a manual
+  crop per document; it buys an excerpt checkable without leaving the repo.
+
+### The 1908 Orange → Wilshire pair is held back
+
+From the 2026-09-18 change-rows audit: with the 1908 change, its December
+repeal and the 1924 change all written, Wilshire Boulevard's timeline came out
+as *Wilshire July 1908 → Dec. 1908 | Orange Dec. 1908 → July 1908* and the 1878
+Orange lettering disappeared; the revival check did not fire. **The generator
+cannot hold A → B → A → B on one stretch.** The 1924 row is written (Orange by
+1878 → Wilshire Apr. 1924, correct); `lah-1908-07-14` and `lah-1908-12-05` are
+ready but not written until `tools/generate.js` can give a name two separate
+periods in that shape. The Orange → Wilshire pilot below meets the same wall.
 
 ### What can happen without the tool
 
@@ -220,27 +271,31 @@ shape that has survived contact with real material:
    narrate.
 2. **Ordinance No. 48 (N.S.), 1889** — 212 changes, a veto, a reconsideration,
    a rewrite before enrolment: the stress test. Its full text is in hand
-   (MINUTES-TO-CHECK, Priority 1).
+   (`documents/lah-1889-05-10`).
 
-Then migrate the 1897 arc onto `ord-4093`, which is already half there.
+Then migrate the 1897 arc onto `ord-4093`, which is already half there, and
+Buena Vista and the Miramar chain (accepted at the switchover as proceedings
+work rather than quick rows; research-leads.md, "Settled and open at the
+switchover").
 
-### The tool (MAP-TOOL-SPEC §9, extended)
+### The tool
 
-§9 asked for a review tool for textual documents: excerpt beside clip, `says`
+§9 asks for a review tool for textual documents: excerpt beside clip, `says`
 made navigable, `scope` made visible. A proceeding is the right *list item* for
 that tool rather than a document: open one, see every step's clip and excerpt
 in date order down one column, and the resulting rows in the other, and write
 the rows while looking at all of the evidence at once. Same surgical file
-editing as `utilities/names-tool.html`, no canvas. Build it after the two hand-written
-pilots, not before.
+editing as `utilities/names-tool.html`, no canvas. Build it after the two
+hand-written pilots, not before. It is also the **confirmation tool for the 61
+held-back audit rows** (`tools/generate.js` prints the count on every run).
 
 ---
 
 ## 3. Historic maps on the public site — *someday; a cheap first step exists*
 
-The alignments Kenny has made (§4.6: two-point similarity or least-squares
-affine, stored on each document) are enough to draw a sheet on the modern base.
-What stands between that and the site:
+The alignments Kenny has made (MODEL-SPEC §4.6: two-point similarity or
+least-squares affine, stored on each document) are enough to draw a sheet on
+the modern base. What stands between that and the site:
 
 - **Leaflet draws only axis-aligned image overlays.** So either pre-warp each
   render at build time into a north-up Web-Mercator PNG plus bounds (a
@@ -251,9 +306,9 @@ What stands between that and the site:
   testifies about — a much better thing to show than the whole sheet with its
   margins and title block.
 - **The scans are not committed.** `.gitignore` already anticipates this: a
-  viewer-facing derivative is to be named `<id>-web.jpg` and excepted. Sixty
-  100 dpi renders exist, none over 3 MB; web-sized and masked they would be a
-  few hundred KB each. Repo size is a Kenny decision.
+  viewer-facing derivative is to be named `<id>-web.jpg` and excepted. The
+  100 dpi renders were none over 3 MB at 2026-09-10; web-sized and masked they
+  would be a few hundred KB each. Repo size is a Kenny decision.
 - **Rights.** County recorder scans and LOC Sanborn sheets are public records /
   public domain; the Huntington items (`11824`, `12017`, `12685`) need their
   terms checked before publication.
@@ -287,9 +342,9 @@ until §2 has a shape.
 A year slider. At Y, every modern segment is one of three things — **known
 present** (existence hull reaches it by Y), **known absent** (an `absent` row
 dated ≥ Y covers it, or its first planning act is after Y), **unknown** — and
-each is drawn differently: full, hidden, dim. Vanished streets (§5.3) appear
-when Y falls in their attested window. Labels and colour show the name in force
-at Y, which the timeline already answers.
+each is drawn differently: full, hidden, dim. Vanished streets (MODEL-SPEC
+§5.3) appear when Y falls in their attested window. Labels and colour show the
+name in force at Y, which the timeline already answers.
 
 What the generator must add: per stretch, `exists: { from: year, kind:
 "exact"|"by"|"after", absentUntil: year|null }`; per vanished trace, its
@@ -305,14 +360,14 @@ dates) and reads naturally off §3's `documents.js`.
 
 ### 5b. Colour by age of oldest attestation — *quick*
 
-This is §8 scheme 3, specified and not built ("Age: earliest document showing
-the segment existed"). The generator already computes the date for the
+MODEL-SPEC §8 scheme 3, specified and not built ("Age: earliest document
+showing the segment existed"). The generator already computes the date for the
 `planned` / `built` text; emit it once more as a number (`earliestYear`, with
 `kind` exact/by) and give `index.html` a sequential ramp from 1849 to the
 extract date. Scheme 4 (latest document showing it did *not* yet exist) is the
 mirror and needs only `absentAsOf` as a number; build both in the same
-afternoon, and the gap between them is the "how well pinned" scheme §12
-defers.
+afternoon, and the gap between them is the "how well pinned" scheme MODEL-SPEC
+§12 defers.
 
 ---
 
@@ -327,204 +382,61 @@ the canonical key — it sees "11th Street" and the user typed "eleventh".
 Fix: replace the datalist with a small custom list (a `<ul>` under the box)
 matched in script on canonical tokens — canon(query) tokens each a prefix of
 some canon(form) token, order-free, so "20" reaches "Avenue 20" and "chavez"
-reaches "Cesar E Chavez", both of which §6.5 already asks for. The generator
-emits the canonical key per row and ships its three tables in
+reaches "Cesar E Chavez", both of which MODEL-SPEC §6.5 already asks for. The
+generator emits the canonical key per row and ships its three tables in
 `search-index.js` so the browser folds the query identically (§12 notes this
-requirement). Apply to `index.html` (entity-keyed since the 2026-09-19
-switchover). An hour or two; `tests/preview-test.js` gets a case.
+requirement). Apply to `index.html`. An hour or two; `tests/preview-test.js`
+gets a case.
 
 ---
 
-## 7. Categories: a vocabulary, a tree, and a review pass — *mostly done 2026-09-15*
+## 7. Categories — *built 2026-09-15; a few loose ends*
 
-**Status.** The move to `data/site-config.js`, the tree, the `object` branch, the
-`nature` split and descendant matching on both maps are **done**. What is left
-is listed at the end of this section under *Still open*.
+**Built:** the checked vocabulary, the tree, the `object` branch, the `nature`
+split, descendant matching, derived `unknown` / `unresearched` / `renamed` /
+`disputed`, and the `basis` node on the map. The vocabulary and the reasoning
+behind each node are in the header and node comments of `CATEGORIES` in
+`data/site-config.js`; `basis`, `searched` and the flags are MODEL-SPEC §3.1;
+the current-and-former counts are MODEL-SPEC §6.0a. Code comments that say
+"ROADMAP §7" mean this section and those places.
 
-### Two things wrong — both fixed
+### Rationale recorded nowhere else
 
-- ~~**Four category ids are in use and not declared.**~~ *Fixed 2026-09-12:*
-  `mythological`, `history`, `foreign` and `company` are declared in
-  `CATEGORIES`; `tools/check-model.js` now errors on an undeclared id, and the names
-  tool warns on one as it is coined (the "new category" row is how the four
-  came about). What remains here is the tree below.
-- ~~**The list is flat and mixes three different kinds of thing.**~~ *Fixed
-  2026-09-15: the three facets below are built, and facet rows are headings
-  rather than choices — `tools/check-model.js` errors if an entity tags one.*
-- ~~**Research status was typed by hand.**~~ *Fixed 2026-09-15: `unknown` and
-  `unresearched` are DERIVED by `tools/generate.js` from `namedAfter` and `searched`,
-  alongside `renamed`. They had drifted badly — twenty of the 143 entities
-  disagreed with their own fields, thirteen of them claiming `unknown` beside a
-  populated `namedAfter`. `tools/check-model.js` and the names tool now error on
-  authoring one, and `utilities/map-tool.html` mints entities with no categories at all
-  rather than guessing `unknown`, which also settles the mint disagreement
-  between the two tools.* "Named after
-  a person" is a referent; "Namesake alive when named" is a circumstance of a
-  person-naming; "Has former names" is derived by the generator; "Origin
-  disputed" is a status of the research. Sorted flat, they read as peers.
-
-### The vocabulary, as built
-
-`CATEGORIES` lives in `data/site-config.js` (MODEL-IMPLEMENTATION checklist item A,
-done together with this). The sketch below is what shipped 2026-09-15, after
-Kenny's review pass — **six top-level referents**, which is the number a reader
-can hold at a glance, and everything else a subtype of one of them.
-
-```
-What the name points to
-  person        → landowner (owned or subdivided the ground) / family (of the
-                  owner or subdivider) / politician → mayor, governor (of
-                  California), president, official / mythological / people
-                  (rather than one person) / foreign / alive when named
-  nature        → tree / plant / animal / landform / water
-  place         → destination (where it goes) / state / borrowed (a street
-                  elsewhere)
-  company       → "An institution" — a railway, a college
-  object        → material / tool
-  abstract      → idea (a virtue, a quality, an aspiration) / descriptive
-                  (the street's own role or position) / number / route system /
-                  event
-Status of the record — all derived, never authored
-  renamed · disputed · unknown · unresearched
-```
-
-Three things in there are worth their own sentence.
-
-**`politician` is the generic and `governor` is a governor of California.** The
-parent used to be called `governor` and carry both senses, which was wrong for
-half its members — Santee was a city councilman, and Cleveland Street's legacy
-entry says only "possibly Grover Cleveland" and carries `disputed`. The six
-legacy uses were migrated to the generic id, a rename and nothing more: none of
-them was reclassified, because for two of them we do not know enough to.
-(Cleveland is a standing question in its own right, but not the one I first
-wrote here: Kines does attribute it to Grover Cleveland, explicitly as his own
-inference rather than from evidence, and he considered and dismissed the city.
-What stays open is whether the 1886 Beaudry tract name and an Ord-survey
-predecessor are the same street. See research-leads.md, 2026-09-15.)
-
-**`landowner` and `family` are what `basis: "eponymous"` is about**, and
-`tools/check-model.js` requires one of them on every eponymous entity. They are not a
-restatement of the grade: both also occur under `basis: "attested"`, where a
-secondary source tells us the same thing — Patton, Wolfskill, Vignes, Kohler
-and Huber are all tagged and none of them is eponymous.
-
-**`alive` is displayed as a subtype of `person`** even though it is a
-circumstance of the naming rather than a kind of referent. It only ever applies
-to people, it excludes none of the other subtypes, and a reader looks for it
-there. Its old `Circumstance` facet had no other member and is gone.
-
-**`history` is retired.** A historical people goes under `person` (as `people`,
-so the map does not call the Aztec empire "a person"), and an event goes under
-`abstract`. Nothing in the new model used `history`; Olympic Boulevard in the
-legacy data is the only `event` there is. If a second one turns up and the
-grouping starts to read wrong, this is the decision to revisit.
-
-Each entry carries `parent`; the Highlight list shows group headings with
-sub-items indented, still single-select radio (§8), and **selecting a parent
-matches every child** (the generator emits `ancestors` per entity, or the map
-walks the tree). Counts beside each label, and within a group sort by count
-descending — a reader wants to know that "tree" has eight and "animal"
-three before choosing.
-
-The migration is mechanical and half a day. Revised 2026-09-15 at Kenny's
-direction, now that all 143 entities are graded: **`tree` is a sibling of
-`plant`, not a synonym for it**, and the split is lopsided — `alameda-st`
-(álamo, the cottonwood), `poplar-st`, `olive`, `spruce`, `willow`, `mesquit`,
-`maple-dtla`, `palm-st-arts-district` → **tree** (8); `flower`, `tulip`,
-`myrtle` → **plant** (3); `chapules`, `hornet`, `bull` → **animal** (3);
-`crown-hill-ave`, `hill-street-downtown` → **landform** (2); `water` has no
-member yet. `person` entities get a subtype or `other`.
-
-Watch the tree/plant boundary: myrtle is a shrub, mesquite is a shrub or a small
-tree, and a tulip is a flower on a bulb but a tulip *tree* is not. The fuzziness
-is real and the rule should be written down before the pass, not discovered
-during it — suggestion: **what the namer would have pointed at.**
-
-Kenny's review pass happened 2026-09-15 and settled all three of the questions
-this paragraph used to leave open: `alive` became a subtype of `person` rather
-than a facet of its own, the generic politician node is `politician` with
-`governor` reserved for a governor of California, and the person subtypes are
-the seven listed above. What the tree looks like now is at the top of this
-section.
-
-### Added 2026-09-15, out of the `basis` design (MODEL-SPEC §3.1)
-
-**A new `object` branch.** Nothing in the vocabulary fits a street named for a
-thing — an object, a tool, a material. `adobe` is the case that surfaced it:
-once its `namedAfter` is populated with the linked concept, `nature` is wrong
-(adobe is a building material, not an organism or a landform) and `descriptive`
-is wrong by that category's own definition (the street is not *made of* adobe,
-it ran among adobes). Expect few members; `traction-avenue` (the electric
-traction motor) is probably the second. Kenny's word was `object` or
-`inanimate`; `artefact` is tighter for the made-thing sense but reads oddly
-beside `nature`, so `object` is the working name.
-
-**The Status facet is largely superseded.** Once `basis` lands, "origin not yet
-found" is `basis: "none"` and "not yet researched" is `searched: "none"` — both
-better defined than the tags they replace, and both already known to be stale in
-`categories` (`yale` carries `unresearched` beside two completed checks;
-`unknown` and `unresearched` disagree about which records are unworked). Retire
-the two tags rather than migrate them, and let the map's Highlight list read
-them off `basis`/`searched`. `disputed` likewise overlaps the new `rival` flag,
-though not exactly: the project's convention is that `disputed` marks a claim
-the project takes a side *against*, while `rival` marks an open question.
-
-**`descriptive` and `number` under `abstract`, reviewed.** The collision that
-prompted this note is resolved by renaming the basis value to `lexical`, so the
-category keeps its name. But the family is still redundant: `number` (position
-in a grid), `destination` (where it goes) and `descriptive` (role or position
-otherwise) all say *the name describes the street*, and `descriptive` is the
-residual — some older `generated/streets-data.js` rows already carry
-`["number","descriptive"]`, which is that showing through. Under the tree,
-`descriptive` should be documented as the residual of that group rather than as
-a peer of it. All 8 current members describe the roadway itself: Main, Central,
-Short, Commercial, College, Court House, Alameda, Traction.
-
-**A finding worth keeping.** Carrying `descriptive` as a CATEGORY predicts a
-*strong* `basis` — of the 8, three grade `intrinsic` and four `attested` —
-because a name that describes the street can be checked against the street. The
-`lexical` basis means the opposite. Two facets that sound alike and point
-opposite ways is exactly the kind of thing the tree should make visible.
-
+- **Tree versus plant: what the namer would have pointed at.** `tree` is a
+  sibling of `plant`, not a synonym for it, and the boundary is genuinely
+  fuzzy — myrtle is a shrub, mesquite a shrub or a small tree, and a tulip is a
+  flower on a bulb but a tulip *tree* is not. As graded 2026-09-15:
+  `alameda-st` (álamo, the cottonwood), `poplar-st`, `olive`, `spruce`,
+  `willow`, `mesquit`, `maple-dtla`, `palm-st-arts-district` → **tree**;
+  `flower`, `tulip`, `myrtle` → **plant**; `chapules`, `hornet`, `bull` →
+  **animal**; `crown-hill-ave`, `hill-street-downtown` → **landform**.
+- **`descriptive` is the residual of a group, not a peer.** `number` (position
+  in a grid), `destination` (where it goes) and `descriptive` (role or position
+  otherwise) all say *the name describes the street*; `descriptive` is what is
+  left when the other two do not apply. At 2026-09-15 all 8 members described
+  the roadway itself: Main, Central, Short, Commercial, College, Court House,
+  Alameda, Traction.
+- **The `descriptive` category and the `lexical` basis point opposite ways.**
+  Of those 8, three grade `intrinsic` and four `attested`: a name that
+  describes the street can be checked against the street, so the category
+  predicts a *strong* basis. `lexical` means the word's meaning is all we have
+  — the opposite. (The basis value was renamed to `lexical` so the category
+  could keep its name.)
+- **`history` is retired.** A historical people goes under `person` as
+  `people`; an event goes under `abstract`. Olympic Boulevard's legacy entry is
+  the only `event` there is; if a second turns up and the grouping reads wrong,
+  revisit.
 
 ### Still open
 
-- ~~**`basis` is not on the map at all.**~~ *Built 2026-09-15:* a **How well we
-  know it** node under *Status of the record*, with the eight grades under it
-  and the three `searched` levels under `basis-none`, where they are the only
-  thing that distinguishes a closed question from an untouched one. The popup
-  prints the grade beside the namesake. In the generated model these REPLACE
-  `unknown` and `unresearched`, which are now legacy-only (`only: "legacy"` in
-  data/site-config.js) — `basis-none` says the same thing about the namesake and its
-  children say what the old pair could not. A street the base map alone knows
-  gets its own row, `stub`, because "researched and not found" and "never
-  entered the corpus" are different answers.
-- **The current-and-former counts are preview-only.** `index.html` shows a
-  single number: the legacy data has no entity ids in its `nameHistory`, so
-  former names cannot be counted there without double-counting. Resolved by the
-  switchover, not before.
-- **Subtypes of `person` that are about the PERSON.** `landowner`, `family`,
-  `governor` (with `mayor` / `governor-ca` / `president` / `official` under it),
-  `foreign`, `mythological` and `people` are built. A religious figure or saint
-  was in the original sketch and has no member yet; nor does `mayor`.
+- **Empty nodes.** A religious figure or saint was in the original sketch and
+  has no node; `mayor`, `event` and `system` have no member in the generated
+  model, some legitimately (the freeways are legacy-only ground).
 - **`witmer-street` is tagged `landowner` on a judgment call.** The sheet reads
   "Witmer's Subdivision", which makes Henry Clayton Witmer the subdivider, but
   the `namedAfter` says the land was his *family's*. Either tag is arguable.
-- ~~**Empty nodes: `borrowed`.**~~ *Filled 2026-09-15* — Wall, Regent, Broadway
-  and Yale now carry a `namedAfter` and the category, on the argument that the
-  published grade is what qualifies a candid reading. `event`, `system`,
-  `mayor` and `people`-adjacent nodes are still empty in the new model, some of
-  them legitimately (the freeways are legacy-only ground).
-- **The " — " convention in `namedAfter` is load-bearing and undocumented
-  outside §3.1.** `tools/generate.js` keeps only the head of the field for a stretch
-  that did not originate under the name, so a hedge written after the dash does
-  not reach those popups. The basis badge covers it now, but anyone writing a
-  `namedAfter` should know the tail is conditional.
-- **The legacy path still authors `unknown`.** `generated/streets-data.js` and the
-  `tools/check-data.js` rules over it are unchanged and correct: that file has no
-  `basis` or `searched` to derive from and never will, since it is being
-  replaced rather than migrated. Both go away with the big-bang switchover
-  (MODEL-IMPLEMENTATION §C–D), not before.
+- **Say that `descriptive` is a residual where authors will see it** — in its
+  node comment in `data/site-config.js` — *quick*.
 
 ---
 
@@ -538,13 +450,14 @@ sources. What neither says yet, because nobody has done it:
   single least-squares fit will have residuals that put a street a block off at
   the far corner. The map tool assumes one image, one alignment. Two ways out:
   cut the scan into tiles and make each a document (the `copies` mechanism,
-  §4.4a, already lets several documents share one url), or store several
-  alignments per document with the tool choosing by nearest control points.
-  Tiling is the one that needs no tool change; try it first on one sheet.
-- **A sheet touching forty streets** is what the model was built for (§1,
-  cost 3), so the data side is fine; the *review* is the bottleneck. Before
-  a Sanborn sweep, the map tool's review mode should be exercised on a
-  20-street tract sheet to see what forty feels like.
+  MODEL-SPEC §4.4a, already lets several documents share one url), or store
+  several alignments per document with the tool choosing by nearest control
+  points. Tiling is the one that needs no tool change; try it first on one
+  sheet.
+- **A sheet touching forty streets** is what the model was built for, so the
+  data side is fine; the *review* is the bottleneck. Before a Sanborn sweep,
+  the map tool's review mode should be exercised on a 20-street tract sheet to
+  see what forty feels like.
 - **Sanborn downloads are Kenny's click** (LOC's IIIF refuses automation);
   1888 and 1894 are the clean anchors, 1906 volumes are palimpsests
   (SERIAL-SOURCES).
@@ -554,7 +467,6 @@ sources. What neither says yet, because nobody has done it:
   Bunker Hill / Westlake to the west and Boyle Heights to the east are the
   obvious pair; `tools/coverage-report.js` can say which existing sheets already
   reach into each.
-- `NEIGHBORHOODS` moves to `data/site-config.js` with the categories (item 7).
 
 ---
 
@@ -570,10 +482,12 @@ sources. What neither says yet, because nobody has done it:
 - **`documents.js` and the coverage layer** (§3's first step) as its own
   item — it serves §1's grades, §3, §5a, and the "what has been looked at"
   question, and it costs an afternoon.
-- **The bridging report** §6.2a already asks for, before the rule lands.
-- ~~**Retire the four-way duplication of `normalizeName` / alias tables**~~
-  — done 2026-09-15 (MODEL-IMPLEMENTATION checklist B): one `normalizeName`
-  in `data/site-config.js`, every consumer calling it.
+- **The bridging report** MODEL-SPEC §6.2a asks for, before the rule lands.
+- **Two gaps in the map tool** (MAP-TOOL-SPEC §4). *Export notes for the next
+  AI pass* — the unconfirmed and rejected rows with the human's comments,
+  formatted as a prompt for another round, which is what makes the AI pass and
+  review alternate rather than being one-shot — is specified and not built.
+  And a row's `basis` is still file-only: review mode cannot set it.
 
 Not proposed: anything that changes what a row can claim. Every item above is
 about how claims are grouped, shown, found or connected; the evidence rules in
@@ -583,19 +497,65 @@ MODEL-SPEC §§4–5 and CLAUDE.md's broken-rules list stay as they are.
 
 ## 10. Suggested order
 
-1. **Quick fixes, this week:** ~~declare the four missing categories and make
-   `tools/check-model.js` validate ids (7)~~ done 2026-09-12; the search matcher (6);
-   scheme 3/4 colours (5b); permalinks and the segmentation report (9).
-1.5 **Add two new similar projects: https://lax-skyline.parcelscope.net/ and https://maps.bristol.gov.uk/kyp/?
-2. **The Orange → Wilshire proceeding, written by hand** (2) — a day, and it
-   settles the shape before anything is built to it.
-3. **§1 Step A**, display unit vs evidence unit — the largest single
+1. **Quick fixes:** the search matcher (§6); add the two similar projects
+   Kenny named to `SIMILAR_PROJECTS` in `data/site-config.js` —
+   https://lax-skyline.parcelscope.net/ and https://maps.bristol.gov.uk/kyp/ ;
+   the segmentation report and permalinks (§9); scheme 3/4 colours (§5b);
+   style-budget warnings once per entity and `report.notes` in the report
+   (§11).
+2. **Legacy cleanup** (§11), and the decision whether `tools/check-legacy.js`
+   has done its job.
+3. **The Orange → Wilshire proceeding, written by hand** (§2) — a day, and it
+   settles the shape before anything is built to it. It needs the A → B → A → B
+   fix (§2) to carry the 1908 pair.
+4. **§1 Step A**, display unit vs evidence unit — the largest single
    improvement to the map for the least risk to the claims.
-4. **`data/site-config.js` + the category tree** (7, and checklist A).
-5. **`documents.js` and the coverage layer** (3, first step).
-6. **The rectangle rule and existence hull** (1B), with its report.
-7. **Ordinance 48 as a proceeding; then the textual review tool** (2).
-8. **The year slider** (5a); the imagery overlay (3) once the rights and
-   repo-size questions have answers; "runs off the sheet" (1C) once 1B has
+5. **`documents.js` and the coverage layer** (§3, first step).
+6. **The bridging report, then the rectangle rule and existence hull** (§1B).
+7. **Ordinance 48 as a proceeding**; migrate `ord-4093`, Buena Vista and the
+   Miramar chain; **then the textual review tool**, which also clears the 61
+   held-back rows (§2). If those rows start to matter, the tool can move ahead
+   of Ordinance 48.
+8. **The year slider** (§5a); the imagery overlay (§3) once the rights and
+   repo-size questions have answers; "runs off the sheet" (§1C) once §1B has
    shown what the bridging actually produces.
-9. A new neighbourhood (8), when Kenny wants to spend the alignment time.
+9. A new neighbourhood (§8), when Kenny wants to spend the alignment time.
+
+---
+
+## 11. Left over from the switchover (2026-09-19)
+
+The flip left a short list, formerly in handbook/SWITCHOVER.md (retired
+2026-09-20). The research notes behind it are in research-leads.md, "Settled
+and open at the switchover". The research errands it also left (the Misc
+Records half of the 17b list, Olympic's 1935 ordinance, the Chavez exhibit map
+in council file 93-0907) are in **WANTED.md**; the proceedings work it left is
+in §2.
+
+- **Cleanup the flip left on purpose:** the `only: "legacy"` rows in
+  `data/site-config.js`, and the legacy branches of `tools/check-data.js`,
+  `utilities/names-tool.html` and `tools/generate.js`'s `NAME_CATEGORY_INDEX`
+  (`unknown` / `unresearched`). Also the `documents/tr0002-008b`,
+  `tr0002-062a` and `tr0012-088a` folders with no `.js` yet, which
+  `tools/generate.js` skips with a warning.
+- **What `tools/check-data.js` is for after the flip.** The authored layers
+  have `tools/check-model.js`; the generated file is the output of a
+  deterministic program. What is still worth checking there is the contract
+  the map relies on — labels, vocabulary, sources with URLs, bands tiling,
+  timelines ending in the current name (it caught three rows on the wrong
+  street before the flip). Decide, and trim it to that.
+- **Style-budget warnings** (note / namedAfter / origin length): they fire in
+  `tools/check-data.js` on the generated file, 70-odd per build, and belong in
+  `tools/check-model.js` or the names tool, once per entity. *Quick.*
+- **`report.notes` is never printed.** An unqualified change that lands nowhere
+  pushes a note there, but `generated/report.md` does not render the list, so
+  the note is dead code. The `check-model` warning covers the same ground;
+  print the notes or drop them. *Quick.*
+
+The one standing rule from the flip, to commit the regenerated
+`generated/streets-data.js` and `generated/search-index.js` with every change
+to `documents/` or the name files, is in PUBLISHING.md and CLAUDE.md rule 7.
+The guard against the generated map having lost something the hand-made one
+said is `node tools/check-legacy.js` (legacy/README.md). It is temporary: the
+first time it fails on a difference that was intended, consider retiring it,
+along with `legacy/` and `tools/diff-street.js`, instead of adding an accept.

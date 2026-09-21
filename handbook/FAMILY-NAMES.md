@@ -21,8 +21,8 @@ Grade every claim before you go looking, so you know what you are hunting:
 | **D** | Coincidence: born after the plat, a collateral line, or a common given name with only a surname match. |
 
 **B is the working standard for writing `namedAfter` with a hedge.** Anything less
-stays null. `agatha` is currently the closest thing in this file to a B and is the
-template to finish first, because it is the one case with a named candidate.
+stays null. `agatha` ("Probably Agatha Sabichi") and `ruth-ave` ("Probably Ruth R.
+Wolfskill") are the two graded this way, both `eponymous`.
 
 **Name rarity shifts the weight.** Gladys was uncommon in the United States in 1887, so
 a pre-1887 Gladys anywhere near the Wolfskills is strong; a Ruth or a William is weak
@@ -122,12 +122,23 @@ person who fits.
 
 ## Where this leaves our seven
 
-`agatha` is at B-minus and should be finished first as the template. `ruth-ave` and
-`gladys` need Phase 1 on Joseph Wolfskill. `ida-street` needs the parent sheet of the
-1888 resubdivision and then a baptismal register. `william` is now a different problem
-— there are two Williams in the Childs family and the question is which, not whether.
-`helena-ave` and `elmore-ave` are stuck at Phase 0: nobody has read the June 1887
-signatures.
+✔ **Graded:** `agatha` and `ruth-ave` (`eponymous`, "Probably …"), and `william`,
+now `william-santee` (`eponymous`, "Probably Ozro William Childs … himself").
+
+Still open, one line each:
+
+- `gladys-ave` — no Gladys among Joseph Wolfskill's eleven children; the live
+  question is **George W. Frink**'s household (Los Angeles Land Bureau, which
+  filed the tract).
+- `helena-ave`, `elmore-ave` — stuck at Phase 0: nobody has read the June 1887
+  signatures.
+- `ida-street` — needs the parent sheet of the 1888 resubdivision, then a
+  baptismal register (Adelaida → "Ida" is a hypothesis).
+- `ruth-ave` rests on Find a Grave; Phase 1 is not finished until the **1900
+  census** household is read (Elena's children-born / children-living counts
+  also test for a child who died young).
+- `agatha` — Kines gives 1871–1963, the Sabichi plot on Find a Grave 1881–1963.
+  On the 1881 reading Agatha and Ruth are first cousins born the same year.
 
 ---
 
@@ -197,16 +208,8 @@ Testing each name against the family and stopping when one fails would have lost
 
 ## What the run did not do
 
-- **The census check was not completed** — FamilySearch wanted a login. Ruth rests on
-  Find a Grave, which is contributor-submitted: internally consistent across four
-  memorials in one physical plot, but possibly one upstream compiler. **Phase 1 is not
-  finished until the 1900 census household is read**, where Elena's "children born /
-  children living" counts also test for a child who died young.
-- **George W. Frink's household is untraced** — no biography, no Find a Grave, no
-  census reached. That is now the live question for Gladys.
-- **The Agatha control wobbled.** Kines gives her 1871–1963; Find a Grave's Sabichi plot
-  gives 1881–1963. Unresolved, and it matters — on the 1881 reading Agatha and Ruth are
-  first cousins both born in 1881, each with a street on her own father's land.
+The census check (FamilySearch wanted a login), Frink's household and the Agatha
+birth-year conflict — all listed under "Where this leaves our seven" above.
 
 ## Method note worth keeping
 
@@ -214,7 +217,11 @@ Chronicling America's page viewer and OCR endpoints return 403, but **the underl
 ALTO XML is openly fetchable**: get the issue's file list from
 `https://www.loc.gov/item/<lccn>/<date>/ed-1/?fo=json`, take the Nth
 `storage-services/…/NNNN.xml` for page N, and fetch it directly. That is full OCR text,
-and it is how the Land Bureau advertisements were recovered. The *Herald* on
+and it is how the Land Bureau advertisements were recovered.
+
+⚠ **Reported working 2026-09-14; CLAUDE.md says the Chronicling America API is
+retired (404), and SERIAL-SOURCES.md records `?fo=json` returning 403 on loc.gov
+in 2026-08 — check before relying on it.** The *Herald* on
 Chronicling America (`sn85042460`, 1884–1890) is the same UCR digitisation as CDNC, so
 this is a second door into the corpus when CDNC is unreachable.
 

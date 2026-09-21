@@ -252,7 +252,7 @@ const ATTESTS = ["planned-on", "planned-by", "built-on", "built-by"];
 const FORMS = ["drawn", "textual", "derived"];
 // §5: change rows only on documents that attest the transition itself.
 const TRANSITION_TYPES = ["ordinance", "news-report"];
-// §§2-3 of handbook/change-rows-amendment.md.
+// The three scopes: handbook/MODEL-SPEC.md §5.6.
 const CHANGE_SCOPES = ["whole-name", "extent", "extent-unresolved"];
 
 const docDateOf = doc => (doc.date && (doc.date.on || doc.date.after || doc.date.before)) || null;
@@ -318,12 +318,12 @@ for (const doc of DOCUMENTS) {
     }
     if ((doc.rows || []).length && !exIds.size)
       err(d, "textual document has rows but no `excerpts` — every row must quote the " +
-             "sentence it was read from (§12)");
+             "sentence it was read from (MODEL-SPEC §5.7)");
     for (const [i, row] of (doc.rows || []).entries()) {
       const says = row.says == null ? [] : (Array.isArray(row.says) ? row.says : [row.says]);
       if (!says.length)
         err(`${d}.rows[${i}]`, "textual document: row needs `says` naming the excerpt(s) " +
-                               "it was read from (§12)");
+                               "it was read from (MODEL-SPEC §5.7)");
       for (const id of says)
         if (!exIds.has(id)) err(`${d}.rows[${i}]`, "says names an unknown excerpt:", id);
       // A placeholder is honest, but it should not go unnoticed.
@@ -652,7 +652,7 @@ for (const doc of DOCUMENTS) {
     for (const r of doc.rows || []) if (r.kind === "state" && r.name) hasStateRow.add(resolve(r.name));
   }
   // A name can also hold ground it was never lettered on: the `to` of an
-  // earlier change lands wherever the `from` held (change-rows-amendment §4),
+  // earlier change lands wherever the `from` held (MODEL-SPEC §5.6),
   // and a later change from it chains on — High → Walters (1886) → Ord (1890),
   // where nothing letters Walters. Count those as grounded too (2026-09-18).
   const groundedByChange = new Set();

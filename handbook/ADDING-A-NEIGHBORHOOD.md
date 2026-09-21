@@ -19,7 +19,8 @@ category vocabulary, the name aliases and the way-keyed branches below.
    "Save geometry file" and replace `data/streets-geometry.js` with the download.
    Everything downstream reads that file: the map tool's sense of where streets
    are, `documents/osm.js` (which derives its rows from it at load time), and
-   the generator.
+   the generator. So after replacing it, re-run `node tools/generate.js`: the
+   `osm` document changes with the file, and the map does not until you do.
 
 3. **Look for branches — two roadways under one name.** Run
    `node tools/branch-check.js`. The model folds every way that shares a name onto
@@ -49,6 +50,18 @@ category vocabulary, the name aliases and the way-keyed branches below.
    as two streets?* If yes, key them apart; if no, don't. Run the script
    again after every geometry refresh — a new extract can add a way.
 
+   *What is keyed so far (2026-09-18).* West 5th Street's one-way southern
+   branch (the old Ward Street corridor) and the East 4th Street viaduct over
+   the surface street, as `"5th Street (south branch)"` and the like. Rows on
+   that ground are keyed to the branch — `mr003-046-p2`'s WARD row,
+   `mr003-569`'s and `mr001-462`'s absent rows, a Saint Paul Avenue crossing.
+   Twin motorway carriageways, the 4th Street bridges over the 110 and the
+   hook-shaped Fort Moore Place also trip the test and are deliberately not
+   keyed. Every consumer that keys ways by name calls `normalizeName(name,
+   wayId)` from `data/site-config.js`, which consults the table, so a branch
+   means the same thing in the generator, the checkers, the map tool and the
+   map.
+
 4. **Sweep the documents you already have.** Before any fresh research: a plat
    whose coverage polygon reaches into the new area may already speak about its
    streets, and the omnibus files may already hold citations for them. Rows
@@ -67,3 +80,13 @@ category vocabulary, the name aliases and the way-keyed branches below.
 
 7. **Check and rebuild.** `node tools/check-model.js && node tools/generate.js`, then
    reload the map.
+
+## Before a document's silence counts
+
+A coverage polygon is harmless while its document is `sweptFully: false`,
+because nothing argues from its silence; once it is swept, negative inference
+makes the polygon load-bearing (MODEL-SPEC §4.4–4.5). Some of the earliest
+tract documents still carry hand-estimated rectangles rather than measured
+footprints — replace those before flipping a big document to `sweptFully:
+true`. The Wolfskill south-extent caveat in `documents/mr030-009.js`, and the
+other ⚠ row comments in `documents/`, are the first places to look.

@@ -18,6 +18,20 @@ the switchover, and stays useful: an entity edit that loses a namesake, or a
 sheet re-key that loses a stretch, trips it. `tools/diff-street.js <street>` is the
 field-by-field comparison for one street.
 
+**This folder is temporary (Kenny, 2026-09-20).** Its job is to catch
+accidents in the period right after the switchover, while the generated map
+still ought to say everything the hand-made one did. As the corpus grows, a
+failure is increasingly likely to mean the project has deliberately moved on:
+a stretch re-read, a namesake revised, a name moved to another street. So
+**when `check-legacy.js` fails, first ask whether the difference was
+intended.** If it was an accident, fix it. If it was intended, the default is
+not to add another accept. Consider retiring the check instead: delete
+`legacy/` (this file, `streets-data-2026-08.js`, `accepted-differences.js`)
+together with `tools/check-legacy.js` and `tools/diff-street.js`, which
+exist only to compare against it, and drop their mentions from CLAUDE.md,
+tools/README.md and ROADMAP.md §11. The deploy never ran it, so nothing
+else changes.
+
 Nothing loads this file. `index.html`, `tools/check-data.js`, `tools/coverage-report.js`
 and `tools/intersect.js` all read the generated `generated/streets-data.js` in the project
 root.

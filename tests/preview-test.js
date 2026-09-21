@@ -70,38 +70,56 @@ const isGrey = c => String(c) === GREY;
   ok("the page loads without errors", errors.length === 0, errors.slice(0, 2).join(" | "));
 
   // What the map actually painted, read back off the polylines.
-  const colourOf = (name, label) => page.evaluate(([n, l]) => {
-    for (const [, st] of streets) {
-      if (st.name !== n) continue;
-      if (l !== null && (!st.entry || st.entry.label !== l)) continue;
-      return st.ways.length ? st.ways[0].options.color : null;
-    }
-    return null;
-  }, [name, label]);
-
   console.log("blue means a document speaks about THIS stretch");
-  // Colton splits now that a segment only merges with one that would produce
-  // the same entry: the State St stretch is attested, the rest is not.
-  ok("Colton's State St stretch is blue",
-     isBlue(await colourOf("Colton Street", "Belmont to Toluca (State St)")),
-     String(await colourOf("Colton Street", "Belmont to Toluca (State St)")));
-  ok("…and the rest of Colton is grey",
-     isGrey(await colourOf("Colton Street", "east of Toluca")),
-     String(await colourOf("Colton Street", "east of Toluca")));
-  ok("the Waters St stretch of Douglas is blue",
-     isBlue(await colourOf("Douglas Street", "beyond Colton (Waters St)")),
-     String(await colourOf("Douglas Street", "beyond Colton (Waters St)")));
-  ok("…and the stretch south of Colton, which nothing attests, is grey",
-     isGrey(await colourOf("Douglas Street", "south of Colton")),
-     String(await colourOf("Douglas Street", "south of Colton")));
+  // Checked across the whole map rather than on named stretches. Until
+  // 2026-09-20 this section looked up five stretches by label ("Colton Street,
+  // Belmont to Toluca (State St)", …). Every new sheet re-cuts and relabels
+  // segments, so the lookups went null one by one and the checks failed while
+  // the map was right. The claim itself doesn't depend on which stretches exist:
+  // a stretch the generator marks `attested` (a document other than the base
+  // map speaks about it) is blue, and every other stretch is grey.
+  const paint = await page.evaluate(() => {
+    const out = [];
+    for (const [, st] of streets) {
+      const e = st.entry;
+      out.push({ name: st.name, label: e ? e.label : null, hasEntry: !!e,
+                 attested: e ? e.attested : undefined,
+                 colour: st.ways.length ? String(st.ways[0].options.color) : null });
+    }
+    return out;
+  });
+  const drawn = paint.filter(p => p.colour !== null);
+  // A street the generated data doesn't carry at all (an OSM name nobody has
+  // curated, like a plaza or a station entrance) is base map only: grey.
+  const bare = drawn.filter(p => !p.hasEntry);
+  ok("a street with no entry is grey", bare.every(p => isGrey(p.colour)),
+     bare.filter(p => !isGrey(p.colour)).slice(0, 3).map(p => `${p.name} ${p.colour}`).join(" | "));
+  const entries = drawn.filter(p => !bare.includes(p));
+  const unsaid = entries.filter(p => typeof p.attested !== "boolean");
+  ok("every stretch with an entry says whether a document speaks about it",
+     unsaid.length === 0, unsaid.slice(0, 3).map(p => `${p.name} / ${p.label}`).join(" | "));
+  const wrong = entries.filter(p => p.attested === true ? !isBlue(p.colour)
+                                  : p.attested === false ? !isGrey(p.colour) : false);
+  ok("every attested stretch is blue and every other stretch is grey",
+     wrong.length === 0,
+     `${wrong.length} of ${entries.length}: ` +
+     wrong.slice(0, 3).map(p => `${p.name} / ${p.label} (${p.attested}) ${p.colour}`).join(" | "));
+  ok("…and both kinds are there to check", entries.some(p => p.attested) && entries.some(p => !p.attested),
+     `${entries.filter(p => p.attested).length} attested of ${entries.length}`);
 
-  console.log("a numbered street is no longer blue end to end");
-  ok("3rd Street beyond Bixel is grey",
-     isGrey(await colourOf("3rd Street", "beyond Bixel")),
-     String(await colourOf("3rd Street", "beyond Bixel")));
-  ok("…while its Arnold St stretch is blue",
-     isBlue(await colourOf("3rd Street", "Bixel to Boylston (Arnold St)")),
-     String(await colourOf("3rd Street", "Bixel to Boylston (Arnold St)")));
+  console.log("a street is coloured stretch by stretch, not end to end");
+  // Blue used to be read off the NAME, which painted whole numbered streets
+  // blue on the strength of one entry. Per stretch, plenty of streets are part
+  // blue, part grey.
+  const byName = new Map();
+  for (const p of drawn) {
+    const k = byName.get(p.name) || { blue: 0, grey: 0 };
+    if (isBlue(p.colour)) k.blue++; else if (isGrey(p.colour)) k.grey++;
+    byName.set(p.name, k);
+  }
+  const mixed = [...byName].filter(([, k]) => k.blue && k.grey).map(([n]) => n);
+  ok("many streets are part blue, part grey", mixed.length >= 10,
+     `${mixed.length}: ${mixed.slice(0, 5).join(", ")}`);
 
   // The whole point: most of the map should be grey, and it was not before.
   const tally = await page.evaluate(() => {

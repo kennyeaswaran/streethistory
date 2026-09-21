@@ -10,7 +10,8 @@
 // east-of-the-river work); the freeways, the ExpressLanes and the two plazas
 // are legacy-only ground by design (ROADMAP §7) and their former names are
 // not going to be lettered on any sheet. NAMESAKES are deliberately NOT
-// accepted here — those move into names.js as entities (SWITCHOVER.md §4).
+// accepted here — those move into names.js as entities (research-leads.md,
+// "Settled and open at the switchover").
 
 const COVERAGE_LATER = "no sheet reaches this street yet; deferred until after the changeover (Kenny, 2026-09-17)";
 const LEGACY_GROUND = "freeway / plaza: legacy-only ground by design (ROADMAP §7) — no recorded map will ever letter it";

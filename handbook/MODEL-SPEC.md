@@ -65,8 +65,8 @@ paying:
 1. **Segmentation is hand-maintained.** Splits are a documented five-step
    procedure; `tools/check-data.js` exists largely to police tiling, adjacency and
    ordering that a generator would get right by construction.
-2. **Entries can out-claim their evidence.** The whole "Segment-review flags"
-   section of research-leads.md is instances of a segment asserting something
+2. **Entries can out-claim their evidence.** The "Segment-review flags" section
+   research-leads.md carried in 2026-07 (in git history) was instances of a segment asserting something
    over more ground than its documents cover.
 3. **One document = many scattered edits.** A tract map touching six streets
    means six edits; a Sanborn sheet touching forty means forty, which is why
@@ -329,7 +329,10 @@ disagreed, thirteen of them claiming `unknown` beside a populated `namedAfter`.
   cannot reach it. Two kinds are worth distinguishing — a refuted NAMESAKE
   (this person is not who it is named for) and a refuted IDENTITY (this is not
   that street; Kines's Wyoming Avenue is Burbank's).
-- **`rival`** — more than one live candidate.
+- **`rival`** — more than one live candidate. Not the same as the `disputed`
+  category, though the two overlap: by the project's convention `disputed`
+  marks a claim the project takes a side *against*, while `rival` marks an
+  open question (ROADMAP §7).
 - **`sharesWarrantWith`** — ids. Sixteen records rest on another record's
   evidence: Regent and Wall are one sheet; Spruce, Tulip and Willow rest on a
   set argument written up under Palm; Maple's warrant lives in Myrtle; the five
@@ -562,10 +565,22 @@ beside the .js in the same folder; the two cross-reference by id.
                                      // gates negative inference — see §4.5
   sweptFor: null,                    // when sweptFully is false: streets done so far
   readBy: "instance",                // human | instance | instance+alignment
+  copies: [ { url: "..." } ],        // optional: other copies of the SAME
+                                     // content — see below
 
   rows: [ ... ]                      // §5
 }
 ```
+
+**`shortTitle` and `copies`** went beyond this spec's letter when the generator
+was built (2026-08-24) and are ratified here. `shortTitle` is the handle
+generated prose uses ("…on the 1875 Map of the Thomas Tract"), so each
+document is described once and cited everywhere (§6.6). `copies` lists other
+places the same content can be reached — the recorder's certified copy of an
+Ord sheet, a IIIF full-size image — so they reach the sources wherever the
+document is cited, without a second row-bearing document for the same sheet.
+The generator treats a copy's `url` as the document's own when it decides
+whether a hand-written citation is already answered by the corpus.
 
 ### 4.1 OSM is a document
 
@@ -575,7 +590,15 @@ boundaries, with one `state` row per named way. It is the newest sighting of
 every living name, which is what makes "display = latest spelling" work and
 what makes the grey base map fall out: a segment whose *only* sighting is
 `osm` is one nobody has researched. It is tertiary, so it must not count
-toward the primary-anchor metric.
+toward the primary-anchor metric, and it does not feed `planned`/`built`
+(§6.4).
+
+**OSM rows carry geometric extents** — the way itself — instead of
+cross-street names: for OSM the geometry *is* the identification. And one
+OSM name is excluded outright, "East West Bank Plaza at The Broad", whose
+leading token is not a directional prefix, so `normalizeName` misparses it.
+The exclusion list is `EXCLUDE_NAMES` in `tools/generate.js`, and
+`generated/report.md` lists what it excludes.
 
 **Its rows bind to entities automatically — nothing is attached by hand.** OSM
 gives spellings, not ids, so the generator resolves them:
@@ -832,20 +855,29 @@ text for the name goes in `asWritten`.
   street: "3rd Street", from: "Alameda Street", to: "Santa Fe Avenue",
   basis: "alignment" },          // lot-level | label | alignment | position
 
-// CHANGE — this extent went from one name to another on this date.
-// Only a document that attests the transition itself (ordinance, council
-// minutes, dated newspaper report) may carry these.
-{ kind: "change", from: "vine-central", to: "central-ave",
+// CHANGE — one name became another on this date. Only a document that
+// attests the transition itself (tools/check-model.js: an ordinance or a
+// news-report) may carry these. Every one declares its `scope` (§5.6), and on
+// a textual document cites the sentences that license it in `says` (§5.7).
+// A QUALIFIED change names its stretch, so it carries one:
+{ kind: "change", from: "vine-central", to: "central-ave", scope: "extent",
   street: "Central Avenue", fromCross: "1st Street", toCross: "2nd Street",
+  says: ["vine-second-to-first"],
   mechanism: "renaming" },       // optional; only when the document SAYS so
+
+// An UNQUALIFIED change names no stretch, and may not carry street,
+// fromCross or toCross: its ground is derived (§5.6).
+{ kind: "change", from: "wolfskill-ave", to: "central-ave", scope: "whole-name",
+  says: ["wolfskill-table-row"] },
 
 // A RESPELLING is a change row with from === to: one lineage taking up a new
 // written form, on a stated date. It MUST carry `toForm` — the form taken up
 // — and tools/check-model.js rejects it without one, because a change from an
-// entity to itself with nothing else said is not a claim.
-{ kind: "change", from: "georgia-bell", to: "georgia-bell",
+// entity to itself with nothing else said is not a claim. Respellings take the
+// same three scopes as any other change.
+{ kind: "change", from: "georgia-bell", to: "georgia-bell", scope: "whole-name",
   toForm: "Georgia Street",
-  street: "Georgia Street", fromCross: null, toCross: null },
+  says: ["passed-as-amended"] },
 
 // ANNOTATION — a place fact tied to an extent, not to a name.
 { kind: "annotation", street: "Wall Street", from: "7th Street", to: "8th Street",
@@ -1116,6 +1148,262 @@ the map tool can round-trip a file without eating anything: a caveat
 that matters belongs in data the tool preserves, not in a JS comment it would
 regenerate away.
 
+### 5.6 Change rows: what a renaming does and does not say
+
+*Settled and built 2026-09-04; formerly handbook/change-rows-amendment.md,
+whose history is in git.*
+
+**What went wrong.** Boylston Street once had exactly one row in the whole
+corpus — `{ kind: "change", from: "figueroa-gov", to: "boylston", street:
+"Boylston Street", fromCross: null, toCross: null }` — and came out `attested:
+true`, `knownFraction: 0.98` along its whole modern length: a
+documented-looking blue over ground nothing says was ever built. Figueroa,
+Central and Georgia had the same shape of problem. Three mechanisms compounded:
+
+- **A renaming was read as testimony about pavement.** §6.2a's table gave
+  `change` no existence axis, but `tools/generate.js` counted it and §8 listed it
+  among the positive rows. The wrong passage was the one in code.
+- **`null` meant something different on a document with no sheet.** On a
+  plat, `fromCross: null` means the street's own end *inside the coverage
+  polygon*. `ord-4093` is textual, its coverage a box over the whole city, so
+  `null` quietly meant **the whole modern street**.
+- **Derived ends were written as though the document said them.** Both
+  Figueroa rows carried `toCross: "Pico Boulevard"`; neither document says
+  Pico. Pearl's south end *was* at Pico, but that comes from MR 3-32 (1875) and
+  MR 7-21 (1885). Of the six change rows then in the corpus, three had a
+  boundary no document states written into them in the source's voice.
+
+**Scope is declared, never inferred.** A renaming document quantifies either
+over the name or over a stretch:
+
+- **Unqualified** — *"Pearl Street shall be known as Figueroa Street."* Every
+  stretch bearing the first entity on that date takes the second, wherever it
+  is. No extent is stated because none is meant.
+- **Qualified** — *"Figueroa Street north of Pico shall be known as Boylston
+  Street."* That stretch, and only that stretch.
+
+Which one it is cannot be read off whether `fromCross`/`toCross` are present;
+the corpus broke that inference in both directions. `figueroa-gov → boylston`
+had no crosses and is qualified (read off Herald reports, the ordinance text
+still pending) — read as unqualified, all of Figueroa would become Boylston.
+`chapules → pearl` had a cross and is unqualified. So a row with no extent is
+ambiguous between "the document didn't qualify it" and "the qualifier hasn't
+been transcribed", and the two must not share a representation. Hence
+`scope`, required on every change row:
+
+| `scope` | means | extent | row carries |
+|---|---|---|---|
+| `whole-name` | every stretch bearing A takes B | derived, never authored | no `street`, `fromCross` or `toCross` |
+| `extent` | this stretch of A takes B | authored by a human, `confirmed: false` until checked | `street` required, crosses as resolved |
+| `extent-unresolved` | a change happened; which ground is not established | none — draws nothing | no `street`, `fromCross` or `toCross` |
+
+The third state is not a placeholder. A row in it carries a real fact — two
+entities and a date — and belongs in the name's prose history ("renamed per
+Ordinance 4093"); it simply puts nothing on the map. Rule 4's "unknowns stay
+unknown", applied to extents.
+
+**Unqualified: derive the extent, never author it.** The change applies
+wherever the corpus independently says A held immediately before the date —
+the same move §3 makes for spelling periods ("dates are derived, not
+authored"), and it buys the same things: it self-corrects as the corpus grows
+and cannot freeze a guess. The generator holds `whole-name` rows back until
+every authored row is placed, then expands each, **in date order**, onto every
+record where its `from` holds. "Holds" counts `state` rows for A *and* change
+rows whose `to` is A, which is what makes a chain work; ground where A is
+attested only *after* the change date is left alone (M.R. 66-35 was recorded
+May 1897 and still letters the pre-February names — `date` is the content
+date, §4.1); and the inherited extent is clipped to the renaming document's
+own coverage. Where the corpus knows nothing, the change draws nothing —
+correct, not a gap.
+
+The acceptance case was Figueroa, with the Pico crosses stripped. Three Ord
+sheets letter Grasshopper in 1849; the 1874 report moves that ground to Pearl;
+the 1897 ordinance moves Pearl's ground — its own 1875 sighting plus
+everything inherited — to Figueroa. South of Pico, where Grasshopper was never
+lettered, Pearl never arrives and the 1897 change never fires, so `beyond Pico
+(original Figueroa St)` survives, Figueroa by 1885, untouched. The Pico
+boundary is derived from where the names are lettered, not from anyone having
+typed it.
+
+**Qualified: record the words, author the ground.** The document's wording is
+testimony; the resolved extent is research. *"Figueroa north of Pico"* is 1897
+Figueroa and 1897 Pico, and resolving it to modern pavement is exactly the
+inference rule 2 exists to catch. So an `extent` row is a researched row like
+any other, `confirmed: false` until a human has checked it, and its verbatim
+wording travels with it through `says` (§5.7). **No resolver is built, on
+purpose.** A directional or two-ended qualifier looks calculable, but where
+the grid rotates and the numbering shifts *the stretch of A between X and Y*
+need not pick out one connected corridor, and a resolver trusting name plus
+direction walks into rule 2. Carrying the words means a future resolver can be
+*checked against* the human answers on disk.
+
+**Why there is no "known name, unknown existence."** Kenny, 2026-09-04, and it
+is what justifies deriving the extent:
+
+> any segment of modern Boylston whose existence on a particular date is
+> unknown will also have unknown name — since we don't know if it was directly
+> built as Boylston either before or after the renaming, or built as Figueroa
+> and then renamed, or built as something else and included in a second
+> renaming.
+
+Name knowledge comes from documents that letter a corridor, and a document
+that letters a corridor draws it. So known-name implies known-existence, and
+the derivation can never produce ground with a name and no existence. The
+converse does occur and is modelled: an `unnamed` row attests existence
+without a name.
+
+**The Georgia hole, and the decision to accept it.** Landing the derivation
+moved four streets. Boylston and Central were expected; Georgia was the
+finding. `georgia-bell` had **no state rows anywhere** — its existence was
+prose spelling periods — so its unqualified respelling had no ground to land
+on, and the authored `street: "Georgia Street"` had been the only thing
+putting that entity on that pavement, and the only thing resolving an OSM
+bind made ambiguous by `georgia-east` sharing the spelling. Without it modern
+Georgia Street carries **no name entity at all**. (`vine-central` has no state
+rows either, and survives only because its row is `scope: "extent"`.) Three
+options were on the table: accept the holes, fill the corpus first, or re-read
+the Georgia row as qualified once the ordinance text arrives. **Kenny's call
+(2026-09-04): accept the holes.** The rule does not want weakening; the corpus
+wants filling, and handbook/WANTED.md lists the sheets that would do it.
+
+What the hole taught is that an authored `street` on a change row can place
+an entity with no evidence behind it, silently. So `tools/check-model.js`
+**warns** on a `whole-name` change whose `from` no document grounds — no
+`state` row letters it, and it is not the `to` of an earlier change that
+chains from one (High → Walters → Ord: nothing letters Walters, and it still
+holds ground; counted since 2026-09-18). The generator also records a change
+that lands nowhere in its report notes.
+
+**On the existence axis**, every change row is inert today — see §6.2a and §8.
+The intended rule is that an `extent` row attests its stretch, since an
+ordinance naming a stretch asserts the street was there to be renamed;
+§12 lists it as not yet built.
+
+### 5.7 `excerpts` — how a textual document carries its evidence
+
+*Settled and enforced 2026-09-04, piloted on `documents/lah-1874-02-27/`.*
+
+On a plat the evidence is ink, and a row quotes it in `asWritten`. On a
+textual document the evidence is a **sentence**. So a textual document carries
+`excerpts`, verbatim and in document order, and each row points at the ones
+that license it:
+
+```js
+excerpts: [
+  { id: "petition",
+    text: "The owners of property on Grasshopper street petition for the name " +
+          "Pearl street; others for Union Avenue. A heavy discussion ensued when " +
+          "the first named petitioners won, and Pearl street is to be the new name." },
+  { id: "ordinance-carried",
+    text: "A ordinance changing Grasshopper street to Pearl street was carried." }
+],
+rows: [
+  { kind: "change", from: "chapules", to: "pearl", scope: "whole-name",
+    says: ["petition", "ordinance-carried"], ... }
+]
+```
+
+**Enforced by `tools/check-model.js`:** every row of a `form: "textual"`
+document carries `says`, and every id in it names an excerpt the document
+carries; excerpt ids are unique and each has text; a textual document with
+rows and no excerpts is an error. It is an error and not a warning because a
+plat's coverage polygon is what stops a claim outrunning its document, and a
+textual document has no polygon — the quoted sentence is the only thing
+bounding what it may be read to say.
+
+**Placeholders.** Where no warrant has been quoted yet, a row cites an excerpt
+whose id begins `PLACEHOLDER-` and whose text says, in square brackets, why.
+The checker warns on every row that cites one, so the debt is counted rather
+than hidden. `ord-4093`'s placeholders exist for a reason worth knowing: the
+manuscript's nearest lines for Boylston and the Georgia respelling are floor
+motions amending the **draft** (§5.8, Form 5), which edit the instrument
+rather than the city — quoting them would have looked like evidence.
+
+**The rules.**
+
+- **Verbatim.** Excerpts are `asWritten` for prose: OCR slips, "A ordinance",
+  period spelling all stay. Corrections go in the row's `note`.
+- **`…` marks elision**, and the excerpt list is not a claim to completeness —
+  `sweptFully` says whether the document was read through.
+- **An excerpt nobody quotes is still worth keeping** if it bears on reading
+  one that is.
+- **Not everything in an excerpt becomes a row.** "others for Union Avenue" is
+  a name proposed and rejected: it never named the street, so it is not an
+  entity and gets no row.
+- **What the text does not place, the text does not attest.** The same 1874
+  column mentions "Bunker Hill Avenue" without saying which street; that went
+  to research-leads.md, not into a row. A claim that cannot be pinned to a
+  quoted sentence has nothing holding it down.
+
+**Why named excerpts rather than the whole text with offsets.** Considered and
+rejected:
+
+- **The relation is many-to-many.** Two passages license the one 1874 row (the
+  decision and the enacting act); and the Feb. 14, 1874 petition renames Bull →
+  Castelar *and* Hornet → Yale in one sentence — one excerpt, two rows.
+- **Offsets are brittle.** Any correction to a transcription silently
+  re-points every row that indexes into it, and the failure is invisible.
+- **Ids are diffable, survive re-transcription, and read in the row**, which
+  is where somebody confirming it is looking.
+
+The whole text still has a home, `transcription` (§4). Excerpts are the
+load-bearing quotes and live beside the rows, not in a companion file: the
+confirm step (rule 5) is "check this row against the source", and it should
+not need two files.
+
+### 5.8 The grammar of a renaming statement
+
+*Read 2026-09-04 off the Feb. 1897 council minutes (the manuscript) and the
+Herald's print of the same committee report — roughly sixty statements.* They
+fall into six forms, and **two of the six are not change rows at all**.
+
+The ordinance's own formula, from floor motions quoting it — *"That the name of
+that certain street known as and called **Wood Avenue from Morrison Road to
+Soto Street**, is hereby changed to **Griffin Avenue**"* — puts an optional
+extent inside the subject. That is where `scope` draws its line too, so marking
+it is transcription rather than interpretation.
+
+| form | example | row |
+|---|---|---|
+| **1. Bare pair** — by far the commonest, roughly forty of sixty | "Wolfskill Avenue \| Central Avenue" | `whole-name` |
+| **2. Two anchors** | "Vine Street from Second to First changed to Central Avenue"; "Short Street from Fourth to Santa Fe Grounds \| Fourth Street" | `extent` |
+| **3. One anchor plus a direction** | "Walnut Street, from Main North \| Avenue 20" | `extent` |
+| **4. Restoration** | "The name Ruth Avenue restored." | **not a change row** |
+| **5. Amendment to the draft's text** | the name "De La Guerra Street" as mentioned in the draft of said ordinance be changed to "Boylston Street" | **not a change row** |
+| **6. Duplicate assignment** | "Canada Street \| Avenue 33" and "Lacy Street \| Avenue 33" in one set | whichever was law; one was corrected later |
+
+- **An anchor need not be a cross street** ("Santa Fe Grounds"): resolving a
+  landmark is research, not arithmetic.
+- **Form 3 is fully qualified.** The open end is bounded by the direction
+  word, not absent — the shape once mistaken for "one end stated, one open".
+  It is also the hardest to resolve: "from Main north" is only as good as our
+  knowledge of where that street ran in 1897.
+- **Form 4 withdraws a change the draft would have made.** Nothing on the
+  ground changes name. It still dates a *negative* — Ruth Avenue was still
+  Ruth in February 1897, which is what proves the Ruth → Stanford swap
+  postdates the ordinance. (An *enacted* change back to an earlier name, such
+  as the 1908 Orange repeal, is not Form 4: it is an ordinary change row that
+  produces a genuine revival.)
+- **Form 5 is the trap in the 1897 material.** It edits the instrument, not
+  the city. De La Guerra was never law — the Feb. 2 version was returned
+  unsigned and its vote reconsidered — so `figueroa-gov → de-la-guerra →
+  boylston` would put a phase on the map that never existed. A committee
+  report is a list of amendments to a draft, and its left-hand column mixes
+  names that existed on the ground with names that existed only in the
+  commission's proposal: Alcantara, Escalon, Chicote, Negrete, Zaragoza and
+  Primero were *coined* by the commission, so "Alcantara Street | Taylor
+  Street" means "the draft would have said Alcantara; make it Taylor". Which
+  reading holds for a given line cannot be settled from the committee report
+  alone — it needs the ordinance text, or a pre-1897 map lettering the left
+  name. Until then a line drawn from a committee report is at best
+  `extent-unresolved`, and possibly not a renaming at all.
+- **Form 6** is not a modelling problem, but it is a reason never to merge
+  two entities silently because they end up spelling alike.
+
+The general lesson: **the verbatim wording has to travel with the row.** Every
+distinction above is visible in the words and invisible in the resolved
+extent.
+
 ## 6. Generation
 
 ### 6.0a `NAME_CATEGORY_INDEX` — every entity's categories, by id
@@ -1133,8 +1421,9 @@ categories. The Highlight list uses the pair to show **current (current and
 former)** beside each node: `A person 18 (31)`, and `…family of the owner or
 subdivider 0 (2)`, where every such name has since been replaced.
 
-`index.html` shows one number instead, because the legacy `generated/streets-data.js` has
-neither ids in its `nameHistory` nor an index to look them up in.
+`index.html` has shown both numbers since the 2026-09-19 switchover; before it,
+the map read the hand-made data file, which had no ids in its `nameHistory`
+and so could show only one.
 
 ### 6.1 Segments
 
@@ -1174,7 +1463,9 @@ a name is attested in 1875 and again in 1888 with nothing contradicting it
 between, the segment simply bore that name 1875–1888. Viewers see a gap only
 where two *different* names meet without a change row pinning the transition.
 
-A `change` row pins a transition to a date and overrides the inferred bracket.
+A `change` row pins a transition to a date and overrides the inferred bracket,
+on whatever ground its `scope` gives it (§5.6): wherever A held for
+`whole-name`, its own stretch for `extent`, nowhere for `extent-unresolved`.
 
 ### 6.2a The rectangle rule — filling the spatial axis
 
@@ -1263,7 +1554,9 @@ sighting itself — nothing to fill; a rectangle still needs two corners.
 | `state` for another entity | attests | contradicts `E` |
 | `unnamed` | attests | says nothing — does not block |
 | `absent` | denies; cuts the run for hull purposes | nothing to say |
-| `change` A→B at `t` | — | pins a transition. Settled 2026-08-31: it implies the ground WAS A before `t` and B after — so for a third entity `E ∉ {A, B}` it contradicts at **all** dates, for `E = A` it contradicts after `t`, for `E = B` before `t`. A respelling row (`from === to`, §5) contradicts nothing for its own entity — it pins a form boundary inside one lineage |
+| `change` A→B at `t`, `whole-name` | — (the ground is already attested by whatever put A there) | pins a transition wherever A holds (§5.6). Settled 2026-08-31: it implies the ground WAS A before `t` and B after — so for a third entity `E ∉ {A, B}` it contradicts at **all** dates, for `E = A` it contradicts after `t`, for `E = B` before `t`. A respelling row (`from === to`, §5) contradicts nothing for its own entity — it pins a form boundary inside one lineage |
+| `change`, `extent` | — today; intended: attests the stated stretch (§12) | as above, on the stated stretch only |
+| `change`, `extent-unresolved` | nothing | nothing drawable; prose only |
 | `annotation` | only if the row asserts existence | only if it asserts a name |
 | `vanished` | not on a modern run at all | — |
 
@@ -1346,6 +1639,22 @@ clothes of testimony.
 Derive only where the rows support it; otherwise leave `how` absent. Never
 guess — evidence density varies, and a renaming looks like a transfer when
 you simply haven't recorded where the name came from.
+
+**`extension` needs a dated sighting adjacent to earlier dated ground.** An
+undated arrival next to older ground is not enough, and the rule is
+deliberately symmetric. The case that set it was the 3rd Street acceptance
+test (2026-08-24): the hand-made data called Main to Alameda "presumably an
+eastward extension", and on this street's *western* reach the same presumption
+is a trap — the 1894 "Third St" is Miramar. So the hedge went, and this is the
+one place the generator is more conservative than the hand data chose to be.
+
+**Unsupported arrival dates are left blank, not presumed.** The same test
+dropped "presumably folded in during the Feb. 1897 renaming" from two 3rd
+Street stretches: it cited an article that does not name them. The generator
+says "arrival on this stretch not directly documented" and gives no date.
+When the full text of Ordinance 4093 arrives and `ord-4093` can be marked
+`sweptFully`, its exhaustive-in-scope listing or silence will settle each
+stretch mechanically, which is strictly better than a presumption.
 
 ### 6.4 `planned` / `built`
 
@@ -1469,10 +1778,11 @@ Color schemes, one active at a time, with the legend reflecting the active one:
    pavement nothing says was ever built.
 
    This is conservative rather than final: a **qualified** change — one naming
-   the stretch it applies to — does assert that stretch existed to be renamed,
-   and should attest again once rows declare which kind they are.
-   handbook/change-rows-amendment.md is the proposal; until it lands, no row
-   carries the marker and the safe reading is that none of them attests.
+   the stretch it applies to — does assert that stretch existed to be renamed.
+   Rows have declared their kind since 2026-09-04 (`scope`, §5.6), but the
+   generator still counts no change row, `scope: "extent"` included; letting
+   those attest their stretch is listed in §12. Under-claiming was chosen over
+   over-claiming deliberately (rule 4).
 
    **Blue is a saturation ramp, not one color.** The generator emits
    `knownFraction` per attested segment: the fraction of [1850,
@@ -1529,8 +1839,12 @@ generated segment id, which is not stable across builds.
 The checker gains: every row's name id exists (or resolves through an alias);
 every street and cross-street exists in geometry; extents parse and lie on the
 named street; `change` rows only on documents that attest transitions;
-respellings carry a `toForm`; a `textual` document carries no alignment, no
-pixel ring, no pixel extent and no trace (§4.1a); annotations carry a source;
+respellings carry a `toForm`; every change row declares a `scope`, and only an
+`extent` row carries `street`/`fromCross`/`toCross` (§5.6) — a `whole-name`
+change nothing grounds is a warning; a `textual` document carries no
+alignment, no pixel ring, no pixel extent and no trace (§4.1a), and every row
+on one cites excerpts it carries in `says` (§5.7), with a warning for each
+`PLACEHOLDER-` cited; annotations carry a source;
 and **an ambiguity the generator cannot resolve into distinct labels is an
 error** — which will fire retroactively on an old entry the day new coverage
 introduces a collision. That is intended, and the check models the label the
@@ -1634,6 +1948,12 @@ First documents to encode, in order:
   so it waits for a reason to do it properly. The whole-street form works as
   specified. Nine documents use the stretch form today.
 
+- **A qualified change attesting its stretch** (§5.6, §6.2a). A `scope:
+  "extent"` row asserts the street was there to be renamed, and should count
+  toward `attested` per the document's `attests`. The generator still excludes
+  every change row from `attested` (§8), which under-claims on exactly those
+  rows — Central Avenue's two qualified stretches, for instance.
+
 - Restructuring nameHistory dates from strings into `{ earliest, latest }`.
   The derived model wants it; it is a migration across every entry and should
   wait until the generator has proven itself.
@@ -1644,24 +1964,29 @@ First documents to encode, in order:
   under "Revived names" in `generated/report.md`, since a row on the wrong
   street produces the same shape).
 
-## 13. Roadmap — wanted, not yet specified (2026-09-10)
+## 13. Roadmap — wanted, not yet specified (2026-09-10; trimmed 2026-09-21)
 
 §12 is what the spec describes and the code does not yet do. This section is
 the other list: changes we want that the spec does not yet *describe*. Each is
-sized and argued in **handbook/ROADMAP.md**; an item moves from there into the
-body of this spec when its design is settled, and out of both when it ships.
+sized and argued in **handbook/ROADMAP.md**, under the same number; an item
+moves from there into the body of this spec when its design is settled, and out
+of both when it ships.
 
-1. **Fewer segments on the map, nothing lost.** Measured 2026-09-10: of 371
-   segment boundaries, 23 mark a change of name; the rest mark where a
+1. **Fewer segments on the map, nothing lost.** Measured 2026-09-07: of 371
+   segment boundaries, 23 marked a change of name; the rest marked where a
    document's coverage ends. Three steps — split the display unit from the
    evidence unit (a segment carries *stretches*), then §6.2a and its existence
    hull, then a `continues` mark for streets drawn off the sheet's edge.
 2. **Proceedings.** A renaming is a sequence of petition, referral, adoption,
    veto, approval, repeal, reported by many documents proposing different
-   things; 179 of 186 textual documents carry no rows because nothing in the
-   model connects them. A first-class `proceedings/<id>.js` carrying the steps
-   and the rows that took effect, hand-written first, tool (MAP-TOOL-SPEC §9)
-   after.
+   things; most textual documents carry no rows because nothing in the model
+   connects them. A first-class `proceedings/<id>.js` carrying the steps and
+   the rows that took effect, hand-written first, a review tool (ROADMAP §2)
+   after. Also holds the change-row questions still open (`basis` for a
+   resolved extent, `ord-4093`'s `built-by`, `exhaustive-in-scope` as negative
+   evidence, `annotation` rows and `attested`, cross-document excerpts,
+   clippings) and the generator's A → B → A → B limit that holds back the 1908
+   Orange → Wilshire pair.
 3. **Historic sheets on the public site**, drawn through their §4.6
    alignments and masked to their coverage; first step, a coverage-ring layer
    from a generated `documents.js`.
@@ -1671,10 +1996,17 @@ body of this spec when its design is settled, and out of both when it ships.
    colour by earliest attestation (§8 schemes 3 and 4, specified, unbuilt).
 6. **Search folds renderings** — "eleventh" finds "11th". A browser-side
    matcher on canonical tokens; the `<datalist>` cannot do it.
-7. **Categories as a checked vocabulary and a tree** (referent /
-   circumstance / status; nature split into plant, animal, landform, water),
-   living in `data/site-config.js` with `NEIGHBORHOODS` (MODEL-IMPLEMENTATION
-   checklist A). The vocabulary is checked since 2026-09-12; the tree is not.
+7. **Categories** — built 2026-09-15 (the vocabulary and tree live in
+   `data/site-config.js`). Left: empty nodes, one judgment-call tag, and the
+   rationale not recorded elsewhere (tree vs plant, `descriptive` as a
+   residual).
 8. **A second neighbourhood, and the large serial sheets** — ADDING-A-
    NEIGHBORHOOD.md and SERIAL-SOURCES.md, plus what a one-affine tool does
    with a sheet that needs several.
+9. **Smaller items:** permalinks, a segmentation report, the §6.2a bridging
+   report, and two map-tool gaps (export notes for the next AI pass; `basis`
+   not editable in review).
+10. *(ROADMAP's suggested order.)*
+11. **Left over from the switchover:** legacy cleanup, what
+    `tools/check-data.js` is for now, style-budget warnings, and
+    `report.notes` never printed.

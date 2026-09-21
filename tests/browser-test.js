@@ -4,43 +4,30 @@ const PROJECT = require("path").join(__dirname, ".."); // the project root: this
 const { chromium } = require("playwright");
 const http = require("http"), fs = require("fs"), path = require("path");
 
-// A document written the broken way — alignment.image with no path — built
-// here rather than committed, so a stray fixture can never end up in the real
-// documents/ set. The leading underscore is the parking convention that
-// documents/index.js skips, so even a crashed run leaves nothing that breaks
-// tools/check-model.js.
-const FIXTURE = path.join(PROJECT, "documents/_bare-test");
-const RENDER = "mr006-138-100dpi.png";
-function makeFixture() {
-  const src = path.join(PROJECT, "documents/mr006-138", RENDER);
-  if (!fs.existsSync(src)) return false;
-  fs.mkdirSync(FIXTURE, { recursive: true });
-  fs.copyFileSync(src, path.join(FIXTURE, RENDER));
-  fs.writeFileSync(path.join(FIXTURE, "_bare-test.js"), `module.exports = {
-  id: "_bare-test",
-  title: "t", shortTitle: "t", url: "http://x", scan: null, transcription: null,
-  date: { on: "1884" }, type: "tract-map", attests: "planned-by",
-  completeness: "incidental", readBy: "human",
-  coverage: [[202, 199], [694, 945], [1569, 919], [1573, 75], [564, 63]],
-  alignment: {
-    image: ${JSON.stringify(RENDER)},
-    dpi: 100,
-    points: [
-      { px: [0, 0], ll: [34.068278, -118.263905] },
-      { px: [1749, 0], ll: [34.064723, -118.256185] },
-      { px: [0, 1115], ll: [34.064173, -118.266621] }
-    ]
-  },
-  sweptFully: false, sweptFor: [], rows: []
+// FIXTURES live in tests/fixtures/, committed, and are served as if they were
+// in documents/: a request for documents/_x/... is answered from
+// tests/fixtures/_x/ when that folder exists. Nothing is written into the real
+// documents/ folder, and nothing depends on a real sheet's scan being on disk.
+//   _main-test   the sheet the run opens first and keeps coming back to
+//   _gaps-test   stretches no row speaks for
+//   _shapes-test branches and rings
+//   _bare-test   a document written the broken way (alignment.image a bare name)
+// Their streets (fixtures/streets.js) and the name entities their rows use
+// (fixtures/entities.js) are made up too, and are added to the page once, at
+// the start of the run: they are not in the real geometry or names.js, and
+// must never be. No test here reads a real document.
+const FIXTURES = path.join(__dirname, "fixtures");
+const FIXTURE_WAYS = require("./fixtures/streets.js").WAYS;
+const FIXTURE_ENTITIES = require("./fixtures/entities.js");
+const fixtureFile = rel => {
+  const m = rel.match(/^\/documents\/(_[^/]+)\/(.*)$/);
+  return m && fs.existsSync(path.join(FIXTURES, m[1])) ? path.join(FIXTURES, m[1], m[2]) : null;
 };
-`);
-  return true;
-}
-const dropFixture = () => fs.rmSync(FIXTURE, { recursive: true, force: true });
 
 const MIME = { ".html":"text/html", ".js":"text/javascript", ".png":"image/png", ".json":"application/json" };
 const server = http.createServer((req, res) => {
-  const f = path.join(PROJECT, decodeURIComponent(req.url.split("?")[0]));
+  const rel = decodeURIComponent(req.url.split("?")[0]);
+  const f = fixtureFile(rel) || path.join(PROJECT, rel);
   fs.readFile(f, (e, d) => e ? (res.writeHead(404), res.end())
     : (res.writeHead(200, {"Content-Type": MIME[path.extname(f)] || "text/plain"}), res.end(d)));
 });
@@ -50,7 +37,6 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
                           : (fail++, console.error("  FAIL " + n + (d ? " — " + d : "")));
 
 (async () => {
-  const haveFixture = makeFixture();
   await new Promise(r => server.listen(8123, r));
   // Playwright's bundled Chromium by default; CHROMIUM_PATH overrides it for a
   // sandbox whose browser lives elsewhere (the old hard-coded
@@ -87,6 +73,15 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   const DEFAULT = Symbol("default");
 
   await page.goto("http://localhost:8123/utilities/map-tool.html");
+  await page.evaluate(([ws, ents]) => {
+    for (const w of ws) {
+      ways.push(w);
+      if (!streetPoints.has(w.name)) streetPoints.set(w.name, []);
+      streetPoints.get(w.name).push(...w.geometry);
+    }
+    Object.assign(NAME_ENTITIES, ents);
+    refreshEntityList();
+  }, [FIXTURE_WAYS, FIXTURE_ENTITIES]);
   await page.addInitScript(() => {});
   await page.evaluate(() => {
     // Pick the point on a feature that is furthest from every OTHER feature,
@@ -125,7 +120,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
 
   console.log("loading a document");
   await showLoaders();
-  await page.fill("#loadId", "mr066-035");
+  await page.fill("#loadId", "_main-test");
   await page.click("#loadDoc");
   await page.waitForFunction(() => loadedDoc && img, null, { timeout: 15000 });
   await page.waitForTimeout(400);
@@ -134,6 +129,12 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
      errors.filter(e => !/404/.test(e)).length === 0, errors.slice(0, 3).join(" | "));
   ok("every file the page asks for exists",
      missing.filter(u => !/favicon/.test(u)).length === 0, missing.join(" | "));
+  // The fixture sheets lie out in Santa Monica Bay, nowhere near the tool's
+  // starting view, so this is a real test of the jump.
+  ok("opening a sheet takes the view to it",
+     await page.evaluate(() => Math.abs(view.lat - scan.lat) < 1e-9 && Math.abs(view.lng - scan.lng) < 1e-9 &&
+                               view.mpp * cv.width >= img.width * scan.mppx),
+     await page.evaluate(() => JSON.stringify({ view, scan: [scan.lat, scan.lng] })));
   ok("it switched itself to review mode",
      await page.evaluate(() => mode) === "review",
      await page.evaluate(() => mode));
@@ -166,19 +167,18 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   ok("it folds itself away once something is open",
      await page.evaluate(() => !document.getElementById("openBox").open));
   const open = await page.textContent("#whatsOpen");
-  ok("…and says what is open", /mr066-035/.test(open), open);
+  ok("…and says what is open", /_main-test/.test(open), open);
 
   console.log("connecting the project folder");
   const advice = await page.textContent("#dirState");
   ok("it names the folder to pick", /Street name history/.test(advice), advice);
 
   console.log("a document whose alignment.image has no path");
-  if (!haveFixture) console.log("  (skipped — documents/mr006-138/ render not present)");
-  else {
+  {
     // The tool used to WRITE a bare filename whenever the render came from the
     // file picker (which hands over a name and nothing else), and then could
     // never reopen the document — alignment.image is fetched relative to the
-    // project root. documents/bare-test/ is exactly such a file.
+    // project root. tests/fixtures/_bare-test/ is exactly such a file.
     dialogs.length = 0;
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
     await page.waitForTimeout(100);
@@ -207,16 +207,15 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     // itself away once something is loaded)
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
     await showLoaders();
-    await page.fill("#loadId", "mr066-035");
+    await page.fill("#loadId", "_main-test");
     await page.click("#loadDoc");
-    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "mr066-035",
+    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "_main-test",
                                null, { timeout: 15000 });
     await page.waitForTimeout(400);
   }
 
-  // The corpus moves: mr066-035 has since been swept for real. The gate tests
-  // below are about the gate itself, not about this document's current state,
-  // so run them from unswept.
+  // The gate tests below are about the gate itself, so run them from unswept
+  // whatever the fixture says.
   await page.evaluate(() => { docSwept = { fully: false, for: [] };
                               reviewSig = null; updateReviewActions(); });
 
@@ -226,7 +225,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     // destroys the first sheet's work, so the save must ask first.
     dialogs.length = 0;
     await page.evaluate(() => {
-      renderPathUsed = "documents/mr066-035/mr066-035-100dpi-2.png";
+      renderPathUsed = "documents/_main-test/_main-test-100dpi-2.png";
       alignmentTouched = true;
     });
     await page.click("#mCoverage");
@@ -253,14 +252,14 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     dialogs.length = 0;
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
     await showLoaders();
-    await page.fill("#renderPath", "inbox/MR006-138.pdf");
+    await page.fill("#renderPath", "inbox/MR123-456.pdf");
     await page.click("#loadRenderBtn");
     await page.waitForTimeout(300);
     const said = dialogs[0];
     ok("it says what a PDF needs instead of failing", said && /pdftoppm/.test(said),
        String(said).slice(0, 100));
     ok("…and names the script that does it", said && /new-map\.command/.test(said));
-    ok("…and works out the document id", said && /mr006-138/.test(said),
+    ok("…and works out the document id", said && /mr123-456/.test(said),
        String(said).slice(0, 160));
     ok("the picker no longer hides PDFs from you",
        /pdf/i.test(await page.getAttribute("#file", "accept")),
@@ -294,8 +293,8 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   const feat = await page.evaluate(() => {
     // Aim at a point on a `state` row that is well clear of every OTHER
     // feature, since the hit test takes the nearest line within 14 px and
-    // 3rd and 4th Street fork inside this tract — clicking near that fork
-    // legitimately selects whichever is closer.
+    // two streets that come close — clicking between them legitimately
+    // selects whichever is closer.
     let best = null;
     for (const f of reviewFeatures) {
       if (!f.street || !f.row || f.row.kind !== "state") continue;
@@ -406,7 +405,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
        /no name entity/.test(await page.textContent("#sweepState")),
        await page.textContent("#sweepState"));
 
-    // put mr066-035 back the way the rest of the run expects
+    // put the sheet back the way the rest of the run expects
     await page.evaluate(n => { loadedDoc.rows.length = n; lastModel = null; reviewSig = null; },
                         before);
     await page.evaluate(() => draw());
@@ -414,28 +413,20 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
 
   console.log("stretches no row speaks for");
   {
-    // MR006-138 is the case this came from: Douglas Street has a row for the
-    // part matching Waters Street and 152 m south of it that nothing covers.
+    // _gaps-test: Douglas and Waters each have a row from their north end down
+    // to Colton, and nothing south of it (M.R. 6-138's Douglas Street was the
+    // original). Un-sweep and clear exclusions whatever the fixture says, so the
+    // sweep gate and the exclusion flow both have something to act on.
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
     await page.waitForTimeout(100);
     await showLoaders();
     await page.evaluate(() => { reviewDirty = false; });   // discard on purpose
-    await page.fill("#loadId", "mr006-138");
+    await page.fill("#loadId", "_gaps-test");
     await page.click("#loadDoc");
-    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "mr006-138",
+    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "_gaps-test",
                                null, { timeout: 15000 });
     await page.waitForTimeout(600);
-
-    // Make the gap rather than depend on the document still having one: this
-    // is live data, and the whole point of the feature is that Kenny closes
-    // these. Drop whatever row covers Douglas Street, in memory only.
-    // Also un-sweep it and put back the streets already excluded as overshoot,
-    // so the sweep gate and the exclusion flow both have something to act on.
     await page.evaluate(() => {
-      // Keep only the `state` row on Douglas, whatever the others are called —
-      // this fixture is live data and its row kinds have been renamed once.
-      loadedDoc.rows = loadedDoc.rows.filter(r => r.street !== "Douglas Street" ||
-                                                  r.kind === "state");
       docSwept = { fully: false, for: [] };
       coverageExcept = [];
       lastModel = null; reviewSig = null; draw(); updateReviewActions();
@@ -449,9 +440,9 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     }));
     const before = await m();
     ok("a street with a row can still have an unaccounted stretch",
-       before.gaps.some(g => g.street === "Douglas Street"), JSON.stringify(before.gaps));
+       before.gaps.some(g => g.street === "Synthetic Douglas Street"), JSON.stringify(before.gaps));
     ok("…and the street reads as partial, not named",
-       before.status["Douglas Street"] === "partial", before.status["Douglas Street"]);
+       before.status["Synthetic Douglas Street"] === "partial", before.status["Synthetic Douglas Street"]);
     ok("the sweep counts metres, not street names",
        /m across/.test(await page.textContent("#sweepState")),
        await page.textContent("#sweepState"));
@@ -461,7 +452,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
       const li = page.locator("#sweepGaps li[data-gk]");
       ok("the list has an entry per gap",
          await li.count() === before.gaps.length, `${await li.count()} vs ${before.gaps.length}`);
-      const d = page.locator("#sweepGaps li", { hasText: "Douglas Street" });
+      const d = page.locator("#sweepGaps li", { hasText: "Synthetic Douglas Street" });
       ok("…including the Douglas Street one, in metres",
          await d.count() === 1 && /\d+ m/.test(await d.first().textContent()),
          await d.first().textContent().catch(() => ""));
@@ -473,9 +464,9 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
          await page.locator("#pop button.mkstate").count() === 1 &&
          (await page.textContent("#pop")).includes("unaccounted"),
          (await page.textContent("#pop") || "").slice(0, 100));
-      ok("…for that street", await page.evaluate(() => popGap && popGap.street) === "Douglas Street");
+      ok("…for that street", await page.evaluate(() => popGap && popGap.street) === "Synthetic Douglas Street");
       const pos = await page.evaluate(() => {
-        const f = reviewFeatures.find(x => x.gap && x.gap.street === "Douglas Street");
+        const f = reviewFeatures.find(x => x.gap && x.gap.street === "Synthetic Douglas Street");
         const mid = f.pts[Math.floor(f.pts.length / 2)];
         return { x: mid[0], y: mid[1], w: cv.width, h: cv.height };
       });
@@ -485,13 +476,12 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     }
 
     // Clicking the gap must offer both answers, and they are different claims.
-    // Aim at the point on the gap furthest from every other feature — this
-    // sheet has vanished traces running close to it, and the hit test takes
-    // the nearest line, quite correctly.
-    await page.evaluate(() => centreOn(f => f.gap && f.gap.street === "Douglas Street"));
+    // Aim at the point on the gap furthest from every other feature: the hit
+    // test takes the nearest line, quite correctly.
+    await page.evaluate(() => centreOn(f => f.gap && f.gap.street === "Synthetic Douglas Street"));
     await page.waitForTimeout(200);
     const at = await page.evaluate(() => clearestPointOn(
-      f => f.gap && f.gap.street === "Douglas Street"));
+      f => f.gap && f.gap.street === "Synthetic Douglas Street"));
     ok("the gap can be brought on screen",
        at && at[0] > 0 && at[1] > 0 && at[0] < 1500 && at[1] < 950, JSON.stringify(at));
     await page.mouse.click(at[0], at[1]);
@@ -514,12 +504,12 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
       await page.waitForTimeout(400);
       const r = await page.evaluate(() => loadedDoc.rows[loadedDoc.rows.length - 1]);
       ok("it becomes a state row on that street with the label as typed",
-         r.kind === "state" && r.street === "Douglas Street" && r.asWritten === "DOUGLAS St" &&
+         r.kind === "state" && r.street === "Synthetic Douglas Street" && r.asWritten === "DOUGLAS St" &&
          "from" in r && "to" in r && r.basis === "alignment", JSON.stringify(r));
       ok("…unconfirmed and unnamed, so the sweep still waits on it",
          r.confirmed === false && !r.name);
       ok("…and it closes the gap",
-         !(await m()).gaps.some(g => g.street === "Douglas Street"));
+         !(await m()).gaps.some(g => g.street === "Synthetic Douglas Street"));
       ok("the popup moves onto the new row so it gets a name",
          await page.locator("#pop input.npick").count() === 1 &&
          (await page.textContent("#pop")).includes("DOUGLAS St"),
@@ -529,10 +519,10 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
       await page.evaluate(n => { loadedDoc.rows.length = n; lastModel = null; reviewSig = null;
                                  hidePop(); draw(); }, n0);
       await page.waitForTimeout(200);
-      await page.evaluate(() => centreOn(f => f.gap && f.gap.street === "Douglas Street"));
+      await page.evaluate(() => centreOn(f => f.gap && f.gap.street === "Synthetic Douglas Street"));
       await page.waitForTimeout(200);
       const at2 = await page.evaluate(() => clearestPointOn(
-        f => f.gap && f.gap.street === "Douglas Street"));
+        f => f.gap && f.gap.street === "Synthetic Douglas Street"));
       await page.mouse.click(at2[0], at2[1]);
       await page.waitForTimeout(250);
       answers.push("");
@@ -540,16 +530,16 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
       await page.waitForTimeout(400);
       const r2 = await page.evaluate(() => loadedDoc.rows[loadedDoc.rows.length - 1]);
       ok("an empty label makes an unnamed row, never asWritten \"\"",
-         r2.kind === "unnamed" && !("asWritten" in r2) && r2.street === "Douglas Street",
+         r2.kind === "unnamed" && !("asWritten" in r2) && r2.street === "Synthetic Douglas Street",
          JSON.stringify(r2));
       // back to the gap for the absent-row test below
       await page.evaluate(n => { loadedDoc.rows.length = n; lastModel = null; reviewSig = null;
                                  hidePop(); draw(); }, n0);
       await page.waitForTimeout(200);
-      await page.evaluate(() => centreOn(f => f.gap && f.gap.street === "Douglas Street"));
+      await page.evaluate(() => centreOn(f => f.gap && f.gap.street === "Synthetic Douglas Street"));
       await page.waitForTimeout(200);
       const at3 = await page.evaluate(() => clearestPointOn(
-        f => f.gap && f.gap.street === "Douglas Street"));
+        f => f.gap && f.gap.street === "Synthetic Douglas Street"));
       await page.mouse.click(at3[0], at3[1]);
       await page.waitForTimeout(250);
     }
@@ -559,11 +549,11 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     await page.waitForTimeout(400);
     const after = await m();
     ok("a absent row closes the gap",
-       !after.gaps.some(g => g.street === "Douglas Street"), JSON.stringify(after.gaps));
+       !after.gaps.some(g => g.street === "Synthetic Douglas Street"), JSON.stringify(after.gaps));
     ok("…and it is a real row with extents",
        await page.evaluate(() => {
          const r = loadedDoc.rows[loadedDoc.rows.length - 1];
-         return r.kind === "absent" && r.street === "Douglas Street" && "from" in r && "to" in r;
+         return r.kind === "absent" && r.street === "Synthetic Douglas Street" && "from" in r && "to" in r;
        }));
     ok("…added as a proposal, not silently vouched for",
        await page.evaluate(() => loadedDoc.rows[loadedDoc.rows.length - 1].confirmed === false));
@@ -574,7 +564,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     await page.evaluate(() => hidePop());
     await page.waitForTimeout(120);
     const gap2 = await page.evaluate(() => {
-      const f = reviewFeatures.find(x => x.gap && x.gap.street !== "Douglas Street");
+      const f = reviewFeatures.find(x => x.gap && x.gap.street !== "Synthetic Douglas Street");
       if (!f) return null;
       centreOn(x => x.gap && x.gap.street === f.gap.street);
       return { street: f.gap.street,
@@ -761,17 +751,17 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     await showLoaders();
     await page.evaluate(() => { reviewDirty = true; });
     dialogs.length = 0;
-    await page.fill("#loadId", "mr066-035");
+    await page.fill("#loadId", "_main-test");
     await page.click("#loadDoc");
     await page.waitForTimeout(400);
     ok("it asks before throwing the edits away",
        dialogs.some(d => /unsaved review edits/.test(d)), dialogs.join(" | "));
     ok("…and dismissing keeps the document open",
-       await page.evaluate(() => loadedDoc.id) === "mr006-138",
+       await page.evaluate(() => loadedDoc.id) === "_gaps-test",
        await page.evaluate(() => loadedDoc.id));
     await page.evaluate(() => { reviewDirty = false; });   // discard on purpose
     await page.click("#loadDoc");
-    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "mr066-035",
+    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "_main-test",
                                null, { timeout: 15000 });
     await page.waitForTimeout(400);
   }
@@ -891,109 +881,162 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
        eq(res.lolli.spineOnly, [[1, 3]]) || eq(res.lolli.spineOnly, [[1, 7]]), JSON.stringify(res.lolli.spineOnly));
   }
 
-  console.log("MR001-489: the branches and rings of Bunker Hill");
-  if (!fs.existsSync(path.join(PROJECT, "documents/mr001-489/mr001-489.js")))
-    console.log("  (skipped — documents/mr001-489/ not present)");
-  else {
-    await page.evaluate(() => { reviewDirty = false; document.getElementById("openBox").open = true; });
+  console.log("answering a gap on awkward geometry");
+  {
+    // Synthetic runs, in metres east/north of a point downtown, so that the
+    // shapes stay put whatever the corpus does. These were first tested on
+    // the live MR001-489 sheet (Hill Street and 2nd Street), where the review
+    // itself closed both gaps and left the tests nothing to find. Each case
+    // runs twice: with the open document's scan (the answer is written as
+    // scan pixels) and without one (written as lat/lon).
+    const run = () => {
+      const lat0 = 34.05, lon0 = -118.25, KY = 110540, KX = 111320 * Math.cos(lat0 * Math.PI / 180);
+      const P = (x, y) => ({ lat: lat0 + y / KY, lon: lon0 + x / KX });
+      const answer = (rec, gap) => {
+        const ends = gapExtents(rec, gap);
+        const pA = extentPoint(rec.name, ends.from, []), pB = extentPoint(rec.name, ends.to, []);
+        return { ends, ranges: clipRanges(rec.runs[gap.runIndex], pA, pB, streetIsNS(rec)) };
+      };
+      // A LOOP HANGING OFF A JUNCTION (Hill Street's divided pair): the run
+      // reaches J at index 2, goes round, and comes back through J at index 7.
+      // The gap ends at the SECOND visit. The other reading (from the first
+      // visit) is the longer one, which is the reading an ambiguous point gets.
+      const loopRun = [P(0, 0), P(100, 0), P(200, 0), P(250, 0), P(300, 0), P(300, 60),
+                       P(200, 60), P(200, 0), P(200, -150)];
+      const loopRec = { name: "Synthetic Loop Street", runs: [loopRun] };
+      const loopGap = { street: loopRec.name, runIndex: 0, a: 5, b: 7, metres: 160 };
+      // A HAIRPIN (2nd Street at the tunnel split): the run starts on a short
+      // leg, folds at index 1, and runs back west along the long leg. Index 0
+      // is an end of the run but NOT the street's west end.
+      const foldRun = [P(400, 12), P(500, 12), P(400, 0), P(300, 0), P(200, 0), P(100, 0), P(0, 0)];
+      const foldRec = { name: "Synthetic Fold Street", runs: [foldRun] };
+      const foldGap = { street: foldRec.name, runIndex: 0, a: 0, b: 1, metres: 100 };
+      return {
+        loop: { revisited: revisited(loopRun, 7), ...answer(loopRec, loopGap),
+                // what the junction itself would get, ambiguous as it is
+                atJunction: clipRanges(loopRun, P(200, 0), P(300, 60), false) },
+        fold: { folds: foldIndices(foldRun), westEnd: runEnds(foldRun, false).fromIdx,
+                ...answer(foldRec, foldGap),
+                // what "from the street's end" would get
+                nullEnd: clipRanges(foldRun, null, P(500, 12), false) }
+      };
+    };
+    const withScan = await page.evaluate(`(${run})()`);
+    const noScan = await page.evaluate(`(() => { const keep = img; img = null;
+      try { return (${run})(); } finally { img = keep; } })()`);
+    const eq = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+    const loop = withScan.loop, fold = withScan.fold;
+    ok("the loop run passes its junction twice", loop.revisited === true);
+    ok("…and the junction itself is ambiguous: it reads as the other, longer stretch",
+       eq(loop.atJunction, [[2, 5]]), JSON.stringify(loop.atJunction));
+    for (const [how, r] of [["as scan pixels", withScan.loop], ["as lat/lon", noScan.loop]])
+      ok(`a gap ending at the second visit is answered with exactly that gap (${how})`,
+         eq(r.ranges, [[5, 7]]), JSON.stringify(r));
+    ok("the fold run folds at index 1, and its west end is the far end",
+       eq(fold.folds, [1]) && fold.westEnd === 6, JSON.stringify(fold));
+    ok("…so 'the street's end' there covers the long leg, not the gap",
+       eq(fold.nullEnd, [[1, 6]]), JSON.stringify(fold.nullEnd));
+    for (const [how, r] of [["as scan pixels", withScan.fold], ["as lat/lon", noScan.fold]]) {
+      ok(`a gap on the short leg names both ends explicitly (${how})`,
+         r.ends.from !== null && r.ends.to !== null, JSON.stringify(r.ends));
+      ok(`…and the row it would make covers exactly the gap (${how})`,
+         eq(r.ranges, [[0, 1]]), JSON.stringify(r));
+    }
+  }
+
+  console.log("branches and rings (a made-up sheet)");
+  {
+    await page.evaluate(() => { reviewDirty = false; });
     await showLoaders();
-    await page.fill("#loadId", "mr001-489");
+    await page.fill("#loadId", "_shapes-test");
     await page.click("#loadDoc");
-    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "mr001-489" && img,
+    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "_shapes-test" && img,
                                null, { timeout: 15000 });
-    await page.waitForTimeout(800);
+    await page.waitForTimeout(500);
     const m = await page.evaluate(() => {
       const m = lastModel || reviewModel();
-      const hope = m.streets.find(s => s.name === "Hope Street");
-      const ct = m.streets.find(s => s.name === "Community Terrace");
-      return { errs: m.problems.length, hopeRuns: hope ? hope.runs.length : 0,
-               hopeRows: hope ? hope.rows.map(r => rowMetres(r)) : [],
-               hopeLen: hope ? Math.round(hope.runs.reduce((t, r) => t + runMetres(r), 0)) : 0,
-               ctLoop: ct ? ct.runs.some(runIsLoop) : null, ctStatus: ct && ct.status,
-               ctGaps: ct ? ct.gaps.length : null };
+      const rec = n => m.streets.find(s => s.name === n);
+      const br = rec("Synthetic Branch Street"), rc = rec("Synthetic Ring Court"),
+            rp = rec("Synthetic Ring Place");
+      return {
+        found: [br, rc, rp].map(r => !!r),
+        brRuns: br ? br.runs.length : 0,
+        brLen: br ? Math.round(br.runs.reduce((t, r) => t + runMetres(r), 0)) : 0,
+        brRows: br ? br.rows.map(r => Math.round(rowMetres(r))) : [],
+        // which runs each branch row lands on: [spine metres, spur metres]
+        brSplit: br ? br.rows.map(r => {
+          const pA = extentPoint(br.name, r.from, []), pB = extentPoint(br.name, r.to, []);
+          return br.runs.map(run => Math.round(clipRanges(run, pA, pB, streetIsNS(br))
+            .reduce((t, [a, b]) => t + runMetres(run.slice(a, b + 1)), 0)));
+        }) : [],
+        brRunLens: br ? br.runs.map(r => Math.round(runMetres(r))) : [],
+        rcLoop: rc ? rc.runs.some(runIsLoop) : null, rcGaps: rc ? rc.gaps.length : null,
+        rcStatus: rc && rc.status, rpLoop: rp ? rp.runs.some(runIsLoop) : null
+      };
     });
-    ok("Hope Street is more than one run", m.hopeRuns > 1, String(m.hopeRuns));
-    ok("no Hope Street row claims more than the whole street",
-       m.hopeRows.every(x => x <= m.hopeLen), JSON.stringify([m.hopeRows, m.hopeLen]));
-    ok("Community Terrace is a ring", m.ctLoop === true);
-    // 2nd Street's run folds at the Hill Street tunnel split; the 56 m gap
-    // on the short leg starts at run index 0, which is an end of the run but
-    // NOT its west end. Answering it must cover the gap, not the long leg.
-    const g2 = await page.evaluate(() => {
-      const m = lastModel || reviewModel();
-      const rec = m.streets.find(s => s.name === "2nd Street");
-      const gap = rec.gaps.find(g => g.a === 0 && foldIndices(rec.runs[g.runIndex]).length);
-      if (!gap) return null;
-      const ends = gapExtents(rec, gap);
-      const pA = extentPoint(rec.name, ends.from, []), pB = extentPoint(rec.name, ends.to, []);
-      const ranges = clipRanges(rec.runs[gap.runIndex], pA, pB, streetIsNS(rec));
-      return { gap: [gap.a, gap.b], ends, ranges };
-    });
-    ok("2nd Street has a gap on the short leg of a folded run", !!g2, "none found");
-    // Hill Street's run passes its junction with the divided pair twice
-    // (index 15 and 24); the gap ends at the second visit. Its answer must
-    // cover the gap, not the stretch between the first visit and the gap.
-    const g3 = await page.evaluate(() => {
-      const m = lastModel || reviewModel();
-      const rec = m.streets.find(s => s.name === "Hill Street");
-      const gap = rec.gaps.find(g => revisited(rec.runs[g.runIndex], g.b) || revisited(rec.runs[g.runIndex], g.a));
-      if (!gap) return null;
-      const ends = gapExtents(rec, gap);
-      const pA = extentPoint(rec.name, ends.from, []), pB = extentPoint(rec.name, ends.to, []);
-      return { gap: [gap.a, gap.b], ends,
-               ranges: clipRanges(rec.runs[gap.runIndex], pA, pB, streetIsNS(rec)) };
-    });
-    ok("Hill Street has a gap ending at a vertex the run visits twice", !!g3, "none found");
-    if (g3) ok("…and its answer covers exactly the gap, not the other visit's stretch",
-               JSON.stringify(g3.ranges) === JSON.stringify([g3.gap]), JSON.stringify(g3));
-    if (g2) {
-      ok("…whose answer names both ends explicitly, not 'the street's end'",
-         g2.ends.from !== null && g2.ends.to !== null, JSON.stringify(g2.ends));
-      ok("…and the row it would make covers exactly the gap",
-         JSON.stringify(g2.ranges) === JSON.stringify([g2.gap]), JSON.stringify(g2));
-    }
+    ok("the made-up streets are all in coverage", m.found.every(Boolean), JSON.stringify(m.found));
+    // Lengths are to within 3 m: the tool measures on its own flat-earth
+    // scale, and the fixture's corners are rounded to 7 decimal places.
+    const near = (a, b) => Math.abs(a - b) <= 3;
+    const SPINE = 600, SPUR = 179;
+    const spineIdx = m.brRunLens.findIndex(l => near(l, SPINE)), spurIdx = m.brRunLens.findIndex(l => near(l, SPUR));
+    ok("a branching street is two runs: spine and spur",
+       m.brRuns === 2 && spineIdx >= 0 && spurIdx >= 0, JSON.stringify(m));
+    ok("a spur row running to 'its end' covers the spur and none of the spine",
+       near(m.brSplit[0][spurIdx], SPUR) && m.brSplit[0][spineIdx] === 0, JSON.stringify(m.brSplit[0]));
+    ok("a spine row covers its stretch of spine and none of the spur",
+       near(m.brSplit[1][spineIdx], 400) && m.brSplit[1][spurIdx] === 0, JSON.stringify(m.brSplit[1]));
+    ok("no row claims more than the whole street", m.brRows.every(x => x <= m.brLen),
+       JSON.stringify([m.brRows, m.brLen]));
+    ok("a closed street is a ring", m.rcLoop === true && m.rpLoop === true);
     ok("…and a row to its 'end' closes it, rather than leaving an unreachable arc",
-       m.ctGaps === 0 && m.ctStatus === "named", JSON.stringify(m));
+       m.rcGaps === 0 && m.rcStatus === "named", JSON.stringify(m));
     // the swap button sits on rows of a ring, and turns the arc round
     await page.evaluate(() => {
-      const ct = (lastModel || reviewModel()).streets.find(s => s.name === "Community Terrace");
-      focusRow(ct.rows.find(r => r.from != null && r.to != null));
+      const rp = (lastModel || reviewModel()).streets.find(s => s.name === "Synthetic Ring Place");
+      focusRow(rp.rows[0]);
     });
     await page.waitForTimeout(300);
     ok("a ring row offers the other way round", await page.locator("#pop button.swaparc").count() === 1);
-    const before = await page.evaluate(() => rowMetres(popRow));
+    const before = await page.evaluate(() => Math.round(rowMetres(popRow)));
     await page.locator("#pop button.swaparc").first().click();
     await page.waitForTimeout(300);
-    const after = await page.evaluate(() => rowMetres(popRow));
-    ok("…and clicking it covers the other arc", before !== after && before + after > 100,
-       `${before} → ${after}`);
+    const after = await page.evaluate(() => Math.round(rowMetres(popRow)));
+    ok("…and clicking it covers the other arc", near(before, 100) && near(after, 300), `${before} → ${after}`);
     ok("…un-confirmed, since the ground changed", await page.evaluate(() => popRow.confirmed === false));
+    // a row on an ordinary street offers no such button
+    await page.evaluate(() => {
+      const br = (lastModel || reviewModel()).streets.find(s => s.name === "Synthetic Branch Street");
+      focusRow(br.rows[1]);
+    });
+    await page.waitForTimeout(300);
+    ok("…and a row on a street that is not a ring does not offer it",
+       await page.locator("#pop button.swaparc").count() === 0);
     await page.evaluate(() => { reviewDirty = false; });
     // back to the document the rest of the run expects
-    await page.evaluate(() => { document.getElementById("openBox").open = true; });
     await showLoaders();
-    await page.fill("#loadId", "mr066-035");
+    await page.fill("#loadId", "_main-test");
     await page.click("#loadDoc");
-    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "mr066-035",
+    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "_main-test",
                                null, { timeout: 15000 });
     await page.waitForTimeout(400);
   }
 
   console.log("a second document starts clean");
   {
-    // mr066-035 is open. Put a value in a header field it does not own and
+    // _main-test is open. Put a value in a header field it does not own and
     // some coverage exclusions, then open a bare render for aligning: nothing
     // of the first document may survive into the second — least of all its id,
     // which is where Save would write.
     await page.evaluate(() => {
-      document.getElementById("f_transcription").value = "documents/mr066-035/leftover.md";
+      document.getElementById("f_transcription").value = "documents/_main-test/leftover.md";
       coverageExcept = ["Leftover Street"]; docSwept = { fully: true, for: ["x"] };
     });
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
     await showLoaders();
-    await page.fill("#renderPath", "documents/mr006-138/mr006-138-100dpi.png");
+    await page.fill("#renderPath", "documents/_gaps-test/_gaps-test-100dpi.png");
     await page.click("#loadRenderBtn");
-    await page.waitForFunction(() => img && renderPathUsed.includes("mr006-138"),
+    await page.waitForFunction(() => img && renderPathUsed.includes("_gaps-test"),
                                null, { timeout: 15000 });
     await page.waitForTimeout(300);
     const st = await page.evaluate(() => ({
@@ -1001,8 +1044,8 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
       tr: document.getElementById("f_transcription").value,
       cov: coverage.length, exc: coverageExcept.length, swept: docSwept.fully,
       doc: loadedDoc, rel: renderRelPath() }));
-    ok("the id is the new document's, not the old one's", st.id === "mr006-138", st.id);
-    ok("…so a save would land in its folder", st.rel === "documents/mr006-138/mr006-138-100dpi.png", st.rel);
+    ok("the id is the new document's, not the old one's", st.id === "_gaps-test", st.id);
+    ok("…so a save would land in its folder", st.rel === "documents/_gaps-test/_gaps-test-100dpi.png", st.rel);
     ok("the old header fields are gone", st.tr === "", st.tr);
     ok("…and the old coverage, exclusions and swept flag",
        st.cov === 0 && st.exc === 0 && st.swept === false && st.doc === null, JSON.stringify(st));
@@ -1010,9 +1053,9 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     // and back, for the rest of the run
     await page.evaluate(() => { document.getElementById("openBox").open = true; });
     await showLoaders();
-    await page.fill("#loadId", "mr066-035");
+    await page.fill("#loadId", "_main-test");
     await page.click("#loadDoc");
-    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "mr066-035",
+    await page.waitForFunction(() => loadedDoc && loadedDoc.id === "_main-test",
                                null, { timeout: 15000 });
     await page.waitForTimeout(400);
   }
@@ -1356,7 +1399,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   {
     // TASK.md is generated, so it goes stale silently every time the model
     // gains a way to say something. These are the claims it must teach.
-    const task = await page.evaluate(() => taskMarkdown("mr066-035"));
+    const task = await page.evaluate(() => taskMarkdown("_main-test"));
     ok("it lists every row kind", ["state", "unnamed", "absent", "vanished", "vanished-unnamed"]
        .every(k => task.includes(`kind: "${k}"`)),
        ["state", "unnamed", "absent", "vanished", "vanished-unnamed"]
@@ -1371,50 +1414,53 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     ok("without a candidate table it forbids `name`",
        /Leave `name` out of every row/.test(task) && !/## Assigning `name` — LAST/.test(task));
     ok("…and the bundle carries no candidates",
-       !JSON.parse(await page.evaluate(() => streetsJsonText("mr066-035", null))).nameCandidates);
+       !JSON.parse(await page.evaluate(() => streetsJsonText("_main-test", null))).nameCandidates);
 
     console.log("name candidates from the rest of the corpus")
     {
-      // mr066-035 is the benchmark: its "Third St" is modern Miramar. Build
-      // the attestation table by hand — the browser cannot read the folder
-      // here — and check what the bundle makes of it.
+      // On M.R. 66-35 the plat's "Third St" is modern Miramar, and 1st Street
+      // runs into Beverly Boulevard two miles west. _main-test has the same
+      // two shapes: Third runs straight into Miramar on the sheet, and First
+      // runs off it into Far Boulevard. Build the attestation table by hand
+      // (the browser cannot read the folder here) and check what the bundle
+      // makes of it.
       const r = await page.evaluate(() => {
         const rec = (docs, forms) => ({ docs: new Set(docs), forms: new Set(forms) });
         const att = new Map([
-          ["3rd Street", new Map([["third-street", rec(["mr053-069"], ["3RD ST."])],
-                                  ["arnold", rec(["mr066-035"], ["ARNOLD ST."])]])],
-          ["Beverly Boulevard", new Map([["diamond-street", rec(["mr006-138"], ["Diamond Street"])]])],
+          ["Synthetic Third Street", new Map([["test-third", rec(["_other-sheet"], ["3RD ST."])],
+                                              ["test-arnold", rec(["_other-sheet"], ["ARNOLD ST."])]])],
+          ["Synthetic Far Boulevard", new Map([["test-diamond", rec(["_other-sheet"], ["Diamond Street"])]])],
         ]);
         const t = nameCandidateTable(att);
         const by = Object.fromEntries(t.map(x => [x.street, x]));
-        const task = taskMarkdown("mr066-035", t);
-        const json = JSON.parse(streetsJsonText("mr066-035", t));
+        const task = taskMarkdown("_main-test", t);
+        const json = JSON.parse(streetsJsonText("_main-test", t));
         return { streets: t.map(x => x.street),
-                 third: by["3rd Street"], miramar: by["Miramar Street"],
-                 first: t.find(x => /1st Street/.test(x.street)),
-                 anyCont: t.some(x => x.continuesInto.length),
+                 third: by["Synthetic Third Street"], miramar: by["Synthetic Miramar Street"],
+                 first: by["Synthetic First Street"],
                  task, json: json.nameCandidates && json.nameCandidates.length };
       });
       ok("one entry per in-bounds street", r.streets.length >= 3 && r.json === r.streets.length,
          `${r.streets.length} vs ${r.json}`);
       const ids = c => (c ? c.candidates : []).map(x => x.id);
       ok("a street lists the entities attested on it",
-         ids(r.third).includes("third-street") && ids(r.third).includes("arnold"), JSON.stringify(ids(r.third)));
+         ids(r.third).includes("test-third") && ids(r.third).includes("test-arnold"), JSON.stringify(ids(r.third)));
       ok("…and the entity carrying its present name",
-         r.third.candidates.find(x => x.id === "third-street").why.some(w => /present name/.test(w)));
+         r.third.candidates.find(x => x.id === "test-third").why.some(w => /present name/.test(w)));
       ok("…with the ink each sheet used",
-         r.third.candidates.find(x => x.id === "arnold").ink.includes("ARNOLD ST."));
-      ok("Miramar runs straight into 3rd", r.miramar && r.miramar.continuesInto.includes("3rd Street"),
+         r.third.candidates.find(x => x.id === "test-arnold").ink.includes("ARNOLD ST."));
+      ok("Miramar runs straight into Third", r.miramar && r.miramar.continuesInto.includes("Synthetic Third Street"),
          JSON.stringify(r.miramar && r.miramar.continuesInto));
-      ok("…so 3rd's entities are offered on Miramar, saying why",
-         ids(r.miramar).includes("third-street") &&
-         r.miramar.candidates.find(x => x.id === "third-street").why.some(w => /runs straight into/.test(w)));
+      ok("…so Third's entities are offered on Miramar, saying why",
+         ids(r.miramar).includes("test-third") &&
+         r.miramar.candidates.find(x => x.id === "test-third").why.some(w => /runs straight into/.test(w)));
       ok("a junction far from the sheet does not count",
-         !ids(r.first).includes("diamond-street") && !(r.first && r.first.continuesInto.includes("Beverly Boulevard")),
+         !!r.first && !ids(r.first).includes("test-diamond") &&
+         !r.first.continuesInto.includes("Synthetic Far Boulevard"),
          JSON.stringify(r.first && r.first.continuesInto));
       ok("the brief tells the pass to assign `name` last, from the list only",
          /## Assigning `name` — LAST/.test(r.task) && /Never invent an id/.test(r.task) &&
-         /### Miramar Street/.test(r.task) && /`arnold`/.test(r.task));
+         /### Synthetic Miramar Street/.test(r.task) && /`test-arnold`/.test(r.task));
       ok("…and to leave it blank when two candidates fit", /two candidates both fit/.test(r.task));
       ok("…and no longer forbids it outright", !/Do not write a `name` field/.test(r.task));
     }
@@ -1440,12 +1486,12 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     // into the loaded document and taken out again, because the editable
     // controls only render for a row the document actually has.
     const shown = await page.evaluate(() => {
-      const r = { kind: "state", street: "3rd Street", from: "Bixel Street",
-                  to: "Boylston Street", fromCross: "a", toCross: "b", toForm: "Third St",
+      const r = { kind: "state", street: "Synthetic Third Street", from: "Synthetic Main Street",
+                  to: "Synthetic First Street", fromCross: "a", toCross: "b", toForm: "Third St",
                   mechanism: "renaming", attests: "built-by", basis: "alignment",
                   date: { on: "1888" }, trace: [[1, 2], [3, 4]],
                   text: "Site of something", url: "https://example.org/x",
-                  note: "why", confirmed: false, name: "third-street",
+                  note: "why", confirmed: false, name: "test-third",
                   asWritten: "THIRD ST", somethingNobodyThoughtOf: "42" };
       loadedDoc.rows.push(r);
       let html;
@@ -1817,7 +1863,6 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   await page.screenshot({ path: "review-mode.png" });
   await browser.close();
   server.close();
-  dropFixture();
   console.log(`\n${pass} passed, ${fail} failed`);
   process.exit(fail ? 1 : 0);
 })();

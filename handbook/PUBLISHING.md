@@ -1,35 +1,19 @@
 # Publishing to the web (GitHub Pages)
 
-Your GitHub username is `kennyeaswaran`, so the site will live at
-`https://kennyeaswaran.github.io/REPONAME/` (pick the repo name accordingly —
-e.g. `streetymology`). A custom domain can be pointed at it later.
+The site is published from GitHub (user `kennyeaswaran`) through GitHub Pages,
+at `https://kennyeaswaran.github.io/<repo>/`; a custom domain can be pointed at it
+later (below).
 
-## One-time setup
+## One-time setup (done; for reference if it ever has to be redone)
 
-1. **Save the geometry file first.** Open the map, click "Save geometry file",
-   and move `data/streets-geometry.js` from Downloads into this folder. Committing it
-   means visitors never depend on Overpass.
-
-2. **Create the repo on github.com.** Click the "+" (top right) → New repository
-   → name it (e.g. `streetymology`) → Public → do NOT check "Add a README"
-   (we have one) → Create repository.
-
-3. **Install GitHub Desktop** (desktop.github.com) and sign in — the friendliest
-   way to use git regularly. Then: File → Add Local Repository → choose this
-   folder → it will say it isn't a git repository yet and offer to create one →
-   accept.
-
-4. **First commit and publish.** In GitHub Desktop you'll see all files listed
-   as changes. Type a summary like "Initial prototype" (bottom left) → Commit to
-   main → click "Publish repository" (top bar) → uncheck "Keep this code
-   private" → make sure the name matches the repo from step 2 → Publish.
-
-5. **Turn on Pages.** On github.com, open the repo → Settings → Pages →
-   under "Build and deployment", set Source to **GitHub Actions**. The included
-   workflow (.github/workflows/deploy.yml) takes over: on every push it runs
-   the three gates below and deploys only if they pass. Watch progress in the
-   repo's Actions tab; the first run finishes in about a minute, then the site
-   is live.
+1. Commit `data/streets-geometry.js` (the map's "Save geometry file" button), so
+   visitors never depend on Overpass.
+2. Create a public repository on github.com (no auto-generated README), add this
+   folder to GitHub Desktop as a local repository, commit, and "Publish
+   repository" with "Keep this code private" unchecked.
+3. Repo → Settings → Pages → Source: **GitHub Actions**. The included workflow
+   (`.github/workflows/deploy.yml`) then runs the three gates below on every push
+   and deploys only if they pass; progress is in the Actions tab.
 
 ## Everyday updates
 

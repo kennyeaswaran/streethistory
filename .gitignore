@@ -36,3 +36,7 @@ project-info.json
 
 # tests/preview-test.js stands a local Leaflet in for the CDN copy.
 node_modules/
+
+# Where instances put files they aren't allowed to delete; Kenny empties it.
+# Its contents were committed by accident once, so it stays out of git.
+_to_delete/

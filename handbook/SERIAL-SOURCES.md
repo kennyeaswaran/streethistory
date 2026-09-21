@@ -85,6 +85,10 @@ Access, verified 2026-08: LOC **item pages** read fine through a fetch tool,
 but the collection search, the JSON API (`?fo=json`) and the IIIF manifest
 all return 403 to automated fetching. So acquisition is a browser or human
 step — the same division of labour every recorded map already uses.
+⚠ FAMILY-NAMES.md ("Method note worth keeping") reports a loc.gov item page's
+`?fo=json` file list, and the ALTO XML behind it, **working 2026-09-14**;
+CLAUDE.md says the Chronicling America API is retired — check before relying on
+either reading.
 
 For georeferencing, Sanborn is friendlier than an 1890s plat: north-up,
 consistent scale, and a street network much closer to the modern graph, so
@@ -126,7 +130,8 @@ What they offer this project:
   tabulating them. Worth knowing as a general lesson about this source: the
   directories absorb a renaming silently, so they bracket a change but do not
   document it. (The ordinance itself is now identified as No. 4093 N.S.,
-  Ordinance Book IV p. 337 — see omnibus-1897-renaming-council-minutes.md.)
+  Ordinance Book IV p. 337 — see
+  `documents/ord-4093/omnibus-1897-renaming-council-minutes.md`.)
 - The reverse/street directories add house numbering, which is how to tell
   renumbering apart from renaming.
 

@@ -16,21 +16,25 @@ const { chromium } = require("playwright");
 const http = require("http"), fs = require("fs"), path = require("path"), os = require("os");
 
 const ROOT = fs.mkdtempSync(path.join(os.tmpdir(), "names-tool-test-"));
-for (const f of ["index.html", "utilities/names-tool.html", "utilities/project-info.json", "data/names.js", "data/names-new.js",
+for (const f of ["index.html", "utilities/names-tool.html", "utilities/project-info.json",
                  "data/site-config.js", "generated/streets-data.js"])
   if (fs.existsSync(path.join(PROJECT, f))) {
     fs.mkdirSync(path.dirname(path.join(ROOT, f)), { recursive: true });
     fs.cpSync(path.join(PROJECT, f), path.join(ROOT, f));
   }
-if (fs.existsSync(path.join(PROJECT, "documents")))
-  fs.cpSync(path.join(PROJECT, "documents"), path.join(ROOT, "documents"), { recursive: true });
-
-// Whether this checkout HAS a document corpus. Three assertions below are about
-// what the documents/ scan feeds — the Docs column, the "cites a sheet that does
-// not letter it" warning, and the absence of 404s — and none of them can mean
-// anything without one. A copy without documents/ is a harness condition, not a
-// fault in the tool, so they announce a skip instead of reporting red.
-const HAVE_DOCS = fs.existsSync(path.join(ROOT, "documents"));
+// THE NAME FILES AND THE DOCUMENTS ARE MADE UP (tests/fixtures/names-tool/):
+// a small names.js and names-new.js in the real files' shape, and two sheets.
+// Each entity is there for a check, and the fixture files say which. The page
+// code, the vocabulary (data/site-config.js) and the tool are the real ones.
+// Until 2026-09-20 this ran on the real name files, so it depended on the
+// wording of `farmer`'s notes, on `bull` still citing the wrong sheet, and on
+// names-new.js not being empty, which would have skipped the promotion checks
+// without a word. The real names.js's round trip is tests/test-names-tool.js.
+const NT = path.join(__dirname, "fixtures/names-tool");
+fs.cpSync(path.join(NT, "names.js"), path.join(ROOT, "data/names.js"));
+fs.cpSync(path.join(NT, "names-new.js"), path.join(ROOT, "data/names-new.js"));
+fs.cpSync(path.join(NT, "documents"), path.join(ROOT, "documents"), { recursive: true });
+const MISCITED = "fixture-miscited";
 
 const MIME = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json" };
 // Directory listings matter: with no folder connected the tool discovers
@@ -96,9 +100,10 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   await page.goto("http://localhost:8124/utilities/names-tool.html");
   await page.waitForSelector("#rows tr.ent");
 
-  const live = require("../data/names.js").NAME_ENTITIES;
+  // What the page is reading: the fixture name files in the throwaway copy.
+  const live = require(path.join(ROOT, "data/names.js")).NAME_ENTITIES;
   let pending = {};
-  try { pending = require("../data/names-new.js").NEW_NAME_ENTITIES; } catch (e) {}
+  try { pending = require(path.join(ROOT, "data/names-new.js")).NEW_NAME_ENTITIES; } catch (e) {}
   const total = Object.keys(live).length + Object.keys(pending).length;
 
   console.log("\nthe list");
@@ -138,12 +143,9 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   await page.click('#list th[data-k="docs"]');
   await page.click('#list th[data-k="docs"]');
   const docs = (await column("docs")).map(t => +t || 0);
-  if (!HAVE_DOCS) console.log("  --  skipped: no documents/ corpus in this checkout");
-  else {
-    ok("the docs column is populated from documents/", docs.some(d => d > 0),
-       "no entity showed a document count — the documents/ scan found nothing");
-    ok("sorting by docs puts the most-attested first", docs[0] === Math.max(...docs));
-  }
+  ok("the docs column is populated from documents/", docs.some(d => d > 0),
+     "no entity showed a document count — the documents/ scan found nothing");
+  ok("sorting by docs puts the most-attested first", docs[0] === Math.max(...docs));
 
   // ── Drift: how far the published prose has moved since a person approved it.
   // The column's whole job is to be sorted, and it is the one column that sorts
@@ -196,8 +198,8 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   await page.fill("#q", "figueroa");
   const found = await rows();
   ok("search narrows the list", found.length > 0 && found.length < total);
-  ok("search matches spellings, not just ids",
-     found.every(async id => true) && found.includes("figueroa-gov"));
+  // pearl-street's id does not say Figueroa; its later spelling does.
+  ok("search matches spellings, not just ids", found.includes("pearl-street"), found.join(", "));
   await page.fill("#q", "");
   await page.click('#stateChips button[data-s="todo"]');
   const todo = await rows();
@@ -210,9 +212,9 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
   ok("the editor opens", await visible("#editor"));
   ok("the empty-state prose is gone", !(await visible("#editEmpty")));
   ok("it shows the entity's own note",
-     (await page.inputValue("#f_note")).includes("Crownwood"));
+     (await page.inputValue("#f_note")).includes("made-up 1909 sheet"));
   ok("it shows the internalNote separately",
-     (await page.inputValue("#f_internal")).includes("Kines"));
+     (await page.inputValue("#f_internal")).includes("searched nowhere"));
   ok("public and private notes are labelled differently",
      (await page.$$("#editor label.public")).length === 1);
   ok("possiblySameAs offers the other entities",
@@ -304,31 +306,23 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
     // tools/check-model.js's "cites a sheet that does not letter the name" rule runs
     // in the page too, but only once the documents/ scan has answered — so
     // this also proves the scan feeds validation, not just the Docs column.
-    // These assertions need a real documents/ tree to have been copied in. A
-    // checkout without one is a harness condition, not a failure of the tool —
-    // say so out loud rather than reporting a red test nobody can act on.
     const haveDocs = await page.evaluate(() =>
       Object.values(docCounts || {}).some(l => l && l.length));
-    if (!haveDocs) console.log("  --  skipped: no documents/ corpus in this checkout");
-    else {
+    ok("the documents/ scan answered", haveDocs);
+    if (haveDocs) {
+    const ID = MISCITED;
     await page.click('#stateChips button[data-s="problems"]');
     const flagged = await rows();
-    ok("an entity citing a sheet that does not letter it is flagged", flagged.includes("bull"),
-       "expected bull among: " + flagged.join(", "));
-    await page.click(`#rows tr.ent[data-id="bull"]`);
+    ok("an entity citing a sheet that does not letter it is flagged", flagged.includes(ID),
+       `expected ${ID} among: ` + flagged.join(", "));
+    await page.click(`#rows tr.ent[data-id="${ID}"]`);
     ok("the warning says so and names where it IS lettered",
        /does NOT letter this name/.test(await page.innerText("#problems")) &&
-       (await page.innerText("#problems")).includes("mr053-073"));
+       (await page.innerText("#problems")).includes("fixture-lettered"),
+       await page.innerText("#problems"));
     ok("it is a warning, not an error — it must not block a save",
        (await page.$$("#problems .wrn")).length > 0 && (await page.$$("#problems .err")).length === 0);
-    ok("the row is not marked as broken", !(await page.$('#rows tr.ent[data-id="bull"].bad')));
-    // tools/prune-sources.js has already taken the redundant citations out, so the
-    // two redundancy rules should have nothing left to say about the corpus.
-    const all = await page.$$eval("#rows tr.ent", ts => ts.map(t => t.dataset.id));
-    ok("nothing still repeats its namedAfterLink",
-       !(await page.evaluate(() => document.body.innerText).then(t => /repeats namedAfterLink/.test(t))));
-    ok("the tessa2 Ord scan is no longer carried by entities it letters",
-       !flagged.includes("hill-street-downtown") && !flagged.includes("main-street-dtla"));
+    ok("the row is not marked as broken", !(await page.$(`#rows tr.ent[data-id="${ID}"].bad`)));
     await page.click('#stateChips button[data-s="any"]');
     }
   }
@@ -402,6 +396,7 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
 
   console.log("\npromotion");
   const pendingId = Object.keys(pending)[0];
+  ok("there is a pending entity to promote", !!pendingId);
   if (pendingId) {
     await page.click(`#rows tr.ent[data-id="${pendingId}"]`);
     ok("a pending entity offers the move into names.js", !!(await page.$("#promoteBtn")));
@@ -514,10 +509,9 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
      dialogs.some(d => /connected/i.test(d)));
 
   console.log("\nhygiene");
-  const realErrors = errors.filter(e => HAVE_DOCS || !/Failed to load resource/.test(e));
+  const realErrors = errors;
   ok("no page errors", realErrors.length === 0, realErrors.slice(0, 3).join(" | "));
-  // A checkout with no documents/ legitimately 404s the listing the scan asks for.
-  const real404 = missing.filter(u => HAVE_DOCS || !/\/documents\/?$/.test(u));
+  const real404 = missing;
   ok("nothing 404ed", real404.length === 0, real404.slice(0, 3).join(" | "));
 
   console.log(`\n${pass} passed, ${fail} failed\n`);

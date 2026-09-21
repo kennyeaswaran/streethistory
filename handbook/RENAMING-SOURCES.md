@@ -2,8 +2,9 @@
 
 How to get from "Kines says this street was renamed in 1874" to a document the
 model can carry a `change` row on. Written 2026-09-04 while hunting the
-Bull → Castelar ordinance, which is still not found; the method is what came
-out of it.
+Bull → Castelar ordinance, which the method found the same day
+(`documents/ord-1874-02-26`; "The worked example" below), and extended as the
+newspaper and minutes runs of 2026-09 taught more.
 
 ## The mechanism, and why it matters to the data
 
@@ -68,6 +69,45 @@ passed*, *was read and adopted*, *ordinance No. …*.
 If the item reports stage 3 in the paper's own words, quote it as an `excerpt`
 and the document is a source. If not, it is a lead, and it gives you a date to
 start from.
+
+**Stage words that fooled earlier readings** (change-row audit, 2026-09-18):
+
+- **"Adopted." after a Board of Public Works report** means the council adopted
+  the *recommendation*, not an ordinance (`lah-1883-08-19` says so).
+- **"ordered … changed"** (1919) may be only an instruction to draft.
+- **"carried 6 to 3", then reconsidered** in the same meeting (1911).
+- **A list printed on first reading** (Nov. 1889, Jan. 1894) whose adoption is
+  reported elsewhere without the names. The list is the proposal; the adoption
+  report is the act, and the two have to be joined by date.
+
+### Adoption is not law
+
+Stage 3 is necessary, not sufficient. An adopted ordinance still has to survive
+the mayor, and a surprising number did not. Vetoed, recalled or withdrawn:
+Jan. 1888 Le Convieur → Ashland (defeated 8–5), Feb. 1889 the duplicate-names
+ordinance (vetoed by Bryson; became Ord. 48), Oct. 1890 the twenty-one changes
+(vetoed by Hazard), Dec. 1892 Adobe → Harvard (vetoed), Mar. 1893 Loomis → Sixth
+(returned at the council's own request and tabled), Feb. 1897 the first version
+of Ord. 4093 (returned), May 1905 the ninety-street ordinance (recalled from the
+mayor), 1908 Orange → Wilshire (repealed), 1917 Valley → Hughes (held up), 1926
+Sherman Way (protested by 74% of owners), 1927 Main → Huntington Drive (drafted,
+withheld, postponed indefinitely), 1932 Pasadena Avenue → North Figueroa (vetoed,
+then overridden 11–4 — the only override found).
+
+**Never date a change from a stage-3 report alone.** Look for the approval, the
+publication, or the paper saying it is in force.
+
+**A veto is a reason to look for a *later* instrument, not evidence the change
+never happened.** Collado → Union, Waters → Douglas and Canal → Beaudry were all
+in the vetoed 1890 ordinance and all came true later.
+
+**Enacted re-changes are ordinary change rows, not a withdrawn draft.** Ord. 482
+(1889) changing "Second street (formerly Lakeshore avenue)" back to Lakeshore
+Avenue, the 1890 "portion of Aliso street back to Pleasant avenue", and the 1908
+Orange repeal are instruments changing the name on the ground back again. They
+produce a genuine revival. MODEL-SPEC §5.8's Form 4 ("restoration
+→ not a change row") is for a change a *draft* would have made and the enacted
+text dropped, not for these.
 
 ## Step 2 — go to the council minutes for the dates after the referral
 
@@ -179,7 +219,7 @@ the ordinance's own words rather than the street's:
   is where newspaper OCR is worst. Expect to search several spellings.
 - A published ordinance gives the instrument and its date, and usually no
   extent. It settles *what* and *when*, not *where*.
-- CDNC sits behind a bot wall for instances (see §"What does not work"), so the
+- CDNC sits behind a bot wall for instances (see "Searching CDNC" below), so the
   searching is Kenny's or a browser's; an instance can still read a clip.
 
 ## Step 2c — a minutes copy of an ordinance can be an ABRIDGEMENT
@@ -202,7 +242,7 @@ the part a change row needs. Three habits follow:
 - **Never conclude "unqualified" from a minutes copy alone.** Absence of an
   extent in the ledger is not evidence the ordinance had none — and an
   unqualified change is the more dangerous reading, because it claims the whole
-  name rather than a stretch (change-rows-amendment.md §2).
+  name rather than a stretch (MODEL-SPEC §5.6).
 - **Mark which copy a row was read from.** `documents/ord-1874-02-26` is a
   minutes copy too and reads as complete. It may be. Nothing disproves it, and
   nothing supports it either.
@@ -219,18 +259,111 @@ ordinance is adopted. Expect the same shape in 1874. The ordinance *text*
 usually needs the City Archivist; the number and ledger page are enough to ask
 for it precisely, which is the difference between a request and a search.
 
+## Step 2e — the compiled ordinance volumes, 1852–1889
+
+The Council published compilations of the ordinances *in force*, indexed. All
+five are in the corpus as rowless volume documents, from Gale's *The Making of
+Modern Law: Primary Sources* (UCLA network only, `…/MMLP?u=uclosangeles`):
+`mcpherson-1873` (reaching back to 1852), `caswell-1878`, `robinson-1884`,
+`teed-1887` (Vol. III) and `teed-1889` (Vol. IV). Each folder carries a contents
+file, a street-ordinance shortlist and a FINDINGS.md.
+
+- **Search them by the right key.** Caswell and Robinson index by **subject**
+  (street name) and give ordinance or resolution number and page; Teed lists by
+  **ordinance number** with a title. For a street, search Caswell and Robinson;
+  for an ordinance, scan Teed.
+- **Resolutions place streets.** Grading, sewer and improvement resolutions name
+  cross streets, which is how Robinson 1884 fixed where Virgin Street ran.
+- **Absence from a subject index is weak evidence.** A street with no ordinance
+  about it simply does not appear.
+- **The series stops at 1889, and the numbering restarts.** The 1889 charter
+  began the New Series, which is why the Oct. 1888 cull is Ordinance No. 48
+  **(N.S.)**, 22 April 1889 (`documents/lah-1889-05-10`), and not in Vol. IV.
+  Anything later — 3829, 3847, 4093, the 1908 and 1924 numbers — is a City Clerk
+  or City Archivist request.
+- **Pulling a page:** the Gale reader downloads page images a range at a time;
+  the citation page it appends carries the doc id. Name downloads
+  `<volume>-p<page>.pdf`.
+
+## Step 4 — modern renamings (after about 1930): the council file
+
+For the 1988–1997 names the route is the City Clerk's **Council File Index**
+(`https://cityclerk.lacity.org/lacityclerkconnect/` → Council File search; a
+JavaScript app, so a browser or a person). Search by the new name and by the
+old, with the year bracketed. A street-renaming file holds the motion or request,
+the **City Engineer's / Bureau of Engineering report** (which states the extent
+in cross-streets — the qualified wording a row needs), the Board of Public Works
+transmittal, the council action, and the **ordinance** with its number and its
+adopted / approved / published dates. Pair each with the *L.A. Times* item
+(full text online from 1985 at latimes.com). CDNC's papers stop in 1931, so a
+1930s adoption is a *Times* item (LAPL's ProQuest).
+
+For the 1930s–40s, before the online index: **NavigateLA's Cadastral Map** for a
+parcel on the street. The Bureau annotates former names with the ordinance
+("… (formerly 10th St) Ord. No. …"), and that number is the document to ask the
+City Archives or the Clerk for. Kimball's *Street Names of Los Angeles* carries
+ordinance numbers too (IN-PERSON.md §2).
+
+**Making the documents.** One folder per instrument, `type: "ordinance"`,
+`form: "textual"`, dated `{ on: <adopted> }` with the approval and publication in
+the note; `excerpts` for the title, the operative section and the certification,
+verbatim; the scan or PDF beside it; `readBy: "human"` only if a person read it.
+The newspaper item is its own `news-report` document.
+
+**Writing the rows**, all `confirmed: false`: whole-name where the ordinance names
+the whole street; `scope: "extent"` with the modern `street`,
+`fromCross`/`toCross` from that street's crossings, and the `wording` verbatim
+where it names a stretch. Mint a missing predecessor entity from what the
+ordinance says (`basis: "none"`, `searched: "none"`, an `internalNote` naming the
+document); a namesake from a secondary source is a lead for the internal note,
+not a `namedAfter`. Never write the `*Approved` fields. Then
+`node tools/check-model.js` per document, `node tools/generate.js` at the end,
+and read "Revived names" and "Row problems" in `generated/report.md`. Kenny
+confirms the rows and checks each qualified extent against a map.
+
+## Searching CDNC — cdnc.ucr.edu
+
+**Instances cannot.** `cdnc.ucr.edu/robots.txt` disallows automated fetching,
+and the site also answers the browser pane with a bot-verification
+interstitial. Both are refusals to respect, not obstacles to route around.
+Searching CDNC is Kenny's step; an instance writes the exact phrases for him and
+reads the clips that come back.
+
+**How to search.** Use the search box at `https://cdnc.ucr.edu`, then narrow with
+the facets on the results page (newspaper = *Los Angeles Herald*, and the date
+range). The advanced-search form takes a phrase in quotes and a date range
+directly, which is the fastest route. Give phrases exactly as they should be
+typed, in quotation marks where the quotation marks matter.
+
+**URLs.** Article permalinks are
+`https://cdnc.ucr.edu/?a=d&d=<PAPER><YYYYMMDD>.<page>.<item>` (`LAH` for the
+Herald) — verified; every newspaper document in the corpus uses this form. An
+article id is not guessable: the Oct. 1888 committee list is `LAH18881011.1.3`,
+and an earlier guess of `.2.11` was a different article. The search form appears
+to be
+`https://cdnc.ucr.edu/?a=q&hs=1&r=1&results=1&txq=<term>&dafyq=<from year>&datyq=<to year>&puq=LAH&e=-------en--20--1--txt-txIN--------`
+(drop `puq=LAH` to search every paper), but it cannot be verified from inside
+the repo; check it against the address bar before relying on it.
+
+**Coverage.** The Herald from the 1870s; the searchable record is thin before
+about 1883 (Step 2d), and CDNC's papers stop in 1931.
+
+**What to capture.** Several Los Angeles names belonged to two, three or four
+unrelated streets at once (Virginia, Lafayette, Jackson, Ida, Pine, Crescent; the
+Oct. 1888 list alone has four Virginias, three Williams, three Grants, and two
+Aurora Streets four Hancock blocks apart). A hit is useful only if the article
+gives a cross-street or a tract, so capture enough of the surrounding text to
+place it. The full list is under "Recurring names — each a trap", at the end
+of this file.
+
+**Council minutes**, for comparison, are reached only through the City Clerk's
+old-document browser, `https://clerkapps.lacity.org/oldcfidocs/` (Step 2): no
+per-date link works.
+
 ## What does not work
 
-- **CDNC cannot be searched by an instance.** `cdnc.ucr.edu/robots.txt`
-  disallows automated fetching, and the site additionally answers the browser
-  pane with a bot-verification interstitial. Both are refusals to respect, not
-  obstacles to route around. Searching CDNC is a human step.
-- **A CDNC search URL can still be handed over.** Article permalinks are
-  `https://cdnc.ucr.edu/?a=d&d=<PAPER><YYYYMMDD>.<page>.<item>` — verified,
-  that is the form every document in the corpus uses. The search form appears
-  to be `?a=q&txq=<term>&dafyq=<from year>&datyq=<to year>&puq=LAH`, but **this
-  has not been verified from inside the repo** for the reason above; check the
-  shape against the address bar before relying on it.
+- **Instances searching CDNC** — above.
+- **A per-date minutes URL** — Step 2.
 - **Directory and Sanborn routes** are covered in SERIAL-SOURCES.md and are
   better for *bracketing* a change than for naming its instrument.
 
@@ -312,6 +445,41 @@ dense. The 1897 renaming ordinance touched 350 streets in one instrument; if a
 second such omnibus exists, it is worth a year of minutes to find. Nothing
 suggests one does.
 
+## What each source gives — measured on the whole newspaper run, 2026-09-06
+
+Kenny's CDNC phrase search on *"ordinance changing"* was carried through the
+Herald to 1927 and then the Daily News and Evening Express to 1935, and every
+clipping became a document. Read as a whole, the run answers "can we find full
+texts or street lists in the papers or the minutes?", and the answer is not
+symmetrical:
+
+- **The Herald prints a full list only when the list is the story.** Ordinance
+  No. 48 (1889, `lah-1889-05-10`) and the Oct. 1888 committee report
+  (`lah-1888-10-11`) are the only two full lists it ever gave this project, both
+  from the 1880s, when the paper still printed legal notices at length. After
+  about 1890 it reports that an ordinance exists, names two or three streets as
+  examples, and stops: the ninety-street ordinance of 1905 got four articles and
+  **one** concrete change out of ninety. The 1920s–30s papers never print a list
+  either; five names is the most, because five fits in a paragraph.
+- **So for lists, the minutes are the only route.** The newspaper's value is
+  telling you *which meeting* to pull.
+- **The newspaper's comparative advantage is failure.** It says whether the
+  ordinance survived — vetoed, recalled, repealed, held up, protested, withheld
+  ("Adoption is not law", above). A minute book showing a 10–4 vote and no later
+  ordinance is silence; the paper says what the silence means. **A minutes-first
+  strategy would have written every one of those as a change. Read the
+  newspaper first, then pull the minutes.**
+- **One campaign in three pushes.** Streets south of Pico were renamed to
+  numbers in Nov. 1889; the same names turn up again in the Sept. 1896 southwest
+  ordinance (Shafer, Simpson, Janes), beside a petition asking that names be
+  changed "so as to make them compare with the names of the streets on the north
+  side of Pico Street"; then the 1897 ordinance. Read 1889, 1896 and 1897
+  together, not as three separate tidyings.
+- **The seniority rule for duplicates.** `lah-1899-10-11` (Pasadena council news,
+  kept for this alone) states the seniority rule for duplicate names, which Los
+  Angeles adopts as annexation policy by 1910 (`lah-1910-09-30`). Read it there
+  before deciding which of two same-named streets gave way.
+
 ## The worked example, now closed
 
 **Bull → Castelar and Wasp → Yale, Feb. 1874 — found 2026-09-04.** The method
@@ -335,34 +503,11 @@ Three lessons that generalise:
 
 ## Full URLs
 
-**Council minutes:** the browser, not a per-date link —
-https://clerkapps.lacity.org/oldcfidocs/
-
-**CDNC searches.** Unverified shape (robots.txt forbids an instance from
-loading them), so check the first one against the address bar. `puq=LAH` is
-the Los Angeles Herald; drop it to search every paper.
-
-- Castelar, 1874–75  
-  https://cdnc.ucr.edu/?a=q&hs=1&r=1&results=1&txq=Castelar&dafyq=1874&datyq=1875&puq=LAH&e=-------en--20--1--txt-txIN--------
-- Yale street, 1874–75  
-  https://cdnc.ucr.edu/?a=q&hs=1&r=1&results=1&txq=%22Yale+street%22&dafyq=1874&datyq=1875&puq=LAH&e=-------en--20--1--txt-txIN--------
-- Bull street, 1873–76  
-  https://cdnc.ucr.edu/?a=q&hs=1&r=1&results=1&txq=%22Bull+street%22&dafyq=1873&datyq=1876&puq=LAH&e=-------en--20--1--txt-txIN--------
-- Wasp street, 1873–76  
-  https://cdnc.ucr.edu/?a=q&hs=1&r=1&results=1&txq=%22Wasp+street%22&dafyq=1873&datyq=1876&puq=LAH&e=-------en--20--1--txt-txIN--------
-- ordinance + street names, 1874  
-  https://cdnc.ucr.edu/?a=q&hs=1&r=1&results=1&txq=ordinance+street+name&dafyq=1874&datyq=1874&puq=LAH&e=-------en--20--1--txt-txIN--------
-
-**The two articles already in the corpus** (verified permalinks):
-
-- Feb. 14, 1874, the petition — https://cdnc.ucr.edu/?a=d&d=LAH18740214.2.12
-- Feb. 27, 1874, the ordinance carrying — https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10
-
-**Still wanted from CDNC** (cited by entities, never transcribed):
-
-- Feb. 19, 1897, “A Storm of Words” — https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24
-- Feb. 21, 1897, “Talking Retrenchment” — https://cdnc.ucr.edu/?a=d&d=LAH18970221.2.28
-- Feb. 24, 1897, council hearing — https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20
+- **Council minutes:** the browser, not a per-date link —
+  https://clerkapps.lacity.org/oldcfidocs/
+- **Council File Index** (modern renamings, Step 4):
+  https://cityclerk.lacity.org/lacityclerkconnect/
+- **CDNC:** permalink and search-URL shapes under "Searching CDNC" above.
 
 ## Step 2d — search the SUCCESSOR name, not the old one
 
@@ -414,3 +559,30 @@ successor name on ground that was never the street you are tracing:
 
 So a successor-name hit is a *candidate*, never a confirmation. Check the extent
 against the corridor before believing it.
+
+### Recurring names — each a trap
+
+A name in an ordinance is not yet a street. These names each belonged to several
+unrelated Los Angeles streets, often at the same time (change-row audit,
+2026-09-18): **Pine** (four), **Virginia** (four), **Georgia** (two, maybe three),
+**William** (two or three; `william` already carries sightings on both Santee and
+Bixel), **Belmont** (two, plus Aztec on the same corridor), **Willow** (two),
+**Cooper** (two — the one in 1896 is not `ord-1613`'s), **California** (two — the
+1896 Bunker Hill one is not `california-street-14th`), **Jackson** (three or
+four), **South Street** (at least three), **Short** (two), **Crescent** (two), and
+**Broadway** (Fort, Buena Vista, Downey, Moneta, *and* a pre-1890 "Broadway
+street" that became Toberman the same night Fort became Broadway). Resolve the
+entity from the extent, never from the word.
+
+### A clean checker does not mean the right street — Ord. 482
+
+Ordinance No. 482's "Second street … between Lucas avenue and Figueroa street"
+was first written as a row on 2nd Street, Lucas Avenue → Figueroa Street. Both
+ends resolved at 0 m and `tools/check-model.js` passed it. A trial build with the
+row let through painted Lake Shore Avenue over 2nd Street ground lettered
+"Second" since 1869: the 1889 Figueroa is `figueroa-gov`, today's Boylston, and
+modern 2nd Street never meets Boylston (203 m). **This is the Miramar trap
+(CLAUDE.md rule 2) on a textual document, and the checker cannot see it** — only
+a build can. When a textual row names streets whose names have since moved,
+build with the unconfirmed rows let through (on a copy of the tree) and look at
+where they paint before writing the extent.

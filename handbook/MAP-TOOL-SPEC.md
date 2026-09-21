@@ -1,23 +1,18 @@
 # Spec: the map tool (align → propose → review)
 
-**Status (2026-08-25): specified, not built.** Target file:
-`utilities/map-tool.html`, a single self-contained page served from the project
-folder. `align.html` was retired to `attic/` when this superseded it (2026-08-26).
-
-Written against MODEL-SPEC.md as amended 2026-08-25 (§4.4, §4.6, §5.2–§5.5).
-Read §0 of that file first if you don't know the project.
+**Status: built end to end (2026-08-30)** in `utilities/map-tool.html`, a
+single self-contained page served from the project folder. This file is the
+design record — why the tool works the way it does; handbook/MAP-TOOL-GUIDE.md
+is how to use it. Specified 2026-08-25 against MODEL-SPEC.md §4.4, §4.6 and
+§5.2–§5.5; read §0 of that file first if you don't know the project.
 
 ---
 
 ## 1. The problem it solves
 
-A document used to reach `documents/<id>.js` by a chain of hand steps: a human
-aligned the scan in `align.html`, exported control points, an instance ran
-`georef.py` to overlay and trace, someone read a verdict table, and someone
-wrote the rows. It worked, and it produced the 3rd Street evidence base, but it
-was slow, it lost the human's judgement into prose, and it could not be resumed
-halfway. Both of those programs were retired in 2026-09, once this tool did
-their jobs; what follows is what replaced them.
+A document used to reach `documents/<id>.js` by a chain of hand steps, from
+aligning the scan to writing the rows. It was slow, it lost the human's
+judgement into prose, and it could not be resumed halfway.
 
 The tool collapses that into two sittings at one screen with an AI pass
 between, and — this is the point — makes the human's gesture *be* the data
@@ -31,8 +26,6 @@ construction; there is no point in the gesture where a name could stand in for
 a match. The interface enforces the rule that instances keep breaking.
 
 ## 2. Phase 1 — align, then bound
-
-Essentially the old `align.html` plus one step.
 
 1. **Load** a render (`documents/<id>/<id>-100dpi.png`) and, if resuming, an
    existing `documents/<id>/<id>.js`.
@@ -109,12 +102,8 @@ names. Verdicts map to row kinds like this:
 ask it.** That sheet's "Third St" is modern Miramar and its "Arnold St" is
 modern 3rd, so a system that gets the unchanged names right and those two wrong
 is name-matching rather than reading geometry. Hand a fresh assistant that
-folder before trusting it on a sheet whose answers nobody knows.
-
-(A four-sheet benchmark with a committed answer key lived in `overlay-trial/`
-until 2026-09. It had done its job — both assistants tried on it read the
-overlays correctly — and any tract map can now be turned into a fresh test with
-`utilities/new-map.command`, so it was retired rather than maintained.)
+folder before trusting it on a sheet whose answers nobody knows; any tract map
+can be turned into a fresh test with `utilities/new-map.command`.
 
 **Everything returned lands `confirmed: false`** (§5.5). Proposals are never
 data until a human says so, and `tools/generate.js` holds them back from the map
@@ -242,7 +231,6 @@ popup offers:
   rather than freezing today's default into the row. Changing it un-confirms.
 - **Edit the row's `note`** — the AI pass's reasoning, and sometimes wrong.
   This does NOT un-confirm: a note is commentary, not a claim (§5.5).
-- `basis` is still file-only.
 
 **Tracing a vanished street**: draw a polyline along the drawn corridor and
 type `asWritten` verbatim — or leave it empty, which records the corridor as
@@ -255,11 +243,6 @@ blocks the sweep, which is how it avoids being forgotten.
 not as more forms. Showing every row on a street at once made the controls
 ambiguous the moment there were three of them — "which stretch am I excluding?"
 had no answer.
-
-**Export notes for the next AI pass**: rather than retyping, the tool emits
-the unconfirmed and rejected rows with the human's comments, formatted as a
-prompt for another round. That is what makes phase 3–4 alternate rather than
-being one-shot.
 
 **The sweep gate**, which runs in **both directions**: `sweptFully` may be set
 only when no *stretch* is unaccounted, every row is confirmed, every naming row
@@ -382,26 +365,16 @@ they are where absent wrongness would hide:
 
 Test against the real data: MR066-035's committed alignment, read live from
 `documents/mr066-035/mr066-035.js`, and known intersections (`node tools/intersect.js
-"3rd Street" "Bixel Street"`) as expected values for the snapping. There was a
-frozen copy in `fixtures/` for a while, so that parking a document could not
-break the suite; it went stale instead — holding an alignment from the retired
-`align.html` against a render size no longer in use — so the suite now reads
-the live document and derives its sample pixels from the control points, which
-survives a re-alignment at any resolution.
+"3rd Street" "Bixel Street"`) as expected values for the snapping. The suite
+reads the live document and derives its sample pixels from the control points,
+rather than a frozen fixture: a frozen copy went stale once, and this survives
+a re-alignment at any resolution.
 
-Three suites, and they catch different things:
-
-| suite | what it runs | what it can see |
-|---|---|---|
-| `node tests/test-doc-geometry.js` | `data/doc-geometry.js` | the pure geometry: alignment round-trips, polygon clipping, snapping |
-| `node tests/test-review.js` | the review model, **extracted from `utilities/map-tool.html`** rather than copied, so it cannot drift | gaps, the confirm and sweep gates, extents, slivers |
-| `node tests/browser-test.js` | the real page in a real browser (Playwright) | everything the other two structurally cannot: whether a panel is on screen, whether a click reaches it, whether a button does anything |
-| `node tests/preview-test.js` | `index.html` (the map) on the generated data, in a real browser | what the MAP says: which stretches are blue, what a popup prints. Needs `npm install leaflet@1.9.4 --no-save` to stand in for the CDN copy |
-
-The last two exist because two shipped bugs were invisible to unit tests — a
+Which suite covers what — the pure geometry, the review model extracted from
+the page, and the real page in Playwright — is in **tests/README.md**. The
+browser suites exist because two shipped bugs were invisible to unit tests: a
 stylesheet rule that made the review panel and every popup `display:none`, and
-a stale index that made the gap buttons silently do nothing. Playwright is not
-installed on Kenny's machine; that suite runs in the assistant's sandbox.
+a stale index that made the gap buttons silently do nothing.
 
 ## 7. What the tool must not do
 
@@ -422,65 +395,13 @@ installed on Kenny's machine; that suite runs in the assistant's sandbox.
   offered on an unaccounted stretch and neither is default: one is a claim
   about the map, the other about the polygon (MODEL-SPEC §4.4).
 
-## 8. First subject: MR066-035
+## 8. Textual documents
 
-The adversarial benchmark, deliberately. Its answers are known, a human
-alignment is already committed
-(`documents/mr066-035/mr066-035-alignment.json`), it is small, and two of its rows
-are already encoded. Finishing it means roughly four to six rows — adding
-Bixel, and the plat's "Figueroa St" which is modern **Boylston** — and
-flipping it to `sweptFully: true`.
-
-The first run therefore tests the tool as much as the sheet: if it leads to
-Third = Miramar and Arnold = 3rd, the gesture works. If it nudges toward name
-continuity, the interface has a bug and the sheet has told us so.
-
-## 9. WANTED — the same thing for textual documents (2026-09-04)
-
-Everything above assumes a **sheet**: align it, bound it, draw the rows on it,
-and confirm each one by looking at the ink. Textual documents have no sheet, and
-by 2026-09 there are five of them — two Herald reports, two council ordinances
-and Ord 4093 — carrying rows that nothing can review.
-
-The gap showed itself the day the 1874 and 1887 ordinances were transcribed:
-`tools/check-model.js` correctly refused `sweptFully: true` on rows still marked
-`confirmed: false`, and there was no way to clear the flag except editing the
-file by hand. A gate nobody can pass is a gate that gets walked around.
-
-**What it would need.** Much less than the map tool, because there is no
-geometry:
-
-- **The excerpt beside the clip.** A textual document already carries `excerpts`
-  (verbatim quotes) and usually a `scan` (a crop of the page). Put them
-  side by side, one excerpt at a time, and confirming a row is: does the quote
-  match the image, and does the row follow from the quote?
-- **Row-to-excerpt navigation.** Rows carry `says: [excerpt ids]` (§12 of
-  handbook/change-rows-amendment.md), so selecting a row can highlight the
-  sentences that license it — the one thing this tool can do that the map tool
-  cannot.
-- **The scope declaration, made visible.** A change row's `scope` is the
-  judgement most likely to be wrong, and it is checkable straight from the
-  quote: does the document name a stretch or not? Show `whole-name` /
-  `extent` / `extent-unresolved` as a three-way choice with the quote next to
-  it.
-- **Confirm, and the sweep gate.** Same semantics as review mode: clear
-  `confirmed`, and `sweptFully` when every excerpt has been read through — which
-  for a textual document means "the whole item was read", not "every street on
-  the sheet was entered".
-- **Minting entities.** The 1874 ordinance minted `castelar` and `yale`; the
-  1887 one minted `alpine`. That is the same job review mode does with
-  `data/names-new.js`, and it should work the same way.
-
-**What it must not do.** No extents from geometry, no alignment, no coverage
-polygon — a textual document's scope is its own words, and inventing a spatial
-extent for it is the failure the change-rows amendment exists to stop.
-
-**Where it probably lives.** Closer to `utilities/names-tool.html` than to
-`utilities/map-tool.html`: the same surgical file editing, the same list-plus-editor
-shape, no canvas at all.
-
-**Amended 2026-09-10.** The list item should be a *proceeding*, not a document
-— one renaming's whole paper trail (petition, referral, adoption, veto,
-approval, repeal), every step's excerpt in one column and the rows that took
-effect in the other. The shape is proposed in handbook/ROADMAP.md §2; two
-proceedings are to be written by hand before the tool is built to them.
+Everything above assumes a **sheet**. Ordinances, minutes and newspaper
+reports have none — no alignment, no coverage polygon, no geometry to confirm
+a row against — and they carry their evidence as `excerpts` cited by `says`
+(MODEL-SPEC §5.7). A tool for reviewing them is wanted, built around the
+*proceeding* rather than the document, and closer to
+`utilities/names-tool.html` than to this page: see ROADMAP §2. What it must not
+do follows from this one's §7 — above all, never invent a spatial extent for a
+text (MODEL-SPEC §5.6).

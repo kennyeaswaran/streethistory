@@ -16,7 +16,7 @@ Those rows are listed in the report, and a few at any time are normal.
 |---|---|---|
 | `check-model.js` | the authored layers, `data/names.js` + `data/names-new.js` + `documents/` (MODEL-SPEC §9) | **deploy gate** |
 | `check-data.js [--require-generated]` | `generated/streets-data.js` against the map's contract | **deploy gate** (with the flag) |
-| `check-legacy.js [--verbose] [--street "X"]` | every entry of the frozen pre-switchover map is subsumed, or accepted in `legacy/accepted-differences.js` | run after changes that could lose a stretch |
+| `check-legacy.js [--verbose] [--street "X"]` | every entry of the frozen pre-switchover map is subsumed, or accepted in `legacy/accepted-differences.js` | temporary: when it fails on a difference you meant, consider retiring it (legacy/README.md). Run after changes that could lose a stretch |
 
 **Helpers.**
 

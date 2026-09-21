@@ -376,7 +376,7 @@ for (const doc of nonOsmDocs) {
     // A CHANGE ROW THAT NAMES NO STRETCH HAS NO EXTENT TO PLACE.
     // Held back for the second pass below, which works out where it lands from
     // the corpus rather than from anything authored here
-    // (handbook/change-rows-amendment.md §§3-4).
+    // (handbook/MODEL-SPEC.md §5.6).
     if (row.kind === "change" && row.scope !== "extent") {
       const from = resolveEntity(row.from), to = resolveEntity(row.to);
       if (!from || !to) { problems.push(`${doc.id}: unknown entity in change row`); continue; }

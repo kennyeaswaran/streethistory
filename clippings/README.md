@@ -52,5 +52,6 @@ a namesake and say nothing about the ground — and neither warrants a document.
 ## Provenance
 
 All ten supplied by **Kenny, 2026-09-17**, from CDNC phrase searches run against
-`handbook/CDNC-QUERIES.md`. Read at full size and applied to `data/names.js` the same
+`handbook/CDNC-QUERIES.md` (retired 2026-09-21; its open searches are in WANTED.md §2b).
+Read at full size and applied to `data/names.js` the same
 day; see the 2026-09-17 entry in `handbook/research-leads.md`.

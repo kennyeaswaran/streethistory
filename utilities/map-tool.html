@@ -1256,6 +1256,11 @@ $("loadDoc").onclick = async () => {
   updateTraceUI(); updateSplitUI();
   lastModel = null; reviewSig = null; reviewDirty = false;
   refreshOpenBox();
+  // TAKE THE VIEW TO THE SHEET. Until 2026-09-20 the view stayed wherever it
+  // was, which on a downtown sheet is usually near enough and anywhere else
+  // means an empty screen and a trip to "Find the scan". A sheet that has an
+  // alignment has a place on the ground, so opening it goes there.
+  if (img && doc.alignment && doc.alignment.points && !pendingAlignment) fitScan();
   draw();
   // A document that already has rows is here to be looked at, not aligned
   // again — go straight to review. (Saving from any mode still preserves the
@@ -1287,7 +1292,7 @@ $("file").addEventListener("change", () => {
 // streets inside coverage in the colour of what has been said about each, so
 // the thing you are looking for — a corridor nobody has accounted for, or a
 // confident match that is a block off — is visible rather than inferable.
-// It changes nothing: confirming is not built yet (MAP-TOOL-SPEC §4).
+// It began read-only; confirming and correcting rows came after (MAP-TOOL-SPEC §4).
 
 const REVC = {
   state:       "#1a7a3c",   // the document names this stretch
@@ -1452,6 +1457,10 @@ function runEnds(run, isNS) {
 // rather than being unreachable. (The ends are deliberately NOT sorted into
 // canonical order on a loop; on an open run they still are.)
 const ON_RUN_M = 25;             // a point further from the line than this is on another run
+// A point this close to a vertex the run passes twice could mean either pass,
+// and clipRanges takes the longer reading. gapExtents writes points that must
+// NOT be ambiguous, so it places them further out than this (INSET_M).
+const AT_VERTEX_M = 8;           // a clicked or aligned point is rarely closer than this
 const LOOP_CLOSE_M = 15;
 // A ring is a closed run with no fold in it. A divided carriageway stitched
 // out along one side and back along the other is ALSO closed — it meets
@@ -1512,7 +1521,6 @@ function clipRanges(run, pA, pB, isNS) {
   // include it (Los Angeles Street on MR053-069 was confirmed and swept on
   // that reading). A point a few metres INTO a stretch is not at the vertex
   // and is not ambiguous; that is how gapExtents addresses one visit alone.
-  const AT_VERTEX_M = 8;          // a clicked or aligned point is rarely closer than this
   const visits = (N, pt, fallback) => {
     if (!N) return [fallback];
     const v = run[N.i];
@@ -2577,7 +2585,14 @@ function gapExtents(rec, gap) {
   // (see nearestOnRun), and a cross-street name resolves to that same vertex.
   // So write it as a point a few metres INTO the gap along the gap's own
   // segment, which names the segment, which names the visit.
-  const INSET_M = 5;
+  //
+  // The inset has to clear AT_VERTEX_M, or clipRanges still reads the point as
+  // "at the vertex" and takes the LONGER reading, whichever that is. It was 5 m
+  // against 8 m until 2026-09-20, so the answer was right only when the gap was
+  // the longer reading (Hill Street on MR001-489, by luck). A synthetic run in
+  // tests/browser-test.js now makes the gap the shorter one. Still unsolved: if
+  // the gap's first segment is under ~18 m, 0.45 of it doesn't clear 8 m either.
+  const INSET_M = AT_VERTEX_M * 1.5;
   const inset = (i, towards) => {
     const p = run[i], q = run[towards];
     const d = G.metres(p, q);

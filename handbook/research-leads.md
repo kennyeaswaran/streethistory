@@ -1,3771 +1,486 @@
 # Research leads
 
-> **Path note.** This is a dated log, so old entries name things that have
-> since moved or gone: `align.html` (now `attic/align.html`), `georef.py` and
-> `overlay-trial/` (retired 2026-09), `tracts/` (now `inbox/` and
-> `documents/<id>/`), and the loose `omnibus-*.md` files (now inside
-> `documents/ord-4093/`). Left as written rather than rewritten.
->
-> **Where a finding lands.** This file predates the document model, so it talks
-> about `generated/streets-data.js`. A finding now goes to one of two places: *where* a
-> name applied becomes rows on a document in `documents/`, read in with the map
-> tool; *who or what* it was named after becomes an entity in `data/names.js`
-> (NAME-RESEARCH.md). `data/names-new.js` is the queue of names waiting on the
-> second.
-
-
-Unverified hunches, patterns, and open questions — things NOT yet solid enough
-for generated/streets-data.js. Rule of thumb: a claim with a citable source goes straight
-into the data (partial entries are fine); anything inferred, remembered, or
-pattern-based waits here until verified.
-
-Workflow: when doing a street's full pass, check here first and consume its
-leads (verify → into the entry; debunk → delete, noting why if instructive).
-Periodically sweep the whole file. Keep entries dated.
-
-## The 1897 ordinance — status as of 2026-08
-
-- **✔ IDENTIFIED: Ordinance No. 4093 (New Series), Ordinance Book IV p. 337**
-  (adopted Feb. 23, 1897; the vetoed Feb. 2 version is at p. 331). From City
-  Council minutes, Record Series R05.557, transcribed in
-  `omnibus-1897-renaming-council-minutes.md` (ChatGPT transcription of the
-  City Clerk's scans, obtained by Kenny 2026-08; not yet spot-checked against
-  the images — the first application of any line from it owes that check). The
-  ⭐ target is no longer "find the ordinance" but "get two known ledger
-  pages": **request with the City Archivist is in flight (Kenny, 2026-08).**
-- **The two Herald items — NEGATIVE (2026-09-04):** Kenny read
-  `LAH18970219.2.24` ("A Storm of Words") and `LAH18970221.2.28` ("Talking
-  Retrenchment"); neither helps the renaming data. They stay cited in data/names.js
-  for what they do carry — the Feb. 19 piece is the source for `georgia-bell`'s
-  prose-dated spelling period. Full note in
-  `documents/ord-4093/omnibus-1897-renaming-full.md`. Don't re-run this;
-  CDNC now costs a person's time.
-- **Directory route — NEGATIVE (2026-08):** the 1898 city directory carries no
-  list of changes; the 1897 directory says it already incorporates the 326
-  council changes but doesn't print them as a table. Don't re-run this.
-  Recorded in SERIAL-SOURCES.md too.
-- **Still open, unchanged:** the Dec. 27, 1897 supplementary renaming
-  ordinance (city engineer's cleanup batch, list never printed) — same
-  archives trail, and presumably findable the same way now, by ordinance
-  number in the same books.
-- **What the minutes changed in what was already banked** (full table in the
-  new file): a dozen Herald OCR corrections, the Escalon/Zaragoza conflict
-  settled, the "Lacy vs. Canada → Avenue 33" conflict resolved as a genuine
-  duplicate, and the Feb. 23 floor amendments recorded for the first time
-  (De La Guerra→Boylston, Nevada→Georgia, Manitou St→Ave, Broadway St→Canal
-  St, Stanley→Tropico, Dana→Stanley, Wood Ave→Griffin Ave).
-- **⚠ Downgrade — 3rd Street, east of Mission Rd:** the "Mono street … had
-  been changed to Third … restored" HOT LEAD below rests on the Feb. 19
-  Herald. The manuscript's corresponding line reads **Moore**, not Mono, so
-  the lead is probably an OCR artifact. Don't build a segment story on it
-  until a Mono Street is independently located.
-- **Apply pass owed:** the in-coverage lines (Figueroa/Boylston, Georgia,
-  Central, 4th, 5th, Marion, Stanford/Ruth) are already in the data from the
-  Herald; what the manuscript adds is that each can now name the instrument —
-  Ordinance No. 4093 (N.S.) — and cite a manuscript record. Not yet applied
-  as of 2026-08.
-
-## ✔ SOLVED — Fort Street → Broadway, by Feb. 20, 1890 (2026-09-04)
-
-`documents/lah-1890-02-20/` — the Herald, under the headline "BROADWAY. Fort
-Street Is No Longer in Existence": *"The ordinance changing its name to
-Broadway has gone into effect, having been signed by Mayor Hazard and published
-as required by law."* Unqualified, and the enactment is reported rather than
-asked for.
-
-**The ordinance itself is missing and may not survive.** The council minutes
-for the relevant dates are not in the City Clerk's holdings — the first gap
-this project has hit in that series, and the reason a newspaper is the only
-record of this change. handbook/RENAMING-SOURCES.md §2a records the gap and
-what to do about it. The Mar. 10, 1890 volume was also checked page by page
-(not there either), but its clerk writes "Fort street (now Broadway)" in
-passing, which corroborates the bracket.
-
-Dated `{ before: "1890-02-20" }`: the ordinance was already in force when the
-paper described it, so Feb. 20 is a ceiling, not the day.
-
-## ✘ Broadway south of Tenth — the 1890 prediction did NOT happen (2026-09-04)
-
-The Herald item that reports the Fort Street renaming
-(`documents/lah-1890-02-20/`) goes on to predict a second one:
-
-> "It is hinted that in a short time a part of Main street, from Tenth street
-> south, will be called Broadway … as soon as Broadway is extended. An
-> examination of the city map will show that Main street makes a bend at
-> Seventh street, and that when Broadway is cut through that portion south of
-> Tenth street will be nearly in a straight line with Broadway."
-
-**It did not happen** (Kenny, from the modern map), and the geometry says why.
-Measured off `data/streets-geometry.js`, as dLon per dLat — how hard a street angles
-west as it runs south:
-
-```
-Main Street   7th → Olympic      1.53      the "bend at Seventh"
-Broadway      1st → 9th          0.93
-Broadway      9th → Olympic      0.96
-Broadway      Olympic → Pico     0.99
-```
-
-**The paper's reasoning was sound.** Project Main's post-7th-Street bearing
-south and it arrives within **59 m** of where Broadway actually runs at Pico —
-"nearly in a straight line", exactly as claimed.
-
-**What defeated it is that neither street did what the projection assumed.**
-Main does not hold that bearing south of Olympic; it straightens, and ends up
-95 m *east* of Broadway at Pico. Broadway, meanwhile, was cut through on an
-alignment of its own, turning gradually west (0.93 → 0.96 → 0.99) rather than
-meeting Main's line. Two streets, both still there, ~95 m apart.
-
-So: no renaming to look for, and the entry that used to sit here asking for one
-is withdrawn. What remains true and worth keeping is the *reason* Broadway runs
-where it does south of downtown — it was cut through, not inherited from Main —
-and that the 1890 press expected otherwise.
-
-⚠ Do not read this as "Main Street south of Tenth was never renamed". It says
-only that it was not renamed **Broadway**, which is what the article predicted.
-
-## ✔ SOLVED — the Fort Street petitioner, Feb. 3, 1890 (2026-09-04)
-
-`documents/min-1890-02-03/` — council minutes, ledger p. 240: "126. From Fred
-L. Alles et al, asking that the name of Fort street be changed to Broadway.
-Referred to the Board of Public Works."
-
-Sources a claim `data/names.js` had carried on nothing. Two corrections it brings:
-the clerk writes **Fred L. Alles**, not Fred Lind Alles, and says nothing about
-his being a printer. It also brackets the renaming to **seventeen days** —
-petition Feb. 3, in force by Feb. 20 — and the minutes for that window are the
-ones that are missing.
-
-Note the referral went to the **Board of Public Works**, where the 1874
-petition went to a special committee with the City Attorney. Two routes to the
-same kind of act, sixteen years apart.
-
-## ✔ SOLVED — Virgin → Alpine, Aug. 22, 1887 (2026-09-04)
-
-`documents/ord-1887-08-22/`, found in the council minutes on the first look —
-the method in handbook/RENAMING-SOURCES.md, run from a month in a `note`
-sentence. Three things worth carrying forward:
-
-- **The ordinance number is blank.** The clerk wrote "Ordinance No." and left
-  it empty, as in Feb. 1874. A renaming before the 1890s may have no number at
-  all, so the ledger page is the citation and "find the ordinance number" is
-  the wrong instinct for this period.
-- **The same session gave the street an EXTENT.** A grading resolution on the
-  facing page describes "said Virgin street, from its intersection with Yale
-  street to the intersection with Beaudry street" — the only statement of where
-  Virgin ran outside the 1849 survey, and it resolves cleanly (modern Alpine
-  meets both Yale Street and Beaudry Avenue). **Look at the whole session, not
-  just the renaming item**: grading, sewer and lighting resolutions describe
-  streets by their intersections, which is exactly the extent evidence the
-  model is short of.
-- **It corroborates 1874.** A street called Yale exists here in 1887, thirteen
-  years after Wasp Street was renamed to it.
-
-## ✔ SOLVED — Castelar and Yale, enacted Feb. 26, 1874 (2026-09-04)
-
-The instrument is found: **"An Ordinance Changing the names of Certain Streets
-in the City of Los Angeles"**, adopted by the Common Council Feb. 26, 1874,
-council minutes ledger p. 621. Transcribed at `documents/ord-1874-02-26/`.
-
-One ordinance renamed all three streets — Grasshopper → Pearl, Bull → Castelar,
-Wasp → Yale — and states no extent for any of them, so all three are
-unqualified changes. Two things worth keeping from the hunt:
-
-- **The Herald under-reported it.** Its Feb. 27 account says "An ordinance
-  changing Grasshopper street to Pearl street was carried" — one street of
-  three, the morning after. A newspaper report is a lead about what an
-  instrument did, never a census of it.
-- **The petition asked for something else.** Feb. 13 asked that Grasshopper
-  become Union Avenue; the ordinance says Pearl. Stage 1 and stage 3 disagree
-  in the record (handbook/RENAMING-SOURCES.md).
-
-⚠ **`data/names.js` still says "by petition".** `bull`'s note reads "Renamed
-Castelar Street by petition in February 1874" and `hornet`'s the same for Yale.
-The outcome was right; the mechanism was not — a petition asked, an ordinance
-did it, and the ordinance is now citable. Both notes are PUBLIC prose and are
-Kenny's to reword.
-
-## Bunker Hill Avenue, 1874 — an unplaced name (2026-09-04)
-
-The same Herald column that reports the Grasshopper → Pearl renaming
-(`documents/lah-1874-02-27/`, CDNC `LAH18740227.2.10`) carries three other
-council items, read off the scan by Kenny:
-
-- "the grade of **Fort street** from Temple street to Second street"
-- "the grade of **Temple** from Fort to **Bunker Hill Avenue**"
-- "defining the lines of **Bunker Hill Avenue** and declaring it a public avenue"
-
-Fort Street is modern Broadway (renamed Feb. 1890), so the second item puts
-Bunker Hill Avenue somewhere west of Broadway along Temple — which in modern
-terms is Hill, Olive, Grand or Hope. **That is as far as the text goes.**
-Hill Street is the tempting reading and is not the only one, and settling it by
-which name sounds right is the failure mode rule 2 exists to stop.
-
-Deliberately NOT entered as an attestation from that document: the document is
-`sweptFully` for the one renaming it reports, and a row here would claim a name
-on ground the text does not identify. What would settle it: a pre-1890 map or
-survey of the Temple/Fort block naming the avenue, or the 1874 council minutes
-themselves (Record Series R05.557 — the same series that produced the 1897
-transcription), which would give the "defining the lines" item its metes and
-bounds.
-
-Also worth noting for whoever picks this up: "declaring it a public avenue" in
-1874 dates the pavement, so whichever modern street it is gains an existence
-claim as well as a name one.
-
-## The "ordinance changing" search, continued — 21 clippings, 1883–1889 (2026-09-06)
-
-Kenny ran the CDNC phrase search across more years and came back with twenty-one
-clippings. None is a document yet and none of the stages is verified against the
-minutes; the worklist for that is **handbook/MINUTES-TO-CHECK.md**, which is the
-deliverable from this batch. What the reading found:
-
-### ★★★ Ordinance No. 48 (New Series) — the 1889 omnibus, in full
-
-Six columns of the Herald of May 10, 1889. **212 changes**, every one qualified
-by an extent, adopted **Apr. 22, 1889**, approved by Mayor Hazard **May 8**, in
-force on publication **May 10**. Its title states the purpose: streets "WHICH,
-WHILE FORMING ONE PRACTICALLY CONTINUOUS STREET, HAVE DIFFERENT NAMES."
-
-This is the 1889 predecessor of Ord. 4093 and the largest untranscribed thing
-the project has — and unlike 4093 its text is not missing. Transcribing it is a
-session of its own.
-
-**And it resolves the Georgia conflict from the last batch.** May 10, 1889 is
-exactly Gen. Forman's date, and it is now an instrument rather than a
-recollection, so the 1889 structure in `georgia-bell` stands. The 1883 report
-using the same new name six years earlier is the thing now needing explanation.
-
-### ★★ The chain behind it, meeting by meeting
-
-Oct. 1888: a special committee, "for the past six or eight months … at work"
-publishes a ~300-item summary list (Herald, Oct. 11) — "ORDER BROUGHT FROM
-CHAOS". Feb. 5, 1889: an ordinance is adopted. Feb. 18: **Mayor Bryson vetoes
-it** on the spot, asking that property owners be heard. Feb. 25: the vote is
-**reconsidered** and it goes back to the Street-Naming Committee, with hearings
-advertised. Apr. 22: re-adopted, 212 changes, Clerk told to have it re-written
-before it goes to the mayor. May 8: approved. May 10: published.
-
-That is the first time this project has seen the whole legislative arc of a
-renaming, veto included — and it is a warning: **an adopted ordinance is not
-necessarily law.** The Feb. 1889 version was adopted and never took effect.
-
-### Entities this batch touches directly
-
-- **`william`** — ✔ SOLVED. **Ordinance No. 207**, adopted Jan. 6, 1886,
-  approved Jan. 14: "William street, situated in the Childs Tract … changed to
-  Santee street." Six months after the Childs sheet drew it. The same ordinance
-  renames a SECOND William Street, in the L.A. Improvement Company's
-  subdivision, to Goss — so this was a duplicate-name fix, and it also dates
-  `santee-street`'s arrival on this ground precisely, where Kines had only 1886.
-- **`guadalupe`** — ✔ END DATE. **Ordinance No. 242**, adopted July 19, 1886:
-  "extending from Alameda street to Geary street and known as Guadalupe street …
-  changed to **Davies street**."
-- **`castelar`** — the same ordinance: "extending from Temple street to Bellevue
-  avenue and known as Cemetery avenue … changed to Castelar street." The name
-  spreading north twelve years after the 1874 ordinance coined it on Bull Street.
-- **`sixteenth-street`** and **`fifteenth-street`** — the Nov. 1889 numbering
-  ordinance has "from **Pine** and Rowland to Sixteenth street" and "from
-  **Laurel** and Adele to Fifteenth street". The Miguel Subdivision's
-  parenthetical predecessors, four years early. Check whether its "Laura" is
-  a misreading of Laurel.
-- **`diamond-street`** — ⚠ **Ordinance No. 364**, adopted Sept. 16, 1889:
-  "that portion of Diamond street from Canal street to Lakeshore avenue, and
-  that portion of Second street from Lakeshore avenue to the west city line …
-  changed to **First street**." That is a third stretch, becoming a third modern
-  street, and it bears on the identity decision of 2026-08-30. Do not act on it
-  without the geometry.
-- **`earl-st`** — the Oct. 1888 committee list: "Earl St. and San Julian Ave.,
-  changed to San Julian St." The absorption this project logged as undated.
-- **`botiller-street`** — same list: "Botiller St. and Santee St., changed to
-  **Martin St.**" — which did NOT happen. A draft-list line that was dropped,
-  and a clean example of why a committee list is not an instrument (amendment
-  §10, form 5).
-- **`regent-street`** — same list: "Maple Ave. and Los Angeles St.: from
-  Washington St. south, changed to Regent St." The 1876 name being revived
-  twelve years later, somewhere else.
-- **`morgan-lane`** — same list: "Morgan Lane and Mayo St., changed to Mayo St.",
-  confirming that both names were live at once in 1888.
-- **`aztec-avenue`** — same list: "Aztec Ave. changed to **Girard St.**", where
-  Kines has Aztec becoming Belmont. Another draft-vs-outcome case; and the
-  Herald of Jan. 4, 1887 has "Texas street to Belmont avenue" adopted, which is
-  a third candidate for where Belmont came from.
-
-### Other names worth knowing existed
-
-High → Walters (Sept. 1886, and WANTED P3 had it undated); Texas → Belmont
-(Jan. 1887); Deep Water → Bartlett, Beaudry to Philadelphia (June 1887); Ozier
-Lane → Winston, POSTPONED (June 1887); Le Convieur → Ashland (Jan. 1888);
-Friend → Montague, Ord. 285 (July 1889); Downey Ave west of the river →
-Olympia, carried 8–1 over the objection that it was "too classic for the Eighth
-ward" (Dec. 1889).
-
-### What this does to the method
-
-Step 2b said the published ordinances are searchable. This batch shows the
-search finds **the whole arc** — committee reports, adoptions, vetoes,
-reconsiderations and the published texts — and that reading only the adoption
-would have been wrong twice (Feb. 1889 vetoed; the 1888 committee list amended
-before passage). Two rules follow, and they are now in MINUTES-TO-CHECK.md:
-never build a row from a §3 report alone, and never treat a committee list as
-an instrument.
-## Every clipping is now a document — 88 of them (2026-09-06)
-
-The inbox is empty of clippings; all 88 are documents under `documents/`, each
-with its transcription and its image beside it, and the consumed files are in
-`_to_delete/inbox-consumed-2026-09-06/`. The corpus went from 61 documents to
-146 in one pass, 83 of them newspaper text from 1883 to 1897. **No rows were
-added** — that is deliberate, and the reason is in the first bullet.
-
-- **★ ADOPTION IS NOT LAW, and this pass proved it six times.** The Ashland
-  ordinance was defeated 8–5 (Jan. 1888); the duplicate-names ordinance was
-  vetoed by Mayor Bryson (Feb. 1889); the twenty-one-change ordinance was vetoed
-  by Mayor Hazard (Nov. 1890); Adobe → Harvard was vetoed because there was
-  already a Harvard Avenue (Dec. 1892); Loomis → Sixth was withdrawn at the
-  council's own request (Mar. 1893); and the Feb. 2, 1897 version of what became
-  Ordinance No. 4093 was returned. A change row built from a "§3 Adopted" report
-  would be wrong roughly one time in six.
-
-- **★★ THE ORIGIN OF THE NUMBERING SYSTEM, in its advocate's own words.**
-  `documents/lah-1896-05-16`: Gen. M. T. Allen before the Board of Public Works,
-  May 1896 — "The change of names in the southerly portion of the city to
-  numbered streets is expected to prove of great benefit, and it is thought that
-  a change in the northerly portion to numbered avenues will be a convenience …
-  The only objection which can be urged to this change is the fact that the
-  streets south of First street are numbered with the same numbers, but it is
-  believed that the designation of those north of First street as avenues will
-  be sufficient to prevent confusion." Streets south of First, avenues north of
-  it, stated as a decision with its objection anticipated. The same document
-  proposes Buena Vista Street and Pasadena Avenue as PASADENA BOULEVARD —
-  thirteen years before Buena Vista became North Broadway (WANTED.md P2).
-
-- **★★ FORT → BROADWAY HAS ITS ACT** (`documents/lah-1890-02-18`), and a second
-  street nobody knew about: "An ordinance changing the name of BROADWAY STREET
-  TO TOBERMAN STREET and changing the name of Fort street to Broadway was read
-  and adopted." There was already a Broadway, and it had to be moved first. The
-  minutes for those dates are still missing; the newspaper carried the act all
-  along.
-
-- **Entities this pass touches, with dates:** `william` → Santee by Ordinance
-  No. 207, adopted Jan. 6, 1886 (and a *second* William Street → Goss in the
-  same instrument — it was a duplicate fix). `guadalupe` → Davies by Ordinance
-  No. 242, July 19, 1886, then Davies → Second in Oct. 1890. `castelar` takes
-  Cemetery Avenue in 1886 and begins losing ground to Hill Street in July 1894 —
-  sixty-six years before the date Kines gives. `regent-street` → Maple Avenue by
-  Ordinance No. 482, Dec. 9, 1889. `myrtle` → Wall Street by Ordinance No. 1915,
-  Nov. 13, 1893. `waters-street` → Douglas and Walters → Ord in the vetoed Oct.
-  1890 list, for the stated reason that "Water, Waters and Walters streets …
-  were so much alike as to be confusing". `botiller-street` → Santee moved twice
-  in Jan. 1892. `willow` loses its Eighth-to-Ninth block to Golden Avenue in
-  1894. `arnold` has a portion renamed in 1896. `alpine` was proposed as Eighth
-  Avenue in 1896 and survived.
-
-- **★ THE "MATEO, OR SHAFER, STREET" PUZZLE IS SOLVED.** `documents/lah-1896-08-11`:
-  three weeks before Ordinance No. 3829 made that stretch Molino, another
-  ordinance had made it SHAFER. The drafter hedged because the street had two
-  current names. Mateo → Shafer (Aug. 10) → Molino (Aug. 31) — a name that
-  lasted twenty-one days.
-
-- **★ BUNKER HILL AVENUE IS PLACEABLE AGAIN.** In May 1896 a portion of it and
-  Sand Street became CALIFORNIA STREET (`documents/lah-1896-05-05`). The 1874
-  items in this file could only put it somewhere west of Fort Street along
-  Temple; California Street is findable.
-
-- **Three names in four months, on one stretch:** South Street → Western Avenue
-  (Aug. 1896) → Union Avenue (Dec. 1896, passed twice, the second time as
-  "Western avenue (formerly South street)"). And the city attorney explaining in
-  May 1896 why it was all so confused: until then the office DRAFTING renaming
-  ordinances was not the office holding the maps.
-
-- **Shapes the model still has no room for**, all newly evidenced: a restoration
-  (Aliso → Pleasant, 1890, and Second → Lakeshore inside Ordinance No. 482); a
-  standing rule about unnamed future ground (the 1895 Hoover Street ordinance);
-  a name reserved "for any future extension of this street eastward" (Ordinance
-  No. 48); an ordinance that failed; and a name abolished in 1893 still being
-  used as a landmark in 1894 and 1896 (Wyoming, Cooper).
-
-**What is not done.** Ordinance No. 48's 212 changes and the Oct. 1888
-committee's ~300 proposals are transcribed only in the lines that touch entities
-this project holds; both want a session of their own. Six clippings from Feb.
-1897 arrived after this pass closed and are still in the inbox — they cover
-exactly the gap between the Feb. 2 adoption and Ordinance No. 4093 of Feb. 23.
-
-## The 1883 clippings — Step 2b works, and it reaches back a decade (2026-09-06)
-
-Kenny searched CDNC for the phrase **"ordinance changing"** — the method written
-up as RENAMING-SOURCES.md Step 2b a few hours earlier — and came back with seven
-clippings from 1883, all Herald p. 3, all council reports. Six documents:
-`lah-1883-05-13`, `-06-17`, `-08-19`, `-08-26`, `-09-02`, `-10-21`. They are the
-corpus's first 1880s textual documents and they change three things.
-
-- **★★ GEORGIA → GEORGIA BELL WAS ADOPTED IN SEPTEMBER 1883, not 1889 — or so
-  one contemporary report says.** The Herald of Sept. 2: *"Ordinance changing
-  the names of certain streets: Turner street to Sonora street; Pine to Cherry
-  street; **Georgia to Georgia Bell street**; Elm to Bush street; Rose street,
-  East Los Angeles, to Kuhrts street. Adopted."*
-
-  ⚠ **Nothing in data/names.js has been changed.** The 1889 date there is sourced —
-  Gen. Forman's dated history in the Herald of Feb. 19, 1897, "renamed Georgia
-  Bell May 10, 1889" — and a contemporary report normally beats a recollection
-  but not automatically when the two may be about different events. data/names.js
-  itself describes the 1889 act as FOLDING IN the stretches platted Nevada in
-  1886. If the name was coined in 1883 and the Nevada stretches were folded into
-  it in 1889, both dates are right about different things and Forman is
-  recalling the later one. That is tidy, which is a reason to distrust it. The
-  conflict is recorded on `georgia-bell` and `georgia-east`; the ordinance book
-  for Sept. 1883, or the minutes for Sept. 1, 1883 and May 10, 1889, settles it.
-
-- **And the name nearly wasn't Georgia Bell at all.** Two weeks earlier the
-  Board of Public Works recommended "Georgia street, **in same addition**, to
-  **Alabama** street" — the addition being Bell's, named two lines above. So the
-  choice was between moving the street into a southern-states run and appending
-  the addition's name to the one it had. The second won. That is the third time
-  this corpus has caught a name changing between the order and the act (Union
-  Avenue → Pearl, 1874; Alabama → Georgia Bell, 1883), and it is why an
-  instruction to draft can never be read as a renaming.
-
-  ⚠ Not established: that the Georgia Street in "Bell's addition" is the
-  west-downtown Georgia. Obvious, but matching a tract to an entity by the
-  owner's surname is a rule-2 step and the addition is not located here.
-
-- **★ MORGAN LANE HAS A SEQUEL, fourteen months after the sheet that minted it.**
-  Oct. 21, 1883: the Council agrees to accept Morgan Lane as a public street,
-  widen it to sixty feet and rename it **Mayo Street**. So the corridor reads
-  Morgan Lane (1882) → Mayo Street (ordered 1883) → … → 3rd Street, with the
-  middle step ordered rather than confirmed. No `mayo` entity minted for that
-  reason. Acceptance-and-renaming in one motion is itself a shape worth having.
-
-- **Turner Street was cut in half in one year.** East end (First to Alameda) →
-  Jackson Street, ordinance passed May 12, 1883. West end (west of Main) →
-  Sonora Street, recommended Aug. 18 and in the Sept. 1 ordinance. One street,
-  two successors, four months apart. No row: modern Jackson Street is a Little
-  Tokyo fragment that reaches neither First (289 m) nor Alameda (338 m), so the
-  1883 stretch is longer than what survives and neither end resolves.
-
-- **Two adoptions of overlapping lists.** Aug. 26 reports an ordinance renaming
-  *Turner, Pacific, Elm, Pine, Georgia and Rose* adopted, with no new names.
-  Sept. 2 reports *Turner, Pine, Georgia, Elm, Rose* with new names — Pacific
-  gone, Georgia's new name different from the recommendation. Something was
-  re-passed or amended between the two Saturdays and newspaper reports cannot
-  say which.
-
-- **Smaller things worth having**: Polyxena Street → Clay Street ordered drafted
-  (June 1883) — a clean stage-2 document, which this corpus had barely any of;
-  Chavez Street → Main Street referred to the Board (Aug. 1883), Main absorbing
-  a named street to the north; a THIRD Pine Street (Bell's addition → Cherry),
-  after 16th Street's predecessor and the 1896 southwest one; and "In matter of
-  Figueroa street ask one week's further time" — the Board had something about
-  Figueroa before it in Aug. 1883, fourteen years before Ord. 4093 moved that
-  name onto Pearl's ground. Worth a look in the following weeks.
-
-**Method note.** Every one of these is a council-proceedings item in the news
-columns, not a published ordinance in the legal notices — so the phrase search
-finds the *reporting* as well as the instruments, which is more than Step 2b
-predicted. It also reaches a decade earlier than any minutes volume this project
-has looked at. Cheapest next search: the same phrase for 1884-1895, and
-"changing the name of" for the same span.
-
-## September 1896 — the renaming campaign has a stated motive (2026-09-06)
-
-Three more meetings from Kenny, three more documents: `min-1896-09-08`,
-`min-1896-09-14`, `min-1896-09-21`. Together with Aug. 31 they turn what looked
-like a run of separate ordinances into one campaign with a purpose.
-
-- **★ THE MOTIVE, in the petitioners' own words.** Sept. 14, petition No. 816
-  from Geo. Harlan et al asks that the names of certain streets in the South
-  Side Tract "be changed **so as to make them compare with the names of the
-  streets on the north side of Pico Street**." That is the argument behind the
-  whole of 1896–97: a street running on both sides of a line should carry one
-  name, and where the north side had numbers the south side should get the same
-  numbers. It came from property owners, not from the City Engineer.
-
-  It changes how Ordinance No. 4093 should be read. The Feb. 1897 omnibus has
-  always looked like a single administrative act by the city; it is the END of
-  a campaign that residents were pushing for, and the Sept. 3 Herald piece
-  already said another ordinance was in preparation.
-
-- **A second renaming ordinance, eight days after the first.** Sept. 8:
-  **Ordinance No. 3847 (New Series)**, nine changes "in the southwest portion of
-  the city", recorded **Ordinance Book 11 page 496** — thirty-six pages after
-  Ord. 3829 in the same book. Freeman → Twentieth, Olivia → Twenty-first,
-  Bryant *and* Cypress → Twenty-second, Maxwell → Twenty-third, Forrester *and*
-  Pine → Twenty-fourth, Clinton *and* Kenwood → Twenty-fifth. Nine names, six
-  numbers, three of the numbers taking two streets each — which is petition 816
-  being carried out: two parallel streets either side of a line getting one
-  number so it runs through.
-
-- **✘ RETRACTED WITHIN THE HOUR — and the retraction is worth more than the
-  claim.** On the minutes alone Ord. 3847 looked UNQUALIFIED — "Vine Street to
-  Twenty-fourth Street", bare — eight days after an ordinance that gave every
-  change an extent, which read as proof that the qualified/unqualified split is
-  a per-instrument choice. Then Kenny produced the Herald of Sept. 9
-  (documents/lah-1896-09-09), which prints the same ordinance with a stretch on
-  every one of the nine changes: *"Freeman street, from Hoover street to Budlong
-  avenue, change to Twentieth street."*
-
-  **The ordinance was qualified; the minute book abridged it.** That is the
-  first case in this corpus where a minutes copy of an instrument is
-  demonstrably not the instrument's words in full, and it puts a caution on
-  documents/ord-1874-02-26, which is also a minutes copy and also reads as
-  complete. It may be complete. It can no longer be assumed to be.
-
-- **⚠ AND THE SEVENTH NAME IS VINE, NOT PINE.** The manuscript is faint; the
-  printed ordinance settles it. Two consequences. The Pine-vs-Pine warning below
-  evaporates — but a worse trap replaces it: **this Vine Street is not the Vine
-  Street on the WANTED list.** That one runs First to Second by Central Avenue
-  and becomes Central Avenue in Feb. 1897 (documents/ord-4093); this one runs
-  Vermont to Rosedale in the southwest and becomes Twenty-fourth Street five
-  months earlier. Two lineages, one spelling, five months apart.
-
-- **The extents show the design.** Vermont Avenue is the seam: each number is
-  one street east of it plus, where there is one, a second street west of it —
-  Bryant (Hoover–Vermont) + Cypress (Vermont–Rosedale) both become Twenty-second;
-  Forrester + Vine both become Twenty-fourth; Clinton + Kenwood both become
-  Twenty-fifth. Read with petition No. 816 six days later, this is that petition
-  being carried out: give the two halves one number so it runs through.
-
-- **A name moving sideways.** Sept. 21, petition No. 829: "the name of Stearns
-  Avenue be changed to Albion Street, and Albion Street from Stearns Avenue to
-  east Main Street be changed to West Albion Street." One street takes its
-  neighbour's name and the neighbour keeps a modified form of it — a shape the
-  amendment's §10 list does not have, and one whose two halves have to be
-  applied in the right order or they collide. Referred to the Board of Public
-  Works, which is the route the Fort Street petition took to an ordinance in
-  seventeen days. The Sept. 23, 24 and 25 volumes are already in the inbox.
-
-- **Names worth having, dated in passing**: Requena Street and Wilmington
-  Street alive in Sept. 1896 (Fire District No. 4's boundary); Kysor, Perry and
-  Park Avenue bounding a proposed park on Central Avenue, with Kysor Street
-  named for the man making the offer — the tract-owner pattern happening in
-  real time; Mott Street still a street name in 1894, a generation after the
-  Mott Tract; and H. Gaylord Wilshire petitioning about Sixth Street west of
-  Carondelet, thirteen years before the boulevard.
-
-**No rows on any of the three.** The Sept. 8 ordinance is unambiguous but not
-one of its fifteen names — nine old, six new — is in the OSM extract, so rows
-would need fifteen entities minted blind with no sighting behind any of them
-and would draw nothing; the nine changes are quoted verbatim instead and are a
-transcription away once the southwest is encoded. The other two documents are
-petitions, and a petition is a request (the Feb. 1874 one asked for Union
-Avenue and got Pearl).
-
-**Four documents for this ordinance, not one.** The adoption is in
-`min-1896-09-08`, the text with extents in `lah-1896-09-09`, the campaign's
-motive in `min-1896-09-14`, and the Aug. 31 ordinance that started it in
-`min-1896-08-31` / `lah-1896-09-03`. That is a decent test corpus on its own for
-whatever the textual-document tool turns out to be.
-
-## Ordinance No. 3829, Aug. 31, 1896 — fourteen renamings, and the first qualified ones (2026-09-06)
-
-Kenny found a Herald clipping and the minutes page behind it. Both are now
-documents: `documents/min-1896-08-31/` (the adoption, the number, and the
-citation **Ordinance Book 11 page 460**) and `documents/lah-1896-09-03/` (the
-list of what it changed). What they add:
-
-- **The first EXTENT-QUALIFIED renamings in the corpus.** Every one of the
-  fourteen names a stretch — "Tulip street, *from Willow to Seventh*, be
-  changed to Santa Fe avenue". Until now every instrument here has been
-  unqualified (1874, 1887, 1893, 1897 all rename the street-as-named and state
-  no extent). This is the document `scope: "extent"` was designed for, and the
-  first row of that kind is entered.
-
-- **★ It corrects a public claim.** The `tulip` note said the street "lasted a
-  matter of months" and took the railway's name in May 1887. Wrong by nine
-  years: May 1887 is when SANTA FE AVENUE itself was named, at the depot by 1st
-  Street (Kines), and Tulip Street survived until this ordinance extended that
-  name south over it. Corrected, with the correction and its cause recorded in
-  the entity's internalNote. Worth remembering as a failure mode: a tidy
-  inference ("the railway arrived, so the street was renamed") had quietly
-  become a claim in public prose.
-
-- **It closes the Molino lead** — see the ✔ entry above.
-
-- **Thirteen changes are parked, and all are quoted.** Nine are on ground
-  outside the OSM extract (the 35th–38th Street block, Jefferson/Vermont in
-  what the paper still calls West Los Angeles, McConnell/Griffin in Lincoln
-  Heights). Four are on ground we have but name a cross street we do not —
-  "Short", "Orange", "Mesquite". Each is an excerpt, so the row is a
-  transcription away once the ground is encoded.
-
-- **Two streets with two names at once**, which the model has no way to express
-  and the ordinance settles by fiat: "Mateo, or Shafer, street" and "Olin, or
-  Jefferson, street". Worth watching for — it is the same shape as
-  Bellevue "avenue or street)".
-
-- **The last line is a forward pointer**: *"Another ordinance is in course of
-  preparation making numerous changes, which will come up in a few days."*
-  That is the run-up to Ordinance No. 4093 of Feb. 1897. The 1896–97 renaming
-  came in waves, and the Feb. 1897 omnibus was not the first of them — which
-  means the 1897 material should be read as the END of a campaign, not the
-  whole of it.
-
-- **Method, confirmed again.** This is the second instrument found through the
-  newspaper rather than the minutes, after Ord. 1613 the same day
-  (RENAMING-SOURCES.md Step 2b). Here the minutes DO exist and are what supply
-  the number and the book-and-page; the paper supplies the contents. Between
-  them they do everything but quote the ordinance's own words.
-
-**One row entered, and it is a proposal.** `tulip → santa-fe-ave`, extent, Santa
-Fe Avenue from Willow Street to 7th Street (both crosses resolve at 0 m), marked
-`confirmed: false` and so held back from the map until a human confirms it.
-
-## Map-pass names, 2026-09-06 (second batch)
-
-- **✔ Whisler Street → Mrs. Lourena Whisler.** The Whisler Subdivision sheet
-  (documents/mr012-064) is "subdivided at request of Mrs. Lourena Whisler,
-  Nov. 25th 1886" and was recorded three weeks later at her request. Owner's
-  name on her own ground — the third such identification after Clark Avenue and
-  Morgan Lane, and the first where the owner is a woman. Moved into data/names.js.
-  Kines has no page. Its surveyor, John Goldsworthy, County Surveyor-elect,
-  turns up twice more in this corner of the corpus.
-
-- **⚠ TRANSCRIPTION FIX WANTED: mr006-039 reads "Earl St.", not "Euclid St."**
-  The Rowan Tract row's `asWritten` says "Euclid St."; the sheet, read at 400
-  dpi, letters **Earl** above the block and **St.** below it, in the same hand
-  and the same corridor as the Goldsworthy, Beck and Moran sheets. The row's
-  entity (`earl-st`) is right and the label is not. Left for Kenny to fix in
-  the tool rather than edited behind him.
-
-- **The San Julian corridor is a patchwork.** With this batch, four sheets
-  letter **Earl** along it (Rowan 1884, Goldsworthy 8th St. 1886, Beck 1886,
-  Moran 1887), one letters **Whisler** (1886), and the Moran sheet letters
-  **San Julian** south of Ninth on the same page as Earl north of it. So the
-  corridor carried at least three names at once in the mid-1880s and San Julian
-  later took all of it. When, and by what instrument, is not known — and it now
-  belongs on the list of undated absorptions with the other nine.
-
-## Council minutes, Monday Apr. 10, 1893 — read in full (2026-09-06)
-
-Kenny pulled one meeting (ledger pp. 527-560, 34 scanned pages) and an instance
-read all of it. Unlike July 1850 this one is thick with streets — a single 1893
-meeting names three dozen — but almost all of it is grade, sewer and sidewalk
-work rather than naming. Seven items are worth keeping, and the first is the
-reason the meeting was worth reading.
-
-- **★ FRED L. ALLES IS BACK, AND HE IS PUSHING BROADWAY NORTH.** Petition
-  **No. 465**: *"From Fred L. Alles et al. asking Council to appropriate the sum
-  of $25,000. to assist in the Opening of Broadway North to Buena Vista street.
-  Which was referred to the Board of Public Works."* (ledger p. 555.) This is
-  the same man whose petition No. 126 of Feb. 3, 1890 asked that Fort Street be
-  renamed Broadway (documents/min-1890-02-03) — three years on, asking the city
-  to spend money pushing that street north until it reaches **Buena Vista
-  Street**, the street that becomes North Broadway in Nov. 1909 (WANTED.md P2).
-  The 1909 renaming has always looked like an administrative tidy-up; this says
-  somebody was working toward it sixteen years earlier, and names him. Where it
-  leads: the Board of Public Works' report back on petition 465, and whatever
-  appropriation followed, in the weeks after Apr. 10, 1893.
-
-- **16th Street ordered opened between Maple Avenue and San Pedro Street**
-  (p. 545), by a 7-0 vote of the Street Superintendent's motion. Three weeks
-  after the Miguel Subdivision (documents/mr053-016, Mar. 25, 1893) letters
-  "16th ST. (formerly Pine St)" one block west. An extent- and date-bearing
-  attestation for the new `sixteenth-street` entity, and the two together date
-  the number's arrival on this ground fairly tightly.
-
-- **Alpine Street between Centennial Avenue and Upper Main Street** (petition
-  No. 473, Poindexter and List, a cement sidewalk by private contract, p. 556).
-  Both ends resolve to modern geometry at 0 m — Centennial Street (generic
-  drift, avenue→street) and Main Street. This is a SECOND extent-bearing
-  attestation for `alpine`, six years after the Aug. 1887 grading resolution
-  that gave it Yale-to-Beaudry (documents/ord-1887-08-22), and it is the stretch
-  EAST of that one. Between them the name is now attested from Beaudry to Main.
-
-- **Ocean View Avenue from Alvarado Street to Bonnie Brae Street** — final
-  ordinance establishing the grade, referred to the Councilman from the Third
-  Ward (p. 553). Ocean View Avenue is the corridor that became Beverly
-  Boulevard, which is what the 1884 Glassell plat's **Diamond Street** also
-  became through its own tract (`diamond-street`). Two names on one modern
-  corridor, and where one stopped and the other started is exactly the question
-  that entity's identity decision turns on. A sheet covering the Alvarado /
-  Bonnie Brae block would settle it.
-
-- **"the intersection of Fremont avenue and Diamond Street"** (a wooden culvert,
-  p. 539). Modern Diamond Street and Fremont Avenue meet at 0 m
-  (34.05890, -118.25260), so this is the SURVIVING Diamond Street, not the
-  Glassell tract's stretch — an 1893 attestation of the eastern half of that
-  entity, nine years after the plat. It does not settle the merge either way,
-  but it is the first evidence outside the plat that the name was in live use.
-
-- **15th Street from the westerly line of Grand Avenue to the easterly line of
-  Hope Street** — ordinance of intention to grade, per petition No. 460 from
-  A. J. Bradish (p. 552). A west-side block of `fifteenth-street`, whose only
-  other sighting is on the far side of downtown.
-
-- **Twenty-first Street from Bonsallo Avenue to Balboa Street — opening
-  ABANDONED** (protest No. 434 of W. Cole, Trustee, sustained; p. 545). Two
-  things: a street opening that did not happen, which is a shape the model has
-  no row for; and **Balboa Street**, a name that is not in the corpus and is
-  outside the OSM extract. Worth knowing it existed in 1893 near Bonsallo.
-
-### ✔ Both documents now exist, and a fourth renaming instrument turned up (2026-09-06)
-
-`documents/min-1893-04-10/` carries the meeting as **excerpts with no rows** —
-Kenny's call: several items are extent-bearing but every one has a soft end
-("Upper Main street" may be historic or modern Main; "Centennial avenue" is a
-generic away from modern Centennial Street; a street *ordered opened* is not a
-street lettered on a plat), so the sentences go in and the rows wait for a pass
-that settles the ends.
-
-And the clipping Kenny pulled the same evening is the prize:
-**`documents/ord-1613/` — Ordinance No. 1613 (New Series), adopted Apr. 3,
-1893**, which abolished **Wyoming Avenue** and **Cooper Street** and made them
-one street called **Scott Avenue**. Three things follow.
-
-- **It is the corpus's first MERGER.** Not two renamings side by side: two names
-  abolished and one put in their place. Two change rows into one `to`, which
-  the model took without any new machinery. Entities `scott-avenue`,
-  `wyoming-avenue` and `cooper-street` are minted; the namesake is Kines's
-  (P. M. and Elizabeth Scott, who lived on the street), and what this project
-  adds is the instrument behind the 1893 date he gives.
-- **Its minutes are missing too** — the second case after Fort Street in 1890.
-  The Apr. 10 minutes prove the Apr. 3 meeting happened ("The minutes of the
-  last meeting of April 3rd 1893 were read and approved"), and the ordinance
-  itself survives only because it was printed.
-- **★ Which is the real find.** Section 2 of every renaming ordinance in this
-  corpus makes publication in a named newspaper a CONDITION of the ordinance
-  taking effect — 1874, 1887 and 1893 all say so. So every renaming that took
-  effect is in print, in full, over the clerk's certification, in a paper CDNC
-  has OCR'd. The minutes are unsearchable; the print is not. Written up as
-  **handbook/RENAMING-SOURCES.md § Step 2b**, and it is the method to try first
-  on the six undated renamings in WANTED.md P3.
-
-Nothing here draws: Scott Avenue is in Echo Park and Silver Lake, north of the
-OSM extract, and neither old name is on any sheet. The rows record the act and
-land on no ground, exactly as ord-4093's georgia-bell row does.
-
-**What this says about method.** The July 1850 measurement said the minutes are
-a bad place to *look* and a good place to *land*. This meeting does not overturn
-that — it was found by date, and its one big item turned up because the project
-already knew who Fred L. Alles was. A reader without that context would have
-skimmed past petition 465 as one more appropriation request. The value is in the
-index, not the sweep.
-
-## Names moved out of data/names-new.js — what the move left open (2026-09-06)
-
-All twenty-one entities in `data/names-new.js` were researched and moved into
-`data/names.js`; the file is now empty. Five came back with a namesake (Temple,
-Clark Avenue, Botiller Street, 15th, 16th) and the rest carry a null
-`namedAfter` with the checks recorded in `internalNote`. Four things surfaced
-in the pass that are leads rather than entries:
-
-- **Laura Street and Pine Street, predecessors of 15th and 16th.** The Miguel
-  Subdivision (`documents/mr053-016`, Mar. 1893) letters each numbered street
-  beside a parenthetical former name — "(formerly Laura St)", "(formerly Pine
-  St)". Both are naming lineages with no entity and no change row: the ink sits
-  in the rows' `asWritten` and nothing else in the corpus mentions either. What
-  would settle them: an earlier sheet of this ground, or the tract that laid
-  them out. NB neither name is related to the Arts District's 1886 tree-and-plant
-  run (Palm, Spruce, Tulip, Willow) — different ground, and Pine is not in it.
-
-- **The "Maple Ave Tract".** The 1888 Widow Botiller resubdivision
-  (`documents/mr029-026`) letters the adjoining land with that name — a tract
-  named after the street, which means its own recorded sheet may date Maple
-  Avenue. Maple is one of the four names on the O. W. Childs Tract with no
-  documented origin, and this is the cheapest lead among them.
-
-- **Six undated absorptions, all in the same few blocks.** Every one of these
-  is a name that our sheets letter and the modern map has replaced, with no
-  document anywhere in the corpus recording the change: Botiller → Santee,
-  William → Santee, Myrtle → Wall, Ida → Cecelia, Clark → Crocker, Court House
-  → Community Terrace. Five of the six are between 8th and 12th east of Main,
-  in tracts recorded 1885-1893, so one city action may well have taken several
-  at once — the same shape as the 1874 and 1897 ordinances. Worth a look in the
-  ordinance-ledger indexes (handbook/RENAMING-SOURCES.md) before hunting them
-  one at a time. NB Kines dates Santee Street's *naming* to 1886, two years
-  before the Botiller sheet letters Botiller Street on ground that is Santee
-  today, so on that one the two names demonstrably ran in parallel for a while.
-
-- **Wesley Clark's dates.** The Clark and Bryan Tract sheet gives his address
-  (127 West 3rd Street, Nov. 1893) but nothing else places him; no Wikipedia
-  article, no Kines page. His partner Elden P. Bryan (1852-1925) is documented
-  by the Homestead Museum. A city directory of the early 1890s would probably
-  settle Clark in one line — SERIAL-SOURCES.md.
-
-### Addendum, same day: four more names, and one clobbered file
-
-Four more entities were minted in review while the above was being written —
-`earl-st` and `regent-street` from the Moran and Moreno Vineyard tracts, then
-`morgan-lane` and `boyd-street` from the Orchard Tract — and all four were
-researched and moved the same way. One has a namesake: **Morgan Lane** is
-G. W. Morgan's, from the Orchard Tract's own title block. What the second pass
-added:
-
-- **⚠ data/names-new.js was overwritten at 18:33 on 2026-09-06**, three minutes after
-  the map tool saved `morgan-lane` and `boyd-street` into it, by an assistant
-  that had read the file before that save. Both entities were rebuilt from
-  `documents/mr005-005`'s rows in the tool's own minting format and lose nothing
-  the rows carry — but a display form or note typed by hand at minting would not
-  have survived, so both want a glance. The lesson is mechanical: the map tool
-  owns data/names-new.js, and anything that rewrites the file must re-read it
-  immediately before writing, not before doing the work.
-
-- **The undated absorptions are now nine, not six.** Add Regent → Maple Avenue
-  (5th to 6th), Earl → San Julian Street (north of Ninth), and Morgan Lane →
-  3rd Street to Botiller → Santee, William → Santee, Myrtle → Wall, Ida →
-  Cecelia, Clark → Crocker and Court House → Community Terrace. All nine are in
-  the same few blocks east of Main between 3rd and 12th, from tracts recorded
-  1876-1893. The Moran Tract shows one of them mid-seam: in April 1887 it
-  letters Earl Street north of Ninth and San Julian Street south of it, on one
-  page, so the corridor genuinely carried two names at once and San Julian later
-  took the whole thing.
-
-- **Wall Street is twelve years older in the corpus than it was this morning.**
-  The Moreno Vineyard sheet (recorded Mar. 1876) letters it, and letters Regent
-  Street two blocks away — New York's and London's best-known commercial streets
-  on one page of building lots sold on their nearness to the new railway depot.
-  That is the only argument either name has, and it is worth more than either
-  would be alone.
-
-- **Three tracts named as predecessors on the Orchard Tract sheet**: the
-  "Chapman Tract", the "Hunter Tract" and the "Damisch Tract", all absorbed by
-  July 1882. None is in the corpus. Any of them would date this ground earlier
-  than 1882 and might account for Boyd Street, which nothing on the Orchard
-  sheet does.
-
-- **H. W. Mills, third owner of the Orchard Tract.** This file already carries a
-  "Mills and Wicks Subdn." lead from the Bliss Tract's margin (M.R. 13-87/88,
-  1886-87). Whether that Mills is this one is unchecked and would be worth five
-  minutes: a shared owner would tie two widely separated pockets of the corpus
-  together.
-
-- **A document question for the Moreno Vineyard sheets.** `date` is recorded as
-  1875-05-01, but the sheet's own recorder's note reads "Recorded Mar 1 1876 at
-  11:00 AM at request of J. S. Cranford", and the title advertises lots near a
-  depot whose land the Council only procured in September 1875. Worth checking
-  where the May 1875 date came from, and whether this is a case for the optional
-  `recorded` field (MODEL-SPEC §4).
-
-## July 1850 council minutes — read in full, checked and cleared (2026-09-05)
-
-Kenny downloaded all eight July 1850 meetings (M07031850, M07051850, M07061850,
-M07101850, M07171850, M07201850, M07271850, M07311850 — 50 ledger pages) to test
-whether reading the council minutes straight through is worth doing. **It is
-not**, and the measurement is written up in RENAMING-SOURCES.md § "Is it worth
-reading the minutes straight through?". This entry records what the month
-actually yielded so that nobody reads it again.
-
-**Not one street is named anywhere in the month** — no row is enterable from any
-of the 50 pages. Two items touch streets obliquely and are recorded here rather
-than as document rows, because neither says where anything is:
-
-- **July 17, 1850** (ledger 30–31): *"The President proposed the appointment of
-  a provisional Committee for the purpose of fixing the property lines of
-  parties wishing to build, which should be done in conformity with the
-  alignment and division into streets and blocks as shown by the maps of this
-  City. Proposition admitted and approved, Messrs Temple and Aguilar being
-  placed on that Committee."* — the council binding new construction to the
-  surveyed grid less than a year after Ord finished it. This is context for
-  when the Ord survey became *operative* rather than merely drawn, and it is
-  the only dated statement of that in the corpus so far. It names no street, so
-  it attests nothing about any particular pavement.
-- **July 20, 1850** (ledger 31): *"A petition of Dª Concepción Navarro, asking
-  for the vacant space which exists between her house and the streetline, was
-  referred to a special Committee…"* — a streetline encroachment request. The
-  street is not named and the house is not located; it would only become useful
-  if the committee's report survives and names either.
-
-The rest of the month, by page count: ~11 pages of oaths of office, ~10 of the
-Council's own Rules and Regulations, ~6 of zanja and water regulation, ~10 of
-salaries, jail, courthouse and school petitions, the remainder lot auctions and
-treasurer's statements.
-
-**Consequence for method:** the minutes are a good place to *land* once a date
-is already known (three renaming instruments were found that way on 2026-09-04)
-and a bad place to *look*. Take the date from the searchable newspapers first.
-
-## Serial-source leads (Sanborn atlases & city directories, 2026-08)
-
-Two source families new to the project, brought in by Kenny 2026-08 and
-written up in SERIAL-SOURCES.md. Nothing below has been run yet.
-
-- **~~⭐ The 1897 and 1898 city directories as a route to the renaming
-  ordinance~~ — RUN, NEGATIVE (Kenny, 2026-08):** the 1898 directory has no
-  list of changes, and the 1897 directory states it already incorporates the
-  326 council changes without printing them as a table. The hypothesis was
-  that a publisher absorbing 326 changes would print a concordance; it didn't.
-  Don't re-run. (The directories remain valuable for their annual street
-  guides — the extent-and-bracket use below — just not for the ordinance.)
-- **Sanborn index-sheet gazetteer, 1888 / 1894 / 1906 / 1950** (2026-08):
-  each volume carries a street index and a key map, so the indexes read
-  across editions give a per-year existence timeline for every street in the
-  city — from roughly a dozen images, all of them text rather than plat ink.
-  Do this BEFORE reading any Sanborn sheets: it is the prioritization tool,
-  and it says which streets have a question at all. Needs a human/browser
-  download step (LOC returns 403 to automated fetching of its search, JSON
-  API and IIIF manifests; item pages read fine).
-- **The 1894 + 1906 Sanborn pair as the bracket for the "presumably folded in
-  during the Feb. 1897 renaming" hedges** (2026-08): three nameHistory items
-  currently rest on that presumption with no source naming the stretch —
-  2nd Street (east-of-Alameda/Guadalupe lineage) and 3rd Street's
-  "Bixel to Boylston (Arnold St)" and "Alameda to Santa Fe (Georgia St)"
-  segments. Sanborn sheets covering those blocks in 1894 and 1906 would
-  replace the presumption with a dated bracket on the exact blocks, whether
-  or not the ordinance itself ever turns up. Same trick applies wholesale to
-  the 96 "not yet researched" field values in generated/streets-data.js as of 2026-08
-  (34 `planned`, 59 `built`, 3 elsewhere).
-- **ProQuest Digital Sanborn Maps (1867–1970), via an LAPL card** (2026-08):
-  many more L.A. years than LOC has online, including the 1929/1930 and
-  1960s editions. Authenticated, so it is a human-only path — worth a session
-  of Kenny's time if the LOC editions leave a bracket too wide.
-- **Annexed-city Sanborn volumes** (2026-08): Hollywood, Highland Park,
-  San Pedro, Venice, Eagle Rock and the rest were published under their OWN
-  city names before annexation — search LOC that way when coverage grows past
-  Downtown. Annexation is itself a renaming event class (duplicate names with
-  existing L.A. streets had to be resolved), so the pre- and post-annexation
-  editions of an annexed town are a natural bracket for that whole class.
-- **Checker follow-up** (2026-08): `tools/check-data.js`'s `PRIMARY` regex doesn't
-  recognize `loc.gov` or `rescarta.lapl.org`, so the primary-anchor count will
-  under-report once Sanborn/directory sources land. Add them with the first
-  such source.
-
-## Segment-review flags (2026-07) — obsolete by construction
-
-> **Closed 2026-09.** Seven flags lived here — Figueroa south of Pico, Hill
-> south of Cesar Chavez, Garey, Mateo, Olive, Santa Fe and Pico — and every one
-> of them said the same thing: *a citation had been applied to more of a street
-> than the document actually covers, so the entry was hedged with prose and
-> might want a split later.*
->
-> That whole class of problem no longer exists. A row carries its own extent, a
-> document carries its own coverage polygon, and the generator segments a
-> street from the rows. A sheet that documents 200 m of Santa Fe Avenue now
-> produces a segment covering 200 m; the rest of the street stays grey, because
-> nothing speaks about it. There is nothing left to hedge and no split to
-> schedule — the geometry does it.
->
-> Two of the seven asked a real question underneath the bookkeeping: **how far
-> south of the Plaza did the 1849 grid actually reach**, for Hill Street and for
-> Olive Street? That is now a lookup rather than a research task. The six
-> Hutton/Ord sheets are all swept, so what the survey attests about any street
-> is exactly what their rows say and their coverage polygons reach — including
-> `absent` rows where the survey covers ground and draws nothing. Read
-> `documents/mr053-06*/` rather than researching it afresh.
-
-## Findings from the first alignments (2026-07)
-
-> **Applied and closed.** The georeferenced identifications this section used
-> to list — MR066-035's Third→Miramar and Arnold→3rd, and MR006-138's State→
-> Colton, Home→Rockwood, Hobart→Lake Shore Terrace, Waters→Douglas, Lake→
-> Glendale and Aztec→Belmont — are all rows in `documents/` now, with the
-> sheets swept. The reading of them is in git if it is ever wanted. Two things
-> that were open then are still open and kept below.
-
-- **Old Home Street ≈ modern Rockwood Street** — a real correspondence about
-  43 m off, because the block was recut at a different angle. When it was
-  realigned is unpinned; it needs a map between 1884 and today.
-- **Montezuma Avenue = Dawson Street** has no entity: Dawson was dropped from
-  MR006-138 as polygon overshoot, so it needs its own document.
-
-
-- **MR006-138 name entities — research pass** (2026-08-30). Eleven entities
-  were minted in review; ten remain in `data/names-new.js`. What was checked:
-  - **Patton Street — SOLVED, moved into `data/names.js`.** Kines: "This 1883 street
-    was named for its developer, attorney George Smith Patton (1856-1927)."
-    Patton was **Andrew Glassell's nephew** and replaced George Hugh Smith in
-    Glassell's firm (Kines's Glassell Street page; Wikipedia). Glassell
-    subdivided this tract the following year, so the tract name really did
-    lead somewhere.
-  - **Hobart Street — NOT Hobart Boulevard.** Kines dates Koreatown's Hobart
-    Blvd to 1887 and names it for Hobart Addison Stewart (1868-1915), a Flint
-    dairy farmer, on someone else's subdivision. Different roadway, three years
-    later. Kept separate; noted in the entity.
-  - **Lake Avenue — two candidates, neither sourced.** Echo Park Lake (the
-    reservoir predates 1884 and the street runs at it) is the simple reading.
-    The other is a coincidence worth recording: Patton married **Ruth Wilson**
-    in 1884, and Pasadena's Lake Avenue is named for her father's **Lake
-    Vineyard** (Kines). Wants a contemporary source.
-  - **Aztec Avenue — SOLVED, moved into `data/names.js`.** Kenny noticed that a block
-    outside coverage the same street meets **Cortez Street**, with **Pizarro
-    Street** 206 m away — a naming scheme, not a coincidence. Kines's Cortez
-    Street page confirms it: Cortez (1884, *Glassell's Subdivision No. 2*,
-    Andrew Glassell) is Hernán Cortés, and "what is now **Belmont Avenue** was
-    called **Aztec Avenue** and what is now **Dawson Street** was called
-    **Montezuma Avenue** … Glassell was clearly going for a theme here." That
-    also confirms Aztec = Belmont **independently of our alignment**, which is
-    the first outside check the AI pass has had. Follow-ups: *Montezuma Avenue =
-    Dawson Street* has no entity yet (Dawson was dropped from MR006-138 as
-    polygon overshoot, so it needs its own document); Pizarro has no Kines page;
-    and it is worth pinning down how "Glassell's Subdivision No. 2" relates to
-    M.R. 6-138's "Glassell's Subdivision of Lot 7 etc."
-  - **Council, Home, Waters, Welcome, Diamond, Court** — not covered by Kines.
-    His Echo Park index (34 streets, both pages read) contains none of them;
-    Patton is the only one of ours he has. Web search found nothing usable.
-  - The 1897 omnibus in `documents/ord-4093/` does **not** cover these
-    renamings — grepped, no hits. The full 326-change list was never printed,
-    so State→Colton, Home→Rockwood, Hobart→Lake Shore Terrace, Waters→Douglas,
-    Lake→Glendale, Aztec→Belmont and Diamond→Beverly are all still undated.
-    **That is the next real target**: one source would date seven renamings.
-    The city engineer's Oct. 26, 1897 second list is a candidate; so are the
-    city directories and Sanborn sheets.
-  - **Identity decisions taken** (Kenny): `diamond-street` is ONE entity
-    spanning the plat's Diamond (modern Beverly Blvd here) and the modern
-    Diamond Street 869 m east — roughly collinear, ~30 m apart, one naming that
-    lost its middle. `state-street` was **renamed `state-colton`** so it cannot
-    collide with Boyle Heights' State Street, which is a different naming and
-    must get its own disambiguated id when that area is encoded.
-
-## Open leads — extents and dates
-
-- **Moneta Avenue → Broadway (1925–26)** (2026-07): much of Moneta Ave. was
-  renamed Broadway in 1925–26, well south of current coverage. Banked for
-  whenever that area is added — it will want its own documents and a
-  `moneta-avenue` entity; nothing to do until the neighbourhood exists.
-
-- **Arts District warehouse-pocket streets** (2026-07): two batch passes done.
-  Batch 1 — Mateo, Traction, Colyton, Santa Fe (full Kines sources); Hewitt
-  (partial: formerly Carolina Street per the Colyton page, own namesake/rename
-  date open); Palmetto, Factory Place, Willow, Molino, Merrick, Imperial
-  (`unknown`, web search exhausted, not covered by Kines). Batch 2 — Seaton
-  (full Kines source, shares the Colyton/Howard-tract page); Myers, Anderson,
-  Mill, Utah, Decatur, Jesse, Mesquit (`unknown`, same story — nothing found,
-  not covered by Kines; Mill/Utah/Decatur/Mesquit each carry a flagged
-  speculative note — mill history, state-name tract pattern, Stephen Decatur,
-  mesquite — none confirmed). Next step for all `unknown` entries in this
-  pocket: a CDNC sweep (Feb.–Apr. 1897 renaming ordinance is the top target
-  already flagged above; also try 1880s Herald tract-sale notices) and/or
-  L.A. County tract-map lookups via NavigateLA — both need a real browser,
-  not fetch tools.
-- **Arts District warehouse-pocket streets, batch 3** (2026-07): Keller Street
-  now has a full source (L.A. Revisited: promoted by Matthew Keller — the same
-  "Don Mateo" of Mateo Street — as part of the 1869 Aliso Tract; geographically
-  just north of the Arts District core, near Ramirez St/Piper Tech, not inside
-  the Arts District bbox proper but thematically tied to Mateo). 4th Place and
-  7th Place entered as spurs of the numbered grid (category "number"), not
-  distinct namesakes. Channing St, Conway Place, Lawrence St, Avery St, Plaza
-  Del Sol all `unknown` — web search exhausted, not covered by Kines. Same
-  CDNC/tract-map follow-up as the rest of the pocket applies.
-
-- **Larkin/Short St extent (4th St) and Lugo St extent (5th St)** (2026-07,
-  partially resolved 2026-07, segments split 2026-07): Kenny's hunch — check
-  828 E 4th St (the building now SCI-Arc) and 1129 E 5th St (Frederick
-  Preston Howard tract, which also produced Seaton/Colyton) — paid off
-  geographically. Both addresses land in the same recorded tract, F.P.
-  Howard & Co.'s Subdivision of the Bliss Tract (M.R. 12-42, 1886, between
-  Alameda and the Santa Fe grounds): 828 E 4th St's parcel fronted "Huber
-  Street," 1100 E 5th St's parcel (1129 doesn't currently exist as an
-  address; 1100 is the same block) fronted "Poplar Street," one block apart
-  — the right spacing and corridor for Larkin/Short and Lugo respectively.
-  Both streets have now been split into segments (west of Alameda / Alameda–
-  Hewitt / east of Hewitt) with the Huber→4th and Poplar→5th story living in
-  the middle segment's nameHistory. NOT yet proven: no source directly
-  documents Huber→Larkin/Short or Poplar→Lugo by name — that link still needs
-  a CDNC or city-directory search from the 1890s (search for "Huber street"
-  and "Poplar street" renamed, or for "Larkin street"/"Lugo street" with a
-  cross-street to confirm the same location). The "east of Hewitt" segments
-  on both streets are still "not yet researched" placeholders — the Boyle
-  Heights 2nd St→4th and 4th St→5th transfers (see below) belong somewhere
-  further east than Hewitt, exact extent unknown.
-  Complication found while reading the omnibus files: there appear to be *two*
-  distinct "Lugo street" mentions in the 1897 sources — the Feb. 21 committee
-  report's "Lugo street → Fifth street" (an existing street elsewhere), versus
-  the Feb. 18 joint-session item where the ordinance had floated "Lugo street"
-  as the new name for Boyle Heights' Second St (rejected after Workman's
-  protest, which became Fourth St instead). These may or may not be the same
-  street — worth keeping in mind when the CDNC search is done.
-- **Wolfskill Ave / original-Central Ave boundary**: still open — this stretch
-  is south of Vernon, outside current map coverage (NEIGHBORHOODS bbox ends at
-  lat 34.033). Not actionable until a South L.A. neighborhood is added.
-  (2026-07 migration: trimmed a duplicate of this same open question from the
-  segment's own note; also displaced from that note — Central Ave's stretch
-  through South L.A. became the heart of Black Los Angeles in the 20th
-  century, a history outside current coverage, worth a proper mention once
-  that stretch is added.)
-- **9th→Olympic renaming date, east of Central** (2026-07): Olympic absorbed
-  9th's continuation east of Central Ave sometime 1935–1945. Pin the ordinance
-  (City Archives / L.A. Times archive) — this one is L.A. Times, 1935–1945
-  (LAPL ProQuest access), not CDNC.
-- **Figueroa south of Pico, pre-1897** (2026-07): Pearl ended at Pico; the
-  entry's southern segment is open. Old maps (1880s Baist/Sanborn) should show
-  what that stretch was called.
-- **Georgia St → Georgia Bell renaming date** (2026-07): unsettled — Kines says
-  1883; Forman's 1897 testimony says Sept. 11, 1890 (or 1880, OCR unclear).
-  Council ordinance books would settle it. (Trimmed from Georgia Street's note;
-  re-trimmed 2026-07 migration — a duplicate of this same sentence had crept
-  back into the entry's note.)
-- **Santa Fe Ave "Tulip" extent** (2026-07): the Goodwin Tract citation covers
-  only the stretch south of 6th. Whether the same "Tulip"-era name applied
-  further north (toward 1st/3rd, where the depots sat) is unchecked. (Trimmed
-  from Santa Fe Avenue's note.)
-- **Court Street (Angelino Heights) as a lost eastern stretch of Temple
-  Street?** (2026-07, Kenny's hunch): Temple Street has two visible bends on
-  the map — one at Fremont Ave, one at Edgeware Rd. Continue Court Street's
-  own alignment straight past its eastern end and it lines up with the
-  Temple/Fremont intersection, closer to matching the eastern stretch of
-  Temple than anything Court currently connects to. Worth pulling tract maps
-  for that stretch of Temple (between Fremont and downtown) to check whether
-  it was ever platted as "Court Street" before Temple absorbed it — same
-  Glassell's Subdivision (M.R. 6-138, sourced into Court Street's entry this
-  pass) or an adjacent tract might show it. Not yet checked.
-## Sourced finds awaiting entries
-
-Also of note in the Feb. 27, 1874 article
-(https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10): the same council session
-established Fort Street's grade and declared Bunker Hill Avenue a public
-street (40 ft wide, ~3,000 ft) — context for Broadway/Hill-area entries.
-
-## Open leads — Arts District, and the undated renamings
-
-> Three bullets closed here (2026-09): the Court/Olympic/Pico tract batch and
-> the MR066-035 Third↔Arnold correction are both applied and encoded — the
-> correction is now Rule 2 in CLAUDE.md and the reason MR066-035 is the
-> benchmark sheet. Spruce Street is answered: `data/names.js` records it as modern
-> Mateo Street, with a row on `documents/mr011-042/`.
-
-- **Goodwin/Thomas/Mills-Wicks batch, loose ends** (2026-07): reading the three
-  downloaded tracts closely (Kenny's tip — read the local PDFs directly rather
-  than the browser viewer, much easier for side-by-side comparison) confirmed
-  Hewitt's segment split, 2nd St's "Guadalupe" stretch, Traction Ave's "Second
-  St" predecessor, and Imperial/Santa Fe's "Palm"/"Tulip" predecessors (all
-  now in generated/streets-data.js). Three loose ends remain:
-  - **Second unnamed "STREET" on the Thomas Tract's north sheet (M.R. 3-61)**:
-    the sheet shows TWO unlabeled N-S streets between "Guadalupe" and
-    "Georgia." One is very likely [[Rose Street|Rose]] (flagged in that
-    entry, geographically plausible but not a literal label match — confirmed
-    Rose St crosses E 2nd St right at the Guadalupe/Georgia band, and a
-    nearby parcel at Alameda/Traction/Rose shows all three streets meeting,
-    though that parcel's own Tract/Map-Ref is a 20th-century resubdivision,
-    not the 1875 Thomas Tract, so it's positional evidence only). The OTHER
-    unnamed street (further east, lots 13-22 on that sheet) is still
-    completely unidentified — not checked against any modern street yet.
-  - **4th Place west of Hewitt**: Kenny's read of the downloaded Mills and
-    Wicks tract suggested 4th Place (west of Hewitt) AND 4th St (east of
-    Hewitt) were both once "Third St." Close re-examination of M.R. 13-87
-    (the Apr.–May 1886 sheet) shows the "Third" band — including Lot 77,
-    confirmed via NavigateLA as 813 E 4th Place — sitting entirely EAST of
-    Hewitt (Lot B/C/D, the area west of Hewitt on this same sheet, are large
-    unsubdivided lots with no through street drawn at all). Applied the part
-    that checks out (4th Place AND 4th St's "east of Hewitt" segment both
-    trace to this same "Third" band, immediately adjacent to Hewitt) to both
-    entries. The "west of Hewitt" half of the claim doesn't have a source in
-    the three tracts on hand — possibly it's on the Bliss Tract (M.R. 12-42,
-    already cited elsewhere for Huber/Poplar/Carolina/Colyton/Seaton/
-    Palmetto but not re-examined this pass) or possibly a mix-up given how
-    disorienting the diagonal, non-north-up plat pages are. Worth Kenny
-    double-checking directly, or downloading MR012-042.pdf for a fresh look,
-    before treating "west of Hewitt" as resolved either way.
-
-
-- **"Mills and Wicks Subdn."** (2026-07, partially resolved 2026-07): while
-  re-checking the F.P. Howard/Bliss Tract map (M.R. 12-42) for Molino/Hewitt
-  content, its margin note names the neighboring subdivision immediately east
-  of Carolina St (now Hewitt) as "Mills and Wicks Subdn." Found via an
-  unrelated NavigateLA lookup (813 E 4th Place, tract-batch pass): this is the
-  "Mills and Wicks Extension of Second St. and adjoining subdivision," M.R.
-  13-87/88 — a big two-page filing. Page 87 (Apr.–May 1886) covers the
-  Georgia/Second/Third/Hewitt/Huber grid, north of the Bliss Tract; page 88
-  (the "additional subdivisions," Jan. 1887) covers the block bordering "O.H.
-  Bliss," and DOES show Mateo Street directly, right against a "Keller Est."
-  label — added as Mateo's primary source. Molino still doesn't appear on
-  either page — that lead stays open; the only remaining unexplored angle is
-  whatever lies between this sheet and the Bliss Tract's own drawn extent.
-  Also: the same page 87 shows Hewitt St by name directly (Apr.–May 1886,
-  same year as but a few months before the Bliss Tract's "Carolina Street" —
-  added to Hewitt's entry as a complication, since the two tracts apparently
-  used different names for the same street corridor in the same year).
-- **✔ SOLVED 2026-09-06 — Molino Street was Mateo (or Shafer) Street until Aug. 31, 1896.** Ordinance No. 3829, as printed in the Herald of Sept. 3: *"Mateo, or Shafer, street, from Palmetto to Short, be changed to Molino street"* (documents/lah-1896-09-03). The date the tract search could not reach is now exact, and the name it replaced turns out to be one this corpus already has. Still open underneath it: which stretch — "Short" is in no geometry here — and who or what Molino was named for. The original lead is kept below because its dead ends are still true.
-- **Molino Street tract lookup — blocked by modern redevelopment** (2026-07):
-  tried multiple addresses (530 S Molino St and others); NavigateLA returns
-  only one giant modern parcel, Tract TR 060507-C / M.B. 1313-4/5 (the
-  "Molino Street Lofts" apartment complex, 91 old APNs merged into one lot
-  spanning the entire 5th–Palmetto block front). The original small-lot
-  fabric and any old M.R./tract reference for this block have been erased by
-  that development — this street can't be dated via NavigateLA. The "Mills
-  and Wicks" lead above is the next avenue, not another NavigateLA pass.
-- **Dunigan Tract lookup — blocked by modern redevelopment** (2026-09-06): the
-  same species as Molino above, one step worse. Carleton and Summerfield's Sub
-  of the Dunigan Tract carries the `nevada-1886` stretch of Georgia Street, and
-  it has no Map-Ref obtainable from NavigateLA at all. **Every** parcel the
-  assessor holds in the tract is DELETED — 1317 Georgia St struck 09/24/1987,
-  1355 Georgia 11/17/1987, 1358 and 1407 Georgia 03/28/1988 — the Convention
-  Center expansion eating the block. A Map-Ref lookup resolves a *live* parcel,
-  so with none left there is nothing to answer with; 1317 and 1355 Georgia both
-  geocode back to 1099 Georgia, the last addressed parcel on the street. So
-  that stretch of Georgia Street is pavement that no longer exists: it can
-  never be confirmed by a modern parcel, and its extent has to come from plats
-  and directories alone. The Huntington has no Dunigan, Carleton or Summerfield
-  sheet either (checked 2026-09-06). Don't re-run the NavigateLA pass.
-- **San Julian below Ninth — NEGATIVE, no tract map exists** (2026-09-06): the
-  parcel there reports the City Lands of Los Angeles (M R 2-504/505, Patent
-  3-64/65) with an *unnumbered* lot and 167 addresses on it — unsubdivided
-  remnant of the original city survey, never platted by a private subdivider.
-  Kenny read the sheet: nothing usable for this project. So San Julian's name
-  on that stretch cannot have come from a tract map. Don't look it up again.
+A dated parking lot for hunches, open questions and cautions that are not yet solid enough to be data.
+A lead that gets solved moves into the data (rows on a document in `documents/`, or an entity in `data/names.js`) and is deleted from this file. Git keeps the history.
+Documents and searches still to *obtain* are listed in WANTED.md, and library trips in IN-PERSON.md. This file only points to them.
+Before a street pass, sweep this file for that street, and keep every entry dated with its document and entity ids.
+Trimmed 2026-09-21 from 3,866 lines. The full log, including every solved finding and its reasoning, is in git history before that date. Entity notes that say "research-leads.md records…" refer to that log.
 
 ---
 
-## The Herald run carried to 1927 — 49 more clippings, 192 documents (2026-09-06)
+## Open: archives and instruments
 
-Kenny finished the CDNC phrase search on *"ordinance changing"* in the Los
-Angeles Herald and supplied every remaining result that touched street names.
-All 49 are now documents with transcriptions. The corpus is **192 documents**;
-`node tools/check-model.js` and `node tools/check-data.js` both pass. No rows were written —
-these are reading material for the textual-document tool, and the confirming is
-Kenny's step.
+- **Ord. 4093 (N.S.), Ordinance Book IV p. 337, adopted Feb. 23, 1897** (the
+  Feb. 2 version was vetoed; it is on p. 331). The text is with the City Archivist (Kenny,
+  2026-08; see WANTED.md §1). The council-minutes transcription in
+  `documents/ord-4093/` is a ChatGPT reading that has not been spot-checked, so the first
+  use of any line owes a check against the scan. **An apply pass is owed:** the
+  in-coverage lines (Figueroa/Boylston, Georgia, Central, 4th, 5th, Marion,
+  Stanford/Ruth) should name the instrument. `ord-4093` carries 5 rows, and 3 of them are
+  placeholders. `lah-1897-02-24` now warrants the Georgia respelling placeholder, and
+  whether to retire that placeholder is Kenny's call. (2026-08, 2026-09-18)
+- **The Dec. 27, 1897 supplementary renaming ordinance** (the city engineer's
+  cleanup batch; its list was never printed; reported in `lah-1897-12-28`). It follows the same
+  ledger trail as 4093. (2026-08)
+- **Georgia → Georgia Bell: Sept. 1883 or May 10, 1889?** `lah-1883-09-02`
+  reports it adopted in 1883. Forman (`lah-1897-02-19`) and Ord. 48
+  (`lah-1889-05-10`) give 1889, and 1889 may be the act that folded the Nevada stretches
+  (`nevada-1886`) into the name. The conflict is recorded on `georgia-bell` and `georgia-east`.
+  It is settled by the minutes of Sept. 1, 1883, and by a rule-2 check that the Georgia in
+  "Bell's addition" is ours. The 1883 Board had proposed *Alabama*
+  (`lah-1883-08-19`). ⚠ A 2026-07 note read Forman as "Sept. 11, 1890", so re-read the
+  Feb. 19 text before quoting him. (2026-09-06)
+- **Ord. 48 (`lah-1889-05-10`)**: all 207 clauses were transcribed 2026-09-18 and have not been
+  checked by a human; its 37 change rows are unconfirmed. `sweptFully` stays false **on
+  purpose**. Setting it would switch negative inference on citywide for the first
+  time, and that is Kenny's decision to make deliberately. About 140 clauses
+  name streets with no entity, most of them outside the extract. (change-rows audit 2026-09-18)
+- **Elm → Olive, Pico–14th, Ord. 207 (`lah-1886-01-15`): check this first.** It
+  was the change-rows audit's boldest row. It rests on reading the ordinance's "California
+  street" as modern 14th Street, via `california-street-14th`'s alignment on the
+  Morris plan (`mr003-038`), not on anything the ordinance says. Elm →
+  Olive is also **enacted twice**: Ord. 48 c058 (1889) repeats it. That row is left
+  `extent-unresolved` so the two do not fight. It is either a re-enactment of a done change, or
+  it reaches Elm south of California. (2026-09-18)
+- **Clause-level oddities left by the audit** (2026-09-18):
+  - Myrtle, Ninth to Pico → *Prospect* (Ord. 48 c086, no row) contradicts
+    Ord. 1915's confirmed Myrtle → Wall (`lah-1893-11-21`). It was law but never took in use.
+  - A **third William** (L.A. Improvement Co. subdivision, lot 2 block 38 → Goss,
+    Ord. 207) has no entity. `william-santee` and `william-farragut` are the other two.
+  - **Two Aztecs.** c001's Aztec Avenue, 12th to Pico → Girard, is not `aztec-avenue`
+    on Belmont.
+  - `lah-1908-09-22`: Fort north of First "has never officially been named
+    Broadway". This is harmless while `fort-street` is lettered only south of First. A sheet
+    lettering Fort north of First would be renamed wrongly by the whole-name row on
+    `lah-1890-02-20`. That row's note should also carry the adoption date, Feb. 17
+    (`lah-1890-02-18`).
+- **The amended Oct. 1890 omnibus probably passed in early 1891.** It was vetoed Nov. 8,
+  1890 (`lah-1890-11-09`) and referred back (`-11-11`). CDNC has "Ord street" in print by
+  1891 and "Walters street" as late as 1896. The Herald's "the ordinance changing the names of
+  certain streets, as amended" (Nov. 1890 to spring 1891) would date Walters → Ord and
+  2nd → Stephenson, and whichever of the other nineteen survived. Against it:
+  Sepulveda → Jackson was prepared singly in Aug. 1891 (`lah-1891-08-25`). No
+  row until the instrument is in hand (see WANTED.md §2a). (2026-09-18)
+- **Seven MR006-138 renamings, all undated**: State → Colton, Home → Rockwood,
+  Hobart → Lake Shore Terrace, Waters → Douglas, Lake → Glendale, Aztec → Belmont,
+  and Diamond → Beverly. None is in Ord. 4093's text. One source would date all seven.
+  (2026-08-30)
+- **Undated absorptions east of Main, 3rd to 12th**: Ida → Cecelia (not
+  `lah-1898-11-08`'s Delgado → Cecilia, which has no ground), Clark → Crocker,
+  Court House → Community Terrace, and Morgan Lane → Mayo → 3rd (`lah-1883-10-21` is
+  only the instruction to draft; there is no adopting item and no `mayo` entity). Also Botiller →
+  Santee, where `lah-1892-01-19` and `-01-23` are a motion and a recommendation with no adoption.
+  (2026-09-06)
+- **Orange/Wilshire ordinance numbers** read off `mr005-566` and `mr055-014`:
+  16790 (June 1908), 16915/16916 (the Dec. 1908 repeal) and 48435 (Apr. 1924). Which is
+  which is inferred from where the pen struck. The City Clerk's index settles all four
+  (see WANTED.md §1). Two numbers for one repeal may be two consecutive acts. The
+  1908 pair of rows is held back, because the generator cannot hold A → B → A → B (see
+  Tooling). (2026-09-18)
+- **Cheap CDNC searches for adoptions that are missing**, all in the extract with both
+  entities present:
+  - Ozier Lane → Winston, postponed June 1887 (`lah-1887-06-14`).
+  - 16th Street → Venice Boulevard, laid over July 1925 (`dnla-1925-07-16`).
+  - Lazard → Ducommun, recommended Aug. 1894 (`lah-1894-08-19`).
+  
+  (2026-09-18)
+- **Fred L. Alles, petition No. 465, Apr. 10, 1893** (`min-1893-04-10`, ledger
+  p. 555). He asked for $25,000 to open Broadway north to Buena Vista Street: the same man who
+  petitioned for Fort → Broadway in 1890 (`min-1890-02-03`). The Board of Public Works'
+  report back is the lead (see WANTED.md §4, no. 25). (2026-09-06)
+- **Modern ordinances** (from the switchover, 2026-09-18):
+  - Olympic 1935 is still unfound. By 1999, 9th became Olympic at **Gladys**
+    (CF 97-1566), so look there as well as east of Central (see WANTED.md §1, 1.5).
+  - The Chavez exhibit map (CF 93-0907) would resolve the three `extent-unresolved` rows on
+    `ord-169111`.
+  - Onizuka (`ord-162010`) is described as "west of Los Angeles Street", but the modern
+    street is east of it. Its ground history runs San Pedro (by 1868) → Wilmington
+    (by 1910) → Weller, and wants a rule-2 look.
+- **The 1905 ninety-street ordinance** (`lah-1905-05-13` to `-05-18`): passed May 8,
+  recalled from the mayor May 15. **Write no rows from it** until the May 22,
+  1905 meeting is read. Its probable successor is the ordinance signed Mar. 12, 1908
+  (`lah-1908-03-13`). (2026-09-06)
+- **`tr0009-075`** (Power Plant Tract No. 1, 1906) letters "EASTON ST." with
+  "Industrial" and **an ordinance number** handwritten beside it. Reading the number off the
+  scan dates Easton → Industrial exactly, with no download needed. (2026-09-15)
+- **Stevenson 1884** (`stevenson-1884`): harvest its rows in passes (WANTED.md §3c).
+  Check Macy and Buena Vista around the Plaza, and Stephenson, Ocean View and Nob Hill.
+  It is a landownership map first, so it attests only what it letters. (2026-09-18)
+- **Untranscribed or unreadable**:
+  - The Oct. 1888 committee list (`lah-1888-10-11`, 199 proposals) is transcribed only
+    where it touches our entities. It is a draft, so it is never a source of rows.
+  - The Feb. 2, 1897 commission report (`lah-1897-02-02`) was read from an 84-px crop
+    (see WANTED.md §2c).
+  
+  (2026-09-06)
 
-The date-by-date worklist and the answer to Kenny's question about where full
-ordinance text is likely to be found are in `handbook/MINUTES-TO-CHECK.md §
-Third pass`. The short version: **after about 1890 the Herald never prints a
-list**, so the minutes are the only route to the names — but the Herald is the
-only source that tells us which of these ordinances *died*, and six large ones
-did. Newspaper first, minutes second.
+## Open: by street or entity
 
-### Findings worth their own entry
+Alphabetical. Each entry gives the date it was raised.
 
-**★ Wilshire Boulevard was named in Dec. 1897** — "Sixth street, Hoover street
-to west city boundary, changed to Wilshire boulevard"
-(`documents/lah-1897-12-07`). That is fifteen months after H. G. Wilshire's own
-petition to the council about that street (`documents/min-1896-09-21`), which
-we already had and could not connect to anything. It connects now.
+- **`agatha`**: the birth year is 1871 (Kines) or 1881 (the Find a Grave Sabichi plot). On 1881,
+  Agatha and Ruth are first cousins born the same year, each with a street on her
+  father's land, and that would make a pattern. (2026-09-14)
+- **`alpine`, `fifteenth-street`, `sixteenth-street`, `diamond-street`**: the extent rows
+  from `min-1893-04-10` are owed once their soft ends settle: "Upper Main", "Centennial
+  avenue", 16th Street "ordered opened", and Ocean View Ave from Alvarado to Bonnie Brae. A sheet
+  of the Alvarado/Bonnie Brae block would also settle where Diamond gave way to Ocean
+  View. (2026-09-06)
+- **`aztec-avenue`, Belmont**: there are four accounts of a Belmont's origin: Texas →
+  Belmont (`lah-1887-01-04`, rowed), the 1888 draft's and Ord. 48 c001's Aztec →
+  Girard (a different Aztec), Kines's Aztec → Belmont, and `belmont-kincaid` (1886).
+  **Montezuma Avenue = Dawson Street** has no entity (Dawson was dropped from MR006-138 as
+  polygon overshoot) and needs a document. Pizarro Street has no Kines page. How
+  "Glassell's Subdivision No. 2" relates to M.R. 6-138 is unchecked. (2026-08-30)
+- **`beaudry-st` and `beaudry-avenue`**: are they one street or two by geometry? The 1868 row is
+  `vanished`, and Kines treats Beaudry as one street. Separately, Ord. 48 has Canal → Beaudry
+  Avenue, `canal-street-beaudry` does not cite Ord. 48, and the direction of the
+  change needs reconciling. (2026-09-13, 2026-09-18)
+- **`boyd-street`**: no origin. The Orchard Tract (`mr005-005`) names the Chapman, Hunter
+  and Damisch tracts as its predecessors, and none of them is in the corpus. Any would date the ground
+  before 1882 and might account for Boyd. (2026-09-06)
+- **`bunker-hill-ave`**: the 1874 avenue "defining the lines … public avenue"
+  (`lah-1874-02-27`) is placeable only west of Fort along Temple (Hill, Olive, Grand
+  or Hope), and a row on name alone breaks rule 2. The 1874 minutes would give its metes and
+  bounds. In May 1896 a portion of it, with Sand Street, became **California Street**
+  (`lah-1896-05-05`, 0 rows). That needs a second California entity: it is not
+  `california-street-14th`. (2026-09-04, 2026-09-06)
+- **`castelar` and `hill-street-downtown`**: "a portion of Castelar street" → Hill, July
+  1894 (`lah-1894-07-24`, `extent-unresolved`), against Hill's note dating its
+  arrival on Castelar to 1960. Reconcile the two. (2026-09-18)
+- **Cemetery Avenue** (→ Castelar, Ord. 242, `lah-1886-07-23`): no entity, and its
+  Temple–Bellevue ground is unplaced. It is not Eternity (2026-09-07). The city-cemetery
+  location behind it comes from general knowledge, so confirm it before it reaches public prose.
+- **`charity` and the Caridads**: the third Calle Caridad (North Spring, pre-Ord,
+  `guinn-1912`, and "Charity St / Calle de Caridad" on M.R. 53-68) is unminted, and minting it is
+  Kenny's call. The same sentence gives **Upper Main → San Fernando** and **Alegro /
+  Junction → North Main**. Both lineages are unminted, and `san-fernando-st-spring` is
+  pending. `guinn-1895` contradicts itself on Caridad (Grand in one place, Spring in another), so no entity
+  should lean on it. (2026-09-18)
+- **`cherry-street`**: the act is Sept. 1883 (`lah-1883-09-02`, "Pine to Cherry",
+  in Bell's addition), which answers the note's worry about its Jan. 1884 lettering. It needs
+  a Pine (Bell's addition) entity before a row. (2026-09-18)
+- **`clark-ave`**: Wesley Clark's dates. A city directory of the early 1890s should
+  have them. (2026-09-06)
+- **`cleveland-st`**: which street? A legacy positional guess ties it to the Ord
+  Survey's "Calle de las Adobes", while Kines dates the name to a fresh 1886 Beaudry
+  tract. If they are two streets, they are two entities. If the tract's Americana names number
+  three or more, consider `pattern`. (2026-09-15)
+- **`consuelo`**: Josefa de Celis's parentage. Wikipedia makes her a daughter of Gov.
+  Luís Antonio Argüello; her son's LAT obituary (26 May 1903) calls both parents
+  "natives of Spain". (2026-09-15)
+- **`court-street`**: Kenny's hunch (2026-07) is that Court Street (Angelino Heights) is a lost
+  eastern stretch of Temple. Its own alignment runs straight to Temple and Fremont. Pull tract
+  maps for Temple between Fremont and downtown.
+- **`diamond-street`**: Ord. 364's "Second street from Lakeshore avenue to the west
+  city line" (`lah-1889-09-19`). Which entity that 1889 Second Street is (the downtown lineage
+  carried west along the cable route?) is open. (2026-09-18)
+- **Easton → Industrial**: see `tr0009-075` above.
+- **`fourth-place`**: was it "Third St" **west** of Hewitt? M.R. 13-87 puts the
+  "Third" band entirely east of Hewitt. The west half has no source; look at the Bliss
+  Tract (`mr012-042`, now a swept document). (2026-07)
+- **`georgia-bell`**: Rouland Street bounds both 1889–90 extents, and Rouland = the
+  Venice corridor (Greenwell Tract, `mr012-070`). Tract 2713 puts Georgia's
+  centreline 425.27 ft west of Figueroa, which is the first foothold on its extent. Now that
+  Ord. 48 is a document, the prose spelling periods could give way to the rows.
+  (2026-09-15, 2026-09-18)
+- **`gladys-ave`**: there is no Gladys in the Wolfskill family. About 40 US girls were named Gladys in 1881,
+  so the name probably honours a specific person. Next:
+  - **George W. Frink's household.** He was president of the Los Angeles Land Bureau, and the Huntington holds a
+    Central Pacific deed to him dated 19 Mar. 1888, in the Shorb Papers. Identity is not established.
+  - Whether the San Francisco auctioneers **Easton, Eldridge & Co.** carried the name
+    from SF's own Gladys Street.
+  
+  (2026-09-14)
+- **`guadalupe`**: nothing found anywhere. Do not guess between a Marian dedication and a
+  given name. (2026-09-13)
+- **`hewitt`**: namesake not found. Start from the owner and surveyor of the 1871 Johnston
+  Tract (`mr002-092`), which also carries the equally blank `messer-street` and
+  `rose-street`. (2026-09-13)
+- **Home → Rockwood** (`home-street` to `rockwood-street`): a real correspondence about 43 m
+  off, because the block was recut. When it was realigned needs a map between 1884 and today.
+  (2026-07)
+- **`lake-avenue`**: Echo Park Lake is the simple reading. The recorded coincidence is that
+  Patton married Ruth Wilson in 1884, and Pasadena's Lake Avenue is named for her
+  father's Lake Vineyard. It wants a contemporary source. (2026-08-30)
+- **Lebanon Street**: no entity. Park Lane (1897, Ord. 4093's list) and
+  `alexander-lane` (1917) were both folded into it. (2026-09-13)
+- **`lemon-st-arts-district` → Wilson**: Kines's three 1887 facts make Lemon the
+  predecessor of Wilson, **but** a Lemon Street survives at 1212 Lemon St, 90021, just
+  south of the extract. **Widen the extract one block south** before any change row.
+  (2026-09-15)
+- **`loomis-st`**: one street or three? The candidates are the withdrawn 1893 Sixth Street ordinance
+  (`lah-1893-02-21`), the 1894 Echo Park Road list (`lah-1894-01-26`) and the Nichols
+  Addition row (`vanished`). (2026-09-13)
+- **`mateo` and `molino-st`**: Ord. 3829's "from Palmetto to Short". "Short" is in no
+  geometry, and the row is `extent-unresolved`. Molino's namesake is untraced. Whether Mill Street
+  echoes Molino (1896) is settled in one look at the 1903/04 Violé map (IN-PERSON.md).
+  (2026-09-15)
+- **Millar, E. B.** (E. B. Millar Tract, `mr013-091`): given name and dates unknown.
+  He is identified through Guinn as George D. Rowan's brother-in-law and partner. Nothing links him
+  to the 1887 tract. (2026-09-15)
+- **Mills, H. W.** (third owner of the Orchard Tract, `mr005-005`): is he the Mills of
+  "Mills and Wicks" (M.R. 13-87/88)? That is a five-minute check. (2026-09-06)
+- **Morris and Montgomery Streets**: the Nov. 1889 ordinance gives them as the predecessors of 17th Street
+  (`lah-1889-11-06`). They are absent from every reachable source. (2026-09-17)
+- **`ozier-lane` → `winston-st`**: Wikipedia spells it "Ogier", while our ordinance and our 1881 sheet
+  say "Ozier". Mills' Tract (`mr012-026`) letters Winston in Nov. 1886, seven months
+  before the ordinance was even postponed, so check its recording date against its survey date. (2026-09-13)
+- **`palm-st-arts-district`**: the likely chain is Palm → Mimosa → Imperial. Garrigues has "Mimosa St.,
+  bet. E. 6th & Jesse St., is Imperial St." from the 1903 map. Neither step is dated
+  and the corridors are unchecked block by block. (2026-09-15)
+- **Park Tract date**: Kines dates the Park tract's names (Centennial, Custer, Boston,
+  Philadelphia) to 1876. M.R. 7-26 in this corpus is Jan. 1885, and a dealer's catalogue
+  gives c. 1884 with E. T. Wright as surveyor. Is it probably an 1885 re-recording of an 1876
+  layout? Nothing checked says so. (2026-09-17)
+- **`parker-drive`**: who J. B. Parker was. (2026-09-13)
+- **`pine-street-venice` and `rouland-street`**: did the *city* ever recognise Pine or
+  Rouland? The plats are subdividers' usage, and Forman is a witness. Also open: when Pine became
+  Venice (Pine and Rowland → 16th, Nov. 1889, then 16th → Venice, 1925), and **who Rouland
+  was**. Start from F. Bouton, at whose request the Greenwell Tract (`mr012-070`) was
+  recorded. (2026-09-15)
+- **`poplar-st` and Lugo**: Huber → 4th is sourced (Kines, Colyton page), but Poplar →
+  Lugo → 5th is not. Also, two "Lugo street" mentions in the 1897 sources may be two streets
+  (the Feb. 21 committee report and the Feb. 18 rejected coinage for Boyle Heights' Second).
+  (2026-07)
+- **Prose that runs ahead of its sources** (change-rows audit, 2026-09-18):
+  - `wilshire` dates the naming to Dec. 1897, but `lah-1897-12-07` is an engineer's report that was
+    only referred.
+  - `hill-street-downtown`: see `castelar` above.
+  - `cherry-street`: see above.
+- **`ruth-ave`**: Phase 1 is not finished until the **1900 census** household is read. It
+  would test Elena's children born/living counts for a child who died young in 1885–88,
+  the only place a Gladys could hide. Ruth now rests on Find a Grave. (2026-09-14)
+- **`san-pedro` and `wilmington-street`**: **when did San Pedro's name move onto the
+  Wilmington line?** The 1868 Garden of J. Murat sheet (`mr010-008`) letters San Pedro
+  on today's Onizuka and Wilmington on today's Judge John Aiso Street. (2026-09-13)
+- **`santa-fe-ave`**: whether the Tulip-era name ran north of 6th, toward the depots,
+  is unchecked. (2026-07)
+- **`st-paul-avenue`**: church or school? `mr005-566` (1889) was made for the Vestry of
+  St. Paul's P.E. Church, while `mr052-085` and `mr078-055` are St. Paul's School sheets, and the School's
+  replat first letters the avenue (1900). **Page 2 of the church subdivision** may letter it
+  earlier. **St. Paul Place** wants an entity, and minting it is Kenny's call. Whether an
+  institution can be an `eponymous` namesake is a ROADMAP question, and this is the entity to test it
+  on. (2026-09-18)
+- **Stanford Street before Ruth**: see Traps.
+- **`stevenson-ave`**: still has no row and no ground. Look for Stevenson Avenue on
+  Stevenson's own 1884 map. The 1888 list's Stevenson is on the cable route west of
+  downtown, while this entity came from a Boyle Heights sheet. (2026-09-17, 2026-09-18)
+- **Thomas Tract** (`mr003-060`, north sheet): a second unnamed N–S street between
+  Guadalupe and Georgia (lots 13–22) is unidentified. (2026-07)
+- **`turner-street`**: our 1928 sheet still letters Turner 45 years after the May 1883
+  Turner → Jackson change (`lah-1883-05-13`). Which Jackson it is remains open (`possiblySameAs`).
+  Modern Jackson meets neither 1st nor Alameda. (2026-09-13)
+- **`weill`**: the **A. Weill tract** is 56.64 acres south-east of downtown on Stevenson 1884,
+  next to O. J. Mairs, J. Philbin, Goetz and H. Niemaier. Still no first name. It is the best open
+  lead among the title blocks (IN-PERSON.md §4). (2026-09-17, 2026-09-18)
+- **Subdividers and title-block names** (all title-block or directory questions, not web
+  ones; the seven people are in IN-PERSON.md §5):
+  - M.R. 6-115 (the gems), M.R. 5-69 (the states), M.R. 10-77 (the Harvey Tract, for
+    Adele), Tract No. 320 (for Nina), the Industrial Center Tract, and Tract No. 1836
+    (Warren → Decatur).
+  - The seven names off the title blocks: B. E. Day, E. W. Jones, E. Bouton,
+    W. A. Boring, N. W. Stowell, Mrs M. A. Hoadley and W. J. Bradshaw.
+  
+  (2026-09-15, 2026-09-17)
+- **Who was J. Murat?** (`mr010-008`, 1868): absent from the Homestead Museum's
+  winemakers and from LA Revisited's French community. Try the directories and the *Star*.
+  (2026-09-13)
+- **The 1849 grid's angle**: `lah-1905-05-18` says Hancock laid the pueblo out
+  "on an angle of twenty-eight degrees". Test it against our geometry. (2026-09-06)
+- **Smaller council items not yet followed**:
+  - Polyxena → Clay, ordered drafted June 1883 (`lah-1883-06-17`).
+  - Stearns → Albion and Albion → West Albion, petition 829 (`min-1896-09-21`); its outcome is unknown.
+  - The pre-1890 "Broadway street" → Toberman, the same night as Fort → Broadway
+    (`lah-1890-02-18`). It needs two entities, and its ground is unknown.
+  
+  (2026-09-06)
 
-**★ Los Angeles' tilted grid, explained by the city in 1905.** The Herald of
-May 18, 1905 (`documents/lah-1905-05-18`) traces the whole south-side numbering
-mess to the original survey: *"Lieutenant Hancock of the United States engineer
-corps laid out the pueblo of Los Angeles in 1849 under orders from the city
-council, and for some reason not now plain, he adopted a system of running his
-streets on an angle of twenty-eight degrees instead of north and south … This
-was done despite the fact that the land lines of the pueblo were run north and
-south, and comprised an area six miles square."* This is the year before our
-July 1850 assessment work, and "twenty-eight degrees" is a claim we can test
-against our own geometry. Worth doing.
+## Open: outside coverage (banked)
 
-**★ The seniority rule, then the annexation rule.** Pasadena, 1899: *"the
-council decided that since the former street was the first to receive the name
-it was entitled to retain it over the other street"* (`lah-1899-10-11`). Los
-Angeles, 1910, as standing policy: *"In nearly all cases the names of the
-streets in the original city are to be left as they are and those in the
-annexed portions changed"* (`lah-1910-09-30`). So when two streets share a name
-across an annexation boundary, the default expectation is that the **annexed**
-one changed. That is a prior we can use.
+Nothing to do on these until the neighbourhood exists.
 
-**★ What a renaming cost.** Assistant city engineer J. J. Johnson, 1910: about
-**$100 per street** to change the name on the department's records, maps,
-profiles and other documents (`lah-1910-09-30`). That is the engineering
-department's standing reason for resisting sentimental renamings, and it
-explains the tone of every engineer's objection in the run.
+- **Moneta → Broadway**, 93rd to 113th, 1926 (`dnla-1926-09-30`), plus its sibling ordinances and
+  the earlier Main ↔ Moneta tangle (`lah-1899-03-14`). (2026-07)
+- **Wolfskill Ave / original Central Ave boundary**, south of Vernon. When that stretch
+  is added, Central Avenue's 20th-century history as the heart of Black Los Angeles wants a proper
+  mention. (2026-07)
+- **Ord. 3847 (Sept. 8, 1896)**, nine southwest changes (`min-1896-09-08`,
+  `lah-1896-09-09`), and Ord. 3829's nine out-of-extract changes (`lah-1896-09-03`) are
+  quoted verbatim, so each is a transcription away from a row once the ground is encoded. (2026-09-06)
+- **Childs avenue → Griffith Park Boulevard** (`laevex-1925-10-16`): is this Childs O. W.
+  Childs? Check it against the Childs Heights tract geometry (rule 2); see also Ord. 1888's
+  "Childs avenue, in the Childs Heights tract" (`lah-1893-10-29`). The predicted Griffin →
+  Montecito change did not follow. (2026-09-06)
+- **Esmeralda**: the earlier East Rose Hill → Esmeralda change is not in hand. The reversal
+  is `lae-1929-10-21`. (2026-09-06)
+- **Adams Boulevard** (`lae-1928-08-06`): did it pass? `lae-1930-06-11` still says
+  "Adams street". (2026-09-06)
+- **Robertson Boulevard** is for G. F. Robertson, "as a compliment to"
+  (`dnla-1926-08-05`). It is a clean `namedAfter` once the ground is in. (2026-09-06)
 
-**★ A legal reason for delay between a decision and its ordinance.** Sept. 1908:
-the Fort/Buena Vista/Downey → Broadway ordinance could not be presented until
-the paving of Downey avenue was finished, because a mid-project name change
-*"would conflict with the Vrooman act, under which the paving is being done"*
-(`lah-1908-09-22`). Whenever a council decision here has no ordinance behind it,
-check whether the street was under improvement.
+## Traps: name collisions
 
-**★ A name that changed and changed back, both instruments dated.** About June
-30, 1908 the council renamed Orange street (Figueroa to Alvarado) to Wilshire
-boulevard and **sign posts went up**; in Dec. 1908 the ordinance was repealed
-and *"Orange street is still Orange street"* (`lah-1908-07-14`,
-`lah-1908-12-05`). Roughly five months in which the name stood in law and on
-the street. Any document from that window may show it.
+Match by geometry, never by name (rule 2). Each of these has already caught someone.
 
-**★ Official name vs. used name, with the post office as tiebreaker.** The same
-Dec. 1908 story: the petitioners for Sunset place say the block *"has always
-been known as Sunset place"*, that owners believed that was its real name
-*"until signs were posted on the corners calling it Orange street"*, and that
-the post office knows it as Sunset place and will not deliver mail addressed to
-Orange. A useful reminder that our `spellings[]` are what was *written*, which
-is not always what was *used*.
+- **Vine**: two lineages. The Central Avenue Vine (→ Central, Feb. 1897,
+  `vine-central`) is not the southwest Vine (Vermont to Rosedale → 24th, Sept. 1896). Olvera's
+  *Calle de las Viñas* ("Wine/Vine") was Olvera by 1877 and is neither of them.
+- **Stanford**: before writing Ruth → Stanford, locate the "Stanford street" of Mar.
+  1896 (`lah-1896-03-31`) and the Stanford made from Bellard Street in the
+  Washington-street tract (`lah-1897-12-07`).
+- **Palm**: the west-side Palm (`lah-1896-05-16`, `lah-1896-09-09`) is not the Goodwin
+  Tract Palm that became Imperial.
+- **Pine** (four streets), **Virginia** (four), **Georgia** (two, maybe three),
+  **William** (three), **Belmont** (two, plus Aztec on the same corridor), **Willow** (two),
+  **Cooper** (two: the 1896 one is not `ord-1613`'s), **California** (two), **Jackson**
+  (three or four), **South Street** (three or more), **Short** (two), **Crescent** (two), and
+  **Broadway** (Fort, Buena Vista, Downey, Moneta, and the pre-1890 "Broadway street").
+- **Turner**: two in 1883. Ours is First to Alameda → Jackson. The other, west of Main, →
+  Sonora.
+- **Rose**: three. Ours survives in the Arts District; the East L.A. Rose → Kuhrts (1883); the Highland
+  Park Rose → Thorne.
+- **Kohler**: Kines puts the *original* Kohler Street on today's 9th, San Pedro to
+  Alameda. None of our four sightings has been checked against it.
+- **Ruby** (two) and **Ward** (two, probably). **Messer** is not Mesmer. **Helena Avenue** is not Helena
+  Drive or the Modjeska streets. **John P. Moran** is not the Moran of Moran's Lane.
+- **Lugo**: see `poplar-st`.
+- **Mono / Moore, 3rd Street east of Mission Rd**: the Feb. 19, 1897 Herald's "Mono
+  street" reads **Moore** in the council manuscript, so it is probably OCR. Build no segment
+  story on it until a Mono Street is independently located. (2026-08)
+- **Pasadena documents**: `lah-1899-07-26` and `lah-1899-10-11` are Pasadena council
+  news. L.A. has its own Locust, Columbia and Union.
+- **The 1889 names are not modern names**: Figueroa = Boylston, Ward = 6th, Seminary =
+  Miramar, Rouland = Venice, Diamond = 1st/Beverly, and Union Avenue (Colina Park) = Burlington.
+  Ord. 482's "Second street … Lucas to Figueroa" does not reach modern 2nd.
+- **`lah-1917-02-14`** transcribes a racial slur as `asWritten`. The document header says it
+  must never reach a public `note`, and any public wording is Kenny's.
 
-**★ Three names for one street at once.** Feb. 1903: an ordinance changing *"the
-name of East Jefferson street, Virginia street or Thirtieth street, between
-Eureka street and Central avenue, to Thirty-eighth street"*
-(`lah-1903-02-17`). The council's own "or" — it did not know which name was
-correct either. A model case for `aliases`.
+## Don't re-run (negatives)
 
-### The 1905 ninety-street ordinance — do not write rows from it
+- **The 1897 and 1898 city directories as a route to Ord. 4093**: the 1898 has no list, and the 1897
+  says it absorbed the 326 changes without a table (Kenny, 2026-08; also in SERIAL-SOURCES.md).
+- **The Herald of Feb. 19 and 21, 1897** (`LAH18970219.2.24`, `LAH18970221.2.28`): nothing for the
+  renaming data (Kenny, 2026-09-04).
+- **July 1850 council minutes**, all eight meetings and 50 pages: no street named. See
+  RENAMING-SOURCES.md. (2026-09-05)
+- **Dunigan Tract / NavigateLA** (2026-09-06): every parcel was deleted by the Convention Center
+  expansion (1987–88), so no Map-Ref can be returned. The Huntington has no Dunigan, Carleton or
+  Summerfield sheet either.
+- **Molino Street / NavigateLA** (2026-07): a single modern parcel (TR 060507-C) has erased the old
+  fabric.
+- **San Julian below Ninth** (2026-09-06): City Lands remnant (M R 2-504/505), never
+  platted by a subdivider, so no tract map exists.
+- **Kines, Garrigues and the city street registry, for the 43-entity batch of 2026-09-17**: every search
+  had a nonsense control. Kines had no page for, and Garrigues no entry for, Loma, Collado, Arch, Shenandoah,
+  Artemus, Clementina, Myers, Anderson, Ingraham, Hartford, Logan, Nichols, Kennedy,
+  Strelitz and others. The registry has retired Clementina, Shenandoah (east), Strelitz, Collado,
+  Gravilla, Atchison, Freight and Topeka. Full lists are in each entity's `internalNote`.
+- **"Genuinely unattributed" names, 2026-09-13**: Ingraham, Kip, Turner, Melendrez, Elmore,
+  Helena, Florida, Ruby, Ward, Loomis, Merchant, Moran's Lane and others were searched across Kines, LA
+  Revisited, Wikipedia's etymology list, LAPL and Garrigues. Results are in each `internalNote`.
 
-Four documents (`lah-1905-05-13`, `-05-16`, `-05-17`, `-05-18`) cover one
-instrument across six days: City Engineer Stafford's renaming and renumbering
-of **ninety cross streets** in the Fifth and Sixth wards; passed May 8; in
-Mayor McAleer's hands May 13; **recalled from the mayor by the council May 15**
-after the Sixth ward protested; and on May 18 the Herald reports it *"considered
-likely that the present ordinance will be entirely done away with and some new
-plan adopted."*
+## Tooling nits
 
-The objection was not to renaming as such — it was to the burden falling on one
-side of town: *"none wish all of the changes made on one side of the city. They
-desire that the changes be divided between the wards evenly."* What probably
-became of it is the ordinance Mayor Harper **signed on Mar. 12, 1908**
-(`lah-1908-03-13`), covering the same southwestern district, endorsed in advance
-by the Fifth and Sixth ward improvement associations, and explicitly *differing*
-from the engineer's own draft. That one took effect thirty days later.
-
-The 1905 list should not be treated as a source of changes until the May 22,
-1905 meeting is read.
-
-### Two documents that are Pasadena, not Los Angeles
-
-`lah-1899-07-26` and `lah-1899-10-11` are Pasadena council news carried by the
-Herald. Both carry a Pasadena coverage polygon and a warning in the header.
-Rule 2 (match by geometry, never by name) would have caught this eventually,
-but only after wasted work: Los Angeles has its own Locust Street, Columbia
-Street and Union Avenue.
-
-### One clipping that could not be read
-
-`documents/lah-1911-02-08` was supplied at **93 pixels wide** — the page crop
-was 743 px but the saved JPEG is downsampled by a factor of eight. The headline
-("Plan to Rename Wesley Ave. Goes to Committee") is legible; the body is not,
-and upsampling recovers nothing. The document says so in its header and quotes
-only the headline. A re-crop is in `handbook/WANTED.md`.
-
-### ⚠ One transcription contains a racial slur
-
-`documents/lah-1917-02-14` records the council ordering the Chinatown alley
-renamed, *"declaring the name … a slur upon the colored people."* The old name
-is transcribed because excerpts are `asWritten` (MODEL-SPEC §12), and the
-document header says plainly that it must not be reproduced in any public
-`note`. If this ever becomes a row, the public wording is Kenny's to write.
-
-### Still untranscribed, unchanged from the last pass
-
-Ordinance No. 48's 212 changes (`lah-1889-05-10`), the Oct. 1888 committee's
-~300 proposals (`lah-1888-10-11`), and the Feb. 2, 1897 commission report
-(`lah-1897-02-02`, read from an 84-px crop).
+- `tools/check-data.js`'s `PRIMARY` regex lacks `loc.gov` and `rescarta.lapl.org`,
+  so the primary-anchor count under-reports once Sanborn or directory sources land. (2026-08)
+- `tools/generate.js` cannot give a name two separate periods on one stretch
+  (A → B → A → B). The 1908 Orange → Wilshire and repeal rows (`lah-1908-07-14`,
+  `lah-1908-12-05`) are held back until it can. (2026-09-18)
 
 ---
 
-## Two more papers — the Daily News and the Evening Express, 1923–1935 (2026-09-06)
+## Settled and open at the switchover (2026-09-17 to 19)
 
-Kenny carried the *"ordinance changing"* search into two more CDNC titles and supplied
-34 clippings across the day, in batches, while the Herald run was being written up. All
-34 are now documents. **The corpus is 226 documents**; `tools/check-model.js` and
-`tools/check-data.js` both pass. No rows written.
+*Moved here from handbook/SWITCHOVER.md when that file was retired on
+2026-09-20. It is the record of what the pre-switchover audit found for each
+legacy name and coverage question, and what it left open. The open items:
+Calle de los Negros (LAPL scan of Ord's original, or the 1872–75
+directories), the Boyle Heights stretches of Willow, Jesse and 7th Place for
+`coverage`, the Walters / Stephenson single ordinances, the Chavez extents
+(council file 93-0907's exhibit map), Olympic 1935, and the prose fixes at
+the end.*
 
-⚠ **Paper identification is provisional.** The CDNC codes are DNLA (read as the Daily
-News, Los Angeles) and LAE / LAEVEX (both read as the Los Angeles Evening Express).
-None was checked against a masthead, and the two Express codes may be two different
-titles. One check would settle it for 34 documents; logged in `handbook/WANTED.md`.
+### The checkers
 
-### ★★ Two long-standing questions closed
+`oldplaza1873` has its Huntington record as `url` (Kenny, 2026-09-18) and the
+35 citation errors are gone; `stevenson-1884-hi-res` (partially processed:
+alignment and coverage in, title block and rows not) has its record page,
+the IIIF full-size image as a `copies` entry, and an interim title. Also
+that day: an entity minted in the tool and not yet researched derives
+`basis-none` / `searched-none` instead of an empty category list.
 
-**Main Street was never renamed — and now we know why, twice over.**
-`documents/lah-1927-06-29` left the file with a contradiction: the Herald said Main
-street was about to become Huntington drive, and Main Street is still Main Street.
-Two clippings close it.
+### Coverage — done
 
-- `documents/dnla-1927-06-30`, one day later: *"Passage of the ordinance … was
-  indefinitely postponed yesterday by the city council on advice of the city
-  attorney."* The reason: notices of pending improvements describe property by street
-  name, so a change *"might make proceedings illegal."*
-- `documents/lae-1927-10-18`, four months later: *"The drafting of an ordinance
-  changing the name of Main street to Huntington boulevard was ordered by the former
-  council, but the measure was withheld."*
+The last ten were compared stretch by stretch with the old map on
+2026-09-19 and accepted: on every one the old claim was the whole-street
+entity claim, which the entity still carries onto the grey stretch. The
+corridors now in WANTED.md §5 (the Misc Records half, §5.11, still to run
+when the City service is back) are work for after the flip.
 
-The full arc is five documents in three papers, and the opposition is a roll-call of
-1927 Los Angeles: J. A. Graves of the Farmers & Merchants National Bank at the head of
-1500 signatures, Judge William P. James of the federal district court, Bishop John J.
-Cantwell, and the Native Sons and Native Daughters of the Golden West. Also: three
-papers say Huntington **boulevard** and only the Herald says **drive**.
+### Names — done (two deferred to proceedings)
 
-**Orange Street did become Wilshire Boulevard — sixteen years after the first attempt.**
-The 1908 renaming was passed, signposted, and repealed under protest
-(`lah-1908-07-14`, `lah-1908-12-05`). On **Apr. 1, 1924** the council passed it again
-**unanimously** (`laevex-1924-04-01`, front page), and Mayor George E. Cryer signed it
-on **Apr. 11, 1924** (`lae-1924-04-12`), having first deferred a few days to look into
-a viaduct across Westlake Park (`lae-1924-04-07`).
+Buena Vista and the Miramar chain were accepted 2026-09-19 as proceedings
+work; the rest cleared or were accepted as recorded below. What the corpus
+held for each, at the time:
 
-What changed was the ARGUMENT, not the personnel. In 1908 the case against was that
-Orange street was not a boulevard. In 1924 the case for was that this was the last link
-in *"a continuous thoroughfare from the heart of the business district of the city to
-the ocean."* **When a renaming fails and then succeeds years later, look for the change
-in argument.**
-
-### New mechanisms this batch put on the record
-
-**★★ Emergency provisions — a name can be law the next day.** Sawtelle's residents, in
-`documents/laevex-1925-09-15`, say the council renamed the whole Old Soldiers' Home
-district *"without warning"*, under emergency provisions, so *"the new names became
-effective the day aftr the ordinances were adopted."* No thirty-day wait as in
-`lah-1908-03-13`. Any dating that assumes a waiting period can be a month wrong. Also
-note **"ordinances", plural** — the 1919 Sawtelle renaming (`lah-1919-09-30`) was more
-than one instrument. The residents *"don't know whether we live in California or
-Halifax."*
-
-**★ A veto is not the end.** `documents/dnla-1932-03-22` and `-03-23`: Mayor John C.
-Porter vetoed the Pasadena avenue renaming; the council **overrode him 11 to 4 the next
-day**, and North Figueroa Street is on the map today. Everywhere else in this corpus a
-mayor's veto kills a renaming. The corollary to *adoption is not law* is *veto is not
-the end either* — always read the following meeting.
-
-**★★ The historic-preservation case, stated by a mayor in 1932.** Porter's veto message
-(`dnla-1932-03-22`) is the best short statement of why any of this matters: *"The
-elimination of old landmarks or historical names in a city with a background of color
-and romance, such as we have here in Los Angeles, is not for the best interests of the
-people. History has been enriched through the preservation of street names which carry
-a distinctive significance, and should be encouraged."*
-
-He also states the **destination principle** with five examples: *"We have streets
-leading from Los Angeles carrying such names as Wilmington boulevard, Santa Monica
-boulevard, Long Beach boulevard, Redondo boulevard and Venice boulevard — all
-indicating the destination of the highway."* Pasa Hambra boulevard
-(`dnla-1924-01-04`) and Avalon boulevard (`lae-1926-07-23`) belong to the same family.
-
-**★ Petition percentages, and what they are worth.** The city measured these precisely
-and the numbers do not behave the way one would guess:
-
-| Petition | Change | Outcome |
+| finding | evidence in the corpus | do |
 |---|---|---|
-| 100% for restoration | Esmeralda → East Rose Hill | recommended (`lae-1929-10-21`) |
-| 57.4% for | Hollenbeck ave → Eighth st | council declared in favor (`lae-1930-11-13`) |
-| 74% against | Sherman way → Van Nuys blvd | hearing only (`lah-1926-06-08`) |
-| 60% of frontage against | Pasadena ave → N. Figueroa | **passed over a veto** (`dnla-1932-03-22`) |
-
-A large majority against does not stop a renaming. Only unanimity clearly moves the
-council.
-
-**★ Suspension of the rules — the one-vote delay.** `documents/dnla-1925-07-16`:
-Councilman Criswell alone voted against suspension of the rules and laid the Venice
-Boulevard ordinance over a week, *"All of the other councilmen voted in favor."* Three
-councilmen do the same to the Pasadena avenue ordinance in 1932 (`dnla-1932-02-17`).
-This explains gaps of exactly one or two weeks between a decision and its ordinance,
-and it is a delay, never a defeat.
-
-**★ Inter-city coordination — Los Angeles renames first.** `lae-1930-06-11`: Angeles
-Mesa drive becomes Crenshaw boulevard to the city limits, and *"the city of Inglewood
-will be asked to continue the change."* `dnla-1930-08-05`: 128th street becomes El
-Segundo boulevard *"although El Segundo, Hawthorne and Lynwood have yet to take action
-to make the change uniform."* When a boulevard name crosses a municipal line, the Los
-Angeles ordinance is likely to be the earliest, and the neighbours' are in their own
-records.
-
-**★ A restoration, in the paper's own words.** `documents/lae-1929-10-21`: *"an
-ordinance changing the name of Esmeralda street **back to** East Rose Hill drive."* The
-headline is "'Esmeralda' Reverts to 'East Rose Hill'". This is the clearest warrant in
-the corpus for Kenny's rule (decision log, 2026-08-24) that **a revived name resumes its
-old entity** — one entity, three `spellings[]` periods. The earlier change, East Rose
-Hill → Esmeralda, is not in hand and should be searched for.
-
-**Suffix changes are not renamings.** Waverly avenue → Waverly Drive
-(`lae-1926-06-08`) and Adams street → Adams Boulevard (`lae-1928-08-06`) come to the
-council in the same language as a renaming (*"an ordinance changing the name of"*) but
-under MODEL-SPEC §3 they are one entity with two `spellings[]` periods. Together they
-show the 1920s upgrading of ordinary streets to "boulevards" as a municipal habit.
-Note that `lae-1930-06-11` still says "Adams street" two years after the Adams
-Boulevard recommendation — so either it did not pass, or the paper kept the old form.
-
-### Boulevards assembled out of other streets
-
-A pattern the Herald run only hinted at is unmistakable here: the great east–west and
-north–south arterials of Los Angeles were **built by renaming**, segment by segment,
-mostly between 1923 and 1934, and contested nearly every time.
-
-| Boulevard | Assembled from | Where |
-|---|---|---|
-| **Venice** | Sixteenth Street, Main to the west city limits | `dnla-1925-07-16` |
-| **Wilshire** | Sixth st (1897); Orange st, Alvarado–Figueroa (1924) | `lah-1897-12-07`, `laevex-1924-04-01` |
-| **Broadway** | Fort st, Buena Vista, Downey ave (1908); Moneta ave, 93rd–113th (1926) | `lah-1908-09-22`, `dnla-1926-09-30` |
-| **Avalon** | South Park avenue + Canal street | `lae-1926-07-23` |
-| **Beverly** | First street, Commonwealth–Glendale (east end) | `dnla-1927-07-27` |
-| **Sunset** | Beverly boulevard west of Beverly Hills (west end) | `dnla-1934-02-03` |
-| **Gage** | Merrill ave, 63rd st, 63rd pl, 64th st, Hyde Park blvd | `lae-1930-05-03` |
-| **Crenshaw** | Angeles Mesa drive, Adams to 79th | `lae-1930-06-11` |
-| **North Figueroa** | Pasadena avenue + Annandale boulevard | `dnla-1932-03-23` |
-| **Olympic** | Country Club drive (from Tenth Street) | `lae-1929-08-21` |
-| **El Segundo** | 128th street, Figueroa–Vermont | `dnla-1930-08-05` |
-| **Bridge** | portions of Macy, Prospect pl, Yosemite, Pennsylvania | `lah-1908-10-27` |
-
-`lae-1930-05-03` says it plainly: *"With slight jogs the various thoroughfares involved
-make one through highway across the city."* That is why so many Los Angeles arterials
-jog.
-
-### One that was ordered and never happened
-
-`documents/lae-1928-08-18`: the council voted **8 to 5** to draft an ordinance making
-Sunset boulevard, **from the Plaza to Hillhurst avenue**, into Hollywood Boulevard —
-and first rejected, 8 to 5, the planning committee's recommendation that property
-owners be consulted. Sunset still runs from the Plaza today.
-
-The opposition is the striking part: Hollywood's **own** Chamber of Commerce (Carl
-Bush), its **own** Boulevard Improvement Association (Harry Bain), and C. E. Toberman.
-The prestigious street refusing to share its name with a longer, plainer one — exactly
-the 1908 Wilshire fight (`lah-1908-07-14`). Councilman Randall's retort, that the
-arguments against *"are based on materialism,"* is the same complaint from the other
-side.
-
-This is the most valuable kind of document we can hold: **evidence that a change did
-NOT occur.** Without it, a 1928 reference to "Hollywood Boulevard" downtown would be
-unexplainable.
-
-### Small things worth keeping
-
-- **Robertson Boulevard** is named for **G. F. Robertson** — the ordinance says so
-  outright, *"as a compliment to"* (`dnla-1926-08-05`). A clean `namedAfter` when
-  confirmed.
-- **Zahn Avenue**, for sitting Councilman Otto J. Zahn, carved out of South Sherman Way
-  (`dnla-1926-05-06`). There is no Zahn Avenue today.
-- **Marion Davies** got Claire drive and Linda drive renamed Davies drive by protesting
-  against the city's proposed fix for a duplicate name, *"Clairaly drive"*
-  (`dnla-1933-09-06`). Her letter was filed under her legal name, Marion Douras. A
-  protest against a proposed name is itself a naming mechanism — and "Clairaly" is a
-  good specimen of what the engineer's office produced when it needed a unique string
-  rather than a meaningful name.
-- **A cascade that did not complete.** Childs avenue → Griffith Park boulevard was
-  adopted, and *"as a result of this change it is probable Griffin avenue will be
-  changed to Montecito drive"* (`laevex-1925-10-16`). Griffin Avenue still exists, so
-  it did not follow. **A predicted follow-on renaming is not evidence that it
-  occurred.**
-- **★ Childs avenue** is very likely named for **O. W. Childs**, whose tract is already
-  in `data/names.js`. If so, `laevex-1925-10-16` records the loss of the last street
-  carrying his name. Check against the Childs Tract geometry (rule 2) before writing
-  anything.
-- **"Swanking up."** Freitas terrace → Londonderry place, and the Daily News says the
-  quiet part: *"Dear old Freitas terrace may be swanked up a bit today"*
-  (`dnla-1935-09-10`). A Portuguese surname replaced by a British place name in the
-  Hollywood Hills. Worth watching for as a pattern; not a conclusion from one case.
-- **The city planning committee** replaces the board of public works as the usual mover
-  of renamings by the late 1920s (`dnla-1927-07-27`, `lae-1928-08-06`,
-  `lae-1928-08-18`, `dnla-1934-02-03`, `lae-1929-10-21`).
-
----
-
-## Coverage audit — did the newspapers find what we already knew? (2026-09-06)
-
-Kenny asked what fraction of the renamings we knew from **maps or Kines** actually
-turned up in the newspaper sweeps. Measured rather than guessed.
-
-**Method.** The denominator is `data/names.js` as it stood at commit `de8172b`
-(2026-09-03), *before* any newspaper work — 72 entities, of which 18 carry a public
-`note` asserting a renaming, each resting on the 1849 Ord survey, a tract plat, or
-Kines, with no document behind it. The numerator is what the 176 newspaper documents
-now in `documents/` say about each. Every pair was grep-checked against the excerpt
-text, not against my memory.
-
-| # | renaming, as we knew it | newspaper result |
-|---|---|---|
-| 1 | Bull → Castelar, Feb. 1874 | ✔ corroborated (`lah-1874-02-13`, `-02-27`); **act** is in the minutes (`ord-1874-02-26`) |
-| 2 | Hornet → Yale, Feb. 1874 | ✔ corroborated, same pair of documents |
-| 3 | Virgin → Alpine, Aug. 1887 | ✘ found in the **minutes** first try (`ord-1887-08-22`); papers only mention it in passing |
-| 4 | Fort → Broadway, Feb. 1890 | ★ **newspaper-exclusive** — minutes missing; `lah-1890-02-20` carries the change row |
-| 5 | Charity → Grand, 1886–87 | ✘ **zero** — "Charity" appears nowhere in 176 documents |
-| 6 | High → Walters, 1886 | ✔ `lah-1886-09-21`, verbatim: "Presented an ordinance changing name of High street to Walters street. Adopted." |
-| 7 | Walters → Ord, 1890 | ✔ **and corrected** — `lah-1890-10-28` has it in a 21-change omnibus that Mayor Hazard **vetoed** on Nov. 8. The 1890 date needs a different instrument. |
-| 8 | Eternity → Buena Vista, 1888 | ✔ **attested — CORRECTED 2026-09-07.** Scored ✘ here because I searched the *old* name; the successor is in `lah-1896-05-16` and `lah-1908-09-22`. See the Cemetery/Eternity section below. |
-| 9 | Buena Vista → North Broadway, Nov. 1909 | ✔ **and explained** — `lah-1908-09-22` orders it 8–1 in Sept. 1908, with the ordinance delayed for the **Vrooman act** until the Downey avenue paving finished. That is the gap to late 1909. |
-| 10 | Georgia → Georgia Bell, 1889 | ★ richly — Ordinance No. 48 text (`lah-1889-05-10`), plus Major Horace Bell's own account of the naming (`lah-1897-02-05`) |
-| 11 | Ruth → Stanford, after Feb. 1897 | ✘ not the renaming — but see the new lead below |
-| 12 | Stanford → Crocker, undated | ✘ **zero** — "Crocker" appears nowhere |
-| 13 | Tulip → Santa Fe, 1887 | ✔ **and corrected** — the real end is Ord. 3829, Aug. 31, 1896 (`lah-1896-09-03`), not "a matter of months" in 1887 |
-| 14 | Palm → Imperial, undated | ✘ not found (two unrelated Palm streets appear) |
-| 15 | Alexander Lane → Lebanon, 1917 | ✘ **zero** — the only "Alexander" in the corpus is Marion Davies's attorney |
-| 16 | Tenth → Olympic, 1935 (asked 1929) | ~ the **ask** only: `lae-1929-08-21`, the Tenth Street Improvement Association's petition. The 1935 act is not found. |
-| 17 | San Pedro → Avalon, undated | ✘ not found (Avalon appears once, from South Park ave and Canal st) |
-| 18 | San Pedro → Judge John Aiso, 1997 | ✘ outside the searched period |
-
-**The score.** ⚠ *Revised 2026-09-07 — see "Is Cemetery Avenue the same street as Eternity?" below; item 8 was mis-scored and the corrected totals are 7 attested / 6 with no trace.* Of 18 prior claims: **6 got a newspaper document that attests or
-materially corrects the change** (4, 6, 7, 9, 10, 13); **2 more were corroborated**
-while the act itself came from the minutes (1, 2); **1 is partial** (16); **1 was a
-minutes find** (3); and **8 left no trace at all** in 176 newspaper documents (5, 8,
-11, 12, 14, 15, 17, 18).
-
-So roughly **a third confirmed, a half touched in some way, and a solid 44% invisible.**
-
-### Why the misses are the interesting half
-
-The eight that produced nothing are not randomly distributed. Six of the eight are
-**undated in our own notes** — Stanford → Crocker, Palm → Imperial, San Pedro →
-Avalon have no year at all, and Ruth → Stanford has only "after Feb. 1897". A search
-of a *searchable* corpus that returns nothing for a street name is real evidence that
-the name is not there, and the likeliest reason is that the change happened **outside
-the window we swept** (the phrase search was densest 1883–1935 in the Herald and
-1923–1935 in the Examiner and Daily News) or in a paper CDNC does not hold.
-
-⚠ **Superseded 2026-09-07:** Eternity → Buena Vista IS attested under its successor name; only Charity → Grand remains in this category. Original text follows.
-
-Charity → Grand and Eternity → Buena Vista are the two that should worry us most.
-Both are 1849-survey names with a decade attached (1886–87, 1888) that sits squarely
-inside the swept window, and **neither old name occurs even once** in 176 documents.
-Two readings: the renamings happened in an unsearched paper, or — worth entertaining —
-the dates from Kines are wrong and these belong somewhere else entirely.
-
-### The asymmetry is the real finding
-
-The audit measures the wrong direction to be flattering. Turned around: the newspaper
-corpus names roughly **240 distinct old → new street-name pairs** (crude regex over
-excerpt text, so call it 200+ after noise), in **107 of the 176 documents** — and that
-is *before* transcribing Ordinance No. 48's 212 changes (`lah-1889-05-10`) and the
-Oct. 1888 committee's ~300 proposals (`lah-1888-10-11`).
-
-Against a prior inventory of **18** renamings.
-
-So the honest summary is not "the newspapers confirmed a third of what we knew." It is
-that **the newspapers found roughly an order of magnitude more renamings than we had,
-and confirmed a third of the ones we came in with.** The prior list was never a sample
-of Los Angeles renamings; it was a list of the ones that had a story attached — a
-namesake worth a paragraph in Kines, or a Spanish name on the 1849 survey. The
-hundreds we did not know about are the ordinary ones: duplicates resolved, streets
-made continuous, named streets folded into the numbered grid.
-
-That also means **the map-and-Kines inventory is not a good check on the newspaper
-work**, and the newspaper work is not primarily a way of confirming it. They are
-sampling different populations.
-
-### Two new leads this audit turned up
-
-**★ There was another Stanford Street, and it may not be Ruth's.** Our note says Ruth
-Avenue "took the Stanford name later" than Feb. 1897. But:
-
-- `lah-1896-03-31` refers to **"Stanford street"** as an existing street in Mar. 1896,
-  ten months *before* the commission left Ruth alone.
-- `lah-1897-12-07`: **"Bellard street, in the Washington-street tract, should be
-  changed to Stanford"** — a Stanford being created in Dec. 1897 out of Bellard street.
-
-So by rule 2 (match by geometry, never by name) we cannot assume the Stanford that
-Ruth became is either of these. Before anything is written about Ruth → Stanford,
-the Washington-street-tract Stanford and the 1896 Stanford need locating. This is
-exactly the two-Vine-Streets trap in `handbook/WANTED.md`.
-
-**Palm Street, twice, neither obviously ours.** `lah-1896-05-16` ("Central avenue and
-Palm streets") and `lah-1896-09-09` ("Kenwood avenue, from Vermont avenue to Palm
-street") both name a Palm street on the west side. The Goodwin Tract Palm — the one
-that became Imperial Street — ran along modern Imperial Street in the Arts District.
-Different ground; do not merge.
-
----
-
-## Is Cemetery Avenue the same street as Eternity? — no, and the asking fixed an error (2026-09-07)
-
-Kenny noticed Cemetery Avenue turning up in the renamings and asked whether it could
-be Eternity, reasoning by the Wasp/Hornet precedent: the 1849 survey letters some
-streets with an English name that is *not* a translation of the Spanish one, so
-"Calle de la Eternidad" might have gone by "Cemetery" in English.
-
-**The answer is no, on three independent grounds — but the question exposed a mistake
-in yesterday's coverage audit, and that correction matters more than the answer.**
-
-### Why Cemetery ≠ Eternity
-
-**1. The bilingual mechanism does not apply here.** Hornet works as a precedent
-because the two halves of that label *disagree*: `CALLE DE LAS AVISPAS` means wasps,
-and the English half says `HORNET ST.` — and the 1874 petition, as the Herald printed
-it, asks for "**Wasp street** to Yale street" (`lah-1874-02-13`), so both English
-forms were in live use. Eternity has no such gap: `mr053-073` letters it
-`ETERNITY ST.` **and** `CALLE DE LA ETERNIDAD`, and the two halves agree exactly.
-There is no English-side slippage to exploit.
-
-**2. Geometry puts them on different corridors** (rule 2 — match by geometry, never by
-name). Our own alignment of the Ord survey has:
-
-- `eternity` → **Broadway**, running south from Cottage Home Street (34.0673)
-- `bull` → **Hill Street**, running south from Bamboo Lane
-
-Cemetery Avenue became **Castelar** (Ord. No. 242, `lah-1886-07-23`), and Castelar is
-the *Bull* line: minted from the Feb. 1874 ordinance, and confirmed downstream when a
-portion of Castelar becomes **Hill Street** in July 1894 (`lah-1894-07-24`). Broadway
-and Hill cross Temple about 120 m apart. Two parallel streets, one block apart.
-
-**3. "Temple to Bellevue" is not a fingerprint.** It looked like one — Cemetery Avenue
-ran Temple→Bellevue in 1886, and in 1908 Councilman Dromgold says Buena Vista "would
-still retain its name from Temple to Bellevue" (`lah-1908-09-22`). But
-`lah-1897-12-07` has "**Fudigar street, Temple to Bellevue, changed to Sugg street**",
-a third street on the same stretch. At least three parallel streets ran Temple to
-Bellevue over that high ground, so a shared extent there identifies nothing.
-
-**The plainer reading** is that there were two burying grounds and two streets named
-for them — Eternity leading north to Calvary (established 1844), and Cemetery Avenue
-beside the older city cemetery on the Temple–Bellevue high ground. That the two
-streets are one block apart and both named for the dead is a fact about that hillside,
-not evidence that they are the same street. *(The city-cemetery location is asserted
-from general knowledge, not from anything in this corpus — worth confirming before it
-is written into a public note.)*
-
-### ★★ The correction: Eternity → Buena Vista IS attested, and I scored it wrong
-
-Yesterday's audit listed **Eternity → Buena Vista** as one of eight claims with "zero
-trace" in 176 newspaper documents, and flagged it as one of the two that should worry
-us most. That was **wrong, and wrong for a stupid reason**: I searched for the string
-"Eternity", which of course does not appear, because by the time the searchable papers
-begin the street had not been called Eternity for decades.
-
-Searching the **successor** name finds it twice:
-
-- `lah-1896-05-16` — "an ordinance changing the names of **Buena Vista street from
-  Bellevue avenue north to the river** and Pasadena avenue from thence north to the
-  city limits to Pasadena boulevard"
-- `lah-1908-09-22` — "**Buena Vista, from Bellevue to the river**" → Broadway
-
-Bellevue-north-to-the-river on the Broadway corridor is exactly where our Ord-survey
-alignment puts Eternity. So the whole Kines chain — **Eternity → Buena Vista → North
-Broadway** — is corroborated by two documents and by our own geometry, and the 1896
-item adds a failed intermediate: the same stretch was nearly named **Pasadena
-Boulevard** in 1896. (Which is its own small joke: in 1932 Pasadena Avenue itself
-became North Figueroa — `dnla-1932-03-23`.)
-
-### The methodological lesson, which is general
-
-**Searching a corpus for the OLD name of a renamed street is the wrong search.** The
-newspapers begin, in practice, in 1883; any street renamed before that appears only
-under its new name. Every "zero trace" result in the audit has to be re-run on the
-successor name before it means anything.
-
-Re-run on that basis, the audit changes:
-
-| claim | was | now |
-|---|---|---|
-| Eternity → Buena Vista | ✘ zero trace | ✔ **attested twice** (`lah-1896-05-16`, `lah-1908-09-22`) |
-| Charity → Grand | ✘ zero trace | still ✘ for the change itself — but Grand's *spread* is attested: **Philadelphia street → Grand avenue**, petition No. 639 of J. E. Fay et al., 1895 (`lah-1895-07-02`) |
-| Stanford → Crocker | ✘ zero | still ✘ — "Crocker" occurs nowhere |
-| Palm → Imperial | ✘ zero | still ✘ — "Imperial" occurs nowhere |
-| Alexander Lane → Lebanon | ✘ zero | still ✘ — "Lebanon" occurs nowhere |
-| San Pedro → Avalon | ✘ zero | still ✘ — Avalon appears once, from South Park ave and Canal st |
-
-**Revised score: 7 of 18 attested or materially corrected** (was 6), 2 more
-corroborated with the act elsewhere, 2 partial, 1 found in the minutes instead, and
-**6 with no trace under either name** (was 8).
-
-### Two things this adds to the file
-
-**★ Grand Avenue was assembled, like the boulevards.** `lah-1895-07-02`: the city
-attorney is instructed to prepare "the necessary ordinance changing the name of
-**Philadelphia street to Grand avenue**, as petitioned for by J. E. Fay et al., No.
-639." So Grand grew by absorbing at least one other street, exactly as Castelar took
-Cemetery Avenue and Broadway took Fort and Buena Vista. Whatever happened to Charity,
-the Grand name did not arrive in one act.
-
-**★ "Wasp street" is in the newspaper record.** The Feb. 13, 1874 petition, as printed,
-asks for "Bull street to Castelar, and **Wasp street** to Yale street"
-(`lah-1874-02-13`) — while the ordinance and the survey say Hornet. That is the
-Spanish/English divergence surviving into live civic use twenty-five years after the
-survey, and it is the best evidence we have that Kenny's underlying instinct — that
-one street could go by two unrelated English names — is sound. It just does not happen
-to be what Cemetery Avenue is.
-
----
-
-## 34 names out of the review queue (2026-09-13)
-
-The map tool minted 34 entities; all 34 are researched and moved into `data/names.js`,
-which is now **143 entities**. `data/names-new.js` is empty. `tools/check-model.js` and
-`tools/check-data.js` pass, `tools/generate.js` runs, and the 72 names-tool tests pass.
-
-**Kines covers 7 of the 34.** Every other name was checked against
-lastreetnames.com's own `?s=` search endpoint (the alpha indexes are paginated and
-give false negatives) and the result is recorded in each entity's `internalNote`, so
-the same searches do not get run twice. **12 entities carry a namesake; 22 have a null
-`namedAfter`** — and most of those nulls are findings rather than gaps, with the
-searched-and-empty sources named.
-
-### The two pairs that turned out to be two ends of one street
-
-**★ Ozier Lane → Winston Street.** Both were minted separately, and they are the same
-lineage. The geometry ties them: the 1881 Rivara and Vignolo Tract letters "Ozier
-Lane" on exactly the ground the 1886 Mills' Tract and 1889 Jones and Ponet Block
-letter "Winston Street" (`mr005-110`, `mr012-026`, `mr039-069`). Our own Herald
-clipping has the council postponing the change in June 1887 (`lah-1887-06-14`), and
-Wikipedia supplies the namesake and the outcome: **James Brown Winston (1820–1884)**,
-the city's first health officer, honoured in 1887 by renaming the street he had
-lived on.
-
-Two things worth keeping. First, Wikipedia spells the predecessor **"Ogier"** where
-our ordinance and our 1881 sheet both say **"Ozier"**. Second — and this is the
-interesting one — **Mills' Tract letters "Winston Street" in Nov. 1886, seven months
-before the ordinance was even postponed.** Another name in use before it was
-official, like Fort Street/Broadway in 1908 and Sunset Place/Orange Street. Worth
-checking whether that tract's recording date is later than its survey date before
-leaning on it.
-
-**★ Moore Street → Francisco Street.** Also both in this batch. Our row on the 1878
-Nichols Addition aligns Moore Street to modern **Francisco Street**, and Kines
-independently names Moore as one of Francisco's two predecessors: "The former Moore
-Street and Okey Street (named for a son-in-law) were rechristened Francisco Street in
-1903." Named for the family of **Andrew Wiggins "Andy" Francisco (1825–1898)** at 9th
-and Figueroa — explicitly *not* for San Francisco. Okey Street is not in this corpus.
-
-**And a third, already half-known: Orange Street → Wilshire Boulevard.** The tool
-minted `orange-st-wilshire` and `wilshire` separately; our row puts the 1878 Nichols
-Addition's Orange Street on modern Wilshire Boulevard, and the ordinance extent
-(Figueroa to Alvarado) matches. Kines dates it to April 1924 independently of our
-documents. **No change row written** — the documents are all in hand and confirming is
-Kenny's step.
-
-### What this batch adds to names already in the file
-
-- **`charity`** — the dates are now sharp: council vote **May 10, 1886**, official
-  renaming **Feb. 15, 1887**. And a detail worth having: the residents first asked for
-  **"Pacific Avenue"** and were refused because a Pacific Street already existed. Grand
-  was a second choice. No source gives a reason for the word "Grand" beyond its being
-  more pleasing than Charity.
-- **`alexander-lane`** — it was the *second* downtown alley folded into Lebanon Street.
-  **Park Lane**, between Figueroa and Flower from 6th to 7th, went the same way in
-  **1897**; Alexander Lane followed in 1917. No Lebanon Street entity exists yet.
-- **`gladys`** already carried the Sabichi/Wolfskill link and cited the same sheet
-  before `agatha` existed. What the new entity adds is Kines's page for Agatha herself
-  — though note his wording is "**surely** honors", an inference from the land
-  ownership with no naming record behind it, so the entity hedges where he does not.
-
-### Traps recorded so nobody walks into them
-
-- **Two Turner Streets in 1883.** Ours aligns to modern Jackson Street and matches the
-  May 1883 "First to Alameda" change (`lah-1883-05-13`). The *other* — "Turner street,
-  west of Main street" — became Sonora Street in the Aug./Sept. 1883 omnibus. ⚠ And our
-  sheet is dated **1928** and still letters Turner, forty-five years after the Jackson
-  change. Unresolved.
-- **Three Rose Streets.** Ours is the Arts District one that survived. Not the East Los
-  Angeles Rose that became Kuhrts Street in 1883; not the Highland Park Rose that Kines
-  says became Thorne Street.
-- **Two Kohler Streets.** Kines says the *original* Kohler Street ran where 9th Street
-  now runs between San Pedro and Alameda. All four of our sightings look like the
-  current street; none has been checked against the older one.
-- **Two Ruby Streets**, two probable **Ward Streets**, and a **Beaudry** that may be two
-  pieces of ground — our row on the 1868 tract is `vanished` while modern Beaudry
-  Avenue survives elsewhere. Kines treats Beaudry as one street; this file has not
-  tested that by geometry.
-- **Messer Street is not Mesmer Avenue** (Westchester). **Helena Avenue is not** 1st
-  Helena Drive or the Modjeska streets.
-- **John P. Moran is not the Moran of Moran's Lane** — he was sixteen when the 1873
-  lane was lettered.
-- **Traction Avenue is not, per Kines, the Traction Company.** He names the electric
-  traction motor; the company appears on his page only in a photo caption. The
-  chronology also cuts against the company: it was bought by the Southern Pacific in
-  1903 and folded into the Los Angeles Railway by 1911, years before the 1915 renaming.
-
-### Names checked and genuinely unattributed
-
-**Ingraham, Kip, Turner, Banning, Melendrez, Elmore, Helena, Florida, Ruby, Ward,
-Loomis, Messer, Rose, Merchant, Moran's Lane, Parker Drive, Wilmington** — all
-searched across Kines, Los Angeles Revisited (including its street-origins index),
-the Wikipedia LA County etymology list, LAPL's street-name posts and Garrigues, with
-nothing found. Two of these are worth singling out:
-
-- **Parker Drive** is the cleanest case in the file of a name whose *origin* is obvious
-  and whose *namesake* is unknown: the sheet is the "J. B. Parker Subdivision", so the
-  street is plainly named from the subdivider — but who J. B. Parker was is
-  undocumented everywhere checked.
-- **Banning Street**, by Union Station, is left null although Phineas Banning is the
-  obvious candidate for any Banning street in this county. Kines attaches him only to
-  Banning Boulevard in Carson. Nothing connects him to this street, so nothing is
-  claimed.
-
-Likewise **Wilmington Street**: the chain "Banning named the town of Wilmington for
-his Delaware birthplace, so the street is named for the town" is completed by no
-source, and the town was not annexed until 1909, long after this street was lettered
-in 1868.
-
-### Open questions this batch leaves
-
-1. **When did Wilmington Street become North San Pedro Street?** Undocumented. Its
-   ground is today Judge John Aiso Street. (Kines dates the San Pedro → Aiso change to
-   1997; Wikipedia says 1999 — a small conflict worth resolving, since `san-pedro`'s
-   note currently says 1997.)
-2. **Was Loomis Street one street or three?** The 1893 Sixth Street ordinance
-   (withdrawn), the 1894 Echo Park Road proposal, and our Nichols Addition sheet may
-   not be the same ground. Our row is `vanished` and not aligned to 6th Street.
-3. **Is the 1868 Beaudry Street the same entity as modern Beaudry Avenue?**
-4. **Who was J. Murat?** The 1868 "Garden of J. Murat" is in the corpus, and he is
-   absent from both the Homestead Museum's survey of 1865 winemakers and Los Angeles
-   Revisited's survey of the city's French community — the two places that would list
-   him. That silence is itself evidence: he looks like an otherwise-unrecorded property
-   owner. City directories and the *Los Angeles Star* next.
-
----
-
-## Working the unknowns: four threads, one answered outright (2026-09-13)
-
-Kenny went through the 78 unknown-namesake entities and set several lines going at
-once. Four research agents ran in parallel plus geometry checks here. `data/names.js` is
-still 143 entities; nothing was minted, twenty entities were revised.
-
-### ★★ O. W. Childs was Ozro WILLIAM Childs
-
-Kenny's hunch — "have you found O.W. Childs's full name? I wonder if the W is William
-by any chance" — is right, and it dissolves a problem this file had recorded as
-settled-negative. `william`'s note previously said the sources "name his wife Emeline
-Huber and a brother Marcus, and no William." That was wrong, because **the search
-never expanded the initial.** Four sources give *Ozro William Childs*, the best being a
-1954 *Historical Society of Southern California Quarterly* article of that title
-written by his own daughter, Hortense Childs Reynolds.
-
-So there are now two Williams on the O. W. Childs Tract of 1885: **Childs himself**,
-and his eldest surviving son **Ozro William Childs Jr. (1865–1933)**, who was twenty
-when it was recorded. Still hedged — nothing says the street honours either — but it
-has moved from "no such person" to "which one."
-
-**The general lesson, worth carrying: expand the initials before concluding a name is
-absent from a family.**
-
-### ★ Huber Street is now sourced, and it came in sideways
-
-`huber-st` carried Caroline Huber as an inference from the neighbouring Carolina
-Street. Kines states it outright — but in his **Colyton Street** entry, not under
-Huber: Dr. Frederick Preston Howard's 1886 tract "also included Huber Street (now part
-of 4th Street) and Carolina Street (now Hewitt Street): his wife was born Caroline
-Huber." Found by searching Kines for *Hewitt*.
-
-Two things follow. **Carolina Street became Hewitt Street** — Garrigues corroborates,
-adding Carmona Street to the same absorption. And a second Huber is now in the record:
-Ozro William Childs's wife was **Emeline Huber**. Whether the two Huber families
-connect is unexamined and worth an hour.
-
-### The four with no search on record — three now have one
-
-- **Boylston.** Kenny's recollection of a Boston derivation is *in* Kines — but as his
-  own flagged guess: "The why behind all this is obscure… I presume Johnson objected to
-  the street adopting another Spanish *nombre*." He then undercuts it himself, since
-  Johnson was Ohio-born with no Boston tie. What **is** documented is who named it:
-  **Orson Thomas "O. T." Johnson (1839–1916)**, a financier who proposed "Boylston"
-  against the commission's "De La Guerra" in 1897 and got it approved — corroborating
-  our Feb. 2 / Feb. 23 ordinance dates. ★ And he lived on **Orange Street**, which is
-  `orange-st-wilshire`: the man who named Boylston lived on the street that became
-  Wilshire Boulevard.
-- **Vine.** Kenny's recollection is right about Olvera and it settles our entity by
-  *exclusion*. The lane by the Plaza was *Calle de las Viñas*, rendered as both Wine
-  and Vine Street, renamed Olvera for Judge Agustín Olvera — Kines says 1873, three
-  other sources say 1877 by ordinance. Either way it had been Olvera Street for twenty
-  years by 1897, so it **cannot** be the Vine Street our 1897 record leaves alone. Ours
-  is the Central Avenue one. That independently confirms the two-Vine-Streets warning
-  already in `WANTED.md`.
-- **Hewitt.** Searched hard; the namesake is still **not found**, and that is now on
-  the record rather than a gap. Kenny's memory of being stumped here was right. The
-  1871 Johnston Tract is the origin point, and its owner and surveyor are the best
-  unexplored lead — the same sheet also carries `messer-street` and `rose-street`,
-  both equally blank.
-- **Guadalupe.** Nothing, anywhere. Notably absent from Kines's Latino and Hispanic
-  heritage category, which is thorough — so a real gap, not a search miss. ⚠ Do not
-  guess: in 1870s Los Angeles "Guadalupe" is equally plausible as a Marian dedication
-  or as a given name, common for men and women alike among Californios.
-
-### ✓ Two placements checked, and the "three names on one line" puzzle resolves
-
-Kenny asked whether the Valenzuela and Melendrez tracts might be misplaced. **They are
-not.** Projecting the rows through each sheet's own alignment:
-
-| | projected | modern |
-|---|---|---|
-| Elmore → Ceres Ave at 8th | 34.03545, −118.24549 | 34.03545, −118.24548 |
-| Elmore → Ceres Ave at 7th | 34.03818, −118.24320 | 34.03818, −118.24320 |
-| Helena → Gladys Ave at 7th | 34.03867, −118.24392 | 34.03867, −118.24392 |
-| Melendrez → Gladys Ave at 8th | 34.03587, −118.24601 | 34.03587, −118.24601 |
-
-Metre-level agreement. And the puzzle from last week — Helena, Melendrez and Gladys all
-landing on one modern line — turns out to be **adjacent segments**, not an error:
-Helena is Gladys from 7th to 8th, Melendrez is Gladys from 8th to 9th. **Modern Gladys
-Avenue was assembled from differently-named segments on adjoining 1887 tracts**, the
-same operation the boulevards performed at larger scale.
-
-The follow-up search of Helena + Elmore + Valenzuela *together*, as Kenny suggested,
-returned nothing historical — no LA Valenzuela family with either name, and no evidence
-Elmore was even a surname here. The observation that survives: both are distinctly
-Anglo names on a Spanish-surname tract, which fits the boom-year pattern where the
-**tract** name honours the prior owner and the **street** names come from whoever
-bought or optioned it. The June 1887 book of maps would name the recording party.
-
-### ★★ Wilmington and San Pedro: two harbour towns, two adjacent streets
-
-Kenny's observation, and the sheets bear it out better than expected. The **Garden of
-J. Murat sheet of 1868 letters both names, one block apart** — San Pedro Street on what
-is now Onizuka Street, Wilmington Street on what is now Judge John Aiso Street.
-`san-pedro` is securely named for the port town it ran toward; a companion street
-named for **the town next door**, on the same sheet, is the destination principle
-applied twice. That is a far better argument than the chain we had rejected (Banning
-named Wilmington for his Delaware birthplace), because it does not depend on Banning at
-all — and it disposes of the annexation objection, since naming a street for a
-neighbouring town in 1868 needs no annexation and Wilmington was founded in 1863.
-
-⚠ And it exposes something new: **the San Pedro name moved.** The 1868 sheet's San
-Pedro Street is today Onizuka; what became *North* San Pedro Street, then Judge John
-Aiso Street, is the **Wilmington** line. San Pedro appears to have absorbed Wilmington
-rather than merely neighboured it. When is undocumented anywhere found.
-
-### Court House Street: there was one, and it had already moved
-
-Kenny asked whether there was a court house in 1869 or plans for one on the Mott tract.
-The chronology, now established: rented adobes 1850–53; **the Rocha Adobe 1853–61, on
-the west side of Spring between First and Temple** — the exact block; the Market House
-/ Clocktower on the Temple Block 1861–91; the red sandstone courthouse from 1891. So a
-court house stood on that ground, but stopped being one **eight years before** this
-1869 sheet, though the building remained the seat of city government until 1886.
-
-No 1860s courthouse *proposal* for First/Temple was found, and nothing connects the
-Motts to a courthouse project. ★ The one real link: **Stephen Hathaway Mott, who
-platted this tract, was a deputy county clerk** — an officer of the court. An agent
-proposed that the street was named for its sightline downhill to the civic block and
-that Court House Street is today's Court Street; ⚠ **not adopted** — our rows put this
-alignment on Community Terrace and `court-street` is a separate entity.
-
-### Made explicit at Kenny's request
-
-- **Regent and Wall.** The load-bearing fact is now stated in both entities: the Moreno
-  Vineyard Tract sheet of March 1876 is the **earliest source in this corpus for both
-  names**, lettered two blocks apart on one new commercial subdivision beside the
-  depot. London's and New York's most famous trading addresses, named together, in one
-  act. `namedAfter` stays null on both — the evidence is the pair, not either name —
-  and the entities are now explicitly keyed to each other, so an argument that weakens
-  one weakens the other.
-- **Palm, Spruce, Tulip, Willow.** All four now carry the plant in `namedAfter` and
-  `nature` in categories, with `unknown` retained: the warrant is the **set** platted
-  together on the Goodwin Tract in Oct. 1886, not any one street. Same footing as
-  `ceres-ave`.
-- **Short Street.** The second spelling form read "Calle Alta", which is High Street's
-  Spanish name — picked up from `high-street-chinatown` on the same 1849 sheet.
-  Replaced with what this street is actually lettered, **C Corta**, left as the
-  survey's own abbreviation rather than expanded to "Calle Corta", which is not on the
-  sheet.
-
-### A method file for the daughter-names
-
-`handbook/FAMILY-NAMES.md` is new: a playbook for the "named for somebody's daughter"
-cases (Ruth, Gladys, Agatha, Ida, William, Helena, Elmore), from a Fable sub-agent, at
-Kenny's suggestion. Its headline point is that the naive move — search a genealogy site
-for the name — is the *last* step. First read the plat's **owners' certificate**,
-because the tract name honours the prior owner while the streets were named by the
-signatories, and nobody has read the June 1887 Valenzuela signatures. It also sets an
-evidence standard (A/B/C/D) and notes that **name rarity shifts the weight**: a
-pre-1887 Gladys near the Wolfskills would be strong evidence, a Ruth or a William on
-the same footing would not.
-
-### Los Angeles Revisited, swept against all 78
-
-Thin: the site covers about 46 City of Los Angeles streets and most of our names are
-not among them. Hits that matter, beyond those above: **Pearl** (Chapules → Pearl in
-the 1870s → Figueroa 1897), **Moore → Francisco 1903** with the extents, **Park Lane →
-Lebanon 1897** confirming our date exactly, **Requena → Market Street** on the July
-1904 petition again, **High → Walters → Ord** with "Ord Street was named for him in
-1890", and **Spring** for Trinidad Serafina Ortega, *La Primavera*, with the author's
-own hedge that it is unknown whether Ord picked the name up locally or bestowed it.
-
----
-
-## The playbook, run for real: the Wolfskill Orchard Tract (2026-09-14)
-
-Kenny asked whether anyone had actually tried `handbook/FAMILY-NAMES.md`. Nobody had —
-it was written the day before and only recorded. Run now on the family with the most at
-stake: the **Wolfskill Orchard Tract** carries six unknown names on five sheets (Ruth,
-Gladys, Omar, Poplar, Ceres, Huber), with Agatha next door as a control. The worked
-example is appended to the playbook; the findings are here.
-
-### ★★ Phase 0 paid off before any genealogy was done
-
-Nobody had read the sheets' own text blocks. Two crops gave the survey line — **J. H.
-Dockweiler, July–August 1887**, so survey 1887 and recording January 1888, a distinction
-several entities had been blurring — and, on sheet 5, the recorder's certificate:
-
-> "A full true and correct copy of the original (reduced to two thirds size) recorded
-> Jany. 11th 1888 at 22 min past 9 a.m. **at request of Los Angeles Land Bureau.**"
-
-**The filing party is a company, not the Wolfskills** — precisely the trap the playbook
-warns about. The Los Angeles Land Bureau styled itself "a Corporation" at No. 20 West
-First Street; president **George W. Frink**; auctioneers **Easton, Eldridge & Co.**; and
-it advertised this tract at private sale in the *Herald*, 31 July – 8 August 1887:
-*"THE WOLFSKILL ORCHARD TRACT, NOW OFFERED AT PRIVATE SALE… Wolfskill Avenue is 100 Ft.
-Wide, and Four of its Other Principal Avenues are 80 Ft. Wide."* It also handled the
-Governor Stoneman Tract in Alhambra and a 168-lot Vernon District auction that year.
-
-Who actually chose the street names is now an open question rather than an assumption.
-The Bureau's own copy calls the orchard *"in the actual occupancy and Possession of one
-family for over Fifty Years"* — present tense — and its Vernon advertisement says *"by
-Order of the Owners"*, so it reads as promoter and selling agent with the Wolfskills
-retaining title. The deed record would settle it and is not online.
-
-### ★★ Ruth is a real person; Gladys is not
-
-**Ruth R. Wolfskill, born 23 November 1881**, seventh of eleven or more children of
-Joseph William Wolfskill (1843–1928) and Elena de Pedrorena, buried in the Wolfskill
-plot at Calvary Cemetery. **Five years old when Dockweiler surveyed.** `ruth-ave` now
-carries her, hedged: grade B on the playbook's scale — right name, right family, alive
-before the plat, on her father's land, with the Agatha precedent nine years later.
-
-**No Gladys exists in the family.** Eleven recorded children and no Gladys among them,
-nor anywhere on the open web as a Wolfskill. The family reading is retired.
-
-**And the rarity argument reopens it rather than closing it.** About **forty girls in
-the entire United States** were named Gladys in 1881 (SSA; decade rank #151, against
-Ruth at #66). In 1887 Gladys was an exotic Welsh literary import, not a generic pretty
-name — so Gladys Avenue is *more* likely to honour a specific real person. She is
-simply not a Wolfskill, and the next search is **George W. Frink's household**, which is
-completely untraced.
-
-**Omar is not in the family either.** An agent suggested Omar Khayyám — the *Rubáiyát*
-was a defining fashion of exactly these decades — and that is recorded as an unsourced
-lead, not adopted.
-
-### The tract's names are mixed, and that is the general lesson
-
-Ruth (the owner's daughter), Ceres (a harvest goddess over an orchard), Poplar (a tree),
-Gladys (nobody in the family), Omar (untraced). **Do not expect one plat's street names
-to come from one source** — testing each against the family and stopping at the first
-failure would have lost Ruth.
-
-### ⚠ Three things this run did not settle
-
-1. **The census check was not completed** — FamilySearch wanted a login. Ruth currently
-   rests on Find a Grave, which is contributor-submitted: cross-consistent across four
-   memorials in one physical plot, but possibly one upstream compiler. Phase 1 is not
-   finished until the **1900 census** household is read, where Elena's "children born /
-   children living" counts would also test for a child who died young in the 1885–88
-   window — the only place a Gladys could hide.
-2. **George W. Frink is untraced.** No biography, no Find a Grave, no census reached.
-   The 1887–88 Los Angeles city directories list company officers and are the next step;
-   HathiTrust has 18 full-view volumes containing the exact phrase "Los Angeles Land
-   Bureau", of which *The Industries of Los Angeles, California* (1888) is most likely to
-   carry a firm sketch with its full slate of officers.
-3. **The Agatha control wobbled.** Kines gives 1871–1963, Find a Grave's Sabichi plot
-   gives 1881–1963 — death year agreeing, birth year ten apart. Flagged on the entity,
-   unresolved. It matters: on the 1881 reading Agatha and Ruth are **first cousins both
-   born in 1881**, each with a street named on her own father's land nine years apart,
-   which would be a pattern rather than two coincidences.
-
-### A method note worth keeping
-
-Chronicling America's page viewer and OCR endpoints return 403, but **the underlying
-ALTO XML is openly fetchable** — `https://www.loc.gov/item/<lccn>/<date>/ed-1/?fo=json`
-for the file list, then the page's `storage-services/…/NNNN.xml` directly. That is how
-the Land Bureau advertisements were recovered. The *Herald* on Chronicling America
-(`sn85042460`, 1884–1890) is the same UCR digitisation as CDNC, so it is a second door
-in when CDNC is unreachable. Added to `handbook/FAMILY-NAMES.md`.
-
----
-
-## Corrections and new leads on the Wolfskill run (2026-09-14, later)
-
-Kenny asked two things: whether the tract dates had actually been updated, and whether
-the rarity of "Gladys" made a whole-census enumeration worth trying. Both were good
-questions and both turned up something I had got wrong.
-
-### ⚠ The tract sheets were mis-dated, and I had not fixed it
-
-All five Wolfskill Orchard Tract sheets carried `date: { on: "1888-01-11" }` — **the
-recording date, not the survey**. Yesterday I put the survey/recording distinction in
-the document headers and in `ruth-ave`'s prose, and never touched the field the model
-actually reasons from. MODEL-SPEC §4.1 is explicit, with the Ord survey as the
-precedent: *"`date` is the date the document's statements are evidence about"*, and
-*"everything that reasons about order … asks `date`, and a document dated by its filing
-would silently sort into the wrong century of the argument."*
-
-Fixed: `date: { on: "1887-08" }` (Dockweiler surveyed July–August 1887) and
-`recorded: "1888-01-11"` on all five sheets, with the reason in a comment beside the
-field. Every row on that tract had been sorting four months late. `gladys-ave`,
-`ceres-ave` and `omar-ave` now say "surveyed July–August 1887 and recorded Jan. 11,
-1888" rather than a bare "1887".
-
-Also restored: `poplar-st`'s working note, which I overwrote yesterday instead of
-appending to. The original text is back above the new paragraph, with a marker.
-
-### ⚠ The "forty Gladyses in the country" claim was wrong — retracted
-
-I wrote it into `gladys-ave`, the playbook and my own summary. **SSA baby-name data
-counts Social Security card applicants, not births.** Anyone born in 1881 who died
-before about 1937 never appears — most of that cohort. The figure is a floor, not a
-population: Find a Grave alone indexes over two thousand Gladyses born 1862–1882, and
-362 born 1874–1886 buried in California.
-
-The first agent had actually flagged this ("use the ratios, not the raw numbers") and I
-quoted the raw number anyway. **What survives is the ratio**: Gladys ranks about #151
-for the 1880s against Ruth at #66, then jumps to #43 in the 1890s. Genuinely less usual
-than Ruth in 1887, fashionable just after — a real signal, far weaker than stated, and
-not enough on its own to argue the street must honour a specific person. The playbook
-now carries the rule: **never quote an absolute SSA count for a pre-1900 birth year.**
-
-### The enumeration question, answered
-
-Kenny's instinct was right that 1880 is the tractable census — it has a complete 100%
-transcription — but the route is narrower than hoped and the prize is smaller:
-
-- **IPUMS public full-count 1880 has the names stripped.** The restricted file carries
-  them but needs institutional affiliation, a signed agreement and a fee.
-- **FamilySearch's 1880 index is complete, searchable by given name with no surname,
-  and free with an account.** That is the workable route.
-- Steve Morse's One-Step pages post to Ancestry and FamilySearch, so they inherit those
-  logins; `1880census.com`, which advertises FREE, is an affiliate funnel to Ancestry.
-- Find a Grave is fully open and gives name-and-year counts, but burial place is not
-  1880 residence.
-
-**Verdict: doable with a free account, probably not worth it** once the pool is hundreds
-rather than dozens. The cheap version — *any Gladys in Los Angeles County in 1880, or in
-1880s Los Angeles at all* — is the one to run.
-
-### ★ Three new leads, one of them better than the census
-
-**San Francisco has a Gladys Street too.** Easton, Eldridge & Co. — the auctioneers on
-this tract — were a **San Francisco** firm, under Wendell Easton, one of the largest
-real-estate houses in the world in the 1880s, with Los Angeles and San Diego offices by
-1888. If the auctioneers named both streets, the name travelled with the firm rather
-than originating with the landowner. That is a sharper question than any census search
-and nobody has tested it.
-
-**George W. Frink is no longer wholly untraced.** The Huntington holds *"Central Pacific
-Railroad Company to George W. Frink,"* 19 March 1888, in the **James De Barth Shorb
-Papers** — a collection centred on Los Angeles and San Gabriel land and railroads. Right
-name, right place, right year. Identity not established, and one agent deliberately
-declined to assume it.
-<https://www.huntington.org/collections/lib-mssshorb-papers-aspace-edf117c4710f91bb9b07aa5ef5665054>
-
-**The four CDNC searches to run by hand** (CDNC is open to a browser and blocked to
-automated fetchers): `"Gladys"` in the Herald 1886–1890; `"Los Angeles Land Bureau"`
-1886–1890; `Frink` in the Herald 1886–1890; and `"Wolfskill Orchard Tract"` in 1887 for
-the auction advertising itself.
-
-### ⚠ And a correction to yesterday's method note
-
-An agent reported that Chronicling America's *Los Angeles Herald* holdings skip
-1877–1889. **Wrong** — and it matters, because the Land Bureau advertisements were
-recovered from Chronicling America. The run is under **`sn85042460`, the *Los Angeles
-Daily Herald*, digitised 1884-10-07 to 1890-03-22** (verified 2026-09-14). The agent had
-checked three other LCCNs and reasoned from their gaps.
-
-**General rule now in the playbook: check every LCCN a title has before concluding
-Chronicling America lacks a year.** A paper's runs are split across several LCCNs as the
-masthead changes, and a gap in one is usually covered by another.
-
-## 2026-09-14 — Data problems surfaced by the `basis` grading pass
-
-Three graders classified all 143 entities for evidentiary strength (draft at
-`tmp/basis-v3.json`). Grading exposed flaws in the data itself, independent of
-whether the `basis` field is adopted. Unfixed as of this writing.
-
-**Unhedged `namedAfter` that the record's own prose undercuts.** `ceres-ave`
-states the goddess flatly while the note says "No source names the goddess."
-`hill-street-downtown` asserts Bunker Hill flatly, then notes the hill was not
-formally named until 1873, *after* the street — so the street more likely names
-the landform and the landform later took the Bunker name. `pico` is a bare Kines
-citation, unhedged, and its note is about a different subject entirely (the
-absent 13th Street). `witmer-street` names Henry Clayton Witmer specifically
-where the plat reads only "Witmer's Subdivision" — the sheet attests the family,
-not the man; compare `vignes-street`, which handles the same ambiguity correctly.
-`alexander-lane` and `catesby-lane` state dates and relationships flatly that
-their own internal notes concede come entirely from the LA Revisited blog.
-
-**`namedAfter` holding something that is not an identification.** `pearl`'s field
-records a negative check of the 1874 council report plus Toberman's 1897 claim to
-have done the naming — prose about the *act*, sitting in an identification field,
-where it reads at a glance like a source. Should be null with that material in
-`note`. Note also that `pearl` is the only record whose evidence of research is
-stored somewhere nobody would think to grade.
-
-**Stale fields.** `huber-st` still opens "Not documented; most likely…" and still
-carries `unknown` in categories, while the internal note records its 2026-09-13
-upgrade to a flat Kines source. `yale` carries `unresearched` beside two completed
-checks. `gladys-ave` is tagged `person` with `namedAfter: null` — a leftover from
-the retired Wolfskill-daughter reading.
-
-**Missing source citation.** `alexander-lane` has an empty `sources` array while
-its internal note cites the blog for everything in it. `cameron-lane`,
-`catesby-lane` and `centerbrook-lane` all cite the article; the one record whose
-dates come wholly from it does not. Invisible to any query over `sources`.
-
-**Inconsistent treatment of like names.** `georgia-east` gets "Likely the state,"
-`nevada-1886` gets null, on identical (absent) evidence — and `georgia-bell`, two
-records away, is proof that "Georgia" in this city was also a woman's name.
-`olive` gets a stated referent, `orange-st-wilshire` gets "namesake NOT FOUND."
-`palm-st-arts-district` names the plant, `maple-dtla` is null on the same footing.
-
-**Warrant living in a sibling entity (16 records).** Regent and Wall rest on one
-sheet; Spruce, Tulip and Willow rest on a set argument written up under Palm;
-Maple's set argument lives in Myrtle; Agatha's land-ownership anchor is Gladys's;
-Castelar's namesake was carried over from Bull's note; Ceres depends on Ruth and
-Gladys; the five numbered streets all cite one Kines page. `crocker-street` has
-no document row of its own at all — its entire warrant is being the third
-Southern Pacific name after Towne and Stanford, which live elsewhere. A count of
-"names we have evidence for" currently overstates by roughly a dozen.
-
-**Entities that may not be one entity.** `beaudry-st` carries a "⚠ TWO PIECES OF
-GROUND" warning; the 1868 tract warrant does not transfer to a modern Beaudry
-Avenue if that is separate ground. `georgia-bell` and `georgia-east` carry an
-unresolved 1883-vs-1889 conflict, and `georgia-east`'s existence claim rests
-entirely on the renaming story in its sibling's Herald document.
-
-**Cross-references that should exist.** `stanford-ave` and `ruth-ave` describe the
-same name-transfer event from opposite ends and neither links to the other — a
-reader of either cannot see that Ruth Avenue *became* Stanford Avenue.
-`hewitt`'s most useful content is a finding about a different street (Carolina /
-Caroline Huber, written up under `huber-st`).
-
-**Damaged prose.** `poplar-st`'s note carries the "⚠ RESTORED 2026-09-14" marker
-plus a truncated paragraph on the Wolfskill Orchard Tract's mixed-kind names. Both
-the restored and the replacing text are present, and the second materially weakens
-the first (a mixed tract cannot support a theme argument). Needs reconciling.
-
-**A leftover lead.** `court-house-street`'s internal note ends mid-sentence on
-"★ THE ONE REAL LINK: Step…" — almost certainly Stephen H. Mott as deputy county
-clerk, which would be a live lead. Worth finishing the sentence.
-
-## 2026-09-15 — Cleveland Street: what Kines actually says
-
-Caught by Kenny while the category tree was being reorganized: I described
-Cleveland Street in ROADMAP §7 as named for a president, which the file does not
-say. Then I wrote a lead here claiming nobody had ever considered Cleveland,
-Ohio — which was also wrong. **I have now read the source** (checked 2026-09-15,
-lastreetnames.com/street/cleveland-street/), and it settles more than either of
-us assumed.
-
-Kines opens **"Most likely named for Grover Cleveland"** and closes by marking
-the attribution as his own: **"I think they chose to honor the sitting POTUS
-with this one."** No documentary evidence is offered. What he offers instead is
-circumstantial, and it is decent:
-
-- the Beaudrys owned the tract and named it January 1886, ten months after
-  Cleveland took office;
-- **they were not from Cleveland, Ohio** — so he DID consider the city and
-  dismissed it, which my earlier note here wrongly said nobody had;
-- they had used Americana themes on other streets in the same tract;
-- Prudent Beaudry was a Democrat, as Cleveland was.
-
-**So there is a source, and Kenny's conditional does not fire**: this is not a
-case for `basis: "none"` with no namesake. It is a case for `guess` — a specific
-candidate chosen over the alternatives on a reason, with nothing documentary
-anchoring it to this street — with the hedge kept in `namedAfter` and Kines
-cited. If the Americana names on that tract turn out to number three or more, it
-may be `pattern` instead, which is worth checking when the entity is built,
-since the theme is the strongest part of his argument.
-
-Still open: **which street?** The legacy note records a positional guess tying
-this to the Ord Survey's "Calle de las Adobes" — sheet 73's northernmost platted
-street — against Kines dating the name to a fresh 1886 tract with no 1849
-predecessor. If those are two streets, they are two entities.
-
-Cleveland Street is legacy-only: it lives in `generated/streets-data.js`, which has no
-`basis` field, so none of this can be recorded until it is migrated into
-`data/names.js`. This note is what should be read when it is.
-
-## 2026-09-15 — Four Venice Boulevard sheets, and three names for one corridor
-
-Kenny downloaded four plats off the "15th, Venice and 17th" harvest and asked
-whether he had placed them right. Checking them turned up more about names than
-about alignment, so the name findings are here and the alignment verdicts are at
-the bottom.
-
-**Method, worth reusing.** Every one of these was settled by the assessor's
-legal-description search — `portal.assessor.lacounty.gov/api/search/legal?legaldesc=<TRACT NAME>`
-— which returns every parcel whose legal description names the tract, with its
-lot and block number and its modern situs address; `/api/parceldetail?ain=<AIN>`
-then gives lat/lon. Because the parcel *carries the plat's own lot and block
-numbers*, this identifies the ground **without assuming any street
-correspondence**, which is exactly the failure mode Kenny flagged on the Requena
-sheets. Two cautions learned here: parcels with `ParcelStatus: DELETED` often
-return null coordinates (freeway takings especially), and the long metes-and-
-bounds legal descriptions on assembled parcels name their bounding streets in
-prose — those descriptions are the single most useful thing the API returns.
-A third, sharper one: the endpoint caps at **501 results and the search is
-fuzzy**, so adding words ("GREENWELL TRACT BLK 6") drags in hundreds of
-unrelated parcels and silently truncates. Query the bare distinctive word
-("GREENWELL" → 131 hits, all of them the tract) and filter locally; only then is
-an *absence* — such as block 6 having no surviving parcels — evidence of
-anything.
-
-Full recipe in TRACT-RESEARCH.md.
-
-### ★ The corridor now called Venice Boulevard carried at least three names
-
-Downtown Venice Boulevard, from Toberman east to Hope, is one straight corridor
-(bearing ~117.7°, the local grid's cross-axis). Three of these four plats letter
-it, and they do not agree:
-
-- **Rouland Street** — Greenwell Tract, recorded **Dec. 15, 1886**, on the
-  stretch from Valencia to Bond. Confirmed: Greenwell block 5 lots 10–13 and
-  block 3 lots 10–13 are today 901–935 Venice Blvd, all flagged "EX OF ST".
-- **Pine Street** — J. H. Bryan's Figueroa Street Subdivision, recorded
-  **Aug. 6, 1887**, on the stretch from Figueroa to Hope. Confirmed two ways:
-  block B lot 1 is 1521 S Hope St (34.036740, −118.267863), and modern Venice
-  Blvd's centreline projects onto the drawn Pine Street within ~12 m, well
-  inside the boulevard's widening.
-- **16th Street** — both west of Figueroa: by **Mar. 11, 1897** (Valentine's
-  Subdivision, at Toberman:
-  Venice Blvd is 60 m north of Lot A and there is no modern 16th Street there)
-  and still in **Feb. 1917** (Tract 2713, at Figueroa).
-
-So two subdividers eight months apart each gave the corridor their own name on
-adjoining stretches — Rouland from Valencia to Bond, Pine from Figueroa to Hope.
-
-**And the split held for decades.** Checking against what the project already
-had turned the "three names in a row" story into something better — a
-**west/east division at about Figueroa**:
-
-- **West of Figueroa the name went Rouland → 16th Street.** Rouland is on the
-  Greenwell plat (1886) from Valencia to Bond, and the city was still using it
-  in 1889–90: Forman's Feb. 18, 1897 statement, transcribed in
-  `documents/ord-4093/omnibus-1897-renaming-full.md`, delimits the Georgia
-  corridor as "Nevada street **from Rouland street** to Eleventh street" and
-  "Georgia street from Washington street **to Rouland street**". By Valentine's
-  (1897, at Toberman) and Tract 2713 (1917, at Figueroa) it is 16th Street.
-- **East of Figueroa the name was Pine too.** Bryan's plat letters PINE from
-  Figueroa to Hope in 1887, and `mr003-038-p1` (Morris Plan) and `mr003-038-p2`
-  (Vineyard Subdivision) letter PINE STREET on the same corridor from −118.2665
-  east to −118.2626, i.e. from Hope eastward. ⚠ CORRECTED 2026-09-18: those two
-  sheets were dated 1915 by a misreading; they are **May 1875** (the certificate
-  on M.R. 3-39 reads 1875), so they are Pine's EARLIEST lettering here, not
-  evidence that it survived to 1915. The Nov. 1889 numbering ordinance
-  (lah-1889-11-06) folds Pine into Sixteenth Street.
-
-Bryan's tract runs Figueroa→Hope and Tract 2713 sits immediately *west* of
-Figueroa, so the two abut without overlapping, and Figueroa is where the
-evidence changes name. **⚠ That boundary is inferred from where each name's
-evidence stops, not from any document that states it** — the real changeover
-could be anywhere between Georgia Street and Hope, and nothing here dates when
-Pine finally gave way to Venice Boulevard.
-
-**What this fixes, and what it opens:**
-
-- **`pine-street-venice` already exists in data/names-new.js**, minted from the two
-  1915 sheets and awaiting a namesake. Bryan's `mr021-032` is a **third sighting
-  and pushes the name back 28 years, to 1887** — and unlike the Greenwell and
-  Valentine's sheets it is inside the neighbourhood and correctly aligned, so it
-  can carry rows now. Its `sightings` list should pick that up on the next
-  review save.
-- **Rouland has no entity anywhere** — it is in neither data/names.js nor
-  data/names-new.js, and the only prose mention in the project is the Forman
-  passage above. On the house convention for a vanished street it would be
-  `rouland-street-venice`. Worth minting, and the namesake is unresearched:
-  Rouland reads as a surname, and the party who filed the Greenwell plat —
-  recorded "at the request of F. Bouton" — is the kind of lead to start from,
-  as is whoever owned the ground before Greenwell bought it.
-- **⭐ The Rouland citations bear directly on `georgia-bell`**, which is still
-  lettered by no document. Both 1889–90 extents are bounded *by Rouland
-  Street*, so knowing Rouland = the Venice Boulevard corridor puts a real
-  latitude on those two segments for the first time. Tract 2713 independently
-  fixes the crossing: Georgia Street's centre line is 425.27 ft west of
-  Figueroa along this corridor. That is a foothold on the georgia-bell extent
-  problem that did not exist before.
-
-**⚠ Still not established.** That the *city* ever recognised Pine or Rouland as
-official names — the plats are subdividers' usage, and the Forman passage is a
-witness statement, not an ordinance. Neither name has been run through the
-directories or the Herald search.
-
-### Greenwell Tract (`inbox/out of neighborhood/mr012-070`) — every street identified
-
-"The subdivision of Lot 2, Block B, Hancock's Survey", E. G. Jones C.E., scale
-200 ft to one inch, recorded Dec. 15, 1886 at the request of F. Bouton. Eight
-blocks: 1 a west strip, 2/4/6 the north tier (Pico to Greenwell), 3/5/7 the
-south tier (Greenwell to Rouland), 8 an east strip. Blocks 2, 4 and 6 are 240 ft
-wide — four 60-ft lots on Pico — with 60-ft streets between.
-
-All seven correspondences come from assessor parcels carrying Greenwell lot and
-block numbers, so none of them is an eyeball match:
-
-| on the plat (1886) | today | evidence |
-|---|---|---|
-| Pico St | **Pico Blvd** | blk 2 lots 1, 2, 21, 22 = 1400–1416 W Pico Blvd |
-| Greenwell St | **14th Street** | blk 2 lot 12 = 1411 W 14th St; and the block-4 metes below |
-| Rouland St | **Venice Blvd** | blk 5 lots 10–13 = 901–921 Venice Blvd, "EX OF ST" |
-| Auburn St | **Valencia St** | blk 2 fronts Valencia and Albany; blk 1, west of it, fronts Valencia only |
-| Albany St | **Albany St** | blk 2/3/4/5 parcels addressed on Albany |
-| Rich St | **Oak St** | blk 5 (Albany–Rich) fronts Albany, Oak, Venice; blk 7 (Rich–Bond) fronts Oak and Venice |
-| Bond St | **Bond St** | blk 8 lots 3, 4 = 1312, 1320 Bond St |
-
-**Greenwell Street is the name that vanished** — the corridor is 14th Street
-today and has no entity in data/names.js. Auburn is the other loss: the plat's Auburn
-Street is now Valencia Street. Rich → Oak is a third. All three are unresearched.
-
-**The Harbor Freeway took the tract's east side.** One assembled parcel
-(1330 W Pico) is described as running "NE on SE line of Albany St and SE on SW
-line of Pico Blvd and **SW on NW line of Harbor Frwy** and NW on NE line of 14th
-St" — i.e. block 4's south-east boundary, which the plat draws as Rich Street,
-is now the freeway's edge, and the same parcel is only "POR OF" lots 13 through
-22. **Block 6 has no surviving parcels at all** (it was Rich to Bond, Pico to
-14th), and blocks 4 and 7 have only 4 and 6 left against 22–29 in each of the
-untouched blocks 1, 2, 3 and 5; block 8's Bond Street parcels were deleted in
-1988. So Rich Street
-survives as Oak Street only *south* of 14th; north of 14th the freeway is sitting
-on it. This is a clean case for `absent`/`vanished` rows once the sheet is
-placed.
-
-### J. H. Bryan's Figueroa Street Subdivision (documents/mr021-032)
-
-J. H. Stevenson, Surveyor, 1887; scale 50 ft to one inch, and the recorder's
-note says the copy is **"reduced to an exact one half size"** — so the sheet as
-scanned is 100 ft to the inch. Recorded Aug. 6, 1887 at the request of J. H.
-Bryan. Two blocks, A (Figueroa–Flower) and B (Flower–Hope), each 20 lots of
-50 ft frontage and 155 ft depth around a 20-ft alley; street widths lettered as
-Figueroa 99 ft, Flower 80 ft, Hope 60 ft, Pine 60 ft. Bearings given as
-N 62°08′ W along Pine and N 28° E along Figueroa.
-
-Figueroa, Flower and Hope all keep their names and their lines — each projects
-onto its drawn counterpart. Only **Pine Street** is lost, to Venice Boulevard.
-
-**Open, and mildly interesting:** the tract's *northern* edge is a boundary line,
-not a street — nothing is drawn beyond it — and there is no modern E–W street
-within 160 m of where that line lands. Modern **15th Street does not reach this
-tract**: it T's into Hope Street about 300 ft south of the tract's north
-line — six lots down, at the lot 4/lot 5 line of block B — and does not
-continue west. The numbered
-grid east of Hope is on a different offset from this tract's grid, which is worth
-remembering before matching any 1880s plat here to a numbered street by position.
-
-### Valentine's Subdivision (`inbox/out of neighborhood/mr060-097`)
-
-"Lot 10, Block 10, Los Angeles Homestead Tract", scale 1″=100′, surveyed
-Mch. 11, 1897 by Fremont Ackerman C.E., **"True courses given"** — N 28°44′ E on
-the west line and Toberman, S 61°16′ E on 16th St. Recorded Jun. 2, 1897 at the
-request of Easton, Eldridge & Co.; the owner's signature at the foot is faint but
-reads as a Valentine. Lots A–D of 44 ft, plus lot 5.
-
-Lot A is **1615 Toberman St** (34.040432, −118.277974). At that point Venice
-Blvd is 60 m north and West 17th Street 71 m south, so the sheet's **16th Street
-is Venice Boulevard** and its **17th Street is still 17th Street**. Toberman
-keeps its name. Nothing lost here — the value of the sheet is the 1897 date on
-"16th Street" for the Venice corridor.
-
-### Tract 2713 (documents/tr0034-004) — and a lead back to Bell's Addition
-
-Surveyed Feb. 1917 by V. J. Rowan; scale 1″=60′. A single lot, 190.11′ × 68.62′,
-at the south-west corner of 16th Street and Figueroa — **1601 S Figueroa St**
-today. It is 425.27′ west of the centre line of **Georgia Street** along 16th,
-and 305.65′ north of the centre line of 17th along Figueroa. Bearings
-"based upon the bearings shown on map of Tract No. 1148, M.B. 18:17".
-
-**⭐ The lead:** the sheet says it is "a subdivision of a portion of **Collins
-Subdivision of Block 1, Bell's Addition, as per Book 9 page 52 Miscellaneous
-Records**". That places Bell's Addition Block 1 at 16th and Figueroa — inside the
-neighbourhood, not outside it. The Bell's Addition sheets currently sit in
-`inbox/out of neighborhood/`, and the Huntington scans there were collected on the
-assumption that the addition was elsewhere. **Worth pulling MR 9-52** —
-`https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf` — and
-re-checking whether Bell's Addition belongs in the neighbourhood after all. This
-also bears on `georgia-bell`, which is still lettered by no document: Georgia
-Street's centre line is measured from on this very sheet.
-
-### Alignment verdicts (for the record)
-
-- **mr021-032** and **tr0034-004** — correct. Assessor parcels project onto their
-  drawn lots; scale and rotation agree with the sheets' printed figures.
-- **mr012-070** (Greenwell) — **wrong: ~1.45× too large and ~340 m too far ESE.**
-  Three independent scale measurements agree against the alignment's 0.921 m/px:
-  the printed 200 ft/inch gives 0.610, the drawn lot-line ruler (240-ft block =
-  344 px at 300 dpi, 60-ft streets = 87 px) gives 0.638, and the assessor pair
-  1416 ↔ 1400 W Pico (51.3 m over 81.2 px) gives 0.632.
-- **mr060-097** (Valentine's) — **wrong: scale fine, but ~594 m too far ESE**
-  (539 m east, 249 m north of where it should be). Lot A projects off the left
-  edge of its own scan.
-- Both wrong sheets fall west of the neighbourhood's `w = -118.272` edge — the
-  Greenwell Tract runs about -118.2726 to -118.2765, Valentine's sits at
-  -118.278 — so Kenny moved them to `inbox/out of neighborhood/` on 2026-09-15
-  rather than re-aligning them. The scale and offset figures above are recorded
-  so they don't have to be re-derived if either comes back. Note the Greenwell
-  Tract's eastern edge only just clears the bbox: if the neighbourhood is ever
-  widened westward, that sheet is the first one back in, and it carries seven
-  street identifications and three lost names.
-- Minor: all four alignments sat at 27.69–27.70° up-page, while the sheets' own
-  stated bearings run 28°00′ (Bryan), 28°02′45″ (TR 2713) and 28°44′ (Valentine's,
-  true courses). Nothing worth more than a degree over tracts this size, but the
-  identical value across four sheets suggests a carried-over default rather than
-  four independent fits.
-
-## 2026-09-15 — data/names-new.js emptied: 28 namesakes researched, and what they left open
-
-All 28 entities minted into `data/names-new.js` were researched and moved into
-`data/names.js`. Fourteen came back with a reading (`attested`, `eponymous`,
-`pattern`, `lexical`, `inferred` or `guess`); fourteen stayed `basis: "none"`
-with `searched` recording how hard the look was. The per-entity detail is in
-each `internalNote`; what follows is only what is still open, plus the leads
-the pass created.
-
-### ✔ CLOSED — "is the Miguel Subdivision's Laura a misreading of Laurel?"
-
-Yes, in effect. The Nov. 1889 numbering ordinance (`documents/lah-1889-11-06`)
-sends "Laurel and Adele" to Fifteenth Street and "Pine and Rowland" to
-Sixteenth; the alignment independently puts `laurel-dtla` on modern 15th
-Street and `pine-street-venice` on Venice Boulevard, which is 16th. So the
-ordinance and the sheets are about the same two streets, and the earlier
-question mark over "Laura" was the right suspicion. **Laura itself stays a
-separate name**: `documents/lah-1888-10-11` has "Cumberland Ave. and Laura St.,
-changed to Boston St." in 1888, which is a third street again.
-
-### ★ Four entities the Nov. 1889 ordinance renames, and it has no rows
-
-`documents/lah-1889-11-06` prints "From California, Consuelo, Greenwell and
-Vejar to Fourteenth street; from Laurel and Adele to Fifteenth street; from
-Pine and Rowland to Sixteenth street". Four of those names are now entities —
-`california-street-14th`, `consuelo`, `laurel-dtla`, `pine-street-venice` —
-and the document carries **no rows at all**, because it is one of the textual
-documents nothing can review (MAP-TOOL-SPEC §9). Greenwell, Vejar, Adele and
-Rowland are four more names it would mint. This is the single highest-value
-target for the textual-review tool when it exists.
-
-Same shape, smaller: `documents/lah-1886-01-15` (Ordinance No. 207) is
-`elm-street` by name *and* by extent — "from Pico street to California street"
-— so it dates Elm → Olive and, in passing, fixes where California Street ran.
-Also rowless.
-
-### ⚠ Lemon → Wilson: a good inference that must not become a change row yet
-
-Both 1887 sheets letter Lemon on the corridor the alignment calls modern
-Wilson Street, and Kines's Wilson Street page has three 1887 facts together —
-D. C. Wilson living on Lemon Street, Wilson Street newly named, Wilson selling
-a lot on it to M. L. Wicks, whose own June 1887 sheet still letters the
-corridor Lemon. Read together that makes Lemon the predecessor of Wilson.
-**But Kines calls Lemon a "nearby" street, and a Lemon Street survives at 1212
-Lemon St, 90021** — just south of the `dtla` bbox, so it is not in the OSM
-extract and could not be checked. Widening the extract one block south settles
-it, and nothing should be written until it does.
-
-### ⚠ Palm → Mimosa → Imperial, probably
-
-`palm-st-arts-district`'s note says "When it became Imperial Street, and why,
-is not researched." Garrigues has "Mimosa St., bet. E. 6th & Jesse St., is
-Imperial St.", and his list is built from the 1903 city map — so Mimosa was on
-that corridor by 1903, between Palm (1886) and Imperial. Palm's missing
-successor is probably Mimosa. Deliberately NOT written into Palm's entry:
-neither step is dated, and the two corridors have not been checked block by
-block. Note also that **Tract No. 1687 (1912) did not coin Mimosa** — it
-re-lettered a street already on the 1903 map — so that row's scope should not
-claim an origin.
-
-### ⚠ Warren → Decatur, from the alignment alone
-
-The corridor the E. B. Millar Tract letters "Warren St." in Jan. 1887 is the
-one Tract No. 1836 letters "DECATUR ST." in May 1913. No renaming document
-found. The subdivider of Tract No. 1836 is the person to identify, and it is
-a title-block question, not a web one.
-
-### The cheapest primary anchor available: an ordinance number already in hand
-
-`documents/tr0009-075` (Power Plant Tract No. 1, 1906) letters "EASTON ST."
-with a handwritten "Industrial" beside it **and an ordinance number**. The
-row's note records that a number is there but not what it is. Reading it off
-the scan would date Easton → Industrial exactly. No download needed — the
-sheet is already in the corpus.
-
-### Identifications the pass produced, and the ones it did not
-
-- **E. B. Millar** — senior partner of E. B. Millar & Co., wholesale grocers
-  of Lansing, Michigan, removed to Chicago in the early 1870s as importers of
-  teas, coffees and spices; Guinn's 1915 *History of California* gives him
-  twice as the brother-in-law and first business partner of **George Doddridge
-  Rowan** (1844–1902), who left the firm in 1876 for Los Angeles and became one
-  of the city's leading real-estate men. No document seen links Millar himself
-  to the 1887 tract, and his given name and dates are still unknown. ⚠ It
-  *weakens* the tempting Boston reading of his sheet (Channing / Lawrence /
-  Warren): his world is Michigan, Chicago and upstate New York, and the
-  sheet's fourth name is Lemon.
-- **F. B. Wilde** — not found, in any source. He subdivided part of the
-  Coronel Tract in 1885 and also appears on Wilde and Strong's Subdivision of
-  the Frank Sabichi Tract (M.R. 66-64), so he worked that one Californio
-  family's land with a partner named Strong.
-- **Kiefer**, **Bliss**, **Kincaid**, **Norris**, **Wiley & Berry**, and the
-  subdividers of Tracts 1687, 1836 and the Industrial Center Tract — all
-  untraced, none indexed anywhere on the open web. These are title-block
-  questions.
-- **Consuelo de Celis** — no such woman found. Josefa is solid (María Josefa
-  Antonia Argüello de Celis, c. 1825–1893, the widow overseeing the family's
-  Los Angeles holdings); Consuelo is a given name on her subdivision with
-  nobody behind it. ⚠ One conflict to resolve first: Wikipedia makes Josefa a
-  daughter of Governor Luís Antonio Argüello, and her son's *Los Angeles Times*
-  obituary of 26 May 1903 calls both parents "natives of Spain".
-
-### Two readings killed, one recorded formally
-
-- **Palmetto ≠ the Palmetto State.** Recorded in `palmetto`'s `refuted`.
-  Palmetto beside Carolina on one sheet is the obvious pairing and it fails
-  twice: Kines derives Carolina from Howard's wife **Caroline Huber**, not from
-  the state, and the Hubers were the Kentucky-born children of German
-  immigrants (Find a Grave's memorial for Caroline's sister Emeline Huber
-  Childs gives Jefferson County, Kentucky, and the parents Joseph and Apolonia
-  Huber, both born in Germany). There is no state on that sheet to pair with.
-  ★ The better lead is the sheet's own annotation, "Palmetto St as herein shown
-  is 30 feet wide and is **wholly within the Bliss Tract**", which reads as
-  Howard describing a street already on the ground rather than one he was
-  laying out — which would explain why Palmetto is the odd name out on a sheet
-  whose others are all accounted for.
-- **Decatur ≠ Stephen Decatur**, and **Mill ≠ a zanja gristmill.** Both were
-  2026-07 speculations; both have now failed a second pass and are dropped
-  from the entries. Neither went into `refuted`, because nothing killed them —
-  there was never anything under them.
-- ★ On Mill and Molino: `molino-st` was fixed by Ordinance No. 3829 on
-  Aug. 31, 1896, **eight years before** Mill Street's earliest lettering here.
-  If the two are related, the English name is the echo and the Industrial
-  Tract made it, not the council — the reverse of the 2026-07 framing. The
-  hole: Mill's absence from Garrigues means only that the name did not change
-  between 1903 and 2002, so Mill could still predate 1904. **The 1903 Chamber
-  of Commerce map settles it in one look.**
-
-### One identity decision owed to Kenny
-
-`belmont-kincaid` (Kincaid's Tract, 1886, a vanished corridor near 11th and Figueroa)
-is **not** modern Belmont Avenue, which runs two kilometres north in Crown
-Hill and is Aztec Avenue's successor. The id is undisambiguated and will
-have collided when the Crown Hill lineage was encoded. ✔ DONE 2026-09-16:
-Kenny renamed it `belmont-kincaid`, following `state-street` →
-`state-colton`, and the one row in documents/mr010-030 was repointed. No
-alias was left behind — a rename is not a merge.
-There are now **four** accounts of where a Belmont came from — the Herald's
-Jan. 4, 1887 "Texas street to Belmont avenue", the Oct. 1888 committee list's
-"Aztec Ave. changed to Girard St.", Kines's Aztec → Belmont, and this 1886
-sheet, which is the earliest of them — and none is settled.
-
-### ✔ 2026-09-16 — Tract No. 1101 parked; `market-st` is deliberately rowless
-
-`documents/tr0020-196b` (Tract No. 1101, the Requena resubdivision of July
-1912) is now `documents/_tr0020-196b` — parked on disk, ignored by the model.
-**Why:** the only two streets on the sheet are Market and San Pedro, both
-heavily renamed, so there is nothing stable to fit the alignment against; Kenny
-had already moved its placement several times. Its single row bound "Market St"
-to the modern **Temple Street** corridor with a null-null extent, which
-`check-model` was flagging as claiming more ground than the sheet shows.
-
-It was the ONLY document in the corpus lettering Market Street. (The other
-"Market" hits are **Marketplace**, a different modern spur off Broadway, on
-`mr001-489`, `mr053-069` and `12685` — unbound rows, substring coincidence.)
-
-Consequences, all checked after regenerating:
-
-- Temple Street falls back to the better-evidenced pair — `beyond Los Angeles
-  (Requena St)`, Requena by 1876 [origin] → Temple [renaming] — off
-  `mr003-146-p2`, a sheet that has never given trouble. Street and entry counts
-  unchanged (270 / 738); HARD findings unchanged at 97.
-- `market-st` stays in `data/names.js` with no sighting. Nothing errors — no rule
-  requires an entity to be lettered — and it simply drops off the generated map,
-  surviving only in `NAME_CATEGORY_INDEX`. Every claim in it came from outside
-  the corpus anyway (Los Angeles Revisited for the July 1904 petition and the
-  Libertad → Requena → Market sequence; Garrigues for Market and Requeña listed
-  separately as "under the City Hall"), so nothing sourced was lost.
-- ⚠ **Two in-progress sheets still advertise it.** `documents/mr002-526-p2` and
-  `documents/mr006-391` carry `market-st` in their tool-generated `TASK.md` and
-  `-streets.json` candidate lists — "attested on Temple Street by another sheet;
-  ink seen: Market St [tr0020-196b]" — sourced from the parked map.
-  **Regenerate those two TASK.md files**, or the bad alignment propagates into
-  the next sheets read.
-- **What would unpark it:** any sheet lettering Market Street with a third
-  street on it to fit against, or the 1903 Violé map.
-
-### Documents worth getting
-
-- **J. M. Guinn, "The Passing of Our Historic Street Names,"** *Annual
-  Publication of the Historical Society of Southern California* v.9 no.1/2
-  (1912–13), pp. 59–64. Contemporaneous, by the era's leading local historian,
-  and specifically about Spanish street names being replaced — eight years
-  after Requena → Market and fifteen after Ord. 4093. JSTOR stable/41168896;
-  the archive.org copies reached were truncated or dark. Would probably give
-  the motive for `market-st` and would serve the whole 1897 thread.
-- **The 1903/04 Chamber of Commerce city map** (drawn by Félix Violé, UCLA map
-  room) — the base of Garrigues's list, and the thing that settles Mill vs
-  Molino, Mimosa's age, and several extents at once.
-
-### Access notes, so the next pass does not rediscover them
-
-- **Garrigues, "What Ever Became of Those Old L.A. City Streets?"** —
-  `https://stevemorse.org/census/changes/LosAngelesChanges2.htm`. There is no
-  page 1; it 404s. ⚠ **The parenthesised numbers are ZIP suffixes, not years**
-  — "(21)" means 90021 — and the page compares the 1904 Chamber of Commerce
-  map with the 2002 Thomas Guide, so **it dates nothing.** A name's absence
-  from it means either the street kept its name or it was gone before 1904.
-  It earned its keep this pass: Atlantic → E. 7th Pl., Palm → Margo, Mimosa →
-  Imperial, Palmetto → part of E. 5th, Carolina → S. Hewitt.
-- **Los Angeles Revisited** — `/search?q=` is robots-disallowed. ⚠ **THE RSS
-  WORKAROUND RECORDED HERE ON 2026-09-15 IS NOT RELIABLE AND THIS NOTE WAS
-  WRONG TO RECOMMEND IT.** `/feeds/posts/summary?q=<term>&alt=rss` answers, but
-  on 2026-09-17 three independent agents found it **ignoring the `q=`
-  parameter**, returning the same default posts for every query including
-  deliberate nonsense controls. It evidently worked on 2026-09-15 (two agents
-  got different, plausible hit counts for different terms), so treat it as
-  intermittent, never as trustworthy. **Run a nonsense control FIRST, every
-  time**; if the control returns what a real query returns, the route is dead
-  and any "hit" from it is spurious. Site-restricted web search plus direct
-  post URLs — which fetch cleanly — is the dependable way into that blog.
-- **archive.org search-inside** works through fetch tools and is much better
-  than pulling `_djvu.txt` whole, which gets truncated and produces false
-  negatives:
-  `https://<d1>/fulltext/inside.php?item_id=<id>&doc=<id>&path=<dir>&q=<term>`,
-  with `<d1>` and `<dir>` from `https://archive.org/metadata/<id>`.
-- **Newly dead or blocked:** `chroniclingamerica.loc.gov` (404 — the API is
-  retired), `loc.gov/collections/chronicling-america/?q=` (403), CDNC (now
-  robots-disallowed to fetch tools, not merely JS-empty), `openlibrary.org
-  /search/inside`, HathiTrust `babel`, Calisphere, Find a Grave and Nominatim
-  (all robots-disallowed). **Google Books API returned HTTP 429 on every
-  attempt across two sessions** — it is the best untried route to 1890s
-  municipal reports and compiled ordinance volumes, and is worth retrying.
-
-## 2026-09-17 — data/names-new.js emptied again: 78 namesakes, and two tracts cracked open
-
-All 78 entities the map tool had minted were researched and moved into
-`data/names.js`, which now holds **249**. Per-entity detail is in each
-`internalNote`; this records only what is still open and what the pass created.
-Generated output went from 738 entries to **841**, stubs from 186 to **161**,
-and `check-legacy` HARD findings from 97 to **75**.
-
-### ✔ THE PARK TRACT IS PRUDENT BEAUDRY'S, and its naming scheme is documented
-
-Kines settles it on the **Centennial Street** page — not under any street of
-its own, the filed-under-another-street pattern again:
-
-> "Named in 1876, presumably to mark the United States Centennial, by Prudent
-> Beaudry (c. 1819-1893) on his so-called Park tract… the proud French Canadian
-> (whose younger brother Victor likely co-developed this tract) often gave his
-> streets names that would appeal to the patriotic American: along with
-> Centennial Street, the Park tract also introduced Custer, Boston, and
-> Philadelphia streets (the latter since erased by the 101 and/or 110 freeways)
-> and extended Beaudry's earlier Bunker Hill Avenue."
-
-One sentence carrying five entities. ⚠ **Date conflict, unresolved:** Kines
-dates the names to **1876**; M.R. 7-26 in this corpus is **January 1885**; a
-dealer catalogue of the printed sheet dates it c. 1884 with **E. T. Wright** as
-surveyor. The likeliest reading is that 1885 re-records an 1876 layout, but
-nothing checked says so.
-
-Also from the same family of pages: **Victor Avenue** is Victor Beaudry, and his
-widow was named **Angelina** — which is what lifts `angelina-st` above the bare
-given names. And **Montreal Street is the street that became Bunker Hill
-Avenue**, the name transferring after the 1960s clearance destroyed the
-original.
-
-### ✔ A SIX-MEMBER GEMSTONE SET on M.R. 6-115 (1884, Crown Hill)
-
-Diamond, Emerald, Jewel, Ruby, Sapphire and South Diamond on one sheet. Same
-footing as the Goodwin Tract's trees: the set is visible on the document and is
-the whole of the argument. **The subdivider is untraced after two passes.** The
-Los Angeles Improvement Company (Jesse Yarnell, H. C. Witmer, Edward A. Hall)
-subdivided this ground, but their documented Crown Hill tract is **Colina Park
-of 1885**, a year *after* this sheet — context, not an answer, and it must not
-be printed as the namer.
-
-Best "what it became" of the batch: **Sapphire St → Huntley Drive**, confirmed
-three ways (Garrigues; the city registry's single Huntley Drive in the tract's
-own Thomas Bros. square 634E3; a geocode landing 80 m from vanished Ruby St).
-
-### ✔ A STATE-NAME SET on M.R. 5-69 (1883)
-
-Alabama, Ohio, Virginia and State on one sheet — so `state-colton` has three
-siblings, and these are graded `pattern` rather than the bare-state-name
-`guess` used for `nevada-1886`. Subdivider of "Lot 8, Block 35" untraced.
-
-### ✔ ANGELENO HEIGHTS: the developers' own plan states the scheme
-
-The **Angelino Heights Preservation Plan (2004)**, on planning.lacity.org, is
-the load-bearing document and was not previously in this file:
-
-> "William W. Stilson and Everett E. Hall, partners and co-developers, on March
-> 19, 1886, filed for the subdivision of the original Angelino Tract."
-> "In naming the new streets - Carroll, Marion, Allison, Helen, Wallace, and
-> Everett—they were honoring family members."
-> "And in renaming streets already in place such as Cummings to Ionia, they were
-> holding on to their Mid-western ties, as Ionia was the hometown of the Hall
-> family for one."
-> "In naming others, Edgeware and Crescent, they had considered the topography
-> as factors."
-
-Note "streets already in place" — **Cummings predates Hall and Stilson**, so it
-is not one of their family names. And the surveyor of the Angeleno Heights
-sheets, including what is plainly M.R. 12-25, was **E. T. Wright** of Wright &
-Nicholson, County Surveyor from 1884 — the same name as `wright-street`'s
-tract, which is a lead and not a finding.
-
-### ⚠ BEAUDRY: the ink partitions the rows cleanly, and it changes the answer
-
-`beaudry-st`'s own internalNote asked for a geometry test. It has now been run,
-and the result is a clean rule of exactly the State/Colton kind:
-
-- every row inked **"Beaudry St"** is on the modern **Fremont Avenue** line;
-- every row inked **"Beaudry"**, **"Beaudry avenue"** or **"BEAUDRY AVE."** is on
-  modern **Beaudry Avenue**.
-
-No exceptions across eight rows and forty years. The **Jan. 1885 Park Tract
-sheets are the control**: mr007-026-p1 and -p2 each letter *both* names, on two
-parallel roadways ~300 m apart. On that reading `beaudry-st` is the Beaudry
-Street lineage that became Fremont — which is exactly what the **vetoed Oct.
-1890 ordinance** already cited in that entry describes ("from Bellevue Terrace
-to Temple Street, to Fremont Avenue") — and five rows it still holds belong to
-`beaudry-avenue`: **mr006-115, mr007-026-p2 (the "Beaudry" one), tr0001-052,
-tr0006-150a, tr0010-175a**.
-
-⚠ Kines is **not** contradicted: his "Beaudry Avenue itself was born Beaudry
-Street, at the corner of 6th" is about lat ~34.045, south of everything this
-corpus covers. **Not acted on** — reassigning rows is Kenny's call. Until then
-`beaudry-st` carries an authored `disambiguation` so the two render apart
-(§6.5), which is what `tools/check-model.js` was erroring on.
-
-### ⚠ LAFAYETTE: the split is drawn on the ink, and the ink is the wrong axis
-
-`lafayette-street` currently holds **two streets 2.3 km apart**: mr003-046-p1
-and -p2 (1875, "LAFAYETTE ST.") are on modern **Bixel Street**, which is
-`lafayette-ave`'s ground; mr002-526-p2 (1869) and tr0014-111b (1908) are the
-vanished eastern one near Alameda. Once the two Bixel rows move,
-`lafayette-ave` wants two spelling periods (Lafayette Street, then Lafayette
-Avenue) and `lafayette-street` keeps only the eastern pair. Recorded in
-`possiblySameAs` both ways.
-
-### ⚠ JACKSON: left split, deliberately
-
-Both at lat ≈34.051, 125 m apart, but `jackson-st-little-tokyo` runs at a 45°
-diagonal and every `jackson-st` row is due east; the gap falls near Alameda. One
-street bending, one street lost in the middle, and two different streets are all
-consistent with that. Kept apart per §3's asymmetry, `possiblySameAs` both ways.
-The city registry has exactly one Jackson Street, which mildly favours "the
-diagonal one is simply gone". ⚠ Its id is probably misnamed — 34.0524 is
-Alvarado/Chinatown, not Little Tokyo.
-
-### ✔ STATE / COLTON: audited, one error, fixed
-
-Six rows in the corpus. Kenny's rule partitions them perfectly and the
-chronology backs it (State on the 1880s sheets, Colton on the 1911+ tracts).
-`tr0017-143b` rows[2], the vanished eastern continuation inked "Colton St", was
-bound to `state-colton` and is now `colton-st`.
-
-### Corrections to earlier entries in this file
-
-- **`labury-lane` is probably `labory`.** Two independent sources spell it
-  Labory — Garrigues, and the Huntington's Solano-Reeve catalogue record for the
-  Alanis Vineyard Tract ("Sainsevain St. to Labory Lane"). The entity's
-  normalised spelling now follows them; **the row's `asWritten` was deliberately
-  NOT touched**, because that is the ink and only a person at the scan should
-  change it. Rename the id if the scan confirms.
-- **`cherry-street` is not the Pine→Cherry of the 1890s ordinance**, or if it is,
-  the ordinance is about a different Pine: this Cherry is already on a sheet of
-  **January 1884**.
-- **Garrigues's Rowland is not ours.** "Rowland St., west of Vermont, is 17th
-  Place (06)" became 17th *Place*, not Sixteenth Street, and sits 2 km west — so
-  it does not corroborate the Nov. 1889 "Pine and Rowland → Sixteenth" and is
-  probably a third name.
-- **Ord Street is a three-stage lineage**: *Calle Alta → Walters Street (1886) →
-  Ord (from 1890)*, per Kines. `high-street-chinatown` is stage one. **Stage two
-  needs checking against `waters-street`** — Kines has "Walters Street, after
-  resident George Walters"; whether our Waters and his Walters are one street
-  misspelt has not been tested.
-
-### Tooling — two routes are broken in ways that manufacture false negatives
-
-- ⚠ **`lastreetnames.com/?s=<term>` SERVES A STALE CACHED PAGE.** Four agents hit
-  it independently; one got a results page headed "Emerald" for *every* term it
-  passed, including deliberate controls. **Use the permalink form
-  `https://lastreetnames.com/search/<term>/`**, which works reliably. Also:
-  `/neighborhoods/<slug>/` indexes are complete and are the only safe way to
-  prove a negative; `/alpha/<letter>/` paginates at 20 and is not.
-- ⚠ **The losangelesrevisited RSS route is unreliable** — see the corrected note
-  in the 2026-09-15 section above.
-- ⚠ **`archive.org/advancedsearch.php` AND `fulltext/inside.php` have both been
-  seen returning stale cached results regardless of query.** When inside.php
-  works it is the best full-text route (`<d1>` and `<dir>` from
-  `archive.org/metadata/<id>`), but **quote multi-word phrases** or terms
-  tokenize into noise, and check for `"No hOCR or Abbyy file present"`, which is
-  a tooling failure and not a negative result. **Harris Newmark's *Sixty Years in
-  Southern California* was never actually searched** because of this, and it is
-  the best untapped source for the Frenchtown merchant circle (Weill, Amelia,
-  Labory).
-
-### New sources worth adding to the playbook — all verified working
-
-- **`https://data.lacity.org/resource/hntu-mwxc.json?$q=<term>`** — the City of
-  L.A. Bureau of Engineering street registry. **The single most useful tool
-  found this pass.** Authoritative on whether a street still exists, with Thomas
-  Bros. grid refs that act as a coarse locator; a record with `"tbm_map":"NA"` is
-  a *retired* name (that is how Weller Street was identified as gone). Throttle
-  to ~3 concurrent or it 429s.
-- **`https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=<addr>&benchmark=Public_AR_Current&format=json`**
-  — free, precise lat/long, no key. Short industrial blocks often have no
-  address range, so a NO MATCH is not evidence of absence.
-- **`https://digitalcollections.lmu.edu/Documents/Detail/<slug>/<id>`** — the
-  Hurley/Wright Surveyors Map Collection holds original linen drawings of many
-  recorded L.A. tract maps **with boundary streets transcribed in the catalog
-  record**. This is how New Cincinnati Street was pinned to Edgeware Road. Its
-  own search endpoint 404s; arrive via web search.
-- **`https://calisphere.org/item/<id>/`** item pages fetch fine — only Calisphere
-  *search* is blocked. This is how "Labory Lane" surfaced.
-- **SurveyLA and neighbourhood preservation plans on `planning.lacity.org`** are
-  fetchable, substantive and repeatedly decisive.
-
-### Still wanted
-
-- The subdividers of **M.R. 6-115** (gems), **M.R. 5-69** (states), **M.R. 3-240**
-  (Teed and Rosas — one sheet, both names, and Teed survives), **M.R. 10-77**
-  (the Harvey Tract, for Adele), **Tract No. 320** (for Nina) and the **Industrial
-  Center Tract**. All are title-block questions, not web questions.
-- **Morris and Montgomery Streets**, the predecessors the Nov. 1889 ordinance
-  gives for Seventeenth Street. Absent from every reachable source.
-- The **1903/04 Chamber of Commerce city map** (Félix Violé, UCLA) — Garrigues's
-  base, and it would settle a dozen extents and datings at once.
-
-## 2026-09-17 (later) — tool fixes, and a test suite that had been dead
-
-### ⚠ `tests/test-review.js` WAS NOT RUNNING, and had not been for some time
-
-It threw on load — `ReferenceError: clipRun is not defined` — because the
-function in `utilities/map-tool.html` had been renamed `clipRuns` (plural) and
-`clipRange` renamed `clipRanges`, and the test's API export line was never
-updated. **This was true in the committed tree, not something this session
-broke.**
-
-Fixed, and it matters more than the rename: once it ran, four assertions
-failed and **three others had been passing while measuring nothing**.
-`clipRuns` now returns a LIST OF RUNS rather than one polyline, so
-`clipped.length` was counting runs, not vertices — "3 of 224" read as
-successful clipping — and `len(fwd)` over a list of runs returns 0, so
-`Math.abs(len(fwd) - len(back)) < 1` compared 0 with 0 and passed. Both blocks
-now flatten before measuring. **140 passed, 0 failed.**
-
-The lesson is CLAUDE.md's own: a test that cannot fail is worse than no test,
-because it is counted. Worth running all four suites after any tool change, and
-worth checking that the count went UP.
-
-### Three map-tool fixes
-
-1. **Excluding a whole street now deletes its rows.** `mkexceptall` pushed the
-   bare street name into `coverageExcept` and left the rows alone, which is the
-   exact state `tools/check-model.js` refuses ("it is either covered or it is not").
-   That is how `documents/tr0063-098-p1` collected three identical stretch
-   entries, a whole-street entry and two live rows. The confirm now says how
-   many rows will be deleted, a whole-street exclusion drops any per-stretch
-   entries for the same street, and an exact duplicate is refused.
-2. **Minting a name entity from a vanished row now shows the result.** `touch()`
-   reopened the popup only when `selStreet` was set, and a vanished row has no
-   street — so `r.name` was set correctly but the stale, empty input stayed on
-   screen and it looked as though nothing had been selected.
-3. **The Open box can hand a pile of documents to an assistant.** Each row has a
-   checkbox, and **Copy ids** puts `documents/<id>/` for every ticked one on the
-   clipboard, one per line. Handing over a batch is a step in the workflow
-   CLAUDE.md describes and it meant retyping folder names.
-
-### A harness gap that let (1) through
-
-`tests/browser-test.js` **dismissed every `confirm()`**, so no test could exercise an
-action behind one — the existing exclusion test pushed the value into the page
-by hand instead, which is why the row-deletion bug survived. Added
-`acceptConfirms(n)` and a test that clicks the real button and asserts the rows
-are gone. **313 passed** (up from 305).
-
-⚠ Four browser-suite failures are environmental, not real: they appear
-identically against the unmodified `HEAD` version. Two need `project-info.json`
-(machine-specific, gitignored) and two need `documents/12685`, which was not
-staged into the sandbox. If you run the suite locally with the whole folder
-present they should pass.
-
-### ✔ TASK.md is not the problem
-
-The save path writes `TASK.md` every time, alongside the document, alignment and
-streets JSON. `mr002-526-p2` and `mr006-391` listed `market-st` because their
-TASK.md was generated **before** Tract No. 1101 was parked — the candidate table
-comes from a corpus scan at save time, so a re-save now would drop it. No bug.
-
-### 2026-09-17 (later still) — the Copy ids bar, top and bottom
-
-Kenny asked for the bar at both ends of the document list and a select-all per
-section. Both done. The section box lives in the caret line, shows a dash when
-only part of its section is ticked, and does NOT fold the section (a checkbox
-inside a `<summary>` otherwise toggles it, because the click reaches the
-summary and folding is its default action). One `sync()` decides what all five
-controls show, because a stale count beside a Copy button fails silently.
-**17 new assertions; the suite is 330 passed, 4 failed** — the same four
-environmental failures as before, which appear identically against HEAD.
-
-⚠ A TRAP WORTH KNOWING, now in CLAUDE.md: patching a file with
-`String.replace(a, b)` treats `$$` in the REPLACEMENT as an escape for a
-literal `$`, so `page.$$eval` was silently written as `page.$eval` and the
-tests threw. Pass a function — `s.replace(a, () => b)` — for any replacement
-that contains code.
-
----
-
-## 2026-09-17 (evening) — Kenny's CDNC clippings and the Newmark book
-
-Kenny ran most of `handbook/CDNC-QUERIES.md` and fetched Newmark. Eighteen
-clippings landed in `inbox/`. What they unlocked, and what they opened up.
-
-### Two documents created, one rewritten
-
-- **`documents/lah-1888-10-11` is now transcribed in full** — all **199** items,
-  in `lah-1888-10-11-transcription.md`. The header used to guess "roughly three
-  hundred"; a count says 199. ★ The list has **two halves doing different work**:
-  items 1–71 are *consolidations* (five names on one line of pavement folded into
-  one), items 72–199 are the *duplicate cull*, alphabetical by the old name —
-  four Virginias, three Williams, three Grants, two Aurora Streets four Hancock
-  blocks apart. That is the lede's two stated purposes executed in two passes,
-  and **a line's position in the column tells you which kind of claim it makes**.
-- **`documents/lah-1919-11-27` is new** — a four-sentence item under the
-  misleading headline "NO CHANGES AT PRESENT" (which is about San Pedro). It
-  carries the council ordering **Sapphire Street + north Boylston Avenue →
-  Huntley Drive** and **Reservoir Street → Descanso Drive**.
-- **`documents/lah-1897-12-07` is now complete** — the tail of the column, ten
-  further changes, is transcribed.
-
-### Six entities changed grade
-
-| Entity | Was | Now | On what |
-|---|---|---|---|
-| `labory-lane` | `none` | **`inferred`** | ★★ **Antonio Labory**, born Bordeaux c. 1819, schoolmate of Vital F. Vignes, San Francisco 1844, Los Angeles ever after; sheep rancher; an **H. Labory** in the vintage business at the Aliso with Pedro Sainsevain. Three Herald items. |
-| `potts-st` | `none` | **`inferred`** | ★★ Newmark p. 61: *"Temple Street had not then been opened by **Beaudry and Potts**."* The exact Beaudry link the 2026-09-17 rejection said was missing. The rejection is reversed and left in place verbatim. |
-| `teed-street` | `none` | **`inferred`** | ★★ **M. Teed**, contractor and builder, shop on First between Main and Spring (1873 ad); on the **Common Council** the same month, sitting with Beaudry; still an old settler in 1897, per Newmark p. 614. |
-| `warren-st-arts-district` / `decatur-st` | alignment only | **sourced** | ★★ *"Warren St., in S. part of city, changed to Decatur St."* The renaming was an inference from the alignment; it is now a line in the record, dated Oct. 1888 instead of "somewhere in 26 years". |
-| `sapphire` | Garrigues only | **attested** | ★★ The council doing it, Nov. 1919. |
-| `crescent-park-tract` | no successor | **successor found** | ★★ *"Crescent Ave., changed to Beaudry St."* — see below. |
-
-### ★★ The Crescent geometry, which is the nicest result of the day
-
-`crescent-park-tract` had no successor. The 1888 list gives it one: **Beaudry
-Street**. Which Beaudry matters, because this corpus splits `beaudry-st` (the
-Fremont Avenue lineage) from `beaudry-avenue` **by the ink**, a rule derived
-from twelve rows. The geometry on Crescent's own sheet settles it:
-
-```
-mr007-026-p1   beaudry-st   row ENDS at   34.06091, −118.24905
-               crescent     trace BEGINS  34.06091, −118.24904     ← 1.4 m
-               beaudry-avenue row, nearest point                    ← 371 m
-```
-
-End to end on one line. So the committee was **extending Beaudry Street over
-its own continuation**, on the Fremont line — and an 1888 document lands on the
-same side of a rule that was derived purely from handwriting. That is an
-independent check on the split Kenny approved this morning.
-
-### Things the clippings opened rather than closed
-
-- ⭐⭐ **"Cedar St., in A. Weill tract."** `weill` had no man, no initial and an
-  `extensive` search behind it. The 1888 list gives the family a **recorded
-  subdivision** — which means a County filing with the subdivider's full name in
-  its title block. That is a findable object, unlike a surname search, and
-  Newmark's zero (real, now that the book is greppable) says the map books are
-  the place to look, not the newspapers. **NavigateLA or the County map-book
-  index; probably belongs in `IN-PERSON.md`.**
-- ⚠ **`rouland-street` × `virginia-conv-center` needs geometry.** The 1888 list
-  has *"Virginia St., in SW. part of city, changed to Rouland St."* — but
-  Rouland and Virginia are lettered as **two different streets on the same two
-  sheets** (`mr005-431`, `mr010-077`). So the committee was spreading a name
-  already on the block onto its neighbour. If the Virginia there is
-  `virginia-conv-center`, the two entities end up sharing a name and the
-  question of whether they are one lineage reopens. ⚠ It also unsettles the
-  Delong story: that entity says it became Delong and guesses the 1888 cull as
-  the occasion — the cull is now readable and it says **Rouland**.
-- ⚠ **`cummings-ave` has two conflicting successors.** The Preservation Plan has
-  Hall and Stilson renaming Cummings → **Ionia**; the 1888 committee wanted
-  **Modoc**. Probably two events (a private renaming in 1886, a city proposal in
-  1888 that failed), but the plan gives no date, so the order is not proven.
-- ⚠ **`belmont-kincaid` may have a successor.** *"Belmont Ave., from Pico to
-  Eleventh St., changed to Trenton St."* is within a block of Kincaid's Tract
-  and is the only extent-qualified Belmont in the list. Ten minutes with the
-  sheet decides it — or reveals a *third* 1888 Belmont.
-- ⚠ **`canal-street-beaudry` now has a source and a direction problem.** *"Beaudry
-  Ave., from Third St. north, changed to Canal St."* — but the Chadwick
-  Subdivision already letters Canal there in **1886**, and the 1917 tract letters
-  Beaudry on the same block. The corpus's sequence is Canal → Beaudry; the
-  committee wanted Beaudry → Canal. Ordinance No. 48 decides.
-- ✔ **`consuelo` → `california-street-14th` is now a chain, not a coincidence.**
-  *"Consuelo St. changed to California St."* (Oct. 1888) explains why the Nov.
-  1889 numbering ordinance folds "California, Consuelo, Greenwell and Vejar"
-  into Fourteenth: it is a sequence caught mid-transition, not four parallel
-  names.
-- ✘ **`lafayette-bixel` got a successor that lost.** *"La Fayett Ave. in W part
-  of city, changed to Contra Costa St."* There is no Contra Costa Street in Los
-  Angeles; Bixel took the corridor in 1889 instead. Useful *because* it fails —
-  a dated instance of §10 form 5.
-
-### ⭐ THE SINGLE LARGEST OUTSTANDING JOB: Ordinance No. 48
-
-Everything above taken from the 1888 list is an **intention, not an act**. At
-least four of its 199 lines demonstrably did not survive (Botiller/Santee ran
-backwards, Aztec/Girard contradicts Kines, Maple/Regent was reversed in Dec.
-1889, La Fayett/Contra Costa never existed). `documents/lah-1889-05-10` is the
-ordinance the list became. **Until that is transcribed, the corpus now carries
-a large and growing stack of qualified claims that only it can discharge.**
-
-### ⭐ And a cheaper one: read the Newmark passages already on disk
-
-`documents/newmark-1916/newmark-1916.txt` is the whole book, greppable, no
-network. Unread:
-**59 Lazard**, **61 Wolfskill**, **51 Beaudry**, **30 Requena**, 15 Ducommun,
-15 Vignes, 8 Sabichi, 8 Harvey. The Potts find came out of exactly one Beaudry
-passage. This is a session's work with `grep -n` and no fetching at all.
-
-### ⚠ A tooling finding worth more than any single name
-
-**The archive.org full-text endpoint had been returning zero for names that are
-plainly in Newmark** — "Potts" appears three times and the endpoint said
-nothing. That is the "sources that lie" problem in CLAUDE.md, confirmed against
-a ground truth for the first time. Every Newmark negative recorded before
-2026-09-17 was worthless. The fix is in CLAUDE.md: **get the book into `inbox/`
-as text and grep it.** Project Gutenberg and the Internet Archive both serve
-whole files fine; it is only their *search* that is broken.
-
----
-
-## 2026-09-17 (late) — the 43-entity batch out of data/names-new.js
-
-Everything the tool had minted was researched and moved into `data/names.js`, which
-is now 292 entities and `data/names-new.js` is empty. Three web-research agents ran in
-parallel on disjoint name sets; the corpus side — the Oct. 1888 committee list,
-Newmark, and the row geometry — was done here.
-
-### What the 1888 list settled that no amount of searching would have
-
-Six of the batch were answered by a document transcribed earlier the same day.
-This is the argument for transcribing instruments in full rather than in the
-lines you happen to need:
-
-- **`north-ave` and `northern-ave` are one roadway.** Their rows, on two sheets a
-  year apart, are the same line to five decimals — and the committee list has
-  *"Northern Ave. and North Ave., in Colina Park tract, changed to North St."*
-- **`rio-avenue` → `rio-st` → `anderson`** is a complete chain with a document at
-  each join: the 1888 proposal, a 1908 sheet lettering the result, and an L.A.
-  City Planning district record for the mid-1920s Union Pacific extension.
-- **`ventura-ingraham`** was minted on alignment alone; the committee says it in
-  its own words. One of the few 1888 proposals that demonstrably took.
-- **`atchison-st` / `topeka-st`** are placed by *"Topeka St., near river"* against
-  Garrigues's other, South Los Angeles Topeka.
-- **`grace`** — proposed for Mono in 1888; Kines dates the act to 1889. A useful
-  calibration on how long that committee's items took to land.
-
-### ★★ The Witmer absorptions
-
-*"Witmer St., Nichols St. and Logan Ave., changed to **Nichols** St."* Three
-separate 1885–87 tract names — Bryan, Nichols, Logan — lie on the line of modern
-**Witmer Street**, and the council's committee wanted the whole thing called
-Nichols. **The ground says Witmer won.** That is the clearest instance in the
-corpus of a committee proposal losing to a name already in use, and it is why the
-1888 list is graded as intentions rather than acts.
-
-### ★★ Texas → Belmont → Loma, from three facts that looked unrelated
-
-`texas-st`'s row ends at 34.06341,−118.26308. `belmont-ave`'s 1886 row **begins**
-at 34.06341,−118.26308. End to end on one line. So: Belmont Avenue already existed
-beside Texas Street in 1886; `lah-1887-01-04` renamed Texas to match its
-neighbour; modern Belmont Avenue therefore stands on what was Texas, and the
-original Belmont stretch became **Loma Drive**. ⚠ Kines has modern Belmont coming
-from AZTEC Avenue, which is a third account of the same corner and is reconciled
-with neither.
-
-### Identified
-
-| | |
-|---|---|
-| `garland` | **William May Garland** (1866–1948) — the tract is his, and he brought the 1932 Olympics to Los Angeles. Two independent sources, and the dates interlock with the Holmes → Garland renaming |
-| `shatto-st` | **George Rufus and Clara Ruth Shatto** — named 1891 after their own "Vieudelou" was rejected. ★ Shatto also developed **Orange Heights**, which is where `logan-ave` and `ventura-ingraham` come from |
-| `utah-st` | **Thomas W. Collins** petitioned for it in 1896, on **Henry J. Woollacott**'s land — both Salt Lake City men. A rare case where the PROPOSER is documented rather than the honoree |
-| `clarence-st` | **Clarence Casper Cummings** (1881–1968), aged thirteen, on his parents' land |
-| `strelitz-st` | **Jacob Strelitz**, merchant tailor, owner of the adjoining Fairview tract — `inferred`, and Kines is the sole witness |
-| `nichols-ave` | **John Gregg Nichols**, mayor, or his son — `inferred` from Kines placing him as prior owner of this exact ground |
-| `atchison-st` etc. | the **Atchison, Topeka & Santa Fe**, whose subsidiary the California Central reached Los Angeles five months before the depot tract was recorded |
-| `colina-ave` + 3 | a **Spanish ground-word set** — colina, loma, collado, gravilla — on a tract called Colina Park, on a hill |
-
-### ⚠ The one that needs Kenny's eyes: GRAVITTA or GRAVILLA
-
-The entity was minted from ink read as *Gravitta*. Garrigues prints **Gravilla**,
-with an extent matching our row exactly; *gravilla* is Spanish for fine gravel and
-fits the tract's other three Spanish ground-words; and **"Gravitta" is attested
-nowhere at all** — not as a surname, a place or a word, in any source searched.
-This is the Labury/Labory error again. `disputed: true`, both forms carried, until
-someone re-reads M.R. 7-36. Written up in `handbook/IN-PERSON.md` §3a.
-
-### ⚠ And one duplicate, which is why check-model was red
-
-`lucas-ave` was the same street as the existing `lucas-avenue` — same name, same
-corridor, 1.4 m apart at the join. The row on `mr007-056` was repointed and the
-stub dropped. That was the `lucas avenue` disambiguation error Kenny hit.
-
-### What came back empty, and why that is worth writing down
-
-The **Clement Tract** (six names) and the **Kennedy Tract** (three) both defeated
-every online route, and for one identifiable reason: *no digitised copy of either
-sheet exists in any reachable catalogue*, and every 1880s newspaper full-text
-archive is dead or robots-blocked. The answers are in the title blocks. Five such
-sheets are now listed in `handbook/IN-PERSON.md` §3a as findable objects rather
-than searches — which is a better kind of lead than anything a search returned.
-
-### Tooling, and it cost two false negatives before it was caught
-
-⚠⚠ **`curl` fails SILENTLY EMPTY through the agent proxy** — 403 on CONNECT for
-`data.lacity.org` and `stevemorse.org`, with no output and no error text, which is
-indistinguishable from "nothing found". Two agents filed false negatives from it
-before a positive control caught it. **Use WebFetch for those hosts.** Also new:
-`digitalcollections.lmu.edu/documents?q=` ignores the query and answers "no
-results" to a record that exists; Calisphere now robots-blocks item pages as well
-as search; and `losangelesrevisited`'s HTML search is blocked, not just its RSS.
-All four are in CLAUDE.md. **The lesson that keeps recurring: a nonsense control
-only catches the endpoint that answers everything. Run a positive control too.**
-
----
-
-## 2026-09-17 (night) — the title blocks were on disk
-
-Kenny confirmed the ink, supplied the second Guinn paper, five Crown Hill
-Chronicles posts and the Diamond Street thread, and pointed out that some sheets
-had moved to `inbox/out of neighborhood`. Checking that folder is what started
-this: the Clement and Kennedy tracts were **not** there, because they are in
-`documents/` — **with their PDFs** — and had been all along.
-
-### ⚠ The mistake worth remembering
-
-Twelve hours earlier this file and `IN-PERSON.md` recorded **five title blocks**
-as in-person leads at the County map books, on the reasoning that the subdivider
-would be named there and was nowhere on the open web. **Four of the five sheets
-were already in `documents/`**, and reading them took about ten minutes with
-`pdftoppm`. CLAUDE.md states the rule — *"Downloads first: if a map is already in
-`inbox/` or `documents/<id>/`, read it locally"* — and the lead was written
-anyway, because the research had been framed as a web problem from the start.
-**Before writing down a trip, list the folder.**
-
-### ★★★ What the title blocks gave
-
-- **Colina Park** (M.R. 7-36): surveyed Nov. 1884 by **E. T. Wright**, recorded
-  at the request of **six named owners** — W. J. Bradshaw, Mrs M. A. Hoadley,
-  J. W. Ellis, W. A. Boring, N. W. Stowell and **H. C. Witmer**. Three were
-  already in the corpus under other hats. ⭐ W. A. Boring may be the Ellis Island
-  architect. Nothing about the Spanish street names, so `pattern` stands.
-- **Bigelow Tract** (M.R. 24-81): recorded "at request of **A. W. Francisco**" —
-  Andrew Wiggins Francisco, already in `data/names.js`. And the sheet **already had a
-  `santa-fe-ave` row**, so the plat letters ATCHISON, TOPEKA, SANTA FE and
-  FREIGHT together beside a depot its own title names. The `pattern` for that set
-  no longer needs Kines's Pasadena tract to make its case.
-- **Clement Tract** and **Kennedy Tract**: a surveyor and a requester each
-  (John Goldsworthy / B. E. Day; E. T. Wright / E. W. Jones) and ⚠ **no Clement
-  and no Kennedy.** The lead was half right: a title block names who *filed* the
-  map, not always who it is named for.
-- **Truman Tract** (M.R. 5-405): recorded at request of **E. Bouton**, and it
-  letters its neighbours — H. C. Sigler, **Nichols**, Jones, Mallard — which is a
-  third independent placement of the Nichols family on this ground.
-
-### ★★ Witmer beat Nichols, and now we know why
-
-H. C. Witmer is on the Colina Park title block of Nov. 1885, three months before
-Witmer Street was named. So by the time the Oct. 1888 committee proposed
-"Witmer St., Nichols St. and Logan Ave., changed to **Nichols** St.", the Witmers
-owned the hill, ran the cable railway up it and had built their houses on their
-own street. The committee reached for the older landowner's name and the newer
-one won.
-
-### ✔ Gravilla, and a rule on its third outing
-
-Kenny read M.R. 7-36: it says **Gravilla**, and the street's dashed centreline
-runs through the word, which is what made a doubled letter look plausible.
-Corrected throughout; `disputed` dropped; Garrigues corroborated.
-
-> **When a name is attested *nowhere at all* — not as a surname, not as a place,
-> not as a word, in any source — suspect the transcription before concluding the
-> name is obscure.** A real but rare name leaves some trace; a misread letter
-> leaves none. Third instance: Labury→Labory, Gravitta→Gravilla.
-
-### ★★★ Guinn 1895 is the bigger of the two Guinn papers
-
-`documents/guinn-1895` prints **Ord's 1849 street names in both languages** —
-seventeen of them, with four etymologies stated outright (Spring for the season,
-Eternity for having neither beginning nor end, Bull for the bull fight, Hornet
-for the hornets), three successors (Charity → Grand, Grasshoppers → Pearl,
-Orchards → San Pedro), and the bounds of Ord's survey (north First, east Main,
-south Twelfth, west Pearl). It also names its own source — C. C. Grove of the
-West Coast Abstract company — so the concordance is a title abstractor's work
-relayed, which is better provenance than Guinn's own recollection.
-
-⚠ **It contradicts itself once**, and no entity should lean on either half until
-something decides: the concordance gives *Calle de Las Caridad* as the street
-that became **Grand Avenue**, and two pages later gives the same Spanish name as
-**Spring Street's** own earlier name.
-
-### ★★ Diamond Street: three modern streets, one 1889 name
-
-The Echo Park thread contradicts itself — author says Beverly Blvd., the railway
-society it quotes says West First Street — and the corpus arbitrates. Sorted west
-to east, `diamond-street`'s eleven rows fall into three contiguous longitude
-bands with no gap at either join:
-
-```
-−118.2669 … −118.2604   modern Beverly Boulevard
-−118.2604 … −118.2553   modern 1st Street        (mr007-056 hands over at −118.26042)
-−118.2534 … −118.2514   surviving Diamond Street
-```
-
-Both published claims are true of different thirds, which vindicates Kenny's
-2026-08-30 decision to hold it as one entity. The thread's attached image turned
-out to be worth more than its text: a published **1889 railway map** that glosses
-seven streets with modern names and independently corroborates Texas → Belmont.
-
-### Still open
-
-- **The A. Weill tract** — the one sheet of the five that is genuinely not on
-  disk, and now the best single lead in the project.
-- **Seven names off the title blocks**: B. E. Day, E. W. Jones, E. Bouton,
-  W. A. Boring, N. W. Stowell, Mrs M. A. Hoadley, W. J. Bradshaw. None needs a
-  library — a city directory or a census would do it.
-- **`stevenson-ave` still has no row**, and the 1889 map makes that worse: the
-  1888 list's Stevenson is on the cable route west of downtown, while this entity
-  was minted from a Boyle Heights sheet now parked out of neighbourhood. Nothing
-  can be attached to it until it has ground.
-
-### ✔ 2026-09-18 — the two Calle Caridads are two streets, and Guinn says so
-
-Kenny's reading, confirmed in the text: *"Grand through downtown and north Spring
-through Chinatown."* `documents/guinn-1912` states it outright —
-
-> "San Fernando street (formerly Upper Main), North Main (once Alegro or Junction
-> street) and **North Spring street, in the early years of the last century Calle
-> Caridad (Charity street)**, are the oldest streets of the city."
-
-— one paragraph before it lists the Ord Survey's christenings, "Forten, Caridad
-and Chapules … changed to Broadway, **Grand avenue** and Figueroa."
-
-★★ **And Guinn settles it against himself, with no outside evidence.** The same
-paragraph says *"all the streets south of First street to Twelfth street and all
-west of Main street to Figueroa date their existence from the Ord Survey, made in
-1849."* So downtown Spring Street **did not exist** to carry a name "sixty or
-seventy years" before 1895. The only part of the Spring line old enough is the
-stretch north of First — Chinatown. `documents/guinn-1895`'s looser "Spring
-street" is the imprecise one; the 1912 paper's "North Spring street" is right.
-
-✔ Ord's own sheet agrees: M.R. 53-68 labels Spring "Calle Primavera" and carries
-"Charity St / Calle de Caridad" as a **separate street on the same sheet**.
-
-⭐ **The `charity` entity predicted this before anyone checked**, and the note is
-worth quoting as a model of how to park an unresolved possibility: *"generated/streets-data.js
-also records Calle de Caridad as an unverified early name for SPRING Street. If
-that is ever confirmed it is a second entity that spells alike, not this one."*
-It is now confirmed and it is a second entity.
-
-⚠ **That third Caridad is still unminted**, deliberately: it is a pre-Ord organic
-name on ground north of First, attested only in Guinn and lettered on no document
-here. Same position as West Market Street. Minting it is Kenny's call.
-
-⭐ **Two more lineages fell out of the same sentence**, neither yet an entity:
-**San Fernando Street was formerly Upper Main**, and **North Main was once Alegro
-or Junction Street** — the "Calle de Las Allegria — Junction street" of the 1895
-paper. And a dating rule worth keeping at hand: *nothing south of First or west of
-Main existed before 1849*, so any claim that a street in that rectangle carried a
-pre-Ord name is wrong about the street.
-
----
-
-## 2026-09-18 — Orange / Wilshire, and four ordinance numbers off the plats
-
-Kenny asked about sheets lettering both Orange and Wilshire with one crossed out,
-and whether a sheet had put Orange on 7th Street. Both questions paid.
-
-### ✔ The dual-labelled sheets, assigned by what was in force
-
-Two, and both were pointed at `wilshire`:
-
-| Sheet | Date | Was | Now |
-|---|---|---|---|
-| `mr005-566` | recorded 9 May 1889 | `wilshire` | **`orange-st-wilshire`** |
-| `mr055-014` | surveyed June 1893 | `wilshire` | **`orange-st-wilshire`** |
-
-Kenny's rule — *assign to the entity active at the time* — and here it is doubly
-clear, because **the Wilshire ink is the half that was struck out**. On this
-stretch (Figueroa–Alvarado) the name ran: Orange from 1878, Wilshire for about six
-months in 1908, Orange again after the December 1908 repeal, Wilshire from April
-1924.
-
-### ★★★ And the plats number the ordinances the newspapers only described
-
-`mr005-566` carries the whole fight in one label — three layers of ink:
-
-1. the plat's own 1889 **"ORANGE … ST."** in capitals, never struck;
-2. a cursive **"Wilshire … Blvd."** tagged **"ORD 16790"**, *every word struck
-   through*, with an unstruck **"ord.16915"** beside the surviving Orange;
-3. a clean later marginal note: **"Orange St. changed to Wilshire Blvd. Ord.
-   48435"**, beside "Por. of Kip St. vacated Ord. 46278".
-
-`mr055-014` shows the same overwrite with **"ord 16790"** struck and a live,
-re-lettered **"Orange … St."** tagged **"ord 16916"**.
-
-**The reading**, which fits `lah-1908-07-14` and `lah-1908-12-05` exactly:
-
-| Ordinance | What it did |
-|---|---|
-| **16790** | June 1908 — Orange Street → Wilshire Boulevard. The signs went up. Struck off both plats. |
-| **16915 / 16916** | December 1908 — the repeal. Unstruck, beside the restored Orange. |
-| **48435** | April 1924 — the change that held. |
-
-⚠ **The numbers are not yet dated from a source** — which is which is inferred
-from where the pen struck, not from the ordinance index. ⭐ **The City Clerk's
-ordinance index would settle all four in one lookup**, and it is a better lead
-than any newspaper search left on this street. ⚠ Two numbers for one repeal
-(16915, 16916) is a loose end: different sheets, adjacent stretches, so possibly
-consecutive ordinances rather than one act.
-
-### ✔ The "Orange on 7th" sheet — an ink error, not a placement error
-
-`mr060-088` (the Garland Tract, April 1897) had a row inked **ORANGE STREET** on
-modern 7th Street. **The sheet letters SEVENTH STREET there, in capitals**, along
-the tract's northern boundary, and carries no Orange Street anywhere. The
-geometry was right; the ink and the entity were wrong. Corrected to
-`seventh-street`. **Nothing to re-locate.**
-
-### Two findings that fell out of reading the same two sheets
-
-- ★★ **`st-paul-avenue` has a candidate with a documented presence.**
-  `mr005-566`'s title block: *"made at request of the **Vestry of St. Paul's
-  P. E. Church**"* — and that sheet covers this exact ground, carrying Saint Paul
-  Avenue and Saint Paul Place as `absent`, i.e. the plat covers the ground and
-  draws no roadway there yet. The church subdivided in 1889 and the streets were
-  cut across it afterwards. The apostle and the Minnesota city are no longer equal
-  candidates. Left at `none` for Kenny to grade — the sheet attests the church's
-  **role**, not the naming.
-- ★★ **`nichols-ave` gains a deed.** `mr055-014`'s title block: *"Reference to a
-  deed from **John G. Nichols** to Charles M. Wright, recorded in **Book 34 page
-  455 of Deeds**"*. So the mayor is a grantor of record here, not just Kines's
-  "prior owner". ⭐ Deeds 34/455 is a findable object. Four placements now, and
-  still nothing stating the naming — `inferred` stands.
-
----
-
-## 2026-09-18 — where the ordinance numbers now live, and St. Paul regraded
-
-### ✔ The four ordinance numbers are stored in seven places
-
-Kenny asked that they be put wherever they'd be wanted later — when fixing the
-change rows, or when looking up the text. They are now in all of:
-
-1. **`orange-st-wilshire`'s `internalNote`** — the evidence, the reading, and
-   both caveats. This is the entity the change row will start from.
-2. **`wilshire`'s `internalNote`** — with the warning that none of the four
-   applies to the *original* naming (Dec. 1897, Sixth Street west of Hoover,
-   `lah-1897-12-07`), which is different ground.
-3. **`mr005-566`'s and `mr055-014`'s row notes** — the two sheets the numbers
-   were read off, each describing its own three layers of ink.
-4. **A `// ★★ ORDINANCE NUMBERS FOR THIS ARC` header block at the top of all six
-   arc documents** — `lah-1908-07-14`, `lah-1908-12-05`, `laevex-1924-04-01`,
-   `lae-1924-04-04`, `lae-1924-04-07`, `lae-1924-04-12`. Identical text in each,
-   so whichever one you open while writing the change row, the numbers are there.
-5. **`handbook/WANTED.md`** — a new P1 entry with the table, what it unblocks,
-   and why it is unusually cheap (we are not searching for an unknown document;
-   we have four numbers and need an index lookup).
-6. **`handbook/RENAMING-SOURCES.md` — new "Step 0: look at the plats over that
-   ground first ⭐"**, which is the generalisable part. Three *further* ordinance
-   numbers were sitting unexamined on the same two sheets: Kip Street established
-   by **Ord. 36214**, a portion of it vacated by **Ord. 46278**, an alley vacated
-   by **Ord. 33107** with **Ord. 5347** beside it.
-7. **Here.**
-
-⚠ Still true: **an annotation is not the instrument.** None of this lets a
-`change` row be written yet — step 3 of RENAMING-SOURCES.md stands. Ord. 48435's
-text is what unblocks it.
-
-### ★★★ `st-paul-avenue` regraded `none` → `inferred`, on Kenny's reading
-
-Kenny noticed the county books hold a **two-page St. Paul's P.E. Church
-Subdivision**, a **St. Paul's School Subdivision** and a **St. Paul's School
-Replat** — and read it the right way: the street is named for the
-**church/school**, not for the apostle and not for the city in Minnesota.
-
-Three sheets already in this corpus confirm it, all on **Lot 1 of Block 37,
-Hancock's Survey**:
-
-| Sheet | Date | What it shows |
-|---|---|---|
-| `mr003-569` | 1878 | Nichols Addition — covers the ground, draws **no street** there (`absent`) |
-| `mr005-566` | May 1889 | *"made at the request of the Vestry of St. Paul's P.E. Church"* — Avenue and Place still `absent` |
-| `mr052-085` | Jan. 1893 | *"Subdivision of the **Lands of St. Paul's School**, … Lying to the North of Orange Street"* |
-| `mr078-055` | Feb. 1900 | *"Replat of a Portion of the Subdivision of the Lands of St. Paul's School"* — **the first sheet to letter ST. PAUL AVENUE** |
-
-One institution holds the ground across twenty-two years, and the street is first
-named on that institution's own replat. That is the ordinary landowner shape.
-
-⚠ **Why `inferred` and not `eponymous`.** MODEL-SPEC §3.1's `eponymous` is
-**person-shaped**: tools/check-model.js errors unless `landowner` or `family` is
-tagged, and both sit under `person` in the category tree. The landowner here is
-an institution, so categories say `company` ("An institution") and the grade
-drops to `inferred` — whose anchor, a documented landholding over four sheets, is
-amply met. ⭐ **If the spec ever grows an institutional `eponymous`, this is the
-entity to test it on.**
-
-⚠ **Church or school is not settled.** `namedAfter` leads with the school because
-the school's sheet coins the name; that the school was the church's is an
-inference from the shared name and the shared lot, and no source here states the
-relationship. ⭐ **The second page of the church subdivision may letter the street
-earlier than 1900** — which would move the naming back from school to church.
-That sheet is not in this corpus.
-
-⚠ **St. Paul Place** is `absent` on `mr005-566`, exists in the city registry in
-the adjacent grid square, and now plainly wants an entity of its own on the same
-warrant. Unminted, awaiting Kenny.
-
----
-
-## 2026-09-18 — the UCLA pass: a call number, a first name, and a closed library
-
-Kenny said he would be at UCLA on Saturday 19 September and asked what would be
-useful there, and whether they might hold the ordinance books in print.
-
-### ⚠ First, the answer that governs everything: the libraries are shut
-
-Checked against UCLA's own LibCal, not inferred. **Sat 19 Sept 2026: Research
-Library closed, Library Special Collections closed, SRLF closed.** The only
-thing open is the Law Library (9am–4:30pm), whose own policy admits the general
-public to the Federal Depository collection only, by advance reservation.
-
-And a standing fact worth more than the one date: **LSC is closed every
-Saturday**, all month. Anything needing Special Collections is permanently a
-weekday errand. YRL returns to full hours Thu 24 Sept and opens Saturdays
-10am–6pm from 26 Sept.
-
-### ★★★ The Violé map has a call number, and it is NOT in Special Collections
-
-> **YRL — A-Level Map Cases — `G4364 Los Angeles P2 ns Violé 1904`**
-
-Twenty years of "you can find the map in the UCLA map room" (Garrigues's only
-sourcing) turns out to be a catalogued item with a shelf location in the
-**open-stack** map cases: no appointment, no paging, no LSC registration, no
-two-day wait. Just an open YRL. That converts IN-PERSON.md §1 from an expedition
-into an errand — and it means a Saturday from 26 Sept onwards will do.
-
-Not digitised anywhere I could find. UCLA runs its own georeferenced viewer at
-`uclalibrary.oldmapsonline.org`, whose search I could not get to answer — one
-click there before driving.
-
-### ⭐⭐ And a better sheet was sitting next to it: Stevenson 1884
-
-> **YRL — Reference Maps Collection — `G4364.L8G46 1884 .S74 1966`**
-> and digitised: uclalibrary.oldmapsonline.org/maps/f563fb17-ea1b-4c78-aa67-258b64303166/
-
-H. J. Stevenson's 1884 official city map, in a 1966 reproduction. **It predates
-the Oct. 1888 duplicate cull by four years**, which nothing else in the corpus
-does — so it shows the city *before* the event that this project spends more
-time reconstructing than any other. For the 1883–89 tract sheets it is a better
-base than a 1903 snapshot. ⭐ Try the georeferenced export from a keyboard first;
-if it works it is a `documents/` candidate, not a trip.
-
-⚠ And note what the name implies: `stevenson-ave` has `basis: "none"` and **no
-row**. A city surveyor whose map is the 1884 base sheet is a better candidate
-than anything found so far — but the entity still has no ground, so nothing can
-be attached to it yet, and the grade must not move. Look for Stevenson Avenue on
-Stevenson's own map.
-
-### ⚠ Ordinance books in print: yes and no
-
-**No** to what was actually wanted: no published series anywhere prints every LA
-ordinance by number, so 3829 / 3847 / 4093 and 16790 / 16915 / 16916 / 48435
-remain a City Clerk errand. UCLA holds no run of Council minutes either, print
-or film.
-
-**But yes** to something nobody here had looked for: a **compiled-ordinance
-series** published by order of the Council — Caswell 1878, Robinson 1884, Teed
-1887 (Vol. III), Teed 1889 (Vol. IV) — and UCLA has all four. These are the
-ordinances *in force*, indexed, and a volume of that era normally carries a
-streets chapter. New P2 entry in WANTED.md; access notes in IN-PERSON.md §1b.
-
-### ✔✔ M. Teed is Matthew Teed — closed from a keyboard
-
-**Matthew Teed**, b. Budleigh, Devonshire, 17 Apr. 1828, d. Los Angeles, 31 Mar.
-1904. Carpenter, trained in San Francisco, burnt out of a Stockton shop in 1857.
-**Common Council Dec. 1870–Dec. 1873, Dec. 1874–Dec. 1876, Dec. 1880–Dec. 1888.**
-House on Fort Hill at 513 California Street; first Park Commission from 1895;
-charter member of the Los Angeles Pioneers Association. Sourced to the
-Chronological Record of LA City Officials (1938) and his LAT obituary.
-
-⭐ **The 1874–76 term is the point:** `documents/mr003-240` was recorded 20 July
-1876, so he was sitting on the Council when the ground was platted — the
-coincidence `teed-street`'s `inferred` anchor was leaning on without being able
-to state it. The grade does not rise: the identification is of the man, not of
-the naming.
-
-⚠ **A second Teed in city government**, and they must not be conflated:
-**Freeman G. Teed** (1851–1916), city auditor 1886–88, councilman 1892–96, and
-the compiler of the 1887 and 1889 ordinance volumes above. He was twenty-five
-and in Pennsylvania in 1876, so he is not the namesake — but any later "Teed" in
-a city record now needs sorting between the two.
-
-★ **The lesson, and it is the same one as §3a:** this had been written down as
-an in-person errand for the Common Council rolls and the Old Settlers' Society
-membership list. It took one web search. **Before writing down a trip, spend
-five minutes at the keyboard.**
-
-### ⚠ A tooling gotcha, third occurrence, now costing real time
-
-Patch scripts written through the editor pipeline get their real Unicode turned
-into literal backslash-u, which then matches nothing in `data/names.js` (which stores
-real characters). **Rule: match strings in a patch script must be pure ASCII** —
-locate fields by their ASCII names and replace whole spans, and build
-replacement text with `\uXXXX` escapes in the Python source, which Python turns
-into real characters at runtime. Heredocs through the device shell are fine and
-preserve UTF-8; it is only the file-writing path that mangles it.
-
-## 2026-09-18 — the amended Oct. 1890 omnibus probably passed in early 1891
-
-Kenny's CDNC pass for Walters/Ord: "Ord street" in print by 1891, "Walters
-street" as late as 1896, "High or Walters street" and "Walter (Ord) street"
-in between. Together with Kines's 1915 date for Stephenson → Traction (a name
-that only exists because of the same omnibus), the reading is that the
-ordinance Mayor Hazard vetoed on Nov. 8, 1890 was amended by Public Works and
-re-passed — the Herald between Nov. 11, 1890 and spring 1891 should carry
-"the ordinance changing the names of certain streets, as amended". That one
-item would date Walters → Ord, 2nd → Stephenson, and whichever of the other
-nineteen survived the amendment. Against it: Sepulveda → Jackson was being
-prepared as a single ordinance in Aug. 1891 (documents/lah-1891-08-25), so
-either it was dropped from the amended version or the omnibus never passed
-and the names came singly. Unverified either way; no change row until the
-instrument is in hand.
-
----
-
-## 2026-09-18 — reading the Stevenson 1884 hi-res, against the switchover list
-
-Kenny downloaded the Huntington scan (6472 × 8108) and asked whether anything on
-it matters before the switchover. Read at full resolution across five crops.
-Findings in full: `inbox/stevenson-1884 — what is actually on it.md`.
-
-**Short answer: yes, and it lands on the two HARD categories that a map can
-touch — but not on the third.**
-
-`tools/check-legacy.js` has **31 HARD: 13 coverage, 6 names, 12 namesakes.**
-
-- **Coverage (13)** — all of the form "X% of this ground is attested by a
-  document". One citywide sheet, one alignment, attests a great deal of it at
-  once. Biggest single lever on the list.
-- **Names (6)** — **Court Street is confirmed lettered.** Macy and Buena Vista
-  are likely (check around the Plaza); Calle de los Negros probably absent, it
-  having gone around 1877, which is itself informative; Stephenson and
-  Ocean View / Nob Hill unchecked.
-- **Namesakes (12)** — ⚠ **nothing. A map letters names; it does not explain
-  them.** Seven freeways and five empty `namedAfter` fields stay a
-  decision-and-research job, and no document of this kind will move them.
-
-⚠ **The honest limit**, and it is why this is not a magic wand: the sheet is a
-**landownership map first**. Blocks carry owners' names and acreages; minor
-streets inside outlying subdivisions are frequently drawn and **not lettered**,
-with the tract name in their place. It attests what it letters, no more.
-
-### Names confirmed in force in 1884, each closing something already on a list
-
-**CHARITY ST** on Grand's ground (⭐⭐ `grand-ave`'s HARD namesake is "a pleasant
-replacement for Charity"; also bears on the Caridad question) · **VIRGINIA**
-(⭐ `delong-street`'s namesake gap) · **VIRGIN ST** (⭐⭐ three years before
-`ord-1887-08-22`, which reads "Ordinance No. —") · **HIGH ST** and **SHORT ST**
-(⭐ the High → Walters row; "Short" is one of the cross streets WANTED P2 says
-the corpus lacks) · **TEXAS** (the Texas → Belmont → Loma chain) · **COURT ST** ·
-**FORT ST** · **PEARL ST** · plus Nichols, Beaudry, Custer, Temple, Alpine,
-Castellar, New High, Upper Main, College, Aliso, Marchessault, Olvera,
-Ducommun, Sainsevain, Lazard, Turner, Banning.
-
-### ⭐⭐ And it places two of the handbook's open leads
-
-- **A. WEILL, 56.64 acres**, south-east of downtown, between O. J. Mairs,
-  J. Philbin, Goetz and H. Niemaier. IN-PERSON §3a calls the A. Weill tract the
-  best open lead in the file and the only one of the five not already on disk.
-  ⚠ **Still no first name** — but a georeferenced holding is what turns a
-  county-map-book hunt from a name search into a location search.
-- **Mrs CLEMENT & BELLIARD, 11 acres.** §3a records that the Clement Tract's
-  title block gave a surveyor, a requester, and **no Clement**. Here is one.
-
-✔ **And the date question is settled against the Huntington's own catalogue:**
-the imprint reads "ENTERED ACCORDING TO ACT OF CONGRESS IN THE YEAR **1884** BY
-H.J. STEVENSON". Their record says 1885. Cite the sheet.
-
-⭐ **Suggested shape:** one `documents/stevenson-1884/` folder, one alignment,
-then harvest rows in passes rather than in a single sitting — the in-bbox
-portion alone is a large number of `state` rows, and the map runs far outside
-the bbox (Highland Park, Boyle Heights, Adams, Jefferson) where rows would be
-wasted until those neighbourhoods come into scope.
-
-## 2026-09-18 — the four modern renamings are in; Olympic is not
-
-The City Clerk's Council File Index (`cityclerk.lacity.org/lacityclerkconnect`)
-reaches back to at least 1986 with full file histories, and the ordinance PDFs
-for these files are online. Four of the five shopping-list renamings are now
-documents: `ord-162010` (Onizuka, **1987** not 1988), `ord-169111` (Chavez, passed
-Oct. 1993, in force Mar. 31, 1994), `ord-171586` (Aiso, 1997), `ord-172590`
-(Wood, **1999** not 1997). All rows `confirmed: false`; the PDFs are Kenny's
-click (the Clerk's host refuses both shells).
-
-**Tooling, for the next instance.** The search form posts to
-`index.cfm?fa=vcfi.doSearch` (`searchform=simple&basicsearch=<term>&searchtype=1`)
-and a record is `index.cfm?fa=ccfi.viewrecord&cfnumber=<CF>`; both work with
-`fetch` from inside the page in the browser pane. Positive control: "Onizuka"
-returns 25 files including 86-0259. The PDFs are scans with a hidden OCR layer;
-pdf.js loaded from jsdelivr into the page reads the text and renders each page to
-a canvas that can be screenshotted. WebFetch on the PDF paraphrases — do not quote
-from it.
-
-**Olympic Boulevard, 1935 — still open.** No online index reaches the 1930s.
-Leads, in order:
-- **Gladys, not Central.** A Sept. 8, 1999 motion in CF 97-1566 says "Presently
-  9th St becomes Olympic Blvd at Gladys Ave approximately midway between San
-  Pedro St and Central Ave." So the 9th → Olympic absorption's west end, at least
-  by 1999, is Gladys. Point the NavigateLA cadastral search there as well as
-  east of Central.
-- **NavigateLA** was tried from the browser pane and would not return a report
-  for an Olympic address (the search answered "address not found" and the report
-  tab stayed blank); the page also writes to the OS clipboard on synthetic
-  clicks. It is Kenny's, by hand.
-- Kimball (BOE 1988) at LAPL; the L.A. Times via LAPL ProQuest, 1935.
-
-**Chavez needs a map.** Ord. 169111's Macy (Bridge to New High) and Sunset
-(N. Main to Figueroa) stretches overlap by a block on the modern alignment, so
-all three rows are `extent-unresolved`. The Engineer's report and exhibit are in
-the complete council file, 172 MB:
-https://cityclerk.lacity.org/onlinedocs/1993/93-0907.pdf
-
-**Onizuka's legal description says "west of Los Angeles Street"**; the modern
-street is east of it. Named cross streets carry the row. And the generator's
-history for that ground already runs San Pedro Street (by 1868) → Wilmington
-Street (by 1910) → Weller Street — from rows that predate this pass, and worth a
-look under rule 2.
+| Los Angeles St: "Calle de los Negros" | not lettered on the recorder's copy of Ord sheet 53-69 (I looked: the plaza alley is drawn, unlabeled). `lah-1917-02-14` (rows 0): council orders the alley renamed | a change row in `lah-1917-02-14` needs a `calle-de-los-negros` entity and a sheet that letters it — none does. **accept** for now, with the 1917 doc as the reason |
+| Broadway N: "Buena Vista" | `lah-1896-05-16`, `min-1893-04-10`, `lah-1899-05-06`, `lah-1908-09-22`, `guinn-1912` all mention it; none has rows | a real lineage (Eternidad → Buena Vista → North Broadway 1909) — **proceedings work** (ROADMAP §2), not a quick row |
+| Traction: "Stephenson Avenue"; Ord: "Walters Street" | Entities `walters-street`, `stephenson-avenue` exist. **High → Walters** (Sept. 1886) is a change row on `lah-1886-09-21`, unconfirmed. **Walters → Ord and 2nd → Stephenson were in the Oct. 1890 omnibus, which the mayor vetoed** (`lah-1890-11-09`, `-11-11`; referred back to Public Works; its items were re-passed singly in 1891 — Sepulveda → Jackson, Aug. 1891). The audit thread withdrew the two rows I had put on it and rewrote the entities' notes; that is the right reading. | confirm the 1886 row; CDNC for the single ordinances: "Walters street" Nov. 1890 – 1892, "Stephenson avenue" 1890 – 1900; or accept both names with the veto as the reason |
+| Cesar Chavez: "Macy Street" | `lah-1908-10-27` (Macy in a 1908 rearrangement); the 1994 renaming has no document | see §4 |
+| Miramar: "Ocean View", "Nob Hill" | `lah-1896-05-16` "Avenues North of First St", `min-1893-04-10` mention Ocean View | see §4 |
+| Court Street | on `mr006-138`, `mr007-026-p2`, `mr005-069`, `tr0014-097b` — all with rows | the name IS lettered: on these four sheets, and on the Stevenson 1884 map, whose full-resolution reading (2026-09-18) confirms COURT ST and closes this name finding. What remains is to check which street those Court rows are keyed to, and to add the Stevenson row when that sheet is harvested (WANTED.md §3c) |
+
+
+**Where a map might letter the five (Cuidado, Calle Real, Negros, Stephenson,
+Walters), 2026-09-17.** There is no street-labelled plan of the pueblo before
+Ord: the 1786/1793 plats show the plaza and fields, and the 1847 military
+sketches and Hutton's drawings (Huntington) are views, not surveys. Pre-1849
+names live in TEXT — the ayuntamiento records in the City Archives, deeds —
+which is proceedings work, not a sheet. So:
+- *Calle de los Negros*: first look at the **LAPL scan of Ord's original**
+  (already a `copies` entry on the Ord documents) at the plaza block — the
+  recorder's 1893 copy draws the alley unlabelled, the original may not.
+  Failing that, the **1872–1875 city directories** (street sections; the
+  alley was absorbed into Los Angeles Street in 1877, so the 1888 Sanborn is
+  too late). A directory year is one textual document; no coverage change.
+- *Stephenson Avenue*, *Walters Street*: 1880s names inside the present
+  coverage — **recorded tract maps** (NavigateLA Map-Refs for the Arts
+  District and north of the plaza) will letter them, cheaper than Sanborn.
+- *Calle Cuidado*, *Calle Real*: nothing will; accept.
+- Sanborn (1888, 1894) and the directories as serial sources stay deferred,
+  as planned; nothing above needs the neighbourhood expanded.
+
+### Legacy namesakes — done
+
+The 13 carried-over entities are in; the five empty fields are settled
+(2026-09-18: grand-ave and Delong accepted, Boylston / San Julian graded
+`guess`, Court `inferred` — Kenny's calls). **Four of the modern renamings
+now have their ordinances** — `ord-162010` (Weller → Onizuka, Feb. 1987),
+`ord-169111` (Macy and two Sunset stretches → Cesar E. Chavez, Oct. 1993, in
+force Mar. 31, 1994), `ord-171586` (San Pedro → Aiso, Apr. 1997), `ord-172590`
+(9th → Wood, May 1999) — from the City Clerk's PDFs, **rows confirmed by Kenny 2026-09-18** and on the map.
+Two dates correct the legacy file (1987 not 1988; 1999 not 1997). The three
+Chavez rows are `extent-unresolved` on purpose: the ordinance's stretches
+("Macy between Bridge and New High", "Sunset between North Main and
+Figueroa") overlap by a block on the modern alignment and Bridge Street is
+off the extract, so they record the act and draw nothing until the
+Engineer's exhibit map in council file 93-0907 settles the ground. Olympic
+1935 is still to find (WANTED.md §1).
+
+**Left: nothing.** The freeways and ExpressLanes are accepted for `namesake` too (shallow research, reconstructible in minutes).
+
+### Accepts
+
+`legacy/accepted-differences.js`: coverage for the six streets, freeways,
+ExpressLanes, plazas; names for the freeways, De La Guerra, Spring's two
+pre-Ord names, Calle Real. Still open: Calle de los Negros (after the LAPL
+Ord original / 1872–75 directories), and the Boyle Heights stretches of
+Willow, Jesse and 7th Place for `coverage`.
+
+### Prose — still open, not a gate
+
+`{{span}}` with no link: Spring, Angelina, Industrial, Wilde. Link with no
+span: Mesquit.

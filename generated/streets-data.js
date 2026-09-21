@@ -11324,7 +11324,7 @@ const STREET_DATA = {
             "entityId": "huber-st",
             "formInForce": "Huber Street",
             "how": "origin",
-            "origin": "labeled “Huber St.”, “HUBER ST.” and “Huber St” on the 1886 Howard's Bliss Tract Subdivision, the 1887 Mills and Wicks Extension map, sheet 1 and the 1887 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — Not documented; most likely Caroline Howard (née Huber), wife of the tract developer Dr. Frederick Preston Howard — the same inference that explains Carolina Street, one block east, now Hewitt Street.",
+            "origin": "labeled “Huber St.”, “HUBER ST.” and “Huber St” on the 1886 Howard's Bliss Tract Subdivision, the 1887 Mills and Wicks Extension map, sheet 1 and the 1887 Wolfskill Orchard Tract, sheet 4 (M.R. 30-12) {{(source)}} — Most likely Caroline Howard (née Huber), wife of the tract developer Dr. Frederick Preston Howard: Kines names Huber Street and Carolina Street (now Hewitt Street) together on Howard’s 1886 tract and adds that his wife was born Caroline Huber",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
           },
           {
@@ -11410,7 +11410,7 @@ const STREET_DATA = {
             "entityId": "huber-st",
             "formInForce": "Huber Street",
             "how": "origin",
-            "origin": "labeled “Huber St.” and “HUBER ST.” on the 1886 Howard's Bliss Tract Subdivision and the 1887 Mills and Wicks Extension map, sheet 1 {{(source)}} — Not documented; most likely Caroline Howard (née Huber), wife of the tract developer Dr. Frederick Preston Howard — the same inference that explains Carolina Street, one block east, now Hewitt Street.",
+            "origin": "labeled “Huber St.” and “HUBER ST.” on the 1886 Howard's Bliss Tract Subdivision and the 1887 Mills and Wicks Extension map, sheet 1 {{(source)}} — Most likely Caroline Howard (née Huber), wife of the tract developer Dr. Frederick Preston Howard: Kines names Huber Street and Carolina Street (now Hewitt Street) together on Howard’s 1886 tract and adds that his wife was born Caroline Huber",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
           },
           {
@@ -31656,6 +31656,10 @@ const STREET_DATA = {
           {
             "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          },
+          {
+            "title": "Los Angeles Revisited: “The Pulchritude of Pearl Street” (Calle de los Chapules → Pearl Street in the 1870s → Figueroa Street in 1897)",
+            "url": "https://losangelesrevisited.blogspot.com/2019/01/the-pulchritude-of-pearl-street.html"
           }
         ],
         "minLat": 34.0584,
@@ -31775,6 +31779,10 @@ const STREET_DATA = {
           {
             "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          },
+          {
+            "title": "Los Angeles Revisited: “The Pulchritude of Pearl Street” (Calle de los Chapules → Pearl Street in the 1870s → Figueroa Street in 1897)",
+            "url": "https://losangelesrevisited.blogspot.com/2019/01/the-pulchritude-of-pearl-street.html"
           }
         ],
         "minLat": 34.0521,
@@ -31893,6 +31901,10 @@ const STREET_DATA = {
           {
             "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          },
+          {
+            "title": "Los Angeles Revisited: “The Pulchritude of Pearl Street” (Calle de los Chapules → Pearl Street in the 1870s → Figueroa Street in 1897)",
+            "url": "https://losangelesrevisited.blogspot.com/2019/01/the-pulchritude-of-pearl-street.html"
           }
         ],
         "minLat": 34.0507,
@@ -31993,6 +32005,10 @@ const STREET_DATA = {
           {
             "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          },
+          {
+            "title": "Los Angeles Revisited: “The Pulchritude of Pearl Street” (Calle de los Chapules → Pearl Street in the 1870s → Figueroa Street in 1897)",
+            "url": "https://losangelesrevisited.blogspot.com/2019/01/the-pulchritude-of-pearl-street.html"
           }
         ],
         "minLat": 34.0492,
@@ -32121,6 +32137,10 @@ const STREET_DATA = {
           {
             "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          },
+          {
+            "title": "Los Angeles Revisited: “The Pulchritude of Pearl Street” (Calle de los Chapules → Pearl Street in the 1870s → Figueroa Street in 1897)",
+            "url": "https://losangelesrevisited.blogspot.com/2019/01/the-pulchritude-of-pearl-street.html"
           }
         ],
         "minLat": 34.0417,
@@ -32213,6 +32233,10 @@ const STREET_DATA = {
           {
             "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          },
+          {
+            "title": "Los Angeles Revisited: “The Pulchritude of Pearl Street” (Calle de los Chapules → Pearl Street in the 1870s → Figueroa Street in 1897)",
+            "url": "https://losangelesrevisited.blogspot.com/2019/01/the-pulchritude-of-pearl-street.html"
           }
         ],
         "minLat": 34.0406,
@@ -32505,6 +32529,10 @@ const STREET_DATA = {
           {
             "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          },
+          {
+            "title": "Los Angeles Revisited: “The Pulchritude of Pearl Street” (Calle de los Chapules → Pearl Street in the 1870s → Figueroa Street in 1897)",
+            "url": "https://losangelesrevisited.blogspot.com/2019/01/the-pulchritude-of-pearl-street.html"
           },
           {
             "title": "L.A. Street Names: Figueroa Street",
@@ -36352,7 +36380,7 @@ const STREET_DATA = {
             "entityId": "carolina-arts-district",
             "formInForce": "Carolina Street",
             "how": "origin",
-            "origin": "labeled “Carolina St.” on the 1886 Howard's Bliss Tract Subdivision {{(source)}} — Not documented; most likely Caroline Howard (née Huber), wife of the tract's subdivider Dr. Frederick Preston Howard (1835–1900) — Carolina and Huber Street would be the same woman, named a block apart on one tract",
+            "origin": "labeled “Carolina St.” on the 1886 Howard's Bliss Tract Subdivision {{(source)}} — Most likely Caroline Howard (née Huber), wife of the tract’s subdivider Dr. Frederick Preston Howard (1835–1900): Kines names Carolina Street and Huber Street together on Howard’s 1886 tract and adds that his wife was born Caroline Huber",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
           },
           {
@@ -49806,7 +49834,7 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-431.pdf"
         },
         "built": "not yet researched",
-        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid.",
+        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid. The identification with Pío Pico is L.A. Street Names’; no record of the naming is in this corpus.",
         "attested": true,
         "knownFraction": 0.81,
         "categories": [
@@ -49851,7 +49879,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Pio_Pico",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid.",
+        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid. The identification with Pío Pico is L.A. Street Names’; no record of the naming is in this corpus.",
         "attested": false,
         "categories": [
           "person",
@@ -49912,7 +49940,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-021.pdf"
           }
         ],
-        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid.",
+        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid. The identification with Pío Pico is L.A. Street Names’; no record of the naming is in this corpus.",
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
@@ -49982,7 +50010,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           }
         ],
-        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid.",
+        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid. The identification with Pío Pico is L.A. Street Names’; no record of the naming is in this corpus.",
         "attested": true,
         "knownFraction": 0.86,
         "categories": [
@@ -50048,7 +50076,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
           }
         ],
-        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid.",
+        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid. The identification with Pío Pico is L.A. Street Names’; no record of the naming is in this corpus.",
         "attested": true,
         "absentAsOf": {
           "text": "1883 (North Carr Tract Subdivision)",
@@ -50126,7 +50154,7 @@ const STREET_DATA = {
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
           }
         ],
-        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid.",
+        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid. The identification with Pío Pico is L.A. Street Names’; no record of the naming is in this corpus.",
         "attested": true,
         "knownFraction": 0.8,
         "categories": [
@@ -50177,7 +50205,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Pio_Pico",
         "planned": "not yet researched",
         "built": "not yet researched",
-        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid.",
+        "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid. The identification with Pío Pico is L.A. Street Names’; no record of the naming is in this corpus.",
         "attested": false,
         "categories": [
           "person",
