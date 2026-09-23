@@ -1,0 +1,215 @@
+{
+  "document": "mr107-097",
+  "image": "mr107-097-100dpi.png",
+  "imageSize": [1113, 1790],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr107-097-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [759, 292],
+    [188, 306],
+    [233, 902],
+    [814, 915]
+  ],
+  "coverageLl": [
+    [34.037306, -118.240757],
+    [34.036687, -118.241374],
+    [34.036182, -118.240566],
+    [34.036785, -118.239904]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [309, 904],
+            [306, 808],
+            [306, 648],
+            [303, 416],
+            [303, 349],
+            [301, 303]
+          ],
+          "ll": [
+            [34.03626, -118.24048],
+            [34.036346, -118.240604],
+            [34.036495, -118.240809],
+            [34.036708, -118.241107],
+            [34.036769, -118.241192],
+            [34.03681, -118.241251]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [303, 349],
+          "ll": [34.036769, -118.241192],
+          "insideCoverage": true
+        },
+        {
+          "name": "Merchant Street",
+          "px": [295, -120],
+          "ll": [34.037196, -118.241796],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Central Avenue",
+      "runs": [
+        {
+          "px": [
+            [193, 369],
+            [251, 358],
+            [303, 349],
+            [372, 347],
+            [763, 340]
+          ],
+          "ll": [
+            [34.036634, -118.241289],
+            [34.036706, -118.241237],
+            [34.036769, -118.241192],
+            [34.036843, -118.241117],
+            [34.037265, -118.240691]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [303, 349],
+          "ll": [34.036769, -118.241192],
+          "insideCoverage": true
+        },
+        {
+          "name": "Industrial Street",
+          "px": [863, 338],
+          "ll": [34.037374, -118.240583],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "7th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "seventh-street",
+          "display": "7th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 7th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "7TH ST.",
+            "7TH STREET",
+            "7th ST",
+            "7th Street",
+            "CALLE 7a",
+            "SEVENTH ST",
+            "SEVENTH ST.",
+            "SEVENTH STR.",
+            "SEVENTH STREET",
+            "Seventh St",
+            "Seventh St.",
+            "Seventh Street",
+            "Seventh Street."
+          ],
+          "docs": [
+            "11824",
+            "mr003-016",
+            "mr003-569",
+            "mr005-566",
+            "mr006-033",
+            "mr006-039",
+            "mr009-095",
+            "mr011-063",
+            "mr013-091",
+            "mr014-034",
+            "mr015-052",
+            "mr018-025",
+            "mr018-063",
+            "mr018-092",
+            "mr021-046",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr053-068",
+            "mr053-071",
+            "mr054-051",
+            "mr055-014",
+            "mr055-081",
+            "mr060-088",
+            "mr066-064",
+            "mr070-084",
+            "tr0001-046",
+            "tr0005-042b",
+            "tr0005-056a",
+            "tr0009-100a",
+            "tr0011-196",
+            "tr0023-054c",
+            "tr0030-069",
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Central Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "central-ave",
+          "display": "Central Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Central Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CENTRAL AVE.",
+            "CENTRAL AVENUE",
+            "Central Ave",
+            "Central Ave."
+          ],
+          "docs": [
+            "mr021-046",
+            "mr037-087",
+            "mr054-051",
+            "mr055-081",
+            "mr070-051",
+            "tr0001-046",
+            "tr0009-075",
+            "tr0012-023a",
+            "tr0273-017",
+            "tr0885-030-p2",
+            "tr0926-086-p2"
+          ]
+        },
+        {
+          "id": "wolfskill-ave",
+          "display": "Wolfskill Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Central Avenue by another sheet"
+          ],
+          "ink": [
+            "Wolfskill Ave"
+          ],
+          "docs": [
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr030-009-p4",
+            "mr030-009-p5"
+          ]
+        }
+      ]
+    }
+  ]
+}

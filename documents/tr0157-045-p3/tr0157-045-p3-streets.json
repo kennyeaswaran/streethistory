@@ -1,0 +1,773 @@
+{
+  "document": "tr0157-045-p3",
+  "image": "tr0157-045-p3-100dpi.png",
+  "imageSize": [2440, 1796],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0157-045-p3-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [-118, 472],
+    [164, 1727],
+    [2192, 1694],
+    [2219, -153],
+    [759, 134]
+  ],
+  "coverageLl": [
+    [34.060167, -118.233623],
+    [34.056638, -118.234152],
+    [34.054824, -118.22779],
+    [34.059604, -118.225633],
+    [34.060225, -118.230508]
+  ],
+  "streets": [
+    {
+      "name": "Avila Street",
+      "runs": [
+        {
+          "px": [
+            [225, 937],
+            [225, 962],
+            [263, 1077],
+            [266, 1086],
+            [269, 1093],
+            [300, 1158],
+            [341, 1243],
+            [380, 1323],
+            [410, 1379],
+            [449, 1449],
+            [474, 1465],
+            [506, 1470]
+          ],
+          "ll": [
+            [34.058636, -118.233074],
+            [34.058571, -118.233102],
+            [34.058238, -118.233115],
+            [34.058209, -118.233116],
+            [34.058188, -118.233113],
+            [34.057991, -118.233089],
+            [34.05773, -118.233056],
+            [34.057486, -118.233026],
+            [34.057314, -118.232994],
+            [34.057094, -118.232953],
+            [34.057029, -118.232892],
+            [34.056985, -118.232796]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bauchet Street",
+          "px": [225, 937],
+          "ll": [34.058636, -118.233074],
+          "insideCoverage": true
+        },
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [520, 1491],
+          "ll": [34.056919, -118.232778],
+          "insideCoverage": true
+        },
+        {
+          "name": "Clara Street",
+          "px": [506, 1470],
+          "ll": [34.056985, -118.232796],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bauchet Street",
+      "runs": [
+        {
+          "px": [
+            [1043, 78],
+            [1039, 92],
+            [1033, 108],
+            [995, 175],
+            [941, 269],
+            [932, 286],
+            [928, 293],
+            [913, 318],
+            [865, 399],
+            [827, 442],
+            [786, 481],
+            [656, 592],
+            [459, 742],
+            [419, 771],
+            [378, 805],
+            [363, 817],
+            [356, 823],
+            [244, 918],
+            [225, 937]
+          ],
+          "ll": [
+            [34.060104, -118.22956],
+            [34.060071, -118.229589],
+            [34.060037, -118.229623],
+            [34.059897, -118.229817],
+            [34.059702, -118.230092],
+            [34.059669, -118.230139],
+            [34.059654, -118.230161],
+            [34.059603, -118.230236],
+            [34.059435, -118.230474],
+            [34.05936, -118.23064],
+            [34.059297, -118.230814],
+            [34.059131, -118.231344],
+            [34.058924, -118.232125],
+            [34.058886, -118.232284],
+            [34.058837, -118.232449],
+            [34.058819, -118.232511],
+            [34.05881, -118.232539],
+            [34.058667, -118.232995],
+            [34.058636, -118.233074]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Avila Street",
+          "px": [225, 937],
+          "ll": [34.058636, -118.233074],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [419, 771],
+          "ll": [34.058886, -118.232284],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Cesar E Chavez Avenue",
+      "runs": [
+        {
+          "px": [
+            [2194, 1564],
+            [2156, 1560],
+            [1953, 1546],
+            [1578, 1522],
+            [1498, 1520],
+            [1310, 1513],
+            [1146, 1506],
+            [1120, 1505],
+            [871, 1504],
+            [827, 1506],
+            [767, 1507],
+            [657, 1509],
+            [552, 1511],
+            [533, 1511],
+            [426, 1513],
+            [401, 1514],
+            [397, 1514],
+            [117, 1518]
+          ],
+          "ll": [
+            [34.055161, -118.227638],
+            [34.055205, -118.227751],
+            [34.055432, -118.228371],
+            [34.055846, -118.229513],
+            [34.055927, -118.229759],
+            [34.056122, -118.230336],
+            [34.056294, -118.230842],
+            [34.056321, -118.23092],
+            [34.056555, -118.231698],
+            [34.056592, -118.231836],
+            [34.056646, -118.232023],
+            [34.056743, -118.232371],
+            [34.056836, -118.232699],
+            [34.056853, -118.23276],
+            [34.056948, -118.233095],
+            [34.056971, -118.233173],
+            [34.056974, -118.233185],
+            [34.057226, -118.234064]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Avila Street",
+          "px": [520, 1491],
+          "ll": [34.056919, -118.232778],
+          "insideCoverage": true
+        },
+        {
+          "name": "Clara Street",
+          "px": [520, 1491],
+          "ll": [34.056919, -118.232778],
+          "insideCoverage": true
+        },
+        {
+          "name": "Keller Street",
+          "px": [1989, 1596],
+          "ll": [34.055269, -118.228314],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lyon Street",
+          "px": [1120, 1505],
+          "ll": [34.056321, -118.23092],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [827, 1506],
+          "ll": [34.056592, -118.231836],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Clara Street",
+      "runs": [
+        {
+          "px": [
+            [506, 1470],
+            [544, 1461],
+            [635, 1406],
+            [680, 1379],
+            [703, 1365],
+            [739, 1345],
+            [743, 1343],
+            [787, 1327]
+          ],
+          "ll": [
+            [34.056985, -118.232796],
+            [34.056973, -118.232668],
+            [34.057032, -118.232321],
+            [34.057061, -118.232153],
+            [34.057076, -118.232065],
+            [34.057094, -118.231929],
+            [34.057094, -118.231917],
+            [34.057095, -118.231759]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Avila Street",
+          "px": [506, 1470],
+          "ll": [34.056985, -118.232796],
+          "insideCoverage": true
+        },
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [520, 1491],
+          "ll": [34.056919, -118.232778],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [787, 1327],
+          "ll": [34.057095, -118.231759],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Lyon Street",
+      "runs": [
+        {
+          "px": [
+            [1120, 1505],
+            [1104, 1543],
+            [1026, 1713]
+          ],
+          "ll": [
+            [34.056321, -118.23092],
+            [34.056235, -118.231013],
+            [34.055866, -118.231446]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [1120, 1505],
+          "ll": [34.056321, -118.23092],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [913, 1829],
+          "ll": [34.055672, -118.231932],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Metro Driveway",
+      "runs": [
+        {
+          "px": [
+            [679, 1093],
+            [719, 1082],
+            [724, 1081],
+            [751, 1070],
+            [829, 1067],
+            [868, 1063],
+            [910, 1056],
+            [936, 1050],
+            [961, 1043],
+            [985, 1035],
+            [1010, 1025],
+            [1160, 936],
+            [1195, 965],
+            [1204, 974],
+            [1209, 982],
+            [1212, 992],
+            [1218, 1040]
+          ],
+          "ll": [
+            [34.057804, -118.231833],
+            [34.057795, -118.231696],
+            [34.057794, -118.23168],
+            [34.057797, -118.231583],
+            [34.057733, -118.231336],
+            [34.057707, -118.23121],
+            [34.057685, -118.231072],
+            [34.057675, -118.230984],
+            [34.05767, -118.230899],
+            [34.057668, -118.230813],
+            [34.057671, -118.230724],
+            [34.057764, -118.230156],
+            [34.057656, -118.230081],
+            [34.057623, -118.230062],
+            [34.057596, -118.230057],
+            [34.057569, -118.230059],
+            [34.057439, -118.230093]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Vignes Street",
+          "px": [679, 1093],
+          "ll": [34.057804, -118.231833],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Vignes Street",
+      "runs": [
+        {
+          "px": [
+            [846, 1716],
+            [835, 1593],
+            [833, 1552],
+            [827, 1506],
+            [819, 1463],
+            [809, 1412],
+            [798, 1366],
+            [787, 1327],
+            [772, 1282],
+            [751, 1231],
+            [738, 1202],
+            [725, 1176],
+            [711, 1151],
+            [679, 1093],
+            [642, 1029],
+            [630, 1008],
+            [615, 984],
+            [607, 970],
+            [597, 956],
+            [568, 914],
+            [549, 891],
+            [531, 871],
+            [514, 853],
+            [482, 820],
+            [454, 797],
+            [451, 795],
+            [419, 771],
+            [389, 755],
+            [240, 673],
+            [149, 624],
+            [38, 570],
+            [-19, 513],
+            [-101, 466]
+          ],
+          "ll": [
+            [34.056028, -118.232013],
+            [34.056359, -118.23191],
+            [34.056465, -118.231869],
+            [34.056592, -118.231836],
+            [34.056711, -118.231813],
+            [34.056854, -118.231787],
+            [34.056982, -118.231769],
+            [34.057095, -118.231759],
+            [34.057226, -118.231758],
+            [34.057378, -118.231764],
+            [34.057466, -118.231772],
+            [34.057545, -118.231784],
+            [34.057625, -118.231799],
+            [34.057804, -118.231833],
+            [34.058006, -118.231877],
+            [34.058073, -118.231893],
+            [34.058149, -118.231911],
+            [34.058192, -118.231922],
+            [34.058238, -118.231936],
+            [34.058373, -118.231979],
+            [34.058451, -118.232014],
+            [34.058521, -118.232047],
+            [34.058583, -118.232079],
+            [34.058701, -118.23214],
+            [34.058785, -118.232204],
+            [34.058795, -118.23221],
+            [34.058886, -118.232284],
+            [34.058956, -118.232359],
+            [34.05931, -118.232731],
+            [34.059521, -118.23296],
+            [34.059766, -118.233246],
+            [34.059967, -118.23336],
+            [34.060169, -118.233564]
+          ]
+        },
+        {
+          "px": [
+            [-109, 513],
+            [-36, 555],
+            [38, 570]
+          ],
+          "ll": [
+            [34.060053, -118.23364],
+            [34.059874, -118.233459],
+            [34.059766, -118.233246]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bauchet Street",
+          "px": [419, 771],
+          "ll": [34.058886, -118.232284],
+          "insideCoverage": true
+        },
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [827, 1506],
+          "ll": [34.056592, -118.231836],
+          "insideCoverage": true
+        },
+        {
+          "name": "Clara Street",
+          "px": [787, 1327],
+          "ll": [34.057095, -118.231759],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lyon Street",
+          "px": [913, 1829],
+          "ll": [34.055672, -118.231932],
+          "insideCoverage": false
+        },
+        {
+          "name": "Metro Driveway",
+          "px": [679, 1093],
+          "ll": [34.057804, -118.231833],
+          "insideCoverage": true
+        },
+        {
+          "name": "Rosabell Street",
+          "px": [-331, 395],
+          "ll": [34.060568, -118.2342],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Keller Street",
+      "metres": 16.1
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Avila Street",
+      "continuesInto": [
+        "Cesar E Chavez Avenue",
+        "Clara Street"
+      ],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Avila Street runs straight into"
+          ],
+          "ink": [
+            "C CORTA",
+            "Calle Corta",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "marchessault-street",
+          "display": "Marchessault Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Avila Street runs straight into"
+          ],
+          "ink": [
+            "MARCHESSAULT STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "macy-street",
+          "display": "Macy Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Avila Street runs straight into"
+          ],
+          "ink": [
+            "MACY ST.",
+            "MACY STREET"
+          ],
+          "docs": [
+            "oldplaza1873",
+            "tr0006-051a"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Avila Street runs straight into"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Bauchet Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "rosabell-street",
+          "display": "Rosabell Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bauchet Street by another sheet"
+          ],
+          "ink": [
+            "ROSABELL ST."
+          ],
+          "docs": [
+            "tr0014-200a"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Cesar E Chavez Avenue",
+      "continuesInto": [
+        "Avila Street",
+        "Clara Street"
+      ],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "C CORTA",
+            "Calle Corta",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "marchessault-street",
+          "display": "Marchessault Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MARCHESSAULT STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "macy-street",
+          "display": "Macy Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MACY ST.",
+            "MACY STREET"
+          ],
+          "docs": [
+            "oldplaza1873",
+            "tr0006-051a"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        },
+        {
+          "id": "cesar-e-chavez-avenue",
+          "display": "Cesar E Chavez Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Clara Street",
+      "continuesInto": [
+        "Avila Street",
+        "Cesar E Chavez Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Clara Street runs straight into"
+          ],
+          "ink": [
+            "C CORTA",
+            "Calle Corta",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "marchessault-street",
+          "display": "Marchessault Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Clara Street runs straight into"
+          ],
+          "ink": [
+            "MARCHESSAULT STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "macy-street",
+          "display": "Macy Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Clara Street runs straight into"
+          ],
+          "ink": [
+            "MACY ST.",
+            "MACY STREET"
+          ],
+          "docs": [
+            "oldplaza1873",
+            "tr0006-051a"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Clara Street runs straight into"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Lyon Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Metro Driveway",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Vignes Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "vignes-street",
+          "display": "Vignes Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Vignes Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "VIGNES ST.",
+            "VIGNES STREET",
+            "Vignes",
+            "Vignes Street"
+          ],
+          "docs": [
+            "mr002-526-p1",
+            "mr002-526-p2",
+            "mr004-012-p2",
+            "tr0116-085-p1",
+            "tr0145-062",
+            "tr0201-001-p2"
+          ]
+        }
+      ]
+    }
+  ]
+}

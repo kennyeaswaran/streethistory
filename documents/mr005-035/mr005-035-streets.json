@@ -1,0 +1,321 @@
+{
+  "document": "mr005-035",
+  "image": "mr005-035-100dpi.png",
+  "imageSize": [1142, 1767],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr005-035-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [233, 1333],
+    [1093, 1327],
+    [1087, 427],
+    [238, 457]
+  ],
+  "coverageLl": [
+    [34.046949, -118.262327],
+    [34.046118, -118.261006],
+    [34.047271, -118.259964],
+    [34.048061, -118.261296]
+  ],
+  "streets": [
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [1087, 485],
+            [1027, 486],
+            [955, 486],
+            [895, 487],
+            [668, 491],
+            [392, 498],
+            [304, 496],
+            [238, 501]
+          ],
+          "ll": [
+            [34.047197, -118.260031],
+            [34.047255, -118.260124],
+            [34.047324, -118.260235],
+            [34.047382, -118.260328],
+            [34.047598, -118.26068],
+            [34.047859, -118.261108],
+            [34.047947, -118.261241],
+            [34.048005, -118.261348]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Figueroa Street",
+          "px": [304, 496],
+          "ll": [34.047947, -118.261241],
+          "insideCoverage": true
+        },
+        {
+          "name": "Flower Street",
+          "px": [1027, 486],
+          "ll": [34.047255, -118.260124],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Figueroa Street",
+      "runs": [
+        {
+          "px": [
+            [313, 1332],
+            [311, 972],
+            [307, 876],
+            [304, 569],
+            [304, 496],
+            [303, 455]
+          ],
+          "ll": [
+            [34.046872, -118.262204],
+            [34.047334, -118.261785],
+            [34.047459, -118.261679],
+            [34.047854, -118.261326],
+            [34.047947, -118.261241],
+            [34.048001, -118.261195]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Place",
+          "px": [313, 1364],
+          "ll": [34.046831, -118.262241],
+          "insideCoverage": false
+        },
+        {
+          "name": "8th Street",
+          "px": [304, 496],
+          "ll": [34.047947, -118.261241],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Flower Street",
+      "runs": [
+        {
+          "px": [
+            [1027, 429],
+            [1027, 486],
+            [1025, 536],
+            [1027, 956],
+            [1023, 1327]
+          ],
+          "ll": [
+            [34.047327, -118.260058],
+            [34.047255, -118.260124],
+            [34.047193, -118.260185],
+            [34.046655, -118.260674],
+            [34.046186, -118.261114]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [1027, 486],
+          "ll": [34.047255, -118.260124],
+          "insideCoverage": true
+        },
+        {
+          "name": "9th Street",
+          "px": [1020, 1623],
+          "ll": [34.045812, -118.261464],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "8th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "eighth-street",
+          "display": "8th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "8TH ST",
+            "8TH STREET",
+            "8th St",
+            "8th St.",
+            "8th Street",
+            "CALLE 8a",
+            "EAST EIGHTH STREET",
+            "EIGHTH ST",
+            "EIGHTH ST.",
+            "EIGHTH STREET",
+            "Eighth St",
+            "Eighth St.",
+            "Eighth Street",
+            "new 8th Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-569",
+            "mr011-008",
+            "mr018-092",
+            "mr021-046",
+            "mr021-087",
+            "mr026-060",
+            "mr029-026",
+            "mr029-085",
+            "mr053-065",
+            "mr053-068",
+            "mr054-051",
+            "mr055-086",
+            "mr060-088",
+            "mr070-051",
+            "pm017-045",
+            "tr0001-037",
+            "tr0005-042b",
+            "tr0005-156a",
+            "tr0007-085",
+            "tr0013-048",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        },
+        {
+          "id": "lincoln-place",
+          "display": "Lincoln Place",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet"
+          ],
+          "ink": [
+            "Lincoln Place"
+          ],
+          "docs": [
+            "mr006-193"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Figueroa Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "pearl",
+          "display": "Pearl Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "PEARL ST",
+            "PEARL STR.",
+            "PEARL STREET",
+            "Pearl",
+            "Pearl St",
+            "Pearl Street"
+          ],
+          "docs": [
+            "mr003-016",
+            "mr003-032",
+            "mr003-569",
+            "mr005-307-a",
+            "mr007-026-p1",
+            "mr007-026-p2",
+            "mr007-062-p2",
+            "mr010-030",
+            "mr021-087"
+          ]
+        },
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "FIGUEROA ST.",
+            "FIGUEROA STREET",
+            "Figueroa St",
+            "Figueroa Street"
+          ],
+          "docs": [
+            "mr007-021",
+            "mr010-077",
+            "mr021-032",
+            "tr0034-004",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "chapules",
+          "display": "Grasshopper Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS CHAPULAS",
+            "CALLE DE LAS CHAPULES",
+            "GRASSHOPPER ST",
+            "GRASSHOPPER ST.",
+            "GRASSHOPPER STREET",
+            "Grasshopper St."
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Flower Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "flower",
+          "display": "Flower Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Flower Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE DE LAS FLORES",
+            "FLOWER",
+            "FLOWER STR.",
+            "FLOWER STREET",
+            "Flower St",
+            "Flower St.",
+            "Flower Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr003-016",
+            "mr003-032",
+            "mr003-033",
+            "mr007-021",
+            "mr021-032",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    }
+  ]
+}

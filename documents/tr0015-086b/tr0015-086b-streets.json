@@ -1,0 +1,271 @@
+{
+  "document": "tr0015-086b",
+  "image": "tr0015-086b-100dpi.png",
+  "imageSize": [1134, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0015-086b-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [283, 516],
+    [110, 1010],
+    [919, 1409],
+    [1033, 638]
+  ],
+  "coverageLl": [
+    [34.057123, -118.23288],
+    [34.056656, -118.232937],
+    [34.056477, -118.23199],
+    [34.057173, -118.232065]
+  ],
+  "streets": [
+    {
+      "name": "Cesar E Chavez Avenue",
+      "runs": [
+        {
+          "px": [
+            [199, 757],
+            [321, 834],
+            [372, 866],
+            [644, 1038],
+            [934, 1219],
+            [946, 1227]
+          ],
+          "ll": [
+            [34.056895, -118.232907],
+            [34.056853, -118.23276],
+            [34.056836, -118.232699],
+            [34.056743, -118.232371],
+            [34.056646, -118.232023],
+            [34.056641, -118.232008]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Avila Street",
+          "px": [322, 759],
+          "ll": [34.056919, -118.232778],
+          "insideCoverage": true
+        },
+        {
+          "name": "Clara Street",
+          "px": [322, 759],
+          "ll": [34.056919, -118.232778],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [1089, 1317],
+          "ll": [34.056592, -118.231836],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Clara Street",
+      "runs": [
+        {
+          "px": [
+            [323, 683],
+            [435, 724],
+            [764, 735],
+            [924, 740],
+            [1007, 743],
+            [1017, 744]
+          ],
+          "ll": [
+            [34.056985, -118.232796],
+            [34.056973, -118.232668],
+            [34.057032, -118.232321],
+            [34.057061, -118.232153],
+            [34.057076, -118.232065],
+            [34.057078, -118.232054]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Avila Street",
+          "px": [323, 683],
+          "ll": [34.056985, -118.232796],
+          "insideCoverage": true
+        },
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [322, 759],
+          "ll": [34.056919, -118.232778],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [1289, 789],
+          "ll": [34.057095, -118.231759],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Avila Street",
+      "metres": 10
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Cesar E Chavez Avenue",
+      "continuesInto": [
+        "Avila Street",
+        "Clara Street"
+      ],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "C CORTA",
+            "Calle Corta",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "marchessault-street",
+          "display": "Marchessault Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MARCHESSAULT STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "macy-street",
+          "display": "Macy Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MACY ST.",
+            "MACY STREET"
+          ],
+          "docs": [
+            "oldplaza1873",
+            "tr0006-051a"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        },
+        {
+          "id": "cesar-e-chavez-avenue",
+          "display": "Cesar E Chavez Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Clara Street",
+      "continuesInto": [
+        "Avila Street",
+        "Cesar E Chavez Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Clara Street runs straight into"
+          ],
+          "ink": [
+            "C CORTA",
+            "Calle Corta",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "marchessault-street",
+          "display": "Marchessault Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Clara Street runs straight into"
+          ],
+          "ink": [
+            "MARCHESSAULT STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "macy-street",
+          "display": "Macy Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Clara Street runs straight into"
+          ],
+          "ink": [
+            "MACY ST.",
+            "MACY STREET"
+          ],
+          "docs": [
+            "oldplaza1873",
+            "tr0006-051a"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Clara Street runs straight into"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        }
+      ]
+    }
+  ]
+}

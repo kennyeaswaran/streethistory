@@ -5102,6 +5102,10 @@ const STREET_DATA = {
       {
         "title": "Ord/Hutton survey, “Plan de la Ciudad de Los Angeles” (Aug. 29, 1849)",
         "url": "https://tessa2.lapl.org/digital/collection/maps/id/42/"
+      },
+      {
+        "title": "Tract No. 841, Being a Resubdivision of Lots 12 and 13 of F. McLaughlin's Subdivision and Lots 38 and 39 of the Wright Tract (Mar. 1910)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0016/TR0016-089.pdf"
       }
     ]
   },
@@ -48660,8 +48664,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Tract No. 5301, Sheet No. 3 (Feb. 20, 1926)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
+            "title": "Plat of Tract No. 680, Showing Relocation of the Stern Tract and Adjacent Property of Chas. Stern, Los Angeles City, Cal. (Dec. 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-161B.pdf"
           }
         ],
         "minLat": 34.0499,
@@ -48729,8 +48733,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
           },
           {
-            "title": "Tract No. 5301, Sheet No. 3 (Feb. 20, 1926)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
+            "title": "Plat of Tract No. 680, Showing Relocation of the Stern Tract and Adjacent Property of Chas. Stern, Los Angeles City, Cal. (Dec. 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-161B.pdf"
           },
           {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Anderson St. and Anderson Ave. changed to Anderson St.”",
@@ -48760,7 +48764,7 @@ const STREET_DATA = {
         "label": "part of (Anderson St)",
         "name": "Mission Road",
         "entityId": "mission-road",
-        "namedAfter": "{{Mission San Gabriel Arcángel}}, which the road ran to from the pueblo",
+        "namedAfter": "{{Mission San Gabriel Arcángel}}, which the road ran to from the pueblo, once this stretch was folded into Mission Road",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Mission_San_Gabriel_Arc%C3%A1ngel",
         "planned": {
           "text": "by 1887",
@@ -48784,7 +48788,7 @@ const STREET_DATA = {
             "name": "Mission Road",
             "entityId": "mission-road",
             "formInForce": "Mission Road",
-            "how": "origin",
+            "how": "renaming",
             "origin": "labeled “MISSION ROAD” on the 1926 Tract No. 5301 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
           }
@@ -48820,6 +48824,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
           },
           {
+            "title": "Plat of Tract No. 680, Showing Relocation of the Stern Tract and Adjacent Property of Chas. Stern, Los Angeles City, Cal. (Dec. 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-161B.pdf"
+          },
+          {
             "title": "Los Angeles Herald, Oct. 11, 1888 — the special committee's street-name list: “Anderson St. and Anderson Ave. changed to Anderson St.”",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18881011.1.3"
           },
@@ -48844,28 +48852,16 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of (original Mission Road)",
+        "label": "part of",
         "name": "Mission Road",
         "entityId": "mission-road",
-        "namedAfter": "{{Mission San Gabriel Arcángel}}, which the road ran to from the pueblo",
+        "namedAfter": "{{Mission San Gabriel Arcángel}}, which the road ran to from the pueblo — how and when this stretch joined Mission Road is not yet researched",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Mission_San_Gabriel_Arc%C3%A1ngel",
         "planned": {
           "text": "by 1926",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
         },
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1926",
-            "until": null,
-            "name": "Mission Road",
-            "entityId": "mission-road",
-            "formInForce": "Mission Road",
-            "how": "origin",
-            "origin": "labeled “MISSION ROAD” on the 1926 Tract No. 5301 {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
-          }
-        ],
         "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Mission Road. The road is far older than the sheet: it is the route from the pueblo out to Mission San Gabriel, and the tracts along it record a name already long in use.",
         "attested": true,
         "absentAsOf": {
@@ -48891,6 +48887,10 @@ const STREET_DATA = {
           {
             "title": "Tract No. 5301, Sheet No. 3 (Feb. 20, 1926; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
+          },
+          {
+            "title": "Plat of Tract No. 680, Showing Relocation of the Stern Tract and Adjacent Property of Chas. Stern, Los Angeles City, Cal. (Dec. 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-161B.pdf"
           }
         ],
         "minLat": 34.0412,
@@ -48929,8 +48929,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Tract No. 5301, Sheet No. 3 (Feb. 20, 1926)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
+            "title": "Plat of Tract No. 680, Showing Relocation of the Stern Tract and Adjacent Property of Chas. Stern, Los Angeles City, Cal. (Dec. 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-161B.pdf"
           }
         ],
         "minLat": 34.0347,
@@ -48965,8 +48965,8 @@ const STREET_DATA = {
         "disputed": false,
         "sources": [
           {
-            "title": "Tract No. 5301, Sheet No. 3 (Feb. 20, 1926)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
+            "title": "Plat of Tract No. 680, Showing Relocation of the Stern Tract and Adjacent Property of Chas. Stern, Los Angeles City, Cal. (Dec. 1909)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-161B.pdf"
           }
         ],
         "maxLat": 34.0347,
@@ -52973,7 +52973,6 @@ const STREET_DATA = {
             "name": "St. Paul Avenue",
             "entityId": "st-paul-avenue",
             "formInForce": "St. Paul Avenue",
-            "how": "origin",
             "origin": "labeled “ST. PAUL AVENUE” on the 1900 St. Paul's School Replat {{(source)}} — St. Paul’s School, the Episcopal school whose lands this street was cut across — its own 1900 replat is the first document to letter the name",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR078/MR078-055.pdf"
           },
@@ -53012,6 +53011,10 @@ const STREET_DATA = {
           {
             "title": "Map of a Replat of a Portion of the Subdivision of the Lands of St. Paul's School (M.R. 78-55, Feb. 1900; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR078/MR078-055.pdf"
+          },
+          {
+            "title": "Replat of Lots 64, 65, 66, 67 and 67 1/2 of the Subdivision of the Lands of St. Paul's School, Lot 1, Block 37, Hancock's Survey (M.R. 72-71, Aug. 1899)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR072/MR072-071.pdf"
           },
           {
             "title": "Recorded map: “Plat of Subdivision of a portion of Lot 1 Block 37 Hancocks Surv. L.A. City, made at request of the Vestry of St. Paul’s P. E. Church”, recorded May 9, 1889 (M.R. 5-566) — the sheet’s own title block",
@@ -57244,7 +57247,7 @@ const STREET_DATA = {
             "name": "San Fernando Street",
             "entityId": "san-fernando-st-spring",
             "formInForce": "San Fernando Street",
-            "how": "origin",
+            "how": "renaming",
             "origin": "labeled “SAN FERNANDO ST.” on the 1907 Tract No. 49 {{(source)}} — no namesake documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
           },
@@ -57306,6 +57309,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Map of Pierre Nicolas Lot in the City of Los Angeles, Cal. (Feb. 1906)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-085.pdf"
           },
           {
             "title": "L.A. Street Names: Main Street",

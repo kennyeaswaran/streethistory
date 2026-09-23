@@ -1,0 +1,690 @@
+{
+  "document": "mr009-052",
+  "image": "mr009-052-100dpi.png",
+  "imageSize": [1148, 1640],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr009-052-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [204, 685],
+    [256, 1250],
+    [1065, 1232],
+    [1013, 593]
+  ],
+  "coverageLl": [
+    [34.038629, -118.272192],
+    [34.037124, -118.27297],
+    [34.036051, -118.270482],
+    [34.037744, -118.269582]
+  ],
+  "streets": [
+    {
+      "name": "17th Street",
+      "runs": [
+        {
+          "px": [
+            [932, 1158],
+            [902, 1158],
+            [818, 1158],
+            [707, 1158],
+            [576, 1159],
+            [307, 1159]
+          ],
+          "ll": [
+            [34.036423, -118.270765],
+            [34.036464, -118.270855],
+            [34.03658, -118.27111],
+            [34.036733, -118.271447],
+            [34.036913, -118.271845],
+            [34.037285, -118.272664]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Figueroa Street",
+          "px": [932, 1158],
+          "ll": [34.036423, -118.270765],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [826, 1134],
+          "ll": [34.03663, -118.271046],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Delong Street",
+      "runs": [
+        {
+          "px": [
+            [246, 680],
+            [244, 684],
+            [245, 718],
+            [246, 730],
+            [247, 764]
+          ],
+          "ll": [
+            [34.038583, -118.272058],
+            [34.038577, -118.272069],
+            [34.038488, -118.272121],
+            [34.038456, -118.272141],
+            [34.03837, -118.272191]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "15th Drive",
+          "px": [314, 539],
+          "ll": [34.038848, -118.271615],
+          "insideCoverage": false
+        },
+        {
+          "name": "Convention Center Drive",
+          "px": [261, 455],
+          "ll": [34.039132, -118.271637],
+          "insideCoverage": false
+        },
+        {
+          "name": "Georgia Street",
+          "px": [314, 539],
+          "ll": [34.038848, -118.271615],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [266, 845],
+          "ll": [34.038137, -118.27227],
+          "insideCoverage": true
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [247, 764],
+          "ll": [34.03837, -118.272191],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Figueroa Street",
+      "runs": [
+        {
+          "px": [
+            [933, 1235],
+            [932, 1158],
+            [931, 1032],
+            [930, 882],
+            [929, 855],
+            [927, 774],
+            [928, 736],
+            [928, 702],
+            [928, 603]
+          ],
+          "ll": [
+            [34.036226, -118.270887],
+            [34.036423, -118.270765],
+            [34.036743, -118.270559],
+            [34.037127, -118.270313],
+            [34.037194, -118.270271],
+            [34.037405, -118.270141],
+            [34.037498, -118.270075],
+            [34.037584, -118.27002],
+            [34.037837, -118.269857]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "15th Drive",
+          "px": [927, 532],
+          "ll": [34.038018, -118.269741],
+          "insideCoverage": false
+        },
+        {
+          "name": "17th Street",
+          "px": [932, 1158],
+          "ll": [34.036423, -118.270765],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [927, 1009],
+          "ll": [34.036809, -118.270532],
+          "insideCoverage": true
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [928, 736],
+          "ll": [34.037498, -118.270075],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Georgia Street",
+      "runs": [
+        {
+          "px": [
+            [374, 666],
+            [375, 673],
+            [377, 702],
+            [378, 715],
+            [381, 763]
+          ],
+          "ll": [
+            [34.038442, -118.271642],
+            [34.038424, -118.271652],
+            [34.038347, -118.271696],
+            [34.038313, -118.271714],
+            [34.038188, -118.271784]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "15th Drive",
+          "px": [356, 541],
+          "ll": [34.038782, -118.271491],
+          "insideCoverage": false
+        },
+        {
+          "name": "Convention Center Drive",
+          "px": [356, 541],
+          "ll": [34.038782, -118.271491],
+          "insideCoverage": false
+        },
+        {
+          "name": "Delong Street",
+          "px": [314, 539],
+          "ll": [34.038848, -118.271615],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [364, 844],
+          "ll": [34.038004, -118.27197],
+          "insideCoverage": true
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [381, 763],
+          "ll": [34.038188, -118.271784],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Santa Monica Freeway",
+      "runs": [
+        {
+          "px": [
+            [240, 1079],
+            [289, 1073],
+            [339, 1069],
+            [420, 1065],
+            [475, 1066],
+            [553, 1069],
+            [612, 1073],
+            [668, 1081],
+            [722, 1092],
+            [834, 1110],
+            [1003, 1130],
+            [1057, 1139]
+          ],
+          "ll": [
+            [34.03758, -118.272734],
+            [34.037527, -118.272578],
+            [34.037468, -118.272418],
+            [34.037367, -118.272166],
+            [34.037289, -118.271998],
+            [34.037173, -118.271768],
+            [34.03708, -118.271596],
+            [34.036983, -118.271439],
+            [34.036881, -118.271291],
+            [34.036681, -118.270982],
+            [34.036395, -118.270503],
+            [34.036299, -118.270351]
+          ]
+        },
+        {
+          "px": [
+            [287, 989],
+            [336, 985],
+            [391, 983],
+            [465, 983],
+            [533, 987],
+            [588, 992],
+            [665, 998],
+            [736, 1008],
+            [835, 1022],
+            [987, 1053],
+            [1051, 1066]
+          ],
+          "ll": [
+            [34.037744, -118.272445],
+            [34.037687, -118.272289],
+            [34.037615, -118.272117],
+            [34.037512, -118.271894],
+            [34.037408, -118.271692],
+            [34.037321, -118.271533],
+            [34.037196, -118.27131],
+            [34.037075, -118.271109],
+            [34.036902, -118.270833],
+            [34.036615, -118.270424],
+            [34.036491, -118.270248]
+          ]
+        },
+        {
+          "px": [
+            [1047, 1007],
+            [1017, 1000],
+            [923, 985],
+            [779, 959],
+            [701, 948],
+            [629, 940],
+            [531, 933],
+            [415, 928],
+            [348, 926],
+            [284, 927],
+            [226, 929]
+          ],
+          "ll": [
+            [34.036648, -118.270165],
+            [34.036705, -118.270245],
+            [34.036875, -118.270505],
+            [34.037138, -118.270898],
+            [34.037275, -118.271119],
+            [34.037395, -118.271322],
+            [34.037549, -118.271608],
+            [34.037722, -118.271953],
+            [34.03782, -118.272155],
+            [34.037904, -118.272349],
+            [34.03798, -118.272527]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "17th Street",
+          "px": [826, 1134],
+          "ll": [34.03663, -118.271046],
+          "insideCoverage": true
+        },
+        {
+          "name": "Delong Street",
+          "px": [266, 845],
+          "ll": [34.038137, -118.27227],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [927, 1009],
+          "ll": [34.036809, -118.270532],
+          "insideCoverage": true
+        },
+        {
+          "name": "Georgia Street",
+          "px": [364, 844],
+          "ll": [34.038004, -118.27197],
+          "insideCoverage": true
+        },
+        {
+          "name": "Venice Boulevard",
+          "px": [353, 845],
+          "ll": [34.038018, -118.272005],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Venice Boulevard",
+      "runs": [
+        {
+          "px": [
+            [1024, 725],
+            [972, 727],
+            [928, 736],
+            [883, 741],
+            [808, 752],
+            [783, 752],
+            [717, 755],
+            [642, 758],
+            [587, 760],
+            [381, 763],
+            [358, 764],
+            [247, 764],
+            [211, 763]
+          ],
+          "ll": [
+            [34.037395, -118.269767],
+            [34.037461, -118.26993],
+            [34.037498, -118.270075],
+            [34.037548, -118.270223],
+            [34.037625, -118.270469],
+            [34.037658, -118.270545],
+            [34.037742, -118.270749],
+            [34.037839, -118.270983],
+            [34.03791, -118.271153],
+            [34.038188, -118.271784],
+            [34.038216, -118.271855],
+            [34.03837, -118.272191],
+            [34.03842, -118.2723]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Delong Street",
+          "px": [247, 764],
+          "ll": [34.03837, -118.272191],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [928, 736],
+          "ll": [34.037498, -118.270075],
+          "insideCoverage": true
+        },
+        {
+          "name": "Georgia Street",
+          "px": [381, 763],
+          "ll": [34.038188, -118.271784],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [353, 845],
+          "ll": [34.038018, -118.272005],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "17th Street",
+      "continuesInto": [
+        "Santa Monica Freeway"
+      ],
+      "candidates": [
+        {
+          "id": "seventeenth-street",
+          "display": "17th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 17th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "17TH STREET"
+          ],
+          "docs": [
+            "tr0030-086"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Delong Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "virginia-conv-center",
+          "display": "Virginia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Delong Street by another sheet"
+          ],
+          "ink": [
+            "Virginia St",
+            "Virginia Street"
+          ],
+          "docs": [
+            "mr005-431",
+            "mr010-077"
+          ]
+        },
+        {
+          "id": "delong-street",
+          "display": "Delong Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Delong Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "Delong Street"
+          ],
+          "docs": [
+            "tr0030-086"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Figueroa Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "FIGUEROA ST.",
+            "FIGUEROA STREET",
+            "Figueroa St",
+            "Figueroa Street"
+          ],
+          "docs": [
+            "mr007-021",
+            "mr010-077",
+            "mr021-032",
+            "tr0034-004",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "pearl",
+          "display": "Pearl Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "PEARL ST",
+            "PEARL STR.",
+            "PEARL STREET",
+            "Pearl",
+            "Pearl St",
+            "Pearl Street"
+          ],
+          "docs": [
+            "mr003-016",
+            "mr003-032",
+            "mr003-569",
+            "mr005-307-a",
+            "mr007-026-p1",
+            "mr007-026-p2",
+            "mr007-062-p2",
+            "mr010-030",
+            "mr021-087"
+          ]
+        },
+        {
+          "id": "chapules",
+          "display": "Grasshopper Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS CHAPULAS",
+            "CALLE DE LAS CHAPULES",
+            "GRASSHOPPER ST",
+            "GRASSHOPPER ST.",
+            "GRASSHOPPER STREET",
+            "Grasshopper St."
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Georgia Street",
+      "continuesInto": [
+        "Convention Center Drive"
+      ],
+      "candidates": [
+        {
+          "id": "valencia-street-poindexter",
+          "display": "Valencia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Georgia Street by another sheet"
+          ],
+          "ink": [
+            "VALENCIA STREET"
+          ],
+          "docs": [
+            "tr0001-038a"
+          ]
+        },
+        {
+          "id": "nevada-1886",
+          "display": "Nevada Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Georgia Street by another sheet"
+          ],
+          "ink": [
+            "Nevada",
+            "Nevada St",
+            "Nevado St"
+          ],
+          "docs": [
+            "mr010-030",
+            "mr010-077"
+          ]
+        },
+        {
+          "id": "georgia-bell",
+          "display": "Georgia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Georgia Street by another sheet"
+          ],
+          "ink": [
+            "Georgia Street"
+          ],
+          "docs": [
+            "tr0030-086"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Santa Monica Freeway",
+      "continuesInto": [
+        "17th Street"
+      ],
+      "candidates": [
+        {
+          "id": "seventeenth-street",
+          "display": "17th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 17th Street, which Santa Monica Freeway runs straight into"
+          ],
+          "ink": [
+            "17TH STREET"
+          ],
+          "docs": [
+            "tr0030-086"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Venice Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "sixteenth-street",
+          "display": "16th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Venice Boulevard by another sheet"
+          ],
+          "ink": [
+            "(formerly Pine St)",
+            "16TH STREET",
+            "16th ST.",
+            "16th STREET"
+          ],
+          "docs": [
+            "mr053-016",
+            "tr0030-086",
+            "tr0034-004"
+          ]
+        },
+        {
+          "id": "pine-street-venice",
+          "display": "Pine Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Venice Boulevard by another sheet"
+          ],
+          "ink": [
+            "PINE STREET",
+            "Pine Street."
+          ],
+          "docs": [
+            "mr003-038-p1",
+            "mr003-038-p2",
+            "mr021-032"
+          ]
+        },
+        {
+          "id": "rouland-street",
+          "display": "Rouland Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Venice Boulevard by another sheet"
+          ],
+          "ink": [
+            "ROULAND STREET",
+            "Rowland St"
+          ],
+          "docs": [
+            "mr005-431",
+            "mr010-077"
+          ]
+        },
+        {
+          "id": "venice-boulevard",
+          "display": "Venice Boulevard",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

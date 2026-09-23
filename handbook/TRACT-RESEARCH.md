@@ -365,6 +365,11 @@ layer (CORS-open):
 Existence-check each URL. Record the byte count too: it is the only cheap signal
 of a multi-sheet filing.
 
+Layer 8's suffixes have held up: on 2026-09-22 all 33 Map Book filenames from
+the §5.11 sweep (WANTED.md) opened on the filename as recorded, with no
+letter-swapping needed. So if a layer-8 filename 404s, suspect a typo or a
+changed URL pattern before you start trying other letters.
+
 ### Map Book pages that hold two filings — the decoys
 
 The un-suffixed filename is often the wrong map, and it cannot be guessed in

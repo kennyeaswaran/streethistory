@@ -1,0 +1,264 @@
+{
+  "document": "tr0023-058a",
+  "image": "tr0023-058a-100dpi.png",
+  "imageSize": [1138, 1767],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0023-058a-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [-3, 572],
+    [174, 1417],
+    [1114, 1593],
+    [1157, 490]
+  ],
+  "coverageLl": [
+    [34.037145, -118.272027],
+    [34.036147, -118.272374],
+    [34.035428, -118.271296],
+    [34.036576, -118.270494]
+  ],
+  "streets": [
+    {
+      "name": "17th Street",
+      "runs": [
+        {
+          "px": [
+            [1051, 691],
+            [980, 690],
+            [779, 688],
+            [513, 686],
+            [199, 683],
+            [20, 681]
+          ],
+          "ll": [
+            [34.036423, -118.270765],
+            [34.036464, -118.270855],
+            [34.03658, -118.27111],
+            [34.036733, -118.271447],
+            [34.036913, -118.271845],
+            [34.037016, -118.272072]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Figueroa Street",
+          "px": [1051, 691],
+          "ll": [34.036423, -118.270765],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [798, 630],
+          "ll": [34.03663, -118.271046],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Figueroa Street",
+      "runs": [
+        {
+          "px": [
+            [1051, 1581],
+            [1056, 1221],
+            [1054, 998],
+            [1053, 877],
+            [1051, 691],
+            [1052, 497]
+          ],
+          "ll": [
+            [34.035476, -118.271368],
+            [34.035857, -118.271118],
+            [34.036095, -118.270969],
+            [34.036224, -118.270888],
+            [34.036423, -118.270765],
+            [34.036628, -118.270633]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "17th Street",
+          "px": [1051, 691],
+          "ll": [34.036423, -118.270765],
+          "insideCoverage": true
+        },
+        {
+          "name": "18th Street",
+          "px": [1051, 1612],
+          "ll": [34.035444, -118.271389],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [1044, 332],
+          "ll": [34.036809, -118.270532],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Santa Monica Freeway",
+      "runs": [
+        {
+          "px": [
+            [580, 531],
+            [818, 572],
+            [1152, 617]
+          ],
+          "ll": [
+            [34.036859, -118.271257],
+            [34.036681, -118.270982],
+            [34.036445, -118.270586]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "17th Street",
+          "px": [798, 630],
+          "ll": [34.03663, -118.271046],
+          "insideCoverage": true
+        },
+        {
+          "name": "Figueroa Street",
+          "px": [1044, 332],
+          "ll": [34.036809, -118.270532],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "18th Street",
+      "metres": 9.7
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "17th Street",
+      "continuesInto": [
+        "Santa Monica Freeway"
+      ],
+      "candidates": [
+        {
+          "id": "seventeenth-street",
+          "display": "17th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 17th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "17TH STREET"
+          ],
+          "docs": [
+            "tr0030-086"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Figueroa Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "pearl",
+          "display": "Pearl Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "PEARL ST",
+            "PEARL STR.",
+            "PEARL STREET",
+            "Pearl",
+            "Pearl St",
+            "Pearl Street"
+          ],
+          "docs": [
+            "mr003-016",
+            "mr003-032",
+            "mr003-569",
+            "mr005-307-a",
+            "mr007-026-p1",
+            "mr007-026-p2",
+            "mr007-062-p2",
+            "mr010-030",
+            "mr021-087"
+          ]
+        },
+        {
+          "id": "figueroa-gov",
+          "display": "Figueroa Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "FIGUEROA ST.",
+            "FIGUEROA STREET",
+            "Figueroa St",
+            "Figueroa Street"
+          ],
+          "docs": [
+            "mr007-021",
+            "mr010-077",
+            "mr021-032",
+            "tr0034-004",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "chapules",
+          "display": "Grasshopper Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Figueroa Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS CHAPULAS",
+            "CALLE DE LAS CHAPULES",
+            "GRASSHOPPER ST",
+            "GRASSHOPPER ST.",
+            "GRASSHOPPER STREET",
+            "Grasshopper St."
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Santa Monica Freeway",
+      "continuesInto": [
+        "17th Street"
+      ],
+      "candidates": [
+        {
+          "id": "seventeenth-street",
+          "display": "17th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 17th Street, which Santa Monica Freeway runs straight into"
+          ],
+          "ink": [
+            "17TH STREET"
+          ],
+          "docs": [
+            "tr0030-086"
+          ]
+        }
+      ]
+    }
+  ]
+}

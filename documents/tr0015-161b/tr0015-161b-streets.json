@@ -1,0 +1,210 @@
+{
+  "document": "tr0015-161b",
+  "image": "tr0015-161b-100dpi.png",
+  "imageSize": [1136, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0015-161b-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [311, 1170],
+    [327, 1350],
+    [635, 1381],
+    [914, 1047]
+  ],
+  "coverageLl": [
+    [34.054921, -118.226865],
+    [34.053985, -118.226753],
+    [34.053841, -118.224831],
+    [34.055593, -118.223114]
+  ],
+  "streets": [
+    {
+      "name": "Cesar E Chavez Avenue",
+      "runs": [
+        {
+          "px": [
+            [611, 1351],
+            [589, 1340],
+            [485, 1283],
+            [430, 1253],
+            [317, 1191],
+            [313, 1188]
+          ],
+          "ll": [
+            [34.053995, -118.224984],
+            [34.054054, -118.225118],
+            [34.05434, -118.225771],
+            [34.054495, -118.226117],
+            [34.054814, -118.226827],
+            [34.054826, -118.226853]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Mission Road",
+          "px": [485, 1283],
+          "ll": [34.05434, -118.225771],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Mission Road",
+      "runs": [
+        {
+          "px": [
+            [648, 1209],
+            [622, 1221],
+            [606, 1228],
+            [485, 1283],
+            [462, 1298],
+            [443, 1311],
+            [429, 1326],
+            [421, 1342],
+            [415, 1359]
+          ],
+          "ll": [
+            [34.054734, -118.224762],
+            [34.054673, -118.22492],
+            [34.054633, -118.225022],
+            [34.05434, -118.225771],
+            [34.054262, -118.225916],
+            [34.054196, -118.226035],
+            [34.054115, -118.226116],
+            [34.054034, -118.226167],
+            [34.053944, -118.226206]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [485, 1283],
+          "ll": [34.05434, -118.225771],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Cesar E Chavez Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "C CORTA",
+            "Calle Corta",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "marchessault-street",
+          "display": "Marchessault Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MARCHESSAULT STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "macy-street",
+          "display": "Macy Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MACY ST.",
+            "MACY STREET"
+          ],
+          "docs": [
+            "oldplaza1873",
+            "tr0006-051a"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        },
+        {
+          "id": "cesar-e-chavez-avenue",
+          "display": "Cesar E Chavez Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Mission Road",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "anderson",
+          "display": "Anderson Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mission Road by another sheet"
+          ],
+          "ink": [
+            "ANDERSON ST.",
+            "Anderson Street"
+          ],
+          "docs": [
+            "mr017-041",
+            "tr0013-168-p1"
+          ]
+        },
+        {
+          "id": "mission-road",
+          "display": "Mission Road",
+          "pendingResearch": false,
+          "why": [
+            "attested on Mission Road by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "MISSION ROAD"
+          ],
+          "docs": [
+            "tr0122-053-p3"
+          ]
+        }
+      ]
+    }
+  ]
+}

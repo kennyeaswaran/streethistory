@@ -1,0 +1,216 @@
+{
+  "document": "tr0013-060",
+  "image": "tr0013-060-100dpi.png",
+  "imageSize": [1165, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0013-060-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [310, 669],
+    [336, 1368],
+    [1156, 1391],
+    [968, 511]
+  ],
+  "coverageLl": [
+    [34.057991, -118.230602],
+    [34.056182, -118.231425],
+    [34.055241, -118.228951],
+    [34.057685, -118.22839]
+  ],
+  "streets": [
+    {
+      "name": "Cesar E Chavez Avenue",
+      "runs": [
+        {
+          "px": [
+            [1127, 1258],
+            [914, 1256],
+            [835, 1257],
+            [647, 1260],
+            [482, 1262],
+            [457, 1262],
+            [332, 1269]
+          ],
+          "ll": [
+            [34.055611, -118.228866],
+            [34.055846, -118.229513],
+            [34.055927, -118.229759],
+            [34.056122, -118.230336],
+            [34.056294, -118.230842],
+            [34.056321, -118.23092],
+            [34.056438, -118.231308]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Keller Street",
+          "px": [1329, 1307],
+          "ll": [34.055269, -118.228314],
+          "insideCoverage": false
+        },
+        {
+          "name": "Lyon Street",
+          "px": [457, 1262],
+          "ll": [34.056321, -118.23092],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [164, 1280],
+          "ll": [34.056592, -118.231836],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Lyon Street",
+      "runs": [
+        {
+          "px": [
+            [457, 1262],
+            [443, 1302],
+            [416, 1370]
+          ],
+          "ll": [
+            [34.056321, -118.23092],
+            [34.056235, -118.231013],
+            [34.05609, -118.231183]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [457, 1262],
+          "ll": [34.056321, -118.23092],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Metro Driveway",
+      "runs": [
+        {
+          "px": [
+            [315, 793],
+            [321, 790],
+            [466, 692],
+            [502, 719],
+            [512, 728],
+            [517, 736],
+            [520, 746],
+            [529, 793]
+          ],
+          "ll": [
+            [34.05767, -118.230748],
+            [34.057671, -118.230724],
+            [34.057764, -118.230156],
+            [34.057656, -118.230081],
+            [34.057623, -118.230062],
+            [34.057596, -118.230057],
+            [34.057569, -118.230059],
+            [34.057439, -118.230093]
+          ]
+        }
+      ],
+      "crossings": []
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Cesar E Chavez Avenue",
+      "continuesInto": [
+        "Avila Street",
+        "Clara Street"
+      ],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "C CORTA",
+            "Calle Corta",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "marchessault-street",
+          "display": "Marchessault Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MARCHESSAULT STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "macy-street",
+          "display": "Macy Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MACY ST.",
+            "MACY STREET"
+          ],
+          "docs": [
+            "oldplaza1873",
+            "tr0006-051a"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        },
+        {
+          "id": "cesar-e-chavez-avenue",
+          "display": "Cesar E Chavez Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Lyon Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Metro Driveway",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

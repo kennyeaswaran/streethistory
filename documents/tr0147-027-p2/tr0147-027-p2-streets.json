@@ -1,0 +1,130 @@
+{
+  "document": "tr0147-027-p2",
+  "image": "tr0147-027-p2-100dpi.png",
+  "imageSize": [1746, 2485],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0147-027-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [-75, 2201],
+    [1517, 2604],
+    [1383, 876],
+    [122, 41]
+  ],
+  "coverageLl": [
+    [34.058299, -118.22656],
+    [34.05445, -118.227037],
+    [34.055351, -118.222262],
+    [34.058575, -118.220443]
+  ],
+  "streets": [
+    {
+      "name": "Cesar E Chavez Avenue",
+      "runs": [
+        {
+          "px": [
+            [1497, 2344],
+            [1375, 2508],
+            [1338, 2559]
+          ],
+          "ll": [
+            [34.054586, -118.226319],
+            [34.054814, -118.226827],
+            [34.054883, -118.226983]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Mission Road",
+          "px": [1628, 2167],
+          "ll": [34.05434, -118.225771],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Cesar E Chavez Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "C CORTA",
+            "Calle Corta",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "marchessault-street",
+          "display": "Marchessault Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MARCHESSAULT STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "macy-street",
+          "display": "Macy Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MACY ST.",
+            "MACY STREET"
+          ],
+          "docs": [
+            "oldplaza1873",
+            "tr0006-051a"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        },
+        {
+          "id": "cesar-e-chavez-avenue",
+          "display": "Cesar E Chavez Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

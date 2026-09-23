@@ -1,0 +1,198 @@
+{
+  "document": "tr0009-085",
+  "image": "tr0009-085-100dpi.png",
+  "imageSize": [1171, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0009-085-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [889, 305],
+    [988, 1451],
+    [102, 1650],
+    [198, 354]
+  ],
+  "coverageLl": [
+    [34.06097, -118.237527],
+    [34.060665, -118.236417],
+    [34.059908, -118.236585],
+    [34.060415, -118.237757]
+  ],
+  "streets": [
+    {
+      "name": "Alameda Street",
+      "runs": [
+        {
+          "px": [
+            [110, 1548],
+            [436, 1477],
+            [830, 1385],
+            [962, 1354],
+            [979, 1350]
+          ],
+          "ll": [
+            [34.059948, -118.236677],
+            [34.060226, -118.236614],
+            [34.060565, -118.236542],
+            [34.060678, -118.236518],
+            [34.060692, -118.236515]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Main Street",
+          "px": [830, 1385],
+          "ll": [34.060565, -118.236542],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ord Street",
+          "px": [-477, 1678],
+          "ll": [34.059448, -118.23679],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Spring Street",
+      "runs": [
+        {
+          "px": [
+            [190, 459],
+            [612, 450],
+            [901, 443]
+          ],
+          "ll": [
+            [34.060374, -118.237663],
+            [34.060705, -118.237503],
+            [34.060933, -118.237393]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Ord Street",
+          "px": [-479, 480],
+          "ll": [34.059845, -118.23791],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Main Street",
+      "metres": 9.4
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Alameda Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "alameda-st",
+          "display": "Alameda Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alameda Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "ALAMEDA ST",
+            "ALAMEDA ST.",
+            "ALAMEDA STREET",
+            "Alameda STREET.",
+            "Alameda St",
+            "Alameda St.",
+            "Alameda Strt."
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr002-526-p1",
+            "mr003-060-p1",
+            "mr003-060-p2",
+            "mr004-012-p2",
+            "mr012-042",
+            "mr013-087-p1",
+            "mr013-091",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "oldplaza1873",
+            "tr0005-056a",
+            "tr0009-075",
+            "tr0012-101",
+            "tr0014-033",
+            "tr0014-111b",
+            "tr0014-200a",
+            "tr0021-144a",
+            "tr0100-025",
+            "tr0110-048",
+            "tr0145-062",
+            "tr0926-086-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Spring Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "main-street-dtla",
+          "display": "Main Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Spring Street by another sheet"
+          ],
+          "ink": [
+            "CALLE PRINCIPAL",
+            "MAIN STREET"
+          ],
+          "docs": [
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "san-fernando-st-spring",
+          "display": "San Fernando Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Spring Street by another sheet"
+          ],
+          "ink": [
+            "SAN FERNANDO ST."
+          ],
+          "docs": [
+            "tr0014-033"
+          ]
+        },
+        {
+          "id": "spring",
+          "display": "Spring Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Spring Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE PRIMAVERA",
+            "SPRING STREET",
+            "Spring Street"
+          ],
+          "docs": [
+            "11824",
+            "mr053-067",
+            "mr053-068",
+            "mr053-069"
+          ]
+        }
+      ]
+    }
+  ]
+}

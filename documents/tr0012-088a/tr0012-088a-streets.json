@@ -1,0 +1,509 @@
+{
+  "document": "tr0012-088a",
+  "image": "tr0012-088a-100dpi.png",
+  "imageSize": [1148, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0012-088a-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [43, 660],
+    [722, 620],
+    [1219, 730],
+    [1186, 1552],
+    [104, 1653]
+  ],
+  "coverageLl": [
+    [34.051629, -118.271502],
+    [34.051158, -118.270255],
+    [34.050606, -118.269472],
+    [34.049409, -118.2703],
+    [34.050104, -118.272323]
+  ],
+  "streets": [
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [1214, 843],
+            [1184, 843],
+            [1072, 843],
+            [1028, 843],
+            [987, 844],
+            [870, 846],
+            [784, 842],
+            [713, 831],
+            [634, 808],
+            [518, 744],
+            [422, 668],
+            [394, 639]
+          ],
+          "ll": [
+            [34.050441, -118.269585],
+            [34.050465, -118.269639],
+            [34.050552, -118.269839],
+            [34.050587, -118.269919],
+            [34.050618, -118.269992],
+            [34.050706, -118.270202],
+            [34.050778, -118.270352],
+            [34.05085, -118.270469],
+            [34.050947, -118.270587],
+            [34.051132, -118.270734],
+            [34.05132, -118.270834],
+            [34.051385, -118.270857]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Columbia Avenue",
+          "px": [1028, 843],
+          "ll": [34.050587, -118.269919],
+          "insideCoverage": true
+        },
+        {
+          "name": "Green Avenue",
+          "px": [216, 479],
+          "ll": [34.051762, -118.271025],
+          "insideCoverage": false
+        },
+        {
+          "name": "Valencia Street",
+          "px": [518, 744],
+          "ll": [34.051132, -118.270734],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [1501, 842],
+          "ll": [34.050218, -118.269074],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Columbia Avenue",
+      "runs": [
+        {
+          "px": [
+            [1029, 688],
+            [1028, 785],
+            [1028, 843],
+            [1027, 893],
+            [1026, 1125],
+            [1026, 1165],
+            [1026, 1233],
+            [1025, 1427],
+            [1025, 1476]
+          ],
+          "ll": [
+            [34.050817, -118.269771],
+            [34.050672, -118.269864],
+            [34.050587, -118.269919],
+            [34.050513, -118.269966],
+            [34.050169, -118.270185],
+            [34.050109, -118.270223],
+            [34.050008, -118.270287],
+            [34.049721, -118.27047],
+            [34.049648, -118.270516]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [1028, 843],
+          "ll": [34.050587, -118.269919],
+          "insideCoverage": true
+        },
+        {
+          "name": "Albany Street",
+          "px": [1153, 1478],
+          "ll": [34.049544, -118.27029],
+          "insideCoverage": true
+        },
+        {
+          "name": "James M Wood Boulevard",
+          "px": [1025, 1476],
+          "ll": [34.049648, -118.270516],
+          "insideCoverage": true
+        },
+        {
+          "name": "Linwood Avenue",
+          "px": [1031, 337],
+          "ll": [34.051338, -118.269439],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Green Avenue",
+      "runs": [
+        {
+          "px": [
+            [214, 650],
+            [208, 1138],
+            [204, 1421],
+            [204, 1466]
+          ],
+          "ll": [
+            [34.05151, -118.271188],
+            [34.050789, -118.271655],
+            [34.050371, -118.271926],
+            [34.050305, -118.271969]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [216, 479],
+          "ll": [34.051762, -118.271025],
+          "insideCoverage": false
+        },
+        {
+          "name": "James M Wood Boulevard",
+          "px": [204, 1466],
+          "ll": [34.050305, -118.271969],
+          "insideCoverage": true
+        },
+        {
+          "name": "Valencia Street",
+          "px": [566, 479],
+          "ll": [34.05149, -118.270401],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "James M Wood Boulevard",
+      "runs": [
+        {
+          "px": [
+            [1189, 1479],
+            [1025, 1476],
+            [861, 1473],
+            [559, 1468],
+            [513, 1468],
+            [204, 1466],
+            [92, 1464]
+          ],
+          "ll": [
+            [34.049515, -118.270226],
+            [34.049648, -118.270516],
+            [34.04978, -118.270805],
+            [34.050023, -118.271338],
+            [34.050059, -118.271421],
+            [34.050305, -118.271969],
+            [34.050395, -118.272166]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Albany Street",
+          "px": [1281, 1480],
+          "ll": [34.049441, -118.270064],
+          "insideCoverage": false
+        },
+        {
+          "name": "Columbia Avenue",
+          "px": [1025, 1476],
+          "ll": [34.049648, -118.270516],
+          "insideCoverage": true
+        },
+        {
+          "name": "Green Avenue",
+          "px": [204, 1466],
+          "ll": [34.050305, -118.271969],
+          "insideCoverage": true
+        },
+        {
+          "name": "Valencia Street",
+          "px": [559, 1468],
+          "ll": [34.050023, -118.271338],
+          "insideCoverage": true
+        },
+        {
+          "name": "Witmer Street",
+          "px": [1488, 1480],
+          "ll": [34.049279, -118.269694],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Valencia Street",
+      "runs": [
+        {
+          "px": [
+            [559, 1468],
+            [558, 1520],
+            [557, 1611]
+          ],
+          "ll": [
+            [34.050023, -118.271338],
+            [34.049947, -118.271388],
+            [34.049813, -118.271476]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [518, 744],
+          "ll": [34.051132, -118.270734],
+          "insideCoverage": true
+        },
+        {
+          "name": "James M Wood Boulevard",
+          "px": [559, 1468],
+          "ll": [34.050023, -118.271338],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "8th Street",
+      "continuesInto": [
+        "Green Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "eighth-street",
+          "display": "8th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "8TH ST",
+            "8TH STREET",
+            "8th St",
+            "8th St.",
+            "8th Street",
+            "CALLE 8a",
+            "EAST EIGHTH STREET",
+            "EIGHTH ST",
+            "EIGHTH ST.",
+            "EIGHTH STREET",
+            "Eighth St",
+            "Eighth St.",
+            "Eighth Street",
+            "new 8th Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-569",
+            "mr011-008",
+            "mr018-092",
+            "mr021-046",
+            "mr021-087",
+            "mr026-060",
+            "mr029-026",
+            "mr029-085",
+            "mr053-065",
+            "mr053-068",
+            "mr054-051",
+            "mr055-086",
+            "mr060-088",
+            "mr070-051",
+            "pm017-045",
+            "tr0001-037",
+            "tr0005-042b",
+            "tr0005-156a",
+            "tr0007-085",
+            "tr0013-048",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        },
+        {
+          "id": "lincoln-place",
+          "display": "Lincoln Place",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet"
+          ],
+          "ink": [
+            "Lincoln Place"
+          ],
+          "docs": [
+            "mr006-193"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Columbia Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "columbia-avenue",
+          "display": "Columbia Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Columbia Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "COLUMBIA AVENUE",
+            "Columbia Ave",
+            "Columbia Avenue"
+          ],
+          "docs": [
+            "mr007-036-p2",
+            "mr037-078",
+            "tr0015-166a-p1",
+            "tr0015-179a",
+            "tr0062-063"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Green Avenue",
+      "continuesInto": [
+        "8th Street"
+      ],
+      "candidates": [
+        {
+          "id": "eighth-street",
+          "display": "8th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street, which Green Avenue runs straight into"
+          ],
+          "ink": [
+            "8TH ST",
+            "8TH STREET",
+            "8th St",
+            "8th St.",
+            "8th Street",
+            "CALLE 8a",
+            "EAST EIGHTH STREET",
+            "EIGHTH ST",
+            "EIGHTH ST.",
+            "EIGHTH STREET",
+            "Eighth St",
+            "Eighth St.",
+            "Eighth Street",
+            "new 8th Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-569",
+            "mr011-008",
+            "mr018-092",
+            "mr021-046",
+            "mr021-087",
+            "mr026-060",
+            "mr029-026",
+            "mr029-085",
+            "mr053-065",
+            "mr053-068",
+            "mr054-051",
+            "mr055-086",
+            "mr060-088",
+            "mr070-051",
+            "pm017-045",
+            "tr0001-037",
+            "tr0005-042b",
+            "tr0005-156a",
+            "tr0007-085",
+            "tr0013-048",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        },
+        {
+          "id": "lincoln-place",
+          "display": "Lincoln Place",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street, which Green Avenue runs straight into"
+          ],
+          "ink": [
+            "Lincoln Place"
+          ],
+          "docs": [
+            "mr006-193"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "James M Wood Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "ninth-street",
+          "display": "9th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on James M Wood Boulevard by another sheet"
+          ],
+          "ink": [
+            "NINTH ST",
+            "NINTH STREET",
+            "Ninth Street"
+          ],
+          "docs": [
+            "mr003-569",
+            "mr005-405",
+            "mr006-193",
+            "tr0001-037",
+            "tr0001-038a"
+          ]
+        },
+        {
+          "id": "james-m-wood-boulevard",
+          "display": "James M Wood Boulevard",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Valencia Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "vernon-ave",
+          "display": "Vernon Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Valencia Street by another sheet"
+          ],
+          "ink": [
+            "Vernon Av",
+            "Vernon Ave"
+          ],
+          "docs": [
+            "mr007-036-p2",
+            "mr018-063"
+          ]
+        },
+        {
+          "id": "valencia-street-poindexter",
+          "display": "Valencia Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    }
+  ]
+}

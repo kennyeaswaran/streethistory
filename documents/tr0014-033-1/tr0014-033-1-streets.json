@@ -1,0 +1,578 @@
+{
+  "document": "tr0014-033-1",
+  "image": "tr0014-033-1-100dpi.png",
+  "imageSize": [1121, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0014-033-1-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [97, 658],
+    [83, 1345],
+    [1113, 1385],
+    [985, 570]
+  ],
+  "coverageLl": [
+    [34.060133, -118.238061],
+    [34.059067, -118.238627],
+    [34.05833, -118.236725],
+    [34.05969, -118.236326]
+  ],
+  "streets": [
+    {
+      "name": "Alameda Street",
+      "runs": [
+        {
+          "px": [
+            [960, 1379],
+            [945, 1315],
+            [937, 1284],
+            [900, 1126],
+            [890, 1074],
+            [860, 941],
+            [852, 905],
+            [840, 845],
+            [829, 789],
+            [787, 590]
+          ],
+          "ll": [
+            [34.058439, -118.237008],
+            [34.058549, -118.236986],
+            [34.058603, -118.236976],
+            [34.058875, -118.236922],
+            [34.058963, -118.2369],
+            [34.059191, -118.236851],
+            [34.059252, -118.236839],
+            [34.059353, -118.236813],
+            [34.059448, -118.23679],
+            [34.059789, -118.236713]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bauchet Street",
+          "px": [890, 1074],
+          "ll": [34.058963, -118.2369],
+          "insideCoverage": true
+        },
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [1008, 1581],
+          "ll": [34.058092, -118.237076],
+          "insideCoverage": false
+        },
+        {
+          "name": "Olvera Street",
+          "px": [945, 1660],
+          "ll": [34.05801, -118.237256],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ord Street",
+          "px": [829, 789],
+          "ll": [34.059448, -118.23679],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bauchet Street",
+      "runs": [
+        {
+          "px": [
+            [890, 1074],
+            [964, 1067],
+            [1062, 1061]
+          ],
+          "ll": [
+            [34.058963, -118.2369],
+            [34.058925, -118.236755],
+            [34.05887, -118.236567]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [890, 1074],
+          "ll": [34.058963, -118.2369],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [890, 1074],
+          "ll": [34.058963, -118.2369],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ord Street",
+          "px": [860, 932],
+          "ll": [34.059205, -118.236845],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Main Street",
+      "runs": [
+        {
+          "px": [
+            [829, 789],
+            [871, 736],
+            [885, 653],
+            [905, 578]
+          ],
+          "ll": [
+            [34.059448, -118.23679],
+            [34.059505, -118.23667],
+            [34.059624, -118.236578],
+            [34.05973, -118.236482]
+          ]
+        },
+        {
+          "px": [
+            [691, 1369],
+            [732, 1217],
+            [747, 1164],
+            [773, 1115],
+            [796, 1096],
+            [812, 1087],
+            [890, 1074]
+          ],
+          "ll": [
+            [34.058631, -118.237504],
+            [34.058842, -118.237309],
+            [34.058915, -118.237239],
+            [34.058975, -118.23715],
+            [34.05899, -118.237093],
+            [34.058993, -118.237056],
+            [34.058963, -118.2369]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [890, 1074],
+          "ll": [34.058963, -118.2369],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bauchet Street",
+          "px": [890, 1074],
+          "ll": [34.058963, -118.2369],
+          "insideCoverage": true
+        },
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [620, 1634],
+          "ll": [34.058263, -118.237845],
+          "insideCoverage": false
+        },
+        {
+          "name": "Olvera Street",
+          "px": [745, 1646],
+          "ll": [34.058162, -118.23762],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ord Street",
+          "px": [829, 789],
+          "ll": [34.059448, -118.23679],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Ord Street",
+      "runs": [
+        {
+          "px": [
+            [829, 789],
+            [748, 791],
+            [641, 791],
+            [630, 791],
+            [534, 792],
+            [467, 791],
+            [275, 787],
+            [231, 786],
+            [183, 787],
+            [94, 787]
+          ],
+          "ll": [
+            [34.059448, -118.23679],
+            [34.059498, -118.236944],
+            [34.059569, -118.237145],
+            [34.059576, -118.237165],
+            [34.059638, -118.237346],
+            [34.059683, -118.237471],
+            [34.059814, -118.237828],
+            [34.059845, -118.23791],
+            [34.059875, -118.238],
+            [34.059932, -118.238168]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [829, 789],
+          "ll": [34.059448, -118.23679],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bauchet Street",
+          "px": [860, 932],
+          "ll": [34.059205, -118.236845],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [829, 789],
+          "ll": [34.059448, -118.23679],
+          "insideCoverage": true
+        },
+        {
+          "name": "New High Street",
+          "px": [-151, 787],
+          "ll": [34.060093, -118.238628],
+          "insideCoverage": false
+        },
+        {
+          "name": "Spring Street",
+          "px": [231, 786],
+          "ll": [34.059845, -118.23791],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Spring Street",
+      "runs": [
+        {
+          "px": [
+            [236, 1351],
+            [232, 827],
+            [231, 786],
+            [230, 747],
+            [227, 645]
+          ],
+          "ll": [
+            [34.058957, -118.238345],
+            [34.059781, -118.237941],
+            [34.059845, -118.23791],
+            [34.059908, -118.237881],
+            [34.060068, -118.237807]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Ord Street",
+          "px": [231, 786],
+          "ll": [34.059845, -118.23791],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Alameda Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "alameda-st",
+          "display": "Alameda Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alameda Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "ALAMEDA ST",
+            "ALAMEDA ST.",
+            "ALAMEDA STREET",
+            "Alameda STREET.",
+            "Alameda St",
+            "Alameda St.",
+            "Alameda Strt."
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr002-526-p1",
+            "mr003-060-p1",
+            "mr003-060-p2",
+            "mr004-012-p2",
+            "mr012-042",
+            "mr013-087-p1",
+            "mr013-091",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "oldplaza1873",
+            "tr0005-056a",
+            "tr0009-075",
+            "tr0012-101",
+            "tr0014-033",
+            "tr0014-111b",
+            "tr0014-200a",
+            "tr0021-144a",
+            "tr0100-025",
+            "tr0110-048",
+            "tr0145-062",
+            "tr0926-086-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Bauchet Street",
+      "continuesInto": [
+        "Main Street"
+      ],
+      "candidates": [
+        {
+          "id": "rosabell-street",
+          "display": "Rosabell Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bauchet Street by another sheet"
+          ],
+          "ink": [
+            "ROSABELL ST."
+          ],
+          "docs": [
+            "tr0014-200a"
+          ]
+        },
+        {
+          "id": "main-street-dtla",
+          "display": "Main Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Main Street, which Bauchet Street runs straight into"
+          ],
+          "ink": [
+            "CALLE PRINCIPAL",
+            "MAIN ST.",
+            "MAIN STREET",
+            "Main St",
+            "Main St.",
+            "Main Street"
+          ],
+          "docs": [
+            "11824",
+            "12017",
+            "mr003-038-p2",
+            "mr005-105",
+            "mr005-110",
+            "mr006-378",
+            "mr011-094",
+            "mr012-026",
+            "mr029-026",
+            "mr053-016",
+            "mr053-063",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071",
+            "oldplaza1873",
+            "tr0014-033",
+            "tr0014-200a"
+          ]
+        },
+        {
+          "id": "bath-street-plaza",
+          "display": "Bath Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Main Street, which Bauchet Street runs straight into"
+          ],
+          "ink": [
+            "BATH STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Main Street",
+      "continuesInto": [
+        "Bauchet Street"
+      ],
+      "candidates": [
+        {
+          "id": "main-street-dtla",
+          "display": "Main Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Main Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE PRINCIPAL",
+            "MAIN ST.",
+            "MAIN STREET",
+            "Main St",
+            "Main St.",
+            "Main Street"
+          ],
+          "docs": [
+            "11824",
+            "12017",
+            "mr003-038-p2",
+            "mr005-105",
+            "mr005-110",
+            "mr006-378",
+            "mr011-094",
+            "mr012-026",
+            "mr029-026",
+            "mr053-016",
+            "mr053-063",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071",
+            "oldplaza1873",
+            "tr0014-033",
+            "tr0014-200a"
+          ]
+        },
+        {
+          "id": "bath-street-plaza",
+          "display": "Bath Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Main Street by another sheet"
+          ],
+          "ink": [
+            "BATH STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "rosabell-street",
+          "display": "Rosabell Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bauchet Street, which Main Street runs straight into"
+          ],
+          "ink": [
+            "ROSABELL ST."
+          ],
+          "docs": [
+            "tr0014-200a"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Ord Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "high-street-chinatown",
+          "display": "High Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Ord Street by another sheet"
+          ],
+          "ink": [
+            "CALLE ALTA",
+            "Calle Alta",
+            "HIGH ST",
+            "High St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "ord-street",
+          "display": "Ord Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Ord Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "ORD ST.",
+            "ORD STREET"
+          ],
+          "docs": [
+            "tr0014-033",
+            "tr0014-200a",
+            "tr0771-036-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Spring Street",
+      "continuesInto": [
+        "New High Street"
+      ],
+      "candidates": [
+        {
+          "id": "main-street-dtla",
+          "display": "Main Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Spring Street by another sheet"
+          ],
+          "ink": [
+            "CALLE PRINCIPAL",
+            "MAIN STREET"
+          ],
+          "docs": [
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "san-fernando-st-spring",
+          "display": "San Fernando Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Spring Street by another sheet"
+          ],
+          "ink": [
+            "SAN FERNANDO ST."
+          ],
+          "docs": [
+            "tr0014-033"
+          ]
+        },
+        {
+          "id": "spring",
+          "display": "Spring Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Spring Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE PRIMAVERA",
+            "SPRING STREET",
+            "Spring Street"
+          ],
+          "docs": [
+            "11824",
+            "mr053-067",
+            "mr053-068",
+            "mr053-069"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,627 @@
+{
+  "document": "tr0082-050",
+  "image": "tr0082-050-100dpi.png",
+  "imageSize": [1746, 2413],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0082-050-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [-125, 654],
+    [-24, 1775],
+    [1454, 1827],
+    [1756, 500]
+  ],
+  "coverageLl": [
+    [34.051282, -118.264513],
+    [34.049525, -118.265388],
+    [34.048286, -118.262786],
+    [34.050035, -118.260994]
+  ],
+  "streets": [
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [1716, 678],
+            [1669, 685],
+            [1606, 694],
+            [1518, 706],
+            [1394, 721],
+            [1302, 730],
+            [1238, 737],
+            [774, 766],
+            [720, 770],
+            [473, 788],
+            [201, 802],
+            [127, 806],
+            [56, 811],
+            [-110, 821]
+          ],
+          "ll": [
+            [34.0498, -118.261234],
+            [34.049827, -118.261325],
+            [34.049862, -118.261446],
+            [34.049913, -118.261616],
+            [34.049989, -118.261851],
+            [34.050047, -118.262025],
+            [34.050087, -118.262146],
+            [34.050408, -118.263007],
+            [34.050446, -118.263107],
+            [34.050613, -118.263567],
+            [34.050804, -118.264068],
+            [34.050856, -118.264205],
+            [34.050905, -118.264336],
+            [34.05102, -118.264644]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [127, 806],
+          "ll": [34.050856, -118.264205],
+          "insideCoverage": true
+        },
+        {
+          "name": "Francisco Street",
+          "px": [1606, 694],
+          "ll": [34.049862, -118.261446],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [819, 790],
+          "ll": [34.050337, -118.262948],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [1508, 1590],
+            [1410, 1582],
+            [1351, 1578],
+            [1304, 1573],
+            [1256, 1569],
+            [1218, 1565],
+            [1182, 1559],
+            [1085, 1546],
+            [1017, 1543],
+            [920, 1542],
+            [873, 1542],
+            [777, 1546],
+            [756, 1547],
+            [735, 1548],
+            [626, 1553],
+            [544, 1563],
+            [435, 1582],
+            [307, 1612],
+            [209, 1637],
+            [149, 1652],
+            [76, 1668],
+            [60, 1672],
+            [-31, 1694]
+          ],
+          "ll": [
+            [34.048599, -118.262465],
+            [34.048687, -118.262633],
+            [34.048739, -118.262736],
+            [34.048783, -118.262817],
+            [34.048827, -118.262897],
+            [34.048863, -118.262962],
+            [34.0489, -118.263022],
+            [34.048997, -118.263182],
+            [34.049054, -118.263302],
+            [34.049131, -118.263475],
+            [34.049168, -118.263559],
+            [34.049238, -118.263735],
+            [34.049254, -118.263774],
+            [34.049268, -118.263812],
+            [34.049346, -118.264014],
+            [34.049396, -118.264169],
+            [34.049453, -118.264383],
+            [34.04951, -118.264641],
+            [34.049549, -118.264841],
+            [34.049572, -118.264961],
+            [34.049607, -118.265108],
+            [34.049613, -118.265141],
+            [34.049652, -118.265325]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Bixel Street",
+          "px": [149, 1652],
+          "ll": [34.049572, -118.264961],
+          "insideCoverage": true
+        },
+        {
+          "name": "Francisco Street",
+          "px": [1351, 1578],
+          "ll": [34.048739, -118.262736],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [524, 1559],
+          "ll": [34.049417, -118.264202],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bixel Street",
+      "runs": [
+        {
+          "px": [
+            [135, 633],
+            [140, 732],
+            [127, 806],
+            [116, 872],
+            [124, 1010],
+            [153, 1043],
+            [176, 1560],
+            [169, 1586],
+            [149, 1652],
+            [129, 1595],
+            [118, 1566],
+            [109, 1446],
+            [98, 1159],
+            [97, 1131],
+            [94, 1051],
+            [124, 1010]
+          ],
+          "ll": [
+            [34.05111, -118.264027],
+            [34.050958, -118.264112],
+            [34.050856, -118.264205],
+            [34.050767, -118.264286],
+            [34.050554, -118.264402],
+            [34.050481, -118.264381],
+            [34.04969, -118.264826],
+            [34.049657, -118.264864],
+            [34.049572, -118.264961],
+            [34.049674, -118.264944],
+            [34.049726, -118.264935],
+            [34.049913, -118.26484],
+            [34.050351, -118.264589],
+            [34.050394, -118.264565],
+            [34.050515, -118.264494],
+            [34.050554, -118.264402]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [127, 806],
+          "ll": [34.050856, -118.264205],
+          "insideCoverage": true
+        },
+        {
+          "name": "8th Street",
+          "px": [149, 1652],
+          "ll": [34.049572, -118.264961],
+          "insideCoverage": true
+        },
+        {
+          "name": "Harbor Freeway",
+          "px": [316, 1606],
+          "ll": [34.049511, -118.264619],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Francisco Street",
+      "runs": [
+        {
+          "px": [
+            [1638, 510],
+            [1621, 608],
+            [1606, 694]
+          ],
+          "ll": [
+            [34.050113, -118.261214],
+            [34.049979, -118.261337],
+            [34.049862, -118.261446]
+          ]
+        },
+        {
+          "px": [
+            [1314, 1822],
+            [1343, 1635],
+            [1351, 1578]
+          ],
+          "ll": [
+            [34.048403, -118.263032],
+            [34.048661, -118.262805],
+            [34.048739, -118.262736]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [1606, 694],
+          "ll": [34.049862, -118.261446],
+          "insideCoverage": true
+        },
+        {
+          "name": "8th Street",
+          "px": [1351, 1578],
+          "ll": [34.048739, -118.262736],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Harbor Freeway",
+      "runs": [
+        {
+          "px": [
+            [993, 562],
+            [982, 586],
+            [922, 703],
+            [864, 814],
+            [804, 944],
+            [535, 1492],
+            [504, 1556],
+            [456, 1652],
+            [387, 1789]
+          ],
+          "ll": [
+            [34.05054, -118.262421],
+            [34.050515, -118.262463],
+            [34.050386, -118.26268],
+            [34.050265, -118.26289],
+            [34.050119, -118.26312],
+            [34.04951, -118.264119],
+            [34.049438, -118.264235],
+            [34.049332, -118.264412],
+            [34.04918, -118.264664]
+          ]
+        },
+        {
+          "px": [
+            [489, 1793],
+            [565, 1637],
+            [641, 1480],
+            [829, 1091],
+            [976, 810],
+            [1060, 649],
+            [1106, 553]
+          ],
+          "ll": [
+            [34.049095, -118.264485],
+            [34.049269, -118.264202],
+            [34.049444, -118.263918],
+            [34.049878, -118.263214],
+            [34.050184, -118.262684],
+            [34.050359, -118.262382],
+            [34.050466, -118.26221]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "7th Street",
+          "px": [819, 790],
+          "ll": [34.050337, -118.262948],
+          "insideCoverage": true
+        },
+        {
+          "name": "8th Street",
+          "px": [524, 1559],
+          "ll": [34.049417, -118.264202],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bixel Street",
+          "px": [316, 1606],
+          "ll": [34.049511, -118.264619],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "7th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "seventh-street",
+          "display": "7th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 7th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "7TH ST.",
+            "7TH STREET",
+            "7th ST",
+            "7th Street",
+            "CALLE 7a",
+            "SEVENTH ST",
+            "SEVENTH ST.",
+            "SEVENTH STR.",
+            "SEVENTH STREET",
+            "Seventh St",
+            "Seventh St.",
+            "Seventh Street",
+            "Seventh Street."
+          ],
+          "docs": [
+            "11824",
+            "mr003-016",
+            "mr003-569",
+            "mr005-566",
+            "mr006-033",
+            "mr006-039",
+            "mr009-095",
+            "mr011-063",
+            "mr013-091",
+            "mr014-034",
+            "mr015-052",
+            "mr018-025",
+            "mr018-063",
+            "mr018-092",
+            "mr021-046",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr053-068",
+            "mr053-071",
+            "mr054-051",
+            "mr055-014",
+            "mr055-081",
+            "mr060-088",
+            "mr066-064",
+            "mr070-084",
+            "tr0001-046",
+            "tr0005-042b",
+            "tr0005-056a",
+            "tr0009-100a",
+            "tr0011-196",
+            "tr0023-054c",
+            "tr0030-069",
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "8th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "eighth-street",
+          "display": "8th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "8TH ST",
+            "8TH STREET",
+            "8th St",
+            "8th St.",
+            "8th Street",
+            "CALLE 8a",
+            "EAST EIGHTH STREET",
+            "EIGHTH ST",
+            "EIGHTH ST.",
+            "EIGHTH STREET",
+            "Eighth St",
+            "Eighth St.",
+            "Eighth Street",
+            "new 8th Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-569",
+            "mr011-008",
+            "mr018-092",
+            "mr021-046",
+            "mr021-087",
+            "mr026-060",
+            "mr029-026",
+            "mr029-085",
+            "mr053-065",
+            "mr053-068",
+            "mr054-051",
+            "mr055-086",
+            "mr060-088",
+            "mr070-051",
+            "pm017-045",
+            "tr0001-037",
+            "tr0005-042b",
+            "tr0005-156a",
+            "tr0007-085",
+            "tr0013-048",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        },
+        {
+          "id": "lincoln-place",
+          "display": "Lincoln Place",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet"
+          ],
+          "ink": [
+            "Lincoln Place"
+          ],
+          "docs": [
+            "mr006-193"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Bixel Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "bixel",
+          "display": "Bixel Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "BIXEL ST",
+            "BIXEL ST.",
+            "BIXEL STREET",
+            "Bixel St",
+            "Bixel Street"
+          ],
+          "docs": [
+            "mr052-085",
+            "mr066-035",
+            "tr0001-057a",
+            "tr0002-037a",
+            "tr0007-078a",
+            "tr0417-049-p2",
+            "tr0588-055",
+            "tr0713-093-p2"
+          ]
+        },
+        {
+          "id": "metcalf-st",
+          "display": "Metcalf Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "Metcalf St"
+          ],
+          "docs": [
+            "mr007-026-p2"
+          ]
+        },
+        {
+          "id": "lafayette-bixel",
+          "display": "Lafayette Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "LAFAYETTE AVENUE",
+            "LAFAYETTE ST.",
+            "Lafayette Av."
+          ],
+          "docs": [
+            "mr003-046-p1",
+            "mr003-046-p2",
+            "mr006-115",
+            "mr006-427"
+          ]
+        },
+        {
+          "id": "ohio-street",
+          "display": "Ohio Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "OHIO ST.",
+            "Ohio Street"
+          ],
+          "docs": [
+            "mr005-069",
+            "tr0014-097b"
+          ]
+        },
+        {
+          "id": "grattan-street",
+          "display": "Grattan Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "GRATTAN STREET"
+          ],
+          "docs": [
+            "tr0001-038a"
+          ]
+        },
+        {
+          "id": "william-farragut",
+          "display": "William Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Bixel Street by another sheet"
+          ],
+          "ink": [
+            "WILLIAM ST.",
+            "William St."
+          ],
+          "docs": [
+            "mr005-566",
+            "mr009-095"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Francisco Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "francisco",
+          "display": "Francisco Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Francisco Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "FRANCISCO STREET"
+          ],
+          "docs": [
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        },
+        {
+          "id": "moore-st",
+          "display": "Moore Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Francisco Street by another sheet"
+          ],
+          "ink": [
+            "MOORE ST",
+            "Moore Street"
+          ],
+          "docs": [
+            "mr003-569",
+            "mr021-087"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Harbor Freeway",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

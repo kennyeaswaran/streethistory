@@ -1,0 +1,353 @@
+{
+  "document": "tr0030-057-p1",
+  "image": "tr0030-057-p1-100dpi.png",
+  "imageSize": [1746, 2393],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0030-057-p1-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [195, 1497],
+    [1426, 1571],
+    [1452, 411],
+    [170, 490]
+  ],
+  "coverageLl": [
+    [34.034147, -118.269475],
+    [34.03322, -118.267658],
+    [34.034678, -118.266678],
+    [34.035445, -118.268697]
+  ],
+  "streets": [
+    {
+      "name": "18th Street",
+      "runs": [
+        {
+          "px": [
+            [180, 890],
+            [271, 890],
+            [326, 888],
+            [529, 888],
+            [910, 882],
+            [1018, 880],
+            [1195, 886],
+            [1269, 890],
+            [1340, 894],
+            [1441, 905]
+          ],
+          "ll": [
+            [34.03493, -118.269006],
+            [34.034868, -118.268868],
+            [34.034833, -118.268781],
+            [34.034696, -118.268471],
+            [34.034446, -118.267887],
+            [34.034374, -118.26772],
+            [34.034248, -118.267456],
+            [34.034192, -118.267345],
+            [34.034139, -118.26724],
+            [34.034058, -118.267095]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Grand Avenue",
+          "px": [1269, 890],
+          "ll": [34.034192, -118.267345],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hope Street",
+          "px": [326, 888],
+          "ll": [34.034833, -118.268781],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olive Street",
+          "px": [1826, 946],
+          "ll": [34.033744, -118.266541],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [1269, 820],
+          "ll": [34.034281, -118.267289],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Grand Avenue",
+      "runs": [
+        {
+          "px": [
+            [1284, 421],
+            [1272, 816],
+            [1269, 890],
+            [1270, 952],
+            [1267, 1269],
+            [1266, 1517],
+            [1266, 1561]
+          ],
+          "ll": [
+            [34.034779, -118.266943],
+            [34.034285, -118.267281],
+            [34.034192, -118.267345],
+            [34.034112, -118.267394],
+            [34.033711, -118.267655],
+            [34.033397, -118.267858],
+            [34.033341, -118.267894]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "17th Street",
+          "px": [1288, 300],
+          "ll": [34.03493, -118.266839],
+          "insideCoverage": false
+        },
+        {
+          "name": "18th Street",
+          "px": [1269, 890],
+          "ll": [34.034192, -118.267345],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [1270, 783],
+          "ll": [34.034328, -118.267258],
+          "insideCoverage": true
+        },
+        {
+          "name": "Washington Boulevard",
+          "px": [1263, 2008],
+          "ll": [34.032774, -118.26826],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Hope Street",
+      "runs": [
+        {
+          "px": [
+            [326, 888],
+            [326, 938],
+            [326, 948],
+            [328, 1152],
+            [323, 1505]
+          ],
+          "ll": [
+            [34.034833, -118.268781],
+            [34.034769, -118.268821],
+            [34.034757, -118.268829],
+            [34.034497, -118.268993],
+            [34.03405, -118.269286]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "18th Street",
+          "px": [326, 888],
+          "ll": [34.034833, -118.268781],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Santa Monica Freeway",
+      "runs": [
+        {
+          "px": [
+            [173, 606],
+            [520, 663],
+            [977, 718],
+            [1268, 750]
+          ],
+          "ll": [
+            [34.035296, -118.268786],
+            [34.034988, -118.268303],
+            [34.034609, -118.267652],
+            [34.034371, -118.267234]
+          ]
+        },
+        {
+          "px": [
+            [1449, 537],
+            [922, 499],
+            [623, 462]
+          ],
+          "ll": [
+            [34.03452, -118.266784],
+            [34.034924, -118.267558],
+            [34.035174, -118.267984]
+          ]
+        },
+        {
+          "px": [
+            [170, 505],
+            [439, 554],
+            [648, 581],
+            [1044, 624],
+            [1446, 667]
+          ],
+          "ll": [
+            [34.035426, -118.268708],
+            [34.035181, -118.268339],
+            [34.035005, -118.268042],
+            [34.034683, -118.267472],
+            [34.034356, -118.266895]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "18th Street",
+          "px": [1269, 820],
+          "ll": [34.034281, -118.267289],
+          "insideCoverage": true
+        },
+        {
+          "name": "Grand Avenue",
+          "px": [1270, 783],
+          "ll": [34.034328, -118.267258],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hope Street",
+          "px": [353, 282],
+          "ll": [34.035585, -118.26825],
+          "insideCoverage": false
+        },
+        {
+          "name": "Olive Street",
+          "px": [1845, 812],
+          "ll": [34.033902, -118.266403],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "18th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "eighteenth-street",
+          "display": "18th Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Grand Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "charity",
+          "display": "Charity Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Grand Avenue by another sheet"
+          ],
+          "ink": [
+            "CALLE DE CARIDAD",
+            "CHARITY",
+            "CHARITY ST.",
+            "CHARITY STREET",
+            "Charity St",
+            "Charity St.",
+            "Charity Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr001-489",
+            "mr003-038-p1",
+            "mr005-573",
+            "mr007-021",
+            "mr053-067",
+            "mr053-068"
+          ]
+        },
+        {
+          "id": "philadelphia-st",
+          "display": "Philadelphia Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Grand Avenue by another sheet"
+          ],
+          "ink": [
+            "Philadelphia St"
+          ],
+          "docs": [
+            "mr007-026-p1",
+            "mr007-062-p2"
+          ]
+        },
+        {
+          "id": "grand-ave",
+          "display": "Grand Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Grand Avenue by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "GRAND AV."
+          ],
+          "docs": [
+            "mr084-053"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Hope Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "hope",
+          "display": "Hope Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hope Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE DE LAS ESPERANZAS",
+            "HOPE ST.",
+            "HOPE STREET",
+            "Hope St",
+            "Hope St.",
+            "Hope Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr001-489",
+            "mr003-033",
+            "mr007-021",
+            "mr021-032",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Santa Monica Freeway",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

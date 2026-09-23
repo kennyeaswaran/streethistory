@@ -1,12 +1,13 @@
 module.exports = {
   id: "tr0014-013b",
-  title: "",
-  shortTitle: "",
-  url: "",
-  scan: null,
+  title: "Tract No. 235, Being a Subdivision of a Portion of Lot 8, Block 37, Hancock Survey",
+  shortTitle: "Tract No. 235",
+  url: "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-013B.pdf",
+  scan: "documents/tr0014-013b/tr0014-013b.pdf",
   transcription: null,
 
-  date: { on: null },   // TODO: read from the sheet's title block
+  date: { on: "1908-06" },
+  recorded: "1908-07-18",
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.
@@ -37,5 +38,10 @@ module.exports = {
   sweptFor: [],
 
   // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
-  rows: []
+  rows: [
+    { kind: "state", asWritten: "SEVENTH ST.", name: "seventh-street", street: "7th Street", from: { px: [176, 548] }, to: { px: [842, 523] }, basis: "alignment", confirmed: false },
+    { kind: "state", asWritten: "EIGHTH ST.", name: "eighth-street", street: "8th Street", from: { px: [339, 1533] }, to: { px: [897, 1198] }, basis: "alignment", confirmed: false },
+    { kind: "state", asWritten: "LUCAS ST.", name: "lucas-avenue", street: "Lucas Avenue", from: { px: [384, 417] }, to: "7th Street", basis: "alignment", confirmed: false },
+    { kind: "vanished", asWritten: "GOLDEN AVE.", trace: [[522, 1444], [549, 1610]], basis: "alignment", confirmed: false, note: "Golden Avenue leaves Eighth Street southward, with no supplied modern street following its corridor." }
+  ]
 };

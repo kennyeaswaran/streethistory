@@ -1,0 +1,619 @@
+{
+  "document": "tr0130-049-p2",
+  "image": "tr0130-049-p2-100dpi.png",
+  "imageSize": [1746, 2469],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0130-049-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [942, 943],
+    [1435, 1119],
+    [772, 1856],
+    [758, 2197],
+    [225, 2053],
+    [201, 1686]
+  ],
+  "coverageLl": [
+    [34.05644, -118.229954],
+    [34.055828, -118.227831],
+    [34.053166, -118.230642],
+    [34.051945, -118.230687],
+    [34.05244, -118.232979],
+    [34.053753, -118.233099]
+  ],
+  "streets": [
+    {
+      "name": "Center Street",
+      "runs": [
+        {
+          "px": [
+            [653, 1838],
+            [628, 1969],
+            [627, 1980],
+            [624, 2000],
+            [625, 2016],
+            [625, 2022],
+            [614, 2105],
+            [604, 2127]
+          ],
+          "ll": [
+            [34.053226, -118.231154],
+            [34.052755, -118.231253],
+            [34.052717, -118.23126],
+            [34.052645, -118.231272],
+            [34.052588, -118.231264],
+            [34.052565, -118.231263],
+            [34.052269, -118.23131],
+            [34.052191, -118.231352]
+          ]
+        },
+        {
+          "px": [
+            [599, 2154],
+            [604, 2127],
+            [604, 2119],
+            [606, 2058],
+            [600, 2018],
+            [599, 2011],
+            [596, 1995],
+            [591, 1963],
+            [590, 1959],
+            [588, 1942],
+            [585, 1895],
+            [585, 1865],
+            [589, 1822],
+            [623, 1656],
+            [632, 1604]
+          ],
+          "ll": [
+            [34.052093, -118.231372],
+            [34.052191, -118.231352],
+            [34.052217, -118.231352],
+            [34.052436, -118.231344],
+            [34.052579, -118.231374],
+            [34.052603, -118.231379],
+            [34.052661, -118.231391],
+            [34.052776, -118.231414],
+            [34.052792, -118.231417],
+            [34.052852, -118.231428],
+            [34.053018, -118.231443],
+            [34.053125, -118.231442],
+            [34.053281, -118.231426],
+            [34.053875, -118.23129],
+            [34.054063, -118.231253]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Commercial Street",
+          "px": [596, 1995],
+          "ll": [34.052661, -118.231391],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ducommun Street",
+          "px": [582, 2247],
+          "ll": [34.051759, -118.231438],
+          "insideCoverage": false
+        },
+        {
+          "name": "I-10 Metro ExpressLanes",
+          "px": [602, 1657],
+          "ll": [34.053872, -118.231381],
+          "insideCoverage": true
+        },
+        {
+          "name": "Ramirez Street",
+          "px": [632, 1604],
+          "ll": [34.054063, -118.231253],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [571, 1800],
+          "ll": [34.053357, -118.231506],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Cesar E Chavez Avenue",
+      "runs": [
+        {
+          "px": [
+            [1328, 1238],
+            [1308, 1228],
+            [1043, 1110],
+            [986, 1087],
+            [854, 1032]
+          ],
+          "ll": [
+            [34.0554, -118.228283],
+            [34.055432, -118.228371],
+            [34.055846, -118.229513],
+            [34.055927, -118.229759],
+            [34.056119, -118.230329]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Keller Street",
+          "px": [1321, 1274],
+          "ll": [34.055269, -118.228314],
+          "insideCoverage": false
+        },
+        {
+          "name": "Lyon Street",
+          "px": [716, 974],
+          "ll": [34.056321, -118.23092],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Commercial Street",
+      "runs": [
+        {
+          "px": [
+            [217, 1925],
+            [247, 1931],
+            [292, 1941],
+            [454, 1969],
+            [503, 1977],
+            [560, 1988],
+            [565, 1989],
+            [596, 1995],
+            [624, 2000],
+            [637, 2002],
+            [641, 2002],
+            [765, 2024]
+          ],
+          "ll": [
+            [34.0529, -118.233021],
+            [34.052878, -118.232891],
+            [34.052844, -118.232698],
+            [34.05275, -118.231999],
+            [34.052722, -118.231791],
+            [34.052684, -118.231543],
+            [34.052682, -118.231523],
+            [34.052661, -118.231391],
+            [34.052645, -118.231272],
+            [34.052639, -118.231213],
+            [34.052637, -118.231197],
+            [34.052565, -118.230664]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Center Street",
+          "px": [624, 2000],
+          "ll": [34.052645, -118.231272],
+          "insideCoverage": true
+        },
+        {
+          "name": "Keller Street",
+          "px": [881, 2044],
+          "ll": [34.052497, -118.230165],
+          "insideCoverage": false
+        },
+        {
+          "name": "Vignes Street",
+          "px": [213, 1924],
+          "ll": [34.052903, -118.233037],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "I-10 Metro ExpressLanes",
+      "runs": [
+        {
+          "px": [
+            [289, 1598],
+            [413, 1616],
+            [494, 1632],
+            [580, 1657],
+            [677, 1688],
+            [847, 1735],
+            [875, 1742]
+          ],
+          "ll": [
+            [34.05407, -118.232727],
+            [34.054011, -118.232194],
+            [34.053955, -118.231847],
+            [34.05387, -118.231473],
+            [34.053763, -118.231058],
+            [34.053603, -118.230326],
+            [34.053579, -118.230206]
+          ]
+        },
+        {
+          "px": [
+            [861, 1757],
+            [589, 1690],
+            [536, 1679],
+            [481, 1670],
+            [264, 1642],
+            [248, 1639]
+          ],
+          "ll": [
+            [34.053522, -118.230266],
+            [34.053751, -118.231434],
+            [34.05379, -118.231662],
+            [34.053821, -118.231899],
+            [34.053914, -118.23283],
+            [34.053923, -118.2329]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Center Street",
+          "px": [602, 1657],
+          "ll": [34.053872, -118.231381],
+          "insideCoverage": true
+        },
+        {
+          "name": "Keller Street",
+          "px": [917, 1756],
+          "ll": [34.05353, -118.230024],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ramirez Street",
+          "px": [917, 1756],
+          "ll": [34.05353, -118.230024],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Ramirez Street",
+      "runs": [
+        {
+          "px": [
+            [503, 1383],
+            [536, 1413],
+            [585, 1460],
+            [596, 1472],
+            [608, 1489],
+            [613, 1497],
+            [626, 1524],
+            [632, 1547],
+            [634, 1570],
+            [632, 1604],
+            [653, 1608],
+            [658, 1609],
+            [709, 1623],
+            [733, 1632],
+            [745, 1637],
+            [756, 1643],
+            [780, 1657],
+            [806, 1675],
+            [848, 1711],
+            [868, 1732],
+            [877, 1739]
+          ],
+          "ll": [
+            [34.05485, -118.231815],
+            [34.054742, -118.231672],
+            [34.054576, -118.231461],
+            [34.054535, -118.231415],
+            [34.054474, -118.231361],
+            [34.054443, -118.231339],
+            [34.054347, -118.231281],
+            [34.054267, -118.231257],
+            [34.054183, -118.231248],
+            [34.054063, -118.231253],
+            [34.054049, -118.231165],
+            [34.054045, -118.231143],
+            [34.053998, -118.230924],
+            [34.053967, -118.230821],
+            [34.053949, -118.230767],
+            [34.053926, -118.230718],
+            [34.053877, -118.230615],
+            [34.053815, -118.230503],
+            [34.053689, -118.230323],
+            [34.053612, -118.230235],
+            [34.053587, -118.230197]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Center Street",
+          "px": [632, 1604],
+          "ll": [34.054063, -118.231253],
+          "insideCoverage": true
+        },
+        {
+          "name": "I-10 Metro ExpressLanes",
+          "px": [917, 1756],
+          "ll": [34.05353, -118.230024],
+          "insideCoverage": false
+        },
+        {
+          "name": "Keller Street",
+          "px": [915, 1759],
+          "ll": [34.053519, -118.230031],
+          "insideCoverage": false
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [866, 1790],
+          "ll": [34.053405, -118.230242],
+          "insideCoverage": false
+        },
+        {
+          "name": "Vignes Street",
+          "px": [408, 1321],
+          "ll": [34.055067, -118.232228],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Santa Ana Freeway",
+      "runs": [
+        {
+          "px": [
+            [205, 1741],
+            [418, 1760],
+            [553, 1779],
+            [802, 1823]
+          ],
+          "ll": [
+            [34.053557, -118.233081],
+            [34.053495, -118.232166],
+            [34.053434, -118.231586],
+            [34.053285, -118.230516]
+          ]
+        },
+        {
+          "px": [
+            [834, 1787],
+            [726, 1766],
+            [563, 1741],
+            [462, 1725],
+            [378, 1713],
+            [344, 1709],
+            [308, 1705],
+            [253, 1699],
+            [201, 1690]
+          ],
+          "ll": [
+            [34.053416, -118.230377],
+            [34.053488, -118.230845],
+            [34.05357, -118.231544],
+            [34.053624, -118.231977],
+            [34.053664, -118.23234],
+            [34.053674, -118.232486],
+            [34.053688, -118.23264],
+            [34.053709, -118.232877],
+            [34.053739, -118.233098]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Center Street",
+          "px": [571, 1800],
+          "ll": [34.053357, -118.231506],
+          "insideCoverage": true
+        },
+        {
+          "name": "Keller Street",
+          "px": [877, 1855],
+          "ll": [34.053173, -118.23019],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ramirez Street",
+          "px": [866, 1790],
+          "ll": [34.053405, -118.230242],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Center Street",
+      "continuesInto": [
+        "Ramirez Street"
+      ],
+      "candidates": [
+        {
+          "id": "center-street",
+          "display": "Center Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Center Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CENTER ST.",
+            "CENTER STREET"
+          ],
+          "docs": [
+            "mr004-012-p2",
+            "tr0201-001-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Cesar E Chavez Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "C CORTA",
+            "Calle Corta",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "marchessault-street",
+          "display": "Marchessault Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MARCHESSAULT STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "macy-street",
+          "display": "Macy Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MACY ST.",
+            "MACY STREET"
+          ],
+          "docs": [
+            "oldplaza1873",
+            "tr0006-051a"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        },
+        {
+          "id": "cesar-e-chavez-avenue",
+          "display": "Cesar E Chavez Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Commercial Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "sainsevain-street",
+          "display": "Sainsevain Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Commercial Street by another sheet"
+          ],
+          "ink": [
+            "SAINSEVAIN STREET",
+            "Sainsevain Street"
+          ],
+          "docs": [
+            "mr002-526-p1",
+            "mr004-012-p2"
+          ]
+        },
+        {
+          "id": "commercial-street",
+          "display": "Commercial Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Commercial Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "COMMERCIAL ST.",
+            "COMMERCIAL STREET"
+          ],
+          "docs": [
+            "tr0018-025a",
+            "tr0018-029a",
+            "tr0201-001-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "I-10 Metro ExpressLanes",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Ramirez Street",
+      "continuesInto": [
+        "Center Street",
+        "Keller Street"
+      ],
+      "candidates": [
+        {
+          "id": "center-street",
+          "display": "Center Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Center Street, which Ramirez Street runs straight into"
+          ],
+          "ink": [
+            "CENTER ST.",
+            "CENTER STREET"
+          ],
+          "docs": [
+            "mr004-012-p2",
+            "tr0201-001-p2"
+          ]
+        },
+        {
+          "id": "keller",
+          "display": "Keller Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Keller Street, which Ramirez Street runs straight into"
+          ],
+          "ink": [
+            "KELLER ST."
+          ],
+          "docs": [
+            "tr0006-051a"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Santa Ana Freeway",
+      "continuesInto": [],
+      "candidates": []
+    }
+  ]
+}

@@ -1,0 +1,1408 @@
+{
+  "document": "tr0157-045-p2",
+  "image": "tr0157-045-p2-100dpi.png",
+  "imageSize": [2446, 1796],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0157-045-p2-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [124, 65],
+    [-51, 1743],
+    [1289, 1841],
+    [2467, 384]
+  ],
+  "coverageLl": [
+    [34.058565, -118.237531],
+    [34.054056, -118.238965],
+    [34.053214, -118.234627],
+    [34.056691, -118.230022]
+  ],
+  "streets": [
+    {
+      "name": "Alameda Street",
+      "runs": [
+        {
+          "px": [
+            [266, 1766],
+            [265, 1730],
+            [258, 1580],
+            [257, 1558],
+            [257, 1520],
+            [258, 1485],
+            [258, 1473],
+            [258, 1463],
+            [259, 1406],
+            [260, 1377],
+            [260, 1322],
+            [261, 1237],
+            [263, 1141],
+            [265, 978],
+            [264, 967],
+            [267, 936],
+            [269, 901],
+            [270, 842],
+            [271, 820],
+            [272, 787],
+            [273, 774],
+            [277, 645],
+            [278, 590],
+            [278, 543],
+            [280, 508],
+            [280, 481],
+            [280, 462],
+            [282, 330],
+            [283, 271],
+            [281, 262],
+            [286, 213],
+            [287, 168],
+            [286, 162],
+            [287, 104],
+            [287, 87]
+          ],
+          "ll": [
+            [34.053857, -118.237938],
+            [34.053955, -118.237925],
+            [34.054369, -118.237869],
+            [34.054429, -118.237863],
+            [34.054532, -118.237841],
+            [34.054628, -118.23782],
+            [34.054662, -118.237813],
+            [34.054688, -118.237808],
+            [34.054845, -118.237776],
+            [34.054924, -118.237758],
+            [34.055073, -118.23773],
+            [34.055305, -118.237683],
+            [34.055566, -118.237629],
+            [34.05601, -118.237537],
+            [34.056041, -118.237534],
+            [34.056124, -118.237511],
+            [34.056221, -118.237486],
+            [34.05638, -118.237451],
+            [34.056439, -118.237437],
+            [34.056529, -118.237416],
+            [34.056564, -118.237407],
+            [34.056916, -118.237326],
+            [34.057064, -118.237296],
+            [34.057192, -118.237271],
+            [34.057288, -118.237249],
+            [34.057361, -118.237233],
+            [34.057413, -118.237223],
+            [34.057772, -118.237149],
+            [34.057936, -118.237117],
+            [34.057958, -118.237117],
+            [34.058092, -118.237076],
+            [34.058215, -118.237051],
+            [34.058231, -118.237051],
+            [34.05839, -118.237018],
+            [34.058435, -118.237009]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Aliso Street",
+          "px": [259, 1406],
+          "ll": [34.054845, -118.237776],
+          "insideCoverage": true
+        },
+        {
+          "name": "Arcadia Street",
+          "px": [257, 1520],
+          "ll": [34.054532, -118.237841],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bauchet Street",
+          "px": [290, -106],
+          "ll": [34.058963, -118.2369],
+          "insideCoverage": false
+        },
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [286, 213],
+          "ll": [34.058092, -118.237076],
+          "insideCoverage": true
+        },
+        {
+          "name": "Commercial Street",
+          "px": [267, 1790],
+          "ll": [34.053791, -118.237947],
+          "insideCoverage": false
+        },
+        {
+          "name": "Los Angeles Street",
+          "px": [271, 820],
+          "ll": [34.056439, -118.237437],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olvera Street",
+          "px": [237, 251],
+          "ll": [34.05801, -118.237256],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [245, 1590],
+          "ll": [34.054346, -118.237917],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Aliso Street",
+      "runs": [
+        {
+          "px": [
+            [259, 1406],
+            [303, 1411],
+            [332, 1416],
+            [367, 1426],
+            [381, 1434],
+            [397, 1447],
+            [424, 1473],
+            [450, 1494],
+            [479, 1510],
+            [509, 1518],
+            [538, 1522],
+            [748, 1537],
+            [824, 1541]
+          ],
+          "ll": [
+            [34.054845, -118.237776],
+            [34.054811, -118.237634],
+            [34.054786, -118.237544],
+            [34.054743, -118.237432],
+            [34.054715, -118.237391],
+            [34.054672, -118.237346],
+            [34.054589, -118.237272],
+            [34.054523, -118.237196],
+            [34.054466, -118.23711],
+            [34.05443, -118.237016],
+            [34.054409, -118.236923],
+            [34.054277, -118.236244],
+            [34.054233, -118.235996]
+          ]
+        },
+        {
+          "px": [
+            [-40, 1640],
+            [-5, 1658],
+            [47, 1683],
+            [58, 1689],
+            [100, 1709],
+            [162, 1739],
+            [202, 1761]
+          ],
+          "ll": [
+            [34.054332, -118.238877],
+            [34.054269, -118.238771],
+            [34.054177, -118.238613],
+            [34.054158, -118.238579],
+            [34.054084, -118.238453],
+            [34.053976, -118.238266],
+            [34.053897, -118.238147]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [267, 1790],
+          "ll": [34.053791, -118.237947],
+          "insideCoverage": false
+        },
+        {
+          "name": "Arcadia Street",
+          "px": [749, 1568],
+          "ll": [34.054191, -118.236256],
+          "insideCoverage": true
+        },
+        {
+          "name": "Commercial Street",
+          "px": [267, 1790],
+          "ll": [34.053791, -118.237947],
+          "insideCoverage": false
+        },
+        {
+          "name": "I-10 Metro ExpressLanes",
+          "px": [824, 1541],
+          "ll": [34.054233, -118.235996],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Arcadia Street",
+      "runs": [
+        {
+          "px": [
+            [750, 1599],
+            [694, 1599],
+            [609, 1594],
+            [548, 1587],
+            [465, 1573],
+            [387, 1557],
+            [312, 1538],
+            [304, 1536],
+            [257, 1520],
+            [200, 1503],
+            [137, 1480],
+            [-16, 1405]
+          ],
+          "ll": [
+            [34.054105, -118.236268],
+            [34.05413, -118.23645],
+            [34.054181, -118.236728],
+            [34.054225, -118.236925],
+            [34.054299, -118.237189],
+            [34.054375, -118.237435],
+            [34.054461, -118.23767],
+            [34.05447, -118.237697],
+            [34.054532, -118.237841],
+            [34.054605, -118.23802],
+            [34.054695, -118.238213],
+            [34.054964, -118.238676]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [257, 1520],
+          "ll": [34.054532, -118.237841],
+          "insideCoverage": true
+        },
+        {
+          "name": "Aliso Street",
+          "px": [749, 1568],
+          "ll": [34.054191, -118.236256],
+          "insideCoverage": true
+        },
+        {
+          "name": "I-10 Metro ExpressLanes",
+          "px": [750, 1599],
+          "ll": [34.054105, -118.236268],
+          "insideCoverage": true
+        },
+        {
+          "name": "Los Angeles Street",
+          "px": [-179, 1318],
+          "ll": [34.055272, -118.239167],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Avila Street",
+      "runs": [
+        {
+          "px": [
+            [1533, 257],
+            [1546, 300],
+            [1571, 377],
+            [1593, 397],
+            [1624, 408]
+          ],
+          "ll": [
+            [34.057438, -118.233017],
+            [34.057314, -118.232994],
+            [34.057094, -118.232953],
+            [34.057029, -118.232892],
+            [34.056985, -118.232796]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [1633, 431],
+          "ll": [34.056919, -118.232778],
+          "insideCoverage": true
+        },
+        {
+          "name": "Clara Street",
+          "px": [1624, 408],
+          "ll": [34.056985, -118.232796],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Cesar E Chavez Avenue",
+      "runs": [
+        {
+          "px": [
+            [2309, 579],
+            [2245, 564],
+            [2220, 558],
+            [1975, 511],
+            [1932, 504],
+            [1873, 494],
+            [1764, 475],
+            [1661, 457],
+            [1642, 454],
+            [1537, 436],
+            [1512, 431],
+            [1508, 431],
+            [1011, 342],
+            [638, 277],
+            [512, 254],
+            [424, 238],
+            [342, 222],
+            [330, 221],
+            [286, 213],
+            [236, 206],
+            [226, 205],
+            [203, 201],
+            [124, 191],
+            [111, 190]
+          ],
+          "ll": [
+            [34.056225, -118.230639],
+            [34.056294, -118.230842],
+            [34.056321, -118.23092],
+            [34.056555, -118.231698],
+            [34.056592, -118.231836],
+            [34.056646, -118.232023],
+            [34.056743, -118.232371],
+            [34.056836, -118.232699],
+            [34.056853, -118.23276],
+            [34.056948, -118.233095],
+            [34.056971, -118.233173],
+            [34.056974, -118.233185],
+            [34.057428, -118.234767],
+            [34.057767, -118.235956],
+            [34.057882, -118.236357],
+            [34.057966, -118.236638],
+            [34.058044, -118.236898],
+            [34.058051, -118.236935],
+            [34.058092, -118.237076],
+            [34.058131, -118.237238],
+            [34.058139, -118.237268],
+            [34.05816, -118.237344],
+            [34.05822, -118.237596],
+            [34.058229, -118.237638]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [286, 213],
+          "ll": [34.058092, -118.237076],
+          "insideCoverage": true
+        },
+        {
+          "name": "Avila Street",
+          "px": [1633, 431],
+          "ll": [34.056919, -118.232778],
+          "insideCoverage": true
+        },
+        {
+          "name": "Clara Street",
+          "px": [1633, 431],
+          "ll": [34.056919, -118.232778],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lyon Street",
+          "px": [2220, 558],
+          "ll": [34.056321, -118.23092],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [47, 188],
+          "ll": [34.058263, -118.237845],
+          "insideCoverage": false
+        },
+        {
+          "name": "Olvera Street",
+          "px": [198, 220],
+          "ll": [34.05811, -118.237369],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [1932, 504],
+          "ll": [34.056592, -118.231836],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Clara Street",
+      "runs": [
+        {
+          "px": [
+            [1624, 408],
+            [1663, 407],
+            [1763, 369],
+            [1811, 351],
+            [1836, 342],
+            [1876, 329],
+            [1880, 328],
+            [1927, 321]
+          ],
+          "ll": [
+            [34.056985, -118.232796],
+            [34.056973, -118.232668],
+            [34.057032, -118.232321],
+            [34.057061, -118.232153],
+            [34.057076, -118.232065],
+            [34.057094, -118.231929],
+            [34.057094, -118.231917],
+            [34.057095, -118.231759]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Avila Street",
+          "px": [1624, 408],
+          "ll": [34.056985, -118.232796],
+          "insideCoverage": true
+        },
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [1633, 431],
+          "ll": [34.056919, -118.232778],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [1927, 321],
+          "ll": [34.057095, -118.231759],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "I-10 Metro ExpressLanes",
+      "runs": [
+        {
+          "px": [
+            [1559, 1507],
+            [1495, 1506],
+            [1444, 1507],
+            [1371, 1511],
+            [1294, 1517],
+            [1215, 1526],
+            [1130, 1539],
+            [1010, 1558],
+            [950, 1568],
+            [902, 1575],
+            [834, 1582],
+            [750, 1599]
+          ],
+          "ll": [
+            [34.054012, -118.233571],
+            [34.054041, -118.233779],
+            [34.054062, -118.233949],
+            [34.054082, -118.234188],
+            [34.054096, -118.234445],
+            [34.054105, -118.234707],
+            [34.054108, -118.234992],
+            [34.054107, -118.235397],
+            [34.054106, -118.235598],
+            [34.054108, -118.235759],
+            [34.054118, -118.235986],
+            [34.054105, -118.236268]
+          ]
+        },
+        {
+          "px": [
+            [824, 1541],
+            [903, 1540],
+            [961, 1537],
+            [1017, 1531],
+            [1204, 1504],
+            [1354, 1484],
+            [1477, 1469],
+            [1598, 1458]
+          ],
+          "ll": [
+            [34.054233, -118.235996],
+            [34.054201, -118.235737],
+            [34.054186, -118.235544],
+            [34.054177, -118.23536],
+            [34.054171, -118.234731],
+            [34.054162, -118.234229],
+            [34.054151, -118.233819],
+            [34.054127, -118.233417]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Aliso Street",
+          "px": [824, 1541],
+          "ll": [34.054233, -118.235996],
+          "insideCoverage": true
+        },
+        {
+          "name": "Arcadia Street",
+          "px": [750, 1599],
+          "ll": [34.054105, -118.236268],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Ana Freeway",
+          "px": [1136, 1569],
+          "ll": [34.054023, -118.234989],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Los Angeles Street",
+      "runs": [
+        {
+          "px": [
+            [39, 882],
+            [43, 878],
+            [55, 869],
+            [70, 865],
+            [83, 864],
+            [100, 868],
+            [123, 878],
+            [153, 896],
+            [175, 907],
+            [209, 920],
+            [221, 924],
+            [267, 936]
+          ],
+          "ll": [
+            [34.056369, -118.238229],
+            [34.05638, -118.238214],
+            [34.056399, -118.238169],
+            [34.056403, -118.238117],
+            [34.0564, -118.238074],
+            [34.056382, -118.238022],
+            [34.056345, -118.237952],
+            [34.056284, -118.237863],
+            [34.056243, -118.237796],
+            [34.056193, -118.23769],
+            [34.056178, -118.237654],
+            [34.056124, -118.237511]
+          ]
+        },
+        {
+          "px": [
+            [271, 820],
+            [221, 824],
+            [164, 831],
+            [92, 833],
+            [75, 834],
+            [59, 838],
+            [44, 845],
+            [43, 846]
+          ],
+          "ll": [
+            [34.056439, -118.237437],
+            [34.05645, -118.237603],
+            [34.056454, -118.237795],
+            [34.056481, -118.238031],
+            [34.056484, -118.238086],
+            [34.05648, -118.23814],
+            [34.056468, -118.238194],
+            [34.056466, -118.238199]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [267, 936],
+          "ll": [34.056124, -118.237511],
+          "insideCoverage": true
+        },
+        {
+          "name": "Olvera Street",
+          "px": [-16, 781],
+          "ll": [34.05667, -118.238356],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Lyon Street",
+      "runs": [
+        {
+          "px": [
+            [2220, 558],
+            [2197, 593],
+            [2074, 765],
+            [2005, 847]
+          ],
+          "ll": [
+            [34.056321, -118.23092],
+            [34.056235, -118.231013],
+            [34.055817, -118.231504],
+            [34.055624, -118.231771]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [2220, 558],
+          "ll": [34.056321, -118.23092],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [1955, 837],
+          "ll": [34.055672, -118.231932],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Olvera Street",
+      "runs": [
+        {
+          "px": [
+            [193, 239],
+            [97, 429],
+            [85, 451],
+            [83, 454]
+          ],
+          "ll": [
+            [34.058061, -118.237395],
+            [34.057581, -118.237806],
+            [34.057528, -118.237856],
+            [34.05752, -118.237863]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [237, 251],
+          "ll": [34.05801, -118.237256],
+          "insideCoverage": true
+        },
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [198, 220],
+          "ll": [34.05811, -118.237369],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [120, 213],
+          "ll": [34.058162, -118.23762],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Patsaouras Transit Plaza",
+      "runs": [
+        {
+          "px": [
+            [1519, 1025],
+            [1510, 1025],
+            [1491, 1046],
+            [1485, 1041],
+            [1489, 1036],
+            [1460, 1037],
+            [1462, 1005],
+            [1455, 999],
+            [1450, 993],
+            [1444, 986],
+            [1440, 979],
+            [1436, 971],
+            [1433, 963],
+            [1431, 955],
+            [1430, 949],
+            [1429, 946],
+            [1429, 938],
+            [1429, 929],
+            [1429, 921],
+            [1431, 914],
+            [1435, 904],
+            [1438, 896],
+            [1442, 889],
+            [1447, 882],
+            [1453, 875],
+            [1459, 869],
+            [1466, 863],
+            [1466, 833],
+            [1520, 835],
+            [1524, 835],
+            [1520, 1005],
+            [1519, 1022],
+            [1519, 1025]
+          ],
+          "ll": [
+            [34.055345, -118.233455],
+            [34.055351, -118.233486],
+            [34.055299, -118.233557],
+            [34.055317, -118.233576],
+            [34.055329, -118.23356],
+            [34.055339, -118.233654],
+            [34.055424, -118.233632],
+            [34.055442, -118.233651],
+            [34.055462, -118.233666],
+            [34.055483, -118.23368],
+            [34.055505, -118.233691],
+            [34.055528, -118.2337],
+            [34.055551, -118.233705],
+            [34.055575, -118.233708],
+            [34.055592, -118.233709],
+            [34.055599, -118.233709],
+            [34.055622, -118.233706],
+            [34.055646, -118.233701],
+            [34.055667, -118.233696],
+            [34.055685, -118.233686],
+            [34.055712, -118.23367],
+            [34.055732, -118.233654],
+            [34.055751, -118.233637],
+            [34.055768, -118.233617],
+            [34.055784, -118.233596],
+            [34.055798, -118.233572],
+            [34.05581, -118.233547],
+            [34.055892, -118.233532],
+            [34.055863, -118.233354],
+            [34.055861, -118.233343],
+            [34.0554, -118.233443],
+            [34.055354, -118.233453],
+            [34.055345, -118.233455]
+          ]
+        }
+      ],
+      "crossings": []
+    },
+    {
+      "name": "Santa Ana Freeway",
+      "runs": [
+        {
+          "px": [
+            [1498, 1583],
+            [1224, 1588],
+            [1142, 1600],
+            [1036, 1625],
+            [865, 1668],
+            [779, 1682],
+            [684, 1690],
+            [569, 1688],
+            [487, 1677],
+            [392, 1654],
+            [232, 1601],
+            [96, 1539],
+            [-23, 1478]
+          ],
+          "ll": [
+            [34.053831, -118.23381],
+            [34.053933, -118.234709],
+            [34.053937, -118.234985],
+            [34.053913, -118.235344],
+            [34.053869, -118.235926],
+            [34.053866, -118.236217],
+            [34.053885, -118.236529],
+            [34.05394, -118.236905],
+            [34.054006, -118.237169],
+            [34.054108, -118.23747],
+            [34.054323, -118.237966],
+            [34.05455, -118.238379],
+            [34.054769, -118.238738]
+          ]
+        },
+        {
+          "px": [
+            [-30, 1541],
+            [-10, 1552],
+            [140, 1626],
+            [275, 1680],
+            [384, 1716],
+            [445, 1732],
+            [524, 1745],
+            [606, 1753],
+            [678, 1755],
+            [758, 1752],
+            [855, 1740],
+            [1148, 1695],
+            [1378, 1673],
+            [1428, 1669]
+          ],
+          "ll": [
+            [34.054598, -118.238792],
+            [34.054561, -118.238733],
+            [34.054294, -118.238281],
+            [34.054087, -118.237866],
+            [34.053943, -118.237525],
+            [34.053875, -118.237336],
+            [34.053805, -118.237084],
+            [34.053748, -118.23682],
+            [34.05371, -118.236583],
+            [34.053684, -118.236319],
+            [34.053677, -118.235996],
+            [34.053674, -118.235013],
+            [34.053637, -118.234251],
+            [34.053625, -118.234083]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [245, 1590],
+          "ll": [34.054346, -118.237917],
+          "insideCoverage": true
+        },
+        {
+          "name": "Commercial Street",
+          "px": [271, 1735],
+          "ll": [34.053939, -118.237907],
+          "insideCoverage": true
+        },
+        {
+          "name": "I-10 Metro ExpressLanes",
+          "px": [1136, 1569],
+          "ll": [34.054023, -118.234989],
+          "insideCoverage": true
+        },
+        {
+          "name": "Los Angeles Street",
+          "px": [-245, 1340],
+          "ll": [34.055241, -118.239393],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Vignes Street",
+      "runs": [
+        {
+          "px": [
+            [1900, 1067],
+            [1902, 1015],
+            [1904, 828],
+            [1910, 723],
+            [1923, 591],
+            [1929, 551],
+            [1932, 504],
+            [1932, 460],
+            [1932, 408],
+            [1930, 362],
+            [1927, 321],
+            [1925, 310]
+          ],
+          "ll": [
+            [34.055067, -118.232228],
+            [34.055209, -118.232195],
+            [34.05572, -118.232093],
+            [34.056003, -118.232021],
+            [34.056359, -118.23191],
+            [34.056465, -118.231869],
+            [34.056592, -118.231836],
+            [34.056711, -118.231813],
+            [34.056854, -118.231787],
+            [34.056982, -118.231769],
+            [34.057095, -118.231759],
+            [34.057124, -118.231759]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Cesar E Chavez Avenue",
+          "px": [1932, 504],
+          "ll": [34.056592, -118.231836],
+          "insideCoverage": true
+        },
+        {
+          "name": "Clara Street",
+          "px": [1927, 321],
+          "ll": [34.057095, -118.231759],
+          "insideCoverage": true
+        },
+        {
+          "name": "Lyon Street",
+          "px": [1955, 837],
+          "ll": [34.055672, -118.231932],
+          "insideCoverage": true
+        },
+        {
+          "name": "Metro Driveway",
+          "px": [1865, 71],
+          "ll": [34.057804, -118.231833],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ramirez Street",
+          "px": [1900, 1067],
+          "ll": [34.055067, -118.232228],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Ramirez Street",
+      "metres": 3.7
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Alameda Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "alameda-st",
+          "display": "Alameda Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alameda Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "ALAMEDA ST",
+            "ALAMEDA ST.",
+            "ALAMEDA STREET",
+            "Alameda STREET.",
+            "Alameda St",
+            "Alameda St.",
+            "Alameda Strt."
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr002-526-p1",
+            "mr003-060-p1",
+            "mr003-060-p2",
+            "mr004-012-p2",
+            "mr012-042",
+            "mr013-087-p1",
+            "mr013-091",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p4",
+            "mr030-009-p5",
+            "oldplaza1873",
+            "tr0005-056a",
+            "tr0009-075",
+            "tr0012-101",
+            "tr0014-033",
+            "tr0014-111b",
+            "tr0014-200a",
+            "tr0021-144a",
+            "tr0100-025",
+            "tr0110-048",
+            "tr0145-062",
+            "tr0926-086-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Aliso Street",
+      "continuesInto": [
+        "Arcadia Street",
+        "Commercial Street",
+        "I-10 Metro ExpressLanes"
+      ],
+      "candidates": [
+        {
+          "id": "sainsevain-street",
+          "display": "Sainsevain Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Commercial Street, which Aliso Street runs straight into"
+          ],
+          "ink": [
+            "SAINSEVAIN STREET",
+            "Sainsevain Street"
+          ],
+          "docs": [
+            "mr002-526-p1",
+            "mr004-012-p2"
+          ]
+        },
+        {
+          "id": "commercial-street",
+          "display": "Commercial Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Commercial Street, which Aliso Street runs straight into"
+          ],
+          "ink": [
+            "COMMERCIAL ST.",
+            "COMMERCIAL STREET"
+          ],
+          "docs": [
+            "tr0018-025a",
+            "tr0018-029a",
+            "tr0201-001-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Arcadia Street",
+      "continuesInto": [
+        "Aliso Street",
+        "I-10 Metro ExpressLanes"
+      ],
+      "candidates": []
+    },
+    {
+      "street": "Avila Street",
+      "continuesInto": [
+        "Cesar E Chavez Avenue",
+        "Clara Street"
+      ],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Avila Street runs straight into"
+          ],
+          "ink": [
+            "C CORTA",
+            "Calle Corta",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "marchessault-street",
+          "display": "Marchessault Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Avila Street runs straight into"
+          ],
+          "ink": [
+            "MARCHESSAULT STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "macy-street",
+          "display": "Macy Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Avila Street runs straight into"
+          ],
+          "ink": [
+            "MACY ST.",
+            "MACY STREET"
+          ],
+          "docs": [
+            "oldplaza1873",
+            "tr0006-051a"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Avila Street runs straight into"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Cesar E Chavez Avenue",
+      "continuesInto": [
+        "Avila Street",
+        "Clara Street"
+      ],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "C CORTA",
+            "Calle Corta",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "marchessault-street",
+          "display": "Marchessault Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MARCHESSAULT STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "macy-street",
+          "display": "Macy Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "MACY ST.",
+            "MACY STREET"
+          ],
+          "docs": [
+            "oldplaza1873",
+            "tr0006-051a"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue by another sheet"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        },
+        {
+          "id": "cesar-e-chavez-avenue",
+          "display": "Cesar E Chavez Avenue",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Clara Street",
+      "continuesInto": [
+        "Avila Street",
+        "Cesar E Chavez Avenue"
+      ],
+      "candidates": [
+        {
+          "id": "short-street-chavez",
+          "display": "Short Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Clara Street runs straight into"
+          ],
+          "ink": [
+            "C CORTA",
+            "Calle Corta",
+            "SHORT ST",
+            "Short St"
+          ],
+          "docs": [
+            "mr003-240",
+            "mr053-073",
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "marchessault-street",
+          "display": "Marchessault Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Clara Street runs straight into"
+          ],
+          "ink": [
+            "MARCHESSAULT STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        },
+        {
+          "id": "macy-street",
+          "display": "Macy Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Clara Street runs straight into"
+          ],
+          "ink": [
+            "MACY ST.",
+            "MACY STREET"
+          ],
+          "docs": [
+            "oldplaza1873",
+            "tr0006-051a"
+          ]
+        },
+        {
+          "id": "canal-and-reservoir-st",
+          "display": "Canal and Reservoir Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Cesar E Chavez Avenue, which Clara Street runs straight into"
+          ],
+          "ink": [
+            "Canal and Reservoir Street"
+          ],
+          "docs": [
+            "mr007-026-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "I-10 Metro ExpressLanes",
+      "continuesInto": [
+        "Aliso Street",
+        "Arcadia Street"
+      ],
+      "candidates": []
+    },
+    {
+      "street": "Los Angeles Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "los-angeles-street",
+          "display": "Los Angeles Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Los Angeles Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "LOS ANGELES ST.",
+            "LOS ANGELES STREET",
+            "Los Angeles St.",
+            "Los Angeles Street"
+          ],
+          "docs": [
+            "12017",
+            "mr003-146-p2",
+            "mr005-005",
+            "mr005-110",
+            "mr006-308",
+            "mr006-378",
+            "mr011-063",
+            "mr011-094",
+            "mr012-026",
+            "mr029-026",
+            "mr039-069",
+            "mr053-016",
+            "mr053-063",
+            "oldplaza1873",
+            "tr0009-100a",
+            "tr0016-005",
+            "tr0856-050-p2"
+          ]
+        },
+        {
+          "id": "calle-de-los-negros",
+          "display": "Calle De Los Negros",
+          "pendingResearch": false,
+          "why": [
+            "attested on Los Angeles Street by another sheet"
+          ],
+          "ink": [
+            "CALLE de los NEGROS",
+            "Calle de los Negros"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Lyon Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Olvera Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "wine-street-plaza",
+          "display": "Wine Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Olvera Street by another sheet"
+          ],
+          "ink": [
+            "WINE STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Patsaouras Transit Plaza",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Santa Ana Freeway",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "Vignes Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "vignes-street",
+          "display": "Vignes Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Vignes Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "VIGNES ST.",
+            "VIGNES STREET",
+            "Vignes",
+            "Vignes Street"
+          ],
+          "docs": [
+            "mr002-526-p1",
+            "mr002-526-p2",
+            "mr004-012-p2",
+            "tr0116-085-p1",
+            "tr0145-062",
+            "tr0201-001-p2"
+          ]
+        }
+      ]
+    }
+  ]
+}

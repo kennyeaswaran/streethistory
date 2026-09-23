@@ -1,0 +1,347 @@
+{
+  "document": "tr0001-072",
+  "image": "tr0001-072-100dpi.png",
+  "imageSize": [1144, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0001-072-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [453, 1767],
+    [772, 1794],
+    [794, 330],
+    [393, 356]
+  ],
+  "coverageLl": [
+    [34.037849, -118.242848],
+    [34.037462, -118.242375],
+    [34.039384, -118.240411],
+    [34.039791, -118.241084]
+  ],
+  "streets": [
+    {
+      "name": "6th Street",
+      "runs": [
+        {
+          "px": [
+            [395, 407],
+            [674, 391],
+            [753, 386],
+            [793, 383]
+          ],
+          "ll": [
+            [34.039721, -118.241147],
+            [34.039435, -118.240682],
+            [34.039354, -118.24055],
+            [34.039314, -118.240483]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [1082, 361],
+          "ll": [34.039027, -118.239993],
+          "insideCoverage": false
+        },
+        {
+          "name": "Ceres Avenue",
+          "px": [277, 413],
+          "ll": [34.039843, -118.241343],
+          "insideCoverage": false
+        },
+        {
+          "name": "Kohler Street",
+          "px": [753, 386],
+          "ll": [34.039354, -118.24055],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "7th Street",
+      "runs": [
+        {
+          "px": [
+            [773, 1733],
+            [744, 1733],
+            [650, 1733],
+            [620, 1731],
+            [468, 1730],
+            [451, 1730]
+          ],
+          "ll": [
+            [34.037542, -118.242293],
+            [34.037574, -118.242339],
+            [34.037676, -118.242489],
+            [34.037713, -118.242535],
+            [34.037881, -118.242775],
+            [34.037899, -118.242802]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Ceres Avenue",
+          "px": [197, 1727],
+          "ll": [34.038183, -118.243204],
+          "insideCoverage": false
+        },
+        {
+          "name": "Kohler Street",
+          "px": [744, 1733],
+          "ll": [34.037574, -118.242339],
+          "insideCoverage": true
+        },
+        {
+          "name": "Merchant Street",
+          "px": [1086, 1734],
+          "ll": [34.037196, -118.241796],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Kohler Street",
+      "runs": [
+        {
+          "px": [
+            [753, 386],
+            [755, 446],
+            [761, 819],
+            [754, 1267],
+            [746, 1676],
+            [744, 1733]
+          ],
+          "ll": [
+            [34.039354, -118.24055],
+            [34.039274, -118.240626],
+            [34.03877, -118.241109],
+            [34.038182, -118.241709],
+            [34.037647, -118.24226],
+            [34.037574, -118.242339]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [753, 386],
+          "ll": [34.039354, -118.24055],
+          "insideCoverage": true
+        },
+        {
+          "name": "7th Street",
+          "px": [744, 1733],
+          "ll": [34.037574, -118.242339],
+          "insideCoverage": true
+        },
+        {
+          "name": "Central Avenue",
+          "px": [851, 284],
+          "ll": [34.039382, -118.24026],
+          "insideCoverage": false
+        },
+        {
+          "name": "Industrial Street",
+          "px": [754, 1267],
+          "ll": [34.038182, -118.241709],
+          "insideCoverage": true
+        },
+        {
+          "name": "Wilde Street",
+          "px": [761, 819],
+          "ll": [34.03877, -118.241109],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [
+    {
+      "name": "Industrial Street",
+      "metres": 4.9
+    },
+    {
+      "name": "Wilde Street",
+      "metres": 5
+    }
+  ],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "6th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "sixth-street",
+          "display": "6th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "6TH ST",
+            "6TH ST.",
+            "6TH STREET",
+            "6th St",
+            "CALLE 6a",
+            "SIXTH",
+            "SIXTH ST.",
+            "SIXTH STR.",
+            "SIXTH STREET",
+            "Sixth St",
+            "Sixth St Extension.",
+            "Sixth St.",
+            "proposed line of Sixth Street."
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-016",
+            "mr003-166-p1",
+            "mr003-569",
+            "mr006-033",
+            "mr011-042",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr052-085",
+            "mr053-068",
+            "mr053-071",
+            "mr078-055",
+            "mr084-053",
+            "tr0002-037a",
+            "tr0007-078a",
+            "tr0009-075",
+            "tr0009-100a",
+            "tr0010-175a",
+            "tr0012-101",
+            "tr0014-087a",
+            "tr0023-066",
+            "tr0159-032-p2",
+            "tr0273-017",
+            "tr0319-001-p1"
+          ]
+        },
+        {
+          "id": "ward-st",
+          "display": "Ward Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet"
+          ],
+          "ink": [
+            "WARD ST",
+            "WARD ST.",
+            "Ward St",
+            "Ward Street"
+          ],
+          "docs": [
+            "mr003-046-p2",
+            "mr003-569",
+            "mr006-427",
+            "mr007-036-p2",
+            "mr007-096-p2",
+            "mr018-063"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "7th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "seventh-street",
+          "display": "7th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 7th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "7TH ST.",
+            "7TH STREET",
+            "7th ST",
+            "7th Street",
+            "CALLE 7a",
+            "SEVENTH ST",
+            "SEVENTH ST.",
+            "SEVENTH STR.",
+            "SEVENTH STREET",
+            "Seventh St",
+            "Seventh St.",
+            "Seventh Street",
+            "Seventh Street."
+          ],
+          "docs": [
+            "11824",
+            "mr003-016",
+            "mr003-569",
+            "mr005-566",
+            "mr006-033",
+            "mr006-039",
+            "mr009-095",
+            "mr011-063",
+            "mr013-091",
+            "mr014-034",
+            "mr015-052",
+            "mr018-025",
+            "mr018-063",
+            "mr018-092",
+            "mr021-046",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr053-068",
+            "mr053-071",
+            "mr054-051",
+            "mr055-014",
+            "mr055-081",
+            "mr060-088",
+            "mr066-064",
+            "mr070-084",
+            "tr0001-046",
+            "tr0005-042b",
+            "tr0005-056a",
+            "tr0009-100a",
+            "tr0011-196",
+            "tr0023-054c",
+            "tr0030-069",
+            "tr0718-007-p2",
+            "tr1397-017-p5"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Kohler Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "kohler",
+          "display": "Kohler Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Kohler Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "KOHLER ST.",
+            "KOHLER STREET",
+            "Kohler St",
+            "Kohler Street"
+          ],
+          "docs": [
+            "mr021-046",
+            "mr054-051",
+            "mr055-081",
+            "tr0011-196",
+            "tr0105-001-p2",
+            "tr0141-011",
+            "tr0273-017"
+          ]
+        }
+      ]
+    }
+  ]
+}

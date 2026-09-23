@@ -1,0 +1,646 @@
+{
+  "document": "tr0035-050",
+  "image": "tr0035-050-100dpi.png",
+  "imageSize": [1528, 2263],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0035-050-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [37, 1549],
+    [608, 1679],
+    [1663, 1156],
+    [880, 113],
+    [308, 630]
+  ],
+  "coverageLl": [
+    [34.060894, -118.235749],
+    [34.060668, -118.234687],
+    [34.061441, -118.232688],
+    [34.0631, -118.234102],
+    [34.062317, -118.235197]
+  ],
+  "streets": [
+    {
+      "name": "Alhambra Avenue",
+      "runs": [
+        {
+          "px": [
+            [572, 1411],
+            [584, 1391],
+            [592, 1378],
+            [669, 1252],
+            [703, 1227],
+            [1274, 1148],
+            [1343, 1138],
+            [1471, 1120]
+          ],
+          "ll": [
+            [34.061087, -118.234742],
+            [34.061118, -118.234718],
+            [34.061138, -118.234702],
+            [34.061332, -118.234553],
+            [34.06137, -118.234488],
+            [34.06147, -118.233416],
+            [34.061482, -118.233285],
+            [34.061504, -118.233046]
+          ]
+        },
+        {
+          "px": [
+            [366, 1170],
+            [419, 1204],
+            [435, 1213],
+            [450, 1216],
+            [602, 1162],
+            [765, 1120],
+            [867, 1102],
+            [1034, 1076],
+            [1166, 1055],
+            [1396, 1019],
+            [1543, 996]
+          ],
+          "ll": [
+            [34.061472, -118.235114],
+            [34.061416, -118.235017],
+            [34.061402, -118.234987],
+            [34.061396, -118.23496],
+            [34.061474, -118.234673],
+            [34.061534, -118.234365],
+            [34.061558, -118.234174],
+            [34.061591, -118.233861],
+            [34.061619, -118.233613],
+            [34.061666, -118.233182],
+            [34.061695, -118.232905]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alpine Street",
+          "px": [338, 1213],
+          "ll": [34.061406, -118.235168],
+          "insideCoverage": true
+        },
+        {
+          "name": "College Street",
+          "px": [1396, 1019],
+          "ll": [34.061666, -118.233182],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [366, 1170],
+          "ll": [34.061472, -118.235114],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [572, 1411],
+          "ll": [34.061087, -118.234742],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Alpine Street",
+      "runs": [
+        {
+          "px": [
+            [311, 1255],
+            [235, 1225],
+            [143, 1189]
+          ],
+          "ll": [
+            [34.061341, -118.235223],
+            [34.061391, -118.235362],
+            [34.061452, -118.235532]
+          ]
+        },
+        {
+          "px": [
+            [123, 1258],
+            [167, 1278],
+            [189, 1287],
+            [265, 1322]
+          ],
+          "ll": [
+            [34.061344, -118.235574],
+            [34.061312, -118.235493],
+            [34.061296, -118.235451],
+            [34.061239, -118.23531]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alameda Street",
+          "px": [-266, 1086],
+          "ll": [34.061628, -118.236293],
+          "insideCoverage": false
+        },
+        {
+          "name": "Alhambra Avenue",
+          "px": [338, 1213],
+          "ll": [34.061406, -118.235168],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [265, 1322],
+          "ll": [34.061239, -118.23531],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [311, 1255],
+          "ll": [34.061341, -118.235223],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Bruno Street",
+      "runs": [
+        {
+          "px": [
+            [618, 781],
+            [568, 754],
+            [563, 751],
+            [318, 621]
+          ],
+          "ll": [
+            [34.062069, -118.234624],
+            [34.062112, -118.234717],
+            [34.062117, -118.234726],
+            [34.06233, -118.235178]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Main Street",
+          "px": [618, 781],
+          "ll": [34.062069, -118.234624],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "College Street",
+      "runs": [
+        {
+          "px": [
+            [723, 255],
+            [833, 313],
+            [847, 325],
+            [880, 367],
+            [927, 427],
+            [932, 433],
+            [1396, 1019],
+            [1471, 1120],
+            [1540, 1217]
+          ],
+          "ll": [
+            [34.062886, -118.234401],
+            [34.06279, -118.234199],
+            [34.06277, -118.234175],
+            [34.062704, -118.234115],
+            [34.062608, -118.234029],
+            [34.062599, -118.234021],
+            [34.061666, -118.233182],
+            [34.061504, -118.233046],
+            [34.061351, -118.232921]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alhambra Avenue",
+          "px": [1396, 1019],
+          "ll": [34.061666, -118.233182],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [880, 367],
+          "ll": [34.062704, -118.234115],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Main Street",
+      "runs": [
+        {
+          "px": [
+            [129, 1570],
+            [248, 1394],
+            [249, 1389],
+            [256, 1368],
+            [265, 1322],
+            [311, 1255],
+            [338, 1214],
+            [352, 1194],
+            [366, 1170],
+            [454, 1035],
+            [509, 954],
+            [618, 781],
+            [749, 577],
+            [880, 367],
+            [970, 233]
+          ],
+          "ll": [
+            [34.060857, -118.235579],
+            [34.061126, -118.235346],
+            [34.061134, -118.235344],
+            [34.061166, -118.235331],
+            [34.061239, -118.23531],
+            [34.061341, -118.235223],
+            [34.061404, -118.235169],
+            [34.061435, -118.235142],
+            [34.061472, -118.235114],
+            [34.061679, -118.234943],
+            [34.061804, -118.234837],
+            [34.062069, -118.234624],
+            [34.062381, -118.234369],
+            [34.062704, -118.234115],
+            [34.062909, -118.233939]
+          ]
+        },
+        {
+          "px": [
+            [265, 1322],
+            [236, 1359],
+            [199, 1411],
+            [90, 1561]
+          ],
+          "ll": [
+            [34.061239, -118.23531],
+            [34.061181, -118.235366],
+            [34.061102, -118.235439],
+            [34.060873, -118.23565]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alhambra Avenue",
+          "px": [366, 1170],
+          "ll": [34.061472, -118.235114],
+          "insideCoverage": true
+        },
+        {
+          "name": "Alpine Street",
+          "px": [311, 1255],
+          "ll": [34.061341, -118.235223],
+          "insideCoverage": true
+        },
+        {
+          "name": "Bruno Street",
+          "px": [618, 781],
+          "ll": [34.062069, -118.234624],
+          "insideCoverage": true
+        },
+        {
+          "name": "College Street",
+          "px": [880, 367],
+          "ll": [34.062704, -118.234115],
+          "insideCoverage": true
+        },
+        {
+          "name": "Vignes Street",
+          "px": [311, 1255],
+          "ll": [34.061341, -118.235223],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Vignes Street",
+      "runs": [
+        {
+          "px": [
+            [811, 1579],
+            [747, 1527],
+            [572, 1411],
+            [385, 1300],
+            [367, 1290],
+            [311, 1255]
+          ],
+          "ll": [
+            [34.060816, -118.234303],
+            [34.060899, -118.23442],
+            [34.061087, -118.234742],
+            [34.061269, -118.235086],
+            [34.061284, -118.235118],
+            [34.061341, -118.235223]
+          ]
+        },
+        {
+          "px": [
+            [265, 1322],
+            [332, 1362],
+            [530, 1486],
+            [625, 1549],
+            [730, 1618]
+          ],
+          "ll": [
+            [34.061239, -118.23531],
+            [34.061173, -118.235188],
+            [34.060972, -118.234824],
+            [34.06087, -118.234649],
+            [34.060757, -118.234456]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Alhambra Avenue",
+          "px": [572, 1411],
+          "ll": [34.061087, -118.234742],
+          "insideCoverage": true
+        },
+        {
+          "name": "Alpine Street",
+          "px": [311, 1255],
+          "ll": [34.061341, -118.235223],
+          "insideCoverage": true
+        },
+        {
+          "name": "Main Street",
+          "px": [265, 1322],
+          "ll": [34.061239, -118.23531],
+          "insideCoverage": true
+        },
+        {
+          "name": "Rosabell Street",
+          "px": [870, 1736],
+          "ll": [34.060568, -118.2342],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "Alhambra Avenue",
+      "continuesInto": [
+        "Alpine Street"
+      ],
+      "candidates": [
+        {
+          "id": "alpine",
+          "display": "Alpine Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alpine Street, which Alhambra Avenue runs straight into"
+          ],
+          "ink": [
+            "ALPINE STREET"
+          ],
+          "docs": [
+            "tr0771-036-p2"
+          ]
+        },
+        {
+          "id": "virgin",
+          "display": "Virgin Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alpine Street, which Alhambra Avenue runs straight into"
+          ],
+          "ink": [
+            "CALLE DE LAS VIRGENES",
+            "VIRGIN ST",
+            "Virgin St",
+            "Virgin street"
+          ],
+          "docs": [
+            "mr007-062-p2",
+            "mr053-073",
+            "ord-1887-08-22"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Alpine Street",
+      "continuesInto": [
+        "Alhambra Avenue",
+        "Vignes Street"
+      ],
+      "candidates": [
+        {
+          "id": "alpine",
+          "display": "Alpine Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alpine Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "ALPINE STREET"
+          ],
+          "docs": [
+            "tr0771-036-p2"
+          ]
+        },
+        {
+          "id": "virgin",
+          "display": "Virgin Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alpine Street by another sheet"
+          ],
+          "ink": [
+            "CALLE DE LAS VIRGENES",
+            "VIRGIN ST",
+            "Virgin St",
+            "Virgin street"
+          ],
+          "docs": [
+            "mr007-062-p2",
+            "mr053-073",
+            "ord-1887-08-22"
+          ]
+        },
+        {
+          "id": "vignes-street",
+          "display": "Vignes Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Vignes Street, which Alpine Street runs straight into"
+          ],
+          "ink": [
+            "VIGNES ST.",
+            "VIGNES STREET",
+            "Vignes",
+            "Vignes Street"
+          ],
+          "docs": [
+            "mr002-526-p1",
+            "mr002-526-p2",
+            "mr004-012-p2",
+            "tr0116-085-p1",
+            "tr0145-062",
+            "tr0201-001-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Bruno Street",
+      "continuesInto": [],
+      "candidates": []
+    },
+    {
+      "street": "College Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "college",
+          "display": "College Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on College Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE DEL COLEGIO",
+            "COLLEGE ST",
+            "COLLEGE ST.",
+            "College St"
+          ],
+          "docs": [
+            "mr007-062-p2",
+            "mr053-073",
+            "tr0014-101a",
+            "tr0026-074"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Main Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "main-street-dtla",
+          "display": "Main Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Main Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE PRINCIPAL",
+            "MAIN ST.",
+            "MAIN STREET",
+            "Main St",
+            "Main St.",
+            "Main Street"
+          ],
+          "docs": [
+            "11824",
+            "12017",
+            "mr003-038-p2",
+            "mr005-105",
+            "mr005-110",
+            "mr006-378",
+            "mr011-094",
+            "mr012-026",
+            "mr029-026",
+            "mr053-016",
+            "mr053-063",
+            "mr053-068",
+            "mr053-069",
+            "mr053-071",
+            "oldplaza1873",
+            "tr0014-033",
+            "tr0014-200a"
+          ]
+        },
+        {
+          "id": "bath-street-plaza",
+          "display": "Bath Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Main Street by another sheet"
+          ],
+          "ink": [
+            "BATH STREET"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Vignes Street",
+      "continuesInto": [
+        "Alpine Street"
+      ],
+      "candidates": [
+        {
+          "id": "vignes-street",
+          "display": "Vignes Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Vignes Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "VIGNES ST.",
+            "VIGNES STREET",
+            "Vignes",
+            "Vignes Street"
+          ],
+          "docs": [
+            "mr002-526-p1",
+            "mr002-526-p2",
+            "mr004-012-p2",
+            "tr0116-085-p1",
+            "tr0145-062",
+            "tr0201-001-p2"
+          ]
+        },
+        {
+          "id": "alpine",
+          "display": "Alpine Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alpine Street, which Vignes Street runs straight into"
+          ],
+          "ink": [
+            "ALPINE STREET"
+          ],
+          "docs": [
+            "tr0771-036-p2"
+          ]
+        },
+        {
+          "id": "virgin",
+          "display": "Virgin Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Alpine Street, which Vignes Street runs straight into"
+          ],
+          "ink": [
+            "CALLE DE LAS VIRGENES",
+            "VIRGIN ST",
+            "Virgin St",
+            "Virgin street"
+          ],
+          "docs": [
+            "mr007-062-p2",
+            "mr053-073",
+            "ord-1887-08-22"
+          ]
+        }
+      ]
+    }
+  ]
+}

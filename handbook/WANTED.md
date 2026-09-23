@@ -262,8 +262,12 @@ none checked against the minutes):
 So `MR066-064` is `…/misc/MR066/MR066-064.pdf` and `TR0013-048` is
 `…/tract/MB0013/TR0013-048.pdf`. A multi-page ref is one file at its first
 page. **Filenames below are exact, suffix included.** Everything in 5.1–5.10
-was existence-checked when swept (2026-09-06 to 09-17). 5.11 was not. ★ = read
-first.
+was existence-checked when swept (2026-09-06 to 09-17). 5.11's Map Book
+filenames were confirmed by Kenny on 2026-09-22: **all 33 resolved on the
+filename as listed**, lettered and un-lettered alike, so the suffix recorded
+from County layer 8's `REFERENCE` (TRACT-RESEARCH.md) needs no second-guessing.
+A file resolving still says nothing about which filing it is; the title block
+does. ★ = read first.
 
 ### 5.0 Sheets wanted for what they would letter (no filing identified yet)
 
@@ -405,7 +409,7 @@ B, Rivara and Vignolo Tract, M R 5-110).
 | M B 28-39 | TR 2721, 1915 | 8th w (7) | `TR0028-039` |
 | M B 2-88 | Samuel Tract, 1902 (the `B` file is the Golden Tract) | 6th w (1) | `TR0002-088A` |
 
-### 5.11 North of the Plaza, Traction, and the southwest (2026-09-17b; **not existence-checked**)
+### 5.11 North of the Plaza, Traction, and the southwest (2026-09-17b; Map Book filenames confirmed 2026-09-22)
 
 Grey corridors: Georgia (34.0391 to its end), Traction, Vignes (north stub),
 8th west of Francisco, James M Wood (two stretches), 10th, 17th (beyond
@@ -434,8 +438,9 @@ Chavez stretches, **Georgia** (§5.0), and the 8th–10th hole west of Figueroa.
 | M B 9-85 | Pierre Nicolas Lot, 1906 | Same | `TR0009-085` |
 
 **Pre-1930 Map Book filings on the corridors** (a footprint touching a corridor
-is not a sheet lettering the street; a 404 on a lettered file means try the
-other letter):
+is not a sheet lettering the street). All of these resolved as listed on
+2026-09-22; the ones downloaded then are in `inbox/` (and `tr0009-085` is
+already a document):
 
 - *8th Street / James M Wood:* Willard Tract 1901 `TR0001-056A` · Willis Tract 1902 `TR0002-033A` · Poindexter Tract 1903 `TR0004-010A` · TR 1161 1911 `TR0017-121A` · TR 1413 1912 `TR0020-132A` · TR 2497 1916 `TR0032-042` · TR 8036 1924 `TR0082-050`
 - *10th Street:* TR 878 1910 `TR0016-125A` · TR 975 1910 `TR0017-006A` · TR 5431 1922 `TR0058-004`

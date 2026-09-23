@@ -1,0 +1,204 @@
+{
+  "document": "mr043-088",
+  "image": "mr043-088-100dpi.png",
+  "imageSize": [1086, 1742],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr043-088-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [96, 1246],
+    [911, 1218],
+    [971, 678],
+    [190, 722]
+  ],
+  "coverageLl": [
+    [34.03592, -118.244311],
+    [34.034946, -118.245102],
+    [34.034417, -118.244408],
+    [34.035365, -118.243674]
+  ],
+  "streets": [
+    {
+      "name": "8th Street",
+      "runs": [
+        {
+          "px": [
+            [918, 681],
+            [857, 1019],
+            [848, 1067],
+            [841, 1112],
+            [822, 1221]
+          ],
+          "ll": [
+            [34.034481, -118.244358],
+            [34.034839, -118.244768],
+            [34.03489, -118.244826],
+            [34.034938, -118.244882],
+            [34.035052, -118.245016]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Ceres Avenue",
+          "px": [757, 1604],
+          "ll": [34.035453, -118.245485],
+          "insideCoverage": false
+        },
+        {
+          "name": "Kohler Street",
+          "px": [848, 1067],
+          "ll": [34.03489, -118.244826],
+          "insideCoverage": true
+        },
+        {
+          "name": "Merchant Street",
+          "px": [936, 562],
+          "ll": [34.03436, -118.24421],
+          "insideCoverage": false
+        },
+        {
+          "name": "Produce Court",
+          "px": [924, 650],
+          "ll": [34.034448, -118.24432],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Kohler Street",
+      "runs": [
+        {
+          "px": [
+            [126, 1080],
+            [131, 1080],
+            [792, 1068],
+            [848, 1067],
+            [913, 1065],
+            [928, 1065]
+          ],
+          "ll": [
+            [34.035744, -118.244109],
+            [34.035738, -118.244114],
+            [34.034957, -118.24477],
+            [34.03489, -118.244826],
+            [34.034814, -118.24489],
+            [34.034796, -118.244905]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "8th Street",
+          "px": [848, 1067],
+          "ll": [34.03489, -118.244826],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "8th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "eighth-street",
+          "display": "8th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "8TH ST",
+            "8TH STREET",
+            "8th St",
+            "8th St.",
+            "8th Street",
+            "CALLE 8a",
+            "EAST EIGHTH STREET",
+            "EIGHTH ST",
+            "EIGHTH ST.",
+            "EIGHTH STREET",
+            "Eighth St",
+            "Eighth St.",
+            "Eighth Street",
+            "new 8th Street"
+          ],
+          "docs": [
+            "11824",
+            "mr003-569",
+            "mr011-008",
+            "mr018-092",
+            "mr021-046",
+            "mr021-087",
+            "mr026-060",
+            "mr029-026",
+            "mr029-085",
+            "mr053-065",
+            "mr053-068",
+            "mr054-051",
+            "mr055-086",
+            "mr060-088",
+            "mr070-051",
+            "pm017-045",
+            "tr0001-037",
+            "tr0005-042b",
+            "tr0005-156a",
+            "tr0007-085",
+            "tr0013-048",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        },
+        {
+          "id": "lincoln-place",
+          "display": "Lincoln Place",
+          "pendingResearch": false,
+          "why": [
+            "attested on 8th Street by another sheet"
+          ],
+          "ink": [
+            "Lincoln Place"
+          ],
+          "docs": [
+            "mr006-193"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Kohler Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "kohler",
+          "display": "Kohler Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Kohler Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "KOHLER ST.",
+            "KOHLER STREET",
+            "Kohler St",
+            "Kohler Street"
+          ],
+          "docs": [
+            "mr021-046",
+            "mr054-051",
+            "mr055-081",
+            "tr0011-196",
+            "tr0105-001-p2",
+            "tr0141-011",
+            "tr0273-017"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "document": "tr0005-049b",
+  "image": "tr0005-049b-100dpi.png",
+  "imageSize": [1164, 1820],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0005-049b-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [874, 596],
+    [280, 571],
+    [330, 1315],
+    [800, 1534]
+  ],
+  "coverageLl": [
+    [34.050509, -118.243434],
+    [34.049824, -118.244023],
+    [34.049305, -118.24292],
+    [34.049691, -118.242171]
+  ],
+  "streets": [
+    {
+      "name": "2nd Street",
+      "runs": [
+        {
+          "px": [
+            [720, 1497],
+            [720, 1491],
+            [727, 1376],
+            [732, 1292],
+            [736, 1216],
+            [737, 1185],
+            [744, 1047],
+            [754, 817],
+            [762, 725],
+            [766, 629],
+            [768, 592]
+          ],
+          "ll": [
+            [34.049626, -118.242298],
+            [34.04963, -118.242306],
+            [34.049728, -118.242464],
+            [34.049799, -118.242579],
+            [34.049863, -118.242683],
+            [34.049889, -118.242726],
+            [34.050005, -118.242915],
+            [34.050194, -118.243232],
+            [34.050276, -118.243355],
+            [34.050355, -118.243487],
+            [34.050387, -118.243539]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Astronaut Ellison S Onizuka Street",
+          "px": [747, 1772],
+          "ll": [34.049443, -118.241882],
+          "insideCoverage": false
+        },
+        {
+          "name": "Los Angeles Street",
+          "px": [762, 725],
+          "ll": [34.050276, -118.243355],
+          "insideCoverage": true
+        },
+        {
+          "name": "San Pedro Street",
+          "px": [704, 1896],
+          "ll": [34.049296, -118.241746],
+          "insideCoverage": false
+        }
+      ]
+    },
+    {
+      "name": "Los Angeles Street",
+      "runs": [
+        {
+          "px": [
+            [863, 734],
+            [832, 734],
+            [762, 725],
+            [697, 724],
+            [561, 732],
+            [291, 732]
+          ],
+          "ll": [
+            [34.050389, -118.243249],
+            [34.050351, -118.243277],
+            [34.050276, -118.243355],
+            [34.050199, -118.243418],
+            [34.050032, -118.243533],
+            [34.049712, -118.243785]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "2nd Street",
+          "px": [762, 725],
+          "ll": [34.050276, -118.243355],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "2nd Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "guadalupe",
+          "display": "Guadalupe Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "GUADALUPE ST",
+            "Guadalupe Street"
+          ],
+          "docs": [
+            "mr002-092-p1",
+            "mr002-092-p2",
+            "mr003-060-p1",
+            "mr003-060-p2"
+          ]
+        },
+        {
+          "id": "silver-st",
+          "display": "Silver Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "Silver St"
+          ],
+          "docs": [
+            "mr007-036-p2",
+            "mr007-056"
+          ]
+        },
+        {
+          "id": "second-street",
+          "display": "2nd Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "2D ST",
+            "2ND ST.",
+            "2ND STREET",
+            "2nd STREET",
+            "CALLE 2a",
+            "SECOND ST.",
+            "SECOND STREET",
+            "Second Street",
+            "W. 2ND ST.",
+            "W. 2ND STREET"
+          ],
+          "docs": [
+            "12685",
+            "mr001-489",
+            "mr005-307-a",
+            "mr007-056",
+            "mr053-069",
+            "mr053-071",
+            "tr0001-052",
+            "tr0006-150a",
+            "tr0015-166a-p1",
+            "tr0015-166a-p2",
+            "tr0016-005",
+            "tr0017-001b",
+            "tr0034-065",
+            "tr0035-022",
+            "tr0062-063",
+            "tr0116-085-p1",
+            "tr0417-049-p2",
+            "tr0713-093-p2",
+            "tr0856-050-p2",
+            "tr0885-030-p2",
+            "tr0926-086-p2",
+            "tr0938-051-p3",
+            "tr1339-069-p3"
+          ]
+        },
+        {
+          "id": "lake-shore-ave",
+          "display": "Lake Shore Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "Lake Shore Ave"
+          ],
+          "docs": [
+            "mr010-081"
+          ]
+        },
+        {
+          "id": "clementina-street",
+          "display": "Clementina Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "Clementina Street"
+          ],
+          "docs": [
+            "mr017-041"
+          ]
+        },
+        {
+          "id": "topeka-st",
+          "display": "Topeka Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "TOPEKA ST."
+          ],
+          "docs": [
+            "mr024-081"
+          ]
+        },
+        {
+          "id": "northern-ave",
+          "display": "Northern Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "Northern Ave"
+          ],
+          "docs": [
+            "mr010-062"
+          ]
+        },
+        {
+          "id": "north-ave",
+          "display": "North Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on 2nd Street by another sheet"
+          ],
+          "ink": [
+            "North Ave"
+          ],
+          "docs": [
+            "mr007-036-p2"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Los Angeles Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "los-angeles-street",
+          "display": "Los Angeles Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Los Angeles Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "LOS ANGELES ST.",
+            "LOS ANGELES STREET",
+            "Los Angeles St.",
+            "Los Angeles Street"
+          ],
+          "docs": [
+            "12017",
+            "mr003-146-p2",
+            "mr005-005",
+            "mr005-110",
+            "mr006-308",
+            "mr006-378",
+            "mr011-063",
+            "mr011-094",
+            "mr012-026",
+            "mr029-026",
+            "mr039-069",
+            "mr053-016",
+            "mr053-063",
+            "oldplaza1873",
+            "tr0009-100a",
+            "tr0016-005",
+            "tr0856-050-p2"
+          ]
+        },
+        {
+          "id": "calle-de-los-negros",
+          "display": "Calle De Los Negros",
+          "pendingResearch": false,
+          "why": [
+            "attested on Los Angeles Street by another sheet"
+          ],
+          "ink": [
+            "CALLE de los NEGROS",
+            "Calle de los Negros"
+          ],
+          "docs": [
+            "oldplaza1873"
+          ]
+        }
+      ]
+    }
+  ]
+}

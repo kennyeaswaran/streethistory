@@ -1,0 +1,344 @@
+{
+  "document": "mr072-071",
+  "image": "mr072-071-100dpi.png",
+  "imageSize": [1121, 1767],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in mr072-071-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [352, 511],
+    [383, 986],
+    [871, 1005],
+    [885, 469]
+  ],
+  "coverageLl": [
+    [34.05403, -118.261687],
+    [34.053111, -118.262191],
+    [34.052585, -118.261121],
+    [34.053572, -118.260443]
+  ],
+  "streets": [
+    {
+      "name": "5th Street (south branch)",
+      "runs": [
+        {
+          "px": [
+            [883, 546],
+            [790, 551],
+            [786, 553],
+            [743, 574]
+          ],
+          "ll": [
+            [34.05343, -118.26054],
+            [34.053513, -118.260754],
+            [34.053514, -118.260766],
+            [34.053519, -118.260888]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "6th Street",
+          "px": [743, 574],
+          "ll": [34.053519, -118.260888],
+          "insideCoverage": true
+        },
+        {
+          "name": "Beaudry Avenue",
+          "px": [1205, 547],
+          "ll": [34.053104, -118.259821],
+          "insideCoverage": false
+        },
+        {
+          "name": "Boylston Street",
+          "px": [999, 542],
+          "ll": [34.053321, -118.260276],
+          "insideCoverage": false
+        },
+        {
+          "name": "Saint Paul Avenue",
+          "px": [743, 574],
+          "ll": [34.053519, -118.260888],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "6th Street",
+      "runs": [
+        {
+          "px": [
+            [357, 584],
+            [512, 579],
+            [697, 575],
+            [743, 574],
+            [787, 584],
+            [795, 586],
+            [880, 585],
+            [882, 585]
+          ],
+          "ll": [
+            [34.053889, -118.261764],
+            [34.053741, -118.261411],
+            [34.053563, -118.260991],
+            [34.053519, -118.260888],
+            [34.053456, -118.2608],
+            [34.053444, -118.260784],
+            [34.05336, -118.260595],
+            [34.053358, -118.26059]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street (south branch)",
+          "px": [743, 574],
+          "ll": [34.053519, -118.260888],
+          "insideCoverage": true
+        },
+        {
+          "name": "Beaudry Avenue",
+          "px": [1198, 599],
+          "ll": [34.053013, -118.259899],
+          "insideCoverage": false
+        },
+        {
+          "name": "Bixel Street",
+          "px": [219, 587],
+          "ll": [34.054021, -118.262078],
+          "insideCoverage": false
+        },
+        {
+          "name": "Boylston Street",
+          "px": [1041, 563],
+          "ll": [34.053239, -118.260207],
+          "insideCoverage": false
+        },
+        {
+          "name": "Saint Paul Avenue",
+          "px": [743, 574],
+          "ll": [34.053519, -118.260888],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Saint Paul Avenue",
+      "runs": [
+        {
+          "px": [
+            [743, 574],
+            [743, 620],
+            [745, 1000]
+          ],
+          "ll": [
+            [34.053519, -118.260888],
+            [34.053432, -118.260943],
+            [34.05272, -118.261396]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "5th Street (south branch)",
+          "px": [743, 574],
+          "ll": [34.053519, -118.260888],
+          "insideCoverage": true
+        },
+        {
+          "name": "6th Street",
+          "px": [743, 574],
+          "ll": [34.053519, -118.260888],
+          "insideCoverage": true
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "5th Street (south branch)",
+      "continuesInto": [
+        "6th Street"
+      ],
+      "candidates": [
+        {
+          "id": "ward-st",
+          "display": "Ward Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 5th Street (south branch) by another sheet",
+            "attested on 6th Street, which 5th Street (south branch) runs straight into"
+          ],
+          "ink": [
+            "WARD ST",
+            "WARD ST.",
+            "Ward St",
+            "Ward Street"
+          ],
+          "docs": [
+            "mr003-046-p2",
+            "mr003-569",
+            "mr006-427",
+            "mr007-036-p2",
+            "mr007-096-p2",
+            "mr018-063"
+          ]
+        },
+        {
+          "id": "sixth-street",
+          "display": "6th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street, which 5th Street (south branch) runs straight into"
+          ],
+          "ink": [
+            "6TH ST",
+            "6TH ST.",
+            "6TH STREET",
+            "6th St",
+            "CALLE 6a",
+            "SIXTH",
+            "SIXTH ST.",
+            "SIXTH STR.",
+            "SIXTH STREET",
+            "Sixth St",
+            "Sixth St Extension.",
+            "Sixth St.",
+            "proposed line of Sixth Street."
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-016",
+            "mr003-166-p1",
+            "mr003-569",
+            "mr006-033",
+            "mr011-042",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr052-085",
+            "mr053-068",
+            "mr053-071",
+            "mr078-055",
+            "mr084-053",
+            "tr0002-037a",
+            "tr0007-078a",
+            "tr0009-075",
+            "tr0009-100a",
+            "tr0010-175a",
+            "tr0012-101",
+            "tr0014-087a",
+            "tr0023-066",
+            "tr0159-032-p2",
+            "tr0273-017",
+            "tr0319-001-p1"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "6th Street",
+      "continuesInto": [
+        "5th Street (south branch)"
+      ],
+      "candidates": [
+        {
+          "id": "sixth-street",
+          "display": "6th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "6TH ST",
+            "6TH ST.",
+            "6TH STREET",
+            "6th St",
+            "CALLE 6a",
+            "SIXTH",
+            "SIXTH ST.",
+            "SIXTH STR.",
+            "SIXTH STREET",
+            "Sixth St",
+            "Sixth St Extension.",
+            "Sixth St.",
+            "proposed line of Sixth Street."
+          ],
+          "docs": [
+            "mr001-462",
+            "mr003-016",
+            "mr003-166-p1",
+            "mr003-569",
+            "mr006-033",
+            "mr011-042",
+            "mr030-009-p1",
+            "mr030-009-p2",
+            "mr030-009-p3",
+            "mr052-085",
+            "mr053-068",
+            "mr053-071",
+            "mr078-055",
+            "mr084-053",
+            "tr0002-037a",
+            "tr0007-078a",
+            "tr0009-075",
+            "tr0009-100a",
+            "tr0010-175a",
+            "tr0012-101",
+            "tr0014-087a",
+            "tr0023-066",
+            "tr0159-032-p2",
+            "tr0273-017",
+            "tr0319-001-p1"
+          ]
+        },
+        {
+          "id": "ward-st",
+          "display": "Ward Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 6th Street by another sheet",
+            "attested on 5th Street (south branch), which 6th Street runs straight into"
+          ],
+          "ink": [
+            "WARD ST",
+            "WARD ST.",
+            "Ward St",
+            "Ward Street"
+          ],
+          "docs": [
+            "mr003-046-p2",
+            "mr003-569",
+            "mr006-427",
+            "mr007-036-p2",
+            "mr007-096-p2",
+            "mr018-063"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Saint Paul Avenue",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "st-paul-avenue",
+          "display": "St. Paul Avenue",
+          "pendingResearch": false,
+          "why": [
+            "attested on Saint Paul Avenue by another sheet"
+          ],
+          "ink": [
+            "ST. PAUL AVENUE"
+          ],
+          "docs": [
+            "mr078-055"
+          ]
+        }
+      ]
+    }
+  ]
+}

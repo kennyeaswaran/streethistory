@@ -1,0 +1,308 @@
+{
+  "document": "tr0016-089",
+  "image": "tr0016-089-100dpi.png",
+  "imageSize": [1159, 1842],
+  "generatedBy": "map-tool.html phase 1",
+  "coordinates": "px = [x, y] in pixels on `image` above, y increasing downward. ll = [latitude, longitude]. The two are related by the human alignment in tr0016-089-alignment.json; px is the useful one for comparing against the scan.",
+  "what": "Every modern street whose geometry falls inside this document's coverage polygon, as it runs TODAY. These are the corridors the document has to be read against. `crossings` are the intersections usable as `from`/`to` in a row.",
+  "coveragePx": [
+    [126, 512],
+    [1163, 676],
+    [1176, 1377],
+    [96, 1402]
+  ],
+  "coverageLl": [
+    [34.036238, -118.269551],
+    [34.035354, -118.268129],
+    [34.034471, -118.26866],
+    [34.035147, -118.270294]
+  ],
+  "streets": [
+    {
+      "name": "18th Street",
+      "runs": [
+        {
+          "px": [
+            [103, 1182],
+            [171, 1180],
+            [238, 1182],
+            [285, 1181],
+            [307, 1180],
+            [335, 1179],
+            [362, 1178],
+            [640, 1182],
+            [936, 1185],
+            [993, 1183],
+            [1172, 1184]
+          ],
+          "ll": [
+            [34.035416, -118.270111],
+            [34.035375, -118.270009],
+            [34.035329, -118.269909],
+            [34.035299, -118.269838],
+            [34.035286, -118.269804],
+            [34.035269, -118.269762],
+            [34.035252, -118.269721],
+            [34.035065, -118.269309],
+            [34.034868, -118.268868],
+            [34.034833, -118.268781],
+            [34.034715, -118.268513]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Flower Street",
+          "px": [238, 1182],
+          "ll": [34.035329, -118.269909],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hope Street",
+          "px": [993, 1183],
+          "ll": [34.034833, -118.268781],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Flower Street",
+      "runs": [
+        {
+          "px": [
+            [244, 531],
+            [245, 851],
+            [239, 1015],
+            [240, 1044],
+            [238, 1182],
+            [236, 1242],
+            [233, 1399]
+          ],
+          "ll": [
+            [34.036137, -118.26939],
+            [34.035736, -118.269639],
+            [34.035536, -118.269776],
+            [34.0355, -118.269799],
+            [34.035329, -118.269909],
+            [34.035255, -118.269959],
+            [34.035061, -118.270087]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "18th Street",
+          "px": [238, 1182],
+          "ll": [34.035329, -118.269909],
+          "insideCoverage": true
+        },
+        {
+          "name": "Santa Monica Freeway",
+          "px": [242, 821],
+          "ll": [34.035776, -118.269621],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Hope Street",
+      "runs": [
+        {
+          "px": [
+            [993, 1183],
+            [993, 1234],
+            [993, 1244],
+            [993, 1381]
+          ],
+          "ll": [
+            [34.034833, -118.268781],
+            [34.034769, -118.268821],
+            [34.034757, -118.268829],
+            [34.034586, -118.268937]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "18th Street",
+          "px": [993, 1183],
+          "ll": [34.034833, -118.268781],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Santa Monica Freeway",
+      "runs": [
+        {
+          "px": [
+            [122, 643],
+            [505, 728],
+            [1110, 842],
+            [1166, 850]
+          ],
+          "ll": [
+            [34.036077, -118.269661],
+            [34.035721, -118.269154],
+            [34.035181, -118.268339],
+            [34.035135, -118.268261]
+          ]
+        },
+        {
+          "px": [
+            [117, 769],
+            [239, 791],
+            [1168, 950]
+          ],
+          "ll": [
+            [34.035923, -118.269766],
+            [34.035816, -118.269602],
+            [34.035009, -118.268337]
+          ]
+        },
+        {
+          "px": [
+            [1164, 729],
+            [980, 700],
+            [749, 658],
+            [558, 620],
+            [359, 578],
+            [126, 525]
+          ],
+          "ll": [
+            [34.035288, -118.268169],
+            [34.035444, -118.268422],
+            [34.035647, -118.268734],
+            [34.035821, -118.26899],
+            [34.036003, -118.269255],
+            [34.036221, -118.269562]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Flower Street",
+          "px": [242, 821],
+          "ll": [34.035776, -118.269621],
+          "insideCoverage": true
+        },
+        {
+          "name": "Hope Street",
+          "px": [1024, 564],
+          "ll": [34.035585, -118.26825],
+          "insideCoverage": false
+        }
+      ]
+    }
+  ],
+  "excludedAsSlivers": [],
+  "excludedAsOvershoot": [],
+  "nameCandidates": [
+    {
+      "street": "18th Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "eighteenth-street",
+          "display": "18th Street",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
+        }
+      ]
+    },
+    {
+      "street": "Flower Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "flower",
+          "display": "Flower Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Flower Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE DE LAS FLORES",
+            "FLOWER",
+            "FLOWER STR.",
+            "FLOWER STREET",
+            "Flower St",
+            "Flower St.",
+            "Flower Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr003-016",
+            "mr003-032",
+            "mr003-033",
+            "mr007-021",
+            "mr021-032",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Hope Street",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "hope",
+          "display": "Hope Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Hope Street by another sheet",
+            "carries the street's present name"
+          ],
+          "ink": [
+            "CALLE DE LAS ESPERANZAS",
+            "HOPE ST.",
+            "HOPE STREET",
+            "Hope St",
+            "Hope St.",
+            "Hope Street"
+          ],
+          "docs": [
+            "12685",
+            "mr001-462",
+            "mr001-489",
+            "mr003-033",
+            "mr007-021",
+            "mr021-032",
+            "mr053-067",
+            "mr053-068"
+          ]
+        }
+      ]
+    },
+    {
+      "street": "Santa Monica Freeway",
+      "continuesInto": [
+        "17th Street"
+      ],
+      "candidates": [
+        {
+          "id": "seventeenth-street",
+          "display": "17th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on 17th Street, which Santa Monica Freeway runs straight into"
+          ],
+          "ink": [
+            "17TH STREET"
+          ],
+          "docs": [
+            "tr0030-086"
+          ]
+        }
+      ]
+    }
+  ]
+}
