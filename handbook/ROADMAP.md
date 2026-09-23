@@ -26,9 +26,13 @@ Suggested order is at the end (§10).
 
 That build had 112 streets with entries and 483 segments — Main Street 17
 pieces, 2nd Street 18, Los Angeles Street 18. The corpus has grown since (272
-streets at the 2026-09-19 switchover; CLAUDE.md, "State"), so the numbers below
-want re-measuring — ideally by the segmentation report in §9 — but the
-proportions are the argument.
+streets at the 2026-09-19 switchover; CLAUDE.md, "State"). The table below is
+the 2026-09-07 hand count; `generated/report.md` now prints the same breakdown
+every build ("Segmentation"). Its first run (2026-09-22: 941 segments, 669
+boundaries) found 224 coverage edges, 111 name changes, 262 date differences,
+56 planned/built/absent differences, 8 other and 8 pavement gaps. The report
+tests coverage before names, so those numbers do not compare row for row with
+the table below. The proportions are still the argument.
 Classifying all 371 adjacent-segment boundaries by what differs across them:
 
 | what differs across the boundary | boundaries |
@@ -335,7 +339,7 @@ until §2 has a shape.
 
 ---
 
-## 5. Display modes — *one quick, one medium*
+## 5. Display modes — *one medium; the quick one is built*
 
 ### 5a. The grid as of year Y — *medium*
 
@@ -349,7 +353,8 @@ name in force at Y, which the timeline already answers.
 What the generator must add: per stretch, `exists: { from: year, kind:
 "exact"|"by"|"after", absentUntil: year|null }`; per vanished trace, its
 sighting dates (it carries one `doc` today). What the map adds: the slider,
-and a third drawing state. The subtle rule is Kenny's own — "attested near
+and a third drawing state, and `y=` in the permalink hash (`updateHash` in
+`index.html`). The subtle rule is Kenny's own — "attested near
 then, but not lines that were absent then": a vanished line has sightings, not
 an interval, so show it from its earliest to its latest sighting, widened by a
 visible tolerance (say ±5 years), and never across an `absent` row on its
@@ -358,35 +363,20 @@ ground. Make the tolerance a labelled control rather than a constant.
 This wants §1 Step A first (stretches are the unit that carries existence
 dates) and reads naturally off §3's `documents.js`.
 
-### 5b. Colour by age of oldest attestation — *quick*
+### 5b. Colour by age of oldest attestation — *built 2026-09-22*
 
-MODEL-SPEC §8 scheme 3, specified and not built ("Age: earliest document
-showing the segment existed"). The generator already computes the date for the
-`planned` / `built` text; emit it once more as a number (`earliestYear`, with
-`kind` exact/by) and give `index.html` a sequential ramp from 1849 to the
-extract date. Scheme 4 (latest document showing it did *not* yet exist) is the
-mirror and needs only `absentAsOf` as a number; build both in the same
-afternoon, and the gap between them is the "how well pinned" scheme MODEL-SPEC
-§12 defers.
+The "Colour by" menu on `index.html`, schemes 3 and 4; MODEL-SPEC §8 has
+what the generator emits and how the map draws it. Still to come: the *gap*
+between the two as a "how well pinned" scheme (MODEL-SPEC §12).
 
 ---
 
-## 6. Search: "eleventh" must find "11th" — *quick*
+## 6. Search: "eleventh" must find "11th" — *built 2026-09-22*
 
-Root cause, not a missing table: the search box is a native `<datalist>`, so
-matching is done by the browser against the option *text*. The generator's
-canonicalisation (`canonTokens`: ordinals, number words, type abbreviations)
-folds "Eleventh" to "11th" when it builds the index, but the browser never sees
-the canonical key — it sees "11th Street" and the user typed "eleventh".
-
-Fix: replace the datalist with a small custom list (a `<ul>` under the box)
-matched in script on canonical tokens — canon(query) tokens each a prefix of
-some canon(form) token, order-free, so "20" reaches "Avenue 20" and "chavez"
-reaches "Cesar E Chavez", both of which MODEL-SPEC §6.5 already asks for. The
-generator emits the canonical key per row and ships its three tables in
-`search-index.js` so the browser folds the query identically (§12 notes this
-requirement). Apply to `index.html`. An hour or two; `tests/preview-test.js`
-gets a case.
+`index.html`'s search box is its own list now, not a `<datalist>`, matched on
+canonical tokens folded with the generator's tables (`SEARCH_CANON` in
+`generated/search-index.js`). The tables cover 1–99 in both directions.
+`tests/preview-test.js` has the cases.
 
 ---
 
@@ -435,8 +425,6 @@ the current-and-former counts are MODEL-SPEC §6.0a. Code comments that say
 - **`witmer-street` is tagged `landowner` on a judgment call.** The sheet reads
   "Witmer's Subdivision", which makes Henry Clayton Witmer the subdivider, but
   the `namedAfter` says the land was his *family's*. Either tag is arguable.
-- **Say that `descriptive` is a residual where authors will see it** — in its
-  node comment in `data/site-config.js` — *quick*.
 
 ---
 
@@ -472,13 +460,6 @@ sources. What neither says yet, because nobody has done it:
 
 ## 9. Things not on Kenny's list that fit alongside it
 
-- **Permalinks.** Encode the selected entity, segment, colour scheme and (when
-  it exists) the year in the URL hash. Trivial, and it is what makes the
-  `[[name:<id>]]` cross-links shareable, lets a proceeding page link to its
-  stretch, and lets Kenny send a colleague a particular view. *Quick.*
-- **A segmentation report in `generated/report.md`** printing the boundary
-  breakdown in §1's table, every build. Then the effect of Steps A–C is a
-  diff in a report rather than an impression from the map. *Quick.*
 - **`documents.js` and the coverage layer** (§3's first step) as its own
   item — it serves §1's grades, §3, §5a, and the "what has been looked at"
   question, and it costs an afternoon.
@@ -497,12 +478,7 @@ MODEL-SPEC §§4–5 and CLAUDE.md's broken-rules list stay as they are.
 
 ## 10. Suggested order
 
-1. **Quick fixes:** the search matcher (§6); add the two similar projects
-   Kenny named to `SIMILAR_PROJECTS` in `data/site-config.js` —
-   https://lax-skyline.parcelscope.net/ and https://maps.bristol.gov.uk/kyp/ ;
-   the segmentation report and permalinks (§9); scheme 3/4 colours (§5b);
-   style-budget warnings once per entity and `report.notes` in the report
-   (§11).
+1. *(The quick fixes: all shipped 2026-09-22.)*
 2. **Legacy cleanup** (§11), and the decision whether `tools/check-legacy.js`
    has done its job.
 3. **The Orange → Wilshire proceeding, written by hand** (§2) — a day, and it
@@ -544,13 +520,6 @@ in §2.
   the map relies on — labels, vocabulary, sources with URLs, bands tiling,
   timelines ending in the current name (it caught three rows on the wrong
   street before the flip). Decide, and trim it to that.
-- **Style-budget warnings** (note / namedAfter / origin length): they fire in
-  `tools/check-data.js` on the generated file, 70-odd per build, and belong in
-  `tools/check-model.js` or the names tool, once per entity. *Quick.*
-- **`report.notes` is never printed.** An unqualified change that lands nowhere
-  pushes a note there, but `generated/report.md` does not render the list, so
-  the note is dead code. The `check-model` warning covers the same ground;
-  print the notes or drop them. *Quick.*
 
 The one standing rule from the flip, to commit the regenerated
 `generated/streets-data.js` and `generated/search-index.js` with every change

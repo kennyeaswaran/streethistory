@@ -7,6 +7,21 @@
 - Curated entities: 328
 - Excluded OSM names (normalizeName misparses them; see tools/generate.js): East West Bank Plaza at The Broad
 
+## Segmentation (ROADMAP §1)
+
+941 segments on 272 streets (146 with anything but stubs); 669 boundaries between adjacent segments of one street.
+
+| what differs across the boundary | boundaries |
+|---|---|
+| a document speaks on one side and nothing but OSM on the other | 224 |
+| a different name lineage on each side (a name change) | 111 |
+| same names; the names carry different dates | 262 |
+| same names and dates; only planned / built / absentAsOf differ | 56 |
+| other (how, namesake text, note, categories or sources differ) | 8 |
+| nothing differs but geometry (a pavement gap) | 8 |
+
+Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 21, 4th Street 20, 6th Street 19, 7th Street 18, 8th Street 17, 1st Street 16, 5th Street 15, Main Street 15.
+
 ## Row problems
 - 12685: street not in geometry: West Bank Plaza at The Broad
 - 12685: cross-street not on Grand Avenue: West Bank Plaza at The Broad
@@ -17,6 +32,13 @@
 - mr001-489: cross-street not on Grand Avenue: West Bank Plaza at The Broad
 - mr010-008: row on Japanese Village Plaza Mall — the street does not enter this document's coverage at all
 - tr0856-050-p2: row on Toriumi Plaza (absent) spans nothing — its two ends resolve to the same point. the two cross streets meet this one at the same place.
+
+## Notes
+- OSM "Belmont Avenue": bound to belmont-ave; belmont-kincaid match(es) the name but exist only as vanished trace(s)
+- ord-97: georgia-bell → georgia-bell is unqualified and georgia-bell is attested nowhere at or before 1883-09-01 (1 later sighting(s) deliberately not counted) — the renaming is recorded but cannot be drawn
+- ord-1613: wyoming-avenue → scott-avenue is unqualified and wyoming-avenue is attested nowhere at or before 1893-04-03 — the renaming is recorded but cannot be drawn
+- ord-1613: cooper-street → scott-avenue is unqualified and cooper-street is attested nowhere at or before 1893-04-03 — the renaming is recorded but cannot be drawn
+- ord-4093: georgia-bell → georgia-bell is unqualified and georgia-bell is attested nowhere at or before 1897-02-23 (1 later sighting(s) deliberately not counted) — the renaming is recorded but cannot be drawn
 
 ## Revived names (a name recurs around another — check the intervening row is on the right street)
 - 2nd Street [-118.2591–-118.2586]: 2nd Street (1886) → Lake Shore Avenue → 2nd Street (undated) — a revived name, or a row on the wrong street

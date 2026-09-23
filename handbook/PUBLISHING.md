@@ -29,7 +29,8 @@ the commit — the change itself and the regenerated output:
 
     node tools/check-model.js && node tools/generate.js
 
-then commit `generated/streets-data.js` (and `generated/search-index.js`) with the rest.
+(or double-click `utilities/check-and-generate.command`, which runs those two
+and the `check-data` gate too, and says whether `generated/` changed), then commit `generated/streets-data.js` (and `generated/search-index.js`) with the rest.
 
 The deploy runs three gates before it uploads anything:
 

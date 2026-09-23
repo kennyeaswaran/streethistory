@@ -3078,6 +3078,10 @@ const STREET_DATA = {
         "note": "Renamed Olympic Boulevard in 1935, for the 1932 Games — the request went in in July 1929, and that they had been the tenth Olympiad seems to have gone unremarked.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -3156,6 +3160,10 @@ const STREET_DATA = {
         "note": "Renamed Olympic Boulevard in 1935, for the 1932 Games — the request went in in July 1929, and that they had been the tenth Olympiad seems to have gone unremarked.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -3219,6 +3227,10 @@ const STREET_DATA = {
         "note": "Renamed Olympic Boulevard in 1935, for the 1932 Games — the request went in in July 1929, and that they had been the tenth Olympiad seems to have gone unremarked.",
         "attested": true,
         "knownFraction": 0.69,
+        "earliest": {
+          "year": 1904,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -3402,6 +3414,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -3457,6 +3473,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -3513,6 +3533,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -3572,6 +3596,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -3669,6 +3697,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
         },
         "knownFraction": 0.2,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -3725,6 +3757,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -3785,6 +3821,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -3853,6 +3893,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -3920,6 +3964,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -4014,6 +4062,7 @@ const STREET_DATA = {
       "text": "1886 (Josefa Subdivision)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-094.pdf"
     },
+    "absentYear": 1886,
     "categories": [
       "basis-none",
       "searched-none",
@@ -4070,6 +4119,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -4161,6 +4214,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -4262,6 +4319,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -4326,6 +4387,7 @@ const STREET_DATA = {
       "text": "1886 (Harvey Tract)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
     },
+    "absentYear": 1886,
     "categories": [
       "basis-none",
       "searched-none",
@@ -4420,6 +4482,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -4509,6 +4575,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -4598,6 +4668,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.82,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -4695,6 +4769,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -4821,6 +4899,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "knownFraction": 0.76,
+    "earliest": {
+      "year": 1893,
+      "kind": "by"
+    },
     "categories": [
       "number",
       "basis-intrinsic"
@@ -4875,6 +4957,10 @@ const STREET_DATA = {
         "note": "The numbering ordinance read to the Council on Nov. 5, 1889 and adopted a week later turned Morris and Montgomery Streets into Seventeenth Street — so this stretch of the numbered grid arrived by renaming rather than by extension, as most of the grid south of Pico did.",
         "attested": true,
         "knownFraction": 0.63,
+        "earliest": {
+          "year": 1915,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -5059,6 +5145,10 @@ const STREET_DATA = {
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
         "attested": true,
         "knownFraction": 0.02,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -5144,6 +5234,10 @@ const STREET_DATA = {
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
         "attested": true,
         "knownFraction": 0.43,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -5239,6 +5333,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -5346,6 +5444,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
         },
         "knownFraction": 0.69,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1884,
         "categories": [
           "number",
           "renamed",
@@ -5440,6 +5543,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
         },
         "knownFraction": 0.55,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1884,
         "categories": [
           "number",
           "renamed",
@@ -5505,6 +5613,7 @@ const STREET_DATA = {
           "text": "1884 (35 Acre Lot 1, Block 38)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
         },
+        "absentYear": 1884,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -5613,6 +5722,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -5685,6 +5799,10 @@ const STREET_DATA = {
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -5761,6 +5879,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.9,
+        "earliest": {
+          "year": 1868,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -5844,6 +5967,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -5899,6 +6027,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -5974,6 +6107,10 @@ const STREET_DATA = {
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
         "attested": true,
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -6042,6 +6179,10 @@ const STREET_DATA = {
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
         "attested": true,
         "knownFraction": 0.67,
+        "earliest": {
+          "year": 1908,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -6098,6 +6239,10 @@ const STREET_DATA = {
         "note": "Since 1883 1st Street has divided north from south in Los Angeles addresses, as Main Street divides east from west. Claims dating the numbering to 1846 are doubtful.",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -6197,6 +6342,7 @@ const STREET_DATA = {
       "text": "1869 (Mott Tract building lots)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
     },
+    "absentYear": 1869,
     "categories": [
       "basis-none",
       "searched-none",
@@ -6332,6 +6478,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -6424,6 +6574,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -6503,6 +6657,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.67,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -6594,6 +6752,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.66,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -6698,6 +6860,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-081.pdf"
         },
         "knownFraction": 0.87,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -6799,6 +6965,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -6884,6 +7054,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -6982,6 +7156,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -7075,6 +7253,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1884,
         "categories": [
           "number",
           "renamed",
@@ -7160,6 +7343,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
         },
         "knownFraction": 0.62,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1884,
         "categories": [
           "number",
           "renamed",
@@ -7253,6 +7441,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
         },
         "knownFraction": 0.9,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1884,
         "categories": [
           "number",
           "renamed",
@@ -7328,6 +7521,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.71,
+        "earliest": {
+          "year": 1901,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -7448,6 +7645,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -7524,6 +7726,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -7576,6 +7782,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -7628,6 +7835,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.66,
+        "earliest": {
+          "year": 1910,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -7700,6 +7912,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.66,
+        "earliest": {
+          "year": 1910,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -7776,6 +7993,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.28,
+        "earliest": {
+          "year": 1977,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -7852,6 +8074,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.27,
+        "earliest": {
+          "year": 1979,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -7930,6 +8157,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.29,
+        "earliest": {
+          "year": 1871,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -8017,6 +8249,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.02,
+        "earliest": {
+          "year": 1871,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -8100,6 +8337,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.13,
+        "earliest": {
+          "year": 1871,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -8187,6 +8429,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.02,
+        "earliest": {
+          "year": 1871,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -8280,6 +8527,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.6,
+        "earliest": {
+          "year": 1871,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -8378,6 +8630,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.57,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -8469,6 +8726,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
         },
         "knownFraction": 0.43,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -8560,6 +8821,7 @@ const STREET_DATA = {
           "text": "1913 (Tract No. 2473)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0024/TR0024-055.pdf"
         },
+        "absentYear": 1913,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -8634,6 +8896,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0015/TR0015-179a.pdf"
         },
         "knownFraction": 0.34,
+        "earliest": {
+          "year": 1889,
+          "kind": "by"
+        },
+        "absentYear": 1885,
         "categories": [
           "number",
           "renamed",
@@ -8722,6 +8989,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.02,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -8837,6 +9108,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -8939,6 +9214,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.1,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -9040,6 +9319,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.1,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -9123,6 +9406,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.15,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -9183,6 +9470,7 @@ const STREET_DATA = {
           "text": "1917 (Tract No. 3085)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0035/TR0035-092.pdf"
         },
+        "absentYear": 1917,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -9276,6 +9564,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -9339,6 +9632,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -9394,6 +9691,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -9463,6 +9761,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1882,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -9515,6 +9818,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -9562,6 +9866,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -9644,6 +9953,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.88,
+        "earliest": {
+          "year": 1871,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -9749,6 +10063,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.74,
+        "earliest": {
+          "year": 1871,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -9846,6 +10165,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.09,
+        "earliest": {
+          "year": 1871,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -9949,6 +10273,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.02,
+        "earliest": {
+          "year": 1871,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -10055,6 +10384,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -10149,6 +10483,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.57,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -10234,6 +10573,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.57,
+        "earliest": {
+          "year": 1926,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -10286,6 +10629,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.67,
+        "earliest": {
+          "year": 1908,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -10386,6 +10733,7 @@ const STREET_DATA = {
           "text": "1887 (Mills and Wicks Extension map, sheet 1)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-087.pdf"
         },
+        "absentYear": 1887,
         "categories": [
           "number",
           "descriptive",
@@ -10445,6 +10793,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-042.pdf"
         },
         "knownFraction": 0.2,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1886,
         "categories": [
           "number",
           "descriptive",
@@ -10512,6 +10865,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1966,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "descriptive",
@@ -10561,6 +10919,7 @@ const STREET_DATA = {
           "text": "1907 (Tract No. 35)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-186.pdf"
         },
+        "absentYear": 1907,
         "categories": [
           "number",
           "descriptive",
@@ -10666,6 +11025,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.16,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -10744,6 +11107,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -10796,6 +11163,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.86,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -10847,6 +11218,7 @@ const STREET_DATA = {
           "text": "1917 (Tract No. 3085)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0035/TR0035-092.pdf"
         },
+        "absentYear": 1917,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -10950,6 +11322,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11017,6 +11394,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11096,6 +11477,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11152,6 +11538,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.82,
+        "earliest": {
+          "year": 1882,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11224,6 +11615,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11276,6 +11672,7 @@ const STREET_DATA = {
           "text": "1887 (Wolfskill Orchard Tract, sheet 4 (M.R. 30-12))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
+        "absentYear": 1887,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11345,6 +11742,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -11431,6 +11833,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.35,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -11521,6 +11928,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.34,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -11592,6 +12004,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.34,
+        "earliest": {
+          "year": 1966,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11644,6 +12061,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11696,6 +12114,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11743,6 +12166,7 @@ const STREET_DATA = {
           "text": "1907 (Tract No. 35)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-186.pdf"
         },
+        "absentYear": 1907,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11782,6 +12206,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.67,
+        "earliest": {
+          "year": 1908,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11917,6 +12345,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0002/TR0002-037a.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -11981,6 +12413,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12037,6 +12473,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.86,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12143,6 +12583,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12207,6 +12648,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.9,
+        "earliest": {
+          "year": 1868,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12275,6 +12721,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12351,6 +12801,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1881,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12411,6 +12866,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.85,
+        "earliest": {
+          "year": 1876,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12463,6 +12923,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12515,6 +12976,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12582,6 +13048,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12656,6 +13127,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -12745,6 +13221,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.34,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "renamed",
@@ -12834,6 +13315,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
         },
         "knownFraction": 0.16,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -12881,6 +13366,7 @@ const STREET_DATA = {
           "text": "1868 (Beaudry Tract)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
         },
+        "absentYear": 1868,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12988,6 +13474,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -13075,6 +13565,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -13158,6 +13652,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -13260,6 +13758,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -13350,6 +13852,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.69,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -13428,6 +13934,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.73,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -13510,6 +14020,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -13567,6 +14081,7 @@ const STREET_DATA = {
           "text": "1878 (Nichols Addition)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
         },
+        "absentYear": 1878,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -13626,6 +14141,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.9,
+        "earliest": {
+          "year": 1868,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -13693,6 +14213,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -13769,6 +14293,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1906,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -13825,6 +14354,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.85,
+        "earliest": {
+          "year": 1876,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -13885,6 +14419,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -13937,6 +14472,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -14012,6 +14552,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-056a.pdf"
         },
         "knownFraction": 0.98,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
+        "absentYear": 1904,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -14071,6 +14616,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -14143,6 +14693,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -14283,6 +14834,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1913,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "descriptive",
@@ -14369,6 +14924,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "descriptive",
@@ -14540,6 +15099,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -14612,6 +15175,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -14672,6 +15239,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -14752,6 +15323,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1889,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -14816,6 +15391,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.84,
+        "earliest": {
+          "year": 1878,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -14900,6 +15479,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.86,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -14976,6 +15560,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -15052,6 +15640,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.87,
+        "earliest": {
+          "year": 1873,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -15132,6 +15725,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -15212,6 +15810,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -15288,6 +15891,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -15356,6 +15964,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -15444,6 +16057,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-091.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1887,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -15499,6 +16117,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -15570,6 +16193,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -15626,6 +16253,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -15756,6 +16387,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-405.pdf"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1884,
         "categories": [
           "renamed",
           "basis-none",
@@ -15820,6 +16456,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1901,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -15916,6 +16556,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1878,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -16028,6 +16672,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -16102,6 +16750,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.73,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -16159,6 +16811,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.73,
+        "earliest": {
+          "year": 1897,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -16255,6 +16911,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.71,
+        "earliest": {
+          "year": 1901,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -16363,6 +17023,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -16426,6 +17090,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.84,
+        "earliest": {
+          "year": 1878,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -16493,6 +17161,10 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -16565,6 +17237,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.91,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -16617,6 +17294,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -16676,6 +17357,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -16739,6 +17424,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -16811,6 +17500,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -16887,6 +17580,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -17015,6 +17712,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "knownFraction": 0,
+    "earliest": {
+      "year": 1893,
+      "kind": "by"
+    },
     "categories": [
       "renamed",
       "basis-none",
@@ -17084,6 +17785,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -17165,6 +17870,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "number",
           "renamed",
@@ -17239,6 +17948,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1873,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -17318,6 +18031,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1873,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "renamed",
@@ -17375,6 +18092,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -17438,6 +18159,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -17497,6 +18222,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -17557,6 +18286,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -17620,6 +18353,10 @@ const STREET_DATA = {
     "note": "Lettered “Calle de las Adobes” on the 1849 survey and still Adobe Street today. The obvious reading is the adobe houses along it, but no source says so.",
     "attested": true,
     "knownFraction": 1,
+    "earliest": {
+      "year": 1849,
+      "kind": "exact"
+    },
     "categories": [
       "material",
       "basis-lexical"
@@ -17665,6 +18402,10 @@ const STREET_DATA = {
     "note": "Named in 1897, on land owned by Frank Sabichi, who had married Magdalena Wolfskill and was credited with opening East 7th Street through the family properties. Agatha Sabichi worked as a bank clerk and in 1908 married John Joseph Fay Jr., later president of the water board.",
     "attested": true,
     "knownFraction": 0.73,
+    "earliest": {
+      "year": 1897,
+      "kind": "by"
+    },
     "categories": [
       "person",
       "alive",
@@ -17712,6 +18453,10 @@ const STREET_DATA = {
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "tree",
@@ -17775,6 +18520,10 @@ const STREET_DATA = {
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "knownFraction": 0.66,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "tree",
@@ -17852,6 +18601,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "knownFraction": 0.87,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "tree",
@@ -17933,6 +18686,10 @@ const STREET_DATA = {
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "tree",
@@ -18003,6 +18760,10 @@ const STREET_DATA = {
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "tree",
@@ -18088,6 +18849,10 @@ const STREET_DATA = {
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "tree",
@@ -18169,6 +18934,10 @@ const STREET_DATA = {
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "knownFraction": 0.88,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "tree",
@@ -18262,6 +19031,10 @@ const STREET_DATA = {
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "tree",
@@ -18327,6 +19100,10 @@ const STREET_DATA = {
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "tree",
@@ -18412,6 +19189,10 @@ const STREET_DATA = {
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "tree",
@@ -18485,6 +19266,10 @@ const STREET_DATA = {
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "tree",
@@ -18617,6 +19402,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -18651,6 +19437,7 @@ const STREET_DATA = {
           "text": "1873 (Old Plaza, 1873)",
           "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
         },
+        "absentYear": 1873,
         "categories": [
           "basis-none",
           "searched-none",
@@ -18775,6 +19562,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "renamed",
@@ -18851,6 +19642,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "place",
           "renamed",
@@ -18931,6 +19727,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "place",
           "renamed",
@@ -19003,6 +19803,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "place",
           "renamed",
@@ -19053,6 +19857,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "place",
           "basis-inferred"
@@ -19138,6 +19943,10 @@ const STREET_DATA = {
         "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041), on Tract No. 207 of 1908 (documents/tr0013-168-p1) and on Tract No. 5301 of 1926 (documents/tr0122-053-p3), and still Anderson Street today. It grew by absorbing its neighbours: an Anderson Avenue was folded into it in Oct. 1888, and South Rio Street became South Anderson Street in the mid-1920s when the Union Pacific extended it to East 7th. Nothing found says who Anderson was.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -19210,6 +20019,10 @@ const STREET_DATA = {
         "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041), on Tract No. 207 of 1908 (documents/tr0013-168-p1) and on Tract No. 5301 of 1926 (documents/tr0122-053-p3), and still Anderson Street today. It grew by absorbing its neighbours: an Anderson Avenue was folded into it in Oct. 1888, and South Rio Street became South Anderson Street in the mid-1920s when the Union Pacific extended it to East 7th. Nothing found says who Anderson was.",
         "attested": true,
         "knownFraction": 0.57,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -19302,6 +20115,10 @@ const STREET_DATA = {
         "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041), on Tract No. 207 of 1908 (documents/tr0013-168-p1) and on Tract No. 5301 of 1926 (documents/tr0122-053-p3), and still Anderson Street today. It grew by absorbing its neighbours: an Anderson Avenue was folded into it in Oct. 1888, and South Rio Street became South Anderson Street in the mid-1920s when the Union Pacific extended it to East 7th. Nothing found says who Anderson was.",
         "attested": true,
         "knownFraction": 0.57,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -19370,6 +20187,10 @@ const STREET_DATA = {
         "note": "Lettered on the Clement Tract of May 1887 (documents/mr017-041), on Tract No. 207 of 1908 (documents/tr0013-168-p1) and on Tract No. 5301 of 1926 (documents/tr0122-053-p3), and still Anderson Street today. It grew by absorbing its neighbours: an Anderson Avenue was folded into it in Oct. 1888, and South Rio Street became South Anderson Street in the mid-1920s when the Union Pacific extended it to East 7th. Nothing found says who Anderson was.",
         "attested": true,
         "knownFraction": 0.57,
+        "earliest": {
+          "year": 1926,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-extensive"
@@ -19522,6 +20343,10 @@ const STREET_DATA = {
         "note": "A woman's given name on Prudent Beaudry's Park tract, beside Victor Avenue, which is named for his brother. Angelina was Victor Beaudry's wife. The modern street also absorbed Omaha Street, between Edgeware and Douglas.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "family",
@@ -19569,6 +20394,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -19598,6 +20424,7 @@ const STREET_DATA = {
       "text": "1873 (Old Plaza, 1873)",
       "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
     },
+    "absentYear": 1873,
     "categories": [
       "basis-none",
       "searched-none",
@@ -19632,6 +20459,7 @@ const STREET_DATA = {
           "text": "1914 (Tract No. 2643)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0026/TR0026-074.pdf"
         },
+        "absentYear": 1914,
         "categories": [
           "basis-none",
           "searched-none",
@@ -19717,6 +20545,10 @@ const STREET_DATA = {
     "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Artemus Street today. Nothing found says who or what it was named for.",
     "attested": true,
     "knownFraction": 0.57,
+    "earliest": {
+      "year": 1926,
+      "kind": "by"
+    },
     "categories": [
       "basis-none",
       "searched-partial"
@@ -19785,6 +20617,10 @@ const STREET_DATA = {
         "note": "Weller Street until 1987, when the City Council renamed it in Onizuka's honor a year after the Challenger explosion, with a memorial plaque and shuttle model at the street's centre. The longest street name in the city.",
         "attested": true,
         "knownFraction": 0.28,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "renamed",
@@ -19900,6 +20736,10 @@ const STREET_DATA = {
         "note": "Weller Street until 1987, when the City Council renamed it in Onizuka's honor a year after the Challenger explosion, with a memorial plaque and shuttle model at the street's centre. The longest street name in the city.",
         "attested": true,
         "knownFraction": 0.32,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "renamed",
@@ -20022,6 +20862,10 @@ const STREET_DATA = {
         "note": "Weller Street until 1987, when the City Council renamed it in Onizuka's honor a year after the Challenger explosion, with a memorial plaque and shuttle model at the street's centre. The longest street name in the city.",
         "attested": true,
         "knownFraction": 0.32,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "renamed",
@@ -20100,6 +20944,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "knownFraction": 0,
+    "earliest": {
+      "year": 1887,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -20129,6 +20978,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -20170,6 +21020,10 @@ const STREET_DATA = {
     "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Azusa Street today. Nothing found says why the name was chosen here.",
     "attested": true,
     "knownFraction": 0.57,
+    "earliest": {
+      "year": 1926,
+      "kind": "by"
+    },
     "categories": [
       "basis-none",
       "searched-partial"
@@ -20198,6 +21052,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "knownFraction": 0,
+    "earliest": {
+      "year": 1849,
+      "kind": "exact"
+    },
     "categories": [
       "basis-none",
       "searched-none",
@@ -20227,6 +21085,7 @@ const STREET_DATA = {
       "text": "1869 (Aliso Tract)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
     },
+    "absentYear": 1869,
     "categories": [
       "person",
       "basis-guess"
@@ -20325,6 +21184,7 @@ const STREET_DATA = {
           "text": "1907 (Tract No. 49)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-033.pdf"
         },
+        "absentYear": 1907,
         "categories": [
           "basis-none",
           "searched-none",
@@ -20389,6 +21249,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1909,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "renamed",
           "basis-none",
@@ -20435,6 +21300,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-none",
@@ -20532,6 +21398,10 @@ const STREET_DATA = {
         "note": "Named for the Montreal-born promoter who moved to Los Angeles in 1852, ran a store at Los Angeles and Aliso Streets until 1867, then went into real estate and made the western hills habitable. He was elected to the City Council in 1871 and to the mayoralty in 1874, presided over the creation of City Park (now Pershing Square), and built a streetcar line along Temple, where he lived. A lifelong bachelor, he died in Los Angeles and is buried in Montreal.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -20603,6 +21473,10 @@ const STREET_DATA = {
         "note": "Named for the Montreal-born promoter who moved to Los Angeles in 1852, ran a store at Los Angeles and Aliso Streets until 1867, then went into real estate and made the western hills habitable. He was elected to the City Council in 1871 and to the mayoralty in 1874, presided over the creation of City Park (now Pershing Square), and built a streetcar line along Temple, where he lived. A lifelong bachelor, he died in Los Angeles and is buried in Montreal.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -20674,6 +21548,10 @@ const STREET_DATA = {
         "note": "Named for the Montreal-born promoter who moved to Los Angeles in 1852, ran a store at Los Angeles and Aliso Streets until 1867, then went into real estate and made the western hills habitable. He was elected to the City Council in 1871 and to the mayoralty in 1874, presided over the creation of City Park (now Pershing Square), and built a streetcar line along Temple, where he lived. A lifelong bachelor, he died in Los Angeles and is buried in Montreal.",
         "attested": true,
         "knownFraction": 0.71,
+        "earliest": {
+          "year": 1901,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -20759,6 +21637,10 @@ const STREET_DATA = {
         "note": "Named for the Montreal-born promoter who moved to Los Angeles in 1852, ran a store at Los Angeles and Aliso Streets until 1867, then went into real estate and made the western hills habitable. He was elected to the City Council in 1871 and to the mayoralty in 1874, presided over the creation of City Park (now Pershing Square), and built a streetcar line along Temple, where he lived. A lifelong bachelor, he died in Los Angeles and is buried in Montreal.",
         "attested": true,
         "knownFraction": 0.71,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -20860,6 +21742,10 @@ const STREET_DATA = {
         "note": "Named for the Montreal-born promoter who moved to Los Angeles in 1852, ran a store at Los Angeles and Aliso Streets until 1867, then went into real estate and made the western hills habitable. He was elected to the City Council in 1871 and to the mayoralty in 1874, presided over the creation of City Park (now Pershing Square), and built a streetcar line along Temple, where he lived. A lifelong bachelor, he died in Los Angeles and is buried in Montreal.",
         "attested": true,
         "knownFraction": 0.62,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -20947,6 +21833,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
         },
         "knownFraction": 0.55,
+        "earliest": {
+          "year": 1955,
+          "kind": "by"
+        },
+        "absentYear": 1875,
         "categories": [
           "person",
           "politician",
@@ -21006,6 +21897,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
         },
         "knownFraction": 0.84,
+        "earliest": {
+          "year": 1906,
+          "kind": "by"
+        },
+        "absentYear": 1878,
         "categories": [
           "person",
           "politician",
@@ -21065,6 +21961,7 @@ const STREET_DATA = {
           "text": "1964 (Tract No. 25510)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0718/TR0718-007.pdf"
         },
+        "absentYear": 1964,
         "categories": [
           "person",
           "politician",
@@ -21162,6 +22059,10 @@ const STREET_DATA = {
         "note": "Lettered on documents/mr012-025 and documents/tr0063-098-p1. It predates the 1886 Angeleno Heights tract, which uses it as a boundary. Most of it east of the 110 is now Sunset Boulevard and Cesar E. Chavez Avenue; a western remnant keeps the name.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "basis-lexical"
@@ -21232,6 +22133,10 @@ const STREET_DATA = {
         "note": "Lettered on documents/mr012-025 and documents/tr0063-098-p1. It predates the 1886 Angeleno Heights tract, which uses it as a boundary. Most of it east of the 110 is now Sunset Boulevard and Cesar E. Chavez Avenue; a western remnant keeps the name.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "renamed",
@@ -21350,6 +22255,10 @@ const STREET_DATA = {
         "note": "Lettered on J. W. Ellis's subdivision of Sept. 1886 (documents/mr010-088), running south-west from the end of Texas Street along what is now Loma Drive. Nothing found says who or what Belmont was named for.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -21435,6 +22344,10 @@ const STREET_DATA = {
         "note": "Lettered on J. W. Ellis's subdivision of Sept. 1886 (documents/mr010-088), running south-west from the end of Texas Street along what is now Loma Drive. Nothing found says who or what Belmont was named for.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -21537,6 +22450,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-none",
@@ -21582,6 +22496,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-none",
@@ -21681,6 +22596,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1924,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -21802,6 +22721,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -21879,6 +22802,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -21969,6 +22896,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1883,
         "categories": [
           "renamed",
           "basis-none",
@@ -22019,6 +22951,7 @@ const STREET_DATA = {
           "text": "1883 (Lot 8, Block 35, Hancock Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
         },
+        "absentYear": 1883,
         "categories": [
           "basis-none",
           "searched-partial"
@@ -22091,6 +23024,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1908,
+          "kind": "by"
+        },
+        "absentYear": 1883,
         "categories": [
           "renamed",
           "basis-none",
@@ -22179,6 +23117,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-081.pdf"
         },
         "knownFraction": 0.63,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -22271,6 +23213,10 @@ const STREET_DATA = {
         "note": "The name reached this ground in stages. Kines dates its arrival on the Lafayette Avenue corridor to 1889; in December 1897 the city engineer proposed carrying it north over Jewel Street, from Sapphire Street to that street’s north end. Nothing found here says who Bixel was.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -22369,6 +23315,10 @@ const STREET_DATA = {
         "note": "The name reached this ground in stages. Kines dates its arrival on the Lafayette Avenue corridor to 1889; in December 1897 the city engineer proposed carrying it north over Jewel Street, from Sapphire Street to that street’s north end. Nothing found here says who Bixel was.",
         "attested": true,
         "knownFraction": 0.05,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -22455,6 +23405,10 @@ const STREET_DATA = {
         "note": "The name reached this ground in stages. Kines dates its arrival on the Lafayette Avenue corridor to 1889; in December 1897 the city engineer proposed carrying it north over Jewel Street, from Sapphire Street to that street’s north end. Nothing found here says who Bixel was.",
         "attested": true,
         "knownFraction": 0.45,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -22549,6 +23503,10 @@ const STREET_DATA = {
         "note": "The name reached this ground in stages. Kines dates its arrival on the Lafayette Avenue corridor to 1889; in December 1897 the city engineer proposed carrying it north over Jewel Street, from Sapphire Street to that street’s north end. Nothing found here says who Bixel was.",
         "attested": true,
         "knownFraction": 0.75,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -22651,6 +23609,10 @@ const STREET_DATA = {
         "note": "The name reached this ground in stages. Kines dates its arrival on the Lafayette Avenue corridor to 1889; in December 1897 the city engineer proposed carrying it north over Jewel Street, from Sapphire Street to that street’s north end. Nothing found here says who Bixel was.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -22735,6 +23697,10 @@ const STREET_DATA = {
         "note": "The name reached this ground in stages. Kines dates its arrival on the Lafayette Avenue corridor to 1889; in December 1897 the city engineer proposed carrying it north over Jewel Street, from Sapphire Street to that street’s north end. Nothing found here says who Bixel was.",
         "attested": true,
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-partial"
@@ -22812,6 +23778,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
         },
         "knownFraction": 0.98,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -22885,6 +23855,10 @@ const STREET_DATA = {
         "note": "The name reached this ground in stages. Kines dates its arrival on the Lafayette Avenue corridor to 1889; in December 1897 the city engineer proposed carrying it north over Jewel Street, from Sapphire Street to that street’s north end. Nothing found here says who Bixel was.",
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -22987,6 +23961,10 @@ const STREET_DATA = {
         "note": "The name reached this ground in stages. Kines dates its arrival on the Lafayette Avenue corridor to 1889; in December 1897 the city engineer proposed carrying it north over Jewel Street, from Sapphire Street to that street’s north end. Nothing found here says who Bixel was.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1901,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -23059,6 +24037,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -23088,6 +24067,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -23189,6 +24169,10 @@ const STREET_DATA = {
     "note": "One of the patriotic-American names on Prudent Beaudry's Park tract (documents/mr007-026-p1). The modern Boston Street also absorbed Ionia Street, the Angeleno Heights name that ran between Edgeware Road and Boylston.",
     "attested": true,
     "knownFraction": 0,
+    "earliest": {
+      "year": 1886,
+      "kind": "by"
+    },
     "categories": [
       "place",
       "renamed",
@@ -23259,6 +24243,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.82,
+        "earliest": {
+          "year": 1882,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-extensive"
@@ -23300,6 +24289,7 @@ const STREET_DATA = {
           "text": "1887 (Wolfskill Orchard Tract, sheet 5 (M.R. 30-13))",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
+        "absentYear": 1887,
         "categories": [
           "basis-none",
           "searched-extensive"
@@ -23344,6 +24334,10 @@ const STREET_DATA = {
         "note": "Lettered on the Orchard Tract of July 1882 between Wall Street and San Pedro Street, and still Boyd Street today. No Boyd is documented: the sheet names its three owners, its surveyor and the three earlier tracts it absorbed, and there is no Boyd among them.",
         "attested": true,
         "knownFraction": 0.57,
+        "earliest": {
+          "year": 1926,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-extensive"
@@ -23412,6 +24406,10 @@ const STREET_DATA = {
         "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.6,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "borrowed",
@@ -23506,6 +24504,10 @@ const STREET_DATA = {
         "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.02,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "borrowed",
@@ -23609,6 +24611,10 @@ const STREET_DATA = {
         "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "borrowed",
@@ -23708,6 +24714,10 @@ const STREET_DATA = {
         "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "borrowed",
@@ -23812,6 +24822,10 @@ const STREET_DATA = {
         "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.73,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "borrowed",
@@ -23907,6 +24921,10 @@ const STREET_DATA = {
         "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.4,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "borrowed",
@@ -23998,6 +25016,10 @@ const STREET_DATA = {
         "note": "The name that replaced “De La Guerra” on the old line of Figueroa Street. The Feb. 2, 1897 draft ordinance would have called the street De La Guerra; the council’s Feb. 23 amendments made it Boylston instead — De La Guerra was only ever draft text. The suggestion came from Orson Thomas “O. T.” Johnson (1839–1916), a financier who lived on nearby Orange Street, today’s Wilshire Boulevard. The street runs through Prudent Beaudry’s Park tract and crosses his Boston Street, one of the patriotic set he named there in the 1870s (Boston, Bunker Hill, Centennial, Philadelphia) — the likeliest reason a Boston name suggested itself, though no source says so.",
         "attested": true,
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "borrowed",
@@ -24067,6 +25089,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -24101,6 +25124,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "borrowed",
           "basis-guess"
@@ -24156,6 +25180,10 @@ const STREET_DATA = {
         "note": "The name has no “Street”: the 1890 papers and the street signs both say simply Broadway.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "borrowed",
           "renamed",
@@ -24213,6 +25241,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "borrowed",
           "basis-guess"
@@ -24278,6 +25307,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "borrowed",
           "renamed",
@@ -24359,6 +25393,10 @@ const STREET_DATA = {
         "note": "The name has no “Street”: the 1890 papers and the street signs both say simply Broadway.",
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "borrowed",
           "renamed",
@@ -24426,6 +25464,7 @@ const STREET_DATA = {
           "text": "1883 (North Carr Tract Subdivision)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
         },
+        "absentYear": 1883,
         "categories": [
           "borrowed",
           "basis-guess"
@@ -24505,6 +25544,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -24564,6 +25604,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "place",
           "renamed",
@@ -24682,6 +25727,10 @@ const STREET_DATA = {
         "note": "Named by Prudent Beaudry in 1873, first mentioned that December in a news article about his tract, and extended onto the Park tract a few years later. ⚠ The modern Bunker Hill Avenue is not on Bunker Hill at all: Beaudry's original stretch, from 2nd to 4th between Hope and Charity, went with the clearance of old Bunker Hill in the 1960s, and the surviving street in Chinatown was born as Montreal Street.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "renamed",
@@ -24793,6 +25842,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -24837,6 +25890,7 @@ const STREET_DATA = {
           "text": "1885 (Colina Park)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
         },
+        "absentYear": 1885,
         "categories": [
           "basis-none",
           "searched-none",
@@ -24941,6 +25995,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-none",
@@ -25014,6 +26069,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "person",
       "alive",
@@ -25055,6 +26111,7 @@ const STREET_DATA = {
           "text": "1873 (Botiller and Reyes lots)",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
+        "absentYear": 1873,
         "categories": [
           "basis-none",
           "searched-none",
@@ -25119,6 +26176,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.13,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "renamed",
           "basis-none",
@@ -25189,6 +26251,7 @@ const STREET_DATA = {
           "text": "1869 (Aliso Tract)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
         },
+        "absentYear": 1869,
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -25234,6 +26297,10 @@ const STREET_DATA = {
         "note": "Lettered on documents/mr004-012-p2 and documents/tr0201-001-p2, east of Alameda. It survives.",
         "attested": true,
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -25319,6 +26386,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "descriptive",
           "basis-attested"
@@ -25396,6 +26468,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.73,
+        "earliest": {
+          "year": 1977,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "descriptive",
           "renamed",
@@ -25464,6 +26541,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "knownFraction": 0.48,
+        "earliest": {
+          "year": 1979,
+          "kind": "by"
+        },
+        "absentYear": 1887,
         "categories": [
           "descriptive",
           "basis-attested"
@@ -25532,6 +26614,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "descriptive",
           "renamed",
@@ -25607,6 +26694,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1906,
+          "kind": "by"
+        },
+        "absentYear": 1887,
         "categories": [
           "descriptive",
           "basis-attested"
@@ -25674,6 +26766,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "descriptive",
           "basis-attested"
@@ -25746,6 +26843,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "descriptive",
           "basis-attested"
@@ -25818,6 +26920,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.73,
+        "earliest": {
+          "year": 1898,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "basis-attested"
@@ -25870,6 +26976,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "basis-attested"
@@ -25926,6 +27036,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1887,
+          "kind": "exact"
+        },
+        "absentYear": 1849,
         "categories": [
           "mythological",
           "basis-guess"
@@ -25980,6 +27095,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "exact"
+        },
+        "absentYear": 1849,
         "categories": [
           "mythological",
           "basis-guess"
@@ -26050,6 +27170,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "mythological",
           "renamed",
@@ -26130,6 +27255,10 @@ const STREET_DATA = {
         "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "renamed",
@@ -26301,6 +27430,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "knownFraction": 0.05,
+        "earliest": {
+          "year": 1876,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "renamed",
@@ -26379,6 +27513,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "person",
           "basis-attested"
@@ -26469,6 +27604,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "knownFraction": 0.2,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "person",
           "renamed",
@@ -26542,6 +27681,7 @@ const STREET_DATA = {
           "text": "1873 (Old Plaza, 1873)",
           "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
         },
+        "absentYear": 1873,
         "categories": [
           "person",
           "basis-attested"
@@ -26627,6 +27767,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1873,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "renamed",
@@ -26712,6 +27857,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1873,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "renamed",
@@ -26771,6 +27921,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "person",
           "basis-attested"
@@ -26825,6 +27976,10 @@ const STREET_DATA = {
         "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "basis-attested"
@@ -26959,6 +28114,10 @@ const STREET_DATA = {
         "note": "Macy Street through the Plaza and Chinatown until March 31, 1994, when Macy Street, Brooklyn Avenue (in Boyle Heights) and a new Sunset Boulevard connector were united under Chavez's name on his would-be 67th birthday, at Supervisor Gloria Molina's urging. In March 2026 a New York Times investigation reported that Chavez had sexually abused several women and minors, including UFW co-founder Dolores Huerta; California and Denver subsequently renamed the associated holiday.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1904,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "renamed",
@@ -27093,6 +28252,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-056a.pdf"
     },
     "knownFraction": 1,
+    "earliest": {
+      "year": 1887,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-extensive"
@@ -27125,6 +28289,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -27193,6 +28358,7 @@ const STREET_DATA = {
           "text": "1886 (Kincaid's Tract)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-030.pdf"
         },
+        "absentYear": 1886,
         "categories": [
           "basis-none",
           "searched-none",
@@ -27232,6 +28398,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -27261,6 +28428,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -27306,6 +28474,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "knownFraction": 0.8,
+    "earliest": {
+      "year": 1885,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "person",
       "politician",
@@ -27410,6 +28583,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "company",
           "basis-attested"
@@ -27468,6 +28646,10 @@ const STREET_DATA = {
         "note": "A church request in June 1849 for a colegio — a secondary school — on this ground prompted Ord and Hutton to letter it “Calle del Colegio” a month later. The school was never built; the street kept the name.",
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "company",
           "basis-attested"
@@ -27522,6 +28704,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "company",
           "basis-attested"
@@ -27564,6 +28747,10 @@ const STREET_DATA = {
         "note": "A church request in June 1849 for a colegio — a secondary school — on this ground prompted Ord and Hutton to letter it “Calle del Colegio” a month later. The school was never built; the street kept the name.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "company",
           "basis-attested"
@@ -27628,6 +28815,10 @@ const STREET_DATA = {
         "note": "Lettered on three tracts between 1908 and 1912 and still Colton Street today. It replaced State Street on the same ground: Edward Doheny's first oil well of 1892 is described as being at the corner of Patton and State, and at the corner of Colton and Patton. Nothing found says who or what Colton was.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -27696,6 +28887,10 @@ const STREET_DATA = {
         "note": "Lettered on three tracts between 1908 and 1912 and still Colton Street today. It replaced State Street on the same ground: Edward Doheny's first oil well of 1892 is described as being at the corner of Patton and State, and at the corner of Colton and Patton. Nothing found says who or what Colton was.",
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -27770,6 +28965,10 @@ const STREET_DATA = {
         "note": "Lettered on three tracts between 1908 and 1912 and still Colton Street today. It replaced State Street on the same ground: Edward Doheny's first oil well of 1892 is described as being at the corner of Patton and State, and at the corner of Colton and Patton. Nothing found says who or what Colton was.",
         "attested": true,
         "knownFraction": 0.67,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -27838,6 +29037,10 @@ const STREET_DATA = {
         "note": "Namesake untraced. The 1909 Crownwood sheet letters it, which is the earliest evidence the project holds for the street, but nothing found says who or what Columbia was meant to be.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-partial"
@@ -27945,6 +29148,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "knownFraction": 0.8,
+    "earliest": {
+      "year": 1886,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "place",
       "basis-attested"
@@ -28012,6 +29220,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "descriptive",
           "renamed",
@@ -28094,6 +29307,10 @@ const STREET_DATA = {
         "note": "One of the oldest named streets in Los Angeles — in print by June 19, 1852, and on Kines's reading older in practice than Flower or Hope, which were drawn in 1849 but stayed paper streets for years. Nearly the whole corridor was erased in the twentieth century by Civic Center expansion and the Hollywood Freeway.",
         "attested": true,
         "knownFraction": 0.65,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "renamed",
@@ -28190,6 +29407,10 @@ const STREET_DATA = {
         "note": "One of the oldest named streets in Los Angeles — in print by June 19, 1852, and on Kines's reading older in practice than Flower or Hope, which were drawn in 1849 but stayed paper streets for years. Nearly the whole corridor was erased in the twentieth century by Civic Center expansion and the Hollywood Freeway.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "renamed",
@@ -28278,6 +29499,10 @@ const STREET_DATA = {
         "note": "One of the oldest named streets in Los Angeles — in print by June 19, 1852, and on Kines's reading older in practice than Flower or Hope, which were drawn in 1849 but stayed paper streets for years. Nearly the whole corridor was erased in the twentieth century by Civic Center expansion and the Hollywood Freeway.",
         "attested": true,
         "knownFraction": 0.51,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "renamed",
@@ -28369,6 +29594,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
     },
     "knownFraction": 0,
+    "earliest": {
+      "year": 1869,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "renamed",
       "basis-none",
@@ -28446,6 +29676,7 @@ const STREET_DATA = {
       "text": "1886 (Harvey Tract)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
     },
+    "absentYear": 1886,
     "categories": [
       "basis-none",
       "searched-none",
@@ -28475,6 +29706,7 @@ const STREET_DATA = {
       "text": "1928 (Tract No. 10542)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0159/TR0159-032.pdf"
     },
+    "absentYear": 1928,
     "categories": [
       "basis-none",
       "searched-none",
@@ -28504,6 +29736,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -28637,6 +29870,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-none",
@@ -28721,6 +29955,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-partial"
@@ -28800,6 +30038,10 @@ const STREET_DATA = {
         "note": "Named on the sheets of the early 1880s north-west of downtown — first on a January 1883 subdivision of Lot 8, Block 35 of Hancock's survey, then Glassell's of 1884 — and on Prudent Beaudry's Park tract (1885), where a curving Court Street is one of the tract's design features, with North Court and South Court on its arms. Why “Court” is not documented.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "basis-inferred"
@@ -28855,6 +30097,10 @@ const STREET_DATA = {
         "note": "Named on the sheets of the early 1880s north-west of downtown — first on a January 1883 subdivision of Lot 8, Block 35 of Hancock's survey, then Glassell's of 1884 — and on Prudent Beaudry's Park tract (1885), where a curving Court Street is one of the tract's design features, with North Court and South Court on its arms. Why “Court” is not documented.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "basis-inferred"
@@ -28932,6 +30178,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "alive",
@@ -29011,6 +30262,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.21,
+        "earliest": {
+          "year": 1887,
+          "kind": "exact"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "alive",
@@ -29086,6 +30342,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.73,
+        "earliest": {
+          "year": 1897,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "alive",
@@ -29150,6 +30411,10 @@ const STREET_DATA = {
         "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
         "attested": true,
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -29219,6 +30484,10 @@ const STREET_DATA = {
         "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
         "attested": true,
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -29297,6 +30566,10 @@ const STREET_DATA = {
         "note": "The third of the Southern Pacific names on Joseph Wolfskill's subdivided orchard, after Towne and Stanford — though this one arrived later than the other two, when the street platted “Stanford Avenue” in 1887 gave that name up and took Crocker's instead.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -29430,6 +30703,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "landform",
           "renamed",
@@ -29511,6 +30788,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "landform",
           "renamed",
@@ -29586,6 +30867,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.66,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "landform",
           "renamed",
@@ -29665,6 +30950,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.66,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "landform",
           "renamed",
@@ -29733,6 +31022,10 @@ const STREET_DATA = {
     "note": "One of the patriotic-American names on Prudent Beaudry's Park tract (documents/mr007-026-p1).",
     "attested": true,
     "knownFraction": 0.8,
+    "earliest": {
+      "year": 1885,
+      "kind": "by"
+    },
     "categories": [
       "person",
       "basis-inferred"
@@ -29812,6 +31105,10 @@ const STREET_DATA = {
     "note": "Lettered on Tract No. 1836, recorded May 23, 1913 (documents/tr0023-054c), east of Alameda near 7th, and still Decatur Street today. The same corridor was lettered Warren Street on the E. B. Millar Tract of 1887, and the city council’s street-name committee proposed the change from Warren to Decatur in October 1888. Nothing found says who or what Decatur was.",
     "attested": true,
     "knownFraction": 0.64,
+    "earliest": {
+      "year": 1887,
+      "kind": "by"
+    },
     "categories": [
       "renamed",
       "basis-none",
@@ -29879,6 +31176,10 @@ const STREET_DATA = {
     "note": "It replaced Virginia Street on this ground, between 16th Street — now Venice Boulevard — and Pico. Most of it is under the Los Angeles Convention Center. Nothing found says who De Long was.",
     "attested": true,
     "knownFraction": 0.64,
+    "earliest": {
+      "year": 1884,
+      "kind": "by"
+    },
     "categories": [
       "renamed",
       "basis-none",
@@ -29939,6 +31240,7 @@ const STREET_DATA = {
           "text": "1885 (Park Tract)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
         },
+        "absentYear": 1885,
         "categories": [
           "basis-none",
           "searched-none",
@@ -29981,6 +31283,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
         },
         "knownFraction": 0.2,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1869,
         "categories": [
           "basis-none",
           "searched-none",
@@ -30025,6 +31332,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-partial"
@@ -30086,6 +31397,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-partial"
@@ -30197,6 +31512,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -30272,6 +31591,7 @@ const STREET_DATA = {
           "text": "1883 (Lot 8, Block 35, Hancock Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
         },
+        "absentYear": 1883,
         "categories": [
           "basis-none",
           "searched-none",
@@ -30311,6 +31631,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -30376,6 +31697,10 @@ const STREET_DATA = {
         "note": "Named by 1875 for the merchant who lived on it. Ducommun's store sold hardware, guns, eyeglasses, stationery and much else; his sons carried the firm on into metal supply, and Ducommun Inc. is often called California's oldest company. He was also an original stockholder and director of the Los Angeles City Water Works.",
         "attested": true,
         "knownFraction": 0.67,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "landowner",
@@ -30496,6 +31821,10 @@ const STREET_DATA = {
         "note": "Named by 1875 for the merchant who lived on it. Ducommun's store sold hardware, guns, eyeglasses, stationery and much else; his sons carried the firm on into metal supply, and Ducommun Inc. is often called California's oldest company. He was also an original stockholder and director of the Los Angeles City Water Works.",
         "attested": true,
         "knownFraction": 0.65,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "landowner",
@@ -30621,6 +31950,10 @@ const STREET_DATA = {
         "note": "Named by 1875 for the merchant who lived on it. Ducommun's store sold hardware, guns, eyeglasses, stationery and much else; his sons carried the firm on into metal supply, and Ducommun Inc. is often called California's oldest company. He was also an original stockholder and director of the Los Angeles City Water Works.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "landowner",
@@ -30726,6 +32059,10 @@ const STREET_DATA = {
         "note": "Named by 1875 for the merchant who lived on it. Ducommun's store sold hardware, guns, eyeglasses, stationery and much else; his sons carried the firm on into metal supply, and Ducommun Inc. is often called California's oldest company. He was also an original stockholder and director of the Los Angeles City Water Works.",
         "attested": true,
         "knownFraction": 0.51,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "landowner",
@@ -30830,6 +32167,10 @@ const STREET_DATA = {
         "note": "Named by 1875 for the merchant who lived on it. Ducommun's store sold hardware, guns, eyeglasses, stationery and much else; his sons carried the firm on into metal supply, and Ducommun Inc. is often called California's oldest company. He was also an original stockholder and director of the Los Angeles City Water Works.",
         "attested": true,
         "knownFraction": 0.51,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "landowner",
@@ -30965,6 +32306,10 @@ const STREET_DATA = {
         "note": "One of the two loop roads around the crescent hills of Angeleno Heights, laid out by Hall and Stilson in 1886. It later absorbed Kern Street on its northern arm and New Cincinnati Street on its southern one.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "renamed",
@@ -31035,6 +32380,10 @@ const STREET_DATA = {
         "note": "One of the two loop roads around the crescent hills of Angeleno Heights, laid out by Hall and Stilson in 1886. It later absorbed Kern Street on its northern arm and New Cincinnati Street on its southern one.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "renamed",
@@ -31153,6 +32502,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "renamed",
@@ -31207,6 +32560,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -31258,6 +32612,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "knownFraction": 0.14,
+    "earliest": {
+      "year": 1884,
+      "kind": "by"
+    },
     "categories": [
       "renamed",
       "basis-none",
@@ -31317,6 +32675,10 @@ const STREET_DATA = {
         "note": "Lettered on the 1884 Crown Hill sheet (documents/mr006-115) and on three later maps down to 1963. It is still Emerald Street, on its 1884 alignment. One of a run of gem names on the one sheet, none of them documented beyond the plat, and the theme is the whole of the argument.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "object",
           "basis-pattern"
@@ -31374,6 +32736,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
         },
         "knownFraction": 0.99,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1884,
         "categories": [
           "object",
           "basis-pattern"
@@ -31467,6 +32834,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0063/TR0063-098-p1.pdf"
         },
         "knownFraction": 0.41,
+        "earliest": {
+          "year": 1922,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-none",
@@ -31522,6 +32893,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "knownFraction": 0.68,
+    "earliest": {
+      "year": 1907,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "descriptive",
       "basis-inferred"
@@ -31621,6 +32997,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "knownFraction": 0.91,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1869,
         "categories": [
           "person",
           "politician",
@@ -31722,6 +33103,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "politician",
@@ -31844,6 +33230,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.9,
+        "earliest": {
+          "year": 1868,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "politician",
@@ -31962,6 +33353,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.86,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "politician",
@@ -32072,6 +33468,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "person",
           "politician",
@@ -32194,6 +33594,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -32263,6 +33667,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -32323,6 +33731,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -32494,6 +33906,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.07,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -32619,6 +34035,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-069.pdf"
     },
     "knownFraction": 0.19,
+    "earliest": {
+      "year": 1885,
+      "kind": "by"
+    },
+    "absentYear": 1883,
     "categories": [
       "renamed",
       "basis-none",
@@ -32658,6 +34079,7 @@ const STREET_DATA = {
           "text": "1869 (Mott Tract building lots)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
         },
+        "absentYear": 1869,
         "categories": [
           "plant",
           "basis-attested"
@@ -32716,6 +34138,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "plant",
           "basis-attested"
@@ -32784,6 +34211,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.9,
+        "earliest": {
+          "year": 1868,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "plant",
           "basis-attested"
@@ -32848,6 +34280,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "plant",
           "basis-attested"
@@ -32956,6 +34392,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "plant",
           "basis-attested"
@@ -33020,6 +34460,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "plant",
           "basis-attested"
@@ -33150,6 +34594,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-none",
@@ -33189,6 +34634,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -33239,6 +34685,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
         },
         "knownFraction": 0.51,
+        "earliest": {
+          "year": 1964,
+          "kind": "by"
+        },
+        "absentYear": 1878,
         "categories": [
           "person",
           "basis-attested"
@@ -33330,6 +34781,10 @@ const STREET_DATA = {
         "note": "Not named for San Francisco. Moore Street and Okey Street were renamed Francisco Street in 1903, five years after Andy Francisco's death.",
         "attested": true,
         "knownFraction": 0.05,
+        "earliest": {
+          "year": 1878,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "renamed",
@@ -33442,6 +34897,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -33495,6 +34954,7 @@ const STREET_DATA = {
           "text": "1878 (Nichols Addition)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
         },
+        "absentYear": 1878,
         "categories": [
           "basis-none",
           "searched-none",
@@ -33590,6 +35050,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
         },
         "knownFraction": 0.44,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1869,
         "categories": [
           "person",
           "alive",
@@ -33663,6 +35128,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.86,
+        "earliest": {
+          "year": 1871,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "alive",
@@ -33733,6 +35203,10 @@ const STREET_DATA = {
         "note": "Lettered on the Map of the Garland Tract of April 1897 (documents/mr060-088) and again on Tract No. 2905 of 1915 (documents/tr0030-069), and still Garland Avenue. Garland came to Los Angeles from Maine in 1890 as an auditor for a streetcar company, turned to real estate in 1893, and in 1897 — the year this tract was recorded — sold Harrison Gray Otis the Wilshire Boulevard property that became the Otis College of Art and Design. He is better remembered for securing the 1932 Summer Olympics for Los Angeles, which he had pushed for almost singlehandedly since 1920.",
         "attested": true,
         "knownFraction": 0.73,
+        "earliest": {
+          "year": 1897,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -33798,6 +35272,10 @@ const STREET_DATA = {
         "note": "Lettered on the Map of the Garland Tract of April 1897 (documents/mr060-088) and again on Tract No. 2905 of 1915 (documents/tr0030-069), and still Garland Avenue. Garland came to Los Angeles from Maine in 1890 as an auditor for a streetcar company, turned to real estate in 1893, and in 1897 — the year this tract was recorded — sold Harrison Gray Otis the Wilshire Boulevard property that became the Otis College of Art and Design. He is better remembered for securing the 1932 Summer Olympics for Los Angeles, which he had pushed for almost singlehandedly since 1920.",
         "attested": true,
         "knownFraction": 0.73,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -33878,6 +35356,10 @@ const STREET_DATA = {
         "note": "Lettered on the Map of the Garland Tract of April 1897 (documents/mr060-088) and again on Tract No. 2905 of 1915 (documents/tr0030-069), and still Garland Avenue. Garland came to Los Angeles from Maine in 1890 as an auditor for a streetcar company, turned to real estate in 1893, and in 1897 — the year this tract was recorded — sold Harrison Gray Otis the Wilshire Boulevard property that became the Otis College of Art and Design. He is better remembered for securing the 1932 Summer Olympics for Los Angeles, which he had pushed for almost singlehandedly since 1920.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -33931,6 +35413,7 @@ const STREET_DATA = {
       "text": "1869 (Mott Tract building lots)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
     },
+    "absentYear": 1869,
     "categories": [
       "basis-none",
       "searched-none",
@@ -34004,6 +35487,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.09,
+        "earliest": {
+          "year": 1901,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -34179,6 +35666,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-431.pdf"
         },
         "knownFraction": 0.97,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1884,
         "categories": [
           "person",
           "alive",
@@ -34246,6 +35738,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -34296,6 +35789,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1887,
+          "kind": "exact"
+        },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-extensive"
@@ -34363,6 +35861,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.73,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "renamed",
           "basis-none",
@@ -34445,6 +35948,10 @@ const STREET_DATA = {
         "note": "Laid out with Ruth Avenue through Joseph Wolfskill’s orchard, surveyed July–August 1887 and recorded Jan. 11, 1888. The two were long read together as Wolfskill daughters, and Ruth turns out to be one — but no Gladys has ever been documented in the family. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
         "attested": true,
         "knownFraction": 0.32,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -34523,6 +36030,10 @@ const STREET_DATA = {
         "note": "Laid out with Ruth Avenue through Joseph Wolfskill’s orchard, surveyed July–August 1887 and recorded Jan. 11, 1888. The two were long read together as Wolfskill daughters, and Ruth turns out to be one — but no Gladys has ever been documented in the family. The street runs through the heart of Skid Row today; Gladys Park sits at 6th and Gladys.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -34634,6 +36145,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -34706,6 +36221,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-056.pdf"
         },
         "knownFraction": 0.2,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -34782,6 +36301,10 @@ const STREET_DATA = {
     "note": "An ordinance adopted in February 1894 changed Willow Street, between Eighth and Ninth streets, to Golden Avenue.",
     "attested": true,
     "knownFraction": 0,
+    "earliest": {
+      "year": 1884,
+      "kind": "by"
+    },
     "categories": [
       "renamed",
       "basis-none",
@@ -34837,6 +36360,10 @@ const STREET_DATA = {
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -34967,6 +36494,10 @@ const STREET_DATA = {
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -35061,6 +36592,10 @@ const STREET_DATA = {
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -35166,6 +36701,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "renamed",
           "basis-none",
@@ -35262,6 +36802,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.9,
+        "earliest": {
+          "year": 1868,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "renamed",
           "basis-none",
@@ -35350,6 +36895,10 @@ const STREET_DATA = {
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -35442,6 +36991,10 @@ const STREET_DATA = {
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -35533,6 +37086,10 @@ const STREET_DATA = {
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
         "knownFraction": 0.86,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -35680,6 +37237,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "knownFraction": 0.1,
+    "earliest": {
+      "year": 1869,
+      "kind": "by"
+    },
     "categories": [
       "renamed",
       "basis-none",
@@ -35800,6 +37361,7 @@ const STREET_DATA = {
           "text": "1901 (Mallard Home Tract)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-037.pdf"
         },
+        "absentYear": 1901,
         "categories": [
           "basis-none",
           "searched-none",
@@ -35884,6 +37446,7 @@ const STREET_DATA = {
           "text": "1964 (Tract No. 25510)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0718/TR0718-007.pdf"
         },
+        "absentYear": 1964,
         "categories": [
           "basis-none",
           "searched-none",
@@ -35968,6 +37531,7 @@ const STREET_DATA = {
           "text": "1885 (Park Tract)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
         },
+        "absentYear": 1885,
         "categories": [
           "basis-none",
           "searched-none",
@@ -36073,6 +37637,10 @@ const STREET_DATA = {
         "note": "Lettered on Tract No. 2905 of Oct. 1915 (documents/tr0030-069). Hartford Avenue still exists in the same neighbourhood; this short stretch is gone. Nothing found says who or what it was named for.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -36185,6 +37753,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
         },
         "knownFraction": 0.99,
+        "earliest": {
+          "year": 1871,
+          "kind": "by"
+        },
+        "absentYear": 1869,
         "categories": [
           "basis-none",
           "searched-extensive"
@@ -36288,6 +37861,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-extensive"
@@ -36401,6 +37979,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.34,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "renamed",
           "basis-none",
@@ -36495,6 +38078,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0.33,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "renamed",
           "basis-none",
@@ -36567,6 +38155,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0.33,
+        "earliest": {
+          "year": 1876,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "renamed",
           "basis-none",
@@ -36641,6 +38234,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1876,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "renamed",
           "basis-none",
@@ -36689,6 +38287,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "landform",
           "basis-attested"
@@ -36762,6 +38361,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "knownFraction": 0.15,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "landform",
           "renamed",
@@ -36833,6 +38436,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "landform",
           "basis-attested"
@@ -36897,6 +38501,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "landform",
           "basis-attested"
@@ -36965,6 +38574,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "landform",
           "basis-attested"
@@ -37045,6 +38658,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "landform",
           "basis-attested"
@@ -37097,6 +38714,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.86,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "landform",
           "basis-attested"
@@ -37235,6 +38856,7 @@ const STREET_DATA = {
           "text": "1886 (Angeleno Heights, Blocks 23–25)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-025.pdf"
         },
+        "absentYear": 1886,
         "categories": [
           "basis-none",
           "searched-none",
@@ -37314,6 +38936,7 @@ const STREET_DATA = {
       "text": "1869 (Mott Tract building lots)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
     },
+    "absentYear": 1869,
     "categories": [
       "basis-none",
       "searched-none",
@@ -37352,6 +38975,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "idea",
           "person",
@@ -37421,6 +39049,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.9,
+        "earliest": {
+          "year": 1868,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "idea",
           "person",
@@ -37487,6 +39120,10 @@ const STREET_DATA = {
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "idea",
           "person",
@@ -37591,6 +39228,10 @@ const STREET_DATA = {
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "idea",
           "person",
@@ -37657,6 +39298,10 @@ const STREET_DATA = {
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "idea",
           "person",
@@ -37757,6 +39402,7 @@ const STREET_DATA = {
           "text": "1903 (Allison Barlow Tract)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0006/TR0006-150a.pdf"
         },
+        "absentYear": 1903,
         "categories": [
           "basis-none",
           "searched-none"
@@ -37825,6 +39471,10 @@ const STREET_DATA = {
         "note": "In November 1919 the council ordered that part of Boylston Avenue and Sapphire Street north of Third changed to Huntley Drive.",
         "attested": true,
         "knownFraction": 0.07,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -37908,6 +39558,7 @@ const STREET_DATA = {
           "text": "1869 (Aliso Tract)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
         },
+        "absentYear": 1869,
         "categories": [
           "basis-none",
           "searched-none",
@@ -38012,6 +39663,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "renamed",
           "basis-none",
@@ -38093,6 +39749,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -38185,6 +39845,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -38274,6 +39938,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "knownFraction": 0.32,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "descriptive",
           "renamed",
@@ -38351,6 +40020,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "knownFraction": 0.21,
+        "earliest": {
+          "year": 1906,
+          "kind": "by"
+        },
+        "absentYear": 1887,
         "categories": [
           "descriptive",
           "renamed",
@@ -38433,6 +40107,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "knownFraction": 0.22,
+        "earliest": {
+          "year": 1904,
+          "kind": "by"
+        },
+        "absentYear": 1887,
         "categories": [
           "descriptive",
           "renamed",
@@ -38506,6 +40185,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR015/MR015-052.pdf"
         },
         "knownFraction": 0.9,
+        "earliest": {
+          "year": 1904,
+          "kind": "by"
+        },
+        "absentYear": 1887,
         "categories": [
           "descriptive",
           "basis-lexical"
@@ -38647,6 +40331,10 @@ const STREET_DATA = {
         "note": "A street of the City West pocket, west of downtown.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -38721,6 +40409,10 @@ const STREET_DATA = {
         "note": "A street of the City West pocket, west of downtown.",
         "attested": true,
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -38793,6 +40485,10 @@ const STREET_DATA = {
         "note": "A street of the City West pocket, west of downtown.",
         "attested": true,
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-extensive"
@@ -38860,6 +40556,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-extensive"
@@ -38910,6 +40610,10 @@ const STREET_DATA = {
         "note": "A street of the City West pocket, west of downtown.",
         "attested": true,
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1889,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-extensive"
@@ -38994,6 +40698,10 @@ const STREET_DATA = {
         "note": "Lettered on four sheets from 1908 to 1936 east of Alameda, running due east beside Ducommun Street. The eastern end survives. Nothing found says who Jackson was.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -39098,6 +40806,10 @@ const STREET_DATA = {
         "note": "Lettered on four sheets from 1908 to 1936 east of Alameda, running due east beside Ducommun Street. The eastern end survives. Nothing found says who Jackson was.",
         "attested": true,
         "knownFraction": 0.51,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -39192,6 +40904,10 @@ const STREET_DATA = {
         "note": "Lettered on four sheets from 1908 to 1936 east of Alameda, running due east beside Ducommun Street. The eastern end survives. Nothing found says who Jackson was.",
         "attested": true,
         "knownFraction": 0.51,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -39349,6 +41065,10 @@ const STREET_DATA = {
         "note": "The stretch of 9th Street between Figueroa and Western, renamed by the City Council in 1999; the motion to honour Wood was made in 1997, the year after his death.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "official",
@@ -39438,6 +41158,10 @@ const STREET_DATA = {
         "note": "The stretch of 9th Street between Figueroa and Western, renamed by the City Council in 1999; the motion to honour Wood was made in 1997, the year after his death.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "official",
@@ -39528,6 +41252,10 @@ const STREET_DATA = {
         "note": "The stretch of 9th Street between Figueroa and Western, renamed by the City Council in 1999; the motion to honour Wood was made in 1997, the year after his death.",
         "attested": true,
         "knownFraction": 0.71,
+        "earliest": {
+          "year": 1901,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "official",
@@ -39702,6 +41430,10 @@ const STREET_DATA = {
         "note": "The stretch of 9th Street between Figueroa and Western, renamed by the City Council in 1999; the motion to honour Wood was made in 1997, the year after his death.",
         "attested": true,
         "knownFraction": 0.84,
+        "earliest": {
+          "year": 1878,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "official",
@@ -39781,6 +41513,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "knownFraction": 0.28,
+    "earliest": {
+      "year": 1977,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "place",
       "basis-intrinsic"
@@ -39809,6 +41546,7 @@ const STREET_DATA = {
       "text": "1869 (Mott Tract building lots)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
     },
+    "absentYear": 1869,
     "categories": [
       "basis-none",
       "searched-none",
@@ -39855,6 +41593,10 @@ const STREET_DATA = {
         "note": "Arrived on Aug. 31, 1896, when Ordinance No. 3829 changed Cincinnati Street, between Mateo and Mesquit, to this name. The ordinance spells it “Jessie”; the modern street is Jesse.",
         "attested": true,
         "knownFraction": 0.65,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-none"
@@ -39912,6 +41654,10 @@ const STREET_DATA = {
         "note": "Arrived on Aug. 31, 1896, when Ordinance No. 3829 changed Cincinnati Street, between Mateo and Mesquit, to this name. The ordinance spells it “Jessie”; the modern street is Jesse.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-none"
@@ -39959,6 +41705,10 @@ const STREET_DATA = {
         "note": "Arrived on Aug. 31, 1896, when Ordinance No. 3829 changed Cincinnati Street, between Mateo and Mesquit, to this name. The ordinance spells it “Jessie”; the modern street is Jesse.",
         "attested": true,
         "knownFraction": 0.56,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-none"
@@ -40077,6 +41827,10 @@ const STREET_DATA = {
         "note": "Until 1997 this was the northernmost block of San Pedro Street, on the edge of Little Tokyo.",
         "attested": true,
         "knownFraction": 0.23,
+        "earliest": {
+          "year": 1876,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "official",
@@ -40181,6 +41935,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1868,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "official",
@@ -40254,6 +42013,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -40305,6 +42065,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "knownFraction": 0,
+    "earliest": {
+      "year": 1887,
+      "kind": "by"
+    },
     "categories": [
       "renamed",
       "basis-none",
@@ -40335,6 +42099,7 @@ const STREET_DATA = {
       "text": "1869 (Aliso Tract)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
     },
+    "absentYear": 1869,
     "categories": [
       "person",
       "landowner",
@@ -40390,6 +42155,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "knownFraction": 0,
+    "earliest": {
+      "year": 1886,
+      "kind": "by"
+    },
     "categories": [
       "renamed",
       "basis-none",
@@ -40445,6 +42214,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "landowner",
@@ -40507,6 +42281,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "landowner",
@@ -40591,6 +42370,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR037/MR037-087.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1924,
+          "kind": "by"
+        },
+        "absentYear": 1888,
         "categories": [
           "person",
           "landowner",
@@ -40698,6 +42482,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -40761,6 +42549,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "knownFraction": 0,
+    "earliest": {
+      "year": 1884,
+      "kind": "by"
+    },
     "categories": [
       "renamed",
       "basis-none",
@@ -40882,6 +42674,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-056a.pdf"
     },
     "knownFraction": 1,
+    "earliest": {
+      "year": 1887,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-extensive"
@@ -40910,6 +42707,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -40944,6 +42742,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-none",
@@ -41067,6 +42866,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -41127,6 +42927,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
         },
         "knownFraction": 0.2,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1885,
         "categories": [
           "nature",
           "landform",
@@ -41170,6 +42975,7 @@ const STREET_DATA = {
           "text": "1886 (J. W. Ellis' Subdivision)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-088.pdf"
         },
+        "absentYear": 1886,
         "categories": [
           "nature",
           "landform",
@@ -41221,6 +43027,10 @@ const STREET_DATA = {
         "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and again on Tract No. 754 of 1910 (documents/tr0015-179a), and still Loma Drive today. The tract also carries Colina, Collado and Gravilla — four Spanish words for ground on one hill.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "nature",
           "landform",
@@ -41263,6 +43073,7 @@ const STREET_DATA = {
       "text": "1885 (Colina Park)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
     },
+    "absentYear": 1885,
     "categories": [
       "basis-none",
       "searched-none",
@@ -41322,6 +43133,10 @@ const STREET_DATA = {
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "renamed",
@@ -41379,6 +43194,10 @@ const STREET_DATA = {
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "place",
           "basis-intrinsic"
@@ -41437,6 +43256,10 @@ const STREET_DATA = {
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "knownFraction": 0.85,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "basis-intrinsic"
@@ -41543,6 +43366,10 @@ const STREET_DATA = {
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "basis-intrinsic"
@@ -41605,6 +43432,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "basis-intrinsic"
@@ -41682,6 +43513,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.28,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "basis-intrinsic"
@@ -41740,6 +43575,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.66,
+        "earliest": {
+          "year": 1910,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "place",
           "basis-intrinsic"
@@ -41799,6 +43639,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "place",
           "basis-intrinsic"
@@ -41854,6 +43695,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.82,
+        "earliest": {
+          "year": 1882,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "place",
           "basis-intrinsic"
@@ -41929,6 +43775,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "place",
           "basis-intrinsic"
@@ -41988,6 +43839,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.82,
+        "earliest": {
+          "year": 1881,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "place",
           "basis-intrinsic"
@@ -42063,6 +43919,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1906,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "place",
           "basis-intrinsic"
@@ -42122,6 +43983,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.93,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "place",
           "basis-intrinsic"
@@ -42197,6 +44063,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.91,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "place",
           "basis-intrinsic"
@@ -42252,6 +44123,7 @@ const STREET_DATA = {
           "text": "1873 (Botiller and Reyes lots)",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
+        "absentYear": 1873,
         "categories": [
           "place",
           "basis-intrinsic"
@@ -42319,6 +44191,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "place",
           "basis-intrinsic"
@@ -42378,6 +44255,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
         },
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "place",
           "basis-intrinsic"
@@ -42449,6 +44331,10 @@ const STREET_DATA = {
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "basis-intrinsic"
@@ -42520,6 +44406,10 @@ const STREET_DATA = {
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "basis-intrinsic"
@@ -42634,6 +44524,10 @@ const STREET_DATA = {
         "note": "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -42717,6 +44611,10 @@ const STREET_DATA = {
         "note": "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -42806,6 +44704,10 @@ const STREET_DATA = {
         "note": "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -42883,6 +44785,10 @@ const STREET_DATA = {
         "note": "Named in 1884, on a tract Lucas was selling with Edward Bentley and Moye Wicks. Lucas had been in Tombstone three years earlier and served as both judge and witness at the hearings after the gunfight at the O.K. Corral.",
         "attested": true,
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -42935,6 +44841,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "knownFraction": 0,
+    "earliest": {
+      "year": 1849,
+      "kind": "by"
+    },
     "categories": [
       "basis-none",
       "searched-none",
@@ -42964,6 +44874,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -43040,6 +44951,10 @@ const STREET_DATA = {
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -43096,6 +45011,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -43152,6 +45068,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0.66,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -43228,6 +45148,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0.66,
+        "earliest": {
+          "year": 1909,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -43284,6 +45209,10 @@ const STREET_DATA = {
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -43365,6 +45294,10 @@ const STREET_DATA = {
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
         "knownFraction": 0.87,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "renamed",
@@ -43472,6 +45405,10 @@ const STREET_DATA = {
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
         "knownFraction": 0.87,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "descriptive",
           "renamed",
@@ -43539,6 +45476,10 @@ const STREET_DATA = {
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -43614,6 +45555,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -43706,6 +45651,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.87,
+        "earliest": {
+          "year": 1873,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -43786,6 +45736,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
         },
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -43858,6 +45813,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
         },
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -43922,6 +45882,10 @@ const STREET_DATA = {
         "note": "Older than the survey: the road was the Calle Real, the standard Spanish colonial name for a settlement’s principal road, before it was the Calle Principal. The Ord/Hutton survey fixed the anglicization, which is first found in print in May 1851.",
         "attested": true,
         "knownFraction": 0.86,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "basis-intrinsic"
@@ -44064,6 +46028,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1876,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "tree",
           "renamed",
@@ -44129,6 +46098,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1906,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "tree",
           "basis-inferred"
@@ -44181,6 +46155,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.93,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "tree",
           "basis-inferred"
@@ -44249,6 +46228,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.91,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "tree",
           "basis-inferred"
@@ -44313,6 +46297,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.92,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "tree",
           "basis-inferred"
@@ -44373,6 +46362,10 @@ const STREET_DATA = {
         "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "tree",
           "basis-inferred"
@@ -44433,6 +46426,10 @@ const STREET_DATA = {
         "note": "A tree name, undocumented. The earliest sheet here that letters it is the O. W. Childs Tract of July 1885, at Eleventh and Twelfth; the corridor further north was NOT Maple in 1876, when the Moreno Vineyard sheet letters it Regent Street between 5th and 6th. So the name spread along this corridor at some undated point, and where it started is an open question rather than a settled one.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "tree",
           "basis-inferred"
@@ -44502,6 +46499,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "knownFraction": 0,
+    "earliest": {
+      "year": 1875,
+      "kind": "by"
+    },
     "categories": [
       "renamed",
       "basis-none",
@@ -44559,6 +46560,10 @@ const STREET_DATA = {
         "note": "Named in August 1886 on Everett E. Hall and William W. Stilson's Angeleno Heights tract (documents/mr012-025), where the developers' practice was to honour family members. Which member is not documented, and no Marion has been traced in either family. It was the eastern terminus of Sunset Boulevard before Sunset was pushed further east.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-partial"
@@ -44646,6 +46651,7 @@ const STREET_DATA = {
       "text": "1869 (Mott Tract building lots)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
     },
+    "absentYear": 1869,
     "categories": [
       "basis-none",
       "searched-none",
@@ -44757,6 +46763,10 @@ const STREET_DATA = {
         "note": "Lettered on a tract of 1955 (documents/tr0588-055), west of downtown. It survives.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "state",
           "renamed",
@@ -44842,6 +46852,10 @@ const STREET_DATA = {
         "note": "Lettered on a tract of 1955 (documents/tr0588-055), west of downtown. It survives.",
         "attested": true,
         "knownFraction": 0.4,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "state",
           "renamed",
@@ -44923,6 +46937,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "landowner",
@@ -44977,6 +46996,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "landowner",
@@ -45063,6 +47087,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "landowner",
@@ -45164,6 +47193,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.69,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "landowner",
@@ -45273,6 +47307,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "landowner",
@@ -45372,6 +47411,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "landowner",
@@ -45455,6 +47499,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR015/MR015-052.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1887,
         "categories": [
           "person",
           "landowner",
@@ -45553,6 +47602,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -45598,6 +47648,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "knownFraction": 0.79,
+    "earliest": {
+      "year": 1887,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "descriptive",
       "basis-inferred"
@@ -45643,6 +47698,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0751/TR0751-038.pdf"
     },
     "knownFraction": 0.66,
+    "earliest": {
+      "year": 1887,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -45714,6 +47774,10 @@ const STREET_DATA = {
         "note": "The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "tree",
           "basis-pattern"
@@ -45776,6 +47840,10 @@ const STREET_DATA = {
         "note": "The plat already spells it “Mesquit” without the terminal E, which is how the street signs still spell it.",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "tree",
           "basis-pattern"
@@ -45827,6 +47895,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -45868,6 +47937,10 @@ const STREET_DATA = {
     "note": "Lettered on Prudent Beaudry's Park tract in 1885 (documents/mr007-026-p2) and on documents/tr0017-143b, where the sheet spells it “Mignoette”. It survives.",
     "attested": true,
     "knownFraction": 0.8,
+    "earliest": {
+      "year": 1885,
+      "kind": "by"
+    },
     "categories": [
       "plant",
       "basis-lexical"
@@ -45913,6 +47986,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR013/MR013-091.pdf"
     },
     "knownFraction": 0.9,
+    "earliest": {
+      "year": 1904,
+      "kind": "by"
+    },
+    "absentYear": 1887,
     "categories": [
       "basis-none",
       "searched-extensive"
@@ -45992,6 +48070,10 @@ const STREET_DATA = {
         "note": "The name dates from 1915, when the city unified most of Ocean View Avenue under it — Ocean View having been opened in 1886 on the Nob Hill tract, renamed Nob Hill Avenue on residents' petition in 1896, and changed back by ordinance in 1897 (the same ordinance that named a separately grown section Miramar). The original 1886 diagonal, outside this map, is still Ocean View Avenue.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "basis-lexical"
@@ -46070,6 +48152,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
         },
         "knownFraction": 0.28,
+        "earliest": {
+          "year": 1909,
+          "kind": "by"
+        },
+        "absentYear": 1885,
         "categories": [
           "descriptive",
           "renamed",
@@ -46165,6 +48252,10 @@ const STREET_DATA = {
         "note": "The name dates from 1915, when the city unified most of Ocean View Avenue under it — Ocean View having been opened in 1886 on the Nob Hill tract, renamed Nob Hill Avenue on residents' petition in 1896, and changed back by ordinance in 1897 (the same ordinance that named a separately grown section Miramar). The original 1886 diagonal, outside this map, is still Ocean View Avenue.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "renamed",
@@ -46263,6 +48354,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
         },
         "knownFraction": 0.24,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
+        "absentYear": 1875,
         "categories": [
           "descriptive",
           "renamed",
@@ -46374,6 +48470,10 @@ const STREET_DATA = {
         "note": "The name dates from 1915, when the city unified most of Ocean View Avenue under it — Ocean View having been opened in 1886 on the Nob Hill tract, renamed Nob Hill Avenue on residents' petition in 1896, and changed back by ordinance in 1897 (the same ordinance that named a separately grown section Miramar). The original 1886 diagonal, outside this map, is still Ocean View Avenue.",
         "attested": true,
         "knownFraction": 0.18,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "renamed",
@@ -46474,6 +48574,10 @@ const STREET_DATA = {
         "note": "The name dates from 1915, when the city unified most of Ocean View Avenue under it — Ocean View having been opened in 1886 on the Nob Hill tract, renamed Nob Hill Avenue on residents' petition in 1896, and changed back by ordinance in 1897 (the same ordinance that named a separately grown section Miramar). The original 1886 diagonal, outside this map, is still Ocean View Avenue.",
         "attested": true,
         "knownFraction": 0.18,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "descriptive",
           "renamed",
@@ -46605,6 +48709,10 @@ const STREET_DATA = {
         "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Mission Road. The road is far older than the sheet: it is the route from the pueblo out to Mission San Gabriel, and the tracts along it record a name already long in use.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -46684,6 +48792,10 @@ const STREET_DATA = {
         "note": "Lettered on Tract No. 5301 of Feb. 1926 (documents/tr0122-053-p3) and still Mission Road. The road is far older than the sheet: it is the route from the pueblo out to Mission San Gabriel, and the tracts along it record a name already long in use.",
         "attested": true,
         "knownFraction": 0.69,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -46761,6 +48873,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0013/TR0013-168.pdf"
         },
         "knownFraction": 0.9,
+        "earliest": {
+          "year": 1926,
+          "kind": "by"
+        },
+        "absentYear": 1908,
         "categories": [
           "place",
           "destination",
@@ -46892,6 +49009,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.34,
+        "earliest": {
+          "year": 1966,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "object",
           "basis-lexical"
@@ -46957,6 +49079,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "object",
           "basis-lexical"
@@ -47090,6 +49217,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-extensive"
@@ -47141,6 +49272,7 @@ const STREET_DATA = {
           "text": "1926 (Tract No. 5301)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0122/TR0122-053.pdf"
         },
+        "absentYear": 1926,
         "categories": [
           "basis-none",
           "searched-extensive"
@@ -47239,6 +49371,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-none",
@@ -47346,6 +49479,7 @@ const STREET_DATA = {
           "text": "1885 (New Depot Street subdivision)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-062.pdf"
         },
+        "absentYear": 1885,
         "categories": [
           "basis-none",
           "searched-partial"
@@ -47400,6 +49534,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-partial"
@@ -47438,6 +49577,7 @@ const STREET_DATA = {
           "text": "1873 (Old Plaza, 1873)",
           "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
         },
+        "absentYear": 1873,
         "categories": [
           "basis-none",
           "searched-none",
@@ -47516,6 +49656,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-none",
@@ -47576,6 +49717,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "tree",
           "basis-lexical"
@@ -47642,6 +49788,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
         "knownFraction": 0.9,
+        "earliest": {
+          "year": 1868,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "tree",
           "basis-lexical"
@@ -47714,6 +49865,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "tree",
           "basis-lexical"
@@ -47790,6 +49945,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
         "knownFraction": 0.95,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
+        "absentYear": 1875,
         "categories": [
           "tree",
           "basis-lexical"
@@ -47868,6 +50028,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "tree",
           "renamed",
@@ -47926,6 +50090,7 @@ const STREET_DATA = {
           "text": "1875 (Morris Plan)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-038.pdf"
         },
+        "absentYear": 1875,
         "categories": [
           "tree",
           "basis-lexical"
@@ -48033,6 +50198,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "knownFraction": 0,
+    "earliest": {
+      "year": 1849,
+      "kind": "by"
+    },
     "categories": [
       "renamed",
       "basis-none",
@@ -48139,6 +50308,10 @@ const STREET_DATA = {
         "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1901,
+          "kind": "by"
+        },
         "categories": [
           "event",
           "renamed",
@@ -48284,6 +50457,10 @@ const STREET_DATA = {
         "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "event",
           "renamed",
@@ -48363,6 +50540,10 @@ const STREET_DATA = {
         "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "event",
           "basis-attested"
@@ -48441,6 +50622,10 @@ const STREET_DATA = {
         "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "event",
           "renamed",
@@ -48541,6 +50726,10 @@ const STREET_DATA = {
         "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "event",
           "renamed",
@@ -48638,6 +50827,10 @@ const STREET_DATA = {
         "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0.21,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "event",
           "renamed",
@@ -48730,6 +50923,10 @@ const STREET_DATA = {
         "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1924,
+          "kind": "by"
+        },
         "categories": [
           "event",
           "renamed",
@@ -48822,6 +51019,10 @@ const STREET_DATA = {
         "note": "Downtown this was 10th Street until 1935 (and, east of Central Avenue, the eastern reach of 9th, absorbed by 1945). The renaming was requested in July 1929, before the Games; that they were the tenth Olympiad apparently went unremarked at the time. The name first landed in 1929 on part of Country Club Drive and spread through 1945.",
         "attested": true,
         "knownFraction": 0.22,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "event",
           "renamed",
@@ -48908,6 +51109,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "knownFraction": 0.79,
+    "earliest": {
+      "year": 1887,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-partial"
@@ -48976,6 +51182,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0.39,
+        "earliest": {
+          "year": 1876,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "official",
@@ -49086,6 +51297,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0.06,
+        "earliest": {
+          "year": 1876,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "official",
@@ -49194,6 +51410,10 @@ const STREET_DATA = {
         "note": "Ord came to Los Angeles for two months in 1849 at the request of city leaders and, with the civil engineer William Rich Hutton, surveyed and mapped the town. Most of the streets on their map did not yet exist: the sheet was a plan for expansion as much as a record. He did not name this street for himself — his map has it as Calle Alta, High Street; it was Walters Street from 1886, and Ord from 1890.",
         "attested": true,
         "knownFraction": 0.2,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "person",
           "official",
@@ -49305,6 +51525,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0.75,
+        "earliest": {
+          "year": 1873,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "official",
@@ -49396,6 +51621,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "tree",
           "basis-lexical"
@@ -49462,6 +51692,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "tree",
           "basis-lexical"
@@ -49534,6 +51769,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.68,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "tree",
           "basis-lexical"
@@ -49598,6 +51838,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "tree",
           "basis-lexical"
@@ -49784,6 +52029,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -49837,6 +52086,10 @@ const STREET_DATA = {
         "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid. The identification with Pío Pico is L.A. Street Names’; no record of the naming is in this corpus.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -49943,6 +52196,10 @@ const STREET_DATA = {
         "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid. The identification with Pío Pico is L.A. Street Names’; no record of the naming is in this corpus.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -50013,6 +52270,10 @@ const STREET_DATA = {
         "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid. The identification with Pío Pico is L.A. Street Names’; no record of the naming is in this corpus.",
         "attested": true,
         "knownFraction": 0.86,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -50083,6 +52344,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-105.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -50157,6 +52422,10 @@ const STREET_DATA = {
         "note": "Los Angeles never had an official 13th Street downtown — 12th was the last numbered street in the original Hutton/Ord Survey. Pico was added immediately outside the grid. The identification with Pío Pico is L.A. Street Names’; no record of the naming is in this corpus.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -50282,6 +52551,7 @@ const STREET_DATA = {
           "text": "1887 (Clement Tract)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR017/MR017-041.pdf"
         },
+        "absentYear": 1887,
         "categories": [
           "basis-none",
           "searched-none",
@@ -50355,6 +52625,7 @@ const STREET_DATA = {
       "text": "1927 (Tract No. 9918)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0141/TR0141-011.pdf"
     },
+    "absentYear": 1927,
     "categories": [
       "basis-none",
       "searched-none",
@@ -50384,6 +52655,7 @@ const STREET_DATA = {
       "text": "1869 (Aliso Tract)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
     },
+    "absentYear": 1869,
     "categories": [
       "basis-none",
       "searched-none",
@@ -50493,6 +52765,10 @@ const STREET_DATA = {
         "note": "Ordinance No. 48 of May 1889 gave the name to Temperance Street and Home Street, from Union Avenue through Belmont Avenue to Lake Shore Avenue.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -50531,6 +52807,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -50564,6 +52841,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
     "knownFraction": 0.66,
+    "earliest": {
+      "year": 1909,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none"
@@ -50608,6 +52890,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
     },
     "knownFraction": 0.99,
+    "earliest": {
+      "year": 1871,
+      "kind": "by"
+    },
+    "absentYear": 1869,
     "categories": [
       "basis-none",
       "searched-partial"
@@ -50704,6 +52991,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1900,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -50754,6 +53045,7 @@ const STREET_DATA = {
           "text": "1889 (St. Paul's P.E. Church Subdivision)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
         },
+        "absentYear": 1889,
         "categories": [
           "basis-none",
           "searched-none",
@@ -50793,6 +53085,7 @@ const STREET_DATA = {
       "text": "1889 (St. Paul's P.E. Church Subdivision)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
     },
+    "absentYear": 1889,
     "categories": [
       "basis-none",
       "searched-none",
@@ -50856,6 +53149,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "basis-guess"
@@ -50927,6 +53225,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "renamed",
@@ -50984,6 +53287,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "person",
           "basis-guess"
@@ -51057,6 +53361,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "renamed",
@@ -51139,6 +53448,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "renamed",
@@ -51217,6 +53531,10 @@ const STREET_DATA = {
         "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "renamed",
@@ -51285,6 +53603,10 @@ const STREET_DATA = {
         "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "basis-guess"
@@ -51348,6 +53670,10 @@ const STREET_DATA = {
         "note": "One of the saints' names in the streets east of Main, with San Pedro two blocks over. Who or what it was named for is not documented. The Moran Tract of April 1887 shows the corridor with a seam in it: San Julian Street south of Ninth, Earl Street north of it, both lettered on the same sheet.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "basis-guess"
@@ -51446,6 +53772,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-008.pdf"
         },
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
+        "absentYear": 1868,
         "categories": [
           "place",
           "destination",
@@ -51512,6 +53843,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.66,
+        "earliest": {
+          "year": 1910,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "place",
           "destination",
@@ -51574,6 +53910,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.66,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -51652,6 +53992,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.26,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -51727,6 +54071,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -51790,6 +54138,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.82,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -51869,6 +54221,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -51932,6 +54288,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -52011,6 +54371,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -52090,6 +54454,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -52165,6 +54533,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -52232,6 +54604,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1849,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -52312,6 +54688,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -52392,6 +54772,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.76,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -52448,6 +54832,10 @@ const STREET_DATA = {
         "note": "Much older than the tract that letters it here; it no longer reaches San Pedro, merging into Avalon Boulevard, and its northernmost block became Judge John Aiso Street in 1997.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -52507,6 +54895,10 @@ const STREET_DATA = {
       "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
     },
     "knownFraction": 0.13,
+    "earliest": {
+      "year": 1849,
+      "kind": "by"
+    },
     "categories": [
       "basis-none",
       "searched-none",
@@ -52541,6 +54933,7 @@ const STREET_DATA = {
           "text": "1886 (Angeleno Heights, Blocks 23–25)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-025.pdf"
         },
+        "absentYear": 1886,
         "categories": [
           "basis-none",
           "searched-none",
@@ -52619,6 +55012,7 @@ const STREET_DATA = {
           "text": "1873 (Old Plaza, 1873)",
           "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
         },
+        "absentYear": 1873,
         "categories": [
           "basis-none",
           "searched-none",
@@ -52703,6 +55097,7 @@ const STREET_DATA = {
           "text": "1869 (Aliso Tract)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
         },
+        "absentYear": 1869,
         "categories": [
           "company",
           "basis-attested"
@@ -52748,6 +55143,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
         },
         "knownFraction": 0.9,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1869,
         "categories": [
           "company",
           "basis-attested"
@@ -52803,6 +55203,7 @@ const STREET_DATA = {
           "text": "1907 (Tract No. 35)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-186.pdf"
         },
+        "absentYear": 1907,
         "categories": [
           "company",
           "basis-attested"
@@ -52854,6 +55255,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-083.pdf"
         },
         "knownFraction": 0.92,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
+        "absentYear": 1893,
         "categories": [
           "company",
           "basis-attested"
@@ -52920,6 +55326,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-083.pdf"
         },
         "knownFraction": 0.69,
+        "earliest": {
+          "year": 1948,
+          "kind": "by"
+        },
+        "absentYear": 1893,
         "categories": [
           "company",
           "basis-attested"
@@ -52992,6 +55403,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.44,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "company",
           "renamed",
@@ -53079,6 +55495,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "company",
           "renamed",
@@ -53158,6 +55579,10 @@ const STREET_DATA = {
         "note": "Named for the railway in May 1887, when its passenger depot opened near 1st Street. The name spread south later: on Aug. 31, 1896 Ordinance No. 3829 changed Tulip Street, from Willow to Seventh, to Santa Fe Avenue (documents/lah-1896-09-03).",
         "attested": true,
         "knownFraction": 0.56,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "company",
           "renamed",
@@ -53250,6 +55675,10 @@ const STREET_DATA = {
         "note": "Named for the railway in May 1887, when its passenger depot opened near 1st Street. The name spread south later: on Aug. 31, 1896 Ordinance No. 3829 changed Tulip Street, from Willow to Seventh, to Santa Fe Avenue (documents/lah-1896-09-03).",
         "attested": true,
         "knownFraction": 0.56,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "company",
           "renamed",
@@ -53341,6 +55770,10 @@ const STREET_DATA = {
         "note": "Named for the railway in May 1887, when its passenger depot opened near 1st Street. The name spread south later: on Aug. 31, 1896 Ordinance No. 3829 changed Tulip Street, from Willow to Seventh, to Santa Fe Avenue (documents/lah-1896-09-03).",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "company",
           "renamed",
@@ -53428,6 +55861,10 @@ const STREET_DATA = {
         "note": "Named for the railway in May 1887, when its passenger depot opened near 1st Street. The name spread south later: on Aug. 31, 1896 Ordinance No. 3829 changed Tulip Street, from Willow to Seventh, to Santa Fe Avenue (documents/lah-1896-09-03).",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "company",
           "renamed",
@@ -53506,6 +55943,10 @@ const STREET_DATA = {
         "note": "Named for the railway in May 1887, when its passenger depot opened near 1st Street. The name spread south later: on Aug. 31, 1896 Ordinance No. 3829 changed Tulip Street, from Willow to Seventh, to Santa Fe Avenue (documents/lah-1896-09-03).",
         "attested": true,
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "company",
           "basis-attested"
@@ -53630,6 +56071,7 @@ const STREET_DATA = {
           "text": "1915 (Whiffen Tract)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0030/TR0030-086.pdf"
         },
+        "absentYear": 1915,
         "categories": [
           "basis-none",
           "searched-none",
@@ -53714,6 +56156,10 @@ const STREET_DATA = {
         "note": "Runs between Santee Street and Maple Avenue; grew out of Fashion District wholesalers selling overstock through their back doors on weekends. Known simply as “The Alley” as of 1982 and branded Santee Alley some time after.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "basis-inferred"
@@ -53763,6 +56209,10 @@ const STREET_DATA = {
         "note": "Runs between Santee Street and Maple Avenue; grew out of Fashion District wholesalers selling overstock through their back doors on weekends. Known simply as “The Alley” as of 1982 and branded Santee Alley some time after.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "basis-inferred"
@@ -53817,6 +56267,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12017"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
+        "absentYear": 1883,
         "categories": [
           "person",
           "basis-inferred"
@@ -53858,6 +56313,7 @@ const STREET_DATA = {
       "text": "1886 (Maple Avenue Tract)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR011/MR011-063.pdf"
     },
+    "absentYear": 1886,
     "categories": [
       "basis-none",
       "searched-none",
@@ -53918,6 +56374,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.13,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "person",
           "alive",
@@ -53975,6 +56436,7 @@ const STREET_DATA = {
           "text": "1873 (Botiller and Reyes lots)",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
+        "absentYear": 1873,
         "categories": [
           "person",
           "alive",
@@ -54029,6 +56491,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1893,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "person",
           "alive",
@@ -54105,6 +56572,10 @@ const STREET_DATA = {
         "note": "Santee later moved to San Diego County, where in 1893 his second wife had the town of Cowleston renamed Santee in his honour — a name it still keeps.",
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -54185,6 +56656,10 @@ const STREET_DATA = {
         "note": "Santee later moved to San Diego County, where in 1893 his second wife had the town of Cowleston renamed Santee in his honour — a name it still keeps.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -54254,6 +56729,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
     },
     "knownFraction": 0.8,
+    "earliest": {
+      "year": 1886,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "place",
       "basis-attested"
@@ -54355,6 +56835,10 @@ const STREET_DATA = {
         "note": "Named in 1891, after the Shattos' own proposal of “Vieudelou” was rejected, and running behind their mansion on Orange Street — now part of Wilshire Boulevard. Shatto Street still exists; the stretch lettered on Tract No. 321 in Nov. 1908 (documents/tr0014-087a) is a lost piece of it.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "landowner",
@@ -54457,6 +56941,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-none",
@@ -54543,6 +57028,10 @@ const STREET_DATA = {
         "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "person",
           "alive",
@@ -54599,6 +57088,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "person",
           "alive",
@@ -54667,6 +57157,10 @@ const STREET_DATA = {
         "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
         "attested": true,
         "knownFraction": 0.13,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "person",
           "alive",
@@ -54768,6 +57262,10 @@ const STREET_DATA = {
         "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
         "attested": true,
         "knownFraction": 0.13,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "person",
           "alive",
@@ -54868,6 +57366,10 @@ const STREET_DATA = {
         "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
         "attested": true,
         "knownFraction": 0.13,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "person",
           "alive",
@@ -54942,6 +57444,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "person",
           "alive",
@@ -54996,6 +57499,10 @@ const STREET_DATA = {
         "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
         "attested": true,
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "person",
           "alive",
@@ -55089,6 +57596,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "basis-none",
           "searched-none",
@@ -55159,6 +57667,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.21,
+        "earliest": {
+          "year": 1887,
+          "kind": "exact"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "politician",
@@ -55239,6 +57752,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1897,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "politician",
@@ -55328,6 +57846,10 @@ const STREET_DATA = {
         "note": "Part of the same 1887 Southern Pacific package as Towne Avenue. The name did not stay put: the street platted “Stanford” in 1887 is modern Crocker Street, and the Stanford name moved a block east onto the former Ruth Avenue — modern Stanford Avenue — some time after Feb. 1897.",
         "attested": true,
         "knownFraction": 0.36,
+        "earliest": {
+          "year": 1897,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -55426,6 +57948,10 @@ const STREET_DATA = {
         "note": "Part of the same 1887 Southern Pacific package as Towne Avenue. The name did not stay put: the street platted “Stanford” in 1887 is modern Crocker Street, and the Stanford name moved a block east onto the former Ruth Avenue — modern Stanford Avenue — some time after Feb. 1897.",
         "attested": true,
         "knownFraction": 0.33,
+        "earliest": {
+          "year": 1903,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -55498,6 +58024,10 @@ const STREET_DATA = {
         "note": "Part of the same 1887 Southern Pacific package as Towne Avenue. The name did not stay put: the street platted “Stanford” in 1887 is modern Crocker Street, and the Stanford name moved a block east onto the former Ruth Avenue — modern Stanford Avenue — some time after Feb. 1897.",
         "attested": true,
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "politician",
@@ -55613,6 +58143,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -55721,6 +58252,10 @@ const STREET_DATA = {
         "note": "The Echo Park stretch is not part of the boulevard's own naming: Sunset began as a few blocks near Cahuenga Pass, advertised under that name by Hollywood's founder in July 1887, and crept east, taking Bellevue Avenue's line through Echo Park and reaching the Plaza by 1904. Nothing found says what the boulevard itself was named for.",
         "attested": true,
         "knownFraction": 0.59,
+        "earliest": {
+          "year": 1922,
+          "kind": "by"
+        },
         "categories": [
           "basis-none",
           "searched-partial"
@@ -55803,6 +58338,10 @@ const STREET_DATA = {
         "note": "The Echo Park stretch is not part of the boulevard's own naming: Sunset began as a few blocks near Cahuenga Pass, advertised under that name by Hollywood's founder in July 1887, and crept east, taking Bellevue Avenue's line through Echo Park and reaching the Plaza by 1904. Nothing found says what the boulevard itself was named for.",
         "attested": true,
         "knownFraction": 0.59,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -55913,6 +58452,10 @@ const STREET_DATA = {
         "note": "The Echo Park stretch is not part of the boulevard's own naming: Sunset began as a few blocks near Cahuenga Pass, advertised under that name by Hollywood's founder in July 1887, and crept east, taking Bellevue Avenue's line through Echo Park and reaching the Plaza by 1904. Nothing found says what the boulevard itself was named for.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -55995,6 +58538,10 @@ const STREET_DATA = {
     "note": "Lettered on a tract of 1922 (documents/tr0063-098-p1) in Echo Park, and still Sunvue Place today.",
     "attested": true,
     "knownFraction": 0.59,
+    "earliest": {
+      "year": 1922,
+      "kind": "by"
+    },
     "categories": [
       "basis-none",
       "searched-partial"
@@ -56069,6 +58616,10 @@ const STREET_DATA = {
         "note": "Christened in 1859, along the one-block lane Temple had laid out himself beside his own downtown property.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "basis-attested"
@@ -56136,6 +58687,10 @@ const STREET_DATA = {
         "note": "Christened in 1859, along the one-block lane Temple had laid out himself beside his own downtown property.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "basis-attested"
@@ -56207,6 +58762,10 @@ const STREET_DATA = {
         "note": "Christened in 1859, along the one-block lane Temple had laid out himself beside his own downtown property.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "basis-attested"
@@ -56290,6 +58849,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "basis-attested"
@@ -56349,6 +58913,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "person",
           "basis-attested"
@@ -56421,6 +58986,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
         "knownFraction": 0,
+        "earliest": {
+          "year": 1876,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "renamed",
@@ -56489,6 +59059,7 @@ const STREET_DATA = {
           "text": "1928 (Tract No. 9771)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
         },
+        "absentYear": 1928,
         "categories": [
           "person",
           "basis-attested"
@@ -56566,6 +59137,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0145/TR0145-062.pdf"
         },
         "knownFraction": 0.49,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1869,
         "categories": [
           "person",
           "renamed",
@@ -56656,6 +59232,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
         },
         "knownFraction": 0.11,
+        "earliest": {
+          "year": 1936,
+          "kind": "by"
+        },
+        "absentYear": 1869,
         "categories": [
           "person",
           "renamed",
@@ -56742,6 +59323,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-081.pdf"
         },
         "knownFraction": 0.2,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -56824,6 +59409,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1884,
         "categories": [
           "renamed",
           "basis-none",
@@ -56881,6 +59471,7 @@ const STREET_DATA = {
       "text": "1907 (Axelrod and Winogura Property)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-023a.pdf"
     },
+    "absentYear": 1907,
     "categories": [
       "person",
       "basis-attested"
@@ -56918,6 +59509,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.79,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "alive",
@@ -56976,6 +59572,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1887,
+          "kind": "exact"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "alive",
@@ -57040,6 +59641,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.73,
+        "earliest": {
+          "year": 1897,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "alive",
@@ -57116,6 +59722,10 @@ const STREET_DATA = {
         "note": "Named when the subdividers of Joseph Wolfskill's downtown orchard gave 13 acres at 4th and Alameda for a new Southern Pacific station — the Arcade Depot, opened 1888 — and lettered the railroad's officers onto the surrounding streets. Stanford Avenue and Crocker Street come from the same deal.",
         "attested": true,
         "knownFraction": 0.69,
+        "earliest": {
+          "year": 1904,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -57172,6 +59782,10 @@ const STREET_DATA = {
         "note": "Named when the subdividers of Joseph Wolfskill's downtown orchard gave 13 acres at 4th and Alameda for a new Southern Pacific station — the Arcade Depot, opened 1888 — and lettered the railroad's officers onto the surrounding streets. Stanford Avenue and Crocker Street come from the same deal.",
         "attested": true,
         "knownFraction": 0.78,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -57294,6 +59908,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
         },
         "knownFraction": 0.14,
+        "earliest": {
+          "year": 1912,
+          "kind": "by"
+        },
+        "absentYear": 1875,
         "categories": [
           "tool",
           "renamed",
@@ -57366,6 +59985,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-060.pdf"
         },
         "knownFraction": 0.14,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1875,
         "categories": [
           "tool",
           "renamed",
@@ -57496,6 +60120,10 @@ const STREET_DATA = {
         "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and on Tract No. 2473 of 1913 (documents/tr0024-055), and still Union Avenue today. Kines suggests the name may have been given a decade earlier on the adjoining Fairview tract; nothing found says what union was meant.",
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -57574,6 +60202,10 @@ const STREET_DATA = {
         "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and on Tract No. 2473 of 1913 (documents/tr0024-055), and still Union Avenue today. Kines suggests the name may have been given a decade earlier on the adjoining Fairview tract; nothing found says what union was meant.",
         "attested": true,
         "knownFraction": 0.65,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -57634,6 +60266,7 @@ const STREET_DATA = {
           "text": "1885 (Colina Park)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
         },
+        "absentYear": 1885,
         "categories": [
           "basis-none",
           "searched-partial"
@@ -57703,6 +60336,10 @@ const STREET_DATA = {
         "note": "Lettered on Colina Park in Nov. 1885 (documents/mr007-036-p2) and on Tract No. 2473 of 1913 (documents/tr0024-055), and still Union Avenue today. Kines suggests the name may have been given a decade earlier on the adjoining Fairview tract; nothing found says what union was meant.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -57789,6 +60426,7 @@ const STREET_DATA = {
       "text": "1885 (Colina Park)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
     },
+    "absentYear": 1885,
     "categories": [
       "basis-none",
       "searched-none",
@@ -57845,6 +60483,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -57928,6 +60570,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -58041,6 +60687,10 @@ const STREET_DATA = {
         "note": "Originally Pleasant Street, and renamed in 1896 because it was being confused with the nearby Pleasant Avenue. Thomas W. Collins petitioned for the change and proposed Utah: he had been living in Salt Lake City when his son was born in 1886, and the land was owned by Henry J. Woollacott, a Salt Lake City native whose brother married Collins's daughter that year. Collins, a bartender who came to Los Angeles about 1888, went blind in 1898 and worked as a guide at City Hall, known about town as “Blind Tom”.",
         "attested": true,
         "knownFraction": 0.67,
+        "earliest": {
+          "year": 1908,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "state",
@@ -58111,6 +60761,10 @@ const STREET_DATA = {
         "note": "The Valencia Street shown on R. W. Poindexter's 1901 subdivision of the Mrs. Fitzgerald Tract.",
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -58179,6 +60833,10 @@ const STREET_DATA = {
         "note": "The Valencia Street shown on R. W. Poindexter's 1901 subdivision of the Mrs. Fitzgerald Tract.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -58327,6 +60985,10 @@ const STREET_DATA = {
         "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -58427,6 +61089,10 @@ const STREET_DATA = {
         "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -58524,6 +61190,10 @@ const STREET_DATA = {
         "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -58649,6 +61319,10 @@ const STREET_DATA = {
         "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -58764,6 +61438,10 @@ const STREET_DATA = {
         "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -58899,6 +61577,10 @@ const STREET_DATA = {
         "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -58985,6 +61667,10 @@ const STREET_DATA = {
         "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -59081,6 +61767,10 @@ const STREET_DATA = {
         "note": "West 16th Street at this end until 1938, when the thirteen-mile Venice Boulevard rebranding championed by Culver City's founder Harry H. Culver finally reached downtown, consolidating Center Street, St. Marks Boulevard, Electric Avenue, Front Street and West 16th under one name — an idea Venice residents had floated in 1912.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1875,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "destination",
@@ -59181,6 +61871,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -59261,6 +61955,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -59323,6 +62021,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "person",
           "landowner",
@@ -59382,6 +62081,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.89,
+        "earliest": {
+          "year": 1869,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "landowner",
@@ -59449,6 +62153,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.82,
+        "earliest": {
+          "year": 1882,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "borrowed",
           "basis-inferred"
@@ -59511,6 +62220,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "borrowed",
           "basis-inferred"
@@ -59575,6 +62289,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.85,
+        "earliest": {
+          "year": 1876,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "borrowed",
           "basis-inferred"
@@ -59635,6 +62354,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "borrowed",
           "basis-inferred"
@@ -59718,6 +62442,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.93,
+        "earliest": {
+          "year": 1884,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "borrowed",
           "renamed",
@@ -59810,6 +62539,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.93,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "borrowed",
           "renamed",
@@ -59877,6 +62611,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.91,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "borrowed",
           "basis-inferred"
@@ -59920,6 +62659,7 @@ const STREET_DATA = {
           "text": "1888 (Widow Botiller Tract resubdivision)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR029/MR029-026.pdf"
         },
+        "absentYear": 1888,
         "categories": [
           "borrowed",
           "basis-inferred"
@@ -59985,6 +62725,11 @@ const STREET_DATA = {
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/11824"
         },
         "knownFraction": 0.92,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
+        "absentYear": 1873,
         "categories": [
           "borrowed",
           "renamed",
@@ -60070,6 +62815,10 @@ const STREET_DATA = {
         "note": "Nothing found says what it was named for. New York’s financial street is the obvious guess, and what supports it is the company it keeps: the Moreno Vineyard Tract sheet of March 1876 letters Wall Street and Regent Street two blocks apart on one new commercial subdivision beside the railroad depot — New York’s and London’s most famous trading addresses named together. As a pair they read as deliberate; singly neither can be shown. The name later spread north, taking Myrtle Avenue on Nov. 13, 1893 by Ordinance No. 1915.",
         "attested": true,
         "knownFraction": 0.81,
+        "earliest": {
+          "year": 1883,
+          "kind": "by"
+        },
         "categories": [
           "borrowed",
           "renamed",
@@ -60205,6 +62954,10 @@ const STREET_DATA = {
     "note": null,
     "attested": true,
     "knownFraction": 0.81,
+    "earliest": {
+      "year": 1884,
+      "kind": "by"
+    },
     "categories": [
       "basis-none",
       "searched-partial"
@@ -60287,6 +63040,10 @@ const STREET_DATA = {
         "note": "The park came first, in 1886, and the street took its name in 1894 when Providence Street was renamed. The park became MacArthur Park in 1942 for General Douglas MacArthur, but the neighbourhood kept the older name.",
         "attested": true,
         "knownFraction": 0.58,
+        "earliest": {
+          "year": 1924,
+          "kind": "by"
+        },
         "categories": [
           "place",
           "basis-attested"
@@ -60372,6 +63129,7 @@ const STREET_DATA = {
       "text": "1849 (Hutton / Ord Survey)",
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
     },
+    "absentYear": 1849,
     "categories": [
       "basis-none",
       "searched-none",
@@ -60467,6 +63225,11 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
     },
     "knownFraction": 1,
+    "earliest": {
+      "year": 1885,
+      "kind": "by"
+    },
+    "absentYear": 1849,
     "categories": [
       "landowner",
       "basis-eponymous"
@@ -60550,6 +63313,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "tree",
           "basis-pattern"
@@ -60695,6 +63463,10 @@ const STREET_DATA = {
         "note": "Named in Dec. 1897, when Sixth Street from Hoover Street to the west city boundary was changed to Wilshire Boulevard — fifteen months after H. G. Wilshire petitioned the council about that street. The name then travelled east in stages: Orange Street, between Figueroa and Alvarado, was folded into it in April 1924 after a first attempt in 1908 had been repealed (documents/laevex-1924-04-01, documents/lae-1924-04-12). The council's stated aim in 1924 was “a continuous thoroughfare from the heart of the business district of the city to the ocean”.",
         "attested": true,
         "knownFraction": 0.03,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -60795,6 +63567,10 @@ const STREET_DATA = {
         "note": "Named in Dec. 1897, when Sixth Street from Hoover Street to the west city boundary was changed to Wilshire Boulevard — fifteen months after H. G. Wilshire petitioned the council about that street. The name then travelled east in stages: Orange Street, between Figueroa and Alvarado, was folded into it in April 1924 after a first attempt in 1908 had been repealed (documents/laevex-1924-04-01, documents/lae-1924-04-12). The council's stated aim in 1924 was “a continuous thoroughfare from the heart of the business district of the city to the ocean”.",
         "attested": true,
         "knownFraction": 0.03,
+        "earliest": {
+          "year": 1888,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -60891,6 +63667,10 @@ const STREET_DATA = {
         "note": "Named in Dec. 1897, when Sixth Street from Hoover Street to the west city boundary was changed to Wilshire Boulevard — fifteen months after H. G. Wilshire petitioned the council about that street. The name then travelled east in stages: Orange Street, between Figueroa and Alvarado, was folded into it in April 1924 after a first attempt in 1908 had been repealed (documents/laevex-1924-04-01, documents/lae-1924-04-12). The council's stated aim in 1924 was “a continuous thoroughfare from the heart of the business district of the city to the ocean”.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1889,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -60979,6 +63759,10 @@ const STREET_DATA = {
         "note": "Named in Dec. 1897, when Sixth Street from Hoover Street to the west city boundary was changed to Wilshire Boulevard — fifteen months after H. G. Wilshire petitioned the council about that street. The name then travelled east in stages: Orange Street, between Figueroa and Alvarado, was folded into it in April 1924 after a first attempt in 1908 had been repealed (documents/laevex-1924-04-01, documents/lae-1924-04-12). The council's stated aim in 1924 was “a continuous thoroughfare from the heart of the business district of the city to the ocean”.",
         "attested": true,
         "knownFraction": 0.06,
+        "earliest": {
+          "year": 1878,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -61067,6 +63851,10 @@ const STREET_DATA = {
         "note": "Named in Dec. 1897, when Sixth Street from Hoover Street to the west city boundary was changed to Wilshire Boulevard — fifteen months after H. G. Wilshire petitioned the council about that street. The name then travelled east in stages: Orange Street, between Figueroa and Alvarado, was folded into it in April 1924 after a first attempt in 1908 had been repealed (documents/laevex-1924-04-01, documents/lae-1924-04-12). The council's stated aim in 1924 was “a continuous thoroughfare from the heart of the business district of the city to the ocean”.",
         "attested": true,
         "knownFraction": 0.41,
+        "earliest": {
+          "year": 1878,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -61163,6 +63951,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-016.pdf"
         },
         "knownFraction": 0.19,
+        "earliest": {
+          "year": 1878,
+          "kind": "by"
+        },
+        "absentYear": 1875,
         "categories": [
           "person",
           "alive",
@@ -61229,6 +64022,7 @@ const STREET_DATA = {
           "text": "1875 (Block 22 1/2, Hancock's Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-016.pdf"
         },
+        "absentYear": 1875,
         "categories": [
           "person",
           "alive",
@@ -61304,6 +64098,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -61379,6 +64177,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "renamed",
           "basis-none",
@@ -61464,6 +64266,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.82,
+        "earliest": {
+          "year": 1881,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "renamed",
@@ -61534,6 +64341,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "person",
           "basis-attested"
@@ -61581,6 +64393,7 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
+        "absentYear": 1849,
         "categories": [
           "person",
           "basis-attested"
@@ -61640,6 +64453,10 @@ const STREET_DATA = {
         "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
         "attested": true,
         "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -61703,6 +64520,10 @@ const STREET_DATA = {
         "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
         "attested": true,
         "knownFraction": 0.66,
+        "earliest": {
+          "year": 1909,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -61782,6 +64603,10 @@ const STREET_DATA = {
         "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
         "attested": true,
         "knownFraction": 0.69,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -61892,6 +64717,10 @@ const STREET_DATA = {
         "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
         "attested": true,
         "knownFraction": 0.02,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -62004,6 +64833,10 @@ const STREET_DATA = {
         "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
         "attested": true,
         "knownFraction": 0.01,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -62106,6 +64939,10 @@ const STREET_DATA = {
         "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -62190,6 +65027,10 @@ const STREET_DATA = {
         "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
         "attested": true,
         "knownFraction": 0.63,
+        "earliest": {
+          "year": 1887,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -62323,6 +65164,10 @@ const STREET_DATA = {
         "note": "Witmer reached Los Angeles in November 1884 and had founded the Los Angeles Improvement Company two months later; the California Bank followed in 1887, with Moses L. Wicks and a son of Henry Mayo Newhall among his partners. Of everything the Witmers owned they were most associated with their 650 acres on Crown Hill, which this street climbs. Named January 1886.",
         "attested": true,
         "knownFraction": 0,
+        "earliest": {
+          "year": 1885,
+          "kind": "by"
+        },
         "categories": [
           "person",
           "alive",
@@ -62403,6 +65248,10 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 1,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
         "categories": [
           "company",
           "renamed",
@@ -62491,6 +65340,11 @@ const STREET_DATA = {
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
         },
         "knownFraction": 0.85,
+        "earliest": {
+          "year": 1876,
+          "kind": "by"
+        },
+        "absentYear": 1849,
         "categories": [
           "company",
           "basis-guess"

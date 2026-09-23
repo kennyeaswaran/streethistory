@@ -28,6 +28,8 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
 const GREY = "#c0c0c0";
 const isBlue = c => /^hsl\(205\b/.test(String(c)) || String(c) === "#2e6f9e";
 const isGrey = c => String(c) === GREY;
+// A popup's heading is the entry's display name
+const STREET_NAME_OF = st => st.display;
 
 (async () => {
   const LEAFLET_DIR = path.join(PROJECT, "node_modules/leaflet/dist");
@@ -330,6 +332,155 @@ const isGrey = c => String(c) === GREY;
     ok(`…and so does selecting its parent`, r.parent, JSON.stringify(r));
     ok(`…while a sibling does not`, !r.sibling, JSON.stringify(r));
   }
+
+  // ---------------------------------------------------------------------
+  console.log("search folds numbers, abbreviations and accents (ROADMAP §6)");
+  // Synthetic rows, built by the page's own searchRowFor, so the matcher is
+  // tested and the corpus is not: which streets exist is none of its business.
+  const found = await page.evaluate(() => {
+    const saved = searchRows.splice(0);
+    ["11th Street", "Avenue 20", "Cesar E Chavez Avenue", "Main Street", "21st Street",
+     "Boylston Street", "Sunset Boulevard"].forEach((form, i) =>
+      searchRows.push(searchRowFor({ form, label: form, entity: "e" + i })));
+    const q = t => searchMatches(t).map(r => r.label);
+    const out = {};
+    for (const t of ["eleventh", "eleve", "11", "11th st", "Eleventh St.", "20", "chavez",
+                     "césar chávez", "twenty first", "twenty-first", "st main", "sunset blvd",
+                     "boulevard sun", "xyzzy", "street"])
+      out[t] = q(t);
+    searchRows.splice(0, searchRows.length, ...saved);
+    return out;
+  });
+  const finds = (t, label) => ok(`"${t}" finds ${label}`, found[t].includes(label), JSON.stringify(found[t]));
+  finds("eleventh", "11th Street");
+  finds("eleve", "11th Street");
+  finds("11", "11th Street");
+  finds("11th st", "11th Street");
+  finds("Eleventh St.", "11th Street");
+  finds("20", "Avenue 20");
+  finds("chavez", "Cesar E Chavez Avenue");
+  finds("césar chávez", "Cesar E Chavez Avenue");
+  finds("twenty first", "21st Street");
+  finds("twenty-first", "21st Street");
+  finds("st main", "Main Street");
+  finds("sunset blvd", "Sunset Boulevard");
+  finds("boulevard sun", "Sunset Boulevard");
+  ok("a query matching nothing finds nothing", found["xyzzy"].length === 0, JSON.stringify(found["xyzzy"]));
+  ok("…and every word must match: \"11\" does not find Avenue 20", !found["11"].includes("Avenue 20"));
+  ok("the whole form typed ranks first", found["11th st"][0] === "11th Street", JSON.stringify(found["11th st"]));
+
+  // Across the real index, as a rule: every form with an ordinal in it is
+  // found by the ordinal spelled out.
+  const spelled = await page.evaluate(() => {
+    const misses = [];
+    let n = 0;
+    for (const r of searchRows) {
+      const words = r.key.split(" ").map(t => NUM_TO_WORD.get(t) || t);
+      if (!r.key.split(" ").some(t => /^\d+(st|nd|rd|th)$/.test(t))) continue;
+      n++;
+      if (!searchMatches(words.join(" ")).some(x => x.label === r.label)) misses.push(r.label);
+    }
+    return { n, misses };
+  });
+  ok("every ordinal form in the index is found spelled out",
+     spelled.n > 0 && spelled.misses.length === 0, `${spelled.n} forms; misses ${spelled.misses.slice(0, 3)}`);
+
+  // The box itself: typed, arrowed, chosen with Enter.
+  const pick = await page.evaluate(() => searchRows.find(r => searchMatches(r.label).length)?.label);
+  await page.fill("#searchBox", "");
+  await page.type("#searchBox", pick);
+  const listed = await page.$$eval("#searchResults li[role=option]", lis => lis.map(li => li.textContent));
+  ok("typing opens the list", listed.length > 0 && !(await page.$eval("#searchResults", u => u.hidden)));
+  await page.keyboard.press("Enter");
+  const chosen = await page.evaluate(() => ({ hits: searchHits.size, entity: searchEntity,
+    hidden: document.getElementById("searchResults").hidden, hash: location.hash }));
+  ok("Enter chooses the top result and highlights it", chosen.hits > 0 && !!chosen.entity, JSON.stringify(chosen));
+  ok("…and closes the list", chosen.hidden);
+  ok("…and puts the name in the address", chosen.hash.includes("name=" + encodeURIComponent(chosen.entity)), chosen.hash);
+  await page.fill("#searchBox", "");
+  await page.dispatchEvent("#searchBox", "input");
+  ok("clearing the box clears the highlight and the address",
+     await page.evaluate(() => searchHits.size === 0 && !location.hash.includes("name=")));
+
+  // ---------------------------------------------------------------------
+  console.log("colour by age (MODEL-SPEC §8 schemes 3 and 4, ROADMAP §5b)");
+  const ages = await page.evaluate(() => {
+    const read = () => [...streets.values()].filter(s => s.ways.length).map(s => ({
+      e: s.entry ? { earliest: s.entry.earliest, absentYear: s.entry.absentYear } : null,
+      colour: String(s.ways[0].options.color), dash: s.ways[0].options.dashArray || null }));
+    setScheme("age"); const age = read();
+    setScheme("absent"); const absent = read();
+    setScheme("known"); const known = read();
+    return { age, absent, known, bins: AGE_BINS.map(b => ({ upTo: b.upTo === Infinity ? 1e9 : b.upTo, colour: b.colour })) };
+  });
+  const binOf = y => ages.bins.find(b => y <= b.upTo).colour;
+  const aWrong = ages.age.filter(p => p.e && p.e.earliest ? p.colour !== binOf(p.e.earliest.year) : !isGrey(p.colour));
+  ok("scheme 3: a dated stretch takes its year's colour, the rest are grey",
+     aWrong.length === 0, `${aWrong.length} wrong, e.g. ${JSON.stringify(aWrong[0])}`);
+  const dWrong = ages.age.filter(p => p.e && p.e.earliest && ((p.e.earliest.kind === "by") !== !!p.dash));
+  ok("…a \"by\" date is dashed and an exact one solid", dWrong.length === 0, JSON.stringify(dWrong[0]));
+  ok("…and both kinds are there to check",
+     ages.age.some(p => p.dash) && ages.age.some(p => p.e && p.e.earliest && !p.dash));
+  const bWrong = ages.absent.filter(p => p.e && p.e.absentYear !== undefined ? p.colour !== binOf(p.e.absentYear) : !isGrey(p.colour));
+  ok("scheme 4: a stretch a sheet shows missing takes that sheet's colour, the rest are grey",
+     bWrong.length === 0 && ages.absent.some(p => !isGrey(p.colour)), `${bWrong.length} wrong`);
+  ok("back on the default scheme, no dashes are left", ages.known.every(p => !p.dash));
+  ok("…and the stretches are blue or grey again", ages.known.every(p => isBlue(p.colour) || isGrey(p.colour)));
+
+  const ageData = await page.evaluate(() => {
+    const all = Object.values(STREET_DATA).flatMap(v => v.segments || [v]);
+    return {
+      inverted: all.filter(e => e.earliest && e.absentYear !== undefined && e.absentYear > e.earliest.year).length,
+      unattested: all.filter(e => e.earliest && !e.attested).length,
+      laterThanPlanned: all.filter(e => {
+        const m = e.planned && typeof e.planned === "object" && e.planned.text.match(/\d{4}/);
+        return e.earliest && m && e.earliest.year > +m[0];
+      }).length
+    };
+  });
+  ok("no stretch is shown missing after it is shown existing", ageData.inverted === 0, JSON.stringify(ageData));
+  ok("a dated stretch is always an attested one", ageData.unattested === 0, JSON.stringify(ageData));
+  ok("the earliest year is never later than the popup's Planned year", ageData.laterThanPlanned === 0, JSON.stringify(ageData));
+
+  // ---------------------------------------------------------------------
+  console.log("permalinks (ROADMAP §9)");
+  const linkState = await page.evaluate(() => {
+    const st = [...streets.values()].find(s => s.entry && s.ways.length > 2);
+    const ll = st.ways[1].getLatLngs()[0];
+    setScheme("age"); updateHash();
+    const cat = CATEGORIES.find(c => !c.heading && !c.facet && c.parent);
+    filtersDiv.querySelector(`input[value="${cat.id}"]`).click();
+    openStreetPopup(st, ll, { autoPan: false });
+    return { hash: location.hash, name: st.name, display: st.entry.name, label: st.entry.label || st.entry.name, cat: cat.id, zoom: map.getZoom() };
+  });
+  ok("the address carries the scheme, the highlight and the open stretch",
+     /c=age/.test(linkState.hash) && linkState.hash.includes("cat=" + encodeURIComponent(linkState.cat)) &&
+     linkState.hash.includes("at=" + encodeURIComponent(linkState.name)), linkState.hash);
+  const page2 = await browser.newPage({ viewport: { width: 1400, height: 900 } });
+  page2.on("pageerror", e => errors.push("page2: " + e));
+  await page2.route("**/leaflet*.js", r => r.fulfill({ contentType: "text/javascript",
+    body: fs.readFileSync(path.join(LEAFLET, "leaflet.js"), "utf8") }));
+  await page2.route("**/leaflet*.css", r => r.fulfill({ contentType: "text/css",
+    body: fs.readFileSync(path.join(LEAFLET, "leaflet.css"), "utf8") }));
+  await page2.goto("http://localhost:8124/index.html" + linkState.hash);
+  await page2.waitForFunction(() => typeof hashReady !== "undefined" && hashReady, null, { timeout: 30000 });
+  const restored = await page2.evaluate(() => ({
+    scheme: document.getElementById("schemeSel").value,
+    cat: [...activeFilters][0] || null,
+    radio: (filtersDiv.querySelector("input:checked") || {}).value || null,
+    zoom: map.getZoom(),
+    popup: (document.querySelector(".leaflet-popup-content h3") || {}).textContent || null,
+    chip: (document.querySelector(".leaflet-popup-content .seg.cur") || {}).textContent || null,
+    legend: document.getElementById("schemeLegend").textContent
+  }));
+  ok("a pasted link restores the scheme", restored.scheme === "age" && /1880s/.test(restored.legend), JSON.stringify(restored));
+  ok("…and the highlight, radio button included", restored.cat === linkState.cat && restored.radio === linkState.cat, JSON.stringify(restored));
+  ok("…and the view", restored.zoom === linkState.zoom, JSON.stringify(restored));
+  ok("…and opens the same stretch's popup",
+     restored.popup === (STREET_NAME_OF(linkState)) && (restored.chip === null || restored.chip === linkState.label),
+     JSON.stringify({ restored, linkState }));
+  await page2.close();
+  await page.evaluate(() => { clearFilters(); setScheme("known"); map.closePopup(); });
 
   ok("still no page errors", errors.length === 0, errors.slice(0, 2).join(" | "));
 

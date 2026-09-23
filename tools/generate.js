@@ -146,15 +146,36 @@ function pavement(street) {
 
 // ---------------------------------------------------------------------------
 // Names: canonical forms, rendering expansion, matching.
-const ORDINALS = [["1st", "First"], ["2nd", "Second"], ["3rd", "Third"], ["4th", "Fourth"],
-  ["5th", "Fifth"], ["6th", "Sixth"], ["7th", "Seventh"], ["8th", "Eighth"], ["9th", "Ninth"],
-  ["10th", "Tenth"], ["11th", "Eleventh"], ["12th", "Twelfth"], ["14th", "Fourteenth"],
-  ["15th", "Fifteenth"], ["16th", "Sixteenth"], ["17th", "Seventeenth"], ["18th", "Eighteenth"],
-  ["20th", "Twentieth"], ["21st", "Twenty-first"], ["23rd", "Twenty-third"]];
-const NUMWORDS = [["1", "One"], ["18", "Eighteen"], ["19", "Nineteen"], ["20", "Twenty"],
-  ["21", "Twenty-one"], ["22", "Twenty-two"], ["26", "Twenty-six"], ["33", "Thirty-three"],
-  ["43", "Forty-three"], ["50", "Fifty"], ["52", "Fifty-two"], ["57", "Fifty-seven"],
-  ["61", "Sixty-one"], ["64", "Sixty-four"], ["66", "Sixty-six"]];
+// Numbers 1–99 as ordinals ("11th" / "Eleventh") and as cardinals ("20" /
+// "Twenty"), built rather than listed. The lists used to hold only the numbers
+// some street happened to carry, which was enough for matching a document's
+// ink against a form, and not enough for search (ROADMAP §6): the browser folds
+// the reader's query with these same tables (SEARCH_CANON in
+// generated/search-index.js), and a reader may type any of them.
+const ONES = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+  "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen",
+  "eighteen", "nineteen"];
+const TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+const ORD_ONES = { one: "first", two: "second", three: "third", five: "fifth", eight: "eighth",
+  nine: "ninth", twelve: "twelfth" };
+const cap = w => w[0].toUpperCase() + w.slice(1);
+function cardinalWord(n) {
+  if (n < 20) return ONES[n];
+  return TENS[Math.floor(n / 10)] + (n % 10 ? "-" + ONES[n % 10] : "");
+}
+function ordinalWord(n) {
+  const w = cardinalWord(n), parts = w.split("-"), last = parts.pop();
+  const o = ORD_ONES[last] || (last.endsWith("y") ? last.slice(0, -1) + "ieth" : last + "th");
+  return [...parts, o].join("-");
+}
+function ordinalSuffix(n) {
+  const t = n % 100, u = n % 10;
+  if (t >= 11 && t <= 13) return n + "th";
+  return n + (u === 1 ? "st" : u === 2 ? "nd" : u === 3 ? "rd" : "th");
+}
+const NUMS = Array.from({ length: 99 }, (_, i) => i + 1);
+const ORDINALS = NUMS.map(n => [ordinalSuffix(n), cap(ordinalWord(n))]);
+const NUMWORDS = NUMS.map(n => [String(n), cap(cardinalWord(n))]);
 const TYPE_ABBR = { "St": "Street", "Ave": "Avenue", "Av": "Avenue", "Blvd": "Boulevard",
   "Ct": "Court", "Dr": "Drive", "Pl": "Place", "Rd": "Road", "Ln": "Lane", "Wy": "Way",
   "Hwy": "Highway", "Ter": "Terrace", "Terr": "Terrace" };
@@ -1429,6 +1450,33 @@ for (const streetName of [...streets.keys()].sort()) {
       entry.knownFraction = +knownFraction(seg, tl,
         +dyear(docDate(osmDoc))).toFixed(2);
 
+    // MODEL-SPEC §8 schemes 3 and 4 (ROADMAP §5b), as plain numbers for the
+    // map's age ramps. `earliest` is the earliest document showing this ground
+    // existed, planned or built — the same rows plannedBuiltFor reads, so it is
+    // never older than the popup's Planned / Built lines. `kind` is "exact"
+    // when that document is the one that made it (planned-on / built-on) and
+    // "by" when it only shows it already there, which is an upper bound on its
+    // age, not the age.
+    //
+    // `absentYear` is the latest document showing NO street here yet — so only
+    // an absence dated no later than `earliest` counts. An `absent` row after
+    // the ground is already attested says the street was gone again (vacated,
+    // or the sheet disagrees), not that it did not yet exist; the popup's "No
+    // street yet" line still shows it, and this scheme does not.
+    const existRows = seg.rows.filter(r => (r.kind === "state" || r.kind === "unnamed") && !r.osm &&
+      /^(planned|built)-(on|by)$/.test(r.attests || ""));
+    // Compared on full dates, not years: a sheet of March 1875 showing nothing
+    // and a plat of May 1875 dedicating the street are both true.
+    let firstKey = null;
+    if (existRows.length) {
+      firstKey = existRows.map(r => dkey(docDate(r.doc))).sort()[0];
+      const atFirst = existRows.filter(r => dkey(docDate(r.doc)) === firstKey);
+      entry.earliest = { year: +dyear(docDate(atFirst[0].doc)),
+                         kind: atFirst.some(r => /-on$/.test(r.attests)) ? "exact" : "by" };
+    }
+    const priorAbsent = absents.filter(r => firstKey === null || dkey(docDate(r.doc)) < firstKey);
+    if (priorAbsent.length) entry.absentYear = +dyear(docDate(priorAbsent[0].doc)); // absents: newest first
+
     const e = cur ? entities[cur.entity] : null;
     // No entity at all on this stretch — a gap in the model rather than an
     // unresearched name. `stub` is the row a reader wants here; `unresearched`
@@ -1543,7 +1591,9 @@ for (const [key, list] of searchIndex) {
       if (sp && sp.disambiguation) label += ` (${sp.disambiguation})`;
       else { label += ` (${x.street})`; report.derivedDisambig.push(`${x.entity}: "${label}"`); }
     }
-    SEARCH_INDEX.push({ form: x.form, entity: x.entity, label, street: x.street });
+    // `key` is canon(form): what the map's search box matches the reader's
+    // query against, folded the same way (ROADMAP §6).
+    SEARCH_INDEX.push({ form: x.form, key, entity: x.entity, label, street: x.street });
   }
 }
 
@@ -1590,8 +1640,17 @@ fs.writeFileSync(path.join(OUT_DIR, "streets-data.js"),
   // public map draws them is a display decision, deliberately still open.
   `const VANISHED_STREETS = ${stringify(vanished)};\n`);
 
+// The three tables canonTokens folds with, so index.html folds a typed query
+// exactly as this file folded each form: "eleventh" → "11th", "blvd" →
+// "boulevard". A browser matching on the option text alone could not.
+const SEARCH_CANON = {
+  ordinals: ORDINALS.map(([n, w]) => [n, w.toLowerCase()]),
+  numwords: NUMWORDS.map(([n, w]) => [n, w.toLowerCase()]),
+  typeAbbr: Object.fromEntries(Object.entries(TYPE_ABBR).map(([a, w]) => [a.toLowerCase(), w.toLowerCase()]))
+};
 fs.writeFileSync(path.join(OUT_DIR, "search-index.js"),
-  header + `const SEARCH_INDEX = ${stringify(SEARCH_INDEX)};\n`);
+  header + `const SEARCH_INDEX = ${stringify(SEARCH_INDEX)};\n\n` +
+  `const SEARCH_CANON = ${JSON.stringify(SEARCH_CANON)};\n`);
 
 // index.html (the former preview.html, promoted at the 2026-09-19 switchover)
 // reads generated/streets-data.js + generated/search-index.js, so a regeneration here
@@ -1606,8 +1665,64 @@ rep.push(`- Stub entities minted from OSM (unresearched): ${report.stubs.length}
 rep.push(`- Curated entities: ${Object.keys(NAME_ENTITIES).length}`);
 if (EXCLUDE_NAMES.size) rep.push(`- Excluded OSM names (normalizeName misparses them; see tools/generate.js): ${[...EXCLUDE_NAMES].join("; ")}`);
 rep.push("");
+// SEGMENTATION (ROADMAP §1 and §9): what each boundary between two adjacent
+// stretches of one street marks. Measured by hand once (2026-09-07: 23 of 371
+// boundaries were name changes, the rest mostly coverage edges); printed every
+// build so the effect of §1's steps shows up as a diff here. The first test
+// that differs decides the row, in the order below. (The 2026-09-07 count put
+// name changes first; this puts coverage first, so the two do not compare
+// row for row.)
+{
+  const txt = v => v == null ? null : typeof v === "string" ? v : v.text;
+  // The names in order, by entity and form. A stretch with no nameHistory
+  // has one name, its current one, and so does a one-line history (which only
+  // adds how that name arrived): both are that one entity.
+  const lineageOf = e => {
+    const h = e.nameHistory || [];
+    if (h.length <= 1) return JSON.stringify([h.length ? h[0].entityId : e.entityId]);
+    return JSON.stringify(h.map(x => [x.entityId, x.formInForce || x.name]));
+  };
+  const dates = e => JSON.stringify((e.nameHistory || []).map(h => [h.from, h.until]));
+  const facts = e => JSON.stringify([txt(e.planned), txt(e.built), txt(e.absentAsOf)]);
+  const rest = e => JSON.stringify([e.entityId, (e.nameHistory || []).map(h => h.how || null),
+    e.namedAfter, e.note, e.categories, (e.sources || []).map(x => x.url)]);
+  const KINDS = [
+    // Coverage first: where one side has nothing but the base map, it has no
+    // name history to compare, so a difference in names there is a gap in the
+    // evidence, not a known change of name.
+    ["a document speaks on one side and nothing but OSM on the other", (a, b) => a.attested !== b.attested],
+    ["a different name lineage on each side (a name change)", (a, b) => lineageOf(a) !== lineageOf(b)],
+    ["same names; the names carry different dates", (a, b) => dates(a) !== dates(b)],
+    ["same names and dates; only planned / built / absentAsOf differ", (a, b) => facts(a) !== facts(b)],
+    ["other (how, namesake text, note, categories or sources differ)", (a, b) => rest(a) !== rest(b)],
+    ["nothing differs but geometry (a pavement gap)", () => true]
+  ];
+  const counts = KINDS.map(() => 0);
+  const perStreet = [];
+  for (const [name, v] of Object.entries(STREET_DATA)) {
+    if (!v.segments) continue;
+    perStreet.push([name, v.segments.length]);
+    for (let i = 1; i < v.segments.length; i++)
+      counts[KINDS.findIndex(([, differs]) => differs(v.segments[i - 1], v.segments[i]))]++;
+  }
+  const total = counts.reduce((a, b) => a + b, 0);
+  const streetsWith = Object.values(STREET_DATA).filter(v => !(v.segments || [v]).every(e => e.categories.includes("stub"))).length;
+  rep.push("## Segmentation (ROADMAP §1)", "",
+    `${Object.values(STREET_DATA).flatMap(v => v.segments || [v]).length} segments on ` +
+    `${Object.keys(STREET_DATA).length} streets (${streetsWith} with anything but stubs); ` +
+    `${total} boundaries between adjacent segments of one street.`, "",
+    "| what differs across the boundary | boundaries |", "|---|---|");
+  KINDS.forEach(([label], i) => rep.push(`| ${label} | ${counts[i]} |`));
+  rep.push("", "Most segments: " + perStreet.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, 10).map(([n, k]) => `${n} ${k}`).join(", ") + ".", "");
+}
 if (report.ambiguous.length) { rep.push("## Ambiguous OSM binds (NOT bound — fix by adding extents or disambiguation)"); report.ambiguous.forEach(x => rep.push("- " + x)); rep.push(""); }
 if (problems.length) { rep.push("## Row problems"); problems.forEach(x => rep.push("- " + x)); rep.push(""); }
+// Notes the build wants a human to read but that are not problems: an OSM
+// name bound past a vanished namesake, an unqualified renaming that lands on
+// no ground. Collected since the switchover and, until 2026-09-22, never
+// printed (ROADMAP §11).
+if (report.notes.length) { rep.push("## Notes"); [...new Set(report.notes)].forEach(x => rep.push("- " + x)); rep.push(""); }
 if (report.revived.length) { rep.push("## Revived names (a name recurs around another — check the intervening row is on the right street)"); [...new Set(report.revived)].forEach(x => rep.push("- " + x)); rep.push(""); }
 if (report.partialDocs.length) { rep.push("## Partially swept documents (no negative inference contributed)"); report.partialDocs.forEach(x => rep.push("- " + x)); rep.push(""); }
 if (report.unmatchedAsWritten.size) {

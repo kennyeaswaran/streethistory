@@ -59,6 +59,8 @@ The 1897 council minutes and the omnibus renaming files are in
     start-map-tools.command       double-click: serves the project folder and
     start-names-tool.command      opens the map tool / names tool
     new-map.command               inbox/ scan -> documents/<id>/
+    check-and-generate.command    before a commit: the three deploy gates,
+                                  run locally, and whether generated/ changed
     map-tool.html                 align + bound a scan, review its rows
     names-tool.html               review + edit data/names.js
     project-info.json             written by the launchers (gitignored)

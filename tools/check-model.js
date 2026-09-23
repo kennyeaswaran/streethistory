@@ -92,6 +92,15 @@ for (const [id, e] of Object.entries(NAME_ENTITIES)) {
   if (typeof e.note === "string" && /\b(Kenny|TODO|check this|research-leads|2026-\d\d-\d\d)\b/.test(e.note))
     warn(id, "note reads like a working note and `note` is shown to readers — " +
              "move it to internalNote");
+  // STYLE BUDGET: popups are fact boxes, not essays. Checked here, once per
+  // entity, on the text somebody wrote. Until 2026-09-22 tools/check-data.js
+  // checked it on the generated file, which repeats an entity's text on every
+  // stretch it names: Cesar E Chavez's one long note was thirteen warnings, and
+  // 206 of them together were a list nobody read (ROADMAP §11).
+  if (typeof e.note === "string" && e.note.length > 420)
+    warn(id, `note is ${e.note.length} chars — trim toward one or two lines`);
+  if (typeof e.namedAfter === "string" && e.namedAfter.length > 190)
+    warn(id, `namedAfter is ${e.namedAfter.length} chars — one line`);
   // CATEGORIES SAY WHAT THE NAME POINTS AT. When we do not know what it points
   // at, the honest entry is nothing at all — tagging `place` on a street whose
   // namesake is deliberately withheld would assert more than `namedAfter: null`

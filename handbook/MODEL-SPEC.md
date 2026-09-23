@@ -1809,6 +1809,17 @@ Color schemes, one active at a time, with the legend reflecting the active one:
    between them is a natural later view, since it maps how well-pinned each
    segment is.
 
+   **Built 2026-09-22** as the "Colour by" menu on `index.html`. The generator
+   emits, per segment, `earliest: { year, kind }` (the earliest `state` /
+   `unnamed` row, planned or built; `kind` is `"exact"` for a `-on` row and
+   `"by"` for a `-by` one) and `absentYear` (the latest `absent` row dated
+   *before* `earliest`, so an absence after the ground is attested, which is
+   a vacation or a disagreement rather than "not yet", does not count). Both
+   schemes share one binned sepia ramp, oldest darkest (1849, 1850–69, then
+   by decade to the 1890s, 1900–19, 1920 on), because the dated ground is
+   bunched before 1900. Scheme 3 draws a `"by"` date dashed, since the street
+   may be older than the year shown.
+
 Search: typing matches against **all recorded forms**, historical included, so
 "Zarago" finds the entity however a document spelled it. Matching segments
 color three ways — currently bearing a matched form, formerly bearing one,
@@ -1993,20 +2004,18 @@ of both when it ships.
 4. **The paper trail in the popup**, once 2 exists.
 5. **Display modes:** the grid as of a year (three states — known present,
    known absent, unknown — plus vanished lines within their attested window);
-   colour by earliest attestation (§8 schemes 3 and 4, specified, unbuilt).
-6. **Search folds renderings** — "eleventh" finds "11th". A browser-side
-   matcher on canonical tokens; the `<datalist>` cannot do it.
+   colour by earliest attestation (§8 schemes 3 and 4, built 2026-09-22).
+6. **Search folds renderings** — built 2026-09-22: `index.html` matches the
+   query on canonical tokens with the generator's own tables (`SEARCH_CANON`).
 7. **Categories** — built 2026-09-15 (the vocabulary and tree live in
    `data/site-config.js`). Left: empty nodes, one judgment-call tag, and the
-   rationale not recorded elsewhere (tree vs plant, `descriptive` as a
-   residual).
+   rationale not recorded elsewhere (tree vs plant).
 8. **A second neighbourhood, and the large serial sheets** — ADDING-A-
    NEIGHBORHOOD.md and SERIAL-SOURCES.md, plus what a one-affine tool does
    with a sheet that needs several.
-9. **Smaller items:** permalinks, a segmentation report, the §6.2a bridging
+9. **Smaller items:** the §6.2a bridging
    report, and two map-tool gaps (export notes for the next AI pass; `basis`
    not editable in review).
 10. *(ROADMAP's suggested order.)*
-11. **Left over from the switchover:** legacy cleanup, what
-    `tools/check-data.js` is for now, style-budget warnings, and
-    `report.notes` never printed.
+11. **Left over from the switchover:** legacy cleanup, and what
+    `tools/check-data.js` is for now.

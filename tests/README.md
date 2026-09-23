@@ -12,7 +12,7 @@ screenshot (`review-mode.png`, `preview-colours.png`) in the working directory.
 | `test-names-tool.js` | names-tool's surgical save: an exact round trip on the real `data/names.js`, plus promotion, rename and edit composed | `utilities/names-tool.html` | node |
 | `browser-test.js` | `utilities/map-tool.html` in a real browser: panels visible, buttons working, `TASK.md` naming every row kind. Reads no real document: every sheet it opens is a fixture | `utilities/map-tool.html` | Playwright (assistant's sandbox) |
 | `names-browser-test.js` | `utilities/names-tool.html` in a real browser, on a throwaway copy of the project whose name files and documents are made up (`fixtures/names-tool/`) | `utilities/names-tool.html` | Playwright (sandbox) |
-| `preview-test.js` | `index.html` over the generated data: reads the polyline colours back | `index.html`, `tools/generate.js` | Playwright + `npm install leaflet@1.9.4 --no-save` (sandbox) |
+| `preview-test.js` | `index.html` over the generated data: reads the polyline colours back (all three colour schemes), and drives the search box and permalinks | `index.html`, `tools/generate.js` | Playwright + `npm install leaflet@1.9.4 --no-save` (sandbox) |
 
 Kenny's machine has no Playwright, so the last three run in an assistant's
 sandbox. They need `utilities/project-info.json`, which is gitignored (the

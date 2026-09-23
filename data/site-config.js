@@ -153,6 +153,12 @@ const CATEGORIES = [
   // Not a thing in the world at all.
   { id: "abstract",     label: "An abstract idea",                  parent: "referent" },
   { id: "idea",         label: "…an idea, a virtue, an aspiration",  parent: "abstract" },
+  // `descriptive` is the RESIDUAL of a group, not a peer of it. `number`
+  // (position in a grid), `destination` (where it goes) and `descriptive` all
+  // say the name describes the street; tag `descriptive` only when the other
+  // two do not apply (Main, Central, Short, Court House…). It predicts a strong
+  // basis, since a name that describes the street can be checked against it —
+  // the opposite of the `lexical` basis (ROADMAP §7).
   { id: "descriptive",  label: "…the street's own role or position", parent: "abstract" },
   { id: "number",       label: "…its number in the grid",            parent: "abstract" },
   { id: "system",       label: "…a route system",                    parent: "abstract" },
@@ -263,7 +269,15 @@ const SIMILAR_PROJECTS = [
     desc: "Academic research project analyzing street names as cultural markers; focuses on Spain but has searchable maps of North America." },
   { title: "Streetpédia",
     url: "https://streetpedia.fr/",
-    desc: "French mobile app with audio street-name histories." }
+    desc: "French mobile app with audio street-name histories." },
+  // Not street-name projects: kin in method. One draws a city by age, the
+  // other lays historic sheets over the modern ground (ROADMAP §3, §5).
+  { title: "Every building in Los Angeles County (Parcelscope)",
+    url: "https://lax-skyline.parcelscope.net/",
+    desc: "Every standing building in the county, rising in the year it was built, from assessor records — L.A.'s growth read off what survives." },
+  { title: "Know Your Place (Bristol)",
+    url: "https://maps.bristol.gov.uk/kyp/",
+    desc: "Bristol City Council's heritage map: 1880s–1930s sheets and 1946 aerials laid over the modern city, with community-added history." }
 ];
 
 if (typeof module !== "undefined") module.exports = {

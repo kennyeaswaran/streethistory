@@ -111,12 +111,9 @@ function checkEntry(id, v) {
   } else if (v.categories.includes("unknown") || v.categories.includes("unresearched")) {
     err(id, "carries a legacy-only status category beside a derived one — tools/generate.js should never emit 'unknown' / 'unresearched'");
   }
-  // style budget (see ADDING-STREETS.md): popups are fact boxes, not essays
-  if (v.note && v.note.length > 420) warn(id, `note is ${v.note.length} chars — trim toward one or two lines`);
-  if (v.namedAfter && v.namedAfter.length > 190) warn(id, `namedAfter is ${v.namedAfter.length} chars — one line`);
-  (v.nameHistory || []).forEach((h, j) => {
-    if (h.origin && h.origin.length > 320) warn(id, `nameHistory[${j}].origin is ${h.origin.length} chars — sub-bullets should be short`);
-  });
+  // The style budget (note / namedAfter length) is checked on the authored
+  // entities by tools/check-model.js, once per entity — not here, where the
+  // same text repeats on every stretch it names (ROADMAP §11).
   const spanChecks = [
     ["namedAfter", v.namedAfter, v.namedAfterLink],
     ...(v.nameHistory || []).map((h, j) => [`nameHistory[${j}].origin`, h.origin, h.originLink])
