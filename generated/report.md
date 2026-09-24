@@ -2,25 +2,25 @@
 
 **Overwritten every build** (`node tools/generate.js`).
 
-- Streets: 272; entries: 941
-- Stub entities minted from OSM (unresearched): 130
-- Curated entities: 328
+- Streets: 272; entries: 953
+- Stub entities minted from OSM (unresearched): 129
+- Curated entities: 331
 - Excluded OSM names (normalizeName misparses them; see tools/generate.js): East West Bank Plaza at The Broad
 
 ## Segmentation (ROADMAP §1)
 
-941 segments on 272 streets (146 with anything but stubs); 669 boundaries between adjacent segments of one street.
+953 segments on 272 streets (147 with anything but stubs); 681 boundaries between adjacent segments of one street.
 
 | what differs across the boundary | boundaries |
 |---|---|
-| a document speaks on one side and nothing but OSM on the other | 224 |
-| a different name lineage on each side (a name change) | 111 |
-| same names; the names carry different dates | 262 |
-| same names and dates; only planned / built / absentAsOf differ | 56 |
+| a document speaks on one side and nothing but OSM on the other | 223 |
+| a different name lineage on each side (a name change) | 112 |
+| same names; the names carry different dates | 273 |
+| same names and dates; only planned / built / absentAsOf differ | 58 |
 | other (how, namesake text, note, categories or sources differ) | 8 |
-| nothing differs but geometry (a pavement gap) | 8 |
+| nothing differs but geometry (a pavement gap) | 7 |
 
-Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 21, 4th Street 20, 6th Street 19, 7th Street 18, 8th Street 17, 1st Street 16, 5th Street 15, Main Street 15.
+Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 22, 4th Street 20, 6th Street 19, 7th Street 18, 8th Street 18, 1st Street 16, 5th Street 16, Main Street 15.
 
 ## Row problems
 - 12685: street not in geometry: West Bank Plaza at The Broad
@@ -233,13 +233,8 @@ Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 21, 4th Street 2
 - min-1896-09-08: sweptFor = []
 - min-1896-09-14: sweptFor = []
 - min-1896-09-21: sweptFor = []
-- mr002-585: sweptFor = []
 - mr005-035: sweptFor = []
-- mr009-052: sweptFor = []
-- mr043-088: sweptFor = []
 - mr055-071: sweptFor = []
-- mr072-071: sweptFor = []
-- mr107-097: sweptFor = []
 - newmark-1916: sweptFor = []
 - ord-103: sweptFor = []
 - ord-105: sweptFor = ["Ord Street"]
@@ -257,15 +252,9 @@ Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 21, 4th Street 2
 - stevenson-1884-hi-res: sweptFor = []
 - teed-1887: sweptFor = []
 - teed-1889: sweptFor = []
-- tr0001-072: sweptFor = []
-- tr0005-049b: sweptFor = []
-- tr0009-085: sweptFor = []
 - tr0010-055: sweptFor = []
-- tr0012-088a: sweptFor = []
 - tr0013-008: sweptFor = []
 - tr0013-060: sweptFor = []
-- tr0014-013b: sweptFor = []
-- tr0014-033-1: sweptFor = []
 - tr0015-086b: sweptFor = []
 - tr0015-161b: sweptFor = []
 - tr0016-089: sweptFor = []
@@ -312,14 +301,14 @@ Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 21, 4th Street 2
 - moore-st: "MOORE ST" ×1
 - ninth-street: "NINTH ST" ×1
 - orange-st-wilshire: "ORANGE ST" ×1
-- seventh-street: "SEVENTH ST." ×7
+- seventh-street: "SEVENTH ST." ×10
 - william-farragut: "WILLIAM ST." ×1
 - ingraham: "INGRAHAM ST." ×1
 - orange-st-wilshire: "ORANGE ST." ×1
 - orange-st-wilshire: "Wilshire Blvd" ×2
 - sixth-street: "proposed line of Sixth Street." ×1
 - wilmington-street: "WILMINGTON ST." ×2
-- los-angeles-street: "LOS ANGELES ST." ×4
+- los-angeles-street: "LOS ANGELES ST." ×5
 - fireman-st: "FIREMAN ST." ×1
 - strelitz-st: "STRELITZ ST." ×1
 - temple: "TEMPLE ST." ×1
@@ -340,7 +329,7 @@ Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 21, 4th Street 2
 - topeka-st: "TOPEKA ST." ×1
 - atchison-st: "ATCHISON ST." ×1
 - santa-fe-ave: "SANTA FE ST." ×1
-- second-street: "SECOND ST." ×5
+- second-street: "SECOND ST." ×6
 - eighth-street: "new 8th Street" ×1
 - san-pedro: "San Pedro Ave" ×4
 - omar-ave: "Omar Ave" ×1
@@ -349,7 +338,7 @@ Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 21, 4th Street 2
 - fifteenth-street: "(formerly Laura St)" ×1
 - sixteenth-street: "16th ST." ×2
 - sixteenth-street: "(formerly Pine St)" ×2
-- main-street-dtla: "MAIN ST." ×4
+- main-street-dtla: "MAIN ST." ×5
 - maple-dtla: "MAPLE AVE." ×2
 - santee-street: "SANTEE ST." ×1
 - ninth-street: "CALLE 9a" ×2
@@ -402,21 +391,21 @@ Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 21, 4th Street 2
 - palmetto: "PALMETTO ST." ×4
 - willow: "WILLOW ST." ×1
 - ingraham: "INGRAM STREET" ×1
-- central-ave: "CENTRAL AVE." ×3
+- central-ave: "CENTRAL AVE." ×4
 - easton: "EASTON ST." ×4
 - kohler: "KOHLER ST." ×3
 - wilde-st: "WILDE ST." ×2
 - stanford-ave: "STANFORD AVE." ×2
 - bixel: "BIXEL ST" ×1
 - towne-ave: "TOWNE AVE" ×2
-- st-paul-avenue: "ST. PAUL AVENUE" ×1
-- sixth-street: "SIXTH ST." ×6
+- st-paul-avenue: "ST. PAUL AVENUE" ×2
+- sixth-street: "SIXTH ST." ×7
 - grand-ave: "GRAND AV." ×1
 - short-street-chavez: "Calle Corta" ×1
 - beaudry-avenue: "BEAUDRY AVE." ×4
 - boylston: "BOYLSTON ST." ×7
-- eighth-street: "EIGHTH ST." ×2
-- alameda-st: "ALAMEDA ST." ×7
+- eighth-street: "EIGHTH ST." ×4
+- alameda-st: "ALAMEDA ST." ×8
 - industrial-st: "INDUSTRIAL ST." ×2
 - mill-st-arts-district: "MILL ST." ×4
 - tenth-street: "TENTH ST." ×1
@@ -428,6 +417,10 @@ Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 21, 4th Street 2
 - easton: "Industrial" ×2
 - merchant-st: "MERCHANT ST." ×1
 - san-pedro: "SAN PEDRO ST." ×3
+- whittier-columbia: "WHITTIER ST." ×1
+- green-ave: "GREEN AVE." ×1
+- ninth-street: "NINTH ST." ×1
+- valencia-street-poindexter: "VALENCIA ST." ×1
 - colyton: "COLYTON ST." ×1
 - carolina-arts-district: "CAROLINA ST." ×1
 - molino-st: "MOLINO ST." ×1
@@ -437,8 +430,9 @@ Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 21, 4th Street 2
 - san-pedro: "SAN PEDRO ST" ×1
 - anderson: "ANDERSON ST." ×1
 - utah-st: "UTAH ST." ×1
-- ord-street: "ORD ST." ×2
-- san-fernando-st-spring: "SAN FERNANDO ST." ×1
+- lucas-avenue: "LUCAS ST." ×1
+- ord-street: "ORD ST." ×3
+- san-fernando-st-spring: "SAN FERNANDO ST." ×2
 - lucas-avenue: "LUCAS AVE." ×1
 - ohio-street: "OHIO ST." ×1
 - colton-st: "COLTON ST." ×3
@@ -492,6 +486,7 @@ Traced through a document alignment; approximate to roughly a street width.
 - **Lafayette Str.** (lafayette-french) — 2 points, from mr002-526-p1
 - **Banning St** (banning-street) — 2 points, from mr002-526-p2
 - **Lafayette Str** (lafayette-french) — 2 points, from mr002-526-p2
+- **Beaudry Street** (beaudry-st) — 2 points, from mr002-585
 - **PARK LANE** (park-lane) — 2 points, from mr003-016
 - **Potts St** (potts-st) — 2 points, from mr003-046-p2
 - **Fifth St** (fifth-street) — 2 points, from mr003-046-p2
@@ -567,6 +562,7 @@ Traced through a document alignment; approximate to roughly a street width.
 - **New Depot St** (new-depot-st) — 2 points, from mr007-062-p2
 - **Pearl St** (pearl) — 2 points, from mr007-062-p2
 - **Fourth St** (fourth-street) — 3 points, from mr007-096-p2
+- **Georgia Bell St.** (georgia-bell) — 2 points, from mr009-052
 - **Eleventh St.** (eleventh-street) — 2 points, from mr010-030
 - **Nevada** (nevada-1886) — 2 points, from mr010-030
 - **Belmont Avenue** (belmont-kincaid) — 2 points, from mr010-030
@@ -619,6 +615,8 @@ Traced through a document alignment; approximate to roughly a street width.
 - **Sapphire St** (sapphire) — 2 points, from tr0006-150a
 - **Easton St** (easton) — 2 points, from tr0009-075
 - **Clarence St** (clarence-st) — 2 points, from tr0013-168-p1
+- **GOLDEN AVE.** (golden-avenue) — 2 points, from tr0014-013b
+- **ALAMEDA ST** (alameda-st) — 2 points, from tr0014-033-1
 - **Shatto St** (shatto-st) — 2 points, from tr0014-087a
 - **Nina St** (nina-st) — 2 points, from tr0014-111b
 - **Lafayette St** (lafayette-french) — 2 points, from tr0014-111b

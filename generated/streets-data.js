@@ -1959,6 +1959,12 @@ const NAME_CATEGORY_INDEX = {
     "basis",
     "searched-none"
   ],
+  "green-ave": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
   "mallard-street": [
     "unknown",
     "basis-none",
@@ -1966,6 +1972,12 @@ const NAME_CATEGORY_INDEX = {
     "searched-none"
   ],
   "marchessault-street": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "montgomery-street": [
     "unknown",
     "basis-none",
     "basis",
@@ -1984,6 +1996,12 @@ const NAME_CATEGORY_INDEX = {
     "searched-none"
   ],
   "valencia-street-poindexter": [
+    "unknown",
+    "basis-none",
+    "basis",
+    "searched-none"
+  ],
+  "whittier-columbia": [
     "unknown",
     "basis-none",
     "basis",
@@ -2444,14 +2462,6 @@ const NAME_CATEGORY_INDEX = {
     "stub"
   ],
   "bartlett-street": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "green-avenue": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -4932,17 +4942,27 @@ const STREET_DATA = {
     "orientation": "EW",
     "segments": [
       {
-        "label": "part of (original 17th St)",
+        "label": "part of (Montgomery Street.)",
         "name": "17th Street",
         "entityId": "seventeenth-street",
         "namedAfter": "Its ordinal position in the downtown grid",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1915",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0030/TR0030-086.pdf"
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": "?",
+            "name": "Montgomery Street.",
+            "entityId": "montgomery-street",
+            "formInForce": "Montgomery Street.",
+            "how": "origin",
+            "origin": "labeled “Montgomery Street.” on the 1886 Collins Subdivision {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
+          },
           {
             "from": "by 1915",
             "until": null,
@@ -4958,11 +4978,12 @@ const STREET_DATA = {
         "attested": true,
         "knownFraction": 0.63,
         "earliest": {
-          "year": 1915,
+          "year": 1886,
           "kind": "by"
         },
         "categories": [
           "number",
+          "renamed",
           "basis-intrinsic"
         ],
         "ancestors": [
@@ -4978,6 +4999,10 @@ const STREET_DATA = {
           {
             "title": "Los Angeles Herald, Nov. 13, 1889 — the same ordinance “was read and adopted” at the Council meeting of Nov. 12",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891113.1.2"
+          },
+          {
+            "title": "Map of Collins Subdivision of Block 1, Bell's Addition to Los Angeles, Cal. (M.R. 9-52, Jan. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
           },
           {
             "title": "Map of Whiffen Tract (Oct. 1915; identified by map alignment, not a lot-level record)",
@@ -4994,17 +5019,48 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Figueroa",
+        "label": "part of (Montgomery Street.)",
         "name": "17th Street",
         "entityId": "seventeenth-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 17th Street is not yet researched",
+        "namedAfter": "Its ordinal position in the downtown grid, once this stretch was folded into 17th Street",
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1886",
+            "until": "?",
+            "name": "Montgomery Street.",
+            "entityId": "montgomery-street",
+            "formInForce": "Montgomery Street.",
+            "how": "origin",
+            "origin": "labeled “Montgomery Street.” on the 1886 Collins Subdivision {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "17th Street",
+            "entityId": "seventeenth-street",
+            "formInForce": "17th Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
         "note": "The numbering ordinance read to the Council on Nov. 5, 1889 and adopted a week later turned Morris and Montgomery Streets into Seventeenth Street — so this stretch of the numbered grid arrived by renaming rather than by extension, as most of the grid south of Pico did.",
-        "attested": false,
+        "attested": true,
+        "knownFraction": 0,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
         "categories": [
           "number",
+          "renamed",
           "basis-intrinsic"
         ],
         "ancestors": [
@@ -5022,6 +5078,10 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH18891113.1.2"
           },
           {
+            "title": "Map of Collins Subdivision of Block 1, Bell's Addition to Los Angeles, Cal. (M.R. 9-52, Jan. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
+          },
+          {
             "title": "Map of Whiffen Tract (Oct. 1915)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0030/TR0030-086.pdf"
           }
@@ -5034,7 +5094,12 @@ const STREET_DATA = {
             1271
           ]
         },
-        "to": "Figueroa Street",
+        "to": {
+          "px": [
+            932,
+            1158
+          ]
+        },
         "gapAfter": true
       },
       {
@@ -7816,8 +7881,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            360,
-            473
+            768,
+            592
           ]
         }
       },
@@ -7828,8 +7893,8 @@ const STREET_DATA = {
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 2nd Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1910",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0016/TR0016-005.pdf"
+          "text": "by 1903",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-049B.pdf"
         },
         "built": "not yet researched",
         "note": null,
@@ -7838,9 +7903,9 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
         },
-        "knownFraction": 0.66,
+        "knownFraction": 0.7,
         "earliest": {
-          "year": 1910,
+          "year": 1903,
           "kind": "by"
         },
         "absentYear": 1849,
@@ -7859,6 +7924,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
+            "title": "Map of Lot A of the Perry-Hellman Property in the City of Los Angeles, County of Los Angeles, California (July 1903; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-049B.pdf"
+          },
+          {
             "title": "Map of the Bisbee Tract (Feb. 1910; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0016/TR0016-005.pdf"
           },
@@ -7872,17 +7941,17 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2435,
-        "maxLng": -118.242,
+        "maxLng": -118.2423,
         "from": {
           "px": [
-            360,
-            473
+            768,
+            592
           ]
         },
         "to": {
           "px": [
-            372,
-            1623
+            720,
+            1497
           ]
         }
       },
@@ -7952,12 +8021,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
           }
         ],
-        "minLng": -118.242,
+        "minLng": -118.2423,
         "maxLng": -118.2412,
         "from": {
           "px": [
-            372,
-            1623
+            720,
+            1497
           ]
         },
         "to": {
@@ -11297,14 +11366,14 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Olive",
+        "label": "part of",
         "name": "4th Street",
         "entityId": "fourth-street",
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1869",
-          "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          "text": "by 1858",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -11327,7 +11396,7 @@ const STREET_DATA = {
         },
         "knownFraction": 0.89,
         "earliest": {
-          "year": 1869,
+          "year": 1858,
           "kind": "by"
         },
         "absentYear": 1849,
@@ -11346,6 +11415,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+          },
+          {
             "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
             "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           },
@@ -11359,17 +11432,22 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2563,
-        "maxLng": -118.2515,
+        "maxLng": -118.2518,
         "from": {
           "px": [
             1330,
             624
           ]
         },
-        "to": "Olive Street"
+        "to": {
+          "px": [
+            127,
+            1094
+          ]
+        }
       },
       {
-        "label": "beyond Olive (original 4th St)",
+        "label": "part of (original 4th St)",
         "name": "4th Street",
         "entityId": "fourth-street",
         "namedAfter": "Its ordinal position in the downtown grid — the numbering system was in place by 1849",
@@ -11429,6 +11507,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
           },
           {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+          },
+          {
             "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
             "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           },
@@ -11441,9 +11523,14 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR012/MR012-026.pdf"
           }
         ],
-        "minLng": -118.2515,
+        "minLng": -118.2518,
         "maxLng": -118.2468,
-        "from": "Olive Street",
+        "from": {
+          "px": [
+            127,
+            1094
+          ]
+        },
         "to": {
           "px": [
             850,
@@ -12564,12 +12651,12 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2591,
-        "maxLng": -118.2576,
+        "maxLng": -118.2583,
         "from": "Beaudry Avenue",
         "to": {
           "px": [
-            726,
-            816
+            540,
+            282
           ]
         }
       },
@@ -12584,10 +12671,10 @@ const STREET_DATA = {
         "note": null,
         "attested": false,
         "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          "text": "1858 (Bellevue Terrace Tract)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
         },
-        "absentYear": 1849,
+        "absentYear": 1858,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12607,12 +12694,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.2576,
+        "minLng": -118.2583,
         "maxLng": -118.2571,
         "from": {
           "px": [
-            726,
-            816
+            540,
+            282
           ]
         },
         "to": {
@@ -12623,7 +12710,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "part of",
+        "label": "beyond Grand",
         "name": "5th Street",
         "entityId": "fifth-street",
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
@@ -12648,15 +12735,15 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          "text": "1858 (Bellevue Terrace Tract)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
         },
-        "knownFraction": 0.9,
+        "knownFraction": 0.94,
         "earliest": {
           "year": 1868,
           "kind": "by"
         },
-        "absentYear": 1849,
+        "absentYear": 1858,
         "categories": [
           "number",
           "basis-intrinsic"
@@ -12681,13 +12768,80 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2571,
-        "maxLng": -118.2527,
+        "maxLng": -118.2539,
         "from": {
           "px": [
             514,
             560
           ]
         },
+        "to": "Grand Avenue"
+      },
+      {
+        "label": "beyond Grand",
+        "name": "5th Street",
+        "entityId": "fifth-street",
+        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1858",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1858",
+            "until": null,
+            "name": "5th Street",
+            "entityId": "fifth-street",
+            "formInForce": "5th Street",
+            "how": "extension",
+            "origin": "labeled “Fifth” and “Fifth St.” on the 1858 Bellevue Terrace Tract and the 1868 Beaudry Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
+        "knownFraction": 0.95,
+        "earliest": {
+          "year": 1858,
+          "kind": "by"
+        },
+        "absentYear": 1849,
+        "categories": [
+          "number",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+          },
+          {
+            "title": "Plan of Lots and Fractional Lots of the 39 Acre Tract Known as The Beaudry Tract (M.R. 1-462, Dec. 28, 1868; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2539,
+        "maxLng": -118.2527,
+        "from": "Grand Avenue",
         "to": {
           "px": [
             538,
@@ -13315,10 +13469,10 @@ const STREET_DATA = {
         "note": null,
         "attested": true,
         "absentAsOf": {
-          "text": "1878 (Nichols Addition)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+          "text": "1899 (St. Paul's School Replat)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR072/MR072-071.pdf"
         },
-        "knownFraction": 0.16,
+        "knownFraction": 0.28,
         "earliest": {
           "year": 1875,
           "kind": "by"
@@ -13347,12 +13501,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "maxLng": -118.2595,
+        "maxLng": -118.2599,
         "from": null,
         "to": {
           "px": [
-            373,
-            186
+            483,
+            143
           ]
         }
       },
@@ -13390,11 +13544,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.2595,
+        "minLng": -118.2599,
         "from": {
           "px": [
-            373,
-            186
+            483,
+            143
           ]
         },
         "to": null
@@ -13839,23 +13993,23 @@ const STREET_DATA = {
             "name": "Ward Street",
             "entityId": "ward-st",
             "formInForce": "Ward Street",
-            "origin": "labeled “WARD ST.” on the 1875 P. Beaudry Subdivision B {{(source)}} — A lost street of the 1878 Nichols Addition, west of downtown (documents/mr003-569)",
+            "origin": "labeled “WARD ST.” and “WARD ST” on the 1875 P. Beaudry Subdivision B and the 1878 Nichols Addition {{(source)}} — A lost street of the 1878 Nichols Addition, west of downtown (documents/mr003-569)",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
           },
           {
-            "from": "by 1905",
+            "from": "by 1899",
             "until": null,
             "name": "6th Street",
             "entityId": "sixth-street",
             "formInForce": "6th Street",
             "how": "renaming",
-            "origin": "labeled “SIXTH ST.” on the 1905 Bixel Street Tract {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0007/TR0007-078a.pdf"
+            "origin": "labeled “SIXTH STREET” and “SIXTH ST.” on the 1899 St. Paul's School Replat, the 1900 St. Paul's School Replat and the 1905 Bixel Street Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR072/MR072-071.pdf"
           }
         ],
         "note": null,
         "attested": true,
-        "knownFraction": 0.69,
+        "knownFraction": 0.74,
         "earliest": {
           "year": 1875,
           "kind": "by"
@@ -13880,6 +14034,18 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
           },
           {
+            "title": "Map of Nichols Addition to West Los Angeles (M.R. 3-569, May 4, 1878; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+          },
+          {
+            "title": "Replat of Lots 64, 65, 66, 67 and 67 1/2 of the Subdivision of the Lands of St. Paul's School, Lot 1, Block 37, Hancock's Survey (M.R. 72-71, Aug. 1899; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR072/MR072-071.pdf"
+          },
+          {
+            "title": "Map of a Replat of a Portion of the Subdivision of the Lands of St. Paul's School (M.R. 78-55, Feb. 1900; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR078/MR078-055.pdf"
+          },
+          {
             "title": "Bixel Street Tract (June 8, 1905; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0007/TR0007-078a.pdf"
           },
@@ -13889,7 +14055,7 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2619,
-        "maxLng": -118.261,
+        "maxLng": -118.2606,
         "from": {
           "px": [
             287,
@@ -13898,8 +14064,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            1559,
-            383
+            882,
+            585
           ]
         }
       },
@@ -13931,7 +14097,7 @@ const STREET_DATA = {
             "entityId": "sixth-street",
             "formInForce": "6th Street",
             "how": "renaming",
-            "origin": "labeled “SIXTH STREET” on the 1900 St. Paul's School Replat {{(source)}}",
+            "origin": "labeled “SIXTH STREET” and “6TH ST.” on the 1900 St. Paul's School Replat and the 1906 Arthur G. Newton's Subdivision {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR078/MR078-055.pdf"
           }
         ],
@@ -13970,16 +14136,20 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR078/MR078-055.pdf"
           },
           {
+            "title": "Arthur G. Newton's Subdivision of Block 18, Woolen Mill Tract (Apr. 1906; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0010/TR0010-175a.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.261,
+        "minLng": -118.2606,
         "maxLng": -118.2601,
         "from": {
           "px": [
-            1559,
-            383
+            882,
+            585
           ]
         },
         "to": {
@@ -14023,11 +14193,16 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
-        "knownFraction": 0.68,
+        "absentAsOf": {
+          "text": "1858 (Bellevue Terrace Tract)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+        },
+        "knownFraction": 0.73,
         "earliest": {
           "year": 1875,
           "kind": "by"
         },
+        "absentYear": 1858,
         "categories": [
           "number",
           "renamed",
@@ -14072,7 +14247,7 @@ const STREET_DATA = {
         }
       },
       {
-        "label": "beyond Figueroa",
+        "label": "part of",
         "name": "6th Street",
         "entityId": "sixth-street",
         "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 6th Street is not yet researched",
@@ -14106,47 +14281,52 @@ const STREET_DATA = {
           }
         ],
         "minLng": -118.2596,
-        "maxLng": -118.2585,
+        "maxLng": -118.2591,
         "from": {
           "px": [
             342,
             186
           ]
         },
-        "to": "Figueroa Street"
+        "to": {
+          "px": [
+            373,
+            330
+          ]
+        }
       },
       {
-        "label": "beyond Figueroa",
+        "label": "part of",
         "name": "6th Street",
         "entityId": "sixth-street",
         "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1868",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+          "text": "by 1858",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1868",
+            "from": "by 1858",
             "until": null,
             "name": "6th Street",
             "entityId": "sixth-street",
             "formInForce": "6th Street",
             "how": "extension",
-            "origin": "labeled “Sixth St.” and “SIXTH STR.” on the 1868 Beaudry Tract and the 1875 Block 22 1/2, Hancock's Survey {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+            "origin": "labeled “Sixth Street”, “Sixth St.” and “SIXTH STR.” on the 1858 Bellevue Terrace Tract, the 1868 Beaudry Tract and the 1875 Block 22 1/2, Hancock's Survey {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
           }
         ],
         "note": null,
         "attested": true,
         "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          "text": "1878 (Nichols Addition)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
         },
-        "knownFraction": 0.9,
+        "knownFraction": 1,
         "earliest": {
-          "year": 1868,
+          "year": 1858,
           "kind": "by"
         },
         "absentYear": 1849,
@@ -14165,6 +14345,10 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           },
           {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+          },
+          {
             "title": "Plan of Lots and Fractional Lots of the 39 Acre Tract Known as The Beaudry Tract (M.R. 1-462, Dec. 28, 1868; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
           },
@@ -14177,9 +14361,14 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "minLng": -118.2585,
+        "minLng": -118.2591,
         "maxLng": -118.2572,
-        "from": "Figueroa Street",
+        "from": {
+          "px": [
+            373,
+            330
+          ]
+        },
         "to": {
           "px": [
             1140,
@@ -14206,7 +14395,7 @@ const STREET_DATA = {
             "entityId": "sixth-street",
             "formInForce": "6th Street",
             "how": "origin",
-            "origin": "labeled “CALLE 6a”, “6TH ST”, “6TH ST.”, “Sixth St.” and “SIXTH ST.” on the 1849 Hutton / Ord Survey, the 1868 Beaudry Tract and the 1902 Grace C. Longley Property {{(source)}}",
+            "origin": "labeled “CALLE 6a”, “6TH ST”, “6TH ST.”, “Sixth Street”, “Sixth St.” and “SIXTH ST.” on the 1849 Hutton / Ord Survey, the 1858 Bellevue Terrace Tract, the 1868 Beaudry Tract and the 1902 Grace C. Longley Property {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
@@ -14242,6 +14431,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-71, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
           },
           {
             "title": "Plan of Lots and Fractional Lots of the 39 Acre Tract Known as The Beaudry Tract (M.R. 1-462, Dec. 28, 1868; identified by map alignment, not a lot-level record)",
@@ -14498,6 +14691,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Wolfskill Orchard Tract situated in the City of Los Angeles Cal. (sheet 2, M.R. 30-10, Aug. 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
+          },
+          {
+            "title": "Culver Tract, Being a Subdivision of Block 7, Coronel Tract, and Strip of Land Lying North (Nov. 1901; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-072.pdf"
           },
           {
             "title": "Power Plant Tract No. 1 (Feb. 17, 1906; identified by map alignment, not a lot-level record)",
@@ -15172,7 +15369,7 @@ const STREET_DATA = {
             "entityId": "seventh-street",
             "formInForce": "7th Street",
             "how": "extension",
-            "origin": "labeled “SEVENTH STREET” on the 1893 Wright & Lynch Tract, the 1897 Garland Tract and the 1915 Tract No. 2905 {{(source)}}",
+            "origin": "labeled “SEVENTH STREET” and “SEVENTH ST.” on the 1893 Wright & Lynch Tract, the 1897 Garland Tract, the 1908 Tract No. 235 and the 1915 Tract No. 2905 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-014.pdf"
           }
         ],
@@ -15204,6 +15401,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Garland Tract, Being a Subdivision of a Portion of Lot 7, Block 37, Hancock's Survey, in the City of Los Angeles, California (M.R. 60-88, Apr. 1897; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
+          },
+          {
+            "title": "Tract No. 235, Being a Subdivision of a Portion of Lot 8, Block 37, Hancock Survey (June 1908; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-013B.pdf"
           },
           {
             "title": "Tract No. 2905 (Oct. 4, 1915; identified by map alignment, not a lot-level record)",
@@ -15276,6 +15477,10 @@ const STREET_DATA = {
           {
             "title": "Map of the Garland Tract, Being a Subdivision of a Portion of Lot 7, Block 37, Hancock's Survey, in the City of Los Angeles, California (M.R. 60-88, Apr. 1897; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
+          },
+          {
+            "title": "Tract No. 235, Being a Subdivision of a Portion of Lot 8, Block 37, Hancock Survey (June 1908; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-013B.pdf"
           },
           {
             "title": "Tract No. 2905 (Oct. 4, 1915; identified by map alignment, not a lot-level record)",
@@ -16008,6 +16213,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-046.pdf"
           },
           {
+            "title": "Culver Tract, Being a Subdivision of Block 7, Coronel Tract, and Strip of Land Lying North (Nov. 1901; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-072.pdf"
+          },
+          {
             "title": "Lot A Slauson Property (Jan. 29, 1907; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0011/TR0011-196.pdf"
           },
@@ -16050,7 +16259,7 @@ const STREET_DATA = {
             "entityId": "seventh-street",
             "formInForce": "7th Street",
             "how": "extension",
-            "origin": "labeled “Seventh St” on the 1887 Wolfskill Orchard Tract, sheet 1 (M.R. 30-9) {{(source)}}",
+            "origin": "labeled “Seventh St” and “SEVENTH ST.” on the 1887 Wolfskill Orchard Tract, sheet 1 (M.R. 30-9) and the 1905 George K. Frink Subdivision {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR030/MR030-009.pdf"
           }
         ],
@@ -16087,6 +16296,10 @@ const STREET_DATA = {
           {
             "title": "Industrial Tract (Mar. 15, 1904)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-056a.pdf"
+          },
+          {
+            "title": "Map of the George K. Frink Subdivision of the Western Portion of Block No. 1 of the Coronel Tract, Los Angeles City, Los Angeles County, California (M.R. 107-97, Dec. 7, 1905; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR107/MR107-097.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
@@ -16632,8 +16845,64 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
         ],
-        "maxLng": -118.2694,
+        "maxLng": -118.2709,
         "from": null,
+        "to": {
+          "px": [
+            394,
+            639
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "8th Street",
+        "entityId": "eighth-street",
+        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 8th Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1907",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-088A.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.68,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
+        "categories": [
+          "number",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Map of the Cathedral Property in the City of Los Angeles, County of Los Angeles, State of California (Jan. 1907; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-088A.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          }
+        ],
+        "minLng": -118.2709,
+        "maxLng": -118.2694,
+        "from": {
+          "px": [
+            394,
+            639
+          ]
+        },
         "to": {
           "px": [
             187,
@@ -16838,6 +17107,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR060/MR060-088.pdf"
           },
           {
+            "title": "Tract No. 235, Being a Subdivision of a Portion of Lot 8, Block 37, Hancock Survey (June 1908; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-013B.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           }
@@ -16861,12 +17134,32 @@ const STREET_DATA = {
         "label": "part of",
         "name": "8th Street",
         "entityId": "eighth-street",
-        "namedAfter": "Its ordinal position in the downtown grid — how and when this stretch joined 8th Street is not yet researched",
+        "namedAfter": "Its ordinal position in the downtown grid, extended onto this stretch",
         "namedAfterLink": null,
-        "planned": "not yet researched",
+        "planned": {
+          "text": "by 1908",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-013B.pdf"
+        },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1908",
+            "until": null,
+            "name": "8th Street",
+            "entityId": "eighth-street",
+            "formInForce": "8th Street",
+            "how": "extension",
+            "origin": "labeled “EIGHTH ST.” on the 1908 Tract No. 235 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-013B.pdf"
+          }
+        ],
         "note": null,
-        "attested": false,
+        "attested": true,
+        "knownFraction": 0.67,
+        "earliest": {
+          "year": 1908,
+          "kind": "by"
+        },
         "categories": [
           "number",
           "basis-intrinsic"
@@ -16880,6 +17173,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: 1st Street (on the numbering system)",
             "url": "https://lastreetnames.com/street/0001st-street/"
+          },
+          {
+            "title": "Tract No. 235, Being a Subdivision of a Portion of Lot 8, Block 37, Hancock Survey (June 1908; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-013B.pdf"
           },
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849)",
@@ -17577,7 +17874,7 @@ const STREET_DATA = {
             "entityId": "eighth-street",
             "formInForce": "8th Street",
             "how": "extension",
-            "origin": "labeled “Eighth Street”, “Eighth St”, “EAST EIGHTH STREET” and “EIGHTH STREET” on the 1887 W. J. Fisher's Subdivision, the 1894 Kohler Tract, the 1898 J. B. Parker Subdivision, the 1924 Tract No. 8657 and the 1927 Tract No. 9918 {{(source)}}",
+            "origin": "labeled “Eighth Street”, “8th St.”, “Eighth St”, “EAST EIGHTH STREET” and “EIGHTH STREET” on the 1887 W. J. Fisher's Subdivision, the 1892 John H. Jacobs' Subdivision, the 1894 Kohler Tract, the 1898 J. B. Parker Subdivision, the 1924 Tract No. 8657 and the 1927 Tract No. 9918 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
           }
         ],
@@ -17605,6 +17902,10 @@ const STREET_DATA = {
           {
             "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+          },
+          {
+            "title": "John H. Jacobs' Subdivision of Lots 3-4 and that part of Lot 5 which lies west of Kohler Street of the Rees Tract (M.R. 43-88, Mar. 8, 1892; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR043/MR043-088.pdf"
           },
           {
             "title": "Kohler Tract, Being W. J. Fisher's Re-Subdivision of a Portion of the Kohler and Frohling Tract (M.R. 54-51, Aug. 9, 1894; identified by map alignment, not a lot-level record)",
@@ -18486,12 +18787,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
           }
         ],
-        "minLat": 34.0609,
+        "minLat": 34.0607,
         "from": null,
         "to": {
           "px": [
-            1067,
-            653
+            979,
+            1350
           ]
         }
       },
@@ -18502,8 +18803,8 @@ const STREET_DATA = {
         "namedAfter": "Spanish for a tree-lind avene, from {{álamo}} (“cottonwood tree”), extended onto this stretch",
         "namedAfterLink": "https://en.wiktionary.org/wiki/alameda",
         "planned": {
-          "text": "by 1909",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+          "text": "by 1906",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-085.pdf"
         },
         "built": {
           "text": "drawn, unlabelled, by Aug. 29, 1849 (Hutton / Ord Survey)",
@@ -18511,19 +18812,19 @@ const STREET_DATA = {
         },
         "nameHistory": [
           {
-            "from": "by 1909",
+            "from": "by 1906",
             "until": null,
             "name": "Alameda Street",
             "entityId": "alameda-st",
             "formInForce": "Alameda Street",
             "how": "extension",
-            "origin": "labeled “ALAMEDA ST.” on the 1909 Oil Well Supply Company Tract {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
+            "origin": "labeled “ALAMEDA STREET” and “ALAMEDA ST.” on the 1906 Pierre Nicolas Lot and the 1909 Oil Well Supply Company Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-085.pdf"
           }
         ],
         "note": "Officially named Feb. 2, 1855, though the road — or an earlier one nearby — may already have been informally called an alameda.",
         "attested": true,
-        "knownFraction": 0.66,
+        "knownFraction": 0.68,
         "earliest": {
           "year": 1849,
           "kind": "by"
@@ -18549,6 +18850,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
           },
           {
+            "title": "Map of Pierre Nicolas Lot in the City of Los Angeles, Cal. (Feb. 1906; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-085.pdf"
+          },
+          {
             "title": "Oil Well Supply Company Tract, being a plat of a portion of acreage property in the City of Los Angeles (Jan. 1909; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-200A.pdf"
           },
@@ -18558,11 +18863,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0598,
-        "maxLat": 34.0609,
+        "maxLat": 34.0607,
         "from": {
           "px": [
-            1067,
-            653
+            979,
+            1350
           ]
         },
         "to": {
@@ -21897,15 +22202,15 @@ const STREET_DATA = {
         "note": "Named for the Montreal-born promoter who moved to Los Angeles in 1852, ran a store at Los Angeles and Aliso Streets until 1867, then went into real estate and made the western hills habitable. He was elected to the City Council in 1871 and to the mayoralty in 1874, presided over the creation of City Park (now Pershing Square), and built a streetcar line along Temple, where he lived. A lifelong bachelor, he died in Los Angeles and is buried in Montreal.",
         "attested": true,
         "absentAsOf": {
-          "text": "1878 (Nichols Addition)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+          "text": "1875 (P. Beaudry Subdivision B)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
         },
-        "knownFraction": 0.84,
+        "knownFraction": 0.82,
         "earliest": {
           "year": 1906,
           "kind": "by"
         },
-        "absentYear": 1878,
+        "absentYear": 1875,
         "categories": [
           "person",
           "politician",
@@ -21936,7 +22241,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
           }
         ],
-        "minLat": 34.0519,
+        "minLat": 34.0528,
         "maxLat": 34.0541,
         "from": {
           "px": [
@@ -21946,8 +22251,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            937,
-            70
+            1565,
+            614
           ]
         }
       },
@@ -21988,11 +22293,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-115.pdf"
           }
         ],
-        "maxLat": 34.0519,
+        "maxLat": 34.0528,
         "from": {
           "px": [
-            937,
-            70
+            1565,
+            614
           ]
         },
         "to": null
@@ -26759,7 +27064,7 @@ const STREET_DATA = {
             "entityId": "central-ave",
             "formInForce": "Central Avenue",
             "how": "origin",
-            "origin": "labeled “CENTRAL AVE.” and “CENTRAL AVENUE” on the 1885 Wilde's Coronel Tract Subdivision, the 1906 Power Plant Tract No. 1 and the 1945 Tract No. 13301 {{(source)}}",
+            "origin": "labeled “CENTRAL AVE.” and “CENTRAL AVENUE” on the 1885 Wilde's Coronel Tract Subdivision, the 1905 George K. Frink Subdivision, the 1906 Power Plant Tract No. 1 and the 1945 Tract No. 13301 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
@@ -26792,6 +27097,10 @@ const STREET_DATA = {
           {
             "title": "F. B. Wilde's Subdivision of a Part of the Coronel Tract (M.R. 55-81, Oct. 17, 1885; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
+          },
+          {
+            "title": "Map of the George K. Frink Subdivision of the Western Portion of Block No. 1 of the Coronel Tract, Los Angeles City, Los Angeles County, California (M.R. 107-97, Dec. 7, 1905; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR107/MR107-097.pdf"
           },
           {
             "title": "Power Plant Tract No. 1 (Feb. 17, 1906; identified by map alignment, not a lot-level record)",
@@ -29090,7 +29399,7 @@ const STREET_DATA = {
         "gapAfter": true
       },
       {
-        "label": "south of 7th",
+        "label": "beyond 7th",
         "name": "Columbia Avenue",
         "entityId": "columbia-avenue",
         "namedAfter": null,
@@ -29117,8 +29426,86 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
           }
         ],
+        "minLat": 34.0508,
         "maxLat": 34.0527,
         "from": "7th Street",
+        "to": {
+          "px": [
+            1029,
+            688
+          ]
+        }
+      },
+      {
+        "label": "beyond James M Wood (Whittier St)",
+        "name": "Columbia Avenue",
+        "entityId": "columbia-avenue",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1907",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-088A.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1907",
+            "until": "?",
+            "name": "Whittier Street",
+            "entityId": "whittier-columbia",
+            "formInForce": "Whittier Street",
+            "how": "origin",
+            "origin": "labeled “WHITTIER ST.” on the 1907 Cathedral Property {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-088A.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Columbia Avenue",
+            "entityId": "columbia-avenue",
+            "formInForce": "Columbia Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Namesake untraced. The 1909 Crownwood sheet letters it, which is the earliest evidence the project holds for the street, but nothing found says who or what Columbia was meant to be.",
+        "attested": true,
+        "knownFraction": 0,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-partial"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Recorded map: “Crownwood” (Witmer’s Subdivision of parts of Lots 2 and 7, Block 38, Hancock Survey; surveyed Nov. 1909 by Chas. Forman Jr.), M.B. 15-166",
+            "url": "https://pw.lacounty.gov/smpm/landrecords/pdf/TR0015-166a.pdf"
+          },
+          {
+            "title": "Map of the Cathedral Property in the City of Los Angeles, County of Los Angeles, State of California (Jan. 1907; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-088A.pdf"
+          },
+          {
+            "title": "Map of Colina Park, Los Angeles City, California (M.R. 7-36, Nov. 28, 1885)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-036.pdf"
+          }
+        ],
+        "maxLat": 34.0508,
+        "from": {
+          "px": [
+            1029,
+            688
+          ]
+        },
         "to": null
       }
     ]
@@ -33075,7 +33462,6 @@ const STREET_DATA = {
             "name": "Grasshopper Street",
             "entityId": "chapules",
             "formInForce": "Grasshopper Street",
-            "how": "extension",
             "origin": "labeled “GRASSHOPPER STREET” on the 1869 Mott Tract (Pickel survey) {{(source)}} — The insect: grasshoppers crossing this line from the western plains were said to doom the grape harvest",
             "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
           },
@@ -33102,16 +33488,11 @@ const STREET_DATA = {
         ],
         "note": null,
         "attested": true,
-        "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-        },
         "knownFraction": 0.89,
         "earliest": {
           "year": 1869,
           "kind": "by"
         },
-        "absentYear": 1849,
         "categories": [
           "person",
           "politician",
@@ -33175,9 +33556,138 @@ const STREET_DATA = {
             "url": "https://losangelesrevisited.blogspot.com/2019/01/the-pulchritude-of-pearl-street.html"
           }
         ],
-        "minLat": 34.0521,
+        "minLat": 34.0539,
         "maxLat": 34.0584,
         "from": "Diamond Street",
+        "to": {
+          "px": [
+            787,
+            396
+          ]
+        }
+      },
+      {
+        "label": "part of (Pearl St)",
+        "name": "Figueroa Street",
+        "entityId": "figueroa-gov",
+        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
+        "planned": {
+          "text": "by 1858",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1869",
+            "until": "Feb. 1874",
+            "name": "Grasshopper Street",
+            "entityId": "chapules",
+            "formInForce": "Grasshopper Street",
+            "how": "extension",
+            "origin": "labeled “GRASSHOPPER STREET” on the 1869 Mott Tract (Pickel survey) {{(source)}} — The insect: grasshoppers crossing this line from the western plains were said to doom the grape harvest",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
+            "from": "Feb. 1874",
+            "until": "Feb. 1897",
+            "name": "Pearl Street",
+            "entityId": "pearl",
+            "formInForce": "Pearl Street",
+            "how": "renaming",
+            "origin": "renamed per the Feb. 1874 council action (Herald report) {{(source)}} — no namesake is documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own — a claim about who did the naming, not about what the name was for",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
+          },
+          {
+            "from": "Feb. 1897",
+            "until": null,
+            "name": "Figueroa Street",
+            "entityId": "figueroa-gov",
+            "formInForce": "Figueroa Street",
+            "how": "transfer",
+            "origin": "the name arrived from another roadway, renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
+        "knownFraction": 0.89,
+        "earliest": {
+          "year": 1858,
+          "kind": "by"
+        },
+        "absentYear": 1849,
+        "categories": [
+          "person",
+          "politician",
+          "governor",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "animal"
+        ],
+        "formerAncestors": [
+          "nature"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Figueroa Street",
+            "url": "https://lastreetnames.com/street/figueroa-street/"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+          },
+          {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
+            "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874 (council renames Grasshopper St → Pearl St)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
+          },
+          {
+            "title": "“An Ordinance Changing the names of Certain Streets in the City of Los Angeles” — Los Angeles Common Council, adopted Feb. 26, 1874 (council minutes, ledger p. 621)",
+            "url": "https://clerkapps.lacity.org/oldcfidocs/"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "Plan of Subdivision B of Lot 8, Block 38, Hancock's Survey, the Property of P. Beaudry (M.R. 3-46, May 6, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          },
+          {
+            "title": "Los Angeles Revisited: “The Pulchritude of Pearl Street” (Calle de los Chapules → Pearl Street in the 1870s → Figueroa Street in 1897)",
+            "url": "https://losangelesrevisited.blogspot.com/2019/01/the-pulchritude-of-pearl-street.html"
+          }
+        ],
+        "minLat": 34.0521,
+        "maxLat": 34.0539,
+        "from": {
+          "px": [
+            787,
+            396
+          ]
+        },
         "to": {
           "px": [
             553,
@@ -33192,8 +33702,8 @@ const STREET_DATA = {
         "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
         "planned": {
-          "text": "by 1868",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+          "text": "by 1858",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -33235,7 +33745,7 @@ const STREET_DATA = {
         },
         "knownFraction": 0.9,
         "earliest": {
-          "year": 1868,
+          "year": 1858,
           "kind": "by"
         },
         "absentYear": 1849,
@@ -33260,6 +33770,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Figueroa Street",
             "url": "https://lastreetnames.com/street/figueroa-street/"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
           },
           {
             "title": "Plan of Lots and Fractional Lots of the 39 Acre Tract Known as The Beaudry Tract (M.R. 1-462, Dec. 28, 1868; identified by map alignment, not a lot-level record)",
@@ -33314,6 +33828,115 @@ const STREET_DATA = {
           "px": [
             126,
             564
+          ]
+        }
+      },
+      {
+        "label": "part of (Pearl St)",
+        "name": "Figueroa Street",
+        "entityId": "figueroa-gov",
+        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835, once this stretch was folded into Figueroa Street",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
+        "planned": {
+          "text": "by 1858",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1875",
+            "until": "Feb. 1897",
+            "name": "Pearl Street",
+            "entityId": "pearl",
+            "formInForce": "Pearl Street",
+            "how": "origin",
+            "origin": "labeled “PEARL STR.” and “PEARL ST” on the 1875 Block 22 1/2, Hancock's Survey and the 1878 Nichols Addition {{(source)}} — no namesake is documented in the 1874 council report; in 1897 ex-Mayor J. R. Toberman claimed the naming as his own — a claim about who did the naming, not about what the name was for",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-016.pdf"
+          },
+          {
+            "from": "Feb. 1897",
+            "until": null,
+            "name": "Figueroa Street",
+            "entityId": "figueroa-gov",
+            "formInForce": "Figueroa Street",
+            "how": "transfer",
+            "origin": "the name arrived from another roadway, renamed per Ord. 4093, the Feb. 1897 citywide renaming {{(source)}}",
+            "originLink": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
+        "knownFraction": 0.86,
+        "earliest": {
+          "year": 1858,
+          "kind": "by"
+        },
+        "absentYear": 1849,
+        "categories": [
+          "person",
+          "politician",
+          "governor",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Figueroa Street",
+            "url": "https://lastreetnames.com/street/figueroa-street/"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+          },
+          {
+            "title": "Subdivision of Land Known as Block 22 1/2, Part of Hancock's Survey, Los Angeles (M.R. 3-16, Apr. 9, 1875; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-016.pdf"
+          },
+          {
+            "title": "Map of Nichols Addition to West Los Angeles (M.R. 3-569, May 4, 1878; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-569.pdf"
+          },
+          {
+            "title": "Ordinance No. 4093 (N.S.), the Feb. 1897 citywide street renaming (adopted Feb. 23, signed Feb. 26, 1897; Ordinance Book IV p. 337 — full text pending; changes as reported in the Los Angeles Herald and the council minutes)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970224.2.20"
+          },
+          {
+            "title": "Los Angeles Herald, “City and Suburbs,” Feb. 27, 1874 (council renames Grasshopper St → Pearl St)",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18740227.2.10"
+          },
+          {
+            "title": "Plan of Subdivision B of Lot 8, Block 38, Hancock's Survey, the Property of P. Beaudry (M.R. 3-46, May 6, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
+          },
+          {
+            "title": "Los Angeles Herald, “A Storm of Words” (Toberman's claim), Feb. 19, 1897",
+            "url": "https://cdnc.ucr.edu/?a=d&d=LAH18970219.2.24"
+          },
+          {
+            "title": "Los Angeles Revisited: “The Pulchritude of Pearl Street” (Calle de los Chapules → Pearl Street in the 1870s → Figueroa Street in 1897)",
+            "url": "https://losangelesrevisited.blogspot.com/2019/01/the-pulchritude-of-pearl-street.html"
+          }
+        ],
+        "minLat": 34.0501,
+        "maxLat": 34.0507,
+        "from": {
+          "px": [
+            126,
+            564
+          ]
+        },
+        "to": {
+          "px": [
+            266,
+            401
           ]
         }
       },
@@ -33412,11 +34035,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0492,
-        "maxLat": 34.0507,
+        "maxLat": 34.0501,
         "from": {
           "px": [
-            126,
-            564
+            266,
+            401
           ]
         },
         "to": {
@@ -33728,7 +34351,7 @@ const STREET_DATA = {
             "entityId": "figueroa-gov",
             "formInForce": "Figueroa Street",
             "how": "extension",
-            "origin": "labeled “Figueroa St”, “Figueroa Street” and “FIGUEROA ST.” on the 1886 Harvey Tract, the 1887 Bryan's Figueroa Street Subdivision and the 1917 Tract No. 2713 {{(source)}}",
+            "origin": "labeled “Figueroa St” and “Figueroa Street” on the 1886 Harvey Tract and the 1887 Bryan's Figueroa Street Subdivision {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
           }
         ],
@@ -33763,15 +34386,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
           },
           {
-            "title": "Tract No. 2713 (Aug. 14, 1917; identified by map alignment, not a lot-level record)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0034/TR0034-004.pdf"
-          },
-          {
             "title": "Plan of Subdivision B of Lot 8, Block 38, Hancock's Survey, the Property of P. Beaudry (M.R. 3-46, May 6, 1875)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
           }
         ],
-        "minLat": 34.0372,
+        "minLat": 34.0378,
         "maxLat": 34.0393,
         "from": {
           "px": [
@@ -33781,8 +34400,77 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            931,
-            1260
+            928,
+            603
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Figueroa Street",
+        "entityId": "figueroa-gov",
+        "namedAfter": "{{José Figueroa (1792–1835)}}, governor of Alta California 1833–1835 — how and when this stretch joined Figueroa Street is not yet researched",
+        "namedAfterLink": "https://en.wikipedia.org/wiki/Jos%C3%A9_Figueroa",
+        "planned": {
+          "text": "by 1886",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
+        },
+        "built": "not yet researched",
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.8,
+        "earliest": {
+          "year": 1886,
+          "kind": "by"
+        },
+        "categories": [
+          "person",
+          "politician",
+          "governor",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Figueroa Street",
+            "url": "https://lastreetnames.com/street/figueroa-street/"
+          },
+          {
+            "title": "Map of Collins Subdivision of Block 1, Bell's Addition to Los Angeles, Cal. (M.R. 9-52, Jan. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
+          },
+          {
+            "title": "Map of the Harvey Tract, Los Angeles, Cal., the Property of Henry W. O'Melveny (M.R. 10-77, Aug. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
+          },
+          {
+            "title": "J. H. Bryan's Figueroa Street Subdivision (M.R. 21-32, Aug. 6, 1887; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-032.pdf"
+          },
+          {
+            "title": "Tract No. 2713 (Aug. 14, 1917; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0034/TR0034-004.pdf"
+          },
+          {
+            "title": "Plan of Subdivision B of Lot 8, Block 38, Hancock's Survey, the Property of P. Beaudry (M.R. 3-46, May 6, 1875)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
+          }
+        ],
+        "minLat": 34.0362,
+        "maxLat": 34.0378,
+        "from": {
+          "px": [
+            928,
+            603
+          ]
+        },
+        "to": {
+          "px": [
+            933,
+            1235
           ]
         }
       },
@@ -33816,11 +34504,11 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR003/MR003-046.pdf"
           }
         ],
-        "maxLat": 34.0372,
+        "maxLat": 34.0362,
         "from": {
           "px": [
-            931,
-            1260
+            933,
+            1235
           ]
         },
         "to": null
@@ -34116,37 +34804,20 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Flower Street",
         "entityId": "flower",
-        "namedAfter": "Supposedly the blossom-covered hills behind it, extended onto this stretch",
+        "namedAfter": "Supposedly the blossom-covered hills behind it — how and when this stretch joined Flower Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1869",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1869",
-            "until": null,
-            "name": "Flower Street",
-            "entityId": "flower",
-            "formInForce": "Flower Street",
-            "how": "extension",
-            "origin": "labeled “FLOWER STREET” on the 1869 Mott Tract (Pickel survey) {{(source)}}",
-            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
-          }
-        ],
         "note": null,
         "attested": true,
-        "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-        },
         "knownFraction": 0.89,
         "earliest": {
           "year": 1869,
           "kind": "by"
         },
-        "absentYear": 1849,
         "categories": [
           "plant",
           "basis-attested"
@@ -34170,12 +34841,89 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0517,
+        "minLat": 34.0532,
         "maxLat": 34.0545,
         "from": {
           "px": [
             2230,
             1241
+          ]
+        },
+        "to": {
+          "px": [
+            794,
+            520
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Flower Street",
+        "entityId": "flower",
+        "namedAfter": "Supposedly the blossom-covered hills behind it, extended onto this stretch",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1858",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1869",
+            "until": null,
+            "name": "Flower Street",
+            "entityId": "flower",
+            "formInForce": "Flower Street",
+            "how": "extension",
+            "origin": "labeled “FLOWER STREET” on the 1869 Mott Tract (Pickel survey) {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
+        "knownFraction": 0.89,
+        "earliest": {
+          "year": 1858,
+          "kind": "by"
+        },
+        "absentYear": 1849,
+        "categories": [
+          "plant",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "nature",
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Flower Street",
+            "url": "https://lastreetnames.com/street/flower-street/"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+          },
+          {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0517,
+        "maxLat": 34.0532,
+        "from": {
+          "px": [
+            794,
+            520
           ]
         },
         "to": {
@@ -34192,8 +34940,8 @@ const STREET_DATA = {
         "namedAfter": "Supposedly the blossom-covered hills behind it, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1868",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+          "text": "by 1858",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -34216,7 +34964,7 @@ const STREET_DATA = {
         },
         "knownFraction": 0.9,
         "earliest": {
-          "year": 1868,
+          "year": 1858,
           "kind": "by"
         },
         "absentYear": 1849,
@@ -34233,6 +34981,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Flower Street",
             "url": "https://lastreetnames.com/street/flower-street/"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
           },
           {
             "title": "Plan of Lots and Fractional Lots of the 39 Acre Tract Known as The Beaudry Tract (M.R. 1-462, Dec. 28, 1868; identified by map alignment, not a lot-level record)",
@@ -34309,6 +35061,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
           },
           {
             "title": "Subdivision of Land Known as Block 22 1/2, Part of Hancock's Survey, Los Angeles (M.R. 3-16, Apr. 9, 1875; identified by map alignment, not a lot-level record)",
@@ -34926,8 +35682,8 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR007/MR007-026.pdf"
           },
           {
-            "title": "Plan of Lots and Fractional Lots of the 39 Acre Tract Known as The Beaudry Tract (M.R. 1-462, Dec. 28, 1868)",
-            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
           },
           {
             "title": "L.A. Street Names: Beaudry Avenue (“Beaudry Avenue itself was born Beaudry Street, at the corner of 6th, on 1868's bluntly-titled Beaudry tract”)",
@@ -36322,6 +37078,10 @@ const STREET_DATA = {
       {
         "title": "Plan of the Truman Tract of Los Angeles City (surveyed 18 June 1883 by Geo. Butler Griffin C.E.; re-arranged 11 January 1884 by W. R. Blackman) (M.R. 5-405; identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-405.pdf"
+      },
+      {
+        "title": "Tract No. 235, Being a Subdivision of a Portion of Lot 8, Block 37, Hancock Survey (June 1908)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0014/TR0014-013B.pdf"
       }
     ]
   },
@@ -36700,16 +37460,11 @@ const STREET_DATA = {
         ],
         "note": "The name Charity Street's residents got instead, after petitioning to be rid of jokes about living on charity: the council voted on May 10, 1886 and the change was official on Feb. 15, 1887. They had first asked for “Pacific Avenue”, which was refused because a Pacific Street already existed. No source gives a reason for the word “Grand” beyond its being more pleasing than Charity. The name later grew: in 1895 the city attorney was instructed to draw an ordinance changing Philadelphia Street to Grand Avenue, on petition No. 639 of J. E. Fay et al. (documents/lah-1895-07-02).",
         "attested": true,
-        "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-        },
         "knownFraction": 0.89,
         "earliest": {
           "year": 1869,
           "kind": "by"
         },
-        "absentYear": 1849,
         "categories": [
           "renamed",
           "basis-none",
@@ -36751,7 +37506,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0507,
+        "minLat": 34.0519,
         "maxLat": 34.0579,
         "from": {
           "px": [
@@ -36761,8 +37516,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            954,
-            2248
+            808,
+            767
           ]
         }
       },
@@ -36773,20 +37528,20 @@ const STREET_DATA = {
         "namedAfter": null,
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1868",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+          "text": "by 1858",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1868",
+            "from": "by 1858",
             "until": "Feb. 1887",
             "name": "Charity Street",
             "entityId": "charity",
             "formInForce": "Charity Street",
             "how": "extension",
-            "origin": "labeled “Charity St.” on the 1868 Beaudry Tract {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+            "origin": "labeled “Charity St.”, “CHARITY STREET” and “Charity Street” on the 1858 Bellevue Terrace Tract, the 1868 Beaudry Tract, the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
           },
           {
             "from": "Feb. 1887",
@@ -36805,9 +37560,9 @@ const STREET_DATA = {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
-        "knownFraction": 0.9,
+        "knownFraction": 0.95,
         "earliest": {
-          "year": 1868,
+          "year": 1858,
           "kind": "by"
         },
         "absentYear": 1849,
@@ -36836,8 +37591,20 @@ const STREET_DATA = {
             "url": "https://en.wikipedia.org/wiki/Grand_Avenue_(Los_Angeles)"
           },
           {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+          },
+          {
             "title": "Plan of Lots and Fractional Lots of the 39 Acre Tract Known as The Beaudry Tract (M.R. 1-462, Dec. 28, 1868; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+          },
+          {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
+            "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
           },
           {
             "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
@@ -36849,11 +37616,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0486,
-        "maxLat": 34.0507,
+        "maxLat": 34.0519,
         "from": {
           "px": [
-            954,
-            2248
+            808,
+            767
           ]
         },
         "to": {
@@ -36882,7 +37649,7 @@ const STREET_DATA = {
             "entityId": "charity",
             "formInForce": "Charity Street",
             "how": "origin",
-            "origin": "labeled “CHARITY ST.”, “CALLE DE CARIDAD” and “Charity Street” on the 1849 Hutton / Ord Survey and the 1884 Feldhauser's Subdivision {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
+            "origin": "labeled “CHARITY ST.”, “CALLE DE CARIDAD”, “Charity St.” and “Charity Street” on the 1849 Hutton / Ord Survey, the 1858 Bellevue Terrace Tract and the 1884 Feldhauser's Subdivision {{(source)}} — The virtue — no institution, benefaction or occasion behind it is documented",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
           {
@@ -36891,7 +37658,7 @@ const STREET_DATA = {
             "name": "Grand Avenue",
             "entityId": "grand-ave",
             "formInForce": "Grand Avenue",
-            "how": "renaming",
+            "how": "origin",
             "origin": "renamed per Ord. 286 (Old Series), Charity Street becomes Grand Avenue (1887) {{(source)}}",
             "originLink": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
           }
@@ -36936,12 +37703,20 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
           },
           {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+          },
+          {
             "title": "Map of Feldhauser's Subdivision of Blocks 85 and 86, Ord's Survey (M.R. 5-573, May 24, 1884; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-573.pdf"
           },
           {
             "title": "Ordinance No. 286 (Old Series), “An Ordinance changing the name of Charity street to Grand avenue” — adopted by the Council of the City of Los Angeles February 15, 1887, approved February 21, published February 22, 1887; printed in Freeman G. Teed, comp., Compiled Ordinances and Resolutions of the City of Los Angeles, Vol. III (1887), p. 248",
             "url": "https://link.gale.com/apps/doc/DT0106633769/MMLP?u=uclosangeles"
+          },
+          {
+            "title": "Map of Property of Mrs. Grace C. Longley in Block 21, Ord's Survey (M.R. 84-53, Nov. 6, 1902; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR084/MR084-053.pdf"
           }
         ],
         "minLat": 34.0397,
@@ -37290,17 +38065,36 @@ const STREET_DATA = {
   },
   "Green Avenue": {
     "name": "Green Avenue",
-    "entityId": "green-avenue",
+    "entityId": "green-ave",
     "namedAfter": null,
     "namedAfterLink": null,
-    "planned": "not yet researched",
+    "planned": {
+      "text": "by 1907",
+      "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-088A.pdf"
+    },
     "built": "not yet researched",
+    "nameHistory": [
+      {
+        "from": "by 1907",
+        "until": null,
+        "name": "Green Avenue",
+        "entityId": "green-ave",
+        "formInForce": "Green Avenue",
+        "how": "origin",
+        "origin": "labeled “GREEN AVE.” on the 1907 Cathedral Property {{(source)}}",
+        "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-088A.pdf"
+      }
+    ],
     "note": null,
-    "attested": false,
+    "attested": true,
+    "knownFraction": 0.68,
+    "earliest": {
+      "year": 1907,
+      "kind": "by"
+    },
     "categories": [
       "basis-none",
-      "searched-none",
-      "stub"
+      "searched-none"
     ],
     "ancestors": [
       "basis"
@@ -37308,8 +38102,8 @@ const STREET_DATA = {
     "disputed": false,
     "sources": [
       {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
+        "title": "Map of the Cathedral Property in the City of Los Angeles, County of Los Angeles, State of California (Jan. 1907; identified by map alignment, not a lot-level record)",
+        "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-088A.pdf"
       }
     ]
   },
@@ -38962,28 +39756,35 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
-        "label": "part of (discontinuous)",
+        "label": "part of",
         "name": "Hope Street",
         "entityId": "hope",
-        "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
+        "namedAfter": "The virtue, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1869",
           "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
         },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1869",
+            "until": null,
+            "name": "Hope Street",
+            "entityId": "hope",
+            "formInForce": "Hope Street",
+            "how": "extension",
+            "origin": "labeled “HOPE STREET”, “Hope Street” and “Hope St” on the 1869 Mott Tract (Pickel survey) and the 1869 Mott Tract building lots {{(source)}}",
+            "originLink": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          }
+        ],
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
         "attested": true,
-        "absentAsOf": {
-          "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
-        },
         "knownFraction": 0.89,
         "earliest": {
           "year": 1869,
           "kind": "by"
         },
-        "absentYear": 1849,
         "categories": [
           "idea",
           "person",
@@ -39013,48 +39814,35 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0501,
+        "minLat": 34.0525,
         "from": null,
         "to": {
           "px": [
-            1042,
-            1760
+            802,
+            648
           ]
-        },
-        "gapAfter": true
+        }
       },
       {
-        "label": "part of",
+        "label": "part of (discontinuous)",
         "name": "Hope Street",
         "entityId": "hope",
-        "namedAfter": "The virtue, extended onto this stretch",
+        "namedAfter": "The virtue — how and when this stretch joined Hope Street is not yet researched",
         "namedAfterLink": null,
         "planned": {
-          "text": "by 1868",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+          "text": "by 1858",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
         },
         "built": "not yet researched",
-        "nameHistory": [
-          {
-            "from": "by 1868",
-            "until": null,
-            "name": "Hope Street",
-            "entityId": "hope",
-            "formInForce": "Hope Street",
-            "how": "extension",
-            "origin": "labeled “Hope St.” on the 1868 Beaudry Tract {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
-          }
-        ],
         "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
         },
-        "knownFraction": 0.9,
+        "knownFraction": 0.95,
         "earliest": {
-          "year": 1868,
+          "year": 1858,
           "kind": "by"
         },
         "absentYear": 1849,
@@ -39073,6 +39861,94 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Hope Street",
             "url": "https://lastreetnames.com/street/hope-street/"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+          },
+          {
+            "title": "Map of the Mott Tract, Subdivided & Surveyed 1868 & 1869 by H. Pickel (identified by map alignment, not a lot-level record)",
+            "url": "https://hdl.huntington.org/digital/collection/p15150coll4/id/12685"
+          },
+          {
+            "title": "Map of a part of Building Lots of the Mott Tract in the City & County of Los Angeles, California (M.R. 1-489, Mar. 2, 1869; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          }
+        ],
+        "minLat": 34.0501,
+        "maxLat": 34.0525,
+        "from": {
+          "px": [
+            802,
+            648
+          ]
+        },
+        "to": {
+          "px": [
+            1042,
+            1760
+          ]
+        },
+        "gapAfter": true
+      },
+      {
+        "label": "part of",
+        "name": "Hope Street",
+        "entityId": "hope",
+        "namedAfter": "The virtue, extended onto this stretch",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1858",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1858",
+            "until": null,
+            "name": "Hope Street",
+            "entityId": "hope",
+            "formInForce": "Hope Street",
+            "how": "extension",
+            "origin": "labeled “Hope Street.” and “Hope St.” on the 1858 Bellevue Terrace Tract and the 1868 Beaudry Tract {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
+          }
+        ],
+        "note": "Named either for the virtue, alongside Charity one block over, or for Dr. Alexander W. Hope. The virtue reading is supported by the company it keeps on the survey; nothing settles it.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+        },
+        "knownFraction": 0.95,
+        "earliest": {
+          "year": 1858,
+          "kind": "by"
+        },
+        "absentYear": 1849,
+        "categories": [
+          "idea",
+          "person",
+          "disputed",
+          "basis-inferred"
+        ],
+        "ancestors": [
+          "abstract",
+          "basis"
+        ],
+        "disputed": true,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Hope Street",
+            "url": "https://lastreetnames.com/street/hope-street/"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
           },
           {
             "title": "Plan of Lots and Fractional Lots of the 39 Acre Tract Known as The Beaudry Tract (M.R. 1-462, Dec. 28, 1868; identified by map alignment, not a lot-level record)",
@@ -39117,7 +39993,7 @@ const STREET_DATA = {
             "entityId": "hope",
             "formInForce": "Hope Street",
             "how": "origin",
-            "origin": "labeled “HOPE ST.”, “CALLE DE LAS ESPERANZAS” and “HOPE STREET” on the 1849 Hutton / Ord Survey and the 1875 Blocks 73 & 72 of Ord's Survey {{(source)}}",
+            "origin": "labeled “HOPE ST.”, “CALLE DE LAS ESPERANZAS”, “Hope Street.” and “HOPE STREET” on the 1849 Hutton / Ord Survey, the 1858 Bellevue Terrace Tract and the 1875 Blocks 73 & 72 of Ord's Survey {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -39151,6 +40027,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
           },
           {
             "title": "Blocks 73 & 72 of Ord's Survey belonging to W. M. Williams (M.R. 3-33, Apr. 29, 1875; identified by map alignment, not a lot-level record)",
@@ -41024,8 +41904,102 @@ const STREET_DATA = {
             "url": "https://lastreetnames.com/street/0001st-street/"
           }
         ],
-        "maxLng": -118.2699,
+        "maxLng": -118.2722,
         "from": null,
+        "to": {
+          "px": [
+            92,
+            1464
+          ]
+        }
+      },
+      {
+        "label": "part of (9th St)",
+        "name": "James M Wood Boulevard",
+        "entityId": "james-m-wood-boulevard",
+        "namedAfter": "James Michael Wood (1945–1996), labor leader and chair of the Community Redevelopment Agency, once this stretch was folded into James M Wood Boulevard",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1907",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-088A.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1907",
+            "until": "May 1999",
+            "name": "9th Street",
+            "entityId": "ninth-street",
+            "formInForce": "9th Street",
+            "how": "extension",
+            "origin": "labeled “NINTH ST.” on the 1907 Cathedral Property {{(source)}} — Its ordinal position in the downtown grid — the numbering system was in place by 1849",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-088A.pdf"
+          },
+          {
+            "from": "May 1999",
+            "until": null,
+            "name": "James M Wood Boulevard",
+            "entityId": "james-m-wood-boulevard",
+            "formInForce": "James M Wood Boulevard",
+            "how": "renaming",
+            "origin": "renamed per Ord. 172590, 9th Street to James M. Wood Boulevard {{(source)}}",
+            "originLink": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
+          }
+        ],
+        "note": "The stretch of 9th Street between Figueroa and Western, renamed by the City Council in 1999; the motion to honour Wood was made in 1997, the year after his death.",
+        "attested": true,
+        "knownFraction": 0.68,
+        "earliest": {
+          "year": 1907,
+          "kind": "by"
+        },
+        "categories": [
+          "person",
+          "official",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "politician",
+          "basis"
+        ],
+        "formerCategories": [
+          "number"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: James M. Wood Boulevard",
+            "url": "https://lastreetnames.com/street/james-m-wood-boulevard/"
+          },
+          {
+            "title": "Map of the Cathedral Property in the City of Los Angeles, County of Los Angeles, State of California (Jan. 1907; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0012/TR0012-088A.pdf"
+          },
+          {
+            "title": "Ordinance No. 172590, “An Ordinance of The City of Los Angeles changing the name of 9th Street between Figueroa Street and Western Avenue and establishing the same as James M. Wood Boulevard” — passed May 11, 1999, approved May 14, 1999 (Council File 97-1566)",
+            "url": "https://cityclerk.lacity.org/onlinedocs/1997/97-1566_ORD_172590_05-21-1999.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "L.A. Street Names: 1st Street (on the numbering system)",
+            "url": "https://lastreetnames.com/street/0001st-street/"
+          }
+        ],
+        "minLng": -118.2722,
+        "maxLng": -118.2699,
+        "from": {
+          "px": [
+            92,
+            1464
+          ]
+        },
         "to": {
           "px": [
             195,
@@ -42207,7 +43181,7 @@ const STREET_DATA = {
             "entityId": "kohler",
             "formInForce": "Kohler Street",
             "how": "origin",
-            "origin": "labeled “KOHLER ST.” and “KOHLER STREET” on the 1885 Wilde's Coronel Tract Subdivision and the 1945 Tract No. 13301 {{(source)}}",
+            "origin": "labeled “KOHLER ST.” and “KOHLER STREET” on the 1885 Wilde's Coronel Tract Subdivision, the 1901 Culver Tract and the 1945 Tract No. 13301 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           }
         ],
@@ -42242,6 +43216,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR055/MR055-081.pdf"
           },
           {
+            "title": "Culver Tract, Being a Subdivision of Block 7, Coronel Tract, and Strip of Land Lying North (Nov. 1901; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0001/TR0001-072.pdf"
+          },
+          {
             "title": "Tract No. 13301 (Feb. 1945; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0273/TR0273-017.pdf"
           }
@@ -42274,7 +43252,7 @@ const STREET_DATA = {
             "entityId": "kohler",
             "formInForce": "Kohler Street",
             "how": "extension",
-            "origin": "labeled “Kohler Street”, “Kohler St”, “KOHLER ST.” and “KOHLER STREET” on the 1887 W. J. Fisher's Subdivision, the 1894 Kohler Tract, the 1907 Slauson Property, Lot A, the 1924 Tract No. 8657 and the 1927 Tract No. 9918 {{(source)}}",
+            "origin": "labeled “Kohler Street”, “Kohler St.”, “Kohler St”, “KOHLER ST.” and “KOHLER STREET” on the 1887 W. J. Fisher's Subdivision, the 1892 John H. Jacobs' Subdivision, the 1894 Kohler Tract, the 1907 Slauson Property, Lot A, the 1924 Tract No. 8657 and the 1927 Tract No. 9918 {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
           }
         ],
@@ -42307,6 +43285,10 @@ const STREET_DATA = {
           {
             "title": "W. J. Fisher's Subdivision of the Kohler and Frohling Tract (M.R. 21-46, Sept. 14, 1887; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR021/MR021-046.pdf"
+          },
+          {
+            "title": "John H. Jacobs' Subdivision of Lots 3-4 and that part of Lot 5 which lies west of Kohler Street of the Rees Tract (M.R. 43-88, Mar. 8, 1892; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR043/MR043-088.pdf"
           },
           {
             "title": "Kohler Tract, Being W. J. Fisher's Re-Subdivision of a Portion of the Kohler and Frohling Tract (M.R. 54-51, Aug. 9, 1894; identified by map alignment, not a lot-level record)",
@@ -43565,13 +44547,25 @@ const STREET_DATA = {
         "label": "part of",
         "name": "Los Angeles Street",
         "entityId": "los-angeles-street",
-        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfter": "The city itself, extended onto this stretch",
         "namedAfterLink": null,
         "planned": {
           "text": "by 1910",
           "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0016/TR0016-005.pdf"
         },
         "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1910",
+            "until": null,
+            "name": "Los Angeles Street",
+            "entityId": "los-angeles-street",
+            "formInForce": "Los Angeles Street",
+            "how": "extension",
+            "origin": "labeled “LOS ANGELES ST.” and “LOS ANGELES STREET” on the 1910 Bisbee Tract and the 1976 Tract No. 30213 {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0016/TR0016-005.pdf"
+          }
+        ],
         "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
         "attested": true,
         "absentAsOf": {
@@ -43614,7 +44608,7 @@ const STREET_DATA = {
             "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           }
         ],
-        "minLat": 34.0501,
+        "minLat": 34.0504,
         "maxLat": 34.051,
         "from": {
           "px": [
@@ -43624,8 +44618,80 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            231,
-            626
+            863,
+            734
+          ]
+        }
+      },
+      {
+        "label": "part of",
+        "name": "Los Angeles Street",
+        "entityId": "los-angeles-street",
+        "namedAfter": "The city itself — how and when this stretch joined Los Angeles Street is not yet researched",
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1903",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-049B.pdf"
+        },
+        "built": "not yet researched",
+        "note": "In place by 1854 along its through stretch; the Plaza block to the north was a separate street, the Calle de los Negros, until this name was extended over it in 1910.",
+        "attested": true,
+        "absentAsOf": {
+          "text": "1849 (Hutton / Ord Survey)",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-071.pdf"
+        },
+        "knownFraction": 0.7,
+        "earliest": {
+          "year": 1903,
+          "kind": "by"
+        },
+        "absentYear": 1849,
+        "categories": [
+          "place",
+          "basis-intrinsic"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Los Angeles Street",
+            "url": "https://lastreetnames.com/street/los-angeles-street/"
+          },
+          {
+            "title": "Wikipedia: Los Angeles Street",
+            "url": "https://en.wikipedia.org/wiki/Los_Angeles_Street"
+          },
+          {
+            "title": "Map of Lot A of the Perry-Hellman Property in the City of Los Angeles, County of Los Angeles, California (July 1903; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0005/TR0005-049B.pdf"
+          },
+          {
+            "title": "Map of the Bisbee Tract (Feb. 1910; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0016/TR0016-005.pdf"
+          },
+          {
+            "title": "Tract No. 30213 (Aug. 30, 1976; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0856/TR0856-050-p2.pdf"
+          },
+          {
+            "title": "Map of the old portion of the city surrounding the Plaza, showing the Old Plaza Church, public square, the first gas plant and adobe buildings (from a survey of 1873)",
+            "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
+          }
+        ],
+        "minLat": 34.0497,
+        "maxLat": 34.0504,
+        "from": {
+          "px": [
+            863,
+            734
+          ]
+        },
+        "to": {
+          "px": [
+            291,
+            732
           ]
         }
       },
@@ -43667,11 +44733,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0487,
-        "maxLat": 34.0501,
+        "maxLat": 34.0497,
         "from": {
           "px": [
-            231,
-            626
+            291,
+            732
           ]
         },
         "to": {
@@ -49749,12 +50815,12 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0507,
+        "minLat": 34.0512,
         "from": null,
         "to": {
           "px": [
-            111,
-            1115
+            816,
+            898
           ]
         }
       },
@@ -49765,31 +50831,31 @@ const STREET_DATA = {
         "namedAfter": "{{The olive}}, extended onto this stretch",
         "namedAfterLink": "https://en.wikipedia.org/wiki/Olive",
         "planned": {
-          "text": "by 1868",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+          "text": "by 1858",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
           {
-            "from": "by 1868",
+            "from": "by 1858",
             "until": null,
             "name": "Olive Street",
             "entityId": "olive",
             "formInForce": "Olive Street",
             "how": "extension",
-            "origin": "labeled “Olive St.”, “Olive Street” and “OLIVE STREET” on the 1868 Beaudry Tract, the 1869 Mott Tract building lots and the 1869 Mott Tract (Pickel survey) {{(source)}}",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-462.pdf"
+            "origin": "labeled “Olive”, “Olive St.”, “Olive Street” and “OLIVE STREET” on the 1858 Bellevue Terrace Tract, the 1868 Beaudry Tract, the 1869 Mott Tract building lots and the 1869 Mott Tract (Pickel survey) {{(source)}}",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
           }
         ],
         "note": null,
         "attested": true,
         "absentAsOf": {
           "text": "1849 (Hutton / Ord Survey)",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-069.pdf"
         },
-        "knownFraction": 0.9,
+        "knownFraction": 0.95,
         "earliest": {
-          "year": 1868,
+          "year": 1858,
           "kind": "by"
         },
         "absentYear": 1849,
@@ -49806,6 +50872,10 @@ const STREET_DATA = {
           {
             "title": "L.A. Street Names: Olive Street",
             "url": "https://lastreetnames.com/street/olive-street/"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
           },
           {
             "title": "Plan of Lots and Fractional Lots of the 39 Acre Tract Known as The Beaudry Tract (M.R. 1-462, Dec. 28, 1868; identified by map alignment, not a lot-level record)",
@@ -49825,11 +50895,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0493,
-        "maxLat": 34.0507,
+        "maxLat": 34.0512,
         "from": {
           "px": [
-            111,
-            1115
+            816,
+            898
           ]
         },
         "to": {
@@ -49858,7 +50928,7 @@ const STREET_DATA = {
             "entityId": "olive",
             "formInForce": "Olive Street",
             "how": "origin",
-            "origin": "labeled “OLIVE ST.”, “CALLE ACEYTUNA”, “Olive St.” and “Olive Street” on the 1849 Hutton / Ord Survey, the 1868 Beaudry Tract and the 1884 Feldhauser's Subdivision {{(source)}}",
+            "origin": "labeled “OLIVE ST.”, “CALLE ACEYTUNA”, “Olive”, “Olive St.” and “Olive Street” on the 1849 Hutton / Ord Survey, the 1858 Bellevue Terrace Tract, the 1868 Beaudry Tract and the 1884 Feldhauser's Subdivision {{(source)}}",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
@@ -49890,6 +50960,10 @@ const STREET_DATA = {
           {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-68, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-068.pdf"
+          },
+          {
+            "title": "Map of the Bellevue Terrace Tract (M.R. 2-585, Dec. 20, 1858; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR002/MR002-585.pdf"
           },
           {
             "title": "Plan of Lots and Fractional Lots of the 39 Acre Tract Known as The Beaudry Tract (M.R. 1-462, Dec. 28, 1868; identified by map alignment, not a lot-level record)",
@@ -52956,6 +54030,86 @@ const STREET_DATA = {
     "orientation": "NS",
     "segments": [
       {
+        "label": "beyond 6th (St. Paul Ave)",
+        "name": "Saint Paul Avenue",
+        "entityId": "saint-paul-avenue",
+        "namedAfter": null,
+        "namedAfterLink": null,
+        "planned": {
+          "text": "by 1899",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR072/MR072-071.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "by 1899",
+            "until": "?",
+            "name": "St. Paul Avenue",
+            "entityId": "st-paul-avenue",
+            "formInForce": "St. Paul Avenue",
+            "how": "origin",
+            "origin": "labeled “ST. PAUL AVENUE” on the 1899 St. Paul's School Replat and the 1900 St. Paul's School Replat {{(source)}} — St. Paul’s School, the Episcopal school whose lands this street was cut across — its own 1900 replat is the first document to letter the name",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR072/MR072-071.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Saint Paul Avenue",
+            "entityId": "saint-paul-avenue",
+            "formInForce": "Saint Paul Avenue",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": null,
+        "attested": true,
+        "knownFraction": 0.01,
+        "earliest": {
+          "year": 1899,
+          "kind": "by"
+        },
+        "categories": [
+          "renamed",
+          "basis-none",
+          "searched-none",
+          "stub"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "company"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "Replat of Lots 64, 65, 66, 67 and 67 1/2 of the Subdivision of the Lands of St. Paul's School, Lot 1, Block 37, Hancock's Survey (M.R. 72-71, Aug. 1899; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR072/MR072-071.pdf"
+          },
+          {
+            "title": "Map of a Replat of a Portion of the Subdivision of the Lands of St. Paul's School (M.R. 78-55, Feb. 1900; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR078/MR078-055.pdf"
+          },
+          {
+            "title": "Recorded map: “Plat of Subdivision of a portion of Lot 1 Block 37 Hancocks Surv. L.A. City, made at request of the Vestry of St. Paul’s P. E. Church”, recorded May 9, 1889 (M.R. 5-566) — the sheet’s own title block",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-566.pdf"
+          },
+          {
+            "title": "Recorded map: “Map of the Subdivision of the Lands of St. Paul’s School, Situated in Lot 1, Block 37, Hancock Survey, Lying to the North of Orange Street”, Jan. 1893 (M.R. 52-85)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR052/MR052-085.pdf"
+          }
+        ],
+        "minLat": 34.0527,
+        "from": null,
+        "to": {
+          "px": [
+            745,
+            1000
+          ]
+        }
+      },
+      {
         "label": "part of (St. Paul Ave)",
         "name": "Saint Paul Avenue",
         "entityId": "saint-paul-avenue",
@@ -52973,6 +54127,7 @@ const STREET_DATA = {
             "name": "St. Paul Avenue",
             "entityId": "st-paul-avenue",
             "formInForce": "St. Paul Avenue",
+            "how": "extension",
             "origin": "labeled “ST. PAUL AVENUE” on the 1900 St. Paul's School Replat {{(source)}} — St. Paul’s School, the Episcopal school whose lands this street was cut across — its own 1900 replat is the first document to letter the name",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR078/MR078-055.pdf"
           },
@@ -53026,7 +54181,13 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0522,
-        "from": null,
+        "maxLat": 34.0527,
+        "from": {
+          "px": [
+            745,
+            1000
+          ]
+        },
         "to": {
           "px": [
             660,
@@ -56051,12 +57212,12 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "maxLng": -118.2731,
+        "maxLng": -118.2727,
         "from": null,
         "to": {
           "px": [
-            709,
-            1036
+            240,
+            1079
           ]
         }
       },
@@ -56090,18 +57251,18 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "minLng": -118.2731,
-        "maxLng": -118.2719,
+        "minLng": -118.2727,
+        "maxLng": -118.2704,
         "from": {
           "px": [
-            709,
-            1036
+            240,
+            1079
           ]
         },
         "to": {
           "px": [
-            1576,
-            716
+            1057,
+            1139
           ]
         }
       },
@@ -56130,11 +57291,11 @@ const STREET_DATA = {
             "url": "https://www.openstreetmap.org/"
           }
         ],
-        "minLng": -118.2719,
+        "minLng": -118.2704,
         "from": {
           "px": [
-            1576,
-            716
+            1057,
+            1139
           ]
         },
         "to": null
@@ -57143,8 +58304,109 @@ const STREET_DATA = {
             "name": "Main Street",
             "entityId": "main-street-dtla",
             "formInForce": "Main Street",
+            "origin": "labeled “MAIN STREET” on the 1849 Hutton / Ord Survey {{(source)}} — Its standing as the pueblo’s principal street",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "from": "?",
+            "until": null,
+            "name": "Spring Street",
+            "entityId": "spring",
+            "formInForce": "Spring Street",
+            "how": "renaming",
+            "origin": "arrival on this stretch not directly documented",
+            "originLink": null
+          }
+        ],
+        "note": "Lettered “Calle Primavera” on the 1849 survey. The nickname story is the usual explanation and is not documented; the season is the plainer reading. Two earlier names are reported for this street — Calle Cuidado (“Caution”) and Calle de Caridad (“Charity”) — but neither is verified.",
+        "attested": true,
+        "knownFraction": 0,
+        "earliest": {
+          "year": 1849,
+          "kind": "exact"
+        },
+        "categories": [
+          "person",
+          "alive",
+          "renamed",
+          "basis-attested"
+        ],
+        "ancestors": [
+          "basis"
+        ],
+        "formerCategories": [
+          "descriptive"
+        ],
+        "formerAncestors": [
+          "abstract"
+        ],
+        "disputed": false,
+        "sources": [
+          {
+            "title": "L.A. Street Names: Spring Street",
+            "url": "https://lastreetnames.com/street/spring-street/"
+          },
+          {
+            "title": "Wikipedia: Spring Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Spring_Street_(Los_Angeles)"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-73, Aug. 29, 1849; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
+          },
+          {
+            "title": "L.A. Street Names: Main Street",
+            "url": "https://lastreetnames.com/street/main-street/"
+          },
+          {
+            "title": "Wikipedia: Main Street (Los Angeles)",
+            "url": "https://en.wikipedia.org/wiki/Main_Street_(Los_Angeles)"
+          }
+        ],
+        "minLat": 34.0607,
+        "maxLat": 34.0619,
+        "from": "Alpine Street",
+        "to": {
+          "px": [
+            1007,
+            158
+          ]
+        }
+      },
+      {
+        "label": "part of (San Fernando St)",
+        "name": "Spring Street",
+        "entityId": "spring",
+        "namedAfter": "Possibly {{Trinidad Ortega}} (1832–1903), who was nicknamed “Primavera”, once this stretch was folded into Spring Street",
+        "namedAfterLink": "https://calisphere.org/item/e876794cf7de2e5b0c7b83aae7c4d0da/",
+        "planned": {
+          "text": "1849",
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+        },
+        "built": "not yet researched",
+        "nameHistory": [
+          {
+            "from": "1849",
+            "until": "?",
+            "name": "Main Street",
+            "entityId": "main-street-dtla",
+            "formInForce": "Main Street",
             "origin": "labeled “MAIN STREET” and “CALLE PRINCIPAL” on the 1849 Hutton / Ord Survey and the 1873 Old Plaza, 1873 {{(source)}} — Its standing as the pueblo’s principal street",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-073.pdf"
+          },
+          {
+            "from": "by 1906",
+            "until": "?",
+            "name": "San Fernando Street",
+            "entityId": "san-fernando-st-spring",
+            "formInForce": "San Fernando Street",
+            "how": "origin",
+            "origin": "labeled “SAN FERNANDO STREET” on the 1906 Pierre Nicolas Lot {{(source)}} — no namesake documented",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-085.pdf"
           },
           {
             "from": "?",
@@ -57198,6 +58460,10 @@ const STREET_DATA = {
             "url": "https://cdm16003.contentdm.oclc.org/digital/collection/p15150coll4/id/11821/rec/3"
           },
           {
+            "title": "Map of Pierre Nicolas Lot in the City of Los Angeles, Cal. (Feb. 1906; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/tract/MB0009/TR0009-085.pdf"
+          },
+          {
             "title": "Plan de la Ciudad de Los Angeles (M.R. 53-67, Aug. 29, 1849)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           },
@@ -57211,8 +58477,13 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0601,
-        "maxLat": 34.0619,
-        "from": "Alpine Street",
+        "maxLat": 34.0607,
+        "from": {
+          "px": [
+            1007,
+            158
+          ]
+        },
         "to": {
           "px": [
             234,
@@ -60965,7 +62236,7 @@ const STREET_DATA = {
             "entityId": "rouland-street",
             "formInForce": "Rouland Street",
             "how": "origin",
-            "origin": "labeled “ROULAND STREET” and “Rowland St” on the 1884 Wright's Subdivision and the 1886 Harvey Tract {{(source)}} — lettered “ROULAND STREET” on Wright's Subdivision of January 1884 (documents/mr005-431) and “Rowland St” on the Harvey Tract of 1886 (documents/mr010-077). The numbering ordinance read to the Council on Nov. 5, 1889 and adopted a week later folded “Pine and Rowland” into Sixteenth Street. Nothing found says who he was. In October 1888 the city council’s street-name committee proposed extending the name over a neighbouring Virginia Street in the south-west of the city",
+            "origin": "labeled “ROULAND STREET”, “Rowland Street” and “Rowland St” on the 1884 Wright's Subdivision, the 1886 Collins Subdivision and the 1886 Harvey Tract {{(source)}} — lettered “ROULAND STREET” on Wright's Subdivision of January 1884 (documents/mr005-431) and “Rowland St” on the Harvey Tract of 1886 (documents/mr010-077). The numbering ordinance read to the Council on Nov. 5, 1889 and adopted a week later folded “Pine and Rowland” into Sixteenth Street. Nothing found says who he was. In October 1888 the city council’s street-name committee proposed extending the name over a neighbouring Virginia Street in the south-west of the city",
             "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-431.pdf"
           },
           {
@@ -61027,6 +62298,10 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR005/MR005-431.pdf"
           },
           {
+            "title": "Map of Collins Subdivision of Block 1, Bell's Addition to Los Angeles, Cal. (M.R. 9-52, Jan. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
+          },
+          {
             "title": "Map of the Harvey Tract, Los Angeles, Cal., the Property of Henry W. O'Melveny (M.R. 10-77, Aug. 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
           },
@@ -61068,7 +62343,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
         "planned": {
           "text": "by 1886",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -61079,8 +62354,8 @@ const STREET_DATA = {
             "entityId": "rouland-street",
             "formInForce": "Rouland Street",
             "how": "extension",
-            "origin": "labeled “Rowland St” on the 1886 Harvey Tract {{(source)}} — lettered “ROULAND STREET” on Wright's Subdivision of January 1884 (documents/mr005-431) and “Rowland St” on the Harvey Tract of 1886 (documents/mr010-077). The numbering ordinance read to the Council on Nov. 5, 1889 and adopted a week later folded “Pine and Rowland” into Sixteenth Street. Nothing found says who he was. In October 1888 the city council’s street-name committee proposed extending the name over a neighbouring Virginia Street in the south-west of the city",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
+            "origin": "labeled “Rowland Street” and “Rowland St” on the 1886 Collins Subdivision and the 1886 Harvey Tract {{(source)}} — lettered “ROULAND STREET” on Wright's Subdivision of January 1884 (documents/mr005-431) and “Rowland St” on the Harvey Tract of 1886 (documents/mr010-077). The numbering ordinance read to the Council on Nov. 5, 1889 and adopted a week later folded “Pine and Rowland” into Sixteenth Street. Nothing found says who he was. In October 1888 the city council’s street-name committee proposed extending the name over a neighbouring Virginia Street in the south-west of the city",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
           },
           {
             "from": "?",
@@ -61119,6 +62394,10 @@ const STREET_DATA = {
           {
             "title": "Los Angeles Herald, Feb. 26, 1927 (a business at Figueroa and Venice Blvd., “formerly Sixteenth street”)",
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH19270226.1.9"
+          },
+          {
+            "title": "Map of Collins Subdivision of Block 1, Bell's Addition to Los Angeles, Cal. (M.R. 9-52, Jan. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
           },
           {
             "title": "Map of the Harvey Tract, Los Angeles, Cal., the Property of Henry W. O'Melveny (M.R. 10-77, Aug. 1886; identified by map alignment, not a lot-level record)",
@@ -61160,7 +62439,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
         "planned": {
           "text": "by 1886",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -61170,8 +62449,8 @@ const STREET_DATA = {
             "name": "Rouland Street",
             "entityId": "rouland-street",
             "formInForce": "Rouland Street",
-            "origin": "labeled “Rowland St” on the 1886 Harvey Tract {{(source)}} — lettered “ROULAND STREET” on Wright's Subdivision of January 1884 (documents/mr005-431) and “Rowland St” on the Harvey Tract of 1886 (documents/mr010-077). The numbering ordinance read to the Council on Nov. 5, 1889 and adopted a week later folded “Pine and Rowland” into Sixteenth Street. Nothing found says who he was. In October 1888 the city council’s street-name committee proposed extending the name over a neighbouring Virginia Street in the south-west of the city",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
+            "origin": "labeled “Rowland Street” and “Rowland St” on the 1886 Collins Subdivision and the 1886 Harvey Tract {{(source)}} — lettered “ROULAND STREET” on Wright's Subdivision of January 1884 (documents/mr005-431) and “Rowland St” on the Harvey Tract of 1886 (documents/mr010-077). The numbering ordinance read to the Council on Nov. 5, 1889 and adopted a week later folded “Pine and Rowland” into Sixteenth Street. Nothing found says who he was. In October 1888 the city council’s street-name committee proposed extending the name over a neighbouring Virginia Street in the south-west of the city",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
           },
           {
             "from": "by 1917",
@@ -61228,6 +62507,10 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH19270226.1.9"
           },
           {
+            "title": "Map of Collins Subdivision of Block 1, Bell's Addition to Los Angeles, Cal. (M.R. 9-52, Jan. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
+          },
+          {
             "title": "Map of the Harvey Tract, Los Angeles, Cal., the Property of Henry W. O'Melveny (M.R. 10-77, Aug. 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
           },
@@ -61279,7 +62562,7 @@ const STREET_DATA = {
         "namedAfterLink": "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
         "planned": {
           "text": "by 1886",
-          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
+          "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
         },
         "built": "not yet researched",
         "nameHistory": [
@@ -61289,8 +62572,8 @@ const STREET_DATA = {
             "name": "Rouland Street",
             "entityId": "rouland-street",
             "formInForce": "Rouland Street",
-            "origin": "labeled “Rowland St” on the 1886 Harvey Tract {{(source)}} — lettered “ROULAND STREET” on Wright's Subdivision of January 1884 (documents/mr005-431) and “Rowland St” on the Harvey Tract of 1886 (documents/mr010-077). The numbering ordinance read to the Council on Nov. 5, 1889 and adopted a week later folded “Pine and Rowland” into Sixteenth Street. Nothing found says who he was. In October 1888 the city council’s street-name committee proposed extending the name over a neighbouring Virginia Street in the south-west of the city",
-            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
+            "origin": "labeled “Rowland Street” and “Rowland St” on the 1886 Collins Subdivision and the 1886 Harvey Tract {{(source)}} — lettered “ROULAND STREET” on Wright's Subdivision of January 1884 (documents/mr005-431) and “Rowland St” on the Harvey Tract of 1886 (documents/mr010-077). The numbering ordinance read to the Council on Nov. 5, 1889 and adopted a week later folded “Pine and Rowland” into Sixteenth Street. Nothing found says who he was. In October 1888 the city council’s street-name committee proposed extending the name over a neighbouring Virginia Street in the south-west of the city",
+            "originLink": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
           },
           {
             "from": "by 1887",
@@ -61359,6 +62642,10 @@ const STREET_DATA = {
             "url": "https://cdnc.ucr.edu/?a=d&d=LAH19270226.1.9"
           },
           {
+            "title": "Map of Collins Subdivision of Block 1, Bell's Addition to Los Angeles, Cal. (M.R. 9-52, Jan. 1886; identified by map alignment, not a lot-level record)",
+            "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR009/MR009-052.pdf"
+          },
+          {
             "title": "Map of the Harvey Tract, Los Angeles, Cal., the Property of Henry W. O'Melveny (M.R. 10-77, Aug. 1886; identified by map alignment, not a lot-level record)",
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR010/MR010-077.pdf"
           },
@@ -61405,8 +62692,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            1012,
-            1116
+            1024,
+            725
           ]
         }
       },
@@ -61492,8 +62779,8 @@ const STREET_DATA = {
         "maxLng": -118.2677,
         "from": {
           "px": [
-            1012,
-            1116
+            1024,
+            725
           ]
         },
         "to": {
@@ -65584,6 +66871,23 @@ const VANISHED_STREETS = [
     ]
   },
   {
+    "entity": "beaudry-st",
+    "asWritten": "Beaudry Street",
+    "doc": "mr002-585",
+    "basis": "alignment",
+    "note": "The historical Beaudry Street corridor lies south of the supplied modern Beaudry Avenue alignment.",
+    "path": [
+      [
+        34.051634,
+        -118.259656
+      ],
+      [
+        34.052794,
+        -118.258542
+      ]
+    ]
+  },
+  {
     "entity": "park-lane",
     "asWritten": "PARK LANE",
     "doc": "mr003-016",
@@ -66947,6 +68251,23 @@ const VANISHED_STREETS = [
     ]
   },
   {
+    "entity": "georgia-bell",
+    "asWritten": "Georgia Bell St.",
+    "doc": "mr009-052",
+    "basis": "alignment",
+    "note": "The historical corridor continues south of the supplied modern Delong Street segment to Montgomery Street.",
+    "path": [
+      [
+        34.037035,
+        -118.272855
+      ],
+      [
+        34.038318,
+        -118.272072
+      ]
+    ]
+  },
+  {
     "entity": "eleventh-street",
     "asWritten": "Eleventh St.",
     "doc": "mr010-030",
@@ -67855,6 +69176,40 @@ const VANISHED_STREETS = [
       [
         34.042064,
         -118.223688
+      ]
+    ]
+  },
+  {
+    "entity": "golden-avenue",
+    "asWritten": "GOLDEN AVE.",
+    "doc": "tr0014-013b",
+    "basis": "alignment",
+    "note": "Golden Avenue leaves Eighth Street southward, with no supplied modern street following its corridor.",
+    "path": [
+      [
+        34.049596,
+        -118.266647
+      ],
+      [
+        34.049244,
+        -118.266794
+      ]
+    ]
+  },
+  {
+    "entity": "alameda-st",
+    "asWritten": "ALAMEDA ST",
+    "doc": "tr0014-033-1",
+    "basis": "alignment",
+    "note": "The historical Marchessault corridor connects Ord Street to the southern segment, but no supplied modern Main Street line follows this middle stretch.",
+    "path": [
+      [
+        34.059449,
+        -118.23679
+      ],
+      [
+        34.058963,
+        -118.2369
       ]
     ]
   },

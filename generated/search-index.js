@@ -86,6 +86,13 @@ const SEARCH_INDEX = [
     "street": "16th Street"
   },
   {
+    "form": "Montgomery Street.",
+    "key": "montgomery street",
+    "entity": "montgomery-street",
+    "label": "Montgomery Street.",
+    "street": "17th Street"
+  },
+  {
     "form": "17th Street",
     "key": "17th street",
     "entity": "seventeenth-street",
@@ -989,6 +996,13 @@ const SEARCH_INDEX = [
     "street": "Colton Street"
   },
   {
+    "form": "Whittier Street",
+    "key": "whittier street",
+    "entity": "whittier-columbia",
+    "label": "Whittier Street",
+    "street": "Columbia Avenue"
+  },
+  {
     "form": "Columbia Avenue",
     "key": "columbia avenue",
     "entity": "columbia-avenue",
@@ -1523,7 +1537,7 @@ const SEARCH_INDEX = [
   {
     "form": "Green Avenue",
     "key": "green avenue",
-    "entity": "green-avenue",
+    "entity": "green-ave",
     "label": "Green Avenue",
     "street": "Green Avenue"
   },
