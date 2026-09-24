@@ -6,8 +6,7 @@ module.exports = {
   scan: "documents/tr0014-033-1/tr0014-033-1.pdf",
   transcription: null,
 
-  date: { on: "1907-07" },
-  recorded: "1908-09-04",
+  date: { on: "1907-07" },   
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.
@@ -33,17 +32,116 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["Alameda Street","Bauchet Street","Main Street","Ord Street","Spring Street"],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
   rows: [
-    { kind: "state", asWritten: "ALAMEDA ST.", name: "alameda-st", street: "Alameda Street", from: { px: [787, 590] }, to: { px: [960, 1379] }, basis: "alignment", confirmed: false },
-    { kind: "absent", street: "Bauchet Street", from: "Alameda Street", to: { px: [1062, 1061] }, confirmed: false, note: "East of Alameda, the modern branch crosses blank ground; no roadway is drawn." },
-    { kind: "absent", street: "Main Street", from: { px: [905, 578] }, to: "Ord Street", confirmed: false, note: "North of Ord, the modern alignment crosses the wedge between the historical Marchessault and Alameda corridors; no roadway follows it." },
-    { kind: "state", asWritten: "MARCHESSAULT ST.", street: "Main Street", from: "Bauchet Street", to: { px: [691, 1369] }, basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "ORD ST.", name: "ord-street", street: "Ord Street", from: { px: [94, 787] }, to: "Alameda Street", basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "SAN FERNANDO ST.", name: "san-fernando-st-spring", street: "Spring Street", from: { px: [227, 645] }, to: { px: [236, 1351] }, basis: "alignment", confirmed: false },
-    { kind: "vanished", asWritten: "MARCHESSAULT ST.", trace: [[829, 789], [890, 1074]], basis: "alignment", confirmed: false, note: "The historical Marchessault corridor connects Ord Street to the southern segment, but no supplied modern Main Street line follows this middle stretch." }
+    {
+      "kind": "state",
+      "asWritten": "ALAMEDA ST.",
+      "name": "alameda-st",
+      "street": "Alameda Street",
+      "from": {
+        "px": [
+          787,
+          590
+        ]
+      },
+      "to": {
+        "px": [
+          960,
+          1379
+        ]
+      },
+      "basis": "alignment"
+    },
+    {
+      "kind": "absent",
+      "street": "Bauchet Street",
+      "from": "Alameda Street",
+      "to": {
+        "px": [
+          1062,
+          1061
+        ]
+      },
+      "note": "East of Alameda, the modern branch crosses blank ground; no roadway is drawn."
+    },
+    {
+      "kind": "unnamed",
+      "street": "Main Street",
+      "from": {
+        "px": [
+          905,
+          578
+        ]
+      },
+      "to": "Ord Street",
+      "note": "North of Ord, the modern alignment crosses the wedge between the historical Marchessault and Alameda corridors; no roadway follows it."
+    },
+    {
+      "kind": "state",
+      "asWritten": "MAIN ST.",
+      "street": "Main Street",
+      "from": "Bauchet Street",
+      "to": {
+        "px": [
+          691,
+          1369
+        ]
+      },
+      "basis": "alignment",
+      "name": "main-street-dtla"
+    },
+    {
+      "kind": "state",
+      "asWritten": "ORD ST.",
+      "name": "ord-street",
+      "street": "Ord Street",
+      "from": {
+        "px": [
+          94,
+          787
+        ]
+      },
+      "to": "Alameda Street",
+      "basis": "alignment"
+    },
+    {
+      "kind": "state",
+      "asWritten": "SAN FERNANDO ST.",
+      "name": "san-fernando-st-spring",
+      "street": "Spring Street",
+      "from": {
+        "px": [
+          227,
+          645
+        ]
+      },
+      "to": {
+        "px": [
+          236,
+          1351
+        ]
+      },
+      "basis": "alignment"
+    },
+    {
+      "kind": "vanished",
+      "asWritten": "ALAMEDA ST",
+      "trace": [
+        [
+          829,
+          789
+        ],
+        [
+          890,
+          1074
+        ]
+      ],
+      "basis": "alignment",
+      "note": "The historical Marchessault corridor connects Ord Street to the southern segment, but no supplied modern Main Street line follows this middle stretch.",
+      "name": "alameda-st"
+    }
   ]
 };

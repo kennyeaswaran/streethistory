@@ -6,8 +6,7 @@ module.exports = {
   scan: "documents/mr055-071/mr055-071.pdf",
   transcription: null,
 
-  date: { on: "1895-03" },
-  recorded: "1895-09-20",
+  date: { on: "1895-03" },   
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.
@@ -27,18 +26,54 @@ module.exports = {
     image: "documents/mr055-071/mr055-071-100dpi.png",
     dpi: 100,
     points: [
-      { px: [0, 0], ll: [34.03514, -118.244291], note: "map-tool corner (0,0)" },
-      { px: [1125, 0], ll: [34.035164, -118.242456], note: "map-tool corner (1125,0)" },
-      { px: [0, 1775], ll: [34.032724, -118.244246], note: "map-tool corner (0,1775)" }
+      { px: [0, 0], ll: [34.033653, -118.245156], note: "map-tool corner (0,0)" },
+      { px: [1125, 0], ll: [34.033677, -118.243324], note: "map-tool corner (1125,0)" },
+      { px: [0, 1775], ll: [34.03124, -118.245111], note: "map-tool corner (0,1775)" }
     ]
   },
 
   sweptFully: false,
   sweptFor: [],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
   rows: [
-    { kind: "state", asWritten: "NINTH ST.", street: "8th Street", from: { px: [260, 799] }, to: { px: [685, 1235] }, basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "CENTRAL AVE", name: "central-ave", street: "Central Avenue", from: { px: [907, 519] }, to: { px: [544, 1259] }, basis: "alignment", confirmed: false }
+    {
+      "kind": "state",
+      "asWritten": "NINTH ST.",
+      "street": "8th Street",
+      "from": {
+        "px": [
+          260,
+          799
+        ]
+      },
+      "to": {
+        "px": [
+          685,
+          1235
+        ]
+      },
+      "basis": "alignment",
+      "confirmed": false
+    },
+    {
+      "kind": "state",
+      "asWritten": "CENTRAL AVE",
+      "name": "central-ave",
+      "street": "Central Avenue",
+      "from": {
+        "px": [
+          907,
+          519
+        ]
+      },
+      "to": {
+        "px": [
+          544,
+          1259
+        ]
+      },
+      "basis": "alignment",
+      "confirmed": false
+    }
   ]
 };

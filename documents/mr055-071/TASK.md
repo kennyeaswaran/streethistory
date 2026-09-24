@@ -1,8 +1,8 @@
 # Identify the streets on mr055-071
 
+Plat of F. T. Bicknell's Subdivision of a Part of the Vineyard of Isidro Reyes, Los Angeles City, California
 
-
-- **Date:** on 
+- **Date:** on 1895-03
 - **Sheet:** `mr055-071-100dpi.png` (100 dpi; every pixel coordinate below is
   measured against this render)
 - **Alignment:** `mr055-071-alignment.json` — control points mapping scan pixels
@@ -23,8 +23,8 @@ Then list any street DRAWN on the plat that matches none of them.
 
 Modern streets inside the coverage polygon (2):
 
-- 8th Street
 - Central Avenue
+- Olympic Boulevard
 
 ## Rules that decide the answer
 
@@ -190,15 +190,16 @@ review; a wrong lineage is a false claim on the map. **Never invent an id**
 and never use one that is not in the list for that street: those fail the
 checker. Rows stay `confirmed: false` either way — a human still checks.
 
-### 8th Street
-
-- `eighth-street` — 8th Street: attested on 8th Street by another sheet; carries the street's present name; ink seen: “8TH ST”, “8TH STREET”, “8th St”, “8th St.”, “8th Street”, “CALLE 8a”, “EAST EIGHTH STREET”, “EIGHTH ST”, “EIGHTH ST.”, “EIGHTH STREET”, “Eighth St”, “Eighth St.”, “Eighth Street”, “new 8th Street” [11824, mr003-569, mr011-008, mr018-092, mr021-046, mr021-087, mr026-060, mr029-026, mr029-085, mr053-065, mr053-068, mr054-051, mr055-086, mr060-088, mr070-051, pm017-045, tr0001-037, tr0005-042b, tr0005-156a, tr0007-085, tr0013-048, tr0105-001-p2, tr0141-011]
-- `lincoln-place` — Lincoln Place: attested on 8th Street by another sheet; ink seen: “Lincoln Place” [mr006-193]
-
 ### Central Avenue
 
-- `central-ave` — Central Avenue: attested on Central Avenue by another sheet; carries the street's present name; ink seen: “CENTRAL AVE.”, “CENTRAL AVENUE”, “Central Ave”, “Central Ave.” [mr021-046, mr037-087, mr054-051, mr055-081, mr070-051, tr0001-046, tr0009-075, tr0012-023a, tr0273-017, tr0885-030-p2, tr0926-086-p2]
+- `central-ave` — Central Avenue: attested on Central Avenue by another sheet; carries the street's present name; ink seen: “CENTRAL AVE.”, “CENTRAL AVENUE”, “Central Ave”, “Central Ave.” [mr021-046, mr037-087, mr054-051, mr055-081, mr070-051, mr107-097, tr0001-046, tr0009-075, tr0012-023a, tr0273-017, tr0885-030-p2, tr0926-086-p2]
 - `wolfskill-ave` — Wolfskill Avenue: attested on Central Avenue by another sheet; ink seen: “Wolfskill Ave” [mr030-009-p2, mr030-009-p3, mr030-009-p4, mr030-009-p5]
+
+### Olympic Boulevard
+
+- `tenth-street` — 10th Street: attested on Olympic Boulevard by another sheet; ink seen: “TENTH STREET”, “Tenth Street” [mr003-032, mr003-033, mr016-027, mr053-063, tr0001-038a]
+- `ninth-street` — 9th Street: attested on Olympic Boulevard by another sheet; ink seen: “East 9th Street”, “NINTH STREET” [mr026-059, mr037-087, tr0105-001-p2, tr0141-011]
+- `olympic-boulevard` — Olympic Boulevard: carries the street's present name
 
 `asWritten` is verbatim ink, typos and abbreviations included — a string, or
 an array of them where the sheet letters the stretch more than once. `trace`

@@ -6,8 +6,7 @@ module.exports = {
   scan: "documents/tr0014-013b/tr0014-013b.pdf",
   transcription: null,
 
-  date: { on: "1908-06" },
-  recorded: "1908-07-18",
+  date: { on: "1908-06" },   
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.
@@ -34,14 +33,78 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["7th Street","8th Street","Lucas Avenue"],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
   rows: [
-    { kind: "state", asWritten: "SEVENTH ST.", name: "seventh-street", street: "7th Street", from: { px: [176, 548] }, to: { px: [842, 523] }, basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "EIGHTH ST.", name: "eighth-street", street: "8th Street", from: { px: [339, 1533] }, to: { px: [897, 1198] }, basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "LUCAS ST.", name: "lucas-avenue", street: "Lucas Avenue", from: { px: [384, 417] }, to: "7th Street", basis: "alignment", confirmed: false },
-    { kind: "vanished", asWritten: "GOLDEN AVE.", trace: [[522, 1444], [549, 1610]], basis: "alignment", confirmed: false, note: "Golden Avenue leaves Eighth Street southward, with no supplied modern street following its corridor." }
+    {
+      "kind": "state",
+      "asWritten": "SEVENTH ST.",
+      "name": "seventh-street",
+      "street": "7th Street",
+      "from": {
+        "px": [
+          176,
+          548
+        ]
+      },
+      "to": {
+        "px": [
+          842,
+          523
+        ]
+      },
+      "basis": "alignment"
+    },
+    {
+      "kind": "state",
+      "asWritten": "EIGHTH ST.",
+      "name": "eighth-street",
+      "street": "8th Street",
+      "from": {
+        "px": [
+          339,
+          1533
+        ]
+      },
+      "to": {
+        "px": [
+          897,
+          1198
+        ]
+      },
+      "basis": "alignment"
+    },
+    {
+      "kind": "state",
+      "asWritten": "LUCAS ST.",
+      "name": "lucas-avenue",
+      "street": "Lucas Avenue",
+      "from": {
+        "px": [
+          384,
+          417
+        ]
+      },
+      "to": "7th Street",
+      "basis": "alignment"
+    },
+    {
+      "kind": "vanished",
+      "asWritten": "GOLDEN AVE.",
+      "trace": [
+        [
+          522,
+          1444
+        ],
+        [
+          549,
+          1610
+        ]
+      ],
+      "basis": "alignment",
+      "note": "Golden Avenue leaves Eighth Street southward, with no supplied modern street following its corridor.",
+      "name": "golden-avenue"
+    }
   ]
 };

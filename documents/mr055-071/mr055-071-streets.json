@@ -12,84 +12,62 @@
     [1024, 584]
   ],
   "coverageLl": [
-    [34.034732, -118.243417],
-    [34.033797, -118.244013],
-    [34.03335, -118.243217],
-    [34.034367, -118.242606]
+    [34.033246, -118.244283],
+    [34.032312, -118.244879],
+    [34.031865, -118.244083],
+    [34.032881, -118.243474]
   ],
   "streets": [
-    {
-      "name": "8th Street",
-      "runs": [
-        {
-          "px": [
-            [260, 799],
-            [280, 818],
-            [432, 975],
-            [454, 998],
-            [537, 1083],
-            [598, 1146],
-            [658, 1207],
-            [685, 1235]
-          ],
-          "ll": [
-            [34.034058, -118.243847],
-            [34.034032, -118.243814],
-            [34.033822, -118.243562],
-            [34.033791, -118.243525],
-            [34.033677, -118.243388],
-            [34.033592, -118.243286],
-            [34.03351, -118.243186],
-            [34.033474, -118.243143]
-          ]
-        }
-      ],
-      "crossings": [
-        {
-          "name": "Central Avenue",
-          "px": [598, 1146],
-          "ll": [34.033592, -118.243286],
-          "insideCoverage": true
-        },
-        {
-          "name": "Merchant Street",
-          "px": [40, 574],
-          "ll": [34.03436, -118.24421],
-          "insideCoverage": false
-        },
-        {
-          "name": "Produce Court",
-          "px": [-26, 508],
-          "ll": [34.034448, -118.24432],
-          "insideCoverage": false
-        }
-      ]
-    },
     {
       "name": "Central Avenue",
       "runs": [
         {
           "px": [
-            [544, 1259],
-            [598, 1146],
-            [629, 1082],
-            [807, 723],
-            [907, 519]
+            [743, 894],
+            [838, 700],
+            [923, 527]
           ],
           "ll": [
-            [34.033437, -118.243372],
-            [34.033592, -118.243286],
-            [34.033681, -118.243237],
-            [34.034173, -118.242957],
-            [34.034453, -118.242798]
+            [34.032454, -118.243923],
+            [34.03272, -118.243774],
+            [34.032956, -118.24364]
           ]
         }
       ],
       "crossings": [
         {
           "name": "8th Street",
-          "px": [598, 1146],
+          "px": [1147, 63],
           "ll": [34.033592, -118.243286],
+          "insideCoverage": false
+        },
+        {
+          "name": "Olympic Boulevard",
+          "px": [556, 933],
+          "ll": [34.032397, -118.244227],
+          "insideCoverage": true
+        }
+      ]
+    },
+    {
+      "name": "Olympic Boulevard",
+      "runs": [
+        {
+          "px": [
+            [368, 972],
+            [239, 837]
+          ],
+          "ll": [
+            [34.03234, -118.244531],
+            [34.03252, -118.244746]
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "name": "Central Avenue",
+          "px": [556, 933],
+          "ll": [34.032397, -118.244227],
           "insideCoverage": true
         }
       ]
@@ -98,76 +76,6 @@
   "excludedAsSlivers": [],
   "excludedAsOvershoot": [],
   "nameCandidates": [
-    {
-      "street": "8th Street",
-      "continuesInto": [],
-      "candidates": [
-        {
-          "id": "eighth-street",
-          "display": "8th Street",
-          "pendingResearch": false,
-          "why": [
-            "attested on 8th Street by another sheet",
-            "carries the street's present name"
-          ],
-          "ink": [
-            "8TH ST",
-            "8TH STREET",
-            "8th St",
-            "8th St.",
-            "8th Street",
-            "CALLE 8a",
-            "EAST EIGHTH STREET",
-            "EIGHTH ST",
-            "EIGHTH ST.",
-            "EIGHTH STREET",
-            "Eighth St",
-            "Eighth St.",
-            "Eighth Street",
-            "new 8th Street"
-          ],
-          "docs": [
-            "11824",
-            "mr003-569",
-            "mr011-008",
-            "mr018-092",
-            "mr021-046",
-            "mr021-087",
-            "mr026-060",
-            "mr029-026",
-            "mr029-085",
-            "mr053-065",
-            "mr053-068",
-            "mr054-051",
-            "mr055-086",
-            "mr060-088",
-            "mr070-051",
-            "pm017-045",
-            "tr0001-037",
-            "tr0005-042b",
-            "tr0005-156a",
-            "tr0007-085",
-            "tr0013-048",
-            "tr0105-001-p2",
-            "tr0141-011"
-          ]
-        },
-        {
-          "id": "lincoln-place",
-          "display": "Lincoln Place",
-          "pendingResearch": false,
-          "why": [
-            "attested on 8th Street by another sheet"
-          ],
-          "ink": [
-            "Lincoln Place"
-          ],
-          "docs": [
-            "mr006-193"
-          ]
-        }
-      ]
-    },
     {
       "street": "Central Avenue",
       "continuesInto": [],
@@ -192,6 +100,7 @@
             "mr054-051",
             "mr055-081",
             "mr070-051",
+            "mr107-097",
             "tr0001-046",
             "tr0009-075",
             "tr0012-023a",
@@ -216,6 +125,59 @@
             "mr030-009-p4",
             "mr030-009-p5"
           ]
+        }
+      ]
+    },
+    {
+      "street": "Olympic Boulevard",
+      "continuesInto": [],
+      "candidates": [
+        {
+          "id": "tenth-street",
+          "display": "10th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Olympic Boulevard by another sheet"
+          ],
+          "ink": [
+            "TENTH STREET",
+            "Tenth Street"
+          ],
+          "docs": [
+            "mr003-032",
+            "mr003-033",
+            "mr016-027",
+            "mr053-063",
+            "tr0001-038a"
+          ]
+        },
+        {
+          "id": "ninth-street",
+          "display": "9th Street",
+          "pendingResearch": false,
+          "why": [
+            "attested on Olympic Boulevard by another sheet"
+          ],
+          "ink": [
+            "East 9th Street",
+            "NINTH STREET"
+          ],
+          "docs": [
+            "mr026-059",
+            "mr037-087",
+            "tr0105-001-p2",
+            "tr0141-011"
+          ]
+        },
+        {
+          "id": "olympic-boulevard",
+          "display": "Olympic Boulevard",
+          "pendingResearch": false,
+          "why": [
+            "carries the street's present name"
+          ],
+          "ink": [],
+          "docs": []
         }
       ]
     }

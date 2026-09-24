@@ -6,8 +6,7 @@ module.exports = {
   scan: "documents/mr072-071/mr072-071.pdf",
   transcription: null,
 
-  date: { on: "1899-08" },
-  recorded: "1899-08-31",
+  date: { on: "1899-08" },   
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.
@@ -33,13 +32,54 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["5th Street (south branch)","6th Street","Saint Paul Avenue"],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
   rows: [
-    { kind: "absent", street: "5th Street (south branch)", from: "6th Street", to: { px: [883, 546] }, confirmed: false, note: "The modern branch leaves Sixth Street across blank ground; no separate roadway is drawn." },
-    { kind: "state", asWritten: "SIXTH STREET", name: "sixth-street", street: "6th Street", from: { px: [357, 584] }, to: { px: [882, 585] }, basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "ST. PAUL AVENUE", name: "st-paul-avenue", street: "Saint Paul Avenue", from: "6th Street", to: { px: [745, 1000] }, basis: "alignment", confirmed: false }
+    {
+      "kind": "absent",
+      "street": "5th Street (south branch)",
+      "from": "6th Street",
+      "to": {
+        "px": [
+          883,
+          546
+        ]
+      },
+      "note": "The modern branch leaves Sixth Street across blank ground; no separate roadway is drawn."
+    },
+    {
+      "kind": "state",
+      "asWritten": "SIXTH STREET",
+      "name": "sixth-street",
+      "street": "6th Street",
+      "from": {
+        "px": [
+          357,
+          584
+        ]
+      },
+      "to": {
+        "px": [
+          882,
+          585
+        ]
+      },
+      "basis": "alignment"
+    },
+    {
+      "kind": "state",
+      "asWritten": "ST. PAUL AVENUE",
+      "name": "st-paul-avenue",
+      "street": "Saint Paul Avenue",
+      "from": "6th Street",
+      "to": {
+        "px": [
+          745,
+          1000
+        ]
+      },
+      "basis": "alignment"
+    }
   ]
 };

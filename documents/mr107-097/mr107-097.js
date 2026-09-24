@@ -6,7 +6,7 @@ module.exports = {
   scan: "documents/mr107-097/mr107-097.pdf",
   transcription: null,
 
-  date: { on: "1905-12-07" },
+  date: { on: "1905-12-07" },   
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.
@@ -32,12 +32,47 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["7th Street","Central Avenue"],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
   rows: [
-    { kind: "state", asWritten: "SEVENTH ST.", name: "seventh-street", street: "7th Street", from: { px: [301, 303] }, to: { px: [309, 904] }, basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "CENTRAL AVE.", name: "central-ave", street: "Central Avenue", from: { px: [763, 340] }, to: { px: [193, 369] }, basis: "alignment", confirmed: false }
+    {
+      "kind": "state",
+      "asWritten": "SEVENTH ST.",
+      "name": "seventh-street",
+      "street": "7th Street",
+      "from": {
+        "px": [
+          301,
+          303
+        ]
+      },
+      "to": {
+        "px": [
+          309,
+          904
+        ]
+      },
+      "basis": "alignment"
+    },
+    {
+      "kind": "state",
+      "asWritten": "CENTRAL AVE.",
+      "name": "central-ave",
+      "street": "Central Avenue",
+      "from": {
+        "px": [
+          763,
+          340
+        ]
+      },
+      "to": {
+        "px": [
+          193,
+          369
+        ]
+      },
+      "basis": "alignment"
+    }
   ]
 };

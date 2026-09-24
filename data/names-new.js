@@ -73,6 +73,23 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+  "green-ave": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"tr0012-088a","sheet":"Cathedral Property","asWritten":["GREEN AVE."]}
+    ],
+    spellings: [{"forms":["Green Avenue"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: [],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from tr0012-088a, where the ink reads “GREEN AVE.”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "mallard-street": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -105,6 +122,23 @@ const NEW_NAME_ENTITIES = {
     aliases: []
   },
 
+  "montgomery-street": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"mr009-052","sheet":"Collins Subdivision","asWritten":["Montgomery Street."]}
+    ],
+    spellings: [{"forms":["Montgomery Street."]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: [],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from mr009-052, where the ink reads “Montgomery Street.”. Namesake not researched.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
   "rosabell-street": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
@@ -124,7 +158,9 @@ const NEW_NAME_ENTITIES = {
   "san-fernando-st-spring": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
-      {"doc":"tr0014-033","sheet":"Tract No. 49","asWritten":["SAN FERNANDO ST."]}
+      {"doc":"tr0009-085","sheet":"Pierre Nicolas Lot","asWritten":["SAN FERNANDO STREET"]},
+      {"doc":"tr0014-033","sheet":"Tract No. 49","asWritten":["SAN FERNANDO ST."]},
+      {"doc":"tr0014-033-1","sheet":"Tract No. 49","asWritten":["SAN FERNANDO ST."]}
     ],
     spellings: [{"forms":["San Fernando Street"]}],
     namedAfter: null,
@@ -141,7 +177,8 @@ const NEW_NAME_ENTITIES = {
   "valencia-street-poindexter": {
     // Sheets that letter this name — derived, rewritten on every review save.
     sightings: [
-      {"doc":"tr0001-038a","sheet":"R. W. Poindexter's Subdivision","asWritten":["VALENCIA STREET"]}
+      {"doc":"tr0001-038a","sheet":"R. W. Poindexter's Subdivision","asWritten":["VALENCIA STREET"]},
+      {"doc":"tr0012-088a","sheet":"Cathedral Property","asWritten":["VALENCIA ST."]}
     ],
     spellings: [{"forms":["Valencia Street"],"disambiguation":"Mrs. Fitzgerald Tract"}],
     namedAfter: null,
@@ -150,6 +187,23 @@ const NEW_NAME_ENTITIES = {
     sources: [],
     disputed: false,
     note: "The Valencia Street shown on R. W. Poindexter's 1901 subdivision of the Mrs. Fitzgerald Tract.",
+    possiblySameAs: null,
+    aliases: []
+  },
+
+  "whittier-columbia": {
+    // Sheets that letter this name — derived, rewritten on every review save.
+    sightings: [
+      {"doc":"tr0012-088a","sheet":"Cathedral Property","asWritten":["WHITTIER ST."]}
+    ],
+    spellings: [{"forms":["Whittier Street"]}],
+    namedAfter: null,
+    namedAfterLink: null,
+    categories: [],
+    sources: [],
+    disputed: false,
+    note: null,
+    internalNote: "Minted in review from tr0012-088a, where the ink reads “WHITTIER ST.”. Namesake not researched.",
     possiblySameAs: null,
     aliases: []
   },

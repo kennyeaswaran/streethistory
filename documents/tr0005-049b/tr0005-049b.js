@@ -6,8 +6,7 @@ module.exports = {
   scan: "documents/tr0005-049b/tr0005-049b.pdf",
   transcription: null,
 
-  date: { on: "1903-07" },
-  recorded: "1904-03-07",
+  date: { on: "1903-07" },   
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.
@@ -33,12 +32,47 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["2nd Street","Los Angeles Street"],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
   rows: [
-    { kind: "state", asWritten: "SECOND ST.", name: "second-street", street: "2nd Street", from: { px: [768, 592] }, to: { px: [720, 1497] }, basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "LOS ANGELES ST.", name: "los-angeles-street", street: "Los Angeles Street", from: { px: [863, 734] }, to: { px: [291, 732] }, basis: "alignment", confirmed: false }
+    {
+      "kind": "state",
+      "asWritten": "SECOND ST.",
+      "name": "second-street",
+      "street": "2nd Street",
+      "from": {
+        "px": [
+          768,
+          592
+        ]
+      },
+      "to": {
+        "px": [
+          720,
+          1497
+        ]
+      },
+      "basis": "alignment"
+    },
+    {
+      "kind": "state",
+      "asWritten": "LOS ANGELES ST.",
+      "name": "los-angeles-street",
+      "street": "Los Angeles Street",
+      "from": {
+        "px": [
+          863,
+          734
+        ]
+      },
+      "to": {
+        "px": [
+          291,
+          732
+        ]
+      },
+      "basis": "alignment"
+    }
   ]
 };

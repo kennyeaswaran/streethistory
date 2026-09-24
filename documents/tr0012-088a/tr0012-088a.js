@@ -6,8 +6,7 @@ module.exports = {
   scan: "documents/tr0012-088a/tr0012-088a.pdf",
   transcription: null,
 
-  date: { on: "1907-01" },
-  recorded: "1907-03-29",
+  date: { on: "1907-01" },   
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.
@@ -34,15 +33,96 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["8th Street","Columbia Avenue","Green Avenue","James M Wood Boulevard","Valencia Street"],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
   rows: [
-    { kind: "state", asWritten: "EIGHTH ST.", name: "eighth-street", street: "8th Street", from: { px: [394, 639] }, to: { px: [1214, 843] }, basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "WHITTIER ST.", street: "Columbia Avenue", from: { px: [1029, 688] }, to: "James M Wood Boulevard", basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "GREEN AVE.", street: "Green Avenue", from: { px: [214, 650] }, to: "James M Wood Boulevard", basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "NINTH ST.", name: "ninth-street", street: "James M Wood Boulevard", from: { px: [92, 1464] }, to: { px: [1189, 1479] }, basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "VALENCIA ST.", name: "valencia-street-poindexter", street: "Valencia Street", from: "James M Wood Boulevard", to: { px: [557, 1611] }, basis: "alignment", confirmed: false }
+    {
+      "kind": "absent",
+      "street": "8th Street",
+      "from": {
+        "px": [
+          394,
+          639
+        ]
+      },
+      "to": "Valencia Street",
+      "basis": "alignment"
+    },
+    {
+      "kind": "state",
+      "asWritten": "EIGHTH ST.",
+      "name": "eighth-street",
+      "street": "8th Street",
+      "from": "Valencia Street",
+      "to": {
+        "px": [
+          1214,
+          843
+        ]
+      },
+      "basis": "alignment"
+    },
+    {
+      "kind": "state",
+      "asWritten": "WHITTIER ST.",
+      "street": "Columbia Avenue",
+      "from": {
+        "px": [
+          1029,
+          688
+        ]
+      },
+      "to": "James M Wood Boulevard",
+      "basis": "alignment",
+      "name": "whittier-columbia"
+    },
+    {
+      "kind": "state",
+      "asWritten": "GREEN AVE.",
+      "street": "Green Avenue",
+      "from": {
+        "px": [
+          214,
+          650
+        ]
+      },
+      "to": "James M Wood Boulevard",
+      "basis": "alignment",
+      "name": "green-ave"
+    },
+    {
+      "kind": "state",
+      "asWritten": "NINTH ST.",
+      "name": "ninth-street",
+      "street": "James M Wood Boulevard",
+      "from": {
+        "px": [
+          92,
+          1464
+        ]
+      },
+      "to": {
+        "px": [
+          1189,
+          1479
+        ]
+      },
+      "basis": "alignment"
+    },
+    {
+      "kind": "state",
+      "asWritten": "VALENCIA ST.",
+      "name": "valencia-street-poindexter",
+      "street": "Valencia Street",
+      "from": "James M Wood Boulevard",
+      "to": {
+        "px": [
+          557,
+          1611
+        ]
+      },
+      "basis": "alignment"
+    }
   ]
 };

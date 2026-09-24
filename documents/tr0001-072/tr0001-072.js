@@ -6,8 +6,7 @@ module.exports = {
   scan: "documents/tr0001-072/tr0001-072.pdf",
   transcription: null,
 
-  date: { on: "1901-11" },
-  recorded: "1902-01-29",
+  date: { on: "1901-11" },   
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.
@@ -33,13 +32,56 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["6th Street","7th Street","Kohler Street"],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
   rows: [
-    { kind: "state", asWritten: "SIXTH ST.", name: "sixth-street", street: "6th Street", from: { px: [395, 407] }, to: { px: [793, 383] }, basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "SEVENTH ST.", name: "seventh-street", street: "7th Street", from: { px: [451, 1730] }, to: { px: [773, 1733] }, basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "KOHLER STREET", name: "kohler", street: "Kohler Street", from: "6th Street", to: "7th Street", basis: "alignment", confirmed: false }
+    {
+      "kind": "state",
+      "asWritten": "SIXTH ST.",
+      "name": "sixth-street",
+      "street": "6th Street",
+      "from": {
+        "px": [
+          395,
+          407
+        ]
+      },
+      "to": {
+        "px": [
+          793,
+          383
+        ]
+      },
+      "basis": "alignment"
+    },
+    {
+      "kind": "state",
+      "asWritten": "SEVENTH ST.",
+      "name": "seventh-street",
+      "street": "7th Street",
+      "from": {
+        "px": [
+          451,
+          1730
+        ]
+      },
+      "to": {
+        "px": [
+          773,
+          1733
+        ]
+      },
+      "basis": "alignment"
+    },
+    {
+      "kind": "state",
+      "asWritten": "KOHLER STREET",
+      "name": "kohler",
+      "street": "Kohler Street",
+      "from": "6th Street",
+      "to": "7th Street",
+      "basis": "alignment"
+    }
   ]
 };

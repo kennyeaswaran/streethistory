@@ -6,8 +6,7 @@ module.exports = {
   scan: "documents/tr0009-085/tr0009-085.pdf",
   transcription: null,
 
-  date: { on: "1906-02" },
-  recorded: "1906-02-26",
+  date: { on: "1906-02" },   
   // §4.1a. Whatever this tool saves has a sheet under it — that is what the
   // tool is for — but a loaded document's own declaration wins, so re-saving
   // one this tool should not have opened cannot quietly reclassify it.
@@ -33,12 +32,47 @@ module.exports = {
     ]
   },
 
-  sweptFully: false,
-  sweptFor: [],
+  sweptFully: true,
+  sweptFor: ["Alameda Street","Spring Street"],
 
-  // Rows arrive from the AI pass and are confirmed in phase 2 (MAP-TOOL-SPEC §3-§4).
   rows: [
-    { kind: "state", asWritten: "ALAMEDA STREET", name: "alameda-st", street: "Alameda Street", from: { px: [979, 1350] }, to: { px: [110, 1548] }, basis: "alignment", confirmed: false },
-    { kind: "state", asWritten: "SAN FERNANDO STREET", name: "san-fernando-st-spring", street: "Spring Street", from: { px: [901, 443] }, to: { px: [190, 459] }, basis: "alignment", confirmed: false }
+    {
+      "kind": "state",
+      "asWritten": "ALAMEDA STREET",
+      "name": "alameda-st",
+      "street": "Alameda Street",
+      "from": {
+        "px": [
+          979,
+          1350
+        ]
+      },
+      "to": {
+        "px": [
+          110,
+          1548
+        ]
+      },
+      "basis": "alignment"
+    },
+    {
+      "kind": "state",
+      "asWritten": "SAN FERNANDO STREET",
+      "name": "san-fernando-st-spring",
+      "street": "Spring Street",
+      "from": {
+        "px": [
+          901,
+          443
+        ]
+      },
+      "to": {
+        "px": [
+          190,
+          459
+        ]
+      },
+      "basis": "alignment"
+    }
   ]
 };
