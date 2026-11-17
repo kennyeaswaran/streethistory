@@ -382,8 +382,21 @@ Match by geometry, never by name (rule 2). Each of these has already caught some
 
 ## Tooling nits
 
-- `tools/check-data.js`'s `PRIMARY` regex lacks `loc.gov` and `rescarta.lapl.org`,
-  so the primary-anchor count under-reports once Sanborn or directory sources land. (2026-08)
+- **Spelling periods are not bound to ground or to their own sightings**
+  (found 2026-11-16; `timelineFor`'s multi-spelling branch in
+  `tools/generate.js`). Three wrong claims on Georgia Street, the only street
+  it reaches today (`georgia-bell` and `lafayette-bixel` are the only entities
+  with more than one spelling period):
+  the Nevada stretch prints **"Georgia Street by 1915 → 1889"**, a period that
+  ends before it starts, because the 1915 sighting belongs to the third
+  spelling period and is taken as the start of the first; the Valencia stretch
+  prints "Georgia Street 1874 → 1889; Georgia Bell Street 1889" ahead of
+  "Valencia Street by 1901", though no document puts either earlier name on
+  that ground; and the stretch no document speaks about carries the same two
+  prose-dated periods. The prose `from`/`until` of a spelling period is being
+  applied to every stretch the entity is bound to today (CLAUDE.md rule 3).
+  Not patched: the fix is the same change as the next item, a timeline built
+  from dated events instead of one bracket per entity.
 - `tools/generate.js` cannot give a name two separate periods on one stretch
   (A → B → A → B). The 1908 Orange → Wilshire and repeal rows (`lah-1908-07-14`,
   `lah-1908-12-05`) are held back until it can. (2026-09-18)

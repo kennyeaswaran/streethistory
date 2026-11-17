@@ -2877,14 +2877,6 @@ const NAME_CATEGORY_INDEX = {
     "searched-none",
     "stub"
   ],
-  "metro-red-purple-lines-entrance": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
   "rondout-street": [
     "unknown",
     "unresearched",
@@ -2941,7 +2933,7 @@ const NAME_CATEGORY_INDEX = {
     "searched-none",
     "stub"
   ],
-  "paseo": [
+  "west-paseo": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -2949,7 +2941,15 @@ const NAME_CATEGORY_INDEX = {
     "searched-none",
     "stub"
   ],
-  "road": [
+  "east-paseo": [
+    "unknown",
+    "unresearched",
+    "basis-none",
+    "basis",
+    "searched-none",
+    "stub"
+  ],
+  "west-road": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -3014,14 +3014,6 @@ const NAME_CATEGORY_INDEX = {
     "stub"
   ],
   "olive-court": [
-    "unknown",
-    "unresearched",
-    "basis-none",
-    "basis",
-    "searched-none",
-    "stub"
-  ],
-  "marketplace": [
     "unknown",
     "unresearched",
     "basis-none",
@@ -32619,6 +32611,31 @@ const STREET_DATA = {
       }
     ]
   },
+  "East Paseo": {
+    "name": "East Paseo",
+    "entityId": "east-paseo",
+    "namedAfter": null,
+    "namedAfterLink": null,
+    "planned": "not yet researched",
+    "built": "not yet researched",
+    "note": null,
+    "attested": false,
+    "categories": [
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
+    ],
+    "disputed": false,
+    "sources": [
+      {
+        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+        "url": "https://www.openstreetmap.org/"
+      }
+    ]
+  },
   "Edgeware Road": {
     "name": "Edgeware Road",
     "orientation": "NS",
@@ -37506,7 +37523,7 @@ const STREET_DATA = {
             "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR053/MR053-067.pdf"
           }
         ],
-        "minLat": 34.0519,
+        "minLat": 34.052,
         "maxLat": 34.0579,
         "from": {
           "px": [
@@ -37516,8 +37533,8 @@ const STREET_DATA = {
         },
         "to": {
           "px": [
-            808,
-            767
+            882,
+            1065
           ]
         }
       },
@@ -37616,11 +37633,11 @@ const STREET_DATA = {
           }
         ],
         "minLat": 34.0486,
-        "maxLat": 34.0519,
+        "maxLat": 34.052,
         "from": {
           "px": [
-            808,
-            767
+            882,
+            1065
           ]
         },
         "to": {
@@ -47708,36 +47725,6 @@ const STREET_DATA = {
       }
     ]
   },
-  "Marketplace": {
-    "name": "Marketplace",
-    "entityId": "marketplace",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "absentAsOf": {
-      "text": "1869 (Mott Tract building lots)",
-      "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR001/MR001-489.pdf"
-    },
-    "absentYear": 1869,
-    "categories": [
-      "basis-none",
-      "searched-none",
-      "stub"
-    ],
-    "ancestors": [
-      "basis"
-    ],
-    "disputed": false,
-    "sources": [
-      {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
-      }
-    ]
-  },
   "Marview Avenue": {
     "name": "Marview Avenue",
     "entityId": "marview-avenue",
@@ -52980,31 +52967,6 @@ const STREET_DATA = {
       }
     ]
   },
-  "Paseo": {
-    "name": "Paseo",
-    "entityId": "paseo",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
-    "categories": [
-      "basis-none",
-      "searched-none",
-      "stub"
-    ],
-    "ancestors": [
-      "basis"
-    ],
-    "disputed": false,
-    "sources": [
-      {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
-      }
-    ]
-  },
   "Patsaouras Transit Plaza": {
     "name": "Patsaouras Transit Plaza",
     "entityId": "patsaouras-transit-plaza",
@@ -53730,31 +53692,6 @@ const STREET_DATA = {
       "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR004/MR004-012.pdf"
     },
     "absentYear": 1869,
-    "categories": [
-      "basis-none",
-      "searched-none",
-      "stub"
-    ],
-    "ancestors": [
-      "basis"
-    ],
-    "disputed": false,
-    "sources": [
-      {
-        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
-        "url": "https://www.openstreetmap.org/"
-      }
-    ]
-  },
-  "Road": {
-    "name": "Road",
-    "entityId": "road",
-    "namedAfter": null,
-    "namedAfterLink": null,
-    "planned": "not yet researched",
-    "built": "not yet researched",
-    "note": null,
-    "attested": false,
     "categories": [
       "basis-none",
       "searched-none",
@@ -64264,6 +64201,56 @@ const STREET_DATA = {
       {
         "title": "Recorded map: Glassell's Subdivision of Lot No. 7 etc., Block 39, Hancock Survey No. 1, M.R. 6-138 (recorded Dec. 27, 1884 at request of A. Glassell) (identified by map alignment, not a lot-level record)",
         "url": "https://pw.lacounty.gov/sur/nas/landrecords/misc/MR006/MR006-138.pdf"
+      }
+    ]
+  },
+  "West Paseo": {
+    "name": "West Paseo",
+    "entityId": "west-paseo",
+    "namedAfter": null,
+    "namedAfterLink": null,
+    "planned": "not yet researched",
+    "built": "not yet researched",
+    "note": null,
+    "attested": false,
+    "categories": [
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
+    ],
+    "disputed": false,
+    "sources": [
+      {
+        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+        "url": "https://www.openstreetmap.org/"
+      }
+    ]
+  },
+  "West Road": {
+    "name": "West Road",
+    "entityId": "west-road",
+    "namedAfter": null,
+    "namedAfterLink": null,
+    "planned": "not yet researched",
+    "built": "not yet researched",
+    "note": null,
+    "attested": false,
+    "categories": [
+      "basis-none",
+      "searched-none",
+      "stub"
+    ],
+    "ancestors": [
+      "basis"
+    ],
+    "disputed": false,
+    "sources": [
+      {
+        "title": "OpenStreetMap (current extract — this street has no research behind it yet)",
+        "url": "https://www.openstreetmap.org/"
       }
     ]
   },

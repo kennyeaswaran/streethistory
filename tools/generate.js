@@ -37,7 +37,8 @@ const OUT_DIR = path.join(PROJECT, "generated");
 // the vocabulary out of generated/streets-data.js was self-referential the moment that
 // file became generated output (MODEL-IMPLEMENTATION checklist A, done
 // 2026-09-15). `unresearched` is declared there now too, so nothing is injected.
-const { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS, categoryAncestors, normalizeName, WAY_STREET_KEYS } =
+const { NEIGHBORHOODS, CATEGORIES, SIMILAR_PROJECTS, categoryAncestors, normalizeName, WAY_STREET_KEYS,
+        NOT_STREETS, NOT_STREET_KEYS } =
   require(path.join(PROJECT, "data", "site-config.js"));
 // A street key from WAY_STREET_KEYS is "<name> (<label>)": the label tells a
 // branch apart, the NAME is what the roadway is called and what binds to an
@@ -52,6 +53,11 @@ function dkey(d) { // sortable; missing parts sort early for starts — callers 
   return (d + "-01-01").slice(0, 10);
 }
 function dyear(d) { return d.slice(0, 4); }
+// A sort comparator that says so when two keys are equal. `a < b ? -1 : 1`
+// claims each of two same-day documents sorts after the other, which leaves
+// their order to whatever the engine's sort happens to do with a comparator
+// that contradicts itself — and the deploy compares this build byte for byte.
+const cmp = (a, b) => a < b ? -1 : a > b ? 1 : 0;
 const MONTHS = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
 function dfmtFull(d) { // "May 19, 1875" / "Mar. 1894" / "1875"
   const [y, m, day] = d.split("-");
@@ -76,21 +82,24 @@ const geomSrc = fs.readFileSync(path.join(PROJECT, "data", "streets-geometry.js"
 const GEOM = new Function(geomSrc + "; return STREET_GEOMETRY;")();
 const geom = GEOM.data || GEOM;
 
-// Names where the leading token is NOT a directional prefix but part of the
-// name itself, so the shared normalizeName convention (and the checker's
-// key rule, and the map's click lookup) all misparse them. Excluded from
-// generation and reported; resolving them properly is an entity-model
-// question for the map/checker migration.
-const EXCLUDE_NAMES = new Set([
-  "East West Bank Plaza at The Broad"   // a plaza named for East West Bank
-]);
+// Named ways that are not streets (NOT_STREETS in data/site-config.js, which
+// every consumer of the geometry now shares) make no street here: no stub, no
+// segment. Their points are kept as LANDMARKS, because a row on a real street
+// may end at one — Grand Avenue's Charity rows run from the plaza at The Broad,
+// and were being dropped as "cross-street not on Grand Avenue".
+const landmarks = new Map(); // normalised key -> { points }
 // (Checklist item B, done 2026-09-15: NAME_ALIASES lives in data/site-config.js and
 // normalizeName above applies it, so aliased ways join their parent street.)
 
 const streets = new Map(); // name -> { ways:[], points:[], orientation, axis }
 for (const w of geom.elements) {
   if (!w.geometry || !w.tags || !w.tags.name) continue;
-  if (EXCLUDE_NAMES.has(w.tags.name)) continue;
+  if (NOT_STREETS.has(w.tags.name)) {
+    const k = normalizeName(w.tags.name, w.id);
+    if (!landmarks.has(k)) landmarks.set(k, { points: [] });
+    landmarks.get(k).points.push(...w.geometry);
+    continue;
+  }
   const n = normalizeName(w.tags.name, w.id);
   if (!streets.has(n)) streets.set(n, { ways: [], points: [] });
   const s = streets.get(n);
@@ -113,7 +122,7 @@ const xCache = new Map();
 function crossScalar(streetName, crossName) {
   const key = streetName + "|" + crossName;
   if (xCache.has(key)) return xCache.get(key);
-  const a = streets.get(streetName), b = streets.get(crossName);
+  const a = streets.get(streetName), b = streets.get(crossName) || landmarks.get(crossName);
   if (!a || !b) { xCache.set(key, null); return null; }
   let best = { d: Infinity };
   for (const p of a.points) for (const q of b.points) {
@@ -211,7 +220,11 @@ const asWrittenQuoted = v => {
 };
 
 function formMatches(asWritten, form) {
-  const a = canon(normalizeName(asWritten)), f = canon(form);
+  const f = canon(form);
+  // The ink as written, before anything is stripped from it: a form may begin
+  // with a word that only looks like a directional ("South Park Avenue").
+  if (canon(asWritten) === f) return true;
+  const a = canon(normalizeName(asWritten));
   if (a === f) return true;
   const ftoks = canonTokens(form);
   const last = ftoks[ftoks.length - 1];
@@ -235,7 +248,8 @@ function displayForm(e) { const sp = e.spellings[e.spellings.length - 1]; return
 // stubs for new coverage. Reports ambiguities instead of guessing.
 const DocGeom = require("../data/doc-geometry.js");
 const report = { stubs: [], ambiguous: [], unmatchedAsWritten: new Map(),
-                 derivedDisambig: [], partialDocs: [], notes: [], revived: [] };
+                 derivedDisambig: [], partialDocs: [], notes: [], revived: [],
+                 notStreetRows: new Map() };
 const vanished = [];   // §5.3 — drawn pavement with no modern counterpart
 const osmDoc = DOCUMENTS.find(d => d.type === "osm");
 let proposalCount = 0;              // unconfirmed rows held back from the map
@@ -407,6 +421,13 @@ for (const doc of nonOsmDocs) {
       // reaches the reader through the entity's prose.
       continue;
     }
+    // A row on a named way since listed as not a street says nothing the map
+    // can use. Counted, not complained about: the row was right when written.
+    if (NOT_STREET_KEYS.has(row.street)) {
+      const k = `${doc.id}: ${row.street}`;
+      report.notStreetRows.set(k, (report.notStreetRows.get(k) || 0) + 1);
+      continue;
+    }
     const street = streets.get(row.street);
     if (!street) { problems.push(`${doc.id}: street not in geometry: ${row.street}`); continue; }
     const ends = [row.kind === "change" ? row.fromCross : row.from,
@@ -538,7 +559,7 @@ for (const doc of nonOsmDocs) {
 // later that still letters the old name (M.R. 66-35, surveyed 1894 and recorded
 // in 1897) is evidence about its own date, not about what a later ordinance
 // reached. `date` is the content date, never the filing date (§4).
-deferredChanges.sort((x, y) => dkey(docDate(x.doc)) < dkey(docDate(y.doc)) ? -1 : 1);
+deferredChanges.sort((x, y) => cmp(dkey(docDate(x.doc)), dkey(docDate(y.doc))));
 for (const { doc, row, from, to } of deferredChanges) {
   const when = docDate(doc);
   let placed = 0, skippedLater = 0;
@@ -708,7 +729,7 @@ function mergeTimelines(A, B) {
     if (!q) return p;
     const sightings = p.ctx.sightings.slice();
     for (const s of q.ctx.sightings) if (!sightings.includes(s)) sightings.push(s);
-    sightings.sort((x, y) => dkey(docDate(x.doc)) < dkey(docDate(y.doc)) ? -1 : 1);
+    sightings.sort((x, y) => cmp(dkey(docDate(x.doc)), dkey(docDate(y.doc))));
     const docs = p.docs.slice();
     for (const d of q.docs) if (!docs.includes(d)) docs.push(d);
     return { ...p, docs, ctx: { ...p.ctx, sightings } };
@@ -722,7 +743,7 @@ function mergeTimelines(A, B) {
 function timelineFor(streetName, iv) {
   const states = iv.rows.filter(r => r.kind === "state");
   const changes = iv.rows.filter(r => r.kind === "change")
-    .sort((x, y) => dkey(x.date) < dkey(y.date) ? -1 : 1);
+    .sort((x, y) => cmp(dkey(x.date), dkey(y.date)));
 
   const present = new Map(); // entity -> {sightings:[], opens:[], closes:[]}
   const get = id => { if (!present.has(id)) present.set(id, { sightings: [], opens: [], closes: [] }); return present.get(id); };
@@ -742,11 +763,11 @@ function timelineFor(streetName, iv) {
   const periods = [];
   for (const [ent, info] of present) {
     const e = entities[ent];
-    const sight = info.sightings.slice().sort((x, y) => dkey(docDate(x.doc)) < dkey(docDate(y.doc)) ? -1 : 1);
+    const sight = info.sightings.slice().sort((x, y) => cmp(dkey(docDate(x.doc)), dkey(docDate(y.doc))));
     const nonOsm = sight.filter(s => !s.osm);
     const hasOsm = sight.some(s => s.osm);
-    const open = info.opens.sort((x, y) => dkey(x.date) < dkey(y.date) ? -1 : 1)[0] || null;
-    const close = info.closes.sort((x, y) => dkey(x.date) < dkey(y.date) ? -1 : 1)[0] || null;
+    const open = info.opens.sort((x, y) => cmp(dkey(x.date), dkey(y.date)))[0] || null;
+    const close = info.closes.sort((x, y) => cmp(dkey(x.date), dkey(y.date)))[0] || null;
 
     // Presence bracket.
     let start, startKind, startDoc = null;
@@ -818,7 +839,7 @@ function timelineFor(streetName, iv) {
       // Boundaries between spelling periods: respell pins first, then prose
       // dates authored on the periods themselves (§3 prose exception).
       const bounds = []; // between sps[i] and sps[i+1]
-      const respells = (info.respells || []).slice().sort((x, y) => dkey(x.date) < dkey(y.date) ? -1 : 1);
+      const respells = (info.respells || []).slice().sort((x, y) => cmp(dkey(x.date), dkey(y.date)));
       let ri = respells.length - 1;
       for (let i = sps.length - 2; i >= 0; i--) {
         let bnd = null;
@@ -1211,7 +1232,7 @@ function plannedBuiltFor(seg) {
   // dates the roadway just as well as a labelled one does.
   const states = seg.rows.filter(r => (r.kind === "state" || r.kind === "unnamed") && !r.osm);
   const byAttest = k => states.filter(s => s.attests === k)
-    .sort((x, y) => dkey(docDate(x.doc)) < dkey(docDate(y.doc)) ? -1 : 1);
+    .sort((x, y) => cmp(dkey(docDate(x.doc)), dkey(docDate(y.doc))));
   const po = byAttest("planned-on")[0], pb = byAttest("planned-by")[0];
   const bo = byAttest("built-on")[0], bb = byAttest("built-by")[0];
   let planned = null, built = null;
@@ -1242,7 +1263,7 @@ function sourcesFor(seg, curEntity) {
   // once, from the registry (§6.6).
   const docs = [];
   for (const r of seg.rows) if (!r.osm && r.kind !== "annotation" && r.kind !== "absent" && !docs.includes(r.doc)) docs.push(r.doc);
-  docs.sort((x, y) => dkey(docDate(x)) < dkey(docDate(y)) ? -1 : 1);
+  docs.sort((x, y) => cmp(dkey(docDate(x)), dkey(docDate(y))));
 
   // EACH PIECE OF EVIDENCE ONCE. An entity's `sources` are the naming claim,
   // and they belong here — except where the same evidence already reaches the
@@ -1663,7 +1684,12 @@ rep.push("# Generated report", "", "**Overwritten every build** (`node tools/gen
 rep.push(`- Streets: ${Object.keys(STREET_DATA).length}; entries: ${Object.values(STREET_DATA).flatMap(v => v.segments || [v]).length}`);
 rep.push(`- Stub entities minted from OSM (unresearched): ${report.stubs.length}`);
 rep.push(`- Curated entities: ${Object.keys(NAME_ENTITIES).length}`);
-if (EXCLUDE_NAMES.size) rep.push(`- Excluded OSM names (normalizeName misparses them; see tools/generate.js): ${[...EXCLUDE_NAMES].join("; ")}`);
+if (NOT_STREETS.size) rep.push(`- Named ways treated as not streets (NOT_STREETS in data/site-config.js): ${[...NOT_STREETS].join("; ")}`);
+if (report.notStreetRows.size) {
+  const n = [...report.notStreetRows.values()].reduce((a, b) => a + b, 0);
+  rep.push(`- ${n} row(s) sit on those names and are ignored (safe to delete when the sheet is next edited): ` +
+    [...report.notStreetRows].map(([k, c]) => `${k}${c > 1 ? ` ×${c}` : ""}`).join("; "));
+}
 rep.push("");
 // SEGMENTATION (ROADMAP §1 and §9): what each boundary between two adjacent
 // stretches of one street marks. Measured by hand once (2026-09-07: 23 of 371

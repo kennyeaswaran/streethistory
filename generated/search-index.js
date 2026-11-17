@@ -1227,6 +1227,13 @@ const SEARCH_INDEX = [
     "street": "Ducommun Street"
   },
   {
+    "form": "East Paseo",
+    "key": "east paseo",
+    "entity": "east-paseo",
+    "label": "East Paseo",
+    "street": "East Paseo"
+  },
+  {
     "form": "Alabama Street",
     "key": "alabama street",
     "entity": "alabama-street",
@@ -1976,13 +1983,6 @@ const SEARCH_INDEX = [
     "street": "Marion Avenue"
   },
   {
-    "form": "Marketplace",
-    "key": "marketplace",
-    "entity": "marketplace",
-    "label": "Marketplace",
-    "street": "Marketplace"
-  },
-  {
     "form": "Marview Avenue",
     "key": "marview avenue",
     "entity": "marview-avenue",
@@ -2228,13 +2228,6 @@ const SEARCH_INDEX = [
     "street": "Park Paseo"
   },
   {
-    "form": "Paseo",
-    "key": "paseo",
-    "entity": "paseo",
-    "label": "Paseo",
-    "street": "Paseo"
-  },
-  {
     "form": "Patsaouras Transit Plaza",
     "key": "patsaouras transit plaza",
     "entity": "patsaouras-transit-plaza",
@@ -2282,13 +2275,6 @@ const SEARCH_INDEX = [
     "entity": "ramirez-street",
     "label": "Ramirez Street",
     "street": "Ramirez Street"
-  },
-  {
-    "form": "Road",
-    "key": "road",
-    "entity": "road",
-    "label": "Road",
-    "street": "Road"
   },
   {
     "form": "Rockwood Street",
@@ -2695,6 +2681,20 @@ const SEARCH_INDEX = [
     "entity": "welcome-street",
     "label": "Welcome Street",
     "street": "Welcome Street"
+  },
+  {
+    "form": "West Paseo",
+    "key": "west paseo",
+    "entity": "west-paseo",
+    "label": "West Paseo",
+    "street": "West Paseo"
+  },
+  {
+    "form": "West Road",
+    "key": "west road",
+    "entity": "west-road",
+    "label": "West Road",
+    "street": "West Road"
   },
   {
     "form": "Westlake Avenue",

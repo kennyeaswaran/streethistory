@@ -30,8 +30,14 @@
 // each. Rows in documents/ carry the PARENT name (a row keyed to the tunnel
 // is a street the geometry index does not have).
 //
-// Not the place for a way whose leading token merely LOOKS directional ("East
-// West Bank Plaza at The Broad"): that is EXCLUDE_NAMES in tools/generate.js.
+// A directional is a prefix only when a NAME is left once it is gone. "North
+// Avenue", "East Street" and "North Court" are the name: stripping them left a
+// bare type word, so the 1885 lettering "North Ave" matched no spelling of
+// north-ave, and OSM's East Paseo and West Paseo were one street called
+// "Paseo" (fixed 2026-11-16; BARE_TYPE below is the test).
+//
+// Not the place for a named way that is not a street at all: that is
+// NOT_STREETS, below.
 const NAME_ALIASES = {
   "2nd Street Tunnel": "2nd Street"
 };
@@ -56,14 +62,45 @@ const WAY_STREET_KEYS = {
   // street it replaced on the Boyle Heights side.
   185949003: "4th Street (viaduct)"
 };
+const BARE_TYPE = /^(street|st|avenue|ave|av|boulevard|blvd|court|ct|drive|dr|place|pl|road|rd|lane|ln|way|wy|terrace|ter|terr|alley|paseo|plaza|walk|row|square)\.?$/i;
 function normalizeName(n, wayId) {
   if (wayId !== undefined && WAY_STREET_KEYS[wayId]) return WAY_STREET_KEYS[wayId];
-  const stripped = n.replace(/^(North|South|East|West|N\.?|S\.?|E\.?|W\.?)\s+/i, "");
+  const rest = n.replace(/^(North|South|East|West|N\.?|S\.?|E\.?|W\.?)\s+/i, "");
+  const stripped = BARE_TYPE.test(rest.trim()) ? n : rest;
   return NAME_ALIASES[stripped] || stripped;
 }
 
+// NAMED WAYS THAT ARE NOT STREETS. OSM draws a station entrance and a market
+// hall's walkway as named pedestrian ways, and everything that keys the
+// geometry then treats them as streets: a stub entity in the research queue,
+// a line on the public map, and a stretch every sheet that covers the ground
+// must account for before it can be swept. Listed here by their OSM name, they
+// are skipped by the generator, the map, the map tool and the coverage report.
+//
+// This list is a judgment and it is short on purpose. A plaza with a namesake
+// is a name worth having (toriumi-plaza is a curated entity; a tract map
+// letters JAPANESE VILLAGE PLAZA MALL), so Jerry Moss Plaza, Frances K.
+// Hashimoto Plaza, Patsaouras Transit Plaza, Blossom Plaza and Broad Plaza are
+// NOT here. Add one and its rows go inert (generated/report.md lists them);
+// nothing has to be deleted. A listed way can still END a row on a real street
+// (Grand Avenue's Charity rows run from the plaza below).
+//
+// "East West Bank Plaza at The Broad" was tools/generate.js's EXCLUDE_NAMES
+// until 2026-11-16. Only the generator knew it, so the map tool went on
+// offering the plaza, keyed "West Bank Plaza at The Broad", and rows were
+// written on it that the generator then could not place.
+const NOT_STREETS = new Set([
+  "East West Bank Plaza at The Broad",   // a plaza named for East West Bank
+  "Metro Red/Purple Lines Entrance",     // a station entrance
+  "Marketplace"                          // a walkway, Broadway to Spring
+]);
+// Rows in documents/ name a street by its normalised key, so that is the form
+// a row is tested against.
+const NOT_STREET_KEYS = new Set([...NOT_STREETS].map(n => normalizeName(n)));
+const isStreetWay = w => !!(w && w.geometry && w.tags && w.tags.name) && !NOT_STREETS.has(w.tags.name);
+
 // Coverage areas. Adding a neighborhood here expands the map query and redraws
-// the dashed coverage outlines; see ADDING-STREETS.md ("Adding a neighborhood").
+// the dashed coverage outlines; see handbook/ADDING-A-NEIGHBORHOOD.md.
 // Bboxes are rough rectangles; for what counts as each neighborhood, use the
 // L.A. Times Mapping L.A. boundaries as the reference.
 const NEIGHBORHOODS = [
@@ -282,5 +319,6 @@ const SIMILAR_PROJECTS = [
 
 if (typeof module !== "undefined") module.exports = {
   NEIGHBORHOODS, CATEGORIES, CATEGORY_BY_ID, categoryAncestors, SIMILAR_PROJECTS,
-  NAME_ALIASES, WAY_STREET_KEYS, normalizeName
+  NAME_ALIASES, WAY_STREET_KEYS, normalizeName,
+  NOT_STREETS, NOT_STREET_KEYS, isStreetWay
 };

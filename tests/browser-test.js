@@ -1857,6 +1857,24 @@ const ok = (n, c, d) => c ? (pass++, console.log("  ok  " + n))
        trace.trace < trace.streets, JSON.stringify(trace));
   }
 
+  // A named way that is not a street (NOT_STREETS in data/site-config.js) is
+  // not offered, drawn or asked to be swept, so it must not be among the
+  // tool's ways; a row on a real street may still end at one, so its points
+  // must still answer a crossing. Stated as a rule over the whole list, so it
+  // holds whatever the list contains.
+  {
+    const ns = await page.evaluate(() => {
+      const keys = [...NOT_STREET_KEYS];
+      return { n: keys.length,
+               offered: keys.filter(k => ways.some(w => w.name === k)),
+               noPoints: keys.filter(k => !streetPoints.has(k)) };
+    });
+    ok("no way listed as not a street is offered as one",
+       ns.offered.length === 0, ns.offered.join(", "));
+    ok("and each can still be the end of a row on a real street",
+       ns.noPoints.length === 0, ns.noPoints.join(", "));
+  }
+
   ok("still no page errors",
      errors.filter(e => !/404/.test(e)).length === 0, errors.slice(0, 3).join(" | "));
 

@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Three gates; any failure blocks deployment. Since the 2026-09-19 switchover
+  # Four gates; any failure blocks deployment. Since the 2026-09-19 switchover
   # streets-data.js is the generator's output, committed alongside the
   # documents that changed it (handbook/PUBLISHING.md).
   check:
@@ -52,6 +52,15 @@ jobs:
           grep -q '^Generated ' generate.log || { echo "::error::tools/generate.js did not finish"; exit 1; }
           git diff --exit-code -- generated/streets-data.js generated/search-index.js \
             || { echo "::error::committed generated/streets-data.js / generated/search-index.js differ from a fresh build — run 'node tools/generate.js' and commit the result"; exit 1; }
+      # The suites that need no browser (tests/README.md): the geometry core,
+      # the map tool's review model and the names tool's file surgery. Seconds
+      # to run, and they read only committed files. The Playwright suites
+      # (browser-test, names-browser-test, preview-test) are not run here.
+      - name: Test suites (no browser)
+        run: |
+          node tests/test-doc-geometry.js
+          node tests/test-review.js
+          node tests/test-names-tool.js
 
   deploy:
     needs: check
@@ -61,9 +70,23 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      # Publish the SITE, not the repository. Until 2026-11-16 this uploaded
+      # `.`, which put handbook/, legacy/, tests/, every document folder and
+      # data/names.js (with its internalNote fields) on the public site. The
+      # page loads four local files and nothing else; if it ever loads a fifth,
+      # the loop below fails the deploy rather than publishing a broken map.
+      - name: Stage the site
+        run: |
+          mkdir -p _site/data _site/generated
+          cp index.html _site/
+          cp data/site-config.js data/streets-geometry.js _site/data/
+          cp generated/streets-data.js generated/search-index.js _site/generated/
+          for f in $(grep -o 'src="[^"]*"' index.html | sed 's/^src="//; s/"$//' | grep -v '^https\?:'); do
+            test -f "_site/$f" || { echo "::error::index.html loads $f, which the deploy does not stage (see 'Stage the site' in deploy.yml)"; exit 1; }
+          done
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4

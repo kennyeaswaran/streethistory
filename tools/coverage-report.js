@@ -22,7 +22,7 @@ try {
 }
 
 // The one normalisation every consumer shares (directionals + NAME_ALIASES).
-const { normalizeName: normalize } = require(PROJECT + "/data/site-config.js");
+const { normalizeName: normalize, NOT_STREETS } = require(PROJECT + "/data/site-config.js");
 
 const R = 6371000;
 function dist(a, b) { // meters between {lat,lon} points
@@ -36,6 +36,7 @@ const inBox = (p, b) => p.lat >= b.s && p.lat < b.n && p.lon >= b.w && p.lon < b
 const streets = new Map(); // name -> { length, hoods:Set, count }
 for (const way of geom.elements || []) {
   if (!way.geometry || !way.tags || !way.tags.name) continue;
+  if (NOT_STREETS.has(way.tags.name)) continue;   // not a street: nothing to research
   const name = normalize(way.tags.name, way.id);
   if (!streets.has(name)) streets.set(name, { length: 0, hoods: new Set(), count: 0 });
   const s = streets.get(name);

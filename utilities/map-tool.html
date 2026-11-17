@@ -358,7 +358,11 @@ const ways = [], streetPoints = new Map();
 for (const w of geomRaw) {
   if (!w.geometry || !w.tags || !w.tags.name) continue;
   const n = normalize(w.tags.name, w.id);
-  ways.push({ name: n, geometry: w.geometry });
+  // A named way that is not a street (NOT_STREETS in site-config.js) is not
+  // offered, drawn or asked to be swept — so it is not in `ways`. Its points
+  // stay in `streetPoints`, which only answers "where do these two meet":
+  // a row on a real street may end at one.
+  if (isStreetWay(w)) ways.push({ name: n, geometry: w.geometry });
   if (!streetPoints.has(n)) streetPoints.set(n, []);
   streetPoints.get(n).push(...w.geometry);
 }
@@ -1746,6 +1750,9 @@ function reviewModel() {
 
     if (isVanished(r)) { vanished.push(r); continue; }
     if (!r.street) { problems.push(`a ${esc(r.kind || "?")} row has no street`); continue; }
+    // A row written before its way was listed in NOT_STREETS: not a problem
+    // with this document, and nothing here can speak for it any more.
+    if (NOT_STREET_KEYS.has(r.street)) continue;
     const rec = streets.get(r.street);
     if (!rec) {
       const sliver = cov.slivers.find(s => s.name === r.street);
@@ -1768,6 +1775,7 @@ function reviewModel() {
   for (const rec of streets.values()) rec.excepted = [];
   for (const x of coverageExcept) {
     if (typeof x !== "object" || !x.street) continue;
+    if (NOT_STREET_KEYS.has(x.street)) continue;   // disclaimed before it was listed as not a street
     const rec = streets.get(x.street);
     if (!rec) { problems.push(`coverageExcept names “${esc(x.street)}”, which is not in coverage`); continue; }
     const pA = extentPoint(x.street, x.from, problems), pB = extentPoint(x.street, x.to, problems);

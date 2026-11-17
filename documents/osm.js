@@ -12,7 +12,7 @@ const path = require("path");
 // The same normalisation the generator keys geometry by — directionals
 // stripped, NAME_ALIASES applied — so the tunnel's ways become rows of 2nd
 // Street rather than of a street nothing else knows.
-const { normalizeName } = require(path.join(__dirname, "..", "data", "site-config.js"));
+const { normalizeName, isStreetWay } = require(path.join(__dirname, "..", "data", "site-config.js"));
 
 function load() {
   const src = fs.readFileSync(path.join(__dirname, "..", "data", "streets-geometry.js"), "utf8");
@@ -23,7 +23,7 @@ function load() {
 
   const rows = [];
   for (const w of geom.elements) {
-    if (!w.geometry || !w.tags || !w.tags.name) continue;
+    if (!isStreetWay(w)) continue;   // unnamed, or a named way that is not a street (NOT_STREETS)
     rows.push({
       kind: "state",
       name: null,                  // bound by the generator (§4.1) — never by hand

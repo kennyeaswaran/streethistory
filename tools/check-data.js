@@ -27,7 +27,7 @@ const { STREET_DATA, NAME_CATEGORY_INDEX } =
   new Function(src + "; return { STREET_DATA, NAME_CATEGORY_INDEX: typeof NAME_CATEGORY_INDEX === 'undefined' ? null : NAME_CATEGORY_INDEX };")();
 // The vocabulary and the coverage boxes are authored in data/site-config.js, not in
 // the data file they describe (ROADMAP §7).
-const { CATEGORIES, NEIGHBORHOODS } = require(PROJECT + "/data/site-config.js");
+const { CATEGORIES, NEIGHBORHOODS, normalizeName } = require(PROJECT + "/data/site-config.js");
 
 // coverage = union of neighborhood bboxes (same as the map)
 const BBOX = {
@@ -141,7 +141,10 @@ NEIGHBORHOODS.forEach(nb => {
 });
 
 for (const [key, v] of Object.entries(STREET_DATA)) {
-  if (/^(North|South|East|West)\s/i.test(key)) err(key, "keys must omit directional prefixes");
+  // A key is a street name as normalizeName leaves it: directional prefix
+  // stripped, unless that would leave a bare type word ("West Road" is the
+  // name, not a "Road" with a direction), and no aliased way as its own key.
+  if (normalizeName(key) !== key) err(key, `keys must be in normalizeName's form (expected "${normalizeName(key)}")`);
   if (!v.segments) { checkEntry(key, v); continue; }
 
   // --- segmented street ---
@@ -199,7 +202,7 @@ if (errors) { console.error(`\n${errors} error(s).`); process.exit(1); }
 // contemporary newspaper, or recorded tract map. pw.lacounty.gov/sur/nas/
 // landrecords serves the DPW recorded-map scans (tract maps + the recorded
 // Ord Survey, M.R. 53-66/73) — a recorded-map primary record.
-const PRIMARY = /tessa2?\.lapl\.org|cdnc\.ucr\.edu|clerk\.lacity\.org|navigatela\.lacity\.org|pqarchiver|newspapers\.com|pw\.lacounty\.gov\/sur\/nas\/landrecords/;
+const PRIMARY = /tessa2?\.lapl\.org|rescarta\.lapl\.org|cdnc\.ucr\.edu|clerk\.lacity\.org|navigatela\.lacity\.org|pqarchiver|newspapers\.com|pw\.lacounty\.gov\/sur\/nas\/landrecords|(^|\/\/|\.)loc\.gov\//;
 const allEntries = Object.values(STREET_DATA).flatMap(v => v.segments || [v]);
 const anchored = allEntries.filter(v => (v.sources || []).some(s => PRIMARY.test(s.url))).length;
 console.log(`All checks pass: ${Object.keys(STREET_DATA).length} streets, ${allEntries.length} entries` +

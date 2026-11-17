@@ -39,7 +39,7 @@ const SEARCHED_VALUES = new Set(["none", "partial", "extensive"]);
 // turned a bad read into a SILENT DISABLING of the whole category check — the
 // worst possible failure for a migration, because everything passes. If the
 // vocabulary cannot be read, that is a broken checkout and should say so.
-const { CATEGORIES, CATEGORY_BY_ID, normalizeName } = require(path.join(PROJECT, "data/site-config.js"));
+const { CATEGORIES, CATEGORY_BY_ID, normalizeName, NOT_STREET_KEYS } = require(path.join(PROJECT, "data/site-config.js"));
 const CATEGORY_IDS = new Set(CATEGORIES.map(c => c.id));
 
 const approvedCount = { note: 0, namedAfter: 0 };
@@ -742,6 +742,19 @@ const pending = Object.entries(NAME_ENTITIES).filter(([, e]) => e.pendingResearc
 if (pending.length)
   warn("names-new.js", `${pending.length} entit${pending.length === 1 ? "y" : "ies"} awaiting ` +
        `research (namesake, sources), then a move into names.js:`, pending.join(", "));
+
+// Rows on a named way that data/site-config.js lists in NOT_STREETS. The ways
+// stay in the geometry index above, so such a row is not an error and a listed
+// way can still end a row on a real street; the generator ignores the row.
+{
+  const inert = new Map();
+  for (const doc of DOCUMENTS) for (const row of doc.rows || [])
+    if (doc.type !== "osm" && NOT_STREET_KEYS.has(row.street)) inert.set(doc.id, (inert.get(doc.id) || 0) + 1);
+  if (inert.size)
+    warn(`${[...inert.values()].reduce((a, b) => a + b, 0)} row(s) sit on a name listed in NOT_STREETS ` +
+      `(data/site-config.js) and reach nothing — safe to delete when the sheet is next edited: ` +
+      [...inert].map(([id, n]) => `${id} ×${n}`).join(", "));
+}
 
 if (errors) { console.error(`\n${errors} error(s).`); process.exit(1); }
 console.log(`Model checks pass: ${Object.keys(NAME_ENTITIES).length} entities, ` +

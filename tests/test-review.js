@@ -68,8 +68,10 @@ const { NAME_ENTITIES } = require("../data/names.js");
 const fit = G.fitAlignment(ALIGN_POINTS);
 
 let rows = [];
+// The page takes NOT_STREET_KEYS from data/site-config.js, loaded as a script.
+const { NOT_STREET_KEYS } = require("../data/site-config.js");
 const sandbox = {
-  G, ways, streetPoints, NAME_ENTITIES, console, JSON, Math, Map, Array, Object, String,
+  G, ways, streetPoints, NAME_ENTITIES, NOT_STREET_KEYS, console, JSON, Math, Map, Set, Array, Object, String,
   img: IMG, coverage: COVERAGE,
   controlPoints: () => ALIGN_POINTS,
   scanToWorldDirect: (px, py) => G.scanToWorld(fit, px, py)
@@ -199,6 +201,15 @@ console.log("the mistakes review mode exists to catch");
   const p = API.reviewModel().problems.join(" | ");
   ok("an invented name entity is flagged", /no name entity/.test(p), p);
   ok("a street outside the coverage polygon is flagged", /not inside the coverage/.test(p), p);
+
+  // A row written before its way was listed as not a street (NOT_STREETS in
+  // data/site-config.js) is inert, not a fault in the document: the sheet was
+  // swept with it, and reopening it must not turn up a "misspelling".
+  const notStreet = [...NOT_STREET_KEYS][0];
+  setRows([{ kind: "absent", street: notStreet, from: null, to: null }]);
+  const q = API.reviewModel().problems.join(" | ");
+  ok("there is a not-a-street name to test with", !!notStreet);
+  ok("a row on a name listed as not a street is not reported", !q.includes(notStreet), q);
   ok("a row with no street at all is flagged", /has no street/.test(p), p);
 }
 

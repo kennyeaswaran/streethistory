@@ -6,6 +6,7 @@
 #   1. node tools/check-model.js                    names.js, names-new.js, documents/
 #   2. node tools/generate.js                       rebuilds generated/
 #   3. node tools/check-data.js --require-generated the map's contract
+#   4. the three test suites that need no browser   (tests/README.md)
 #
 # and then says whether generated/ changed, which means it goes into your
 # commit along with the rest (handbook/PUBLISHING.md).
@@ -50,10 +51,21 @@ run() {                                   # $1 = label, rest = command
   return $code
 }
 
+# The deploy's fourth gate. Passing lines are dropped; a FAIL line, a crash
+# and each suite's "N passed, M failed" are what is worth reading.
+run_tests() {
+  local t code=0
+  for t in test-doc-geometry test-review test-names-tool; do
+    node "tests/$t.js" 2>&1 | grep -v -e '^  ok' -e '^$' | tail -4
+    [ "${PIPESTATUS[0]}" -eq 0 ] || code=1
+  done
+  return $code
+}
+
 echo
 echo "  Streetymology — check and generate"
 
-if ! run "1/3  Checking names and documents" node tools/check-model.js; then
+if ! run "1/4  Checking names and documents" node tools/check-model.js; then
   echo
   echo "  ✗ The model check found errors (the ERROR lines above). Nothing was"
   echo "    regenerated. Fix them and run me again; a push now would not deploy."
@@ -63,20 +75,24 @@ else
   # rows are dropped and listed in generated/report.md, a few are normal, and
   # the deploy doesn't mind them. What matters is that it finished: it prints
   # "Generated ..." as its last act.
-  run "2/3  Generating the map data" node tools/generate.js
+  run "2/4  Generating the map data" node tools/generate.js
   if ! grep -q '^Generated ' "$LOG"; then
     echo
     echo "  ✗ The generator didn't finish. A push now would not deploy."
     status=1
-  elif ! run "3/3  Checking the generated map data" node tools/check-data.js --require-generated; then
+  elif ! run "3/4  Checking the generated map data" node tools/check-data.js --require-generated; then
     echo
     echo "  ✗ The generated data fails the map's checks (the ERROR lines above)."
     echo "    A push now would not deploy."
     status=1
+  elif ! run "4/4  Running the tests that need no browser" run_tests; then
+    echo
+    echo "  ✗ A test suite failed (the FAIL lines above). A push now would not deploy."
+    status=1
   else
     status=0
     echo
-    echo "  ✓ All three checks pass."
+    echo "  ✓ All four checks pass."
     if command -v git >/dev/null 2>&1 && [ -d .git ]; then
       changed=$(git --no-optional-locks status --porcelain -- generated/streets-data.js generated/search-index.js)
       if [ -n "$changed" ]; then

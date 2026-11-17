@@ -12,7 +12,7 @@ later (below).
    folder to GitHub Desktop as a local repository, commit, and "Publish
    repository" with "Keep this code private" unchecked.
 3. Repo → Settings → Pages → Source: **GitHub Actions**. The included workflow
-   (`.github/workflows/deploy.yml`) then runs the three gates below on every push
+   (`.github/workflows/deploy.yml`) then runs the four gates below on every push
    and deploys only if they pass; progress is in the Actions tab.
 
 ## Everyday updates
@@ -32,7 +32,7 @@ the commit — the change itself and the regenerated output:
 (or double-click `utilities/check-and-generate.command`, which runs those two
 and the `check-data` gate too, and says whether `generated/` changed), then commit `generated/streets-data.js` (and `generated/search-index.js`) with the rest.
 
-The deploy runs three gates before it uploads anything:
+The deploy runs four gates before it uploads anything:
 
 1. `node tools/check-data.js --require-generated` — the contract the map relies
    on, and a refusal to publish a `generated/streets-data.js` that lacks the
@@ -45,6 +45,17 @@ The deploy runs three gates before it uploads anything:
    geometry file lacks, a cross street that does not meet it) do not fail
    it — those rows are dropped and listed in `generated/report.md` and the
    Actions log; a generator that crashes mid-run does.
+4. **The test suites that need no browser** — `tests/test-doc-geometry.js`,
+   `tests/test-review.js`, `tests/test-names-tool.js`. A change to a tool that
+   breaks one holds the site back, so run them before pushing a tool change
+   (tests/README.md).
+
+**What is published is the site, not the repository** (since 2026-11-16):
+`index.html`, `data/site-config.js`, `data/streets-geometry.js` and the two
+files in `generated/`. The handbook, the documents and `data/names.js` are in
+the public GitHub repository and no longer also on the Pages site. If
+`index.html` ever loads another local file, add it to the "Stage the site" step
+in `deploy.yml`; the deploy fails with that message until it is there.
 
 ## Custom domain (later)
 

@@ -3,9 +3,10 @@
 **Overwritten every build** (`node tools/generate.js`).
 
 - Streets: 272; entries: 953
-- Stub entities minted from OSM (unresearched): 129
+- Stub entities minted from OSM (unresearched): 128
 - Curated entities: 331
-- Excluded OSM names (normalizeName misparses them; see tools/generate.js): East West Bank Plaza at The Broad
+- Named ways treated as not streets (NOT_STREETS in data/site-config.js): East West Bank Plaza at The Broad; Metro Red/Purple Lines Entrance; Marketplace
+- 14 row(s) sit on those names and are ignored (safe to delete when the sheet is next edited): 12685: Metro Red/Purple Lines Entrance; 12685: West Bank Plaza at The Broad ×2; mr001-489: Marketplace ×3; mr001-489: Metro Red/Purple Lines Entrance ×2; mr001-489: West Bank Plaza at The Broad ×2; mr053-069: Marketplace ×2; mr053-069: Metro Red/Purple Lines Entrance ×2
 
 ## Segmentation (ROADMAP §1)
 
@@ -23,13 +24,6 @@
 Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 22, 4th Street 20, 6th Street 19, 7th Street 18, 8th Street 18, 1st Street 16, 5th Street 16, Main Street 15.
 
 ## Row problems
-- 12685: street not in geometry: West Bank Plaza at The Broad
-- 12685: cross-street not on Grand Avenue: West Bank Plaza at The Broad
-- 12685: street not in geometry: West Bank Plaza at The Broad
-- mr001-489: street not in geometry: West Bank Plaza at The Broad
-- mr001-489: street not in geometry: West Bank Plaza at The Broad
-- mr001-489: cross-street not on Grand Avenue: West Bank Plaza at The Broad
-- mr001-489: cross-street not on Grand Avenue: West Bank Plaza at The Broad
 - mr010-008: row on Japanese Village Plaza Mall — the street does not enter this document's coverage at all
 - tr0856-050-p2: row on Toriumi Plaza (absent) spans nothing — its two ends resolve to the same point. the two cross streets meet this one at the same place.
 
@@ -314,7 +308,6 @@ Most segments: 2nd Street 29, 3rd Street 25, Los Angeles Street 22, 4th Street 2
 - temple: "TEMPLE ST." ×1
 - custer-ave: "Custer ave" ×1
 - victor-ave: "Victor ave" ×1
-- north-ave: "North Ave" ×1
 - arnold: "ARNOLD ST" ×1
 - texas-st: "TEXAS ST" ×1
 - nevada-1886: "Nevado St" ×1

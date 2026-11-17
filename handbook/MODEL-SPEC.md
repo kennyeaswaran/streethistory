@@ -594,11 +594,11 @@ toward the primary-anchor metric, and it does not feed `planned`/`built`
 (§6.4).
 
 **OSM rows carry geometric extents** — the way itself — instead of
-cross-street names: for OSM the geometry *is* the identification. And one
-OSM name is excluded outright, "East West Bank Plaza at The Broad", whose
-leading token is not a directional prefix, so `normalizeName` misparses it.
-The exclusion list is `EXCLUDE_NAMES` in `tools/generate.js`, and
-`generated/report.md` lists what it excludes.
+cross-street names: for OSM the geometry *is* the identification. A named way
+that is not a street (a station entrance, the plaza at The Broad) makes no
+rows at all: `NOT_STREETS` in `data/site-config.js` lists them, every consumer
+of the geometry shares it, and `generated/report.md` prints the list and any
+rows left sitting on it.
 
 **Its rows bind to entities automatically — nothing is attached by hand.** OSM
 gives spellings, not ids, so the generator resolves them:

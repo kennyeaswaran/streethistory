@@ -4,16 +4,19 @@ A zoomable, clickable map of street-name history. Prototype area: Downtown Los A
 
 ## Run it
 
-Open `index.html` in a browser (internet required — it loads OSM map tiles and fetches
-street geometry live from the Overpass API). For a local server:
+Open `index.html` in a browser (internet required for the OSM map tiles; the
+street geometry is the committed `data/streets-geometry.js`). For a local server:
 `python3 -m http.server` in this folder, then http://localhost:8000.
 
 ## How it works
 
 - Basemap: OpenStreetMap tiles via Leaflet.
-- Street geometry: fetched at load from Overpass (named highways in the DTLA bounding
-  box, defined in `BBOX` in index.html). Ways sharing a name (after stripping N/S/E/W
-  prefixes) are grouped into one clickable street.
+- Street geometry: `data/streets-geometry.js`, a saved Overpass extract of the
+  named highways inside the `NEIGHBORHOODS` boxes in `data/site-config.js`. The
+  map falls back to fetching from Overpass only if that file is missing or was
+  saved for different boxes. Ways sharing a name (after `normalizeName` strips
+  N/S/E/W prefixes) are grouped into one clickable street; named ways that are
+  not streets are listed in `NOT_STREETS` and skipped.
 - Click target: each street segment carries an invisible ~18px-wide stroke, so the
   street's drawn area is clickable without hunting for a hairline.
 - Data: `generated/streets-data.js` is **generated** — `data/names.js` (what is known about
@@ -68,8 +71,9 @@ street was named after: handbook/NAME-RESEARCH.md.
 - OSM rarely maps streets as areas (`area:highway` coverage is near zero), so true
   street polygons aren't available; the wide invisible stroke approximates "click the
   street itself".
-- Name normalization is simple prefix-stripping; watch for collisions (e.g. two
-  distinct streets sharing a base name).
+- Name normalization is prefix-stripping (kept when only a type word would be
+  left: "North Avenue"); watch for collisions (e.g. two distinct streets
+  sharing a base name).
 - Some of the earliest entries are summarized from lastreetnames.com — before
   going public, confirm permissions/attribution with Mark Tapio Kines. The
   document model is the diversification: every row cites the sheet it was read
